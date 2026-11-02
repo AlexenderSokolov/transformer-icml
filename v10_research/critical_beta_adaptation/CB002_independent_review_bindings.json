@@ -1,0 +1,53 @@
+{
+  "unit": "CB002",
+  "status": "PASS_INDEPENDENT_LLM_REVIEW_PARTIAL_THEOREM",
+  "time_utc": "2026-11-02T13:28:25.423918+00:00",
+  "proof_sha256": "69c55c6ab40e939c5392beb022c213c8506e8aa464b3f0b2f3f23b0db0eabe11",
+  "review_scope": "Complete new proof; imported accepted SC003 terminal-occupation interface/support classification and limited AB003/CB001 statements only. No full-adaptation claim.",
+  "artifacts": [
+    {
+      "path": "critical_beta_adaptation/CB002_near_prefix_veto_partial.md",
+      "sha256": "69c55c6ab40e939c5392beb022c213c8506e8aa464b3f0b2f3f23b0db0eabe11",
+      "bytes": 11001
+    },
+    {
+      "path": "critical_beta_adaptation/CB002_independent_full_review.md",
+      "sha256": "ebab47127d2be0b26a062eb79cac1dcc6e886d5796140ac4e83ca7248bd488c6",
+      "bytes": 8090
+    },
+    {
+      "path": "critical_beta_adaptation/CB002_independent_exact_checks.py",
+      "sha256": "36b79ae015d4e9b037104d62ad1eb68f273622f5d6eabc9fd0de90aa871aa265",
+      "bytes": 5399
+    },
+    {
+      "path": "critical_beta_adaptation/CB002_independent_exact_checks.json",
+      "sha256": "8a720426eff50c778a3021dc0de1f8f1306ecb55cc3ab3cf424f32cc3b18b1a7",
+      "bytes": 741
+    },
+    {
+      "path": "critical_beta_adaptation/review_snapshots/CB002_received.md",
+      "sha256": "69c55c6ab40e939c5392beb022c213c8506e8aa464b3f0b2f3f23b0db0eabe11",
+      "bytes": 11001
+    }
+  ],
+  "receipts": [
+    {
+      "path": "intake/SC003_acceptance.json",
+      "sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+      "bytes": 864
+    },
+    {
+      "path": "intake/AB003_acceptance.json",
+      "sha256": "eb4a51922f764ee65bc3dffa77e253d5345f2ce0d0e8c577ca655fc24f79b67d",
+      "bytes": 948
+    },
+    {
+      "path": "intake/CB001_acceptance.json",
+      "sha256": "e09c7d0b901d92beefbf940596a94c72287534d3d8cca9a059316ccdd2a849e2",
+      "bytes": 1005
+    }
+  ],
+  "revision": "No author revision requested or made during this independent review.",
+  "limits": "Not formal verification, external peer review, or root acceptance."
+}

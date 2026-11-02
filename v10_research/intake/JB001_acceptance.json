@@ -1,0 +1,10 @@
+{
+  "unit": "JB001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "joint_blind_finite_cut/JB001_theorem.md",
+  "sha256": "9d28b2b655be1cf643ac8fc0881aa3952047bc618850c64e31a051e8cc67c9c3",
+  "review": "joint_blind_finite_cut/JB001_independent_review.md",
+  "review_sha256": "a62a51579ff951f2aa32cfac40f899011fe0e9186144dc017dfff87c2bbe5b3d",
+  "time_utc": "2026-11-02T12:23:28.851337+00:00",
+  "scope": "POST-STAGE8. Root-authored proof plus fresh independent full review read by root. Fixed binary uniform eight-coordinate finite noisy histogram cut, source edits+vector port noise, protected pair. Hard threshold decoder blind to k,delta,beta,and certificates attains JP001 known-budget order simultaneously when tau=k/M+delta+1/Q<=M^-1/2, both initializations. Real pseudo-count extension, weighted occupation, exact finite rational costs. No all-budget, redesigned-encoder, neural-depth, training, formal/external-review or novelty claim."
+}

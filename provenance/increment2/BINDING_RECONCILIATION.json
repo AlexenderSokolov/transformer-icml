@@ -1,0 +1,107 @@
+{
+  "rule": "For an exact listed path, first verify current bytes equal public_export_sha256; only then recognize original_sha256 as its declared source identity. Never accept an unlisted hash or relax scientific checks. Existing inherited maps are reused, not replaced.",
+  "new_pairs": [
+    {
+      "path": "v10_research/binary_beta_known_adaptation/BK001_ACCEPTED_BINDINGS.json",
+      "original_sha256": "f66fe9d62f3a8537a013e1475379881eefb04ffa89cb2737e92de3be3aa3a0b5",
+      "public_export_sha256": "e3fa229f3a7b731b91297f67131aebdc58f3c18b5705edf39ab554a81cc1aed4",
+      "purpose": "Declared nonmathematical privacy export; historical expected hashes unchanged"
+    },
+    {
+      "path": "v10_research/binary_beta_known_adaptation/BK001_HANDOFF.md",
+      "original_sha256": "f3ac84fda88cfe523797fb9505afa3ca6534b4ced9beaee0353cfd82723c67a7",
+      "public_export_sha256": "c689414308c0090944d3c0fab6e25605bbb10e8274ba4db68b237f0d1520c91a",
+      "purpose": "Declared nonmathematical privacy export; historical expected hashes unchanged"
+    },
+    {
+      "path": "v10_research/binary_beta_known_adaptation/BK002_HANDOFF.md",
+      "original_sha256": "bb5370ff0689d6534c04c8cb62c7975994ccd798b8d37f666d212fe835017ba2",
+      "public_export_sha256": "763cc09fdf55e7fe5b7ba0d5e79fa566e5d8faba81a89df4f39f10ec11e0042d",
+      "purpose": "Declared nonmathematical privacy export; historical expected hashes unchanged"
+    },
+    {
+      "path": "v10_research/binary_beta_known_adaptation/revisions/BK001_endpoint_bound_revision_record.json",
+      "original_sha256": "e6878299f1ebebe3e1b3f5828eb12d45b472f9339d165577f164383db18539aa",
+      "public_export_sha256": "598e472b0445dc49fdee796ddfed4f68710c0f77c4cbe71028f51b3a56dec947",
+      "purpose": "Declared nonmathematical privacy export; historical expected hashes unchanged"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/AB_HANDOFF.md",
+      "original_sha256": "83f37e494c72a8a4d13899081fef8abe0bc06a86f8bab48da5a2f80b45d121d8",
+      "public_export_sha256": "d9be9ef9fbf2ced9341d36c7eceeb9d158f9ed2d3db92a437ad2943b102a2218",
+      "purpose": "Declared nonmathematical privacy export; historical expected hashes unchanged"
+    },
+    {
+      "path": "v10_research/binary_certificate_adaptation_phase/KA001_HANDOFF.md",
+      "original_sha256": "a8cb457ecd2666a23c2db2e532d44007559f1a805e49e4eb8d4665a519af6ee9",
+      "public_export_sha256": "74477f2f4cb10d259f20d022f217188532e12ac1d50b11341724241910fa090b",
+      "purpose": "Declared nonmathematical privacy export; historical expected hashes unchanged"
+    },
+    {
+      "path": "v10_research/critical_beta_adaptation/CB001_independent_full_review.md",
+      "original_sha256": "e3746bbaa36f1641bdba5efbfa55b95cb57ec7515b4a493c2c23f349202c7c51",
+      "public_export_sha256": "da080d677376c2c605ee23fadeea9754d9106f46382736ff6e8f4a06e743ae2b",
+      "purpose": "Declared nonmathematical privacy export; historical expected hashes unchanged"
+    },
+    {
+      "path": "v10_research/critical_beta_adaptation/CB002_HANDOFF.md",
+      "original_sha256": "4d44e584dd9962424323897507ce27f44c96178c30a73439dfc95dedbd32aa4a",
+      "public_export_sha256": "2e327696e97a20c4c471f1f3a00322834d253baa2996d44045b6d9f8207f72ff",
+      "purpose": "Declared nonmathematical privacy export; historical expected hashes unchanged"
+    },
+    {
+      "path": "v10_research/reviews/BK002_independent_review_bindings.json",
+      "original_sha256": "be45012053f1aa6470354679d69fd366f8172a7e91caf37a2c18cd678f54dea3",
+      "public_export_sha256": "f671e42d0a55a2ca1c1f7af81c6bf56c40d3298d58a2e56f3c9a4128400baaef",
+      "purpose": "Declared nonmathematical privacy export; historical expected hashes unchanged"
+    },
+    {
+      "path": "v10_research/reviews/KA001_independent_review_bindings.json",
+      "original_sha256": "6c40b64ac3f0ad4ded2dd4adca5d89e57093724218637e38257648e0de331eba",
+      "public_export_sha256": "6d242d77fdf3e601fd7e6dea55f1c300b30a473e03c040dd4188e0435f54030e",
+      "purpose": "Declared nonmathematical privacy export; historical expected hashes unchanged"
+    }
+  ],
+  "inherited_pairs": [
+    {
+      "path": "v10_research/binary_arbitrary/BAI003_review_v2.md",
+      "original_sha256": "551543ab488b4582b44192396120a32a1d3fcf017668cafa8f9ceb8786225f4a",
+      "initial_public_sha256": "8f9538c85b3e048dd20710b5461ebc9906eda7fc166d98ff7a54e5ab237d7ccb",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "existing_public_source_map_pair_verified": true
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/review_joint_blindness_full.md",
+      "original_sha256": "07050ce099a0e1770f0dd4b59c11911938e1bed798246c23256093d25f4629c5",
+      "initial_public_sha256": "a87760d42e80ca57631abf3096a8b1c84a5627995f1b0561817973a91a030170",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "existing_public_source_map_pair_verified": true
+    },
+    {
+      "path": "v10_research/binary_erasure_transport/BT002_independent_review.md",
+      "original_sha256": "9171f4e18f4a238965644f67baf0fb81e73efba3c373bf27109c058327312595",
+      "initial_public_sha256": "d4b76e0845a324886ddf5079a7df7742899f2122ae823b5ea924ab9ce8895376",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "existing_public_source_map_pair_verified": true
+    },
+    {
+      "path": "v10_research/joint_corruption_precision/JP001_independent_review.md",
+      "original_sha256": "a10f0c591d07922181e4daec6fb9f54cb542c6327165ce9b4c14c171096f043b",
+      "initial_public_sha256": "7fb61e952bdbd5c453ab052093b49e03dc5e5bce82caaa251065abb2a2fc8ca5",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "existing_public_source_map_pair_verified": true
+    },
+    {
+      "path": "v10_research/reviews/IU001_review_v1.md",
+      "original_sha256": "b854cb06682d68c69041b57bbf21e8be021ca9e8180b1fee5def9c4a984ba974",
+      "initial_public_sha256": "e5d13c7568bd93a8ff26e06d2200dfb1c94cc5209569f38bb82f3860815e74f0",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "existing_public_source_map_pair_verified": true
+    }
+  ]
+}

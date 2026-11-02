@@ -1,0 +1,26 @@
+{
+  "status": "PASS_TESTED_INSTANCES_ONLY",
+  "full_words_canonicalized": 32767,
+  "exact_distance_comparisons": 458753,
+  "exact_all_state_certificate_stationarity_atom_cases": 37,
+  "exact_conditioning_scalar_cases": 6,
+  "acceptance_rows": [
+    {
+      "n": 4096,
+      "conditional_failure_upper": "231/512",
+      "lambda": "1/77371252455336267181195264"
+    },
+    {
+      "n": 8192,
+      "conditional_failure_upper": "231/2048",
+      "lambda": "1/4951760157141521099596496896"
+    },
+    {
+      "n": 10000,
+      "conditional_failure_upper": "29568/390625",
+      "lambda": "1/16384000000000000000000000000"
+    }
+  ],
+  "proof_sha256": "edbfc9cd372df7497ff7462eded0e6c85a3ee4f99f21bd7310f460bd1f0fcb5a",
+  "limits": "No giant-M word was materialized. Canonicalization exhaustive only at small M; explicit large-family matrix/constant checks are exact rational. Universal variance, conditional and constrained-risk proofs require independent full review."
+}

@@ -1,0 +1,264 @@
+{
+  "generated_utc": "2026-11-02T12:18:05.847747+00:00",
+  "scope": "Binary full-history protected-endpoint budget adaptation; no external novelty/formal verification claim.",
+  "acceptance_authority": "Only separate root-created intake receipts establish acceptance; candidate headers preserved.",
+  "sources": [
+    {
+      "path": "v10_research/source_corruption_manuscript/corrupted_trajectories.tex",
+      "sha256": "13345044d06449bb79255d0341e1e2349e061c631584b6c14bdefb6b72451392",
+      "bytes": 17637,
+      "role": "comparison model and full known-k minimax synthesis"
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/binary.tex",
+      "sha256": "d4b130483d86fe3cb3107136a88c0197025ed2a71118b3e4e2ddba857c10b881",
+      "bytes": 38107,
+      "role": "binary known-k upper/lower manuscript"
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/nonbinary_endpoint.tex",
+      "sha256": "ed8d40a5b16664a3dcdc96ae5ece997cc8b8738e55cfa8a01c5af9f62f9297f6",
+      "bytes": 24848,
+      "role": "generic count stability/occupation and beta=1 pooling interfaces"
+    },
+    {
+      "path": "v10_research/binary_source_corruption/SC003_theorem.md",
+      "sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "bytes": 12757,
+      "role": "direct inherited clean empirical, terminal occupation, and weighted occupation interfaces"
+    },
+    {
+      "path": "v10_research/binary_source_corruption/SC003_independent_full_review.md",
+      "sha256": "2d5a735602717ca020d5cd463b75cc28cab25cec0cb5d809f0d14b4770e7d153",
+      "bytes": 17136,
+      "role": "accepted direct-interface review"
+    },
+    {
+      "path": "v10_research/binary_source_corruption/SC003_source_bindings.json",
+      "sha256": "0727a74d142e2ff80019853daffb26853a451b8d3afdd4b432b98e9bd25cc795",
+      "bytes": 2205,
+      "role": "transitive R011 and occupation provenance"
+    },
+    {
+      "path": "v10_research/binary_erasure_transport/BT002_entropy_bridge_lower.md",
+      "sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "bytes": 13700,
+      "role": "known-k binary minimax lower comparison"
+    },
+    {
+      "path": "v10_research/binary_erasure_transport/BT002_scalar_completion.md",
+      "sha256": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+      "bytes": 4963,
+      "role": "known-k binary lower all-regime completion"
+    },
+    {
+      "path": "v10_research/binary_erasure_transport/BT002_independent_review.md",
+      "sha256": "9171f4e18f4a238965644f67baf0fb81e73efba3c373bf27109c058327312595",
+      "bytes": 7551,
+      "role": "known-k lower review"
+    },
+    {
+      "path": "v10_research/binary_all_start/BIF001_binary_all_initializations_frontier_v1.md",
+      "sha256": "35c6cb3b5c882c9e70dad68dbc8492c08e65ba49f532da84597e5e1e303467f0",
+      "bytes": 21674,
+      "role": "full-support arbitrary-start weighted occupation for A>0"
+    },
+    {
+      "path": "v10_research/binary_all_start/BIF001_independent_review_v1.md",
+      "sha256": "8c952204bf7e2c13aeb7cea5ae4760acf2b00867b670e68a8b0a71aab2851912",
+      "bytes": 7529,
+      "role": "weighted occupation source review"
+    },
+    {
+      "path": "v10_research/binary_arbitrary/BAI003_uniform_absorbing_binary_upper_v2.md",
+      "sha256": "99d209c423664c3fe74d1b32fd68fb89ed31218c58fa2f11c343c3e6a54bd0e4",
+      "bytes": 12048,
+      "role": "arbitrary-start singleton-support weighted occupation"
+    },
+    {
+      "path": "v10_research/binary_arbitrary/BAI003_review_v2.md",
+      "sha256": "551543ab488b4582b44192396120a32a1d3fcf017668cafa8f9ceb8786225f4a",
+      "bytes": 1915,
+      "role": "singleton-support source delta review"
+    },
+    {
+      "path": "v10_research/intake/SC003_acceptance.json",
+      "sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+      "bytes": 864,
+      "role": "exact inherited-source acceptance receipt"
+    },
+    {
+      "path": "v10_research/intake/BT002_acceptance.json",
+      "sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+      "bytes": 1307,
+      "role": "exact inherited-source acceptance receipt"
+    },
+    {
+      "path": "v10_research/intake/BIF001_acceptance.json",
+      "sha256": "cc9d2d121521efdc8a1dfabe6beaa5e6551ed2d83b3e196ec3d20787953a7412",
+      "bytes": 700,
+      "role": "exact inherited-source acceptance receipt"
+    },
+    {
+      "path": "v10_research/intake/BAI003_acceptance.json",
+      "sha256": "1e9fc79e3a3a23f2f731b17b123e4cf076842e5da6ef32b6860897e5b1da303f",
+      "bytes": 666,
+      "role": "exact inherited-source acceptance receipt"
+    },
+    {
+      "path": "v10_intake/source/sources/dot-return/readable/proofs/R011_global_rates_and_constant_adaptation_v1.md",
+      "sha256": "1b7133c69131b84c6e7e235338797e683eaa2c0e73b9c83a26612e344f78039d",
+      "bytes": 10913,
+      "role": "transitive original clean add-one source; invoked through accepted SC003 interface"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "v10_research/binary_budget_adaptation/AB001_author_diagnostics.json",
+      "sha256": "640cf4d55a7dc6a4c6aaba91fd1de4bdea64c68d76e6fd68f6962fd6166b151f",
+      "bytes": 2757,
+      "role": "new research artifact"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/AB001_joint_blindness_obstruction.md",
+      "sha256": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d",
+      "bytes": 9876,
+      "role": "new research artifact"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/AB002_addone_failure_and_open_beta_known.md",
+      "sha256": "7848267fa73e33775ca2aa467230980ee5f89e1d5ae0ae140c0d7955909d219b",
+      "bytes": 4035,
+      "role": "new research artifact"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/AB003_author_diagnostics.json",
+      "sha256": "eb9e0a04d8d14685775d26b7fd5282670698fa94327ad79af94f2093d470b1ce",
+      "bytes": 1283,
+      "role": "new research artifact"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/AB003_small_budget_hard_threshold.md",
+      "sha256": "fe3260f31f76a99576897d931e23ab939e0ebf8eb04e8cf31591b2b908d392e8",
+      "bytes": 11456,
+      "role": "new research artifact"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/AB_HANDOFF.md",
+      "sha256": "83f37e494c72a8a4d13899081fef8abe0bc06a86f8bab48da5a2f80b45d121d8",
+      "bytes": 4707,
+      "role": "new research artifact"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/DRAFT_RENAMING.md",
+      "sha256": "e96e258b7855f5b535a13aca8535ea1c934f5bbde9e8efecaf86debff7d1c65b",
+      "bytes": 410,
+      "role": "new research artifact"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/NEXT_PROBLEM.md",
+      "sha256": "06678de687bf4dd3f6ce5eb55e2d0d0262c83e7754e0f22c0896f4252d925244",
+      "bytes": 3751,
+      "role": "new research artifact"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/build_bindings.py",
+      "sha256": "672319b03ba4fae05345fc657044eb2bfb56138963137a2588617952b9b91d7f",
+      "bytes": 4544,
+      "role": "new research artifact"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/check_ab001.py",
+      "sha256": "b87d4c2533207f670d314e005900f8bba132f05a9f3083f36622307ce8f15d1f",
+      "bytes": 4594,
+      "role": "new research artifact"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/check_ab003.py",
+      "sha256": "335f54b56987d1a9254d79dd561a3252c54df559ab54ca52b31b6fee72198144",
+      "bytes": 3424,
+      "role": "new research artifact"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/draft_history/BA001_author_diagnostics.json",
+      "sha256": "17ee93dc6e7a27d588c9a458b67943914374b1ab051bc385e52f0f327f47d609",
+      "bytes": 2757,
+      "role": "preserved pre-renaming draft/history; not authoritative unit ID"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/draft_history/BA001_joint_blindness_obstruction.md",
+      "sha256": "eed39eab0f2e4f42f85d90921a0d423a81e42bdb60b19f388a824a8d990257b0",
+      "bytes": 9876,
+      "role": "preserved pre-renaming draft/history; not authoritative unit ID"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/draft_history/BA002_addone_failure_and_open_beta_known.md",
+      "sha256": "c3c13bfbee687a903709a550e4087969d41317bc59c33e73b33f29bd0eba468a",
+      "bytes": 4035,
+      "role": "preserved pre-renaming draft/history; not authoritative unit ID"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/draft_history/check_ba001.py",
+      "sha256": "2c8c20f78cfab3f16f5f56c271adc93625d09f627e27cf81223216da68e4eeba",
+      "bytes": 4594,
+      "role": "preserved pre-renaming draft/history; not authoritative unit ID"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/review_ab003_checks.json",
+      "sha256": "89c047adf54978bac36e25be127f425c0749142c424da6e975fdbe151d535ec8",
+      "bytes": 1408,
+      "role": "fresh independent LLM review or independent finite diagnostic"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/review_ab003_checks.py",
+      "sha256": "63c545b9ea777bf99f7c65c4651b794632a8d4bee0192505639fceb6b10ac6d9",
+      "bytes": 4755,
+      "role": "fresh independent LLM review or independent finite diagnostic"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/review_ab003_full.md",
+      "sha256": "0d4ec9fb2f4672fc5b2c850b0e553caebd83871a8ec808931b75fa25193ada90",
+      "bytes": 10452,
+      "role": "fresh independent LLM review or independent finite diagnostic"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/review_joint_blindness_checks.json",
+      "sha256": "cae22494f72fd33cc0d4b4a55749da444b52eb982cd1dae5c2aed91458300fff",
+      "bytes": 896,
+      "role": "fresh independent LLM review or independent finite diagnostic"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/review_joint_blindness_checks.py",
+      "sha256": "e88f3c9d4cf9043513e15990c3658d18d8f6fd65236f2bf7ae5f5f43447b64b1",
+      "bytes": 4455,
+      "role": "fresh independent LLM review or independent finite diagnostic"
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/review_joint_blindness_full.md",
+      "sha256": "07050ce099a0e1770f0dd4b59c11911938e1bed798246c23256093d25f4629c5",
+      "bytes": 9268,
+      "role": "fresh independent LLM review or independent finite diagnostic"
+    }
+  ],
+  "root_receipts": [
+    {
+      "path": "v10_research/intake/AB001_acceptance.json",
+      "sha256": "86a80911ba8735b7108598dcad99bb041f733d3fd065151eff6649cdefde7701",
+      "bytes": 845,
+      "role": "root-created exact-version acceptance receipt"
+    },
+    {
+      "path": "v10_research/intake/AB002_acceptance.json",
+      "sha256": "c705737c00020f62b1bd6b80fc84e24756a71c524ce21dfc0350825264aac53b",
+      "bytes": 876,
+      "role": "root-created exact-version acceptance receipt"
+    },
+    {
+      "path": "v10_research/intake/AB003_acceptance.json",
+      "sha256": "eb4a51922f764ee65bc3dffa77e253d5345f2ce0d0e8c577ca655fc24f79b67d",
+      "bytes": 948,
+      "role": "root-created exact-version acceptance receipt"
+    }
+  ],
+  "id_history": "Initial BA001/BA002 author drafts collided with historical bounded-attention BA001; AB001/AB002 are authoritative. ID-only delta independently reviewed; exact originals preserved under draft_history."
+}

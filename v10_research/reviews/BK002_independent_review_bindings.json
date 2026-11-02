@@ -1,0 +1,103 @@
+{
+  "unit": "BK002",
+  "review_status": "NO_SUBSTANTIVE_DEFECT_FOUND_INDEPENDENT_LLM_CORROBORATION",
+  "root_acceptance": "NOT_CREATED_BY_REVIEWER",
+  "reviewed_at_utc": "2026-11-02T12:55:02.998429+00:00",
+  "reviewed_proof_sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12",
+  "source_unchanged_during_review": true,
+  "author_proof_edited_by_reviewer": false,
+  "files": {
+    "binary_beta_known_adaptation/BK002_full_history_supplied_beta_obstruction.md": {
+      "sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12",
+      "bytes": 15223
+    },
+    "binary_beta_known_adaptation/revisions/BK002_initial_candidate.md": {
+      "sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12",
+      "bytes": 15223
+    },
+    "reviews/BK002_audit_snapshots/BK002_reference_sampler_received.md": {
+      "sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12",
+      "bytes": 15223
+    },
+    "reviews/BK002_audit_snapshots/received_to_reviewed.diff": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "reviews/BK002_independent_full_review.md": {
+      "sha256": "41f6a35a5224271a6f8cc70a8b84e4099526257b47aef19eb6f64779ca41c3a4",
+      "bytes": 17477
+    },
+    "reviews/BK002_independent_exact_checks.py": {
+      "sha256": "3c4b443bd5610eb7d1b3f4aed9f95d661543ecab8dcc3fc0111e5db24cf3e0ba",
+      "bytes": 7941
+    },
+    "reviews/BK002_independent_exact_checks.json": {
+      "sha256": "92dc47bbea5649238b73a27703cd542c0c6cb35826c46df68e79cc28459530d1",
+      "bytes": 7352
+    },
+    "binary_budget_adaptation/AB001_joint_blindness_obstruction.md": {
+      "sha256": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d",
+      "bytes": 9876
+    },
+    "binary_budget_adaptation/AB003_small_budget_hard_threshold.md": {
+      "sha256": "fe3260f31f76a99576897d931e23ab939e0ebf8eb04e8cf31591b2b908d392e8",
+      "bytes": 11456
+    },
+    "binary_source_corruption/SC003_theorem.md": {
+      "sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "bytes": 12757
+    },
+    "binary_erasure_transport/BT002_entropy_bridge_lower.md": {
+      "sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "bytes": 13700
+    },
+    "binary_erasure_transport/BT002_scalar_completion.md": {
+      "sha256": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+      "bytes": 4963
+    },
+    "source_symbol_corruption_mixing/SC002_theorem.md": {
+      "sha256": "40a8950861b486f532ac625fa479cb49cd79241dbb4b08efce6296ae9b6a1f0e",
+      "bytes": 12580
+    },
+    "intake/AB001_acceptance.json": {
+      "sha256": "86a80911ba8735b7108598dcad99bb041f733d3fd065151eff6649cdefde7701",
+      "bytes": 845
+    },
+    "intake/AB003_acceptance.json": {
+      "sha256": "eb4a51922f764ee65bc3dffa77e253d5345f2ce0d0e8c577ca655fc24f79b67d",
+      "bytes": 948
+    },
+    "intake/SC003_acceptance.json": {
+      "sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+      "bytes": 864
+    },
+    "intake/BT002_acceptance.json": {
+      "sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+      "bytes": 1307
+    }
+  },
+  "dependency_receipt_checks": {
+    "AB001": {
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "proof_hashes_match": true,
+      "accepted_at": "2026-11-02T11:57:46.613913+00:00"
+    },
+    "AB003": {
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "proof_hashes_match": true,
+      "accepted_at": "2026-11-02T12:11:01.832759+00:00"
+    },
+    "SC003": {
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "proof_hashes_match": true,
+      "accepted_at": "2026-11-02T09:00:43.294300+00:00"
+    },
+    "BT002": {
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "proof_hashes_match": true,
+      "accepted_at": "2026-11-02T09:18:40.363588+00:00"
+    }
+  },
+  "diagnostic_scope": "EXACT_TESTED_INSTANCES_ONLY; mathematical proof independently reconstructed in full review",
+  "administrative_metadata_omitted": true
+}

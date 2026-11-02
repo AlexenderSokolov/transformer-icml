@@ -1,0 +1,15 @@
+{
+  "status": "PASS_TESTED_INSTANCES_ONLY",
+  "arithmetic": "Fraction exact throughout; square comparisons avoid floating square roots",
+  "counts": {
+    "accepted_source_hashes": 5,
+    "source_stationarity_all16": 180,
+    "endpoint_factor": 180,
+    "endpoint_transition": 3060,
+    "longrun_all_starts_dp": 576,
+    "binomial_bounds": 8080,
+    "bk001_prefix_bound": 1985
+  },
+  "proof_sha256": "192b14816e982e6f81d7651d50ef271b14feb5dad4c0c0249c51eedc94033772",
+  "scope": "Clean-risk increment and stated support checks only; no arbitrary-corruption or adaptation guarantee; no formal or external review."
+}

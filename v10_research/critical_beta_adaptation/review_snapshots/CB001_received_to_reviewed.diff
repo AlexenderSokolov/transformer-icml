@@ -1,0 +1,13 @@
+--- CB001_initial_received.md
++++ CB001_reviewed.md
+@@ -16,7 +16,9 @@
+ The exchanged bound holds with tau and E_11(L). In particular, for M>=2 and L=floor(M/2), each right side is at most20/(M sqrt(beta)). If the long run is required to start at the first observed symbol, the sharper bound is
+ 
+     E[a 1_{X_1...X_(L+2)=1,Y_M=00}]
+-       <=2/((L+1)sqrt(beta)) <=4/(M sqrt(beta)).     (CB2)
++       <=2/((L+1)sqrt(beta)).                           (CB2)
++
++For L=floor(M/2), the last bound is at most4/(M sqrt(beta)).
+ 
+ Consequently, given ANY full-word predictor A, define V_L(A) as follows:
+ 

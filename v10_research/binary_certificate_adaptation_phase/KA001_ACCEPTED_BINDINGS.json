@@ -1,0 +1,185 @@
+{
+  "generated_utc": "2026-11-02T13:27:46.699989+00:00",
+  "unit": "KA001",
+  "status": "ROOT_ACCEPTED_EXACT_BINDINGS_VERIFIED",
+  "scope": "Partial full-history certificate-dependent adaptation: weak and strong positive, strictly intermediate curve negative; critical gap unresolved.",
+  "root_receipt": {
+    "path": "intake/KA001_acceptance.json",
+    "sha256": "f98aac7691f919d2583acf53601f7c9e654924620a9e952623e063849e9f2843",
+    "bytes": 955,
+    "role": "root acceptance authority"
+  },
+  "artifacts": [
+    {
+      "path": "binary_certificate_adaptation_phase/KA001_certificate_phase_partial.md",
+      "sha256": "5cf1f9ba5dca0e5cb7dd2a703bca163f87e46f5eb16ddf5563837d873e9072e7",
+      "bytes": 10978,
+      "role": "accepted unit/review/diagnostic/snapshot"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KA001_author_diagnostics.json",
+      "sha256": "1fa40a3143bcf5b38048c680ca81667e774dbbd97c79f5cac1836ef02c81a644",
+      "bytes": 3374,
+      "role": "accepted unit/review/diagnostic/snapshot"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/check_ka001.py",
+      "sha256": "4e854a2a7ce6f0dee0f6d27e17b9b44c7a4dcc25583527d1bb1561bb31448dee",
+      "bytes": 2586,
+      "role": "accepted unit/review/diagnostic/snapshot"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KA001_HANDOFF.md",
+      "sha256": "a8cb457ecd2666a23c2db2e532d44007559f1a805e49e4eb8d4665a519af6ee9",
+      "bytes": 4250,
+      "role": "accepted unit/review/diagnostic/snapshot"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/build_ka001_bindings.py",
+      "sha256": "36a1a2366c75def04c5585db0adb22797c30a8ccdf956b78b74517fd7cca57e8",
+      "bytes": 2595,
+      "role": "accepted unit/review/diagnostic/snapshot"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/revisions/KA001_initial_candidate.md",
+      "sha256": "5cf1f9ba5dca0e5cb7dd2a703bca163f87e46f5eb16ddf5563837d873e9072e7",
+      "bytes": 10978,
+      "role": "accepted unit/review/diagnostic/snapshot"
+    },
+    {
+      "path": "reviews/KA001_independent_full_review.md",
+      "sha256": "a479f51f29c59f3ba180b743fd9e72f1fd14e9cd634ca910f17ca371f1ce893f",
+      "bytes": 17603,
+      "role": "accepted unit/review/diagnostic/snapshot"
+    },
+    {
+      "path": "reviews/KA001_independent_exact_checks.py",
+      "sha256": "d32a662f7778b39e603b27b69f6c0c9085deca9011ca30c38341e673081e4a61",
+      "bytes": 9527,
+      "role": "accepted unit/review/diagnostic/snapshot"
+    },
+    {
+      "path": "reviews/KA001_independent_exact_checks.json",
+      "sha256": "7b9d6ebb99e027002e4f110a7dc5b77f6d7c66b34f1b43437237086c4d2ead96",
+      "bytes": 10629,
+      "role": "accepted unit/review/diagnostic/snapshot"
+    },
+    {
+      "path": "reviews/KA001_independent_review_bindings.json",
+      "sha256": "6c40b64ac3f0ad4ded2dd4adca5d89e57093724218637e38257648e0de331eba",
+      "bytes": 6134,
+      "role": "accepted unit/review/diagnostic/snapshot"
+    },
+    {
+      "path": "reviews/KA001_audit_snapshots/KA001_received.md",
+      "sha256": "5cf1f9ba5dca0e5cb7dd2a703bca163f87e46f5eb16ddf5563837d873e9072e7",
+      "bytes": 10978,
+      "role": "accepted unit/review/diagnostic/snapshot"
+    },
+    {
+      "path": "reviews/KA001_audit_snapshots/received_to_reviewed.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "accepted unit/review/diagnostic/snapshot"
+    }
+  ],
+  "sources": [
+    {
+      "path": "intake/BK002_acceptance.json",
+      "sha256": "0ed8c82368501bc8e720201e82eb7eab18726fdbc0292c1ec6efd5ae3fd88a3d",
+      "bytes": 1173,
+      "role": "inherited acceptance"
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK002_full_history_supplied_beta_obstruction.md",
+      "sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12",
+      "bytes": 15223,
+      "role": "accepted inherited proof"
+    },
+    {
+      "path": "intake/AB003_acceptance.json",
+      "sha256": "eb4a51922f764ee65bc3dffa77e253d5345f2ce0d0e8c577ca655fc24f79b67d",
+      "bytes": 948,
+      "role": "inherited acceptance"
+    },
+    {
+      "path": "binary_budget_adaptation/AB003_small_budget_hard_threshold.md",
+      "sha256": "fe3260f31f76a99576897d931e23ab939e0ebf8eb04e8cf31591b2b908d392e8",
+      "bytes": 11456,
+      "role": "accepted inherited proof"
+    },
+    {
+      "path": "intake/SC003_acceptance.json",
+      "sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+      "bytes": 864,
+      "role": "inherited acceptance"
+    },
+    {
+      "path": "binary_source_corruption/SC003_theorem.md",
+      "sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "bytes": 12757,
+      "role": "accepted inherited proof"
+    },
+    {
+      "path": "intake/BT002_acceptance.json",
+      "sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+      "bytes": 1307,
+      "role": "inherited acceptance"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_entropy_bridge_lower.md",
+      "sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "bytes": 13700,
+      "role": "accepted inherited proof"
+    },
+    {
+      "path": "intake/SC002_acceptance.json",
+      "sha256": "af1aa004e7b4d86ba1d9e6ba9d0ccb517daa984b249de7d8198560505fc1fb26",
+      "bytes": 903,
+      "role": "inherited acceptance"
+    },
+    {
+      "path": "source_symbol_corruption_mixing/SC002_theorem.md",
+      "sha256": "40a8950861b486f532ac625fa479cb49cd79241dbb4b08efce6296ae9b6a1f0e",
+      "bytes": 12580,
+      "role": "accepted inherited proof"
+    },
+    {
+      "path": "intake/IU001_acceptance.json",
+      "sha256": "a8649f9294d51083c893d67aa5bfa4f83ce6f5cc7d0117be2df92ee7d40697c8",
+      "bytes": 446,
+      "role": "inherited acceptance"
+    },
+    {
+      "path": "intermediate_upper/IU001_beta_sensitive_precision_upper_v1.md",
+      "sha256": "4c0adb15aadfb574e156c5ce5f4f4da1ec8447ed515417a71d400c5a52c7b317",
+      "bytes": 23036,
+      "role": "accepted inherited proof"
+    },
+    {
+      "path": "intake/AU001_acceptance.json",
+      "sha256": "85fda91470729b0ad5759abc6efe60ed12dc6b247aab4e3922ad52246225a473",
+      "bytes": 427,
+      "role": "inherited acceptance"
+    },
+    {
+      "path": "arbitrary_frontier/AU001_residual_suffix_precision_upper_v1.md",
+      "sha256": "1fce0c8374f372eeec6d4a21a2b683db02a754b227d39e6e8dd6b4e45e3ca6e1",
+      "bytes": 9844,
+      "role": "accepted inherited proof"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_scalar_completion.md",
+      "sha256": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+      "bytes": 4963,
+      "role": "accepted lower scalar completion"
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK002_FIXED_POSITIVE_BETA_PROVENANCE.md",
+      "sha256": "a36b2ffe532758aff29841d7b003519dc6dd31642ba8fad75bcddc48de0e6c73",
+      "bytes": 1367,
+      "role": "generic-upper citation clarification"
+    }
+  ],
+  "revision_history": "No KA001 proof revision; original author and fresh reviewer snapshots match accepted bytes; actual review diff empty."
+}

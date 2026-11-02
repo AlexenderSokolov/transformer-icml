@@ -1,0 +1,10 @@
+{
+  "unit": "BK002",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "binary_beta_known_adaptation/BK002_full_history_supplied_beta_obstruction.md",
+  "sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12",
+  "review": "reviews/BK002_independent_full_review.md",
+  "review_sha256": "41f6a35a5224271a6f8cc70a8b84e4099526257b47aef19eb6f64779ca41c3a4",
+  "time_utc": "2026-11-02T12:56:33.419419+00:00",
+  "scope": "POST-STAGE8. Root read complete frozen reference-sampler proof and fresh full independent review. Same supplied beta=1/k^2, stationary binary sources, FULL corrupted history. Exact finite constrained-risk lower with constants3/2048 and32 proves no uniform-in-beta unknown-k oracle-rate adaptation across all budgets. Together with AB003, adaptation uniformly over0<=k<=b_M exists iff b_M=O(sqrtM), even when beta supplied; sufficiency all starts, necessity stationary. Not pointwise every-large-k impossibility, not fixed-positive-beta with beta-dependent constants, not resolution of prescribed beta=1/M full-history curve. Optional actual-clean sampler unadopted. No formal/external-review/novelty/training claim."
+}

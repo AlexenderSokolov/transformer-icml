@@ -1,0 +1,175 @@
+{
+  "generated_utc": "2026-11-02T12:58:31.341580+00:00",
+  "unit": "BK002",
+  "status": "ROOT_ACCEPTED_EXACT_BINDINGS_VERIFIED",
+  "scope": "Supplied-beta unknown-actual-budget FULL-HISTORY obstruction, uniform in beta; sharp public range-envelope iff O(sqrt M).",
+  "root_receipt": {
+    "path": "intake/BK002_acceptance.json",
+    "sha256": "0ed8c82368501bc8e720201e82eb7eab18726fdbc0292c1ec6efd5ae3fd88a3d",
+    "bytes": 1173,
+    "role": "root acceptance authority"
+  },
+  "artifacts": [
+    {
+      "path": "binary_beta_known_adaptation/BK002_full_history_supplied_beta_obstruction.md",
+      "sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12",
+      "bytes": 15223,
+      "role": "accepted-unit artifact or clarification"
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK002_author_diagnostics.json",
+      "sha256": "9d7150c94ca596c1f09afc70f1248df13f93a6053a0f26d798c43c67d5735333",
+      "bytes": 993,
+      "role": "accepted-unit artifact or clarification"
+    },
+    {
+      "path": "binary_beta_known_adaptation/check_bk002.py",
+      "sha256": "2ee285ad643c103c5064ebe8047146ae25329be7633ad763fd28e5a79380f58b",
+      "bytes": 4162,
+      "role": "accepted-unit artifact or clarification"
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK002_HANDOFF.md",
+      "sha256": "bb5370ff0689d6534c04c8cb62c7975994ccd798b8d37f666d212fe835017ba2",
+      "bytes": 5296,
+      "role": "accepted-unit artifact or clarification"
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK002_FIXED_POSITIVE_BETA_PROVENANCE.md",
+      "sha256": "a36b2ffe532758aff29841d7b003519dc6dd31642ba8fad75bcddc48de0e6c73",
+      "bytes": 1367,
+      "role": "accepted-unit artifact or clarification"
+    },
+    {
+      "path": "binary_beta_known_adaptation/build_bk002_bindings.py",
+      "sha256": "f04ea85fa149ac59fb45ca47ac0f648eb621fbee489770ec0fc6771d0fe3a2ff",
+      "bytes": 3508,
+      "role": "accepted-unit artifact or clarification"
+    },
+    {
+      "path": "binary_beta_known_adaptation/revisions/BK002_initial_candidate.md",
+      "sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12",
+      "bytes": 15223,
+      "role": "accepted-unit artifact or clarification"
+    },
+    {
+      "path": "reviews/BK002_independent_full_review.md",
+      "sha256": "41f6a35a5224271a6f8cc70a8b84e4099526257b47aef19eb6f64779ca41c3a4",
+      "bytes": 17477,
+      "role": "fresh independent review/check/snapshot artifact"
+    },
+    {
+      "path": "reviews/BK002_independent_exact_checks.py",
+      "sha256": "3c4b443bd5610eb7d1b3f4aed9f95d661543ecab8dcc3fc0111e5db24cf3e0ba",
+      "bytes": 7941,
+      "role": "fresh independent review/check/snapshot artifact"
+    },
+    {
+      "path": "reviews/BK002_independent_exact_checks.json",
+      "sha256": "92dc47bbea5649238b73a27703cd542c0c6cb35826c46df68e79cc28459530d1",
+      "bytes": 7352,
+      "role": "fresh independent review/check/snapshot artifact"
+    },
+    {
+      "path": "reviews/BK002_independent_review_bindings.json",
+      "sha256": "be45012053f1aa6470354679d69fd366f8172a7e91caf37a2c18cd678f54dea3",
+      "bytes": 4166,
+      "role": "fresh independent review/check/snapshot artifact"
+    },
+    {
+      "path": "reviews/BK002_audit_snapshots/BK002_reference_sampler_received.md",
+      "sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12",
+      "bytes": 15223,
+      "role": "fresh independent review/check/snapshot artifact"
+    },
+    {
+      "path": "reviews/BK002_audit_snapshots/received_to_reviewed.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "fresh independent review/check/snapshot artifact"
+    }
+  ],
+  "sources": [
+    {
+      "path": "binary_budget_adaptation/AB003_small_budget_hard_threshold.md",
+      "sha256": "fe3260f31f76a99576897d931e23ab939e0ebf8eb04e8cf31591b2b908d392e8",
+      "bytes": 11456,
+      "role": "accepted small-budget/envelope sufficiency"
+    },
+    {
+      "path": "binary_source_corruption/SC003_theorem.md",
+      "sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "bytes": 12757,
+      "role": "known-k binary upper and model comparison"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_entropy_bridge_lower.md",
+      "sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "bytes": 13700,
+      "role": "known-k binary minimax comparison lower"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_scalar_completion.md",
+      "sha256": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+      "bytes": 4963,
+      "role": "known-k comparison all-regime completion"
+    },
+    {
+      "path": "source_symbol_corruption_mixing/SC002_theorem.md",
+      "sha256": "40a8950861b486f532ac625fa479cb49cd79241dbb4b08efce6296ae9b6a1f0e",
+      "bytes": 12580,
+      "role": "generic upper only for ancillary fixed-positive-beta remark"
+    },
+    {
+      "path": "source_corruption_manuscript/corrupted_trajectories.tex",
+      "sha256": "13345044d06449bb79255d0341e1e2349e061c631584b6c14bdefb6b72451392",
+      "bytes": 17637,
+      "role": "comparison experiment and scope"
+    },
+    {
+      "path": "intake/AB003_acceptance.json",
+      "sha256": "eb4a51922f764ee65bc3dffa77e253d5345f2ce0d0e8c577ca655fc24f79b67d",
+      "bytes": 948,
+      "role": "exact inherited-source receipt"
+    },
+    {
+      "path": "intake/SC003_acceptance.json",
+      "sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+      "bytes": 864,
+      "role": "exact inherited-source receipt"
+    },
+    {
+      "path": "intake/BT002_acceptance.json",
+      "sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+      "bytes": 1307,
+      "role": "exact inherited-source receipt"
+    },
+    {
+      "path": "intake/SC002_acceptance.json",
+      "sha256": "af1aa004e7b4d86ba1d9e6ba9d0ccb517daa984b249de7d8198560505fc1fb26",
+      "bytes": 903,
+      "role": "exact inherited-source receipt"
+    }
+  ],
+  "unreviewed_history_not_dependencies": [
+    {
+      "path": "binary_beta_known_adaptation/BK002_exploration_and_optional_simplification_unreviewed.md",
+      "sha256": "8d21f173507e883296959e4967c7bb09e2c537f4fc36155a86ef56255480bfde",
+      "bytes": 4101,
+      "role": "UNREVIEWED related research; not an accepted premise"
+    },
+    {
+      "path": "binary_beta_known_adaptation/same_beta_route_barriers_unreviewed.md",
+      "sha256": "e7253aa2ad9aebdc53d517e04c2d9f5071b705bfd633e06b1c4ecd20880b169e",
+      "bytes": 11368,
+      "role": "UNREVIEWED related research; not an accepted premise"
+    },
+    {
+      "path": "binary_beta_known_adaptation/macrocycle_transport_barrier_unreviewed.md",
+      "sha256": "c80f3ab8b59e66111c2679a4eb34ae10ab3f721588e30568872c1649e7deff94",
+      "bytes": 11134,
+      "role": "UNREVIEWED related research; not an accepted premise"
+    }
+  ],
+  "proof_revision_history": "No BK002 proof revision; author and independent received snapshots equal accepted bytes, actual review diff empty."
+}

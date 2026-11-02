@@ -40,3 +40,7 @@ python v10_research/binary_budget_adaptation/check_ab001.py
 ## 历史证据与本次实际检查
 
 第八阶段历史记录中的 91 个当前脚本、1 个预期历史失败、913,221 个精确／认证有理案例和 36 页重建一致性，只归属于那些记录的实际运行。本次发布的新检查及其准确范围见 `provenance/PUBLICATION_RECEIPT.json`。不把继承的历史结果冒充一次新运行。独立 LLM 审查不等于形式验证、外部同行评审或新颖性认证。
+
+## 第二次增量的精确边界
+
+第二次增量有独立[来源映射](../provenance/increment2/SOURCE_MAP.json)、[来源闭合审计](../provenance/increment2/SOURCE_CLOSURE_AUDIT.json)与[严格哈希协调表](../provenance/increment2/BINDING_RECONCILIATION.json)。原始期望哈希没有被全局改写；只有在准确路径的当前公开字节先通过其公开哈希后，才可承认表内原始身份。未列出的差异必须失败。历史脚本可能写诊断或绑定记录，应在一次性副本中运行。本次增量没有重跑这些科学程序；当前 CI 仅核验文件字节、集合和校验器回归测试。

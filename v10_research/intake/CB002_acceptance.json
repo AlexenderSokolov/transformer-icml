@@ -1,0 +1,10 @@
+{
+  "unit": "CB002",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "critical_beta_adaptation/CB002_near_prefix_veto_partial.md",
+  "sha256": "69c55c6ab40e939c5392beb022c213c8506e8aa464b3f0b2f3f23b0db0eabe11",
+  "review": "critical_beta_adaptation/CB002_independent_full_review.md",
+  "review_sha256": "ebab47127d2be0b26a062eb79cac1dcc6e886d5796140ac4e83ca7248bd488c6",
+  "time_utc": "2026-11-02T13:32:31.964358+00:00",
+  "scope": "POST-STAGE8 PARTIAL theorem. Root read full frozen proof and full independent review. BINARY arbitrary-start full-history near-prefix veto has strict-Hamming arbitrary-k RISK-INCREMENT bound over any baseline; at beta1/M adds at most min(1,2^11/sqrtM+2^9k/M). Independent fixed-size stack inclusion and embedded diagonal trace, no conditional-binomial claim. Does NOT establish all-budget adaptation or bound baseline risk outside veto. Later failure candidate not adopted here. No formal/external-review/novelty/neural/training claim."
+}

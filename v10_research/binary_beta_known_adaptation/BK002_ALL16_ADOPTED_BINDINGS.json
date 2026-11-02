@@ -1,0 +1,75 @@
+{
+  "generated_utc": "2026-11-02T13:40:12.292713+00:00",
+  "status": "ROOT_ADOPTED_NARROW_CLARIFICATION_BINDINGS_VERIFIED",
+  "root_adoption": {
+    "path": "intake/BK002_all16_clarification_adoption.json",
+    "sha256": "b6f8818f278009d1a6e9b7e463e84bf452a88b70b90401cf892b3d6ed9f5afd4",
+    "bytes": 832,
+    "role": "root adoption authority"
+  },
+  "artifacts": [
+    {
+      "path": "binary_beta_known_adaptation/BK002_ALL16_ENUMERATION_CLARIFICATION.md",
+      "sha256": "cf871a79db047fd28f43e211431e344450e96cad3b94b0dc1f2b773fa7961a46",
+      "bytes": 3330,
+      "role": "additive clarification/review/check artifact"
+    },
+    {
+      "path": "reviews/BK002_all16_clarification_independent_review.md",
+      "sha256": "2acba9859a5ec678847cc71833a290e33a1c1a590aeb71e579e208e2036ea397",
+      "bytes": 2742,
+      "role": "additive clarification/review/check artifact"
+    },
+    {
+      "path": "reviews/BK002_all16_clarification_exact_checks.py",
+      "sha256": "1552e0bd2f73b30692f5b64650b6ebd66bcc965de993681e42936526ac2b0cbe",
+      "bytes": 2215,
+      "role": "additive clarification/review/check artifact"
+    },
+    {
+      "path": "reviews/BK002_all16_clarification_exact_checks.json",
+      "sha256": "140c0cbdf61dd370752bc5b7c019c3b3a3ba063fb8dc4e12896d5cb3bb6b28e3",
+      "bytes": 878,
+      "role": "additive clarification/review/check artifact"
+    },
+    {
+      "path": "reviews/BK002_all16_clarification_bindings.json",
+      "sha256": "a2789b2b2142cdbbebb46ca79477394edfa42899db9af457832cfb9b8490c535",
+      "bytes": 1441,
+      "role": "additive clarification/review/check artifact"
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK002_ALL16_ADOPTED_HANDOFF.md",
+      "sha256": "01884bd35666e67d183b0ce984eb204c264c23c67a45b94742c7606c2a724c96",
+      "bytes": 1584,
+      "role": "additive clarification/review/check artifact"
+    }
+  ],
+  "unchanged_accepted_sources": [
+    {
+      "path": "binary_beta_known_adaptation/BK002_full_history_supplied_beta_obstruction.md",
+      "sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12",
+      "bytes": 15223,
+      "role": "immutable originally accepted source"
+    },
+    {
+      "path": "reviews/BK002_independent_full_review.md",
+      "sha256": "41f6a35a5224271a6f8cc70a8b84e4099526257b47aef19eb6f64779ca41c3a4",
+      "bytes": 17477,
+      "role": "immutable originally accepted source"
+    },
+    {
+      "path": "intake/BK002_acceptance.json",
+      "sha256": "0ed8c82368501bc8e720201e82eb7eab18726fdbc0292c1ec6efd5ae3fd88a3d",
+      "bytes": 1173,
+      "role": "immutable originally accepted source"
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK002_ACCEPTED_BINDINGS.json",
+      "sha256": "538887724895b50acac746749a35178d0d7ef29a80bbbf7260ff201c12a4e4cf",
+      "bytes": 7125,
+      "role": "immutable originally accepted source"
+    }
+  ],
+  "scope": "Matrix-position enumeration only; no mathematical inequality, theorem/rate/scope change."
+}

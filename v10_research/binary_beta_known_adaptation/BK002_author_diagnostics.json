@@ -1,0 +1,23 @@
+{
+  "status": "PASS_TESTED_INSTANCES_ONLY",
+  "arithmetic": "Fraction exact; no floating-point probability checks",
+  "counts": {
+    "family_stationarity_all16_certificate": 126,
+    "prefix_ratio_exact_powers": 63,
+    "density_inequality": 126,
+    "reference_acceptance_dp": 45,
+    "ordered_path_domination": 12319,
+    "strict_budget_endpoint": 12319,
+    "one_quarter_sequence": 511
+  },
+  "minimum_acceptance_exact": "602785907117090992420834505752819287009/680564733841876926926749214863536422912",
+  "minimum_acceptance_float": 0.8857142857142857,
+  "minimum_acceptance_case": {
+    "M": 256,
+    "k": 32,
+    "t": 32,
+    "a": "1/16"
+  },
+  "proof_sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12",
+  "limitations": "Finite cases only. Small ordered-path enumeration checks a component lemma over a wider parameter domain; it does not purport to enumerate full theorem histories. Common-a integration and all-domain arguments require fresh full review."
+}

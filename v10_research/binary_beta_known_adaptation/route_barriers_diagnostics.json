@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "review_status": "UNREVIEWED_CONTRIBUTOR_DIAGNOSTIC",
+  "counts": {
+    "stationary_flow_exact": 1500,
+    "certificate_elimination_exact": 1500,
+    "likelihood_numeric": 6000,
+    "cost_split_exact": 4465
+  },
+  "arithmetic": "Fraction exact for flow, certificate and cost checks; floating logarithms only for explicitly numeric likelihood checks",
+  "maximum_likelihood_log_excess": -7.289370050105699,
+  "corresponding_case": {
+    "a": "3/100",
+    "b": "1/5",
+    "e": "37/100",
+    "t": "53/100",
+    "L": 2,
+    "J": 1,
+    "k": 1,
+    "beta": "86543/530000"
+  },
+  "notes_sha256": "e7253aa2ad9aebdc53d517e04c2d9f5071b705bfd633e06b1c4ecd20880b169e",
+  "limitation": "Finite diagnostics are not a proof or independent review; source notes explicitly retain supplied-beta full-history adaptation as open."
+}

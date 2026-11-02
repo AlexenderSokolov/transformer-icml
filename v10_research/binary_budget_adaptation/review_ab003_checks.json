@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact integers and Fraction throughout",
+  "counts": {
+    "relaxed_count_configs": 26292,
+    "critical_probability_checks": 88156,
+    "active_configs": 3472,
+    "inactive_configs": 22820,
+    "threshold_bias_floor_checks": 61864,
+    "finite_M_constants": 99937,
+    "scaled_envelope_configs": 7440
+  },
+  "minimum_tested_pathwise_margin": "0",
+  "minimum_margin_case": [
+    64,
+    0,
+    52,
+    28,
+    52,
+    28,
+    "7/13"
+  ],
+  "source_sha256": {
+    "binary_budget_adaptation/AB003_small_budget_hard_threshold.md": "fe3260f31f76a99576897d931e23ab939e0ebf8eb04e8cf31591b2b908d392e8",
+    "binary_source_corruption/SC003_theorem.md": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+    "binary_all_start/BIF001_binary_all_initializations_frontier_v1.md": "35c6cb3b5c882c9e70dad68dbc8492c08e65ba49f532da84597e5e1e303467f0",
+    "binary_arbitrary/BAI003_uniform_absorbing_binary_upper_v2.md": "99d209c423664c3fe74d1b32fd68fb89ed31218c58fa2f11c343c3e6a54bd0e4",
+    "binary_budget_adaptation/AB001_joint_blindness_obstruction.md": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d"
+  },
+  "scope": "New pathwise inequality, count boundary cases, fixed-row floor accounting, and finite constants checked on stated cases; inherited stochastic interfaces separately audited in the full review. No formal verification claim."
+}

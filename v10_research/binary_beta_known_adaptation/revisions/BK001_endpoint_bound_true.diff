@@ -1,0 +1,11 @@
+--- BK001_pre_elementary_endpoint_bound.md
++++ BK001_histogram_adaptation_obstruction.md
+@@ -98,7 +98,7 @@
+ 
+     P_j(F_j)=w P_j^M(11,00)>=y/4.                   (4.1)
+ 
+-Indeed alpha_M<=exp(-lambda floor(M/3))<=exp(-c k/(16sqrt(M)))=exp(-c n^4/16). For n>=32 this is <=1/(2n)<=y/2: at n=32 the exponent is 16>log(64), and c n^4/16-log(2n) is increasing thereafter. Our n>=4096 domain is more than sufficient.
++Indeed the elementary inequality (1-lambda)^m<=1/(1+m lambda) and floor(M/3)>=M/4 give alpha_M<=1/(1+c k/(16sqrt(M)))=1/(1+c n^4/16). For n>=64, c n^4/16>=2n, because n^3>=32/c; hence alpha_M<=1/(2n)<=y/2. Our n>=4096 domain is more than sufficient. The elementary inequality follows by applying Bernoulli's inequality to (1-lambda)^(-m).
+ 
+ Consider a full stationary Q_j word conditional on F_j. Its clean target at the endpoint is a_j. Since the contribution of F_j is part of its unconditional clean risk,
+ 

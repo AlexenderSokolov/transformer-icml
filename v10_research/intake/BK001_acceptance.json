@@ -1,0 +1,10 @@
+{
+  "unit": "BK001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "binary_beta_known_adaptation/BK001_histogram_adaptation_obstruction.md",
+  "sha256": "edbfc9cd372df7497ff7462eded0e6c85a3ee4f99f21bd7310f460bd1f0fcb5a",
+  "review": "binary_beta_known_adaptation/BK001_independent_full_review.md",
+  "review_sha256": "ec654b57d3a82c66fb70e9801febc517f83a4fa1e3f6a06fa93b5b66f186628b",
+  "time_utc": "2026-11-02T12:32:29.954083+00:00",
+  "scope": "POST-STAGE8. Root read complete initial proof, sole exact endpoint-bound delta and full independent review. Same advertised beta=1/M, stationary binary sources, exact triple histogram plus initial/final pairs ONLY. Exact constrained-risk bound rules out unknown-k adaptation across all budgets for that restricted statistic. Strict source-independent Hamming kernel uses auxiliary clean sample canonicalization and pays fixed-null-length occupancy mismatch and endpoint conditioning. Does NOT settle full-history supplied-beta adaptation, richer fixed boundary windows, or known-k minimax. No efficiency/neural/novelty/formal/external-review claim."
+}

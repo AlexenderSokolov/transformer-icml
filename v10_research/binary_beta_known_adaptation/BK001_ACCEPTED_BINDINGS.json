@@ -1,0 +1,121 @@
+{
+  "generated_utc": "2026-11-02T12:47:54.891106+00:00",
+  "unit": "BK001",
+  "status": "ROOT_ACCEPTED_EXACT_BINDINGS_VERIFIED",
+  "artifacts": [
+    {
+      "path": "binary_beta_known_adaptation/BK001_histogram_adaptation_obstruction.md",
+      "sha256": "edbfc9cd372df7497ff7462eded0e6c85a3ee4f99f21bd7310f460bd1f0fcb5a",
+      "bytes": 12706
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK001_author_diagnostics.json",
+      "sha256": "ec4482ee94c9610f21ff72a44608216d3ccdde433eb533723ec202576395f0b7",
+      "bytes": 969
+    },
+    {
+      "path": "binary_beta_known_adaptation/check_bk001.py",
+      "sha256": "04c9da41db39bdb5e83e9f1987b733f4ffc9cf76d628a02376b722d2e1917f5c",
+      "bytes": 3249
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK001_independent_checks.py",
+      "sha256": "f2a3c570cc874e83ae87e0a93d8aecf84df9b6e5c3a2a4a98d3fb64a80be511d",
+      "bytes": 10137
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK001_independent_checks.json",
+      "sha256": "2559f18ffcd6164eeacfa39a426cec3ce71f52f355f4ec7068f82d9e209d7a1f",
+      "bytes": 21525
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK001_independent_full_review.md",
+      "sha256": "ec654b57d3a82c66fb70e9801febc517f83a4fa1e3f6a06fa93b5b66f186628b",
+      "bytes": 16388
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK001_independent_review_bindings.json",
+      "sha256": "32e25af3352a68badfe1f44816cfe2b6103e76d75414b8633eedf92b4dca85d1",
+      "bytes": 2856
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK001_HANDOFF.md",
+      "sha256": "f3ac84fda88cfe523797fb9505afa3ca6534b4ced9beaee0353cfd82723c67a7",
+      "bytes": 3586
+    },
+    {
+      "path": "binary_beta_known_adaptation/revisions/BK001_pre_elementary_endpoint_bound.md",
+      "sha256": "f51f7b0ce139389d117ce05a8ac74889fb82bbc010c3908a62442b6f447eabeb",
+      "bytes": 12606
+    },
+    {
+      "path": "binary_beta_known_adaptation/revisions/BK001_endpoint_bound_true.diff",
+      "sha256": "08f2142b37cf5d566d68d57c2d54a95af4dc07a756cb8d4db95dcb99b9fc7515",
+      "bytes": 923
+    },
+    {
+      "path": "binary_beta_known_adaptation/revisions/BK001_endpoint_bound_revision_record.json",
+      "sha256": "e6878299f1ebebe3e1b3f5828eb12d45b472f9339d165577f164383db18539aa",
+      "bytes": 1097
+    }
+  ],
+  "receipt": {
+    "path": "intake/BK001_acceptance.json",
+    "sha256": "5bc61da0716e6645abdd9d538ea69b15dece11a0be00fb7f05b255e114cf6226",
+    "bytes": 1121
+  },
+  "scope": "Exact triple histogram plus initial/final PAIRS only; not full-history supplied-beta adaptation.",
+  "previous_version_disclosure": "This prior snapshot was not backed up contemporaneously. It was reconstructed losslessly by reversing the exact one-paragraph old/new replacement documented in the contemporaneous execution record. No mathematical history beyond that actual edit is invented.",
+  "independent_source_bindings": {
+    "status": "INDEPENDENT_LLM_FULL_AUDIT_NO_SUBSTANTIVE_DEFECT_FOUND_NOT_ACCEPTANCE",
+    "generated_utc": "2026-11-02T12:31:33.228127+00:00",
+    "files": {
+      "BK001_histogram_adaptation_obstruction.md": "edbfc9cd372df7497ff7462eded0e6c85a3ee4f99f21bd7310f460bd1f0fcb5a",
+      "BK001_independent_full_review.md": "ec654b57d3a82c66fb70e9801febc517f83a4fa1e3f6a06fa93b5b66f186628b",
+      "BK001_independent_checks.py": "f2a3c570cc874e83ae87e0a93d8aecf84df9b6e5c3a2a4a98d3fb64a80be511d",
+      "BK001_independent_checks.json": "2559f18ffcd6164eeacfa39a426cec3ce71f52f355f4ec7068f82d9e209d7a1f"
+    },
+    "dependencies": {
+      "AB001": {
+        "proof": "binary_budget_adaptation/AB001_joint_blindness_obstruction.md",
+        "proof_sha256": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d",
+        "receipt_sha256": "86a80911ba8735b7108598dcad99bb041f733d3fd065151eff6649cdefde7701",
+        "receipt_status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW"
+      },
+      "AB002": {
+        "proof": "binary_budget_adaptation/AB002_addone_failure_and_open_beta_known.md",
+        "proof_sha256": "7848267fa73e33775ca2aa467230980ee5f89e1d5ae0ae140c0d7955909d219b",
+        "receipt_sha256": "c705737c00020f62b1bd6b80fc84e24756a71c524ce21dfc0350825264aac53b",
+        "receipt_status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW"
+      },
+      "AB003": {
+        "proof": "binary_budget_adaptation/AB003_small_budget_hard_threshold.md",
+        "proof_sha256": "fe3260f31f76a99576897d931e23ab939e0ebf8eb04e8cf31591b2b908d392e8",
+        "receipt_sha256": "eb4a51922f764ee65bc3dffa77e253d5345f2ce0d0e8c577ca655fc24f79b67d",
+        "receipt_status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW"
+      },
+      "SC003": {
+        "proof": "binary_source_corruption/SC003_theorem.md",
+        "proof_sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+        "receipt_sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+        "receipt_status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW"
+      },
+      "BT002": {
+        "proof": "binary_erasure_transport/BT002_entropy_bridge_lower.md",
+        "proof_sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+        "receipt_sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+        "receipt_status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+        "component_proofs": {
+          "binary_erasure_transport/BT002_entropy_bridge_lower.md": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+          "binary_erasure_transport/BT002_scalar_completion.md": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026"
+        }
+      }
+    },
+    "limitations": [
+      "Not formal verification",
+      "Not external peer review",
+      "Not root acceptance",
+      "Finite diagnostics support but do not replace the full analytical review"
+    ]
+  }
+}

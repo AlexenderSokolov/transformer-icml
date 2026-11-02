@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "scope": "Independent exact finite diagnostics, not formal verification or universal proof",
+  "theorem": "JB001_theorem.md",
+  "theorem_sha256": "9d28b2b655be1cf643ac8fc0881aa3952047bc618850c64e31a051e8cc67c9c3",
+  "diagnostic_script_sha256": "c055efb7978c96abc09ec98edfac5a1882194b6ffdc7afa0a4ec854e047f1e5d",
+  "all_assertion_arithmetic": "integers and exact rational fractions; no floating comparisons",
+  "counts": {
+    "inactive": 64537,
+    "critical_probability_inequalities": 383000,
+    "relaxed_real_pseudorows": 72294,
+    "active": 7757,
+    "threshold_right_limits": 7437,
+    "uniform_cancellation_nested_floor": 378738,
+    "scalar_noisy_clipped_bank": 11760,
+    "word_noise_cases": 33750,
+    "nonintegral_selected_pseudorows": 14339,
+    "nonunit_total_pseudohistograms": 29255,
+    "boundary_clipped_coordinates": 42637,
+    "finite_m_threshold_constants": 99937,
+    "singleton_A_domain_constants": 25
+  },
+  "accepted_dependencies": {
+    "JP001": {
+      "proof": "joint_corruption_precision/JP001_theorem.md",
+      "proof_sha256": "c94e7d59d463a642853b8e3c52588f735c24175885f9cfddf05fbd8f3f2c0fab",
+      "receipt": "intake/JP001_acceptance.json",
+      "receipt_sha256": "75d7a29c3c4e9740093302534f47820e4402232d54c72c31a4454db15489a1ee",
+      "accepted_proof_hash_matches": true,
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "review": "joint_corruption_precision/JP001_independent_review.md",
+      "review_sha256": "a10f0c591d07922181e4daec6fb9f54cb542c6327165ce9b4c14c171096f043b",
+      "accepted_review_hash_matches": true
+    },
+    "AB003": {
+      "proof": "binary_budget_adaptation/AB003_small_budget_hard_threshold.md",
+      "proof_sha256": "fe3260f31f76a99576897d931e23ab939e0ebf8eb04e8cf31591b2b908d392e8",
+      "receipt": "intake/AB003_acceptance.json",
+      "receipt_sha256": "eb4a51922f764ee65bc3dffa77e253d5345f2ce0d0e8c577ca655fc24f79b67d",
+      "accepted_proof_hash_matches": true,
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "review": "binary_budget_adaptation/review_ab003_full.md",
+      "review_sha256": "0d4ec9fb2f4672fc5b2c850b0e553caebd83871a8ec808931b75fa25193ada90",
+      "accepted_review_hash_matches": true
+    },
+    "SC003": {
+      "proof": "binary_source_corruption/SC003_theorem.md",
+      "proof_sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "receipt": "intake/SC003_acceptance.json",
+      "receipt_sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+      "accepted_proof_hash_matches": true,
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW"
+    },
+    "BIF001": {
+      "proof": "binary_all_start/BIF001_binary_all_initializations_frontier_v1.md",
+      "proof_sha256": "35c6cb3b5c882c9e70dad68dbc8492c08e65ba49f532da84597e5e1e303467f0",
+      "receipt": "intake/BIF001_acceptance.json",
+      "receipt_sha256": "cc9d2d121521efdc8a1dfabe6beaa5e6551ed2d83b3e196ec3d20787953a7412",
+      "accepted_proof_hash_matches": true,
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW"
+    },
+    "BAI003": {
+      "proof": "binary_arbitrary/BAI003_uniform_absorbing_binary_upper_v2.md",
+      "proof_sha256": "99d209c423664c3fe74d1b32fd68fb89ed31218c58fa2f11c343c3e6a54bd0e4",
+      "receipt": "intake/BAI003_acceptance.json",
+      "receipt_sha256": "1e9fc79e3a3a23f2f731b17b123e4cf076842e5da6ef32b6860897e5b1da303f",
+      "accepted_proof_hash_matches": true,
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW"
+    },
+    "BC001": {
+      "proof": "binary_causal/BC001_binary_stationary_causal_frontier_v1.md",
+      "proof_sha256": "38712b68da30e08d14f41567e84f53b4073b7e2d46280313adc8b69859fc850e",
+      "receipt": "intake/BC001_acceptance.json",
+      "receipt_sha256": "7d0cbb9c246483fe4f9776fbe2f0d2494ee2e960ce7b4d1b6117f04844406850",
+      "accepted_proof_hash_matches": true,
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW"
+    },
+    "FA001": {
+      "proof": "causal_attention/FA001_finite_arithmetic_bridge_v3.md",
+      "proof_sha256": "94a9d64f2a2eedf50cb7e918cfeec4e8cac6e78f21de214a528a853b4f17e073",
+      "receipt": "intake/FA001_acceptance.json",
+      "receipt_sha256": "91bb12cc2cabbaa16c53b30be3f2a0acdf1c5758223dbff32fba793541a2e132",
+      "accepted_proof_hash_matches": true,
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW"
+    }
+  }
+}

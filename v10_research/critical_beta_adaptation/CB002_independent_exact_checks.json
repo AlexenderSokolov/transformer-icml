@@ -1,0 +1,19 @@
+{
+  "status": "PASS_TESTED_INSTANCES_ONLY",
+  "arithmetic": "exact Fraction and integer throughout; squared comparisons avoid approximate roots",
+  "counts": {
+    "receipts": 3,
+    "matrix_stationarity_all16": 96,
+    "trace_probabilities": 96,
+    "lambda_bound": 96,
+    "future_endpoint": 576,
+    "near_occupation_dp_stack_comparison": 384,
+    "weighted_future_dp": 384,
+    "pathwise_trace_balance": 8190,
+    "strict_hamming_prefix": 23520,
+    "singleton_support": 8,
+    "scalar_assembly": 9937
+  },
+  "proof_sha256": "69c55c6ab40e939c5392beb022c213c8506e8aa464b3f0b2f3f23b0db0eabe11",
+  "scope": "Independent finite diagnostics for the partial risk-increment theorem only. Not formal verification or full-adaptation evidence."
+}

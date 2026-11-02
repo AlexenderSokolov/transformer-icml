@@ -1,0 +1,10 @@
+{
+  "unit": "AB003",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "binary_budget_adaptation/AB003_small_budget_hard_threshold.md",
+  "sha256": "fe3260f31f76a99576897d931e23ab939e0ebf8eb04e8cf31591b2b908d392e8",
+  "review": "binary_budget_adaptation/review_ab003_full.md",
+  "review_sha256": "0d4ec9fb2f4672fc5b2c850b0e553caebd83871a8ec808931b75fa25193ada90",
+  "time_utc": "2026-11-02T12:11:01.832759+00:00",
+  "scope": "POST-STAGE8. Root read full proof including section8 and full independent review. Hard-threshold estimator jointly k/beta-blind attains binary known-k profile for k<=sqrtM, all beta and all starts. With AB001, uniform optimal joint-blind adaptation over 0<=k<=b_M exists iff b_M=O(sqrtM), constants may depend on public range envelope. Not pointwise impossibility at every larger budget; supplied-beta all-budget adaptation remains open. No neural-depth/training/novelty/formal/external-review claim."
+}

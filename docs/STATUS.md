@@ -1,94 +1,46 @@
-# 当前状态与分析
+# 当前状态：第二次研究增量的七个已接纳单元
 
-更新边界：2026-11-02 11:57:46 UTC 的接纳记录。本文是公开科学摘要；精确量词、常数、初始化与计算模型以完整证明和相应接纳范围为准。
+本增量只包含 AB003、JB001、BK001、BK002、KA001、CB001、CB002，以及另行采纳的 BK002 十六个矩阵位置枚举说明。它们均为阶段八冻结之后的研究更新，不加入原阶段八的六单元冻结集合。候选标题与旧开放问题按原写作时点保留；后续状态以带时间和精确哈希的接纳记录为准。
 
-## 1. 对象与比较原则
-
-母问题是未知二阶转移规律下的下一符号概率预测，损失为真实终点条件分布的无条件期望总变差。比较须保持可见历史、终点权限、初始分布、噪声端口和目标一致。一个固定表示的下界不能自动成为所有 Transformer 的下界；IID 构造不能自动成为一般 Markov 上界；可实现性也不等于可训练性。
-
-本仓库同时保留三类证据：数学证明与反例、项目内独立 LLM 审查、有限计算与文稿复现记录。它们相互补充，不互相替代。
-
-## 2. 第八阶段：已冻结的六个单元
-
-冻结时点为 **2026-11-02 09:22:25.495805 UTC**。准确列表和原始接纳哈希见 [科学冻结记录](../v10_research/delivery_stage8/SCIENTIFIC_FREEZE.json)。
-
-| 单元 | 实际结论 | 不应推断的结论 |
+| 单元 | 已建立的结论 | 不可扩张的边界 |
 |---|---|---|
-| SC001 | 固定 `K ≥ 3`、弱混合端的全历史符号扰动率，含平稳扩展 | 不替代二元或任意增长字母表结论 |
-| SC002 | 固定 `K ≥ 3`、全部 `beta`、平稳与任意初始化的匹配扰动率 | 不声称有效攻击采样、因果攻击或神经资源最优 |
-| SC003 | 二元情形的匹配阶上界；下包络估计器使用公开 `k`，不使用 `beta` | 本单元自身不提供完整二元下界，也不解决未知 `k` 适应 |
-| BT001 | 精确输运障碍、局部合并偏差、修正见证与条件归约 | **强内部常数步输运前提未证明** |
-| BT002 | 通过集中性与熵到桥分布的输运，独立闭合二元下界 | 不证明或依赖 BT001 的开放强前提 |
-| EP001 | 允许终点编辑时、真实隐藏终点目标下的匹配风险 | 不把目标改成观察到的被编辑终点对应的分布 |
+| AB003 | 二元全历史实验中，一个不知道 k 和 beta 的硬阈值估计器，在 k 不超过平方根量级的公开预算范围内达到已知 k 的风险阶；上界适用于任意初始分布。 | 不是每个更大 k 上的逐点不可能性。 |
+| JB001 | 固定二元八坐标均匀直方图有限切口中，不知道 k、delta、beta 的阈值解码器，在 k/M + delta + 1/Q ≤ M^(-1/2) 时达到相应已知预算阶。 | 固定编码器、向量端口噪声、小总扰动域；不是全预算或任意重新设计编码器的结果。 |
+| BK001 | 在给定 beta = 1/M 时，只看八个三元计数以及首末符号对的预测器，不能同时对所有未知实际 k 达到已知 k 的风险阶。 | 这是受限统计量的结论，不是完整有序历史的不可能性。 |
+| BK002 | 即使提供 beta 和完整污染历史，也不存在对所有 beta、所有未知实际预算统一达到已知 k 风险阶的规则。结合 AB003，公开预算区间 0 ≤ k ≤ b_M 上的统一适应可行，当且仅当 b_M = O(sqrt(M))。 | 下界已在平稳初始分布成立，上界适用于所有初始分布；常数可依赖固定的公开区间包络。不是每个较大 k 的逐点不可能性，不排除固定正 beta 下依赖 beta 的常数，也不解决预先指定 beta = 1/M 曲线上的全历史问题。 |
+| KA001 | 给定 beta 的全历史未知预算适应具有部分相图：beta ≤ C/M² 可行；M beta → 0 且 M² beta → ∞ 的指定中间曲线不可行；beta ≥ c/sqrt(M) 可行。 | C、c 固定，正向常数可依赖它们。beta 约为 1/M 及其至 M^(-1/2) 之间的剩余区间未由本单元解决。 |
+| CB001 | 精确长游程否决规则在任意初始分布下具有受控的干净风险增量，并可阻断明确列出的 BK001/BK002 攻击支持。 | 仅为部分引理，不控制任意污染风险，也不证明完整适应。 |
+| CB002 | 对任意基线加入近前缀否决，在任意严格 Hamming-k 污染下只增加受控风险；beta = 1/M 时增量不超过 min(1, 2^11/sqrt(M) + 2^9 k/M)。 | 基线本身的风险仍然存在；这是风险增量定理，不是全预算适应定理。 |
 
-设 `s = M^(-1/2)`，其中历史长度为 `M + 2`。受保护终点模型中，最后两个真实符号不允许被修改；预测器看到整个受扰历史，看不到编辑掩码或攻击种子。固定字母表下的共同风险阶为
+## BK002 枚举说明
 
-\[
-\min\!\left\{1,\max\left[s,\frac{k}{M}\left(1+\log\left(1+\frac{1}{k e_K}\right)\right)\right]\right\},
-\]
+原证明与原独立审查中的矩阵、参数、证书不等式、常数和风险结论保持原字节。另行采纳的说明补充明确列出位置 (00,10)，其矩阵元素 a e 与已处理的 e a 相同，目标同为 delta² x；正确的位置数是 2+1+3+1+2+3+4 = 16。旧审查写出的和实际等于 15。旧诊断程序本已遍历全部十六个位置。该说明纠正文字枚举和加法，不是新的定理、矩阵变更、参数域扩大或风险阶修正。
 
-其中 `k = 0` 时扰动项定义为零；二元 `e_2 = max(sqrt(beta), 1/M)`，`K ≥ 3` 时 `e_K = max(beta, 1/M)`。平稳和任意初始化均覆盖，但常数与合法有限域按各证明规定。
+## 真实历史与仍未解决的问题
 
-允许终点被修改后，目标仍为原始真实终点条件分布，风险阶变为
+- BK001 的端点界改写保留准确差分。旧版本并非当时备份，而是由有记录的单段替换反向重建；不能把它说成同时保存的历史快照。
+- BK002 的参考采样器证明没有在审查中改写。可选的真实干净续接采样器、同 beta 路线障碍和宏循环探索仍明确标注为未独立接纳的历史研究，不作已接纳前提。
+- CB001 保留一般 L 界及 L = floor(M/2) 特化的真实澄清差分。CB002 没有证明基线在否决区域以外的风险。
+- 仅就本次固定增量，预先指定 beta 约为 1/M 曲线上的全历史未知 k 适应仍未解决。KH001、KH002、CB003 等后续单元不在本次发布范围，不能用它们改写本次结论。
 
-\[
-\min\{1,\max[s,k/M,(1-\beta)\mathbf 1_{\{k\ge1\}}]\}.
-\]
+独立 LLM 审查和有限精确诊断不等于形式化验证、外部同行评审或新颖性认证。本次隐私与来源审计没有重新运行全部科学诊断。
 
-因此一个终点编辑也可能阻止一致预测。英文伴随稿另给出了统计阶容忍预算的标量推论；它是经过审查的派生文稿结果，**不是第七个冻结单元**。
+## 证明、完整审查和接纳记录
 
-## 3. 冻结后的四个已接纳更新
+| 单元 | 证明 | 完整审查 | 接纳时间（UTC）与记录 |
+|---|---|---|---|
+| AB003 | [证明](../v10_research/binary_budget_adaptation/AB003_small_budget_hard_threshold.md) | [审查](../v10_research/binary_budget_adaptation/review_ab003_full.md) | [2026-11-02T12:11:01.832759+00:00](../v10_research/intake/AB003_acceptance.json) |
+| JB001 | [证明](../v10_research/joint_blind_finite_cut/JB001_theorem.md) | [审查](../v10_research/joint_blind_finite_cut/JB001_independent_review.md) | [2026-11-02T12:23:28.851337+00:00](../v10_research/intake/JB001_acceptance.json) |
+| BK001 | [证明](../v10_research/binary_beta_known_adaptation/BK001_histogram_adaptation_obstruction.md) | [审查](../v10_research/binary_beta_known_adaptation/BK001_independent_full_review.md) | [2026-11-02T12:32:29.954083+00:00](../v10_research/intake/BK001_acceptance.json) |
+| BK002 | [证明](../v10_research/binary_beta_known_adaptation/BK002_full_history_supplied_beta_obstruction.md) | [审查](../v10_research/reviews/BK002_independent_full_review.md) | [2026-11-02T12:56:33.419419+00:00](../v10_research/intake/BK002_acceptance.json) |
+| KA001 | [证明](../v10_research/binary_certificate_adaptation_phase/KA001_certificate_phase_partial.md) | [审查](../v10_research/reviews/KA001_independent_full_review.md) | [2026-11-02T13:20:27.137673+00:00](../v10_research/intake/KA001_acceptance.json) |
+| CB001 | [证明](../v10_research/critical_beta_adaptation/CB001_long_run_veto_partial.md) | [审查](../v10_research/critical_beta_adaptation/CB001_independent_full_review.md) | [2026-11-02T13:22:25.063063+00:00](../v10_research/intake/CB001_acceptance.json) |
+| CB002 | [证明](../v10_research/critical_beta_adaptation/CB002_near_prefix_veto_partial.md) | [审查](../v10_research/critical_beta_adaptation/CB002_independent_full_review.md) | [2026-11-02T13:32:31.964358+00:00](../v10_research/intake/CB002_acceptance.json) |
 
-以下结果不属于第八阶段冻结快照。证明原文中保留的“candidate”标题记录了写作时状态；后续接纳以对应收据为证，不改写原始正文。
+BK002 的[枚举说明](../v10_research/binary_beta_known_adaptation/BK002_ALL16_ENUMERATION_CLARIFICATION.md)与[另行采纳记录](../v10_research/intake/BK002_all16_clarification_adoption.json)须与原证明、原审查同时阅读。
 
-### JP001：固定均匀直方图接口上的联合扰动
+## 原有主线与历史状态
 
-[完整证明](../v10_research/joint_corruption_precision/JP001_theorem.md) · [完整审查](../v10_research/joint_corruption_precision/JP001_independent_review.md) · [接纳记录](../v10_research/intake/JP001_acceptance.json)
+[初次完整发布的科学状态](STATUS_INITIAL_20261102_115746.md)保留阶段八六个冻结单元和 JP001、RE001、AB001、AB002 的原始时点摘要。其旧开放问题不代表本次新增结果之后的状态。阶段八冻结本身、BT001 的开放强输运前提、BT002 的独立熵路线、EP001 的真实隐藏终点目标均不改变。70 页 v5 精度／深度稿仍见[资料导航](NAVIGATION.md)。
 
-2026-11-02 11:38:19 UTC 接纳。固定均匀 `K³` 直方图前缀，真实终点对受保护；同时考虑 `k` 次源符号编辑、一次**整向量** `l∞` 端口噪声 `delta` 和最终 `Q` 网格。令
-
-\[
-f_e(v)=v\left[1+\log\left(1+\frac1{Mev}\right)\right],\qquad f_e(0)=0.
-\]
-
-平稳与任意初始化的风险阶为 `min(1, max(s, f_e(k/M + delta + 1/Q)))`，其中 `e` 取上文对应字母表的截断。证明包含实际有限求值器、完整有理证书成本和实数、粗网格及细 `Q` 网格噪声下界。
-
-这里一次噪声可作用于每个坐标，不能读成一个非零标量故障。结论针对固定接口，不覆盖重新设计的深编码器；未知预算适应也未由此解决。
-
-### RE001：源编辑之后的鲁棒重新编码
-
-[完整证明](../v10_research/robust_encoded_source_corruption/RE001_theorem.md) · [完整审查](../v10_research/robust_encoded_source_corruption/RE001_independent_review.md) · [接纳记录](../v10_research/intake/RE001_acceptance.json)
-
-2026-11-02 11:55:24 UTC 接纳。编码器只看到受扰历史，利用付费的压扩与无平台打包构造，在真正带噪的量化切口后得到
-
-\[
-R\le\min\{1,C_K[s+\epsilon+f_e(k/M+\epsilon^2+\epsilon/\chi)]\}.
-\]
-
-在充分日程 `epsilon = O(s)`、`chi` 与 `log M` 同阶时，达到完整历史的源扰动／统计风险阶。二元解码器使用 `k` 构造可验证半径，不使用 `beta`；较大字母表规则对二者都盲。审查补全了任意有理目标尺度 `t0` 的完整分子、分母描述成本。
-
-这是付出宽度、深度、编码和解码成本后的充分构造，不是全体编码器、噪声与资源的尖锐联合最优前沿。JP001 的固定表示精度下界不能直接转移到这里。
-
-### AB001 与 AB002：预算适应的否定结果和剩余问题
-
-[AB001 证明](../v10_research/binary_budget_adaptation/AB001_joint_blindness_obstruction.md) · [AB002 证明](../v10_research/binary_budget_adaptation/AB002_addone_failure_and_open_beta_known.md) · [共同完整审查](../v10_research/binary_budget_adaptation/review_joint_blindness_full.md) · [AB001 接纳](../v10_research/intake/AB001_acceptance.json) · [AB002 接纳](../v10_research/intake/AB002_acceptance.json)
-
-二者于 2026-11-02 11:57:46 UTC 接纳。
-
-- **AB001：** 即使平稳初始化，也不存在一个同时不知道 `k` 和 `beta` 的估计器，在全部类别中统一达到相应已知预算率。论证作用于整个受扰历史，使用严格共同扰动核，不限于直方图估计器。
-- **AB002：** 在 `beta = 1/M`，普通选中行 add-one 估计器具有对数级次优性。该反例排除的是这一个规则，不是所有未知预算规则。
-- **仍开放：** 对每个给定的中间 `beta`，是否存在不依赖 `k`、同时覆盖全部 `k` 的率最优估计器？不能把 AB001 中不同已声明混合类别的比较当成同一 `beta` 的不可能性证明。
-
-## 4. 前期精度、深度与可靠性结果仍是主线
-
-[70 页英文 v5](../v10_research/manuscript_v5/finite_precision_prediction.pdf) 保留固定信息切口、二元与较大字母表的差异、混合依赖、IID 坐标容量／深度关系、折叠编码脆弱性、鲁棒重新编码及一般 Markov 上界。其科学范围冻结于 2026-11-02 08:09:06 UTC。
-
-MG001／MG002 后续明确补上故障前精确工作格裁剪及全部成本，见 [澄清](../v10_research/robust_markov_prediction/MG_final_clip_clarification.md) 与 [审查](../v10_research/robust_markov_prediction/MG_final_clip_clarification_independent_review.md)。这不是新增风险率，也不能说原文当时已经明确写出该步骤。
-
-一般 Markov 充分打包指数 `R` 与全库下界维度 `D = R K³` 之间仍有差距。增长字母表尖锐性、整体资源最优性、训练可达性、物理故障实验与外部新颖性评估没有由现有材料完成。
-
-## 5. 复现记录怎样理解
-
-原阶段包记录了 91 个当前不同字节脚本通过、7 个相同字节别名，以及 1 个单独复现的预期历史失败。两个当前科学审计脚本合计记录 913,221 个精确／认证有理案例。英文 27 页和中文 9 页的历史重构逐页栅格与文本相同，中文 DOCX 字节相同并含 93 个原生 OMML 公式。
-
-这些是相应历史运行的证据，**本页不声称公开发布时又运行了一遍全部科学脚本或又重构了所有文稿**。公开版本的来源、脱敏差异和本次实际校验应以 [公开来源映射](../provenance/PUBLIC_SOURCE_MAP.json) 及发布校验记录为准。有限案例不能代替一般证明；独立 LLM 审查不是形式验证、外部同行评审或新颖性认证。
+这些适应结论涉及二元模型；不能推广为 K ≥ 3 的预算盲适应障碍。文献阅读范围见[限定的一手文献记录](../v10_research/prior_art/adaptation_and_constrained_risk_screen.md)，不是新颖性认证。

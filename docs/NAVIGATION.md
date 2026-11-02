@@ -58,3 +58,17 @@ AB001／AB002 的 [共同审查](../v10_research/binary_budget_adaptation/review
 [公开来源映射](../provenance/PUBLIC_SOURCE_MAP.json) 区分原始字节、既有科学导出和本次公开导出，并声明真实路径变化及必要脱敏。科学正文、历史失败和审查结论不能靠重写哈希来“通过”。如某个旧脚本消费原始绑定，应使用明确限定的导出协调记录，而不是全局忽略完整性检查。
 
 [公开校验工具](../tools/public_verify.py) 用于公开目录的完整性检查；具体执行范围和结果看发布记录。文稿各自的 `build.sh` 或构建说明给出依赖。原包的历史嵌套归档结构不等于当前仓库结构；仓库展开必要科学来源，避免递归 ZIP、渲染缓存与重复归档堆积。公开版不声称可从被排除的私人操作信息重建整个原始运行环境。
+
+## 第二次已接纳研究增量
+
+下列七项及 BK002 枚举说明独立于阶段八冻结；[当前条件、边界与完整入口](STATUS.md)。
+
+- **AB003**：[证明](../v10_research/binary_budget_adaptation/AB003_small_budget_hard_threshold.md) · [完整审查](../v10_research/binary_budget_adaptation/review_ab003_full.md) · [接纳记录](../v10_research/intake/AB003_acceptance.json)。
+- **JB001**：[证明](../v10_research/joint_blind_finite_cut/JB001_theorem.md) · [完整审查](../v10_research/joint_blind_finite_cut/JB001_independent_review.md) · [接纳记录](../v10_research/intake/JB001_acceptance.json)。
+- **BK001**：[证明](../v10_research/binary_beta_known_adaptation/BK001_histogram_adaptation_obstruction.md) · [完整审查](../v10_research/binary_beta_known_adaptation/BK001_independent_full_review.md) · [接纳记录](../v10_research/intake/BK001_acceptance.json)。
+- **BK002**：[证明](../v10_research/binary_beta_known_adaptation/BK002_full_history_supplied_beta_obstruction.md) · [完整审查](../v10_research/reviews/BK002_independent_full_review.md) · [接纳记录](../v10_research/intake/BK002_acceptance.json)。
+- **KA001**：[证明](../v10_research/binary_certificate_adaptation_phase/KA001_certificate_phase_partial.md) · [完整审查](../v10_research/reviews/KA001_independent_full_review.md) · [接纳记录](../v10_research/intake/KA001_acceptance.json)。
+- **CB001**：[证明](../v10_research/critical_beta_adaptation/CB001_long_run_veto_partial.md) · [完整审查](../v10_research/critical_beta_adaptation/CB001_independent_full_review.md) · [接纳记录](../v10_research/intake/CB001_acceptance.json)。
+- **CB002**：[证明](../v10_research/critical_beta_adaptation/CB002_near_prefix_veto_partial.md) · [完整审查](../v10_research/critical_beta_adaptation/CB002_independent_full_review.md) · [接纳记录](../v10_research/intake/CB002_acceptance.json)。
+
+精确来源与脱敏差异见[第二次来源映射](../provenance/increment2/SOURCE_MAP.json)，历史预期哈希与公开哈希的严格对照见[绑定协调表](../provenance/increment2/BINDING_RECONCILIATION.json)。

@@ -1,0 +1,49 @@
+{
+  "status": "PASS_TESTED_INSTANCES_ONLY",
+  "pathwise_rational_cases": 93044,
+  "active_row_configurations": 1165,
+  "inactive_row_configurations": 12127,
+  "minimum_pathwise_slack": "0",
+  "integer_threshold_cases": 16132,
+  "exact_squared_constant_checks": 4033,
+  "coefficient_checks": "PASS",
+  "envelope_scalar_examples": [
+    {
+      "log2M": 16,
+      "k_over_sqrtM": 4.0,
+      "log_M_over_k": 4.1588830833596715
+    },
+    {
+      "log2M": 32,
+      "k_over_sqrtM": 5.0,
+      "log_M_over_k": 9.480916976525025
+    },
+    {
+      "log2M": 64,
+      "k_over_sqrtM": 6.0,
+      "log_M_over_k": 20.388950308690195
+    },
+    {
+      "log2M": 128,
+      "k_over_sqrtM": 7.0,
+      "log_M_over_k": 42.41550940678118
+    },
+    {
+      "log2M": 256,
+      "k_over_sqrtM": 8.0,
+      "log_M_over_k": 86.64339756999316
+    },
+    {
+      "log2M": 512,
+      "k_over_sqrtM": 9.0,
+      "log_M_over_k": 175.24845364600978
+    },
+    {
+      "log2M": 1024,
+      "k_over_sqrtM": 10.0,
+      "log_M_over_k": 352.58877135369795
+    }
+  ],
+  "proof_sha256": "fe3260f31f76a99576897d931e23ab939e0ebf8eb04e8cf31591b2b908d392e8",
+  "limitations": "Finite checks only; imported universal occupation and clean interfaces are not established by this script. Fresh full review is separate."
+}

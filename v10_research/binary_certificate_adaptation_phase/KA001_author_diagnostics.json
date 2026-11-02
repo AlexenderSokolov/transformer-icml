@@ -1,0 +1,158 @@
+{
+  "status": "PASS_TESTED_INSTANCES_ONLY",
+  "arithmetic": "Fraction and integer square roots exact; no floating-point probability checks",
+  "counts": {
+    "rounded_actual_certificate_cases": 136,
+    "all_state_entries_at_actual_beta": 6528,
+    "weak_algebra_cases": 125,
+    "non_square_reciprocal_certificates": 111
+  },
+  "selected_rounding_records": [
+    {
+      "M": 4096,
+      "beta": "1/65536",
+      "k": 256,
+      "k_squared_beta": "1"
+    },
+    {
+      "M": 4096,
+      "beta": "1/65536",
+      "k": 256,
+      "k_squared_beta": "1"
+    },
+    {
+      "M": 4096,
+      "beta": "1/65536",
+      "k": 256,
+      "k_squared_beta": "1"
+    },
+    {
+      "M": 4097,
+      "beta": "256/16785409",
+      "k": 256,
+      "k_squared_beta": "16777216/16785409"
+    },
+    {
+      "M": 4097,
+      "beta": "8193/537133088",
+      "k": 256,
+      "k_squared_beta": "16779264/16785409"
+    },
+    {
+      "M": 4097,
+      "beta": "1/65552",
+      "k": 256,
+      "k_squared_beta": "4096/4097"
+    },
+    {
+      "M": 4100,
+      "beta": "16/1050625",
+      "k": 256,
+      "k_squared_beta": "1048576/1050625"
+    },
+    {
+      "M": 4100,
+      "beta": "2049/134480000",
+      "k": 256,
+      "k_squared_beta": "1049088/1050625"
+    },
+    {
+      "M": 4100,
+      "beta": "1/65600",
+      "k": 256,
+      "k_squared_beta": "1024/1025"
+    },
+    {
+      "M": 5000,
+      "beta": "4/390625",
+      "k": 312,
+      "k_squared_beta": "389376/390625"
+    },
+    {
+      "M": 5000,
+      "beta": "1137/100000000",
+      "k": 296,
+      "k_squared_beta": "1556553/1562500"
+    },
+    {
+      "M": 5000,
+      "beta": "1/80000",
+      "k": 282,
+      "k_squared_beta": "19881/20000"
+    },
+    {
+      "M": 10000,
+      "beta": "1/390625",
+      "k": 625,
+      "k_squared_beta": "1"
+    },
+    {
+      "M": 10000,
+      "beta": "881/200000000",
+      "k": 476,
+      "k_squared_beta": "12475841/12500000"
+    },
+    {
+      "M": 10000,
+      "beta": "1/160000",
+      "k": 400,
+      "k_squared_beta": "1"
+    },
+    {
+      "M": 65536,
+      "beta": "1/16777216",
+      "k": 4096,
+      "k_squared_beta": "1"
+    },
+    {
+      "M": 65536,
+      "beta": "17/33554432",
+      "k": 1404,
+      "k_squared_beta": "2094417/2097152"
+    },
+    {
+      "M": 65536,
+      "beta": "1/1048576",
+      "k": 1024,
+      "k_squared_beta": "1"
+    },
+    {
+      "M": 1000000,
+      "beta": "1/3906250000",
+      "k": 62500,
+      "k_squared_beta": "1"
+    },
+    {
+      "M": 1000000,
+      "beta": "15689/500000000000",
+      "k": 5645,
+      "k_squared_beta": "19997842649/20000000000"
+    },
+    {
+      "M": 1000000,
+      "beta": "1/16000000",
+      "k": 4000,
+      "k_squared_beta": "1"
+    },
+    {
+      "M": 16777216,
+      "beta": "1/1099511627776",
+      "k": 1048576,
+      "k_squared_beta": "1"
+    },
+    {
+      "M": 16777216,
+      "beta": "4097/2199023255552",
+      "k": 23167,
+      "k_squared_beta": "2198900415233/2199023255552"
+    },
+    {
+      "M": 16777216,
+      "beta": "1/268435456",
+      "k": 16384,
+      "k_squared_beta": "1"
+    }
+  ],
+  "proof_sha256": "5cf1f9ba5dca0e5cb7dd2a703bca163f87e46f5eb16ddf5563837d873e9072e7",
+  "limits": "Finite rounding, source inclusion and elementary algebra only. Accepted BK002 provides the full-word constrained-risk theorem; generic upper interfaces and asymptotic curve arguments require fresh full review."
+}
