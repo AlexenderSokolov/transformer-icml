@@ -1,0 +1,157 @@
+{
+  "symbolic_stationarity": true,
+  "symbolic_ratio_table": true,
+  "domain_nonnegativity_certificates": [
+    {
+      "cell": [
+        0,
+        0
+      ],
+      "numerator": "v**6 + 48*v**5 + 959*v**4 + 10206*v**3 + 61008*v**2 + 194176*v + 257025",
+      "denominator": "v**6 + 48*v**5 + 960*v**4 + 10240*v**3 + 61440*v**2 + 196608*v + 262144"
+    },
+    {
+      "cell": [
+        0,
+        1
+      ],
+      "numerator": "v**3 + 23*v**2 + 176*v + 447",
+      "denominator": "v**4 + 32*v**3 + 384*v**2 + 2048*v + 4096"
+    },
+    {
+      "cell": [
+        0,
+        2
+      ],
+      "numerator": "v + 6",
+      "denominator": "2*v**2 + 32*v + 128"
+    },
+    {
+      "cell": [
+        0,
+        3
+      ],
+      "numerator": "0",
+      "denominator": "1"
+    },
+    {
+      "cell": [
+        1,
+        0
+      ],
+      "numerator": "v + 6",
+      "denominator": "2*v**2 + 32*v + 128"
+    },
+    {
+      "cell": [
+        1,
+        1
+      ],
+      "numerator": "v**4 + 31*v**3 + 360*v**2 + 1856*v + 3582",
+      "denominator": "2*v**2 + 32*v + 128"
+    },
+    {
+      "cell": [
+        1,
+        2
+      ],
+      "numerator": "v**3 + 24*v**2 + 192*v + 510",
+      "denominator": "2*v**2 + 32*v + 128"
+    },
+    {
+      "cell": [
+        1,
+        3
+      ],
+      "numerator": "v**3 + 23*v**2 + 176*v + 447",
+      "denominator": "v**2 + 16*v + 64"
+    },
+    {
+      "cell": [
+        2,
+        0
+      ],
+      "numerator": "v**3 + 23*v**2 + 176*v + 447",
+      "denominator": "v**4 + 32*v**3 + 384*v**2 + 2048*v + 4096"
+    },
+    {
+      "cell": [
+        2,
+        1
+      ],
+      "numerator": "0",
+      "denominator": "1"
+    },
+    {
+      "cell": [
+        2,
+        2
+      ],
+      "numerator": "v**4 + 31*v**3 + 360*v**2 + 1856*v + 3582",
+      "denominator": "2*v**2 + 32*v + 128"
+    },
+    {
+      "cell": [
+        2,
+        3
+      ],
+      "numerator": "v**3 + 23*v**2 + 176*v + 447",
+      "denominator": "v**2 + 16*v + 64"
+    },
+    {
+      "cell": [
+        3,
+        0
+      ],
+      "numerator": "0",
+      "denominator": "1"
+    },
+    {
+      "cell": [
+        3,
+        1
+      ],
+      "numerator": "v**3 + 23*v**2 + 176*v + 447",
+      "denominator": "v**2 + 16*v + 64"
+    },
+    {
+      "cell": [
+        3,
+        2
+      ],
+      "numerator": "v**3 + 23*v**2 + 176*v + 447",
+      "denominator": "v**2 + 16*v + 64"
+    },
+    {
+      "cell": [
+        3,
+        3
+      ],
+      "numerator": "2*v**3 + 44*v**2 + 322*v + 783",
+      "denominator": "v**2 + 16*v + 64"
+    }
+  ],
+  "exact_rational_horizons": [
+    {
+      "epsilon": "1/8",
+      "n": 4,
+      "pcc": 0.6819000244140625,
+      "marginal": 0.15398787610299353,
+      "future": 0.14731763465474365
+    },
+    {
+      "epsilon": "1/10",
+      "n": 6,
+      "pcc": 0.701166631005,
+      "marginal": 0.1319335463194206,
+      "future": 0.12393668454982498
+    },
+    {
+      "epsilon": "1/16",
+      "n": 16,
+      "pcc": 0.7461464274714245,
+      "marginal": 0.09054559612270265,
+      "future": 0.08278488974831719
+    }
+  ]
+}

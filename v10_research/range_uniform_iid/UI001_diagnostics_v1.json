@@ -1,0 +1,249 @@
+{
+  "status": "PASS",
+  "warning": "Finite corroboration only, not formal proof or original-network execution",
+  "conditional_experiments": [
+    {
+      "kappa": 1.0,
+      "conditional_cases": 192,
+      "revealed_bits": 6,
+      "variance_bound_max_ratio": 0.04378848109682257,
+      "max_curve_derivative": 0.24911554926350682
+    },
+    {
+      "kappa": 10000.0,
+      "conditional_cases": 768,
+      "revealed_bits": 8,
+      "variance_bound_max_ratio": 0.021731561048242882,
+      "max_curve_derivative": 1.0408615695288463
+    },
+    {
+      "kappa": 1e+18,
+      "conditional_cases": 384,
+      "revealed_bits": 7,
+      "variance_bound_max_ratio": 0.02374339102829247,
+      "max_curve_derivative": 1.1670223766270753
+    },
+    {
+      "kappa": 1e+100,
+      "conditional_cases": 384,
+      "revealed_bits": 7,
+      "variance_bound_max_ratio": 0.023454885484247172,
+      "max_curve_derivative": 0.011136796143861075
+    }
+  ],
+  "posterior_local_integrals": [
+    {
+      "N": 1,
+      "t": 0,
+      "local_normalizer_scaled": 0.015462239583333332
+    },
+    {
+      "N": 1,
+      "t": 0,
+      "local_normalizer_scaled": 0.015462239583333332
+    },
+    {
+      "N": 1,
+      "t": 0,
+      "local_normalizer_scaled": 0.015462239583333332
+    },
+    {
+      "N": 1,
+      "t": 0,
+      "local_normalizer_scaled": 0.015462239583333332
+    },
+    {
+      "N": 1,
+      "t": 1,
+      "local_normalizer_scaled": 0.015462239583333332
+    },
+    {
+      "N": 1,
+      "t": 1,
+      "local_normalizer_scaled": 0.015462239583333332
+    },
+    {
+      "N": 1,
+      "t": 1,
+      "local_normalizer_scaled": 0.015462239583333332
+    },
+    {
+      "N": 2,
+      "t": 0,
+      "local_normalizer_scaled": 0.0153959522920038
+    },
+    {
+      "N": 2,
+      "t": 0,
+      "local_normalizer_scaled": 0.0153959522920038
+    },
+    {
+      "N": 2,
+      "t": 0,
+      "local_normalizer_scaled": 0.0153959522920038
+    },
+    {
+      "N": 2,
+      "t": 1,
+      "local_normalizer_scaled": 0.015622456868489582
+    },
+    {
+      "N": 2,
+      "t": 2,
+      "local_normalizer_scaled": 0.0153959522920038
+    },
+    {
+      "N": 2,
+      "t": 2,
+      "local_normalizer_scaled": 0.0153959522920038
+    },
+    {
+      "N": 2,
+      "t": 2,
+      "local_normalizer_scaled": 0.0153959522920038
+    },
+    {
+      "N": 10,
+      "t": 0,
+      "local_normalizer_scaled": 0.015120346089795803
+    },
+    {
+      "N": 10,
+      "t": 0,
+      "local_normalizer_scaled": 0.015120346089795803
+    },
+    {
+      "N": 10,
+      "t": 2,
+      "local_normalizer_scaled": 0.01551961924799005
+    },
+    {
+      "N": 10,
+      "t": 5,
+      "local_normalizer_scaled": 0.015622457166492017
+    },
+    {
+      "N": 10,
+      "t": 8,
+      "local_normalizer_scaled": 0.015519619247990052
+    },
+    {
+      "N": 10,
+      "t": 10,
+      "local_normalizer_scaled": 0.0151203460897958
+    },
+    {
+      "N": 10,
+      "t": 10,
+      "local_normalizer_scaled": 0.0151203460897958
+    },
+    {
+      "N": 100,
+      "t": 0,
+      "local_normalizer_scaled": 0.01410380552577641
+    },
+    {
+      "N": 100,
+      "t": 0,
+      "local_normalizer_scaled": 0.01410380552577641
+    },
+    {
+      "N": 100,
+      "t": 25,
+      "local_normalizer_scaled": 0.015621616850579959
+    },
+    {
+      "N": 100,
+      "t": 50,
+      "local_normalizer_scaled": 0.015622457233527285
+    },
+    {
+      "N": 100,
+      "t": 75,
+      "local_normalizer_scaled": 0.015621616850579978
+    },
+    {
+      "N": 100,
+      "t": 100,
+      "local_normalizer_scaled": 0.014103805525776435
+    },
+    {
+      "N": 100,
+      "t": 100,
+      "local_normalizer_scaled": 0.014103805525776435
+    },
+    {
+      "N": 10000,
+      "t": 2200,
+      "local_normalizer_scaled": 0.013822362717878518
+    },
+    {
+      "N": 10000,
+      "t": 2500,
+      "local_normalizer_scaled": 0.015621610525961291
+    },
+    {
+      "N": 10000,
+      "t": 5000,
+      "local_normalizer_scaled": 0.015622457240894666
+    },
+    {
+      "N": 10000,
+      "t": 7500,
+      "local_normalizer_scaled": 0.015621610525961907
+    },
+    {
+      "N": 10000,
+      "t": 7800,
+      "local_normalizer_scaled": 0.013822362717878518
+    },
+    {
+      "N": 1000000,
+      "t": 247000,
+      "local_normalizer_scaled": 0.013822159711082966
+    },
+    {
+      "N": 1000000,
+      "t": 250000,
+      "local_normalizer_scaled": 0.015621609889640075
+    },
+    {
+      "N": 1000000,
+      "t": 500000,
+      "local_normalizer_scaled": 0.01562245724068304
+    },
+    {
+      "N": 1000000,
+      "t": 750000,
+      "local_normalizer_scaled": 0.015621609889626688
+    },
+    {
+      "N": 1000000,
+      "t": 753000,
+      "local_normalizer_scaled": 0.013822159710987547
+    }
+  ],
+  "constants": [
+    {
+      "D": 1,
+      "r": 1,
+      "C": 42393600,
+      "heavy_failure": 1.3586956521739131e-05,
+      "tube_failure": 0.01
+    },
+    {
+      "D": 2,
+      "r": 2,
+      "C": 2787980083200,
+      "heavy_failure": 1.785034272658035e-07,
+      "tube_failure": 0.01
+    },
+    {
+      "D": 4,
+      "r": 3,
+      "C": 72271323463680000,
+      "heavy_failure": 3.305304352424771e-09,
+      "tube_failure": 0.01
+    }
+  ]
+}

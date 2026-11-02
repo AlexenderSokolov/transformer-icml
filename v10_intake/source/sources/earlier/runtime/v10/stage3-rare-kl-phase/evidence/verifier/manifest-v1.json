@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "review_kind": "INDEPENDENT_FIXED_VERSION_DISCUSSION_ONLY",
+  "c1": {
+    "obligation_id": "1dd6b3b9191952ba424db347dab176cd3336d5399831f867f595a13a40e5ce25",
+    "verdict": "PASS_MATHEMATICAL_REVIEW_ONLY",
+    "mandatory_math_repairs": []
+  },
+  "c2": {
+    "obligation_id": "8b179af3ef2fe36eca7503ff37e9baca6ba118d546cf884db6ad7e4da0d0b6f8",
+    "verdict": "CONDITIONAL_PASS_ON_EXACT_C1",
+    "native_predecessor": "PENDING actual C1 Fact ID",
+    "mandatory_math_repairs": []
+  },
+  "c3_and_stage_root_certified": false,
+  "inputs": [
+    {
+      "path": "PROBLEM.md",
+      "sha256": "efc51898a4a702040f9048e2f53121ec59020586b12221fd57e1015940ec5751",
+      "bytes": 12619
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c1-proof-v1.md",
+      "sha256": "5884ffc213a0aaa950b48f881abd4519440800737485b5c3aae9d293c38fb38d",
+      "bytes": 21542
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c2-proof-v1.md",
+      "sha256": "a008ec575571973d7df08ece2468c901744a6c3680df08b15a008c38ff1d7105",
+      "bytes": 14467
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/adversarial-review-v1.md",
+      "sha256": "b9273b1e96d5fd16d5eaaa5ed8ce75e8385cd57d6ec9dbe2589582a54f86ad64",
+      "bytes": 21864
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/stats-grid-review-v1.md",
+      "sha256": "b682098e988151e907df8c508c901742f2d3ee18569b8c376ca32cd904083592",
+      "bytes": 7029
+    },
+    {
+      "path": "[Non-scientific operational metadata omitted.]",
+      "sha256": "2174a3d8961b0bd390ae64e6be1b46dea059ba494f63dad98eb5604bba8c3e03",
+      "bytes": 492
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/check_adversarial_v1.py",
+      "sha256": "06c15bf5a46002fe7d866345de9b5f3a0205160fddd3232033715c21bfad0092",
+      "bytes": 5535
+    }
+  ],
+  "outputs_excluding_self_and_checksum_index": [
+    {
+      "path": "outputs/001-conditional-grid/verifier/stats-grid-review-v1.md",
+      "sha256": "9a7ec137568f5494d260a23a6bfdf6e945a11edc1fce9cb0a033717127fb2161",
+      "bytes": 17996
+    },
+    {
+      "path": "outputs/001-conditional-grid/verifier/check_stats_grid_v1.py",
+      "sha256": "fbcc3cb849fb69ec88e9801cfc7f966bae4ba33527ac115bf96b6b34715a3e35",
+      "bytes": 8841
+    },
+    {
+      "path": "outputs/001-conditional-grid/verifier/check-results-v1.json",
+      "sha256": "577194f8c4913e61a65750dc94b540e68663878000e23240b5e60159e73ef553",
+      "bytes": 1308
+    },
+    {
+      "path": "outputs/001-conditional-grid/verifier/native-state-v1.json",
+      "sha256": "697c79ff6c6d52fd6ea4f79f14647f51569b9ea485726616c0f9dde992ffd0e9",
+      "bytes": 3384
+    }
+  ],
+  "actual_new_fact_ids": [],
+  "actual_new_evidence_ids": [],
+  "gateway_calls": 0,
+  "research_graph_mutations": 0
+}

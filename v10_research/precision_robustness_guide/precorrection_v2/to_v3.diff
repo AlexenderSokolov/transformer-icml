@@ -1,0 +1,23 @@
+--- v10_research/precision_robustness_guide/precorrection_v2/guide_math_zh.md	2026-11-02 00:18:17.120347231 -0800
++++ v10_research/precision_robustness_guide/guide_math_zh.md	2026-11-02 00:18:17.134377053 -0800
+@@ -88,9 +88,9 @@
+ 
+ $$\widehat p_b=\frac{\widehat x_{S,b}+1/M}{\sum_a\widehat x_{S,a}+K/M}.$$
+ 
+-分母始终为正，空行也有定义。风险分析中的真实 $J_S$ 只是证明变量，不是额外传输的信息。任意初始化下的实际末端占用界是
++分母始终为正，空行也有定义。风险分析中的真实 $J_S$ 只是证明变量，不是额外传输的信息。对任意正整数阈值 $w$，任意初始化下的实际末端占用界是
+ 
+-$$\Pr(J_S<w)\le\min\{1,K^4w/(M+1)\},\qquad w\ge1.$$
++$$\Pr(J_S<w)\le\min\{1,K^4w/(M+1)\},\qquad w\in\mathbb N,\ w\ge1.$$
+ 
+ 这个不依赖混合的界把稀少访问与归一化误差联系起来。记 $\Psi(0)=0$，在 $0<z<1$ 时 $\Psi(z)=z(1+\ln(1/z))$，在 $z\ge1$ 时取一，则
+ 
+@@ -282,7 +282,7 @@
+ 
+ **混合。** MD001 由综合定理、上界和二元下界三份承重证明组成；独立审查绑定三者，并核查任意初始化、纯度性质及不同字长的交接。它只闭合指定平方根网格带内的混合敏感深度阶。
+ 
+-已知机制应归功于先前工作。Adler、Tang 与 Polyanskiy 的概率压扩工作讨论已知概率向量的非线性变换与量化；Telgarsky 的 ReLU 帐篷迭代是标准深度构造。Uss 等在 ICML 2025 使用二维 Hilbert 曲线进行低精度设备上的高精度标量表示；Taylor、Mili 与 Zaghloul 的模拟纠错工作研究曲线管打包和最近曲线恢复。它们各有不同损失、噪声或计算设定，既不能直接充当本项目定理，也不能被本项目的特定失败反驳。
++已知机制应归功于先前工作。Adler、Tang 与 Polyanskiy 的概率压扩工作讨论已知概率向量的非线性变换与量化；Telgarsky 的 ReLU 帐篷迭代是标准深度构造。Uss 等在 ICML 2025 使用二维 Hilbert 曲线进行低精度设备上的高精度标量表示；Taylor、Mili 与 Zaghloul 的模拟纠错工作研究曲线管打包和最近曲线恢复。它们各有不同损失、噪声或计算设定，既不能直接充当本项目定理，也不能被本项目的特定失败反驳。原始来源：[概率压扩](https://web.mit.edu/jstang/www/papers/companders_JSAIT.pdf)、[帐篷迭代](https://proceedings.mlr.press/v49/telgarsky16.html)、[Hilbert 曲线](https://proceedings.mlr.press/v267/uss25a.html)、[曲线管打包](https://www.mitre.org/sites/default/files/pdf/12_4920.pdf)。归因仅据已核读部分，不表示审查了各论文的全部证明与实验。
+ 
+ 本阶段尚未解决：一般马尔可夫类的完整维数容量边界；独立幅度噪声下的一般类充分性；增长字母表或增长维数的一致常数；最低内部精度和最优总工作；反复内部故障；从训练到这些构造的可达性。既有归因调查也没有认证定理新颖性或排除更近的文献。
+ 

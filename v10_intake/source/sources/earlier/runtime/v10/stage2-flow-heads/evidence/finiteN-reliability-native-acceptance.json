@@ -1,0 +1,150 @@
+{
+  "checked_at": "2026-10-25T00:00:28.656823+00:00",
+  "root_status": "OPEN",
+  "obligation": {
+    "obligation_id": "af879858f3020c501dff7a366f8e1cfdcda36eb6a8c4f2a79fa1af839eb41390",
+    "contract_id": "22e80d3d620c36cfc0bbd297101a5efabe634d7fd696b4cae200963af52af02a",
+    "exact_statement": "For the exact finite family Pi_(N,h) admitted in C1 Fact b2f4d10fa0a69e00, prove explicit finite-N joint-statistic and TV prediction bounds on a single path event, retaining K,N,accuracy,context-frequency and declared source dependence bounds, and substitute the actual h,p and full stored/working/operation resource functions. Handle zero counts and fixed-context, max-context, actual terminal, conditional-terminal and frequency-weighted risks without assuming independent query/history. On this same fully enumerated finite visible code, declare a located post-aggregation error model covering all statistical coordinates and copies, trace normalizers/differencing/flags/endpoint correction/final conditioning and correlated errors, and prove a nonempty robustness region. Supply a concrete finite-grid pre-fanout P2 error construction yielding a substantive finite-N prediction failure for the specified difference decoder, together with a fully charged finite P1-only counterconstruction on a declared unknown genuine second-order subfamily (or a rigorously justified corrected failure/counterconstruction), so the scope of any lower bound is explicit. Preserve all intact side information, distinguish nominal evaluation from perturbation rounding, and give compatible achievable stochastic bounds. No population-aliasing/collision or output-quantization shortcut; no general all-decoder lower bound or resource-optimality claim. This discharges only the finite-history/reliability clauses actually proved; C2 strong baseline and C4 integration remain separate.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the exact current stage scope; theta is unknown and no parameter depends on the test law.",
+        "Stationary strictly positive second-order sources; uniform finite-N claims explicitly declare their additional class bounds.",
+        "All side information, positions, endpoint access, finite arithmetic, residuals and program/parameter storage are charged.",
+        "Binary product kernels map to the earlier sign-B kernel as inD2; categorical extension and complete-contextA stay distinct.",
+        "Copied prior material is provenance and must undergo this project native evidence path when used as an admitted premise."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers>=2",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "D3-D5 causal simplex family indexed byN andaccuracy, with theta-independent accuracy schedule",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "stationarily initialized strictly positive second-order tables",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers>=3",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers>=2; N integers>=3; theta asD1; proposed gamma=kappa=1, lambda1=1,lambda2=2, all fixed independent ofN andtheta; comparatorA fixed beta>0 subject to the same declared score-range budget; epsilon>0 and alpha in(0,1); finite resources asD5; any enlarged coefficient/error/source domain must be explicitly proved.",
+      "definitions_hash": "67efbc8a85f90a92300e57ccca51716ec7e6481cb8c84f9705782ed7f31c681d"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "68832ce6bd94b4b08ae357de5d2e4fb34e7c0fb46ae72da5b44809faecc87cec"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": {
+    "artifact_id": "68832ce6bd94b4b08ae357de5d2e4fb34e7c0fb46ae72da5b44809faecc87cec",
+    "content_hash": "165bb3532e35e6c6f2e3828c6db31e5ec9037b328335d6de0c0da153cd79168e",
+    "producer": "fact_submit:2f813459a8ff4026",
+    "contract_id": "22e80d3d620c36cfc0bbd297101a5efabe634d7fd696b4cae200963af52af02a",
+    "evidence_kind": "LLM_CHECKED_PROOF",
+    "exact_claim": "For the exact finite family Pi_(N,h) admitted in C1 Fact b2f4d10fa0a69e00, prove explicit finite-N joint-statistic and TV prediction bounds on a single path event, retaining K,N,accuracy,context-frequency and declared source dependence bounds, and substitute the actual h,p and full stored/working/operation resource functions. Handle zero counts and fixed-context, max-context, actual terminal, conditional-terminal and frequency-weighted risks without assuming independent query/history. On this same fully enumerated finite visible code, declare a located post-aggregation error model covering all statistical coordinates and copies, trace normalizers/differencing/flags/endpoint correction/final conditioning and correlated errors, and prove a nonempty robustness region. Supply a concrete finite-grid pre-fanout P2 error construction yielding a substantive finite-N prediction failure for the specified difference decoder, together with a fully charged finite P1-only counterconstruction on a declared unknown genuine second-order subfamily (or a rigorously justified corrected failure/counterconstruction), so the scope of any lower bound is explicit. Preserve all intact side information, distinguish nominal evaluation from perturbation rounding, and give compatible achievable stochastic bounds. No population-aliasing/collision or output-quantization shortcut; no general all-decoder lower bound or resource-optimality claim. This discharges only the finite-history/reliability clauses actually proved; C2 strong baseline and C4 integration remain separate.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the exact current stage scope; theta is unknown and no parameter depends on the test law.",
+        "Stationary strictly positive second-order sources; uniform finite-N claims explicitly declare their additional class bounds.",
+        "All side information, positions, endpoint access, finite arithmetic, residuals and program/parameter storage are charged.",
+        "Binary product kernels map to the earlier sign-B kernel as inD2; categorical extension and complete-contextA stay distinct.",
+        "Copied prior material is provenance and must undergo this project native evidence path when used as an admitted premise."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers>=2",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "D3-D5 causal simplex family indexed byN andaccuracy, with theta-independent accuracy schedule",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "stationarily initialized strictly positive second-order tables",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers>=3",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers>=2; N integers>=3; theta asD1; proposed gamma=kappa=1, lambda1=1,lambda2=2, all fixed independent ofN andtheta; comparatorA fixed beta>0 subject to the same declared score-range budget; epsilon>0 and alpha in(0,1); finite resources asD5; any enlarged coefficient/error/source domain must be explicitly proved.",
+      "definitions_hash": "67efbc8a85f90a92300e57ccca51716ec7e6481cb8c84f9705782ed7f31c681d"
+    },
+    "input_hashes": [
+      "14b5ddd18a2bca32dbf8ab793a722072ce444d4f590ed785916b6c2258503ffd",
+      "165bb3532e35e6c6f2e3828c6db31e5ec9037b328335d6de0c0da153cd79168e",
+      "b7da05fabbbee7795400e05b215c3ced69e9f2132280a7ab964ad514775d4e61"
+    ],
+    "environment_hash": "806a741f2f79afcc5f90f244f113873df48e397cd62338ec5c16430177173fcb",
+    "checker_id": "fact_submit",
+    "checker_version": "1",
+    "checker_result": "PASS",
+    "created_at": "2026-10-24T23:48:49Z",
+    "validity": "VALID"
+  },
+  "admission": {
+    "record_id": "2f813459a8ff4026",
+    "provenance": "fact_submit",
+    "transport_status": "ok",
+    "verdict": "correct",
+    "fact_id": "f9a79122946f24c5",
+    "exact_claim": "For the exact finite family Pi_(N,h) admitted in C1 Fact b2f4d10fa0a69e00, prove explicit finite-N joint-statistic and TV prediction bounds on a single path event, retaining K,N,accuracy,context-frequency and declared source dependence bounds, and substitute the actual h,p and full stored/working/operation resource functions. Handle zero counts and fixed-context, max-context, actual terminal, conditional-terminal and frequency-weighted risks without assuming independent query/history. On this same fully enumerated finite visible code, declare a located post-aggregation error model covering all statistical coordinates and copies, trace normalizers/differencing/flags/endpoint correction/final conditioning and correlated errors, and prove a nonempty robustness region. Supply a concrete finite-grid pre-fanout P2 error construction yielding a substantive finite-N prediction failure for the specified difference decoder, together with a fully charged finite P1-only counterconstruction on a declared unknown genuine second-order subfamily (or a rigorously justified corrected failure/counterconstruction), so the scope of any lower bound is explicit. Preserve all intact side information, distinguish nominal evaluation from perturbation rounding, and give compatible achievable stochastic bounds. No population-aliasing/collision or output-quantization shortcut; no general all-decoder lower bound or resource-optimality claim. This discharges only the finite-history/reliability clauses actually proved; C2 strong baseline and C4 integration remain separate.",
+    "write_error": null,
+    "accepted": true,
+    "reasons": []
+  },
+  "fact_id": "f9a79122946f24c5",
+  "fact_sha256": "165bb3532e35e6c6f2e3828c6db31e5ec9037b328335d6de0c0da153cd79168e",
+  "proof_sha256": "2694840f91b432bf98c551ea5607df41a08e757500a785a8a03e019230ddfd4b",
+  "predecessors": [
+    "b2f4d10fa0a69e00",
+    "bcd4541db2cf4c1a"
+  ],
+  "manifest_entries_verified": 11,
+  "cold_result_path": "[redacted user home]/icml-transformer/runs/flow-heads-20261025/history/icml-flow-heads/verification/[redacted routing identifier]-policy5b4098d08979fe87/runs/[redacted review run identifier]/verification.json",
+  "cold_result": {
+    "verification_report": {
+      "summary": "Reviewed Sections 1–12 of frozen proof v1 (SHA256 2694840f91b432bf98c551ea5607df41a08e757500a785a8a03e019230ddfd4b) sequentially against contract 22e80d3d620c36cfc0bbd297101a5efabe634d7fd696b4cae200963af52af02a. Read admitted Facts b2f4d10fa0a69e00 and bcd4541db2cf4c1a, checked their statements and P3 chains, and verified the cited artifact hashes. The joint visit/occupancy events, zero-count handling, dependent terminal and weighted risks, precision/resource substitutions, complete visible-code interface, correlated grid-error propagation, nonzero robustness region, integer P2 attack, and charged intact-P1 counterconstruction support the stated finite-history/reliability conclusions. Exact rational checks confirm the finite witness inequalities; these checks do not enumerate histories or replace the probability proofs. No external-paper theorem is invoked, and no P1/P3/P5/P6 violation was found. No server-internal attestation or formal certification is claimed; admitted prerequisites are inherited within scope, not independently re-proved. This is one independent-context LLM admission review, with no cross-model-independence claim. Acceptance is limited to the specified decoder/error experiment and proved reliability clauses; C2, C4, general decoder lower bounds, and resource optimality remain outside this result. This is an LLM review, not formal verification or external peer review; cross-model independence is not established.",
+      "critical_errors": [],
+      "gaps": []
+    },
+    "verdict": "correct",
+    "repair_hints": ""
+  },
+  "scope_note": "Specified complete grid port and original decoder failure plus paid intact-P1 replacement. Numerical witness is theoretical atN=2^25,h39; expected terminal TV, not conditional0.032 or universal decoder lower bound."
+}

@@ -1,0 +1,199 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=21mm,headheight=15pt]{geometry}
+\usepackage{fontspec,amsmath,amssymb,booktabs,tabularx,enumitem,fancyhdr,hyperref}
+\setmainfont{Noto Serif CJK SC}\setsansfont{Noto Sans CJK SC}
+\XeTeXlinebreaklocale "zh"\XeTeXlinebreakskip=0pt plus 1pt
+\hypersetup{hidelinks,pdfauthor={},pdftitle={分组再生与全参数适应上界}}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}\setlength{\emergencystretch}{3em}\linespread{1.06}
+\setlist[itemize]{leftmargin=1.25em,itemsep=3pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small 二阶预测的条件统计}\fancyhead[R]{\small 2026年10月30日阶段结果}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}
+\newcommand{\TV}{\operatorname{TV}}\newcommand{\E}{\mathbb E}\newcommand{\Prob}{\mathbb P}
+\newcommand{\head}[2]{{\small\sffamily #1}\par\vspace{2pt}{\LARGE\bfseries #2}\par\vspace{5pt}}
+\newcommand{\entry}[1]{\vfill{\noindent\small\raggedright 正文入口\quad #1\par}}
+\begin{document}
+\head{主要结论与固定实验}{分组再生与全参数适应上界}
+\textbf{同一个不读取 $\beta$ 的预测器，在全部参数域达到真实公共 minimax 风险的 $\sqrt{\log(eK)}$ 倍上界。} R005 给出
+\[
+ 1\le\Gamma_{\rm all}(K,M)\le 2^{33}\sqrt{\log(eK)},
+ \qquad K\ge2,\ M\ge1.
+\]
+这\textbf{不是匹配的适应代价结论}：下界仅为 $1$，尚未证明对数因子必要，也未排除常数适应。R004 去掉两项 moderate-log 证明限制；R002 的临界结果仍限于指定星形族，完整类的关键占用义务未证。
+
+\textbf{实验不变。} $K,M$ 为整数，观察全部 $X_1,\ldots,X_{M+2}$。齐次合法二阶表 $\theta$ 诱导
+\[
+ Y_j=(X_{j+1},X_{j+2}),\quad
+ P((a,b),(b,c))=\theta_{ab}(c),
+\]
+\[
+ \mathcal D_2(\beta)=\{(\theta,\mu):\exists\pi,\ \pi P=\pi,
+ \ P^2(s,t)\ge\beta\pi(t)\ \forall s,t\}.
+\]
+初始对律 $\mu$ 任意，包括平稳支撑外。$\pi$ 隐藏；条件须在\textbf{全部状态}成立。仅计数 departure $0,\ldots,M-1$，目标为实际末对 $Y_M$ 的下一符号律；未观察 departure $M$。损失为无条件期望半 $L^1$，不是平方 TV。
+
+\textbf{固定规则。} 设 $n=M+1$，$g=\min\{1,\sqrt{K^5/n}\}$，
+\[
+ C_s(c)=\sum_{j=0}^{M-1}\mathbf1\{Y_j=s,X_{j+3}=c\},\qquad
+ J=\sum_c C_{Y_M}(c),
+\]
+\[
+ q(c)=\frac{C_{Y_M}(c)+1}{J+K},\qquad
+ b(c)=\frac{\sum_{j=3}^{M+2}\mathbf1\{X_j=c\}+1}{M+K},
+\]
+\[
+ \rho(J)=\min\{g,64\sqrt{K/(J+K)}\},\qquad
+ \mathrm{ALG}=\begin{cases}b,&\TV(q,b)\le\rho(J),\\q,&\text{否则}.\end{cases}
+\]
+ALG 仅读 $K,M$ 与历史；不读 $\beta$、类标签、$\theta,\mu,\pi$、隐藏再生标签或额外数据。所有结果使用这一\textbf{相同}规则，不按参数切换算法。
+
+公共 minimax 的下确界遍历共用的可随机化完整历史预测器；ALG 是确定性规则。记 $L_A(\beta)=\sup_{\mathcal D_2(\beta)}\E\TV(A,\theta_{Y_M})$，
+$R(K,M,\beta)=\inf_{A\text{ 可读 }\beta}L_A(\beta)$，$R^+=L_q(\beta)$，并定义
+\[
+ \Gamma_{\rm all}=\inf_{A\text{ 不读 }\beta}\ \sup_{\beta\in[0,1]}
+ \frac{L_A(\beta)}{R(K,M,\beta)}.
+\]
+\entry{R005 完整正文与独立审查；R001 的实验与算法；继承 S024、S025。}
+\newpage
+\head{R001 的完整证书接口}{混合前缀占用与同算法转移}
+\textbf{R001 是新写重建，不是找回缺失的历史原文。} 它从实际可读的 S020、S024 等接口重新给出混合前缀桥，并把其显式证书转给固定 ALG；不把历史叙述当作证明前提。
+
+对 $K\ge2,M\ge1,0<\beta<1$，令 $\delta=1-\beta$、$r=\lfloor M/2\rfloor$，并置
+\[
+ q_0=\delta^r,\quad \bar q=\delta^{\lfloor(M-1)/2\rfloor},\quad
+ b_{\rm mix}=\beta K^2[1+(K-1)\bar q],
+\]
+\[
+ A=\delta^M\min\{1,48g+\beta\},\qquad
+ B=\min\{q_0,80\sqrt{q_0b_{\rm mix}[K+\log(1/q_0)]}\},
+\]
+\[
+ q_j=\beta\delta^{j-1},\quad L_j=2(r-j),\qquad
+ S=\sum_{j=1}^{r}q_j\min\!\left\{1,80\sqrt{\frac{K^2[K+\log(1/q_j)]}{L_j+1}}\right\},
+\]
+\[
+ U_{\rm mix}=\min\{1,48g,A+B+S\}.
+\]
+完整类的原规则及同一 ALG 满足
+\[
+ R^+\le U_{\rm mix},\qquad
+ L_{\rm ALG}\le\min\{1,49g,2A+\tfrac{13}{5}(B+S)\}
+ \le\min\{1,3U_{\rm mix}\}.
+\]
+这是\textbf{证书适应}，不表示 $U_{\rm mix}$ 等于真实 minimax 风险。
+
+\textbf{承重路径。} 全状态二步条件先给每行 $\theta_{ab}\ge\beta p$，其中 $p$ 为 $\pi$ 的单坐标边际。因此残余表 $T=(\theta-\beta p)/\delta$ 合法。无符号刷新事件用普通 $T$ 轨迹的一般界；最后刷新后的后缀只用于下界原始完整计数，不删除已观测前缀。
+
+前缀混合把非平稳的额外 $K$ 因子压到 $\bar q$ 项。与末端对齐的 pair 再生标签可在完整历史上联合构造，但\textbf{不宣称两套标签无条件独立}。事件加权的原始行栈不等式始终在无条件独立栈边际上使用；不把条件于标签后的栈说成 IID。
+
+半径引理将每个事件的损失证书转为阈值代价，逐路径
+$\ell_{\rm ALG}\le\ell_q+\rho(J)$ 给出因子 $3$。$M=1$ 时成功和为空，最后零长度后缀与奇偶对齐均保留。
+
+\textbf{显式编辑澄清。} 冻结 R001 末端旁注中的 $i$ 定义为
+$i=\min\{1,\sqrt{K/(M+1)}\}$。在 $\beta=0,1$ 分别使用既有 $49g$ 与 $858i$ 上界，\textbf{不}把端点代入含 $\delta$ 除法的内部公式。原证明字节未被改写。
+\entry{proofs/R001；reviews/R001；S020 §§3--7、S024 §§1、4、5。}
+\newpage
+\head{R003 与 R004 的有限匹配域}{分组再生去掉 moderate log 限制}
+\textbf{R004 新增的范围。} 对全部 $K\ge2,M\ge1,0<\beta\le1/2$，pair 再生至少成功一次的事件 $E_+$ 满足
+\[
+ \E[\ell_q\mathbf1_{E_+}]\le\min\{1,6400a\},\qquad
+ a=\min\{1,\sqrt{K^3/n}\}.
+\]
+不再要求 $\log(1/\beta)\le K$ 或 $r[-\log\delta]\le K$。证明将早期成功合并，晚期按剩余后缀长度二进分组；每组用其\textbf{质量上界}而非伪造的精确质量。零长度最后后缀未遗漏。
+
+对 $M\ge K^4$，定义
+\[
+ D=\delta^n g,\quad h_* =\sqrt{K^4/n},\quad
+ T=\delta^{M/2}h_*,\quad t=\beta n,\quad
+ d=\min\{K,n/K^4\}.
+\]
+这里的 $T$ 是风险尺度，不是第 2 页的残余转移表。R004 给出
+\[
+ R^+\le\min\{1,6641a+96D+160\sqrt t\,T\},
+\]
+\[
+ L_{\rm ALG}\le\min\{1,3[6641a+96D+160\sqrt t\,T]\}.
+\]
+ALG 的转移按各组事件证书逐一进行，不能只从成功风险的一个标量上界推断阈值风险。
+
+\textbf{准确匹配区域。} 在 $M\ge K^4,0<\beta\le1/2$ 中，只要满足以下\textbf{任一}条件：
+\[
+ t\le d\delta^{M+2}\qquad\text{或}\qquad tK\delta^M\le1,
+\]
+令 $Z=\max\{a,D\}$，则
+\[
+ 2^{-18}Z\le R\le R^+\le\min\{1,6897Z\},
+ \qquad R\le L_{\rm ALG}\le\min\{1,20691Z\}.
+\]
+继承 S016 的真实共同 minimax 下界支撑左侧；不是将大上界证书当作下界。
+
+\textbf{保留 R003 的较小常数。} R003 是新写的有限域推论，亦非历史字节恢复。若再有
+$\log(1/\beta)\le K$ 且 $r[-\log\delta]\le K$，同一匹配区域上可用较小常数 $2675$ 与 $8025$；一般证书为
+\[
+ R^+\le\min\{1,2419a+96D+160\sqrt t\,T\},\quad
+ L_{\rm ALG}\le\min\{1,3[2419a+96D+160\sqrt t\,T]\}.
+\]
+R004 扩展范围但未宣称在旧子域改进常数。上述两个匹配条件不覆盖全部长历史域；$M=K^5,\ \beta=\log K/K^5$ 的临界缺口仍在。
+\entry{R003、R004 完整正文及独立审查；S016 下界与 S020 事件不等式。}
+\newpage
+\head{R002 已证明与尚未证明的分界}{完整前缀证据仍不等于全类闭合}
+\textbf{三项已接纳结果。} R002 在实际 S015 星形族上证明耦合障碍与原规则族内匹配，并对一般来源证明局部到达刚性、无条件前缀到达浓缩。它没有给出全类临界 $O(1/K)$ 上界。
+
+令 $E=\{\text{pair 无成功}\}\cap\{\text{symbol 至少一次成功}\}$，$q_0=\delta^{\lfloor M/2\rfloor}$。在合法星形族的可观测基底支撑事件 $\mathcal A$ 上，设 $H,S$ 为预定脆弱与安全 departure 数；对保持两套标准标签边际的\textbf{每一种}联合耦合，
+\[
+ \Prob(\mathcal A\cap E)=\delta^H(1-\delta^S).
+\]
+在 $M=K^5,\ \beta=\log K/K^5$ 上，$\Prob(E)/q_0\to1$。因此仅优化标签耦合不可能把事件质量统一改为 $o(q_0)$。\textbf{大事件质量不自动给大统计风险。}
+
+在 $K\ge13$ 的\textbf{同一受限族}上，条件于 $\mathcal A$（以及 $S>0$ 时的 $\mathcal A\cap E$），完整历史有精确乘积实验：令 $m=\lfloor(K-1)/4\rfloor$、$Q=\lfloor M/(2m)\rfloor$，实际末行的全计数为
+$\operatorname{Bin}(Q,1/m^2)$。结合吸收失败尾界，原始完整历史 add-one 风险为 $O(1/K)$；已有 S015 下界给该族 minimax 与原规则最坏风险均为 $\Theta(1/K)$。它不能提供希望中的 $\sqrt{\log K}/K$ 统计下界，也不能把族内乘积律迁移到任意选择行。
+
+\textbf{一般到达约束的作用与限度。} 对 $p(c)>0$，设 $R_c(d)=\pi(c,d)/p(c)$、$v_{bc}=\TV(\theta_{bc},R_c)$。R002 证明
+\[
+ \min_a\theta_{ab}(c)\ge\frac{\beta p(c)}{1-v_{bc}},\qquad
+ T_{ab}(c)\ge\frac{\beta p(c)v_{bc}}{\delta(1-v_{bc})}.
+\]
+局部界有合法两字母等号例；再配合实际前缀的指数超鞅界，可约束到达次数。但它不能自动传播到刷新后任意晚时刻的支撑外目标行，隐藏 $R_c$ 也不是可用的算法输入。
+
+\textbf{尚未证明的全类义务 O。} 对某个普适 $C$ 与兼容联合标签构造，是否总有
+\[
+ \Prob(E,J<w)\le\min\!\left\{q_0,
+ C\delta^M+C\left[\beta K^2+\frac{q_0K^3}{M+1}\right]w\right\}
+ \quad(w\ge1\text{ 整数})?
+\]
+已证明的事件裁剪归约表明：\textbf{若 O 成立}，临界全类原规则上界可降至 $O(1/K)$。O 本身仍未证。反驳 O 也只首先反驳计数命题，不自动建立统计下界。
+
+\textbf{审查澄清。} 条件于 $\mathcal A\cap E$ 的分布仅在 $S>0$ 时使用；$S=0$ 时保留加权零质量公式。裁剪式 (7) 的域为 $0<q\le1,\epsilon\ge0,b\ge0$，$q=0$、$b=0$ 直接处理。
+\entry{R002 §§1--6 与完整独立审查；S015 现有公开复制件及其精确原文映射。}
+\newpage
+\head{全域比较的证据与采用边界}{上界已经全域而精确代价仍开放}
+\textbf{R005 如何覆盖全部参数。} 在长历史弱条件域 $M\ge K^4,0<\beta\le1/2$，令 $H_*=\max\{a,D,T\}$，R004 与 S016 分别提供上界和
+$R\ge2^{-18}H_*$。关键标量比较为
+\[
+ \sqrt t\,T\le\sqrt{\tfrac{17}{16}\log(eK)}\,H_*.
+\]
+它利用 $T/a\le\sqrt K\exp[-Mt/(2n)]$，并非直接把 $\sqrt t$ 换成 $\sqrt{\log K}$。于是
+\[
+ L_{\rm ALG}\le21000\sqrt{\log(eK)}H_*
+ \le2^{33}\sqrt{\log(eK)}R.
+\]
+其余参数全部落在继承 S025 的原闭合并集：两个端点、$\beta\ge1/2$，或短历史弱条件条带。该处同一 ALG 的 $8000r_{\rm closed}$ 上界与对应真实下界补齐全域；不隐含按 $\beta$ 更换预测器。IID 子类给 $R\ge i/(32\sqrt6)>0$，故比值分母有效，且定义直接给下界 $1$。
+
+\textbf{科学采用状态。}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+单元 & 可采用范围\\\midrule
+R001 & 全内部参数的混合前缀证书及同算法因子 $3$ 转移\\
+R003 & moderate-log 子域内的有限匹配及较小常数\\
+R004 & 去掉两项 moderate-log 限制的分组界与扩展匹配域\\
+R005 & 全 $K,M,\beta$ 的真实 minimax oracle 比值上界\\
+R002 & 受限族匹配、耦合障碍、局部刚性及条件归约；O 未证\\\bottomrule
+\end{tabularx}
+\end{center}
+五份独立审查及全部科学论证随包保存。R001 的 $i$ 与 R002 的两个域澄清公开列出；没有把审查意见称作形式验证。数值检查只支持其实际有限计算，非证明前提。
+
+\textbf{来源闭包。} 继承\textbf{一个}精确的已交付科学 ZIP，递归含 S001--S025，不是项目备份。R001、R003 为本次新写重建／推论，不冒充缺失 S026--S032 历史原件。R002 引用的 S015 原始输入与公开科学复制件\textbf{哈希不同}；现有复制映射已按真实字节核对，不替换来源身份。全部可定位入口见 SOURCES 与 SOURCE\_INDEX。
+
+\textbf{采用边界。} 零边、不可达状态、稀疏平稳律和支撑外初始化不能删去；每个来源仍须满足全状态条件。没有额外不可约／非周期假设，但不满足正 $\beta$ 条件的周期例不在该类。$K=1$、$M=0$ 不在本包定理域；$\beta$ 端点按独立接口处理。时间非齐次或自适应改变的表不在本实验内。
+
+\textbf{下一必要问题。} 对全类证明 O，或构造合法反例并另做真正统计比较。应控制刷新后向实际末行的占用传播；不再只尝试改善耦合事件质量，也不能把大证书、平均计数或族内结果当作全类风险结论。
+\entry{R005 §§1--3；EDITORIAL\_NOTES、SOURCES、BOUNDARIES、COPY\_MAP 与校验脚本。}
+\end{document}

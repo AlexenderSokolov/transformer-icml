@@ -1,0 +1,275 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm,headheight=15pt]{geometry}
+\usepackage{fontspec,amsmath,amssymb,booktabs,tabularx,enumitem,xcolor,fancyhdr,hyperref}
+\setmainfont{Noto Serif CJK SC}
+\setsansfont{Noto Sans CJK SC}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\definecolor{ink}{HTML}{173B57}
+\hypersetup{colorlinks=true,urlcolor=ink,linkcolor=ink,pdfauthor={},pdftitle={数据条件与二阶预测难度 阶段结论}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{2em}
+\linespread{1.13}
+\renewcommand{\emph}[1]{\textbf{#1}}
+\setlist[itemize]{leftmargin=1.3em,itemsep=4pt,topsep=4pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small 数据条件与二阶预测难度}\fancyhead[R]{\small 阶段二}\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathcal R}
+\newcommand{\head}[2]{\begin{center}{\large\sffamily\color{ink}#1}\end{center}\vspace{-4pt}{\LARGE\bfseries #2}\par\vspace{5pt}}
+\newcommand{\entry}[1]{\vfill\noindent\small\textcolor{ink}{证明入口}\quad#1\normalsize}
+\begin{document}
+\head{结论与统一实验}{数据条件改变统计率\quad{}算法未必自动受益}
+本阶段给出从一般初始化、平稳初始化到共享行结构的条件分层。全部主要结论使用同一条完整轨迹的\textbf{实际末行平均 TV 损失}，不是独立 query、随机时间、TV 平方或预测 KL。原逐 context add-one 在一般平稳类达到最优阶，但在 IID 端点并不自动获得更小的最优率。
+
+\textbf{固定实验。} 整数 $K\ge2,M\ge1$；齐次二阶行 $\theta_{ab}(c)$ 固定于一条轨迹，允许零边。pair 链只沿 $(a,b)\to(b,c)$ 移动。观察 $X_1,\ldots,X_{M+2}$，令 $Y_i=(X_{i+1},X_{i+2})$。预测尚未观察的 $X_{M+3}$，目标为 $\theta_{Y_M}$。
+\[
+ L_A(\theta,\mu)=\E_{\theta,\mu}\TV(A(X_1^{M+2}),\theta_{Y_M}),\qquad
+ \TV(p,q)=\tfrac12\|p-q\|_1.
+\]
+共同算法可用完整历史、公开 $K,M$、明确公开的类参数及源独立种子；不读隐藏 $\theta,\mu,\pi$、共同中心或未来。各 minimax 风险为相应源类的 $\inf_A\sup L_A$；上标 $+$ 表示原 add-one 的最坏源风险 $\sup L_{p^+}$。
+
+统一记 $n=M+1$，避免不同正文中 $b$ 的重名：
+\[
+ a=\min\{1,\sqrt{K^3/n}\},\quad
+ b_{\rm gen}=\min\{1,\sqrt{K^5/n}\},\quad
+ b_{\rm iid}=\min\{1,\sqrt{K/n}\}.
+\]
+\begin{tabularx}{\textwidth}{@{}p{.34\textwidth}X@{}}\toprule
+源条件 & 已证 minimax 平均 TV 阶\\\midrule
+任意初始律（继承基线） & $b_{\rm gen}$\\
+平稳初始律 & $a$；原 add-one 达到此阶\\
+距某平稳律 TV 不超过 $\eta$ & $\max\{a,\eta b_{\rm gen}\}$；原规则仍达到此阶\\
+两步完全 reset，任意初始律 & $b_{\rm iid}$；pooled 规则达到，原规则可分离\\
+存在有限完全 reset，任意初始律 & $a$；三步类已给下界，原规则达到\\
+平稳近 IID（公开半径 $\rho$） & $F(\rho)=\max\{b_{\rm iid},\min(\rho,a)\}$\\
+平稳两步 Doeblin（公开 $\beta$） & $F(1-\beta)$；常数对 $\beta\in[0,1]$ 统一\\\bottomrule
+\end{tabularx}
+
+这里“阶”是带截断的匹配率函数，常数不依赖显示的类参数；\textbf{不是精确 minimax 数值或最优数值常数}。精确量词、常数、完整证明与原审查科学正文均随包附上。
+\entry{第 2--6 页给出核心接口；完整数学正文位于 proofs/，审查位于 reviews/。}
+\newpage
+\head{S001 至 S003}{平稳收益及初始化距离代价}
+\textbf{平稳类。} 初始 pair 律是同一 $P_\theta$ 的任意平稳律 $\pi$。不要求唯一平稳律、正边、不可约、非周期或混合；多个闭类的平稳混合也包含。原规则为
+\[
+ C_s(c)=\sum_{i=0}^{M-1}\mathbf1\{Y_i=s,X_{i+3}=c\},\quad
+ n_s=\sum_c C_s(c),\quad p_s^+(c)=\frac{C_s(c)+1}{n_s+K}.
+\]
+两个独立证明给出
+\[
+ \boxed{\quad \frac{a}{180}\le R_{\rm stat}\le R^+_{\rm stat}
+ \le \min\{1,48\sqrt{K^3/n}\}.\quad}
+\]
+上界的关键是平稳有限窗口计数：对 $J=n_{Y_M}$、每个整数 $w\ge1$，
+\[
+ \Pr(J<w)\le\min\{1,K^2w/n\}.
+\]
+确定序列在长度 $M+1$ 的候选末端中，每个状态至多有 $w$ 次“前 $M$ 步访问少于 $w$”标记；平稳性把平均标记转成实际末端事件。随后用确定前缀 row-stack 的 $L^4$ 最大值与\emph{无条件} Hölder 分层，保留末行、计数和误差的相关性。
+
+下界使用合法棋盘扰动族、共同均匀平稳 pair 律。固定实际末对后，精确反向展开\textbf{完整}历史，控制单符号翻转的条件检验距离，再平均端点与隐藏符号。见证甚至满足 $P_\theta^2(s,t)\ge0.81\pi(t)$，故 $K^3$ 难度不依赖慢混合。
+
+\textbf{初始 TV 邻域。} 令 $\mathcal C_\eta$ 为存在平稳律 $\pi$ 使 $\TV(\mu,\pi)\le\eta$ 的源类，$0\le\eta\le1$。该 $\pi$ 只是未知存在见证。记 $u_s=\min(1,48\sqrt{K^3/n})$、$u_g=\min(1,48\sqrt{K^5/n})$，则
+\[
+ \max\{a/180,\eta b_{\rm gen}/65536\}
+ \le R_\eta\le R^+_\eta\le\min\{u_g,u_s+\eta u_g\}.
+\]
+因此 $R_\eta\asymp\max\{a,\eta b_{\rm gen}\}$。上界使用正部测度支配；\textbf{不是}错误地把每个 TV 邻域元素当作污染混合。下界才选取合法污染子类，并用固定源、固定算法的全路径风险线性。
+
+$\eta\le1/K$ 时，所有 horizon 都保持平稳阶。小误差区的样本阶为 $\max\{K^3,\eta^2K^5\}/\tau^2$，但当要求精度比 $\eta$ 粗时，不能无条件宣称第二项必要；正文保留全部截断条件。
+\entry{S001 §§3--7；S002 §§1--7；S003 §§3--8。S003 的一般基线为继承 L1MAX/MM5，不把非平稳下界搬进平稳类。}
+\newpage
+\head{S004}{混合能洗掉初始化\quad{}原规则需单独证明}
+给定任意初始律 $\mu$、同一源的平稳律 $\pi$ 和确定 burn $0\le t\le M-1$，记 $L=M-t$、$\eta_t=\TV(\mu P^t,\pi)$。suffix add-one 只使用 departure $i=t,\ldots,M-1$；原规则仍使用全部 $M$ 次 departure。两者都在\textbf{同一个} $Y_M$ 预测。
+\begin{align*}
+ \E\TV(p^{+,[t]}_{Y_M},\theta_{Y_M})
+ &\le\min\{1,u_s(K,L)+\eta_t\},\\
+ \E\TV(p^+_{Y_M},\theta_{Y_M})
+ &\le\min\{1,48\sqrt{K^3/(L+1)}+13\sqrt K\,\eta_t^{3/4}\}.
+\end{align*}
+其中 $u_s(K,L)=\min\{1,48\sqrt{K^3/(L+1)}\}$。\textbf{第一行不自动推出第二行。} 第二行另用原计数不少于 suffix 计数，得到
+\[
+ \Pr(n_{Y_M}<w)\le\min\{1,K^2w/(L+1)+\eta_t\},
+\]
+再与\emph{原完整历史} row-stack 相接。$\eta_t^{3/4}$ 是此证明给出的充分项，不声称其指数最优。
+
+\textbf{明确的统一混合参数。} 假设公开整数 $q\ge1$、$0<\beta\le1$ 满足
+\[
+ P^q(s,u)\ge\beta\pi(u)\qquad\text{对每一个起始和目标 pair }s,u.
+\]
+若 $\beta<1$，$\eta_t\le h(t)=(1-\beta)^{\lfloor t/q\rfloor}$；若 $\beta=1$，$h(t)=1$ 对 $t<q$，而 $h(t)=0$ 对 $t\ge q$。不使用含糊的 $0^0$。
+
+当 $t=\lfloor M/2\rfloor$ 且 $h(t)\le1/(M+1)$，suffix 与原规则分别有 $69a$ 与 $81a$ 上界，另取截断一。对固定 $q\ge2,\beta<1$，该充分条件最终成立；同类有下界
+\[
+ R\ge\frac{\min\{1/10,1-\sqrt\beta\}}{18}\,a.
+\]
+这是充分 burn 后的固定参数匹配，不是 $q,\beta$ 联合变化下的锐界。suffix 的 burn 必须从公开信息选择；原规则的 $t$ 只用于分析，不是隐藏 oracle 输入。
+
+\textbf{必要性边界。} 全 pair 量词下 $q=1$ 类为空，因为 pair-shift 有结构性零。平稳的确定四周期仍满足平稳上界，所以混合不是平稳保证的必要条件。固定 $K$ 时，一般初始化的继承上界本来也趋零；不能说“没有混合就不能预测”。单纯每条合法边正也不给统一有限 burn。
+\entry{S004 九个局部命题及对应审查。两步 $\beta=1$ 端点须使用下一页 IID 结构，不能延伸固定 $\beta<1$ 的 $K^3$ 下界。}
+\newpage
+\head{S005}{两步完全 reset 的 IID 率与原算法反例}
+全 pair 的 $P^2(s,u)=\pi(u)$ 等价于所有符号转移行相同：$\theta_{ab}(c)=p(c)$，且 $\pi=p\otimes p$。这是由唯一两步路径
+\[
+ P^2((a,b),(c,d))=\theta_{ab}(c)\theta_{bc}(d)
+\]
+对 $d$ 求和直接推出；零概率也允许。初始 pair 律 $\mu$ 仍可任意，只有 $X_3,\ldots,X_{M+2}$ 必为独立同分布 $p$。
+
+定义真正不同的 pooled add-one
+\[
+ B_{\rm pool}(c)=\frac{\sum_{j=3}^{M+2}\mathbf1\{X_j=c\}+1}{M+K}.
+\]
+则对全部 $K\ge2,M\ge1$，
+\[
+ \boxed{\frac{b_{\rm iid}}{32\sqrt6}\le R_{\rm IID}
+ \le\sup_{p,\mu}\E\TV(B_{\rm pool},p)
+ \le\min\{1,\tfrac32\sqrt{K/n}\}.}
+\]
+上界是坐标方差与平滑偏差；下界在平稳 IID 子类中使用成对超立方体检验，并完整保留\textbf{全部 $M+2$ 个可见符号}，不为方便丢弃初始两符号。这里目标恰好恒等于 $p$，不是悄悄换成固定 query。
+
+\textbf{原逐 context add-one 并不统一最优。} 取偶数 $K\ge10$、$M=\lfloor K^2/100\rfloor$，
+\[
+ p(c)=\begin{cases}3/(2K),&c<K/2,\\1/(2K),&c\ge K/2,\end{cases}
+ \qquad\mu=p\otimes p.
+\]
+这是真正平稳且合法边严格正的 IID 源。若 $J=n_{Y_M}$，重叠已正确计入：
+\[
+ \E J=(M-1)\Big(\sum_c p(c)^2\Big)^2+\sum_c p(c)^3.
+\]
+在 $J=0$ 上原规则输出均匀分布，与 $p$ 的 TV 为 $1/4$，从而
+\[
+ \E\TV(p^+_{Y_M},p)\ge\frac{391}{1600}>0.24,
+ \qquad
+ \E\TV(B_{\rm pool},p)\le\min\{1,15/\sqrt K\}\longrightarrow0.
+\]
+这是\textbf{同源、同样本长度、同实际末端目标}的算法分离。单源原规则下界不是所有算法的 minimax 下界；后者由前述独立的多源检验给出。
+
+因此“数据条件改善最优可达率”与“原规则自动达到改善后的率”必须分开。已证样本尺度是 $K/\tau^2$（适当小误差范围），但尚未给原规则全 $K,M$ 风险的匹配公式。
+\entry{S005 §§2--5 的自足证明；§6 保留小参数、零支持、随机化、样本方向与非主张。}
+\newpage
+\head{S006}{平稳近 IID 与两步 minorization 的统一过渡}
+\textbf{近 IID 类。} 真正平稳初始化，存在\emph{未知}分布 $p$，使全部行（不只已访问行）满足 $\max_s\TV(\theta_s,p)\le\rho$，其中公开 $0\le\rho\le1$ 是上界，不是 oracle 揭示的精确最小半径。
+\[
+ F(z)=\max\{b_{\rm iid},\min(z,a)\},\qquad 0\le z\le1.
+\]
+对近 IID 类 $z=\rho$，以及平稳全 pair 两步类 $P^2\ge\beta\Pi$ 的 $z=1-\beta$，均有
+\[
+ \boxed{\qquad F(z)/180\le R\le\min\{1,48F(z)\}.\qquad}
+\]
+所有常数对 $\rho,\beta\in[0,1]$ 统一。两类只用包含关系联系，并未证明它们等价。
+
+\textbf{可实施的公开选择器。} 令 $E_{\rm pool}$ 为 $M$ 个后继符号的经验分布。算法仅比较两个\emph{公开上界}
+\[
+ U_{\rm stat}=\min\{1,48\sqrt{K^3/n}\},\qquad
+ U_{\rm pool}(z)=\min\{1,\tfrac12\sqrt{K/M}+2z\}.
+\]
+若后者不大于前者，输出 $E_{\rm pool}$；否则输出原 $p^+_{Y_M}$。不读真实风险、未知中心 $p$ 或隐藏源半径。更细的已证上界是 $\min(U_{\rm stat},U_{\rm pool}(z))$。
+
+pooled 上界用 $D_i=e_{X_{i+3}}-\theta_{Y_i}$ 的向量鞅差证明：$\E\|\sum_iD_i\|_2^2\le M$。经验分布与平均真实行的 TV 至多 $\tfrac12\sqrt{K/M}$，平均行和实际末行各距中心不超过 $z$。\textbf{没有把近 IID 轨迹声称为 IID。}
+
+两步结构给 $\theta_{ab}(c)\ge\beta\sum_d\pi(c,d)$，从而每行距共同中心不超过 $1-\beta$。下界取缩放棋盘族与平稳 IID 子类两个见证的\emph{最大值}；两步情形使用 $\alpha=\min\{a/10,1-\sqrt\beta\}$，而非两个因子的乘积，故没有额外消失的 $\beta$ 系数。
+\[
+ F(z)=\begin{cases}
+ b_{\rm iid},&0\le z\le b_{\rm iid},\\
+ z,&b_{\rm iid}\le z\le a,\\
+ a,&a\le z\le1.
+ \end{cases}
+\]
+$\rho=1$ 或 $\beta=0$ 恢复一般平稳阶；$\rho=0$ 或 $\beta=1$ 恢复 IID 阶。原规则在大半径区达到正确阶，但 S005 的平稳反例仍否定它在 IID 端点统一最优。
+
+\textbf{初始化范围不可扩大。} pooled 鞅引理单独允许任意初始律；上述匹配 $F$ 定理却依赖平稳原规则上界，不能因此扩展到任意 $\mu$，也不能扩展到一般 $q>2$。
+\entry{S006 七个局部命题与原审查；S001、S002、S005 是精确引用的前置接口。}
+\newpage
+\head{S007 与 S009}{精确遗忘不等于 IID 统计维度}
+\textbf{两步与三步有真实结构分界。} 全 pair 两步完全 reset 强制共享行 IID，最优阶为 $b_{\rm iid}$；三步完全 reset 仍可容纳约 $K^3$ 个未知方向。混合忘记初始状态与缩减未知参数不是同一个条件。
+
+\textbf{S007 三步 reset。} 若存在平稳 $\pi$ 使全部起始及目标 pair 满足 $P^3(s,u)=\pi(u)$，初始律仍可\textbf{任意}，则全部 $K\ge2,M\ge1$ 有
+\[
+ \frac a{100000}\le R_3\le R_3^+
+ \le\min\{1,80\sqrt{K^3/n}\}.
+\]
+$K\ge6$ 的合法下界族把符号分成互不相交的 $A,B,C$ 块，以各坐标成对零和函数构造
+\[
+ \theta_{ab}^{\sigma}(c)=\frac1K+
+ \frac\alpha K\sum_{i,j,\ell}\sigma_{ij\ell}u_i(a)v_j(b)w_\ell(c),
+ \qquad\alpha=a/20.
+\]
+各坐标零和保证行归一化与均匀 pair 律真正平稳；支撑不交使三步乘积中所有多扰动项逐项为零，一次项求和也为零，故 $P^3=\Pi$。活跃块却有 $P^2\ne\Pi$，仍有 $r^3$ 个未知符号方向，$r=\lfloor K/6\rfloor$。
+
+完整历史条件于实际末对后，单个符号翻转改变\textbf{四个}反向行；启动两步单列，端点条件检验给 $K\ge6$ 时更强下界 $a/34560$。$K=2,\ldots,5$ 用 S005 的平稳 IID 全数据见证补齐。每个下界源都真正平稳初始化。上界对任意初始律成立：$M\ge4$ 时只在 S004 原规则分析中取 $t=3$，$\eta_3=0$；短 horizon 用截断一。
+
+\textbf{S009 只需存在某个有限 reset 步数。} 进一步考虑“存在源依赖的有限整数 $q\ge1$ 使全 pair $P^q=\Pi$”的类，仍允许任意初始化，且算法\textbf{不知} $q,\pi$。则
+\[
+ \boxed{\frac a{100000}\le R_{\rm fin}\le R_{\rm fin}^+
+ \le\min\{1,68\sqrt{K^3/n}\}.}
+\]
+这是标准有限维推论。令 $d=K^2$、$A=P-\Pi$，投影关系给 $P^j=\Pi+A^j$，故某次 reset 意味 $A^q=0$。递增核链 $\ker A^j$ 一旦停滞就永远停滞；既然最终充满 $d$ 维空间，至多 $d$ 次严格增长。因此 $A^d=0$，得到统一的\textbf{派生}结论 $P^{K^2}=\Pi$，而非额外假设已知 reset 时间。
+
+若 $M\ge2K^2$，在 S004 原规则分析中取 $t=K^2$，初始化项为零，且 $48\sqrt2<68$；若 $M<2K^2$，则 $K^3/(M+1)\ge K/2\ge1$，目标率本已饱和。下界由三步类包含关系继承。\textbf{算法始终使用全部观察}，不删除 reset 前的数据，也不接收隐藏参数。
+
+该结论只描述类的最坏风险；IID 子类仍较容易。它不是 reset 核分类、最短 reset 指数结论，亦不能把近似等式的误差丢掉而转称锐混合参数定理。
+\entry{S007 的六个局部命题；S009 的投影、完整核链及两段 horizon 证明。精确有限 reset 足以恢复任意初始化的平稳阶，但并非平稳保证的必要条件。}
+
+\newpage
+\head{S008}{定性正性与遍历性不改善统一最坏风险}
+\textbf{比同阶更强的结论。} 固定有限 $K\ge2,M\ge1$ 和\emph{每一个}源盲共同随机算法 $A$。只要求全部\textbf{合法符号转移} $\theta_{ab}(c)>0$，却没有共同正下界，则
+\begin{align*}
+ \sup_{\theta>0,\,\mu\,\text{任意}}L_A(\theta,\mu)
+ &=\sup_{\theta,\,\mu\,\text{任意}}L_A(\theta,\mu),\\
+ \sup_{\theta>0,\,\pi P_\theta=\pi}L_A(\theta,\pi)
+ &=\sup_{\theta,\,\pi P_\theta=\pi}L_A(\theta,\pi).
+\end{align*}
+这两式分别对任意初始化类与平稳类成立；先逐算法比较 supremum，再取 infimum。因此 minimax 值与原 add-one 的最坏风险都\textbf{精确不变}，不是仅说指数相同，也不要求正类内达到最大值。
+
+任意初始化用 $\theta_s^\varepsilon=(1-\varepsilon)\theta_s+\varepsilon u$，保留 $\mu$。完整路径分布变化至多 $M\varepsilon$，实际末行目标还要另加 $\varepsilon$，故对所有算法统一有
+\[
+ |L_A(\theta,\mu)-L_A(\theta^\varepsilon,\mu)|\le(M+1)\varepsilon.
+\]
+\textbf{平稳类不能任意挑选新平稳律。} 对原来选定的 $\pi$，正则化平稳 triple flow：
+\[
+ T_{abc}=\pi_{ab}\theta_{ab}(c),\quad
+ T^\varepsilon=(1-\varepsilon)T+\varepsilon/K^3,
+ \quad\pi^\varepsilon=(1-\varepsilon)\pi+\varepsilon/K^2.
+\]
+令 $\theta^\varepsilon_{ab}(c)=T^\varepsilon_{abc}/\pi^\varepsilon_{ab}$，同时保留两个 pair 边缘，得到\emph{恰好}平稳的正源。原 $\pi$ 加权行误差至多 $\varepsilon/(1-\varepsilon)$，所以
+\[
+ |L_A(\theta,\pi)-L_A(\theta^\varepsilon,\pi^\varepsilon)|
+ \le\varepsilon+(M+1)\frac\varepsilon{1-\varepsilon}\longrightarrow0.
+\]
+路径 telescope 始终使用原源的前缀权重，目标变化也用原末端权重。原 $\pi$ 零质量行可发生大变化，但加权贡献为零；没有错误地声称整张表逐行一致收敛。可约、周期及多闭类平稳混合都在范围内。
+
+\textbf{为何不与逐源混合矛盾。} 若 $m_\theta=\min\theta_{ab}(c)>0$，则每个两步 pair 概率至少 $m_\theta^2$，确实给唯一平稳律、非周期及源依赖收缩。但 $K^2m_\theta^2$ 可以在类内趋于零。每个固定 horizon 的 supremum 可选更慢的正源，故一般初始化 $K^5$ 与平稳 $K^3$ 率都不变。
+
+任何由上述定性遍历性质定义、仍包含全部合法正表的中间类，分别在相同初始化范围内也由包含关系继承该等式。额外给定\emph{定量}下界或结构限制则是另一问题。
+
+\textbf{不作未证插值。} 这不是对 $\TV(\mu,\pi)\le\eta$ 类的等式定理：行混合可能改变用来认证距离的平稳律，flow 混合又可能大幅改变 $\pi$ 零质量但 $\mu$ 可到达的行。该延伸在这里\emph{未证}，而不是已被反驳。以上归类为标准有限实验连续性推论，不作新工具或首创声称。
+\entry{S008 §§2--6 给完整路径、移动目标及两种正则化证明；§§7--8 给逐源混合、继承率及非延伸边界。}
+
+\newpage
+\head{来源与适用边界}{哪些结论没有被声称}
+\textbf{证据状态。} S001 至 S009 各主单元有完整证明和独立上下文 LLM 数学审查。正文复制与哈希映射核对只保证忠实编排，不是新审查；LLM 审查不是形式验证。完整证明的科学部分保持原字节，原编号、引理依赖与审查理由保留。辅助有限枚举只检验实际执行的有限案例。
+
+\textbf{直接先例的准确位置。} Han--Jana--Wu（2023），IEEE TIT 69(6), 3920--3959。Theorem 22 与高阶设定 pp.3941--3943 确实覆盖平稳二阶 shift；Lemma 6 pp.3925--3926 的算法是\textbf{suffix 预测器平均}，目标是 forward KL。令 $d=K^2(K-1)$、$L=M+1$，其已核公式直接给
+\[
+ \E\TV(\theta_{Y_M},A_{\rm mix})
+ \le\min\!\left\{1,\sqrt{\frac{d\{\log(1+L/d)+1\}+2\log K}{2L}}\right\}.
+\]
+这不是原完整历史 add-one 的无对数平均 TV 定理。KL 下界不能反向经 Pinsker 得到 TV 下界；其 §VI-A 的 TV 风险也是 $\E[\TV^2]$。对于 $Z\in[0,1]$，
+\[
+ (\E Z)^2\le\E Z^2\le\E Z;
+ \qquad\E Z^2\ge r\ \not\Rightarrow\ \E Z\ge\sqrt r.
+\]
+来源审读对 p.3942 的归一化印刷不一致使用 (106) 的累计界与 Lemma 6，只除一次 $L$。\href{https://doi.org/10.1109/TIT.2023.3239508}{论文 DOI 与出版信息}可核对。完整题名、精确页码、有限近邻范围与全文缺口见 SOURCES.md；不作首创或穷尽文献检索声称，也不附第三方论文全文。
+
+\textbf{始终保留的边界。}
+\begin{itemize}
+\item 全部 $K\ge2,M\ge1$ 与率的截断一；零访问数不形成零分母。
+\item 平稳基本类允许零边、不可达 pair、可约、多闭类及周期。pair 矩阵的结构性零不能被非法的“全矩阵严格正”条件排除。
+\item 同轨迹实际末行不换成独立 query，全部可见历史不从下界实验中删去。
+\item 源可随 supremum 中的 $K,M$ 改变，但一条轨迹内齐次；共同算法不读取隐藏参数。
+\item 下一项明确缺口是任意初始化下，两步 Doeblin 条件随 $\beta$ 变化的锐率；平稳 $F$ 定理不能直接移植。近似 reset、其他联合参数和原 IID 规则全参数风险也未在此全部完成。
+\item 统计存在性不等于神经实现、训练可达或资源最优；常数均未优化。
+\end{itemize}
+\entry{本次是 S001 至 S009 的阶段封装，不宣告整个条件支线收束。完整证明、原审查与反例边界随包；原稿与既有历史材料保持原处不变。}
+\end{document}

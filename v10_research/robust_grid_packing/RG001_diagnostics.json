@@ -1,0 +1,109 @@
+{
+  "status": "PASS finite exact rational checks; not all-parameter proof",
+  "cases": [
+    {
+      "J": 2,
+      "N": 2,
+      "edges": 4,
+      "minimum_nonincident_squared": "1/4",
+      "maximum_plateau": "1/12",
+      "minimum_speed": "3",
+      "maximum_speed": "6"
+    },
+    {
+      "J": 2,
+      "N": 4,
+      "edges": 8,
+      "minimum_nonincident_squared": "1/16",
+      "maximum_plateau": "1/40",
+      "minimum_speed": "5",
+      "maximum_speed": "10"
+    },
+    {
+      "J": 3,
+      "N": 2,
+      "edges": 10,
+      "minimum_nonincident_squared": "1/4",
+      "maximum_plateau": "1/12",
+      "minimum_speed": "15/2",
+      "maximum_speed": "15"
+    },
+    {
+      "J": 3,
+      "N": 4,
+      "edges": 36,
+      "minimum_nonincident_squared": "1/16",
+      "maximum_plateau": "9/680",
+      "minimum_speed": "85/4",
+      "maximum_speed": "85/2"
+    },
+    {
+      "J": 4,
+      "N": 2,
+      "edges": 22,
+      "minimum_nonincident_squared": "1/4",
+      "maximum_plateau": "7/108",
+      "minimum_speed": "135/8",
+      "maximum_speed": "135/4"
+    },
+    {
+      "J": 4,
+      "N": 4,
+      "edges": 148,
+      "minimum_nonincident_squared": "1/16",
+      "maximum_plateau": "229/44200",
+      "minimum_speed": "5525/64",
+      "maximum_speed": "5525/32"
+    }
+  ],
+  "uniform_precision_cases": [
+    {
+      "J": 2,
+      "k": 1,
+      "P": 13,
+      "p0": 13,
+      "G": 0,
+      "checked_values": 2220
+    },
+    {
+      "J": 3,
+      "k": 1,
+      "P": 20,
+      "p0": 19,
+      "G": 1,
+      "checked_values": 4588
+    },
+    {
+      "J": 3,
+      "k": 2,
+      "P": 24,
+      "p0": 22,
+      "G": 2,
+      "checked_values": 5994
+    },
+    {
+      "J": 4,
+      "k": 1,
+      "P": 28,
+      "p0": 25,
+      "G": 3,
+      "checked_values": 7178
+    },
+    {
+      "J": 4,
+      "k": 2,
+      "P": 35,
+      "p0": 29,
+      "G": 6,
+      "checked_values": 9620
+    },
+    {
+      "J": 5,
+      "k": 1,
+      "P": 37,
+      "p0": 31,
+      "G": 6,
+      "checked_values": 9990
+    }
+  ]
+}

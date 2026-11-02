@@ -1,0 +1,863 @@
+{
+  "files": [
+    {
+      "path": "v10_intake/source/sources/earlier/runtime/v10/stage5-input-contamination/research.definition.json",
+      "origin": "stage8 restored export",
+      "input_sha256": "93fa2cfd06a9b597e4380fe699839e1ac673d856956ca786a744cf529ef7994c",
+      "input_bytes": 27346,
+      "public_sha256": "d57dc54309060e0c640efb4f19fede2002bc01ef1662125393efc423e99711f2",
+      "public_bytes": 23926,
+      "public_edits": [
+        {
+          "line": 4,
+          "input_line_sha256": "07a6b4aaa22c017b9ca22feee3bc0e7171da68e42d1a4fddd76da1a48509d131",
+          "public_line_sha256": "dd79e508a3f7e3ced0affaae48159ba13b14f37114614ec68c8572b6e560c093",
+          "public_line": "  \"note\": \"Linked from [redacted user home]/icml-transformer/runs/relative-code-20261026/projects/icml-relative-code; frozen root 82f3b230a8e39f7ef988c219960127d8a94bee1c31d31ae51a328ab8580a3a29, Acceptance c7a4b9c1ecbf65fcff1436de945702549aa9cd5d99bd80be36dbd68fdb237fb7. Reviewed probe012 is source-only; all four prior roots and all historical suspensions/failures remain frozen. This stage does not certify novelty or finish the mother problem.\",\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 6,
+          "input_line_sha256": "ebabb8df08dcaa2447ed15c20fec6612f66c7d6a8ad4a9249740a1ccad7e5752",
+          "public_line_sha256": "517d3fa1f45792b0ca0646c7b12be3c0341d05db2db3ee752d89fdc8e1e00642",
+          "public_line": "    \"statement\": \"Establish the following finite input-contamination reliability theorem, under Definitions D1-D7. The true stationary source, actual terminal query, one common observation channel, complete observed information, positive output format and two distinct implementation cost models are part of this contract. Prior project Facts and probe012 file reviews are sources only; establish or legally discharge every load-bearing premise in this new project's normal native evidence chain.\\n\\nC1. There is one deterministic predictor family A_(N,k,Q), independent of unknown u,t and of the channel, with the exact smoothed-count/clipping/grid rule D3. For every N>=3 and public (k,Q) in D2, every D1 source, and every admissible source-independent randomized batch channel T in D2, its actual terminal average KL satisfies\\nR_av(A,T;u,t) <= 16000000/(3N) + 135680*k/N + 3/Q.\\nThe algorithm receives only Z,N,k,Q; clean counts are proof variables. Prove the pathwise count/row perturbation, common probability domination through clipping, true-source reciprocal visits and whole-prefix terminal bridge, and positive-grid transfer. Cover k=0, Q=2, Q=4/ties/zero counts and the actual N=3,4,5 no-prefix uniform branch. Do not assume the corrupted path is Markov, replace the terminal query by an independent query, or provide clean endpoints to the predictor.\\n\\nC2. For every N>=6 and 1<=k<=floor((floor(N/2)-2)/1024), put u0=k/N, Delta=1/640000, t_-=1/2-Delta/2, t_+=1/2+Delta/2 and c=Delta^2/8=1/3276800000000. There exists ONE globally admissible randomized batch T_(N,k), independent of Q, the predictor and the actual hidden source label, such that TV(L_(u0,t_+)(Z | S_N=00), L_(u0,t_-)(Z | S_N=00))<=1/64, where Z=T_(N,k)(X_1^N) and channel-private coins are averaged. For every common possibly randomized predictor using the entire Z (even unrestricted probability outputs and unlimited subsequent computation), there is one SAME t_* in {t_-,t_+} for which\\nR_00(A,T_(N,k);u0,t_*) >= c and R_av(A,T_(N,k);u0,t_*) >= c*k/N.\\nThe channel is fixed before the predictor; t_* may depend on that predictor. Its support preserves the last pair and changes at most k earlier bits for EVERY input and EVERY private seed. Prove the full reverse-history coupling, intermediate pairs, adaptive boundaries and truncated last block; then the unnormalized Jordan residual flow, one-row common kernel, hard-budget finite seed implementation and actual-terminal same-witness testing argument. Two source-labelled attacks, population/count aliases, or an average transport budget alone do not meet C2.\\n\\nC3. Construct the D3 predictor as BOTH (i) a Z-only causal finite JOINT attention frontend plus exact selected-query arithmetic and (ii) a Z-only direct eight-count baseline. For each individual observed Z and public tuple they must emit identical guarded output bits. Prove all closed-box arithmetic guards, full products/remainders and safe casts, source-bearing state erasure and no clean bypass. Supply explicit finite generators and prove that each implementation separately obeys every applicable resource bound in D5, including all input/feature/endpoint acquisition, physical banks, scalar-vs-bit distinction, masks/zero coefficients, copies, holds, code/metadata/address handling, online work/storage/peak, output and offline generation/peak. The actual 46-operation output table, JOINT 17+46 and DIRECT 8+46 plus paid acquisition are specified in D4. Do not replace D5 with a new looser envelope, equate the two accounting models, assert old Bstar inclusion, or treat Python integer semantics as unit-cost hardware.\\n\\nC4. Integrate C1-C3 in the same observation experiment: for either concrete implementation, C1 applies to C2's SAME channel and its selected SAME source witness. State precisely that the pollution contribution has an O(k/N) upper and an Omega(k/N) full-Z lower, with the separate 1/N and 1/Q terms only upper-bounded here. Preserve the direct-count strong baseline and the exact primary comparison in D6; no novelty, JOINT efficiency superiority, all-source bad-risk statement, deterministic-channel attainment, per-time sensor or all-layer/IEEE conclusion is part of the theorem. [Non-scientific operational metadata omitted.] Existing source reviews and old SOLVED roots do not discharge this new contract. After this accurate stage closes, the v10 mother problem still requires synthesis; no frozen prior root is reopened.\",\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 7,
+          "input_line_sha256": "7739b076089cb043cb7b1e59f0d650a9c6c1ada8e62456f77bce41be001af51b",
+          "public_line_sha256": "1b83413319732724a3883abbaead6c9b585872dfcf2218b19196bae6fe7117d3",
+          "public_line": "    \"definitions\": \"# D1. True source, history and loss\\n\\nThe alphabet is {0,1}. For unknown 0<u<1/4 and 1/4<=t<=3/4 put w=(1-u)/3 and r=ut/w. The pair state order is (00,01,10,11). The stationary pair law is pi=(u,w,w,w), and next-one probabilities in that order are (t,1/2,1-r,1/2). The pair transition shifts the last bit and appends the next symbol. Start (X1,X2) with pi and generate X1,...,X_(N+1) by this law. The observed clean history is only X1,...,XN; Y=X_(N+1) is not observed. The actual terminal pair is S_N=(X_(N-1),X_N). Natural logarithms are used.\\n\\nFor a predictor receiving the corrupted history below, let q_A(.|Z,N,k,Q) be its output probability vector. Define R_av(A,T;u,t)=E KL(p_(u,t)(.|S_N)||q_A) and R_00=E[the same loss | S_N=00]. Expectations include the source, independent private channel coins and any independent private predictor coins. Arbitrary probability outputs in the lower theorem may have infinite KL. The fixed finite upper predictor is strictly positive. These are actual same-trajectory terminal risks, not cumulative regret divided by N or independent test-query risks.\\n\\n# D2. Public domain and the common batch observation channel\\n\\nN is any integer >=3 and Q=2^b with integer b>=1. If N>=6, set m=floor(N/2), M=m-2 and allow integer 0<=k<=floor(M/1024). For N=3,4,5 define k=0; the predictor is a genuine uniform no-prefix branch. The constant 1/1024 defines this conservative domain and is not asserted necessary.\\n\\nBefore ANY encoder/predictor computation, one randomized batch T maps the complete already-observed X1..XN to Z1..ZN. For EVERY binary input x and EVERY independent private seed omega, T(x,omega) has the same last two bits as x and differs in at most k of positions1..N-2. The rule may use all observed input bits and their terminal pair, plus public N,k,Q. It cannot read future Y, the actual hidden u,t or source label, or source-dependent coins. A channel is one fixed rule over all inputs and all D1 sources; it is not chosen at runtime using the realized source index. The lower theorem's T_(N,k) is additionally independent of Q and predictor.\\n\\nAll algorithms and baselines see ONLY Z,N,k,Q. They receive no clean history/prefix/gap/E_m/counts, hidden parameters or private channel seed. Since the last pair is preserved, S_N equals the last pair of Z. Any prefix endpoint E_m used by an implementation is the DIRTY pair (Z_(m-1),Z_m), without extra protection. Internal arithmetic is exact finite arithmetic, separately charged. There is no post-statistic eta cut in this experiment. This is not a time-causal sensor, IEEE fault or all-layer perturbation model. The external channel's own computation/randomness is unrestricted and not part of predictor cost; handling all observed input by the predictor is charged.\\n\\nFor C2 a public two-point experiment uses u0=k/N and t_+/-=1/2+/-1/1280000. Computing a fixed table from both public witness laws is allowed; selecting a row by the actual hidden label is not. T must be globally legal also when other D1 parameters produce its input. Private channel randomness is averaged in the TV/risk statement but the edit constraint is pointwise in every seed. Predictor-private randomization is fresh and independent of channel coins.\\n\\n# D3. Exactly specified unknown-parameter predictor and output\\n\\nFor N>=6 and a path z, C_sc(z) counts triples ending at positions3..m, with preceding two symbols s and next symbol c. There are M eligible triples. Let D_s=C_s0+C_s1, alpha=3k+1. Select the row s by the actual last two Z symbols. In the 00 row, r1=clip_[1/4,3/4]((C_001+alpha)/(D_00+2alpha)), r0=1-r1. In row10, r0=min(3/4,(C_100+alpha)/(D_10+2alpha)), r1=1-r0. Rows01 and11 use uniform. No true source parameter enters these formulas.\\n\\nFor the selected counts C0,C1 define D=C0+C1+2alpha and Zden=4D. N<6 and Q=2 output uniform. For row00 with Q>=4 set z1=min(3D,max(D,4(C1+alpha))), J=floor((2Q*z1+Zden)/(2Zden)); output (Q-J,J)/Q. Half ties go upward. For row10 set z0=min(3D,4(C0+alpha)), z1=Zden-z0, j_c=ceil((Q-1)*z_c/Zden), e=Q-j0-j1; output (j0,j1+e)/Q. In both Q-1 and the division numerator Zden-1, the constant is literal1, not alpha. Rows01/11 are uniform. All candidate branches actually evaluated by the straight-line program must be defined, including when the final uniform MUX discards one.\\n\\nThe final observable port is THREE b+1-bit fields (out0,out1,Q), each least-significant bit first, thus 3(b+1) bits. The two output numerators are positive and sum to Q. Every retained intermediate/source-bearing bank other than this final output is explicitly erased; public code/indices may remain but cannot contain hidden source data. N=3,4,5 reads exactly N observed bits and writes this same port without instantiating a prefix/head or fictitious sixth input.\\n\\n# D4. Two finite implementations, arithmetic and deterministic acquisition\\n\\nThe source implementations copied to inputs/source-stage4/outputs/012-input-contamination/prover/ are fixed specifications and provenance, not automatically accepted proofs: robust_program_v1.py SHA256 5945d29df95eb1499005250e7d0f3835aff91f9846b8e6ce6ac3ef516c0d5600, resource_interface_v1.py SHA256 b11f8f06eec9b1ff2e305b5385e1efc69d3076b527027971a764e58d1ec9603e, finite-program-v1.json SHA256 3875340ee76fa75ad61cc9db5e4483bb03e1971eeaa9b5d8973545bb2a83ec44. The exact semantics are D3 plus the finite operations below; their new-project realization and costs must be proved. The original semantic library c3c4_program_v1.py SHA256 88de55d3243dcff63c1deffc226a645a7fb7949e3a32d662ab55141630f9b570 is also source-only.\\n\\nJOINT: let h=ceil(log2(256(N-2))), A=2^h, p=4h+4ceil(log2(m+4))+64, R_s=2^p. Four charged singleton bindings produce the causal local lags and observed terminal/dirty prefix endpoint selectors; two-AND triple features and a single zero-score uniform finite head produce eight j_sc=floor(A*C_sc(Z)/M) and eleven explicit zero internal words. Its exact finite zero-score value is R_s, with numerator A*R_s*C_sc and denominator M*R_s. The internal 19 words and eight controls are implementation registers, NOT an observation restriction on other predictors. No real-softmax approximation, free triple table, or clean endpoint is assumed. Six row-selection MUXes and exact count snapping floor((2M*j+A)/(2A)) plus two control ORs use the 17-operation table. Every independent closed j in[0,A] yields a count in[0,M]; on actual observed Z the snap is exact.\\n\\nDIRECT: own and read the same full Z batch, initialize eight counters, scan every eligible triple and all eight public labels, compute its two AND/equality features and increment each matching counter. Endpoints come only from this owned Z. Six MUXes and two control ORs select the counts. Acquisition loop/control/input reads and cleanup are charged in addition to the eight selected-row operations.\\n\\nBoth then execute the same 46-operation output table: from the frozen 41-operation output insert after CONST1 the five operations k=CONST(public k), twok=SHL(k,1), threek=ADD(twok,k), alpha=ADD(threek,one), twoalpha=SHL(alpha,1). Only three subsequent operands change to Dsum+twoalpha, C0+alpha, C1+alpha; all grid literal1 operations and eager candidates remain. JOINT has 17+46=63 selected-row/output operations, DIRECT 8+46=54 plus acquisition. This table must be presented self-contained in its new proof, including the retained paid CONST0/CONST2, ceiling residual and terminal MUXes.\\n\\nOn the closed independent count box C0,C1 in[0,M], D<=3m, Zden<=12m, nearest dividend<32mQ and each ceiling dividend<12mQ. Guards must cover that whole box, not just realizable count sums. With beta as D5, use exact finite primitives with g(beta)=1024beta^2 bit steps and 32beta+32 bit scratch. Multiplication retains the full 2beta-bit product; restoring division retains the full numerator, beta+1-bit shifted remainder and full quotient before a range-justified cast. Carry/borrow, MIN/MAX/MUX/select and comparison costs are real. Neither primitive validity nor the finite compiler is assumed from an old Fact without lawful new-project support.\\n\\n# D5. Fixed separately priced full resource vectors\\n\\nThese are sufficient finite implementation bounds, not equality of consumption, optimality or a shared-cap advantage. DIRECT uses an owned-batch packed bit-register machine; JOINT uses principal extracted-query one-shot batch hybrid dense tokenwise tied matrices plus a separately charged finite evaluator. Every Boolean neural channel occupies a full beta-bit physical scalar. The models must not be silently identified, flattened, streamed or treated as unit-cost RAM. All zero matrix/mask entries and retained identities are stored/evaluated. JOINT initially pays all n token banks; nonquery release follows actual full source-state erasure. No old D6 Bstar is a cap or premise here.\\n\\nDefine bitlength(x)=floor(log2(x))+1 for positive integers, ell=ceil(log2(N+2)), tau=bitlength(k+1), n=N+1. For N>=6, s=ell+b+tau+p+32 with p in D4; for N<6, s=ell+b+tau+32 with no p or prefix parameters. Let beta=128s, g=1024beta^2 and Z_meta=1024ns.\\n\\nFor DIRECT, N>=6:\\nG=(512n+2048)g, E=L=0, W=0, dense_slots=P_bits=mask_bits=I_holds=0,\\ncore=G, W_work=8N+8192beta+Z_meta.\\nAll neural coordinates are zero. Packed-memory residence and each accessed bit are separately paid; zero neural coordinates do not mean free memory.\\n\\nFor JOINT, N>=6:\\nW=2048beta,\\nG=64g+256*19(h+1)+8192beta+128(b+1),\\nL=16G+96,\\nE=512n^2+16nW+256W+1024(h+b+ell+tau+1),\\ndense_slots=(132+L)(W+1)^2,\\nP_bits=dense_slots*beta,\\nmask_bits=4n^2+(m+1)^2,\\nI_holds=132nW+LW,\\ncore=256(132n+L)(W+1)^2*beta^2+E*g,\\nW_work=4nWbeta+Z_meta.\\nFrontend depth allowance132 consists of128 construction layers and four extraction/clear phases. Query depth is L, width per token W, five total heads and at most four simultaneous heads, value width8, QK dimension at most4, score magnitude0. E is finite word-step bundles, each expanded by g, distinct from neural depth and dense MAC work. Metadata is public only; dirty inputs/counts/endpoints are data banks. Actual copies, full-bank scans, liveness and all source-bearing cleanup must justify these numbers.\\n\\nFor N=3,4,5 BOTH implementations use the actual-input uniform packed bit-register branch:\\nG=(128(N+1)+512)g, core=G, E=L=W=dense_slots=P_bits=mask_bits=I_holds=0,\\nW_work=8N+8192beta+Z_meta.\\nAll heads/layers/values/QK/score coordinates are zero; no N-to6 statistical padding is permitted.\\n\\nFor either implementation and every N define:\\na=beta+bitlength(G+E+Z_meta+N+L+1)+32,\\nK_code=4096*g*(beta+a)+4096*(s+1)*(beta+a)^2,\\nU_stored=P_bits+mask_bits+Z_meta+K_code,\\nT_online=4096(a+beta)^2*core,\\npeak_online=U_stored+W_work,\\na_gen=beta+bitlength(U_stored+T_online+N+L+1)+s+32,\\nEmit=U_stored+L+1024,\\nT_gen=1024s^2+4096*Emit*a_gen^2,\\nW_gen=64a_gen+64*Emit*a_gen,\\npeak_gen=U_stored+W_gen.\\nHere g is the defined number 1024beta^2. a is the per-field runtime address-record width and a_gen the separate flat generator address width. The final output length is3(b+1), GPU work0. The separately fixed resource calculator is a transcription reference for these full vectors, not a proof of the charges.\\n\\nAll input storage/read/validation, full products/remainders, dirty endpoint/control handling, prior copies, physical scalar storage, all-live-state holds, instruction/operand/coefficient fetch and dispatch/address arithmetic, explicit cleanup, public metadata/code/constants, final field initialization/writes and simultaneous storage/working peaks are included. The generator enumerates the primitive wiring, new SSA, loop/phase descriptors, masks/dense zeros, all padded code/metadata bits and final port wiring; all stored bits and layer delimiters are generated with the displayed offline cost/peak. No free hardware primitive, Python GC or precomputed hidden statistic is allowed. No actual allocation of enormous netlists is required for a finite constructive proof, but a formula without an explicit generator/liveness argument is insufficient.\\n\\n# D6. Quantifier interpretation, baselines and sources\\n\\nC1 quantifier order is one deterministic family A, then all public tuples, all D1 parameters and all admissible channels. C2 order is each public(N,k>=1), then one globally lawful T independent of Q and predictor, then every Q and every common possibly randomized full-Z predictor, then a witness t_* that simultaneously supports conditional and average bounds. The latter predictor may even know the public two-point experiment and channel; it never receives the private channel seed. Infinite later computation does not add unobserved clean information.\\n\\nC1 applies to C2's T for either concrete implementation. The two implementations agree on every Z, so this contract cannot establish JOINT statistical superiority. It gives an O(1/N+k/N+1/Q) average upper and an Omega(k/N) contamination lower, plus a positive rare00 conditional lower. It does not claim matched 1/N or1/Q lower terms, full conditional classification, every-source damage, small unconditional history TV, deterministic attack attainment, practical constants, optimized resources or a learning result.\\n\\nBounded existing primary mapping: Chen/Gao/Ren, arXiv1511.04144v2, is iid Huber-mixture robust testing/modulus, not this common hard-edit dependent observation rule. Pydi/Jog, ICML2020/PMLR119 pp7814-7823 main plus supplement, includes class-dependent point maps and Wasserstein distribution attacks, transport tail cost and submeasures. A whole dependent trajectory can be one feature; dependence itself is not a novelty exclusion. Generic testing/transport/submeasure ideas are prior tools. The new proof must establish the actual D1 conditional full-path Hamming bound and one hard-budget common input-row kernel; class-labelled maps or expected transport alone cannot substitute. These three fixed PDFs and exact location maps are provenance. No claim of novel or publication-central results is required or inferred from the bounded comparison.\\n\\nSources live only under inputs/source-stage4/ with original relative layout and author/hash records. The previous native C1/C3 Fact identifiers in those files remain old-project provenance, not active new-project Fact IDs. Necessary clean source/visits/full-prefix/grid and deterministic finite primitive/frontend/compiler premises must be self-contained or admitted by a genuinely supported mechanism with matching semantics in this project's normal evidence chain. Old Dot absolute-cube formulas, 5/4 exponents and periodic logarithmic-history claims are not mathematical premises. Preserve the earlier conditional Theta(eta) erratum in historical scope; it is not a parameter or claim of this new model.\\n\\n# D7. Evidence and completion\\n\\nThis historical contract required fixed full mathematical review with accurate claims, definitions, dependencies and source versions. Existing source-file reviews and finite diagnostics are not substitutes for the required proof evidence. The recorded evidence level is LLM_CHECKED_PROOF, not formal verification or external peer review. Same-model agreement is not independent cross-model validation. Historical administrative completion requirements are omitted from this public export; their unresolved status is not relabelled a scientific pass. Completion of this stage would not settle the broader research problem.\\n\",\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 57,
+          "input_line_sha256": "1dbc7e3057e888e1f03bcabb935c8477fbacb06c659cbdff0a79f8386db0a74a",
+          "public_line_sha256": "13d00ab52565a838218223e5cc16e842d8413d8da8094f6377c3950b45b5e3e2",
+          "public_line": "    \"external_help_policy\": null,\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 60,
+          "input_line_sha256": "5961a719fd8e26d6de60946b7912653100efd2d345ee665e6e48127cdb4e2ff3",
+          "public_line_sha256": "5d5e3ec541efeb698a5b6acee0109f052bb89bb80721470b1441a53584b0c3f9",
+          "public_line": "  \"team\": null\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 61,
+          "input_line_sha256": "b4463412f72c24112e0859b3d547bb688824bee7737b5c80abcaf1668377c152",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 62,
+          "input_line_sha256": "d99b830443b50f6b4008061e19f925d4f911ac0300cb98017f518139213c5959",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 63,
+          "input_line_sha256": "d6c702b72319a67d46a9d764735a37ddc8de5e4d1b8a3b7bab7955a1ea1478c9",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 64,
+          "input_line_sha256": "03d9394a14894db0630379a2bf93d1d651aae586e0f7491f879da2960c43c743",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 65,
+          "input_line_sha256": "495b8c5bf863743671def3f630eb232d59a7a634a070fc436eec37a8674e6c30",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 66,
+          "input_line_sha256": "7e851c899b9dbf21a1d0879738c1231e98e287707ddaa9d9fbe5c22540913c17",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 67,
+          "input_line_sha256": "5636c7e9273e6a0bdf0f2116720691fde2a851c6c95413f392f7e9a1044808f2",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 68,
+          "input_line_sha256": "0c06eba34d63d32bd917cd6882ff0604de038772e2a4e6b69e5422a715e0b95b",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 69,
+          "input_line_sha256": "4996cd2cb224aab7fa2edffdebe66b5e3523a17fc86422308d59e7c56b223024",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 70,
+          "input_line_sha256": "fe6a12de650dafd2acd780aaa706e74ef17b5707b066936cd8a7f036478c9671",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 71,
+          "input_line_sha256": "27b596fec03d24c12aeabc240d6feb15ea5f7813a3ce17edfe90fc9d89fe57a1",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 72,
+          "input_line_sha256": "202300f7e742eb0672146c825cdf68ccb972f199dd4e54014d4b7320176e86a3",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 73,
+          "input_line_sha256": "b978e2503b8cf37a06f7d6f0a3a6b6fe35691fbcab50b8775cab6fabc71c592b",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 74,
+          "input_line_sha256": "495b8c5bf863743671def3f630eb232d59a7a634a070fc436eec37a8674e6c30",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 75,
+          "input_line_sha256": "28c287119bc49a233f67792c9450260a39fc9a87f8d220df22ed2ce72cf44438",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 76,
+          "input_line_sha256": "8a1865b9106359ffd3cc22856599eab7b4213e5ab867b24d9e1b28d61196155e",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 77,
+          "input_line_sha256": "4c060ce86ed2eb1ea9c07bb6720279d778551a9ebd967d1465ff2c1aea0ab377",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 78,
+          "input_line_sha256": "4996cd2cb224aab7fa2edffdebe66b5e3523a17fc86422308d59e7c56b223024",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 79,
+          "input_line_sha256": "fe6a12de650dafd2acd780aaa706e74ef17b5707b066936cd8a7f036478c9671",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 80,
+          "input_line_sha256": "27b596fec03d24c12aeabc240d6feb15ea5f7813a3ce17edfe90fc9d89fe57a1",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 81,
+          "input_line_sha256": "f8963d8ed54a1beb458fa0606b0e380f1b3d5f47a25623045724e95bdd5d7ad4",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 82,
+          "input_line_sha256": "b978e2503b8cf37a06f7d6f0a3a6b6fe35691fbcab50b8775cab6fabc71c592b",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 83,
+          "input_line_sha256": "495b8c5bf863743671def3f630eb232d59a7a634a070fc436eec37a8674e6c30",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 84,
+          "input_line_sha256": "722c7a2ac99e16effc3a8b04f97024a1eed1c92b6c99d3fe29ddef269b9b26c3",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 85,
+          "input_line_sha256": "f121ba4c879dcca381276cc57b695ffbd3a8a5fbf68ae2cd37dee7018211eb6a",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 86,
+          "input_line_sha256": "4c060ce86ed2eb1ea9c07bb6720279d778551a9ebd967d1465ff2c1aea0ab377",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 87,
+          "input_line_sha256": "4996cd2cb224aab7fa2edffdebe66b5e3523a17fc86422308d59e7c56b223024",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 88,
+          "input_line_sha256": "47182ad124a59f0ab000b522a8a26aec534cb8466c924be3846c378df20867b5",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 89,
+          "input_line_sha256": "c618057ad4cbe6a06c708bf14fe5b3c83359e1c7ac533090f3d807a0ac414977",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 90,
+          "input_line_sha256": "d0f9921198fd3804e9035ad570ff67dea5b5cfbfd6e933c5641988732833c9a4",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 91,
+          "input_line_sha256": "b978e2503b8cf37a06f7d6f0a3a6b6fe35691fbcab50b8775cab6fabc71c592b",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 92,
+          "input_line_sha256": "495b8c5bf863743671def3f630eb232d59a7a634a070fc436eec37a8674e6c30",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 93,
+          "input_line_sha256": "1df95db7cc17c2c73a993393dd101b7fbe0c6cdd037dbd73f203319273745407",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 94,
+          "input_line_sha256": "3544060b37415479ee2c6f2e18f5e65e7d1ed65610c922fa2d6fd93cc651ba72",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 95,
+          "input_line_sha256": "2c06b2f3713355de28e228b7b5434c99309731efe165156bc00933fe0ffc284f",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 96,
+          "input_line_sha256": "4996cd2cb224aab7fa2edffdebe66b5e3523a17fc86422308d59e7c56b223024",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 97,
+          "input_line_sha256": "47182ad124a59f0ab000b522a8a26aec534cb8466c924be3846c378df20867b5",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 98,
+          "input_line_sha256": "27b596fec03d24c12aeabc240d6feb15ea5f7813a3ce17edfe90fc9d89fe57a1",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 99,
+          "input_line_sha256": "9e6c6dac7b9b288bc139a2a379d09dd4dbdeed1a1e07324c465fdfea1d5fa8b3",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 100,
+          "input_line_sha256": "9b62f60d8590a579cf46f8d67378c4c572b962ceccdb90c7a5f7b42b960782a4",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 101,
+          "input_line_sha256": "add244582b6fb03d23b8415abecd346b0c9f466b6f752b068189ce7e9a2dc350",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 102,
+          "input_line_sha256": "4d5cd2fb4f3df884515255b39523f2f8b5472beea9f566ffca204db802561041",
+          "public_line_sha256": "beadba836315747fc95ae304452514b72fe122a6e345974638d70c4e8ebace6a",
+          "public_line": ",\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 103,
+          "input_line_sha256": "27f02eb62b8796aa4f33461030c4aa88dcb6737de563f1e90e516ae3474d3b22",
+          "public_line_sha256": "ce7472de8fa9b7dc802ffd2e9a1e23411f4e279f6a96eca7c0e22f07c43def8a",
+          "public_line": "  \"task_budget\": null\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 104,
+          "input_line_sha256": "9ff293b27863b002a6d579b28db74fc339e4edc59782938750c2f05ec359908f",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 105,
+          "input_line_sha256": "b8ad1d109499deb31032548c5eec2ef698bd8c51f53ecb90d1f943a0840dd1e2",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 106,
+          "input_line_sha256": "195e1d29ee73845ff821b9e67961dd9c7440d4f6c582283ec715dc18f834f2ac",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 107,
+          "input_line_sha256": "1f0cdb972a7bfb7ed246f9ff672385e55f4968fc11043dc5b684d51dfa31dbcb",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 108,
+          "input_line_sha256": "cf42b3ec04e634fa7304a326e9911ce9479ae0ead9c465fde1330e28b1bc1d32",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 109,
+          "input_line_sha256": "b8ad1d109499deb31032548c5eec2ef698bd8c51f53ecb90d1f943a0840dd1e2",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 110,
+          "input_line_sha256": "195e1d29ee73845ff821b9e67961dd9c7440d4f6c582283ec715dc18f834f2ac",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 111,
+          "input_line_sha256": "1f0cdb972a7bfb7ed246f9ff672385e55f4968fc11043dc5b684d51dfa31dbcb",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 112,
+          "input_line_sha256": "3efbbc09c6e87d89253fd01b1bf6efc8461dbf604488655d17c70e1e371b0713",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 113,
+          "input_line_sha256": "b8ad1d109499deb31032548c5eec2ef698bd8c51f53ecb90d1f943a0840dd1e2",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 114,
+          "input_line_sha256": "195e1d29ee73845ff821b9e67961dd9c7440d4f6c582283ec715dc18f834f2ac",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 115,
+          "input_line_sha256": "1f0cdb972a7bfb7ed246f9ff672385e55f4968fc11043dc5b684d51dfa31dbcb",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 116,
+          "input_line_sha256": "99b70a0d0d0eb4c4e0b339dd88ec4307e695b49ef9a14d82a5cd9f3b1d54a693",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 117,
+          "input_line_sha256": "b8ad1d109499deb31032548c5eec2ef698bd8c51f53ecb90d1f943a0840dd1e2",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 118,
+          "input_line_sha256": "195e1d29ee73845ff821b9e67961dd9c7440d4f6c582283ec715dc18f834f2ac",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 119,
+          "input_line_sha256": "1f0cdb972a7bfb7ed246f9ff672385e55f4968fc11043dc5b684d51dfa31dbcb",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 120,
+          "input_line_sha256": "a3a377d70ab792afd4fa0fa946a88d925cc6235274fdf660e39710f36703d401",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 121,
+          "input_line_sha256": "b8ad1d109499deb31032548c5eec2ef698bd8c51f53ecb90d1f943a0840dd1e2",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 122,
+          "input_line_sha256": "195e1d29ee73845ff821b9e67961dd9c7440d4f6c582283ec715dc18f834f2ac",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 123,
+          "input_line_sha256": "1f0cdb972a7bfb7ed246f9ff672385e55f4968fc11043dc5b684d51dfa31dbcb",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 124,
+          "input_line_sha256": "32af29ef0096545da00c5d48eeb340cfdf10a6a6384b1126c6730dc101cfb6ea",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 125,
+          "input_line_sha256": "b8ad1d109499deb31032548c5eec2ef698bd8c51f53ecb90d1f943a0840dd1e2",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 126,
+          "input_line_sha256": "195e1d29ee73845ff821b9e67961dd9c7440d4f6c582283ec715dc18f834f2ac",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 127,
+          "input_line_sha256": "1f0cdb972a7bfb7ed246f9ff672385e55f4968fc11043dc5b684d51dfa31dbcb",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 128,
+          "input_line_sha256": "8d0046517ba164e41d76a9da09ea91894d9924c0f9eb004dbee23911b3e02132",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 129,
+          "input_line_sha256": "b8ad1d109499deb31032548c5eec2ef698bd8c51f53ecb90d1f943a0840dd1e2",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 130,
+          "input_line_sha256": "195e1d29ee73845ff821b9e67961dd9c7440d4f6c582283ec715dc18f834f2ac",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 131,
+          "input_line_sha256": "1f0cdb972a7bfb7ed246f9ff672385e55f4968fc11043dc5b684d51dfa31dbcb",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 132,
+          "input_line_sha256": "58df4d8d9586a480668165063456f9481af08d17724327a34e9d21d41f93153f",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 133,
+          "input_line_sha256": "12cf248e6031faafe0f92d79a0ffd1de7b1c7233531c2983071ee11cef05f8b4",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 134,
+          "input_line_sha256": "92169253e979f83a26dede38112c6ce8ae2fbc604fdcb93102f6af8fee8b3517",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 135,
+          "input_line_sha256": "1f0cdb972a7bfb7ed246f9ff672385e55f4968fc11043dc5b684d51dfa31dbcb",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 136,
+          "input_line_sha256": "1799066163c2ace4a491b80392e28863047fe5b57fb276ed4a9b6dc1e7b477a3",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 137,
+          "input_line_sha256": "aed07c6fd623e8c9f1a66b84a6f7a516723f98dc3bc915c776e8300445fb2885",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 138,
+          "input_line_sha256": "0d06d04ac72ba9149adcf705b2e56a433291f6ae82e689410a6ed239155826dc",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 139,
+          "input_line_sha256": "813a4c78b97a3a48dbcc07f1b191c46cc2dee445bd62ccb0bacd4c9505eebc83",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 140,
+          "input_line_sha256": "3413ec1e25911783c6e81fd4b2851c4366a9f813619a6f1f361fa0939f506501",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 141,
+          "input_line_sha256": "9bfd31c8e7088d69df3384cd29adf0d0cebbfcce80d8699b359c7703ee3527cf",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 142,
+          "input_line_sha256": "5cd486f605a28145f5234bab4e7ea9764701c026f51c146d440335659bb98fea",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 143,
+          "input_line_sha256": "82347ccab979964227accfac2019c006403cd2e4d17f02305b56dcf8749e2675",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 144,
+          "input_line_sha256": "0ec4f4b81fe2c87550280d3f424740dacb319152855a58bbf964a0d7085b019a",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 145,
+          "input_line_sha256": "4d5cd2fb4f3df884515255b39523f2f8b5472beea9f566ffca204db802561041",
+          "public_line_sha256": "beadba836315747fc95ae304452514b72fe122a6e345974638d70c4e8ebace6a",
+          "public_line": ",\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 146,
+          "input_line_sha256": "117e4e42e5d57bc30724df67ed32fa536e9a231c2f8703e562d370de3215f9d8",
+          "public_line_sha256": "bbdd1a67f93b712f4a3f36c48373e0b9b3cf916aa5a196a1b3e3ab7c42a952b5",
+          "public_line": "  \"workbench\": null\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 147,
+          "input_line_sha256": "97c925ac5d1101b010c4c3297b44912dd11d44dec90fa4265591567ac69dfc4b",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 148,
+          "input_line_sha256": "f379599bf64b72e5e5469e7a6c4e30c4bfa4aac38bbd992e3df7687d8a98af50",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 149,
+          "input_line_sha256": "27e5788d5d9d73d24a81dbc0a5a74bfa82c9c3b3af99e52af796e90b468a8a3d",
+          "public_line_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "public_line": "\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/earlier/runtime/v10/stage5-input-contamination/research.definition.json",
+        "source_sha256": "93fa2cfd06a9b597e4380fe699839e1ac673d856956ca786a744cf529ef7994c",
+        "export_sha256": "93fa2cfd06a9b597e4380fe699839e1ac673d856956ca786a744cf529ef7994c",
+        "source_bytes": 27346,
+        "export_bytes": 27346,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/earlier/runtime/v10/stage5-input-contamination/research.definition.json"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/counter/assessment-v1.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "8dbfe070cba1aefc6f78de19aa1a346f7d2832e7b18155f24d2316239e247c58",
+      "input_bytes": 18221,
+      "public_sha256": "e8a2808b8f26d0d5723e10403d7af890c8179cafc54418bd7baeebb16543f038",
+      "public_bytes": 17966,
+      "public_edits": [
+        {
+          "line": 9,
+          "input_line_sha256": "6dee3ca7a3729f9866779ae8db39a30b84ee8d1646abe8a54a08022631eaa9d1",
+          "public_line_sha256": "883852902df641a61564e7aeee0fe3a8f2b7269f36f3a1bb280c72952dfdee02",
+          "public_line": "首先读取Lead文件 outputs/027-anchor-joint-k-frontier/lead/bounded-frontier-question-v1.md，SHA256 8a198af293ad5ba4db5de2d05c761a23c4a9aa1df59018030fa1f85f13085223。原生Euler状态显示027为OPEN、evidence_refs为空，路线 [redacted orchestration identifier] 为ACTIVE。\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        },
+        {
+          "line": 267,
+          "input_line_sha256": "6db10656c9f7cce197b2d1e929199c00f447dcd72507bed0fa4c511cf3e47645",
+          "public_line_sha256": "ec163e77cabe8f16dff29a8d12db6dcca54cbf20d5e1a0ef579e9ff3bd2c7349",
+          "public_line": "同一023程序、实际u及主dense/uncached费用保持：全n位置、六heads、QKV、mask、input/query/endpoint、完整products/remainders、guards、holds/copy/clear、输出、offline全格式和逐phase总peak均收费。clock是数据源规律；聚合计数是分析对象，不是新decoder输入、免费cache或历史重读。[Non-scientific operational metadata omitted.]\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        },
+        {
+          "line": 269,
+          "input_line_sha256": "a2a98abe8e7b8d3b66a90f5099e494404a3f0f690517876529758a909787b60e",
+          "public_line_sha256": "638c3afa43782c83796635112ab880eecc2f29b43010e0325e39cc2d81855883",
+          "public_line": "[Non-scientific operational metadata omitted.]单个子域进展不宣告v10母目标解决。\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/counter/assessment-v1.md",
+        "source_sha256": "8dbfe070cba1aefc6f78de19aa1a346f7d2832e7b18155f24d2316239e247c58",
+        "export_sha256": "8dbfe070cba1aefc6f78de19aa1a346f7d2832e7b18155f24d2316239e247c58",
+        "source_bytes": 18221,
+        "export_bytes": 18221,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/counter/assessment-v1.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/lead/bounded-frontier-question-v1.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "8a198af293ad5ba4db5de2d05c761a23c4a9aa1df59018030fa1f85f13085223",
+      "input_bytes": 6609,
+      "public_sha256": "28b51263be50819bf49c5deb0acce391366755f9c9b574f4b94ee45b36ebc503",
+      "public_bytes": 6421,
+      "public_edits": [
+        {
+          "line": 59,
+          "input_line_sha256": "3df4593ec5a3fbeec86c7c9ecf08773afc00b8b99ed51951ab260aa40a832933",
+          "public_line_sha256": "92ab4a727b5150eb74d2a913e9ad436c9a6da3305b6d03e12a653f9879af32a4",
+          "public_line": "本轮推导与候选源构造仅属探索，不改变任何已接纳 Fact 或其依赖，也不自动产生新的数学 Fact。完整新目标只有正常独立网关才能接纳。若出现真实障碍，用Euler工具作准确诊断记录，勿把一次方法失败写成母问题不可能。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 61,
+          "input_line_sha256": "4e812db5201783c1868f1e714b5af1e8b46b4793ca16fff54b694d18895e518e",
+          "public_line_sha256": "6c0953c452d090a5b4629744c90d321c46218497b9188762e4bcd23238152df5",
+          "public_line": "沿实际u及023主dense/uncached完整资源，所有n位置、六heads、QKV、mask、input/query/endpoint、完整products/remainders、guards、holds/copy/clear、输出、offline全格式与逐phase总peak保持。无新compiler、literal ledger、batch测量要求。[Non-scientific operational metadata omitted.]021收束，022 OPEN/PARKED；[Non-scientific operational metadata omitted.]Dot一般初始化/平稳/混合统计率支线不另派，本特殊clock只作量化风险见证。v10母目标未解决。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/lead/bounded-frontier-question-v1.md",
+        "source_sha256": "8a198af293ad5ba4db5de2d05c761a23c4a9aa1df59018030fa1f85f13085223",
+        "export_sha256": "8a198af293ad5ba4db5de2d05c761a23c4a9aa1df59018030fa1f85f13085223",
+        "source_bytes": 6609,
+        "export_bytes": 6609,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/lead/bounded-frontier-question-v1.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/prover/joint-k-frontier-diagnostic-v1.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "8a1ba3557d4d94340e2637d07f400eb71bdd863cafd83cd313603e6cf9e7d092",
+      "input_bytes": 32351,
+      "public_sha256": "4a4d348e7d8ff5d3ea4c2c4be4b71772939aea0d89bff7b6de2505084d286fea",
+      "public_bytes": 32235,
+      "public_edits": [
+        {
+          "line": 460,
+          "input_line_sha256": "39a7041ed47c36f73ab5d7a2990c4cdbe378ae26e435f1192265b086b3de4fb4",
+          "public_line_sha256": "d9a3a177ef02591c758e2053ef241c205d8487b6e789eb49dc3fb8d50d5e8820",
+          "public_line": "GPU use and audit reserve are zero. [Non-scientific operational metadata omitted.] These special clocks address only the quantization witness, not Dot's general initialization/stationarity/mixing-rate line. Neither a general decoder/Transformer resource lower bound nor the v10 mother objective is claimed solved.\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/prover/joint-k-frontier-diagnostic-v1.md",
+        "source_sha256": "8a1ba3557d4d94340e2637d07f400eb71bdd863cafd83cd313603e6cf9e7d092",
+        "export_sha256": "8a1ba3557d4d94340e2637d07f400eb71bdd863cafd83cd313603e6cf9e7d092",
+        "source_bytes": 32351,
+        "export_bytes": 32351,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/prover/joint-k-frontier-diagnostic-v1.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/COPY_MANIFEST.json",
+      "origin": "stage8 restored export",
+      "input_sha256": "ddc0a05010fbb2497315359dc8941fcf3cc204cb26fcbd3a2ec2e650fc8189bc",
+      "input_bytes": 14643,
+      "public_sha256": "ddc0a05010fbb2497315359dc8941fcf3cc204cb26fcbd3a2ec2e650fc8189bc",
+      "public_bytes": 14643,
+      "public_edits": [],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/COPY_MANIFEST.json",
+        "source_sha256": "ddc0a05010fbb2497315359dc8941fcf3cc204cb26fcbd3a2ec2e650fc8189bc",
+        "export_sha256": "ddc0a05010fbb2497315359dc8941fcf3cc204cb26fcbd3a2ec2e650fc8189bc",
+        "source_bytes": 14643,
+        "export_bytes": 14643,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/COPY_MANIFEST.json"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    }
+  ]
+}

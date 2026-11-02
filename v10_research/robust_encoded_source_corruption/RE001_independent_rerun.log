@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "scope": "Independent exact rational/algebra/geometry/schedule checks; no expected-risk Monte Carlo, no complete emitted generic-FA evaluator audit, not formal verification.",
+  "exhaustive_protected_word_pair_checks": 7585,
+  "theorem_domain_random_word_pairs": 350,
+  "row_inverse_composition_normalization_checks": 10737,
+  "binary_exact_pathwise_checks": 10575,
+  "empty_clean_row_checks": 5040,
+  "artificial_positive_empty_row_checks": 3200,
+  "packed_exact_tube_noise_geometry_checks": 3160,
+  "pre_fault_exact_clip_checks": 5048,
+  "exact_finite_scale_schedule_checks": 30716,
+  "scalar_schedule_checks": 14689,
+  "snake_schedule_checks": 16027,
+  "long_full_description_scalar_target_cases": 3,
+  "dependency_receipts": {
+    "MG001": {
+      "receipt_sha256": "d2d105f735e724d1057fdc9ad88b6e69a405c3b95eb97ad0a50321335ea23e1a",
+      "proof_sha256": "c4f114bb7510f3dd5ead7461d9ebead092e2abe103fc92f96e3af9fbd4ac6623",
+      "component_count": 0
+    },
+    "MG002": {
+      "receipt_sha256": "57002e5143588baaba3f25c8baec6c0493dea9b8304ef40d4bb5f9cd2dfae44f",
+      "proof_sha256": "7b9c72da1bbaa6ddafcba66fabe80cf25b467703bfeca7b9afa8e00f0f8e8d93",
+      "component_count": 0
+    },
+    "GD001": {
+      "receipt_sha256": "662c3020f51d0d8cc7595cc375c21281df6ef71eea85dd0e1d153745c8496d08",
+      "proof_sha256": "5959d2c6f60c1374f9c2702fcf58a9bd5cc1245313e59c0fe95ad635e9e8e50a",
+      "component_count": 3
+    },
+    "GN001": {
+      "receipt_sha256": "9267efd56a4a4a0fc1aa0b50b13712b933e27e72ae9f6e2f0a6716c15b558f07",
+      "proof_sha256": "743367f687c79ea9b3abfbecaa70b206fe62afb5fbb56d1643331aacbfc18383",
+      "component_count": 0
+    },
+    "JP001": {
+      "receipt_sha256": "75d7a29c3c4e9740093302534f47820e4402232d54c72c31a4454db15489a1ee",
+      "proof_sha256": "c94e7d59d463a642853b8e3c52588f735c24175885f9cfddf05fbd8f3f2c0fab",
+      "component_count": 0
+    },
+    "SC002": {
+      "receipt_sha256": "af1aa004e7b4d86ba1d9e6ba9d0ccb517daa984b249de7d8198560505fc1fb26",
+      "proof_sha256": "40a8950861b486f532ac625fa479cb49cd79241dbb4b08efce6296ae9b6a1f0e",
+      "component_count": 0
+    },
+    "SC003": {
+      "receipt_sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+      "proof_sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "component_count": 0
+    },
+    "BT002": {
+      "receipt_sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+      "proof_sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "component_count": 2
+    }
+  },
+  "clip_clarification_sha256": "30832632d00b18ae757cebc68426276d34f26b95dab18ecd67dd782e36dffdbc",
+  "clip_review_sha256": "f7b6fc753bd7ca4b3fedb1f48ca813e9dc6da33a68f8584b610cd6b20d73109f",
+  "theorem_sha256": "0cbe7c7a45b2efe6d73ba1a8e55b96d0a6d9f6bc8aa9b74a122960272944ce73",
+  "script_sha256": "fb381c04d3e1c30ed6e9202528b218e1f1963885b4e0348bfb5f93df5650f4f7",
+  "elapsed_seconds": 6.948
+}

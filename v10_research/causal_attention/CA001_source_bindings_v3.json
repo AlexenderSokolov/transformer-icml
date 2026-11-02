@@ -1,0 +1,51 @@
+{
+  "candidate": "CA001 v3",
+  "date": "2026-11-02",
+  "status": "Author candidate frozen for independent review; not accepted.",
+  "external_sources": "No external source retrieved by this agent; prior-art statements rely on the locally read comparison, not a fresh verification.",
+  "finite_arithmetic": "Uniform E/Q approximation obligation explicitly remains unproved.",
+  "files": [
+    {
+      "path": "v10_research/bounded_attention/BA001_bounded_local_attention_lower_v1.md",
+      "sha256": "fb589a775220737124a42e96a115eb3471ccbb84933edc2fd488e0d5986f1569",
+      "bytes": 18608,
+      "role": "Read directly; source family, finite-message method, harmonic averaging and IID completion."
+    },
+    {
+      "path": "v10_research/prior_art/bounded_attention_family_comparison.md",
+      "sha256": "0116166d902afed8ec6ee6c6042b426c5a2b515e596d3e8660410a3ff355c494",
+      "bytes": 10335,
+      "role": "Read directly; scoped prior-art comparison and corrected Hahn supplement warning."
+    },
+    {
+      "path": "v10_research/causal_attention/CA001_causal_bounded_softmax_candidate_v1.md",
+      "sha256": "e7203ce6ea55c1380adfe1eb8eaaa2b3878f6f43fcc456153433a013f3d52129",
+      "bytes": 15117,
+      "role": "Preserved author candidate before public dense-mask extension."
+    },
+    {
+      "path": "v10_research/causal_attention/CA001_causal_bounded_softmax_candidate_v2.md",
+      "sha256": "f13d6f7e348f3fdab8c8a3f3b4b9d5d65e94e30249b049e80d0e68d348e69fb7",
+      "bytes": 17974,
+      "role": "Current author candidate, explicit public dense causal-mask corollary."
+    },
+    {
+      "path": "v10_research/causal_attention/check_ca001.py",
+      "sha256": "795cebdeed6ff74aa0d2709aa5f02d61f783a6de3e654447e5b30b94bab94661",
+      "bytes": 3263,
+      "role": "Executable finite diagnostics; not formal proof."
+    },
+    {
+      "path": "v10_research/causal_attention/CA001_diagnostic.json",
+      "sha256": "01bdadff8bdd8bacac4b1cc00868cee414f2a99f3bf03593a69ad0574a89fae6",
+      "bytes": 1158,
+      "role": "Actual passing finite-diagnostic output."
+    },
+    {
+      "path": "v10_research/causal_attention/CA001_causal_bounded_softmax_candidate_v3.md",
+      "sha256": "88e952f840009d8345c4482ca8cd14231f9dd9a28a3d522f12cd7e03b65ea21e",
+      "bytes": 19626,
+      "role": "Current frozen author candidate: corrected influence-bound definition; full formal-history frozen-branch domain; grid versus word-capacity distinction; includes dense masks."
+    }
+  ]
+}

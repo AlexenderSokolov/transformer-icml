@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "freeze_utc": "2026-11-02T06:56:00Z",
+  "pages": 8,
+  "native_editable_OMML_objects": 180,
+  "formula_images": 0,
+  "page_text_characters": [
+    1117,
+    1039,
+    1084,
+    1073,
+    1052,
+    1099,
+    990,
+    1348
+  ],
+  "source_receipt_hash_checks": "PASS",
+  "science_review": "Independent read-only review passed after one-step/two-step virtual-completion and suffix-horizon notation clarifications.",
+  "visual_review": {
+    "status": "PASS",
+    "directory": "qa_release4",
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "notes": "Opened all eight final PNGs after status/cost clarification and page-eight prose compaction. Unchanged 11pt typography; all text, mathematics, page numbers and header readable. No clipping, overlap or spill pages.",
+    "page_sha256": {
+      "page-1.png": "d3f50e168f851ddac228ca4e81f9c6b68606e81f3dab0b1deca3f63aad2e42d6",
+      "page-2.png": "1f38507b307d6f1c46b84bcfbf8b142eb3e011eb46e95674e04ff142bc6ffcb5",
+      "page-3.png": "07948f598605290b20b572562840d7fafb14bd15e272c47fba84f0bcb4ccdfe1",
+      "page-4.png": "6efd5724c8a01328ae204fab572739739169784e78709ff4fb566b477d510413",
+      "page-5.png": "9e8a6d2eb75199a27c661f8804edc45d1b1b5d74494e7f90b0df00aae5267d19",
+      "page-6.png": "8e1f23755a2d74f318d26e6249c6c16c8a314dab99bd919abec99a39197f6130",
+      "page-7.png": "52a81991f00d2f29c8e9c6b7bbacbcb38b6da65054227721c1e97c1c9bedcb19",
+      "page-8.png": "39c9aee094d9523af49002fff02cc872b933924fd2d580d9c992b88ef592dccd"
+    }
+  },
+  "outputs": {
+    "Chinese-stage6-guide.docx": "8a1a9b53dc8af682507a4af98fb0383db760cdea8fe536797185b3a7ee4c1486",
+    "Chinese-stage6-guide.pdf": "eed6e40fb767d9481347cb883fe5647ee9cf6f3d55b97303b82d5acd3842816b"
+  },
+  "build_inputs": {
+    "guide_math_zh.md": "c89dfe488a30e08d779d836de37032fd9ffad2474e51b4a807859d7512db9f34",
+    "guide_final_math_zh.md": "8c3b5822710874b97382cfc91b7d14eaab44dfcea9bef698040cefe4973dea6e",
+    "build_guide.py": "b522848932728ceab0e81c2a53b4bd15bb821b8efe37cd5f0297f0e2a832f71e",
+    "verify_guide.py": "700e1eb7e36054ec80ff56ffc1649bad08e258a1440eb8b01266212fafd43dca"
+  },
+  "verified_utc": "2026-11-02T07:19:42Z",
+  "science_delta_review": "Independent manuscript auditor passed publication-status wording, distinct w/b accounting and bank conversion, and page-eight prose compaction; no theorem change."
+}

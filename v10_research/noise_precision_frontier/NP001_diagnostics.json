@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "scope": "Finite rational diagnostics only, inherited independently checked GN geometry and explicit finite evaluator; not uniform proof",
+  "coarse_attack_scalar_cases": 12126,
+  "exact_statistical_selection_cases": 310,
+  "finite_encoder_cases": [
+    {
+      "N": 2,
+      "J": 2,
+      "Q": 256,
+      "delta": "1/100",
+      "Q_delta": "64/25",
+      "tau": "1/100",
+      "t": "1/64",
+      "P": 3904,
+      "inputs": 17,
+      "attacks_checked": 170
+    },
+    {
+      "N": 2,
+      "J": 2,
+      "Q": 1024,
+      "delta": "1/100",
+      "Q_delta": "256/25",
+      "tau": "1/100",
+      "t": "1/64",
+      "P": 3912,
+      "inputs": 17,
+      "attacks_checked": 170
+    },
+    {
+      "N": 4,
+      "J": 2,
+      "Q": 1024,
+      "delta": "1/257",
+      "Q_delta": "1024/257",
+      "tau": "1/257",
+      "t": "1/256",
+      "P": 5832,
+      "inputs": 21,
+      "attacks_checked": 210
+    },
+    {
+      "N": 2,
+      "J": 3,
+      "Q": 1024,
+      "delta": "1/211",
+      "Q_delta": "1024/211",
+      "tau": "1/211",
+      "t": "1/128",
+      "P": 8712,
+      "inputs": 23,
+      "attacks_checked": 644
+    },
+    {
+      "N": 2,
+      "J": 3,
+      "Q": 256,
+      "delta": "0",
+      "Q_delta": "0",
+      "tau": "1/256",
+      "t": "1/256",
+      "P": 8704,
+      "inputs": 23,
+      "attacks_checked": 621
+    }
+  ]
+}

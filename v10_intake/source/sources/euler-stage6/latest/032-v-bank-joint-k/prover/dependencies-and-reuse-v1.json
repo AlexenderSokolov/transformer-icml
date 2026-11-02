@@ -1,0 +1,47 @@
+{
+  "obligation_id": "02da4576308aa8b8abc12ded4c285018a0c3ef4375f713b027fde13927e15fff",
+  "actual_direct_predecessors": [
+    {
+      "fact_id": "fef8372728290b45",
+      "evidence_id": "e565455ae8465695ccf1f83e7c7f203d29c2f5bc4e49eb4b5eed822057d94505",
+      "path": "fact_graph/facts/fef8372728290b45.md",
+      "sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025"
+    },
+    {
+      "fact_id": "a53804d650803060",
+      "evidence_id": "fef1785395851e47b5ca0b719640449061718f4c670bfcd74c24cf0aec696c88",
+      "path": "fact_graph/facts/a53804d650803060.md",
+      "sha256": "bc24d183f5299df636e67f0b439aadbcd4d79671b69c327ed7083ddfab857c6f"
+    },
+    {
+      "fact_id": "946d42d5bf502eb4",
+      "evidence_id": "aa23c442ca1006c6ac0b12379f64a0fa500fbbd6a2e41c798b7a4de3952baa82",
+      "path": "fact_graph/facts/946d42d5bf502eb4.md",
+      "sha256": "fe18f4a413fef5da14c5f361aef47a8c5addceac1a3a58d73366ad20f16d8e93"
+    }
+  ],
+  "writing_source": {
+    "path": "outputs/030-anchor-joint-k-high-kappa/prover/high-kappa-proof-v1.md",
+    "sha256": "8ae2d4d7cdf04b9d509326e667ecf58ea35e16847efe5bdb19a332a4308395ba",
+    "reuse": "sections 2-3 source/path writing only; all arguments restated; no 030 risk premise"
+  },
+  "source_reuse_is_mathematical_premise": false,
+  "new_self_contained_arguments": {
+    "section_3": "full homogeneous clock source and all-residue path law for T<1",
+    "section_4": "all-history legal V edit, real SRC 78 capacity and 78K sum, target nonresidual floor",
+    "section_5": "conditional finite Jensen and finite harmonic sum",
+    "section_6": "all-parameter statistical/logarithmic/saturated max bridge",
+    "section_7": "necessary and sufficient sequence consistency"
+  },
+  "additional_fact_predecessors": [],
+  "not_used_as_premises": [
+    "030 CLOCK/PARTIAL",
+    "031",
+    "Dot condition or mixing results",
+    "finite diagnostic checks"
+  ],
+  "nominal_program": "same SRC dense/uncached Pi; no anchor program or new decoder",
+  "gpu_used": 0,
+  "gpu_audit_reserved": 0,
+  "compiler_ledger_batch_profile_run": false
+}

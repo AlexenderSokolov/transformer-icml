@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "method": "independently authored exact Fraction arithmetic; no imports from author diagnostics",
+  "counts": {
+    "coarse_attacks": 21450,
+    "scale_and_selector_cases": 5532,
+    "statistical_snakes": 866,
+    "statistical_scalar": 2464,
+    "geometric_decodes": 16640
+  },
+  "limitations": "Finite diagnostics do not prove the all-parameter theorem or audit the finite FA evaluator. Real-attack universality uses proof; tests use rational examples.",
+  "theorem_sha256": "79cae4ebb56694452d63ccb2f6ac1f2d89516e9812c68bba700341ea600e9f54"
+}

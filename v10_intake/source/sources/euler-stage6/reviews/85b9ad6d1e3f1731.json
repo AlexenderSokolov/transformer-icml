@@ -1,0 +1,27 @@
+{
+  "fact_id": "ca2de64e8dbb95d4",
+  "claim": "# RATE-K-MINIMAX：合法二阶源族上的一般 K actual TV 下界\n\n这是 RATE-K-LOW 接纳之后的独立算法量词扩展候选，目标是全部共同全历史预测器，不把指定 add-one 的已知源损失冒充 minimax。旧 G/U、SRC、RATE-TV、K3 与 K-LOW 均保持接纳及原有依赖，不增加逆向前提。Lead 候选和 Counter 报告不是 Fact；本合取需完整证明与正常独立网关。\n\n对每个整数 K>=2、M>=1，N=M+2，字母表为 {0,...,K-1}。theta 是任意齐次二阶转移表，允许零边；mu 为任意初始对律。令 Y_i=(X_(i+1),X_(i+2))，0<=i<=M；观察完整 X_1^(M+2)，actual target 是 theta_(Y_M)。一条实验内 theta 固定，sup 可随 (K,M) 改选源。\n\n令 A_(K,M) 遍历所有共同、可能随机的全历史概率预测器：其输入只有已观察历史和公开 K,M，可计算 actual query，但不得读隐藏 theta,mu 或未来符号。算法的随机种子与源独立；算法可依 K,M 选择，且输出在 K-simplex 上。定义\n\n    R_min(K,M)=inf_A sup_(theta,mu)\n        E_(theta,mu,A) TV(A(X_1^(M+2)),theta_(Y_M)).\n\n拟证明全部有限参数上的\n\n    R_min(K,M)>=2^(-12) min{1,sqrt(K^3/(M+1))}.        (MM)\n\n这是同轨迹 actual 的均值风险，非 fixed row、最大行、时间平均或额外独立测试实验。证明中允许在一个具体合法源族内导出末对的独立性，但必须从原二阶路径律严格证明，不能为一般源额外假设独立 query 或条件 iid。\n\n## 1. 拟用的合法有限源族及全余数初始化\n\nK>=6 时，置 q=floor(K/3)>=2、r=floor(q/2)。取三个互不相交的字母组 U,V,W，各有 q 个字母；余下字母的质量可为零。对每个 (u,v)∈U×V、j=1,...,r，取未知符号 sigma_(u,v,j)∈{-1,+1}。将 W 中前 2r 个字母分为 r 对，取公开 0<alpha<=1/2，定义\n\n    theta_(u,v)(w_(2j-1))=(1+alpha sigma_(u,v,j))/q,\n    theta_(u,v)(w_(2j))  =(1-alpha sigma_(u,v,j))/q.\n\n若 q 为奇数，剩下的一个 W 字母概率为 1/q；组外概率为零。对所有 (v,w)∈V×W，theta_(v,w)=Unif(U)；对所有 (w,u)∈W×U，theta_(w,u)=Unif(V)。其余未到达 pair 给任一固定合法概率行。完整证明须检查归一化、shift 约束、未到达行及同一齐次表。\n\n写 M=3n+d，d∈{0,1,2}。初始化不依 sigma：d=0 时 mu=Unif(U)⊗Unif(V)；d=1 时 mu=delta_(w_*)⊗Unif(U)；d=2 时 mu=delta_(v_*)⊗delta_(w_*)，其中公开 v_*∈V,w_*∈W。应严格证明已观察历史等价于 n=floor(M/3) 个独立 block (U_i,V_i,W_i)，其中 (U_i,V_i) 独立 uniform 于 U×V，W_i 条件律为 theta_(U_i,V_i)，加上一个与全部训练 block 独立的 uniform 末对 (U_(n+1),V_(n+1))。d=1,2 的初始固定前缀不携带 sigma 信息；n=0 也必须覆盖。这个等价是原始完整轨迹的精确表示，没有删除信息或更换风险实验。\n\n## 2. 未知符号测试与常数\n\n可取 alpha=min{1/2,(1/8)sqrt(q^3/(n+1))}。相邻符号向量仅翻转一个 (u,v,j) 时，完整训练 block 的 KL 必须从实际路径律计算；候选给不超过 8n alpha^2/q^3。实际末对和固定前缀不能引入未计的信息。\n\n对实际末对为 (u,v) 的每个符号对，预测器两个 W 坐标的顺序可用作 sigma_(u,v,j) 的测试；错误顺序使该对的 TV 贡献至少 alpha/q。需要严格处理任意随机预测器、ties、实际末对条件下的观察律、符号平均与所有 q² 行的权重，不能把不同源风险直接相加后声称同一见证。标准两点测试不等式及所用 KL-TV 控制须明确证明或给准确可核版本。\n\n预期由此先得 q>=2 时的保守下界\n\n    R_min(K,M)>=(1/64) min{1,sqrt(q^3/(n+1))}.\n\n再由 q>=K/6 与 n+1<=M+1推出 (MM)。对于 2<=K<=5，可只用本项目 G/U Fact a12539a93d9f1ee3 已接纳的任意共同算法 iid actual 下界 1/(16sqrt(M+2))，明确比较有限常数以补齐 (MM)。该 Fact 是此候选唯一必需的当前项目 Fact 前驱；高 K 源族和测试论证须自足，不能依赖 K-LOW 的指定估计器 lower。\n\n## 3. 准确推论和范围\n\n(MM) 若成立，则任何共同算法在该完整源类上达到统一 actual 均值风险 tau，0<tau<2^(-12)，必须有\n\n    M+1>=2^(-24) K^3/tau^2.                          (sample necessity)\n\n这只是统计样本量必要条件，不是内部 bit 数、层数、宽度、算术工作或资源最优性的下界。它覆盖实际 Pi 和 strong direct 作为全历史算法的子类，但不额外声称它们的实现费用，也不需要 SRC 作统计 lower 前提。\n\n与已有 K3 upper 比较仍留下 K^(3/2) 与 K^3 的差距，不宣称 sharp K 或 minimax 完整匹配。未知源可依算法/参数选择，不能称一个固定源同时使所有算法失败。初始化依 M 的余数是合法的每 horizon supremum，不称同一 mu 在全部 M 同时实现该界。分组嵌入、两点测试、KL/TV 工具不作首创声称；直接 primary 的同范围先例仍需核对。本义务不重做 count-snap、二元故障或模块费用，也不宣告 v10 完成。",
+  "evidence": "verdict: correct",
+  "glossary": {},
+  "links": {
+    "attempt_id": "native-fd13ee0141eae881fd98cdd8ab88317041b7b3abbf6b7b135683fafe2b56352a",
+    "predecessors": [
+      "a12539a93d9f1ee3"
+    ],
+    "source_id": null
+  },
+  "status": "open",
+  "timestamp_utc": "2026-10-27T14:28:12.801568+00:00",
+  "transport_status": "ok",
+  "verdict": "correct",
+  "verifiable": false,
+  "verification_report": {
+    "critical_errors": [],
+    "gaps": [],
+    "summary": "Reviewed this single frozen submission for run [redacted review run identifier], using contract e6b7592e781948d00eb2a2effb80d8e3ef77e480f8d70f960286bc33faf730af and definitions hash 2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc. Service-recorded statement SHA256: e0d712e1027d7bce378dc6c38c4cf28f9b904b224699761bdd043fd5e1fe6c5d; proof-packet SHA256: adc3194331ea825edd50d461b22742b78190189878d292368f8e63561fe5ed11. Sequential review of Sections 1–8 found no mathematical errors or gaps. The source table is normalized, homogeneous and shift-compatible. The full-path factorization proves the claimed block representation and actual-terminal independence for all three remainders, including n=0, without discarding observations. The finite randomized-testing and KL–TV inequalities are proved within the submission. The adjacent-sign KL calculation, treatment of ties, q^2 actual-row weights, common-prior averaging, minimax quantifiers, finite constants for every K>=2 and M>=1, and sample-necessity implication are valid. The stored project Fact a12539a93d9f1ee3 was read: its unconditional U2 iid lower bound supplies exactly the small-K prerequisite, without interface I; the statement has no inherited P3 narrowing defect. This uses its admitted status rather than independently re-verifying the entire prerequisite. No P1/P3/P5/P6 violation was found. No external-paper theorem is imported; prior-art novelty, implementation costs and sharp matching are not certified. This is one cold-context LLM admission review; no cross-model independence, server-internal or cryptographic attestation, or formal certification is claimed. This is an LLM review, not formal verification or external peer review; cross-model independence is not established."
+  },
+  "write_error": null,
+  "source_record_id": "85b9ad6d1e3f1731",
+  "source_canonical_json_sha256": "ada0c1c9d8e9a4a9380157d0e6ddc19187873306278b04f8e1ecf8e94ab25584",
+  "export_note": "Scientific claim, glossary, dependencies and complete mathematical report retained. Runtime author/attempt/routing metadata omitted; this JSON is a declared scientific export, not the original serialized record."
+}

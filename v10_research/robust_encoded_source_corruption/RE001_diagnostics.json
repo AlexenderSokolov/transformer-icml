@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "scope": "Exact finite diagnostics, not formal verification, statistical expectation Monte Carlo, or a full emitted-network/resource audit.",
+  "histogram_edit_pairs": 10657,
+  "actual_finite_composed_frequency_evaluations": 420,
+  "noisy_geometric_reconstructions": 6951,
+  "actual_corrupted_word_pipeline_rows": 192,
+  "empty_clean_rows_with_false_reconstructed_mass": 6,
+  "max_actual_affine_count": 82,
+  "precut_error_strictly_below_grid": true,
+  "prototype_settings": [
+    {
+      "R": 2,
+      "N": 2,
+      "Q": 512,
+      "L": 0,
+      "P_diagnostic": 384,
+      "unique_frequencies": 103,
+      "epsilon": "3/64"
+    },
+    {
+      "R": 2,
+      "N": 4,
+      "Q": 1024,
+      "L": 3,
+      "P_diagnostic": 384,
+      "unique_frequencies": 103,
+      "epsilon": "3/256"
+    },
+    {
+      "R": 3,
+      "N": 2,
+      "Q": 1024,
+      "L": 6,
+      "P_diagnostic": 384,
+      "unique_frequencies": 108,
+      "epsilon": "9/512"
+    },
+    {
+      "R": 2,
+      "N": 1,
+      "Q": 64,
+      "L": 3,
+      "P_diagnostic": 384,
+      "unique_frequencies": 106,
+      "epsilon": "3/32"
+    }
+  ],
+  "finite_scale_certificate_cases": 14565,
+  "scalar_schedules": 7640,
+  "packed_schedules": 6925,
+  "explicit_pre_fault_clip_cases": 28,
+  "all_radical_inequalities_checked_by_exact_squaring": true,
+  "elapsed_seconds": 4.666040897369385,
+  "sha256": {
+    "robust_encoded_source_corruption/RE001_theorem.md": "0cbe7c7a45b2efe6d73ba1a8e55b96d0a6d9f6bc8aa9b74a122960272944ce73",
+    "robust_encoded_source_corruption/RE001_diagnostics.py": "144e67ccaafceaf4580ebf7ecb7fe31a93e004e3b2aa9994f3b6866b17e69592",
+    "robust_depth_capacity/check_gn001_finite.py": "9bf5e5858b2ebd9a1b43b0efbe821b3c2d0d7fce0c406ca220423ff1ebebc422",
+    "robust_depth_capacity/GN001_independent_geometry.py": "c693eb0dd0fd7fe89dd307538266d5af4a476cb958a30e055e1b6f4be737aacd"
+  }
+}

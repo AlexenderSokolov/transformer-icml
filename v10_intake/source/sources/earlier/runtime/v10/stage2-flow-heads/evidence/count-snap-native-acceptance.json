@@ -1,0 +1,138 @@
+{
+  "checked_at": "2026-10-24T23:30:11.040995+00:00",
+  "root_status": "OPEN",
+  "obligation": {
+    "obligation_id": "2b5ba74d6d15e652767bfd1543e6a04065654751a94cba20adbe3e6c53895d6b",
+    "contract_id": "22e80d3d620c36cfc0bbd297101a5efabe634d7fd696b4cae200963af52af02a",
+    "exact_statement": "Prove or correct exact finite-grid count recovery and fully charged simplex readout as a strong comparator within D1-D7: for known M and h-grid a with |a-C/M|<1/(2M), implement nearest count by floor((2M A+Q)/(2Q)), A=Qa,Q=2^h, with legal Boolean/ReLU gates, closed-grid endpoint and all word/range/hold costs. Apply it to a paid K^3-feature uniform-count head (nominal Q>=2M, retaining finite evaluator h>=4) and separately to the admitted C1 D3 recovered joint frequency whose nominal error is <=76/Q (sufficient Q>=256M), followed by exact integer add-one and dyadic simplex output. Prove pathwise bitwise equality of these two strengthened comparators at the same sufficient Q and TV error <=(K-1)/Q; state their restricted correlated post-aggregation perturbation margins and where the rounding guarantee ceases. Give full resource functions/deltas including known length, feature tables, finite attention, integer count snapping and output, and distinguish sufficient precision schedules from precision lower bounds or componentwise budget dominance. Treat D3-snap as an explicitly charged alternative readout, leaving the accepted Pi_(N,h) and its C3 experiment unchanged. Use C1 only through admitted Fact b2f4d10fa0a69e00; no free counts, table, floor oracle, all-decoder lower bound or novelty presumption.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the exact current stage scope; theta is unknown and no parameter depends on the test law.",
+        "Stationary strictly positive second-order sources; uniform finite-N claims explicitly declare their additional class bounds.",
+        "All side information, positions, endpoint access, finite arithmetic, residuals and program/parameter storage are charged.",
+        "Binary product kernels map to the earlier sign-B kernel as inD2; categorical extension and complete-contextA stay distinct.",
+        "Copied prior material is provenance and must undergo this project native evidence path when used as an admitted premise."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers>=2",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "D3-D5 causal simplex family indexed byN andaccuracy, with theta-independent accuracy schedule",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "stationarily initialized strictly positive second-order tables",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers>=3",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers>=2; N integers>=3; theta asD1; proposed gamma=kappa=1, lambda1=1,lambda2=2, all fixed independent ofN andtheta; comparatorA fixed beta>0 subject to the same declared score-range budget; epsilon>0 and alpha in(0,1); finite resources asD5; any enlarged coefficient/error/source domain must be explicitly proved.",
+      "definitions_hash": "67efbc8a85f90a92300e57ccca51716ec7e6481cb8c84f9705782ed7f31c681d"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "f652dccd9b59f4953ab3a0939081d221dede8640e1e8615398b6aba5d00e5b87"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": {
+    "artifact_id": "f652dccd9b59f4953ab3a0939081d221dede8640e1e8615398b6aba5d00e5b87",
+    "content_hash": "14b5ddd18a2bca32dbf8ab793a722072ce444d4f590ed785916b6c2258503ffd",
+    "producer": "fact_submit:a1854697bbb1d9d0",
+    "contract_id": "22e80d3d620c36cfc0bbd297101a5efabe634d7fd696b4cae200963af52af02a",
+    "evidence_kind": "LLM_CHECKED_PROOF",
+    "exact_claim": "Prove or correct exact finite-grid count recovery and fully charged simplex readout as a strong comparator within D1-D7: for known M and h-grid a with |a-C/M|<1/(2M), implement nearest count by floor((2M A+Q)/(2Q)), A=Qa,Q=2^h, with legal Boolean/ReLU gates, closed-grid endpoint and all word/range/hold costs. Apply it to a paid K^3-feature uniform-count head (nominal Q>=2M, retaining finite evaluator h>=4) and separately to the admitted C1 D3 recovered joint frequency whose nominal error is <=76/Q (sufficient Q>=256M), followed by exact integer add-one and dyadic simplex output. Prove pathwise bitwise equality of these two strengthened comparators at the same sufficient Q and TV error <=(K-1)/Q; state their restricted correlated post-aggregation perturbation margins and where the rounding guarantee ceases. Give full resource functions/deltas including known length, feature tables, finite attention, integer count snapping and output, and distinguish sufficient precision schedules from precision lower bounds or componentwise budget dominance. Treat D3-snap as an explicitly charged alternative readout, leaving the accepted Pi_(N,h) and its C3 experiment unchanged. Use C1 only through admitted Fact b2f4d10fa0a69e00; no free counts, table, floor oracle, all-decoder lower bound or novelty presumption.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the exact current stage scope; theta is unknown and no parameter depends on the test law.",
+        "Stationary strictly positive second-order sources; uniform finite-N claims explicitly declare their additional class bounds.",
+        "All side information, positions, endpoint access, finite arithmetic, residuals and program/parameter storage are charged.",
+        "Binary product kernels map to the earlier sign-B kernel as inD2; categorical extension and complete-contextA stay distinct.",
+        "Copied prior material is provenance and must undergo this project native evidence path when used as an admitted premise."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers>=2",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "D3-D5 causal simplex family indexed byN andaccuracy, with theta-independent accuracy schedule",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "stationarily initialized strictly positive second-order tables",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers>=3",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers>=2; N integers>=3; theta asD1; proposed gamma=kappa=1, lambda1=1,lambda2=2, all fixed independent ofN andtheta; comparatorA fixed beta>0 subject to the same declared score-range budget; epsilon>0 and alpha in(0,1); finite resources asD5; any enlarged coefficient/error/source domain must be explicitly proved.",
+      "definitions_hash": "67efbc8a85f90a92300e57ccca51716ec7e6481cb8c84f9705782ed7f31c681d"
+    },
+    "input_hashes": [
+      "14b5ddd18a2bca32dbf8ab793a722072ce444d4f590ed785916b6c2258503ffd",
+      "b7da05fabbbee7795400e05b215c3ced69e9f2132280a7ab964ad514775d4e61"
+    ],
+    "environment_hash": "1fbf36c46d7b4da0b17f3ed691ea1e6651f18dff48a5197cc418d9e0e5fbe89b",
+    "checker_id": "fact_submit",
+    "checker_version": "1",
+    "checker_result": "PASS",
+    "created_at": "2026-10-24T23:24:12Z",
+    "validity": "VALID"
+  },
+  "admission": {
+    "record_id": "a1854697bbb1d9d0",
+    "provenance": "fact_submit",
+    "transport_status": "ok",
+    "verdict": "correct",
+    "fact_id": "bcd4541db2cf4c1a",
+    "exact_claim": "Prove or correct exact finite-grid count recovery and fully charged simplex readout as a strong comparator within D1-D7: for known M and h-grid a with |a-C/M|<1/(2M), implement nearest count by floor((2M A+Q)/(2Q)), A=Qa,Q=2^h, with legal Boolean/ReLU gates, closed-grid endpoint and all word/range/hold costs. Apply it to a paid K^3-feature uniform-count head (nominal Q>=2M, retaining finite evaluator h>=4) and separately to the admitted C1 D3 recovered joint frequency whose nominal error is <=76/Q (sufficient Q>=256M), followed by exact integer add-one and dyadic simplex output. Prove pathwise bitwise equality of these two strengthened comparators at the same sufficient Q and TV error <=(K-1)/Q; state their restricted correlated post-aggregation perturbation margins and where the rounding guarantee ceases. Give full resource functions/deltas including known length, feature tables, finite attention, integer count snapping and output, and distinguish sufficient precision schedules from precision lower bounds or componentwise budget dominance. Treat D3-snap as an explicitly charged alternative readout, leaving the accepted Pi_(N,h) and its C3 experiment unchanged. Use C1 only through admitted Fact b2f4d10fa0a69e00; no free counts, table, floor oracle, all-decoder lower bound or novelty presumption.",
+    "write_error": null,
+    "accepted": true,
+    "reasons": []
+  },
+  "fact_id": "bcd4541db2cf4c1a",
+  "fact_sha256": "14b5ddd18a2bca32dbf8ab793a722072ce444d4f590ed785916b6c2258503ffd",
+  "proof_sha256": "8b9308eaebe171021dba4ce729531b86316966b8298235919e16602bdf5a5e6a",
+  "predecessors": [
+    "b2f4d10fa0a69e00"
+  ],
+  "manifest_entries_verified": 20,
+  "note": "Exact deterministic count recovery and charged comparator readouts; no sampling-rate improvement, necessity or componentwise dominance inferred."
+}

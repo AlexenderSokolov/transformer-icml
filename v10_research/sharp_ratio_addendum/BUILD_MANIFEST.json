@@ -1,0 +1,59 @@
+{
+  "science_freeze_utc": "2026-11-02T05:15:00+00:00",
+  "science_freeze_beijing": "2026-11-02 13:15:00",
+  "pages": 3,
+  "native_OMML_equations": 96,
+  "native_math_path": "Pandoc TeX math to native OMML, bundled-runtime python-docx formatting; fixed nonround delimiters verified",
+  "marker": {
+    "create_docx_successful_calls": 1,
+    "create_pdf_successful_calls": 1
+  },
+  "runtime_bundle": "26.1027.11531",
+  "render_dir": "qa_v3",
+  "outputs": [
+    {
+      "path": "Chinese-sharp-ratio-addendum.docx",
+      "bytes": 18570,
+      "sha256": "041292e36536db917ab00a9884777c24623f993165c3d2aea48dd1b2e07e41a9"
+    },
+    {
+      "path": "Chinese-sharp-ratio-addendum.pdf",
+      "bytes": 317292,
+      "sha256": "29cfefe270f41067e145ebbc91a7a57457150f5d2a157df5ab289ba06fe77686"
+    }
+  ],
+  "support_files": [
+    {
+      "path": "addendum_math_zh.md",
+      "bytes": 7947,
+      "sha256": "f88d2efe1734990c62723c99af5d1cde22c1d783916d63c8cfcf9e7c7f8e8792"
+    },
+    {
+      "path": "addendum_final_math_zh.md",
+      "bytes": 8007,
+      "sha256": "7f78a04e39fe198f3433582ed62674162bf30a8983c40b7a5ff54a7f20eb0466"
+    },
+    {
+      "path": "build_addendum.py",
+      "bytes": 7961,
+      "sha256": "f10d1edafcc7005073db5c8fc81d3a276b604e8d75cb546305e11830a043a09c"
+    },
+    {
+      "path": "verify_addendum.py",
+      "bytes": 5592,
+      "sha256": "d55f6cec64f45b3785f3517a568b2c25a14fe55ee65a39dc7fc61d807ba59da7"
+    },
+    {
+      "path": "SOURCE_BINDINGS.json",
+      "bytes": 3540,
+      "sha256": "8036b8a6c23b45acdf667a4981dfe4053a975ddf8fcee92fe9fd6196c8d782d8"
+    },
+    {
+      "path": "final_verification.json",
+      "bytes": 828,
+      "sha256": "0f03c530a82397f20fcbd520abae314043fd22949f0bb8026620ee1b4ed3ce26"
+    }
+  ],
+  "source_files_modified": false,
+  "external_upload_or_send": false
+}

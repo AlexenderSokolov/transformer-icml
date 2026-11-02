@@ -1,0 +1,868 @@
+{
+  "files": [
+    {
+      "path": "v10_intake/source/sources/euler-stage6/facts/ed3adf29f858da12.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "92832afc95fe451d6132a6c7c3263e6b7f2404840f3ca06d2eea7f9d1bc9454d",
+      "input_bytes": 111865,
+      "public_sha256": "86196a41a0259d5a65a101e7006e97701e3b81744d1a86aac6941edb011547d4",
+      "public_bytes": 110556,
+      "public_edits": [
+        {
+          "line": 129,
+          "input_line_sha256": "10d405f4c0ef6da7ec7c2c5d1c485fb1dd873b2a21a8bbbe4b50429d2da1239f",
+          "public_line_sha256": "6d4896ee2438db4fe1eeab836af7d54015aa6a4e0ad9829733805b795b2ed139",
+          "public_line": "原SRC后缀提供上界，同一dense/uncached实现及完整费用保持：p=4h+4ell+64，ell=ceil(log2(M+K+4))，六heads、全部M+3位置、input/query/endpoint、QKV/mask、products/remainders/guards、holds/copy/clear、输出、offline全格式与逐phase总peak均付费。rolling work不是总peak。无限计算读出类只用于信息下界；核的历史解析、计数、理想有理head计算、selector、移动/存储/程序以及任何物理保护器均另收费。本项不新增snapshot、cache或回读端口，不宣称实际physical纠错不可能或同资源优势。[Non-scientific operational metadata omitted.]\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 133,
+          "input_line_sha256": "a8aa6068401d57f8b6d3405af0045a379d4a92492cf8b11af7f727e0d4d60931",
+          "public_line_sha256": "63b5ecc8fd7e217ae73b644d92c8db83be3898ab6bf883a88c5de450b8d4d645",
+          "public_line": "完整 HDEC-MATCH/HDEC-SEQUENCE/费用保持合取需要独立审查。[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]失败登记准确步骤与解除条件、保留OPEN；辅助路线失败不冒作目标反例，不静默换成K^4 delta、二元或固定后缀定理。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 135,
+          "input_line_sha256": "299bbbc6b1758b0ba7ae848918ea895e4f57f308c600989a175b62c1c44359b6",
+          "public_line_sha256": "2dc9434c8a14791a0e8dc96408e5cf13a79d7d5af8d041767d46382f24b8fcb8",
+          "public_line": "031–034及旧root不重投、不加逆向依赖。[Non-scientific operational metadata omitted.]其入口缺失仍未解除，未实际投递不能声称已安排，不创建替代Dot。S001–S019固定来源及闭包限制保持。[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]物理纠错及真实资源关系仍未决，v10未完成。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 141,
+          "input_line_sha256": "9e6222434a5b60e28790ecbe0a00442b5d4d3bfaaed1a2ed165555e0471b4526",
+          "public_line_sha256": "8606f3cccdc77d1b24a6f89d74725f026053a70738480fb09c55d68d44242931",
+          "public_line": "{\"contract_id\":\"e6b7592e781948d00eb2a2effb80d8e3ef77e480f8d70f960286bc33faf730af\",\"definitions\":\"## A. 共同源、观察、算法及风险定义\\n\\n对每个整数 K>=2，A={0,...,K-1}，S=A²，D=K²。一个实验固定一个时间齐次二阶表 theta∈(Delta(A))^S，允许零坐标；初始对分布 mu∈Delta(S) 任意。令\\n\\n    Y_j=(X_(j+1),X_(j+2)),\\n    P_theta((a,b),(b,c))=theta_(a,b)(c),\\n    N>=3, M=N-2, E_N=Y_M,\\n    n_s(M)=sum_(j=0)^(M-1)1{Y_j=s},\\n    C_s,c(M)=sum_(j=0)^(M-1)1{Y_j=s,X_(j+3)=c},\\n    p_s^+=(C_s+1)/(n_s+K).\\n\\n每次预测完整观察 X_1^N。最后一个计数后继是 X_N；Y_M 不是额外 departure。actual query 从已观察最后两符号取得；fixed-query 任务另有明确的公开 s。X_(N+1)、theta、mu、支持、闭类、平稳律、未来行栈及隐藏源标签不可见。外部 query 是同一历史下调用的查询参数，不额外赠送干净端点或统计量。获得和复制实际端点在实现中收费。\\n\\n共同算法族的程序和公开精度可以依赖 K,N,h，不能依赖未知 theta,mu 或其隐藏标签。统计根中的理想 p^+ 是分析变量；给定实现的计数、头输出等实际可见代码由来源实现义务确定，不能据理想表达式新增 readout 端口。比较中的任意全历史预测器可以用全部 X_1^N 和源独立随机种子，输出任意概率向量。具体 Pi 则遵守自己已声明的内部信息切口。\\n\\nTV(p,q)=1/2 sum_c|p_c-q_c|。对给定 family F，令 Z_N(s)=TV(F_(K,N,h)(X_1^N;s),theta_s)。严格区分：\\n\\n| 名称 | 定义 | 量词 |\\n|---|---|---|\\n| fixed row | E Z_N(s) | 固定公开 s |\\n| all contexts | E max_(s∈S) Z_N(s)；另可问其 a.s. 极限 | 全 K² 行，不改成访问行 |\\n| actual terminal | R_act=E Z_N(E_N) | 同一历史的末尾 query |\\n| conditional terminal | E[Z_N(E_N)\\\\|E_N=s] | 仅当 p_N(s)=mu P^M(s)>0；零概率时未定义 |\\n| empirical weighted | E sum_s(n_s/M)Z_N(s) | 同历史频率权重 |\\n| other history weighted | E sum_s w_s(X_1^N)Z_N(s) | w 为观察历史可测 simplex；不自动有一致性 |\\n\\n逐源极限固定 K,theta,mu 后令 N→∞。统一均值是每个 N 的 sup_(theta,mu) R_act；取 supremum 时源可随 N 改选，但一个样本路径内部的核必须齐次。固定 K 的统一结论不是 K 随 N 变化的无条件结论，也不是 changing-source 的统一几乎处处结论。输出允许零坐标，损失仅 TV，本 contract 不把它解释为 positive-output KL。\\n\\n\\n## 共同研究范围的约定\\n\\n接口I是一个程序性质的定义，不能作为所有算法已经满足的全局假设。条件统计根对任意满足I的共同有限族F证明蕴含式；具体Pi满足I及其完整成本须由SRC-Pi的正常独立来源义务支持，不能在证明SRC-Pi时先假定它。原第二阶段固定证明是可查来源，旧Fact编号不是新项目前驱。\\n\\n后继真实资源/可靠性命题可以在同一contract内建立独立义务，不必谎称它们是统计根的前提。数据观察及TV实验保持上述定义。每项具体实现须声明自己的内部代码、允许回读、输出格式、参数/字长、batch或streaming等执行方式；比较只在所声明的共同条件下成立。原Pi的finite-attention加pointwise batch hybrid、literal bit/ReLU模块的packed/scalar、sparse/dense选项分别核算，不将一项格式的便宜坐标拼入另一项。\\n\\n完整费用包括实际head和局部绑定、输入/query/端点取得、参数/零系数、物理字、复制/跨层保持/清除、mask/position、所有活动bank与metadata、online/offline工作和同时峰值。不能免费引入计数、normalizer、译码或生成器。新算术/扰动参数由各精确义务局部量化；改变共同数据律、可见信息或风险须建立新的明确数学范围。\\n\\n给定接口的条件定理、具体实现定理、训练可达性、必要资源及新颖性是不同主张。数学根只包含数学命题。行政完成程序不是数学前提；独立后续结论不改变已有定理的证明依赖。\\n\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]},\"statement\":\"# REL-MASTER-DECODER-MINIMAX（035）：原SRC master端口任意共同读出的联合K信息风险\\n\\n034正常接收后的独立nonroot候选，尚未接纳。033的rho广播只证明原固定后缀；公开rho可修复，不能作为任意decoder信息下界。034关闭最终V端口的任意decoder问题，未关闭更早、信息更丰富的全部9K+1 master端口。本项检验K^5 delta及Psi对数是否在该master端口同样必要。Lead以下多标签分箱路线是待核候选，不是Fact；失败保留目标与精确障碍。\\n\\n## 1. 实验、完整端口与量词\\n\\n全部整数K>=22、M>=1，N=M+2，n_tok=M+3，Y_i=(X_(i+1),X_(i+2))。观察完整X_1^(M+2)，departure仅0<=i<M，actual目标theta_(Y_M)，TV=L1/2。每实验theta是固定齐次二阶表，允许零边、任意初始pair律mu；sup可随公开参数选择源，不能逐路径换表。\\n\\n使用SRC Fact fef8372728290b45原Pi干净前缀及同一个post-quantization、pre-fanout master切口。整数h>=h_N=ceil(log2(128(K+1)(M+3)^3))，Q=2^h，保留h_N>=h0=max(4,ceil(log2 M)+1)。干净H属于G_h^(9K+1)，G_h={j/Q:0<=j<=Q}；其完整坐标为P1(q1,v1)、P2(q2,v2)、T(hvec,h0)、0(alpha,nu,f,rho)。这是原有限log/exp、完整累加、向下head quotient及clipping产生的H，不能用理想head直接冒充。\\n\\n公开实delta>=0。共同Markov核T在每条合法历史上把H换成Hbar∈G_h^(9K+1)，||Hbar-H||_infty<=delta。核可用完整已观察历史、当前H、公开参数与源独立种子，不读隐藏theta、mu、未来或预测器私有种子。所有fanout副本来自Hbar。其它运算与query/endpoint/flag bits无故障；本项没有第二V切口编辑或坏事件概率。\\n\\n读出类A可依K,M,h,delta，接收全部Hbar及SRC该切口保留的完整exact公共/query/mode/actual endpoint/flag bits，输出任意K维概率向量。允许无限计算与源独立私有随机种子，不要求原有序输出网格。它不得回读历史、clean H、evaluator numerator/denominator/weights/remainders、历史投影、旧统计、count table、辅助样本或snapshot。历史存储已付费不产生新的读端口。h0/f/rho是可替换统计均值，不是exact flags。下界必须逐项核清全部侧信息，不能删掉能泄露标签的真实端口。\\n\\n定义\\nR_dec,H(K,M,h,delta)=inf_A sup_(theta,mu) sup_(合法共同T)\\n E TV(A(Hbar;retained bits),theta_(Y_M))。\\n先固定共同A再取源与核；A不能逐源选取。记R_H^Pi=R_MV^Pi(K,M,h,delta,0)，即033第一切口与原完整后缀、第二核identity。记T_K=K^(5/2)/sqrt(M+1)，x=K^5 delta；Psi(0)=0，Psi(x)=x(1+ln(1/x))于0<x<1，Psi(x)=1于x>=1。\\n\\n## 2. 完整待证合取\\n\\n全部上述有限参数：\\n2^-160 min(1,T_K+Psi(K^5 delta))\\n <=R_dec,H(K,M,h,delta)\\n <=R_H^Pi(K,M,h,delta)\\n <=min(1,64T_K+36Psi(K^5 delta)).                 (HDEC-MATCH)\\n\\n每个该域公开参数序列：\\nR_dec,H(K_n,M_n,h_n,delta_n)->0\\n iff T_(K_n,M_n)->0 且 K_n^5 delta_n->0。          (HDEC-SEQUENCE)\\n\\n保留delta=0、0<delta<1/Q、任意大delta、M=1、全部h>=h_N、全horizon余数及全部9K+1可见坐标。常数不称最优；不同源lower先取max，不相加当同源见证。不是excess、统一a.s.、同一源跨全部n或全Transformer资源最优结论。\\n\\n上界直接选择原后缀并调用033 Fact a1a95aa68be0723e的D=0；统计lower用MM5 Fact946d42d5bf502eb4和identity核，任一A与干净SRC前缀组合仍是共同全历史算法。不得用033 rho攻击证明新信息lower，也不从034 V切口自动倒推master切口。\\n\\n## 3. 新五组多标签源与完整路径律\\n\\n只在T_K<1分支构造，此时整数M>=K^5。令a=floor((K-6)/5)>=3，P=a^2，L=P+5，m=floor(M/L)，U=a^2L，r=floor(a/2)。五个互斥符号组Agrp,Bgrp,Cgrp,Dgrp,Egrp分别为0,...,a-1及其a、2a、3a、4a平移。六marker(p0,q0,p1,q1,xi,zeta)=(5a,...,5a+5)。Egrp中选2r个label e_(ell,+)=4a+2ell、e_(ell,-)=4a+2ell+1，0<=ell<r；未用字母允许零质量。\\n\\n须证明a>=K/10、r>=K/30、m>=4以及\\nK^4/2^14<=U<=K^4，K^5/2^20<=rU<=K^5，rU/M<=2T_K^2。\\n这里a可等于3，不能未经证明沿用032/034要求a>=4的数值域。\\n\\n给出Agrp上从0回0、枚举所有有序pair含loops一次的Euler字w_0,...,w_P；存在性与以下新源应自足证明。令w^0=w，w^1=w+a。定义：\\n(p_s,q_s)->w^s_0，(q_s,w^s_0)->w^s_1，s=0,1；\\n(w^s_i,w^s_(i+1))->w^s_(i+2)，0<=i<=P-2；\\n最后Agrp pair->xi，(w^0_P,xi)->zeta；\\n(xi,zeta)->(1-1/m)delta_p0+(1/m)delta_p1，(zeta,p_s)->q_s；\\n最后Bgrp pair->Unif(Cgrp)，(w^1_P,c)->Unif(Dgrp)。\\n\\n对每个z=(c,e)∈Cgrp×Dgrp和0<=ell<r设未知t_(z,ell)∈[0,1]，\\ntheta_z(e_(ell,+))=t_(z,ell)/r，\\ntheta_z(e_(ell,-))=(1-t_(z,ell))/r。\\n对每个e∈Dgrp、label v∈所选2r标签，令(e,v)->q1、(v,q1)->w^1_0。其它未指定行delta_0。全部赋值须无冲突、合法shift、概率归一化；每次label后等长返回Bgrp圈，query间隔仍为L，不能回到stay圈。\\n\\nstay圈y0=(p0,q0)，y1=(q0,w0)，y_i=(w_(i-2),w_(i-1))于2<=i<=P+1，y_(P+2)=(w_P,xi)，y_(P+3)=(xi,zeta)，y_(P+4)=(zeta,p0)。写d=M-mL，k=(L-2-d)modL，mu=delta_(y_k)，不依未知t。\\n\\n从完整观察路径律证明：首次激活后actual末query之前恰有j个旧query的事件A_j满足\\np_j=(1/m)(1-1/m)^(m-j-1)>=1/(4m)，0<=j<m。\\n给定A_j，全部j个训练query及actual query z_1,...,z_(j+1)条件iid Unif(Cgrp×Dgrp)。训练query另选pair index ell_i∈{0,...,r-1}均匀，继而sign sigma_i∈{+,-}按t_(z_i,ell_i)选择。完整指定历史唯一且概率为\\np_j a^(-2(j+1)) r^(-j)\\n product_(i=1)^j t_(z_i,ell_i)^(1{sigma_i=+})(1-t_(z_i,ell_i))^(1{sigma_i=-})。\\n保留全部初始残段，k=L-1不付未观察门概率；actual departure M的pair index及sign未观察。\\n\\n给定A_j、actual query z，真实访问J~Bin(j,1/a^2)，与未知t独立。给定全部query选择和训练pair indices，actual row各pair样本数n_ell满足sum n_ell=J；其正标签数k_ell条件为相互独立Bin(n_ell,t_(z,ell))。其它row标签的先验信息不得误用于t_z。\\n\\n## 4. 新承重桥：同一row内标签排列与全部实际master\\n\\n源上改变旧actual-row query的label sign，保留query选择、pair index、其它row全部labels不动。改变一个完整query block中的label v只涉及三个keys的局部三元组：\\n(c,e,v)，(e,v,q1)，(v,q1,w^1_0)。\\n所有labels均不属于Cgrp/Dgrp，故相对当前query z=(c,e)，P1/P2/T/0的全部score和分母不依这些sign；值坐标改变要逐项追踪。不得以单纯Hamming改动数支付重新排列大量sign的代价。\\n\\n以Delta_v为该row中label v的总计数变化，Z1,Z2,ZT为P1/P2/T理想权重总和，均>=M。候选精确变化表为：\\nq1_v:4Delta_v/Z1；q2_v:6Delta_v/Z2；\\nv1_v:Delta_v/Z1；v2_v:Delta_v/Z2；\\nhvec_v:2Delta_v/ZT；alpha_v、nu_v各Delta_v/M。\\n其它坐标不变，包括h0/f/rho；它们的初始flag贡献固定，首次可变label在t=3之后。需从SRC实际head定义完整证明该表，不遗漏返回段、所有9K+1坐标、实际endpoint和prefix。\\n\\n因此任何两条同一公开模板历史，若其它row标签和全部query/pair indices相同，且每个actual-row label计数差至多b，则所有理想head之差<=6b/M；这些heads只依相应计数，不依actual-row signs的排列。\\n\\n核使用理想head只是构造替换字的数学方法：原理想score权重是1、2、3、6，故可用有限整数/有理运算计算；不调用免费实log/exp oracle，不修改原Pi干净前缀。SRC给原实际H距本历史理想head逐坐标<=2/Q；新的canonical向下网格化另付1/Q，须合计支付3/Q。\\n\\n## 5. 全历史合法的共同master分箱核与侧信息\\n\\n令delta0=min(delta,1/8)，x0=K^5delta0。须核Psi(x0)=Psi(x)。若T_K>=1或x0<=2^16 T_K^2，候选用Psi(x0)<=512T_K及MM5支付总风险，不声称有额外信息损失。\\n\\n其余分支T_K<1、x0>2^16 T_K^2，令A0=delta0 M、b=floor(A0/64)。须证明A0>2^15、delta0 Q>2^16、b>=2且b>=A0/128；全部取整、Q>=M+1与实delta保留。b只为允许核的公开整数索引，不给原Pi免费任意实floor能力。\\n\\n定义单一共同核：若当前完整历史不能按上述公开图模板解析为激活后actual query属于Cgrp×Dgrp的历史，输出H。若可解析，计算其actual row每pair的n_ell、k_ell，取k'_ell=b floor(k_ell/b)。构造规范历史x'：保留初始段、全部query与pair index序列及其它row labels；在actual row每个pair的n_ell次访问中按时间顺序置前k'_ell次为+、其余为-。这仍是合法模板历史，长度及实际末对不变；不要求它在原隐藏t下有正概率。\\n\\n在x'上算原理想9K+1 head，再逐坐标floor到G_h，记H*。若||H*-H||_infty<=delta则输出H*，否则输出H。此guard与identity fallback保证对所有合法历史的共同canonical预算，不使用隐藏theta/mu/t或预测器种子。\\n\\n须证明在见证源全部激活历史上guard总通过：每label计数改动小于b，故\\n||H*-H||_infty<=6b/M+3/Q<=delta0<=delta。       (MASTER-ERASE)\\n原实际有限evaluator携带的额外信息也由3/Q费用支付，不能只消除某两个理想输出坐标。\\n\\n增广观测允许给decoder A_j、全部query序列、全部训练pair indices、其它row全部signs和actual row的各k'_ell。它不能额外看到actual row原signs/k_ell或其参数t_(z,ell)。需证明该观测能模拟完整H*与所有保留exact bits。SRC实际query、endpoint均为末z；zero synthetic token/flags和公开metadata固定；若保留初始F3则由公开初pair确定。其它真实保留bits如有标签信息必须处理，不能删除。独立decoder seed另条件化再积分。\\n\\n## 6. 多pair Bayes信息风险、有限调和与合并\\n\\n取所有t_(z,ell)相互独立Unif[0,1]先验，只用于lower；每个实现是固定齐次theta，核不读t。可准确调用034 Fact d3e63f7b5e389adf正文的有限Beta/bin引理：对n>=0、b>=2，k|t~Bin(n,t)，只见b floor(k/b)，任意实估计的Bayes绝对误差至少(1/32)min(1,b/(n+1))。须明确保留n=0的Unif先验1/4、末不满bin及b>n+1；若不调用则自足重证，不能静默放宽引理条件。\\n\\n对任意K概率输出q，由TV>=1/2 sum_ell |q_(e_(ell,+))-t_(z,ell)/r|，结合上述条件独立性和先验引理，候选得\\nBayes E TV | (J,query/pair indices,other-row signs)\\n >= (1/(64r)) sum_ell min(1,b/(n_ell+1))\\n >= r A0/[8192(J+r+r A0)]。                     (H-BIN-LOSS)\\n中间还要对各bins积分；不可把未见k_ell交给decoder，亦不可把已见其它bins当成同pair额外样本。用凸倒数与sum n_ell=J给最后一步。随机decoder每seed成立再积分。\\n\\n随后在A_j、actual query上对J作Jensen，并用真实p_j与有限j=0,...,m-1求和，候选为\\nBayes E TV>= r delta0 U/32768\\n ln(1+M/[2U(r+r delta0 M)])。                    (H-HARMONIC)\\n保留m=floor(M/L)、j=0和全部余数。设z=r delta0 U、b0=rU/M，则x0/2^20<=z<=x0、b0<=2T_K^2；当前分支b0<x0/2^15。以短标量不等式x ln(1+1/(10x))>=Psi(x)/16（可准确调用034或重证）支付log及饱和，核所有常数，完成2^-160保守目标。\\n\\n对于每个固定A，先验平均风险<=某固定源风险的sup，使用同一个不读t的核；统计项和故障项不同源先取max再做数值比较，然后才取inf_A。不可交换inf/sup或声称同一源对全部算法/horizon困难。HDEC-SEQUENCE必须从完整有限合取推出；sub-grid delta由统计主导分支支付，不能删去或替换序列中的real delta。\\n\\n## 7. 费用、依赖与分工边界\\n\\n原SRC后缀提供上界，同一dense/uncached实现及完整费用保持：p=4h+4ell+64，ell=ceil(log2(M+K+4))，六heads、全部M+3位置、input/query/endpoint、QKV/mask、products/remainders/guards、holds/copy/clear、输出、offline全格式与逐phase总peak均付费。rolling work不是总peak。无限计算读出类只用于信息下界；核的历史解析、计数、理想有理head计算、selector、移动/存储/程序以及任何物理保护器均另收费。本项不新增snapshot、cache或回读端口，不宣称实际physical纠错不可能或同资源优势。[Non-scientific operational metadata omitted.]\\n\\n预期直接Fact前驱SRC fef8372728290b45、MM5 946d42d5bf502eb4、033 a1a95aa68be0723e、034 d3e63f7b5e389adf。033只供固定后缀upper，034只按其真实Beta/bin/标量引理范围使用；新五组源、全部head变化表及实际master消信息必须自证。032的四组源及a>=4数值域不得偷渡；若实质另依赖Fact应如实登记，不给旧Fact增加逆向前提。\\n\\n完整 HDEC-MATCH/HDEC-SEQUENCE/费用保持合取需要独立审查。[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]失败登记准确步骤与解除条件、保留OPEN；辅助路线失败不冒作目标反例，不静默换成K^4 delta、二元或固定后缀定理。\\n\\n031–034及旧root不重投、不加逆向依赖。[Non-scientific operational metadata omitted.]其入口缺失仍未解除，未实际投递不能声称已安排，不创建替代Dot。S001–S019固定来源及闭包限制保持。[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]物理纠错及真实资源关系仍未决，v10未完成。\\n\\n\"}\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 144,
+          "input_line_sha256": "83021248e5c8114395f9edddfcc138cad0a5afa33c124c0a8b84863b540cfe6a",
+          "public_line_sha256": "692881fab3359b02860fc6c5eb5ef8acb7a81e7c087e6b07f79a21649a7b3b70",
+          "public_line": "[{\"exact_statement\":\"# SRC-Pi：原有限因果程序的全路径实现、银行接口与完整费用\\n\\n对每个整数 K>=2、N>=3，令 M=N-2、n=N+1。对每个整数 h>=max(4,ceil(log2 M)+1)，令 Q=2^h、ell=ceil(log2(N+K+2))、p=4h+4ell+64。字母表 A={0,...,K-1}。对任意完整已观察历史 x_1^N 和 query s=(a,b)，定义\\n\\n    C_s,c=sum_(t=3)^N 1{(x_(t-2),x_(t-1),x_t)=(a,b,c)},\\n    n_s=sum_c C_s,c, p_s,c^+=(C_s,c+1)/(n_s+K).\\n\\n存在下述同一个共同确定有限程序族 Pi_(K,N,h)，参数、固定循环、布局、掩码和常数仅依赖公开 K,N,h；其固定构造由本项目 inputs/source-v10/inputs/general-assumptions-20261027/stage2/ 下 C1-proof-v1.md §§1–7、finiteN-reliability-proof-v1.md §§4–6 和 root-proof-v1.md §5 指定。以下断言需由确定性构造证明支持，I 是待证结论。旧来源的正性、平稳初始化和旧 Fact 身份均不作前提。\\n\\n## S1. 实际因果前端与有限求值\\n\\n主实现为有限整数求值的因果 attention 加逐 token Boolean/ReLU 点运算的 batch hybrid。输入仅为已观察历史、声明 query/mode 和公开 metadata；合成位置 q=N+1 的 token 为零，不含未来符号。两个已付费 singleton copying heads 产生前两步符号，并在 q 保留实际端点 (x_(N-1),x_N)，供外部 query 与 actual query 两种模式使用。外部 s 不替换实际端点修正。\\n\\n另有四个统计 heads P1、P2、T、0。理想比较对象的 Q/K/V 为：P1 的 Q=((ln2)A,(ln2)B)、K=(lag2,lag1)、V=(token,lag2)；P2 将第二段 ln2 换为 ln3；T 的 Q=(ln2)B、K=lag2、V=(lag1,F)；0 的 Q=K=0、V=(lag2,lag1,F,z)。A,B 为 query one-hot，z_t=1{t=3}，F_t=z_t lag1_t；q 的有效 keys 为 3,...,N，其余行使用声明的因果 prefix/fallback。理想输出依次为 (q1,v1)、(q2,v2)、(hvec,h0)、(alpha,nu,f,rho)，共 9K+1 标量。值为 query 无关的局部 bits。\\n\\n实际程序以有限有理 log 生成、定长整数指数求值、精确累加和正整数除法产生闭 h-grid G_h={j/Q:0<=j<=Q} 上的标量；不调用实数 log/exp/floor oracle。每一返回 head 标量与其上述理想值相差至多 2/Q。包含 1 的 G_h 用 h+1 位无符号分子。连续 ReLU 不被声称在实区间上实现 floor；其 bit extraction 只作用于声明有限网格。\\n\\n四个统计 head 后不再有读取原始历史的 decoder 端口或免费 count table；计数 C 仅为数学比较对象。源参数 theta、mu、支持、平稳律和访问控制参数均不进入程序。\\n\\n## S2. 正确逐路径读出、guards 与接口 I\\n\\n记 c_s,c=C_s,c/M、rho=1/M、u_ij=n_ij/M，alpha_i=sum_j u_ij、nu_j=sum_i u_ij，J_c=1{实际端点=(b,c)}。理想读出为\\n\\n    dT=1+alpha_b,\\n    initial_bc=dT h0_c-f_c,\\n    g_bc=dT hvec_c-nu_c+rho J_c-initial_bc,\\n    U_k=v_k,a, lambda_1=1,lambda_2=2,\\n    d_k=(1+lambda_k nu_b)/(1-U_k/2),\\n    c_s,c=d2 q2_c-d1 q1_c-g_bc.\\n\\n这些恒等式对每条有限路径成立，包含 M=1、n_s=0，以及任何特定源下零概率的历史。实际点运算保留完整整数乘积、除法余数和 guard fractional bit；加减和声明的除二精确，所需乘除截断绝对误差至多 1/Q。head clipping 后 1-U_k/2∈[1/2,1]，d1∈[1,4]、d2∈[1,6]、dT∈[1,2]，有符号中间量容纳于来源指定的 [-16,16] 安全盒。\\n\\n令 a_c 为恢复 c_s,c 后截入 [0,1] 的 h-grid 值，令\\n\\n    r0=2^(-ceil(log2 M)-1), r=max(hat rho,r0),\\n    x_c=a_c+r, V_c=Q x_c, T=sum_c V_c.\\n\\n则 x_c∈(0,2]，V_c∈{1,...,2Q}，T>0，并且\\n\\n    |a_c-C_s,c/M|<=76/Q,\\n    |x_c-(C_s,c+1)/M|<=78/Q.\\n\\n最终输出按原有序 simplex 格式：c=0,...,K-2 的分子 m_c=floor(Q V_c/T)，m_(K-1)=Q-sum_(c<K-1)m_c，随后已付费 dyadic decode。其坐标非负且和为一，允许非末坐标为零，且所有路径、所有 query 同时满足\\n\\n    TV(Pi_(K,N,h)(x_1^N;s),p_s^+(x_1^N))\\n      <=78KM/[Q(n_s+K)]+(K-1)/Q.                 (I)\\n\\n程序在上述全域合法；不同源规律只改变路径概率，不改变给定输入的程序及其费用。\\n\\n## S3. 后继确实使用的 master 与正权重银行接口\\n\\n9K+1 个 head 坐标各有一个 post-quantization master word，在任何 readout fanout/residual 复制之前定位切口。所有后继副本都来自该 master；query、端点及 flag BITs 在此实验中精确，统计标量 h0、f、rho 包含在可替换银行内。有限 evaluator 的干净 numerator、denominator、指数、余数及不用的历史投影在切口开放前按声明生命周期擦除或释放；历史存储及其处理仍收费。这里声明的是指定访问规则下的实际程序接口，不是对任意能重读历史算法的信息论限制。\\n\\n若每个 master 被任意相关的 G_h 标量替换，坐标偏差至多 delta>=0，原 downstream 运算仍合法，并有\\n\\n    |a_c-C_s,c/M|<=76/Q+35delta,\\n    |x_c-(C_s,c+1)/M|<=78/Q+36delta,\\n    TV(Pi^delta_s,p_s^+)<=KM(78/Q+36delta)/(n_s+K)+(K-1)/Q.\\n\\n这些是有限路径上的确定性接口，不要求误差独立，不涵盖改变 query/endpoint bits 或额外算术故障。\\n\\n最后正整数 V 银行的切口在全部 V_c 生成后、任何最终求和与 quotient 前。可将 V 替换为 W∈{1,...,2Q}^K；原 decoder 只从替换后的 W 重算 U=sum W 和上述 ordered floor/residual 输出，不保留干净 T 或 quotient。比较向量 V*_c=Q(C_s,c+1)/M 不是程序输入，且无需为整数；上述坐标界等价于 |V_c-V*_c|<=78+36Q delta。该定位与生命周期可在原声明成本上界内实现；若另外实现物理注入器、快照设备或新 normalizer 的 bridge，其硬件和程序费用单列，不在 nominal Pi 的免费能力中。\\n\\n## S4. 完整构造费用及表示约定\\n\\n以下是固定构造的统一上界，常数与 K,N,h 无关；采用来源最终修正后的 batch hybrid 计费。全部 n 个 token 的点运算计费，数学上所有 query 的正确性不意味着一次运行免费输出全部 K² 行。\\n\\n| 坐标 | 上界或精确结构 |\\n|---|---|\\n| neural depth / width | O(Kp²) / O(Kp) |\\n| total heads / max layer heads；max QK dimension；score cap | 6 / 4；2K；2 |\\n| 单 coefficient 与 arithmetic word | 至多 128p bits，含完整乘积、余数与 guards |\\n| dense coefficient slots / parameter bits | O(K³p⁴) / O(K³p⁵)，零项和 bias 收费 |\\n| active gates/projections；identity holds | O(Kp²+K²)；O(K²p³) |\\n| sparse program / coefficients / addresses / holds | 共 O(K²p⁴) bits |\\n| masks / positions | O(n²+n log(n+1)) bits |\\n| observed input | O(NK) one-hot bits，或另付 binary acquisition/转换 |\\n| rolling working arrays | O(nKp²) bits，不含已存参数、input、masks |\\n| uncached finite attention bitwork | O(n²(K+p)p²) |\\n| equally cached attention bitwork | O(n²Kp²)，cache 生成、存储、selector 另付 |\\n| dense pointwise / QKV bitwork | O(nK³p⁶) |\\n| finite rational log generation / scratch | O(p³ log²(p+1)) / O(p log(p+1)) |\\n| finite arithmetic evaluator code | 保守 O(p⁴) bits |\\n\\n五个 full-score caches 对应 0,L2,2L2,L3,L2+L3，分别有限求值；最后一项不是两个已舍入 exp 的乘积。使用 cache 时其非零生成需 O(p³) bitwork，另加 log 生成；与比较器一致付费。dense 与 sparse 为不同表示选择，不混合其优势；packed registers 与 scalar neural bit-channel 存储分别说明。\\n\\n完整 offline 包括 K,N,h layout、masks/positions、微码、cache/selector、全部 gate/term/hold 生成整理与实际格式输出。令 G,T_rec,I_hold 为实际生成的 gate、term、hold 记录数，其整理生成费用为 O((G+T_rec+I_hold)p²) bitwork 和 O((G+T_rec+I_hold)p) 工作 bits；dense 文件还支付真实 coefficient bits 的写出，包括零项。input/query/endpoint acquisition、residual copy、保持、擦除和最终 decode 均计费。\\n\\n总峰值按同一 phase 同时存活的程序/参数、input、mask/metadata、QKV、residual、银行、controller/address、临时工作区及输出求和，再取各 phase 最大值。上表 rolling working bits 不能冒充总峰值。这里不声称已在本 workspace 运行未提供的旧 emitter，也不以其他程序的精确 ledger 冒充 Pi 的实测 profile。\\n\\n另有保守 PURE neural 展开实现：令 T_bit 为上述固定循环的全部 online bitops（含 copy/clear），S_bit 为相应 live work、input/mask/public data；若用 interpreter，存储程序位作为常数 rails 加入。逐指令展开并保持其余 live bits，得到 depth O(T_bit+p)、width O(S_bit+p)、sparse gates/holds O((T_bit+p)(S_bit+p))、dense coefficient bits O(p(T_bit+p)(S_bit+p)²)、generic dense bitwork O(p²(T_bit+p)(S_bit+p)²)。该展开的完整成本单列，不能报告成较小的 hybrid L,W。\\n\\n## S5. 准确结论边界\\n\\nS1–S4 是本独立来源义务的合取，只针对上述固定 Pi 构造及定位接口。不从抽象 I 推导实现或费用，不泛化到所有训练 Transformer；不包含强 direct 基线上的逐坐标资源优势、整网主导成本下降或资源最优性。资源 NORM 模块与 weighted-direct 的新前端/bridge 若被使用，须有其自身明确实现和费用来源。\\n\\n证明可复用来源的固定确定性推导，但需在本项目正常提交为可独立检查的完整正文。G/U 统计根不作此纯确定性义务的必要前提；其独立完成不倒置为已完成统计根的前提。上述 statement 未把任何旧 discussion PASS 或旧 Fact 编号当作本项目 admission。\\n\",\"fact_id\":\"fef8372728290b45\",\"scope_bindings\":[{\"evidence_id\":\"e565455ae8465695ccf1f83e7c7f203d29c2f5bc4e49eb4b5eed822057d94505\",\"obligation_id\":\"6010cac30ffe4aea77e6d7a9e4e3f5686e4f44b2bf31c1674d33dfdf7dc46f84\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]}}],\"source_hash\":\"33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025\"},{\"exact_statement\":\"# RATE-K5-MINIMAX：周期稀疏观测下的共同算法 actual TV 下界候选\\n\\n这是独立的新候选，不是已接纳结果，也不从原始add-one的确定后继反例直接推出。原G/U、SRC、RATE、K3、K-LOW及RATE-K-MINIMAX的接纳与依赖不变；RATE-K-SHARP-ADDONE的REFUTE+证明及网关独立继续。本义务失败不影响上述事项，完成亦不宣告v10结束。\\n\\n对每个整数K>=2、M>=1，N=M+2，字母表{0,...,K-1}。theta为任意允许零边的齐次二阶转移表，mu为任意初始对律；每个实验内theta固定。令Y_i=(X_(i+1),X_(i+2))，观察完整X_1^(M+2)，实际目标为theta_(Y_M)。共同全历史概率预测器A可依公开K,M选取，可使用与源独立的随机种子，不可读取隐藏theta、mu或未来符号。定义\\n\\n    R_min(K,M)=inf_A sup_(theta,mu) E TV(A(X_1^(M+2)),theta_(Y_M)).\\n\\n待证明的完整有限参数结论为\\n\\n    R_min(K,M)>=2^(-16) min{1,sqrt(K^5/(M+1))}.       (MM5)\\n\\n这里是原同轨迹actual的E[TV]，不是E[TV²]、KL、fixed/all/conditional风险或另加独立测试实验。sup可随K,M及算法选择源；不声称同一源对全部算法或全部horizon同时达到下界。\\n\\n## 候选合法源族\\n\\nK>=12时取m=floor(K/4)>=3、L=m²、b=floor(m/2)。取四个互不相交的字母组C,U,V,W，各有m个字母，C含字母0；其余字母不被访问。\\n\\n取C上的循环字c_0,...,c_(L-1)，使p_t=(c_t,c_(t+1))枚举全部C² pair且各出现一次，按模L延拓，旋转令c_5=0。需给出这种循环字的有限存在性证明。\\n\\n对每个(u,v)∈U×V、j=1,...,b引入未知sigma_(u,v,j)∈{-1,+1}。公开0<alpha<=1/2，设\\n\\n    theta_(u,v)(w_(2j-1))=(1+alpha sigma_(u,v,j))/m,\\n    theta_(u,v)(w_(2j))  =(1-alpha sigma_(u,v,j))/m.\\n\\n奇数m时剩余W字母概率1/m，W外为0。其余行定义为\\n\\n    theta_p0=Unif(U),\\n    theta_(c_1,u)=Unif(V)                      (u∈U),\\n    theta_(v,w)=delta_0                       (v∈V,w∈W),\\n    theta_(w,0)=delta_(c_6)                   (w∈W),\\n    theta_p_t=delta_(c_(t+2))                 (5<=t<L),\\n    其余未指定行=delta_0。\\n\\n需检查所有赋值无冲突、概率归一化和合法shift。预期每圈以五步等长拼接\\n\\n    p0 -> (c_1,A) -> (A,B) -> (B,Z) -> (Z,0) -> p5=(0,c_6)\\n\\n替代clock前五步，A∼Unif(U)、B∼Unif(V)，Z条件律为theta_(A,B)，之后沿clock返回p0。圈长L不依任何随机选择或sigma；完整轨迹除观测到的Z外不应泄露额外sigma信息。这一点必须从实际路径律证明，不能把额外clock状态视为免费删除的数据。\\n\\n## 全余数初始化及完整观察实验\\n\\n写M=nL+d，0<=d<L，取起始相位k=(2-d) mod L，使实际末对位于UV查询相位2。以下初始化均不得依sigma：\\n\\n- k=0：mu=delta_p0；\\n- k=1：mu=delta_(c_1)⊗Unif(U)；\\n- k=2：mu=Unif(U)⊗Unif(V)；\\n- k=3：mu=delta_(v_*)⊗delta_(w_*)；\\n- k=4：mu=delta_(w_*)⊗delta_0；\\n- 5<=k<L：mu=delta_p_k。\\n\\nv_*∈V、w_*∈W固定公开。初始pair本身不要求由更早未观测历史生成。不同M可选择不同mu，实验内仍使用同一个齐次theta。\\n\\n需严格证明：完整已观察历史与n=floor(M/L)个iid训练block(A_i,B_i,Z_i)，加上一个与全部训练block独立的均匀actual末对(A_(n+1),B_(n+1))，以及无sigma信息的公开前缀/clock填充等价。k=1,2中的初始随机字母应计入首个训练block或最终末对，不能遗漏信息；k=3,4中的固定前缀不能包含未计的标签样本。覆盖所有余数、n=0及全部departure索引，不把一般源的条件样本称为iid。\\n\\n## 测试下界、常数与输出范围\\n\\n候选alpha=min{1/2,(1/8)sqrt(m³/(n+1))}。相邻sigma仅翻转一个UV行的一个标签对，预期完整观察KL至多8n alpha²/m³<=1/8。实际末对和clock前缀必须纳入路径律验证。对任意随机预测器用该标签对的坐标顺序作测试，处理ties、种子、实际末对条件律及均匀row权重；目标先得\\n\\n    R_min(K,M)>=(1/64) min{1,sqrt(m³/(floor(M/m²)+1))}.\\n\\n须证明完整实验而非丢失信息后的实验满足此式。随后以m>=K/8及有限参数分情况比较，推出保守的(MM5)。2<=K<=11可使用当前项目G/U Fact a12539a93d9f1ee3的共同算法iid actual下界1/(16sqrt(M+2))，必须明确有限常数比较。高K源族及测试论证应自足；唯一预期必需Fact前驱为a12539a93d9f1ee3。既有RATE-K-MINIMAX的证明可作为写作来源，不能未经说明扩张其已接纳scope。\\n\\n若(MM5)成立，统一actual均值风险tau满足0<tau<2^-16的任何共同算法必须有\\n\\n    M+1>=2^-32 K^5/tau²。\\n\\n这仅为样本必要性；不推出内部位数、深宽、算术工作、资源最优性。与已接纳K³/sqrt(M+1) upper比较仍有K指数差距，不称sharp匹配。未知标签族是新增的研究内容，原确定delta_0族并未自动提供此结论。\\n\\n首先做有界反向核查；若发现相位、信息或常数缺口，登记精确障碍并保持OPEN。只有完整自足证明和正常独立网关才能接纳。不重复提交原SHARP+否定构造，不重新审查已完成root。周期稀疏访问构造、条件L1估计及两点测试不作新工具或首创宣称。\",\"fact_id\":\"946d42d5bf502eb4\",\"scope_bindings\":[{\"evidence_id\":\"aa23c442ca1006c6ac0b12379f64a0fa500fbbd6a2e41c798b7a4de3952baa82\",\"obligation_id\":\"3883ea68e83601751cd4e4ff1500d552ac6e412c158b39a9912f6e1de55283dd\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]}}],\"source_hash\":\"fe18f4a413fef5da14c5f361aef47a8c5addceac1a3a58d73366ad20f16d8e93\"},{\"exact_statement\":\"# REL-MASTER-V-JOINT-K（033）：原SRC-Pi两切口联合故障率与一般K均值可靠性\\n\\n这是032正常接收后的独立nonroot机制候选，尚未接纳。新的承重内容是原9K+1个master的逐坐标扰动是否出现K^5尺度，以及与当前post-master V银行总编辑的联合有限参数匹配。不是重投032或把005固定K=2的excess结论扩大。Lead提出以下rho广播路线；候选计算非Fact，失败须保留准确目标并登记障碍。\\n\\n## 1. 固定实验、实际程序与两阶段核\\n\\n全部整数K>=22、M>=1，N=M+2、n_tok=M+3；Y_i=(X_(i+1),X_(i+2))。观察完整X_1^(M+2)，计数departure仅i=0,...,M-1，目标theta_(Y_M)，TV=L1/2。每实验theta是固定齐次二阶表，允许零边及任意初始pair律mu；sup可随公开参数选源，不能逐路径换表。共同算法不获隐藏theta、mu或未来。\\n\\n严格使用SRC Fact fef8372728290b45原Pi_(K,N,h)及所有有向有限算术、guards、clip、r0、ordered floor/residual，非023anchor程序。取全部整数\\nh>=h_N=ceil(log2(128(K+1)(M+3)^3))，Q=2^h；\\nh_N>=h0=max(4,ceil(log2 M)+1)须保留。匹配不扩到仅h0。\\n\\n公开实delta>=0和整数D>=0。第一切口是9K+1个post-quantization、pre-fanout canonical G_h={j/Q:0<=j<=Q} master H。核T1将H换成Hbar，同属G_h^(9K+1)，每路径||Hbar-H||_infty<=delta。所有下游副本来自Hbar；query/endpoint/flag BITs与其它计算无故障。按原程序生成当前银行Vbar∈{1,...,2Q}^K。\\n第二切口在全部Vbar生成之后、任何最终总和/quotient之前；核T2输出W∈{1,...,2Q}^K且每路径||W-Vbar||_1<=D。D相对当前post-master银行，不能改成clean V的预算。两核可相关，可用完整已观察历史、当前阶段银行、公开参数和源独立种子；不读隐藏theta、mu、未来或预测器私有种子。它们是共同Markov映射，对所有合法历史满足预算，不只在某见证源上合法。\\n\\n后缀仅使用W和SRC原有exact公共/query/endpoint/flag bits，重算S_W=sum W；c<K-1输出floor(QW_c/S_W)/Q，末坐标补残差。清理的clean master/V、旧总和/quotient、evaluator scratch及历史旁路不能重读；核的历史权限不是后缀的新端口。无坏事件项，无额外算术、输入或endpoint故障。定义\\nR_MV^Pi(K,M,h,delta,D)\\n =sup_(theta,mu) sup_(合法共同T1,T2) E TV(Pi^(T1,T2)(X;Y_M),theta_(Y_M))。\\n这是固定原程序的总actual均值风险，非excess，非inf_decoder。\\n\\n记T=K^(5/2)/sqrt(M+1)，B=K^5 delta+K^4 D/Q；\\nPsi(0)=0，Psi(x)=x(1+ln(1/x))于0<x<1，Psi(x)=1于x>=1。\\nmaster有效网格预算可描述为min(Q,floor(Qdelta))个整数单位；这是允许核类的数学描述，不给程序免费任意实数floor oracle。delta<1/Q只能identity。delta>1、D超过银行直径允许，核类自然饱和。\\n\\n## 2. 完整待证合取\\n\\n所有上述有限参数：\\n2^-96 min(1,T+Psi(B))\\n <= R_MV^Pi(K,M,h,delta,D)\\n <= min(1,64T+36Psi(B)).                         (MV-MATCH)\\n\\n同时对每个合法公开参数序列：\\nR_MV^Pi(K_n,M_n,h_n,delta_n,D_n)->0\\n 当且仅当\\nK_n^(5/2)/sqrt(M_n+1)->0，\\nK_n^5 delta_n->0，K_n^4 D_n/Q_n->0。             (MV-SEQUENCE)\\n\\n保留delta=0、0<delta<1/Q、D=0、M=1、任意大预算、全部h>=h_N和全horizon余数。必要性是最坏源/核均值风险，不声称同一源跨全部n或同时实现各必要项、不推出统一a.s.或任意decoder必要性。数值常数不称最优。若候选失败，不可静默换成大样本/对齐/仅网格delta/单切口/excess命题。\\n\\n## 3. 已接纳上界与已有下界的准确使用\\n\\n016 Fact a53804d650803060取gamma=0给\\nR_MV^Pi<=min(1,48T+(K-1)/Q+\\n Psi(K^4 M[K(78/Q+36delta)+D/Q]/(M+1)))。\\n明确以Psi单调、次可加及Psi(cx)<=cPsi(x)（c>=1）推出64T+36Psi(B)；保持真实J、实阈值TRUNC及正银行归一化，不条件化随机J称iid。\\n\\n恒等双核及MM5 Fact946d42d5bf502eb4给2^-16 min(1,T)统计下界。032 Fact372cbc90282df2cd/Evidence1a61c7931a3b8ee13da63e8e24e758106308055d829d8e5e60195fbca96d0cf0的V-MATCH在第一核identity子类适用，给V项。不同源下界先取max再作数值比较，不能相加当同源见证。\\n\\n032正文包含已接纳的全余数齐次clock源及完整路径律，可在其真实T<1范围引用，不能引用030的局部CLOCK风险扩大范围。对a=floor((K-6)/4)，L=a^2+5，m=floor(M/L)，U=a^2L，032源在激活分支实际末query属于互斥组C×Dgrp，目标delta_p1且p1<K-1；事件A_j质量p_j>=1/(4m)，条件于A_j和actual query，J~Bin(j,1/a^2)，C_p1=J、其他C=0。U满足K^4/4096<=U<=K^4及U(K+1)/M<=4T^2。完整前缀/全历史没有被删除，departure M不计入训练。新证明需明确引用准确源/余数/分支范围及有限律，不能把此条件iid推广到一般源。\\n\\n## 4. 新承重桥：rho全部fanout与真实银行的精确广播\\n\\n只需在T<1分支使用clock，整数M>=K^5，故m>=4。取\\nb=min(floor(Qdelta),Q/8)，epsilon=b/Q。\\nQ/8整数；b只是公开整数预算索引。T1在actual query属于上述公开C×Dgrp时，仅替换rho master为min(hat rho+epsilon,1)；其它master保持；其它query全identity。T2取identity。这个核对所有历史canonical合法且坐标偏差<=delta，不读J、counts、隐藏源或未来。\\n\\n必须从SRC实际有限uniform head证明每历史\\nhat rho=floor(Q/M)/Q，hat rho>r0=2^(-ceil(log2M)-1)\\n（在使用该关系的T<1、高精度分支），并证hat rho+epsilon<=1，所以源上不触master cap且r=max(hat rho,r0)恰增epsilon。\\n\\n必须追踪同一个被替换rho的全部下游副本。以P_h(x,y)表示原完整整数乘积后有向quotient：\\nhat dT=1+hat alpha_b，\\ninitial_c=P_h(hat dT,hat h0_c)-hat f_c，\\ng_c=P_h(hat dT,hat hvec_c)-hat nu_c+hat rho I_c-initial_c，\\nu_c=P_h(hat d2,hat q2_c)-P_h(hat d1,hat q1_c)-g_c，\\na_c=clip(u_c,0,1)，r=max(hat rho,r0)，V_c=Q(a_c+r)，\\nI_c=1{实际端点=(query第二字母,c)}。\\n当actual query=(u,v)∈C×Dgrp时u!=v，故所有I_c=0。所有其它master、d1/d2/dT、products、initial及raw u_c应逐字不变，clip也逐字不变。因此候选精确关系为\\nVbar_c=V_c+Qepsilon，所有c=0,...,K-1。           (RHO-BROADCAST)\\n\\n这里V是原clean SRC实际银行，不是理想count向量。要证明正银行范围、全部有向算术及fanout关系；不能只引用SRC的36delta误差上界来推出上述等式，也不能借用005在actual11的二元抵消式。005 §5可作写作来源，但本新桥需从SRC自足重述；若实质引用005额外引理须如实登记前驱。\\n\\n在032源的activated query历史上，target p1非末坐标，原floor给\\nTV(Pi^(T1,id),delta_p1)\\n >=(K-1)Qepsilon/[sum V+KQepsilon]\\n >=(K-1)epsilon M/[J+K+78KM/Q+Kepsilon M]。        (RHO-LOSS)\\n支付实际银行每坐标78/总和78K及Q>78KM，保留全部K个平滑质量；这是总loss，不能减clean loss后沿用。\\n\\n## 5. 有限调和、量化余项和联合下界\\n\\n从032准确p_j/Binomial律和RHO-LOSS，以条件凸倒数Jensen及有限j=0,...,m-1求和，候选推出\\nE_clock TV >=(K-1)/K * (Kepsilon U/4)\\n *ln(1+M/[2U(K+1+Kepsilon M)])。                 (RHO-HARMONIC)\\nepsilon=0时右边0，分母正。保留m取整、全余数与完整路径；这条新master式不能以032的V编辑核自动替换得到。\\n\\n令y=K^5 epsilon、z=Kepsilon U、b0=U(K+1)/M，则y/4096<=z<=y、b0<=4T^2且(K-1)/K>=1/2。可以分y<=T^2（由统计下界支付）与y>T^2（有限调和支付Psi(y)的log和饱和），给明确绝对常数。\\n\\n必须再处理公开实delta与epsilon的量化差：\\n若delta>=1/8，epsilon=1/8且Psi(K^5epsilon)=Psi(K^5delta)=1；\\n若delta<1/8，则0<=delta-epsilon<1/Q，而Q>=M+1使\\nK^5/Q<=T^2，Psi(K^5delta)<=Psi(K^5epsilon)+2T。\\n所以不能删除sub-grid预算或偷换MV-SEQUENCE中的delta为epsilon。将此与V项Psi(K^4D/Q)及统计项的sup下界取max，用Psi次可加给B的合取，完整核算保守2^-96。没有理由把各项风险加成同一见证。D大预算由032合法小预算子类，delta大预算由rho小扰动子类处理。\\n\\n## 6. 费用保持、意义与保护\\n\\nMV-MATCH/MV-SEQUENCE若正常接纳，将区分原master逐坐标容忍量K^-5与最终银行归一化总编辑K^-4（在联合均值一致性意义）；这只针对固定SRC-Pi两个指定切口及原后缀，不是任何decoder的信息论sharp下界。rho nominal值可由公开M,Q求出，另一个付费decoder可以使用该事实，故本构造不能冒作不可修复性或所有Transformer资源下界。\\n\\n完整SRC dense/uncached费用保持：真实p=4h+4ell+64，ell=ceil(log2(M+K+4))；六heads、全部M+3位置、input/query/endpoint、QKV/mask、完整products/remainders/guards、holds/copy/clear、输出、offline完整格式及逐phase共存总peak均付费。rolling work不代替总peak；不新增decoder/cache/count table/snapshot或免费历史端口。故障核是信息层实验，物理注入器/保护器的selector、数据移动、存储与程序另付；本项不给物理纠错构造或同数值资源优势。未运行compiler、literal ledger或batch测量；[Non-scientific operational metadata omitted.]不回021/022费用定义循环。\\n\\n预计直接Fact前驱SRC fef8372728290b45、016 a53804d650803060、MM5 946d42d5bf502eb4、032 372cbc90282df2cd；031及Dot不是前提，005只作写作来源。实质依赖须诚实登记，旧Fact不加逆向前提。完整有限 MV-MATCH/MV-SEQUENCE/费用合取需要独立审查。先有界核查真实rho广播及量化桥，失败保留OPEN并登记精确不等式/解除条件，不把辅助失败冒作母题反例。\\n\\n031、032已接纳不重投。[Non-scientific operational metadata omitted.]本地不重合。Dot入口缺失诊断ebfd7e3592f7556d4c7131eaa28e133221b39b6f79b5c9a35171cc37ed250ebf保持，未实际发送不能声称已安排；不创建替代Dot。固定S001--S019来源保持，S018/S019按科学需要正常吸收，不拆19义务。030低kappa/小K、027两方法障碍、任意decoder sharp率、物理纠错、真实资源关系未解决；[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]同类通道再失败保存实际错误、不机械重试。v10母题未完成。\\n\\n\",\"fact_id\":\"a1a95aa68be0723e\",\"scope_bindings\":[{\"evidence_id\":\"3dd4849df0b1a9bf560d3e2ee0216cd46dd84ddb97fa6863faf53a8aa089cc0a\",\"obligation_id\":\"44f736e89336c2d8be001f8f6f5b3dfc82fcd1cb206f234c07602338fae715a4\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]}}],\"source_hash\":\"21d405159a5694c9848e0656187a9d674dc777ffaec1d1f51e5a7541552adfb8\"},{\"exact_statement\":\"# REL-V-DECODER-MINIMAX（034）：原SRC最终V切口任意共同读出的联合K信息风险\\n\\n这是033正常接收后独立nonroot候选，尚未接纳。032/033只证明固定原后缀；本项改变下界算法量词，检验最终V切口的K^4编辑尺度和Psi对数项是否对任意共同读出仍必要。033不是本项前提，不重投031–033，不把rho可公开修复的master攻击冒作信息下界。Lead提出以下随机标签clock与计数分箱路线；全部新增桥均为待核候选。\\n\\n## 1. 准确实验、可见端口与量词\\n\\n整数K>=22、M>=1，N=M+2、n_tok=M+3，Y_i=(X_(i+1),X_(i+2))。完整观察X_1^(M+2)，departure仅0<=i<M，actual目标theta_(Y_M)，TV=L1/2。每实验theta固定齐次二阶表，mu任意，允许零边；sup可依公开参数选择源，不逐路径换表。\\n\\n沿SRC Fact fef8372728290b45原Pi的干净前缀，全部整数h>=h_N=ceil(log2(128(K+1)(M+3)^3))，Q=2^h，保留h_N>=h0。所有master及到V生成的运算干净。实际V∈{1,...,2Q}^K，逐路径\\n|V_c-Q(C_c+1)/M|<=78，\\nC_c为actual query的真实triple count，J=sum C_c。不是023anchor前缀，不改变V表示。\\n\\n切口仍在全部V生成后、任何最终sum/quotient之前。公开整数D>=0；共同Markov核T将V替换为W∈{1,...,2Q}^K，逐路径||W-V||_1<=D。核可读完整已观察历史、当前V、公开K,M,h,D及源独立种子；不能读theta、mu、未来、预测器私有种子。核在所有合法历史上满足预算，不能只在见证源上合法。\\n\\n本项读出类A可依公开K,M,h,D，仅接收W以及SRC该最终切口保留的exact公共/query/actual endpoint/flag bits，并输出任意K维概率向量。允许无限计算和源独立私有随机种子，不要求原ordered grid格式。它不读取历史、clean V/master、旧sum/quotient、evaluator scratch、count table、另存统计或辅助样本；没有额外snapshot或旁路。核能看历史不授予A历史权限。证明须核清所列exact bits的实际内容，并在下界源上给出其与标签参数的关系；不能把遗漏的侧信息偷偷删掉。\\n\\n定义\\nR_dec,V(K,M,h,D)=inf_A sup_(theta,mu) sup_(T合法共同核)\\n E TV(A(W;retained bits),theta_(Y_M))。\\n先固定共同A，再取源与核sup；A不知道隐藏源参数。对每个源实验，theta仍固定。inf的算法可依所有公开预算，不可针对隐藏theta逐源选取。R_dec,V是总actual均值风险，不是excess，也不是算法可回读历史的无约束minimax。\\n\\n令T_K=K^(5/2)/sqrt(M+1)，eta=D/Q，x=K^4 eta；\\nPsi(0)=0；Psi(x)=x(1+ln(1/x))于0<x<1；Psi(x)=1于x>=1。\\n\\n## 2. 完整待证合取\\n\\n所有上述有限参数：\\n2^-120 min(1,T_K+Psi(K^4D/Q))\\n <=R_dec,V(K,M,h,D)\\n <=R_V^Pi(K,M,h,D)\\n <=min(1,64T_K+Psi(K^4D/Q)).                    (DEC-MATCH)\\n\\n对任何该域公开参数序列：\\nR_dec,V(K_n,M_n,h_n,D_n)->0\\n 当且仅当\\nK_n^(5/2)/sqrt(M_n+1)->0 且 K_n^4 D_n/Q_n->0。   (DEC-SEQUENCE)\\n\\n保留D=0、M=1、任意大D、所有h>=h_N、全部horizon余数和全K个可见银行坐标。不同源下界先取max，不能相加为同一源见证。常数非最优，不称统一a.s.、同一源跨全部n、所有Transformer资源最优或物理纠错不可能。若候选失败，保留目标和精确障碍，不静默换成两标签固定decoder、小预算或对齐horizon定理。\\n\\n上界选择原SRC ordered suffix，准确调用032 Fact372cbc90282df2cd；整个inf读出类包含该有限算法。统计下界用MM5 Fact946d42d5bf502eb4与identity核：任一给定A与干净SRC前缀的组合仍是共同全历史预测器。无需重证既有Fact。\\n\\n## 3. 新源：全余数clock中植入未知Bernoulli行\\n\\n仅在T_K<1的非平凡分支构造，整数M>=K^5。沿032的公开a=floor((K-6)/4)>=4，P=a^2，L=P+5，m=floor(M/L)>=4，U=a^2L。四互斥组Agrp,Bgrp,Cgrp,Dgrp及六marker(p0,q0,p1,q1,xi,zeta)=(4a,...,4a+5)与032完全相同。Agrp为0,...,a-1，其余三组依次平移a；有限Euler字w_0,...,w_P闭合于0，全部有序pair恰出现一次含loops，w^0=w，w^1=w+a。\\n\\n复用032的有限Euler存在性与stay圈，明确列全核：\\n(p_s,q_s)->w^s_0，(q_s,w^s_0)->w^s_1，s=0,1；\\n(w^s_i,w^s_(i+1))->w^s_(i+2)，0<=i<=P-2；\\n最后Agrp pair->xi，(w^0_P,xi)->zeta；\\n(xi,zeta)->(1-1/m)delta_p0+(1/m)delta_p1，(zeta,p_s)->q_s；\\n最后Bgrp pair->Unif(Cgrp)，(w^1_P,c)->Unif(Dgrp)。\\n\\n对每个z=(c,e)∈Cgrp×Dgrp引入独立未知参数t_z∈[0,1]。将032的确定query后继改为\\ntheta_(c,e)=t_z delta_p0+(1-t_z)delta_p1。\\n令(e,p0)->q1及(e,p1)->q1，并令(p0,q1)->w^1_0。\\n(p1,q1)->w^1_0已在Bgrp规则内，不能覆盖(p0,q0)->w^0_0。\\n其它未指定行delta_0。\\n需自足证明新增赋值无冲突、shift合法，且两个标签分支等长返回同一Bgrp圈，不改变query间隔L和query选择律。参数t_z是固定theta的一部分，不是逐访问重抽。\\n\\n初始stay圈仍为032的y_0,...,y_(L-1)，d=M-mL，k=(L-2-d)modL，mu=delta_(y_k)，不依t。必须保留全部初始残段和真实随机激活门；k=L-1时不支付未观察门概率。\\n\\n须从实际完整路径律证明：首次激活对应末尾前j个旧query的事件A_j有\\np_j=(1/m)(1-1/m)^(m-j-1)>=1/(4m)，0<=j<m。\\nj个已完成query和actual末query的选择z_1,...,z_(j+1)条件iid Unif(Cgrp×Dgrp)，每个训练query另有标签ell_i∈{0,1}（ell_i=1表示p0）。给定t，一条完整指定历史的概率是\\np_j a^(-2(j+1)) product_(i=1)^j t_(z_i)^(ell_i)(1-t_(z_i))^(1-ell_i)。\\n必须核唯一完整路径及所有标签分支，不从032的确定标签路径律直接宣称新律。actual departure M的标签尚未观察。\\n在A_j和actual query z给定时J~Bin(j,1/a^2)，且给定J,t_z，k0=C_p0~Bin(J,t_z)，C_p1=J-k0，其它C=0。J与未知t独立。exact公共/query/endpoint/flag侧信息不得额外泄露这些训练标签；若有必须处理而非删除。\\n\\n## 4. 全历史合法的实际银行分箱核\\n\\n取D0=min(D,Q/8)，eta0=D0/Q，x0=K^4 eta0。Psi(x0)=Psi(x)须以K>=22和截断分支明确核算。T_K>=1由统计项覆盖；x0<=256T_K^2时Psi(x0)<=32T_K，同样只用统计下界覆盖。这是总风险的数值分支，不声称零编辑造成信息损失。\\n\\n仅在T_K<1且x0>256T_K^2时定义新非平凡核。取\\nb=floor(eta0 M/8)。\\n候选有限界：D0>256K，eta0 M>128K，b>=2，b>=eta0 M/16。\\n这些必须从Q>=M+1和完整参数推出，不能漏掉整数取整。\\n\\n核在actual query属于公开Cgrp×Dgrp时，从完整历史计算真实J与k0=C_p0，令\\nk'=b floor(k0/b)。\\n构造整数比较计数v_p0=k'，v_p1=J-k'，其它v_c=0，并构造候选银行\\nW*_c=max(1,floor(Q(v_c+1)/M))。\\n若W*∈{1,...,2Q}^K且||W*-V||_1<=D，则输出W*；否则输出V。其它query也输出V。\\n这是单一共同确定核；只用公开量、历史计数与当前V，不读未知t、theta或预测器种子。全历史合法由最终预算guard保证。计数计算属于对抗核权限，不是读出算法免费count table；物理实现未免费提供。\\n\\n在上述源的所有激活query历史上，须证明guard总通过：\\n|W*_c-Q(v_c+1)/M|<=1，全部坐标正且<=2Q，\\n||W*-V||_1<=79K+2Q|k0-k'|/M\\n <=79K+D0/4 <D0<=D。\\n因此全部真实finite-evaluator误差及其它K-2坐标中的潜在历史信息都被支付并消除，实际可见W恰是(J,k')的确定函数。不能只编辑两个理想坐标而忽略其余实际V的78误差，也不能因解码器看到额外坐标而漏掉信息。\\n给解码器额外告知J、A_j、实际query及query选择序列（但不给训练标签）只会让下界更难；需证明该增广实验可模拟其真实可见输入。\\n\\n## 5. 新Bayes信息桥与有限调和\\n\\n取有限维参数向量(t_z)的product Unif[0,1]先验，仅作lower证明。每个先验实现仍为合法固定齐次源。核完全不依此隐藏参数值；最终由平均风险<=sup风险取出源，不能把先验标签交给算法。decoder的独立随机种子和所有ties须覆盖。\\n\\n条件于给定J，积分真实Binomial路径律须自足给\\nP(k0=k|J)=1/(J+1)，\\nE[t_z|k0=k,J]=(k+1)/(J+2)，0<=k<=J。\\n这里参数先验的积分可由有限Beta积分/分部积分直接证明，不引入未经登记外部定理。给定同一分箱k'=b floor(k/b)，k在其整数bin中均匀。\\n\\n任意K维概率输出q的TV至少|q_p0-t_z|。在每个bin内先对t的条件分布用Jensen，再对bin中k的均匀分布取绝对偏差下界。对连续s个整数，最小绝对偏差和为floor(s^2/4)。候选总体Bayes下界（固定J,b>=2）：\\ninf_q E TV(q,theta_z) >= (1/32) min(1,b/(J+1))\\n >= eta0 M/[512(J+1+eta0 M)]。                 (BIN-LOSS)\\n须处理最后不满bin、b>J+1、J=0。特别J=0时bin均值论证本身给0，必须直接用Unif[0,1]先验的最小绝对偏差1/4；不能漏掉这一步。允许q质量放在其它K-2标签，TV坐标投影仍有效。对每个随机种子同样成立，再积分。\\n\\n用新完整路径律、p_j>=1/(4m)、J条件Jensen及有限j求和，预期得到\\nBayes E TV >= eta0 U/2048\\n ln(1+M/[2U(1+eta0 M)])。                      (DEC-HARMONIC)\\n保留m=floor(M/L)、j=0、所有余数。由032的U界\\nK^4/4096<=U<=K^4，U/M<=4T_K^2，\\n及当前x0>256T_K^2分支，以z=eta0 U在[x0/4096,x0]比较，支付Psi(x0)的log和饱和。可用\\nx ln(1+1/(10x))>=Psi(x)/16，x>0，\\n但要在本文证明短标量不等式与常数。其余分支由MM5统计项支付。\\n最后不同源sup lower先取max，再推出固定2^-120的DEC-MATCH；不要把各项加成同源风险。必须对每个A有统一常数，才能取inf_A。DEC-SEQUENCE从该完整有限合取和Psi性质推出。\\n\\n## 6. 费用、实际意义、范围与分工\\n\\n这是最终V切口的任意共同后缀信息风险；若成立，可说明在该接口内更换读出不能改善032的联合K,M,D/Q风险阶。上界由同一个原Pi后缀实现，保留SRC完整dense/uncached费用；不把无限计算读出类当作免费算法。真实p=4h+4ell+64，ell=ceil(log2(M+K+4))；六头、全部M+3位置、QKV/mask/input/query/endpoint、products/remainders/guards、holds/copy/clear、输出、offline全格式与逐phase总peak均付费。核/保护器的物理实现、计数扫描、selector、移动、存储与程序另付。没有compiler、literal ledger或batch测量；[Non-scientific operational metadata omitted.]\\n\\n下界只针对未额外编码的原V可见端口，不能限制改变前缀/编码/快照/可回读接口的算法；不是物理纠错不可能性或全Transformer工作量/宽度下界。不覆盖master任意decoder sharp率，033的rho可公开修复边界继续保留。015二元切口信息下界不被暗中扩大，也不作为必须前提；新Bayes/分箱桥自足。K<22及仅h0不外推。\\n\\n预计直接Fact前驱仅SRC fef8372728290b45、MM5 946d42d5bf502eb4、032 372cbc90282df2cd。033为动机非数学前提；016若只经032上界使用，不额外登记直接依赖；实质另调用任何Fact须如实注册。新增随机标签源/路径、共同核实际消信息、完整侧信息、Bayes风险桥为新承重内容，不能把讨论或有限枚举当Fact。\\n\\n[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]失败登记准确一步及解除条件，保持OPEN，不删除目标或把方法失败宣称母题反例。031–033不重投，旧root/依赖不增加逆向前提。[Non-scientific operational metadata omitted.]Dot入口缺失仍未解决，未实际投递不能声称已安排，不创建替代Dot；固定S001–S019及来源限制保留。[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]v10未完成。\\n\\n\",\"fact_id\":\"d3e63f7b5e389adf\",\"scope_bindings\":[{\"evidence_id\":\"dbadc5e7ba8291254d133f41b62bbb5acb0368631d6a7cb0b9fda79b4a5b8d3a\",\"obligation_id\":\"7e9edb773c2453ce6ca6ab0962158682e758dd98a2e5feefd614a6b6e185c6f8\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]}}],\"source_hash\":\"f60b0d2057aa2357a5fb424fda8cf6ec0c72b43c770dee330987838528f39a92\"}]\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 748,
+          "input_line_sha256": "4deadb955387b3cdd22e7a1221e941330ea6ad3f23196d30a4a8362e2b48a1ef",
+          "public_line_sha256": "c04e602df52ae8e848d8852b797e9078a527742333b0db069b61e0c1f37daaea",
+          "public_line": "path/head identities and inequalities. [Non-scientific operational metadata omitted.]\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 770,
+          "input_line_sha256": "1e2524b9dd968794ff9ffb252d2b475dbdb8b397b27e294b0a25aa6ddcb53b4a",
+          "public_line_sha256": "a903b77b6cec76e586ea02f8dc82344e8a1f329d1d48ecdbd94b2c869da5905c",
+          "public_line": "[Non-scientific operational metadata omitted.]\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/facts/ed3adf29f858da12.md",
+        "source_sha256": "92832afc95fe451d6132a6c7c3263e6b7f2404840f3ca06d2eea7f9d1bc9454d",
+        "export_sha256": "92832afc95fe451d6132a6c7c3263e6b7f2404840f3ca06d2eea7f9d1bc9454d",
+        "source_bytes": 111865,
+        "export_bytes": 111865,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/facts/ed3adf29f858da12.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/facts/f26fe010ee257079.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "4fbc7de1cdc401ca7e1f6cf6c93831fda86425b6ac48af2b90cf3930184cb532",
+      "input_bytes": 71895,
+      "public_sha256": "aff1b4569168c6b0e70b07068a70df27e26fe4d45878b245bc65650d9e8005bd",
+      "public_bytes": 71185,
+      "public_edits": [
+        {
+          "line": 71,
+          "input_line_sha256": "97448a0301d2c7e6dd78e484aa46e46c61238e232704c235ccd96a88ea83a1bf",
+          "public_line_sha256": "5b0cfd020f6a5998ff092390b2ddd42a0a0e6978371de04c48443155bfa4f12e",
+          "public_line": "仅同一F的总actual E[TV]，不推出excess、任意decoder位数lower、其它风险或同一源全参数困难。实际u与023完整dense/uncached费用保持，全部M+3位置、六heads、输入/QKV/mask/端点、完整算术/guards/holds/copy/clear、输出、offline全格式及逐phase总peak全收费。无新decoder/cache或资源优势；[Non-scientific operational metadata omitted.]\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 72,
+          "input_line_sha256": "8e1003dc39446d9cc8693a8469893ad5ab18684706162492405f5ca3bf552de0",
+          "public_line_sha256": "121c57b4eb4571986bf4cd3ab818857a266bddd8b1876b2255379ab9f9e7d309",
+          "public_line": "完整证明需要独立审查；失败应保留，不得静默删除结论。[Non-scientific operational metadata omitted.]不重审旧根，不宣称v10解决。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 77,
+          "input_line_sha256": "c18270e51c98c2e4898d81f8b2734233db79bf9080863908545ad2b27fb680c4",
+          "public_line_sha256": "b38035b140221e7b6242c29419936e4b94a1bea3ea94e6a4ed75f743467ec128",
+          "public_line": "{\"contract_id\":\"e6b7592e781948d00eb2a2effb80d8e3ef77e480f8d70f960286bc33faf730af\",\"definitions\":\"## A. 共同源、观察、算法及风险定义\\n\\n对每个整数 K>=2，A={0,...,K-1}，S=A²，D=K²。一个实验固定一个时间齐次二阶表 theta∈(Delta(A))^S，允许零坐标；初始对分布 mu∈Delta(S) 任意。令\\n\\n    Y_j=(X_(j+1),X_(j+2)),\\n    P_theta((a,b),(b,c))=theta_(a,b)(c),\\n    N>=3, M=N-2, E_N=Y_M,\\n    n_s(M)=sum_(j=0)^(M-1)1{Y_j=s},\\n    C_s,c(M)=sum_(j=0)^(M-1)1{Y_j=s,X_(j+3)=c},\\n    p_s^+=(C_s+1)/(n_s+K).\\n\\n每次预测完整观察 X_1^N。最后一个计数后继是 X_N；Y_M 不是额外 departure。actual query 从已观察最后两符号取得；fixed-query 任务另有明确的公开 s。X_(N+1)、theta、mu、支持、闭类、平稳律、未来行栈及隐藏源标签不可见。外部 query 是同一历史下调用的查询参数，不额外赠送干净端点或统计量。获得和复制实际端点在实现中收费。\\n\\n共同算法族的程序和公开精度可以依赖 K,N,h，不能依赖未知 theta,mu 或其隐藏标签。统计根中的理想 p^+ 是分析变量；给定实现的计数、头输出等实际可见代码由来源实现义务确定，不能据理想表达式新增 readout 端口。比较中的任意全历史预测器可以用全部 X_1^N 和源独立随机种子，输出任意概率向量。具体 Pi 则遵守自己已声明的内部信息切口。\\n\\nTV(p,q)=1/2 sum_c|p_c-q_c|。对给定 family F，令 Z_N(s)=TV(F_(K,N,h)(X_1^N;s),theta_s)。严格区分：\\n\\n| 名称 | 定义 | 量词 |\\n|---|---|---|\\n| fixed row | E Z_N(s) | 固定公开 s |\\n| all contexts | E max_(s∈S) Z_N(s)；另可问其 a.s. 极限 | 全 K² 行，不改成访问行 |\\n| actual terminal | R_act=E Z_N(E_N) | 同一历史的末尾 query |\\n| conditional terminal | E[Z_N(E_N)\\\\|E_N=s] | 仅当 p_N(s)=mu P^M(s)>0；零概率时未定义 |\\n| empirical weighted | E sum_s(n_s/M)Z_N(s) | 同历史频率权重 |\\n| other history weighted | E sum_s w_s(X_1^N)Z_N(s) | w 为观察历史可测 simplex；不自动有一致性 |\\n\\n逐源极限固定 K,theta,mu 后令 N→∞。统一均值是每个 N 的 sup_(theta,mu) R_act；取 supremum 时源可随 N 改选，但一个样本路径内部的核必须齐次。固定 K 的统一结论不是 K 随 N 变化的无条件结论，也不是 changing-source 的统一几乎处处结论。输出允许零坐标，损失仅 TV，本 contract 不把它解释为 positive-output KL。\\n\\n\\n## 共同研究范围的约定\\n\\n接口I是一个程序性质的定义，不能作为所有算法已经满足的全局假设。条件统计根对任意满足I的共同有限族F证明蕴含式；具体Pi满足I及其完整成本须由SRC-Pi的正常独立来源义务支持，不能在证明SRC-Pi时先假定它。原第二阶段固定证明是可查来源，旧Fact编号不是新项目前驱。\\n\\n后继真实资源/可靠性命题可以在同一contract内建立独立义务，不必谎称它们是统计根的前提。数据观察及TV实验保持上述定义。每项具体实现须声明自己的内部代码、允许回读、输出格式、参数/字长、batch或streaming等执行方式；比较只在所声明的共同条件下成立。原Pi的finite-attention加pointwise batch hybrid、literal bit/ReLU模块的packed/scalar、sparse/dense选项分别核算，不将一项格式的便宜坐标拼入另一项。\\n\\n完整费用包括实际head和局部绑定、输入/query/端点取得、参数/零系数、物理字、复制/跨层保持/清除、mask/position、所有活动bank与metadata、online/offline工作和同时峰值。不能免费引入计数、normalizer、译码或生成器。新算术/扰动参数由各精确义务局部量化；改变共同数据律、可见信息或风险须建立新的明确数学范围。\\n\\n给定接口的条件定理、具体实现定理、训练可达性、必要资源及新颖性是不同主张。数学根只包含数学命题。行政完成程序不是数学前提；独立后续结论不改变已有定理的证明依赖。\\n\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]},\"statement\":\"# ANCHOR-JOINT-K-HIGH-KAPPA（030）：任意合法horizon的高kappa总actual风险匹配\\n029诊断后的完整定理候选，未接纳。GO/枚举非Fact。须自足证明后正常提交。旧依赖及027全域问题不变。\\n\\n## 1. 固定对象、全域上界与新目标\\n严格使用023 Fact c5ca8f2e82eafcfc的同一F、DOMAIN及PROGRAM。整数K>=2、M>=1，N=M+2、n_tok=q=M+3；Y_i=(X_(i+1),X_(i+2))，只观察完整X_1^N，departure仅i=0,...,M-1，目标同轨迹theta_(Y_M)，TV=L1/2。每实验theta固定齐次、允许零边，mu任意；sup可依公开参数选源；程序不读theta、mu、未来或辅助样本。\\nh0=max(4,ceil(log2 M)+1)，整数h>=h0，Q=2^h，b=ceil(log2(M+1))，ell=ceil(log2(M+K+4))，D_*=4M+1；\\nmax(h,ceil(log2(8D_*)))<=g<=max(h,2b+12)，G=2^g，u=4g+4ell+64。\\n023程序逐位不变，含六头、完整score分别递推、全部head floor、Z_safe、half-up、两次clip、K个add-one及有序输出；后端不重读历史。\\nR_K=sup_(theta,mu) E TV(F(X;Y_M),theta_(Y_M))，lambda=G/M，T=K^(5/2)/sqrt(M+1)。\\nPsi(0)=0，Psi(x)=x(1+ln(1/x))于0<x<1，Psi(x)=1于x>=1。\\n028 Fact c4d2925dfe8d1748的全DOMAIN AGG/UPPER按原scope引用：||C'-C||_1<=8D_*^2/G+4K，R_K<=min(1,64T+128Psi(K^4/lambda))；J=sum C是真实计数。\\n\\n限K>=22，a=floor((K-6)/4)，P=a^2，L=P+5，kappa=lambda/a^4>=2^48。所有原合法M,h,g须证\\n2^-66 min(1,T+Psi(K^4/lambda))<=R_K\\n <=min(1,64T+128Psi(K^4/lambda)).                     (HIGH-KAPPA)\\nM无对齐/大样本前提；小K、低kappa及量化饱和区不在本匹配内。\\n\\n## 2. 分支判据与完全指定的全余数源\\n置B_thr=2^80 a lambda sqrt(kappa)=2^80 lambda^(3/2)/a。证明\\nM>=B_thr iff a^2 M^2>=2^160 lambda^3 iff a^2 M^5>=2^160 G^3。 (BRANCH)\\n等号归浓缩分支，用正整数判据，不以M+1替换M。\\n\\n浓缩分支先证m=floor(M/L)>=4，再用以下源。字母组A={0,...,a-1}，B={a,...,2a-1}，C={2a,...,3a-1}，D={3a,...,4a-1}；(p0,q0,p1,q1,eta,zeta)=(4a,...,4a+5)。\\nw_0,...,w_P为从0回0、各有序相邻pair恰出现一次的字典序首个Euler回路，含loops；给有限存在性。w^0=w，w^1=w+a。epsilon=1/m。\\n对s=0,1，(p_s,q_s)->w^s_0，(q_s,w^s_0)->w^s_1，(w^s_i,w^s_(i+1))->w^s_(i+2)，0<=i<=P-2。\\n最后A pair->eta，(w^0_P,eta)->zeta，(eta,zeta)->(1-epsilon)delta_p0+epsilon delta_p1，(zeta,p_s)->q_s。\\n最后B pair->Unif(C)，(w^1_P,c)->Unif(D)，(c,e)->p1，(e,p1)->q1，对c∈C、e∈D。其它行delta_0。核无冲突、合法shift、概率及齐次性，每圈L步。\\n\\n定义stay圈仅用于初pair：y0=(p0,q0)，y1=(q0,w0)，y_r=(w_(r-2),w_(r-1))于2<=r<=P+1，y_(P+2)=(w_P,eta)，y_(P+3)=(eta,zeta)，y_(P+4)=(zeta,p0)。\\nd=M-mL，k=(L-2-d) mod L，mu=delta_(y_k)。观测中的门保持真实epsilon随机激活，不能固定stay。首门departure=d，未激活后续门d+tL，t=0,...,m-1；终端时刻M为未激活A门或B query，departure M不入历史。尤其k=L-1的(zeta,p0)是合法任意初始化，不付未观察的更早门概率；d=0须计departure0随机门。\\n\\n对0<=j<=m-1，首次激活在门index m-j-1的质量\\np_j=(1/m)(1-1/m)^(m-j-1)>=1/(4m)。\\n从完整路径律证明此前j个query及actual末query条件iid Unif(C×D)，每个指定完整选择序列唯一且历史质量p_j a^(-2(j+1))，真实目标delta_p1。\\nh_A(k)为首门前d个departure所发A标签数，须保留初始残段并证明\\nH_A=h_A(k)+(m-j-1)(a^2+1)。\\n不得沿用其它余数的旧对齐等式或删历史。\\n\\n## 3. 新浓缩分支的实际源级下界\\nM>=B_thr时，须从该源与真实共同四头自足证明\\nE_source TV>=2^-40 ln(kappa)/kappa\\n             >=2^-53 Psi(K^4/lambda)。                (CLOCK)\\n条件于激活j和实际末(c_r,e_s)，旧query行/列/交叉计数R_r,C_s,J的边缘分别为Bin(j,1/a)、Bin(j,1/a)、Bin(j,1/a^2)，保留相关性。\\n令R=2^u、E1=W(L2)、E2=W(2L2)，整数分母核为\\nR(M+1)，R(M+1)+(E1-R)R_r，R(M+1)+(E1-R)C_s，\\nR(M+1)+(E1-R)(R_r+C_s-2J)+(E2-R)J。\\nanchor分子R，每个wrong label的四头分子同为R H_c；全部M个departure计入。\\n取1<=w_j=lambda*j/(a^2 M)<sqrt(kappa)/1000，beta=10^-6；证明含整数lambda的好相位、格点密度、j范围及H_A>=M/16。\\nE_j要求三项计数各距均值<=beta M/lambda。证明条件失败概率<=3a w_j lambda/(beta^2 M)<1/2。\\n随机计数、相位及有限递推须逐项支付；00保留floor(G/(M+1))。共同floor、half-up、两次clip、K个add-one、输出及调和和给CLOCK，不外推028 PARTIAL或独立化末query。\\n\\n## 4. 统计补集与总风险合并\\nM<B_thr时证明Psi(K^4/lambda)<=2^49 T。核K/8<=a、M+1<=2M及Psi截断；用(1+ln kappa)/kappa^(1/4)<=5。\\n仅调用MM5 Fact946d42d5bf502eb4的任意共同全历史预测器actual下界R_K>=2^-16 min(1,T)，覆盖此补集。不主张此处分支clock的E_j正概率或量化lower。\\n浓缩分支由CLOCK与MM5先取不同源supremum下界的max，再比较常数；不得相加成同一困难源。证明HIGH-KAPPA的固定2^-66常数，保留小M、m=0/1只落补集及全部合法h,g。\\n\\n## 5. 依赖、证据与保留边界\\n全余数源/路径律、BRANCH、CLOCK、统计BRIDGE、HIGH-KAPPA及费用保持为一次完整合取。直接Fact前驱023、028、MM5；实质另用则登记。028原前驱023、016不变。029稿非Fact，新增论证须自足。\\n027诊断f557ceba3e8d54defd029041857c535baf2130460e4013afb265d2d296affa72及f2dd61ad8ffce71684c42db217a54b1e4ed10b385dc6f829c01bb722276fbf41保持；旧空E_j见证须核属于新补集，不否认该方法障碍。027全DOMAIN匹配仍OPEN。\\n仅同一F的总actual E[TV]，不推出excess、任意decoder位数lower、其它风险或同一源全参数困难。实际u与023完整dense/uncached费用保持，全部M+3位置、六heads、输入/QKV/mask/端点、完整算术/guards/holds/copy/clear、输出、offline全格式及逐phase总peak全收费。无新decoder/cache或资源优势；[Non-scientific operational metadata omitted.]\\n完整证明需要独立审查；失败应保留，不得静默删除结论。[Non-scientific operational metadata omitted.]不重审旧根，不宣称v10解决。\\n\"}\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 80,
+          "input_line_sha256": "71893c3de63b862cefdce333d2855e6675a287ab981dd02942a5954e6db31901",
+          "public_line_sha256": "9b68b4f06b9ede38cae59c8d00b74fd388c2f16f0453badbc1bdfdb23f226414",
+          "public_line": "[{\"exact_statement\":\"# ANCHOR-PRECISION-RISK：固定锚定读出的精度—实际风险及一个粗精度失败配置\\n\\n这是020之后的独立nonroot科学义务。020 Fact8a4d1b9aef15dae8及其Evidence3ff58057b04b6befec3ddaa73e01d996e10fdb69caf7719520f48d5f4d315692保持原scope；本项不扩写其精确恢复参数域。021精确旧cap核查本轮收束，022保持OPEN/PARKED，不是本项前提。已恢复core及尚未解决的接线/alias/地址/微码/phase问题原样保留。不新做旧cap、compiler枚举或调度修复。\\n\\n来源设计资料 inputs/anchor-precision-risk-seed-20261029.md 和 anchor-precision-risk-precheck-20261029.md 当时尚未接纳，不能将来源材料标记当作独立科学证据。下述上界是标准有限误差与截断推论；新增可判别部分是指定粗配置在真实四头联合输出上的实际风险。整个合取经正常网关才可接纳，不拆常数节点，以首引理替代完整目标。\\n\\n## 1. 全域、量词与新程序\\n\\n所有整数K>=2、M>=1，N=M+2、n=q=N+1，字母表{0,...,K-1}。每次实验内theta固定为任意允许零边的齐次二阶表，mu为任意初始对律。只观察完整X_1^N，Y_i=(X_(i+1),X_(i+2))，departure为i=0,...,M-1，actual目标为theta_(Y_M)。风险始终为同轨迹E[TV]，TV=L1/2；sup可随公开参数选源。程序不读theta、mu、未来或辅助行栈。\\n\\n定义h0=max(4,ceil(log2 M)+1)，整数h>=h0，Q=2^h，b=ceil(log2(M+1))，ell=ceil(log2(N+K+2))，D_*=4M+1，p=4h+4ell+64，并独立选择整数g：\\n\\n    g_min=max(h,ceil(log2(8D_*))),\\n    g_min<=g<=g_0=max(h,2b+12),\\n    G=2^g, u=4g+4ell+64.                            (DOMAIN)\\n\\n需证明区间非空、g>=h>=b、u<=2p。所有整数配置有有限位长/移位构造。\\n\\nF_(K,M,h,g)保留020的同一六头共享因果batch hybrid前端、局部query、q外部/actual模式选择与half-up/clip decoder，仅重生成内部精度相关常数、有限求值和网格。两singleton复制头取得历史lag2/lag1及q已观察末对。q的token为零；f_t=1{t=q}；统计key为((1-f_t)lag2_t,(1-f_t)lag1_t)，value为(x_t,f_t)。四头(alpha,beta)∈{0,1}²的query为(alpha L2 A,beta L2 B)，A,B是该token合法局部query的one-hot。q选择最终query，过去位置不提前获得它。\\n\\nq的统计mask为{3,...,N,q}；其他行是{3,...,t}，空集self fallback。mask为有限bits。所有n位置完整执行、收费，每次只暴露q一个query输出。后端只访问四头返回、公开量及声明精确bits，不回读历史。\\n\\n精确冻结有限求值如下。R=2^u，先有理生成\\n\\n    V=2 sum_(j=0)^(u-1) 1/[3^(2j+1)(2j+1)],\\n    L2=floor(R V)/R.\\n\\n对每个完整score s=S/R∈{0,L2,2L2}分别计算\\n\\n    T_0=R, T_j=floor(T_(j-1) S/(jR)), 1<=j<=8u,\\n    W(S)=sum_(j=0)^(8u)T_j.\\n\\n保留full product和余数。对每个非空mask精确累加D_int=sum W、A_int=sum W v，返回网格分子floor(G A_int/D_int)。cached实现只缓存三个完整score的各自递推结果，不能把exp(L2)的舍入结果平方代替2L2求值。zero score的W=R准确。\\n\\n每个位置的四头label/anchor分子记Y_(ab),c、Z_(ab)。执行：\\n\\n    Z_safe=max(1,Z),\\n    U_(ab),c=clip_[0,4M](floor((2Y_(ab),c+Z_safe)/(2Z_safe))),\\n    C'_c=clip_[0,M](U_11,c-U_10,c-U_01,c+U_00,c),\\n    B_c=C'_c+1, B_sum=sum_c B_c,\\n    m_c=floor(Q B_c/B_sum) (c<K-1),\\n    m_(K-1)=Q-sum_(c<K-1)m_c, F_c=m_c/Q.             (PROGRAM)\\n\\n不得改变舍入/clip顺序。非q的Z可能为0，sum C'可达KM，必须容纳；所有路径、query、两模式均合法，含M=1、无访问行、网格端点及源支持不相容历史。\\n\\n## 2. 全路径误差、统一actual上界和风险配置\\n\\n理想四头沿020的乘积展开定义D_ab=1+sum w_ab、S_ab,c=sum w_ab 1{x_t=c}，w_ab∈{1,2,4}。则S+1<=D<=D_*，C_c=S_11,c-S_10,c-S_01,c+S_00,c是真实完整triple count，J=sum C，p_c^+=(C_c+1)/(J+K)。需要为新g重述：有限log误差<2·2^-u，单weight误差<=100u2^-u，网格化前每坐标比值误差<=200u2^-u，网格化后HEAD误差<=2/G；score∈[0,2]。前一更强误差界亦用于第三节，不能只用独立的HEAD区间替代实际输出。\\n\\n待证在q，Z>=1，且\\n\\n    |Y/Z-S|<=4D_*²/G,\\n    |C'_c-C_c|<=e, e=16D_*²/G+2,\\n    TV(F_(h,g)(x;s),p_s^+(x))\\n      <=min(1,K e/(J_s+K))+(K-1)/Q.                 (PATH)\\n\\n最后归一化必须以真实正向量C+1及其总和J+K证明；两次clip是向含真实值的区间投影，half-up每项另付1/2。非q概率合法性独立证明。\\n\\n令T=K^(5/2)/sqrt(M+1)，Psi(0)=0，Psi(x)=x(1+ln(1/x))于0<x<1，Psi(x)=1于x>=1。定义\\n\\n    R(K,M,h,g)=sup_(theta,mu) E TV(F_(h,g)(X;Y_M),theta_(Y_M)).\\n\\n使用016 Fact a53804d650803060的实际48T及TRUNC，证明\\n\\n    R(K,M,h,g)<=min(1,48T+(K-1)/Q+Psi(x)),\\n    x=K^5[16D_*²/G+2]/(M+1)\\n      <=256K^5 M/G+2K^5/(M+1).                      (RISK)\\n\\nTRUNC的实阈值取整、J=0、小M和零参数保持。对每个固定K，任何合法公开序列h_M,g_M，若G_M/M→∞，则R(K,M,h_M,g_M)→0。特别h=h0且G按M^(1+epsilon)向上取二次幂，固定0<epsilon<1，在充分大M进入DOMAIN，给M<<G<<M²的充分配置。此结论不声称必要性。\\n\\n给定0<tau<1，保留48T+(K-1)/Q+Psi(x)<=tau这个有限充分证书，并给出可检查的显式选择：\\n\\n    M+1 >= (144 K^(5/2)/tau)^2,\\n    h=max(h0,ceil(log2(3(K-1)/tau))),\\n    H=16K^5 D_*² / [(M+1)tau²/36-2K^5],\\n    g=max(g_min,ceil(log2 H)).                      (TAU)\\n\\n需证明分母正、此g<=g_0、R<=tau；如上述表达式有真缺口须登记修复，不默许超出DOMAIN。此处使用Psi(x)<=2sqrt(x)只是显式充分配置的松弛。平方根界也足以推出G/M→∞时一致，不能说其一致性需要M²；只有要求保持M^-1/2实现误差阶时，它才给粗的M²充分尺度。TAU不声称最优精度或新的样本下界。\\n\\n## 3. 一个完全指定的coarse配置：真实联合四头的失败见证\\n\\n令K=2，对所有M取公开h_c(M)=h0(M)、g_c(M)=g_min(M,h0)。G_c=2^g_c满足G_c=Theta(M)。待证该特定配置不uniform actual一致，具体用以下同一个固定合法源，不引入任何新观察实验：\\n\\n    theta_00=delta_1, theta_01=delta_1,\\n    theta_11=delta_0, theta_10=delta_0, mu=delta_00.\\n\\n真实pair路径是00→01→11→10→00的确定周期。沿公开子序列M_r=3·2^r，整数r>=2，真实末对Y_M=00，真实下一符号律delta_1；每个triple 001、011、110、100恰出现M_r/4次。待证实际有限程序给\\n\\n    lim_(r→∞) E TV(F_(2,M_r,h_c,g_c)(X;Y_M),theta_(Y_M))=1/12,\\n    limsup_(M→∞) R(2,M,h_c(M),g_c(M))>=1/12.         (COARSE-FAIL)\\n\\n必须从同一路径产生全部四头。可核候选计算链为：在M_r上h_c=r+3，g_c=r+7，u=8r+100，G/M=128/3。按头顺序00、10、01、11，D/M趋于(1,3/2,3/2,9/4)，label0的S/M=(1/2,1/2,3/4,3/4)，label1的S/M=(1/2,1,3/4,3/2)。量化前误差乘G趋于0，理想G/D的极限(128/3,256/9,256/9,512/27)均非整数；应推出真实Z最终为(42,28,28,18)。须再逐项验证half-up、两次clip、add-one及ordered final floor，从而\\n\\n    (C'_0/M,C'_1/M)→(16/567,176/567),\\n    F→(1/12,11/12).\\n\\n该计算链及有限诊断是待独立验证的证明候选，不是Fact。若失败，保持义务OPEN并登记精确失败点；不能以独立选择HEAD误差、理想实数输出或其他decoder替代。\\n\\n这是一个指定coarse配置、固定decoder的反例；不证明每个G=Theta(M)配置都失败，不证明G/M→∞对全配置必要，不推广为任意decoder、所有attention或一般Transformer资源下界。[Non-scientific operational metadata omitted.]\\n\\n## 4. 实际u的完整收费资源及范围\\n\\n从020已接纳构件核实新DOMAIN中的同一收费实现，精度字长为实际u，不自动以p或原p_a替换。要求沿其完整batch hybrid模型保持下列统一构造上界：L=O(Ku²)、per-token W=O(Ku)，6总heads/最多同层4、max QK=2K、统计value维K+1、score<=2；在线coefficient/arithmetic完整word<=128u；dense slots O(K³u⁴)、dense参数bits O(K³u⁵)、active gates/projections O(Ku²+K²)、holds O(K²u³)。\\n\\n主配置固定dense/uncached：全部n点运算/QKV O(nK³u⁶)，attention O(n²(K+u)u²)，mask/position O(n²+n log(n+1))，input/query/mode/endpoint/flag取得、转换、保存及residual/copy/hold/clear/decode全部收费。有限log work O(u³log²(u+1))、scratch O(u log(u+1))，code O(u⁴)。\\n\\n令P_u=K³u⁵+n²+nKu²+u⁴+u log(u+1)。复核program/参数/code、已存input、masks、QKV、rolling层、四头银行、controller/address、完整算术scratch和output逐phase共存求和，online/offline总peak O(P_u)。完整offline生成/整理及包括dense零项的真实格式写出work为O(K³u⁶+n²u²+u³log²(u+1))。这些是同源构件的解析上界核实，不要求旧十进制cap、literal ledger或compiler。须明说未运行这些测量。\\n\\n若讨论cached或sparse，独立列出其完整cache/selector/代码/格式费用，不与主配置混合。u<=2p仅给共同常数倍包络，不给原128p的逐数值word结论、020对Pi支配、最优work/width或资源必要性。COARSE-FAIL证明亦不扩展SRC的master故障接口。\\n\\n## 5. 依赖与执行门槛\\n\\n实际预期前驱为020 Fact8a4d1b9aef15dae8（固定前端/decoder及收费构件）、016 Facta53804d650803060（48T/TRUNC）、SRC Factfef8372728290b45（实际有限运算构件，若正文实质直接使用即登记）。若自足重述使某前驱不实际必需，提交时如实报告，不隐藏真正依赖。G/U已由016支持所需统计引理，不为此重审旧root。022及021均无数学前驱关系。\\n\\n完整 PATH/RISK/TAU/COARSE-FAIL/新参数资源合取需要独立审查；补充检查重点是四头联合可达性、Z 的 floor 稳定、两次 clip、最终归一化抵消和量词。[Private task allocation omitted from the public export.][Non-scientific operational metadata omitted.]新输入和上述具体数学见证是选择性接续的依据。旧接纳及依赖保持，不为新义务添加任何逆向前提。完成本合取仍不宣称v10母题解决。\\n\",\"fact_id\":\"c5ca8f2e82eafcfc\",\"scope_bindings\":[{\"evidence_id\":\"4bdb115ae34079859922c01c137d03a50853cedb43cefa6736969773bc852fa4\",\"obligation_id\":\"8b01f4916991a27070c6a469b8efe13a421c0ffc8d68065bd6b643838dce114c\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]}}],\"source_hash\":\"92c451b503e6a288fa1b2a6f7eec3efd4e02cb737ae0caaad88d86b991105538\"},{\"exact_statement\":\"# ANCHOR-JOINT-K-PARTIAL（028）：共同anchor全域上界、clock子域匹配及K指数不可降低\\n027有界诊断的独立部分定理后继，尚未接纳。027全域匹配问题与两个方法障碍保持未决；本合取不是026或任何旧Fact的逆向前提。\\n\\n## 1. 准确对象\\n全部整数K>=2、M>=1，N=M+2、n_tok=q=M+3，Y_i=(X_(i+1),X_(i+2))。只观察X_1^N，departure为i=0,...,M-1，目标为同轨迹theta_(Y_M)，TV=L1/2。每次实验theta为固定齐次二阶表，允许零边，mu任意；sup可依公开参数选源，程序不读theta、mu、未来或辅助样本。\\n严格采用023 Fact c5ca8f2e82eafcfc的同一F、DOMAIN及PROGRAM：\\nh0=max(4,ceil(log2 M)+1)，h>=h0，Q=2^h，b=ceil(log2(M+1))，ell=ceil(log2(M+K+4))，D_*=4M+1；\\ng_min=max(h,ceil(log2(8D_*)))<=g<=g_0=max(h,2b+12)，G=2^g，u=4g+4ell+64。\\n保留六头共享因果batch、q actual/external模式、有限有理log、0/L2/2L2完整score分别8u递推、全部head floor、Z_safe、half-up、[0,4M]与[0,M]两次clip、add-one及ordered floor/residual的顺序；全部n_tok位置收费，后端不重读历史。C、C'分别为真实和程序恢复的query计数，J=sum C，p^+=(C+1)/(J+K)。\\nR_K=sup_(theta,mu) E TV(F(X;Y_M),theta_(Y_M))，lambda=G/M，T=K^(5/2)/sqrt(M+1)。Psi(0)=0，Psi(x)=x(1+ln(1/x))于0<x<1，Psi(x)=1于x>=1。\\n\\n## 2. 全合法域的确定性及actual上界\\n须对所有完整历史与query（包括零计数及源支持外历史）证明\\n||C'-C||_1<=8D_*^2/G+4K；                                      (AGG)\\nTV(F,p^+)<=min(1,(8D_*^2/G+4K)/(J+K))+(K-1)/Q。\\n继而全DOMAIN有\\nR_K<=min(1,53T+Psi(128K^4/lambda))\\n   <=min(1,64T+128Psi(K^4/lambda))。                           (UPPER)\\n每头共同anchor误差必须实际求和，不把它变成K个自由扰动；one-hot有限weight误差无额外K倍；两次clip均按包含真实比较点的投影证明。归一化用真实J+K。直接调用016 Fact a53804d650803060的48T/TRUNC须登记为直接前驱。\\n\\n## 3. 完全指定源及精确范围\\nK>=22，a=floor((K-6)/4)>=4，P=a^2，L=P+5。令A={0,...,a-1}、B={a,...,2a-1}、C={2a,...,3a-1}、D={3a,...,4a-1}，六marker (p0,q0,p1,q1,eta,zeta)=(4a,...,4a+5)。\\nw_0,...,w_P为从0开始、终于0、各有序相邻pair恰出现一次的字，取完全有向图含loops的字典序首个Euler回路；w^0=w，w^1=w+a。须自足给有限存在性。\\n整数m>=2，M=(m+1)L-2，epsilon=1/m，mu=delta_(p0,q0)。\\n对s=0,1设(p_s,q_s)->w^s_0，(q_s,w^s_0)->w^s_1，(w^s_i,w^s_(i+1))->w^s_(i+2)于0<=i<=P-2。\\n最后A pair->eta，(w^0_P,eta)->zeta，(eta,zeta)->(1-epsilon)delta_p0+epsilon delta_p1，(zeta,p_s)->q_s。\\n最后B pair->Unif(C)，(w^1_P,c)->Unif(D)，(c,d)->p1，(d,p1)->q1，对c∈C、d∈D。其它未指定行delta_0。须核无冲突、合法shift、齐次性及每段恰L步。源依K,M，不随轨迹时刻或隐藏数据改变。\\n\\n先从完整路径律证明：若末尾前已完成j个B圈，0<=j<=m-1，其激活质量p_j=(1/m)(1-1/m)^(m-j-1)>=1/(4m)；此前j个query与actual末对为iid Unif(C×D)，每个指定完整选择序列路径唯一、质量p_j a^(-2(j+1))。末query departure恰为M而不计入历史，其真实目标delta_p1。\\n同源对任意整数v>=1须证明\\nP(Y_M∈C×D,J<v)>=2^-16 min(1,K^4 v/(M+2))。              (OCC)\\nOCC仅为中间源性质，不能代替风险证明。\\n\\n进一步严格限制到原h,g合法且\\nkappa=lambda/a^4>=2^48，M>=2^80 K lambda^2。             (SUBDOMAIN)\\n在此域须给源级下界及匹配\\nE_source TV>=2^-40 ln(kappa)/kappa>=2^-53 Psi(K^4/lambda)，\\n2^-53 Psi(K^4/lambda)<=R_K<=129 Psi(K^4/lambda)。        (PARTIAL)\\n须从真实共同四头出发；保持整数lambda边界、随机行/列/交叉计数、有限格点与条件概率、两次clip、K个add-one及最终输出floor。不得自由挑HEAD误差、删除历史信息或独立化末query与历史。\\n\\n## 4. 子域非空及联合K指数的准确推论\\n对每个K>=22，任取对齐M=(m+1)L-2>=2^178 K a^8，h=h0，g=ceil(log2(M a^4 2^48))，须证全DOMAIN合法、SUBDOMAIN成立及2^48<=kappa<2^49；g用整数位长构造。\\n因此对任意实p<4与参数无关有限非负常数C1,C2,C3，不存在覆盖全部合法K,M,h,g的上界\\nR_K<=C1 T+C2 Psi(C3 K^p/lambda)。                       (EXPONENT)\\n证明须给K趋无穷的合法对齐序列，使T->0、Psi(C3 K^p/lambda)->0而R_K有统一正下界。此推论只排除该指定上界形式；不声称全域匹配，不排除其它函数、统计项或参数范围的精细界。\\n\\n## 5. 证据、依赖与边界\\n整个AGG/UPPER、源/OCC、SUBDOMAIN/PARTIAL、非空性/EXPONENT为一次有限完整合取，不拆常数节点。预计直接Fact前驱仅023及016；027 Prover/Counter资料均未接纳，相关构造、相位、格点、概率及指数推论须自足写入新正文。实质另用Fact则如实登记，不把026、MM5或UC的sharp性藏为量化下界前提。\\n027诊断f557ceba3e8d54defd029041857c535baf2130460e4013afb265d2d296affa72及f2dd61ad8ffce71684c42db217a54b1e4ed10b385dc6f829c01bb722276fbf41保持。子域外均值相位好但E_j可为空；本项不删除大样本、对齐horizon、K>=22及高kappa条件，不声称它们必要。全域随机共同floor、任意horizon、小K与低kappa/饱和区仍OPEN。\\n实际u及023完整dense/uncached费用保持：所有n_tok位置、六heads、QKV、mask、input/query/endpoint、full products/remainders、guards、holds/copy/clear、输出、offline全格式与逐phase总peak全收费。计数只作证明对象，无新decoder、cache或资源优势。未运行compiler、literal ledger、batch测量须明确。[Non-scientific operational metadata omitted.]\\n完整自足正文需要独立审查。若失败记录准确障碍并保持OPEN，不静默删结论。[Non-scientific operational metadata omitted.]不重审旧根，不宣称v10母目标解决。\\n\",\"fact_id\":\"c4d2925dfe8d1748\",\"scope_bindings\":[{\"evidence_id\":\"b35e6c569bf5e67bb939196c48b36c16e3df5d9b4489f37f815294563a4a77ad\",\"obligation_id\":\"e153ddefc1ca42e6dbc936ea7650426c78405d4956fb63f0a912a0f43fecbd98\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]}}],\"source_hash\":\"e606b4b2a4462ef36e45c14910d7aa0ced89c343dc57e1b02705b1a8daab72f8\"},{\"exact_statement\":\"# RATE-K5-MINIMAX：周期稀疏观测下的共同算法 actual TV 下界候选\\n\\n这是独立的新候选，不是已接纳结果，也不从原始add-one的确定后继反例直接推出。原G/U、SRC、RATE、K3、K-LOW及RATE-K-MINIMAX的接纳与依赖不变；RATE-K-SHARP-ADDONE的REFUTE+证明及网关独立继续。本义务失败不影响上述事项，完成亦不宣告v10结束。\\n\\n对每个整数K>=2、M>=1，N=M+2，字母表{0,...,K-1}。theta为任意允许零边的齐次二阶转移表，mu为任意初始对律；每个实验内theta固定。令Y_i=(X_(i+1),X_(i+2))，观察完整X_1^(M+2)，实际目标为theta_(Y_M)。共同全历史概率预测器A可依公开K,M选取，可使用与源独立的随机种子，不可读取隐藏theta、mu或未来符号。定义\\n\\n    R_min(K,M)=inf_A sup_(theta,mu) E TV(A(X_1^(M+2)),theta_(Y_M)).\\n\\n待证明的完整有限参数结论为\\n\\n    R_min(K,M)>=2^(-16) min{1,sqrt(K^5/(M+1))}.       (MM5)\\n\\n这里是原同轨迹actual的E[TV]，不是E[TV²]、KL、fixed/all/conditional风险或另加独立测试实验。sup可随K,M及算法选择源；不声称同一源对全部算法或全部horizon同时达到下界。\\n\\n## 候选合法源族\\n\\nK>=12时取m=floor(K/4)>=3、L=m²、b=floor(m/2)。取四个互不相交的字母组C,U,V,W，各有m个字母，C含字母0；其余字母不被访问。\\n\\n取C上的循环字c_0,...,c_(L-1)，使p_t=(c_t,c_(t+1))枚举全部C² pair且各出现一次，按模L延拓，旋转令c_5=0。需给出这种循环字的有限存在性证明。\\n\\n对每个(u,v)∈U×V、j=1,...,b引入未知sigma_(u,v,j)∈{-1,+1}。公开0<alpha<=1/2，设\\n\\n    theta_(u,v)(w_(2j-1))=(1+alpha sigma_(u,v,j))/m,\\n    theta_(u,v)(w_(2j))  =(1-alpha sigma_(u,v,j))/m.\\n\\n奇数m时剩余W字母概率1/m，W外为0。其余行定义为\\n\\n    theta_p0=Unif(U),\\n    theta_(c_1,u)=Unif(V)                      (u∈U),\\n    theta_(v,w)=delta_0                       (v∈V,w∈W),\\n    theta_(w,0)=delta_(c_6)                   (w∈W),\\n    theta_p_t=delta_(c_(t+2))                 (5<=t<L),\\n    其余未指定行=delta_0。\\n\\n需检查所有赋值无冲突、概率归一化和合法shift。预期每圈以五步等长拼接\\n\\n    p0 -> (c_1,A) -> (A,B) -> (B,Z) -> (Z,0) -> p5=(0,c_6)\\n\\n替代clock前五步，A∼Unif(U)、B∼Unif(V)，Z条件律为theta_(A,B)，之后沿clock返回p0。圈长L不依任何随机选择或sigma；完整轨迹除观测到的Z外不应泄露额外sigma信息。这一点必须从实际路径律证明，不能把额外clock状态视为免费删除的数据。\\n\\n## 全余数初始化及完整观察实验\\n\\n写M=nL+d，0<=d<L，取起始相位k=(2-d) mod L，使实际末对位于UV查询相位2。以下初始化均不得依sigma：\\n\\n- k=0：mu=delta_p0；\\n- k=1：mu=delta_(c_1)⊗Unif(U)；\\n- k=2：mu=Unif(U)⊗Unif(V)；\\n- k=3：mu=delta_(v_*)⊗delta_(w_*)；\\n- k=4：mu=delta_(w_*)⊗delta_0；\\n- 5<=k<L：mu=delta_p_k。\\n\\nv_*∈V、w_*∈W固定公开。初始pair本身不要求由更早未观测历史生成。不同M可选择不同mu，实验内仍使用同一个齐次theta。\\n\\n需严格证明：完整已观察历史与n=floor(M/L)个iid训练block(A_i,B_i,Z_i)，加上一个与全部训练block独立的均匀actual末对(A_(n+1),B_(n+1))，以及无sigma信息的公开前缀/clock填充等价。k=1,2中的初始随机字母应计入首个训练block或最终末对，不能遗漏信息；k=3,4中的固定前缀不能包含未计的标签样本。覆盖所有余数、n=0及全部departure索引，不把一般源的条件样本称为iid。\\n\\n## 测试下界、常数与输出范围\\n\\n候选alpha=min{1/2,(1/8)sqrt(m³/(n+1))}。相邻sigma仅翻转一个UV行的一个标签对，预期完整观察KL至多8n alpha²/m³<=1/8。实际末对和clock前缀必须纳入路径律验证。对任意随机预测器用该标签对的坐标顺序作测试，处理ties、种子、实际末对条件律及均匀row权重；目标先得\\n\\n    R_min(K,M)>=(1/64) min{1,sqrt(m³/(floor(M/m²)+1))}.\\n\\n须证明完整实验而非丢失信息后的实验满足此式。随后以m>=K/8及有限参数分情况比较，推出保守的(MM5)。2<=K<=11可使用当前项目G/U Fact a12539a93d9f1ee3的共同算法iid actual下界1/(16sqrt(M+2))，必须明确有限常数比较。高K源族及测试论证应自足；唯一预期必需Fact前驱为a12539a93d9f1ee3。既有RATE-K-MINIMAX的证明可作为写作来源，不能未经说明扩张其已接纳scope。\\n\\n若(MM5)成立，统一actual均值风险tau满足0<tau<2^-16的任何共同算法必须有\\n\\n    M+1>=2^-32 K^5/tau²。\\n\\n这仅为样本必要性；不推出内部位数、深宽、算术工作、资源最优性。与已接纳K³/sqrt(M+1) upper比较仍有K指数差距，不称sharp匹配。未知标签族是新增的研究内容，原确定delta_0族并未自动提供此结论。\\n\\n首先做有界反向核查；若发现相位、信息或常数缺口，登记精确障碍并保持OPEN。只有完整自足证明和正常独立网关才能接纳。不重复提交原SHARP+否定构造，不重新审查已完成root。周期稀疏访问构造、条件L1估计及两点测试不作新工具或首创宣称。\",\"fact_id\":\"946d42d5bf502eb4\",\"scope_bindings\":[{\"evidence_id\":\"aa23c442ca1006c6ac0b12379f64a0fa500fbbd6a2e41c798b7a4de3952baa82\",\"obligation_id\":\"3883ea68e83601751cd4e4ff1500d552ac6e412c158b39a9912f6e1de55283dd\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]}}],\"source_hash\":\"fe18f4a413fef5da14c5f361aef47a8c5addceac1a3a58d73366ad20f16d8e93\"}]\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 467,
+          "input_line_sha256": "74e0db2f1bbe531be13666460c89d98cca0153e238760a2186c8872a2c63a3b2",
+          "public_line_sha256": "c73a32d9c7beb5079ff4139dae21c30179d51b363741244a2476059b835c22b4",
+          "public_line": "本轮未运行compiler、literal ledger或batch/profile测量；有限整数/有理数检查只是辅助核验，不是网络实现或资源测量。[Non-scientific operational metadata omitted.]本证明的直接Fact前驱恰为023 c5ca8f2e82eafcfc、028 c4d2925dfe8d1748、MM5 946d42d5bf502eb4；028原前驱023/016不变。029双方稿只作写作来源，不是Fact；没有直接调用016、024、025、026或任何未接纳设计引理。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 469,
+          "input_line_sha256": "d164b18cddf42527d3c3363dd5c0980914c8c61e4c29b248a75503eb77ab4a2a",
+          "public_line_sha256": "c6b6e036fdfcf15aef864e175f7cb769788a5732e2df4338815b54a23f004332",
+          "public_line": "030是新的完整正常提交义务，029本身仍是OPEN/PARKED诊断并保持no-submit。[Non-scientific operational metadata omitted.]特殊初相位仅用于此量化见证。不重审旧root，不宣称v10母目标解决。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/facts/f26fe010ee257079.md",
+        "source_sha256": "4fbc7de1cdc401ca7e1f6cf6c93831fda86425b6ac48af2b90cf3930184cb532",
+        "export_sha256": "4fbc7de1cdc401ca7e1f6cf6c93831fda86425b6ac48af2b90cf3930184cb532",
+        "source_bytes": 71895,
+        "export_bytes": 71895,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/facts/f26fe010ee257079.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/facts/f55e7fd4cc0fb570.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "f4f3a03e4c8e0c84f5f10dfd0b0cfbbada741c3e7b78b820cfb2e16e7c14eed7",
+      "input_bytes": 54780,
+      "public_sha256": "8be2ae59becbc5e3f98cb8d7581623faec0eb597ede8f7eecd1be86f113ff6e1",
+      "public_bytes": 54723,
+      "public_edits": [
+        {
+          "line": 50,
+          "input_line_sha256": "2043e1f756462a65f3053e4caa22ab5532ac2977fb28275b6920c2c594960192",
+          "public_line_sha256": "0cc2c4e54ac9223d8bd049d066e4c57d9f2890e3ff20cb408ddfe627cada36bc",
+          "public_line": "{\"contract_id\":\"e6b7592e781948d00eb2a2effb80d8e3ef77e480f8d70f960286bc33faf730af\",\"definitions\":\"## A. 共同源、观察、算法及风险定义\\n\\n对每个整数 K>=2，A={0,...,K-1}，S=A²，D=K²。一个实验固定一个时间齐次二阶表 theta∈(Delta(A))^S，允许零坐标；初始对分布 mu∈Delta(S) 任意。令\\n\\n    Y_j=(X_(j+1),X_(j+2)),\\n    P_theta((a,b),(b,c))=theta_(a,b)(c),\\n    N>=3, M=N-2, E_N=Y_M,\\n    n_s(M)=sum_(j=0)^(M-1)1{Y_j=s},\\n    C_s,c(M)=sum_(j=0)^(M-1)1{Y_j=s,X_(j+3)=c},\\n    p_s^+=(C_s+1)/(n_s+K).\\n\\n每次预测完整观察 X_1^N。最后一个计数后继是 X_N；Y_M 不是额外 departure。actual query 从已观察最后两符号取得；fixed-query 任务另有明确的公开 s。X_(N+1)、theta、mu、支持、闭类、平稳律、未来行栈及隐藏源标签不可见。外部 query 是同一历史下调用的查询参数，不额外赠送干净端点或统计量。获得和复制实际端点在实现中收费。\\n\\n共同算法族的程序和公开精度可以依赖 K,N,h，不能依赖未知 theta,mu 或其隐藏标签。统计根中的理想 p^+ 是分析变量；给定实现的计数、头输出等实际可见代码由来源实现义务确定，不能据理想表达式新增 readout 端口。比较中的任意全历史预测器可以用全部 X_1^N 和源独立随机种子，输出任意概率向量。具体 Pi 则遵守自己已声明的内部信息切口。\\n\\nTV(p,q)=1/2 sum_c|p_c-q_c|。对给定 family F，令 Z_N(s)=TV(F_(K,N,h)(X_1^N;s),theta_s)。严格区分：\\n\\n| 名称 | 定义 | 量词 |\\n|---|---|---|\\n| fixed row | E Z_N(s) | 固定公开 s |\\n| all contexts | E max_(s∈S) Z_N(s)；另可问其 a.s. 极限 | 全 K² 行，不改成访问行 |\\n| actual terminal | R_act=E Z_N(E_N) | 同一历史的末尾 query |\\n| conditional terminal | E[Z_N(E_N)\\\\|E_N=s] | 仅当 p_N(s)=mu P^M(s)>0；零概率时未定义 |\\n| empirical weighted | E sum_s(n_s/M)Z_N(s) | 同历史频率权重 |\\n| other history weighted | E sum_s w_s(X_1^N)Z_N(s) | w 为观察历史可测 simplex；不自动有一致性 |\\n\\n逐源极限固定 K,theta,mu 后令 N→∞。统一均值是每个 N 的 sup_(theta,mu) R_act；取 supremum 时源可随 N 改选，但一个样本路径内部的核必须齐次。固定 K 的统一结论不是 K 随 N 变化的无条件结论，也不是 changing-source 的统一几乎处处结论。输出允许零坐标，损失仅 TV，本 contract 不把它解释为 positive-output KL。\\n\\n\\n## 共同研究范围的约定\\n\\n接口I是一个程序性质的定义，不能作为所有算法已经满足的全局假设。条件统计根对任意满足I的共同有限族F证明蕴含式；具体Pi满足I及其完整成本须由SRC-Pi的正常独立来源义务支持，不能在证明SRC-Pi时先假定它。原第二阶段固定证明是可查来源，旧Fact编号不是新项目前驱。\\n\\n后继真实资源/可靠性命题可以在同一contract内建立独立义务，不必谎称它们是统计根的前提。数据观察及TV实验保持上述定义。每项具体实现须声明自己的内部代码、允许回读、输出格式、参数/字长、batch或streaming等执行方式；比较只在所声明的共同条件下成立。原Pi的finite-attention加pointwise batch hybrid、literal bit/ReLU模块的packed/scalar、sparse/dense选项分别核算，不将一项格式的便宜坐标拼入另一项。\\n\\n完整费用包括实际head和局部绑定、输入/query/端点取得、参数/零系数、物理字、复制/跨层保持/清除、mask/position、所有活动bank与metadata、online/offline工作和同时峰值。不能免费引入计数、normalizer、译码或生成器。新算术/扰动参数由各精确义务局部量化；改变共同数据律、可见信息或风险须建立新的明确数学范围。\\n\\n给定接口的条件定理、具体实现定理、训练可达性、必要资源及新颖性是不同主张。数学根只包含数学命题。行政完成程序不是数学前提；独立后续结论不改变已有定理的证明依赖。\\n\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]},\"statement\":\"# RATE-K3：同轨迹 actual TV 的显式 K 三次上界\\n\\n这是 RATE-TV Fact 42a4f0a54a7ca79c 之后的独立定量改进候选。旧根、SRC、RATE 的接纳和前驱保持不变。本义务只证明下述上界，不宣称 sharp K 或资源最优性。\\n\\n对所有整数 K>=2、M>=1，置 N=M+2、A={0,...,K-1}。theta 为任意齐次二阶转移表，允许零边；mu 为任意初始对律。令 Y_i=(X_(i+1),X_(i+2))，0<=i<=M，且只计 i=0,...,M-1 的 departures：\\n\\n    C_s,c=sum_(i=0)^(M-1) 1{Y_i=s,X_(i+3)=c},\\n    n_s=sum_c C_s,c, J=n_(Y_M),\\n    p_s,c^+=(C_s,c+1)/(n_s+K),\\n    R_K^+(M)=sup_(theta,mu) E TV(p^+_(Y_M),theta_(Y_M)).\\n\\n每条实验内 theta 固定；sup 可以随 (K,M) 选择 theta,mu。结论为全部有限参数上的\\n\\n    R_K^+(M)<=min{1,20 K^3/sqrt(M+1)}.                 (K3)\\n\\n该改进使用完整多项向量的四阶最大矩，避免逐符号最大值后再乘 K 的损失。必须在完整正文中证明所用向量矩展开与相关性处理；不能把所选随机长度或末行条件化成 iid。J=0、暂态、可约、周期、任意 mu、含零边与小 M 均须覆盖。行栈只用于分析，不交给预测器。\\n\\n对 SRC-Pi Fact fef8372728290b45 的同一个实际有限程序，原 h_N=ceil(log2(128(K+1)(N+1)^3))、e_N=(N+1)^(-2) 下有\\n\\n    sup_(theta,mu) R_act(Pi_(K,N,h_N))\\n       <=min{1,20 K^3/sqrt(M+1)+e_N}.                 (K3-high)\\n\\n对任意合法 h>=max(4,ceil(log2 M)+1)、Q=2^h，令 c0=K^4/(M+1)，H(t)=1（t>=1），H(t)=t(1+ln(1/t))（0<t<1），则\\n\\n    sup_(theta,mu) R_act(Pi_(K,N,h))\\n       <=min{1,20K^3/sqrt(M+1)+(78KM H(c0)+K-1)/Q}\\n       <=min{1,99K^3/sqrt(M+1)}.                     (K3-legal)\\n\\n第二行仅使用合法 Q>=2M，不更换 Pi、不赠送 counts 或历史端口、不声称不同精度的输出逐字相同。实际费用仍按 SRC 的相应 K,N,h 收费；统计界不能推出精确预算相同或整程序资源优势。\\n\\n真实可用前驱为 G/U Fact a12539a93d9f1ee3（UC、逆访问矩及既有 iid actual 下界），RATE-TV Fact 42a4f0a54a7ca79c（有限行栈、有限 Doob L4、二进分层几何估计及准确风险范围），SRC-Pi Fact fef8372728290b45（实际 I 及费用）。新向量矩证明须自足给出。上述继承按各 Fact 的实际使用范围，不反向增加旧根前提。\\n\\n这是 K 指数的保守改进，不是最优依赖。若另给 add-one 的 K 下界，须独立核对同轨迹 actual 选择；单个已知 iid 源的 add-one 下界不能成为任意算法 minimax 下界。共同算法下界需要合法的未知二阶源族。固定 K 的 M^(-1/2) 匹配已有 RATE 支持；本候选不重新包装该结论或标准 Doob/Hölder 为首创。\\n\\n不涉及 count-snap、二元银行故障、模块费用枚举、所有 decoder 下界或同精确预算整程序比较。Lead 候选与团队报告不是 Fact；本上界的接纳仍须完整证明与正常独立网关。\"}\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/facts/f55e7fd4cc0fb570.md",
+        "source_sha256": "f4f3a03e4c8e0c84f5f10dfd0b0cfbbada741c3e7b78b820cfb2e16e7c14eed7",
+        "export_sha256": "f4f3a03e4c8e0c84f5f10dfd0b0cfbbada741c3e7b78b820cfb2e16e7c14eed7",
+        "source_bytes": 54780,
+        "export_bytes": 54780,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/facts/f55e7fd4cc0fb570.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/facts/fd1a83454c2bf962.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "53fe55d27285baa6486282528617861d788dd56013da2846ca341d03b3b9f0a1",
+      "input_bytes": 92662,
+      "public_sha256": "d15b7dd8186efd16fac04a5f2d7fa95d17a8e99398ee2b5e3777484ea1c3955f",
+      "public_bytes": 91299,
+      "public_edits": [
+        {
+          "line": 131,
+          "input_line_sha256": "f164c6b912f57fa17951b0afaecce61c38f438d2935859f67abc73812d4403e6",
+          "public_line_sha256": "839a5293a0b355d96e0b4ae40db03376031500f593938550a62b81ec9215f5a1",
+          "public_line": "[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]不拆常数节点，不以计划或小样本代替目标。若失败记录精确障碍并保持OPEN。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 133,
+          "input_line_sha256": "39b18362a11afc9ce38143f4b5c8b7de6c6b567382f3cef9d3bc99b7f073aaad",
+          "public_line_sha256": "25947a83c9b735934aee64f27636cc4ee3084163143c09464a6586e4632875b8",
+          "public_line": "[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]本合取完成不宣称v10母目标解决。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 138,
+          "input_line_sha256": "b127e1367801c5cb89d73a314f5a31e03a5d14787b4cc62bb499fb49e730b22b",
+          "public_line_sha256": "49371446382c4796158afb34f2f6624f137f2edb87a3e337a542dff7628019a7",
+          "public_line": "{\"contract_id\":\"e6b7592e781948d00eb2a2effb80d8e3ef77e480f8d70f960286bc33faf730af\",\"definitions\":\"## A. 共同源、观察、算法及风险定义\\n\\n对每个整数 K>=2，A={0,...,K-1}，S=A²，D=K²。一个实验固定一个时间齐次二阶表 theta∈(Delta(A))^S，允许零坐标；初始对分布 mu∈Delta(S) 任意。令\\n\\n    Y_j=(X_(j+1),X_(j+2)),\\n    P_theta((a,b),(b,c))=theta_(a,b)(c),\\n    N>=3, M=N-2, E_N=Y_M,\\n    n_s(M)=sum_(j=0)^(M-1)1{Y_j=s},\\n    C_s,c(M)=sum_(j=0)^(M-1)1{Y_j=s,X_(j+3)=c},\\n    p_s^+=(C_s+1)/(n_s+K).\\n\\n每次预测完整观察 X_1^N。最后一个计数后继是 X_N；Y_M 不是额外 departure。actual query 从已观察最后两符号取得；fixed-query 任务另有明确的公开 s。X_(N+1)、theta、mu、支持、闭类、平稳律、未来行栈及隐藏源标签不可见。外部 query 是同一历史下调用的查询参数，不额外赠送干净端点或统计量。获得和复制实际端点在实现中收费。\\n\\n共同算法族的程序和公开精度可以依赖 K,N,h，不能依赖未知 theta,mu 或其隐藏标签。统计根中的理想 p^+ 是分析变量；给定实现的计数、头输出等实际可见代码由来源实现义务确定，不能据理想表达式新增 readout 端口。比较中的任意全历史预测器可以用全部 X_1^N 和源独立随机种子，输出任意概率向量。具体 Pi 则遵守自己已声明的内部信息切口。\\n\\nTV(p,q)=1/2 sum_c|p_c-q_c|。对给定 family F，令 Z_N(s)=TV(F_(K,N,h)(X_1^N;s),theta_s)。严格区分：\\n\\n| 名称 | 定义 | 量词 |\\n|---|---|---|\\n| fixed row | E Z_N(s) | 固定公开 s |\\n| all contexts | E max_(s∈S) Z_N(s)；另可问其 a.s. 极限 | 全 K² 行，不改成访问行 |\\n| actual terminal | R_act=E Z_N(E_N) | 同一历史的末尾 query |\\n| conditional terminal | E[Z_N(E_N)\\\\|E_N=s] | 仅当 p_N(s)=mu P^M(s)>0；零概率时未定义 |\\n| empirical weighted | E sum_s(n_s/M)Z_N(s) | 同历史频率权重 |\\n| other history weighted | E sum_s w_s(X_1^N)Z_N(s) | w 为观察历史可测 simplex；不自动有一致性 |\\n\\n逐源极限固定 K,theta,mu 后令 N→∞。统一均值是每个 N 的 sup_(theta,mu) R_act；取 supremum 时源可随 N 改选，但一个样本路径内部的核必须齐次。固定 K 的统一结论不是 K 随 N 变化的无条件结论，也不是 changing-source 的统一几乎处处结论。输出允许零坐标，损失仅 TV，本 contract 不把它解释为 positive-output KL。\\n\\n\\n## 共同研究范围的约定\\n\\n接口I是一个程序性质的定义，不能作为所有算法已经满足的全局假设。条件统计根对任意满足I的共同有限族F证明蕴含式；具体Pi满足I及其完整成本须由SRC-Pi的正常独立来源义务支持，不能在证明SRC-Pi时先假定它。原第二阶段固定证明是可查来源，旧Fact编号不是新项目前驱。\\n\\n后继真实资源/可靠性命题可以在同一contract内建立独立义务，不必谎称它们是统计根的前提。数据观察及TV实验保持上述定义。每项具体实现须声明自己的内部代码、允许回读、输出格式、参数/字长、batch或streaming等执行方式；比较只在所声明的共同条件下成立。原Pi的finite-attention加pointwise batch hybrid、literal bit/ReLU模块的packed/scalar、sparse/dense选项分别核算，不将一项格式的便宜坐标拼入另一项。\\n\\n完整费用包括实际head和局部绑定、输入/query/端点取得、参数/零系数、物理字、复制/跨层保持/清除、mask/position、所有活动bank与metadata、online/offline工作和同时峰值。不能免费引入计数、normalizer、译码或生成器。新算术/扰动参数由各精确义务局部量化；改变共同数据律、可见信息或风险须建立新的明确数学范围。\\n\\n给定接口的条件定理、具体实现定理、训练可达性、必要资源及新颖性是不同主张。数学根只包含数学命题。行政完成程序不是数学前提；独立后续结论不改变已有定理的证明依赖。\\n\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]},\"statement\":\"# ANCHOR-STATISTICAL-TRANSITION：固定锚定程序达到统计最优阶的精度转折候选\\n\\n这是025接收后的独立nonroot义务，尚未接纳。025 Fact bad63120212ba712 / Evidence 357a052ffb9f2147d179a068d0d16b47d92af10313f7998be0988aabff291fcc已在max(2^48,K)<=lambda<=sqrt(M)证明实际log(lambda)/lambda风险；其范围不能直接外推。本项的新内容是跨过lambda=sqrt(M)的真实舍入下界、统计误差与量化误差的全高精度范围合并，以及该固定程序达到M^-1/2统计阶的必要充分精度。025原声明和接纳保持。\\n\\n## 1. 固定程序、参数域及风险\\n\\n全部整数K>=2、M>=1，N=M+2，Y_i=(X_(i+1),X_(i+2))。观察完整X_1^N，departure只有i=0,...,M-1；actual目标为同轨迹theta_(Y_M)，TV=L1/2。每次实验theta是固定齐次二阶表，允许零边，mu任意。sup可以按公开参数选源；程序不读theta、mu、未来或辅助样本。\\n\\n准确沿023 Fact c5ca8f2e82eafcfc / Evidence 4bdb115ae34079859922c01c137d03a50853cedb43cefa6736969773bc852fa4的DOMAIN和PROGRAM：\\n\\n    h0=max(4,ceil(log2 M)+1), h>=h0, Q=2^h,\\n    b=ceil(log2(M+1)), ell=ceil(log2(M+K+4)), D_*=4M+1,\\n    g_min=max(h,ceil(log2(8D_*))), g_0=max(h,2b+12),\\n    g_min<=g<=g_0, G=2^g, u=4g+4ell+64, lambda=G/M.\\n\\n六头共享因果batch、局部query、q的actual模式、有限有理log、各完整score分别8u递推、所有head floor、Z_safe、half-up、[0,4M]和[0,M]两次clip、add-one及ordered floor/residual的顺序不变；所有n=M+3位置执行收费。后端不重读历史。\\n\\n    R_K(M;h,g)=sup_(theta,mu) E TV(F_(K,M,h,g)(X;Y_M),theta_(Y_M)),\\n    T=K^(5/2)/sqrt(M+1), phi(lambda)=ln(lambda)/lambda.\\n\\n## 2. 完整有限合取：高精度全域风险包络\\n\\n待证对于全部合法参数，只要lambda>=Lambda=2^48（不要求K<=lambda或lambda<=sqrt(M)），有\\n\\n    2^-42 min{1,T+phi(lambda)}\\n      <= R_K(M;h,g)\\n      <= min{1,64T+1024K^5 phi(lambda)}.                (ENVELOPE)\\n\\n常数必须明确核查；本候选冻结以上保守常数。若出现真正缺口，记录准确障碍并保持OPEN，不静默改弱目标。该式对量化项没有sharp联合K依赖：下界phi和上界K^5 phi的差距须保留。\\n\\n其中必须自足建立以下新的源级有限下界，而非只拼接025在原范围的结论。令B_*=2^20，在\\n\\n    lambda>=2^48, M>=B_* K lambda                      (EXTENDED)\\n\\n时，对完全指定源\\n\\n    theta00^(M)=(1-1/M,1/M),\\n    theta01^(M)=theta11^(M)=delta1,\\n    theta10^(M)=delta0, mu=delta00\\n\\n证明\\n\\n    E_(theta^(M),delta00) TV(F(X;Y_M),theta^(M)_(Y_M))\\n        >=2^-40 phi(lambda).                          (EXT-LOG)\\n\\nK>2时其它标签为零质量，未指定行delta0。每次实验仍齐次，源随M改变是uniform sup允许的，不声称024的同一固定源见证。此特殊吸收源仅为无故障量化问题，不开展Dot的一般初始化/平稳/混合率支线。\\n\\n此外使用MM5 Fact946d42d5bf502eb4 / Evidence aa23c442ca1006c6ac0b12379f64a0fa500fbbd6a2e41c798b7a4de3952baa82的共同算法同轨迹actual下界\\n\\n    R_K>=2^-16 min(1,T).\\n\\n必须分别保留两个源见证与量词。可以用max及常数比较合并成ENVELOPE，不能把两下界相加声称同一源同时困难。EXTENDED的补集M<B_*Klambda上须证明phi(lambda)<=T；该处不要求吸收源仍给EXT-LOG。\\n\\n## 3. 新参数域的有限相位与共同舍入证明责任\\n\\n025的正文可作写作来源，但不能直接引用其M>=lambda^2范围外的结论。下列论证在EXTENDED下重新自足给出，所有原M>=lambda^2的用途均需替换：\\n\\n首次001发生于departure t<=M-2时，令j=M-t-2、L=M-j-2；真实唯一历史具有C000=L、C001=C011=1、C111=j、Y_M=11，概率(1-1/M)^L/M>=1/(4M)。query11的四头按00、10、01、11排序，理想D为(M+1,M+j+1,M+j+2,M+3j+2)、S0=(L,L,L,L)。写R=2^u、A=W(L2)、B_exp=W(2L2)，实际D_int准确为\\n\\n    (R(M+1), R(L+3)+Aj, R(L+2)+A(j+1), R(L+2)+A+B_exp*j).\\n\\n四头label0分子都是RL，anchor分子都是R；label1分子D_int-R-RL，其余零。不得自由挑HEAD误差、预先删clip或将终端与历史独立化。\\n\\n令alpha={lambda}、w=lambda*j/M、r={lambda-w}，在r∈[0,1/3]有H={3r-2alpha}-2r，其积分为1/18。保留H>=1/12且r、{3r-2alpha}距整数至少1/1000的集合，须证明长度>1/40、r区间分量至多2，在每个单位w周期分量至多4。实际格点步长Delta=lambda/M<=1/(B_*K)，每周期好j数量至少M/(80lambda)，使用1<=w<sqrt(lambda)/1000。有限区间端点、整数lambda及非整数lambda都覆盖，不用等分布或连续测度代替格点。\\n\\n新误差条件为\\n\\n    2lambda/M+16w^2/lambda+200G u2^-u\\n      <= 2/(B_*K)+16/10^6+1/lambda <1/10000.\\n\\n须从023有限误差推出最后一项界；同时稳定实际Z10、Z01、Z11，00始终准确用floor(G/(M+1))且d00/Z00>=1。不得把00的精确有限分子替为lambda。\\n\\n须核在新域仍有共同系数a11-a10-a01+a00>=1/(16lambda)，Z>=lambda/2>=2、L>=M/2；实际label floor与half-up每头误差<=1。第一clip由实际范围证明不动作；第二clip以投影方向保留\\n\\n    M/(64lambda)<=C'_0<=8M/lambda, C'_1<=18(j+2),\\n    C'_c=0 (c>=2),\\n    sum_c(C'_c+1)<=64(w+1)M/lambda.\\n\\n这里用M/lambda>=B_*K支付四次rounding损失及全部K个add-one；不能继续偷用K<=lambda<=M/lambda。最终F0>=1/[8192(w+1)]要重新支付1/Q，并由M>=B_*Klambda保证M>=4096(w+1)。结合真实历史概率和有限调和求和，给EXT-LOG。聚合计数只用于证明等价q输出，不成为程序输入或免费cache。\\n\\n补集phi<=T可由M+1<=2M<2B_*Klambda得到\\n\\n    phi/T < sqrt(2B_*) ln(lambda)/(K^2 sqrt(lambda)) <=1,\\n\\n须给lambda>=2^48的准确单调与端点比较。上界可用023的x<=256K^5/lambda+2K^5/(M+1)、Psi截断次可加、Psi(x)<=2sqrt(x)及Q>=2M，目标是保留统计T而不再全部吸收到phi。以上皆待正常核查，不是Lead Fact。\\n\\n## 4. 固定K统计阶的精度充要条件\\n\\n从ENVELOPE待证：对每个固定K和每个全M合法、公开确定、源无关的配置序列，只要lambda_M->infinity，就有\\n\\n    R_K(M;h_M,g_M)\\n      =Theta_K((M+1)^(-1/2)+ln(lambda_M)/lambda_M).       (RATE)\\n\\n给任意这样的全M合法序列（此处不预先假设lambda_M->infinity），完整充要条件为\\n\\n    limsup_(M->infinity) sqrt(M+1) R_K(M;h_M,g_M)<infinity\\n      当且仅当\\n    liminf_(M->infinity) G_M/[M sqrt(M+1) ln(M+1)]>0.     (OPT-PREC)\\n\\n必要性可以引用024 Fact911384a1c6a812b0 / Evidence8295098dee5f6c11abd3762742c0e8eccc00b4c87626dcc5ea1306f726e28b8b，使风险趋零先强迫lambda_M->infinity，再用ENVELOPE和对数反解。必须证明反解及任意振荡序列的量词，不把一个幂律配置当作全部序列。常数可依K和所选公开序列，但不依M或源。MM5使该O(M^-1/2)同时为固定K共同算法的统计最优阶；不称数值常数最优或sharp联合K量化下界。\\n\\n等价地，该程序需要G=Omega(M^(3/2)ln(M+1))；整数g条件为\\n\\n    g_M >= (3/2)log2 M + log2 ln(M+1) - C\\n\\n对充分大M成立，其中C有限、可依K和配置序列。这里log内底为自然；只给指定程序的参数必要性，不是一般arithmetic word、width/work或128p cap的必要性。h仅满足原DOMAIN，不加新的最终输出精度必要性。\\n\\n需给一个全M合法、实际可由整数位长规则构造的达到上述阶配置，例如h=h0，b=ceil(log2(M+1))，\\n\\n    g*=min(g_0,max(g_min,ceil(3b/2)+ceil(log2 b)+2)).\\n\\n核其全M合法、两层clip最终不动作、G*=Theta(M^(3/2)ln(M+1))；这里“两层clip”仅指本公开参数公式中的min/max，不与PROGRAM两次count clip混淆。该标准配置是OPT-PREC的实现推论，不构造新decoder。\\n\\n## 5. 依赖、成本和执行边界\\n\\n预期实际直接Fact前驱为023（准确程序/有限误差/统一上界/完整费用）、MM5（共同算法统计下界）及024（一般配置序列的一致性必要性）。025提供研究动机和写作来源；在新EXTENDED域自足重述HISTORY/相位/格点/舍入时不作为隐藏前提。若实际直接使用025或其它Fact的实质引理，必须如实登记。不得让本义务成为旧接纳的逆向前提。\\n\\n实际u=4g+4ell+64及023完整dense/uncached费用保持，所有n位置、六heads、QKV、mask、input/query/endpoint、full products/remainders、guards、holds/copy/clear、输出、完整offline格式写出和逐phase总peak均收费。没有新compiler、literal ledger或网络测量要求；本轮未执行应明确说明。仅用该固定程序精度条件不能推出同数值预算资源优势、其它decoder精度最优或所有Transformer下界。\\n\\n[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]不拆常数节点，不以计划或小样本代替目标。若失败记录精确障碍并保持OPEN。\\n\\n[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]本合取完成不宣称v10母目标解决。\\n\"}\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 141,
+          "input_line_sha256": "c51d94a99d3b7d52b547b7b81c8499755d708e293a246f5d576da4736734a0d5",
+          "public_line_sha256": "525bb5d26b34c434e597eb4df087ac71ee7d153565a6a3955b2cfcb49f081a36",
+          "public_line": "[{\"exact_statement\":\"# ANCHOR-PRECISION-RISK：固定锚定读出的精度—实际风险及一个粗精度失败配置\\n\\n这是020之后的独立nonroot科学义务。020 Fact8a4d1b9aef15dae8及其Evidence3ff58057b04b6befec3ddaa73e01d996e10fdb69caf7719520f48d5f4d315692保持原scope；本项不扩写其精确恢复参数域。021精确旧cap核查本轮收束，022保持OPEN/PARKED，不是本项前提。已恢复core及尚未解决的接线/alias/地址/微码/phase问题原样保留。不新做旧cap、compiler枚举或调度修复。\\n\\n来源设计资料 inputs/anchor-precision-risk-seed-20261029.md 和 anchor-precision-risk-precheck-20261029.md 当时尚未接纳，不能将来源材料标记当作独立科学证据。下述上界是标准有限误差与截断推论；新增可判别部分是指定粗配置在真实四头联合输出上的实际风险。整个合取经正常网关才可接纳，不拆常数节点，以首引理替代完整目标。\\n\\n## 1. 全域、量词与新程序\\n\\n所有整数K>=2、M>=1，N=M+2、n=q=N+1，字母表{0,...,K-1}。每次实验内theta固定为任意允许零边的齐次二阶表，mu为任意初始对律。只观察完整X_1^N，Y_i=(X_(i+1),X_(i+2))，departure为i=0,...,M-1，actual目标为theta_(Y_M)。风险始终为同轨迹E[TV]，TV=L1/2；sup可随公开参数选源。程序不读theta、mu、未来或辅助行栈。\\n\\n定义h0=max(4,ceil(log2 M)+1)，整数h>=h0，Q=2^h，b=ceil(log2(M+1))，ell=ceil(log2(N+K+2))，D_*=4M+1，p=4h+4ell+64，并独立选择整数g：\\n\\n    g_min=max(h,ceil(log2(8D_*))),\\n    g_min<=g<=g_0=max(h,2b+12),\\n    G=2^g, u=4g+4ell+64.                            (DOMAIN)\\n\\n需证明区间非空、g>=h>=b、u<=2p。所有整数配置有有限位长/移位构造。\\n\\nF_(K,M,h,g)保留020的同一六头共享因果batch hybrid前端、局部query、q外部/actual模式选择与half-up/clip decoder，仅重生成内部精度相关常数、有限求值和网格。两singleton复制头取得历史lag2/lag1及q已观察末对。q的token为零；f_t=1{t=q}；统计key为((1-f_t)lag2_t,(1-f_t)lag1_t)，value为(x_t,f_t)。四头(alpha,beta)∈{0,1}²的query为(alpha L2 A,beta L2 B)，A,B是该token合法局部query的one-hot。q选择最终query，过去位置不提前获得它。\\n\\nq的统计mask为{3,...,N,q}；其他行是{3,...,t}，空集self fallback。mask为有限bits。所有n位置完整执行、收费，每次只暴露q一个query输出。后端只访问四头返回、公开量及声明精确bits，不回读历史。\\n\\n精确冻结有限求值如下。R=2^u，先有理生成\\n\\n    V=2 sum_(j=0)^(u-1) 1/[3^(2j+1)(2j+1)],\\n    L2=floor(R V)/R.\\n\\n对每个完整score s=S/R∈{0,L2,2L2}分别计算\\n\\n    T_0=R, T_j=floor(T_(j-1) S/(jR)), 1<=j<=8u,\\n    W(S)=sum_(j=0)^(8u)T_j.\\n\\n保留full product和余数。对每个非空mask精确累加D_int=sum W、A_int=sum W v，返回网格分子floor(G A_int/D_int)。cached实现只缓存三个完整score的各自递推结果，不能把exp(L2)的舍入结果平方代替2L2求值。zero score的W=R准确。\\n\\n每个位置的四头label/anchor分子记Y_(ab),c、Z_(ab)。执行：\\n\\n    Z_safe=max(1,Z),\\n    U_(ab),c=clip_[0,4M](floor((2Y_(ab),c+Z_safe)/(2Z_safe))),\\n    C'_c=clip_[0,M](U_11,c-U_10,c-U_01,c+U_00,c),\\n    B_c=C'_c+1, B_sum=sum_c B_c,\\n    m_c=floor(Q B_c/B_sum) (c<K-1),\\n    m_(K-1)=Q-sum_(c<K-1)m_c, F_c=m_c/Q.             (PROGRAM)\\n\\n不得改变舍入/clip顺序。非q的Z可能为0，sum C'可达KM，必须容纳；所有路径、query、两模式均合法，含M=1、无访问行、网格端点及源支持不相容历史。\\n\\n## 2. 全路径误差、统一actual上界和风险配置\\n\\n理想四头沿020的乘积展开定义D_ab=1+sum w_ab、S_ab,c=sum w_ab 1{x_t=c}，w_ab∈{1,2,4}。则S+1<=D<=D_*，C_c=S_11,c-S_10,c-S_01,c+S_00,c是真实完整triple count，J=sum C，p_c^+=(C_c+1)/(J+K)。需要为新g重述：有限log误差<2·2^-u，单weight误差<=100u2^-u，网格化前每坐标比值误差<=200u2^-u，网格化后HEAD误差<=2/G；score∈[0,2]。前一更强误差界亦用于第三节，不能只用独立的HEAD区间替代实际输出。\\n\\n待证在q，Z>=1，且\\n\\n    |Y/Z-S|<=4D_*²/G,\\n    |C'_c-C_c|<=e, e=16D_*²/G+2,\\n    TV(F_(h,g)(x;s),p_s^+(x))\\n      <=min(1,K e/(J_s+K))+(K-1)/Q.                 (PATH)\\n\\n最后归一化必须以真实正向量C+1及其总和J+K证明；两次clip是向含真实值的区间投影，half-up每项另付1/2。非q概率合法性独立证明。\\n\\n令T=K^(5/2)/sqrt(M+1)，Psi(0)=0，Psi(x)=x(1+ln(1/x))于0<x<1，Psi(x)=1于x>=1。定义\\n\\n    R(K,M,h,g)=sup_(theta,mu) E TV(F_(h,g)(X;Y_M),theta_(Y_M)).\\n\\n使用016 Fact a53804d650803060的实际48T及TRUNC，证明\\n\\n    R(K,M,h,g)<=min(1,48T+(K-1)/Q+Psi(x)),\\n    x=K^5[16D_*²/G+2]/(M+1)\\n      <=256K^5 M/G+2K^5/(M+1).                      (RISK)\\n\\nTRUNC的实阈值取整、J=0、小M和零参数保持。对每个固定K，任何合法公开序列h_M,g_M，若G_M/M→∞，则R(K,M,h_M,g_M)→0。特别h=h0且G按M^(1+epsilon)向上取二次幂，固定0<epsilon<1，在充分大M进入DOMAIN，给M<<G<<M²的充分配置。此结论不声称必要性。\\n\\n给定0<tau<1，保留48T+(K-1)/Q+Psi(x)<=tau这个有限充分证书，并给出可检查的显式选择：\\n\\n    M+1 >= (144 K^(5/2)/tau)^2,\\n    h=max(h0,ceil(log2(3(K-1)/tau))),\\n    H=16K^5 D_*² / [(M+1)tau²/36-2K^5],\\n    g=max(g_min,ceil(log2 H)).                      (TAU)\\n\\n需证明分母正、此g<=g_0、R<=tau；如上述表达式有真缺口须登记修复，不默许超出DOMAIN。此处使用Psi(x)<=2sqrt(x)只是显式充分配置的松弛。平方根界也足以推出G/M→∞时一致，不能说其一致性需要M²；只有要求保持M^-1/2实现误差阶时，它才给粗的M²充分尺度。TAU不声称最优精度或新的样本下界。\\n\\n## 3. 一个完全指定的coarse配置：真实联合四头的失败见证\\n\\n令K=2，对所有M取公开h_c(M)=h0(M)、g_c(M)=g_min(M,h0)。G_c=2^g_c满足G_c=Theta(M)。待证该特定配置不uniform actual一致，具体用以下同一个固定合法源，不引入任何新观察实验：\\n\\n    theta_00=delta_1, theta_01=delta_1,\\n    theta_11=delta_0, theta_10=delta_0, mu=delta_00.\\n\\n真实pair路径是00→01→11→10→00的确定周期。沿公开子序列M_r=3·2^r，整数r>=2，真实末对Y_M=00，真实下一符号律delta_1；每个triple 001、011、110、100恰出现M_r/4次。待证实际有限程序给\\n\\n    lim_(r→∞) E TV(F_(2,M_r,h_c,g_c)(X;Y_M),theta_(Y_M))=1/12,\\n    limsup_(M→∞) R(2,M,h_c(M),g_c(M))>=1/12.         (COARSE-FAIL)\\n\\n必须从同一路径产生全部四头。可核候选计算链为：在M_r上h_c=r+3，g_c=r+7，u=8r+100，G/M=128/3。按头顺序00、10、01、11，D/M趋于(1,3/2,3/2,9/4)，label0的S/M=(1/2,1/2,3/4,3/4)，label1的S/M=(1/2,1,3/4,3/2)。量化前误差乘G趋于0，理想G/D的极限(128/3,256/9,256/9,512/27)均非整数；应推出真实Z最终为(42,28,28,18)。须再逐项验证half-up、两次clip、add-one及ordered final floor，从而\\n\\n    (C'_0/M,C'_1/M)→(16/567,176/567),\\n    F→(1/12,11/12).\\n\\n该计算链及有限诊断是待独立验证的证明候选，不是Fact。若失败，保持义务OPEN并登记精确失败点；不能以独立选择HEAD误差、理想实数输出或其他decoder替代。\\n\\n这是一个指定coarse配置、固定decoder的反例；不证明每个G=Theta(M)配置都失败，不证明G/M→∞对全配置必要，不推广为任意decoder、所有attention或一般Transformer资源下界。[Non-scientific operational metadata omitted.]\\n\\n## 4. 实际u的完整收费资源及范围\\n\\n从020已接纳构件核实新DOMAIN中的同一收费实现，精度字长为实际u，不自动以p或原p_a替换。要求沿其完整batch hybrid模型保持下列统一构造上界：L=O(Ku²)、per-token W=O(Ku)，6总heads/最多同层4、max QK=2K、统计value维K+1、score<=2；在线coefficient/arithmetic完整word<=128u；dense slots O(K³u⁴)、dense参数bits O(K³u⁵)、active gates/projections O(Ku²+K²)、holds O(K²u³)。\\n\\n主配置固定dense/uncached：全部n点运算/QKV O(nK³u⁶)，attention O(n²(K+u)u²)，mask/position O(n²+n log(n+1))，input/query/mode/endpoint/flag取得、转换、保存及residual/copy/hold/clear/decode全部收费。有限log work O(u³log²(u+1))、scratch O(u log(u+1))，code O(u⁴)。\\n\\n令P_u=K³u⁵+n²+nKu²+u⁴+u log(u+1)。复核program/参数/code、已存input、masks、QKV、rolling层、四头银行、controller/address、完整算术scratch和output逐phase共存求和，online/offline总peak O(P_u)。完整offline生成/整理及包括dense零项的真实格式写出work为O(K³u⁶+n²u²+u³log²(u+1))。这些是同源构件的解析上界核实，不要求旧十进制cap、literal ledger或compiler。须明说未运行这些测量。\\n\\n若讨论cached或sparse，独立列出其完整cache/selector/代码/格式费用，不与主配置混合。u<=2p仅给共同常数倍包络，不给原128p的逐数值word结论、020对Pi支配、最优work/width或资源必要性。COARSE-FAIL证明亦不扩展SRC的master故障接口。\\n\\n## 5. 依赖与执行门槛\\n\\n实际预期前驱为020 Fact8a4d1b9aef15dae8（固定前端/decoder及收费构件）、016 Facta53804d650803060（48T/TRUNC）、SRC Factfef8372728290b45（实际有限运算构件，若正文实质直接使用即登记）。若自足重述使某前驱不实际必需，提交时如实报告，不隐藏真正依赖。G/U已由016支持所需统计引理，不为此重审旧root。022及021均无数学前驱关系。\\n\\n完整 PATH/RISK/TAU/COARSE-FAIL/新参数资源合取需要独立审查；补充检查重点是四头联合可达性、Z 的 floor 稳定、两次 clip、最终归一化抵消和量词。[Private task allocation omitted from the public export.][Non-scientific operational metadata omitted.]新输入和上述具体数学见证是选择性接续的依据。旧接纳及依赖保持，不为新义务添加任何逆向前提。完成本合取仍不宣称v10母题解决。\\n\",\"fact_id\":\"c5ca8f2e82eafcfc\",\"scope_bindings\":[{\"evidence_id\":\"4bdb115ae34079859922c01c137d03a50853cedb43cefa6736969773bc852fa4\",\"obligation_id\":\"8b01f4916991a27070c6a469b8efe13a421c0ffc8d68065bd6b643838dce114c\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]}}],\"source_hash\":\"92c451b503e6a288fa1b2a6f7eec3efd4e02cb737ae0caaad88d86b991105538\"},{\"exact_statement\":\"# RATE-K5-MINIMAX：周期稀疏观测下的共同算法 actual TV 下界候选\\n\\n这是独立的新候选，不是已接纳结果，也不从原始add-one的确定后继反例直接推出。原G/U、SRC、RATE、K3、K-LOW及RATE-K-MINIMAX的接纳与依赖不变；RATE-K-SHARP-ADDONE的REFUTE+证明及网关独立继续。本义务失败不影响上述事项，完成亦不宣告v10结束。\\n\\n对每个整数K>=2、M>=1，N=M+2，字母表{0,...,K-1}。theta为任意允许零边的齐次二阶转移表，mu为任意初始对律；每个实验内theta固定。令Y_i=(X_(i+1),X_(i+2))，观察完整X_1^(M+2)，实际目标为theta_(Y_M)。共同全历史概率预测器A可依公开K,M选取，可使用与源独立的随机种子，不可读取隐藏theta、mu或未来符号。定义\\n\\n    R_min(K,M)=inf_A sup_(theta,mu) E TV(A(X_1^(M+2)),theta_(Y_M)).\\n\\n待证明的完整有限参数结论为\\n\\n    R_min(K,M)>=2^(-16) min{1,sqrt(K^5/(M+1))}.       (MM5)\\n\\n这里是原同轨迹actual的E[TV]，不是E[TV²]、KL、fixed/all/conditional风险或另加独立测试实验。sup可随K,M及算法选择源；不声称同一源对全部算法或全部horizon同时达到下界。\\n\\n## 候选合法源族\\n\\nK>=12时取m=floor(K/4)>=3、L=m²、b=floor(m/2)。取四个互不相交的字母组C,U,V,W，各有m个字母，C含字母0；其余字母不被访问。\\n\\n取C上的循环字c_0,...,c_(L-1)，使p_t=(c_t,c_(t+1))枚举全部C² pair且各出现一次，按模L延拓，旋转令c_5=0。需给出这种循环字的有限存在性证明。\\n\\n对每个(u,v)∈U×V、j=1,...,b引入未知sigma_(u,v,j)∈{-1,+1}。公开0<alpha<=1/2，设\\n\\n    theta_(u,v)(w_(2j-1))=(1+alpha sigma_(u,v,j))/m,\\n    theta_(u,v)(w_(2j))  =(1-alpha sigma_(u,v,j))/m.\\n\\n奇数m时剩余W字母概率1/m，W外为0。其余行定义为\\n\\n    theta_p0=Unif(U),\\n    theta_(c_1,u)=Unif(V)                      (u∈U),\\n    theta_(v,w)=delta_0                       (v∈V,w∈W),\\n    theta_(w,0)=delta_(c_6)                   (w∈W),\\n    theta_p_t=delta_(c_(t+2))                 (5<=t<L),\\n    其余未指定行=delta_0。\\n\\n需检查所有赋值无冲突、概率归一化和合法shift。预期每圈以五步等长拼接\\n\\n    p0 -> (c_1,A) -> (A,B) -> (B,Z) -> (Z,0) -> p5=(0,c_6)\\n\\n替代clock前五步，A∼Unif(U)、B∼Unif(V)，Z条件律为theta_(A,B)，之后沿clock返回p0。圈长L不依任何随机选择或sigma；完整轨迹除观测到的Z外不应泄露额外sigma信息。这一点必须从实际路径律证明，不能把额外clock状态视为免费删除的数据。\\n\\n## 全余数初始化及完整观察实验\\n\\n写M=nL+d，0<=d<L，取起始相位k=(2-d) mod L，使实际末对位于UV查询相位2。以下初始化均不得依sigma：\\n\\n- k=0：mu=delta_p0；\\n- k=1：mu=delta_(c_1)⊗Unif(U)；\\n- k=2：mu=Unif(U)⊗Unif(V)；\\n- k=3：mu=delta_(v_*)⊗delta_(w_*)；\\n- k=4：mu=delta_(w_*)⊗delta_0；\\n- 5<=k<L：mu=delta_p_k。\\n\\nv_*∈V、w_*∈W固定公开。初始pair本身不要求由更早未观测历史生成。不同M可选择不同mu，实验内仍使用同一个齐次theta。\\n\\n需严格证明：完整已观察历史与n=floor(M/L)个iid训练block(A_i,B_i,Z_i)，加上一个与全部训练block独立的均匀actual末对(A_(n+1),B_(n+1))，以及无sigma信息的公开前缀/clock填充等价。k=1,2中的初始随机字母应计入首个训练block或最终末对，不能遗漏信息；k=3,4中的固定前缀不能包含未计的标签样本。覆盖所有余数、n=0及全部departure索引，不把一般源的条件样本称为iid。\\n\\n## 测试下界、常数与输出范围\\n\\n候选alpha=min{1/2,(1/8)sqrt(m³/(n+1))}。相邻sigma仅翻转一个UV行的一个标签对，预期完整观察KL至多8n alpha²/m³<=1/8。实际末对和clock前缀必须纳入路径律验证。对任意随机预测器用该标签对的坐标顺序作测试，处理ties、种子、实际末对条件律及均匀row权重；目标先得\\n\\n    R_min(K,M)>=(1/64) min{1,sqrt(m³/(floor(M/m²)+1))}.\\n\\n须证明完整实验而非丢失信息后的实验满足此式。随后以m>=K/8及有限参数分情况比较，推出保守的(MM5)。2<=K<=11可使用当前项目G/U Fact a12539a93d9f1ee3的共同算法iid actual下界1/(16sqrt(M+2))，必须明确有限常数比较。高K源族及测试论证应自足；唯一预期必需Fact前驱为a12539a93d9f1ee3。既有RATE-K-MINIMAX的证明可作为写作来源，不能未经说明扩张其已接纳scope。\\n\\n若(MM5)成立，统一actual均值风险tau满足0<tau<2^-16的任何共同算法必须有\\n\\n    M+1>=2^-32 K^5/tau²。\\n\\n这仅为样本必要性；不推出内部位数、深宽、算术工作、资源最优性。与已接纳K³/sqrt(M+1) upper比较仍有K指数差距，不称sharp匹配。未知标签族是新增的研究内容，原确定delta_0族并未自动提供此结论。\\n\\n首先做有界反向核查；若发现相位、信息或常数缺口，登记精确障碍并保持OPEN。只有完整自足证明和正常独立网关才能接纳。不重复提交原SHARP+否定构造，不重新审查已完成root。周期稀疏访问构造、条件L1估计及两点测试不作新工具或首创宣称。\",\"fact_id\":\"946d42d5bf502eb4\",\"scope_bindings\":[{\"evidence_id\":\"aa23c442ca1006c6ac0b12379f64a0fa500fbbd6a2e41c798b7a4de3952baa82\",\"obligation_id\":\"3883ea68e83601751cd4e4ff1500d552ac6e412c158b39a9912f6e1de55283dd\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]}}],\"source_hash\":\"fe18f4a413fef5da14c5f361aef47a8c5addceac1a3a58d73366ad20f16d8e93\"},{\"exact_statement\":\"# ANCHOR-PRECISION-THRESHOLD：固定锚定程序的一致性精度阈值候选\\n\\n这是023之后独立的nonroot科学义务，未接纳。023 Fact c5ca8f2e82eafcfc / Evidence 4bdb115ae34079859922c01c137d03a50853cedb43cefa6736969773bc852fa4 已正常接纳；其单coarse配置反例并不自动给本项必要性。新路线使用有可调00停留概率的合法二阶源，联合四头极限及非零三次多项式来检查其他配置的归一化抵消。不得把本候选或Lead推导当作Fact。\\n\\n## 1. 固定对象与准确量词\\n\\n对每个固定整数K>=2，使用023的同一个有限程序 F_(K,M,h,g)、同一DOMAIN/PROGRAM、one-hot完整历史和actual模式。M>=1、N=M+2、Y_i=(X_(i+1),X_(i+2))，departure只有i=0,...,M-1，目标为原同轨迹theta_(Y_M)。每次实验内theta为固定齐次二阶表，允许零边，mu任意初始对律，TV=L1/2。程序不读theta、mu或未来。\\n\\n具体参数不变：\\n\\n    h0=max(4,ceil(log2 M)+1), h>=h0, Q=2^h,\\n    b=ceil(log2(M+1)), ell=ceil(log2(M+K+4)), D_*=4M+1,\\n    max(h,ceil(log2(8D_*)))<=g<=max(h,2b+12),\\n    G=2^g, u=4g+4ell+64.\\n\\n保留023的六头共享因果batch前端、实际有理log与8u次指数递推、完整score分别求值、所有head floor、Z_safe、half-up、[0,4M]与[0,M]两次clip、add-one及最终ordered floor/residual的准确顺序。新目标不改变decoder、mask、value、anchor或舍入方式，也不延长参数域。\\n\\n定义\\n\\n    R_K(M;h,g)=sup_(theta,mu) E TV(F_(K,M,h,g)(X;Y_M),theta_(Y_M)).\\n\\n对每个固定K和每个公开确定、源无关、全M合法的整数配置序列(h_M,g_M)，待证完整等价：\\n\\n    R_K(M;h_M,g_M)->0  当且仅当  G_M/M->infinity.       (THRESHOLD)\\n\\n充分方向引用023。必要方向必须证明：若G_M/M不趋于无穷，则存在一条无限子序列M_j->infinity、一个固定合法源theta及一个固定mu（可依整个公开配置序列及K选择，但不随j变化）、一个常数eta>0，使\\n\\n    liminf_j E_(theta,mu)\\n       TV(F_(K,M_j,h_(M_j),g_(M_j))(X;Y_(M_j)),theta_(Y_(M_j)))>=eta.  (WITNESS)\\n\\n由此才能排除该序列的uniform actual一致性。不能用固定外部query风险替换actual，不声称存在同一源击败所有配置，也不将本固定decoder结论推广到任意decoder、全部attention或Transformer类。\\n\\n同一等价可改写为g_M-b_M->infinity；实际u满足\\nu_M-(4b_M+4ell_M+64)=4(g_M-b_M)。h只须原DOMAIN合法，本项不增加最终输出精度必要性。有限风险tau的最优精度关系仍不在本项已定目标内。\\n\\n## 2. 候选特殊源和联合可达频率\\n\\n允许采用以下待核查的见证族。选有理v∈(1/10,1/6)，令t=v/(1-3v)∈(0,1)。在二元子字母表上设\\n\\n    theta_00=(1-t,t), theta_01=delta_1,\\n    theta_11=delta_0, theta_10=delta_0,\\n    mu(00)=1-3v, mu(01)=mu(11)=mu(10)=v.\\n\\nK>2的其余符号从不出现，其他未访问行可设delta_0。须核合法shift、概率归一化、mu不随M变化，以及上述mu确使P(Y_M=00)=1-3v对每个M成立。[Non-scientific operational metadata omitted.]\\n\\n可用有限计数flow及有界鞅差自足证明频率，无需输入辅助行栈或调用新的普遍混合定理：若B=C_001、A为00 departure数，则B-tA是M项有界鞅差之和，二次矩<=M；C_011、C_110、C_100分别与B差至多常数，M=A+3B+O(1)。由此待证同一轨迹中\\n\\n    (C_000,C_001,C_011,C_110,C_100)/M\\n       ->(1-4v,v,v,v,v) 依概率（可给L2）.\\n\\n在声明query00处，四头按00、10、01、11顺序的联合极限必须从这些真实频率推得：\\n\\n    D/M -> (1,2-2v,2-2v,4-7v),\\n    S_0/M -> (1-2v,2-6v,2-5v,4-13v),\\n    S_1/M -> (2v,4v,3v,6v).\\n\\n其它label的实际head分子均为0。不得自由选择HEAD误差或忽略随机末行与历史相关性。\\n\\n## 3. 任意有界精度子序列、整数边界与非抵消候选\\n\\n若G_M/M不趋于无穷，可先取有界子序列，再取lambda_M=G_M/M->lambda∈[32,infinity)。00头的实际anchor分子精确为floor(G/(M+1))。另取子序列使其恒为整数z0，则必须证明0<=lambda-z0<=1；lambda为整数时z0=lambda-1和z0=lambda两种边界都保留，不假定固定从某一侧趋近。\\n\\n须选择同一个有理v∈(1/10,1/6)，避开lambda/(2-2v)、lambda/(4-7v)的整数点，令\\n\\n    d1=2-2v, d2=4-7v,\\n    z1=floor(lambda/d1), z2=floor(lambda/d2),\\n    a0=lambda/z0, a1=lambda/(d1 z1), a2=lambda/(d2 z2).\\n\\n通过023已接纳的量化前误差<=200u2^-u和200G u2^-u->0，证明实际Z趋于(z0,z1,z1,z2)，且概率趋1地等于这些整数。还须证明从实际label floors、half-up、两次clip产生的C'满足\\n\\n    C'_0/M -> c0=a2(4-13v)-a1(4-11v)+a0(1-2v),\\n    C'_1/M -> c1=v(6a2-7a1+2a0),\\n    C'_c=0  (c>=2).\\n\\n候选内点控制为：a0-1<=1/31，a1-1<=9/151，a2-1<=33/287；raw U/M在(0,4)内，c0、c1在(0,1)内。因此clips以概率趋1不动作，而不是先从程序删去。所有失败事件上的输出仍合法且TV<=1。\\n\\n非抵消的核心待证关系是\\n\\n    v c0-(1-4v)c1 = lambda v f(v),\\n    f(v)=(-2+11v)/[z2(4-7v)]\\n         +(3-17v)/[z1(2-2v)]+(-1+6v)/z0.\\n\\n在一个避开上述有限阈值且z1,z2恒定的非空开区间，乘以正分母z0 z1 z2(4-7v)(2-2v)得到三次多项式；其三次项系数84z1z2>0。因此不恒为零，可在该区间选有理v使f(v)≠0。需证明存在这样的区间和v，不以数值采样替代此有限代数论证。\\n\\n最后从原PROGRAM证明，query00的预测极限为(c0,c1)/(c0+c1)（K>2的额外add-one质量和末残差误差须核），与theta_00不同。必须利用同轨迹事件Y_M=00得到actual均值的严格正下界；不能把无条件概率极限错误地条件化成iid。可用有界收敛的L1形式与P(Y_M=00)=1-3v相乘得到候选\\n\\n    eta=lambda v |f(v)|/(c0+c1)>0.\\n\\n这个eta可依所选lambda,z0,v，无需给全lambda统一数值常数。若候选链存在缺口，登记准确障碍并保持OPEN，不能静默减弱THRESHOLD为另一个指定coarse配置反例。\\n\\n## 4. 依赖、成本和执行边界\\n\\n预期唯一直接Fact前驱为023 c5ca8f2e82eafcfc：其具体程序、有限误差、全路径合法性、充分性及完整费用已经接纳。若正文实质直接用其他Fact，提交如实登记。有限计数、鞅差二阶矩、有限多项式和有界依概率转L1论证应自足；不新增021/022或旧root逆向前提。\\n\\n本项沿同一程序和DOMAIN，费用仍使用实际u及023完整dense/uncached收费上界，未构造新decoder或新成本优势。若将g-b阈值解释为字长增长，只能说此指定程序的参数条件，不能称所有电路width/work或128p数值cap的下界。无需新compiler、literal ledger或网络测量，未执行须说明。\\n\\n[Private administrative workflow omitted from the public export.]Lead当前推导和代数诊断不是Fact，不拆小节点或以计划完成目标。[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]\\n\",\"fact_id\":\"911384a1c6a812b0\",\"scope_bindings\":[{\"evidence_id\":\"8295098dee5f6c11abd3762742c0e8eccc00b4c87626dcc5ea1306f726e28b8b\",\"obligation_id\":\"95a229086dc060737e6fd4b9b531f52ee49d56d763c4cdaf1d377a6de67b84d3\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]}}],\"source_hash\":\"f951de7a9ac180fdf6994dc8a1ae3a0fe4d198bcc01aeaf507206aae70044461\"}]\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 715,
+          "input_line_sha256": "d1b7781d31298b1e657ded89f6500f773542bdcd844026ccea6c33688c4e2002",
+          "public_line_sha256": "d4543ce8985c6ff5d76aa1795dfd77ad0e037d205d36ff6d9cfff1ddd49cc6b2",
+          "public_line": "[Non-scientific operational metadata omitted.] This single independent nonroot conjunction does not declare the v10 mother objective solved. Actual Fact/Evidence identities and admission status must come from the normal independent Euler gateway, not this text, diagnostic checks or team discussion.\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/facts/fd1a83454c2bf962.md",
+        "source_sha256": "53fe55d27285baa6486282528617861d788dd56013da2846ca341d03b3b9f0a1",
+        "export_sha256": "53fe55d27285baa6486282528617861d788dd56013da2846ca341d03b3b9f0a1",
+        "source_bytes": 92662,
+        "export_bytes": 92662,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/facts/fd1a83454c2bf962.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/facts/fef8372728290b45.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025",
+      "input_bytes": 67360,
+      "public_sha256": "638427641cef45ed949a24dfa5c4735e561b4fd5b69aa2639c350f677dc431ea",
+      "public_bytes": 67263,
+      "public_edits": [
+        {
+          "line": 113,
+          "input_line_sha256": "30747d96aea5820ec2c0f1f7b185cf3f3178bc5780d3abef625ea0e58c0bedfa",
+          "public_line_sha256": "2197ebbd76a37cb341c4b91e40183059d6623cda95c15fa410ea623eb60b5c7b",
+          "public_line": "{\"contract_id\":\"e6b7592e781948d00eb2a2effb80d8e3ef77e480f8d70f960286bc33faf730af\",\"definitions\":\"## A. 共同源、观察、算法及风险定义\\n\\n对每个整数 K>=2，A={0,...,K-1}，S=A²，D=K²。一个实验固定一个时间齐次二阶表 theta∈(Delta(A))^S，允许零坐标；初始对分布 mu∈Delta(S) 任意。令\\n\\n    Y_j=(X_(j+1),X_(j+2)),\\n    P_theta((a,b),(b,c))=theta_(a,b)(c),\\n    N>=3, M=N-2, E_N=Y_M,\\n    n_s(M)=sum_(j=0)^(M-1)1{Y_j=s},\\n    C_s,c(M)=sum_(j=0)^(M-1)1{Y_j=s,X_(j+3)=c},\\n    p_s^+=(C_s+1)/(n_s+K).\\n\\n每次预测完整观察 X_1^N。最后一个计数后继是 X_N；Y_M 不是额外 departure。actual query 从已观察最后两符号取得；fixed-query 任务另有明确的公开 s。X_(N+1)、theta、mu、支持、闭类、平稳律、未来行栈及隐藏源标签不可见。外部 query 是同一历史下调用的查询参数，不额外赠送干净端点或统计量。获得和复制实际端点在实现中收费。\\n\\n共同算法族的程序和公开精度可以依赖 K,N,h，不能依赖未知 theta,mu 或其隐藏标签。统计根中的理想 p^+ 是分析变量；给定实现的计数、头输出等实际可见代码由来源实现义务确定，不能据理想表达式新增 readout 端口。比较中的任意全历史预测器可以用全部 X_1^N 和源独立随机种子，输出任意概率向量。具体 Pi 则遵守自己已声明的内部信息切口。\\n\\nTV(p,q)=1/2 sum_c|p_c-q_c|。对给定 family F，令 Z_N(s)=TV(F_(K,N,h)(X_1^N;s),theta_s)。严格区分：\\n\\n| 名称 | 定义 | 量词 |\\n|---|---|---|\\n| fixed row | E Z_N(s) | 固定公开 s |\\n| all contexts | E max_(s∈S) Z_N(s)；另可问其 a.s. 极限 | 全 K² 行，不改成访问行 |\\n| actual terminal | R_act=E Z_N(E_N) | 同一历史的末尾 query |\\n| conditional terminal | E[Z_N(E_N)\\\\|E_N=s] | 仅当 p_N(s)=mu P^M(s)>0；零概率时未定义 |\\n| empirical weighted | E sum_s(n_s/M)Z_N(s) | 同历史频率权重 |\\n| other history weighted | E sum_s w_s(X_1^N)Z_N(s) | w 为观察历史可测 simplex；不自动有一致性 |\\n\\n逐源极限固定 K,theta,mu 后令 N→∞。统一均值是每个 N 的 sup_(theta,mu) R_act；取 supremum 时源可随 N 改选，但一个样本路径内部的核必须齐次。固定 K 的统一结论不是 K 随 N 变化的无条件结论，也不是 changing-source 的统一几乎处处结论。输出允许零坐标，损失仅 TV，本 contract 不把它解释为 positive-output KL。\\n\\n\\n## 共同研究范围的约定\\n\\n接口I是一个程序性质的定义，不能作为所有算法已经满足的全局假设。条件统计根对任意满足I的共同有限族F证明蕴含式；具体Pi满足I及其完整成本须由SRC-Pi的正常独立来源义务支持，不能在证明SRC-Pi时先假定它。原第二阶段固定证明是可查来源，旧Fact编号不是新项目前驱。\\n\\n后继真实资源/可靠性命题可以在同一contract内建立独立义务，不必谎称它们是统计根的前提。数据观察及TV实验保持上述定义。每项具体实现须声明自己的内部代码、允许回读、输出格式、参数/字长、batch或streaming等执行方式；比较只在所声明的共同条件下成立。原Pi的finite-attention加pointwise batch hybrid、literal bit/ReLU模块的packed/scalar、sparse/dense选项分别核算，不将一项格式的便宜坐标拼入另一项。\\n\\n完整费用包括实际head和局部绑定、输入/query/端点取得、参数/零系数、物理字、复制/跨层保持/清除、mask/position、所有活动bank与metadata、online/offline工作和同时峰值。不能免费引入计数、normalizer、译码或生成器。新算术/扰动参数由各精确义务局部量化；改变共同数据律、可见信息或风险须建立新的明确数学范围。\\n\\n给定接口的条件定理、具体实现定理、训练可达性、必要资源及新颖性是不同主张。数学根只包含数学命题。行政完成程序不是数学前提；独立后续结论不改变已有定理的证明依赖。\\n\",\"scope\":{\"assumptions\":[\"Each experiment has a fixed finite alphabet K>=2 and a time-homogeneous second-order transition table. Zeros and arbitrary initial pair distributions are allowed.\",\"Only the full observed history, declared query and public parameters are available; the next target and hidden source parameters are unavailable.\",\"The exact root is conditional on the explicitly defined all-path predicate I for a family F. I is not assumed for the concrete source Pi or for every comparator; a separate normally checked source obligation must establish each actual realization.\",\"Risk types, quantifier order and each implementation/cost convention remain as defined. Earlier file reviews and prior-project Facts are sources, not automatic admissions in this project.\"],\"definitions_hash\":\"2e1530f79109eb12f5f9c38a09bfc33a11cb241c811b093a8c1e9cc305f1d3dc\",\"objects\":[],\"parameter_domain\":\"K>=2 fixed finite; N>=3,M=N-2; theta in the full product of K-simplexes, mu any pair law; h integer in the stated legal domain. The exact statement separately quantifies upper families, lower-bound algorithms and witness sources; uniform suprema may choose theta,mu per N while each trajectory remains homogeneous.\",\"quantifiers\":[]},\"statement\":\"# SRC-Pi：原有限因果程序的全路径实现、银行接口与完整费用\\n\\n对每个整数 K>=2、N>=3，令 M=N-2、n=N+1。对每个整数 h>=max(4,ceil(log2 M)+1)，令 Q=2^h、ell=ceil(log2(N+K+2))、p=4h+4ell+64。字母表 A={0,...,K-1}。对任意完整已观察历史 x_1^N 和 query s=(a,b)，定义\\n\\n    C_s,c=sum_(t=3)^N 1{(x_(t-2),x_(t-1),x_t)=(a,b,c)},\\n    n_s=sum_c C_s,c, p_s,c^+=(C_s,c+1)/(n_s+K).\\n\\n存在下述同一个共同确定有限程序族 Pi_(K,N,h)，参数、固定循环、布局、掩码和常数仅依赖公开 K,N,h；其固定构造由本项目 inputs/source-v10/inputs/general-assumptions-20261027/stage2/ 下 C1-proof-v1.md §§1–7、finiteN-reliability-proof-v1.md §§4–6 和 root-proof-v1.md §5 指定。以下断言需由确定性构造证明支持，I 是待证结论。旧来源的正性、平稳初始化和旧 Fact 身份均不作前提。\\n\\n## S1. 实际因果前端与有限求值\\n\\n主实现为有限整数求值的因果 attention 加逐 token Boolean/ReLU 点运算的 batch hybrid。输入仅为已观察历史、声明 query/mode 和公开 metadata；合成位置 q=N+1 的 token 为零，不含未来符号。两个已付费 singleton copying heads 产生前两步符号，并在 q 保留实际端点 (x_(N-1),x_N)，供外部 query 与 actual query 两种模式使用。外部 s 不替换实际端点修正。\\n\\n另有四个统计 heads P1、P2、T、0。理想比较对象的 Q/K/V 为：P1 的 Q=((ln2)A,(ln2)B)、K=(lag2,lag1)、V=(token,lag2)；P2 将第二段 ln2 换为 ln3；T 的 Q=(ln2)B、K=lag2、V=(lag1,F)；0 的 Q=K=0、V=(lag2,lag1,F,z)。A,B 为 query one-hot，z_t=1{t=3}，F_t=z_t lag1_t；q 的有效 keys 为 3,...,N，其余行使用声明的因果 prefix/fallback。理想输出依次为 (q1,v1)、(q2,v2)、(hvec,h0)、(alpha,nu,f,rho)，共 9K+1 标量。值为 query 无关的局部 bits。\\n\\n实际程序以有限有理 log 生成、定长整数指数求值、精确累加和正整数除法产生闭 h-grid G_h={j/Q:0<=j<=Q} 上的标量；不调用实数 log/exp/floor oracle。每一返回 head 标量与其上述理想值相差至多 2/Q。包含 1 的 G_h 用 h+1 位无符号分子。连续 ReLU 不被声称在实区间上实现 floor；其 bit extraction 只作用于声明有限网格。\\n\\n四个统计 head 后不再有读取原始历史的 decoder 端口或免费 count table；计数 C 仅为数学比较对象。源参数 theta、mu、支持、平稳律和访问控制参数均不进入程序。\\n\\n## S2. 正确逐路径读出、guards 与接口 I\\n\\n记 c_s,c=C_s,c/M、rho=1/M、u_ij=n_ij/M，alpha_i=sum_j u_ij、nu_j=sum_i u_ij，J_c=1{实际端点=(b,c)}。理想读出为\\n\\n    dT=1+alpha_b,\\n    initial_bc=dT h0_c-f_c,\\n    g_bc=dT hvec_c-nu_c+rho J_c-initial_bc,\\n    U_k=v_k,a, lambda_1=1,lambda_2=2,\\n    d_k=(1+lambda_k nu_b)/(1-U_k/2),\\n    c_s,c=d2 q2_c-d1 q1_c-g_bc.\\n\\n这些恒等式对每条有限路径成立，包含 M=1、n_s=0，以及任何特定源下零概率的历史。实际点运算保留完整整数乘积、除法余数和 guard fractional bit；加减和声明的除二精确，所需乘除截断绝对误差至多 1/Q。head clipping 后 1-U_k/2∈[1/2,1]，d1∈[1,4]、d2∈[1,6]、dT∈[1,2]，有符号中间量容纳于来源指定的 [-16,16] 安全盒。\\n\\n令 a_c 为恢复 c_s,c 后截入 [0,1] 的 h-grid 值，令\\n\\n    r0=2^(-ceil(log2 M)-1), r=max(hat rho,r0),\\n    x_c=a_c+r, V_c=Q x_c, T=sum_c V_c.\\n\\n则 x_c∈(0,2]，V_c∈{1,...,2Q}，T>0，并且\\n\\n    |a_c-C_s,c/M|<=76/Q,\\n    |x_c-(C_s,c+1)/M|<=78/Q.\\n\\n最终输出按原有序 simplex 格式：c=0,...,K-2 的分子 m_c=floor(Q V_c/T)，m_(K-1)=Q-sum_(c<K-1)m_c，随后已付费 dyadic decode。其坐标非负且和为一，允许非末坐标为零，且所有路径、所有 query 同时满足\\n\\n    TV(Pi_(K,N,h)(x_1^N;s),p_s^+(x_1^N))\\n      <=78KM/[Q(n_s+K)]+(K-1)/Q.                 (I)\\n\\n程序在上述全域合法；不同源规律只改变路径概率，不改变给定输入的程序及其费用。\\n\\n## S3. 后继确实使用的 master 与正权重银行接口\\n\\n9K+1 个 head 坐标各有一个 post-quantization master word，在任何 readout fanout/residual 复制之前定位切口。所有后继副本都来自该 master；query、端点及 flag BITs 在此实验中精确，统计标量 h0、f、rho 包含在可替换银行内。有限 evaluator 的干净 numerator、denominator、指数、余数及不用的历史投影在切口开放前按声明生命周期擦除或释放；历史存储及其处理仍收费。这里声明的是指定访问规则下的实际程序接口，不是对任意能重读历史算法的信息论限制。\\n\\n若每个 master 被任意相关的 G_h 标量替换，坐标偏差至多 delta>=0，原 downstream 运算仍合法，并有\\n\\n    |a_c-C_s,c/M|<=76/Q+35delta,\\n    |x_c-(C_s,c+1)/M|<=78/Q+36delta,\\n    TV(Pi^delta_s,p_s^+)<=KM(78/Q+36delta)/(n_s+K)+(K-1)/Q.\\n\\n这些是有限路径上的确定性接口，不要求误差独立，不涵盖改变 query/endpoint bits 或额外算术故障。\\n\\n最后正整数 V 银行的切口在全部 V_c 生成后、任何最终求和与 quotient 前。可将 V 替换为 W∈{1,...,2Q}^K；原 decoder 只从替换后的 W 重算 U=sum W 和上述 ordered floor/residual 输出，不保留干净 T 或 quotient。比较向量 V*_c=Q(C_s,c+1)/M 不是程序输入，且无需为整数；上述坐标界等价于 |V_c-V*_c|<=78+36Q delta。该定位与生命周期可在原声明成本上界内实现；若另外实现物理注入器、快照设备或新 normalizer 的 bridge，其硬件和程序费用单列，不在 nominal Pi 的免费能力中。\\n\\n## S4. 完整构造费用及表示约定\\n\\n以下是固定构造的统一上界，常数与 K,N,h 无关；采用来源最终修正后的 batch hybrid 计费。全部 n 个 token 的点运算计费，数学上所有 query 的正确性不意味着一次运行免费输出全部 K² 行。\\n\\n| 坐标 | 上界或精确结构 |\\n|---|---|\\n| neural depth / width | O(Kp²) / O(Kp) |\\n| total heads / max layer heads；max QK dimension；score cap | 6 / 4；2K；2 |\\n| 单 coefficient 与 arithmetic word | 至多 128p bits，含完整乘积、余数与 guards |\\n| dense coefficient slots / parameter bits | O(K³p⁴) / O(K³p⁵)，零项和 bias 收费 |\\n| active gates/projections；identity holds | O(Kp²+K²)；O(K²p³) |\\n| sparse program / coefficients / addresses / holds | 共 O(K²p⁴) bits |\\n| masks / positions | O(n²+n log(n+1)) bits |\\n| observed input | O(NK) one-hot bits，或另付 binary acquisition/转换 |\\n| rolling working arrays | O(nKp²) bits，不含已存参数、input、masks |\\n| uncached finite attention bitwork | O(n²(K+p)p²) |\\n| equally cached attention bitwork | O(n²Kp²)，cache 生成、存储、selector 另付 |\\n| dense pointwise / QKV bitwork | O(nK³p⁶) |\\n| finite rational log generation / scratch | O(p³ log²(p+1)) / O(p log(p+1)) |\\n| finite arithmetic evaluator code | 保守 O(p⁴) bits |\\n\\n五个 full-score caches 对应 0,L2,2L2,L3,L2+L3，分别有限求值；最后一项不是两个已舍入 exp 的乘积。使用 cache 时其非零生成需 O(p³) bitwork，另加 log 生成；与比较器一致付费。dense 与 sparse 为不同表示选择，不混合其优势；packed registers 与 scalar neural bit-channel 存储分别说明。\\n\\n完整 offline 包括 K,N,h layout、masks/positions、微码、cache/selector、全部 gate/term/hold 生成整理与实际格式输出。令 G,T_rec,I_hold 为实际生成的 gate、term、hold 记录数，其整理生成费用为 O((G+T_rec+I_hold)p²) bitwork 和 O((G+T_rec+I_hold)p) 工作 bits；dense 文件还支付真实 coefficient bits 的写出，包括零项。input/query/endpoint acquisition、residual copy、保持、擦除和最终 decode 均计费。\\n\\n总峰值按同一 phase 同时存活的程序/参数、input、mask/metadata、QKV、residual、银行、controller/address、临时工作区及输出求和，再取各 phase 最大值。上表 rolling working bits 不能冒充总峰值。这里不声称已在本 workspace 运行未提供的旧 emitter，也不以其他程序的精确 ledger 冒充 Pi 的实测 profile。\\n\\n另有保守 PURE neural 展开实现：令 T_bit 为上述固定循环的全部 online bitops（含 copy/clear），S_bit 为相应 live work、input/mask/public data；若用 interpreter，存储程序位作为常数 rails 加入。逐指令展开并保持其余 live bits，得到 depth O(T_bit+p)、width O(S_bit+p)、sparse gates/holds O((T_bit+p)(S_bit+p))、dense coefficient bits O(p(T_bit+p)(S_bit+p)²)、generic dense bitwork O(p²(T_bit+p)(S_bit+p)²)。该展开的完整成本单列，不能报告成较小的 hybrid L,W。\\n\\n## S5. 准确结论边界\\n\\nS1–S4 是本独立来源义务的合取，只针对上述固定 Pi 构造及定位接口。不从抽象 I 推导实现或费用，不泛化到所有训练 Transformer；不包含强 direct 基线上的逐坐标资源优势、整网主导成本下降或资源最优性。资源 NORM 模块与 weighted-direct 的新前端/bridge 若被使用，须有其自身明确实现和费用来源。\\n\\n证明可复用来源的固定确定性推导，但需在本项目正常提交为可独立检查的完整正文。G/U 统计根不作此纯确定性义务的必要前提；其独立完成不倒置为已完成统计根的前提。上述 statement 未把任何旧 discussion PASS 或旧 Fact 编号当作本项目 admission。\\n\"}\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 121,
+          "input_line_sha256": "c8915e3a2b7c2fabce70e5dd2d9d6aaea9616ffdd3b9f39bfbe4d12834d88dc4",
+          "public_line_sha256": "8979ac8e88c768334758bb161d0df6456c7599cbbca3bf3b60def7ef37333637",
+          "public_line": "Fixed submission body v1, 2026-10-27.\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/facts/fef8372728290b45.md",
+        "source_sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025",
+        "source_bytes": 67360,
+        "export_sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025",
+        "export_bytes": 67360,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/facts/fef8372728290b45.md"
+        ],
+        "edits": [],
+        "inherited": true
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/counter/assessment-v1.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "c602703b62ce90173794b78586fbe823dc9a0772a08f5f32d10b81407376c898",
+      "input_bytes": 11052,
+      "public_sha256": "8756c1f05dc9124ecbaa26007dbd62fa116da2ca34cc8e86cf4ce840d0cf7a96",
+      "public_bytes": 10926,
+      "public_edits": [
+        {
+          "line": 115,
+          "input_line_sha256": "3a5705bdbcbe3dc3852902462f3d03b3a62c198b9a4539f9a1d2eb5dc620f541",
+          "public_line_sha256": "b14ee1e7c488ec918951d741a15c2cebc242e7841f7877c701f332fbbe14e971",
+          "public_line": "[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]本轮未执行compiler、literal ledger、batch测量、数学枚举或新模型任务，未改工具/调度/内部图存储；v10母题仍未完成。\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/counter/assessment-v1.md",
+        "source_sha256": "c602703b62ce90173794b78586fbe823dc9a0772a08f5f32d10b81407376c898",
+        "export_sha256": "c602703b62ce90173794b78586fbe823dc9a0772a08f5f32d10b81407376c898",
+        "source_bytes": 11052,
+        "export_bytes": 11052,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/032-v-bank-joint-k/counter/assessment-v1.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/lead/frozen-statement-v1.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "7311bf5eca3b4800d0da5a9e292ed8299c224856137f7016ffe0ebf64e15ab64",
+      "input_bytes": 9476,
+      "public_sha256": "f91fbf0ac52a0226855b12c09b1d8045a8f258bd2f59a11cde9c36287e8c2063",
+      "public_bytes": 9256,
+      "public_edits": [
+        {
+          "line": 90,
+          "input_line_sha256": "384631f99fdfec1be04381195f03bf33976cc5b5e66c52dd7a090f96415628ff",
+          "public_line_sha256": "2351f6bf2995060f2af41a14122714bcaa1090698bc0418371369587c06cef22",
+          "public_line": "同一SRC主实现dense/uncached，真实p=4h+4ell+64、ell=ceil(log2(M+K+4))；全部M+3位置、六heads、input/query/endpoint、QKV/mask、完整算术products/remainders/guards、holds/copy/clear、输出、offline完整格式和逐phase共存总peak沿SRC完整收费。故障核是明确的信息层扰动实验；若将其或保护器物理实现，注入器、selector、数据移动、存储与程序成本另付，不属于nominal Pi免费能力。未运行compiler、literal ledger或batch测量；[Non-scientific operational metadata omitted.]不回021/022费用定义循环。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 95,
+          "input_line_sha256": "6e0c6b137dcf39fe80211fcf74c90d6fd21cefc8762fd9ef7de868b164d295a4",
+          "public_line_sha256": "b791b4fc134ae74f305edfcf28af973401cd0fc78580b7fddb4945dcc088e288",
+          "public_line": "完整 V-MATCH/序列等价/费用保持合取需要独立审查；讨论与有限检查不是已接纳的定理。失败写准确障碍，不删除或偷偷缩小目标。031不再列候选；031 Fact53aa09cd3b53aefb及Evidence81742e0b0292442a08f50836040f73605371a9329ca82e863018fd3b58cc096f保持。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 96,
+          "input_line_sha256": "683fbe8f2efef7091e4e8f6ea460ad6eda63f538c92e01a356b9e070d77c0186",
+          "public_line_sha256": "ab4b605bcac1b4a704fb420b582f86fb32649e85eac1d84b14e67379ebe198a2",
+          "public_line": "[Non-scientific operational metadata omitted.]本地不另开重合研究。Dot已完成S001--S019固定来源，S018/S019只按科学需要正常吸收，不逐个造19义务。当前本地成员表无Dot投递入口，不能把本地记录冒作已向原Dot派发。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 97,
+          "input_line_sha256": "f6f2bd29ce96ddf335102d08b620e105029541401c82de252cfa1f3d9cca8868",
+          "public_line_sha256": "96ad85856333cd8e4e71f06aeddca3c54656a4d15f54d38754617d7be145d53f",
+          "public_line": "030小K/低kappa及027两方法障碍保留；一般master联合K、任意decoder sharp故障率、物理纠错和真正资源关系仍未决。[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]同类通道再失败保存实际错误，不机械重试。v10母题仍未完成。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/lead/frozen-statement-v1.md",
+        "source_sha256": "7311bf5eca3b4800d0da5a9e292ed8299c224856137f7016ffe0ebf64e15ab64",
+        "export_sha256": "7311bf5eca3b4800d0da5a9e292ed8299c224856137f7016ffe0ebf64e15ab64",
+        "source_bytes": 9476,
+        "export_bytes": 9476,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/032-v-bank-joint-k/lead/frozen-statement-v1.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/prover/acceptance-check-v1.json",
+      "origin": "stage8 restored export",
+      "input_sha256": "952fea8da16c8b2da3854e80aaec45814c9e491c16f93c41d8d4b487d3765ac9",
+      "input_bytes": 1069,
+      "public_sha256": "952fea8da16c8b2da3854e80aaec45814c9e491c16f93c41d8d4b487d3765ac9",
+      "public_bytes": 1069,
+      "public_edits": [],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/prover/acceptance-check-v1.json",
+        "source_sha256": "952fea8da16c8b2da3854e80aaec45814c9e491c16f93c41d8d4b487d3765ac9",
+        "export_sha256": "952fea8da16c8b2da3854e80aaec45814c9e491c16f93c41d8d4b487d3765ac9",
+        "source_bytes": 1069,
+        "export_bytes": 1069,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/032-v-bank-joint-k/prover/acceptance-check-v1.json"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/prover/complete-proof-v1.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "a993aaa8c844642fa8c99b6c569453f0de8cf747a33cb76af7b5f98fbc1d1f00",
+      "input_bytes": 25100,
+      "public_sha256": "849cca22632556537c60cece49c1569d1911b348f614691510969439a371cafc",
+      "public_bytes": 25093,
+      "public_edits": [
+        {
+          "line": 444,
+          "input_line_sha256": "e59972319c85fabc58127f8d385daab6094076b4eab600495e799fb079e31d55",
+          "public_line_sha256": "3e561d3c4b5643a0c9dad6a02421a3eec0631fdfc3f330846c4b9edebae83893",
+          "public_line": "measurement or profile was run. [Non-scientific operational metadata omitted.]\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        },
+        {
+          "line": 464,
+          "input_line_sha256": "d300dc5c6b22cbf060ee07fe9bfb026e7f873cf33da9bbd96c907052a451f005",
+          "public_line_sha256": "a903b77b6cec76e586ea02f8dc82344e8a1f329d1d48ecdbd94b2c869da5905c",
+          "public_line": "[Non-scientific operational metadata omitted.]\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/prover/complete-proof-v1.md",
+        "source_sha256": "a993aaa8c844642fa8c99b6c569453f0de8cf747a33cb76af7b5f98fbc1d1f00",
+        "export_sha256": "a993aaa8c844642fa8c99b6c569453f0de8cf747a33cb76af7b5f98fbc1d1f00",
+        "source_bytes": 25100,
+        "export_bytes": 25100,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/032-v-bank-joint-k/prover/complete-proof-v1.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/prover/dependencies-and-reuse-v1.json",
+      "origin": "stage8 restored export",
+      "input_sha256": "0e485d7730f10d4ccb5514283ed855bada0a719c8a05ae7f3c2b49c7d4ef9e3c",
+      "input_bytes": 2090,
+      "public_sha256": "0e485d7730f10d4ccb5514283ed855bada0a719c8a05ae7f3c2b49c7d4ef9e3c",
+      "public_bytes": 2090,
+      "public_edits": [],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/prover/dependencies-and-reuse-v1.json",
+        "source_sha256": "0e485d7730f10d4ccb5514283ed855bada0a719c8a05ae7f3c2b49c7d4ef9e3c",
+        "export_sha256": "0e485d7730f10d4ccb5514283ed855bada0a719c8a05ae7f3c2b49c7d4ef9e3c",
+        "source_bytes": 2090,
+        "export_bytes": 2090,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/032-v-bank-joint-k/prover/dependencies-and-reuse-v1.json"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/prover/handoff-v1.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "2ffe6a484b02afde7329bb239564235b5ea6c2bbbc603250d9e0b541a6844792",
+      "input_bytes": 6066,
+      "public_sha256": "60d36d727e17157f542d73e024f952db60ccdd0d54e064bcc49a949af4b0504f",
+      "public_bytes": 5929,
+      "public_edits": [
+        {
+          "line": 51,
+          "input_line_sha256": "abc59cfe51ff7bda9fecc92acf7d048b64b3e3f9094af5eb77ceb6dfef6d7bec",
+          "public_line_sha256": "66b348086298253c2b99173c40fff7b52cf958975b7450e201618d083fa776da",
+          "public_line": "[Non-scientific operational metadata omitted.]Counter另项互补检查由Lead协调，不把讨论或枚举视作本项目Fact。本项接纳依据上列正常独立网关。\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        },
+        {
+          "line": 57,
+          "input_line_sha256": "660cb7ecaec26dc0965c8e42f5daebff7954534dcee245dffce632e8245a2d6f",
+          "public_line_sha256": "a244b814f19256e7b77cfb95d19a3d5456dd7d1878e256ae5180b9272e1cd63c",
+          "public_line": "未运行compiler、literal ledger、batch或profile。[Non-scientific operational metadata omitted.]最终`manifest-v1.json`绑定全部交付、冻结文件、来源和本次Fact，`manifest-check-v1.json`记录重算结果。\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        },
+        {
+          "line": 59,
+          "input_line_sha256": "2ca9fbfee94ee3c35e0c190e505d5b65c23e56decd687f80d1fbff05bc3d8492",
+          "public_line_sha256": "3b7348137dfea30fb87acdb311517226f4aecb2c4bc8d18c01a2aa3655a1842c",
+          "public_line": "K<22、h0-only精度、master联合K、任意decoder sharp故障率、物理纠错及真正资源比较未由032解决。[Non-scientific operational metadata omitted.]Dot后续统计任务仍归原Dot。冻结032合取内无本次网关报告的剩余数学缺口；不宣称v10母题完成。\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/prover/handoff-v1.md",
+        "source_sha256": "2ffe6a484b02afde7329bb239564235b5ea6c2bbbc603250d9e0b541a6844792",
+        "export_sha256": "2ffe6a484b02afde7329bb239564235b5ea6c2bbbc603250d9e0b541a6844792",
+        "source_bytes": 6066,
+        "export_bytes": 6066,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/032-v-bank-joint-k/prover/handoff-v1.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/counter/assessment-v1.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "7d0e793a05b514ccee87065414d55af31acc97daa920d2ad72c7d524fc896bb3",
+      "input_bytes": 12676,
+      "public_sha256": "560acbdd451d7825a6f172e6cd269938d0132aa266e1b60f8b38abd9516594b6",
+      "public_bytes": 12480,
+      "public_edits": [
+        {
+          "line": 135,
+          "input_line_sha256": "171fdff0721e09f390a8cb938181d17597d90aa97b199c11e7e6a00d9a25aa27",
+          "public_line_sha256": "1040d9b988582a6b90764ea76cd7f6f7df49de2324e853576df8b4a7ecfa9bc4",
+          "public_line": "[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]没有替代Dot或未经实际投递声称已安排。[Non-scientific operational metadata omitted.]v10母题未完成。\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/counter/assessment-v1.md",
+        "source_sha256": "7d0e793a05b514ccee87065414d55af31acc97daa920d2ad72c7d524fc896bb3",
+        "export_sha256": "7d0e793a05b514ccee87065414d55af31acc97daa920d2ad72c7d524fc896bb3",
+        "source_bytes": 12676,
+        "export_bytes": 12676,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/033-master-v-joint-k/counter/assessment-v1.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/lead/frozen-statement-v1.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "ce5b7f80c718738c2d672959d4ef662023f4cc2e681ef9bbc2f7e94de8a8043c",
+      "input_bytes": 10358,
+      "public_sha256": "8f3885fe0223e471472b52e5019267e68cc12182311dbe292ba453057dab644f",
+      "public_bytes": 10168,
+      "public_edits": [
+        {
+          "line": 98,
+          "input_line_sha256": "171af008343c70933216eab33228b4be14d49312aea8cd86bcd0d9603a55e1a9",
+          "public_line_sha256": "bc8bc344c71eb7c7d093c717e9eef68fd1fcf876b81a9675d1c704de8dc39584",
+          "public_line": "完整SRC dense/uncached费用保持：真实p=4h+4ell+64，ell=ceil(log2(M+K+4))；六heads、全部M+3位置、input/query/endpoint、QKV/mask、完整products/remainders/guards、holds/copy/clear、输出、offline完整格式及逐phase共存总peak均付费。rolling work不代替总peak；不新增decoder/cache/count table/snapshot或免费历史端口。故障核是信息层实验，物理注入器/保护器的selector、数据移动、存储与程序另付；本项不给物理纠错构造或同数值资源优势。未运行compiler、literal ledger或batch测量；[Non-scientific operational metadata omitted.]不回021/022费用定义循环。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 100,
+          "input_line_sha256": "478d6887de64398e37c7c5e6bbf7f9396c7dfe4e1ac98b8c4f7595739eafa155",
+          "public_line_sha256": "145c7311b6d375a26424a2bc13d97d26e20b9cfdf30ed4da3d6f3a3a73bab073",
+          "public_line": "预计直接Fact前驱SRC fef8372728290b45、016 a53804d650803060、MM5 946d42d5bf502eb4、032 372cbc90282df2cd；031及Dot不是前提，005只作写作来源。实质依赖须诚实登记，旧Fact不加逆向前提。完整有限 MV-MATCH/MV-SEQUENCE/费用合取需要独立审查。先有界核查真实rho广播及量化桥，失败保留OPEN并登记精确不等式/解除条件，不把辅助失败冒作母题反例。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        },
+        {
+          "line": 102,
+          "input_line_sha256": "fd0d12aa17bc11344f5961cf418e9578bf6660e79806f6c4bcb8ad103eca1ce7",
+          "public_line_sha256": "2a9db2b6843867d6fafc747d6e8e335600c5d9c3aed34d7feae506d5d45d1048",
+          "public_line": "031、032已接纳不重投。[Non-scientific operational metadata omitted.]本地不重合。Dot入口缺失诊断ebfd7e3592f7556d4c7131eaa28e133221b39b6f79b5c9a35171cc37ed250ebf保持，未实际发送不能声称已安排；不创建替代Dot。固定S001--S019来源保持，S018/S019按科学需要正常吸收，不拆19义务。030低kappa/小K、027两方法障碍、任意decoder sharp率、物理纠错、真实资源关系未解决；[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]同类通道再失败保存实际错误、不机械重试。v10母题未完成。\n",
+          "category": "Exact nonmathematical privacy export; equations, proof arguments, mathematical failures and review verdicts retained."
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/lead/frozen-statement-v1.md",
+        "source_sha256": "ce5b7f80c718738c2d672959d4ef662023f4cc2e681ef9bbc2f7e94de8a8043c",
+        "export_sha256": "ce5b7f80c718738c2d672959d4ef662023f4cc2e681ef9bbc2f7e94de8a8043c",
+        "source_bytes": 10358,
+        "export_bytes": 10358,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/033-master-v-joint-k/lead/frozen-statement-v1.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/prover/acceptance-check-v1.json",
+      "origin": "stage8 restored export",
+      "input_sha256": "7e225c82b2629cec4c09a6f4091800f61f213e50369ebf6973cbc6767e56e10e",
+      "input_bytes": 1093,
+      "public_sha256": "7e225c82b2629cec4c09a6f4091800f61f213e50369ebf6973cbc6767e56e10e",
+      "public_bytes": 1093,
+      "public_edits": [],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/prover/acceptance-check-v1.json",
+        "source_sha256": "7e225c82b2629cec4c09a6f4091800f61f213e50369ebf6973cbc6767e56e10e",
+        "export_sha256": "7e225c82b2629cec4c09a6f4091800f61f213e50369ebf6973cbc6767e56e10e",
+        "source_bytes": 1093,
+        "export_bytes": 1093,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/033-master-v-joint-k/prover/acceptance-check-v1.json"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/prover/complete-proof-v1.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "8e45e24a4c897e5ef888482dec0a5f446c5074f48431aeaaaedacae7fd2b803f",
+      "input_bytes": 28629,
+      "public_sha256": "002779f46fd7466adb46a1332c67c8716b2c2db0408e12d4831f6c3babffa23d",
+      "public_bytes": 28583,
+      "public_edits": [
+        {
+          "line": 515,
+          "input_line_sha256": "da05e38616591aa3d90fe83a8698e9fde88a6624b0035eeffbc9bd3dcebfb9d9",
+          "public_line_sha256": "a903b77b6cec76e586ea02f8dc82344e8a1f329d1d48ecdbd94b2c869da5905c",
+          "public_line": "[Non-scientific operational metadata omitted.]\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        },
+        {
+          "line": 532,
+          "input_line_sha256": "dc9c7ce8fd63410274bf990a4f83ceb2f5222353c6e0543609686c1a10e448b5",
+          "public_line_sha256": "a903b77b6cec76e586ea02f8dc82344e8a1f329d1d48ecdbd94b2c869da5905c",
+          "public_line": "[Non-scientific operational metadata omitted.]\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/prover/complete-proof-v1.md",
+        "source_sha256": "8e45e24a4c897e5ef888482dec0a5f446c5074f48431aeaaaedacae7fd2b803f",
+        "export_sha256": "8e45e24a4c897e5ef888482dec0a5f446c5074f48431aeaaaedacae7fd2b803f",
+        "source_bytes": 28629,
+        "export_bytes": 28629,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/033-master-v-joint-k/prover/complete-proof-v1.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/prover/dependencies-and-reuse-v1.json",
+      "origin": "stage8 restored export",
+      "input_sha256": "e3e8e8d6a4ca389d63e00ada12d416b4c9e7eb36556825d38b2ab8b29e8fff9e",
+      "input_bytes": 2506,
+      "public_sha256": "e3e8e8d6a4ca389d63e00ada12d416b4c9e7eb36556825d38b2ab8b29e8fff9e",
+      "public_bytes": 2506,
+      "public_edits": [],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/prover/dependencies-and-reuse-v1.json",
+        "source_sha256": "e3e8e8d6a4ca389d63e00ada12d416b4c9e7eb36556825d38b2ab8b29e8fff9e",
+        "export_sha256": "e3e8e8d6a4ca389d63e00ada12d416b4c9e7eb36556825d38b2ab8b29e8fff9e",
+        "source_bytes": 2506,
+        "export_bytes": 2506,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/033-master-v-joint-k/prover/dependencies-and-reuse-v1.json"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/prover/handoff-v1.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "2e0e5ca7916bbbcb5da03c454e973192561a9fb56a985ec43ece3f730d400309",
+      "input_bytes": 6589,
+      "public_sha256": "314b8b607141c73b83cd6797ed6ac299c68553cd2f397981e69111a659f22508",
+      "public_bytes": 6484,
+      "public_edits": [
+        {
+          "line": 50,
+          "input_line_sha256": "5554dd54db8c12ba12a1e11d9261e6428638c593368167b3d87668c8f51ce503",
+          "public_line_sha256": "56a7eb187d98f48488edbc9e9f953c63953124bae038b28065d46dcf72fd1e5b",
+          "public_line": "[Non-scientific operational metadata omitted.]Counter的独立任务由Lead汇总，不以讨论或有限枚举充当接纳。Dot入口缺失问题未因033接纳而解决；没有实际投递，不能声称已安排原Dot。\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        },
+        {
+          "line": 56,
+          "input_line_sha256": "50716884b3ea1dbe7cd09056f4496652d7d781dab631ad357cb4b812c91cac4d",
+          "public_line_sha256": "dd5dc9189b01646b319f23b8b4c17468c689a64d1c4b33932fea25ece9c021e5",
+          "public_line": "没有运行compiler、literal ledger、batch或profile。[Non-scientific operational metadata omitted.]`manifest-v1.json`绑定最终proof/request/receipt/checks/handoff、冻结statement、前驱/写作来源和新Fact；重算结果为`manifest-check-v1.json`。\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        },
+        {
+          "line": 58,
+          "input_line_sha256": "0dde84f09b054fb5b879222713ce52b533997c8bee211dbdbe712b3dfcbdb6d7",
+          "public_line_sha256": "79aa844314c2015053f3fe5d2b485c9de88764630ef2aaab11487b6507f1678d",
+          "public_line": "本次网关未留下冻结033合取内的数学修复要求。K<22、仅h0精度、其它输入/endpoint/算术故障、任意decoder sharp率、物理纠错和真正资源比较未由本项覆盖。rho名义值可由M,Q公开求得，因此本构造不证明其它付费decoder不可修复。[Non-scientific operational metadata omitted.]Dot进一步统计工作仍归原Dot。v10母题未完成。\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/prover/handoff-v1.md",
+        "source_sha256": "2e0e5ca7916bbbcb5da03c454e973192561a9fb56a985ec43ece3f730d400309",
+        "export_sha256": "2e0e5ca7916bbbcb5da03c454e973192561a9fb56a985ec43ece3f730d400309",
+        "source_bytes": 6589,
+        "export_bytes": 6589,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/033-master-v-joint-k/prover/handoff-v1.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/034-v-decoder-minimax/counter/assessment-v1.md",
+      "origin": "stage8 restored export",
+      "input_sha256": "87bc712df047298b7d1f90d161e54e018304f9b7211044fb95b98a1fc2a13eb6",
+      "input_bytes": 13896,
+      "public_sha256": "82b3249596e7a3980d55f626596c69de2ef78e6c4c6801bf3fe9c6d205f8e564",
+      "public_bytes": 13718,
+      "public_edits": [
+        {
+          "line": 116,
+          "input_line_sha256": "d9a03af5b9fd40c48f6aeb8084d76c78583c388ecdca756f51777d8a66f5a541",
+          "public_line_sha256": "ee1be6fb9ed44c05f07699881cfa45a6bf585c0fb813cbb3a74b05873b3a3cb4",
+          "public_line": "原生起止完整页中30个obligation、28个route、27个Evidence，以及relations、两个blocker、contract、acceptance、budget_policy、frontier_hash均相同；目标接纳在本轮开始前已经完成。manifest逐项记录该比较及直接依赖hash，未据此声称重新审计所有旧proof。[Non-scientific operational metadata omitted.]\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        },
+        {
+          "line": 118,
+          "input_line_sha256": "579b4f978eec1b816411e5852c792e7c32f7fccb7e00bccb39361e856601c94c",
+          "public_line_sha256": "c0ff12297a63e14c859a7b9ced99a746abb8b890787fb0942cf5cfead2e629f5",
+          "public_line": "031–033不重投；[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]本非root合取及本次GO均不代表v10母题完成。\n",
+          "category": "private metadata or operational prose; mathematics retained"
+        }
+      ],
+      "stage8_source_record": {
+        "source_path": "v10_intake/source/sources/euler-stage6/latest/034-v-decoder-minimax/counter/assessment-v1.md",
+        "source_sha256": "87bc712df047298b7d1f90d161e54e018304f9b7211044fb95b98a1fc2a13eb6",
+        "export_sha256": "87bc712df047298b7d1f90d161e54e018304f9b7211044fb95b98a1fc2a13eb6",
+        "source_bytes": 13896,
+        "export_bytes": 13896,
+        "package_chain": [
+          "inherited/DOT_v10_precision_stage7_20261102.zip",
+          "DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+          "DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+          "DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+          "DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+          "DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+          "DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+          "DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+          "sources/euler-stage6/latest/034-v-decoder-minimax/counter/assessment-v1.md"
+        ],
+        "edits": [],
+        "inherited": true,
+        "original_input_verbatim": true,
+        "boundary": "Exact original-input member bytes, not fresh verification of historical administrative receipt subgraphs."
+      }
+    }
+  ]
+}

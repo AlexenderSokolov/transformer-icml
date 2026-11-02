@@ -1,0 +1,209 @@
+--- c2-proof-v1.md
++++ c2-proof-v2.md
+@@ -1,15 +1,17 @@
+-# C2: joint history and positive-output-grid classification, fixed candidate v1
++# C2: joint history and positive-output-grid classification, repaired candidate v2
+ 
+ Prover, 2026-10-25. Exact obligation:
+ `8b179af3ef2fe36eca7503ff37e9baca6ba118d546cf884db6ad7e4da0d0b6f8`.
+-This proof uses the current D1–D4 and only the statistical theorem proved
+-in companion `c1-proof-v1.md`. C1 is a **necessary pending native
+-predecessor**, exact obligation
+-`1dd6b3b9191952ba424db347dab176cd3336d5399831f867f595a13a40e5ce25`.
+-No native Fact ID is assigned to it at writing. This is a dependent proof
+-candidate, awaiting Counter's fixed report and Lead review, not an admission.
+-The two companion proofs together are self-contained. No source009 native
+-Fact, previous review verdict, or C3 implementation theorem is a premise.
++This proof uses current D1–D4 and the admitted C1 Fact
++`e418ec34b7dbc4a6`, native evidence
++`4857f1b1b5d10ab74a979362e3d0c3068c9634016e4ce6b6a0609ed577eb2eea`.
++That is its sole native predecessor; its exact scope is used below.
++No source009 Fact, previous discussion verdict or C3 theorem is a premise.
++Version v1 was submitted unchanged and rejected for one local output-cost
++gap (failure `b97ba0738f1848747bd400c3e74405482a403fe463232e79f62fa7068938d708`).
++Version v2 adds section2a and updates only admission/dependency prose.
++Its statistical and representation arguments are unchanged. This v2 is
++an unsubmitted repair candidate, awaiting fixed-version review.
+ 
+ ## 1. Definitions and precise finite inequalities
+ 
+@@ -98,8 +100,156 @@
+ compares it with the divisor, subtracts when necessary and emits a quotient
+ bit; induction leaves remainder in [0,divisor). Finite input integers and
+ public N,Q give finite loop bounds. This is not a real floor oracle.
+-The physical recovery of these counts and the full bit/resource ledger
+-are C3's separate task, not assumed here.
++The local output/bit costs are proved in section2a. Physical recovery of
++these counts and the full architecture ledger remain C3's separate task.
++
++## 2a. Local converter, output encoding and finite bit costs (v2 repair)
++
++This lemma concerns the finite function of the selected exact counts and
++the two actual terminal bits specified in section2. It charges that local
++function and its output. It neither supplies those counts for free to the
++complete predictor nor claims a causal frontend: producing these inputs
++from the history and all network/mask/attention costs remain C3. In
++constant branches the converter does not request counts. No C3 theorem
++is a predecessor of this lemma.
++
++Fix public N>=3 and b>=1, Q=2^b. Write
++ell=ceil(log2(N+1)) and K=b+ell+6. These are public word-layout constants,
++not real-number operations executed on observed data. All main registers
++are unsigned K-bit binary words, with leading zeroes. A second K-bit
++scratch word can hold a full product if a generic multiplier is used.
++
++The output port emits the next-1 numerator j1 in **exactly b bits**, most
++significant bit first, with leading zeroes when needed. Its interpretation
++is the canonical vector ((Q-j1)/Q,j1/Q); 1<=j1<=Q-1 guarantees this
++encoding fits. The denominator Q and layout b are public port parameters.
++The port therefore emits no denominator and no second numerator in this
++convention. The decoder obtains the next-0 numerator by subtraction in
++b+1 bits, with at most 16(b+1) elementary bit reads/writes/Boolean
++operations using a borrow chain. Both numerators fit in b bits.
++
++If an application instead emits both numerators, its output is exactly
++2b bits, and includes that subtraction and b additional bit writes. If it
++also emits the literal binary denominator, the denominator is the b+1
++bit string 1 followed by b zeroes: total output is exactly 3b+1 bits
++and an additional b+1 writes. Two explicitly emitted dyadic scalars
++0.(b fractional bits) use 2b fractional bits, with their fixed punctuation
++and radix convention specified by the port. No variable-length,
++self-delimiting header is asserted to be free: these counts are for the
++declared public fixed-width interfaces. A different wire format must
++charge its own header.
++
++For a nonconstant branch, D=C0+C1<=M=m-2 and d=D+2<=m, so
++Z=4d<=4m and 0<zc<Z. The nearest dividend and denominator obey
++
++    2Qz1+Z < 8mQ+4m <= 9mQ <16mQ,   2Z<=8m,
++
++where Q>=4. The ceiling dividends satisfy
++(Q-1)zc+Z-1<QZ<=4mQ and their denominator is Z. In the nearest
++branch Qz1, its doubled value, and the subsequent added value are
++nonnegative increasing partial products/sums; all have the same
++16mQ bound. Since m<=N/2 and N<2^ell, 16mQ<=8NQ<2^(b+ell+3).
++Thus the positive operands, dividends and accumulated products fit
++strictly within K bits. A restoring-division remainder is less than its
++divisor after each iteration, and less than twice the divisor after a
++shift and next-bit insertion; this temporary value also fits in K bits.
++The row10 residual is computed as Q-(k0+k1), whose nonnegativity follows
++from section3. No signed underflow is used. Q itself needs b+1 bits and
++also fits. These bounds include zero counts and both clipping endpoints;
++they do not use an internal attention precision Q_A.
++
++Here is an explicit word-operation inventory. Multiplication by2 or4
++means a fixed zero-fill shift. A min/max means one comparison followed
++by a select. Each DIV returns quotient and remainder by the loop below.
++
++    Normalization (row00, 10 word operations):
++      D=C0+C1; d=D+2; Z=d<<2; h=d<<1; U=h+d;
++      v=C1+1; V=v<<2; W=max(d,V); z1=min(U,W); z0=Z-z1.
++    Normalization (row10, 9 word operations):
++      D=C0+C1; d=D+2; Z=d<<2; h=d<<1; U=h+d;
++      v=C0+1; V=v<<2; z0=min(U,V); z1=Z-z0.
++    Nearest row00 (6 word operations):
++      p=Q*z1; h=p<<1; a=h+Z; d2=Z<<1;
++      (J,rho)=DIV(a,d2); j0=Q-J; j1 aliases J.
++    Ceil/residual row10 (11 word operations):
++      A=Q-1; h=Z-1; p0=A*z0; p1=A*z1;
++      a0=p0+h; a1=p1+h;
++      (k0,rho0)=DIV(a0,Z); (k1,rho1)=DIV(a1,Z);
++      h2=k0+k1; e=Q-h2; j1=k1+e; j0 aliases k0.
++
++The branch controller compares N with6, compares b with1, computes
++whether the two-bit row is00 or10, and takes the appropriate uniform
++or active branch. At most 12 comparisons/Boolean flags/selects suffice:
++two integer comparisons, at most four bit negations/equalities, two
++ANDs, two ORs and two branch selects. Uniform output constructs
++j1=2^(b-1), the b-bit string 1 followed by b-1 zeroes; its numerator
++is Q/2 for every allowed branch, including b=1. No empty division
++is executed. At most eight further word copies/selects route the
++chosen output pair and scratch values. There are at most16 K-bit
++input/constant loads or constant-word initializations (counts if
++needed, N,b,Q,0,1,2,6, and branch flags/scratch zeroes). Even charging
++both normalization/conversion branch capacities, we need at most
++
++    10+9+6+11+12+8+16=72 word operations.
++
++A completely specified bit implementation uses ripple-carry addition,
++borrow subtraction, high-to-low comparison, and bitwise selection.
++Each has at most 32K elementary bit reads/writes/Boolean operations
++before address/control costs; min or max is charged as at most64K.
++Shifts and copies take at most2K such operations, and constants at
++most K writes. Schoolbook multiplication executes K rounds:
++form the K shifted partial-product bits and add into a 2K-bit
++accumulator with a ripple adder. Per round at most 80K elementary
++operations suffice (K ANDs, at most2K writes/copies, and at most
++32*2K adder operations, with spare operations for the carry). Thus
++the whole product uses at most80K^2 such operations.
++
++DIV(a,d) initializes quotient and remainder to zero, then scans
++exactly K dividend bits from high to low. Each round shifts the
++remainder and inserts the next bit, compares with d, subtracts d
++when necessary, selects the resulting remainder, and writes one
++quotient bit. The comparison, subtraction, select and shift require
++at most128K elementary operations per round. Its invariant is that
++the scanned dividend prefix equals d times the partial quotient
++plus the stored remainder in [0,d). Induction proves the returned
++quotient and remainder exactly, including tie dividends and exact
++divisibility. Total at most128K^2 elementary operations.
++
++For a conservative sequential bit-operation model, also charge
++address construction and control. Use fixed arrays for at most
++128 K-bit registers including scratch, loop indices and constants;
++they occupy at most128K bits. K>=9, so an address and loop counter
++fit in K bits: ceil(log2(128K))<=K for K>=11, and for K=9,10 the
++entire same array can instead use at most2K address bits. Uniformly
++use 2K-bit addresses. For every elementary operation, reserving
++128K extra elementary bit operations pays for forming/advancing
++these addresses, a counter increment, a comparison and branch
++control with ripple operations; fixed shifts have known addresses.
++Consequently each word operation above costs at most
++32768K^3 bit operations, including this conservative overhead.
++For 72 operations, initialization/erasure of the 128-word workspace,
++and any of the explicit output ports above, the sufficient local
++online bound is
++
++    T_convert(N,b) <= 3000000 K^3 bit operations,
++    S_convert(N,b) <= 256K bits of live working storage.
++
++The memory bound includes the at most128 K-bit data registers and
++room for 2K-bit addressing/control; the fixed program is constant
++length with bounded loops, rather than an unrolled K-dependent
++instruction tape. Public parameter/constant storage is included in
++the 16 charged loads and the stated workspace. Erasing all scratch
++requires at most128K writes; transmitting at most3b+1 output bits
++and the optional subtraction is covered by the numerical slack.
++These costs apply unchanged to zero counts, Q=2, Q=4, N=3,4,5,
++uniform rows, half-up ties and row10 residual1. The uniform-only
++branches in fact need just initialization and O(b) output writes.
++
++This is an explicit sufficient cost bound, not an optimal cost claim or
++an architecture theorem. It closes the local D3 output encoding and D4
++finite conversion cost statements. The full history-to-count frontend,
++working state of the observed history, and architecture-specific masks,
++positions, routing and holds must still be charged in C3.
+ 
+ ## 3. Positivity, exact simplex, ties and smallest grids
+ 
+@@ -307,9 +457,14 @@
+ zero-coordinate conditional-risk qualification in section8 prevents
+ an overbroad use of the average-risk zero-output observation.
+ 
+-Before any gateway submission, Counter must review the fixed main
+-proofs and Lead must review them as requested. Later C1 must be admitted
+-to its exact obligation before C2 is submitted with C1's actual native
+-Fact identifier as predecessor. A file hash, an obligation ID, and a
+-discussion verdict are not substitute predecessor Facts.
+-Actual Fact IDs=[], actual Evidence IDs=[] at this version's writing.
++The fixed v1 main proof, Counter, Lead and independent discussion gates
++were completed before its first native submission. C1 was accepted first;
++v1 C2 used the actual C1 Fact above and received transport_status=ok,
++verdict=wrong solely because its local encoding/converter costs were absent.
++The original request, result and fixed files are retained in admissions-v1/.
++Section2a is the versioned repair of that specific recorded gap. It has
++not been submitted or independently checked yet. Lead should arrange only
++the needed fixed-version repair review; [Non-scientific operational metadata omitted.]
++Any later C2 submission must use the actual C1 Fact e418ec34b7dbc4a6 as
++predecessor. A file hash, obligation ID or discussion verdict is not a Fact.
++Actual C2 Fact IDs=[]; actual C2 accepted Evidence IDs=[] at v2 writing.

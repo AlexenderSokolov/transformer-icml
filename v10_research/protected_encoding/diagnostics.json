@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "checks": {
+    "extractors": 1028,
+    "bounded_cleaner": 526,
+    "full_cleaner": 1020,
+    "capacity": 28,
+    "l1_repeat_received": 2730,
+    "l1_overlap_boundary": 9
+  },
+  "iid_3_overlap": "5/16",
+  "iid_risk_lower": "5/64",
+  "limitations": "Finite diagnostics only; no universal proof, full SRC execution, training, physical fault experiment or measured cost.",
+  "script_sha256": "70658e10cfbf7e6b427e284d5a25b359cb91f47dd4501e723cc6b6e52449dc18"
+}

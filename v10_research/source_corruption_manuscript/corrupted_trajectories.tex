@@ -1,0 +1,172 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{enumitem}
+\setlist{itemsep=3pt,topsep=5pt}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Pbb}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\1}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\KL}{\operatorname{KL}}
+\DeclareMathOperator{\supp}{supp}
+\title{Next-Symbol Prediction from Adversarially Corrupted Markov Trajectories}
+\author{}
+\date{2 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+A predictor observes one trajectory of an unknown homogeneous second-order finite-alphabet source after an adversary has replaced at most $k$ symbols. It must predict the source's next-symbol law at the true terminal context, not at an independent query. For fixed alphabet size $K$, history length $M+2$, and an all-state two-step minorization coefficient $\beta$, we determine the minimax total-variation risk when the final pair is protected. The rate is the larger of $M^{-1/2}$ and $(k/M)[1+\log(1+1/(ke_K))]$, capped at one, where $e_K=\max\{\beta,M^{-1}\}$ for $K\ge3$ and $e_2=\max\{\sqrt\beta,M^{-1}\}$. It holds for stationary and arbitrary initialization. The lower bounds account for the entire corrupted history, using common source-independent strict-budget kernels; the binary argument uses entropy transport to canonical Markov bridges. If the terminal symbols are editable but the target remains the true hidden terminal law, the rate instead contains the additional term $(1-\beta)\1_{\{k\ge1\}}$. The results are statistical full-information statements. Foundational clean prediction and specified occupation inequalities are inherited explicitly; no neural implementation or learning theorem is asserted.
+\end{abstract}
+\tableofcontents
+\newpage
+\section{Introduction}
+Predicting the next symbol of a dependent process differs from estimating its transition table uniformly. The query is the terminal context of the same trajectory used for estimation. A context that appears only near the end can be statistically important even though it has few earlier departures. Adversarial replacement of recorded symbols adds a second difficulty: a changed symbol alters several overlapping triples and can change which observations appear to belong to the queried row.
+
+This paper studies these effects without an intermediate information bottleneck. The predictor receives every corrupted symbol and may perform arbitrary computation. Corruption happens before any encoding. Thus the lower bounds cannot be removed by storing more of the corrupted input or by improving an internal representation. Conversely, the upper rules use counts directly; their performance does not rely on a restricted neural architecture.
+
+The principal distinction is between protecting and not protecting the terminal pair. With protection, a logarithmic accumulation of rare informative suffixes determines the corruption price. Binary sources have a different cutoff from sources with three or more symbols. Without protection, even a known first-order source can leave irreducible uncertainty about the true final symbol after one erasure. The latter is uncertainty about the prediction target itself, not merely about estimating an unknown transition probability.
+
+\paragraph{Relation to earlier work.}
+Prediction from a Markov trajectory, and lower bounds based on a common prior and waiting-time structure, have established precedents; see Han, Jana and Wu \citep{han2022}. We do not claim that those general ideas originate here. Robust Markov inference also has a substantial existing literature. Ghosh \citep{ghosh2021} studies parametric inference for stationary ergodic finite chains, including contamination of the transition matrix by rowwise mixtures. That contamination acts on the transition law, rather than replacing a fixed number of entries in a realized word. Zuckerman \citep{zuckerman2026} studies robustness of Markov dynamics; its abstract concerns limiting frequencies and mixing, hitting and cover times for reversible chains. Bhatt et al.\ \citep{bhatt2022} study contaminated mean estimation under moment assumptions. These comparisons distinguish the declared experiments, not establish priority for the present rates. Our reading of Ghosh covers the abstract, introduction and Section 2.3; our comparisons with Zuckerman and Bhatt et al.\ are abstract-level only. The transport-coupling work of O'Connor, McGoff and Nobel \citep{oconnor2022} was screened at abstract level for long-run stationary transition couplings, not audited as a source of the finite bridge theorem proved here.
+
+\paragraph{Proof organization and dependency boundary.}
+We first state the experiment, rates and statistical-order budget consequence. The technical sections give the new perturbation, erasure, binary transport and endpoint arguments in full. They import a clean actual-terminal add-one bound from the predecessor dossier (R011), a stationary clipped-occupation inequality (IU001), and binary weighted-occupation interfaces (BIF001 and BAI003 version 2). The arbitrary-start residual decomposition is given explicitly, following AU001. These inherited interfaces are stated with their domains at the point of use. Their full original proofs and reviews remain in the accompanying predecessor dossier, whose exact paths and hashes are listed in the source manifest. This manuscript is therefore not a claim to newly rederive the entire foundational clean-prediction chain. The preserved companion manuscript on finite information cuts addresses different, internal representation restrictions.
+
+\section{Experiment and principal results}\label{sec:model}
+Let $\mathcal X$ be an alphabet of fixed size $K\ge2$. A homogeneous second-order source has transition vectors $\theta_{ab}\in\Delta_K$ and an initial pair law $\mu$. Put
+\[
+ N=M+2,\qquad Y_j=(X_{j+1},X_{j+2}),\quad 0\le j\le M,
+ \qquad P((a,b),(b,c))=\theta_{ab}(c).
+\]
+All other pair-kernel entries are zero. Departures $j=0,\ldots,M-1$ give precisely $M$ observed triples. The target is $\theta_{Y_M}$, the conditional distribution of the unobserved next symbol.
+
+For $0\le\beta\le1$, the class $\mathcal D_2(\beta)$ consists of tables admitting a stationary pair law $\Pi$ with
+\begin{equation}\label{eq:certificate}
+ \Pi P=\Pi,\qquad P^2(u,v)\ge\beta\Pi(v)\quad\text{for every pair }u,v\in\mathcal X^2.
+\end{equation}
+The certificate includes starting states outside stationary support. The qualifying $\Pi$ is existential and hidden; it need not be unique. In the stationary experiment the initial pair has such a qualifying law. In the arbitrary-initialization experiment $\mu$ is unrestricted, including unsupported starting pairs.
+
+A protected corruption kernel $C$ is a stochastic map from $\mathcal X^N$ to itself with
+\[
+ d_H(x,z)\le k,\qquad (z_{N-1},z_N)=(x_{N-1},x_N)
+ \quad\text{whenever } C(z\mid x)>0.
+\]
+It can inspect the complete realized word (an offline adversary) and use private randomness. It receives no unknown source table, stationary law, initial law, future symbol or hidden parameter as an input. Its algorithm may depend on public $K,M,k$. The predictor receives the entire $Z$, not an edit mask, attack seed or clean interior. It may use public $K,M,\beta,k$ and independent randomness. Loss is unconditional expected half-$\ell_1$ total variation,
+\[
+ \E\TV(A(Z),\theta_{Y_M}),\qquad
+ \TV(p,q)=\tfrac12\sum_{c\in\mathcal X}|p(c)-q(c)|.
+\]
+Write
+\begin{equation}\label{eq:risk}
+ R_{\rm all}=\inf_A\sup_{(\theta,\mu)\in\mathcal D_2(\beta)}\sup_{C\in\mathcal C_k}
+ \E\TV(A(C(X)),\theta_{Y_M}),
+\end{equation}
+and $R_{\rm stat}$ for the stationary restriction. The notation in the source supremum includes the unrestricted initial law only for $R_{\rm all}$. Nested suprema alone do not force the maximizing map to be identical at different sources. Our lower proofs establish the stronger fact that each witness family uses one common map across all of its unknown parameters, even if that map and family are known to the predictor. Separate lower floors may use different families and maps; their maximum, not an unsupported sum, is taken.
+
+Throughout the main results $M\ge64$ and $0\le k\le M$ are integers. Define
+\begin{align}
+ s&=M^{-1/2},&
+ e_K&=\begin{cases}\max\{\sqrt\beta,M^{-1}\},&K=2,\\
+ \max\{\beta,M^{-1}\},&K\ge3,\end{cases}\label{eq:cutoff}\\
+ F_K&=\begin{cases}0,&k=0,\\
+ \dfrac{k}{M}\left[1+\log\left(1+\dfrac1{k e_K}\right)\right],&k\ge1,
+ \end{cases}&
+ H_K&=\min\{1,\max\{s,F_K\}\}.\label{eq:profile}
+\end{align}
+All logarithms are natural. A zero-budget expression is defined separately, never by evaluating a singular logarithm.
+
+\begin{theorem}[Protected true terminal pair]\label{thm:main}
+For every fixed $K\ge2$ there are positive constants $c_K,C_K$, independent of $M,k,\beta$, such that
+\[
+ c_K H_K\le R_{\rm stat}\le R_{\rm all}\le C_K H_K.
+\]
+One may take $c_K=2^{-15}$ for $K\ge3$ and $c_2=2^{-54}$. For $K\ge3$ the ordinary add-one rule applied to the corrupted terminal-row counts is both $\beta$-blind and $k$-blind and attains this rate. For $K=2$ a deterministic lower-envelope count rule attains it using public $k$, but not $\beta$. No unknown-$k$ binary adaptation claim is made.
+\end{theorem}
+
+The theorem is uniform in the stated finite domain, but its constants are not sharp in a growing alphabet. Stationary initialization does not eliminate the logarithmic price. The binary cutoff $\sqrt\beta$ comes from oriented terminal occupation and a legal binary witness; it is not a claim that all binary chains mix globally at that rate. For fixed positive $\beta$, both alphabets have risk of order $\max\{M^{-1/2},k/M\}$. Moving $\beta$ reveals the distinction.
+
+\begin{theorem}[Editable endpoint, unchanged true target]\label{thm:endpoint-main}
+Allow $C$ to edit any of the $N$ positions while retaining $d_H(X,Z)\le k$, and continue to target $\theta_{Y_M}$ at the original hidden pair. With $\delta=1-\beta$, set
+\[
+ H_{\rm end}=\min\{1,\max\{s,k/M,\delta\1_{\{k\ge1\}}\}\}.
+\]
+The two initialization risks in this experiment satisfy
+\[
+ H_{\rm end}/96\le R_{{\rm end},{\rm stat}}
+ \le R_{{\rm end},{\rm all}}\le C_K^{\rm end}H_{\rm end},
+ \quad C_K^{\rm end}=\max\{2^{13}K^{5/2},\sqrt K/2+3\}.
+\]
+For $k\ge1$, pooling corrupted symbols at positions $3,\ldots,N$ gives the upper bound; for $k=0$, use clean selected-row add-one.
+\end{theorem}
+
+In particular, a fixed $\beta<1$ and a single allowed endpoint edit preclude consistency for this target. A predictor asked instead for the law at the corrupted pair faces a different experiment. Revealing a mask or seed also changes the information available and is not covered here.
+
+\section{How many replacements preserve statistical order?}\label{sec:tolerance}
+The rate admits a useful explicit inverse. Define
+\[
+ f_K=1+\log\left(1+\frac1{e_K\sqrt M}\right),
+ \qquad T_K=\frac{\sqrt M}{f_K}.
+\]
+This inverse is only an algebraic consequence of Theorem~\ref{thm:main}, not a further empirical result or a clean-reconstruction threshold.
+
+\begin{corollary}[Statistical-order tolerance]\label{cor:tolerance}
+On the domain of Theorem~\ref{thm:main}, $1\le T_K\le\sqrt M$.
+Every integer $0\le k\le\lfloor T_K\rfloor$ satisfies $F_K\le2s$.
+Conversely, if $F_K\le A s$ for a fixed $A>0$ and $k\ge1$, then, with $A'=\max\{A,1\}$,
+\[
+ k\le A A' T_K.
+\]
+Consequently the largest budget retaining risk of statistical order is of order $T_K$, with separate constants in sufficiency and necessity. For the endpoint-unprotected experiment a positive budget retains statistical order exactly in the order sense $k=O(\sqrt M)$ and $1-\beta=O(M^{-1/2})$.
+\end{corollary}
+\begin{proof}
+Write $e=e_K$, $x=1/(e\sqrt M)$, $f=1+\log(1+x)$ and $T=\sqrt M/f$. Since $e\ge1/M$, $0<x\le\sqrt M$. For $r\ge8$, $1+\log(1+r)\le r$ (check it at $8$ and differentiate). Thus $1\le f\le\sqrt M$, proving the range of $T$.
+For real $u>0$, the function $u[1+\log(1+1/(eu))]$ is increasing: its derivative is $1+\log(1+v)-v/(1+v)>0$, where $v=1/(eu)$. At $u=T$,
+\[
+ F(T)/s=\frac{1+\log(1+fx)}{f}
+ \le\frac{f+\log f}{f}\le2.
+\]
+Here $1+fx\le f(1+x)$ and $\log f\le f$. Monotonicity gives the asserted integer sufficiency, including $k=0$ by definition. Since $T\ge1$, $\lfloor T\rfloor\ge T/2$, so rounding does not remove the order-sized positive budget.
+
+For necessity, $F_K\ge k/M$ first gives $k\le A\sqrt M\le A'\sqrt M$. Therefore
+\[
+ 1+\log(1+1/(ek))\ge1+\log(1+x/A')\ge f/A'.
+\]
+The last step uses concavity of $\log(1+x)$ at the factor $1/A'\in(0,1]$ and $1\ge1/A'$. Combining with $F_K\le As$ gives $k\le AA'T$. These are not a same-multiplier ``if and only if.'' More generally, for $0<c\le1$, monotonicity and $1+fx/c\le(f/c)(1+x)$ give $F(cT)\le c[2+\log(1/c)]s$, permitting any prescribed positive fixed profile multiplier by decreasing $c$ and rounding down; when the resulting threshold is below one, only zero budget is guaranteed.
+
+For a sequence with $M\to\infty$, a risk bounded by a fixed multiple of $s$ eventually lies below the cap in Theorem~\ref{thm:main}. Its lower bound therefore forces $F_K=O(s)$; the upper gives the converse. Finitely many remaining $M$ are absorbed into constants. Finally Theorem~\ref{thm:endpoint-main} directly gives the two stated conditions for a positive unprotected budget. Zero budget is a separate clean case and imposes no condition on $1-\beta$.
+\end{proof}
+
+At $\beta=1/M$, the binary value has $e_2=M^{-1/2}$ and $f_2=1+\log2$, so $T_2$ is of order $\sqrt M$. For $K\ge3$, $e_K=M^{-1}$ and $f_K=1+\log(1+\sqrt M)$, giving order $\sqrt M/\log M$. At $\beta=0$ both cutoffs equal $M^{-1}$ and both tolerances have the latter order. In the unprotected experiment, $\beta=1/M$ instead leaves a constant-order one-edit obstruction as $M$ grows.
+
+\section{Scope of the synthesis}
+The protected upper and lower directions have different mechanisms. For $K\ge3$, direct histogram stability is combined with terminal occupation, while exact exchangeability erases the active suffix arrangement. For binary sources, a pessimistic designated-exit estimator exploits a weighted occupation inequality. Its lower witness has variable-length cycles, so a cheap modification with the wrong output marginal is not enough. Entropy transport supplies a weaker bridge approximation, and a finite scalar argument shows that its genuine horizon cutoff does not change the final order.
+
+The binary lower is an existence result for a common stochastic map assembled from finite rational transport tables. It makes no efficient sampling claim. The upper count rule has a straightforward finite rational description, but no assertion about a Transformer's bounded depth, width, attention budget, training dynamics or learnability follows. These resources require separate theorems with the same input and fault permissions. Likewise, offline history-adaptive kernels, causal corruption and visible-mask models are not interchangeable here.
+
+The technical proofs below imply Theorems~\ref{thm:main} and~\ref{thm:endpoint-main} by taking maxima of the separately established lower floors and using the stated upper rules. All genuinely new ingredients are included; the explicitly named inherited interfaces retain their original evidence status. Independent LLM reviews and finite diagnostics in the dossier are corroborating mathematical checks, not formal verification or external peer review.
+
+\appendix
+\input{nonbinary_endpoint}
+\input{binary}
+
+\section{Source and version record}\label{app:provenance}
+The scientific source set is the stage-eight freeze dated 2 November 2026, 09:22:25.495805 UTC. It comprises SC001 (including its stationary corollary), SC002, SC003, BT001, BT002 (including finite scalar completion), and EP001. Historical candidate headers in the original files are preserved; adoption is established separately by the hash-bound acceptance receipts. In particular, SC003 alone established only the binary upper and elementary floors; the matching logarithmic lower is supplied by BT002. BT001 supplies the obstruction, modified source and a \emph{conditional} reduction, not a proof of its stronger interior constant-cost transport premise.
+
+The new tolerance corollary in Section~\ref{sec:tolerance} is an elementary derivation from the frozen rate formulas and is identified separately for manuscript review. Later exploratory work is not used. The immutable predecessor manuscript, its proofs and the earlier delivery are preserved rather than overwritten. The adjacent \texttt{SOURCE\_MANIFEST.json} records exact file identities, acceptance receipts, inherited interfaces and primary-source reading scope; \texttt{PRESERVATION\_BINDINGS.json} records the pre-authoring preservation baseline. Full predecessor arguments are accessible through these local dossier paths, not through invented publication references. This is an English companion manuscript; no authorship affiliation, external submission, public release or novelty certification is implied.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

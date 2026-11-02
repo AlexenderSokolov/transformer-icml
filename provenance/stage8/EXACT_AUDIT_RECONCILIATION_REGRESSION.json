@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "before": "Exactly four declared routing-only source files rejected by original verifier",
+  "after": "107 exact bindings pass after eight explicit hash/length pointer adjustments",
+  "negative_control": "Undeclared proof-byte tamper still rejected",
+  "changes": [
+    {
+      "script": "v10_research/stage8_science_audit/verify_audit.py",
+      "binding_file": "v10_research/stage8_science_audit/SOURCE_BINDINGS.json",
+      "json_pointer": "/sources/11/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI003_review_v1.md",
+      "original_sha256": "42459b65016671265fe328864afd395cc87a539c16ef19ffb4b35dc84c8265dc",
+      "export_sha256": "b5fe97bbc7c0237bcc77c662df8f8c9cf2882801145e71981bc9d9cc3893ecf5",
+      "basis": "exact declared routing-only original/export delta in this script disposable binding"
+    },
+    {
+      "script": "v10_research/stage8_science_audit/verify_audit.py",
+      "binding_file": "v10_research/stage8_science_audit/SOURCE_BINDINGS.json",
+      "json_pointer": "/sources/11/bytes",
+      "source_path": "v10_research/binary_arbitrary/BAI003_review_v1.md",
+      "original_bytes": 6936,
+      "export_bytes": 6947,
+      "basis": "exact byte-count consequence of the same declared routing-only original/export delta"
+    },
+    {
+      "script": "v10_research/stage8_science_audit/verify_audit.py",
+      "binding_file": "v10_research/stage8_science_audit/SOURCE_BINDINGS.json",
+      "json_pointer": "/sources/12/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI003_review_v2.md",
+      "original_sha256": "551543ab488b4582b44192396120a32a1d3fcf017668cafa8f9ceb8786225f4a",
+      "export_sha256": "8f9538c85b3e048dd20710b5461ebc9906eda7fc166d98ff7a54e5ab237d7ccb",
+      "basis": "exact declared routing-only original/export delta in this script disposable binding"
+    },
+    {
+      "script": "v10_research/stage8_science_audit/verify_audit.py",
+      "binding_file": "v10_research/stage8_science_audit/SOURCE_BINDINGS.json",
+      "json_pointer": "/sources/12/bytes",
+      "source_path": "v10_research/binary_arbitrary/BAI003_review_v2.md",
+      "original_bytes": 1915,
+      "export_bytes": 1926,
+      "basis": "exact byte-count consequence of the same declared routing-only original/export delta"
+    },
+    {
+      "script": "v10_research/stage8_science_audit/verify_audit.py",
+      "binding_file": "v10_research/stage8_science_audit/SOURCE_BINDINGS.json",
+      "json_pointer": "/sources/17/sha256",
+      "source_path": "v10_research/binary_erasure_transport/BT001_independent_review.md",
+      "original_sha256": "a49e047e4d88cf2e29bd71a576572c2e8effe588e90ade15926b5ad036e952f2",
+      "export_sha256": "02edacf1ca7c70470691fc6ab59854608da20ede986c3268994c7a1f8dba85dc",
+      "basis": "exact declared routing-only original/export delta in this script disposable binding"
+    },
+    {
+      "script": "v10_research/stage8_science_audit/verify_audit.py",
+      "binding_file": "v10_research/stage8_science_audit/SOURCE_BINDINGS.json",
+      "json_pointer": "/sources/17/bytes",
+      "source_path": "v10_research/binary_erasure_transport/BT001_independent_review.md",
+      "original_bytes": 6003,
+      "export_bytes": 5962,
+      "basis": "exact byte-count consequence of the same declared routing-only original/export delta"
+    },
+    {
+      "script": "v10_research/stage8_science_audit/verify_audit.py",
+      "binding_file": "v10_research/stage8_science_audit/SOURCE_BINDINGS.json",
+      "json_pointer": "/sources/23/sha256",
+      "source_path": "v10_research/binary_erasure_transport/BT002_independent_review.md",
+      "original_sha256": "9171f4e18f4a238965644f67baf0fb81e73efba3c373bf27109c058327312595",
+      "export_sha256": "d4b76e0845a324886ddf5079a7df7742899f2122ae823b5ea924ab9ce8895376",
+      "basis": "exact declared routing-only original/export delta in this script disposable binding"
+    },
+    {
+      "script": "v10_research/stage8_science_audit/verify_audit.py",
+      "binding_file": "v10_research/stage8_science_audit/SOURCE_BINDINGS.json",
+      "json_pointer": "/sources/23/bytes",
+      "source_path": "v10_research/binary_erasure_transport/BT002_independent_review.md",
+      "original_bytes": 7551,
+      "export_bytes": 7519,
+      "basis": "exact byte-count consequence of the same declared routing-only original/export delta"
+    }
+  ],
+  "production_runner_sha256": "6b2dda01be1fcdf271cf171c8579190f78210f839d4e10939c648e6ff578d052",
+  "scientific_verifier_sha256_unchanged": "1b4b7a0241ba334389aeee1d9642962e58dbcbdc0be75403869f75d7ec5cd990"
+}

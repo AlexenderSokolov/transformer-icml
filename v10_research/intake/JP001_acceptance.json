@@ -1,0 +1,10 @@
+{
+  "unit": "JP001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "joint_corruption_precision/JP001_theorem.md",
+  "sha256": "c94e7d59d463a642853b8e3c52588f735c24175885f9cfddf05fbd8f3f2c0fab",
+  "review": "joint_corruption_precision/JP001_independent_review.md",
+  "review_sha256": "a10f0c591d07922181e4daec6fb9f54cb542c6327165ce9b4c14c171096f043b",
+  "time_utc": "2026-11-02T11:38:19.043843+00:00",
+  "scope": "POST-STAGE8. Root read full proof and full independent review. Fixed uniform K^3 histogram prefix, protected terminal pair, source edits plus one-shot vector l-infinity port noise and final Q floor. Both-init risk Theta_K min(1,max(s,f_e(k/M+delta+1/Q))). Exact finite evaluator P>=h, rational certified-budget decoder, beta-blind. Real/D-grid/Q-grid noise lower; not single-coordinate noise, optimized encoder, unknown-budget adaptation, growing-K sharpness, training or novelty certification."
+}

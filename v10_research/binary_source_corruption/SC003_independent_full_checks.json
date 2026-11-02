@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "seed": 202611020851,
+  "target_sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+  "checks": {
+    "exhaustive_word_masks": 87376,
+    "k0_branch": 1016,
+    "symbol_complement_equivariance": 87376,
+    "exact_algebra": 126360,
+    "exact_erasure_cells": 284,
+    "scalar_and_lower": 1848,
+    "clean_floor": 462,
+    "accepted_proof_hashes": 4
+  },
+  "total_checks": 304726,
+  "constants": {
+    "statistical_coefficient": 92697.21373218215,
+    "corruption_coefficient": 433472,
+    "absorbing_coefficient": 6672
+  },
+  "limitations": "Exact finite enumeration and scalar diagnostics corroborate only tested instances; universal claims require the written independent proof audit. Same-model independent LLM review, not formal or external review."
+}

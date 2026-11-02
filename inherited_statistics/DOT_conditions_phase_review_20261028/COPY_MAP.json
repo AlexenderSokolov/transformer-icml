@@ -1,0 +1,1022 @@
+{
+  "format": "Exact UTF-8 byte partitions v1; offsets zero-based half-open; touched lines one-based inclusive",
+  "records": [
+    {
+      "source": "S016_proof_v1.md",
+      "source_bytes": 27596,
+      "source_sha256": "d28778b2e116a6a0717d844ff0df27c39800775e0fbd9b08c3e4d9e37d7baa0a",
+      "output": "proofs/S016_complete_proof.md",
+      "output_bytes": 23244,
+      "output_sha256": "bfb6ab6e9bd403d4a8502da6474b51f8b31940189dad339cfa5dac1b5ecbf645",
+      "copied_body_sha256": "f5a6365c258361b13af685e784d5cbe92b77d2bb86f157397221202cc6512563",
+      "spans": [
+        {
+          "source_byte_start": 162,
+          "source_byte_end": 1339,
+          "source_line_start": 5,
+          "source_line_end": 19,
+          "output_byte_start": 1328,
+          "output_byte_end": 2505,
+          "sha256": "41405457971ebcac0733d1b762bb15f78481ea9d32be19dc3c4b5fc32d7d7ad9"
+        },
+        {
+          "source_byte_start": 2525,
+          "source_byte_end": 4874,
+          "source_line_start": 29,
+          "source_line_end": 51,
+          "output_byte_start": 2507,
+          "output_byte_end": 4856,
+          "sha256": "3a07d1836878c97ec0f537f5290bb6674f52dbd4800767a8fbad8b628b246a04"
+        },
+        {
+          "source_byte_start": 5012,
+          "source_byte_end": 23396,
+          "source_line_start": 52,
+          "source_line_end": 297,
+          "output_byte_start": 4858,
+          "output_byte_end": 23242,
+          "sha256": "6975161a622a1d7a8b9b6483993893667b605a28379a0f90246834cf631ba3a8"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 162,
+          "source_line_start": 1,
+          "source_line_end": 5,
+          "sha256": "a5cd7ed25bb4db0a80a192e9adc520fd0dac0d892bfa46617b8276e9344ee17d",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 1339,
+          "source_byte_end": 2525,
+          "source_line_start": 20,
+          "source_line_end": 28,
+          "sha256": "c9ce969b3587a3806e612ad784629707e260b9f746708618f8eac9517b748dc5",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 4874,
+          "source_byte_end": 5012,
+          "source_line_start": 52,
+          "source_line_end": 52,
+          "sha256": "084b89d5d8bbaec0405eda174ad84ddacdba5e4d194942f14142c7a5acaa0ebc",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 23396,
+          "source_byte_end": 27596,
+          "source_line_start": 298,
+          "source_line_end": 330,
+          "sha256": "ad10a9a10ed806c6b2a01c3678764dd153bed7e61e4533aac2e865b5195016b3",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 1328,
+          "sha256": "13346ccf6c9cc515c3b4dc9b99d7d64fdde3423d06b042f2d4c1bb707078541c",
+          "purpose": "明确的编排标题、证据边界、历史时序和交叉引用说明"
+        },
+        {
+          "output_byte_start": 2505,
+          "output_byte_end": 2507,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 4856,
+          "output_byte_end": 4858,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 23242,
+          "output_byte_end": 23244,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        }
+      ]
+    },
+    {
+      "source": "S016_review_v1.md",
+      "source_bytes": 19686,
+      "source_sha256": "50043baf9f542d246733c4d9704038a0614c743c6779f02af782c80924dbd247",
+      "output": "reviews/S016_mathematical_review.md",
+      "output_bytes": 15386,
+      "output_sha256": "2eb9c39bb53069ff3c8901dfafe47671603838ab44c75b2725c79e6ce0bd395a",
+      "copied_body_sha256": "26b42a67556a63926ce65607e68c7547b7856009f294ef282e099d87fba0fa3c",
+      "spans": [
+        {
+          "source_byte_start": 71,
+          "source_byte_end": 845,
+          "source_line_start": 5,
+          "source_line_end": 11,
+          "output_byte_start": 1428,
+          "output_byte_end": 2202,
+          "sha256": "10610b49a883f1989883508c9e6fc0895dbed94c2520cc822b692b386ab6ebe5"
+        },
+        {
+          "source_byte_start": 2126,
+          "source_byte_end": 3530,
+          "source_line_start": 37,
+          "source_line_end": 57,
+          "output_byte_start": 2204,
+          "output_byte_end": 3608,
+          "sha256": "79054e0396d1776deba2c6cbc13cc5f0ff251f733c260eea72fa8b8b32d6c047"
+        },
+        {
+          "source_byte_start": 5757,
+          "source_byte_end": 17531,
+          "source_line_start": 75,
+          "source_line_end": 162,
+          "output_byte_start": 3610,
+          "output_byte_end": 15384,
+          "sha256": "c87cc50bc69978c44b652838c4f7b1e521ad4fc374151e295a90d9a52bcba1f8"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 71,
+          "source_line_start": 1,
+          "source_line_end": 4,
+          "sha256": "5e32f832382d621511d6d2eb39ab8a5dde85716deb58226cdc600f80577b4d95",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 845,
+          "source_byte_end": 2126,
+          "source_line_start": 12,
+          "source_line_end": 36,
+          "sha256": "54aba11800f5b324a8d87e659cc06e36d9b853d19778c0cd2656c5d874043821",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 3530,
+          "source_byte_end": 5757,
+          "source_line_start": 58,
+          "source_line_end": 74,
+          "sha256": "a498fb518eecaef51fc4df0326cf78651e18617223697af49423ffdc793509d0",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 17531,
+          "source_byte_end": 19686,
+          "source_line_start": 163,
+          "source_line_end": 184,
+          "sha256": "3bbea065d57a865419637f4075c6c64d4acba2e870724c36b27c7bb3a4217675",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 1428,
+          "sha256": "b593b2d12361263f6cd09394ea31275339fd7f171ce538e1d5c57ad98e5a972c",
+          "purpose": "明确的编排标题、证据边界、历史时序和交叉引用说明"
+        },
+        {
+          "output_byte_start": 2202,
+          "output_byte_end": 2204,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 3608,
+          "output_byte_end": 3610,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 15384,
+          "output_byte_end": 15386,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        }
+      ]
+    },
+    {
+      "source": "S017_proof_v1.md",
+      "source_bytes": 32795,
+      "source_sha256": "8c756b6448240393c71b5ccf68ec279cd13665df58628fd528cac3bb869caa27",
+      "output": "proofs/S017_complete_proof.md",
+      "output_bytes": 29332,
+      "output_sha256": "5695840484c741314cc0a201d534132b609756de843244593948e4c01d7a7cf4",
+      "copied_body_sha256": "df400fe87a437aaee83c5dc927e9657e29d87ad7da3c21c7d61935f5476bac44",
+      "spans": [
+        {
+          "source_byte_start": 191,
+          "source_byte_end": 1660,
+          "source_line_start": 5,
+          "source_line_end": 22,
+          "output_byte_start": 1346,
+          "output_byte_end": 2815,
+          "sha256": "1a8806b6004b675630ce0ce86f419686b8e76be106c071110c5d96e322f3dc26"
+        },
+        {
+          "source_byte_start": 2250,
+          "source_byte_end": 4340,
+          "source_line_start": 30,
+          "source_line_end": 49,
+          "output_byte_start": 2817,
+          "output_byte_end": 4907,
+          "sha256": "5a3a7ade8f468fad5d894e23d6cd34fe0206b42a3761e6e8a43c227251bb82b3"
+        },
+        {
+          "source_byte_start": 4653,
+          "source_byte_end": 27917,
+          "source_line_start": 50,
+          "source_line_end": 379,
+          "output_byte_start": 4909,
+          "output_byte_end": 28173,
+          "sha256": "35fb3bb09fc487560f8ae383c85291e76339acaa7ed5e39b0b0e88e06810421a"
+        },
+        {
+          "source_byte_start": 31548,
+          "source_byte_end": 32700,
+          "source_line_start": 411,
+          "source_line_end": 415,
+          "output_byte_start": 28175,
+          "output_byte_end": 29327,
+          "sha256": "c4ca86ae6639e018b48c9ebd444adb1c584fd292936b27b4644575f0ccf89669"
+        },
+        {
+          "source_byte_start": 32794,
+          "source_byte_end": 32795,
+          "source_line_start": 415,
+          "source_line_end": 415,
+          "output_byte_start": 29329,
+          "output_byte_end": 29330,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 191,
+          "source_line_start": 1,
+          "source_line_end": 5,
+          "sha256": "1f1e8b59d4bee016257f4b359fd6b0c93f1cff48288594af99d4b87853d84274",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 1660,
+          "source_byte_end": 2250,
+          "source_line_start": 23,
+          "source_line_end": 29,
+          "sha256": "f009dddd76b889405995204bcef23f6df1e24fe132ba16fd94185107353f6889",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 4340,
+          "source_byte_end": 4653,
+          "source_line_start": 50,
+          "source_line_end": 50,
+          "sha256": "f98afa928448a9e501578e4c9eaed34df41fd4bbc741966379881f12dd6bd307",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 27917,
+          "source_byte_end": 31548,
+          "source_line_start": 380,
+          "source_line_end": 410,
+          "sha256": "104ca4cc39b543c6aadbacf62cacc6cc0c73bbdf9bc83765e1fd853174510123",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 32700,
+          "source_byte_end": 32794,
+          "source_line_start": 415,
+          "source_line_end": 415,
+          "sha256": "7d41a673ee27ecbf4aa4fe2df5dd0860a5498459720d8fff9811f5f93bb96694",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 1346,
+          "sha256": "c0bb2fbaf50383e2f73b6ed815f047b08255f845830673bda7f4ecf487061d14",
+          "purpose": "明确的编排标题、证据边界、历史时序和交叉引用说明"
+        },
+        {
+          "output_byte_start": 2815,
+          "output_byte_end": 2817,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 4907,
+          "output_byte_end": 4909,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 28173,
+          "output_byte_end": 28175,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 29327,
+          "output_byte_end": 29329,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 29330,
+          "output_byte_end": 29332,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        }
+      ]
+    },
+    {
+      "source": "S017_review_v1.md",
+      "source_bytes": 22761,
+      "source_sha256": "605a7a79c54af5382f18b895817d8ca7147b58c67a48cd0234c5a45b15e516d1",
+      "output": "reviews/S017_mathematical_review.md",
+      "output_bytes": 19766,
+      "output_sha256": "5e4fc876bf06b5a8d8d9a7108b76d66bb722e12b4e6e0e6b39656301bc3cf169",
+      "copied_body_sha256": "da09a028ddf2cb7b442eb6678634f389cb361262ae167e30546598e1883c4b1c",
+      "spans": [
+        {
+          "source_byte_start": 71,
+          "source_byte_end": 825,
+          "source_line_start": 5,
+          "source_line_end": 14,
+          "output_byte_start": 1579,
+          "output_byte_end": 2333,
+          "sha256": "bbaf142e76d4ecf55a561d5da96771eeb8b159e5673f668dc245bc87847ecab9"
+        },
+        {
+          "source_byte_start": 2233,
+          "source_byte_end": 15580,
+          "source_line_start": 40,
+          "source_line_end": 120,
+          "output_byte_start": 2335,
+          "output_byte_end": 15682,
+          "sha256": "c6e3db72db09d2626e6448755a9f358d99ea807b1ecbc2e1999eb7920e963ce5"
+        },
+        {
+          "source_byte_start": 15830,
+          "source_byte_end": 19910,
+          "source_line_start": 122,
+          "source_line_end": 149,
+          "output_byte_start": 15684,
+          "output_byte_end": 19764,
+          "sha256": "1643f6ecc3eafe78f5a8bf44989ba8968faba0ee88f280060242de9da0fb8927"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 71,
+          "source_line_start": 1,
+          "source_line_end": 4,
+          "sha256": "00924c2060b099f1854442eeef5802eba8f70f412c46bfd8c05965a95b13e1cc",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 825,
+          "source_byte_end": 2233,
+          "source_line_start": 15,
+          "source_line_end": 39,
+          "sha256": "02e9a993104743e5c79d0c395d716a356a4e7564623ca71cd0650be92b3e452c",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 15580,
+          "source_byte_end": 15830,
+          "source_line_start": 121,
+          "source_line_end": 121,
+          "sha256": "c6e9ac86583cc2c8ec268aaf3c0864bb6ce0f9eab2f9bb5721ebe827bc2db09c",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 19910,
+          "source_byte_end": 22761,
+          "source_line_start": 150,
+          "source_line_end": 171,
+          "sha256": "d058e34f2e0288f6ccf28b09907f81dd2590a9f06e71f28959bb7ebfb22e96a2",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 1579,
+          "sha256": "3c99f362d65a9d111abfaa9d8efd2d3c1de85552f3595b98cd1ccd9aa3c697ec",
+          "purpose": "明确的编排标题、证据边界、历史时序和交叉引用说明"
+        },
+        {
+          "output_byte_start": 2333,
+          "output_byte_end": 2335,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 15682,
+          "output_byte_end": 15684,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 19764,
+          "output_byte_end": 19766,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        }
+      ]
+    },
+    {
+      "source": "S018_proof_v1.md",
+      "source_bytes": 40067,
+      "source_sha256": "0ae5c609dedec1dde7c80d3458f56fb0739ad7ab3c1e829d42dbd42e2c799838",
+      "output": "proofs/S018_complete_proof.md",
+      "output_bytes": 33339,
+      "output_sha256": "0bd13ecdc9d33df0cd56a5367885fa6779ce6fcabf16caf59ecbf9ed8e7b4d46",
+      "copied_body_sha256": "ef3828b0d4a984fb2202dc378547e780ac8e30a956ae7d2431eda23e429054fc",
+      "spans": [
+        {
+          "source_byte_start": 1437,
+          "source_byte_end": 3934,
+          "source_line_start": 14,
+          "source_line_end": 57,
+          "output_byte_start": 1467,
+          "output_byte_end": 3964,
+          "sha256": "6a6d78ce8c7910fbb7ba1dbf45058377203fec7caeaa36822b422b5ef7e8ce2f"
+        },
+        {
+          "source_byte_start": 4058,
+          "source_byte_end": 32121,
+          "source_line_start": 57,
+          "source_line_end": 362,
+          "output_byte_start": 3966,
+          "output_byte_end": 32029,
+          "sha256": "edaf97e3c87866063fb7fa3d8ae5d43bda1d2f138b65392396f85f7a69999468"
+        },
+        {
+          "source_byte_start": 37874,
+          "source_byte_end": 39177,
+          "source_line_start": 413,
+          "source_line_end": 415,
+          "output_byte_start": 32031,
+          "output_byte_end": 33334,
+          "sha256": "74d7df419c0d20b715ffc00e8008c63c95c0883406b94712ee6a32f3e840b25e"
+        },
+        {
+          "source_byte_start": 39227,
+          "source_byte_end": 39228,
+          "source_line_start": 415,
+          "source_line_end": 415,
+          "output_byte_start": 33336,
+          "output_byte_end": 33337,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 1437,
+          "source_line_start": 1,
+          "source_line_end": 13,
+          "sha256": "b3a85e4f9c2b32a3aa05ac09209f9a4be34ac27b31257895a1354cd6fd2ae51c",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 3934,
+          "source_byte_end": 4058,
+          "source_line_start": 57,
+          "source_line_end": 57,
+          "sha256": "edfa3533e0f330fa88d0e1aabeeceaa70e6f62ae3ef922103e84407ddfd21151",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 32121,
+          "source_byte_end": 37874,
+          "source_line_start": 363,
+          "source_line_end": 412,
+          "sha256": "b59d04c3df38602507f1bcb192d31468961e6faae3fa315ad0ab807525b05e8e",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 39177,
+          "source_byte_end": 39227,
+          "source_line_start": 415,
+          "source_line_end": 415,
+          "sha256": "94b2497b2b7e013e1a4df6bb3464c38768f8232cd9839acac72075d80cba7868",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 39228,
+          "source_byte_end": 40067,
+          "source_line_start": 416,
+          "source_line_end": 422,
+          "sha256": "50271355394c4111fc419b059714859d5bc82160e76e93977a7f538142bdf890",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 1467,
+          "sha256": "3ac29c1d6178282c13a8cef6c7774b81a2e782fd8d64a912b7578f76bce31456",
+          "purpose": "明确的编排标题、证据边界、历史时序和交叉引用说明"
+        },
+        {
+          "output_byte_start": 3964,
+          "output_byte_end": 3966,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 32029,
+          "output_byte_end": 32031,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 33334,
+          "output_byte_end": 33336,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 33337,
+          "output_byte_end": 33339,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        }
+      ]
+    },
+    {
+      "source": "S018_review_v1.md",
+      "source_bytes": 29139,
+      "source_sha256": "9e87cf57166c935ae5d3b8afe97c758708afd85f510209e93d77be9b2bf50cc1",
+      "output": "reviews/S018_mathematical_review.md",
+      "output_bytes": 23673,
+      "output_sha256": "9afaeabaad78dae86c2ea67e85494fd8845fcfe07608fa7b41131646882a3ef0",
+      "copied_body_sha256": "f0225bb8fe68e5ba1d5ada568ef0f5ff05bf24e82d22bc525a9a67bcf2c27330",
+      "spans": [
+        {
+          "source_byte_start": 71,
+          "source_byte_end": 845,
+          "source_line_start": 5,
+          "source_line_end": 10,
+          "output_byte_start": 1796,
+          "output_byte_end": 2570,
+          "sha256": "90fe6464341c3c73fa315f3e8edc0c17d866749b1ba4549dab1fc71716e9b950"
+        },
+        {
+          "source_byte_start": 2378,
+          "source_byte_end": 5427,
+          "source_line_start": 36,
+          "source_line_end": 55,
+          "output_byte_start": 2572,
+          "output_byte_end": 5621,
+          "sha256": "a8d0d6b23e574f76269b6a8536ad1046582095a48c7f5a184e72d4c7dbd7f4b1"
+        },
+        {
+          "source_byte_start": 5528,
+          "source_byte_end": 20007,
+          "source_line_start": 56,
+          "source_line_end": 139,
+          "output_byte_start": 5623,
+          "output_byte_end": 20102,
+          "sha256": "0d1697173abb11327609eccda08d2fa8674afc35121bdad51988ce51c2f0fe3f"
+        },
+        {
+          "source_byte_start": 20043,
+          "source_byte_end": 20044,
+          "source_line_start": 139,
+          "source_line_end": 139,
+          "output_byte_start": 20104,
+          "output_byte_end": 20105,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "source_byte_start": 20098,
+          "source_byte_end": 21966,
+          "source_line_start": 145,
+          "source_line_end": 158,
+          "output_byte_start": 20107,
+          "output_byte_end": 21975,
+          "sha256": "45823e685c7f94362e83bd133a1d9833dc1d79d3842ba77c82e1c328e0fa039b"
+        },
+        {
+          "source_byte_start": 22133,
+          "source_byte_end": 22650,
+          "source_line_start": 160,
+          "source_line_end": 161,
+          "output_byte_start": 21977,
+          "output_byte_end": 22494,
+          "sha256": "22169603ffa5b074e0ec50cc0a40c543a012a6fbc657bfc95776697b546a3994"
+        },
+        {
+          "source_byte_start": 27547,
+          "source_byte_end": 28722,
+          "source_line_start": 206,
+          "source_line_end": 215,
+          "output_byte_start": 22496,
+          "output_byte_end": 23671,
+          "sha256": "8c962b04b898e6a52041b37b81437befb462f4dd9091dcbdcae3eed0bb0500df"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 71,
+          "source_line_start": 1,
+          "source_line_end": 4,
+          "sha256": "90823afd80e15c039f9dcfe2030f5fe3d3077288362ddab40554b3c7d844b5fd",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 845,
+          "source_byte_end": 2378,
+          "source_line_start": 11,
+          "source_line_end": 35,
+          "sha256": "18680d613bf7f0093781ac53c471c7991024e3a0a1d0d77a35785f31d3195714",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 5427,
+          "source_byte_end": 5528,
+          "source_line_start": 56,
+          "source_line_end": 56,
+          "sha256": "2a5c41e9dc56ec402528a75fc556df78dc052859bd05b12aa963d448ebb6f229",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 20007,
+          "source_byte_end": 20043,
+          "source_line_start": 139,
+          "source_line_end": 139,
+          "sha256": "0ec9517de1f9eef2100bad70546c68f2e65b921df84f78e0315369b536f12ed6",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 20044,
+          "source_byte_end": 20098,
+          "source_line_start": 140,
+          "source_line_end": 144,
+          "sha256": "62f079ed2b3461c2fa59bdf8dc2f6ee2391913ea0a4654920a93e78a31308f65",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 21966,
+          "source_byte_end": 22133,
+          "source_line_start": 159,
+          "source_line_end": 159,
+          "sha256": "c5b44306006f7469f9ebc7012afceaa5c366455bfacf00d06b8c763b7cf83db2",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 22650,
+          "source_byte_end": 27547,
+          "source_line_start": 162,
+          "source_line_end": 205,
+          "sha256": "24d81428bddd1bd3fc1f876d38b3fd08cfa3bd8a94198ce1f69301e6a82e61b3",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 28722,
+          "source_byte_end": 29139,
+          "source_line_start": 216,
+          "source_line_end": 216,
+          "sha256": "1ce503810b9a582ca71119f665350e78913bb3a5934ab855c056ef0d06fcfae3",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 1796,
+          "sha256": "3e006e957474bdd0fb7c65d25540cf2557f05ceb6f9f7a7f577c22c46ab8155a",
+          "purpose": "明确的编排标题、证据边界、历史时序和交叉引用说明"
+        },
+        {
+          "output_byte_start": 2570,
+          "output_byte_end": 2572,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 5621,
+          "output_byte_end": 5623,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 20102,
+          "output_byte_end": 20104,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 20105,
+          "output_byte_end": 20107,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 21975,
+          "output_byte_end": 21977,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 22494,
+          "output_byte_end": 22496,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 23671,
+          "output_byte_end": 23673,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        }
+      ]
+    },
+    {
+      "source": "S019_proof_v1.md",
+      "source_bytes": 19560,
+      "source_sha256": "1ce16742abeab9a8c2eee94ad4d39fac0be2a14278dd7117477bca7b85f26fe6",
+      "output": "proofs/S019_complete_proof.md",
+      "output_bytes": 15887,
+      "output_sha256": "7cf5eb6a408109d534bc1537a7123b90201795d5b6450832b2649ccba739905b",
+      "copied_body_sha256": "c5a5a38a8815e71722a5ebbfcb21ade4ed9607af0e1874810da87235ab0d0219",
+      "spans": [
+        {
+          "source_byte_start": 212,
+          "source_byte_end": 1080,
+          "source_line_start": 5,
+          "source_line_end": 11,
+          "output_byte_start": 1343,
+          "output_byte_end": 2211,
+          "sha256": "cc41fafb23727fd417a55f1060f3736cd8bcc857ea86b5b963d09d95672df04a"
+        },
+        {
+          "source_byte_start": 1641,
+          "source_byte_end": 5570,
+          "source_line_start": 15,
+          "source_line_end": 71,
+          "output_byte_start": 2213,
+          "output_byte_end": 6142,
+          "sha256": "7c6ff6c4808860ea2a9dbc3a184c70d013deee6d306e04617f03d030806cf5d6"
+        },
+        {
+          "source_byte_start": 5879,
+          "source_byte_end": 15620,
+          "source_line_start": 74,
+          "source_line_end": 189,
+          "output_byte_start": 6144,
+          "output_byte_end": 15885,
+          "sha256": "0105f32646dab171d80b5ce47f703ebd98180710de40f66bc15c5d37951b072a"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 212,
+          "source_line_start": 1,
+          "source_line_end": 5,
+          "sha256": "235cc0fb3bf4c33651052afc11d65bf324225f2ab1a0ce2e03964bdeae9d4026",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 1080,
+          "source_byte_end": 1641,
+          "source_line_start": 12,
+          "source_line_end": 14,
+          "sha256": "ac1d32f3f5d8b67c3e2d877180cabcd6f5c1122180c882aaea5cec74d17725c4",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 5570,
+          "source_byte_end": 5879,
+          "source_line_start": 72,
+          "source_line_end": 73,
+          "sha256": "c3de6b3426694d4bb1ef5edc636b9259c38c7430dc80ff6da9355df1daa33f1a",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 15620,
+          "source_byte_end": 19560,
+          "source_line_start": 190,
+          "source_line_end": 228,
+          "sha256": "4dd65585604915660d7f6900b84f85bddb8a6818c92f90b71c2f26c2136518f7",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 1343,
+          "sha256": "4277fc1230116cd50a8b0d6a9187f3191ab354b4db4e1638a9b3f2119a77bc28",
+          "purpose": "明确的编排标题、证据边界、历史时序和交叉引用说明"
+        },
+        {
+          "output_byte_start": 2211,
+          "output_byte_end": 2213,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 6142,
+          "output_byte_end": 6144,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 15885,
+          "output_byte_end": 15887,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        }
+      ]
+    },
+    {
+      "source": "S019_review_v1.md",
+      "source_bytes": 23062,
+      "source_sha256": "79c14a0518a0c0e5755e0351794e86aa49448472ac7e18dd14cb61c7145ba54f",
+      "output": "reviews/S019_mathematical_review.md",
+      "output_bytes": 18659,
+      "output_sha256": "44660cfc8170fc1376f8f26ff057bba777d76f975629c1d918c22ffd7d796c5a",
+      "copied_body_sha256": "b49ba8e5a4252834b84a1b7818c284a2515529f6b3f1b7ec7cde7ec9a2d697e4",
+      "spans": [
+        {
+          "source_byte_start": 71,
+          "source_byte_end": 1128,
+          "source_line_start": 5,
+          "source_line_end": 13,
+          "output_byte_start": 1730,
+          "output_byte_end": 2787,
+          "sha256": "dfa5a3c2b018fc20468b4534428158cef4fceefb36bccb0c2816ec38ca99270e"
+        },
+        {
+          "source_byte_start": 2466,
+          "source_byte_end": 5886,
+          "source_line_start": 38,
+          "source_line_end": 67,
+          "output_byte_start": 2789,
+          "output_byte_end": 6209,
+          "sha256": "b9c0851cf9bbf1c80ff17c2bee784f257b126bed8194cc8a4f2468ef667dae39"
+        },
+        {
+          "source_byte_start": 6257,
+          "source_byte_end": 16770,
+          "source_line_start": 70,
+          "source_line_end": 138,
+          "output_byte_start": 6211,
+          "output_byte_end": 16724,
+          "sha256": "8ad37a445bb01b0c512c77102a80c9d95786b2372a5b0819f7265e73223a84c2"
+        },
+        {
+          "source_byte_start": 17000,
+          "source_byte_end": 17261,
+          "source_line_start": 146,
+          "source_line_end": 146,
+          "output_byte_start": 16726,
+          "output_byte_end": 16987,
+          "sha256": "42e2a88cd82355adc37f5cb2f3984a1393a66e7935618691662d68140de0e390"
+        },
+        {
+          "source_byte_start": 17383,
+          "source_byte_end": 18069,
+          "source_line_start": 146,
+          "source_line_end": 148,
+          "output_byte_start": 16989,
+          "output_byte_end": 17675,
+          "sha256": "c91adbbc30f0f87c203de32947a3c935869bdc3563c072b0cf39d9cbb44a0ad8"
+        },
+        {
+          "source_byte_start": 21489,
+          "source_byte_end": 22469,
+          "source_line_start": 182,
+          "source_line_end": 187,
+          "output_byte_start": 17677,
+          "output_byte_end": 18657,
+          "sha256": "42328a6138b254a107e902c2d68f36f2ab5fb422660142a912f8c9b9ffbc02fb"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 71,
+          "source_line_start": 1,
+          "source_line_end": 4,
+          "sha256": "faf631e3f7528f3c025cd2b9b91e67cf0f7c87a41cac8337c96fe63bd7735715",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 1128,
+          "source_byte_end": 2466,
+          "source_line_start": 14,
+          "source_line_end": 37,
+          "sha256": "141c3f2329bbaa9db68e15a1e106eb5af45c7aa2cc047466c15cac6fc2b9a5bd",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 5886,
+          "source_byte_end": 6257,
+          "source_line_start": 68,
+          "source_line_end": 69,
+          "sha256": "87f7b9b622e5669486ceecebb0d228fe81d7e690e46c53c1bb1a54dd0bc7e68a",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 16770,
+          "source_byte_end": 17000,
+          "source_line_start": 139,
+          "source_line_end": 145,
+          "sha256": "05b339488efbcd2d6cb97ff708f9850fffff4e7b389f4ac70046d9a153f02bc8",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 17261,
+          "source_byte_end": 17383,
+          "source_line_start": 146,
+          "source_line_end": 146,
+          "sha256": "1b26683ea68d6c22171bacafe2df192381109b0dd112fc0e321c6df2da984821",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 18069,
+          "source_byte_end": 21489,
+          "source_line_start": 149,
+          "source_line_end": 181,
+          "sha256": "3bccfa2673fe8adc87c1c52c27e6371c816a51394ffcd3edcd3f022a041017b9",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        },
+        {
+          "source_byte_start": 22469,
+          "source_byte_end": 23062,
+          "source_line_start": 188,
+          "source_line_end": 188,
+          "sha256": "8e69555639534957ed4fadb4e4e8db001af91374c5d03963b759c7958fb23a0d",
+          "reason": "身份、控制／路径、管理性哈希／读写记录、原提交状态或已完整保留的重复框架；不省略独立数学单元"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 1730,
+          "sha256": "bfab777e42fe345e02a81eda7ec1e56cd7c6692069e205a705ff274d3459bc54",
+          "purpose": "明确的编排标题、证据边界、历史时序和交叉引用说明"
+        },
+        {
+          "output_byte_start": 2787,
+          "output_byte_end": 2789,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 6209,
+          "output_byte_end": 6211,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 16724,
+          "output_byte_end": 16726,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 16987,
+          "output_byte_end": 16989,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 17675,
+          "output_byte_end": 17677,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        },
+        {
+          "output_byte_start": 18657,
+          "output_byte_end": 18659,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的显式编排空行"
+        }
+      ]
+    }
+  ],
+  "binary_copies": [
+    {
+      "source": "DOT_conditions_stage04_20261028.zip",
+      "source_bytes": 1069825,
+      "source_sha256": "a5f96b4987dfdaccf0c2a98d89f575b81a5ef9267ad3f7a8f9fd27254de6a1a1",
+      "output": "inherited/DOT_conditions_stage04_20261028.zip",
+      "output_bytes": 1069825,
+      "output_sha256": "a5f96b4987dfdaccf0c2a98d89f575b81a5ef9267ad3f7a8f9fd27254de6a1a1",
+      "archive_manifest_sha256": "20260e4bf2fb88fe541c3d23ef1de911c874ee2d77530a9c7944ade709610080"
+    }
+  ]
+}

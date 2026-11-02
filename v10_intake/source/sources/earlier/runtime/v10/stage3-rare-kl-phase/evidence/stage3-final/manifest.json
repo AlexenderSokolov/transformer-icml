@@ -1,0 +1,95 @@
+{
+  "kind": "fixed-lead-final-audit-archive-v1",
+  "date": "2026-10-25",
+  "contract_id": "d9e5e1f1efba187dfce2e80b395a1db533e89e8a97bd11c6f2f1e51d1ee9bb3e",
+  "root_obligation_id": "d0bdd1d8bf611bb7a6e9c4bb14d8b14e5a71ae8cc5c97776fc079ac13c63b428",
+  "root_fact_id": "dd8b3eaa48049bdb",
+  "root_evidence_id": "5e4b01839ad75dfe0311188ff5dd5a73249c9f9729a9957d230ee4876f758c01",
+  "audit_receipt_id": "e96c44d3c5dacd1a35f9e11c0efcf4746ef156b94828614c8141af2433e25a41",
+  "acceptance_id": "0023133f119f97fb765121e714f365df9ebabf074ee1af2b37b9b759ccda33ab",
+  "native_outcome": "SOLVED",
+  "proof_level": "LLM_CHECKED_PROOF",
+  "mother_problem_completed": false,
+  "files": [
+    {
+      "path": "outputs/001-conditional-grid/lead/final-audit-v1/admission-readback.json",
+      "bytes": 44888,
+      "sha256": "88e963dca583d012ef2f5c85a04d01313ba433e423fca659fdd65694988d22c7"
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/final-audit-v1/archive-validation.json",
+      "bytes": 1747,
+      "sha256": "b88f71bbd4aa031b56bf42d18c4121c73ebfbc0fd5d26ee02e9991ec47c95e1d"
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/final-audit-v1/audit-response.raw.json",
+      "bytes": 1812,
+      "sha256": "e5dcfd501b2764740eadb9c168ae266e289660143d60a54b0b272cbe6d1b4154"
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/final-audit-v1/audit-result.json",
+      "bytes": 1591,
+      "sha256": "7ba094f009b17d5b464867f3e1e03e9e83f68933257287045be81429a3aaaedb"
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/final-audit-v1/frontier-after-final-audit.md",
+      "bytes": 7693,
+      "sha256": "87aa2639d2989ba787c47685917b615f63776e7b7e2c163515e3635f8c021d26"
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/final-audit-v1/frontier-before-final-audit.md",
+      "bytes": 13206,
+      "sha256": "94a6888499f40b3fdcfc56c16add1dd4d723bd2ed664efc377017681a9418746"
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/final-audit-v1/mailbox-after.json",
+      "bytes": 190442,
+      "sha256": "a16f954cf7431ba59a275275f475238116e5defa351108b2ce32a3071276d6e5"
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/final-audit-v1/research-state-after.json",
+      "bytes": 70453,
+      "sha256": "72ae46b6ba5492b4597240319508bef9cbb0c606bf75ee60225ab565cc99046f"
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/final-audit-v1/supplementary-handoff-zh-v1.md",
+      "bytes": 7320,
+      "sha256": "e2f834058d5df988c00b7829e0af353ddf937918692140e1973418348a63c6a0"
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/final-audit-v1/v2-v3-diff-check.json",
+      "bytes": 499,
+      "sha256": "9f7a665cba8c4feb484281c03379fa9dfe1cb0c9c9e4f733707a41ebf47e399f"
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/final-audit-v1/verification-artifact.json",
+      "bytes": 1977,
+      "sha256": "93628d2272150df09dffd5a2504b6d200c1d6fc5f643380bc6a78ddaad2b91a9"
+    }
+  ],
+  "source_manifest_pins": [
+    {
+      "path": "outputs/001-conditional-grid/prover/final-admissions-v3/manifest.json",
+      "bytes": 10093,
+      "sha256": "cf6fc1c78ee442e069de3d58f7f8a271d729e45035a3cbfc3ff5473c3c8408e0"
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/responsibility-receipt-check-v1.json",
+      "bytes": 8920,
+      "sha256": "e70e95775453bb5a9b6cbdeee161ec0a1227b536495f5808286fe9fa5a1dc052"
+    },
+    {
+      "path": "inputs/responsibility-receipts/20261025-current-status/manifest.json",
+      "bytes": 1345,
+      "sha256": "616ed0758d62c88faa9ce30b86976768b25dba4fdd3b62bddc877e91ae6b1b45"
+    },
+    {
+      "path": "[Non-scientific operational metadata omitted.]",
+      "bytes": 492,
+      "sha256": "2174a3d8961b0bd390ae64e6be1b46dea059ba494f63dad98eb5604bba8c3e03"
+    }
+  ],
+  "historical_suspended_count": 8,
+  "frontier_is_snapshot": true,
+  "supplementary_recipient_acknowledgement_claimed": false
+}

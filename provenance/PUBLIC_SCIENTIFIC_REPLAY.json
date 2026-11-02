@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "scope": "Selected public-export scientific diagnostic replay, not the historical 91-script suite, mathematical proof, or document rebuild. Each script executed in a separate disposable copy; retained outputs not modified. No binding hash overrides applied. Exact and floating checks retain their own labels.",
+  "current_script_passes": 11,
+  "expected_historical_failures": 1,
+  "unexpected_failures": 0,
+  "checks": [
+    {
+      "script": "v10_research/source_symbol_corruption/SC001_diagnostics.py",
+      "script_sha256": "4e58de40c543db8671f6bc68f5a012ccf12fc1717d0a4f04feaf400861b75c99",
+      "returncode": 0,
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true,
+      "elapsed_seconds": 1.407,
+      "stdout": "{\"status\": \"PASS\", \"factorial_cases\": 792, \"enumerated_kernel_cases\": 288, \"finite_domain_inequalities\": 125249, \"scope\": \"Finite diagnostics only; no Monte Carlo and no formal verification.\"}\n",
+      "stderr": ""
+    },
+    {
+      "script": "v10_research/binary_erasure_transport/check_bt001.py",
+      "script_sha256": "0e50ace4976d1835e263af607678cde1bb2b531c1df52c4266ea75feadac78b1",
+      "returncode": 0,
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true,
+      "elapsed_seconds": 2.644,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"exact_checks\": 5282,\n  \"scope\": \"stationarity, all-state certificate grid, boundary formula, failed-merge density and cost\",\n  \"missing_transport_theorem\": \"NOT CHECKED OR PROVED\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "v10_research/binary_erasure_transport/check_bt002.py",
+      "script_sha256": "ea1bfa297bb2ac7b9391d51d962874402c5014177f9144775bae0f88b8cbd609",
+      "returncode": 0,
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true,
+      "elapsed_seconds": 1.23,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"structural_checks\": 762,\n  \"scope\": \"exact reference powers, return-count probabilities, binomial-mode bound, rational grid cardinalities; numeric safe constants\",\n  \"does_not_claim\": \"formal verification or computational execution at huge entropy cutoff\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "v10_research/binary_erasure_transport/check_bt002_scalar.py",
+      "script_sha256": "c2f4938465d691e5787a5a1347ce7e6602abed3816c8283871212cd2fe50bd86",
+      "returncode": 0,
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true,
+      "elapsed_seconds": 2.234,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"inequalities_checked\": 99180,\n  \"largest_SCALAR1_ratio\": 0.5216854757464515,\n  \"largest_SCALAR3_ratio\": 0.3081158802061514,\n  \"scope\": \"Finite diagnostics; proof in BT002_scalar_completion.md\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "v10_research/binary_source_corruption/SC003_diagnostics.py",
+      "script_sha256": "85190c6ab6daa49447792cc7884fc830acfc77c53b223f924b540082b6a81a94",
+      "returncode": 0,
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true,
+      "elapsed_seconds": 0.468,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"exact_full_path_checks\": 20184,\n  \"exact_kernel_start_budget_scenarios\": 48,\n  \"scalar_domain_checks\": 180,\n  \"limitation\": \"Finite diagnostics; constants/occupation theorems require written proof and accepted imports.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "v10_research/stage8_science_audit/independent_exact_checks.py",
+      "script_sha256": "ebd7cb13de21013f3e7ba35a5035eed1586a7fce359097d68445eb4b20c15d6e",
+      "returncode": 0,
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true,
+      "elapsed_seconds": 7.608,
+      "stdout": "{\n  \"target_snapshot\": {\n    \"v10_research/source_corruption_manuscript/corrupted_trajectories.tex\": \"13345044d06449bb79255d0341e1e2349e061c631584b6c14bdefb6b72451392\",\n    \"v10_research/source_corruption_manuscript/nonbinary_endpoint.tex\": \"ed8d40a5b16664a3dcdc96ae5ece997cc8b8738e55cfa8a01c5af9f62f9297f6\",\n    \"v10_research/source_corruption_manuscript/binary.tex\": \"d4b130483d86fe3cb3107136a88c0197025ed2a71118b3e4e2ddba857c10b881\",\n    \"v10_research/source_corruption_guide/guide_final_math_zh.md\": \"0ffe24409645c803d16ed82fd46e95cebc77ad49a5a2559bb0ef92c819f6d009\",\n    \"v10_research/delivery_stage8/SCIENTIFIC_FREEZE.json\": \"6260f393db5403766e57ccfa26a6ee93e88440f8751d7159f027df2ad9daea25\"\n  },\n  \"status\": \"PASS\",\n  \"arithmetic\": \"Exact fractions, plus rigorous rational enclosures for logarithms and square roots\",\n  \"counts\": {\n    \"histogram_edit_bound\": 87376,\n    \"binary_downward_envelope\": 86360,\n    \"binary_pathloss\": 431800,\n    \"boundary_transport_exact\": 25,\n    \"merge_mean_exact\": 30,\n    \"merge_preimage_density\": 1946,\n    \"reference_fifth_power\": 13,\n    \"reference_common_atom\": 13,\n    \"binary_witness_stationarity\": 171,\n    \"binary_witness_allstate\": 171,\n    \"reference_microcanonical_path_mass\": 180,\n    \"reference_count_probability\": 180,\n    \"exact_binomial_mode_mass\": 1274,\n    \"bridge_grid_spacing\": 30,\n    \"bridge_grid_labels\": 30,\n    \"endpoint_stationarity\": 51,\n    \"endpoint_allstate_certificate\": 51,\n    \"endpoint_delta_floor\": 51,\n    \"certificate_marginal_identity\": 646,\n    \"erased_prefix_exact_Bayes_loss\": 1260,\n    \"pooled_martingale_exact_moments\": 12,\n    \"tolerance_range_interval\": 71,\n    \"tolerance_floor_certified\": 71,\n    \"tolerance_zero_budget\": 71,\n    \"tolerance_integer_sufficiency\": 207,\n    \"tolerance_premise_false\": 944,\n    \"tolerance_integer_necessity\": 801,\n    \"scalar_cutoff_floor_certified\": 96,\n    \"scalar_empty_sum_case\": 52,\n    \"scalar_completion_interval\": 96,\n    \"scalar_nonempty_sum_case\": 44,\n    \"entropy_cutoff_constant_exact\": 1,\n    \"scalar_completion_constant_interval\": 1,\n    \"lower_and_upper_constant_slack\": 1,\n    \"target_snapshot_stable\": 1\n  },\n  \"total_checks\": 614127,\n  \"scope\": \"Finite corroboration only, not a proof or formal verification. Small M tests are historywise algebra only and do not extend theorem domains.\",\n  \"script_sha256\": \"ebd7cb13de21013f3e7ba35a5035eed1586a7fce359097d68445eb4b20c15d6e\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "v10_research/stage8_science_audit/sc001_sc002/independent_exact_diagnostics.py",
+      "script_sha256": "6d68397aea6aa587b4044b43aec35ec713504c1d31524bf75fe191aed7076d6e",
+      "returncode": 0,
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true,
+      "elapsed_seconds": 5.141,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"arithmetic\": \"exact integers and fractions.Fraction only; no floating tolerances\",\n  \"checks\": {\n    \"multi_edit_histogram_and_clean_mass_normalization\": 88260,\n    \"erasure_conditional_arrangement_entries\": 2687,\n    \"full_word_rounded_count_terminal_factorization\": 25160,\n    \"all_state_pair_minorization_entries\": 34560,\n    \"stationary_rare_suffix_event_bounds\": 1640,\n    \"direct_path_conditional_iid_entries\": 12420,\n    \"exact_all_state_suffix_mixture_entries\": 1024,\n    \"sc001_stationary_event_identity_and_bound\": 2016,\n    \"iid_message_floor_integer_cases\": 131327\n  },\n  \"total_asserted_cases\": 299094,\n  \"scope\": \"Finite corroboration of algebra, full-word factorization and selected finite cases, not proof or statistical simulation.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "v10_research/stage8_science_audit/diagnostic_revisions/independent_exact_checks.v1.py",
+      "script_sha256": "d8476e9a15389ed43957ee28566cee08e62a98e2453f6874abecad7aed7b6c97",
+      "returncode": 1,
+      "expected_outcome": "KNOWN_HISTORICAL_HARNESS_FAILURE",
+      "matched_expected_outcome": true,
+      "elapsed_seconds": 6.639,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"DISPOSABLE_PUBLIC_RESTORATION/v10_research/stage8_science_audit/diagnostic_revisions/independent_exact_checks.v1.py\", line 194, in <module>\n    check(1830<2**11 and 2*(8192+1)**2*32*4 <2**34,'lower_and_upper_constant_slack')\n  File \"DISPOSABLE_PUBLIC_RESTORATION/v10_research/stage8_science_audit/diagnostic_revisions/independent_exact_checks.v1.py\", line 16, in check\n    assert ok,key\n           ^^\nAssertionError: lower_and_upper_constant_slack\n"
+    },
+    {
+      "script": "v10_research/joint_corruption_precision/JP001_diagnostics.py",
+      "script_sha256": "17b3544e573060c1c9291a717d4cb5c9c4f63edb8f726dfac13d761e508b04fb",
+      "returncode": 0,
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true,
+      "elapsed_seconds": 4.3,
+      "stdout": "{\n  \"nested_floor_exact_checks\": 26100,\n  \"edit_histogram_checks\": 15519,\n  \"rational_lower_envelope_checks\": 60000,\n  \"clipping_bound_checks\": 2955,\n  \"scalar_float_checks\": 1920,\n  \"status\": \"PASS_FINITE_CORROBORATION_NOT_PROOF\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "v10_research/robust_encoded_source_corruption/RE001_diagnostics.py",
+      "script_sha256": "144e67ccaafceaf4580ebf7ecb7fe31a93e004e3b2aa9994f3b6866b17e69592",
+      "returncode": 0,
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true,
+      "elapsed_seconds": 5.778,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Exact finite diagnostics, not formal verification, statistical expectation Monte Carlo, or a full emitted-network/resource audit.\",\n  \"histogram_edit_pairs\": 10657,\n  \"actual_finite_composed_frequency_evaluations\": 420,\n  \"noisy_geometric_reconstructions\": 6951,\n  \"actual_corrupted_word_pipeline_rows\": 192,\n  \"empty_clean_rows_with_false_reconstructed_mass\": 6,\n  \"max_actual_affine_count\": 82,\n  \"precut_error_strictly_below_grid\": true,\n  \"prototype_settings\": [\n    {\n      \"R\": 2,\n      \"N\": 2,\n      \"Q\": 512,\n      \"L\": 0,\n      \"P_diagnostic\": 384,\n      \"unique_frequencies\": 103,\n      \"epsilon\": \"3/64\"\n    },\n    {\n      \"R\": 2,\n      \"N\": 4,\n      \"Q\": 1024,\n      \"L\": 3,\n      \"P_diagnostic\": 384,\n      \"unique_frequencies\": 103,\n      \"epsilon\": \"3/256\"\n    },\n    {\n      \"R\": 3,\n      \"N\": 2,\n      \"Q\": 1024,\n      \"L\": 6,\n      \"P_diagnostic\": 384,\n      \"unique_frequencies\": 108,\n      \"epsilon\": \"9/512\"\n    },\n    {\n      \"R\": 2,\n      \"N\": 1,\n      \"Q\": 64,\n      \"L\": 3,\n      \"P_diagnostic\": 384,\n      \"unique_frequencies\": 106,\n      \"epsilon\": \"3/32\"\n    }\n  ],\n  \"finite_scale_certificate_cases\": 14565,\n  \"scalar_schedules\": 7640,\n  \"packed_schedules\": 6925,\n  \"explicit_pre_fault_clip_cases\": 28,\n  \"all_radical_inequalities_checked_by_exact_squaring\": true,\n  \"elapsed_seconds\": 5.447315692901611,\n  \"sha256\": {\n    \"robust_encoded_source_corruption/RE001_theorem.md\": \"0cbe7c7a45b2efe6d73ba1a8e55b96d0a6d9f6bc8aa9b74a122960272944ce73\",\n    \"robust_encoded_source_corruption/RE001_diagnostics.py\": \"144e67ccaafceaf4580ebf7ecb7fe31a93e004e3b2aa9994f3b6866b17e69592\",\n    \"robust_depth_capacity/check_gn001_finite.py\": \"9bf5e5858b2ebd9a1b43b0efbe821b3c2d0d7fce0c406ca220423ff1ebebc422\",\n    \"robust_depth_capacity/GN001_independent_geometry.py\": \"c693eb0dd0fd7fe89dd307538266d5af4a476cb958a30e055e1b6f4be737aacd\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "v10_research/binary_budget_adaptation/check_ab001.py",
+      "script_sha256": "b87d4c2533207f670d314e005900f8bba132f05a9f3083f36622307ce8f15d1f",
+      "returncode": 0,
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true,
+      "elapsed_seconds": 2.729,
+      "stdout": "{\n  \"status\": \"PASS_TESTED_INSTANCES_ONLY\",\n  \"exact_stationarity_certificate_checks\": 150,\n  \"exact_acceptance_cases\": 150,\n  \"minimum_acceptance\": {\n    \"value\": \"9/16\",\n    \"float\": 0.5625,\n    \"case\": {\n      \"M\": 64,\n      \"k\": 2,\n      \"t\": 2,\n      \"a\": \"1/4\"\n    }\n  },\n  \"full_word_edit_count_cases\": 74640,\n  \"proof_hashes\": {\n    \"AB001_joint_blindness_obstruction.md\": \"865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d\",\n    \"AB002_addone_failure_and_open_beta_known.md\": \"7848267fa73e33775ca2aa467230980ee5f89e1d5ae0ae140c0d7955909d219b\"\n  },\n  \"limitations\": \"Finite diagnostics corroborate only tested instances; they are not the universal proof, formal verification, or independent review.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "v10_research/binary_budget_adaptation/review_joint_blindness_checks.py",
+      "script_sha256": "e88f3c9d4cf9043513e15990c3658d18d8f6fd65236f2bf7ae5f5f43447b64b1",
+      "returncode": 0,
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true,
+      "elapsed_seconds": 3.345,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"arithmetic\": \"Fraction exact except the explicitly labeled harmonic/log scalar diagnostic\",\n  \"counts\": {\n    \"null_certificate\": 6,\n    \"alternative_stationarity\": 270,\n    \"ratio_identity\": 270,\n    \"acceptance_dp\": 270,\n    \"kernel_strings\": 76656,\n    \"scalar_integrals\": 90\n  },\n  \"minimum_acceptance_probability_exact\": \"9/16\",\n  \"minimum_acceptance_probability_float\": 0.5625,\n  \"minimum_acceptance_case\": [\n    64,\n    2,\n    2,\n    \"1/4\"\n  ],\n  \"source_sha256\": {\n    \"AB001_joint_blindness_obstruction.md\": \"865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d\",\n    \"AB002_addone_failure_and_open_beta_known.md\": \"7848267fa73e33775ca2aa467230980ee5f89e1d5ae0ae140c0d7955909d219b\"\n  },\n  \"scope\": \"Independent finite diagnostics corroborate tested instances; full theorem is assessed separately in the mathematical review, not formally verified.\"\n}\n",
+      "stderr": ""
+    }
+  ]
+}

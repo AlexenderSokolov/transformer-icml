@@ -1,0 +1,52 @@
+{
+  "candidate_sha256": "88e952f840009d8345c4482ca8cd14231f9dd9a28a3d522f12cd7e03b65ea21e",
+  "checks": {
+    "triangular_log_envelope": 42,
+    "entry_envelope": 168,
+    "actual_row_sum": 168,
+    "square_integral_bound": 168,
+    "local_multiplicity_row": 672,
+    "local_multiplicity_square": 672,
+    "softmax_l1_weight_change": 1920,
+    "attention_query_key_value_bound": 1920,
+    "layer_recurrence": 1920,
+    "source_stationarity": 96,
+    "all_state_minorization": 96,
+    "suffix_domain": 288,
+    "rare_event_probability": 288,
+    "harmonic_constant": 288,
+    "harmonic_argument": 288,
+    "iid_large_Q_constant": 24,
+    "real_averaging_counterexample": 5
+  },
+  "total_checks": 9023,
+  "violations": [],
+  "early_token_actual_zero_logit_network": [
+    {
+      "T": 8,
+      "terminal_influence": 0.33973214285714287,
+      "T_times_influence": 2.717857142857143
+    },
+    {
+      "T": 32,
+      "terminal_influence": 0.12682797485739125,
+      "T_times_influence": 4.05849519543652
+    },
+    {
+      "T": 128,
+      "terminal_influence": 0.04244646166085291,
+      "T_times_influence": 5.433147092589173
+    },
+    {
+      "T": 512,
+      "terminal_influence": 0.013313508856542427,
+      "T_times_influence": 6.816516534549723
+    },
+    {
+      "T": 2048,
+      "terminal_influence": 0.00400492127530162,
+      "T_times_influence": 8.202078771817717
+    }
+  ],
+  "scope": "Finite diagnostics supplement written analytic review; neither formal proof nor finite-arithmetic certification."
+}

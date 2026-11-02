@@ -1,0 +1,150 @@
+{
+  "name": "C2",
+  "fact_id": "1a1aca7dd84c60da",
+  "evidence_id": "3f262cc0c76a700ab4f0163c011154c4e8f51655f5be6e5a7964d50b9f158989",
+  "obligation": {
+    "obligation_id": "a287207d73eed1edaa4f7b16c5d2e17f174154036432c3655450afc6bf022359",
+    "contract_id": "38d15641fecff6dbee957b6e036c052ecb7f07e6354623e800f7a126cf5270ef",
+    "exact_statement": "C2 under current D1-D3: for every d>=6, eta=2^-d, u=eta/65536, N=2^L with M=N/2-2 and Mu^2>=2^40 on the original A/p schedule, construct one public deterministic globally admissible Phi_* independent of t and decoder. For every common source-independent possibly randomized decoder of the fixed FULL19 cut, prove there is the SAME t_* in{1/4,3/4} with conditional00 KL>=3/64 and average KL>=3u/64. Give a self-contained proof for actual finite log/exp evaluators, all nineteen integers including exact small flags383/767/512, initial S2, protected E_m/S_N and their true dependence, whole-prefix bridge and full-code TV testing. Do not use source native Facts, population aliases, single-decoder failure or arbitrary-encoder extrapolation.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 fix the stationary source, full actual finite encoders, integer error cut, precise protected/public information and cost model.",
+        "Source-independent predictor family is not supplied unknown u,t. Same-source and same-map witness quantifiers are as C1-C3, not universal per-source dominance.",
+        "All input acquisition, binding, features, masks, finite arithmetic, copies, clears, holds, code, generation and output are charged; no clean-data bypass.",
+        "The common budget is the principal extracted-query one-shot hybrid model, not padded all-phase, streaming, flattened or unit-cost RAM.",
+        "Source files and prior discussion PASS are provenance only. No new proof depends on old Dot absolute noise laws or claims optimized architecture advantage."
+      ],
+      "quantifiers": [
+        {
+          "variable": "joint_predictor_family",
+          "kind": "EXISTS",
+          "domain": "one executable D4 family depending only on observed history and public N,b,d",
+          "depends_on": []
+        },
+        {
+          "variable": "C1_parameters_and_maps",
+          "kind": "FORALL",
+          "domain": "the full C1 domain with unknown u,t and all D3 maps",
+          "depends_on": []
+        },
+        {
+          "variable": "C2_public_tuple",
+          "kind": "FORALL",
+          "domain": "the restricted C2 domain",
+          "depends_on": []
+        },
+        {
+          "variable": "Phi_star",
+          "kind": "EXISTS",
+          "domain": "one deterministic globally admissible public map independent of t and the decoder, for the C2 tuple",
+          "depends_on": []
+        },
+        {
+          "variable": "post_cut_decoder",
+          "kind": "FORALL",
+          "domain": "all common source-independent randomized decoders of the fixed FULL19 cut",
+          "depends_on": []
+        },
+        {
+          "variable": "witness_t",
+          "kind": "EXISTS",
+          "domain": "one of1/4,3/4 witnessing both conditional and u-weighted average lower for that decoder",
+          "depends_on": []
+        },
+        {
+          "variable": "C3_d",
+          "kind": "FORALL",
+          "domain": "integers>=32 with the exact C3 tuple and the same witness/map",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "C1: N>=3,b>=1,Q=2^b,d>=6,eta=2^-d,0<u<1/4,1/4<=t<=3/4,all D3 maps. C2: u=eta/65536,N power2,M*u^2>=2^40,t in{1/4,3/4}. C3 comparison: d>=32,N=2^(2d+74),b=2d,u=2^(-d-16). D6 Bstar forN>=6,b>=1,d>=6.",
+      "definitions_hash": "1648c98212f71be946dfc8b39ab54497fbad41649bbe3fedc03296c401b8c0ca"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "3f262cc0c76a700ab4f0163c011154c4e8f51655f5be6e5a7964d50b9f158989"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": {
+    "artifact_id": "3f262cc0c76a700ab4f0163c011154c4e8f51655f5be6e5a7964d50b9f158989",
+    "content_hash": "0904b8be7898b9723a11c8c87b11231fb48a63e05661a11d94918937e0611ba8",
+    "producer": "fact_submit:ad8ed46c6375249b",
+    "contract_id": "38d15641fecff6dbee957b6e036c052ecb7f07e6354623e800f7a126cf5270ef",
+    "evidence_kind": "LLM_CHECKED_PROOF",
+    "exact_claim": "C2 under current D1-D3: for every d>=6, eta=2^-d, u=eta/65536, N=2^L with M=N/2-2 and Mu^2>=2^40 on the original A/p schedule, construct one public deterministic globally admissible Phi_* independent of t and decoder. For every common source-independent possibly randomized decoder of the fixed FULL19 cut, prove there is the SAME t_* in{1/4,3/4} with conditional00 KL>=3/64 and average KL>=3u/64. Give a self-contained proof for actual finite log/exp evaluators, all nineteen integers including exact small flags383/767/512, initial S2, protected E_m/S_N and their true dependence, whole-prefix bridge and full-code TV testing. Do not use source native Facts, population aliases, single-decoder failure or arbitrary-encoder extrapolation.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 fix the stationary source, full actual finite encoders, integer error cut, precise protected/public information and cost model.",
+        "Source-independent predictor family is not supplied unknown u,t. Same-source and same-map witness quantifiers are as C1-C3, not universal per-source dominance.",
+        "All input acquisition, binding, features, masks, finite arithmetic, copies, clears, holds, code, generation and output are charged; no clean-data bypass.",
+        "The common budget is the principal extracted-query one-shot hybrid model, not padded all-phase, streaming, flattened or unit-cost RAM.",
+        "Source files and prior discussion PASS are provenance only. No new proof depends on old Dot absolute noise laws or claims optimized architecture advantage."
+      ],
+      "quantifiers": [
+        {
+          "variable": "joint_predictor_family",
+          "kind": "EXISTS",
+          "domain": "one executable D4 family depending only on observed history and public N,b,d",
+          "depends_on": []
+        },
+        {
+          "variable": "C1_parameters_and_maps",
+          "kind": "FORALL",
+          "domain": "the full C1 domain with unknown u,t and all D3 maps",
+          "depends_on": []
+        },
+        {
+          "variable": "C2_public_tuple",
+          "kind": "FORALL",
+          "domain": "the restricted C2 domain",
+          "depends_on": []
+        },
+        {
+          "variable": "Phi_star",
+          "kind": "EXISTS",
+          "domain": "one deterministic globally admissible public map independent of t and the decoder, for the C2 tuple",
+          "depends_on": []
+        },
+        {
+          "variable": "post_cut_decoder",
+          "kind": "FORALL",
+          "domain": "all common source-independent randomized decoders of the fixed FULL19 cut",
+          "depends_on": []
+        },
+        {
+          "variable": "witness_t",
+          "kind": "EXISTS",
+          "domain": "one of1/4,3/4 witnessing both conditional and u-weighted average lower for that decoder",
+          "depends_on": []
+        },
+        {
+          "variable": "C3_d",
+          "kind": "FORALL",
+          "domain": "integers>=32 with the exact C3 tuple and the same witness/map",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "C1: N>=3,b>=1,Q=2^b,d>=6,eta=2^-d,0<u<1/4,1/4<=t<=3/4,all D3 maps. C2: u=eta/65536,N power2,M*u^2>=2^40,t in{1/4,3/4}. C3 comparison: d>=32,N=2^(2d+74),b=2d,u=2^(-d-16). D6 Bstar forN>=6,b>=1,d>=6.",
+      "definitions_hash": "1648c98212f71be946dfc8b39ab54497fbad41649bbe3fedc03296c401b8c0ca"
+    },
+    "input_hashes": [
+      "0904b8be7898b9723a11c8c87b11231fb48a63e05661a11d94918937e0611ba8"
+    ],
+    "environment_hash": "0e2ac36a86aaa1da12318e2eb0b5209dbd6ad803929ab02372631bce15d8fb02",
+    "checker_id": "fact_submit",
+    "checker_version": "1",
+    "checker_result": "PASS",
+    "created_at": "2026-10-26T00:13:56Z",
+    "validity": "VALID"
+  },
+  "fact_bytes_match_CAS": true,
+  "new_project_predecessors": [],
+  "root_complete": false
+}

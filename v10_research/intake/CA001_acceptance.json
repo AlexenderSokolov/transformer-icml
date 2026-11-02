@@ -1,0 +1,15 @@
+{
+  "unit": "CA001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "causal_attention/CA001_causal_bounded_softmax_candidate_v3.md",
+  "sha256": "88e952f840009d8345c4482ca8cd14231f9dd9a28a3d522f12cd7e03b65ea21e",
+  "review": "reviews/CA001_review_v3.md",
+  "time_utc": "2026-11-02T04:16:22.419419+00:00",
+  "scope": "Fixed-depth causal bounded-softmax ideal real encoder with final grid cut; local/frozen-boundary/dense-public-mask variants; conditional E/Q finite transfer only, no all-operations certificate or actual SRC membership",
+  "corrections": [
+    "v1 envelope-vs-matrix bound notation corrected",
+    "formal histories required for every frozen boundary branch",
+    "absolute grid resolution separated from total wordcapacity"
+  ],
+  "counterexample": "Two uniform causal averaging layers have early-token influence H_T/T, so uniform O(1/T) over all positions is false"
+}

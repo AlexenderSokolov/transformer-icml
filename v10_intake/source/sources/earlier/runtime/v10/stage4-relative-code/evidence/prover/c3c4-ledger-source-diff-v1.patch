@@ -1,0 +1,185 @@
+--- inputs/source-stage3/outputs/010-relative-noise-probe/lead/common_budget_risk_gap_v1.py
++++ outputs/001-relative-code/prover/c3c4_ledger_v1.py
+@@ -1,19 +1,8 @@
+-"""Public complete 010 budget and exact finite risk-gap calculations.
+-
+-No history simulation or source proof rerun. Original pinned ledgers are read
+-only for arithmetic cross-checks. All model semantics are in the companion md.
++"""Stage4 ledgers. Main Bstar is exact D6; alternatives are separate complete vectors.
++Author Prover, 2026-10-26. Bstar function attributed to Lead010 source
++SHA256 3869642ae43f29d25990ecb89af19c5d936b79e6b5333f5f42c7996051db9b37.
++No old diagnostics or old certificate functions are invoked.
+ """
+-from pathlib import Path
+-from fractions import Fraction
+-import hashlib
+-import importlib.util
+-import json
+-import sys
+-
+-
+-ROOT = Path(__file__).resolve().parents[3]
+-
+-
+ def clog2(x):
+     assert x >= 1
+     return (x - 1).bit_length()
+@@ -67,87 +56,77 @@
+                                 scratch_bits=wg, peak_bits=stored+wg))
+ 
+ 
+-def gap(d):
+-    assert d >= 32
+-    eta = Fraction(1, 1 << d)
+-    u = eta / (1 << 16)
+-    N, Q = 1 << (2*d + 74), 1 << (2*d)
+-    M = N // 2 - 2
+-    av = Fraction(12000000, N) + 256*eta**2 + Fraction(3, Q)
+-    cond = Fraction(1800000, 1 + N*u) + 256*eta**2 + Fraction(3, Q*Q)
+-    assert M*u*u > 1 << 40
+-    assert av < 260*eta**2 < u/64 < 3*u/64
+-    assert cond < Fraction(1, 64) < Fraction(3, 64)
+-    return dict(d=d, N=N, b=2*d, eta=str(eta), u=str(u),
+-                lower_domain_Mu2=str(M*u*u), joint_average_upper=str(av),
+-                joint_conditional_upper=str(cond), mixed_average_lower=str(3*u/64),
+-                mixed_conditional_lower='3/64',
+-                average_upper_over_u_div64=str(av/(u/64)),
+-                conditional_upper_over_one_div64=str(64*cond),
+-                same_domain_strict_gaps=True)
++def small_uniform_cost(N,b,d):
++    assert 3<=N<=5 and b>=1 and d>=6
++    ell=clog2(N+2);tau=(d+1).bit_length()
++    beta=32*(b+clog2(8)+8)
++    width=32
++    depth=16
++    metadata=128*(ell+b+tau+16)
++    code=4096*(ell+b+tau+16)
++    params=depth*(width+1)**2*beta
++    stored=params+code+metadata
++    work=4*width*beta+metadata
++    steps=256*depth*(width+1)**2*beta*beta+64*(N+3*(b+1))
++    a=beta+(stored+depth+1).bit_length()+ell+b+tau+32
++    gen=1024*(ell+b+tau+1)**2+4096*(stored+depth+1)*a*a
++    wg=64*(ell+b+tau+1)+64*(stored+depth+1)*a
++    return dict(N=N,b=b,d=d,mode='EARLY_UNIFORM_NO_FRONTEND',depth=depth,
++                width=width,total_heads=0,cut_words=0,protected_control_bits=0,
++                output_bits=3*(b+1),masks_bits=0,metadata_bits=metadata,
++                code_bits=code,parameter_bits=params,identity_holds=depth*width,
++                stored_bits=stored,working_bits=work,peak_bits=stored+work,
++                online_bit_steps=steps,generation=dict(address_bits=a,bit_steps=gen,
++                scratch_bits=wg,peak_bits=stored+wg))
+ 
+ 
+-def pinned_module(name, relative, sha):
+-    path = ROOT / relative
+-    assert hashlib.sha256(path.read_bytes()).hexdigest() == sha, relative
+-    spec = importlib.util.spec_from_file_location(name, path)
+-    module = importlib.util.module_from_spec(spec)
+-    sys.modules[name] = module
+-    spec.loader.exec_module(module)
+-    return module
++def alternative_budget(N,b,d,kind):
++    assert N>=6 and b>=1 and d>=6 and kind in ('GAIN','COUNT_PACK','OUTPUT_PACK')
++    q=common_budget(N,b,d)['parameters']
++    n=N+1;h=q['h'];p=q['p'];ell=q['ell'];tau=q['tau'];M=q['M']
++    kappa=min(d,h);ellC=clog2(M+1);H=19*(h+1)+8
++    R=8*(h+1) if kind=='GAIN' else 8*ellC if kind=='COUNT_PACK' else b
++    capacity=19*(h+1) if kind=='GAIN' else 19*kappa
++    if R>capacity:
++        return dict(kind=kind,available=False,payload_bits=R,capacity=capacity)
++    beta=128*(p+b+ell+tau+h+16)
++    g=lambda w:1024*w*w
++    W=16*n+1024*beta+4*R+H+64
++    S=W+2*H+R+8+64*beta
++    K=6*H+5*R+W+40
++    acq=(512*n+256)*g(beta)
++    pre=(64*g(beta) if kind=='OUTPUT_PACK' else 0)+16*(R+8)
++    post=(16 if kind=='OUTPUT_PACK' else 96)*g(beta)+64*(b+1)+16*(R+8)
++    # Initialization, pre-cut purge, returned-copy purge, final cleanup,
++    # and retained-field handoffs: five groups of four physical banks.
++    transfer=(K+20*S+1024)*g(beta)
++    G=acq+pre+transfer+post
++    L=16*G+64;C=S+8
++    z0=256*n*(ell+b+tau+p+h+32)
++    a=(G+S+L+z0+1).bit_length()+ell+tau+32
++    code=64*(G+K+S+1)*(beta+a)+4096*g(beta)*(beta+a)
++    meta=z0+16*K*(a+1)
++    par=L*(C+1)**2*beta
++    stored=par+code+meta
++    work=4*C*beta+meta+64*a
++    online=256*L*(C+1)**2*beta*beta+transfer
++    agen=beta+a+(stored+L+G+1).bit_length()+ell+b+tau+h+p+64
++    emit=stored+L+G+K+1
++    gen=1024*(ell+b+tau+p+h+1)**2+4096*emit*agen*agen
++    wg=64*(ell+b+tau+p+h+1)+64*emit*agen
++    return dict(kind=kind,available=True,model='SEPARATELY_PAID_STATIC_ONE_SHOT_DENSE_BIT_REGISTER_CIRCUIT',
++                N=N,b=b,d=d,h=h,kappa=kappa,ell_C=ellC,payload_bits=R,
++                capacity=capacity,full_port_bits=H,source_logical_cells=W,
++                circuit_logical_cells=S,physical_scalar_bits=beta,
++                exact_logical_transfer_actions=K,acquisition_gate_bound=acq,
++                precut_output_and_conversion_gate_bound=pre,
++                physical_transfer_and_duplicate_erasure_bit_bound=transfer,
++                postcut_readout_and_guarded_output_gate_bound=post,
++                total_gate_bound=G,depth=L,width=C,address_field_bits=a,
++                identity_holds=L*C,dense_slots=L*(C+1)**2,
++                parameter_bits=par,code_bits=code,metadata_bits=meta,
++                stored_bits=stored,working_bits=work,peak_bits=stored+work,
++                online_bit_steps=online,output_bits=3*(b+1),
++                generation=dict(address_bits=agen,bit_steps=gen,scratch_bits=wg,
++                                peak_bits=stored+wg))
+ 
+-
+-def verify():
+-    old = pinned_module('nominal_c3_budget', 'outputs/001-conditional-grid/prover/c3_word_program_v1.py',
+-                        '187f81b8da04a20412c07dc2fdfbe7387836484e2bc57e873a0dd8045b785a56')
+-    joint = pinned_module('joint_port_budget', 'outputs/010-relative-noise-probe/counter/joint_port_cost_v1.py',
+-                          'e2896e22217a6ecab58d08d362e36abacfdf700898e2824231ea67c5f441f7de')
+-    cases = [(6, 1, 6), (31, 100, 6), (1030, 4, 1 << 20)]
+-    cases += [(1 << (2*d + 74), 2*d, d) for d in (32, 33, 64, 195)]
+-    checks, rows = 0, []
+-    for N, b, d in cases:
+-        z = common_budget(N, b, d)
+-        c = old.certificate(N, b)
+-        ch = c['hybrid']
+-        cg = c['generation']['complete_formats']['hybrid_dense']
+-        j = joint.cost(N, b, d)
+-        jh = j['models']['hybrid_dense']
+-        jg = jh['generation']
+-        pairs = [
+-            (z['depth'], ch['L'], jh['depth']),
+-            (z['width_per_token'], ch['W'], jh['width']),
+-            (z['masks_bits'], ch['explicit_mask_bits'], j['masks']),
+-            (z['metadata_bits'], ch['metadata_bits'], j['metadata']),
+-            (z['code_bits'], ch['shared_evaluator_code_bits'], j['library_bits']),
+-            (z['identity_holds'], ch['identity_connections_bound'], jh['holds']),
+-            (z['parameter_bits'], ch['dense_neural_parameter_bits'],
+-             jh['stored_bits']-j['library_bits']-j['masks']-j['metadata']),
+-            (z['stored_bits'], ch['total_stored_dense_bits'], jh['stored_bits']),
+-            (z['working_bits'], ch['rolling_work_bits'], jh['working_bits']),
+-            (z['peak_bits'], ch['peak_dense_bits'], jh['peak_bits']),
+-            (z['finite_evaluator_bit_steps'], ch['finite_attention_bit_operations'], j['TU']),
+-            (z['online_bit_steps'], ch['dense_projection_pointwise_and_attention_bit_operations'], jh['online_bit_steps']),
+-            (z['generation']['bit_steps'], cg['bit_operations'], jg['bit_steps']),
+-            (z['generation']['scratch_bits'], cg['scratch_bits'], jg['scratch_bits']),
+-            (z['generation']['peak_bits'], cg['peak_including_program_bits'], jg['peak_including_program_bits']),
+-        ]
+-        for cap, x, y in pairs:
+-            assert cap >= x and cap >= y
+-            checks += 2
+-        assert z['cut_data_bits'] == j['cut_data_bits']
+-        assert z['output_bits'] == j['output_bits']
+-        rows.append(z)
+-    return dict(kind='010-one-common-budget-finite-gap-diagnostics', status='PASS',
+-                budget_cases=len(cases), component_comparisons=checks,
+-                budgets=rows, risk_gap_cases=[gap(d) for d in (32, 33, 64, 195)],
+-                scope='Formula checks only. Universal claims rely on the companion proof and independently reviewed input certificates.',
+-                new_native_fact_ids=[], new_native_evidence_ids=[])
+-
+-
+-if __name__ == '__main__':
+-    result = verify()
+-    target = Path(__file__).with_name('common-budget-risk-gap-checks-v1.json')
+-    with target.open('x') as out:
+-        json.dump(result, out, ensure_ascii=False, indent=2)
+-        out.write('\n')
+-    print(json.dumps({k: result[k] for k in ('status', 'budget_cases', 'component_comparisons')}))

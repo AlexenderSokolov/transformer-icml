@@ -1,0 +1,204 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=21mm,headheight=15pt]{geometry}
+\usepackage{fontspec,amsmath,amssymb,booktabs,tabularx,enumitem,fancyhdr,hyperref}
+\setmainfont{Noto Serif CJK SC}\setsansfont{Noto Sans CJK SC}
+\XeTeXlinebreaklocale "zh"\XeTeXlinebreakskip=0pt plus 1pt
+\hypersetup{hidelinks,pdfauthor={},pdftitle={未知条件适应的闭合与吸收结构边界}}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}\setlength{\emergencystretch}{3em}\linespread{1.06}
+\setlist[itemize]{leftmargin=1.25em,itemsep=3pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small 二阶预测的条件统计}\fancyhead[R]{\small 2026年10月29日阶段结果}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}
+\newcommand{\TV}{\operatorname{TV}}\newcommand{\E}{\mathbb E}\newcommand{\Prob}{\mathbb P}
+\newcommand{\head}[2]{{\small\sffamily #1}\par\vspace{2pt}{\LARGE\bfseries #2}\par\vspace{5pt}}
+\newcommand{\entry}[1]{\vfill{\noindent\small\raggedright 正文入口\quad #1\par}}
+\begin{document}
+\head{主要结论与固定实验}{未知条件适应的闭合与吸收结构边界}
+\textbf{目标 B 在原已闭合比较并集上得到常数阶适应；目标 A 仍继续。} 同一个不读取 $\beta$ 的计数阈值选择器，在原 $\Omega_{\rm closed}$ 上同时满足 $8000r_{\rm closed}$ 风险上界。这里的并集和最小值与原问题完全相同，不包含尚未闭合的长历史风险区域。
+\begin{itemize}
+\item \textbf{S024 与 S025。} S024 先覆盖较小 $\Omega_{\rm row}$；S025 保持同一算法，补上近 IID 风险，并覆盖原完整比较并集。无需随 $\beta$ 改阈值或换算法。
+\item \textbf{一个真实反例。} S024 提议但未证明的 NEXT 尾界，即使在 IID 也为假。S025 保留完整合法反例，改用实际拒绝事件的论证；这不否定 S024 已接纳定理。
+\item \textbf{S023 v2。} 首零吸收大子类有原规则上界；一个真正部分零返回族也有受限预测器上界。但二者不是全类结论，更不关闭 $K^5$ 风险窗口。v1 的两处范围失败和 v2 有界修复均保留。
+\end{itemize}
+\textbf{固定实验。} $K\ge2,M\ge1$ 为整数，观察全部 $X_1,\ldots,X_{M+2}$，恰计数 departure $0,\ldots,M-1$。隐藏二阶表 $\theta$ 齐次固定，
+\[
+ P((a,b),(b,c))=\theta_{ab}(c),\qquad Y_j=(X_{j+1},X_{j+2}).
+\]
+目标是实际末对 $Y_M$ 的下一符号律 $\theta_{Y_M}$；departure $M$ 未观察。风险为无条件期望半 $L^1$ 损失 $L_A=\E\TV(A,\theta_{Y_M})$。初始律 $\mu$ 任意，允许平稳支撑外初始状态。
+\[
+\mathcal D_2(\beta)=\{(\theta,\mu):\exists\pi,\ \pi P=\pi,\ P^2(s,t)\ge\beta\pi(t)\ \forall s,t\}.
+\]
+所有状态都须满足条件，不能只验初始可达支撑。$\pi$ 隐藏，允许零边；$\beta$ 是条件下界，不是已知的最大系数。目标 B 的算法只读 $K,M$ 和实际历史，不读 $\theta,\mu,\beta,\pi$、隐藏标签、未来或额外样本。
+
+令 $n=M+1$、$\delta=1-\beta$，统一使用
+\[
+ i=\min\{1,\sqrt{K/n}\},\quad a=\min\{1,\sqrt{K^3/n}\},\quad
+ g=\min\{1,\sqrt{K^5/n}\}.
+\]
+$n$ 是率的分母，观测符号数仍为 $M+2$。全文证明和完整科学审查另附 Markdown，导读不替代它们。
+\entry{proofs/ 三份完整证明；reviews/ 四份科学审查；SOURCES.md 版本与闭包。}
+\newpage
+\head{同一算法与精确比较域}{原比较并集上的常数阶适应}
+对完整历史定义
+\[
+ C_s(c)=\sum_{j=0}^{M-1}\mathbf1\{Y_j=s,X_{j+3}=c\},\quad n_s=\sum_c C_s(c),\quad J=n_{Y_M},
+\]
+\[
+ q(c)=\frac{C_{Y_M}(c)+1}{J+K},\qquad
+ b(c)=\frac{\sum_{j=3}^{M+2}\mathbf1\{X_j=c\}+1}{M+K}.
+\]
+\textbf{固定规则。} 令 $T=\min\{g,64\sqrt{K/(J+K)}\}$。当 $\TV(q,b)\le T$ 时输出 $b$，否则输出 $q$；等号选 pooling。常数 $64$ 和全部原计数在 S024、S025 中完全相同。
+
+定义 $H=\max\{a,\delta^{M/2}\}$、$F=\max\{i,\min(\delta,a)\}$，并令
+\[
+ h_b=\delta^{\lfloor b/2\rfloor}\ (\beta<1),\qquad
+ h_b=\begin{cases}1&b<2,\\0&b\ge2\end{cases}\ (\beta=1),
+\]
+\[
+ N=\{\delta\le a\},\quad B=\{h_{\lfloor M/2\rfloor}\le1/n\}.
+\]
+\textbf{原比较并集与每块尺度。}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}Xl@{}}\toprule
+适用区域 & 对应尺度\\\midrule
+$\beta=0$ & $g$\\
+$\beta=1$ & $i$\\
+$0\le\beta\le1/2,\ M\le K^4$ & $H$\\
+$N$ 或 $B$ 或 $\beta\ge1/2$ & $F$\\\bottomrule
+\end{tabularx}
+\end{center}
+$\Omega_{\rm closed}$ 恰为这四行的并集；$r_{\rm closed}$ 是\textbf{所有适用尺度的最小值}，不是任选一个方便尺度。
+
+S024 给同一规则的一般 $49g$、IID $858i$、$B$ 或强 $\beta$ 下 $337a$、S019 条带 $1472H$ 上界。S025 在全部 $\mathcal D_2(\beta)$、任意 $\mu$ 上新增
+\[
+ L_A\le\min\{1,1308\delta+\tfrac{7715}{2}i\}\le\min\{1,4000(\delta+i)\}.
+\]
+若 $\delta\le a$，新界给 $8000F$；若 $\delta>a$ 且 $F$ 适用，则须有 $B$ 或强 $\beta$，旧界给 $337F$。各适用尺度均约束\textbf{同一个}规则，故可取其最小值：
+\[
+ \sup_{\mathcal D_2(\beta)}L_A\le8000r_{\rm closed}\qquad(\beta\in\Omega_{\rm closed}).
+\]
+对同一个预测器先取各类最坏风险、再取 $\beta$ 上确界，最后对预测器取下确界的归一化适应比值，有
+\[
+ \frac1{32\sqrt6}\le\Gamma(K,M)\le8000.
+\]
+下界继承完整数据 IID lower。结论是不需要随参数增长的适应代价，不是最优数值常数或 $\beta$ 可准确估计。
+\entry{S024 §§2--8；S025 §§3--9；两份完整独立审查。}
+\newpage
+\head{真实失败与替代证明}{NEXT 被否定而算法保持不变}
+\textbf{历史提案。} S024 §9 曾提出一个充分但未证明的 NEXT 尾界，令 $e=\TV(q,\theta_{Y_M})$，希望
+\[
+ \E[e\mathbf1\{e>T/2\}]\le C(i+\delta)\qquad(\delta\le a).
+\]
+这不是 S024 的已接纳结论。S025 发现它即使在 $\delta=0$ 也为假。
+
+\textbf{完整合法反例。} 取偶整数 $m\ge32$，令 $K=m^2,M=m^3$。$p$ 在固定 $d=K/4$ 个符号上均匀，所有表行等于 $p$，初始律为 $p\otimes p$。这是合法 $\mathcal D_2(1)$，全部 $M+2$ 个观测符号 IID。
+对每个 $j<M$，$\Prob(Y_j=Y_M)=1/d^2$；相邻的最后两个 pair 相等，恰要求三个符号都相等，也有该概率。因此
+\[
+ \E J=\frac{M}{d^2}=\frac{16}{m},\qquad
+ \Prob(J=0)\ge1-\frac{16}{m}\ge\frac12.
+\]
+在 $J=0$ 上，$q$ 为全 $K$ 符号均匀律，$e=3/4$，$g=1,t=64,T=1$，故
+\[
+ \E[e\mathbf1\{e>T/2\}]\ge\frac34(1-16/m)\ge\frac38,
+ \qquad i\le m^{-1/2}\longrightarrow0.
+\]
+NEXT 不可能有统一常数。没有删掉初始观测，也没有换独立测试终点。
+
+\textbf{为何不推翻选择器。} 当 $g=1$ 时，$\TV(q,b)\le1$，固定 $g$ 测试不会导致拒绝。必须只为实际可能发生的拒绝付尾损失。令 $f=\TV(b,\theta_{Y_M})$、$t=64\sqrt{K/(J+K)}$，S025 证明逐路径
+\[
+ \TV(A,\theta_{Y_M})\le f+e\mathbf1\{e>t/2\}
+       +\mathbf1\{g<1\}e\mathbf1\{e>g/2\}.
+\]
+\textbf{新的统计桥。} 全状态条件给隐藏共同中心 $\theta_s\ge(1-\delta)p$。用独立 IID 创新和残余抽样耦合真实完整历史；只在最后两个创新均刷新时比较相同实际终点，失败代价至多 $2\delta$。内段被改动的行计数预算 $D_s$ 与 IID 参考计数 $N_s$ 可以依赖，故控制的是截断比值
+\[
+ \rho_s=\min\{1,(D_s+8)/(N_s+K)\},\quad
+ \sum_s p(a)p(b)\E\rho_s\le216\delta+78i.
+\]
+$+8$ 确定性恢复两条历史各四个边界 departure。好计数处逐路径抵消权重和样本长度，坏计数处先截断再用二项尾；不付 $M\delta$，也不把依赖的两项期望相乘。由此转移两种尾界，再加 dependent-path pooling 鞅界，得到上一页 NI。
+\entry{S025 §2 完整反例；§§4--8 完整耦合、截断比值与实际拒绝证明。}
+\newpage
+\head{S023 第一个子类}{首零吸收族的原规则上界}
+\textbf{一般吸收恒等式。} 对吸收见证 $\pi=\delta_{00}$，取末端对齐的 $r=\lfloor M/2\rfloor$ 个两步块，$H_0$ 表示无成功标签。每块唯一合法中间 pair 保留。若完整历史最终不在 $00$，它此前也没有到过 $00$，于是
+\[
+ \Prob(H_0)=\delta^r,\qquad
+ \Prob(H_0,E)=\Prob(E)\quad(E\subseteq\{Y_M\ne00\}).
+\]
+$H_0$ 不是无吸收、无零输出或无符号刷新。Euler 与 star 的信息联合质量分别仍是 $\delta^M$、$\delta^{H_M}$；条件于 $H_0$ 后分别为 $\delta^{M-r}$、$\delta^{H_M-r}$。star 在 $K^5$ 射线上条件活跃概率趋于一，其较小统计复杂度不可漏掉。
+
+\textbf{Theorem A 的完整有限范围。} 对每个 $K\ge2,M\ge1,0<\beta<1$，任取所有 $b\ne0$ 行的未知非零支持概率 $r_{ab}$，设
+\[
+ \theta_{ab}=\beta\delta_0+\delta r_{ab}\quad(b\ne0),\qquad
+ \theta_{a0}=\delta_0.
+\]
+全部 $K^2$ 行合法，$\pi=\delta_{00}$ 是唯一平稳律，并满足全状态两步条件。对\textbf{任意初始律} $\mu$，原完整历史 add-one 有
+\[
+ \sup_{r,\mu}\E\TV(q,\theta_{Y_M})
+ \le\min\{1,48\delta^M g+10i\}.
+\]
+不要求公开相位、乘积时钟、均匀终点或已知未知行。规则不读 $\beta$。
+
+\textbf{为何能用一般风险界。} 在初始第二符号非零时，无零输出事件只约束独立刷新币；条件后的\textbf{整个历史}恰为合法齐次基准源的原实验，概率 $\delta^M$。因此可用一般原规则风险界，而不是在残余核或停止计数条件下假设 IID。实际目标偏移另付 $\beta\delta^M\le i$。
+
+首次零输出在 departure $t$ 的概率为 $\beta\delta^t$。最后一步吸收时，终点零计数必须付清；更早吸收则用实际 $00$ 计数。精确失败贡献为
+\[
+ B_M=\frac{K-1}{K}\beta\delta^{M-1}
+ +\sum_{t=0}^{M-2}\beta\delta^t\frac{K-1}{M-t-2+K}\le9i.
+\]
+初始第二符号已为零的两类确定性轨迹另行计数，随后按 $\mu$ 混合。
+
+当 $\beta\le1/2$，该子类还满足 $H_0$ 加权损失 $\le96\delta^{M+1}g+10a$。在 $M=K^5,\beta=\ln K/(2K^5)$ 上风险 $O(K^{-1/2})$。这仅是大子类的原规则上界，不是全类 TARGET。
+\entry{S023 v2 §§2--4；完整 v1 审查 Units 1--3；v2 保留 K 域修复。}
+\newpage
+\head{S023 第二个子类}{部分零返回族只得到受限预测器界}
+\textbf{真正的部分零返回。} 取 $m\ge1,K\ge3m+2$，公开不同符号 $0,c$ 和互不相交的 $m$ 元集 $U,V,W$。公开 $0<\beta<1$、$\tau\in[\beta,1]$、$\eta\in[0,1]$，初始化固定为 $\mu=\delta_{cc}$。$U\times V$ 上有 $m^2$ 个任意未知 $W$ 标签律 $p_{ab}$。
+
+一般 hazard 配方为 $t_0=1,t_b\in[\beta,1]$，
+\[
+ h_{a0}=t_a,\qquad h_{ab}=\beta/t_b\ (b\ne0),\qquad
+ \theta_{ab}=h_{ab}\delta_0+(1-h_{ab})r_{ab}.
+\]
+取 $t_c=\tau$、其余非零 $t_b=1$，全部非零组件在完整证明逐行指定。特别地 $\theta_{c0}=\tau\delta_0+(1-\tau)\delta_c$，可从零返回；全状态合法性与唯一平稳 $\delta_{00}$ 仍成立。
+
+\textbf{七个可观察类别，而非隐藏标签。} 类别为 $C,Z,U_c,V_c,W_c,E,A$，其中查询类别 $V_c=U\times V$。其过程是源无关的七状态齐次 Markov 链，转移矩阵记为 $A_{\rm cat}$，从 $C$ 开始。实际查询终点概率为
+\[
+ p_M=e_C A_{\rm cat}^{M}e_{V_c};\qquad
+ p_M=\delta(1-\beta/\tau)\eta\Prob(Z_{M-2}=C)\ (M\ge2).
+\]
+$M=1$ 时为零。平均等待时间不能冒充固定 horizon 的终点对齐概率。
+
+\textbf{完整信息必须先证明。} 对每个可观察类别 trace，完整符号似然保留全部初始、返回、吸收和失败数据。终点在 $U\times V$ 时，先前 $Q$ 次查询恰有完整标签；条件 trace 后，整个观察可逆重建为 $Q$ 个均匀 context 的 IID 标签对，以及独立均匀的\textbf{实际终点}。不是额外加入测试样本。
+
+\textbf{Theorem B。} 对每个固定公开族存在一个共同预测器：查询外输出已知真实行；查询内用对应行经验 $W$ 律，零计数取均匀，再混合 $\beta\delta_0+\delta\widehat p$；公共支持外补齐固定概率输出。对全部未知 $p_{ab}$，
+\[
+ \sup_p L_A\le\delta\min\left\{p_M,14\sqrt{\frac{p_Mm^3}{M+1}}\right\}.
+\]
+证明用实际末类别占用 $\Prob(E_M,Q<w)\le\min(p_M,49w/n)$ 和严格阈值层积分。在 $K^5$ 射线上为 $O(K^{-1})$。
+
+\textbf{不能升级。} 这不是原 add-one 上界，不是任意 $\mu$，也不是未知公开几何族的混合上界。推广到 $d$ 类时，必须保留真实目标混合、$m^2$ context、$m$ 标签、完整可逆乘积实验、相同初始化与公共查询外行；才有 $\delta\min\{p,2d\sqrt{pm^3/n}\}$。
+\entry{S023 v2 §§5--8；完整 v1 审查 Units 4--6；v2 R2 的五项必要前提。}
+\newpage
+\head{审查结论与继续边界}{目标 B 已闭合而目标 A 尚未完成}
+\textbf{科学审查的准确版本。}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+版本 & 独立判断与当前地位\\\midrule
+S023 v1 & 完整六单元审查要求范围修复。R1：字面 Euler/star 构造不能泛称 $K\ge2$；R2：$d$ 类推论缺失目标和乘积维数等前提。两项主定理未被反例推翻。\\
+S023 v2 & 有界精确差异复核通过，最终只接纳 v2。继承未变的 v1 完整审查；不追认 v1，也不冒称新一次全部重审。\\
+S024 v1 & 六单元完整审查通过。接纳较小并集结果；NEXT 只是历史提案，从未接纳。\\
+S025 v1 & 七单元完整审查通过。接纳 NEXT 合法反例、近 IID 界，以及原完整比较并集的适应结论。\\\bottomrule
+\end{tabularx}
+\end{center}
+\textbf{证据等级。} 上述是独立上下文 LLM 科学判断，辅以有限精确／数值检查；不是形式验证、外部同行评议或文献首创认证。公开字节校验器只核完整性，不验证数学。本包另须通过独立完整装配审计后交付。
+
+\textbf{保留旧状态而不误用。} S024 中未证明 NEXT 和尚未覆盖全并集的文字属于当时阶段；S025 给出后续否定和闭合。继承归档中关于 B 尚待扩展、阶段结束或下一候选的文字也属于历史状态。科学原字节不改写，当前解释以本包边界为准。S023 v1 的全部科学失败审查与 S025 的完整真实反例都没有删掉。
+
+\textbf{目标 A 的当前缺口。} 在
+\[
+ M=K^5,\qquad \beta=\frac{\ln K}{2K^5},\qquad K\longrightarrow\infty,
+\]
+现有真实风险窗口仍为 $\Omega(K^{-1/2})$ 到 $O(K^{-1/4})$。S023 的两类受限上界不使这个全类窗口闭合。一般 TARGET、一般部分零 hazard 配方的加权原行损失、原规则在其余区域的准确风险仍需证明。
+
+\textbf{接续的两个 A 方向。} 一条针对原逐行规则的 IID 风险及算法分离；另一条针对增长复杂度、标签依赖的返回机制。只有精确源合法性、完整似然、实际终点／计数关系和独立审查完成后的新结果才进入下一包。本包没有加入两条方向的在研候选或未接纳结论。
+
+\textbf{交付边界。} 三份完整证明、四份科学审查、修复／反例说明及唯一不变的前阶段科学归档组成必要闭包。不是全项目恢复副本；不含私有控制记录、原始日志、第三方论文全文，也不涉及网络、压缩、硬件、训练或实现费用。原 B 闭合不等于全域 minimax 适应，更不结束 A 的授权研究。
+\entry{BOUNDARIES.md；CORRECTION\_S023\_AND\_NEXT.md；精确身份与删略地图见 SOURCES.md、COPY\_MAP.json。}
+\par\vspace{3pt}{\tiny END\_DOT\_STAGE\_OUTPUT}
+\end{document}

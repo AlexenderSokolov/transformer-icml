@@ -1,0 +1,13 @@
+{
+  "unit": "BT002",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "binary_erasure_transport/BT002_entropy_bridge_lower.md",
+  "sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+  "component_proofs": {
+    "binary_erasure_transport/BT002_entropy_bridge_lower.md": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+    "binary_erasure_transport/BT002_scalar_completion.md": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026"
+  },
+  "review": "binary_erasure_transport/BT002_independent_review.md",
+  "time_utc": "2026-11-02T09:18:40.363588+00:00",
+  "scope": "POST-STAGE7. Binary full-history stationary corruption lower 2^-54 max(s,F2), allbeta M>=64 k0..M, true finalpair protected. Uniform Doeblin concentration/finite entropy transport to coarse public canonical bridge, strict Hamming truncation, independent auxiliary seed small-ball argument, same prior/kernel across suffixes, exact finite-domain scalar cutoff completion. Root read entire mainproof, scalarproof and full fresh review. Combining separately accepted SC003 closes bothinit fixedbinary minimax profile. Does NOT prove BT001 stronger interior O(1) transport, efficient/causal attack, visible seed/mask, edited endpoint, novelty or formalverification."
+}

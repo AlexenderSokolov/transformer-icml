@@ -1,0 +1,9 @@
+# Analog channel coding: scope and attribution
+
+Checked 2026-11-02. No novelty certification; no private proof text submitted externally.
+
+Taylor, Mili and Zaghloul, *Analog Error Correction via Tube Packing*, MITRE publication page dated 1 January 2013: https://www.mitre.org/news-insights/publication/analog-error-correction-tube-packing ; primary five-page PDF https://www.mitre.org/sites/default/files/pdf/12_4920.pdf . Read abstract, introduction, Sections 2.1–2.3 and 3.1 through the nearest-curve decoder discussion; not a complete audit of optimization or experiments. It develops scalar-to-vector analog error correction using separated curves/tubes, scalar stretching and folding, and nearest-curve reconstruction for an AWGN formulation. Thus curve separation, dimensional expansion and geometric noise suppression are established mechanisms, not new concepts of RP/RG/GN/NP.
+
+Floor and Ramstad, *Shannon-Kotel'nikov Mappings for Analog Point-to-Point Communications*, https://arxiv.org/abs/0904.1538v4 (20 March 2022): only abstract/version metadata read. It explicitly treats continuous/piecewise-continuous direct source-channel mappings, with a high-SNR memoryless-source/Gaussian-channel scope. Do not cite uninspected propositions from it.
+
+Our inference from the inspected material: the present project must locate any contribution in its precise statistical experiment, bounded-primitive depth necessity/construction, finite information cut and paid arithmetic, and actual-terminal Markov composition. Bounded adversarial noise is different from Gaussian-noise average distortion. This comparison does not establish novelty of the resulting theorems or exclude closer prior results. See also folded_capacity_comparison.md for Uss et al.'s neural output representation, and FG001's Telgarsky attribution.

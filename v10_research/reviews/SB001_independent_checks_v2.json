@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "source_sha256": "d10086be4d358e322872daffad4dd10572588d6dcffaecbffefc409df6a217b7",
+  "checks": {
+    "exact_history_tests": {
+      "cases": 38547,
+      "all_zero_selected_blocks": 29482,
+      "zero_match_histories": 19134
+    },
+    "integer_schedule_tests": 14866,
+    "scalar_envelope_tests": 4375,
+    "mixing_choice_and_log_comparison_tests": 1605,
+    "BA_constant_tests": 60
+  },
+  "limits": "Independent finite corroboration, not formal verification, not emitted-network execution, not a statistical theorem replacement."
+}

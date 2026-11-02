@@ -1,0 +1,10 @@
+{
+  "unit": "RE001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "robust_encoded_source_corruption/RE001_theorem.md",
+  "sha256": "0cbe7c7a45b2efe6d73ba1a8e55b96d0a6d9f6bc8aa9b74a122960272944ce73",
+  "review": "robust_encoded_source_corruption/RE001_independent_review.md",
+  "review_sha256": "658620ce15713c96891358f6fac315bd6bd9b8d4c37cde3aa4a270900e38e39f",
+  "time_utc": "2026-11-02T11:55:24.407211+00:00",
+  "scope": "POST-STAGE8. Root read full theorem, full fresh independent review and exact b_t0 correction. All K>=2, all beta, bothinit robust compander/packing after source edits upper min(1,C_K[s+epsilon+f_e(k/M+epsilon^2+epsilon/chi)]). Binary decoded-data radius uses k; larger K decoder k/beta-blind. Sufficient epsilon~s,chi~logM schedule matches full-history source/statistical lower, not sharp global encoder/noise/depth frontier. Full rational description costs and pre-fault exact clips explicit. No novelty/formal/external-review/training claim."
+}

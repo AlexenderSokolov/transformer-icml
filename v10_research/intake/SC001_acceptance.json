@@ -1,0 +1,13 @@
+{
+  "unit": "SC001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "source_symbol_corruption/SC001_theorem.md",
+  "sha256": "8a51b7d48269731c7ac1143a5a0434b93d134e355734cc0ea8a13d9e69dce0df",
+  "component_proofs": {
+    "source_symbol_corruption/SC001_theorem.md": "8a51b7d48269731c7ac1143a5a0434b93d134e355734cc0ea8a13d9e69dce0df",
+    "source_symbol_corruption/SC001_stationary_corollary.md": "45ce21dfdc2f8c08d115406caf5b2e9c1b4ff7cff3ffa3499d2acf3876d8a8d1"
+  },
+  "review": "source_symbol_corruption/SC001_independent_review.md",
+  "time_utc": "2026-11-02T08:27:43.341687+00:00",
+  "scope": "POST-STAGE7. Full corrupted observed history, up to k offline randomized symbol replacements before any encoder, final two positions untouched, actual true terminal target. FixedK>=3 beta0 M>=2 gives Theta_K(max((M+1)^-1/2,Psi(k/M))) for arbitrary and stationary initialization. Exact common-kernel exchangeability erasure accounts for full coin arrangement and protected pair, no concentration cutoff; stationary recurrent witness separate. Root read both complete proofs and full fresh review. No binary/positivebeta/causal-online/visible-mask/internalnetwork/novelty claim."
+}

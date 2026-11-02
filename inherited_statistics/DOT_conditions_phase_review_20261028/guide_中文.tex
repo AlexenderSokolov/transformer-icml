@@ -1,0 +1,279 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=21mm,headheight=15pt]{geometry}
+\usepackage{fontspec,amsmath,amssymb,booktabs,tabularx,enumitem,fancyhdr,hyperref}
+\setmainfont{Noto Serif CJK SC}\setsansfont{Noto Sans CJK SC}
+\XeTeXlinebreaklocale "zh"\XeTeXlinebreakskip=0pt plus 1pt
+\hypersetup{hidelinks,pdfauthor={},pdftitle={二阶预测的条件分层与算法边界}}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}\setlength{\emergencystretch}{3em}\linespread{1.08}
+\setlist[itemize]{leftmargin=1.25em,itemsep=3pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small 二阶预测的条件分层}\fancyhead[R]{\small 2026年10月28日阶段综合}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}
+\newcommand{\TV}{\operatorname{TV}}\newcommand{\E}{\mathbb E}\newcommand{\R}{R_{\mathrm{D2}}}\newcommand{\Rp}{R_{\mathrm{D2}}^+}
+\newcommand{\head}[2]{{\small\sffamily #1}\par\vspace{2pt}{\LARGE\bfseries #2}\par\vspace{5pt}}
+\newcommand{\entry}[1]{\vfill\noindent\small 证明入口\quad #1\normalsize}
+\begin{document}
+\head{阅读结论}{二阶预测的条件分层与算法边界}
+数据条件改变的不是同一个“混合快慢”数字，而是\textbf{初始分布、未知行的维数与残余初始化影响}。在固定的实际末行期望 TV 实验中，一般任意初始化、平稳初始化和 IID 的匹配基准分别为
+\[
+ g=\min\{1,\sqrt{K^5/n}\},\qquad
+ a=\min\{1,\sqrt{K^3/n}\},\qquad
+ i=\min\{1,\sqrt{K/n}\},\qquad n=M+1.
+\]
+原完整历史 add-one 达到前两类的阶；IID 类由 pooling 达到更小的 $i$，原行式规则不能自动继承它。新 S019 又在 $1\le M\le K^4$、$0\le\beta\le1/2$ 上给出原规则与共同 minimax 的 $H=\max\{a,(1-\beta)^{M/2}\}$ 匹配。本导读把充分的源类条件、类内最坏情形的必要性和真正适用的算法分开。
+
+\textbf{唯一实验。} 整数 $K\ge2,M\ge1$，字母表 $A=\{0,\ldots,K-1\}$；未知齐次二阶概率表 $\theta$ 在每条轨迹内固定，只有合法转移
+\[
+ P_\theta((a,b),(b,c))=\theta_{ab}(c),\qquad
+ Y_j=(X_{j+1},X_{j+2}),\quad 0\le j\le M.
+\]
+对任何平稳律 $\pi$，记 $\Pi(s,t)=\pi(t)$ 为每行相同的核。观察全部 $N=M+2$ 个符号，恰有 $M$ 次已观察 departure。预测对象是尚未观察的 $X_{M+3}$ 的真实分布 $\theta_{Y_M}$；$n=M+1$ 只是率的统一分母，不是观测数。对一个源类 $\mathcal C$，
+\[
+ L_A(\theta,\mu)=\E\TV(A(X_1^{M+2}),\theta_{Y_M}),\quad
+ \TV(p,q)=\tfrac12\sum_c|p(c)-q(c)|,
+\]
+\[
+ R_{\mathcal C}=\inf_A\sup_{\mathcal C}L_A,
+ \qquad R_{\mathcal C}^{+}=\sup_{\mathcal C}L_{p^+}.
+\]
+共同算法可读完整历史、公开 $K,M$ 及明确允许的类参数，并可用源独立种子；不读 $\theta,\mu,\pi$、隐藏中心、源族符号参数或再生标签。sup 可随公开参数选不同源，但一条轨迹中不能换源。固定 query、独立测试、随机时间、条件风险、$\E[\TV^2]$ 和 KL 都不是本题。
+
+\textbf{如何读“必要”。} 下界是对每个共同算法，类内都有合法未知源使其困难，不表示每个源都困难，也不把某个充分条件宣称为所有成功预测的逻辑必要条件。$\asymp$ 只表示正常数因子的上下匹配，不是精确数值。
+
+\textbf{证据状态。} AI 辅助、已作内部独立上下文 LLM 数学审查的研究草稿。不是外部同行评审、形式验证、文献首创或投稿认证。完整证明与原独立审查科学正文另附；本 PDF 不代替证明。
+\entry{当前 proofs/、reviews/；历史闭包按 SOURCES.md 逐层定位。}
+\newpage
+\head{初始化层}{平稳性降低难度但不要求快混合}
+\textbf{一般任意初始化。} 不限制合法齐次表及初始 pair 律 $\mu$。继承 MM5 与 L1MAX 的同一实验结论为
+\[
+ 2^{-16}g\le R_{\rm general}\le R_{\rm general}^{+}
+ \le\min\{1,48\sqrt{K^5/n}\}\le48g.
+\]
+一般下界的时钟初始化不能搬到平稳类；它见证的是更大的任意初始化类。上界明确属于原完整历史规则，而非 suffix。
+
+\textbf{平稳初始化。} 只要求 $\mu=\pi$、$\pi P=\pi$，$\pi$ 是任意平稳律，包括多闭类的任意平稳混合；允许零边、零平稳质量、可约与周期。S001 与 S002 给
+\[
+ \frac a{180}\le R_{\rm stat}\le R_{\rm stat}^{+}
+ \le\min\{1,48\sqrt{K^3/n}\}\le48a.
+\]
+新有限窗口占用界为 $\Pr(J<w)\le\min\{1,K^2w/n\}$，$J$ 是实际末行的过去计数。它不把依赖末行条件化成 IID 样本。下界由合法平稳棋盘源和完整反向历史检验实现；甚至可限制到已知均匀 pair 律、行概率在 $[.9/K,1.1/K]$、$P^2\ge.81\Pi$ 的子类。因此常数级快混合不自动降到 IID 维数。
+
+\textbf{距某个平稳律不超过 $\eta$。} 对公开 $0\le\eta\le1$，定义
+\[
+ \mathcal C_\eta=\{(\theta,\mu):\exists\pi,\ \pi P=\pi,
+                   \TV(\mu,\pi)\le\eta\}.
+\]
+平稳律仅是隐藏的存在性见证，不要求唯一。S003 的精确匹配率是
+\[
+ r_\eta=\max\{a,\eta g\},\qquad
+ 2^{-16}r_\eta\le R_\eta\le R_\eta^+\le96r_\eta.
+\]
+更细的上界保留为 $\min\{u_g,u_s+\eta u_g\}$，其中
+$u_s=\min\{1,48\sqrt{K^3/n}\}$、$u_g=\min\{1,48\sqrt{K^5/n}\}$。
+原规则无需读取 $\eta$ 即达到此阶。标准初始律／全路径比较给充分性，平稳源与含非平稳困难成分的合法见证给必要性，组合取最大值而非相加不同源的风险。
+
+这是\textbf{标准比较的紧性推论}，不是新统计方法。$\eta$ 不等于谱隙、密度比、只在平稳支撑上的距离或其他混合描述符；该结论不能未经证明转写给它们。
+\entry{Stage02：S001、S002、S003；继承 L1MAX、MM5、GU 科学接口。}
+\newpage
+\head{精确结构层}{两步重置与三步重置不是同一难度}
+\textbf{两步全状态精确重置。} 存在隐藏平稳律 $\pi$，对每个起点和终点都有 $P^2(s,t)=\pi(t)$。合法 shift 结构使它等价于
+\[
+ \theta_{ab}(c)=p(c)\quad\hbox{对所有 }a,b,c,\qquad \pi=p\otimes p.
+\]
+未知 $p$ 可有零坐标，初始 pair 律仍可任意。$X_3,\ldots,X_{M+2}$ 是 $M$ 个 IID 输出，目标恒为 $p$，并未换成独立 query。S005 给
+\[
+ \frac{i}{32\sqrt6}\le R_{\rm IID}\le R_{\rm pool}^{+}\le\tfrac32i,
+ \qquad B_{\rm pool}^{+}(c)=\frac{T_c+1}{M+K}.
+\]
+这里 $T_c$ 跨全部上下文汇总输出；它不同于原规则
+\[
+ C_s(c)=\sum_{j=0}^{M-1}\mathbf1\{Y_j=s,X_{j+3}=c\},\qquad
+ p_s^+(c)=\frac{C_s(c)+1}{\sum_d C_s(d)+K}.
+\]
+\textbf{原规则的已证分离仅取明确反例序列。} 偶数 $K\ge10$，一半符号概率 $3/(2K)$，另一半为 $1/(2K)$，取真正平稳初始化及 $M=\lfloor K^2/100\rfloor$，则
+\[
+ \E\TV(p^+_{Y_M},p)\ge391/1600>.24,
+ \qquad R_{\rm IID}\le\min\{1,15/\sqrt K\}.
+\]
+故原行式 add-one 不能在全部 $K,M$ 上以常数倍达到 IID minimax；\textbf{并未给出其全参数精确风险公式}。不能用 pooling 的上界替换它。
+
+\textbf{三步全状态精确重置。} 若 $P^3=\Pi$，$\mu$ 任意，S007 证明
+\[
+ a/100000\le R_3\le R_3^+\le80a.
+\]
+下界重新构造合法三坐标零和扰动，满足 $P^3=\Pi$ 而 $P^2\ne\Pi$；不是把已有棋盘族直接假定属于新类。原规则上界保留全部计数。
+
+\textbf{存在某个有限重置指数。} 若每个源存在隐藏有限整数 $q\ge1$ 使全状态 $P^q=\Pi$，S009 的有限维幂零推论给 $P^{K^2}=\Pi$，并有
+\[
+ a/100000\le R_{\rm fin}\le R_{\rm fin}^+\le68a.
+\]
+算法不需知道 $q$ 或 $\pi$。这是标准有限维／统计推论，不是核的完整分类，也不是近似混合锐率。两步的 IID 结构边界不能泛化成“一切快速重置或快速混合都只有 $K$ 维难度”。
+\entry{Stage02：S005 两步结构及分离；S007 三步；S009 有限重置。}
+\newpage
+\head{平稳邻域层}{近 IID 插值与定性正性}
+\textbf{平稳近 IID 半径。} 本页始终有 $\mu=\pi$。公开 $\rho\in[0,1]$，且存在隐藏概率向量 $p$ 满足
+\[
+ \max_{s\in A^2}\TV(\theta_s,p)\le\rho.
+\]
+这是所有行的共同中心半径，不是仅已访问行或平稳加权平均。S006 的统一率函数为
+\[
+ F(z)=\max\{i,\min\{z,a\}\},\qquad
+ F(\rho)/180\le R_{\rm near}\le48F(\rho).
+\]
+\textbf{平稳两步 minorization。} 对全部 pair $s,t$ 要求
+\[
+ P^2(s,t)\ge\beta\pi(t),\quad \beta\in[0,1],\qquad\mu=\pi.
+\]
+同一结论取 $z=1-\beta$：$F(1-\beta)/180\le R_{\rm D2,stat}\le48F(1-\beta)$。$\rho$ 和 $\beta$ 是公开界，不是隐藏源真实最优系数。常数在两端点保持统一。
+
+\textbf{达到者是公开选择器。} 比较
+\[
+ U_{\rm stat}=\min\{1,48\sqrt{K^3/n}\},\qquad
+ U_{\rm pool}(z)=\min\{1,\tfrac12\sqrt{K/M}+2z\}.
+\]
+较小者选择原 add-one 或跨行 pooled empirical，平手固定选 pooling。不根据未知真风险选择。原规则单独只有其适用的上界，不因此自动达到整个 $F$ 插值。
+
+$z$ 大时保留平稳二阶难度；$i<z<a$ 时邻域半径本身控制过渡；$z\le i$ 时到 IID 阶。\textbf{这是平稳类的匹配结论}，不能转给任意 $\mu$，也不能把两个邻域或多个描述符的交集直接套成一个未经证明的联合公式。
+
+\textbf{严格正但没有统一正下界。} S008 对每个固定有限 $K,M$、每个共同随机算法 $A$ 分别证明
+\[
+ \sup_{\text{任意 }\mu,\ \theta_{ab}(c)>0}L_A
+  =\sup_{\text{任意 }\mu,\ \theta_{ab}(c)\ge0}L_A,
+\]
+\[
+ \sup_{\text{平稳},\ \theta_{ab}(c)>0}L_A
+  =\sup_{\text{平稳},\ \theta_{ab}(c)\ge0}L_A.
+\]
+这些等式也可取算法 infimum，并适用于固定原规则。它们是 supremum 相等，不保证正子类达到最坏值。正性只针对合法符号转移，pair 矩阵仍有结构零。任意初始化和平稳初始化用不同逼近构造，不能自动合并为 $\eta$ 邻域的同样等式。
+\entry{Stage02：S006 的两个全参数平稳插值；S008 精确逐算法等式。}
+\newpage
+\head{任意初始化弱混合层}{统一下界账本与旧证书的范围}
+本页及后两页使用 $D_K(2,\beta)$：$\mu$ 任意，存在隐藏 $\pi P=\pi$，对\textbf{每个}起点和终点满足 $P^2(s,t)\ge\beta\pi(t)$。允许稀疏 $\pi$、零边及 $\mu$ 与 $\pi$ 奇异。记 $\delta=1-\beta$，并令
+\[
+ h_*=\min\{1,\sqrt{K^4/n}\},\quad F=\max\{i,\min\{\delta,a\}\},
+ \qquad D=\delta^n g,\quad T=\delta^{M/2}h_*.
+\]
+\textbf{S016 全参数下界。} 全部 $K\ge2,M\ge1,\beta\in[0,1]$ 有
+\[
+ \R\ge\max\{F/180,2^{-16}D,2^{-17}T\}
+       \ge2^{-17}\max\{F,D,T\}.
+\]
+$F$ 来自平稳子类，$D$ 来自吸收时钟，$T$ 来自星形时钟。不同见证的风险取最大值，不相加。新贡献是只在 $T>F$ 区域吸收星形\textbf{精确}计数的有限相位代价；并未丢弃指数内误差或额外目标因子。$\beta=0$ 时 $D=g,T=h_*$；$\beta=1$ 时 $D=T=0,F=i$，所有幂指数正，直接定义端点。
+
+\textbf{继承 S011 的算法分开证书。} $U=\min\{U_+,U_{\rm suf},U_{\rm pool}\}$ 是公开选择器上界，只有 $U_+$ 属于原完整历史规则；$U_{\rm suf}$ 属于丢弃确定前缀后的另一个算法。完整公式在 S016 证明第 7 节保留；$h_b=\delta^{\lfloor b/2\rfloor}$，在 $\beta=1$ 时另定义 $b<2$ 为 1、$b\ge2$ 为 0，避免 $0^0$。上述下界与 $U$ \textbf{没有全域匹配结论}，$\beta=0$ 的一般率与 $\beta=1$ 的 pooled IID 率仍独立保留。
+
+\textbf{S017 的历史固定射线结论。} 固定 $3<\rho\le4,\gamma>0$，令
+\[
+ M=\lceil K^\rho\rceil,\quad\beta=\gamma\ln K/M,\quad K\to\infty.
+\]
+非临界 $\gamma\ne\rho-3$ 的共同 minimax 阶为
+$K^{-\min\{\gamma,\rho-3\}/2}$；原证明上界属于公共选择器。当 $\gamma=\rho-3$ 时，它证明的是\textbf{旧 S011 数值证书}
+\[
+ U=\Theta_\rho\!\left(a\sqrt{\ln K/\ln\ln K}\right),\qquad a/180\le\R\le U.
+\]
+这不是估计器风险的对数下界。S017 当时的“真实临界率未定”是历史叙述；S018 的新分析闭合精确临界序列，S019 的完整有限域与原规则结论见第 7 页。旧 $U$ 的数值结论仍然正确。固定射线的原渐近常数不被说成临界附近统一常数。
+\entry{S016 四个局部单位；S017 六个局部单位；Stage03 的 S011/S012 与 Stage04 的 S015。}
+\newpage
+\head{原规则的新分析}{再生末行计数消除精确临界间隙}
+\textbf{S018 不是把 suffix 上界改名。} 对 $0<\beta<1$，原 add-one 仍计入全部 $M$ 次 departure。令 $r=\lfloor M/2\rfloor$，任意分析容差 $0<\epsilon<1$，$B_\epsilon=K+\ln(K^2M/\epsilon)$，则
+\[
+ \Rp\le\min\!\left\{1,\epsilon+\delta^r+
+ \sum_{j=1}^{r}\beta\delta^{j-1}
+       \min\!\left\{1,4K\sqrt{\frac{B_\epsilon}{M-2j+1}}\right\}\right\}.
+\]
+$\epsilon$ 只是分析参数，不输入算法；所有短后缀和无成功原子都保留。$M=1$ 时和为空，界为 1。分母在偶数 $M$ 最后为 1，在奇数 $M$ 最后为 2，没有删去临末端再生。
+
+\textbf{三条承重桥。}
+\begin{itemize}
+\item 在原源的独立行堆栈上，对确定行、确定长度及符号向量做有限 MGF／联合界，先得到无条件事件，再在事件上选择真实相关末行。因此 $\E L\le\epsilon+\E f(J)$，取\[f(J)=\min\{1,2\sqrt{B_\epsilon/(J+1)}\}.\]失败概率不按再生标签重新条件化。
+\item 在另一辅助空间分解两步核 $P^2=\beta\Pi+\delta Q_2$。从 $(a,b)$ 到 $(c,d)$ 的唯一合法中点是 $(b,c)$；它被完整保留。只条件于首次成功标签 $\tau=j$，后续 pair 路径边缘为真正平稳律。\textbf{不能}再条件于已观察中点或完整前缀。
+\item 全历史末行计数逐路径不小于同一末端的 suffix 计数。平稳占用尾界经严格整数阈值和 layer cake 给 $\E_\pi f(J_L)\le\min\{1,4K\sqrt{B_\epsilon/(L+1)}\}$，$L=0$ 单独处理。两个辅助空间通过同一原历史分布连接，不假定二者标签独立。
+\end{itemize}
+\textbf{精确临界序列。} 在 $M=K^4,\beta=\ln K/K^4$，每个整数 $K\ge2$ 都有
+\[
+ a=\sqrt{K^3/(K^4+1)},\qquad
+ a/180\le\R\le\Rp\le\min\{1,128a\}.
+\]
+取 $\epsilon=1/K$ 后 $B_\epsilon\le4K$；有限常数、奇偶性和零计数均在原证明内。这里消除了\textbf{真实风险}的临界对数间隙，而非改变旧 $U$ 的优化结果。
+
+符号级 canonical refresh 只刷新一个符号，不等于 pair 平稳重置。S014 的即时刷新障碍与 S015 的“无害符号刷新”反例仍然有效；本分析不把那些已失败的推理重新作为前提。
+\entry{S018 Lemmas 1--3、Theorems 4--5；其独立审查逐单位保留。}
+\newpage
+\head{S019 当前有限域匹配}{统计采样项与初始化残余项分开}
+\textbf{准确域。} 对每个整数 $K\ge2$、$1\le M\le K^4$ 及公开 $0\le\beta\le1/2$，在同一任意初始化 $D_K(2,\beta)$ 类中，定义
+\[
+ a=\min\{1,\sqrt{K^3/(M+1)}\},\qquad
+ v=(1-\beta)^{M/2},\qquad H=\max\{a,v\}.
+\]
+S019 的已接纳有限定理为
+\[
+ \boxed{\quad 2^{-18}H\le\R\le\Rp\le\min\{1,128H\}.\quad}
+\]
+上下常数在整个闭域统一，均不依赖源、初始律或 $K,M,\beta$。\textbf{达到者就是原完整历史 add-one}，无需 burn-in、再生标签、$\pi$ 或 $\beta$ 输入；公开 $\beta$ 只定义 minimax 的类。此事实不扩张成域外的未知类最优适应定理。
+
+\textbf{两项为何同时出现。} $a$ 是保留二阶未知行结构的统计采样项；$v$ 是任意初始化未被充分消除的残余项。有限域内 S016 的 $F\ge a/2$、$h_*\ge\sqrt{16/17}>1/2$ 给 $H$ 下界，S018 的几何计数和分为早／晚成功及无成功三部分给原规则上界。晚成功的短 suffix 仍被保留，不能统一假装为长平稳样本。
+
+这是\textbf{既有精确接口的标准推论}，不另造困难源或统计方法。其新价值在于把原本仅属公开选择器的匹配提升为这个完整有限域内原规则本身的匹配。
+
+\textbf{小样本与端点。} $\beta=0$ 时 $v=H=1$；一般类基线实际仍保留更强下界 $2^{-16}$。当 $M+1\le K^3$ 时 $a=H=1$，先由平凡 cap 处理，涵盖 $M=1$。$\beta=1/2$、$M=K^4$ 均包含，且奇偶 $M$ 已显式控制。这里没有 $\beta=1$，所以不与 IID 更小的 $i$ 冲突。
+
+\textbf{不要改写指数。} 定理中的 $v$ 是精确 $(1-\beta)^{M/2}$，不能在整个参数域统一替换成 $e^{-\beta M/2}$。只有在固定射线上支付 $M\beta^2$ 的余项后，S019 Corollary 4 才给
+\[
+ \begin{gathered}
+ M=\lceil K^\rho\rceil,\quad\beta=\gamma\ln K/M,\quad
+ 3<\rho\le4,\ \gamma>0\text{ 固定}:\\
+ \R\asymp_{\rho,\gamma}\Rp
+ \asymp_{\rho,\gamma}K^{-\min\{\rho-3,\gamma\}/2}.
+ \end{gathered}
+\]
+包含临界 $\gamma=\rho-3$，无额外对数因子；射线的最终阈值仍可依赖固定参数。这更新 Stage04 的原规则开放叙述及 S017 当时的真实临界间隙，不改变旧证书 $U$ 的数值数学。
+\entry{S019 Lemmas 1--2、Theorem 3、Corollary 4；S016 与 S018 是承重前驱。}
+\newpage
+\head{样本代价}{把率读成预算而不是精确风险阈值}
+以下只反解已接纳的率函数；这是\textbf{常数因子量级}的样本解释，不是算法计算量、训练代价、神经预算或精确 $R\le\tau$ 的充要判据。$M$ 是 departure 数，实际可见符号数是 $N=M+2$。令目标率阈值 $0<\tau<1$。
+
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\linewidth}{@{}l X l@{}}
+\toprule
+源类 & 已匹配尺度 & 尺度不超过 $\tau$ 的样本表达\\
+\midrule
+一般任意初始化 & $g$ & $n\ge K^5/\tau^2$\\
+平稳初始化 & $a$ & $n\ge K^3/\tau^2$\\
+IID／两步重置 & $i$ & $n\ge K/\tau^2$\\
+三步／有限重置 & $a$ & $n\ge K^3/\tau^2$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+对应上界算法依次为原规则、原规则、pooling、原规则。若定理给 $c r\le R\le C r$，则足够条件应将这里的 $\tau$ 换为 $\tau/C$；必要条件来自 $r\le\tau/c$，且仍需保留 cap 及其适用范围。不要把这张量级表当作 sharp 常数预算。
+
+\textbf{$\eta$ 初始化邻域的 cap 不能丢。} 匹配尺度 $r_\eta=\max\{a,\eta g\}$ 的要求同时包含 $a\le\tau$ 与 $\eta g\le\tau$。第一项给 $n\ge K^3/\tau^2$。第二项在 $\eta\le\tau$ 时自动满足；只有 $\eta>\tau$ 时才还要求 $n\ge\eta^2K^5/\tau^2$。因而不能在小 $\eta$、尚未越过 $g$ 的截断区时一律套用未截断公式。风险预算仍须按 S003 的上下常数缩放阈值。
+
+\textbf{有限弱混合域的精确尺度代数。} 仍限定 $M\le K^4$、$0<\beta\le1/2$，$\delta=1-\beta$。对 $0<\tau<1$，
+\[
+ H\le\tau\quad\Longleftrightarrow\quad
+ n\ge K^3/\tau^2\quad\hbox{且}\quad
+ M\ln(1/\delta)\ge2\ln(1/\tau).
+\]
+第一条压低统计采样项，第二条压低初始化残余；必须同时满足，且不得超出定理域后继续使用。$\beta=0$ 时 $H=1$，对 $\tau<1$ 没有这样的尺度预算。上述 iff 仅为 $H$ 的代数，不是 $\R\le\tau$ 的精确 iff；后者上下界中的 $2^{-18}$ 与 128 要缩放阈值。特别不能把精确 $\ln(1/\delta)$ 静默换为 $\beta$ 得到全域精确样本式。
+
+\textbf{必要性所说的对象。} 样本下界对整个未知源类的共同算法成立，不否定某个容易源、已知源或有额外信息时可能零风险。下界见证保留全部观察，因此不能通过“只让算法看到较少样本”来制造必要性。现有结论也没有给未知类参数自适应选择的统一复杂度定理。
+\entry{S003 的 capped 过渡；S005/S007/S009；S019 仅在规定有限域内。}
+\newpage
+\head{先例与未越过的边界}{当前综合优先于归档中的历史叙述}
+\textbf{结果的年代。} Stage02 给平稳、$\eta$、IID 与算法分离、近 IID、三步／有限重置及正性。Stage03 给任意初始化弱混合证书与时钟／状态 TV 边界。Stage04 的 S015 闭合 $M=K^4,\beta=\ln K/(4K^4)$ 的 $\Theta(K^{-1/8})$ 窗口。S016 统一下包络，S017 描绘固定射线及旧临界证书，S018 则闭合精确 $\gamma=1$ 的真实原规则风险。S019 继而闭合第 7 页的完整有限域及全部固定临界射线。当前范围以外层最新陈述为准；旧证明与旧 PDF 原字节不改写。
+
+\textbf{已知工具与真正新增的部分。}
+\begin{itemize}
+\item 一般 $g$ 基线、确定前缀行堆栈和最大值方法继承 GU、L1MAX、MM5；不是本阶段新发明。平稳窗口占用、合法平稳反向完整历史下界是 S001/S002 的本支线工作。
+\item $\eta$ 比较、有限 reset 的维数推论、S016 有限吸收、S017 标量优化和有界历史域推论均明确按标准推论／组合归类，不以整理本身冒称新方法。
+\item 真正需要独立证明的结构包括两步 IID 边界及原算法反例、三步合法族、近 IID 平稳插值、正性逼近、星形完整数据下界，以及 S018 原历史计数与两步 pair 分裂的精确桥。各完整单元与独立审查均可读。
+\end{itemize}
+\textbf{外部先例口径保持有限。} 已继承的来源审读讨论 Han--Jana--Wu，\textsf{Optimal Prediction of Markov Chains With and Without Spectral Gap}，IEEE TIT 69(6), 3920--3959 (2023)。Theorem 22 的高阶平稳实验相关，但其 KL／suffix 平均规则不能替代本题原规则期望 TV 结论；其 $\E[\TV^2]$ 下界也不能反向开方成 $\E[\TV]$ 下界。完整页码、损失方向及未完成文献核验见 Stage02 SOURCES.md。本次没有新检索，也不声称文献穷尽或优先权。
+
+\textbf{仍未宣称的结论。} 任意初始化全部 $(K,M,\beta)$ 的联合锐率；把 S019 的原规则 $H$ 公式推广到其域外；IID 原规则的全参数最优式；一般 $q$ 的近似混合分类；未知参数统一自适应；多邻域交集；将定性正性等式扩展到 $\eta$ 邻域。状态 TV 困难不是统计困难，已知单族算法也不是全类算法。
+
+\textbf{域外并非全空白。} S011 已证明当 $\delta\le a$ 或半窗条件 $h_{\lfloor M/2\rfloor}\le1/(M+1)$ 成立时，共同 minimax 在 $F/180$ 与 $\min\{1,81F\}$ 之间；特别覆盖所有 $\beta\ge1/2$。半窗条件还给原规则 $81a$ 上界，但近 IID 的 $F$ 改善不能统一转给原规则。较长历史 $M>K^4$ 的弱混合锐率可作为另立合同的后续方向，不是本阶段缺少的数学前提。
+
+原全路径实现误差接口可作为继承接口引用，但本包不产生网络、codec、故障核、训练可达性或硬件结论，也不声称计算资源最优。当前已选条件层、算法比较和临界续题已形成完整阶段结果；这不表示所有有价值研究穷尽、全联合率闭合或调度已暂停。
+\entry{SOURCES.md 给嵌套归档路径；BOUNDARIES.md 给条件及算法索引；COPY\_MAP.json 绑定科学副本。}
+\par\smallskip\noindent{\small\ttfamily END\_DOT\_STAGE\_OUTPUT}\par
+\end{document}

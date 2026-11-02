@@ -1,9 +1,58 @@
 {
-  "status": "PARTIAL_CORE_DOCUMENTS_PUBLICATION",
-  "complete_source_closure_published": false,
-  "binary_paths": 33,
-  "target_complete_initial_tree": "5d3926035aa4e9c491a90184c3b3e1c44270aa70",
-  "scope": "Audited project PDFs/DOCX plus concise Chinese navigation. Complete frozen initial source snapshot remains pending; later research is separate.",
-  "archive_sha256": "89d434c7b0d9fe81d6e3b2f47cb64ac6c019b8a3abdd8678910f2a814e451e38",
-  "no_new_license_granted": true
+  "status": "LOCAL_PUBLIC_EXPORT_VERIFIED_BEFORE_ATOMIC_PUBLICATION",
+  "recorded_utc": "2026-11-02T12:29:17.898328+00:00",
+  "repository": "https://github.com/AlexenderSokolov/transformer-icml",
+  "branch": "main",
+  "scope": {
+    "frozen_stage8_units": [
+      "SC001",
+      "SC002",
+      "SC003",
+      "BT001",
+      "BT002",
+      "EP001"
+    ],
+    "post_stage8_accepted_units": [
+      "JP001",
+      "RE001",
+      "AB001",
+      "AB002"
+    ],
+    "later_units_included": false
+  },
+  "new_checks": {
+    "original_stage8_archive_sha256": "89d434c7b0d9fe81d6e3b2f47cb64ac6c019b8a3abdd8678910f2a814e451e38",
+    "original_archive_bytes": 27369241,
+    "original_package_integrity": "PASS: 1,138 restored paths and 535 structured bindings",
+    "selected_scientific_replay": {
+      "current_passes": 11,
+      "expected_historical_failures": 1,
+      "unexpected_failures": 0,
+      "binding_hash_overrides": 0,
+      "record": "PUBLIC_SCIENTIFIC_REPLAY.json"
+    },
+    "binary_privacy_audit": {
+      "pdf_files": 24,
+      "docx_files": 9,
+      "record": "PUBLIC_BINARY_AUDIT.json"
+    },
+    "strict_inventory_regression_tests": 7,
+    "regression_test_scope": "Exact bytes, missing/extra files, path safety, symlinks and duplicate entries; not mathematical validity."
+  },
+  "inherited_not_claimed_reexecuted": {
+    "full_91_current_script_replay": false,
+    "all_36_document_pages_rebuilt": false,
+    "fresh_visual_layout_review": false
+  },
+  "privacy_boundary": "Original user prompts, personal routing, credentials, private orchestration state and unrelated material are not public payloads. Source and replacement hashes are retained without redacted values.",
+  "repository_structure": "Expanded browsable scientific sources and dated Chinese navigation, not a recursive ZIP dump. Exact historical package verifiers retain their original structural assumptions and are not the public-root entrypoint.",
+  "license_boundary": "No new license is assigned to third-party material. Public literature is linked rather than redistributed as full texts.",
+  "remote_commit_binding": "This receipt is included in the data commit and cannot contain that same commit hash without self-reference. The containing Git commit and separately verified remote tree identify the snapshot.",
+  "limitations": [
+    "Independent LLM review is not formal verification, external peer review, training evidence or a novelty certificate.",
+    "BT001 stronger transport premise remains open; BT002 uses its independent entropy route.",
+    "EP001 retains the hidden true target under changed endpoint permissions.",
+    "AB001 is joint k/beta blindness impossibility; supplied-beta all-budget adaptation remains open.",
+    "No missing old BT002 C=4 snapshot or genuine old scalar diff has been reconstructed."
+  ]
 }

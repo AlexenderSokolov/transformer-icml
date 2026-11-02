@@ -1,0 +1,27 @@
+{
+  "fact_id": "ba0c003ce6db282a",
+  "claim": "# RATE-K-LOW：原始 add-one 的一般 K 下界及 uniform 源精确常数\n\n本独立义务仅针对指定原始 add-one 估计器及其同轨迹 actual 末行 TV 风险；不对预测器取 infimum。既有 G/U、SRC、RATE-TV、RATE-K3 均不重开，也不添加逆向前提。Counter 报告是候选来源，不能替代正常独立网关。\n\n对每个整数 K>=2、M>=1，N=M+2，A={0,...,K-1}。theta 是任意含零边的齐次二阶表，mu 是任意初始对律；每条轨迹内部保持齐次。令\n\n    Y_i=(X_(i+1),X_(i+2)), 0<=i<=M,\n    C_s,c=sum_(i=0)^(M-1)1{Y_i=s,X_(i+3)=c},\n    n_s=sum_c C_s,c, J=n_(Y_M),\n    p_s,c^+=(C_s,c+1)/(n_s+K),\n    R_K^+(M)=sup_(theta,mu) E TV(p^+_(Y_M),theta_(Y_M)).\n\nsup 可以随 (K,M) 改选源。对所有 theta_s=u_K=(1/K,...,1/K)、mu=u_K⊗u_K 的 uniform iid 源，记相应风险为 r_K(M)。\n\n## A. 固定 K 的指定源精确极限\n\n每个固定 K>=2 有\n\n    lim_(M→∞) sqrt(M) r_K(M)=K sqrt(K-1)/sqrt(2pi).     (A)\n\n这里先固定 K，再令 M 趋于无穷；没有关于 K 增长的一致渐近余项断言。完整证明必须处理 overlapping triples 的真实方差、随机分母、实际末对选择及绝对值期望收敛。不能在给定 J 或 Y_M 后称原完整计数为 iid。\n\n可使用分析侧删去最后两个 departures 的 bulk：其使用 X_1^M，与末对 (X_(M+1),X_(M+2)) 独立。必须证明回到完整计数的误差；不把原估计器换成 bulk 估计器。所用固定依赖长度 CLT 必须完整列假设和 primary 定位，或在正文自证适用版本。\n\n## B. 全有限参数的 uniform 源界\n\n对全部 K>=2、M>=2K^3+2，L=M-2，有\n\n    r_K(M)>=max{0,K sqrt(K-1)/(648 sqrt(L))-4/L}.       (B)\n\n特别，对全部 M>=2^22 K^3，\n\n    r_K(M)>=(1/2048)sqrt(K^3/M).                      (B-dense)\n\n这些有限界必须以有限矩和相关分母的准确控制证明，不从 A 的固定 K 极限推出。当 M=1 时另有精确式\n\n    r_K(1)=(K-1)/[K^3(K+1)].                         (small-M)\n\n因此 uniform 单源不提供覆盖全部 (K,M) 的饱和型下界。\n\n## C. 原始 add-one 的 class supremum 下界\n\n全部 K>=2、M>=1 有\n\n    R_K^+(M)>=2^(-24) min{1,sqrt(K^3/M)}.              (C)\n\n允许在不同参数区间选不同合法见证。一个明确的低样本见证为 K 个字母上的长度 K² 的 cyclic pair enumeration：每个 pair 恰出现一次，其确定性转移均满足 (a,b)->(b,c)。从 cycle 的固定起点初始化，有 J=floor(M/K²) 和实际风险\n\n    (K-1)/[floor(M/K²)+K].                            (cycle)\n\n必须证明该 cycle 对每个 K 存在、转移表无冲突及 actual count 精确式。在 M<2^22 K³ 使用此源，在其余参数区间使用 B-dense 的 uniform 源；使用 supremum 合法取较大值，不相加不同源风险。确定性源的零边、周期和初始律均在原域内。\n\n## D. 同一个原 Pi 的 h_N 转移及范围\n\n仅用 SRC-Pi Fact fef8372728290b45 的实际全路径 I。原 h_N=ceil(log2(128(K+1)(M+3)^3))、e_N=(M+3)^(-2) 下，每个源的 Pi 与 add-one actual 风险之差绝对值至多 e_N。因此 uniform 源的 Pi 风险有 A 的同一固定 K 极限，并有\n\n    sup_(theta,mu) R_act(Pi_(K,M+2,h_N))\n        >=max{0,2^(-24)min{1,sqrt(K^3/M)}-e_N}.        (Pi-low)\n\n不把该精确常数转移到最低合法精度；不推出内部位宽、深度或完整资源必要性。A–C 的统计推导不需要 RATE-K3 上界作前提；SRC 是 D 的唯一当前项目 Fact 前驱。外部 CLT 的明确适用性须经本次证明检查，Counter 的报告身份不是 Fact。\n\n本合取是指定估计器的 lower。uniform 常值预测器在 uniform 源上风险为零，知道指定 cycle 的预测器也可零误差；这些见证没有给任意共同算法的 minimax K 下界。若与已接纳 K3 upper 比较，K 的 3/2 与 3 指数仍有差距，不称 sharp K，不从维数猜补最优性。标准 CLT、矩插值、Euler cycle 不作首创宣称；v10 不因本义务而结束。",
+  "evidence": "verdict: correct",
+  "glossary": {},
+  "links": {
+    "attempt_id": "native-abcd4ca0739078953d092e2ebb474fa85c9e4066a652f1beb0d2723a9e0060e2",
+    "predecessors": [
+      "fef8372728290b45"
+    ],
+    "source_id": null
+  },
+  "status": "open",
+  "timestamp_utc": "2026-10-27T13:39:19.920964+00:00",
+  "transport_status": "ok",
+  "verdict": "correct",
+  "verifiable": false,
+  "verification_report": {
+    "critical_errors": [],
+    "gaps": [],
+    "summary": "Reviewed the single frozen RATE-K-LOW v1 submission dated 2026-10-27, sequentially through §§0–9, against contract e6b7592e781948d00eb2a2effb80d8e3ef77e480f8d70f960286bc33faf730af. All conclusions A–D pass, including B-dense, small-M, cycle and Pi-low. Checked the bulk indices and independence, the 4/L restoration error with both tail-match probabilities, the martingale orthogonality giving the actual overlapping-triple variance, denominator variance, fixed-K CLT and absolute-moment convergence, finite fourth-moment and correlated-denominator inequalities, all numerical thresholds, the Euler construction and exact actual-row count, and the legal-precision all-path Pi transfer. Janson's Theorem 1.1 and the dependence definitions match the cited primary [arXiv:2108.12263v1, pages 1 and 3](https://arxiv.org/pdf/2108.12263v1), and every hypothesis is discharged. The required arXiv theorem-search call was attempted first but unavailable under the runtime approval policy; built-in web search and direct primary retrieval resolved the reference check. Read SRC-Pi fef8372728290b45 from the project fact graph: its statement supplies exactly the interface used in §8 and has no inherited P3 defect. Its admitted implementation result was inherited, not re-proved. The combined target packet is self-contained; no P1, P3, P5, P6 or chain violation was found. The conclusions remain about the specified estimator and precision, without a minimax, sharp-K or resource-necessity claim. This is one cold-context LLM admission judgment, not formal certification; no server-internal attestation or cross-model independence is claimed. Auxiliary report identities and administrative provenance assertions were not used as mathematical premises. This is an LLM review, not formal verification or external peer review; cross-model independence is not established."
+  },
+  "write_error": null,
+  "source_record_id": "b26c40a2615424e3",
+  "source_canonical_json_sha256": "f19387fa368868b78ed6febabcdfb0e44d96d033a65d7748e98105ed003d8ad7",
+  "export_note": "Scientific claim, glossary, dependencies and complete mathematical report retained. Runtime author/attempt/routing metadata omitted; this JSON is a declared scientific export, not the original serialized record."
+}

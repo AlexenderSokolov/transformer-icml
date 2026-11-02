@@ -1,0 +1,134 @@
+{
+  "checked_at": "2026-10-24T22:29:04.749929+00:00",
+  "root_status": "OPEN",
+  "obligation": {
+    "obligation_id": "7920eabcfdc46f9f423c5d0b4831cf856320e56ad1fb88f4f70d1f30df2982e5",
+    "contract_id": "22e80d3d620c36cfc0bbd297101a5efabe634d7fd696b4cae200963af52af02a",
+    "exact_statement": "Prove or correct the four-statistical-head causal construction for all K>=2,N>=3 under D1-D5, including two paid singleton-mask predecessor/endpoint heads, query-independent values, the initial flag and actual endpoint correction, recovered normalizers, and no free pair/triple table. Give a specified finite-precision neural implementation of scores/softmax, selection, multiplication/division, clipping and add-one exact-simplex finite output, complete R and parameter/working-bit/operation bounds distinguishing O(K) alphabetic interface from full neural resources. Prove a uniform theta-independent implementation schedule and max-context almost-sure consistency for every fixed generally nonuniform stationary strictly positive D1 law, with actual terminal expected and conditional-terminal consequences. Independently check/correct the checkpoint's pathwise 35eta+6zeta joint-frequency and smoothed-TV bounds. This is C1 plus its deterministic error prerequisite, not closure of C2-C4.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the exact current stage scope; theta is unknown and no parameter depends on the test law.",
+        "Stationary strictly positive second-order sources; uniform finite-N claims explicitly declare their additional class bounds.",
+        "All side information, positions, endpoint access, finite arithmetic, residuals and program/parameter storage are charged.",
+        "Binary product kernels map to the earlier sign-B kernel as inD2; categorical extension and complete-contextA stay distinct.",
+        "Copied prior material is provenance and must undergo this project native evidence path when used as an admitted premise."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers>=2",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "D3-D5 causal simplex family indexed byN andaccuracy, with theta-independent accuracy schedule",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "stationarily initialized strictly positive second-order tables",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers>=3",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers>=2; N integers>=3; theta asD1; proposed gamma=kappa=1, lambda1=1,lambda2=2, all fixed independent ofN andtheta; comparatorA fixed beta>0 subject to the same declared score-range budget; epsilon>0 and alpha in(0,1); finite resources asD5; any enlarged coefficient/error/source domain must be explicitly proved.",
+      "definitions_hash": "67efbc8a85f90a92300e57ccca51716ec7e6481cb8c84f9705782ed7f31c681d"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "15df56a560e38b8bb7fc84382d374a1e31298a0463efdbde0ab5e20f044291f3"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": {
+    "artifact_id": "15df56a560e38b8bb7fc84382d374a1e31298a0463efdbde0ab5e20f044291f3",
+    "content_hash": "b7da05fabbbee7795400e05b215c3ced69e9f2132280a7ab964ad514775d4e61",
+    "producer": "fact_submit:ba39220e4df14fcb",
+    "contract_id": "22e80d3d620c36cfc0bbd297101a5efabe634d7fd696b4cae200963af52af02a",
+    "evidence_kind": "LLM_CHECKED_PROOF",
+    "exact_claim": "Prove or correct the four-statistical-head causal construction for all K>=2,N>=3 under D1-D5, including two paid singleton-mask predecessor/endpoint heads, query-independent values, the initial flag and actual endpoint correction, recovered normalizers, and no free pair/triple table. Give a specified finite-precision neural implementation of scores/softmax, selection, multiplication/division, clipping and add-one exact-simplex finite output, complete R and parameter/working-bit/operation bounds distinguishing O(K) alphabetic interface from full neural resources. Prove a uniform theta-independent implementation schedule and max-context almost-sure consistency for every fixed generally nonuniform stationary strictly positive D1 law, with actual terminal expected and conditional-terminal consequences. Independently check/correct the checkpoint's pathwise 35eta+6zeta joint-frequency and smoothed-TV bounds. This is C1 plus its deterministic error prerequisite, not closure of C2-C4.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the exact current stage scope; theta is unknown and no parameter depends on the test law.",
+        "Stationary strictly positive second-order sources; uniform finite-N claims explicitly declare their additional class bounds.",
+        "All side information, positions, endpoint access, finite arithmetic, residuals and program/parameter storage are charged.",
+        "Binary product kernels map to the earlier sign-B kernel as inD2; categorical extension and complete-contextA stay distinct.",
+        "Copied prior material is provenance and must undergo this project native evidence path when used as an admitted premise."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers>=2",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "D3-D5 causal simplex family indexed byN andaccuracy, with theta-independent accuracy schedule",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "stationarily initialized strictly positive second-order tables",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers>=3",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers>=2; N integers>=3; theta asD1; proposed gamma=kappa=1, lambda1=1,lambda2=2, all fixed independent ofN andtheta; comparatorA fixed beta>0 subject to the same declared score-range budget; epsilon>0 and alpha in(0,1); finite resources asD5; any enlarged coefficient/error/source domain must be explicitly proved.",
+      "definitions_hash": "67efbc8a85f90a92300e57ccca51716ec7e6481cb8c84f9705782ed7f31c681d"
+    },
+    "input_hashes": [
+      "b7da05fabbbee7795400e05b215c3ced69e9f2132280a7ab964ad514775d4e61"
+    ],
+    "environment_hash": "ef4df9c79766ed862d44595315a497ac75f76b2ee3b1f00217088dd7690adeae",
+    "checker_id": "fact_submit",
+    "checker_version": "1",
+    "checker_result": "PASS",
+    "created_at": "2026-10-24T22:09:56Z",
+    "validity": "VALID"
+  },
+  "admission": {
+    "record_id": "ba39220e4df14fcb",
+    "provenance": "fact_submit",
+    "transport_status": "ok",
+    "verdict": "correct",
+    "fact_id": "b2f4d10fa0a69e00",
+    "exact_claim": "Prove or correct the four-statistical-head causal construction for all K>=2,N>=3 under D1-D5, including two paid singleton-mask predecessor/endpoint heads, query-independent values, the initial flag and actual endpoint correction, recovered normalizers, and no free pair/triple table. Give a specified finite-precision neural implementation of scores/softmax, selection, multiplication/division, clipping and add-one exact-simplex finite output, complete R and parameter/working-bit/operation bounds distinguishing O(K) alphabetic interface from full neural resources. Prove a uniform theta-independent implementation schedule and max-context almost-sure consistency for every fixed generally nonuniform stationary strictly positive D1 law, with actual terminal expected and conditional-terminal consequences. Independently check/correct the checkpoint's pathwise 35eta+6zeta joint-frequency and smoothed-TV bounds. This is C1 plus its deterministic error prerequisite, not closure of C2-C4.",
+    "write_error": null,
+    "accepted": true,
+    "reasons": []
+  },
+  "fact_id": "b2f4d10fa0a69e00",
+  "fact_sha256": "b7da05fabbbee7795400e05b215c3ced69e9f2132280a7ab964ad514775d4e61",
+  "proof_sha256": "36260d168f17b9da129179070a70c5e87019a45d98c60f1c343a9e1c5e60287b",
+  "exact_claim_matches": true,
+  "note": "LLM checked C1 realization only; whole root remains open."
+}

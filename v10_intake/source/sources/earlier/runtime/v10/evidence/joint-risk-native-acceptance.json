@@ -1,0 +1,208 @@
+{
+  "obligation": {
+    "obligation_id": "921ed4dbe276321559d9c98d44259516f1ab38c7d20359913ee4240928c15fa8",
+    "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+    "exact_statement": "For every K>=2, fixed beta>0 and fixed D1 theta, extend the admitted causal Route A family with reference P_(N,s)=(A_N(s,.)+lambda_N v0)/(u_s+lambda_N), lambda_N=1/(N-2), into an explicit general-D1 finite-history TV upper theorem with a theta-independent parameter/accuracy schedule. Derive a simultaneous concentration event for all K^3 legal empirical transition frequencies, keeping structural zeros and explicit dependence on eta_theta=min p_theta, pi_s, N and failure probability. On this single path event, combine sampling, smoothing, actual finite frontend/correction errors, and declared located perturbations without treating q,r,u sampling fluctuations independently or asserting a universal u^{-2} gain. Declare the full visible representation and all copies. Include actual terminal-query conditional risk and correctly stationary-weighted actual average risk, without assuming query/history independence. Give explicit deterministic bounds mapping bounded errors in the two charged local copied symbol blocks, Q/K scores, post-aggregation q/r/mu and query-context residual into the implemented frequency selector and probability output; keep discrete masks/length/type fixed unless explicitly analyzed. Account for finite rational input caps at every perturbed location and preserve an exact simplex output. Prove the required uniform numerical-softmax estimate on the declared perturbed score interval, either within the admitted backend or via an explicitly charged legal extension preserving nominal fixed beta and the original unperturbed consistency guarantee. State a concrete finite resource envelope (L,W,H,D_qk,B_param,B_arith,score_range) for the chosen mechanism and the admitted strong direct-correction comparison, including any changed exponent approximation and all retained residuals. Report exactly which perturbation sites are covered, distinguish operator-only or additional layer-error claims from proved finite-code guarantees, and state meaningful nonempty robustness conditions. This is a finite-history/located-error upper theorem, not an optimal sample-rate or precision lower bound, unrestricted architecture claim, log-loss theorem, or C1-C4/root closure.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+        "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+        "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+        "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers >=2",
+          "depends_on": []
+        },
+        {
+          "variable": "beta",
+          "kind": "FORALL",
+          "domain": "fixed positive full-context score gap",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+          "depends_on": [
+            "K",
+            "beta"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "D1 second-order tables on K symbols",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers >=3",
+          "depends_on": []
+        },
+        {
+          "variable": "epsilon",
+          "kind": "FORALL",
+          "domain": "positive accuracy targets",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+      "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "4d54d73b0fcea68249d049a848b258ae344d5f468cb38156bc168ffeef44dd49"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": [
+    {
+      "artifact_id": "4d54d73b0fcea68249d049a848b258ae344d5f468cb38156bc168ffeef44dd49",
+      "content_hash": "b7cfd43f5e8c2bd7a5e3ed3fe716bfea9e4dd3395b6be963f9a4ca48eb20a240",
+      "producer": "fact_submit:40a6bd12a9783fbe",
+      "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+      "evidence_kind": "LLM_CHECKED_PROOF",
+      "exact_claim": "For every K>=2, fixed beta>0 and fixed D1 theta, extend the admitted causal Route A family with reference P_(N,s)=(A_N(s,.)+lambda_N v0)/(u_s+lambda_N), lambda_N=1/(N-2), into an explicit general-D1 finite-history TV upper theorem with a theta-independent parameter/accuracy schedule. Derive a simultaneous concentration event for all K^3 legal empirical transition frequencies, keeping structural zeros and explicit dependence on eta_theta=min p_theta, pi_s, N and failure probability. On this single path event, combine sampling, smoothing, actual finite frontend/correction errors, and declared located perturbations without treating q,r,u sampling fluctuations independently or asserting a universal u^{-2} gain. Declare the full visible representation and all copies. Include actual terminal-query conditional risk and correctly stationary-weighted actual average risk, without assuming query/history independence. Give explicit deterministic bounds mapping bounded errors in the two charged local copied symbol blocks, Q/K scores, post-aggregation q/r/mu and query-context residual into the implemented frequency selector and probability output; keep discrete masks/length/type fixed unless explicitly analyzed. Account for finite rational input caps at every perturbed location and preserve an exact simplex output. Prove the required uniform numerical-softmax estimate on the declared perturbed score interval, either within the admitted backend or via an explicitly charged legal extension preserving nominal fixed beta and the original unperturbed consistency guarantee. State a concrete finite resource envelope (L,W,H,D_qk,B_param,B_arith,score_range) for the chosen mechanism and the admitted strong direct-correction comparison, including any changed exponent approximation and all retained residuals. Report exactly which perturbation sites are covered, distinguish operator-only or additional layer-error claims from proved finite-code guarantees, and state meaningful nonempty robustness conditions. This is a finite-history/located-error upper theorem, not an optimal sample-rate or precision lower bound, unrestricted architecture claim, log-loss theorem, or C1-C4/root closure.",
+      "scope": {
+        "assumptions": [
+          "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+          "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+          "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+          "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+        ],
+        "quantifiers": [
+          {
+            "variable": "K",
+            "kind": "FORALL",
+            "domain": "integers >=2",
+            "depends_on": []
+          },
+          {
+            "variable": "beta",
+            "kind": "FORALL",
+            "domain": "fixed positive full-context score gap",
+            "depends_on": []
+          },
+          {
+            "variable": "predictor_family",
+            "kind": "EXISTS",
+            "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+            "depends_on": [
+              "K",
+              "beta"
+            ]
+          },
+          {
+            "variable": "theta",
+            "kind": "FORALL",
+            "domain": "D1 second-order tables on K symbols",
+            "depends_on": [
+              "K"
+            ]
+          },
+          {
+            "variable": "N",
+            "kind": "FORALL",
+            "domain": "integers >=3",
+            "depends_on": []
+          },
+          {
+            "variable": "epsilon",
+            "kind": "FORALL",
+            "domain": "positive accuracy targets",
+            "depends_on": []
+          }
+        ],
+        "objects": [],
+        "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+        "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+      },
+      "input_hashes": [
+        "6a231cbc6dc9fd88e1291234d295b38652a12f4f33199a96d2ac85c6f9db7fe4",
+        "82170d7734472d615c25a172a95fd8a04624154a1d6c0a4b19f53d47dab7b363",
+        "899e13e3de35de82397926f56e26587a062e7789c726ea676465f2a1151b8132",
+        "b7cfd43f5e8c2bd7a5e3ed3fe716bfea9e4dd3395b6be963f9a4ca48eb20a240"
+      ],
+      "environment_hash": "894db36e04714ea1609c71a4dfe90f5bf8e323c25580c87de84778af3817c688",
+      "checker_id": "fact_submit",
+      "checker_version": "1",
+      "checker_result": "PASS",
+      "created_at": "2026-10-24T06:48:18Z",
+      "validity": "VALID"
+    }
+  ],
+  "manifest": {
+    "obligation_id": "921ed4dbe276321559d9c98d44259516f1ab38c7d20359913ee4240928c15fa8",
+    "status": "DISCHARGED",
+    "fact": {
+      "fact_id": "0bf422aeee139e59",
+      "path": "fact_graph/facts/0bf422aeee139e59.md",
+      "sha256": "b7cfd43f5e8c2bd7a5e3ed3fe716bfea9e4dd3395b6be963f9a4ca48eb20a240",
+      "frontmatter": "\nfact_id: 0bf422aeee139e59\nproblem_id: icml-probabilistic\nauthor: counter\npredecessors: [3a69c2fa3d459b1d, 338012727e3d5f81, 608003f641535f2c]\nglossary_introduces: {}\nexternal_refs: []\n",
+      "submitted_proof_is_contained": true,
+      "evidence_id": "4d54d73b0fcea68249d049a848b258ae344d5f468cb38156bc168ffeef44dd49",
+      "checker_result": "PASS",
+      "validity": "VALID",
+      "created_at": "2026-10-24T06:48:18Z"
+    },
+    "root_status": "OPEN",
+    "root_acceptance": null,
+    "submission_count": 1,
+    "transport_result": "300-second timeout, preserved; async PASS confirmed without retry",
+    "frozen_version_hash": "e7b4f785eaeab6dcead090d389d11fedcef3a52aa44cfa5d053d0363f3cb0ce3",
+    "files": {
+      "VERSION.json": "e7b4f785eaeab6dcead090d389d11fedcef3a52aa44cfa5d053d0363f3cb0ce3",
+      "admitted-evidence.json": "09236ff5af976af48011a061c843778cc4e59618ececf10bfdd8240f70cf46d8",
+      "check-result.json": "a4d33969f553516f203a181f2e89d05d23d4b3c0b2e69025474feb9bb13782b7",
+      "check_theorem.py": "142ba74b609078074f9a865931fc839d823ceb3dfe352bc953995c2509d9e2f7",
+      "dependency-check.json": "a9004662280076e5aaadcd4ea37e2dc702bae2b10a5dfda264b9c72cf4d56502",
+      "exact-proof.md": "2b0092a0ff8f427fb2b90ebdded46b0fd0acd70b760e20f38bad6f33935382f1",
+      "exact-statement.md": "60bdb8d3339f058ea45a7c1a620b2ea09a0883328ed76867190f82cfa7ef71fc",
+      "fact-verification.json": "f084e4da1a2e615abd876d7a772d4375c25ff4262dbf2ce4bdf7c3b209c4026d",
+      "handoff.md": "62859310794a4b8ce1188c7c4bb387048badc0c3a0f64a49eef724f19377f4a5",
+      "mathematics-first.md": "8adf0b31c6fc9746382f41c72d9a8f5839c96a425d8888bd5e7010c671bdc54d",
+      "native-final-state.json": "f0ad685052fd752b44e451d98174ea3197e6cefa55ede3cc0c73275760f77210",
+      "native-state-after-timeout.json": "fc71ebe60d2a75c9eb2faa9bc1195c02f168891444e0e52210a420a47230db55",
+      "native-submit-request.json": "f0fc179cfcabcbc16903943f832e2e4d8c4198d2b74a707272e3d7513660410b",
+      "native-submit-return.json": "093edeeda708bfc398388efd2c0eb18689478a8180eb0f59b4609d70f2c19198",
+      "presubmit-native-state.json": "fc71ebe60d2a75c9eb2faa9bc1195c02f168891444e0e52210a420a47230db55"
+    }
+  },
+  "file_checks": {
+    "VERSION.json": true,
+    "admitted-evidence.json": true,
+    "check-result.json": true,
+    "check_theorem.py": true,
+    "dependency-check.json": true,
+    "exact-proof.md": true,
+    "exact-statement.md": true,
+    "fact-verification.json": true,
+    "handoff.md": true,
+    "mathematics-first.md": true,
+    "native-final-state.json": true,
+    "native-state-after-timeout.json": true,
+    "native-submit-request.json": true,
+    "native-submit-return.json": true,
+    "presubmit-native-state.json": true
+  },
+  "review": {
+    "verification_report": {
+      "summary": "Reviewed the complete frozen version-1 submission for obligation 921ed4dbe276321559d9c98d44259516f1ab38c7d20359913ee4240928c15fa8 under contract 3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a (definitions hash 63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc). Sequential checks found no critical errors or unresolved gaps. The two-step minorization and bounded-range martingale argument establish the simultaneous legal-edge concentration event while retaining structural zeros. The sampling and smoothing bounds, terminal-query conditional bound, and stationary-weighted actual risk correctly retain history/query dependence. The declared copies, bounded-code perturbation sites, enlarged score interval, positive Taylor softmax implementation, selector estimates, correction identity, interpolation domains, exact simplex encoding, finite resource envelope, direct-correction comparison, and nonempty robustness schedules support the stated upper theorem. The shared-statistic identity yields a single inverse-frequency factor. The three cited fact files were read, their SHA-256 hashes match the supplied interfaces, and their applications and P3 chain checks pass; inherited facts were used within scope rather than independently recertified. No external-paper theorem citation requires search. The supporting checker and numerical probes were not rerun or used as substitutes for the analytical proof. This is a same-model independent-context LLM admission judgment, not formal certification. Acceptance covers the specified finite-history and located-error upper theorem and preservation of unperturbed consistency; it does not certify arbitrary layer faults, lower bounds, log loss, unrestricted architectures, or root closure. This is an LLM review, not formal verification or external peer review; cross-model independence is not established.",
+      "critical_errors": [],
+      "gaps": []
+    },
+    "verdict": "correct",
+    "repair_hints": ""
+  }
+}

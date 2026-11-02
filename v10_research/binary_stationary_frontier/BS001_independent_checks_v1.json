@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "counts": {
+    "cases": 27646,
+    "A": 1265,
+    "B": 17333,
+    "C": 20835,
+    "D": 6302,
+    "threshold_necessity": 27646,
+    "threshold_sufficiency": 27646,
+    "integer_allocation": 27646,
+    "receipt_hashes": 5
+  },
+  "maxima": {
+    "A_ratio": 1.0,
+    "B_W_over_s": 1.9166066720281076,
+    "C_W_over_s": 1.4716333818615528,
+    "D_ratio": 1.0,
+    "suff_aW": 1.3406690979481326,
+    "band_QW": 1.3332949542491594
+  },
+  "bindings": {
+    "BU001": {
+      "proof": "binary_upper/BU001_weighted_return_upper_v2.md",
+      "sha256": "2dc9cf9d13faa6cfa15fffd5ec83a67326ccc95eb6a63291c7b2349136b166f5",
+      "receipt_sha256": "914fd8d84fe31b5c2ea5fb34cfef7a3117a2169ab50738ae209f16ff5bce6e91"
+    },
+    "BI001": {
+      "proof": "binary_frontier/BI001_binary_rare_suffix_lower_v2.md",
+      "sha256": "17725df3f25084fdfbf6f92fa26555fc5c29e15a4341f69a24dd703751201992",
+      "receipt_sha256": "8ab1673dcff9efacacd3f5adf3b91124297919e511c2a2604aa0a82ca880ec2d"
+    },
+    "UI001": {
+      "proof": "range_uniform_iid/UI001_range_uniform_iid_floor_v1.md",
+      "sha256": "c4bd8a5d7324ed1cf03c1d746a253b592fbe9a63e9e6020be95e657c13307dde",
+      "receipt_sha256": "fa818cc247dc1a7ec564446099bdaba1b1e12fcdbf615824933af92a01760b19"
+    },
+    "TR001": {
+      "proof": "two_resource_frontier/TR001_two_resource_frontier_v1.md",
+      "sha256": "7dca0c09637164c2a632e1e493c7af281109bb52116400c94ee507fe18c493c6",
+      "receipt_sha256": "fad05211ded32ec8281542c15b9872d2d81db3b5e2553e36c25dbcd81f5678ac"
+    },
+    "SB001": {
+      "proof": "score_precision/SB001_loglog_effective_score_budget_v2.md",
+      "sha256": "d10086be4d358e322872daffad4dd10572588d6dcffaecbffefc409df6a217b7",
+      "receipt_sha256": "d2364a3405390fcf1b9a4d401c92f9832552b627d6480bc8806074681a73cd2e"
+    }
+  },
+  "limits": "Finite floating-point scalar checks with relative tolerance 2e-12; exact receipt SHA-256 checks. Not a proof, full kernel re-audit, formal verification or external review."
+}

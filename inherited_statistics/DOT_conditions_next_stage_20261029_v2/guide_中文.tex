@@ -1,0 +1,210 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=21mm,headheight=15pt]{geometry}
+\usepackage{fontspec,amsmath,amssymb,booktabs,tabularx,enumitem,fancyhdr,hyperref}
+\setmainfont{Noto Serif CJK SC}\setsansfont{Noto Sans CJK SC}
+\XeTeXlinebreaklocale "zh"\XeTeXlinebreakskip=0pt plus 1pt
+\hypersetup{hidelinks,pdfauthor={},pdftitle={长历史弱混合与未知条件的阶段结果}}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}\setlength{\emergencystretch}{3em}\linespread{1.06}
+\setlist[itemize]{leftmargin=1.25em,itemsep=3pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small 二阶预测的条件统计}\fancyhead[R]{\small 2026年10月29日阶段结果}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}
+\newcommand{\TV}{\operatorname{TV}}\newcommand{\E}{\mathbb E}\newcommand{\R}{R_{\mathrm{D2}}}\newcommand{\Rp}{R_{\mathrm{D2}}^+}
+\newcommand{\head}[2]{{\small\sffamily #1}\par\vspace{2pt}{\LARGE\bfseries #2}\par\vspace{5pt}}
+\newcommand{\entry}[1]{\vfill\noindent\small 正文入口\quad #1\normalsize}
+\begin{document}
+\head{结果与实验}{长历史弱混合与未知条件的阶段结果}
+本阶段推进两个问题：\textbf{长历史下残余初始化代价能否降低，以及不知道条件参数时能否选对算法。} 三项进展的性质不同，不能混成一个全域最优定理。
+\begin{itemize}
+\item \textbf{S020 原规则新上界。} 对未再生事件付出统计代价；在一条 $M=K^6$ 射线上消去旧上界证书的 $\sqrt{\ln K}$ 因子，尚未与风险下界匹配。
+\item \textbf{S021 固定模板阻断。} 每个已知几何的吸收乘积时钟，在指定射线上的受限 minimax 风险至多 $5K^{-1/2}$；仅延长这类时钟不能见证更大下界，不是否定全源类。
+\item \textbf{S022 两端点选择器。} 同一可观察规则不读 $\beta$，同时达到一般源的 $g$ 阶和 IID 的 $i$ 阶。已通过独立数学审查并接纳；不覆盖整个已闭合比较域。
+\end{itemize}
+\textbf{固定实验。} 整数 $K\ge2,M\ge1$，观察全部 $X_1,\ldots,X_{M+2}$。隐藏齐次二阶表 $\theta$ 固定，只有合法 shift
+\[
+P_\theta((a,b),(b,c))=\theta_{ab}(c),\qquad Y_j=(X_{j+1},X_{j+2}).
+\]
+恰有 $M$ 次已观察 departure，目标始终是实际末对 $Y_M$ 的下一符号分布。初始 pair 律 $\mu$ 任意，包括平稳支撑之外。允许零边、可约和周期。条件类为
+\[
+\mathcal D_2(\beta)=\{(\theta,\mu):\exists\pi,\ \pi P=\pi,\ P^2(s,t)\ge\beta\pi(t)\ \forall s,t\}.
+\]
+$\pi$ 隐藏，不假设唯一；$\beta$ 是一个条件下界，不是已知的最大系数。以 $L_A=\E\TV(A(X_1^{M+2}),\theta_{Y_M})$ 记实际期望半 $L^1$ 损失，
+\[
+\R=\inf_A\sup_{\mathcal D_2(\beta)}L_A,\qquad
+\Rp=\sup_{\mathcal D_2(\beta)}L_{p^+},\qquad \R\le\Rp.
+\]
+目标 A 的共同算法可读公开 $K,M,\beta$；原规则本身不读 $\beta$。目标 B 的同一个 $A_{K,M}$ 只读 $K,M$ 和实际历史。允许预先固定的源独立种子，不读隐藏表、初始律、平稳律、标签、辅助样本或未来。
+
+\textbf{统一尺度。} 令 $n=M+1$、$\delta=1-\beta$，
+\[
+a=\min\{1,\sqrt{K^3/n}\},\quad g=\min\{1,\sqrt{K^5/n}\},\quad i=\min\{1,\sqrt{K/n}\}.
+\]
+这里 $n$ 是率的分母，不是观测符号数。下界是每个共同算法在类中遇到某个困难源，并非每个源都难。
+\entry{完整证明 proofs/；完整科学审查 reviews/；准确版本 SOURCES.md。}
+\newpage
+\head{S020 全参数内域上界}{不把未再生当作完全没有信息}
+\textbf{算法不变。} 对全部已观察 departure 定义
+\[
+C_s(c)=\sum_{j=0}^{M-1}\mathbf1\{Y_j=s,X_{j+3}=c\},\quad n_s=\sum_c C_s(c),\quad
+p_s^+(c)=\frac{C_s(c)+1}{n_s+K}.
+\]
+输出始终是 $p^+_{Y_M}$，没有删去早期历史，也没有改成后缀规则。
+
+对 $0<\beta<1$，令
+\[
+r=\lfloor M/2\rfloor,\quad p=M-2r,\quad \lambda=-\ln\delta,\quad
+q_0=\delta^r,\quad q_j=\beta\delta^{j-1}\ (1\le j\le r).
+\]
+S020 的全内域有限上界 N1 是
+\[
+\Rp\le\min\{u_g(M),V\},\qquad u_g(M)=\min\{1,48\sqrt{K^5/n}\},
+\]
+\begin{align*}
+V={}&q_0\min\left\{1,80K^2\sqrt{\frac{K+r\lambda}{r+1}}\right\}\\
+&+\sum_{j=1}^{r}q_j\min\left\{1,80K\sqrt{\frac{K+\ln(1/\beta)+(j-1)\lambda}{2(r-j)+1}}\right\}.
+\end{align*}
+所有事件权重及 cap 都保留。不存在另外付出的 $\ln M$ 并集代价，但显式的 $\ln(1/\beta)$ 可能沿参数射线依赖 $M$，不能删掉。
+
+\textbf{证明中真正的新桥。} 记末行计数 $J=n_{Y_M}$、原规则损失 $\ell$。对任意增广事件 $H$，若 $0<q\le1,c>0$，且对每个整数 $w\ge1$，
+\[
+\Pr(H)\le q,\qquad \Pr(H,J<w)\le q\min\{1,cw\},
+\]
+则原无条件行栈的最大尾界给
+\[
+\E[\ell\mathbf1_H]\le q\min\{1,80\sqrt{c(K+\ln(1/q))}\}.
+\]
+该式不声称在 $H$ 条件下行栈仍 IID。用无条件尾积分、dyadic 分层和 add-one 平滑控制选中末行；零计数单独付 cap。
+
+\textbf{完整历史与奇偶。} 从 pair 时间 $p$ 起分两步块，隐藏失败核为 $Q_2=(P^2-\beta\Pi)/\delta$。每块的唯一中间 pair 及两个实际输出都保留。未成功时残余骨架恰以 $\mu P^p$ 开始，实际终点仍为 $Y_M$；一般 $K^2$ 状态占用给 $c_0=K^4/(r+1)$。首次成功在第 $j$ 块时，普通平稳后缀长度为 $2(r-j)$，给 $c_j=K^2/[2(r-j)+1]$。相加即 N1。
+
+$M=1$ 时 $r=0$、和为空；最后成功原子允许零长度后缀。$\beta=0$ 单独使用一般上界；$\beta=1$ 不形成 $Q_2$，由 IID 共同 minimax 接口处理，不据此称原行规则最优。
+\entry{S020 完整证明 §§3--6；独立审查 Units 2--4。}
+\newpage
+\head{S020 的可读推论}{证书改进与真实风险缺口分开}
+\textbf{N2 的精确充分域 D1。} 除 $K\ge2,M\ge1$ 外，还必须同时满足
+\[
+0<\beta\le\tfrac12,\qquad \ln(1/\beta)\le K,\qquad r\lambda\le K.
+\]
+在此域内，首次成功项通过早晚几何求和降到平稳尺度，得到
+\[
+\boxed{\Rp\le\min\{1,2304a+\delta^r\min(1,160g)\}.}
+\]
+D1 只是充分条件，不是必要条件。超出它时退回 N1、完整证明中的 N0 和一般上界，而非直接外推 N2。这里减小的是未成功事件的代价，并未证明全域的最优公式。
+
+\textbf{已发生的改进。} 在
+\[
+M=K^6,\qquad \beta=\frac{\ln K}{2K^6},\qquad K\ge32
+\]
+上，D1 确实成立，有限结论为
+\[
+\Rp\le\min\{1,2544K^{-3/4}\}.
+\]
+比较了\textbf{所有}旧 S011 原规则、公开后缀、pooling 分支、S018 容差证书与一般证书后，其最小值为
+\[
+\Theta\!\left(K^{-3/4}\sqrt{\ln K}\right).
+\]
+因此是原完整规则的真实上界证书改进，不是只比一个不佳后缀。旧最优后缀长度约为 $1/\lambda$；先前只比部分分支而得到 $K^{-1/2}$ 的判断已更正。常数较松，不声称 $K=32$ 就有严格数值优势。
+
+但现有风险下界仍仅为 $\Omega(K^{-1})$。\textbf{消去上界证书的对数损失，不等于消去风险上下界间隙。}
+
+\textbf{原指定窗口仍开着。} 在
+\[
+M=K^5,\qquad \beta=\frac{\ln K}{2K^5}
+\]
+上，S016 的已证下包络为 $\Theta(K^{-1/2})$，而已知共同算法及 N1 的上界仍是 $O(K^{-1/4})$。N1 的未成功系数在这条射线上被 cap 在 1。故当前只知
+\[
+\Omega(K^{-1/2})\le\R\le\Rp\le O(K^{-1/4}),
+\]
+不能把任一端当成答案，也不能把某个证书的数值下限当作真实风险下界。
+
+\textbf{下一必要桥。} 残余核有合法乘积减秩一项的结构，不能当任意 $K^2$ 状态矩阵只降一个维数。需要严格的存活与行信息联合约束，或合法新困难源；未证明的 TARGET 不进入结论链。
+\entry{S020 §§2、7--9；继承 S011、S016、S018 的精确范围。}
+\newpage
+\head{S021 的准确阻断范围}{固定公开时钟模板不能只靠加长周期}
+这不是全 $\mathcal D_2(\beta)$ 上界。对\textbf{每个固定且公开的模板}，$K\ge2,M\ge1,0<\beta<1$，要求四项假设：
+\begin{enumerate}[leftmargin=1.5em,itemsep=3pt,topsep=3pt]
+\item 实际 pair 集合内有非空互斥相位 $D_0,\ldots,D_{L-1}$，不含 $00$；基表 $Q_\nu$ 合法闭合循环，$00$ 吸收。
+\item 每相位或全为安全零输出，或全部不输出零；分类公开，后者共 $v$ 个相位。
+\item \textbf{每一行}的实际表是 $\theta_\nu=\beta\delta_0+\delta Q_\nu$，并满足全状态 $P_\nu^2(s,00)\ge\beta$。
+\item 初始化公开、与未知参数无关、位于指定相位并与 horizon 对齐。完整基历史与 $q=\lfloor M/L\rfloor$ 个 IID 标记样本及\textbf{实际}终点 $T$ 可公开双向重构。样本上下文和 $T$ 在已知查询集 $S$ 上均匀，$S$ 位于一个易损相位，$T$ 独立于训练样本；标签在已知非零集 $W$ 上的律就是对应的未知基表行。
+\end{enumerate}
+第四项是实质统计限制，不由 Markov 性自动推出。算法可用此公开几何，不读取未知行律或隐藏刷新事件；换一个公开几何可以换算法，\textbf{不等于}一个算法适应未知几何混合。
+
+结构计数给 $L\le K^2-1$、安全相位数 $Z\le\min(K-1,\lfloor L/2\rfloor)$。若 $H$ 是全部 $M$ 次 departure 的确定易损数，则 $H\ge Mv/L-L$。真实的可观察经验预测器给受限风险上界
+\[
+R_{\rm template}\le\delta^{H+1}\min\{1,\sqrt{|S||W|/(q+1)}\}.
+\]
+因此对 $M\ge K^5$，
+\[
+R_{\rm template}\le\min\left\{1,\delta^{-K^2}\max\left(
+\sqrt{\frac{2K^4}{M}}\delta^{M/2},\sqrt{\frac{K^5}{M}}\delta^{M(1-1/K)}\right)\right\}.
+\]
+有限相位罚因子 $\delta^{-K^2}$ 必须保留。若 $\lambda(K^2+M/K)\le C_0$，可把第二项的存活因子换成 $\delta^M$ 并在最大值外付 $e^{C_0}$。在 $M=K^5,\beta=\ln K/(2K^5)$ 上，条件左侧至多 $5/8$，故
+\[
+R_{\rm template}\le\min\{1,5K^{-1/2}\}.
+\]
+它阻断仅调周期、安全相位或 W 行律的这条路线；隐藏几何、部分零行、非乘积终点依赖等不在定理内。状态依赖吸收构造已证\textbf{成员合法性}，尚未证明更强预测下界。
+
+\textbf{真实更正。} v1 的 Lemma A 局部标题误写“条件 1--3”，允许初始 pair 不在相位内，存活结论确有反例。v2 改为 1--4，并在公共零概率历史上补齐经验规则。Theorem C 原已用 1--4，公式未改；旧 v1 不追认。完整九行表反例及修复见更正说明和两份审查。
+\entry{S021 完整证明 v2；CORRECTION\_S021.md；v1 科学审查与 v2 复核。}
+\newpage
+\head{S022 只覆盖两个端点}{同一个规则不知道 beta 也能选择}
+令 $q=p^+_{Y_M}$ 为原完整末行 add-one，跨上下文汇总全部 $M$ 个已观察输出得到
+\[
+T(c)=\sum_{j=3}^{M+2}\mathbf1\{X_j=c\},\qquad b(c)=\frac{T(c)+1}{M+K}.
+\]
+同一个确定规则仅依赖 $K,M$ 与实际完整历史：
+\[
+\boxed{A_{K,M}=\begin{cases}b,&\TV(q,b)\le g,\\q,&\TV(q,b)>g.\end{cases}}
+\]
+它不读取 $\beta$、类标签、初始律、平稳律或隐藏表。两项同时保证为
+\[
+\sup_{\mathcal D_2(0)}L_A\le\min\{1,49g\},\qquad
+\sup_{\mathcal D_2(1)}L_A\le\min\{1,853i\}.
+\]
+一般源与 IID 的已知 all-algorithm lower 分别给 $g$ 和 $i$ 阶，故两个端点之间\textbf{不需要随参数增长的适应罚项}。数值常数没有最优化。
+
+\textbf{为何这是同一个原实验。} 全状态 $P^2=\Pi$ 强迫所有行同为未知 $p$，包括平稳支撑外的行。于是 $X_3,\ldots,X_{M+2}$ IID 且独立于任意初始 pair，目标恒为 $p$；初始两个符号本身不必 IID。
+
+一般源上有逐路径安全关系 $\TV(A,\theta_{Y_M})\le\TV(q,\theta_{Y_M})+g$，结合继承一般上界即得 $49g$。IID 上的新桥是原规则二阶矩
+\[
+\E\TV(q,p)^2\le\min\{1,423K^3/n\}.
+\]
+证明\textbf{只在分析中}删去四个边界 departure，将内部三元组分成三组不相交 IID triples，使每组与实际终点独立；组之间不要求独立。随后逐路径恢复四个 departure 与原平滑，最终规则仍用全部计数。
+
+令 $e=\TV(q,p),f=\TV(b,p)$。若 $g<1$，被拒绝 pooling 时 $e+f>g$，故
+\[
+\TV(A,p)\le f+\frac{2(e^2+f^2)}g.
+\]
+原规则二阶矩、pooling 的一二阶矩给 $853i$。若 $g=1$，规则总选 pooling；小 $M$、零概率符号和任意初始 pair 均有单独边界处理。
+
+\textbf{量化与边界。} 对同一个不读参数的算法取
+\[
+\Gamma_{\rm end}=\inf_A\max\left\{\frac{\sup_{\mathcal D_2(0)}L_A}{g},\frac{\sup_{\mathcal D_2(1)}L_A}{i}\right\}.
+\]
+已有下界及本规则给
+\[
+\frac1{32\sqrt6}\le\Gamma_{\rm end}(K,M)\le853.
+\]
+这不证明平稳 $a$、S019 的 $H$ 或 S011 的 $F$ 在全部适用 $\beta$ 上同时达到。IID 三元组独立性不能直接移植到 $\beta<1$；一般 guard 付的 $g$ 可能太大。
+\entry{S022 完整证明 §§3--7；同一规则的两端点量词与任意初始化。}
+\newpage
+\head{采用与接续}{阶段包是接口不是研究终点}
+\textbf{本次可采用的接口。}
+\begin{itemize}
+\item S020：原完整规则的 N0、N1；在 D1 内的 N2；充分有限域和 odd/even endpoint 对齐必须一起采用。
+\item S021：v2 的固定公开模板受限风险上界；不能写成全类或未知模板混合的上界。原 v1 局部反例继续成立。
+\item S022：同一个不读 $\beta$ 的末行／pooling 选择器，\textbf{仅在两个端点}同时达到对应 minimax 阶。
+\end{itemize}
+\textbf{接续目标仍在。} A 的 $K^5$ 长历史窗口和一般联合参数规律没有完成；要继续寻找真实存活／信息桥或突破已证模板限制。B 需从端点进入任意初始化的近 IID 区及其余已闭合比较域；需要依赖路径下的合法局部误差控制或可观察多尺度比较，不能为每个 $\beta$ 另选算法后称为适应。
+
+已有 S001--S019 的数学正文与独立判断保持原身份。它们曾经的阶段收束，是 2026 年 10 月 28 日的历史状态；10 月 29 日已进入新授权目标。旧包中的“完成”或“下一阶段可选”不终止本轮 A/B，也不被静默改写。
+
+\textbf{最短阅读顺序。} 本导读先说明结果性质；随后读三个完整证明及相应完整科学审查。S021 要将 v1 五单元科学审查与 v2 有界修复复核合读；不能只读 v2 的短结论，也不能将原 v1 追认为通过。来源身份和每段复制边界见 SOURCES.md、COPY\_MAP.json。
+
+\textbf{必要科学闭包。} 本包只嵌入一份逐字节未改的上一阶段 v2 科学归档，内含 S016--S019，并逐层连接 Stage04、Stage03、Stage02 的必要早期证明与审查。三项新结果共同使用跨层的 L1MAX、GU、MM5、S001、S003、S005、S006、S011、S012、S015、S016、S018、S019；保留一个准确已有归档比重新拆装多层来源更稳妥。不重复添加第三方论文全文，也不打包整个项目记录。
+
+\textbf{证据等级。} 这是 AI 辅助研究草稿，数学证据为独立上下文 LLM 审查，装配完整性另行核对；不等同外部同行评审、跨模型认证、形式验证或文献首创。哈希与复制脚本验证字节来源和清单，不证明数学；有限枚举仅是补充检查。完整数学依据在证明正文。
+
+\textbf{编辑与复核。} 可编辑源为本导读 TeX。BUILD.md 给已有 XeLaTeX 的编译及只读校验方法；构建日志和渲染图不在科学交付内。保留原文、范围、量词和 cap 后再作后续引用。
+\vfill
+{\small\ttfamily END\_DOT\_STAGE\_OUTPUT}
+\end{document}

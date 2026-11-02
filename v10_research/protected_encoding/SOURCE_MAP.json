@@ -1,0 +1,117 @@
+{
+  "status": "Imported source hashes checked against FACT_INDEX for each Fact; legacy acceptance remains inherited LLM_CHECKED_PROOF, not formal verification.",
+  "sources": [
+    {
+      "fact_id": "fef8372728290b45",
+      "path": "v10_intake/source/sources/euler-stage6/facts/fef8372728290b45.md",
+      "sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025",
+      "use": "Actual finite encoder, full side-information/lifecycle, bit extraction (§3), costs (§9)",
+      "admission_reviews": [
+        "98b8dbb958991e9c"
+      ]
+    },
+    {
+      "fact_id": "a53804d650803060",
+      "path": "v10_intake/source/sources/euler-stage6/facts/a53804d650803060.md",
+      "sha256": "bc24d183f5299df636e67f0b439aadbcd4d79671b69c327ed7083ddfab857c6f",
+      "use": "Accepted exact L1+/L1-I risk interface; no new statistical proof",
+      "admission_reviews": [
+        "765b6eab6fa11104"
+      ]
+    },
+    {
+      "fact_id": "946d42d5bf502eb4",
+      "path": "v10_intake/source/sources/euler-stage6/facts/946d42d5bf502eb4.md",
+      "sha256": "fe18f4a413fef5da14c5f361aef47a8c5addceac1a3a58d73366ad20f16d8e93",
+      "use": "Accepted full-history common-algorithm minimax lower interface",
+      "admission_reviews": [
+        "847712d42050dc84"
+      ]
+    },
+    {
+      "fact_id": "372cbc90282df2cd",
+      "path": "v10_intake/source/sources/euler-stage6/facts/372cbc90282df2cd.md",
+      "sha256": "e7295c4903277b5d403a453f429a62a60a5dc8ca6a6b04e9917646088fb39476",
+      "use": "032 comparison: raw final-V fixed suffix",
+      "admission_reviews": [
+        "8dd6096a9e3f131f"
+      ]
+    },
+    {
+      "fact_id": "a1a95aa68be0723e",
+      "path": "v10_intake/source/sources/euler-stage6/facts/a1a95aa68be0723e.md",
+      "sha256": "21d405159a5694c9848e0656187a9d674dc777ffaec1d1f51e5a7541552adfb8",
+      "use": "033 comparison: raw master+V fixed suffix",
+      "admission_reviews": [
+        "686d47049ed14443"
+      ]
+    },
+    {
+      "fact_id": "d3e63f7b5e389adf",
+      "path": "v10_intake/source/sources/euler-stage6/facts/d3e63f7b5e389adf.md",
+      "sha256": "f60b0d2057aa2357a5fb424fda8cf6ec0c72b43c770dee330987838528f39a92",
+      "use": "034 comparison: arbitrary raw-V decoder",
+      "admission_reviews": [
+        "e7e1a8acd087d794"
+      ]
+    },
+    {
+      "fact_id": "ed3adf29f858da12",
+      "path": "v10_intake/source/sources/euler-stage6/facts/ed3adf29f858da12.md",
+      "sha256": "92832afc95fe451d6132a6c7c3263e6b7f2404840f3ca06d2eea7f9d1bc9454d",
+      "use": "035 comparison: arbitrary raw-master decoder",
+      "admission_reviews": [
+        "4807f8203cafb55e"
+      ]
+    },
+    {
+      "fact_id": "5110203ec700e7e1",
+      "path": "v10_intake/source/sources/euler-stage6/facts/5110203ec700e7e1.md",
+      "sha256": "4948f1c3c5749d93ed962b6c459213be3b844ae2bd210066d6dd9da5791d3334",
+      "use": "Alternative streaming comparator named only; its cost is not mixed with our batch counter",
+      "admission_reviews": [
+        "b51a9e94d2fb9352"
+      ]
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/prover/complete-proof-v1.md",
+      "sha256": "a993aaa8c844642fa8c99b6c569453f0de8cf747a33cb76af7b5f98fbc1d1f00",
+      "use": "Exact legacy proof/scope or independent counter review; legacy results not re-proved"
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/032-v-bank-joint-k/counter/assessment-v1.md",
+      "sha256": "c602703b62ce90173794b78586fbe823dc9a0772a08f5f32d10b81407376c898",
+      "use": "Exact legacy proof/scope or independent counter review; legacy results not re-proved"
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/prover/complete-proof-v1.md",
+      "sha256": "8e45e24a4c897e5ef888482dec0a5f446c5074f48431aeaaaedacae7fd2b803f",
+      "use": "Exact legacy proof/scope or independent counter review; legacy results not re-proved"
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/033-master-v-joint-k/counter/assessment-v1.md",
+      "sha256": "7d0e793a05b514ccee87065414d55af31acc97daa920d2ad72c7d524fc896bb3",
+      "use": "Exact legacy proof/scope or independent counter review; legacy results not re-proved"
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/034-v-decoder-minimax/prover/complete-proof-v1.md",
+      "sha256": "17ba6dc117edec4d1315a175f972ab541226eded4525e23652e194c656c1650f",
+      "use": "Exact legacy proof/scope or independent counter review; legacy results not re-proved"
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/034-v-decoder-minimax/counter/assessment-v1.md",
+      "sha256": "87bc712df047298b7d1f90d161e54e018304f9b7211044fb95b98a1fc2a13eb6",
+      "use": "Exact legacy proof/scope or independent counter review; legacy results not re-proved"
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/035-master-decoder-minimax/prover/complete-proof-v1.md",
+      "sha256": "36644f069fa7ee96f1f837a47fcd823b83ed85f3bc377242174ffbce63dcdcec",
+      "use": "Exact legacy proof/scope or independent counter review; legacy results not re-proved"
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/latest/035-master-decoder-minimax/counter/assessment-v1.md",
+      "sha256": "94499938c27f247626ce5d380c0cf5c55901aa9f9a101a9301a0d4e73236b113",
+      "use": "Exact legacy proof/scope or independent counter review; legacy results not re-proved"
+    }
+  ]
+}

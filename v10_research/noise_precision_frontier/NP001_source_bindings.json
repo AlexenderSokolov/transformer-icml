@@ -1,0 +1,64 @@
+{
+  "sources": [
+    {
+      "unit": "GN001",
+      "proof": "v10_research/robust_depth_capacity/GN001_theorem.md",
+      "sha256": "743367f687c79ea9b3abfbecaa70b206fe62afb5fbb56d1643331aacbfc18383",
+      "acceptance": "v10_research/intake/GN001_acceptance.json",
+      "acceptance_sha256": "9267efd56a4a4a0fc1aa0b50b13712b933e27e72ae9f6e2f0a6716c15b558f07",
+      "receipt_match": true
+    },
+    {
+      "unit": "IR001",
+      "proof": "v10_research/influence_reveal/IR001_theorem.md",
+      "sha256": "963e3f743c474f3f4c29fcb2f4aa9dfe1283ac82e0821b18df6a99223b09fffe",
+      "acceptance": "v10_research/intake/IR001_acceptance.json",
+      "acceptance_sha256": "02726788355296cc57311c21f2339e1610f2f99df70a356d88aaea47bf37a07f",
+      "receipt_match": true
+    },
+    {
+      "unit": "IC001",
+      "proof": "v10_research/iid_depth_capacity/IC001_theorem.md",
+      "sha256": "a443306b90e55bb05c76f3935b8cca676f9f8b3c6211c21d2e2b34e23dd979e3",
+      "acceptance": "v10_research/intake/IC001_acceptance.json",
+      "acceptance_sha256": "95a41ec851b73c10e5a44c38885808d6969f41c773059e7f165a3af9bcaec898",
+      "receipt_match": true
+    },
+    {
+      "unit": "RG001",
+      "proof": "v10_research/robust_grid_packing/RG001_theorem.md",
+      "sha256": "fc563812489ea4deba9bbc00e072119f2e26d23f3b6bcab56c40cb5dabd74949",
+      "acceptance": "v10_research/intake/RG001_acceptance.json",
+      "acceptance_sha256": "ce650c379e238a5add3806a47e19cadd5a7e40ad719c4df92a4e42b8bbdae4c7",
+      "receipt_match": true
+    },
+    {
+      "unit": "RP001",
+      "proof": "v10_research/robust_scalar_packing/RP001_theorem.md",
+      "sha256": "6326dfc083b69a1915679ac01e4dbdad750057cf3c896a3cd0c5787cd504a136",
+      "acceptance": "v10_research/intake/RP001_acceptance.json",
+      "acceptance_sha256": "940ec6be73cd345d6db885ab826794568ccd7f667fe2231a2cfba4a984559591",
+      "receipt_match": true
+    },
+    {
+      "role": "contract / attribution / diagnostic dependency",
+      "path": "v10_research/folded_noise/FN001_theorem.md",
+      "sha256": "38d716cdd2703ac3f53338c71f77b86728bf39d25fdd389a81d06d7b975d8399"
+    },
+    {
+      "role": "contract / attribution / diagnostic dependency",
+      "path": "v10_research/prior_art/analog_channel_comparison.md",
+      "sha256": "f96d43581070154e0db47bdc97b64e5be80059803728c167bbf343a6eef6e729"
+    },
+    {
+      "role": "contract / attribution / diagnostic dependency",
+      "path": "v10_research/robust_depth_capacity/GN001_independent_geometry.py",
+      "sha256": "c693eb0dd0fd7fe89dd307538266d5af4a476cb958a30e055e1b6f4be737aacd"
+    },
+    {
+      "role": "contract / attribution / diagnostic dependency",
+      "path": "v10_research/robust_depth_capacity/check_gn001_finite.py",
+      "sha256": "9bf5e5858b2ebd9a1b43b0efbe821b3c2d0d7fce0c406ca220423ff1ebebc422"
+    }
+  ]
+}

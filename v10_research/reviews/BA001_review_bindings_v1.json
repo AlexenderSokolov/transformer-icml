@@ -1,0 +1,84 @@
+{
+  "unit": "BA001",
+  "status": "INDEPENDENT_LLM_REVIEW_PASS_WITHIN_STATED_FAMILY",
+  "time_utc": "2026-11-02T03:52:24.705689+00:00",
+  "reviewer": "independent LLM reviewer",
+  "manuscript_sha256": "fb589a775220737124a42e96a115eb3471ccbb84933edc2fd488e0d5986f1569",
+  "all_author_manifest_hashes_verified": true,
+  "reviewed_inputs": [
+    {
+      "path": "v10_research/bounded_attention/BA001_bounded_local_attention_lower_v1.md",
+      "sha256": "fb589a775220737124a42e96a115eb3471ccbb84933edc2fd488e0d5986f1569",
+      "bytes": 18608
+    },
+    {
+      "path": "v10_research/bounded_attention/check_ba001.py",
+      "sha256": "6453c58ce8ad73d7b086bcd118582179208bd33b2cc1267a0c52ac4154d25152",
+      "bytes": 2880
+    },
+    {
+      "path": "v10_research/bounded_attention/BA001_diagnostic.json",
+      "sha256": "0e5b7fe742a5f9df9a87c56c38f6a41c30b0f458851a4ac1ea0e3a7fd56386bc",
+      "bytes": 618
+    },
+    {
+      "path": "v10_research/bounded_attention/BA001_HANDOFF.md",
+      "sha256": "8f65d1c1d6a7b5a6aa881fc0615fde675868a9eb5a1caba55718930548f76294",
+      "bytes": 2781
+    },
+    {
+      "path": "v10_research/intermediate_precision/IP002_stationary_finite_domain_master_lower_v1.md",
+      "sha256": "59d5477653968534b71b54f10d4074cba5ea94db127108463292c13d34161302",
+      "bytes": 24228
+    },
+    {
+      "path": "v10_research/intake/IP002_acceptance.json",
+      "sha256": "31ca5d5f00a05ee132f46739ae8e619d4f9db37d96071dabfefbc59b32a81b29",
+      "bytes": 444
+    },
+    {
+      "path": "v10_research/strong_mixing_precision/SM002_iid_complete_master_precision_lower_v1.md",
+      "sha256": "170840c84e5633f5b131641aaef8ebaee9db69c5550e878db5002e5446cbb5cc",
+      "bytes": 19286
+    },
+    {
+      "path": "v10_research/intake/SM002_acceptance.json",
+      "sha256": "b5798bbefdcc2246e9307bc44980f5a0015994b01a226b59935104bebc2d1bbb",
+      "bytes": 479
+    },
+    {
+      "path": "v10_research/bounded_attention/BA001_scalar_coordinate_scope_note.md",
+      "sha256": "3d7067191f31989dbb6c959ab3aa0f2b3c45a38f3e69657441de9ba7733524a1",
+      "bytes": 969
+    },
+    {
+      "path": "v10_research/bounded_attention/BA001_source_bindings_v1.json",
+      "sha256": "4721da910bb237980f5c7bb00af9475becd639df42280151c06d3220dab1bc9f",
+      "bytes": 2734
+    }
+  ],
+  "review_outputs": [
+    {
+      "path": "v10_research/reviews/BA001_review_v1.md",
+      "sha256": "b702a51e3c88a3831d33c2fe7c0057dfe028ccf92d43cfc7498cac81f01ed90b",
+      "bytes": 10903
+    },
+    {
+      "path": "v10_research/reviews/BA001_independent_checks_v1.py",
+      "sha256": "f94ae19cbfad0a6a8129be64b1222dbfb8df64590bf70b66535ef53370de368e",
+      "bytes": 4458
+    },
+    {
+      "path": "v10_research/reviews/BA001_independent_checks_v1.json",
+      "sha256": "4385e6ee4d7b3abb7061cfe8100a22e6c55cbc93159e9463365476664b9c4ee1",
+      "bytes": 847
+    }
+  ],
+  "blockers": [],
+  "limitations": [
+    "Not external or formal review",
+    "No original emitted-network execution",
+    "No generic deep-Transformer theorem",
+    "Original-SRC inclusion requires its separate interface audit"
+  ]
+}

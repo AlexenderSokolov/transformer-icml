@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1040" viewBox="0 0 1500 1040" role="img" aria-labelledby="title desc">
+  <title id="title">预测计算架构：局部绑定、全局匹配与可恢复的统计通道</title>
+  <desc id="desc">有限前缀中已观察到的三元组先绑定情境和后继，再以当前末两项查询全局历史。完整情境匹配与逐项匹配是两种需要比较的不同机制。首个完整情境原型需要构造软读出、背景分布、情境占比等实际统计通道，经过直接读出或恢复、平滑得到合法预测概率。稀有情境与纯二阶交互是两个不同诊断原型，它们共同用于比较统计证据、计算精度及同预算结构。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#355a70" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="small-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#889ba6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#21394a}.title{font-size:29px;font-weight:700}.head{font-size:24px;font-weight:700}.text{font-size:21px}.small{font-size:19px;fill:#536875}.mono{font-family:Consolas,"Microsoft YaHei",monospace;font-size:21px}.node{fill:#f5f8fa;stroke:#aec3d1;stroke-width:1.7}.flow{fill:none;stroke:#355a70;stroke-width:2;marker-end:url(#arrow)}.effect{fill:none;stroke:#889ba6;stroke-width:1.8;stroke-dasharray:6 5;marker-end:url(#small-arrow)}</style>
+  </defs>
+  <rect width="1500" height="1040" fill="#fff"/>
+  <text x="30" y="44" class="title">实际网络要完成什么：绑定证据、区分情境、保留可恢复的预测信息</text>
+  <text x="30" y="79" class="small">局部绑定与全局汇总分开建模；先固定计算关系，再证明其收敛与成本。</text>
+
+  <text x="115" y="132" text-anchor="middle" class="small">未知二阶随机规律</text>
+  <text x="350" y="132" text-anchor="middle" class="small">相邻位置与顺序</text>
+  <path d="M350 142 V174" class="effect"/>
+  <text x="630" y="132" text-anchor="middle" class="small">当前末两项作为查询</text>
+  <path d="M630 142 V174" class="effect"/>
+  <text x="950" y="132" text-anchor="middle" class="small">残差和其他头也须纳入</text>
+  <path d="M950 142 V174" class="effect"/>
+
+  <rect x="30" y="178" width="170" height="244" rx="13" class="node"/>
+  <text x="115" y="216" text-anchor="middle" class="head">有限历史</text>
+  <text x="115" y="269" text-anchor="middle" class="mono">x_1,...,x_N</text>
+  <text x="115" y="322" text-anchor="middle" class="small">真实随机序列</text>
+  <text x="115" y="355" text-anchor="middle" class="small">有限次观察</text>
+  <text x="115" y="391" text-anchor="middle" class="small">不使用未来</text>
+  <path d="M200 299 H240" class="flow"/>
+
+  <rect x="245" y="178" width="210" height="244" rx="13" fill="#edf5f8" stroke="#78a6bd" stroke-width="1.8"/>
+  <text x="350" y="216" text-anchor="middle" class="head">局部绑定</text>
+  <text x="350" y="269" text-anchor="middle" class="mono">(a,b) → c</text>
+  <text x="350" y="322" text-anchor="middle" class="small">情境与已知后继</text>
+  <text x="350" y="355" text-anchor="middle" class="small">形成历史样本</text>
+  <text x="350" y="391" text-anchor="middle" class="small">编码与误差需证明</text>
+  <path d="M455 299 H495" class="flow"/>
+
+  <rect x="500" y="178" width="260" height="244" rx="13" fill="#edf5f8" stroke="#78a6bd" stroke-width="1.8"/>
+  <text x="630" y="216" text-anchor="middle" class="head">全局匹配</text>
+  <rect x="516" y="240" width="228" height="68" rx="8" fill="#f6fafc" stroke="#c2d5df"/>
+  <text x="630" y="268" text-anchor="middle" class="text">完整情境匹配</text>
+  <text x="630" y="294" text-anchor="middle" class="small">整个状态对一起比较</text>
+  <rect x="516" y="320" width="228" height="68" rx="8" fill="#f6fafc" stroke="#c2d5df"/>
+  <text x="630" y="348" text-anchor="middle" class="text">逐项匹配</text>
+  <text x="630" y="374" text-anchor="middle" class="small">两项分别比较再合成</text>
+  <text x="630" y="410" text-anchor="middle" class="small" style="font-size:17px">两条路线分别导出统计关系</text>
+  <path d="M760 299 H800" class="flow"/>
+
+  <rect x="805" y="178" width="290" height="244" rx="13" fill="#edf5f8" stroke="#78a6bd" stroke-width="1.8"/>
+  <text x="950" y="216" text-anchor="middle" class="head">可实现的统计通道</text>
+  <text x="950" y="250" text-anchor="middle" class="small">首个完整情境原型</text>
+  <text x="830" y="286" class="text">q_s：软汇总的后继分布</text>
+  <text x="830" y="319" class="text">r：历史总体后继分布</text>
+  <text x="830" y="352" class="text">u_s：当前情境的占比</text>
+  <text x="950" y="389" text-anchor="middle" class="small">辅助统计需要实际构造</text>
+  <text x="950" y="412" text-anchor="middle" class="small" style="font-size:17px">逐项匹配另行推导所需通道</text>
+  <path d="M1095 299 H1135" class="flow"/>
+
+  <rect x="1140" y="178" width="330" height="244" rx="13" class="node"/>
+  <text x="1305" y="216" text-anchor="middle" class="head">读出、恢复与概率预测</text>
+  <text x="1305" y="264" text-anchor="middle" class="text">直接读出：检验残留偏差</text>
+  <text x="1305" y="300" text-anchor="middle" class="text">统计校正：检验恢复条件</text>
+  <path d="M1305 315 V337" class="flow"/>
+  <text x="1305" y="365" text-anchor="middle" class="text">合法概率读出与平滑</text>
+  <text x="1305" y="399" text-anchor="middle" class="small">对照真实下一步概率计算风险</text>
+
+  <text x="30" y="460" class="small">因果约束：只有三项 a、b、c 都已观察到，才把 c 计入情境 (a,b) 的历史后继。</text>
+  <rect x="30" y="486" width="1440" height="80" rx="11" fill="#faf7f0" stroke="#d5c5a7" stroke-width="1.4"/>
+  <text x="750" y="519" text-anchor="middle" class="text" style="fill:#705d3c">实现成本必须计入：位置绑定、情境编码、辅助统计、乘除近似与概率读出</text>
+  <text x="750" y="549" text-anchor="middle" class="small">归一化放在哪里、残差保留什么，都由实际电路说明；不能把需要构造的通道视为免费信息。</text>
+
+  <text x="30" y="616" class="head">两类诊断原型：分别暴露不同障碍，不套用同一个匹配核的结论</text>
+  <rect x="30" y="643" width="700" height="149" rx="12" fill="#edf5ef" stroke="#a9c7b4" stroke-width="1.5"/>
+  <rect x="30" y="643" width="6" height="149" rx="3" fill="#477d63"/>
+  <text x="55" y="680" class="head" style="fill:#305d47">稀有情境：自己的信号被总体背景稀释</text>
+  <text x="55" y="720" class="text">先分析完整情境匹配：出现少，恢复时可能更敏感。</text>
+  <text x="55" y="755" class="small">区分“这个情境没有足够样本”和“已有证据受精度限制”。</text>
+  <text x="55" y="780" class="small">同时检查该情境风险与整体平均风险。</text>
+
+  <rect x="770" y="643" width="700" height="149" rx="12" fill="#f1f4fa" stroke="#b5c2d8" stroke-width="1.5"/>
+  <rect x="770" y="643" width="6" height="149" rx="3" fill="#516f9a"/>
+  <text x="795" y="680" class="head" style="fill:#3e587f">纯二阶交互：联合方向可能受到更强衰减</text>
+  <text x="795" y="720" class="text">先分析逐项匹配：单项信息尚在，联合关系已变弱。</text>
+  <text x="795" y="755" class="small">比较完整情境编码与逐项编码的表示成本、恢复代价。</text>
+  <text x="795" y="780" class="small">不把这一机制的衰减当成所有注意力的性质。</text>
+
+  <path d="M380 792 V823 H590 V849" class="flow"/>
+  <path d="M1120 792 V823 H910 V849" class="flow"/>
+  <rect x="205" y="853" width="1090" height="116" rx="13" fill="#edf5f8" stroke="#80a9be" stroke-width="1.8"/>
+  <text x="750" y="892" text-anchor="middle" class="head">共同落到一个问题：什么证据能够在给定资源下可靠用于预测？</text>
+  <text x="750" y="928" text-anchor="middle" class="text">统计证据与计算误差分开分析 → 同一预测风险 → 同预算结构比较</text>
+  <text x="750" y="954" text-anchor="middle" class="small">允许对照方法重新分配相同的头数、宽度、精度和计算；增加深度不保证恢复已丢信息。</text>
+  <text x="30" y="1012" class="small">上图是待完成的计算构造与证明安排；代数恒等式、网络可实现性和训练能否学会，分别验收。</text>
+</svg>

@@ -1,0 +1,27 @@
+--- v10_research/binary_arbitrary/BAI004_fullsupport_initial_delay_lemmas_v4.md	2026-11-01 22:41:21.197056923 -0800
++++ v10_research/binary_arbitrary/BAI004_fullsupport_initial_delay_lemmas_v5.md	2026-11-01 22:45:56.752423462 -0800
+@@ -1,6 +1,6 @@
+ # BAI004 — Square-root-beta occupation from a diagonal start to its successor crossing
+ 
+-2026-11-02. Author candidate v4, with the opposite-crossing weak-beta boundary explicitly separated. Independent full/delta review required. v1, accepted BAI003, and delivered materials remain unchanged. This is a strong intermediate lemma, NOT the complete arbitrary-initialization theorem.
++2026-11-02. Author candidate v5, with all standalone crossing-start zero-exit cases explicit. Independent full/delta review required. v1, accepted BAI003, and delivered materials remain unchanged. This is a strong intermediate lemma, NOT the complete arbitrary-initialization theorem.
+ 
+ ## 1. Main intermediate result
+ 
+@@ -158,7 +158,7 @@
+ 
+     E q_(Y_M)<=2(b+e)<=4/sqrt(M).                      (6.1)
+ 
+-Crossing endpoint contributions are at most b+e. For W endpoints, sum over the last B→W entrance: P(Y_M=W)<=e sum_(j>=0)(1-a)^j=e/a, so aP(Y_M=W)<=e. There is no initial W mass. Likewise tP(Y_M=C)<=b. Finally b+e<=2h. Thus (6.1) bounds E sum_s V_s independently of A0.
++Crossing endpoint contributions are at most b+e. For W endpoints, if a=0 the weighted contribution aP(Y_M=W) is zero. Otherwise sum over the last B→W entrance: P(Y_M=W)<=e sum_(j>=0)(1-a)^j=e/a, so aP(Y_M=W)<=e. There is no initial W mass. Likewise, if t=0 its weighted contribution is zero; otherwise the geometric last-entry sum gives tP(Y_M=C)<=b. Finally b+e<=2h. Thus (6.1) bounds E sum_s V_s independently of A0.
+ 
+ If h>M^(-1/2), let u=floor(M/2), and T_diag be the first diagonal hit. Then for M>=8,
+ 
+@@ -267,3 +267,7 @@
+ ## 11. v3-to-v4 boundary repair
+ 
+ The fresh reviewer identified that section9 divided by b without explicitly separating zero-parameter beta=0 cases. v4 applies the existing universal weak-beta bound first, and restricts the phase/Jensen proof to beta M²>=1, where the full-support certificate forces b,t>0. No constant or positive-parameter argument changes. v3 is preserved.
++
++## 12. v4-to-v5 standalone zero-exit clarification
++
++Root identified a small scope clarification in the standalone crossing-start reduction: its last-entry geometric calculation divided by a or t, although beta=0 can allow a zero exit. Section6 now explicitly handles a=0 and t=0 by their zero weighted contributions before using the geometric sum for positive exits. This leaves every estimate, constant, and positive-beta proof unchanged. v4 is preserved.

@@ -1,0 +1,1475 @@
+{
+  "status": "FAIL",
+  "restore": "DISPOSABLE_PACKAGE_ONLY_RESTORATION",
+  "package_manifest_sha256": "84aad6dcb9b0e9adc6a3ea99115624724ea779524ca72e0c33e142b08da64b6d",
+  "runner_sha256": "f37f7388e0984929e8bfb607c0aa98bd99696dc0f1b762c85bbe39c5022e3b05",
+  "binding_reconciliations": [
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "binding_file": "v10_research/depth_initialization_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/binary_arbitrary~1BAI002_review_v1.md",
+      "source_path": "v10_research/binary_arbitrary/BAI002_review_v1.md",
+      "original_sha256": "b66956a51a2be79356c933ef720f7d3f91703c20f831f1dc87e1e350a74620f9",
+      "export_sha256": "2e28b378d569cf8698cef6c2b5251e02a4972ee9c1f525d41bddc32274f5a3cb",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "binding_file": "v10_research/depth_initialization_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/binary_arbitrary~1BAI003_review_v1.md",
+      "source_path": "v10_research/binary_arbitrary/BAI003_review_v1.md",
+      "original_sha256": "42459b65016671265fe328864afd395cc87a539c16ef19ffb4b35dc84c8265dc",
+      "export_sha256": "b5fe97bbc7c0237bcc77c662df8f8c9cf2882801145e71981bc9d9cc3893ecf5",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "binding_file": "v10_research/depth_initialization_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/binary_arbitrary~1BAI003_review_v2.md",
+      "source_path": "v10_research/binary_arbitrary/BAI003_review_v2.md",
+      "original_sha256": "551543ab488b4582b44192396120a32a1d3fcf017668cafa8f9ceb8786225f4a",
+      "export_sha256": "8f9538c85b3e048dd20710b5461ebc9906eda7fc166d98ff7a54e5ab237d7ccb",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "binding_file": "v10_research/depth_initialization_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/binary_arbitrary~1BAI004_review_v1.md",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v1.md",
+      "original_sha256": "876bd35df632a0effe4b0cc6a24a397e36ffb5ac7e71ed9e187f2664609314d6",
+      "export_sha256": "e96fe3ae4510e6a2837ae20f95905772a5a6af4453de3d8908eb64070a38d7bb",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "binding_file": "v10_research/depth_initialization_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/binary_arbitrary~1BAI004_review_v2.md",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v2.md",
+      "original_sha256": "1c23149586bc42ad30b628d21d8f2bbc5afbcd345a4a4d036641ca60c76b6d3b",
+      "export_sha256": "d803980c94bbd0139af4270ce955d62960e78a4f17fe26c83f931d69b7c53949",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "binding_file": "v10_research/depth_initialization_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/binary_arbitrary~1BAI004_review_v3.md",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v3.md",
+      "original_sha256": "3f673186561f0e6087d7de23de5b20b17f04a671348c04e286b055687874e686",
+      "export_sha256": "8e7736c51806b1246de71a23de822e206988577e12a3643fd912e2669c72b774",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "binding_file": "v10_research/depth_initialization_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/binary_arbitrary~1BAI004_review_v4.md",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v4.md",
+      "original_sha256": "306a6d39b438559a9c65b5836605ccf90819189044102b3ca1d851b3584592a7",
+      "export_sha256": "561654bfbaedef86bedaa5af4aad3308d7d0790e201e771425d834685d782fab",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "binding_file": "v10_research/depth_initialization_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/binary_causal~1BC001_independent_review_v1.md",
+      "source_path": "v10_research/binary_causal/BC001_independent_review_v1.md",
+      "original_sha256": "b5865990f633ff75fb5ce002708d523b735e353ae7daf9e9881f798679604fdd",
+      "export_sha256": "ebee300c02c24919c9b9c3a0387b8beb964defd6d1f37f84dc86b7036f51c09e",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "binding_file": "v10_research/depth_initialization_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/binary_opposite_diagonal~1review_BOD001_bindings_v1.json",
+      "source_path": "v10_research/binary_opposite_diagonal/review_BOD001_bindings_v1.json",
+      "original_sha256": "ebe6f97bfc024839395375d7d703700da3a456a2318ab8f9e862372ffa772698",
+      "export_sha256": "ff071c4edbc8f7074e8c6fc7cdb547c8e9b2ecd1ee4a1d4889a5c8c4780bdc24",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "binding_file": "v10_research/depth_initialization_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/binary_weighted_coupling~1WM001_review_v1.md",
+      "source_path": "v10_research/binary_weighted_coupling/WM001_review_v1.md",
+      "original_sha256": "f635561ad457dd1e3ce2b8ec750a20129bebd361f39b75496d90e41b442b1ddb",
+      "export_sha256": "b17077952b037e5152345082738e659a40779e8584c0fcfa3193f40d045f3906",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "binding_file": "v10_research/depth_initialization_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/binary_weighted_coupling~1WM001_review_v2.md",
+      "source_path": "v10_research/binary_weighted_coupling/WM001_review_v2.md",
+      "original_sha256": "2398b796bc494d3000abad058bab6d6e125ba90a216f7824a37454c87f765662",
+      "export_sha256": "e54fe14a166d60edbf2ad62e879e18d0474d0476ed80967b79c6fa2d03030dd0",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "binding_file": "v10_research/depth_initialization_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/two_resource_frontier~1TR001_independent_review_v1.md",
+      "source_path": "v10_research/two_resource_frontier/TR001_independent_review_v1.md",
+      "original_sha256": "f077b8da23d4126b9f59b1ba270d82731c8d3383f6474d787e2057b3b3b380e4",
+      "export_sha256": "6028a23640b833b9cfc7ca75f0da7d67a5a1d60e70a389d56bd05001a4a5b900",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/25/sha256",
+      "source_path": "v10_research/reviews/SH001_review_v1.md",
+      "original_sha256": "9c8975a6d70b41b0a087123a409ccd8a9a5a943a7bb44efac7dcebb1c0c2416f",
+      "export_sha256": "4d94ecd3c065bafa2ec71ef8db37021d4c878d5667d1295b1cf8a5f5f1f9ee80",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/27/sha256",
+      "source_path": "v10_research/reviews/UI001_review_v1.md",
+      "original_sha256": "6b9b7aa04ae31d85c8ccef80f606468fa075c68397a8c727ce31459333530c1f",
+      "export_sha256": "f163d95b83a1e780fbdb3c52a842e1f902a5a42f1899e7d3544c451c9a9adfb5",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/30/sha256",
+      "source_path": "v10_research/two_resource_frontier/TR001_independent_review_v1.md",
+      "original_sha256": "f077b8da23d4126b9f59b1ba270d82731c8d3383f6474d787e2057b3b3b380e4",
+      "export_sha256": "6028a23640b833b9cfc7ca75f0da7d67a5a1d60e70a389d56bd05001a4a5b900",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/33/sha256",
+      "source_path": "v10_research/reviews/BI001_review_v1.md",
+      "original_sha256": "ee1755df7317b8e02efd4eecbb97f0254d8daa894bc5b5558483485b87b775a6",
+      "export_sha256": "df5c1ad8a3c98a11fa040150c2dc68886821c1f2d8a1c91f177a7fccad5e25c0",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/45/sha256",
+      "source_path": "v10_research/binary_causal/BC001_independent_review_v1.md",
+      "original_sha256": "b5865990f633ff75fb5ce002708d523b735e353ae7daf9e9881f798679604fdd",
+      "export_sha256": "ebee300c02c24919c9b9c3a0387b8beb964defd6d1f37f84dc86b7036f51c09e",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/49/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI002_review_v1.md",
+      "original_sha256": "b66956a51a2be79356c933ef720f7d3f91703c20f831f1dc87e1e350a74620f9",
+      "export_sha256": "2e28b378d569cf8698cef6c2b5251e02a4972ee9c1f525d41bddc32274f5a3cb",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/52/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI003_review_v1.md",
+      "original_sha256": "42459b65016671265fe328864afd395cc87a539c16ef19ffb4b35dc84c8265dc",
+      "export_sha256": "b5fe97bbc7c0237bcc77c662df8f8c9cf2882801145e71981bc9d9cc3893ecf5",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/53/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI003_review_v2.md",
+      "original_sha256": "551543ab488b4582b44192396120a32a1d3fcf017668cafa8f9ceb8786225f4a",
+      "export_sha256": "8f9538c85b3e048dd20710b5461ebc9906eda7fc166d98ff7a54e5ab237d7ccb",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/56/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v1.md",
+      "original_sha256": "876bd35df632a0effe4b0cc6a24a397e36ffb5ac7e71ed9e187f2664609314d6",
+      "export_sha256": "e96fe3ae4510e6a2837ae20f95905772a5a6af4453de3d8908eb64070a38d7bb",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/57/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v2.md",
+      "original_sha256": "1c23149586bc42ad30b628d21d8f2bbc5afbcd345a4a4d036641ca60c76b6d3b",
+      "export_sha256": "d803980c94bbd0139af4270ce955d62960e78a4f17fe26c83f931d69b7c53949",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/58/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v3.md",
+      "original_sha256": "3f673186561f0e6087d7de23de5b20b17f04a671348c04e286b055687874e686",
+      "export_sha256": "8e7736c51806b1246de71a23de822e206988577e12a3643fd912e2669c72b774",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/59/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v4.md",
+      "original_sha256": "306a6d39b438559a9c65b5836605ccf90819189044102b3ca1d851b3584592a7",
+      "export_sha256": "561654bfbaedef86bedaa5af4aad3308d7d0790e201e771425d834685d782fab",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/65/sha256",
+      "source_path": "v10_research/binary_weighted_coupling/WM001_review_v1.md",
+      "original_sha256": "f635561ad457dd1e3ce2b8ec750a20129bebd361f39b75496d90e41b442b1ddb",
+      "export_sha256": "b17077952b037e5152345082738e659a40779e8584c0fcfa3193f40d045f3906",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/66/sha256",
+      "source_path": "v10_research/binary_weighted_coupling/WM001_review_v2.md",
+      "original_sha256": "2398b796bc494d3000abad058bab6d6e125ba90a216f7824a37454c87f765662",
+      "export_sha256": "e54fe14a166d60edbf2ad62e879e18d0474d0476ed80967b79c6fa2d03030dd0",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/90/sha256",
+      "source_path": "v10_research/influence_reveal/IR001_independent_review.md",
+      "original_sha256": "57f1a10851039bc47c6321b08f60198fe8603e98f4462fe6b31de6cc5f13fd59",
+      "export_sha256": "4c3970a0db02e09984b9871b8a7cc0025ff137ae8f5a3737d045db1b3730f4de",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/94/sha256",
+      "source_path": "v10_research/iid_depth_capacity/IC001_independent_review.md",
+      "original_sha256": "488b0990edfeae39b9dbdfc1d337822605b39a2d67a0735c327e5d2ab5494318",
+      "export_sha256": "3beb4b636d97850f98549f262aa5788b2ec443d48759a53a4faabe5325429cdf",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/102/sha256",
+      "source_path": "v10_research/robust_scalar_packing/RP001_independent_review.md",
+      "original_sha256": "5679eedef7841cd0ccf1acc3b29cd769117dd6408c8dbb5b1620d7880cdfe269",
+      "export_sha256": "9be066588c51bdfaf87965d70a2434eafd9f7c4879aee4f054d2a5d4bc47baa1",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/128/sha256",
+      "source_path": "v10_research/manuscript_v4/QA_VERIFICATION.json",
+      "original_sha256": "7cd1908d1b24a7bf086292c3579106b7dbdecf8bf9ba30196c20d0cdf19e61eb",
+      "export_sha256": "7f89289342d09f3e588d3888418e254667debc6333aaf4e07078d4d05b244887",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/129/sha256",
+      "source_path": "v10_research/manuscript_v4/AUDIT_SCIENCE_FRESH.md",
+      "original_sha256": "b6b4d88006b51e57be05603e8aa7ee3bc1843f5cd8a9bc7a4209790700b7ccbe",
+      "export_sha256": "96b78c86ecfe7c39f1a4e656e7e5aecdd3f0798f1cd0d4c692e9f32e8404285f",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1binary_arbitrary~1BAI002_review_v1.md",
+      "source_path": "v10_research/binary_arbitrary/BAI002_review_v1.md",
+      "original_sha256": "b66956a51a2be79356c933ef720f7d3f91703c20f831f1dc87e1e350a74620f9",
+      "export_sha256": "2e28b378d569cf8698cef6c2b5251e02a4972ee9c1f525d41bddc32274f5a3cb",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1binary_arbitrary~1BAI003_review_v1.md",
+      "source_path": "v10_research/binary_arbitrary/BAI003_review_v1.md",
+      "original_sha256": "42459b65016671265fe328864afd395cc87a539c16ef19ffb4b35dc84c8265dc",
+      "export_sha256": "b5fe97bbc7c0237bcc77c662df8f8c9cf2882801145e71981bc9d9cc3893ecf5",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1binary_arbitrary~1BAI003_review_v2.md",
+      "source_path": "v10_research/binary_arbitrary/BAI003_review_v2.md",
+      "original_sha256": "551543ab488b4582b44192396120a32a1d3fcf017668cafa8f9ceb8786225f4a",
+      "export_sha256": "8f9538c85b3e048dd20710b5461ebc9906eda7fc166d98ff7a54e5ab237d7ccb",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1binary_arbitrary~1BAI004_review_v1.md",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v1.md",
+      "original_sha256": "876bd35df632a0effe4b0cc6a24a397e36ffb5ac7e71ed9e187f2664609314d6",
+      "export_sha256": "e96fe3ae4510e6a2837ae20f95905772a5a6af4453de3d8908eb64070a38d7bb",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1binary_arbitrary~1BAI004_review_v2.md",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v2.md",
+      "original_sha256": "1c23149586bc42ad30b628d21d8f2bbc5afbcd345a4a4d036641ca60c76b6d3b",
+      "export_sha256": "d803980c94bbd0139af4270ce955d62960e78a4f17fe26c83f931d69b7c53949",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1binary_arbitrary~1BAI004_review_v3.md",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v3.md",
+      "original_sha256": "3f673186561f0e6087d7de23de5b20b17f04a671348c04e286b055687874e686",
+      "export_sha256": "8e7736c51806b1246de71a23de822e206988577e12a3643fd912e2669c72b774",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1binary_arbitrary~1BAI004_review_v4.md",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v4.md",
+      "original_sha256": "306a6d39b438559a9c65b5836605ccf90819189044102b3ca1d851b3584592a7",
+      "export_sha256": "561654bfbaedef86bedaa5af4aad3308d7d0790e201e771425d834685d782fab",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1binary_causal~1BC001_independent_review_v1.md",
+      "source_path": "v10_research/binary_causal/BC001_independent_review_v1.md",
+      "original_sha256": "b5865990f633ff75fb5ce002708d523b735e353ae7daf9e9881f798679604fdd",
+      "export_sha256": "ebee300c02c24919c9b9c3a0387b8beb964defd6d1f37f84dc86b7036f51c09e",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1binary_opposite_diagonal~1review_BOD001_bindings_v1.json",
+      "source_path": "v10_research/binary_opposite_diagonal/review_BOD001_bindings_v1.json",
+      "original_sha256": "ebe6f97bfc024839395375d7d703700da3a456a2318ab8f9e862372ffa772698",
+      "export_sha256": "ff071c4edbc8f7074e8c6fc7cdb547c8e9b2ecd1ee4a1d4889a5c8c4780bdc24",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1binary_weighted_coupling~1WM001_review_v1.md",
+      "source_path": "v10_research/binary_weighted_coupling/WM001_review_v1.md",
+      "original_sha256": "f635561ad457dd1e3ce2b8ec750a20129bebd361f39b75496d90e41b442b1ddb",
+      "export_sha256": "b17077952b037e5152345082738e659a40779e8584c0fcfa3193f40d045f3906",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1binary_weighted_coupling~1WM001_review_v2.md",
+      "source_path": "v10_research/binary_weighted_coupling/WM001_review_v2.md",
+      "original_sha256": "2398b796bc494d3000abad058bab6d6e125ba90a216f7824a37454c87f765662",
+      "export_sha256": "e54fe14a166d60edbf2ad62e879e18d0474d0476ed80967b79c6fa2d03030dd0",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1iid_depth_capacity~1IC001_independent_review.md",
+      "source_path": "v10_research/iid_depth_capacity/IC001_independent_review.md",
+      "original_sha256": "488b0990edfeae39b9dbdfc1d337822605b39a2d67a0735c327e5d2ab5494318",
+      "export_sha256": "3beb4b636d97850f98549f262aa5788b2ec443d48759a53a4faabe5325429cdf",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1influence_reveal~1IR001_independent_review.md",
+      "source_path": "v10_research/influence_reveal/IR001_independent_review.md",
+      "original_sha256": "57f1a10851039bc47c6321b08f60198fe8603e98f4462fe6b31de6cc5f13fd59",
+      "export_sha256": "4c3970a0db02e09984b9871b8a7cc0025ff137ae8f5a3737d045db1b3730f4de",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1robust_scalar_packing~1RP001_independent_review.md",
+      "source_path": "v10_research/robust_scalar_packing/RP001_independent_review.md",
+      "original_sha256": "5679eedef7841cd0ccf1acc3b29cd769117dd6408c8dbb5b1620d7880cdfe269",
+      "export_sha256": "9be066588c51bdfaf87965d70a2434eafd9f7c4879aee4f054d2a5d4bc47baa1",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "binding_file": "v10_research/precision_robustness_guide/SOURCE_BINDINGS.json",
+      "json_pointer": "/files/v10_research~1two_resource_frontier~1TR001_independent_review_v1.md",
+      "source_path": "v10_research/two_resource_frontier/TR001_independent_review_v1.md",
+      "original_sha256": "f077b8da23d4126b9f59b1ba270d82731c8d3383f6474d787e2057b3b3b380e4",
+      "export_sha256": "6028a23640b833b9cfc7ca75f0da7d67a5a1d60e70a389d56bd05001a4a5b900",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/25/sha256",
+      "source_path": "v10_research/reviews/SH001_review_v1.md",
+      "original_sha256": "9c8975a6d70b41b0a087123a409ccd8a9a5a943a7bb44efac7dcebb1c0c2416f",
+      "export_sha256": "4d94ecd3c065bafa2ec71ef8db37021d4c878d5667d1295b1cf8a5f5f1f9ee80",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/27/sha256",
+      "source_path": "v10_research/reviews/UI001_review_v1.md",
+      "original_sha256": "6b9b7aa04ae31d85c8ccef80f606468fa075c68397a8c727ce31459333530c1f",
+      "export_sha256": "f163d95b83a1e780fbdb3c52a842e1f902a5a42f1899e7d3544c451c9a9adfb5",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/30/sha256",
+      "source_path": "v10_research/two_resource_frontier/TR001_independent_review_v1.md",
+      "original_sha256": "f077b8da23d4126b9f59b1ba270d82731c8d3383f6474d787e2057b3b3b380e4",
+      "export_sha256": "6028a23640b833b9cfc7ca75f0da7d67a5a1d60e70a389d56bd05001a4a5b900",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/33/sha256",
+      "source_path": "v10_research/reviews/BI001_review_v1.md",
+      "original_sha256": "ee1755df7317b8e02efd4eecbb97f0254d8daa894bc5b5558483485b87b775a6",
+      "export_sha256": "df5c1ad8a3c98a11fa040150c2dc68886821c1f2d8a1c91f177a7fccad5e25c0",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/45/sha256",
+      "source_path": "v10_research/binary_causal/BC001_independent_review_v1.md",
+      "original_sha256": "b5865990f633ff75fb5ce002708d523b735e353ae7daf9e9881f798679604fdd",
+      "export_sha256": "ebee300c02c24919c9b9c3a0387b8beb964defd6d1f37f84dc86b7036f51c09e",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/49/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI002_review_v1.md",
+      "original_sha256": "b66956a51a2be79356c933ef720f7d3f91703c20f831f1dc87e1e350a74620f9",
+      "export_sha256": "2e28b378d569cf8698cef6c2b5251e02a4972ee9c1f525d41bddc32274f5a3cb",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/52/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI003_review_v1.md",
+      "original_sha256": "42459b65016671265fe328864afd395cc87a539c16ef19ffb4b35dc84c8265dc",
+      "export_sha256": "b5fe97bbc7c0237bcc77c662df8f8c9cf2882801145e71981bc9d9cc3893ecf5",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/53/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI003_review_v2.md",
+      "original_sha256": "551543ab488b4582b44192396120a32a1d3fcf017668cafa8f9ceb8786225f4a",
+      "export_sha256": "8f9538c85b3e048dd20710b5461ebc9906eda7fc166d98ff7a54e5ab237d7ccb",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/56/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v1.md",
+      "original_sha256": "876bd35df632a0effe4b0cc6a24a397e36ffb5ac7e71ed9e187f2664609314d6",
+      "export_sha256": "e96fe3ae4510e6a2837ae20f95905772a5a6af4453de3d8908eb64070a38d7bb",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/57/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v2.md",
+      "original_sha256": "1c23149586bc42ad30b628d21d8f2bbc5afbcd345a4a4d036641ca60c76b6d3b",
+      "export_sha256": "d803980c94bbd0139af4270ce955d62960e78a4f17fe26c83f931d69b7c53949",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/58/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v3.md",
+      "original_sha256": "3f673186561f0e6087d7de23de5b20b17f04a671348c04e286b055687874e686",
+      "export_sha256": "8e7736c51806b1246de71a23de822e206988577e12a3643fd912e2669c72b774",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/59/sha256",
+      "source_path": "v10_research/binary_arbitrary/BAI004_review_v4.md",
+      "original_sha256": "306a6d39b438559a9c65b5836605ccf90819189044102b3ca1d851b3584592a7",
+      "export_sha256": "561654bfbaedef86bedaa5af4aad3308d7d0790e201e771425d834685d782fab",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/65/sha256",
+      "source_path": "v10_research/binary_weighted_coupling/WM001_review_v1.md",
+      "original_sha256": "f635561ad457dd1e3ce2b8ec750a20129bebd361f39b75496d90e41b442b1ddb",
+      "export_sha256": "b17077952b037e5152345082738e659a40779e8584c0fcfa3193f40d045f3906",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/66/sha256",
+      "source_path": "v10_research/binary_weighted_coupling/WM001_review_v2.md",
+      "original_sha256": "2398b796bc494d3000abad058bab6d6e125ba90a216f7824a37454c87f765662",
+      "export_sha256": "e54fe14a166d60edbf2ad62e879e18d0474d0476ed80967b79c6fa2d03030dd0",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/90/sha256",
+      "source_path": "v10_research/influence_reveal/IR001_independent_review.md",
+      "original_sha256": "57f1a10851039bc47c6321b08f60198fe8603e98f4462fe6b31de6cc5f13fd59",
+      "export_sha256": "4c3970a0db02e09984b9871b8a7cc0025ff137ae8f5a3737d045db1b3730f4de",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/94/sha256",
+      "source_path": "v10_research/iid_depth_capacity/IC001_independent_review.md",
+      "original_sha256": "488b0990edfeae39b9dbdfc1d337822605b39a2d67a0735c327e5d2ab5494318",
+      "export_sha256": "3beb4b636d97850f98549f262aa5788b2ec443d48759a53a4faabe5325429cdf",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/102/sha256",
+      "source_path": "v10_research/robust_scalar_packing/RP001_independent_review.md",
+      "original_sha256": "5679eedef7841cd0ccf1acc3b29cd769117dd6408c8dbb5b1620d7880cdfe269",
+      "export_sha256": "9be066588c51bdfaf87965d70a2434eafd9f7c4879aee4f054d2a5d4bc47baa1",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/128/sha256",
+      "source_path": "v10_research/manuscript_v4/QA_VERIFICATION.json",
+      "original_sha256": "7cd1908d1b24a7bf086292c3579106b7dbdecf8bf9ba30196c20d0cdf19e61eb",
+      "export_sha256": "7f89289342d09f3e588d3888418e254667debc6333aaf4e07078d4d05b244887",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "binding_file": "v10_research/manuscript_v5/SOURCE_MANIFEST.json",
+      "json_pointer": "/sources/129/sha256",
+      "source_path": "v10_research/manuscript_v4/AUDIT_SCIENCE_FRESH.md",
+      "original_sha256": "b6b4d88006b51e57be05603e8aa7ee3bc1843f5cd8a9bc7a4209790700b7ccbe",
+      "export_sha256": "96b78c86ecfe7c39f1a4e656e7e5aecdd3f0798f1cd0d4c692e9f32e8404285f",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/two_resource_frontier/TR001_diagnostics_v1.py",
+      "binding_file": "v10_research/two_resource_frontier/TR001_source_bindings_v1.json",
+      "json_pointer": "/sources/2/sha256",
+      "source_path": "v10_research/reviews/UI001_review_v1.md",
+      "original_sha256": "6b9b7aa04ae31d85c8ccef80f606468fa075c68397a8c727ce31459333530c1f",
+      "export_sha256": "f163d95b83a1e780fbdb3c52a842e1f902a5a42f1899e7d3544c451c9a9adfb5",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    },
+    {
+      "script": "v10_research/two_resource_frontier/TR001_independent_checks_v1.py",
+      "binding_file": "v10_research/two_resource_frontier/TR001_source_bindings_v1.json",
+      "json_pointer": "/sources/2/sha256",
+      "source_path": "v10_research/reviews/UI001_review_v1.md",
+      "original_sha256": "6b9b7aa04ae31d85c8ccef80f606468fa075c68397a8c727ce31459333530c1f",
+      "export_sha256": "f163d95b83a1e780fbdb3c52a842e1f902a5a42f1899e7d3544c451c9a9adfb5",
+      "basis": "exact declared routing-only source/export delta in this script disposable copy"
+    }
+  ],
+  "byte_identical_script_aliases": {
+    "v10_research/reviews/BI001_independent_checks_v1.py": {
+      "canonical_script": "reviews/BI001_independent_checks_v1.py",
+      "identical_script_sha256": "92e609a3a44ccd67b642ce9c6b61c4fe56f9e8e22d30fccce3a165e4debe7065"
+    },
+    "v10_research/reviews/CF001_independent_checks_v1.py": {
+      "canonical_script": "reviews/CF001_independent_checks_v1.py",
+      "identical_script_sha256": "cafefc8fd96e92a49216f2b9c87e5d124168f2d812f4c693214afa622f886f2d"
+    },
+    "v10_research/reviews/FA001_independent_checks_v2.py": {
+      "canonical_script": "reviews/FA001_independent_checks_v2.py",
+      "identical_script_sha256": "01ccf46c8bf88d98aa4e913ac3c78e8d223835a5f24afb9b06b4252ee6bbb7c4"
+    },
+    "v10_research/reviews/GW001_independent_checks_v2.py": {
+      "canonical_script": "reviews/GW001_independent_checks_v2.py",
+      "identical_script_sha256": "a25ce0cf8a892d38091c1cd742ec0f4e6a949cc03c6f14be6bd15b0d4a2bcec5"
+    },
+    "v10_research/reviews/SB001_independent_checks_v2.py": {
+      "canonical_script": "reviews/SB001_independent_checks_v2.py",
+      "identical_script_sha256": "fc1fdd116df6f17ec4177a94088e5a46cc626fa3bd502e792920fabadff8d4a4"
+    },
+    "v10_research/growing_depth/preclarification_20261102T065250Z/GD001_diagnostics.py": {
+      "canonical_script": "v10_research/growing_depth/GD001_diagnostics.py",
+      "identical_script_sha256": "8f63e94024eb3498880f83e3656cc319b6ba4affb4e01339af792f271d2bcba3"
+    },
+    "v10_research/growing_depth/preclarification_20261102T065250Z/GD001_independent_checks.py": {
+      "canonical_script": "v10_research/growing_depth/GD001_independent_checks.py",
+      "identical_script_sha256": "feb95e8848aa9477720b12ad508390d414e2d511cf72e830fe4bc03d1e3f3c50"
+    }
+  },
+  "passing_current_scripts": 90,
+  "expected_historical_failures": 1,
+  "unexpected_failures": 1,
+  "checks": [
+    {
+      "script": "reviews/BI001_independent_checks_v1.py",
+      "script_sha256": "92e609a3a44ccd67b642ce9c6b61c4fe56f9e8e22d30fccce3a165e4debe7065",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS_FINITE_DIAGNOSTICS_NOT_FORMAL_VERIFICATION\",\n  \"symbolic\": [\n    \"stationarity and normalization\",\n    \"full 4x4 P squared\",\n    \"R squared B column and R cubed A column\",\n    \"topology-specific beta obstruction identity\"\n  ],\n  \"all_state_parameter_cases\": 75,\n  \"minimum_minorization_slack\": \"1/3600000000000\",\n  \"enumerated_path_density_cases\": 675,\n  \"positional_local_sum_cases\": 336,\n  \"maximum_variance_bound_ratio\": \"14257/307077120\",\n  \"maximum_derivative_bound_ratio\": \"13/2176\",\n  \"maximum_Doob_range_bound_ratio\": \"1127/26112\",\n  \"cutoff_harmonic_cases\": 60,\n  \"minimum_harmonic_ratio_80digits\": \"1.4426950408889634073599246810018921374266459541529859341354494069311092191811851\",\n  \"arithmetic\": \"SymPy symbolic + Fraction exact; harmonic logarithm only mpmath 80 digits\",\n  \"bindings\": {\n    \"v10_research/binary_frontier/BI001_binary_rare_suffix_lower_v1.md\": \"7fee27f4de9040f8509c86c0a7a2fca627623529f0e8d0ff192531a02d1dfb73\",\n    \"v10_research/bounded_attention/BA001_bounded_local_attention_lower_v1.md\": \"fb589a775220737124a42e96a115eb3471ccbb84933edc2fd488e0d5986f1569\",\n    \"v10_research/score_precision/SH001_sharp_weight_ratio_threshold_v1.md\": \"fa8e326047f2df8f01dd7b3112da655937ad7be1a3508ad00b80ccd51b64fd50\",\n    \"v10_research/score_precision/SB001_loglog_effective_score_budget_v2.md\": \"d10086be4d358e322872daffad4dd10572588d6dcffaecbffefc409df6a217b7\",\n    \"v10_research/range_uniform_iid/UI001_range_uniform_iid_floor_v1.md\": \"c4bd8a5d7324ed1cf03c1d746a253b592fbe9a63e9e6020be95e657c13307dde\"\n  }\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "reviews/CF001_independent_checks_v1.py",
+      "script_sha256": "cafefc8fd96e92a49216f2b9c87e5d124168f2d812f4c693214afa622f886f2d",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"bank_cases\": 912,\n  \"compiled_cases\": 48,\n  \"scalar_cases\": 50000,\n  \"mask_rows\": 500292,\n  \"new_rejects\": 37,\n  \"scope\": \"Exact rational arbitrary compatible master errors and new positive-shift finite head examples; floating scalar sweep; not a proof, generic compiler certificate, resource measurement or risk simulation.\",\n  \"script_sha256\": \"cafefc8fd96e92a49216f2b9c87e5d124168f2d812f4c693214afa622f886f2d\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "reviews/FA001_independent_checks_v2.py",
+      "script_sha256": "01ccf46c8bf88d98aa4e913ac3c78e8d223835a5f24afb9b06b4252ee6bbb7c4",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"independent exact finite diagnostics, not proof or cost benchmarks\",\n  \"compressed_exponent_conversion_cases\": 1275,\n  \"exp_interval_cases\": 69,\n  \"odd_even_factorial_tail_cases\": 300,\n  \"max_taylor_product_bits_observed\": 43,\n  \"signed_normalization_cases\": 30,\n  \"precision_choices\": [\n    {\n      \"Cstar\": \"1\",\n      \"Carch\": 3\n    },\n    {\n      \"Cstar\": \"7\",\n      \"Carch\": 7\n    },\n    {\n      \"Cstar\": \"1000000000\",\n      \"Carch\": 36\n    },\n    {\n      \"Cstar\": \"10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\",\n      \"Carch\": 341\n    }\n  ],\n  \"label_equality_counterexample\": {\n    \"ideal\": \"1/4\",\n    \"actual\": \"63/256\",\n    \"Q\": 4\n  },\n  \"status\": \"PASS\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "reviews/GW001_independent_checks_v2.py",
+      "script_sha256": "a25ce0cf8a892d38091c1cd742ec0f4e6a949cc03c6f14be6bd15b0d4a2bcec5",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"counts\": {\n    \"histories\": 2096,\n    \"rows\": 65096,\n    \"empty_terminal\": 3608,\n    \"nonempty_terminal\": 4776,\n    \"uc\": 3564,\n    \"division\": 2370,\n    \"precision\": 2496\n  },\n  \"source_bindings_verified\": 8,\n  \"limits\": \"Independent finite exact diagnostics; no original emitter, complete circuit execution, formal proof checking, or numerical-risk validation claimed.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "reviews/SB001_independent_checks_v2.py",
+      "script_sha256": "fc1fdd116df6f17ec4177a94088e5a46cc626fa3bd502e792920fabadff8d4a4",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"source_sha256\": \"d10086be4d358e322872daffad4dd10572588d6dcffaecbffefc409df6a217b7\",\n  \"checks\": {\n    \"exact_history_tests\": {\n      \"cases\": 38547,\n      \"all_zero_selected_blocks\": 29482,\n      \"zero_match_histories\": 19134\n    },\n    \"integer_schedule_tests\": 14866,\n    \"scalar_envelope_tests\": 4375,\n    \"mixing_choice_and_log_comparison_tests\": 1605,\n    \"BA_constant_tests\": 60\n  },\n  \"limits\": \"Independent finite corroboration, not formal verification, not emitted-network execution, not a statistical theorem replacement.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_all_start/BIF001_diagnostics_v1.py",
+      "script_sha256": "2b4f3402da4978682f9e8ca7ff4596c1d877a1c9f0ec1f44e38d21953466f1de",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS finite deterministic boundary checks only; not universal proof\",\n  \"checks\": 14640,\n  \"branches\": {\n    \"weak\": 600,\n    \"strong_full\": 1680,\n    \"lower_A\": 510,\n    \"lower_B\": 1330,\n    \"lower_C\": 24,\n    \"lower_D\": 416\n  },\n  \"proof_sha256\": \"35c6cb3b5c882c9e70dad68dbc8492c08e65ba49f532da84597e5e1e303467f0\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_all_start/BIF001_independent_checks_v1.py",
+      "script_sha256": "626ef54bedca133b1209dd9338fabaee2e8842c2eee9ae02786845c94a5c2d48",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS finite diagnostics only; not proof or root acceptance\",\n  \"seed\": 202611020648,\n  \"checks\": 163846,\n  \"branch_counts\": {\n    \"A\": 5755,\n    \"B\": 15268,\n    \"C\": 3643,\n    \"D\": 5334\n  },\n  \"max_observed_ratios\": {\n    \"statistical_constant\": 0.7073251910452357,\n    \"crossing_tail_max\": 0.9810118431238463,\n    \"lower_branch_B\": 0.0562731466977411,\n    \"threshold_sufficient\": 0.6703345490480525,\n    \"precision_constant\": 0.7636718748778186,\n    \"short_suffix_log\": 1.0,\n    \"lower_branch_C\": 0.11457047540798734,\n    \"lower_branch_D\": 0.4999626266078709,\n    \"lower_branch_A\": 0.48763168058566303,\n    \"finite_weighted_occupation\": 5.549212771799736e-05,\n    \"finite_diagonal_occupation\": 0.00011095092938752687\n  }\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_arbitrary/BAI001_boundary_mixing_diagnostic_v1.py",
+      "script_sha256": "810896c974a340c357740e90454c7f42bced637d053909d48b7acab287ecce61",
+      "returncode": 0,
+      "stdout": "[\n  {\n    \"e\": 0.1,\n    \"M\": 10,\n    \"beta\": 0.05,\n    \"stationary_residual\": 0.0,\n    \"minorization_min\": 0.0,\n    \"terminal_law\": [\n      0.27639875,\n      0.230304375,\n      0.24664843749999996,\n      0.24664843749999996\n    ],\n    \"minority_weighted_terminal_mass\": 0.26314125,\n    \"analytic_lower\": 0.021792402506250006,\n    \"positive_a_exceptional_ratio\": 0.010300000000000002\n  },\n  {\n    \"e\": 0.01,\n    \"M\": 100,\n    \"beta\": 0.005,\n    \"stationary_residual\": 0.0,\n    \"minorization_min\": 0.0,\n    \"terminal_law\": [\n      0.28280106355746754,\n      0.23799904650778686,\n      0.23959994496737255,\n      0.23959994496737255\n    ],\n    \"minority_weighted_terminal_mass\": 0.24119549518725342,\n    \"analytic_lower\": 0.022877021329576825,\n    \"positive_a_exceptional_ratio\": 0.00010003\n  },\n  {\n    \"e\": 0.001,\n    \"M\": 1000,\n    \"beta\": 0.0005,\n    \"stationary_residual\": 0.0,\n    \"minorization_min\": 0.0,\n    \"terminal_law\": [\n      0.2834023024997027,\n      0.23875968933529884,\n      0.23891900408250186,\n      0.23891900408250186\n    ],\n    \"minority_weighted_terminal_mass\": 0.23907826571298285,\n    \"analytic_lower\": 0.022980964048185233,\n    \"positive_a_exceptional_ratio\": 1.0000029999999998e-06\n  }\n]\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_arbitrary/BAI002_diagnostics_v1.py",
+      "script_sha256": "f7a7fd611230813dbe931e0a78f3d3bce01b93eaeb2f2cc3fb775cf92e298275",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"occupation_cases\": [\n    {\n      \"eta\": 0.5,\n      \"b\": 0.5,\n      \"t\": 0.5,\n      \"e\": 0.001,\n      \"M\": 64,\n      \"start\": 1,\n      \"beta\": 0.0005,\n      \"active_functional\": 0.0859043513935644,\n      \"reflected_functional\": 0.08773799607864577,\n      \"reflection_slack\": 0.001833644685081376,\n      \"core_block_B_min\": 0.25,\n      \"analytic_bound\": 6.647490707753786\n    },\n    {\n      \"eta\": 0.5,\n      \"b\": 0.5,\n      \"t\": 0.5,\n      \"e\": 0.001,\n      \"M\": 64,\n      \"start\": 2,\n      \"beta\": 0.0005,\n      \"active_functional\": 0.08585715218721633,\n      \"reflected_functional\": 0.08774913416847907,\n      \"reflection_slack\": 0.0018919819812627386,\n      \"core_block_B_min\": 0.25,\n      \"analytic_bound\": 6.647490707753786\n    },\n    {\n      \"eta\": 0.5,\n      \"b\": 0.5,\n      \"t\": 0.5,\n      \"e\": 0.001,\n      \"M\": 64,\n      \"start\": 3,\n      \"beta\": 0.0005,\n      \"active_functional\": 0.08587329023942834,\n      \"reflected_functional\": 0.08770547779930632,\n      \"reflection_slack\": 0.0018321875598779763,\n      \"core_block_B_min\": 0.25,\n      \"analytic_bound\": 6.647490707753786\n    },\n    {\n      \"eta\": 0.25,\n      \"b\": 0.25,\n      \"t\": 0.75,\n      \"e\": 0.1,\n      \"M\": 128,\n      \"start\": 1,\n      \"beta\": 0.07500000000000001,\n      \"active_functional\": 0.00014593260582852527,\n      \"reflected_functional\": 0.04507404427056757,\n      \"reflection_slack\": 0.04492811166473904,\n      \"core_block_B_min\": 0.1875,\n      \"analytic_bound\": 18.90769970342903\n    },\n    {\n      \"eta\": 0.25,\n      \"b\": 0.25,\n      \"t\": 0.75,\n      \"e\": 0.1,\n      \"M\": 128,\n      \"start\": 2,\n      \"beta\": 0.07500000000000001,\n      \"active_functional\": 0.0001375552007214076,\n      \"reflected_functional\": 0.04514464298776022,\n      \"reflection_slack\": 0.04500708778703881,\n      \"core_block_B_min\": 0.1875,\n      \"analytic_bound\": 18.90769970342903\n    },\n    {\n      \"eta\": 0.25,\n      \"b\": 0.25,\n      \"t\": 0.75,\n      \"e\": 0.1,\n      \"M\": 128,\n      \"start\": 3,\n      \"beta\": 0.07500000000000001,\n      \"active_functional\": 0.00014449389330290126,\n      \"reflected_functional\": 0.04458387983411766,\n      \"reflection_slack\": 0.04443938594081476,\n      \"core_block_B_min\": 0.1875,\n      \"analytic_bound\": 18.90769970342903\n    },\n    {\n      \"eta\": 0.2,\n      \"b\": 0.7,\n      \"t\": 0.3,\n      \"e\": 0.9,\n      \"M\": 64,\n      \"start\": 1,\n      \"beta\": 0.27,\n      \"active_functional\": 9.534691565711813e-10,\n      \"reflected_functional\": 0.08658162728154789,\n      \"reflection_slack\": 0.08658162632807874,\n      \"core_block_B_min\": 0.21,\n      \"analytic_bound\": 65.47609574451117\n    },\n    {\n      \"eta\": 0.2,\n      \"b\": 0.7,\n      \"t\": 0.3,\n      \"e\": 0.9,\n      \"M\": 64,\n      \"start\": 2,\n      \"beta\": 0.27,\n      \"active_functional\": 1.107760994916585e-10,\n      \"reflected_functional\": 0.08606943567894354,\n      \"reflection_slack\": 0.08606943556816744,\n      \"core_block_B_min\": 0.21,\n      \"analytic_bound\": 65.47609574451117\n    },\n    {\n      \"eta\": 0.2,\n      \"b\": 0.7,\n      \"t\": 0.3,\n      \"e\": 0.9,\n      \"M\": 64,\n      \"start\": 3,\n      \"beta\": 0.27,\n      \"active_functional\": 9.705362477266364e-10,\n      \"reflected_functional\": 0.08751320955924197,\n      \"reflection_slack\": 0.08751320858870572,\n      \"core_block_B_min\": 0.21,\n      \"analytic_bound\": 65.47609574451117\n    },\n    {\n      \"eta\": 0.5,\n      \"b\": 0.5,\n      \"t\": 0.5,\n      \"e\": 0,\n      \"M\": 512,\n      \"start\": 1,\n      \"beta\": 0.0,\n      \"active_functional\": 0.011620262308042577,\n      \"reflected_functional\": 0.011620262308042577,\n      \"reflection_slack\": 0.0,\n      \"core_block_B_min\": 0.25,\n      \"analytic_bound\": 1.603638323514327\n    },\n    {\n      \"eta\": 0.5,\n      \"b\": 0.5,\n      \"t\": 0.5,\n      \"e\": 0,\n      \"M\": 512,\n      \"start\": 2,\n      \"beta\": 0.0,\n      \"active_functional\": 0.011620291068151354,\n      \"reflected_functional\": 0.011620291068151354,\n      \"reflection_slack\": 0.0,\n      \"core_block_B_min\": 0.25,\n      \"analytic_bound\": 1.603638323514327\n    },\n    {\n      \"eta\": 0.5,\n      \"b\": 0.5,\n      \"t\": 0.5,\n      \"e\": 0,\n      \"M\": 512,\n      \"start\": 3,\n      \"beta\": 0.0,\n      \"active_functional\": 0.01162017635941821,\n      \"reflected_functional\": 0.01162017635941821,\n      \"reflection_slack\": 0.0,\n      \"core_block_B_min\": 0.25,\n      \"analytic_bound\": 1.603638323514327\n    }\n  ],\n  \"arithmetic_checks\": 11565\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_arbitrary/BAI003_diagnostics_v1.py",
+      "script_sha256": "72760ea7a67cdebff07f4e20c84e74617f771a912156ff0f1759a00df088e043",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"parameter_pairs\": 146,\n  \"weighted_DP_cases\": 2628,\n  \"max_ratio_to_uniform_bound\": 0.045454545454545456,\n  \"min_run_reduction_slack\": -2.7755575615628914e-17,\n  \"max_renewal_coefficient_violation\": 1.1102230246251565e-16\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_arbitrary/BAI003_review_diagnostic_v1.py",
+      "script_sha256": "7df5bea202b59ab9753fc8c1ce9afe58ad5fb7f2d9648864aa3650e591f74b86",
+      "returncode": 0,
+      "stdout": "{'exact_terminal_DP_vs_run_coefficient_comparisons': 192, 'max_coefficient_excess': 0, 'max_ratio_to_64_over_M': np.float64(0.043600568962511486)}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_arbitrary/BAI004_diagnostics_v1.py",
+      "script_sha256": "5ce3720bec8eb615d7500ace404bd0c2dd63ee76982346103747c8b4e9722ec6",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scalar_bridge_cases\": 6000,\n  \"occupation_DP_cases\": 720,\n  \"max_bridge_ratio\": 0.16641590172165635,\n  \"max_truncated_count_ratio\": 1.0000000000000002,\n  \"max_actual_occupation_to_bound_ratio\": 0.019377067854129484\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_arbitrary/BAI004_diagnostics_v2.py",
+      "script_sha256": "29978dfb94c18dfd0186ae47ce35f5fe77c94708f07bd6f3f742563cc646918b",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"phase_convolution_cases\": 588,\n  \"max_exact_identity_error\": 1.1102230246251565e-16,\n  \"max_actual_bound_ratio\": 0.008359634717693453\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_arbitrary/BAI004_review_diagnostic_v1.py",
+      "script_sha256": "06db58308ae14bbe15b8656dc1c0db701c0b82737b56d5e9e3c0cd843b944f96",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"source_cases\": 500,\n  \"positive_gamma_scalar_checks\": 272,\n  \"main_terminal_count_cases\": 600,\n  \"general_trace_identity_cases\": 960,\n  \"max_main_ratio\": 0.3873091690555916,\n  \"max_truncated_count_ratio\": 1.000000000000001\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_arbitrary/BAI004_review_phase_diagnostic_v1.py",
+      "script_sha256": "c4d0f35db1ac3c8ce7328146d687d561341a8de61ee1ab56bf664c51de688c84",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"parameter_sets\": 84,\n  \"convolution_horizon_comparisons\": 26880,\n  \"maximum_convolution_absolute_error\": 2.220446049250313e-16,\n  \"maximum_main_bound_ratio\": 0.9237062428902791\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_causal/BC001_diagnostics_v1.py",
+      "script_sha256": "b19d4f797c78bd958c4de591c43161b5a22ffab1c6f5c8af913aec44d6101239",
+      "returncode": 0,
+      "stdout": "{\n  \"exact_FA_equal_weight_nested_floors_cases\": 6790,\n  \"exact_reference_minorization_parameter_cases\": 33,\n  \"nonlinear_reference_exact_moment_cases\": 21,\n  \"completion_float_cases\": 2562,\n  \"status\": \"PASS; finite diagnostics only\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_causal/BC001_independent_checks_v1.py",
+      "script_sha256": "ff24e11da37be58c2c936c72c818d799de062e35fda1dcd7b58fbfd780ae1765",
+      "returncode": 0,
+      "stdout": "{\n  \"exact_stationarity_minorization_cases\": 60,\n  \"exact_taylor_normalization_nested_floor_cases\": 55260,\n  \"dense_mask_rows\": 1269,\n  \"exhaustive_histories_bit_features_histogram_labels\": 2040,\n  \"floating_all_regime_completion_cases\": 1656,\n  \"accepted_source_hashes_verified\": [\n    \"CA001\",\n    \"FA001\",\n    \"CF001\",\n    \"BI001\",\n    \"BU001\",\n    \"BS001\",\n    \"SB001\"\n  ],\n  \"status\": \"PASS; finite diagnostics only, not universal proof\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_erasure_transport/check_bt001.py",
+      "script_sha256": "0e50ace4976d1835e263af607678cde1bb2b531c1df52c4266ea75feadac78b1",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"exact_checks\": 5282,\n  \"scope\": \"stationarity, all-state certificate grid, boundary formula, failed-merge density and cost\",\n  \"missing_transport_theorem\": \"NOT CHECKED OR PROVED\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_erasure_transport/check_bt002.py",
+      "script_sha256": "ea1bfa297bb2ac7b9391d51d962874402c5014177f9144775bae0f88b8cbd609",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"structural_checks\": 762,\n  \"scope\": \"exact reference powers, return-count probabilities, binomial-mode bound, rational grid cardinalities; numeric safe constants\",\n  \"does_not_claim\": \"formal verification or computational execution at huge entropy cutoff\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_erasure_transport/check_bt002_review.py",
+      "script_sha256": "bab0a701788fbc33d808eab7cf6bf6f91f3020b99e2dcb9a7d86b1e344ccb02c",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"checks\": {\n    \"fifth_power_entries\": 15,\n    \"return_count_identities\": 145,\n    \"binomial_mode_bounds\": 4950,\n    \"grid_spacing\": 12,\n    \"scalar_sum_completion\": 270\n  },\n  \"total\": 5392,\n  \"limits\": \"Finite exact/rational and floating scalar diagnostics; no formal verification.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_erasure_transport/check_bt002_scalar.py",
+      "script_sha256": "c2f4938465d691e5787a5a1347ce7e6602abed3816c8283871212cd2fe50bd86",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"inequalities_checked\": 99180,\n  \"largest_SCALAR1_ratio\": 0.5216854757464515,\n  \"largest_SCALAR3_ratio\": 0.3081158802061514,\n  \"scope\": \"Finite diagnostics; proof in BT002_scalar_completion.md\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_erasure_transport/transport_lp.py",
+      "script_sha256": "75ee7518918c9fdc6cc1bb148b421170b891cc8741cc9e2338efda9ba33d2e3f",
+      "returncode": 0,
+      "stdout": "{'s': 0, 'l': 2, 'j': 6, 'source_size': 1, 'target_size': 1, 'min_expected_hamming': 3.0, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 3}\n{'s': 1, 'l': 2, 'j': 8, 'source_size': 3, 'target_size': 1, 'min_expected_hamming': 3.6666666666666665, 'nearest_min': 3, 'worst_nearest_source': 5, 'worst_nearest_target': 3}\n{'s': 2, 'l': 2, 'j': 10, 'source_size': 6, 'target_size': 1, 'min_expected_hamming': 4.333333333333333, 'nearest_min': 3, 'worst_nearest_source': 7, 'worst_nearest_target': 3}\n{'s': 3, 'l': 2, 'j': 12, 'source_size': 10, 'target_size': 1, 'min_expected_hamming': 5.0, 'nearest_min': 3, 'worst_nearest_source': 9, 'worst_nearest_target': 3}\n{'s': 4, 'l': 2, 'j': 14, 'source_size': 15, 'target_size': 1, 'min_expected_hamming': 5.666666666666667, 'nearest_min': 3, 'worst_nearest_source': 11, 'worst_nearest_target': 3}\n{'s': 6, 'l': 2, 'j': 18, 'source_size': 28, 'target_size': 1, 'min_expected_hamming': 6.999999999999999, 'nearest_min': 3, 'worst_nearest_source': 15, 'worst_nearest_target': 3}\n{'s': 8, 'l': 2, 'j': 22, 'source_size': 45, 'target_size': 1, 'min_expected_hamming': 8.333333333333332, 'nearest_min': 3, 'worst_nearest_source': 19, 'worst_nearest_target': 3}\n{'s': 10, 'l': 2, 'j': 26, 'source_size': 66, 'target_size': 1, 'min_expected_hamming': 9.666666666666671, 'nearest_min': 3, 'worst_nearest_source': 23, 'worst_nearest_target': 3}\n{'s': 0, 'l': 3, 'j': 9, 'source_size': 1, 'target_size': 4, 'min_expected_hamming': 4.0, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 5}\n{'s': 1, 'l': 3, 'j': 11, 'source_size': 4, 'target_size': 5, 'min_expected_hamming': 3.6, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 5}\n{'s': 2, 'l': 3, 'j': 13, 'source_size': 10, 'target_size': 6, 'min_expected_hamming': 3.7999999999999994, 'nearest_min': 3, 'worst_nearest_source': 5, 'worst_nearest_target': 3}\n{'s': 3, 'l': 3, 'j': 15, 'source_size': 20, 'target_size': 7, 'min_expected_hamming': 3.771428571428571, 'nearest_min': 3, 'worst_nearest_source': 5, 'worst_nearest_target': 3}\n{'s': 4, 'l': 3, 'j': 17, 'source_size': 35, 'target_size': 8, 'min_expected_hamming': 4.057142857142858, 'nearest_min': 3, 'worst_nearest_source': 7, 'worst_nearest_target': 3}\n{'s': 6, 'l': 3, 'j': 21, 'source_size': 84, 'target_size': 10, 'min_expected_hamming': 4.485714285714281, 'nearest_min': 3, 'worst_nearest_source': 9, 'worst_nearest_target': 3}\n{'s': 8, 'l': 3, 'j': 25, 'source_size': 165, 'target_size': 12, 'min_expected_hamming': 4.957575757575757, 'nearest_min': 3, 'worst_nearest_source': 11, 'worst_nearest_target': 3}\n{'s': 10, 'l': 3, 'j': 29, 'source_size': 286, 'target_size': 14, 'min_expected_hamming': 5.4515484515484625, 'nearest_min': 3, 'worst_nearest_source': 13, 'worst_nearest_target': 3}\n{'s': 0, 'l': 4, 'j': 12, 'source_size': 1, 'target_size': 10, 'min_expected_hamming': 5.0, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 7}\n{'s': 1, 'l': 4, 'j': 14, 'source_size': 5, 'target_size': 15, 'min_expected_hamming': 4.200000000000001, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 7}\n{'s': 2, 'l': 4, 'j': 16, 'source_size': 15, 'target_size': 21, 'min_expected_hamming': 3.7047619047619036, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 5}\n{'s': 3, 'l': 4, 'j': 18, 'source_size': 35, 'target_size': 28, 'min_expected_hamming': 3.6857142857142837, 'nearest_min': 3, 'worst_nearest_source': 5, 'worst_nearest_target': 5}\n{'s': 4, 'l': 4, 'j': 20, 'source_size': 70, 'target_size': 36, 'min_expected_hamming': 3.6873015873015835, 'nearest_min': 3, 'worst_nearest_source': 5, 'worst_nearest_target': 3}\n{'s': 6, 'l': 4, 'j': 24, 'source_size': 210, 'target_size': 55, 'min_expected_hamming': 3.7852813852813805, 'nearest_min': 3, 'worst_nearest_source': 7, 'worst_nearest_target': 3}\n{'s': 8, 'l': 4, 'j': 28, 'source_size': 495, 'target_size': 78, 'min_expected_hamming': 4.006060606060577, 'nearest_min': 3, 'worst_nearest_source': 7, 'worst_nearest_target': 3}\n{'s': 10, 'l': 4, 'j': 32, 'source_size': 1001, 'target_size': 105, 'min_expected_hamming': 4.311222111222044, 'nearest_min': 3, 'worst_nearest_source': 9, 'worst_nearest_target': 3}\n{'s': 0, 'l': 5, 'j': 15, 'source_size': 1, 'target_size': 20, 'min_expected_hamming': 6.0, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 9}\n{'s': 1, 'l': 5, 'j': 17, 'source_size': 6, 'target_size': 35, 'min_expected_hamming': 4.771428571428571, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 9}\n{'s': 2, 'l': 5, 'j': 19, 'source_size': 21, 'target_size': 56, 'min_expected_hamming': 4.047619047619046, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 5}\n{'s': 3, 'l': 5, 'j': 21, 'source_size': 56, 'target_size': 84, 'min_expected_hamming': 3.6428571428571392, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 5}\n{'s': 4, 'l': 5, 'j': 23, 'source_size': 126, 'target_size': 120, 'min_expected_hamming': 3.542857142857136, 'nearest_min': 3, 'worst_nearest_source': 5, 'worst_nearest_target': 5}\n{'s': 6, 'l': 5, 'j': 27, 'source_size': 462, 'target_size': 220, 'min_expected_hamming': 3.5108225108225266, 'nearest_min': 3, 'worst_nearest_source': 5, 'worst_nearest_target': 3}\n{'s': 8, 'l': 5, 'j': 31, 'source_size': 1287, 'target_size': 364, 'min_expected_hamming': 3.602841602841605, 'nearest_min': 3, 'worst_nearest_source': 7, 'worst_nearest_target': 3}\n{'s': 10, 'l': 5, 'j': 35, 'source_size': 3003, 'target_size': 560, 'min_expected_hamming': 3.7832001332002103, 'nearest_min': 3, 'worst_nearest_source': 7, 'worst_nearest_target': 3}\n{'s': 0, 'l': 6, 'j': 18, 'source_size': 1, 'target_size': 35, 'min_expected_hamming': 7.0, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 11}\n{'s': 1, 'l': 6, 'j': 20, 'source_size': 7, 'target_size': 70, 'min_expected_hamming': 5.428571428571427, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 11}\n{'s': 2, 'l': 6, 'j': 22, 'source_size': 28, 'target_size': 126, 'min_expected_hamming': 4.380952380952373, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 7}\n{'s': 3, 'l': 6, 'j': 24, 'source_size': 84, 'target_size': 210, 'min_expected_hamming': 3.8571428571428457, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 7}\n{'s': 4, 'l': 6, 'j': 26, 'source_size': 210, 'target_size': 330, 'min_expected_hamming': 3.5549783549783665, 'nearest_min': 3, 'worst_nearest_source': 3, 'worst_nearest_target': 5}\n{'s': 6, 'l': 6, 'j': 30, 'source_size': 924, 'target_size': 715, 'min_expected_hamming': 3.392041292041306, 'nearest_min': 3, 'worst_nearest_source': 5, 'worst_nearest_target': 5}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_frontier/BI001_diagnostics_v1.py",
+      "script_sha256": "ffaa361f3aca6af217ad6f8be58896679279fbc60526842abfdd11c0878fc365",
+      "returncode": 0,
+      "stdout": "{\n  \"stationarity_max_residual\": 3.3306690738754696e-16,\n  \"certificate_min_slack\": 2.777777777777778e-13,\n  \"R2_common_B_min\": 0.125,\n  \"R3_terminal_A_min\": 0.125,\n  \"harmonic_claim_min_ratio\": 1.0,\n  \"local_sum_variance_bound_max_ratio\": 0.00024276706082286865,\n  \"local_sum_derivative_bound_max_ratio\": 0.00877079470060869,\n  \"evidence_status\": \"Author finite diagnostics; proof still requires independent audit.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_opposite_diagonal/BOD001_diagnostics_v1.py",
+      "script_sha256": "762b880de00f5a60fa80005538412b712e074802cd2d74f1b444361e6030709c",
+      "returncode": 0,
+      "stdout": "{\n  \"seed\": 202611020640,\n  \"kernels\": 1200,\n  \"max_density_envelope_ratio\": 0.23330934694279828,\n  \"max_cumulative_bound_ratio\": 0.0775451995756713,\n  \"max_hit_mean_relative_error\": 2.5004740011880244e-07,\n  \"max_final_bound_ratio\": 6.294361021464713e-05,\n  \"occupation_cases\": 675,\n  \"positive_beta_kernels\": 900,\n  \"limitations\": \"Finite floating-point checks; no proof, no exact universal verification.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_opposite_diagonal/review_BOD001_exact_v1.py",
+      "script_sha256": "345cc2eadc7d0d5471129af11324333a84859467f322b682946e98b6cb354835",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS_EXACT_RATIONAL_FINITE_DIAGNOSTICS\",\n  \"horizon\": 24,\n  \"counts\": {\n    \"kernels\": 85,\n    \"positive_certificates\": 83,\n    \"density_checks\": 2040,\n    \"count_checks\": 340,\n    \"trace_checks\": 2040,\n    \"convolution_checks\": 8160,\n    \"potential_checks\": 340,\n    \"survival_checks\": 6375\n  },\n  \"max_beta_p_t_H_squared\": \"3969/4096\",\n  \"max_density_to_stronger_rational_envelope_ratio\": \"56868009039084453379145559568503828204008300042843411184085568463223743698662387610859979407360000000/236075612261971534227055685191707946194470561728506578506951158596223848303316833176783010424824962423\",\n  \"method\": \"Fraction throughout. Exponential envelope tested against strictly smaller rational odd-Taylor lower bound (31 terms). No floating point used. Finite checks do not prove universal claims.\",\n  \"limitations\": \"Moderate horizons, finite positive rational kernels and several beta-zero endpoint kernels; theorem constants justified by written review, not coverage.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_source_corruption/SC003_algebra_independent_checks.py",
+      "script_sha256": "58215fc76e86eb869474230f2bac4ac42c1f376a22ee242f2dd8551b2df2d143",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"row_exact_rational_cases\": 58185,\n  \"full_word_exact_cases\": 79768,\n  \"orientations\": {\n    \"00\": 1,\n    \"01\": 1,\n    \"10\": 0,\n    \"11\": 0\n  }\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_source_corruption/SC003_diagnostics.py",
+      "script_sha256": "85190c6ab6daa49447792cc7884fc830acfc77c53b223f924b540082b6a81a94",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"exact_full_path_checks\": 20184,\n  \"exact_kernel_start_budget_scenarios\": 48,\n  \"scalar_domain_checks\": 180,\n  \"limitation\": \"Finite diagnostics; constants/occupation theorems require written proof and accepted imports.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_source_corruption/SC003_independent_full_checks.py",
+      "script_sha256": "2fe20a939bde0be37b4d1fef300953c3eb964d0e3ff23795283591e859b88839",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"seed\": 202611020851,\n  \"target_sha256\": \"4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837\",\n  \"checks\": {\n    \"exhaustive_word_masks\": 87376,\n    \"k0_branch\": 1016,\n    \"symbol_complement_equivariance\": 87376,\n    \"exact_algebra\": 126360,\n    \"exact_erasure_cells\": 284,\n    \"scalar_and_lower\": 1848,\n    \"clean_floor\": 462,\n    \"accepted_proof_hashes\": 4\n  },\n  \"total_checks\": 304726,\n  \"constants\": {\n    \"statistical_coefficient\": 92697.21373218215,\n    \"corruption_coefficient\": 433472,\n    \"absorbing_coefficient\": 6672\n  },\n  \"limitations\": \"Exact finite enumeration and scalar diagnostics corroborate only tested instances; universal claims require the written independent proof audit. Same-model independent LLM review, not formal or external review.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_stationary_frontier/BS001_diagnostics_v1.py",
+      "script_sha256": "be994a2bd7d120f41a28ee57c1035786499ca7c9cf1ab197705c52b12c9f993f",
+      "returncode": 0,
+      "stdout": "{\"status\": \"PASS\", \"scalar_assertions\": 1326099, \"branch_instances\": {\"A\": 12342, \"B\": 39265, \"C\": 14883, \"D\": 60487}, \"M_count\": 81, \"max_log2_M\": 496.0, \"source_hashes_verified\": 10, \"limitations\": \"Finite floating-point algebra checks only; not universal proof, formal verification, or original-network execution.\"}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_stationary_frontier/BS001_independent_checks_v1.py",
+      "script_sha256": "ef6c1c5fc1e0cfdfabbc9ae6f3b0f01703e41cc65b74da4bdc87c7b7a7138caa",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"counts\": {\n    \"cases\": 27646,\n    \"A\": 1265,\n    \"B\": 17333,\n    \"C\": 20835,\n    \"D\": 6302,\n    \"threshold_necessity\": 27646,\n    \"threshold_sufficiency\": 27646,\n    \"integer_allocation\": 27646,\n    \"receipt_hashes\": 5\n  },\n  \"maxima\": {\n    \"A_ratio\": 1.0,\n    \"B_W_over_s\": 1.9166066720281076,\n    \"C_W_over_s\": 1.4716333818615528,\n    \"D_ratio\": 1.0,\n    \"suff_aW\": 1.3406690979481326,\n    \"band_QW\": 1.3332949542491594\n  },\n  \"bindings\": {\n    \"BU001\": {\n      \"proof\": \"binary_upper/BU001_weighted_return_upper_v2.md\",\n      \"sha256\": \"2dc9cf9d13faa6cfa15fffd5ec83a67326ccc95eb6a63291c7b2349136b166f5\",\n      \"receipt_sha256\": \"914fd8d84fe31b5c2ea5fb34cfef7a3117a2169ab50738ae209f16ff5bce6e91\"\n    },\n    \"BI001\": {\n      \"proof\": \"binary_frontier/BI001_binary_rare_suffix_lower_v2.md\",\n      \"sha256\": \"17725df3f25084fdfbf6f92fa26555fc5c29e15a4341f69a24dd703751201992\",\n      \"receipt_sha256\": \"8ab1673dcff9efacacd3f5adf3b91124297919e511c2a2604aa0a82ca880ec2d\"\n    },\n    \"UI001\": {\n      \"proof\": \"range_uniform_iid/UI001_range_uniform_iid_floor_v1.md\",\n      \"sha256\": \"c4bd8a5d7324ed1cf03c1d746a253b592fbe9a63e9e6020be95e657c13307dde\",\n      \"receipt_sha256\": \"fa818cc247dc1a7ec564446099bdaba1b1e12fcdbf615824933af92a01760b19\"\n    },\n    \"TR001\": {\n      \"proof\": \"two_resource_frontier/TR001_two_resource_frontier_v1.md\",\n      \"sha256\": \"7dca0c09637164c2a632e1e493c7af281109bb52116400c94ee507fe18c493c6\",\n      \"receipt_sha256\": \"fad05211ded32ec8281542c15b9872d2d81db3b5e2553e36c25dbcd81f5678ac\"\n    },\n    \"SB001\": {\n      \"proof\": \"score_precision/SB001_loglog_effective_score_budget_v2.md\",\n      \"sha256\": \"d10086be4d358e322872daffad4dd10572588d6dcffaecbffefc409df6a217b7\",\n      \"receipt_sha256\": \"d2364a3405390fcf1b9a4d401c92f9832552b627d6480bc8806074681a73cd2e\"\n    }\n  },\n  \"limits\": \"Finite floating-point scalar checks with relative tolerance 2e-12; exact receipt SHA-256 checks. Not a proof, full kernel re-audit, formal verification or external review.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_upper/check_bu001_v1.py",
+      "script_sha256": "12a486f5d14b782c3231527c8eb5b0c2b44320e3ec93b45d6369edf3a8bd30b0",
+      "returncode": 0,
+      "stdout": "{\n  \"cases\": 40000,\n  \"max_sqrtbeta_pq_H\": 0.9999999679074955,\n  \"max_mgf_over_bound\": 1.0000000041260404,\n  \"seed\": 20261102,\n  \"scope\": \"finite corroboration only\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_weighted_coupling/WM001_diagnostics_v1.py",
+      "script_sha256": "d98ad82360ec2f77ef90047a2d44661ecb21b8292e9255963c599c81a5e7ec25",
+      "returncode": 0,
+      "stdout": "[\n  {\n    \"epsilon\": \"1/8\",\n    \"n\": 4,\n    \"beta\": \"35/2048\",\n    \"pcc\": 0.6819000244140625,\n    \"marginal\": 0.15398787610299353,\n    \"future\": 0.14731763465474365,\n    \"marginal_over_epsilon\": 1.2319030088239482,\n    \"future_over_epsilon\": 1.1785410772379492\n  },\n  {\n    \"epsilon\": \"1/16\",\n    \"n\": 16,\n    \"beta\": \"133/32768\",\n    \"pcc\": 0.7461464274714246,\n    \"marginal\": 0.09054559612270266,\n    \"future\": 0.0827848897483172,\n    \"marginal_over_epsilon\": 1.4487295379632426,\n    \"future_over_epsilon\": 1.3245582359730752\n  },\n  {\n    \"epsilon\": \"1/32\",\n    \"n\": 64,\n    \"beta\": \"521/524288\",\n    \"pcc\": 0.804302895995778,\n    \"marginal\": 0.04947283502209078,\n    \"future\": 0.044511062664996125,\n    \"marginal_over_epsilon\": 1.583130720706905,\n    \"future_over_epsilon\": 1.424354005279876\n  },\n  {\n    \"epsilon\": \"1/64\",\n    \"n\": 256,\n    \"beta\": \"2065/8388608\",\n    \"pcc\": 0.8401122519132205,\n    \"marginal\": 0.02603465694057812,\n    \"future\": 0.02321096797028278,\n    \"marginal_over_epsilon\": 1.6662180441969996,\n    \"future_over_epsilon\": 1.485501950098098\n  },\n  {\n    \"epsilon\": \"1/128\",\n    \"n\": 1024,\n    \"beta\": \"8225/134217728\",\n    \"pcc\": 0.8603405429794089,\n    \"marginal\": 0.01338515348974095,\n    \"future\": 0.01187461260632105,\n    \"marginal_over_epsilon\": 1.7132996466868415,\n    \"future_over_epsilon\": 1.5199504136090944\n  },\n  {\n    \"epsilon\": \"1/256\",\n    \"n\": 4096,\n    \"beta\": \"32833/2147483648\",\n    \"pcc\": 0.8711558720935946,\n    \"marginal\": 0.0067910817139310905,\n    \"future\": 0.006009140488367742,\n    \"marginal_over_epsilon\": 1.7385169187663592,\n    \"future_over_epsilon\": 1.5383399650221419\n  },\n  {\n    \"epsilon\": \"1/512\",\n    \"n\": 16384,\n    \"beta\": \"131201/34359738368\",\n    \"pcc\": 0.8767576231206833,\n    \"marginal\": 0.0034210751169184046,\n    \"future\": 0.0030231577649550735,\n    \"marginal_over_epsilon\": 1.7515904598622232,\n    \"future_over_epsilon\": 1.5478567756569976\n  },\n  {\n    \"epsilon\": \"1/1024\",\n    \"n\": 65536,\n    \"beta\": \"524545/549755813888\",\n    \"pcc\": 0.8796096676166909,\n    \"marginal\": 0.0017170409368778283,\n    \"future\": 0.001516308606927928,\n    \"marginal_over_epsilon\": 1.7582499193628962,\n    \"future_over_epsilon\": 1.5527000134941982\n  }\n]\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_weighted_coupling/WM001_diagnostics_v2.py",
+      "script_sha256": "ba807bf78c12ebc206a9e80e4b823f864936cfd0a6239fe2921131e551b05e59",
+      "returncode": 0,
+      "stdout": "All symbolic and numeric checks pass; cases: 15\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_weighted_coupling/WM001_review_checks_v1.py",
+      "script_sha256": "046cab5f9204279d6dfa019c1caa8a07c34da94b217a9213615c9fda2a6245ab",
+      "returncode": 0,
+      "stdout": "PASS: symbolic identities, all 16 domain inequalities, exact finite-horizon residuals.\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/binary_weighted_coupling/WM001_review_checks_v2.py",
+      "script_sha256": "64fa97837dde2a16dcbe8d0785bddbaaf7c2f4439b243f10856ed54f3c781e40",
+      "returncode": 0,
+      "stdout": "PASS: symbolic two-parameter identities, all 16 whole-domain inequalities, exact finite-horizon residuals.\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/bounded_attention/check_ba001.py",
+      "script_sha256": "6453c58ce8ad73d7b086bcd118582179208bd33b2cc1267a0c52ac4154d25152",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"kind\": \"author finite exact local-sum and numerical cutoff corroboration\",\n  \"checks\": 852,\n  \"max_variance_to_bound\": 0.010132137345679013,\n  \"max_mean_derivative_to_bound\": 0.1111111111111111,\n  \"max_ratio_curve_derivative_to_bound\": 0.010870019667029095,\n  \"nonzero_ratio_of_means_vs_mean_ratio_gap\": 0.00020443721762726454,\n  \"limitations\": [\n    \"not independent review\",\n    \"not formal verification\",\n    \"not original emitted-network execution\",\n    \"does not test every table or source\"\n  ],\n  \"manuscript_sha256\": \"fb589a775220737124a42e96a115eb3471ccbb84933edc2fd488e0d5986f1569\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/causal_attention/check_ca001.py",
+      "script_sha256": "795cebdeed6ff74aa0d2709aa5f02d61f783a6de3e654447e5b30b94bab94661",
+      "returncode": 0,
+      "stdout": "{\n  \"triangular_power_envelope\": {\n    \"pass\": true,\n    \"max_ratio\": 1.0,\n    \"sizes\": [\n      2,\n      3,\n      8,\n      25,\n      80\n    ],\n    \"depths\": [\n      1,\n      2,\n      3,\n      4,\n      5,\n      6\n    ]\n  },\n  \"squared_log_integral\": {\n    \"pass\": true,\n    \"powers\": [\n      0,\n      1,\n      2,\n      3,\n      4,\n      5,\n      6,\n      7,\n      8,\n      9,\n      10\n    ]\n  },\n  \"weight_change_recurrence\": {\n    \"pass\": true,\n    \"trials\": 300,\n    \"max_ratio\": 0.08021751941590644\n  },\n  \"early_token_uniform_inverse_n_counterexample\": [\n    {\n      \"n\": 10,\n      \"n_times_influence\": 2.9289682539682538\n    },\n    {\n      \"n\": 100,\n      \"n_times_influence\": 5.187377517639621\n    },\n    {\n      \"n\": 1000,\n      \"n_times_influence\": 7.485470860550345\n    },\n    {\n      \"n\": 10000,\n      \"n_times_influence\": 9.787606036044382\n    }\n  ],\n  \"rare_suffix_late_positions\": {\n    \"pass\": true\n  },\n  \"public_dense_mask_v2\": {\n    \"pass\": true,\n    \"density\": 0.3333333333333333,\n    \"trials\": 200,\n    \"max_ratio\": 0.023821630563393172\n  },\n  \"status\": \"All finite diagnostics passed; candidate proof still requires independent review.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/causal_attention/check_fa001.py",
+      "script_sha256": "56098a70c6c540ff547ff26375530ee73458b30a4ae8743c6aae5ec929878637",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"exact-integer diagnostic only; not independent proof acceptance\",\n  \"exp_cases\": 24,\n  \"signed_ratio_keycounts\": [\n    1,\n    2,\n    7,\n    97,\n    1000\n  ],\n  \"two_layer_signed_network\": [\n    {\n      \"P\": 8,\n      \"max_abs_error\": \"0.0032798934251885937643135367796646967592028636130087926261542367989788515152098161878118700769211162\",\n      \"max_error_in_grid_units\": \"0.8396527168482800036642654155941623703559330849302509122954846205385859878937129440798387396918057472\"\n    },\n    {\n      \"P\": 16,\n      \"max_abs_error\": \"0.0000151284282262806098503022735390958373944418924523933661477398572654196221771176301676344276203724\",\n      \"max_error_in_grid_units\": \"0.9914566722375260471494097986581847994821438637600516438582792857465403589995810106660898485287256064\"\n    },\n    {\n      \"P\": 24,\n      \"max_abs_error\": \"8.82417779492330635367796646967592028636130087926261542367989788515152098161878118700769211162E-8\",\n      \"max_error_in_grid_units\": \"1.480451368878320141298276379025103646430653988923788196880091616771302602371503216311644442181448499\"\n    }\n  ],\n  \"network_cases\": 48,\n  \"precision_choices\": [\n    {\n      \"C_star\": \"1\",\n      \"C_arch\": 3\n    },\n    {\n      \"C_star\": \"10\",\n      \"C_arch\": 7\n    },\n    {\n      \"C_star\": \"1000000\",\n      \"C_arch\": 25\n    },\n    {\n      \"C_star\": \"1000000000000000000000000000000\",\n      \"C_arch\": 107\n    }\n  ]\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/folded_grid/FG001_independent_checks.py",
+      "script_sha256": "b224ad8e702dc5e7db634381b0dc05613e0335a93bf2e7d8517bf0c1af2dda1c",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"finite exhaustive diagnostics; not proof or emitted-network audit\",\n  \"geometry_parameter_cases\": 12,\n  \"exact_rational_points\": 149860,\n  \"singleton_endpoint_cases\": 2737,\n  \"finite_count_precision_cases\": 7176,\n  \"exact_integer_fold_steps\": 53820,\n  \"theorem_sha256\": \"085e94826be642b71acbbeefe5bdc44cc0774da2eae0e1445e4c7f3a8e93d442\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/folded_grid/check_fg001.py",
+      "script_sha256": "ce417fb0d6f74cf68a52ac3057e1c842e5ae38310679d09b4cd3d407d521ee4f",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"exact_cases\": 156118,\n  \"label_Q_cases\": 5298,\n  \"max_error_in_Q_minus_J_units\": \"197/99\",\n  \"worst_case\": [\n    2,\n    3,\n    99,\n    17\n  ],\n  \"limits\": \"Finite exact arithmetic diagnostics, not proof nor emitted network audit\",\n  \"theorem_sha256\": \"085e94826be642b71acbbeefe5bdc44cc0774da2eae0e1445e4c7f3a8e93d442\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/folded_noise/FN001_independent_checks.py",
+      "script_sha256": "1ef8e5379e4d17ca9daf2bd8ecaed8e9a133eaf02f52c07fb9de7ed80cb607c6",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"collision_cases\": 9396,\n  \"exact_observation_law_cases\": 360,\n  \"retained_side_observations\": \"all four exact terminal pairs; fixed initial bits identical\",\n  \"finite_rounding_counterexample\": {\n    \"M\": 3,\n    \"P\": 2,\n    \"A\": 1,\n    \"fine_numerators\": [\n      1,\n      2\n    ],\n    \"sum\": 3,\n    \"required_sum\": 4\n  },\n  \"theorem_sha256\": \"38d716cdd2703ac3f53338c71f77b86728bf39d25fdd389a81d06d7b975d8399\",\n  \"limitations\": \"Exact finite diagnostics only; Hoeffding numerical checks are supplemental, not proof.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/folded_noise/check_fn001.py",
+      "script_sha256": "4dc68d90d15d46ec75213fd02e2a2e7ed55a8a254aa57074ed64c0c42ca97358",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"finite exact diagnostic, not formal verification\",\n  \"exhaustive_count_cases\": 74016,\n  \"gate_matches\": 39264,\n  \"outside_gate_identity\": 34752,\n  \"separation\": [\n    {\n      \"Q\": 4,\n      \"M\": 256,\n      \"P\": 8,\n      \"delta\": \"1/16\",\n      \"matched_counts\": 33,\n      \"terminal_risk_lower\": 0.0,\n      \"clean_upper\": 0.0625\n    },\n    {\n      \"Q\": 8,\n      \"M\": 4096,\n      \"P\": 12,\n      \"delta\": \"1/32\",\n      \"matched_counts\": 257,\n      \"terminal_risk_lower\": 0.0028461609287181487,\n      \"clean_upper\": 0.01171875\n    },\n    {\n      \"Q\": 16,\n      \"M\": 65536,\n      \"P\": 16,\n      \"delta\": \"1/64\",\n      \"matched_counts\": 2049,\n      \"terminal_risk_lower\": 0.001951338081873645,\n      \"clean_upper\": 0.00244140625\n    },\n    {\n      \"Q\": 32,\n      \"M\": 1048576,\n      \"P\": 20,\n      \"delta\": \"1/128\",\n      \"matched_counts\": 16385,\n      \"terminal_risk_lower\": 0.0009765028953551999,\n      \"clean_upper\": 0.00054931640625\n    }\n  ],\n  \"negative_control\": {\n    \"M\": 3,\n    \"P\": 2,\n    \"A\": 1,\n    \"rails_U\": [\n      1,\n      2\n    ],\n    \"complement_rails_U\": [\n      2,\n      4\n    ]\n  }\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/growing_depth/GD001_diagnostics.py",
+      "script_sha256": "8f63e94024eb3498880f83e3656cc319b6ba4affb4e01339af792f271d2bcba3",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"seed\": 71443,\n  \"counts\": {\n    \"coordinates\": 10244,\n    \"blocks\": 3000,\n    \"bootstrap\": 10000\n  },\n  \"worst_normalization_to_bound\": 0.8710314284189744,\n  \"proof_scope\": \"finite checks only; not formal verification\",\n  \"source_sha256\": {\n    \"GD001_lower_derivation.md\": \"3137d43739fe39e80490b7f8b1c76f85495e4b7078e31c52a8f3ea9b1831e000\",\n    \"GD001_upper_derivation.md\": \"5959d2c6f60c1374f9c2702fcf58a9bd5cc1245313e59c0fe95ad635e9e8e50a\"\n  }\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/growing_depth/GD001_independent_checks.py",
+      "script_sha256": "feb95e8848aa9477720b12ad508390d414e2d511cf72e830fe4bc03d1e3f3c50",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"counts\": {\n    \"geometry\": 1350,\n    \"finite_purity\": 4590,\n    \"normalization\": 3000,\n    \"harmonic\": 4800,\n    \"late_matrix\": 992,\n    \"precision_bootstrap\": 3400\n  },\n  \"source_sha256\": {\n    \"GD001_upper_derivation.md\": \"5959d2c6f60c1374f9c2702fcf58a9bd5cc1245313e59c0fe95ad635e9e8e50a\",\n    \"GD001_lower_derivation.md\": \"3137d43739fe39e80490b7f8b1c76f85495e4b7078e31c52a8f3ea9b1831e000\",\n    \"GD001_uniform_FA_extension.md\": \"505be0ffc2f7499581cac5ba9da7c018b6f04cb10dc21bce9d3ab7cdba3f5c7e\"\n  },\n  \"limits\": \"Finite diagnostics supplement but do not replace proofs; uniform growing-depth FA recursion reviewed; diagnostics are not exhaustive architecture testing.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/growing_weight/check_gw001.py",
+      "script_sha256": "f3d740ef72ec41cd059ab482b8357f0562ec75d5831d9d16996688881af353af",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"full_row_rational_checks\": 44616,\n  \"terminal_nonempty_checks\": 2960,\n  \"terminal_empty_checks\": 3376,\n  \"UC_integer_threshold_checks\": 109080,\n  \"scope\": \"Exhaustive finite word tests for K=2,M<=6 and K=3,M<=4,Q=16,32, both W=M and W=MQ. Exact Fraction arithmetic. Not statistical risk simulation, original emitter execution, formal verification or independent review.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/iid_depth_capacity/IC001_diagnostics.py",
+      "script_sha256": "b31933eb23cc30e5c825cb719289c9b688cc5bf29885cf1a0d8ea1c341b394d8",
+      "returncode": 0,
+      "stdout": "{\"status\": \"PASS\", \"geometry_cases\": 36434, \"singleton_cases\": 4104, \"finite_precision_cases\": 46656, \"capacity_cases\": 8416, \"limitations\": \"Finite exact corroboration, not proof or emitted network audit\", \"theorem_sha256\": \"a443306b90e55bb05c76f3935b8cca676f9f8b3c6211c21d2e2b34e23dd979e3\"}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/iid_depth_capacity/IC001_independent_checks.py",
+      "script_sha256": "76d2dcdf580cb5afa50c1ff427312006b8ad5750eec26a457f73e58aff39dab4",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"theorem_sha256\": \"a443306b90e55bb05c76f3935b8cca676f9f8b3c6211c21d2e2b34e23dd979e3\",\n  \"counts\": {\n    \"geometry\": 70209,\n    \"finite_mean\": 91770,\n    \"capacity\": 47652,\n    \"branch_bins\": 2178,\n    \"singletons\": 4717,\n    \"negative_orientation_stages\": 135116\n  },\n  \"notes\": \"Exact finite checks supplement mathematical review; no emitted-network or formal verification claim.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/influence_reveal/IR001_diagnostics.py",
+      "script_sha256": "7ebaa229166ee5d6b8a5dfaaf6bbf62f7612f17c3a7299cbe5a78d473276d123",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"Finite corroboration only; no uniform theorem or emitted-network certification\",\n  \"conditional_boolean_tables\": {\n    \"cases\": 17216,\n    \"max_variance_bound_ratio\": 0.03762918802458162,\n    \"max_derivative_bound_ratio\": 0.4136093785337979,\n    \"max_tail_bound_ratio\": 0.32392683140992706\n  },\n  \"posterior\": {\n    \"patterns_in_T\": 436,\n    \"boundary_modes_in_T\": 144,\n    \"max_density_bound_ratio\": 0.11028677549021867\n  },\n  \"matrix_row_sums\": {\n    \"max_relative_error\": 1.3322676295501878e-15,\n    \"max_local_influence_sum_ratio\": 0.9999774558190335\n  },\n  \"label_box_counts\": \"PASS\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/influence_reveal/IR001_independent_checks.py",
+      "script_sha256": "2bd773878e0d99b304ef36ed840ea0983b82f0178624c7ee8a51553a22aeacf4",
+      "returncode": 0,
+      "stdout": "{\n  \"exact_nonlinear_conditional_cases\": 608,\n  \"posterior_mode_segment_cases\": 31336,\n  \"max_loglikelihood_drop\": 0.25064581558691046,\n  \"exact_matrix_locality_cases\": 936,\n  \"real_grid_negative_tube_cases\": 10000,\n  \"constant_checks\": \"PASS\",\n  \"status\": \"PASS\",\n  \"reviewed_theorem_sha256\": \"963e3f743c474f3f4c29fcb2f4aa9dfe1283ac82e0821b18df6a99223b09fffe\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/manuscript_v3/audit_science_checks.py",
+      "script_sha256": "707a4ff317a555378a9459716926247b210ffd3411e929bcdef6555dd3385b7a",
+      "returncode": 0,
+      "stdout": "{\"exact_binary_witness_checks\": 24, \"exact_floor_cases\": 19399, \"floating_scalar_surface_cases\": 1920, \"status\": \"PASS\", \"limitations\": \"Finite corroboration; does not prove universal statements. Rational kernels/floors exact; scalar log checks floating.\"}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/manuscript_v4/AUDIT_FRESH_CHECKS.py",
+      "script_sha256": "407ccae3eedab4b73515f15b8ee8d69cb984dba3b38226ca8c46271580a629be",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"finite_checks\": {\n    \"exact_schur_return\": 108,\n    \"exact_compander_floor_inverse\": 5400,\n    \"exact_uniform_precision\": 460\n  },\n  \"guide_source_hashes_verified\": 99,\n  \"guide_OMML\": 180,\n  \"guide_pages\": 8,\n  \"limitation\": \"Finite corroboration, not universal or formal verification.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/bind_final.py",
+      "script_sha256": "7a4323c50e86ddee3bd1899aafb9e4570bf9cc949c791e2dc15e34e81a4a4378",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"final_sources\": {\n    \"v10_research/manuscript_v5/finite_precision_prediction.tex\": \"bc174b64e00fb704085c3c090323160469f5350afe06c0ac7c674615554e7351\",\n    \"v10_research/precision_robustness_guide/guide_math_zh.md\": \"2305105433b0477da09bb5f1ae9a57903234cd0f34a569c947d3fa7c9caae934\"\n  },\n  \"rendered_artifacts\": {\n    \"v10_research/manuscript_v5/finite_precision_prediction.pdf\": \"6563cf1c47a356196991c776c2bcbf27dc51068117f4d9d855eca9821ac80653\",\n    \"v10_research/precision_robustness_guide/Chinese-stage7-guide.docx\": \"2c25607af9992f87b9f191435b10d1764503b00e5a02518a60f7dc14312a179e\",\n    \"v10_research/precision_robustness_guide/Chinese-stage7-guide.pdf\": \"ee181acf18f00e6e4175ca84b6675a64e42b856c506db6df32a665280f617fcc\"\n  },\n  \"fresh_exact_checks\": 72217\n}\nbound files 228\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_final_clip.py",
+      "script_sha256": "1f38aaa7d422ca55ad0f9691c9bee9644b802de926655c7c72306b7c832c8219",
+      "returncode": 0,
+      "stdout": "{\"status\": \"PASS\", \"checks\": 6152, \"claim\": \"Exact lattice cube clipping and nonexpansiveness; finite diagnostics only.\"}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_interfaces.py",
+      "script_sha256": "f3810f04bc7892602d8a7d03d8eec50c5ab313282a87df2f6dbefa6e099630b6",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"checks\": {\n    \"curve_table_exact\": 960,\n    \"path_continuity\": 180,\n    \"nonincident_separation\": 1940,\n    \"adversarial_decode\": 3840,\n    \"no_pause_positive_speed\": 96,\n    \"no_pause_tiling\": 90,\n    \"partial_fold_endpoints\": 837,\n    \"symmetric_inverse_leakage\": 17952,\n    \"finite_scale_certificate\": 54,\n    \"common_attack_oracle\": 2925\n  },\n  \"total\": 28874,\n  \"scope\": \"Fresh independent exact rational finite checks; not universal proofs or emitted-evaluator verification.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_markov_interfaces.py",
+      "script_sha256": "7c362d9baf71e215ebc10aa88c1ca20466fb239e2792278ab5f0867a55cf129a",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"checks\": {\n    \"finite_monotone_zero\": 11781,\n    \"binary_purity_clip\": 11739,\n    \"largest_positive_bank\": 11739,\n    \"FN_protected_terminal_overlap\": 12,\n    \"terminal_occupation_target_bound\": 1920\n  },\n  \"total\": 37191,\n  \"scope\": \"Exact finite corroboration, not full-source-class proof.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/manuscript_v5/audit_science_fresh/check_provenance.py",
+      "script_sha256": "5899456f43828b777229a22ed5e42a344f41461a104ffe11b8d7c021a9a16bfd",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"manifest_sources_verified\": 142,\n  \"frozen_receipts_verified\": 11,\n  \"inherited_core_math_fragments_identical\": 1388,\n  \"v4_labeled_equations_identical\": 67,\n  \"v4_tex_sha256\": \"d362bc57b0a42c206e804fd666492744e563b392950bfc6f7924d10b2d1bbd3f\",\n  \"v4_pdf_sha256\": \"c1aa52913b10f5c9ea9db5a03e0fd7a23dbdf2b6e62413b1703ae7c87d8bec0f\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/mixing_depth/MD001_diagnostics.py",
+      "script_sha256": "f9bdec6a807e6c452cd3f4d0d6cd92dbd14c82354ae4034ab46d610d1186b4e8",
+      "returncode": 0,
+      "stdout": "{\"status\": \"PASS\", \"finite_checks\": 90018, \"max_observed_largest_x_over_y\": 3.9399782531862653, \"scope\": \"Scalar compander, downward finite program, purity, zero-bank bound and harmonic inequalities; not proof or full encoder execution.\"}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/mixing_depth/MD001_independent_checks.py",
+      "script_sha256": "e2930a4b94a48105ebaf1fba9280f96b303d48b0b21f0aabc3c6eef240c39b42",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"counts\": {\n    \"finite_pair\": 4800,\n    \"monotone\": 6168,\n    \"witness\": 408,\n    \"active_atoms\": 408,\n    \"harmonic_real_gamma\": 9599,\n    \"selection\": 10000\n  },\n  \"total\": 31383,\n  \"source_sha256\": {\n    \"MD001_upper.md\": \"f1eb7603649291e7033c658fd81f8443b91fb15a7e77a5801105140699dd5213\",\n    \"MD001_binary_lower.md\": \"d9fe8d4c75c30cce7d9d472e7ed486db0f77f18974200c757538523284871dc3\",\n    \"MD001_theorem.md\": \"d7665dbc719fecfab32b2e9c56e6f33a4e70cea7dec5c4efa876c7fff538aed3\"\n  },\n  \"limitations\": \"Finite corroboration only; full mathematical and interface review is separate.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/noise_precision_frontier/NP001_independent_checks.py",
+      "script_sha256": "8bada0a8e455f679da833ef1b7ca63995034d2bdd34c8f26a2094570e30f0867",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"method\": \"independently authored exact Fraction arithmetic; no imports from author diagnostics\",\n  \"counts\": {\n    \"coarse_attacks\": 21450,\n    \"scale_and_selector_cases\": 5532,\n    \"statistical_snakes\": 866,\n    \"statistical_scalar\": 2464,\n    \"geometric_decodes\": 16640\n  },\n  \"limitations\": \"Finite diagnostics do not prove the all-parameter theorem or audit the finite FA evaluator. Real-attack universality uses proof; tests use rational examples.\",\n  \"theorem_sha256\": \"79cae4ebb56694452d63ccb2f6ac1f2d89516e9812c68bba700341ea600e9f54\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/noise_precision_frontier/check_np001.py",
+      "script_sha256": "8922175ef3951137c64dad9557eb545e6cbab1d8adf0a2f4a939c25bd7806602",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Finite rational diagnostics only, inherited independently checked GN geometry and explicit finite evaluator; not uniform proof\",\n  \"coarse_attack_scalar_cases\": 12126,\n  \"exact_statistical_selection_cases\": 310,\n  \"finite_encoder_cases\": [\n    {\n      \"N\": 2,\n      \"J\": 2,\n      \"Q\": 256,\n      \"delta\": \"1/100\",\n      \"Q_delta\": \"64/25\",\n      \"tau\": \"1/100\",\n      \"t\": \"1/64\",\n      \"P\": 3904,\n      \"inputs\": 17,\n      \"attacks_checked\": 170\n    },\n    {\n      \"N\": 2,\n      \"J\": 2,\n      \"Q\": 1024,\n      \"delta\": \"1/100\",\n      \"Q_delta\": \"256/25\",\n      \"tau\": \"1/100\",\n      \"t\": \"1/64\",\n      \"P\": 3912,\n      \"inputs\": 17,\n      \"attacks_checked\": 170\n    },\n    {\n      \"N\": 4,\n      \"J\": 2,\n      \"Q\": 1024,\n      \"delta\": \"1/257\",\n      \"Q_delta\": \"1024/257\",\n      \"tau\": \"1/257\",\n      \"t\": \"1/256\",\n      \"P\": 5832,\n      \"inputs\": 21,\n      \"attacks_checked\": 210\n    },\n    {\n      \"N\": 2,\n      \"J\": 3,\n      \"Q\": 1024,\n      \"delta\": \"1/211\",\n      \"Q_delta\": \"1024/211\",\n      \"tau\": \"1/211\",\n      \"t\": \"1/128\",\n      \"P\": 8712,\n      \"inputs\": 23,\n      \"attacks_checked\": 644\n    },\n    {\n      \"N\": 2,\n      \"J\": 3,\n      \"Q\": 256,\n      \"delta\": \"0\",\n      \"Q_delta\": \"0\",\n      \"tau\": \"1/256\",\n      \"t\": \"1/256\",\n      \"P\": 8704,\n      \"inputs\": 23,\n      \"attacks_checked\": 621\n    }\n  ]\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/protected_encoding/verify_protection.py",
+      "script_sha256": "70658e10cfbf7e6b427e284d5a25b359cb91f47dd4501e723cc6b6e52449dc18",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"checks\": {\n    \"extractors\": 1028,\n    \"bounded_cleaner\": 526,\n    \"full_cleaner\": 1020,\n    \"capacity\": 28,\n    \"l1_repeat_received\": 2730,\n    \"l1_overlap_boundary\": 9\n  },\n  \"iid_3_overlap\": \"5/16\",\n  \"iid_risk_lower\": \"5/64\",\n  \"limitations\": \"Finite diagnostics only; no universal proof, full SRC execution, training, physical fault experiment or measured cost.\",\n  \"script_sha256\": \"70658e10cfbf7e6b427e284d5a25b359cb91f47dd4501e723cc6b6e52449dc18\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/range_uniform_iid/UI001_diagnostics_v1.py",
+      "script_sha256": "6239327a7a2a1874b4c1082ceea7f6c4501963c391d01c9ab6a215532dd967c1",
+      "returncode": 0,
+      "stdout": "{\"status\": \"PASS\", \"conditional_cases\": 1728, \"posterior_cases\": 38}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/reviews/BA001_independent_checks_v1.py",
+      "script_sha256": "f94ae19cbfad0a6a8129be64b1222dbfb8df64590bf70b66535ef53370de368e",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"checks\": 33867,\n  \"max_observed_bound_ratios\": {\n    \"variance\": 0.2,\n    \"mean_derivative\": 0.2,\n    \"ratio_derivative\": 0.03368421052631579,\n    \"influence\": 0.9\n  },\n  \"min_event_to_claim_ratio\": 4.84272793154957,\n  \"min_harmonic_to_claim_ratio\": 2.5075413805927225,\n  \"fixtures\": {\n    \"M_local\": 64,\n    \"j_local\": 5,\n    \"r\": [\n      1,\n      3,\n      70\n    ],\n    \"shared_denominator\": true,\n    \"negative_values\": true,\n    \"all_supported_boundary_queries\": true,\n    \"noninteger_Q\": true,\n    \"all_state_unused_symbol\": true\n  },\n  \"limitations\": [\n    \"Finite corroboration, not proof of arbitrary tables.\",\n    \"Independent LLM audit, not external or formal review.\",\n    \"No original emitted-network execution.\"\n  ],\n  \"manuscript_sha256\": \"fb589a775220737124a42e96a115eb3471ccbb84933edc2fd488e0d5986f1569\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/reviews/BU001_independent_checks_v1.py",
+      "script_sha256": "5b556f60a4e5983baf8ddba43407e50a564c674a6828ffb284104a37dfa56850",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"counts\": {\n    \"kernels\": 625,\n    \"positive_certificates\": 209,\n    \"zero_support\": 128,\n    \"hitting_targets\": 324,\n    \"moment_inequalities\": 1296,\n    \"count_cases\": 3888,\n    \"floor_cases\": 280694,\n    \"decoder_cases\": 13584\n  },\n  \"largest_exact_squared_hitting_ratio_float\": 1.0,\n  \"exact_arithmetic\": \"Fraction for kernels, all-state certificate, hitting equations, moments, floors, decoder algebra; transcendental tail/BU1 checks numerical only\",\n  \"limitations\": \"Finite diagnostic corroboration, not proof or external review.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/reviews/CA001_independent_checks_v3.py",
+      "script_sha256": "a6c72d6cd55e03687246c6e0ddd79ba04bac59bd4531e3282152da5f771dc50d",
+      "returncode": 0,
+      "stdout": "{\n  \"candidate_sha256\": \"88e952f840009d8345c4482ca8cd14231f9dd9a28a3d522f12cd7e03b65ea21e\",\n  \"checks\": {\n    \"triangular_log_envelope\": 42,\n    \"entry_envelope\": 168,\n    \"actual_row_sum\": 168,\n    \"square_integral_bound\": 168,\n    \"local_multiplicity_row\": 672,\n    \"local_multiplicity_square\": 672,\n    \"softmax_l1_weight_change\": 1920,\n    \"attention_query_key_value_bound\": 1920,\n    \"layer_recurrence\": 1920,\n    \"source_stationarity\": 96,\n    \"all_state_minorization\": 96,\n    \"suffix_domain\": 288,\n    \"rare_event_probability\": 288,\n    \"harmonic_constant\": 288,\n    \"harmonic_argument\": 288,\n    \"iid_large_Q_constant\": 24,\n    \"real_averaging_counterexample\": 5\n  },\n  \"total_checks\": 9023,\n  \"violations\": [],\n  \"early_token_actual_zero_logit_network\": [\n    {\n      \"T\": 8,\n      \"terminal_influence\": 0.33973214285714287,\n      \"T_times_influence\": 2.717857142857143\n    },\n    {\n      \"T\": 32,\n      \"terminal_influence\": 0.12682797485739125,\n      \"T_times_influence\": 4.05849519543652\n    },\n    {\n      \"T\": 128,\n      \"terminal_influence\": 0.04244646166085291,\n      \"T_times_influence\": 5.433147092589173\n    },\n    {\n      \"T\": 512,\n      \"terminal_influence\": 0.013313508856542427,\n      \"T_times_influence\": 6.816516534549723\n    },\n    {\n      \"T\": 2048,\n      \"terminal_influence\": 0.00400492127530162,\n      \"T_times_influence\": 8.202078771817717\n    }\n  ],\n  \"scope\": \"Finite diagnostics supplement written analytic review; neither formal proof nor finite-arithmetic certification.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/reviews/SH001_independent_checks_v1.py",
+      "script_sha256": "c1ac0f3995343f7c5c1b27ffd08133f42e8c335b05825d66acbb5a2e9fa60487",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"cutoff_cases\": 1120,\n  \"necessity_cases\": 2430,\n  \"local_moment_cases\": 468,\n  \"influence_checks\": 19968,\n  \"event_ratio\": 4.84272793154957,\n  \"harmonic_ratio\": 2.507541380592722,\n  \"target_sha256\": \"fa8e326047f2df8f01dd7b3112da655937ad7be1a3508ad00b80ccd51b64fd50\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/reviews/UI001_independent_checks_v1.py",
+      "script_sha256": "3d58f8db5c5118b509d133c3099f551f50f3798ab1d893eac4a99766ee5d969e",
+      "returncode": 0,
+      "stdout": "{\"status\": \"PASS\", \"conditional_cases\": 2136, \"heavy_cases\": 510, \"posterior_T_cases\": 226, \"posterior_boundary_modes\": 122}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/robust_depth_capacity/GN001_independent_full_checks.py",
+      "script_sha256": "ebb95eb1ad9675f3e7e9f3623a291f84940b7b70b209c7b7b6774eb0eb318bbd",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"arithmetic\": \"exact Fraction and integers\",\n  \"signed_rational_conversions\": 39600,\n  \"affine_error_bounds\": 640,\n  \"uniform_bootstrap_checks\": 8000,\n  \"capacity_choice_checks\": 45956,\n  \"scope\": \"Finite diagnostics, not exhaustive network verification\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/robust_depth_capacity/GN001_independent_geometry.py",
+      "script_sha256": "c693eb0dd0fd7fe89dd307538266d5af4a476cb958a30e055e1b6f4be737aacd",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"arithmetic\": \"Python Fraction exact rational\",\n  \"scope\": \"Finite geometry diagnostics only; independent of author implementation\",\n  \"cases\": [\n    {\n      \"N\": 2,\n      \"J\": 2,\n      \"edges\": 4,\n      \"phase_checks\": 40,\n      \"nonincident_pairs\": 3,\n      \"local_inverse_checks\": 24,\n      \"minimum_speed\": \"12/5\",\n      \"passed\": true\n    },\n    {\n      \"N\": 2,\n      \"J\": 3,\n      \"edges\": 10,\n      \"phase_checks\": 80,\n      \"nonincident_pairs\": 36,\n      \"local_inverse_checks\": 86,\n      \"minimum_speed\": \"16/3\",\n      \"passed\": true\n    },\n    {\n      \"N\": 2,\n      \"J\": 4,\n      \"edges\": 22,\n      \"phase_checks\": 120,\n      \"nonincident_pairs\": 210,\n      \"local_inverse_checks\": 210,\n      \"minimum_speed\": \"192/17\",\n      \"passed\": true\n    },\n    {\n      \"N\": 2,\n      \"J\": 5,\n      \"edges\": 46,\n      \"phase_checks\": 160,\n      \"nonincident_pairs\": 990,\n      \"local_inverse_checks\": 458,\n      \"minimum_speed\": \"256/11\",\n      \"passed\": true\n    },\n    {\n      \"N\": 4,\n      \"J\": 2,\n      \"edges\": 8,\n      \"phase_checks\": 80,\n      \"nonincident_pairs\": 21,\n      \"local_inverse_checks\": 28,\n      \"minimum_speed\": \"40/9\",\n      \"passed\": true\n    },\n    {\n      \"N\": 4,\n      \"J\": 3,\n      \"edges\": 36,\n      \"phase_checks\": 160,\n      \"nonincident_pairs\": 595,\n      \"local_inverse_checks\": 184,\n      \"minimum_speed\": \"5440/297\",\n      \"passed\": true\n    },\n    {\n      \"N\": 4,\n      \"J\": 4,\n      \"edges\": 148,\n      \"phase_checks\": 240,\n      \"nonincident_pairs\": 10731,\n      \"local_inverse_checks\": 808,\n      \"minimum_speed\": \"2828800/38313\",\n      \"passed\": true\n    },\n    {\n      \"N\": 8,\n      \"J\": 2,\n      \"edges\": 16,\n      \"phase_checks\": 160,\n      \"nonincident_pairs\": 105,\n      \"local_inverse_checks\": 60,\n      \"minimum_speed\": \"144/17\",\n      \"passed\": true\n    },\n    {\n      \"N\": 8,\n      \"J\": 3,\n      \"edges\": 136,\n      \"phase_checks\": 320,\n      \"nonincident_pairs\": 9045,\n      \"local_inverse_checks\": 628,\n      \"minimum_speed\": \"49920/731\",\n      \"passed\": true\n    },\n    {\n      \"N\": 16,\n      \"J\": 2,\n      \"edges\": 32,\n      \"phase_checks\": 320,\n      \"nonincident_pairs\": 465,\n      \"local_inverse_checks\": 124,\n      \"minimum_speed\": \"544/33\",\n      \"passed\": true\n    }\n  ]\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/robust_depth_capacity/check_gn001_finite.py",
+      "script_sha256": "9bf5e5858b2ebd9a1b43b0efbe821b3c2d0d7fce0c406ca220423ff1ebebc422",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Finite exact diagnostics, not a universal proof; generic GD theorem supplies uniform all-history guarantee\",\n  \"rational_signed_conversion\": [\n    {\n      \"P\": 0,\n      \"cases\": 897,\n      \"pass_all\": true\n    },\n    {\n      \"P\": 1,\n      \"cases\": 897,\n      \"pass_all\": true\n    },\n    {\n      \"P\": 4,\n      \"cases\": 897,\n      \"pass_all\": true\n    },\n    {\n      \"P\": 9,\n      \"cases\": 897,\n      \"pass_all\": true\n    }\n  ],\n  \"cases\": [\n    {\n      \"N\": 2,\n      \"J\": 2,\n      \"h\": 8,\n      \"d_bound\": 240,\n      \"max_scalar_affines\": 22,\n      \"P\": 3904,\n      \"inputs\": 23,\n      \"adversarial_corner_checks\": 92,\n      \"uniform_precut_pass\": true,\n      \"robust_inverse_pass\": true,\n      \"error_strictly_below_grid\": true\n    },\n    {\n      \"N\": 2,\n      \"J\": 3,\n      \"h\": 8,\n      \"d_bound\": 540,\n      \"max_scalar_affines\": 45,\n      \"P\": 8704,\n      \"inputs\": 29,\n      \"adversarial_corner_checks\": 232,\n      \"uniform_precut_pass\": true,\n      \"robust_inverse_pass\": true,\n      \"error_strictly_below_grid\": true\n    },\n    {\n      \"N\": 2,\n      \"J\": 4,\n      \"h\": 8,\n      \"d_bound\": 960,\n      \"max_scalar_affines\": 69,\n      \"P\": 15424,\n      \"inputs\": 41,\n      \"adversarial_corner_checks\": 656,\n      \"uniform_precut_pass\": true,\n      \"robust_inverse_pass\": true,\n      \"error_strictly_below_grid\": true\n    },\n    {\n      \"N\": 4,\n      \"J\": 2,\n      \"h\": 8,\n      \"d_bound\": 360,\n      \"max_scalar_affines\": 29,\n      \"P\": 5824,\n      \"inputs\": 27,\n      \"adversarial_corner_checks\": 108,\n      \"uniform_precut_pass\": true,\n      \"robust_inverse_pass\": true,\n      \"error_strictly_below_grid\": true\n    },\n    {\n      \"N\": 4,\n      \"J\": 3,\n      \"h\": 8,\n      \"d_bound\": 810,\n      \"max_scalar_affines\": 60,\n      \"P\": 13024,\n      \"inputs\": 55,\n      \"adversarial_corner_checks\": 440,\n      \"uniform_precut_pass\": true,\n      \"robust_inverse_pass\": true,\n      \"error_strictly_below_grid\": true\n    },\n    {\n      \"N\": 8,\n      \"J\": 2,\n      \"h\": 8,\n      \"d_bound\": 480,\n      \"max_scalar_affines\": 36,\n      \"P\": 7744,\n      \"inputs\": 35,\n      \"adversarial_corner_checks\": 140,\n      \"uniform_precut_pass\": true,\n      \"robust_inverse_pass\": true,\n      \"error_strictly_below_grid\": true\n    }\n  ]\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/robust_grid_packing/RG001_independent_checks.py",
+      "script_sha256": "67bca20162719e0d02c26a7f39d650da7860972d612e3f13e3b772af82393e8a",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Exact rational finite diagnostics, not proof or emitted-network audit\",\n  \"checks\": [\n    {\n      \"J\": 2,\n      \"k\": 1,\n      \"edges\": 4,\n      \"piece_formula_and_separation\": \"PASS\"\n    },\n    {\n      \"J\": 2,\n      \"k\": 2,\n      \"edges\": 8,\n      \"piece_formula_and_separation\": \"PASS\"\n    },\n    {\n      \"J\": 3,\n      \"k\": 1,\n      \"edges\": 10,\n      \"piece_formula_and_separation\": \"PASS\"\n    },\n    {\n      \"J\": 3,\n      \"k\": 2,\n      \"edges\": 36,\n      \"piece_formula_and_separation\": \"PASS\"\n    },\n    {\n      \"J\": 4,\n      \"k\": 1,\n      \"edges\": 22,\n      \"piece_formula_and_separation\": \"PASS\"\n    },\n    {\n      \"J\": 2,\n      \"k\": 1,\n      \"P\": 14,\n      \"uniform_grid_recorded_ops\": \"PASS\"\n    },\n    {\n      \"J\": 3,\n      \"k\": 1,\n      \"P\": 21,\n      \"uniform_grid_recorded_ops\": \"PASS\"\n    },\n    {\n      \"J\": 3,\n      \"k\": 2,\n      \"P\": 25,\n      \"uniform_grid_recorded_ops\": \"PASS\"\n    },\n    {\n      \"J\": 4,\n      \"k\": 1,\n      \"P\": 29,\n      \"uniform_grid_recorded_ops\": \"PASS\"\n    },\n    {\n      \"J\": 5,\n      \"k\": 1,\n      \"P\": 38,\n      \"uniform_grid_recorded_ops\": \"PASS\"\n    }\n  ],\n  \"theorem_sha256\": \"fc563812489ea4deba9bbc00e072119f2e26d23f3b6bcab56c40cb5dabd74949\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/robust_grid_packing/check_rg001.py",
+      "script_sha256": "98716d1d1c3209d57b29315123d0a5b8ff80b0215459caaf1e09eba6dca77e2a",
+      "returncode": 0,
+      "stdout": "[\n  {\n    \"J\": 2,\n    \"N\": 2,\n    \"edges\": 4,\n    \"minimum_nonincident_squared\": \"1/4\",\n    \"maximum_plateau\": \"1/12\",\n    \"minimum_speed\": \"3\",\n    \"maximum_speed\": \"6\"\n  },\n  {\n    \"J\": 2,\n    \"N\": 4,\n    \"edges\": 8,\n    \"minimum_nonincident_squared\": \"1/16\",\n    \"maximum_plateau\": \"1/40\",\n    \"minimum_speed\": \"5\",\n    \"maximum_speed\": \"10\"\n  },\n  {\n    \"J\": 3,\n    \"N\": 2,\n    \"edges\": 10,\n    \"minimum_nonincident_squared\": \"1/4\",\n    \"maximum_plateau\": \"1/12\",\n    \"minimum_speed\": \"15/2\",\n    \"maximum_speed\": \"15\"\n  },\n  {\n    \"J\": 3,\n    \"N\": 4,\n    \"edges\": 36,\n    \"minimum_nonincident_squared\": \"1/16\",\n    \"maximum_plateau\": \"9/680\",\n    \"minimum_speed\": \"85/4\",\n    \"maximum_speed\": \"85/2\"\n  },\n  {\n    \"J\": 4,\n    \"N\": 2,\n    \"edges\": 22,\n    \"minimum_nonincident_squared\": \"1/4\",\n    \"maximum_plateau\": \"7/108\",\n    \"minimum_speed\": \"135/8\",\n    \"maximum_speed\": \"135/4\"\n  },\n  {\n    \"J\": 4,\n    \"N\": 4,\n    \"edges\": 148,\n    \"minimum_nonincident_squared\": \"1/16\",\n    \"maximum_plateau\": \"229/44200\",\n    \"minimum_speed\": \"5525/64\",\n    \"maximum_speed\": \"5525/32\"\n  }\n]\nUniform-P lattice checks PASS [{'J': 2, 'k': 1, 'P': 13, 'p0': 13, 'G': 0, 'checked_values': 2220}, {'J': 3, 'k': 1, 'P': 20, 'p0': 19, 'G': 1, 'checked_values': 4588}, {'J': 3, 'k': 2, 'P': 24, 'p0': 22, 'G': 2, 'checked_values': 5994}, {'J': 4, 'k': 1, 'P': 28, 'p0': 25, 'G': 3, 'checked_values': 7178}, {'J': 4, 'k': 2, 'P': 35, 'p0': 29, 'G': 6, 'checked_values': 9620}, {'J': 5, 'k': 1, 'P': 37, 'p0': 31, 'G': 6, 'checked_values': 9990}]\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/robust_markov_prediction/MG001_independent_checks.py",
+      "script_sha256": "23081b8040cb9341947420de76ae4546ea1649adbb78828e50360e98374c6aca",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Exact rational finite tests; not formal verification or a finite-evaluator/network audit\",\n  \"inverse_cases\": 19305,\n  \"normalization_cases\": 2106,\n  \"occupation_cases\": 20480,\n  \"theorem_sha256\": \"c4f114bb7510f3dd5ead7461d9ebead092e2abe103fc92f96e3af9fbd4ac6623\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/robust_markov_prediction/MG002_independent_checks.py",
+      "script_sha256": "d32e5dbe481293be981f4e8941544cff6a59b46bedc94d9f23617115f6b198cc",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Exact integer squared capacity/selection inequalities; executable constants conservatively upper-bound radicals. Not full evaluator audit.\",\n  \"capacity_admissible\": 51823,\n  \"scalar\": 27431,\n  \"snake\": 24392,\n  \"MG002_theorem_sha256\": \"7b9c72da1bbaa6ddafcba66fabe80cf25b467703bfeca7b9afa8e00f0f8e8d93\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/robust_markov_prediction/check_mg001.py",
+      "script_sha256": "a79f9f883efe3f0e10f9b15348a19291ee6734f18527b9d32301fd846198c548",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Exact finite rational diagnostics; not formal proof or emitted generic-FA network verification\",\n  \"symmetric_inverse_cases\": 13635,\n  \"robust_composed_curve_recovery_cases\": 4590,\n  \"add_one_row_cases\": 25140,\n  \"artificial_zero_row_mass_cases_handled\": 225,\n  \"actual_terminal_full_history_count_cases\": 2040,\n  \"deterministic_arbitrary_start_nontrivial_occupation_cases\": 4160,\n  \"theorem_sha256\": \"c4f114bb7510f3dd5ead7461d9ebead092e2abe103fc92f96e3af9fbd4ac6623\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/robust_markov_prediction/check_mg002.py",
+      "script_sha256": "f255bb00ac09ea5f4c24cd209d3c1b3cec65f76f33a6336eb46fb7896606590e",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Exact integer schedule and rational conversion diagnostics, not all-parameter proof or emitted network audit\",\n  \"capacity_schedule_cases\": 890565,\n  \"snake_cases\": 7216,\n  \"scalar_fallback_cases\": 883349,\n  \"rational_conversion_cases\": 8064,\n  \"theorem_sha256\": \"7b9c72da1bbaa6ddafcba66fabe80cf25b467703bfeca7b9afa8e00f0f8e8d93\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/robust_scalar_packing/RP001_independent_checks.py",
+      "script_sha256": "f5578b24b3022cb1d47ed7d35c751726f37ae0ebeba830cbb8cd9a57edec59b0",
+      "returncode": 0,
+      "stdout": "{\n  \"formula_cases\": 2937,\n  \"exact_grid_cases\": 2937,\n  \"uniform_lattice_cases\": 2937,\n  \"noise_label_cases\": 8477,\n  \"local_inverse_cases\": 11686,\n  \"max_error_over_bound\": 0.4155844155844156,\n  \"theorem_sha256\": \"6326dfc083b69a1915679ac01e4dbdad750057cf3c896a3cd0c5787cd504a136\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/robust_scalar_packing/check_rp001.py",
+      "script_sha256": "cc7054dd8c4e664c7370ce3c061e6c9dd3af12312914d36cd744b251b38adb0a",
+      "returncode": 0,
+      "stdout": "{\"status\": \"PASS\", \"uniform_lattice_cases\": 40527, \"formula_exact_cases\": 10493, \"adversarial_quantization_cases\": 8037, \"max_error_over_bound\": 0.4155844155844156, \"scope\": \"finite exact diagnostics, not proof or emitted-network certification\"}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/score_precision/SH001_diagnostics_v1.py",
+      "script_sha256": "45fa4abfd1dad6bac99d4432b101d61d4edd3f89f83aab74ba813f1437348ebb",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Finite scalar checks only; analytic theorem not certified by tests\",\n  \"counts\": {\n    \"cutoff_harmonic\": 216,\n    \"tube_mesh\": 3276,\n    \"necessity_large_f\": 12000,\n    \"upper_selection\": 8\n  },\n  \"minimum_ratios\": {\n    \"harmonic_ratio\": 2.5075413805927225,\n    \"event_ratio\": 4.84272793154957\n  }\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/score_precision/check_sb001.py",
+      "script_sha256": "0e08a8cbc2154fa2ab11d0afaede012f3c830b0afdfe391f23eea2f16eb3b461",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"pass\",\n  \"scope\": \"Exact rational mathematical-map tests; not compiled finite network execution\",\n  \"histories\": 2096,\n  \"instances\": 33536,\n  \"zero_selected_block\": 22370,\n  \"nonempty_all_floors_zero\": 7938,\n  \"max_observed_error_to_bound_ratio\": \"64/139\",\n  \"schedule_and_constant_checks\": \"pass\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/source_corruption_manuscript/check_tolerance.py",
+      "script_sha256": "28f8cd1193604647ba7171c01cebf32cb916645eca870d7530cffa10acf4c13a",
+      "returncode": 0,
+      "stdout": "{'status': 'PASS', 'checks': 316, 'largest_continuous_sufficiency_ratio_tested': 1.3406685519406623, 'scope': 'Finite scalar corroboration only; analytic proof in Corollary 3.1; no process experiments'}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/source_symbol_corruption/SC001_diagnostics.py",
+      "script_sha256": "4e58de40c543db8671f6bc68f5a012ccf12fc1717d0a4f04feaf400861b75c99",
+      "returncode": 0,
+      "stdout": "{\"status\": \"PASS\", \"factorial_cases\": 792, \"enumerated_kernel_cases\": 288, \"finite_domain_inequalities\": 125249, \"scope\": \"Finite diagnostics only; no Monte Carlo and no formal verification.\"}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/source_symbol_corruption/SC001_review_checks.py",
+      "script_sha256": "7bb19b3fff2f54b6785556d1f4a97ef876a3be68b9b95fd9743675e861640bf2",
+      "returncode": 0,
+      "stdout": "{\n  \"exchangeability_exact_rational_cases\": 605,\n  \"finite_constant_cases\": 500499,\n  \"minimum_integrated_to_claimed_ratio\": [\n    1.7260924347106852,\n    [\n      2,\n      2\n    ]\n  ],\n  \"exhaustive_single_edit_histogram_cases\": 44307,\n  \"all_passed\": true,\n  \"limits\": \"Finite diagnostics only, not proof or external/formal review.\",\n  \"stationary_exact_rational_event_cases\": 19800,\n  \"stationary_iid_KL_cases\": 9999\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/source_symbol_corruption_mixing/SC002_diagnostics.py",
+      "script_sha256": "45d0c6f1e20b8af0d78d6267d8068f72f7fba0257cb32a85b9ca811b8058b67e",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"finite diagnostics, not universal proof\",\n  \"counts\": {\n    \"exact_all_pair_minorization\": 20736,\n    \"exact_erasure\": 1920,\n    \"floating_scalar_cases\": 2568\n  },\n  \"minimum_tested_lower_margin_ratio\": 99.53617403942648,\n  \"failures\": []\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/source_symbol_corruption_mixing/SC002_review_checks.py",
+      "script_sha256": "70921b9ab64a7ceb08ec6f4d870a55f1fca6d8f824617398d6e0c05179c09294",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Independent finite diagnostics, exact rational for source/erasure, floating point for scalar and KL grids; not formal verification\",\n  \"theorem_sha256\": \"40a8950861b486f532ac625fa479cb49cd79241dbb4b08efce6296ae9b6a1f0e\",\n  \"counts\": {\n    \"exact_all_pair_minorization_entries\": 18432,\n    \"exact_event_bounds\": 828,\n    \"exact_enumerated_erasure_cases\": 450,\n    \"lower_scalar_cases\": 517184,\n    \"residual_envelope_cases\": 960,\n    \"iid_kl_and_clean_floor_cases\": 9937\n  },\n  \"worst_cases\": {\n    \"minimum_integral_over_log_lower\": 1.5188804452292626,\n    \"maximum_residual_over_envelope\": 0.18649421499707874\n  }\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/stage8_science_audit/diagnostic_revisions/independent_exact_checks.v1.py",
+      "script_sha256": "d8476e9a15389ed43957ee28566cee08e62a98e2453f6874abecad7aed7b6c97",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/run_85/v10_research/stage8_science_audit/diagnostic_revisions/independent_exact_checks.v1.py\", line 194, in <module>\n    check(1830<2**11 and 2*(8192+1)**2*32*4 <2**34,'lower_and_upper_constant_slack')\n  File \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/run_85/v10_research/stage8_science_audit/diagnostic_revisions/independent_exact_checks.v1.py\", line 16, in check\n    assert ok,key\n           ^^\nAssertionError: lower_and_upper_constant_slack\n",
+      "expected_outcome": "HISTORICAL_AUDIT_HARNESS_FAILURE",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/stage8_science_audit/independent_exact_checks.py",
+      "script_sha256": "ebd7cb13de21013f3e7ba35a5035eed1586a7fce359097d68445eb4b20c15d6e",
+      "returncode": 0,
+      "stdout": "{\n  \"target_snapshot\": {\n    \"v10_research/source_corruption_manuscript/corrupted_trajectories.tex\": \"13345044d06449bb79255d0341e1e2349e061c631584b6c14bdefb6b72451392\",\n    \"v10_research/source_corruption_manuscript/nonbinary_endpoint.tex\": \"ed8d40a5b16664a3dcdc96ae5ece997cc8b8738e55cfa8a01c5af9f62f9297f6\",\n    \"v10_research/source_corruption_manuscript/binary.tex\": \"d4b130483d86fe3cb3107136a88c0197025ed2a71118b3e4e2ddba857c10b881\",\n    \"v10_research/source_corruption_guide/guide_final_math_zh.md\": \"0ffe24409645c803d16ed82fd46e95cebc77ad49a5a2559bb0ef92c819f6d009\",\n    \"v10_research/delivery_stage8/SCIENTIFIC_FREEZE.json\": \"6260f393db5403766e57ccfa26a6ee93e88440f8751d7159f027df2ad9daea25\"\n  },\n  \"status\": \"PASS\",\n  \"arithmetic\": \"Exact fractions, plus rigorous rational enclosures for logarithms and square roots\",\n  \"counts\": {\n    \"histogram_edit_bound\": 87376,\n    \"binary_downward_envelope\": 86360,\n    \"binary_pathloss\": 431800,\n    \"boundary_transport_exact\": 25,\n    \"merge_mean_exact\": 30,\n    \"merge_preimage_density\": 1946,\n    \"reference_fifth_power\": 13,\n    \"reference_common_atom\": 13,\n    \"binary_witness_stationarity\": 171,\n    \"binary_witness_allstate\": 171,\n    \"reference_microcanonical_path_mass\": 180,\n    \"reference_count_probability\": 180,\n    \"exact_binomial_mode_mass\": 1274,\n    \"bridge_grid_spacing\": 30,\n    \"bridge_grid_labels\": 30,\n    \"endpoint_stationarity\": 51,\n    \"endpoint_allstate_certificate\": 51,\n    \"endpoint_delta_floor\": 51,\n    \"certificate_marginal_identity\": 646,\n    \"erased_prefix_exact_Bayes_loss\": 1260,\n    \"pooled_martingale_exact_moments\": 12,\n    \"tolerance_range_interval\": 71,\n    \"tolerance_floor_certified\": 71,\n    \"tolerance_zero_budget\": 71,\n    \"tolerance_integer_sufficiency\": 207,\n    \"tolerance_premise_false\": 944,\n    \"tolerance_integer_necessity\": 801,\n    \"scalar_cutoff_floor_certified\": 96,\n    \"scalar_empty_sum_case\": 52,\n    \"scalar_completion_interval\": 96,\n    \"scalar_nonempty_sum_case\": 44,\n    \"entropy_cutoff_constant_exact\": 1,\n    \"scalar_completion_constant_interval\": 1,\n    \"lower_and_upper_constant_slack\": 1,\n    \"target_snapshot_stable\": 1\n  },\n  \"total_checks\": 614127,\n  \"scope\": \"Finite corroboration only, not a proof or formal verification. Small M tests are historywise algebra only and do not extend theorem domains.\",\n  \"script_sha256\": \"ebd7cb13de21013f3e7ba35a5035eed1586a7fce359097d68445eb4b20c15d6e\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/stage8_science_audit/sc001_sc002/independent_exact_diagnostics.py",
+      "script_sha256": "d085abb823ebb076e02e3ab1db438cea2ea7a4c4d99c84cbfaef1709785b0312",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"arithmetic\": \"exact integers and fractions.Fraction only; no floating tolerances\",\n  \"checks\": {\n    \"multi_edit_histogram_and_clean_mass_normalization\": 88260,\n    \"erasure_conditional_arrangement_entries\": 2687,\n    \"full_word_rounded_count_terminal_factorization\": 25160,\n    \"all_state_pair_minorization_entries\": 34560,\n    \"stationary_rare_suffix_event_bounds\": 1640,\n    \"direct_path_conditional_iid_entries\": 12420,\n    \"exact_all_state_suffix_mixture_entries\": 1024,\n    \"sc001_stationary_event_identity_and_bound\": 2016,\n    \"iid_message_floor_integer_cases\": 131327\n  },\n  \"total_asserted_cases\": 299094,\n  \"scope\": \"Finite corroboration of algebra, full-word factorization and selected finite cases, not proof or statistical simulation.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/stage8_science_audit/verify_audit.py",
+      "script_sha256": "1b4b7a0241ba334389aeee1d9642962e58dbcbdc0be75403869f75d7ec5cd990",
+      "returncode": 1,
+      "stdout": "{\n  \"status\": \"FAIL\",\n  \"bound_file_comparisons\": 107,\n  \"failures\": [\n    {\n      \"path\": \"v10_research/binary_arbitrary/BAI003_review_v1.md\",\n      \"reason\": \"hash or length mismatch\",\n      \"got\": \"b5fe97bbc7c0237bcc77c662df8f8c9cf2882801145e71981bc9d9cc3893ecf5\"\n    },\n    {\n      \"path\": \"v10_research/binary_arbitrary/BAI003_review_v2.md\",\n      \"reason\": \"hash or length mismatch\",\n      \"got\": \"8f9538c85b3e048dd20710b5461ebc9906eda7fc166d98ff7a54e5ab237d7ccb\"\n    },\n    {\n      \"path\": \"v10_research/binary_erasure_transport/BT001_independent_review.md\",\n      \"reason\": \"hash or length mismatch\",\n      \"got\": \"02edacf1ca7c70470691fc6ab59854608da20ede986c3268994c7a1f8dba85dc\"\n    },\n    {\n      \"path\": \"v10_research/binary_erasure_transport/BT002_independent_review.md\",\n      \"reason\": \"hash or length mismatch\",\n      \"got\": \"d4b76e0845a324886ddf5079a7df7742899f2122ae823b5ea924ab9ce8895376\"\n    }\n  ],\n  \"scope\": \"Exact artifact identity and passing diagnostic records only; mathematical verdict is in AUDIT_REPORT.md; not acceptance.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": false
+    },
+    {
+      "script": "v10_research/terminal_symbol_corruption/EP001_boundary_review_checks.py",
+      "script_sha256": "bcf1272b5987aa3e284c9f3e2012b8af78fb8c616c5c7e33a8ee8574ad03b248",
+      "returncode": 0,
+      "stdout": "{\n  \"random_rational_all_state_certificates\": 36,\n  \"off_support_certificates\": 18,\n  \"exact_erased_prefix_posteriors\": 888,\n  \"exact_martingale_path_enumerations\": 9,\n  \"exhaustive_empirical_perturbations\": 21824,\n  \"count_erasure_ancillarity_identities\": 2108,\n  \"finite_domain_constant_cases\": 11484,\n  \"candidate_sha256\": \"bf58470664861f28dbd8746d5b0c54eea1beadd98e87c2c80600b1ec68c796fa\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/two_resource_frontier/TR001_diagnostics_v1.py",
+      "script_sha256": "34dbe39878b1dd8d813eb9c2b7f3bd9bb75e3a4d8619cd8fb3aea27985d6f800",
+      "returncode": 0,
+      "stdout": "{\"status\": \"PASS\", \"scalar_assertions\": 1228235, \"branch_instances\": {\"A\": 12060, \"B\": 36401, \"C\": 13705, \"D\": 57616}, \"M_count\": 81, \"max_log2_M\": 496.0, \"source_hashes_verified\": 13, \"limitations\": \"Finite floating-point algebra checks only; not universal proof, formal verification, or original-network execution.\"}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    },
+    {
+      "script": "v10_research/two_resource_frontier/TR001_independent_checks_v1.py",
+      "script_sha256": "7adb5de83c0db171983be2fd304f2b133a906ab80557721d5a5d8d6cd81f3002",
+      "returncode": 0,
+      "stdout": "{\n  \"verdict\": \"PASS\",\n  \"arithmetic\": \"65-digit Decimal logarithms; exact Python integer domain predicates where applicable; comparison tolerance 1e-58 relative to max(1, magnitudes)\",\n  \"counts\": {\n    \"source_hashes\": 13,\n    \"legal_surface_points\": 17948,\n    \"A\": 5397,\n    \"B\": 8939,\n    \"C\": 10469,\n    \"D\": 5221,\n    \"threshold_implications\": 66148,\n    \"allocations\": 349,\n    \"scalar_necessity\": 2091,\n    \"scalar_sufficiency\": 306,\n    \"kl\": 35\n  },\n  \"candidate_sha256\": \"7dca0c09637164c2a632e1e493c7af281109bb52116400c94ee507fe18c493c6\",\n  \"limits\": \"Finite checks corroborate scalar completion and threshold algebra only; do not test minimax risk or establish a universal proof.\"\n}\n",
+      "stderr": "",
+      "expected_outcome": "PASS",
+      "matched_expected_outcome": true
+    }
+  ],
+  "scope": "Each unchanged scientific script executes in a pristine isolated package restoration. Only its explicitly consumed metadata pointers are reconciled. Original author/review outputs remain immutable evidence. Finite diagnostics are not proof, formal verification or original-network execution. Original-input historical operational scripts are retained verbatim, not re-executed. Document builders/native verifiers have separate clean-rebuild audit. Superseded audit-harness v1 is intentionally replayed as an expected historical failure; it is not counted as a passing scientific diagnostic."
+}

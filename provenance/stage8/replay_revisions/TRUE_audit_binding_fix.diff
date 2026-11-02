@@ -1,0 +1,32 @@
+--- run_diagnostics.pre_audit_binding_fix.py
++++ run_diagnostics.py
+@@ -32,6 +32,21 @@
+    if isinstance(e,dict):e['sha256']=actual
+    else:x[kind][key]=actual
+  q.write_text(json.dumps(x,indent=2))
++def reconcile_stage8_audit(work,script):
++ name='v10_research/stage8_science_audit/SOURCE_BINDINGS.json'
++ q=work/name;original=q.read_bytes();assert sha(original)==by[name]['export_sha256'];x=json.loads(original)
++ for group in ['targets','sources','audit_artifacts']:
++  for i,e in enumerate(x[group]):
++   source=e['path'];r=by[source];data=(work/source).read_bytes()
++   assert e['sha256']==r['source_sha256'] and e['bytes']==r['source_bytes']
++   assert sha(data)==r['export_sha256'] and len(data)==r['export_bytes']
++   if r['source_sha256']!=r['export_sha256']:
++    assert r['edits'] and not source.endswith('.py')
++    changes.append({'script':script,'binding_file':name,'json_pointer':f'/{group}/{i}/sha256','source_path':source,'original_sha256':e['sha256'],'export_sha256':r['export_sha256'],'basis':'exact declared routing-only original/export delta in this script disposable binding'})
++    changes.append({'script':script,'binding_file':name,'json_pointer':f'/{group}/{i}/bytes','source_path':source,'original_bytes':e['bytes'],'export_bytes':r['export_bytes'],'basis':'exact byte-count consequence of the same declared routing-only original/export delta'})
++    e['sha256']=r['export_sha256'];e['bytes']=r['export_bytes']
++ q.write_text(json.dumps(x,indent=2))
++
+ for i,s in enumerate(scripts):
+  work=D/f'run_{i:02d}';shutil.copytree(BASE,work)
+  # Reconcile only bindings actually consumed by this script; unrelated bindings stay pristine.
+@@ -45,6 +60,7 @@
+   reconcile(work,s,'v10_research/manuscript_v5/SOURCE_MANIFEST.json','sources','')
+  if s=='v10_research/manuscript_v5/audit_science_fresh/bind_final.py':
+   reconcile(work,s,'v10_research/precision_robustness_guide/SOURCE_BINDINGS.json','files','')
++ if s=='v10_research/stage8_science_audit/verify_audit.py':reconcile_stage8_audit(work,s)
+  script_hash=sha((work/s).read_bytes());assert script_hash==by[s]['export_sha256']==by[s]['source_sha256']
+  r=subprocess.run([sys.executable,str(work/s)],cwd=work,text=True,capture_output=True)
+  assert sha((work/s).read_bytes())==script_hash

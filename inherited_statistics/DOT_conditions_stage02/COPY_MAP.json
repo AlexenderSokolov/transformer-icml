@@ -1,0 +1,940 @@
+{
+  "format": "science-byte-excerpts-v2",
+  "line_numbering": "1-based inclusive touched-line numbers for each nonempty half-open source byte interval.",
+  "verification": "Each copied span equals the indicated original source byte interval; copied bodies are not re-reviewed. Editorial titles/notes are outside spans.",
+  "records": [
+    {
+      "source": "S001_proof_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "6d00dc0b99ff0d6932b171bdd3e243ee923ca5d8a864cdac407c815e37f26f6d",
+      "output": "proofs/S001_stationary_upper.md",
+      "output_sha256": "7fa8b2119f84d9f382da80516aa8b3c277ebd2c4587dffd58d24bf16b11a77d4",
+      "copied_body_sha256": "e9fb1bb30e1886da9cdae3a3b1e75e67f29fbe45e7bc8235b1e7b7540a14fbda",
+      "spans": [
+        {
+          "source_byte_start": 317,
+          "source_byte_end": 2079,
+          "source_line_start": 8,
+          "source_line_end": 39,
+          "output_byte_start": 328,
+          "output_byte_end": 2090,
+          "sha256": "6b6b652ebde9585ed8a9f0622fc5dbb01e28fcfb6db6b44d4aa156c584f4903e"
+        },
+        {
+          "source_byte_start": 5112,
+          "source_byte_end": 18297,
+          "source_line_start": 70,
+          "source_line_end": 302,
+          "output_byte_start": 2092,
+          "output_byte_end": 15277,
+          "sha256": "60de43a88702206402e6eacc482b5316567193aac08536c1a8dea3ce6bf5e2db"
+        },
+        {
+          "source_byte_start": 18676,
+          "source_byte_end": 19401,
+          "source_line_start": 305,
+          "source_line_end": 320,
+          "output_byte_start": 15279,
+          "output_byte_end": 16004,
+          "sha256": "d45413acd05d272171ed38fc388a86554c961cde1a1e9ca88d165f4f8be23367"
+        }
+      ]
+    },
+    {
+      "source": "S002_proof_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "ac5e20d249704e298454f1b3633eedcf4026847801922a584a9043304cbdbdf4",
+      "output": "proofs/S002_stationary_lower.md",
+      "output_sha256": "859e02a709ed270324432762af79c1949329d80ba3c324e1a1a6a542ad88881e",
+      "copied_body_sha256": "bc834f92076525acfd2288451894af89a7ad126cfc4ca45efa7fad5fd5e516b6",
+      "spans": [
+        {
+          "source_byte_start": 257,
+          "source_byte_end": 15237,
+          "source_line_start": 5,
+          "source_line_end": 285,
+          "output_byte_start": 322,
+          "output_byte_end": 15302,
+          "sha256": "bc834f92076525acfd2288451894af89a7ad126cfc4ca45efa7fad5fd5e516b6"
+        }
+      ]
+    },
+    {
+      "source": "S003_proof_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "efa75c1ec0c1c3c8aab6956397f277bcf27dd148a480921b86186d6984f248e5",
+      "output": "proofs/S003_initialization_transition.md",
+      "output_sha256": "5ab2b390ab2d40b238932d658cd1986381bafe9514ba5fa9d25f1d3f18507759",
+      "copied_body_sha256": "50c1ba1969f5e45d5e642fcf32fad7032d527a15cc127ebe8daee23d29ed472a",
+      "spans": [
+        {
+          "source_byte_start": 581,
+          "source_byte_end": 3546,
+          "source_line_start": 7,
+          "source_line_end": 62,
+          "output_byte_start": 320,
+          "output_byte_end": 3285,
+          "sha256": "742e219b0f698af44bb822f1bf883b2e7c495fe3e1ed641a2135328131232780"
+        },
+        {
+          "source_byte_start": 4153,
+          "source_byte_end": 4225,
+          "source_line_start": 67,
+          "source_line_end": 68,
+          "output_byte_start": 3287,
+          "output_byte_end": 3359,
+          "sha256": "67205401b7bd622df3b853ca480740ce1ce56289f43addfdbf3e311326de5255"
+        },
+        {
+          "source_byte_start": 4419,
+          "source_byte_end": 4489,
+          "source_line_start": 70,
+          "source_line_end": 70,
+          "output_byte_start": 3361,
+          "output_byte_end": 3431,
+          "sha256": "22e05cbcfffaae4eab99b31094bb1d102fb9f4c24ac133896326308482f8c4d2"
+        },
+        {
+          "source_byte_start": 4612,
+          "source_byte_end": 4944,
+          "source_line_start": 70,
+          "source_line_end": 75,
+          "output_byte_start": 3431,
+          "output_byte_end": 3763,
+          "sha256": "4eb20d787cb9da43293ce3854a1369dbf095609a94af60ec1573b068fea1d8ea"
+        },
+        {
+          "source_byte_start": 5043,
+          "source_byte_end": 5170,
+          "source_line_start": 75,
+          "source_line_end": 78,
+          "output_byte_start": 3763,
+          "output_byte_end": 3890,
+          "sha256": "3d2f74c3fe6dab9c59caf5a73b96a48473cb903854b3df5afc10d6d5dd66b6ac"
+        },
+        {
+          "source_byte_start": 6156,
+          "source_byte_end": 19981,
+          "source_line_start": 83,
+          "source_line_end": 283,
+          "output_byte_start": 3892,
+          "output_byte_end": 17717,
+          "sha256": "1146c4c833557cc826ffc93af7bde8ec7931051b6ffda9d71951dd0e278abea9"
+        },
+        {
+          "source_byte_start": 23552,
+          "source_byte_end": 24194,
+          "source_line_start": 314,
+          "source_line_end": 332,
+          "output_byte_start": 17719,
+          "output_byte_end": 18361,
+          "sha256": "078847e9b31379ab91046cf7a118b98792e7cc5251a34289c291397deeb9a3b8"
+        }
+      ]
+    },
+    {
+      "source": "S004_proof_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "a0f4f3cb2daf8f3191281d5e0fcdbb3f645d4118f7373f5fb1b8427006a1959a",
+      "output": "proofs/S004_mixing_original_and_suffix.md",
+      "output_sha256": "e04ea48a52c5943b65d3e5472555de5c6a7ccd83b30f9509d620fb9eec426bdb",
+      "copied_body_sha256": "3cfb35605993ca0cc6c8b877ecb4e44acbbeea1900a94526d1f2c99553a76635",
+      "spans": [
+        {
+          "source_byte_start": 830,
+          "source_byte_end": 5907,
+          "source_line_start": 12,
+          "source_line_end": 92,
+          "output_byte_start": 330,
+          "output_byte_end": 5407,
+          "sha256": "806d300d382026b9489a021b2fb5805f84bf614bac5a714ffcf964b4c378ed2c"
+        },
+        {
+          "source_byte_start": 6391,
+          "source_byte_end": 6912,
+          "source_line_start": 98,
+          "source_line_end": 101,
+          "output_byte_start": 5409,
+          "output_byte_end": 5930,
+          "sha256": "f30739782493f79e63264d0ac3f710f10ba67f9261d6d0f115cf10db5014f359"
+        },
+        {
+          "source_byte_start": 6918,
+          "source_byte_end": 8033,
+          "source_line_start": 101,
+          "source_line_end": 108,
+          "output_byte_start": 5930,
+          "output_byte_end": 7045,
+          "sha256": "cdb1a041afe3594f89c15744006c3f179a19bf8b3194f90fea172a3fcc7e3553"
+        },
+        {
+          "source_byte_start": 8565,
+          "source_byte_end": 31071,
+          "source_line_start": 111,
+          "source_line_end": 410,
+          "output_byte_start": 7047,
+          "output_byte_end": 29553,
+          "sha256": "f96fe053812643c4e84a278b2553b821531a4d1493059b7396fbe91f78987651"
+        },
+        {
+          "source_byte_start": 31077,
+          "source_byte_end": 32851,
+          "source_line_start": 410,
+          "source_line_end": 414,
+          "output_byte_start": 29553,
+          "output_byte_end": 31327,
+          "sha256": "b28ca53f0c4c922addbbf8c507009d853194fd835d8dd13b2b0883b17535931a"
+        }
+      ]
+    },
+    {
+      "source": "S005_proof_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "389d743cebf89f7afeb4855ceb712bfec8b3b216b10ae077b23dd980b03c7eba",
+      "output": "proofs/S005_iid_algorithm_separation.md",
+      "output_sha256": "54071248416106afcc8f51734bc8ed019135ec2502e02d6e49fd09a45e6065e6",
+      "copied_body_sha256": "709ae4b3500223af7aff8bf1f213387d1b848a802003ba4bd79669a4d0bbcb93",
+      "spans": [
+        {
+          "source_byte_start": 960,
+          "source_byte_end": 20179,
+          "source_line_start": 12,
+          "source_line_end": 370,
+          "output_byte_start": 330,
+          "output_byte_end": 19549,
+          "sha256": "709ae4b3500223af7aff8bf1f213387d1b848a802003ba4bd79669a4d0bbcb93"
+        }
+      ]
+    },
+    {
+      "source": "S006_proof_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "88f150f0d316825bae1fd5718878e863991be64329ba92d0a3865919ca3fc4b7",
+      "output": "proofs/S006_near_iid_and_two_step.md",
+      "output_sha256": "17644d47e3b899d141c61251858aebbc1b64848306d77b0a210179b1472a2b30",
+      "copied_body_sha256": "c8ebc9e740d5c56a3c9c3da1c5ed1adb33ab14b0c125d0fd8c7ec6b232eccbf3",
+      "spans": [
+        {
+          "source_byte_start": 1082,
+          "source_byte_end": 7729,
+          "source_line_start": 11,
+          "source_line_end": 103,
+          "output_byte_start": 332,
+          "output_byte_end": 6979,
+          "sha256": "9c239e34f253572e2904682c4a298e83a2dd679c828188711602fa0dbd0ec738"
+        },
+        {
+          "source_byte_start": 7883,
+          "source_byte_end": 8236,
+          "source_line_start": 103,
+          "source_line_end": 104,
+          "output_byte_start": 6981,
+          "output_byte_end": 7334,
+          "sha256": "7da1d4b82cbe8c5f59076458e90f5be3442b8c94b49b11934109767c97b57f04"
+        },
+        {
+          "source_byte_start": 8653,
+          "source_byte_end": 30210,
+          "source_line_start": 108,
+          "source_line_end": 354,
+          "output_byte_start": 7336,
+          "output_byte_end": 28893,
+          "sha256": "624675fe2c49fbb99108371678188318efadb30930adc3e57460629058d6559f"
+        }
+      ]
+    },
+    {
+      "source": "S007_proof_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "622e02f827feda6645641024477929066c67c68adba26bdfcd2621bab1683b24",
+      "output": "proofs/S007_three_step_reset.md",
+      "output_sha256": "aa57bda8d79f77fe5053996fdc5ffb9e1bcce599cdc76f19f2ac5eb5dbad9af9",
+      "copied_body_sha256": "72efbf092b66b76a9e39f5f9ee7d38f5045ae1961db11a74b05aeb6edc148d4e",
+      "spans": [
+        {
+          "source_byte_start": 1491,
+          "source_byte_end": 5863,
+          "source_line_start": 17,
+          "source_line_end": 71,
+          "output_byte_start": 328,
+          "output_byte_end": 4700,
+          "sha256": "fba18d530167e3ed54d2d62f77b97ff76fce761f4458ea642838451744a08c04"
+        },
+        {
+          "source_byte_start": 6603,
+          "source_byte_end": 26447,
+          "source_line_start": 81,
+          "source_line_end": 337,
+          "output_byte_start": 4702,
+          "output_byte_end": 24546,
+          "sha256": "2206c28adfbc0cf4c3648c540f13856a24bc5cc470ed3081e959333061e7ed48"
+        }
+      ]
+    },
+    {
+      "source": "S008_proof_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "8e49cf5c7655e9db40454dba484f8bb3a9049505e52f2064e8cd59a6ff3b218d",
+      "output": "proofs/S008_qualitative_positivity.md",
+      "output_sha256": "f898ff233b9dede048fc4e26b49fb8b355c534c5c113031444c8230a4c98819e",
+      "copied_body_sha256": "9399b8e990d185acf1a670b3e4522f3053c4656dbc1a777013a107ac953c3077",
+      "spans": [
+        {
+          "source_byte_start": 416,
+          "source_byte_end": 16131,
+          "source_line_start": 9,
+          "source_line_end": 381,
+          "output_byte_start": 493,
+          "output_byte_end": 16208,
+          "sha256": "a144725596f43d2d09f4f1aaf07f853019ec0e4a927fb36307f88147aee5d91b"
+        },
+        {
+          "source_byte_start": 16196,
+          "source_byte_end": 19745,
+          "source_line_start": 382,
+          "source_line_end": 448,
+          "output_byte_start": 16208,
+          "output_byte_end": 19757,
+          "sha256": "18b1512d60b018c26a1625c3060ef90c7cf57e724d53022e6031bdf7c8ca7209"
+        }
+      ]
+    },
+    {
+      "source": "S009_proof_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "f720e3513917778a6f21fe38be600a64a5c1726a0311dd2eda4fde992e0f1fda",
+      "output": "proofs/S009_finite_exact_reset.md",
+      "output_sha256": "38bceaa3a22f9a06cf9792a2c062c471dee77418d6fb6578876b01d291e908c2",
+      "copied_body_sha256": "6c4b43a9bbd05a7ce817bb67d4fa6c248e593cfcdc6a2712061e9b80f3763221",
+      "spans": [
+        {
+          "source_byte_start": 128,
+          "source_byte_end": 1081,
+          "source_line_start": 5,
+          "source_line_end": 14,
+          "output_byte_start": 328,
+          "output_byte_end": 1281,
+          "sha256": "de0fe4e3c872c45fd9b8456a52d701867947a735a4d4d9fecfb61baf63d43a1c"
+        },
+        {
+          "source_byte_start": 1809,
+          "source_byte_end": 4973,
+          "source_line_start": 23,
+          "source_line_end": 57,
+          "output_byte_start": 1283,
+          "output_byte_end": 4447,
+          "sha256": "264bd3c56d68f230c1fc58800510bcd69ae9756dd9596f49255f480a79dc8546"
+        },
+        {
+          "source_byte_start": 5631,
+          "source_byte_end": 24847,
+          "source_line_start": 66,
+          "source_line_end": 268,
+          "output_byte_start": 4449,
+          "output_byte_end": 23665,
+          "sha256": "c0671ddc0987fb83ff938bc16e9f19200d4e67365d606ac43d96f239a1a4bab6"
+        }
+      ]
+    },
+    {
+      "source": "S001_review_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "affe3eb2fa4c7f35f240a227758141173f5efa2af950966656c99337bc1cc1e8",
+      "output": "reviews/S001_mathematical_review.md",
+      "output_sha256": "7d850ab47469f079ae12fbb2ba0b53b954a9b087d02ad14c531e829876fef3f2",
+      "copied_body_sha256": "4a1807879163a30f740d505b9073e9890bd1147ade59642960b9084e73b1d8a3",
+      "spans": [
+        {
+          "source_byte_start": 1336,
+          "source_byte_end": 2408,
+          "source_line_start": 28,
+          "source_line_end": 43,
+          "output_byte_start": 466,
+          "output_byte_end": 1538,
+          "sha256": "c30e802cd5da3f66854dfbcb8dd238d72260e454127fe2db31dc0c1ded679a15"
+        },
+        {
+          "source_byte_start": 5464,
+          "source_byte_end": 16018,
+          "source_line_start": 67,
+          "source_line_end": 171,
+          "output_byte_start": 1540,
+          "output_byte_end": 12094,
+          "sha256": "261229f6e2d4ebd329e9b7d82b1cb3ec1dba42d2b4de118f40e599728f50c135"
+        },
+        {
+          "source_byte_start": 16415,
+          "source_byte_end": 21002,
+          "source_line_start": 172,
+          "source_line_end": 226,
+          "output_byte_start": 12096,
+          "output_byte_end": 16683,
+          "sha256": "c2452c5d5ab0c270319afcd1cf4e73a30e780618addabdf8ffc3aacf745dc340"
+        }
+      ]
+    },
+    {
+      "source": "S002_review_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "031d75fa365a6f9640664ddd0745729f024f5ab11c1cf57475960a1c0ccc8a67",
+      "output": "reviews/S002_mathematical_review.md",
+      "output_sha256": "61b7ef9964e68d3877f289c955fcf489611d6259d1e878212c066ba8090c4a55",
+      "copied_body_sha256": "b391e6996ba229e97b2437ac86155c3c4324bf0910652e0b638d531c608321aa",
+      "spans": [
+        {
+          "source_byte_start": 1151,
+          "source_byte_end": 1816,
+          "source_line_start": 26,
+          "source_line_end": 35,
+          "output_byte_start": 678,
+          "output_byte_end": 1343,
+          "sha256": "aff8e4d1d56e446b7194843dda40acf53b7ff953a620a0c1bb42e5bd79e867cb"
+        },
+        {
+          "source_byte_start": 3026,
+          "source_byte_end": 13080,
+          "source_line_start": 51,
+          "source_line_end": 124,
+          "output_byte_start": 1345,
+          "output_byte_end": 11399,
+          "sha256": "837f0a43f17b8d60bfdbc4a7a51a22f7a09b75b63376bb5170dd1ccf8c9e36ea"
+        },
+        {
+          "source_byte_start": 13308,
+          "source_byte_end": 14810,
+          "source_line_start": 124,
+          "source_line_end": 137,
+          "output_byte_start": 11399,
+          "output_byte_end": 12901,
+          "sha256": "fb2350747379cec9cdb32caeb8d6add7756d2274d38ddc4c6ee7c2a15271a92f"
+        },
+        {
+          "source_byte_start": 14861,
+          "source_byte_end": 16448,
+          "source_line_start": 140,
+          "source_line_end": 154,
+          "output_byte_start": 12903,
+          "output_byte_end": 14490,
+          "sha256": "3e3c7877e135666ff391d17b5e20554ac9f876b860b8b82d68aee632deee78a7"
+        }
+      ]
+    },
+    {
+      "source": "S003_review_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "8a6ceb06c315b49d881a710c90f9a2cb0ce41fe03c69373c6f46ea136d74d226",
+      "output": "reviews/S003_mathematical_review.md",
+      "output_sha256": "200fb9bf2e58d7ba2a3966ea8b5aa4da13c30cca82dc8d2ffb58187efe8edae3",
+      "copied_body_sha256": "848ab8c36e3fa2591f82cb7e6f4df0c2bce2e1482c08f13c402890160bc6ae8f",
+      "spans": [
+        {
+          "source_byte_start": 1322,
+          "source_byte_end": 2838,
+          "source_line_start": 26,
+          "source_line_end": 51,
+          "output_byte_start": 678,
+          "output_byte_end": 2194,
+          "sha256": "c953a9acbd6276ddf5ef35c980cfe3ca255ff524cac67183f4caa51ccd925df6"
+        },
+        {
+          "source_byte_start": 6965,
+          "source_byte_end": 16732,
+          "source_line_start": 90,
+          "source_line_end": 171,
+          "output_byte_start": 2196,
+          "output_byte_end": 11963,
+          "sha256": "4a1481b9c926de9765e4b2f1909d5ad4349c216bf993621a0412d0e9fdfeadb8"
+        },
+        {
+          "source_byte_start": 16768,
+          "source_byte_end": 16770,
+          "source_line_start": 172,
+          "source_line_end": 173,
+          "output_byte_start": 11965,
+          "output_byte_end": 11967,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070"
+        },
+        {
+          "source_byte_start": 16813,
+          "source_byte_end": 20553,
+          "source_line_start": 174,
+          "source_line_end": 205,
+          "output_byte_start": 11969,
+          "output_byte_end": 15709,
+          "sha256": "d74ef232e452f09dab0a2246acf94d2ada9138c469a161ead1bfb0cac9d96970"
+        },
+        {
+          "source_byte_start": 20728,
+          "source_byte_end": 20729,
+          "source_line_start": 205,
+          "source_line_end": 205,
+          "output_byte_start": 15711,
+          "output_byte_end": 15712,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        }
+      ]
+    },
+    {
+      "source": "S004_review_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "9b3148ce4ac46090d9311a4f52d65dcb8f42bbfdb483e180edf830b3efa33699",
+      "output": "reviews/S004_mathematical_review.md",
+      "output_sha256": "b03d4f40f302905c287c1d5b92a24cc1de6af741075419dbdeacff296c80b22b",
+      "copied_body_sha256": "c9418be0ed7df39ec07b5b226cf9837943de3001c6fb3f5204ee23fbc482b2bf",
+      "spans": [
+        {
+          "source_byte_start": 1242,
+          "source_byte_end": 3023,
+          "source_line_start": 26,
+          "source_line_end": 41,
+          "output_byte_start": 466,
+          "output_byte_end": 2247,
+          "sha256": "ca1bc4a8bb0cca058570e2a610b2b0f4f2dca58cff3e249bc38e79dc2e8096b9"
+        },
+        {
+          "source_byte_start": 5611,
+          "source_byte_end": 15395,
+          "source_line_start": 62,
+          "source_line_end": 135,
+          "output_byte_start": 2249,
+          "output_byte_end": 12033,
+          "sha256": "0c9e1b7bfd7ba5fe14b3d45df72bd01cc840ede1968df52fa031a86106ac361f"
+        },
+        {
+          "source_byte_start": 15758,
+          "source_byte_end": 19872,
+          "source_line_start": 136,
+          "source_line_end": 171,
+          "output_byte_start": 12035,
+          "output_byte_end": 16149,
+          "sha256": "04ec329715c54e1f8128987e09d417cec55ec4997dabe8e597162ea438769991"
+        }
+      ]
+    },
+    {
+      "source": "S005_review_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "836fd40704d2d32a064f0efda7fc812d80855137c2aac4bd71ac2175f4c85bde",
+      "output": "reviews/S005_mathematical_review.md",
+      "output_sha256": "182c5899b6ec57aebe4d12f18b7b7bedf6b2761c2377c8d438ebe471f9e235b7",
+      "copied_body_sha256": "247e13f50451ac44e5883423a459aa7b5921c343cb57b2f6f1994bb2c24051e6",
+      "spans": [
+        {
+          "source_byte_start": 1979,
+          "source_byte_end": 3249,
+          "source_line_start": 32,
+          "source_line_end": 46,
+          "output_byte_start": 678,
+          "output_byte_end": 1948,
+          "sha256": "acd39ef64e54c5ec2cb149233e8c6d9f37d9b21cb91bf62939a7c75b7a270331"
+        },
+        {
+          "source_byte_start": 4175,
+          "source_byte_end": 13193,
+          "source_line_start": 53,
+          "source_line_end": 124,
+          "output_byte_start": 1950,
+          "output_byte_end": 10968,
+          "sha256": "cf974b303210eb9fa9193f29145de47e2e817672e420c242a5489b9b36647532"
+        },
+        {
+          "source_byte_start": 13440,
+          "source_byte_end": 15105,
+          "source_line_start": 125,
+          "source_line_end": 142,
+          "output_byte_start": 10970,
+          "output_byte_end": 12635,
+          "sha256": "06240b224e15f7dbc9a236df450521d71a909c178ec0ca535c6fc08fed62fba1"
+        },
+        {
+          "source_byte_start": 15143,
+          "source_byte_end": 17152,
+          "source_line_start": 142,
+          "source_line_end": 156,
+          "output_byte_start": 12635,
+          "output_byte_end": 14644,
+          "sha256": "097530289eb5adf8a3f91408dddb4bbf508191a49267cf77650967a3598d0530"
+        }
+      ]
+    },
+    {
+      "source": "S006_review_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "4cd7abbbfdadad9f559c4ee848dd8444cbe35d8966f8327a74df5631afdae9b1",
+      "output": "reviews/S006_mathematical_review.md",
+      "output_sha256": "c4e2400b6e78e39ab309b086c40604b058fa5316cefc2ddc45bbb9fffb3fa479",
+      "copied_body_sha256": "b4a3d60e466304a3bd29540550c1ab4f27ee836f65f6604ee87a08988b4c605f",
+      "spans": [
+        {
+          "source_byte_start": 2171,
+          "source_byte_end": 3512,
+          "source_line_start": 38,
+          "source_line_end": 59,
+          "output_byte_start": 466,
+          "output_byte_end": 1807,
+          "sha256": "161963424518a1898f77127a5d95cd49e98fa6ea284998d8eabfe3a974c3739a"
+        },
+        {
+          "source_byte_start": 5840,
+          "source_byte_end": 16111,
+          "source_line_start": 81,
+          "source_line_end": 150,
+          "output_byte_start": 1809,
+          "output_byte_end": 12080,
+          "sha256": "44727b508f1ad2e06e5cc42a55525c937bb249c49e1cf609b1a706ef71d03812"
+        },
+        {
+          "source_byte_start": 16228,
+          "source_byte_end": 17788,
+          "source_line_start": 150,
+          "source_line_end": 163,
+          "output_byte_start": 12082,
+          "output_byte_end": 13642,
+          "sha256": "62d5a5527a2ad9bfd6d012e3b4688a1e5c37d6e2c25af379e11e6ad25e093931"
+        },
+        {
+          "source_byte_start": 17821,
+          "source_byte_end": 20437,
+          "source_line_start": 163,
+          "source_line_end": 183,
+          "output_byte_start": 13642,
+          "output_byte_end": 16258,
+          "sha256": "e098489810cfdba03a2ba2eefea0d345fa56ba95fea4832522a26af5760ff854"
+        }
+      ]
+    },
+    {
+      "source": "S007_review_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "77b0ef21dcbd37a9ac1ba4ffb218cc7e806ad88f1c60a7c457d3586522a3e699",
+      "output": "reviews/S007_mathematical_review.md",
+      "output_sha256": "339155e75ffa32e2656c21f53716567a9262bd9f1e77925d210b1ef4b264d4e4",
+      "copied_body_sha256": "aad9e19a6a4d5fb283e56e306898b79d75c6b63ee7916b90d52da65176d05862",
+      "spans": [
+        {
+          "source_byte_start": 2249,
+          "source_byte_end": 3813,
+          "source_line_start": 34,
+          "source_line_end": 46,
+          "output_byte_start": 466,
+          "output_byte_end": 2030,
+          "sha256": "9dcdd2ed6ccc25dfd96df07af0410dbde740666691680ba788c8e2d1918adc76"
+        },
+        {
+          "source_byte_start": 6299,
+          "source_byte_end": 18150,
+          "source_line_start": 65,
+          "source_line_end": 138,
+          "output_byte_start": 2032,
+          "output_byte_end": 13883,
+          "sha256": "68dab5b965ea3c69a60afad3b59a7e582ae91400c86d2f0e69ec9309655768dd"
+        },
+        {
+          "source_byte_start": 18293,
+          "source_byte_end": 22928,
+          "source_line_start": 138,
+          "source_line_end": 174,
+          "output_byte_start": 13885,
+          "output_byte_end": 18520,
+          "sha256": "68978c85a3983bf672a201d76dc61e9aaf4de6239f3c709122e53d401c6ebc96"
+        }
+      ]
+    },
+    {
+      "source": "S008_review_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "c86d149ee275d7de96a8a18b0694c6905bcbfcd7e6ab6fb90663e915dd31085f",
+      "output": "reviews/S008_mathematical_review.md",
+      "output_sha256": "fb87d39074b445b7496dd460bcac81b35181dda79f0e85b9825b1a3c3bc09e78",
+      "copied_body_sha256": "2f07c8e11c3a3b2337cbf53b59a24b94bb4fd554d49342f89903ffef2f80fe3a",
+      "spans": [
+        {
+          "source_byte_start": 1458,
+          "source_byte_end": 3087,
+          "source_line_start": 29,
+          "source_line_end": 39,
+          "output_byte_start": 466,
+          "output_byte_end": 2095,
+          "sha256": "6889568fcaab4d30fde77683d4ef3a394bbecb00315ce067ff235e6e944a38ac"
+        },
+        {
+          "source_byte_start": 5117,
+          "source_byte_end": 16416,
+          "source_line_start": 55,
+          "source_line_end": 125,
+          "output_byte_start": 2097,
+          "output_byte_end": 13396,
+          "sha256": "431c4bd0db045337fae8b8dee096458f8a66dc54a8493e1254259fe27259fe87"
+        },
+        {
+          "source_byte_start": 16451,
+          "source_byte_end": 18824,
+          "source_line_start": 125,
+          "source_line_end": 137,
+          "output_byte_start": 13396,
+          "output_byte_end": 15769,
+          "sha256": "a11c9e59434f87a4e9a52545886e5b694ff1df66f1a0b5f23a4b39c39f9860f9"
+        },
+        {
+          "source_byte_start": 19004,
+          "source_byte_end": 23632,
+          "source_line_start": 137,
+          "source_line_end": 176,
+          "output_byte_start": 15771,
+          "output_byte_end": 20399,
+          "sha256": "884e02762dd2274139b4e50955c7eacbf7a2734b05a4b883a1638da13f9f7cfd"
+        }
+      ]
+    },
+    {
+      "source": "S009_review_v1.md",
+      "source_category": "accepted_stage_proof_or_review",
+      "source_sha256": "beb58f9bcc8de0910c8eae868f71eef534042d57bdc36720751340b0050d0f63",
+      "output": "reviews/S009_mathematical_review.md",
+      "output_sha256": "66f3a326ee3bc928d930c4fe2bccabe64134571212e8e4f01093c1bbad82cd3f",
+      "copied_body_sha256": "e4765ad58dc578b7bc8b6c21c58dd6b421d320cead6898b7d0882254912c87a2",
+      "spans": [
+        {
+          "source_byte_start": 2408,
+          "source_byte_end": 3720,
+          "source_line_start": 39,
+          "source_line_end": 46,
+          "output_byte_start": 466,
+          "output_byte_end": 1778,
+          "sha256": "18740f2fbdf1889002a83a05f8bf31bb3fb33df091aa228dbcc382e3fbb129a0"
+        },
+        {
+          "source_byte_start": 5945,
+          "source_byte_end": 12238,
+          "source_line_start": 64,
+          "source_line_end": 109,
+          "output_byte_start": 1780,
+          "output_byte_end": 8073,
+          "sha256": "0f3221148fc68687aa00ef646a3956fe66cbebd5dcbeb8cc35d20ae522b1e814"
+        },
+        {
+          "source_byte_start": 12375,
+          "source_byte_end": 18151,
+          "source_line_start": 109,
+          "source_line_end": 154,
+          "output_byte_start": 8075,
+          "output_byte_end": 13851,
+          "sha256": "888f4dcadcb988639974ea986df748262e36a2b2e7dbbbae761db3827e3f7e2d"
+        }
+      ]
+    },
+    {
+      "source": "L1MAX-proof.md",
+      "source_category": "inherited_proof",
+      "source_sha256": "96397d48a9c0b118991b14cac4b1c48b7f06613825275a5a28d3f489399287d9",
+      "output": "inherited/L1MAX_statistical_proof.md",
+      "output_sha256": "b430fe3d176ecefc00ac575670ea13ffc5d5799f9e232a10375333a0547f44e4",
+      "copied_body_sha256": "b29cf77c18f987239c57aca0e8a568943d059fdef9374dece16dbdbca7cfae14",
+      "spans": [
+        {
+          "source_byte_start": 532,
+          "source_byte_end": 1307,
+          "source_line_start": 12,
+          "source_line_end": 30,
+          "output_byte_start": 1093,
+          "output_byte_end": 1868,
+          "sha256": "b49a3d7a544f1055882c65c31bbeb16ada1f81d316a6872feb824761131e36bf"
+        },
+        {
+          "source_byte_start": 1320,
+          "source_byte_end": 1347,
+          "source_line_start": 30,
+          "source_line_end": 32,
+          "output_byte_start": 1868,
+          "output_byte_end": 1895,
+          "sha256": "12b1b8d5ab97b3be940769d939ceda1600858f530f8e3e7821a5ea7aaf33618c"
+        },
+        {
+          "source_byte_start": 1365,
+          "source_byte_end": 1489,
+          "source_line_start": 32,
+          "source_line_end": 33,
+          "output_byte_start": 1895,
+          "output_byte_end": 2019,
+          "sha256": "004bac92283454186e267983f76240528bddee9823fb9cfab227900d96fc9afe"
+        },
+        {
+          "source_byte_start": 2528,
+          "source_byte_end": 15637,
+          "source_line_start": 51,
+          "source_line_end": 379,
+          "output_byte_start": 2021,
+          "output_byte_end": 15130,
+          "sha256": "7624f98b6241941b2ce58154466315c2f6323ad6a2bf901dd072f215593d69d7"
+        }
+      ]
+    },
+    {
+      "source": "MM5-proof.md",
+      "source_category": "inherited_proof",
+      "source_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+      "output": "inherited/MM5_statistical_proof.md",
+      "output_sha256": "4d5e865ebe00846662cef1830be02bf52cc2b839eca8a0600f8baa501ada6078",
+      "copied_body_sha256": "9addffcca07d5e60a34d7e32546db23011fa22f92e5c53b9b8a167c00168dcf5",
+      "spans": [
+        {
+          "source_byte_start": 639,
+          "source_byte_end": 19627,
+          "source_line_start": 8,
+          "source_line_end": 335,
+          "output_byte_start": 307,
+          "output_byte_end": 19295,
+          "sha256": "1523021213352f0e88cbdfa01dc80a753a84d8a667aa14d6fe59564b688af204"
+        },
+        {
+          "source_byte_start": 19649,
+          "source_byte_end": 20129,
+          "source_line_start": 335,
+          "source_line_end": 338,
+          "output_byte_start": 19295,
+          "output_byte_end": 19775,
+          "sha256": "a8c558283d1bef4b2530257c9407ae86367419bdfe8c805f865f912a582000e2"
+        },
+        {
+          "source_byte_start": 20310,
+          "source_byte_end": 21795,
+          "source_line_start": 343,
+          "source_line_end": 368,
+          "output_byte_start": 19777,
+          "output_byte_end": 21262,
+          "sha256": "473ab47aafba1ce82ffd329dcf02fe80053ae5a19f79af4fb3920927d93decac"
+        }
+      ]
+    },
+    {
+      "source": "GU-proof.md",
+      "source_category": "inherited_proof",
+      "source_sha256": "cd15ce0bdd6821dbfce47784975483e93acf7834b58d218e098ba584496ca4b6",
+      "output": "inherited/GU_UC_and_IID_interfaces.md",
+      "output_sha256": "f4abb8e565d58c5af9f6f52ca1e83fc78989dfeb70554e4d22ad1fab8308d275",
+      "copied_body_sha256": "02788a27b46425f756fcad11a13c6ec6928f216d2b455dbc6ff1c08a002f6dba",
+      "spans": [
+        {
+          "source_byte_start": 1992,
+          "source_byte_end": 3108,
+          "source_line_start": 35,
+          "source_line_end": 56,
+          "output_byte_start": 569,
+          "output_byte_end": 1685,
+          "sha256": "2a68170662f1c475cea8eb5fe020046a2ef76520cecb10d12bb88b6906240f20"
+        },
+        {
+          "source_byte_start": 35208,
+          "source_byte_end": 37063,
+          "source_line_start": 718,
+          "source_line_end": 760,
+          "output_byte_start": 1687,
+          "output_byte_end": 3542,
+          "sha256": "2f6bdaf6981f90e58fe5b9a56672978d3d183fba24d6b6704af3157e72b80169"
+        },
+        {
+          "source_byte_start": 45051,
+          "source_byte_end": 46695,
+          "source_line_start": 930,
+          "source_line_end": 968,
+          "output_byte_start": 3544,
+          "output_byte_end": 5188,
+          "sha256": "b642b4dc8056658a78ac07fe8ac146e061f9cc6f7d6648826d7fecbc1d350886"
+        }
+      ]
+    },
+    {
+      "source": "MM5-independent-report.json",
+      "source_category": "inherited_review",
+      "source_sha256": "feb0d0fcc5ca03efa229425c24afa521b3ec6226786fd4b5bccae5983555862e",
+      "output": "inherited/MM5_review_scientific_excerpt.md",
+      "output_sha256": "4d47d00208b072a31f4004697e71358b22c39ef1d3b3c75c0615a1dca3b80a0a",
+      "copied_body_sha256": "6b3c3ef3dfe526eed414d3b2fa6fc8cadda5c3e461ababedb365616c4efe673d",
+      "spans": [
+        {
+          "source_byte_start": 447,
+          "source_byte_end": 1168,
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "output_byte_start": 381,
+          "output_byte_end": 1102,
+          "sha256": "a905d0483ade9e67be0c5a69dbe83d1e0f3fff32a7fe7220901ceee6b81bcd12"
+        },
+        {
+          "source_byte_start": 1288,
+          "source_byte_end": 1385,
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "output_byte_start": 1102,
+          "output_byte_end": 1199,
+          "sha256": "32312cc67a775b5b3a0e700e7287b2440a2d832ec3c95344e4cdf62288e59512"
+        },
+        {
+          "source_byte_start": 1423,
+          "source_byte_end": 1610,
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "output_byte_start": 1199,
+          "output_byte_end": 1386,
+          "sha256": "8691ed26d23d3f02ef58613f3117a5a48e87f025d0c7e44d80b898237f57db51"
+        },
+        {
+          "source_byte_start": 1655,
+          "source_byte_end": 1824,
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "output_byte_start": 1386,
+          "output_byte_end": 1555,
+          "sha256": "7afab9e86872cd47a690fb69d204fa0e5c7ac11fcc5456cd3120685eb02d0063"
+        }
+      ]
+    },
+    {
+      "source": "L1MAX-independent-report.json",
+      "source_category": "inherited_review",
+      "source_sha256": "5850d4250f6533550229f2f2d531bcce06d58b039136fd0d15bc0b5cc8a3eebb",
+      "output": "inherited/L1MAX_review_scientific_excerpt.md",
+      "output_sha256": "89ab49844e640763a6ce33d3c7425b3705fcebd090c46f9dd389227d2fbcaa73",
+      "copied_body_sha256": "febb2b622ade0496ffcf12451549d16f9c5e69242608b81ed1c7ab9a9af7d8b1",
+      "spans": [
+        {
+          "source_byte_start": 327,
+          "source_byte_end": 698,
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "output_byte_start": 383,
+          "output_byte_end": 754,
+          "sha256": "febb2b622ade0496ffcf12451549d16f9c5e69242608b81ed1c7ab9a9af7d8b1"
+        }
+      ]
+    },
+    {
+      "source": "GU-independent-report.json",
+      "source_category": "inherited_review",
+      "source_sha256": "584b499e1888174dd468769aab1922e2b265d138e37f2cf6af642c21ccc336f2",
+      "output": "inherited/GU_review_scientific_excerpt.md",
+      "output_sha256": "73894d5e4c33438307ea7ee6f445138bcac1812d1b87eac4ba104105a010cea5",
+      "copied_body_sha256": "4f7e92c51ba05815de6b2ebf843d9d2f002a81ebcd06e05c3ff6d65adb307277",
+      "spans": [
+        {
+          "source_byte_start": 484,
+          "source_byte_end": 940,
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "output_byte_start": 380,
+          "output_byte_end": 836,
+          "sha256": "d20db48da650be5901b7b6e49656c54c45f1e72fca419a8a3cb28fe20c1a848e"
+        },
+        {
+          "source_byte_start": 1099,
+          "source_byte_end": 1298,
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "output_byte_start": 836,
+          "output_byte_end": 1035,
+          "sha256": "25ccf4ae55a933626663e1260e01a3cd685b4ad4c7addfe720f299711df9b896"
+        }
+      ]
+    }
+  ]
+}

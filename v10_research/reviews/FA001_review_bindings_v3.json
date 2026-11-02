@@ -1,0 +1,76 @@
+{
+  "status": "ACCEPT narrow v3 revision; public-record layout clarification resolved",
+  "review_scope": "exhaustive v2/v3 diff and source/artifact hashes; prior full numerical review preserved",
+  "changed_zero_based_paragraphs": [
+    0,
+    1,
+    57
+  ],
+  "only_title_history_and_layout_paragraph_changed": true,
+  "source_binding_checks": [
+    {
+      "path": "v10_research/causal_attention/CA001_causal_bounded_softmax_candidate_v3.md",
+      "sha256": "88e952f840009d8345c4482ca8cd14231f9dd9a28a3d522f12cd7e03b65ea21e",
+      "actual_sha256": "88e952f840009d8345c4482ca8cd14231f9dd9a28a3d522f12cd7e03b65ea21e",
+      "matches": true
+    },
+    {
+      "path": "cloud_work/conditions-20261028/handoff/DOT_CONDITIONS_20261028/sources/euler/SRC-proof.md",
+      "sha256": "cc6eb60acb595240c7a7ff26e3ec66dec63f4d9f230c2c788fea9cda9448886f",
+      "actual_sha256": "cc6eb60acb595240c7a7ff26e3ec66dec63f4d9f230c2c788fea9cda9448886f",
+      "matches": true
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/facts/fef8372728290b45.md",
+      "sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025",
+      "actual_sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025",
+      "matches": true
+    },
+    {
+      "path": "v10_research/causal_attention/FA001_finite_arithmetic_bridge_v3.md",
+      "sha256": "94a9d64f2a2eedf50cb7e918cfeec4e8cac6e78f21de214a528a853b4f17e073",
+      "actual_sha256": "94a9d64f2a2eedf50cb7e918cfeec4e8cac6e78f21de214a528a853b4f17e073",
+      "matches": true
+    },
+    {
+      "path": "v10_research/causal_attention/check_fa001.py",
+      "sha256": "56098a70c6c540ff547ff26375530ee73458b30a4ae8743c6aae5ec929878637",
+      "actual_sha256": "56098a70c6c540ff547ff26375530ee73458b30a4ae8743c6aae5ec929878637",
+      "matches": true
+    },
+    {
+      "path": "v10_research/causal_attention/FA001_diagnostic.json",
+      "sha256": "d16330a843d028d7e30372d9e05c6f8d77548aa01dc5cfc02d44153bc5b3856b",
+      "actual_sha256": "d16330a843d028d7e30372d9e05c6f8d77548aa01dc5cfc02d44153bc5b3856b",
+      "matches": true
+    }
+  ],
+  "review_artifacts": [
+    {
+      "path": "v10_research/causal_attention/FA001_source_bindings_v3.json",
+      "sha256": "01948405de555f71157aa240dad0b78b0672774bbfb2847720dbe10579428178"
+    },
+    {
+      "path": "v10_research/reviews/FA001_review_v3.md",
+      "sha256": "28ffccec66d900f1b0d8a9ef07aeeb65d62f71741bbf1768ea9c6659ed8a0b93"
+    },
+    {
+      "path": "reviews/FA001_review_v2.md",
+      "sha256": "6470fdd4b1d1e59b5ba5860966adeb8518f7be535d54fabc5db4c82314715ae3"
+    },
+    {
+      "path": "reviews/FA001_review_bindings_v2.json",
+      "sha256": "ed40039c93d4b13a5e02edd38589d56c03087b4a7e266b6ecae1dff4d158ba78"
+    },
+    {
+      "path": "reviews/FA001_independent_checks_v2.py",
+      "sha256": "01ccf46c8bf88d98aa4e913ac3c78e8d223835a5f24afb9b06b4252ee6bbb7c4"
+    },
+    {
+      "path": "reviews/FA001_independent_checks_v2.json",
+      "sha256": "fc56068f2ce4efbe68c01c2b5d0ff232af4da4a8f2870a2103b1d2ab92dc6761"
+    }
+  ],
+  "v2_diagnostics_rerun": false,
+  "reason": "No numerical or algorithmic proof changes; retained original exact diagnostics verified by hash."
+}

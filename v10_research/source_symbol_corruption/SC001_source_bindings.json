@@ -1,0 +1,51 @@
+{
+  "unit": "SC001",
+  "status": "AUTHOR_CANDIDATE_PENDING_REVIEW_AND_ROOT_ACCEPTANCE",
+  "bindings": [
+    {
+      "path": "v10_intake/source/DOT_START_PROMPT.txt",
+      "sha256": "8a270ee67ff3f3700441771c6dd0bb74451e80c8ff56a368b174fc90fd331edb"
+    },
+    {
+      "path": "v10_intake/source/START_HERE.md",
+      "sha256": "6538c4edf19678e9f06b4228aeebd65b959112a4140e33ac73deb980fda28767"
+    },
+    {
+      "path": "v10_intake/source/sources/dot-return/readable/proofs/R011_global_rates_and_constant_adaptation_v1.md",
+      "sha256": "1b7133c69131b84c6e7e235338797e683eaa2c0e73b9c83a26612e344f78039d"
+    },
+    {
+      "path": "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md",
+      "sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf"
+    },
+    {
+      "path": "cloud_work/conditions-20261028/research/resume_20261030/R011_root_acceptance.json",
+      "sha256": "1feb2882b9134001ec1b45dbdea8e02e411fa99eb6c738489b929b1fa053b61d"
+    },
+    {
+      "path": "v10_research/robust_markov_prediction/MG001_theorem.md",
+      "sha256": "c4f114bb7510f3dd5ead7461d9ebead092e2abe103fc92f96e3af9fbd4ac6623"
+    },
+    {
+      "path": "v10_research/intake/MG001_acceptance.json",
+      "sha256": "d2d105f735e724d1057fdc9ad88b6e69a405c3b95eb97ad0a50321335ea23e1a"
+    },
+    {
+      "path": "v10_research/precision_lower/PL001_fixed_master_log_precision_lower_v1.md",
+      "sha256": "d7cd0815fe506b5d25d3025abf80b64588728d0b3342241d38a3a13ccc4fac34"
+    },
+    {
+      "path": "v10_research/intermediate_precision/IP002_stationary_finite_domain_master_lower_v1.md",
+      "sha256": "59d5477653968534b71b54f10d4074cba5ea94db127108463292c13d34161302"
+    },
+    {
+      "path": "v10_research/score_precision/SH001_sharp_weight_ratio_threshold_v1.md",
+      "sha256": "fa8e326047f2df8f01dd7b3112da655937ad7be1a3508ad00b80ccd51b64fd50"
+    },
+    {
+      "path": "v10_research/growing_depth/GD001_lower_derivation.md",
+      "sha256": "3137d43739fe39e80490b7f8b1c76f85495e4b7078e31c52a8f3ea9b1831e000"
+    }
+  ],
+  "accepted_dependency_hash_checks": "PASS: MG001 and original R011 proof hashes match acceptance records; readable R011 is editorial export separately bound."
+}

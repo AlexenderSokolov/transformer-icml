@@ -1,0 +1,192 @@
+{
+  "obligation": {
+    "obligation_id": "7884bf704cc0152e744b6588497d7bbb892fc62e4ff6c43de3721792cd3ddd98",
+    "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+    "exact_statement": "For the admitted single-query Route A finite frontend on D5, insert the same theta-independent canonical quantizer Q_b(x)=2^{-b} floor(2^b x) on every qtilde,r,mu coordinate and all read-visible copies, preserving query/terminal/length/type side information and erasing all old aggregate coding/denominator metadata. Construct and charge this quantizer on the actual finite rational words, together with a legal correction/simplex readout and an optional separately budgeted binary output grid. Prove finite-N lower bounds for EVERY decoder of this full quantized representation using two genuine stationary D5 processes under an explicit nonempty grid-phase subfamily, rather than reusing the adversarial map as if it were deterministic rounding. Account for all endpoints and actual terminal conditional/average TV risks; give a corresponding achievable upper bound for the same quantizer/history/error model and resource envelope. Quantify the necessary and sufficient summary fractional-resolution scale versus the separate unavoidable output probability precision, stating the finite-sample and grid-phase restrictions and distinguishing these quantities from total parameter/arithmetic register bits. Supply a theta-independent growing-precision schedule compatible with the actual A consistency/reference guarantees. Analyze the fully paid comparator scaling all values/copies by S=2^k before the same rounding location and scaling back afterward: prove or refute S^{-1}Q_b(Sz)=Q_{b+k}(z) for the actual declared encodings, and give matched total-word/range/resource conditions explaining when the apparent gain is only a redistribution of bits. Preserve the fixed nominal score gap and the original full representation scope. No necessity may be inferred for the unquantized sufficient representation, arbitrary grid phases, every same-budget Transformer, other rounding/noise models, optimal sample rate, log loss or the whole C1-C4 root.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+        "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+        "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+        "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers >=2",
+          "depends_on": []
+        },
+        {
+          "variable": "beta",
+          "kind": "FORALL",
+          "domain": "fixed positive full-context score gap",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+          "depends_on": [
+            "K",
+            "beta"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "D1 second-order tables on K symbols",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers >=3",
+          "depends_on": []
+        },
+        {
+          "variable": "epsilon",
+          "kind": "FORALL",
+          "domain": "positive accuracy targets",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+      "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "7064d5bc355688b040e8065a1e9246656739701d730b4deb0ea3ccdbee37666f"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": [
+    {
+      "artifact_id": "7064d5bc355688b040e8065a1e9246656739701d730b4deb0ea3ccdbee37666f",
+      "content_hash": "6b80628d65aa79ef8c6b0c8dd855077e817faff870f0c411802c738f453d6916",
+      "producer": "fact_submit:4fcafcda6b4a066a",
+      "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+      "evidence_kind": "LLM_CHECKED_PROOF",
+      "exact_claim": "For the admitted single-query Route A finite frontend on D5, insert the same theta-independent canonical quantizer Q_b(x)=2^{-b} floor(2^b x) on every qtilde,r,mu coordinate and all read-visible copies, preserving query/terminal/length/type side information and erasing all old aggregate coding/denominator metadata. Construct and charge this quantizer on the actual finite rational words, together with a legal correction/simplex readout and an optional separately budgeted binary output grid. Prove finite-N lower bounds for EVERY decoder of this full quantized representation using two genuine stationary D5 processes under an explicit nonempty grid-phase subfamily, rather than reusing the adversarial map as if it were deterministic rounding. Account for all endpoints and actual terminal conditional/average TV risks; give a corresponding achievable upper bound for the same quantizer/history/error model and resource envelope. Quantify the necessary and sufficient summary fractional-resolution scale versus the separate unavoidable output probability precision, stating the finite-sample and grid-phase restrictions and distinguishing these quantities from total parameter/arithmetic register bits. Supply a theta-independent growing-precision schedule compatible with the actual A consistency/reference guarantees. Analyze the fully paid comparator scaling all values/copies by S=2^k before the same rounding location and scaling back afterward: prove or refute S^{-1}Q_b(Sz)=Q_{b+k}(z) for the actual declared encodings, and give matched total-word/range/resource conditions explaining when the apparent gain is only a redistribution of bits. Preserve the fixed nominal score gap and the original full representation scope. No necessity may be inferred for the unquantized sufficient representation, arbitrary grid phases, every same-budget Transformer, other rounding/noise models, optimal sample rate, log loss or the whole C1-C4 root.",
+      "scope": {
+        "assumptions": [
+          "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+          "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+          "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+          "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+        ],
+        "quantifiers": [
+          {
+            "variable": "K",
+            "kind": "FORALL",
+            "domain": "integers >=2",
+            "depends_on": []
+          },
+          {
+            "variable": "beta",
+            "kind": "FORALL",
+            "domain": "fixed positive full-context score gap",
+            "depends_on": []
+          },
+          {
+            "variable": "predictor_family",
+            "kind": "EXISTS",
+            "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+            "depends_on": [
+              "K",
+              "beta"
+            ]
+          },
+          {
+            "variable": "theta",
+            "kind": "FORALL",
+            "domain": "D1 second-order tables on K symbols",
+            "depends_on": [
+              "K"
+            ]
+          },
+          {
+            "variable": "N",
+            "kind": "FORALL",
+            "domain": "integers >=3",
+            "depends_on": []
+          },
+          {
+            "variable": "epsilon",
+            "kind": "FORALL",
+            "domain": "positive accuracy targets",
+            "depends_on": []
+          }
+        ],
+        "objects": [],
+        "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+        "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+      },
+      "input_hashes": [
+        "6a231cbc6dc9fd88e1291234d295b38652a12f4f33199a96d2ac85c6f9db7fe4",
+        "6b80628d65aa79ef8c6b0c8dd855077e817faff870f0c411802c738f453d6916",
+        "70fecafd40d3c3228ad123491a32a910d45173db852765034c44ead7d0df1c9c",
+        "82170d7734472d615c25a172a95fd8a04624154a1d6c0a4b19f53d47dab7b363",
+        "899e13e3de35de82397926f56e26587a062e7789c726ea676465f2a1151b8132",
+        "96fe8b12c8d596ba78b97c567c9427cdbeb20106189bcd33130adcb5861d54a9"
+      ],
+      "environment_hash": "237f4cb677ebbd8a1942392f51e80e4fd97539cf60b65b130b158e4eda39678f",
+      "checker_id": "fact_submit",
+      "checker_version": "1",
+      "checker_result": "PASS",
+      "created_at": "2026-10-24T07:41:58Z",
+      "validity": "VALID"
+    }
+  ],
+  "version": {
+    "version": "A-precision-006/prover-v1",
+    "frozen_at_utc": "2026-10-24T07:33:22.368001+00:00",
+    "obligation_id": "7884bf704cc0152e744b6588497d7bbb892fc62e4ff6c43de3721792cd3ddd98",
+    "predecessors": [
+      "3a69c2fa3d459b1d",
+      "338012727e3d5f81",
+      "1c8686b995accf27",
+      "608003f641535f2c"
+    ],
+    "hash_algorithm": "SHA-256",
+    "files": {
+      "exact-statement.md": "95b29e807e293c8a335f8bb8687367aff2ed2803e49f21e2eff53f5d04318401",
+      "exact-proof.md": "6f82fa1923608b564575e0fe2cd4f14d8e66d90874f7657c28ec8b131fab7423",
+      "predecessors.json": "9922d6f2fdac5bc14b9eb1e377c62bae8c6b65d49c5eb9cd47f8ae263d5c4b67",
+      "checkpoint-v1.md": "fa3f7b5457f350e1424bdda2df0044da173920bceb947ae463ebdb03c838857d",
+      "checkpoint-v2.md": "a22d83c1f4c5600877f4951f06039e801cc9c9089da3458d8293229ea50978fe",
+      "check_canonical.py": "29c938c4ca343d77f08e3e3fe59c432805ee87afe15fac314ee8e88ef35b1a88",
+      "canonical-check-result.json": "e95b9074c9e6e8390b6aa18551efd93c4a31e41b1f8282d685b5947b6753fd57",
+      "lead-grid-check-result.json": "5d1894e19a2853bff7c4bceca3ae3882f31719d7f98045783a43a66596981feb",
+      "local-review.md": "31aeeeaca7ce8e26e005f24a05d5bc93f18887dfd9e5c16614fa9215af534e01"
+    },
+    "status_at_freeze": "NOT_YET_SUBMITTED",
+    "scope": "Canonical summary floor on D5 phase subfamily, separate output grid, paid scale comparator; root OPEN"
+  },
+  "file_checks": {
+    "exact-statement.md": true,
+    "exact-proof.md": true,
+    "predecessors.json": true,
+    "checkpoint-v1.md": true,
+    "checkpoint-v2.md": true,
+    "check_canonical.py": true,
+    "canonical-check-result.json": true,
+    "lead-grid-check-result.json": true,
+    "local-review.md": true
+  },
+  "review": {
+    "verification_report": {
+      "summary": "Reviewed the complete frozen A-precision-006/prover-v1 submission sequentially through Sections 1–11 against the candidate statement and attached contract 3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a (definitions hash 63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc). Service packet hashes: statement 05a2ad8843cecbaec2cfb551c6cae523a5d353e674e9cdee75dfca8e63f47a08; proof e287199c2718114ebfdbc1ff956dfe96b527afea8f274dc54c2a759d1bcfbe8a. The four cited fact files 3a69c2fa3d459b1d, 338012727e3d5f81, 1c8686b995accf27 and 608003f641535f2c were read for the imported claims and their scopes; all four source hashes match the supplied interfaces. Their existing admissions are inherited, not independently re-proved. No P1/P3/P5/P6 or cited-statement chain defect was found. The submitted derivation contains no external-paper citations requiring theorem search.\n\nThe canonical floor construction correctly handles finite rational words, zero and unit endpoints, every aggregate copy, and erasure of old aggregate coding and scratch. The correction, binary simplex projection, positive smoothing, optional complementary output-grid encoding, and finite resource caps support the declared implementation. The explicit phase family is nonempty, and the two stationary D5 laws yield common full observation atoms indexed by all retained endpoints. The decoder lower bounds and achievable bounds retain the actual terminal conditioning and stationary weights: summary loss has the stated rare fixed/conditional resolution scale and distinct actual-average scale within the explicit phase and sample restrictions. The output-grid obstruction is separate and keeps its rare-frequency weight in actual risk. The theta-independent schedule preserves uniform approximation to the admitted reference and its per-process consistency. Power-of-two scaling gives exact equality with Q_(b+k), including canonical transmitted aggregate codes, when the declared erasure, exact arithmetic, range, weights and b+k+1 numerator-bit costs are paid.\n\nAcceptance is restricted to this single-query representation, quantizer, resource construction and stated phase/sample regimes. It supplies no necessity for the unquantized sufficient representation, arbitrary phases, other architectures or error models, optimal sampling, log loss, or root closure. This is one independent-context LLM admission review, not formal certification. Author-model provenance was not established, so no cross-model assurance is claimed. This is an LLM review, not formal verification or external peer review; cross-model independence is not established.",
+      "critical_errors": [],
+      "gaps": []
+    },
+    "verdict": "correct",
+    "repair_hints": ""
+  }
+}

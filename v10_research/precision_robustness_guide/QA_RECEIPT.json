@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "freeze_utc": "2026-11-02T08:09:06.390192+00:00",
+  "pages": 11,
+  "native_editable_OMML_objects": 156,
+  "formula_images": 0,
+  "page_text_characters": [
+    974,
+    894,
+    846,
+    915,
+    852,
+    842,
+    854,
+    865,
+    892,
+    966,
+    1171
+  ],
+  "source_receipt_hash_checks": "PASS",
+  "visual_review": {
+    "status": "PASS",
+    "directory": "qa_release_final",
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "method": "Every final full-resolution page PNG opened after final rebuild; equations, Chinese glyphs, margins, page numbers and layout inspected. No clipping, overflow or missing glyphs.",
+    "page_png_sha256": {
+      "page-1.png": "16c16b2de7224998c9b77634918574b2c3bc13175fab015d11998c5e70628c41",
+      "page-2.png": "417eb8c725054dd7042ad1b9d985f789306d0a1f01e0e7b1c636ae8b9c00c533",
+      "page-3.png": "9049e3ebddc3d2c29f9493ec206ba105c6adbd7a7b27276285042e5eef8097bb",
+      "page-4.png": "fa61b6a33915156c59d6ce71cf75ad2a240a34812446e03189952637bbab27c7",
+      "page-5.png": "effb89c56dbc12f2d484b014d2ea4e2b80cef11f092143868764be15ff99d62b",
+      "page-6.png": "dfe42ccdb5cd2feaba67f09140df04015e16fe993d6209be68632bc41ef5adf7",
+      "page-7.png": "a079c64768b590a01668f70c4fe0f9065357e26498169801ec9c84f18a6875b0",
+      "page-8.png": "3a976a416ee308f32f87bfcc3037360c178d094d9cb1214c69d6d8b242e537c3",
+      "page-9.png": "ec1fb85f753e66fe7ae7c3aeb9e0a7f4ef8a1ade841d365e3aab9480842f8983",
+      "page-10.png": "b0be817892233357aef8fd5eb80737ed33034a487e926a8630e1b1a4693725ac",
+      "page-11.png": "dfbefd597704c97f1d1256f69ea5b1fecf142a173eabd47b6d7aeae91ac6bb32"
+    }
+  },
+  "science_review": {
+    "status": "PASS",
+    "evidence": "Fresh independent science auditor confirmed final source and rendered hashes and no further science edits, after MG working-lattice clipping and provenance clarification. Full review and its binding are maintained with the stage7 scientific audit.",
+    "type": "Independent LLM review, not formal verification or external peer review."
+  },
+  "outputs": {
+    "Chinese-stage7-guide.docx": "2c25607af9992f87b9f191435b10d1764503b00e5a02518a60f7dc14312a179e",
+    "Chinese-stage7-guide.pdf": "ee181acf18f00e6e4175ca84b6675a64e42b856c506db6df32a665280f617fcc"
+  },
+  "build_inputs": {
+    "guide_math_zh.md": "2305105433b0477da09bb5f1ae9a57903234cd0f34a569c947d3fa7c9caae934",
+    "guide_final_math_zh.md": "2305105433b0477da09bb5f1ae9a57903234cd0f34a569c947d3fa7c9caae934",
+    "build_guide.py": "2c7f4d530b6b97096b60db26a0a2ae19fdd24bc9c84b97e790586f78951cecad",
+    "verify_guide.py": "5d60e7c3df67224ef534927151f6584cf8207117584a2b7e9569c2dbda6778f2"
+  },
+  "clean_rebuild": {
+    "status": "PASS",
+    "method": "Two independent final build runs produced byte-identical normalized DOCX packages.",
+    "docx_sha256": "2c25607af9992f87b9f191435b10d1764503b00e5a02518a60f7dc14312a179e"
+  },
+  "primary_attribution_links": {
+    "status": "PASS",
+    "count": 4,
+    "urls": [
+      "https://web.mit.edu/jstang/www/papers/companders_JSAIT.pdf",
+      "https://www.mitre.org/sites/default/files/pdf/12_4920.pdf",
+      "https://proceedings.mlr.press/v267/uss25a.html",
+      "https://proceedings.mlr.press/v49/telgarsky16.html"
+    ]
+  }
+}

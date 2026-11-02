@@ -1,0 +1,176 @@
+{
+  "obligation": {
+    "obligation_id": "67e1a38828e2a7b8f27f8a7d3d20e32b91c3c4f0e8e728035d85ad282ee1ff7d",
+    "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+    "exact_statement": "On the exact smoothed reference and the explicitly compiled theta-independent family of the Route A actual-circuit prerequisite, prove for each fixed D1 theta that max_s TV(Pi_N(H;s),p_theta(.|s))->0 almost surely, hence actual terminal-query TV converges almost surely and in expectation despite query/history dependence. State any claim for conditional terminal-query risk separately and justify it. Determine the population limit of the specified direct matched outcome readout q_s, give necessary and sufficient equality-to-target conditions for a fixed context and all contexts, and exhibit a stationary strictly positive stochastic second-order counterexample to unqualified direct-readout consistency. Keep this theorem conditional on an admitted or self-contained actual implementation result; statistical formulas alone do not discharge the implementation prerequisite.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+        "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+        "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+        "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers >=2",
+          "depends_on": []
+        },
+        {
+          "variable": "beta",
+          "kind": "FORALL",
+          "domain": "fixed positive full-context score gap",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+          "depends_on": [
+            "K",
+            "beta"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "D1 second-order tables on K symbols",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers >=3",
+          "depends_on": []
+        },
+        {
+          "variable": "epsilon",
+          "kind": "FORALL",
+          "domain": "positive accuracy targets",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+      "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "c2b66d556d2cd3da27f707ed45de77d2bfc797274aae2688640266e1411ef9d9"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": [
+    {
+      "artifact_id": "c2b66d556d2cd3da27f707ed45de77d2bfc797274aae2688640266e1411ef9d9",
+      "content_hash": "6a231cbc6dc9fd88e1291234d295b38652a12f4f33199a96d2ac85c6f9db7fe4",
+      "producer": "fact_submit:0465deb59eb95f3b",
+      "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+      "evidence_kind": "LLM_CHECKED_PROOF",
+      "exact_claim": "On the exact smoothed reference and the explicitly compiled theta-independent family of the Route A actual-circuit prerequisite, prove for each fixed D1 theta that max_s TV(Pi_N(H;s),p_theta(.|s))->0 almost surely, hence actual terminal-query TV converges almost surely and in expectation despite query/history dependence. State any claim for conditional terminal-query risk separately and justify it. Determine the population limit of the specified direct matched outcome readout q_s, give necessary and sufficient equality-to-target conditions for a fixed context and all contexts, and exhibit a stationary strictly positive stochastic second-order counterexample to unqualified direct-readout consistency. Keep this theorem conditional on an admitted or self-contained actual implementation result; statistical formulas alone do not discharge the implementation prerequisite.",
+      "scope": {
+        "assumptions": [
+          "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+          "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+          "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+          "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+        ],
+        "quantifiers": [
+          {
+            "variable": "K",
+            "kind": "FORALL",
+            "domain": "integers >=2",
+            "depends_on": []
+          },
+          {
+            "variable": "beta",
+            "kind": "FORALL",
+            "domain": "fixed positive full-context score gap",
+            "depends_on": []
+          },
+          {
+            "variable": "predictor_family",
+            "kind": "EXISTS",
+            "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+            "depends_on": [
+              "K",
+              "beta"
+            ]
+          },
+          {
+            "variable": "theta",
+            "kind": "FORALL",
+            "domain": "D1 second-order tables on K symbols",
+            "depends_on": [
+              "K"
+            ]
+          },
+          {
+            "variable": "N",
+            "kind": "FORALL",
+            "domain": "integers >=3",
+            "depends_on": []
+          },
+          {
+            "variable": "epsilon",
+            "kind": "FORALL",
+            "domain": "positive accuracy targets",
+            "depends_on": []
+          }
+        ],
+        "objects": [],
+        "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+        "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+      },
+      "input_hashes": [
+        "6a231cbc6dc9fd88e1291234d295b38652a12f4f33199a96d2ac85c6f9db7fe4",
+        "899e13e3de35de82397926f56e26587a062e7789c726ea676465f2a1151b8132"
+      ],
+      "environment_hash": "2abc7698e741eb7271e757fef2dae45282cfb9d352463890dac9d8fc280cfe4b",
+      "checker_id": "fact_submit",
+      "checker_version": "1",
+      "checker_result": "PASS",
+      "created_at": "2026-10-24T05:03:03Z",
+      "validity": "VALID"
+    }
+  ],
+  "version_checks": {
+    "exact-statement.md": true,
+    "exact-proof.md": true,
+    "check_counterexample.py": true,
+    "exact-check-result.json": true,
+    "predecessor-verification.json": true
+  },
+  "version": {
+    "version": "A-consistency-002-prover-v1",
+    "obligation_id": "67e1a38828e2a7b8f27f8a7d3d20e32b91c3c4f0e8e728035d85ad282ee1ff7d",
+    "predecessors": [
+      "3a69c2fa3d459b1d"
+    ],
+    "predecessor_evidence": "83da5d4be4352713fb2833e7c7fa65a03a12797544dfce4961c393ac244bbcb9",
+    "sha256": {
+      "exact-statement.md": "725b6f65c1d1e5423b4241b3587617c2f40e1615ce7871c2444475555d908b18",
+      "exact-proof.md": "08c5e0fb2542aa2fe8377fa36afdb3b596a5a1024e00d1d0394991a5f7858476",
+      "check_counterexample.py": "8eaa44325a3cedea8d10798ba23f5678e143eb68dd64ad489f74bdce03dc5634",
+      "exact-check-result.json": "e79123ab6ecd66a11b48a7f1ae17111e69fefa097628427c150a24c40893a48e",
+      "predecessor-verification.json": "5821cdc6cefc6913186ab550f81bea0cb38bbb9a5f3f6c4733e2550ed0748457"
+    },
+    "status": "FROZEN_FOR_NATIVE_GATEWAY"
+  },
+  "review_path": "[redacted user home]/icml-transformer/runs/probabilistic-20261024/history/icml-probabilistic/verification/[redacted routing identifier]-policy5b4098d08979fe87/runs/[redacted review run identifier]/verification.json",
+  "review": {
+    "verification_report": {
+      "summary": "Reviewed the submitted A-consistency-002-prover-v1 packet sequentially under frozen contract 3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a (D1-D8). The service-recorded proof SHA-256 is 1bd6ce2ee69491c080aadf62e7c6cd5e505a907a2b97b899a3b9e116b4e74a4e. Read admitted Fact 3a69c2fa3d459b1d; its file matches the supplied source SHA-256 899e13e3de35de82397926f56e26587a062e7789c726ea676465f2a1151b8132. Its construction supports the imported uniform approximation, theta-independent schedule, simplex output, numerical-head error and resource interface; its statement passes the P3 chain check. The two-step minorization and bounded-increment arguments correctly establish simultaneous empirical frequency limits. Smoothing and the admitted deterministic implementation error then prove maximum-context almost-sure TV consistency for every fixed theta. This pathwise maximum controls actual dependent terminal queries and their expected TV; the separate conditional terminal-risk claims correctly use stationary positive context probabilities. The direct-head limit is (r_theta+gamma*pi_s*p_s)/(1+gamma*pi_s), equaling p_s exactly when p_s=r_theta; equality at every context is equivalent to identical transition rows and the stationary iid subclass. The strictly positive second-order binary counterexample is valid, including its common limiting TV bias 1/6 at the stated parameters; an exact rational check also confirms that instance. No critical errors, gaps or hard-prohibition violations were found. There are no external-paper citations requiring lookup. Acceptance is local and conditional on the inherited implementation result, whose circuit is not independently re-certified here; no uniform-over-theta rate, KL convergence or root closure is established. This separate-context LLM admission judgment is not formal certification or a claim of cross-model independence. This is an LLM review, not formal verification or external peer review; cross-model independence is not established.",
+      "critical_errors": [],
+      "gaps": []
+    },
+    "verdict": "correct",
+    "repair_hints": ""
+  }
+}

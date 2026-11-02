@@ -1,0 +1,11 @@
+--- pre_cube_clarification.tex
++++ finite_precision_prediction.tex
+@@ -2439,7 +2439,7 @@
+ A zero-logit statistical head pools the $K^3$ indicators over each row's own observed prefix; rows one and two use public fallback, and the synthetic terminal pools all $M$ triples but is never itself a triple. Statistical masks have fixed positive density. Boundary symbols are acquired by a paid scan at the fixed terminal positions. Apply \eqref{eq:companderrails} coordinatewise and put $t=g_L(x)/2\in[0,3/4]$. Feed each such scalar into the dyadic plateau snake of Theorem~\ref{thm:robustgrid}, with dimension $R$ and grid parameter $N_g$, and run all $K^3$ copies in parallel. Its bounded-stage realization and the compander give the stated width and depth. Every optional later dummy head is paid.
+ 
+ Use the uniform finite evaluator on the \emph{entire composition}. Fixed per-stage bounds give one constant $c_{\rm FA}$ independent of $M,Q,d$ such that
+-$P\ge4h+c_{\rm FA}(d+2)$ ensures pre-cut discrepancy at most $1/Q$ on every row and formal history. Increase $P$ to cover all dyadic coefficient exponents $O_R(h)+L+O(1)$. This is the uniform recurrence \eqref{eq:depthprecision}, not substitution of growing depth into a fixed-architecture constant. There is no separate, hidden re-pooling or exact-mean floor after companding.
++$P\ge4h+c_{\rm FA}(d+2)$ ensures pre-cut discrepancy at most $1/Q$ on every row and formal history. Increase $P$ to cover all dyadic coefficient exponents $O_R(h)+L+O(1)$. This is the uniform recurrence \eqref{eq:depthprecision}, not substitution of growing depth into a fixed-architecture constant. There is no separate, hidden re-pooling or exact-mean floor after companding. Append exact working-lattice clipping to $[0,1]$ before the attack; the corresponding ideal clips are identities, their fixed overhead is counted in $d$, and nonexpansiveness preserves the stated certificate.
+ After the attack, nonexpansive clipping and the final floor put the received vector within Euclidean distance $\sqrt R(c+2)/Q$ of the ideal snake point. Its nearest-segment decoder returns $\widehat t$ with
+ \[
+  |\widehat t-t|\le

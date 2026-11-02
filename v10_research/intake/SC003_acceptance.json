@@ -1,0 +1,9 @@
+{
+  "unit": "SC003",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "binary_source_corruption/SC003_theorem.md",
+  "sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+  "review": "binary_source_corruption/SC003_independent_full_review.md",
+  "time_utc": "2026-11-02T09:00:43.294300+00:00",
+  "scope": "POST-STAGE7. Binary full corrupted history with final pair protected; all beta/all starts; k-aware beta-blind lower-envelope rational estimator. Upper min(1,2^17s+2^19F), F=(k/M)[1+ln(1+1/(k max(sqrtbeta,1/M)))], F0=0. Only lower floors max(s,k/M)/96 and fixed-positive-beta matching order claimed. Root read full theorem and fresh FULL review, not only prior algebra subreview. Matching moving-beta logarithmic lower remains open. No global sqrtbeta mixing, neural-depth, unknown-k adaptation or novelty claim."
+}

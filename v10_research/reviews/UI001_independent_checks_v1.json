@@ -1,0 +1,120 @@
+{
+  "conditional_exact": [
+    {
+      "n": 7,
+      "r": 1,
+      "m": 1,
+      "kind": "ties",
+      "N": 3,
+      "free": 4,
+      "conditional_cases": 24,
+      "heavy_cases": 12,
+      "max_variance_ratio": "81/800",
+      "max_derivative": "0"
+    },
+    {
+      "n": 9,
+      "r": 2,
+      "m": 1,
+      "kind": "huge",
+      "N": 6,
+      "free": 3,
+      "conditional_cases": 192,
+      "heavy_cases": 48,
+      "max_variance_ratio": "1216872613/243777208320",
+      "max_derivative": "6578732525178889042933150747/2338402619729444669146163131926728166637650083560"
+    },
+    {
+      "n": 10,
+      "r": 3,
+      "m": 1,
+      "kind": "huge",
+      "N": 9,
+      "free": 1,
+      "conditional_cases": 1536,
+      "heavy_cases": 192,
+      "max_variance_ratio": "16265089/2974359525",
+      "max_derivative": "6965679456892041476059061121/730750818665451459114985857868991758215430917152"
+    },
+    {
+      "n": 7,
+      "r": 2,
+      "m": 5,
+      "kind": "all_selected",
+      "N": 7,
+      "free": 0,
+      "conditional_cases": 384,
+      "heavy_cases": 258,
+      "max_variance_ratio": "0",
+      "max_derivative": "0"
+    }
+  ],
+  "posterior_exact": [
+    {
+      "N": 1,
+      "T_cases": 2,
+      "boundary_mode_cases": 2,
+      "max_density_over_sqrtN": "3"
+    },
+    {
+      "N": 4,
+      "T_cases": 5,
+      "boundary_mode_cases": 4,
+      "max_density_over_sqrtN": "405/121"
+    },
+    {
+      "N": 9,
+      "T_cases": 10,
+      "boundary_mode_cases": 6,
+      "max_density_over_sqrtN": "32805/7381"
+    },
+    {
+      "N": 16,
+      "T_cases": 17,
+      "boundary_mode_cases": 10,
+      "max_density_over_sqrtN": "731794257/129140162"
+    },
+    {
+      "N": 25,
+      "T_cases": 26,
+      "boundary_mode_cases": 14,
+      "max_density_over_sqrtN": "11014751922759/1588666142705"
+    },
+    {
+      "N": 64,
+      "T_cases": 65,
+      "boundary_mode_cases": 34,
+      "max_density_over_sqrtN": "223189448319013311502760190803265/20602102921755074907947094535684"
+    },
+    {
+      "N": 100,
+      "T_cases": 101,
+      "boundary_mode_cases": 52,
+      "max_density_over_sqrtN": "52053129593933144434682574106327748542912859722101/3865331405490084982773458473242159545265806415005"
+    }
+  ],
+  "constants_exact": [
+    {
+      "D": 1,
+      "r": 1,
+      "C": "42393600"
+    },
+    {
+      "D": 2,
+      "r": 2,
+      "C": "2787980083200"
+    },
+    {
+      "D": 4,
+      "r": 3,
+      "C": "72271323463680000"
+    },
+    {
+      "D": 1,
+      "r": 64,
+      "C": "6913213342451731786986158554088749132692370239306545116876980327181374138094690688893585219669914681761237477909372727439530818463039583945584629861512232478771051826618453022439624668022898483248562852960665600"
+    }
+  ],
+  "status": "PASS",
+  "scope": "Exact finite algebra corroboration only; no asymptotic proof, network execution, or novelty claim."
+}

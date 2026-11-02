@@ -1,0 +1,56 @@
+{
+  "obligation_id": "44f736e89336c2d8be001f8f6f5b3dfc82fcd1cb206f234c07602338fae715a4",
+  "actual_direct_predecessors": [
+    {
+      "fact_id": "fef8372728290b45",
+      "evidence_id": "e565455ae8465695ccf1f83e7c7f203d29c2f5bc4e49eb4b5eed822057d94505",
+      "path": "fact_graph/facts/fef8372728290b45.md",
+      "sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025"
+    },
+    {
+      "fact_id": "a53804d650803060",
+      "evidence_id": "fef1785395851e47b5ca0b719640449061718f4c670bfcd74c24cf0aec696c88",
+      "path": "fact_graph/facts/a53804d650803060.md",
+      "sha256": "bc24d183f5299df636e67f0b439aadbcd4d79671b69c327ed7083ddfab857c6f"
+    },
+    {
+      "fact_id": "946d42d5bf502eb4",
+      "evidence_id": "aa23c442ca1006c6ac0b12379f64a0fa500fbbd6a2e41c798b7a4de3952baa82",
+      "path": "fact_graph/facts/946d42d5bf502eb4.md",
+      "sha256": "fe18f4a413fef5da14c5f361aef47a8c5addceac1a3a58d73366ad20f16d8e93"
+    },
+    {
+      "fact_id": "372cbc90282df2cd",
+      "evidence_id": "1a61c7931a3b8ee13da63e8e24e758106308055d829d8e5e60195fbca96d0cf0",
+      "path": "fact_graph/facts/372cbc90282df2cd.md",
+      "sha256": "e7295c4903277b5d403a453f429a62a60a5dc8ca6a6b04e9917646088fb39476"
+    }
+  ],
+  "writing_source": {
+    "path": "outputs/005-master-joint/prover/master-joint-proof-v1.md",
+    "sha256": "a55899f3a10a488a30ce26fb934c687d85f60cbb6cc757df4e9811f255bcf281",
+    "reuse": "section 5 rho-use writing only; new off-diagonal all-K bridge proved from SRC; no 005 Fact premise"
+  },
+  "writing_source_is_mathematical_premise": false,
+  "admitted_032_uses": [
+    "full V-MATCH in original precision/range",
+    "sections 2-3 all-residue source and full observed path law only when T<1"
+  ],
+  "new_self_contained_arguments": {
+    "section_4": "actual zero-score finite uniform rho and complete list of directed fanouts",
+    "section_5": "all-history legal master kernel; off-diagonal exact broadcast including r0, cap, clip, positive bank",
+    "section_6": "new master target floor loss; conditional finite Jensen/harmonic sum",
+    "section_7": "quantized master scale and real delta remainder, including sub-grid and saturation",
+    "section_8": "max combination and exact sequence equivalence"
+  },
+  "additional_fact_predecessors": [],
+  "excluded": [
+    "005 binary cancellation as premise",
+    "031",
+    "Dot statistics",
+    "030 restricted CLOCK risk"
+  ],
+  "gpu_used": 0,
+  "gpu_audit_reserved": 0,
+  "compiler_ledger_batch_profile_run": false
+}

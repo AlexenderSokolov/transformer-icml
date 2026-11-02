@@ -1,0 +1,107 @@
+{
+  "root": "82f3b230a8e39f7ef988c219960127d8a94bee1c31d31ae51a328ab8580a3a29",
+  "contract": "38d15641fecff6dbee957b6e036c052ecb7f07e6354623e800f7a126cf5270ef",
+  "source_pins": [
+    {
+      "path": "PROBLEM.md",
+      "author": "Lead",
+      "sha256": "34f29e9aa714e81bbd9c92408930d0ce38c051f92f42e1e9ebf7f8158b5a8fab",
+      "bytes": 23007
+    },
+    {
+      "path": "inputs/STAGE_DEFINITIONS.md",
+      "author": "Contract",
+      "sha256": "1648c98212f71be946dfc8b39ab54497fbad41649bbe3fedc03296c401b8c0ca",
+      "bytes": 16936
+    },
+    {
+      "path": "inputs/source-stage3/outputs/001-conditional-grid/prover/c1-proof-v1.md",
+      "author": "Prover stage3",
+      "sha256": "5884ffc213a0aaa950b48f881abd4519440800737485b5c3aae9d293c38fb38d",
+      "bytes": 21542
+    },
+    {
+      "path": "inputs/source-stage3/outputs/001-conditional-grid/prover/c2-proof-v2.md",
+      "author": "Prover stage3",
+      "sha256": "b8de1c83444044357790ab8062caa443a701f260b7d631dbae35f85c308f667c",
+      "bytes": 23197
+    },
+    {
+      "path": "inputs/source-stage3/outputs/001-conditional-grid/prover/c3-proof-v1.md",
+      "author": "Prover stage3",
+      "sha256": "68dcb797dfe0e2103d2f35034311efa97d9ae496dedf4eafc67c600b34a8679c",
+      "bytes": 58094
+    },
+    {
+      "path": "inputs/source-stage3/outputs/001-conditional-grid/prover/c3_word_program_v1.py",
+      "author": "Prover stage3",
+      "sha256": "187f81b8da04a20412c07dc2fdfbe7387836484e2bc57e873a0dd8045b785a56",
+      "bytes": 12473
+    },
+    {
+      "path": "inputs/source-stage3/outputs/010-relative-noise-probe/prover/relative-noise-proof-v1.md",
+      "author": "Prover 010",
+      "sha256": "a1d49bd0a71f4bdeeaa367c5e58d1089588a959a6bf71c24cab0aa4db6c96256",
+      "bytes": 27357
+    },
+    {
+      "path": "inputs/source-stage3/outputs/010-relative-noise-probe/counter/strong-baseline-review-v1.md",
+      "author": "Counter 010",
+      "sha256": "f88b28fc67048c46dd0e0bc8bd7e21b56b0d91bb38d15fd43cdb414d83840479",
+      "bytes": 18590
+    },
+    {
+      "path": "inputs/source-stage3/outputs/010-relative-noise-probe/counter/cost-ledger-v1.md",
+      "author": "Counter 010",
+      "sha256": "fe3807a72a4d2cbc12d7518296ae5f5d951f43aa9852ebd391bfb5733b1332ec",
+      "bytes": 17539
+    },
+    {
+      "path": "inputs/source-stage3/outputs/010-relative-noise-probe/counter/joint_port_cost_v1.py",
+      "author": "Counter 010",
+      "sha256": "e2896e22217a6ecab58d08d362e36abacfdf700898e2824231ea67c5f441f7de",
+      "bytes": 7721
+    },
+    {
+      "path": "inputs/source-stage3/outputs/010-relative-noise-probe/counter/sources/primary-map-v1.json",
+      "author": "Counter 010",
+      "sha256": "9666ac99f68373d87c7f45c3f343c5edc9ec4d727b6fb3787132e7f0866e2b2d",
+      "bytes": 3415
+    },
+    {
+      "path": "inputs/source-stage3/outputs/010-relative-noise-probe/lead/common-budget-risk-gap-v1.md",
+      "author": "Lead 010",
+      "sha256": "6815c773851eff90863df3d85edb75471bbe46fa7ca35ef63c8b88974418833b",
+      "bytes": 14174
+    },
+    {
+      "path": "inputs/source-stage3/outputs/010-relative-noise-probe/lead/common_budget_risk_gap_v1.py",
+      "author": "Lead 010",
+      "sha256": "3869642ae43f29d25990ecb89af19c5d936b79e6b5333f5f42c7996051db9b37",
+      "bytes": 7321
+    },
+    {
+      "path": "inputs/source-stage3/outputs/010-relative-noise-probe/verifier/relative-noise-review-v1.md",
+      "author": "[Non-scientific operational metadata omitted.]",
+      "sha256": "6df99bbad3bd7b39deb00819e25aafa53c10600f47133593414ff394ae16d8a1",
+      "bytes": 30564
+    },
+    {
+      "path": "inputs/source-stage3/outputs/010-relative-noise-probe/verifier/common-budget-delta-review-v1.md",
+      "author": "Same Verifier 010 delta",
+      "sha256": "6a5f87ed913d9845a13b39b68830ce05264e4e37894fe0c45d8cb7c52d83eb2c",
+      "bytes": 19221
+    },
+    {
+      "path": "outputs/001-relative-code/lead/mathematical-checkpoint-v1.md",
+      "author": "[Non-scientific operational metadata omitted.]",
+      "sha256": "df163b669169b0d59eb28d643b204e76e730dab6795da73e668ab22a27baa564",
+      "bytes": 20695
+    }
+  ],
+  "status": "checkpoint; no native admission",
+  "fact_ids": [],
+  "evidence_ids": [],
+  "erratum": "Original total displayed conditional upper is Theta(eta); old main omission retained; delta controls reuse.",
+  "prior_scripts_rerun": false
+}

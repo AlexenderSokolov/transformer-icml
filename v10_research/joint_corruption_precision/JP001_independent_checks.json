@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "checks": {
+    "exact_finite_nested_coarsening_cases": 155176,
+    "exact_fractional_binary_envelope_cases": 35000,
+    "exact_addone_stability_cases": 9000,
+    "exact_symbol_edit_histogram_cases_small_M": 16384,
+    "floating_scalar_corrob_cases_not_proof": 30000,
+    "accepted_dependency_sha256_matches": 9
+  },
+  "scope": "Exact finite identities/pathwise algebra plus sampled floating scalar corroboration; not universal theorem proof or formal verification. Small M edit tests are algebra only, outside risk theorem domain.",
+  "reviewed_proof_sha256": "c94e7d59d463a642853b8e3c52588f735c24175885f9cfddf05fbd8f3f2c0fab",
+  "source_bindings": {
+    "source_symbol_corruption_mixing/SC002_theorem.md": "40a8950861b486f532ac625fa479cb49cd79241dbb4b08efce6296ae9b6a1f0e",
+    "intake/SC002_acceptance.json": "af1aa004e7b4d86ba1d9e6ba9d0ccb517daa984b249de7d8198560505fc1fb26",
+    "binary_source_corruption/SC003_theorem.md": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+    "intake/SC003_acceptance.json": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+    "binary_erasure_transport/BT002_entropy_bridge_lower.md": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+    "intake/BT002_acceptance.json": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+    "binary_stationary_frontier/BS001_binary_stationary_frontier_v1.md": "ca116bd9c9a8ee88c62be85d5f0352c2d4f7b3d7df84df6406036c94ac86cb2b",
+    "intake/BS001_acceptance.json": "89cd020d7d8b241d18da2b5df906915d3c1099ebcc7df7e3d8551d6b0a6edc2a",
+    "bounded_attention/BF001_encoder_family_frontier_v3.md": "31138a756cc5e9cdc6a5cc8c55d11e265672c7048c1acb34266cdfd67411af7a",
+    "intake/BF001_acceptance.json": "d2def8e9e9247ae3f9fb9fc9e87e64788764f180185fdfe1f2c1e99970096556",
+    "binary_all_start/BIF001_binary_all_initializations_frontier_v1.md": "35c6cb3b5c882c9e70dad68dbc8492c08e65ba49f532da84597e5e1e303467f0",
+    "intake/BIF001_acceptance.json": "cc9d2d121521efdc8a1dfabe6beaa5e6551ed2d83b3e196ec3d20787953a7412",
+    "binary_causal/BC001_binary_stationary_causal_frontier_v1.md": "38712b68da30e08d14f41567e84f53b4073b7e2d46280313adc8b69859fc850e",
+    "intake/BC001_acceptance.json": "7d0cbb9c246483fe4f9776fbe2f0d2494ee2e960ce7b4d1b6117f04844406850",
+    "intermediate_upper/IU001_beta_sensitive_precision_upper_v1.md": "4c0adb15aadfb574e156c5ce5f4f4da1ec8447ed515417a71d400c5a52c7b317",
+    "intake/IU001_acceptance.json": "a8649f9294d51083c893d67aa5bfa4f83ce6f5cc7d0117be2df92ee7d40697c8",
+    "arbitrary_frontier/AU001_residual_suffix_precision_upper_v1.md": "1fce0c8374f372eeec6d4a21a2b683db02a754b227d39e6e8dd6b4e45e3ca6e1",
+    "intake/AU001_acceptance.json": "85fda91470729b0ad5759abc6efe60ed12dc6b247aab4e3922ad52246225a473"
+  }
+}

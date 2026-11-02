@@ -1,0 +1,776 @@
+{
+  "format": "Exact UTF-8 byte partitions v1; zero-based half-open byte offsets; one-based inclusive touched lines",
+  "records": [
+    {
+      "source": "long_history_upper_diagnostic_v1.md",
+      "source_bytes": 28656,
+      "source_sha256": "4a49759bfd8eb75babf695e319b6aafea7ed7ae09085c3339db1684981d9a4e8",
+      "output": "proofs/S020_complete_proof.md",
+      "output_bytes": 28164,
+      "output_sha256": "a478d1219c97b479f0c96d0124a6d3fff023e18a4177361a758003db4b1de8eb",
+      "copied_body_sha256": "e6b7c6dc08cc4aed2c1c294e693f1e6e4c3dea391b4027456ed79efe4d87066a",
+      "spans": [
+        {
+          "source_byte_start": 349,
+          "source_byte_end": 3249,
+          "source_line_start": 5,
+          "source_line_end": 55,
+          "output_byte_start": 901,
+          "output_byte_end": 3801,
+          "sha256": "68caaad90f871ee531444b45bdb4451b4ea5c47a7be9c11fc6720e64039408e3"
+        },
+        {
+          "source_byte_start": 3288,
+          "source_byte_end": 26852,
+          "source_line_start": 55,
+          "source_line_end": 377,
+          "output_byte_start": 3801,
+          "output_byte_end": 27365,
+          "sha256": "b30dac4022daa979accbf4fa80f4a86b0a59ac383b8936ddad9d498391a8f2b8"
+        },
+        {
+          "source_byte_start": 27341,
+          "source_byte_end": 28136,
+          "source_line_start": 382,
+          "source_line_end": 384,
+          "output_byte_start": 27367,
+          "output_byte_end": 28162,
+          "sha256": "e3e96cbd5ef81f616cc15b08fbbc9c21868097f6bc09ab0a0876982ba179db37"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 349,
+          "source_line_start": 1,
+          "source_line_end": 4,
+          "sha256": "3d03b9177cfa348ecf499e9d8ef1c01e3771be29f82bfbe5f890b1b047966ce4",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 3249,
+          "source_byte_end": 3288,
+          "source_line_start": 55,
+          "source_line_end": 55,
+          "sha256": "e2ae41e7a374de1beeae488701d71a094dc183529ee4c23367550785095456bb",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 26852,
+          "source_byte_end": 27341,
+          "source_line_start": 378,
+          "source_line_end": 381,
+          "sha256": "08f7eb2c079e40ef89a9664f1b990dd6f0fbb172167813ac2879cd75af2e6cd3",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 28136,
+          "source_byte_end": 28656,
+          "source_line_start": 385,
+          "source_line_end": 386,
+          "sha256": "a13323187a052db31f9e670f4eedfc6c77be30e6af4ce6149c02244b01f06c21",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 901,
+          "sha256": "08224af7dedf27d774e2a3b51930228984f96b639c4ec93993072e413bd95ac3",
+          "purpose": "明确标记的编排标题、历史版本、证据边界和公共导航"
+        },
+        {
+          "output_byte_start": 27365,
+          "output_byte_end": 27367,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 28162,
+          "output_byte_end": 28164,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        }
+      ]
+    },
+    {
+      "source": "S020_mathematical_review_v1.md",
+      "source_bytes": 25661,
+      "source_sha256": "9630c56b9f8bf0eb74695a4c8d48555893ff99a8d7640e6bc652a0aac0655864",
+      "output": "reviews/S020_mathematical_review.md",
+      "output_bytes": 23875,
+      "output_sha256": "32a82df661382b8fa16cbe64e731b104b6f32715754812eeb4426a3cdc8851ea",
+      "copied_body_sha256": "d1759b11596315a38ae1f6b40a3c6bf82d0c552b11a4a637db7d066edc5699ef",
+      "spans": [
+        {
+          "source_byte_start": 47,
+          "source_byte_end": 1108,
+          "source_line_start": 3,
+          "source_line_end": 7,
+          "output_byte_start": 826,
+          "output_byte_end": 1887,
+          "sha256": "e94e071a4c8744685353357baf4e88c3a48d6584816ca0a6e1ab68a888235ec1"
+        },
+        {
+          "source_byte_start": 2855,
+          "source_byte_end": 22574,
+          "source_line_start": 25,
+          "source_line_end": 169,
+          "output_byte_start": 1889,
+          "output_byte_end": 21608,
+          "sha256": "7082239a24720f0c004b85434cb50c542e667e04046a05f3c7179db517276f25"
+        },
+        {
+          "source_byte_start": 22738,
+          "source_byte_end": 24731,
+          "source_line_start": 178,
+          "source_line_end": 182,
+          "output_byte_start": 21610,
+          "output_byte_end": 23603,
+          "sha256": "8e586d404550853dbb5feb0fe62461d4efd4dd10270253cc2e051eb3e5468515"
+        },
+        {
+          "source_byte_start": 25163,
+          "source_byte_end": 25431,
+          "source_line_start": 188,
+          "source_line_end": 188,
+          "output_byte_start": 23605,
+          "output_byte_end": 23873,
+          "sha256": "0aeacd3cd2e93bed5932705a2ad7d03bb64a5af65d50fdce093ceff175f6058f"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 47,
+          "source_line_start": 1,
+          "source_line_end": 2,
+          "sha256": "e544c773aad3ebf1f223ad4b3d483ccc4a02295184add2e0be202e8f48a7ca0c",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 1108,
+          "source_byte_end": 2855,
+          "source_line_start": 8,
+          "source_line_end": 24,
+          "sha256": "f750752aa8fe63b12c5f302ad14c6888871acc134f8b392e200ad828061da859",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 22574,
+          "source_byte_end": 22738,
+          "source_line_start": 170,
+          "source_line_end": 177,
+          "sha256": "4a340349716b7057a069c8e711f74d2befe33c306a543e3cf8c31cb42aefbec2",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 24731,
+          "source_byte_end": 25163,
+          "source_line_start": 183,
+          "source_line_end": 187,
+          "sha256": "de3aab7d644bf9d65ece102f209c854e5b3fb484274b8d4021cdc8e5a5c37f74",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 25431,
+          "source_byte_end": 25661,
+          "source_line_start": 189,
+          "source_line_end": 190,
+          "sha256": "14185e7ac387ef4684274b057c47f017dc51514d1ca21d2f8784fcfa23f89204",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 826,
+          "sha256": "795738f8c1e3436c9d16fd92bd444b7fed959ceac33a7f83a7b7f131d0c21f6a",
+          "purpose": "明确标记的编排标题、历史版本、证据边界和公共导航"
+        },
+        {
+          "output_byte_start": 1887,
+          "output_byte_end": 1889,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 21608,
+          "output_byte_end": 21610,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 23603,
+          "output_byte_end": 23605,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 23873,
+          "output_byte_end": 23875,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        }
+      ]
+    },
+    {
+      "source": "long_history_lower_diagnostic_v2.md",
+      "source_bytes": 27867,
+      "source_sha256": "879532785c8a195ef84263ab90e327bb50fc8e9c20315f269274070b24625fa2",
+      "output": "proofs/S021_complete_proof_v2.md",
+      "output_bytes": 25127,
+      "output_sha256": "6b1eef09db3959a2e846e5e56fcf6d4d084ed51ceaaca0033ca6a9d4e4dc57b3",
+      "copied_body_sha256": "c9df354955c036be6054e3d327a0f98f222c2f05be8e8f6ae443ceaa9e3c79df",
+      "spans": [
+        {
+          "source_byte_start": 1263,
+          "source_byte_end": 3075,
+          "source_line_start": 7,
+          "source_line_end": 21,
+          "output_byte_start": 1255,
+          "output_byte_end": 3067,
+          "sha256": "ddbf7af3a93fc86ff2496a255921364a75bf430286ed32738055e8d0fd505388"
+        },
+        {
+          "source_byte_start": 3080,
+          "source_byte_end": 5659,
+          "source_line_start": 21,
+          "source_line_end": 53,
+          "output_byte_start": 3067,
+          "output_byte_end": 5646,
+          "sha256": "2bf1007b0f8496f6c8ead446fbadfb15f5603a792a2ba527b4e95873696be54c"
+        },
+        {
+          "source_byte_start": 5695,
+          "source_byte_end": 23943,
+          "source_line_start": 54,
+          "source_line_end": 274,
+          "output_byte_start": 5646,
+          "output_byte_end": 23894,
+          "sha256": "947052ec99952af8a5e3e7ddacfe578cb3ebb09ec7651434ae0fd6f2e677ee71"
+        },
+        {
+          "source_byte_start": 24782,
+          "source_byte_end": 26011,
+          "source_line_start": 282,
+          "source_line_end": 284,
+          "output_byte_start": 23896,
+          "output_byte_end": 25125,
+          "sha256": "23fd85da0b84b07ced75693e6dbc6d236bb90d271242e0e9025b7cc060823659"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 1263,
+          "source_line_start": 1,
+          "source_line_end": 6,
+          "sha256": "cb2ecc11637d08eade7a744f91e7977148192192a1b5b0d1d4e70f4c8d8603a2",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 3075,
+          "source_byte_end": 3080,
+          "source_line_start": 21,
+          "source_line_end": 21,
+          "sha256": "cc6097fb7df07326dffd8fcd99d9b75274714f1a9d92b38171a6a18828038b58",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 5659,
+          "source_byte_end": 5695,
+          "source_line_start": 54,
+          "source_line_end": 54,
+          "sha256": "e63bd2582b64297a8fc8f8f31102172fbb5685099e099661b8e367a91376629c",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 23943,
+          "source_byte_end": 24782,
+          "source_line_start": 275,
+          "source_line_end": 281,
+          "sha256": "88c0da05619f0a2e65b24ee898e0b7bf9792e31ad2508e329f878984a3b74750",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 26011,
+          "source_byte_end": 27867,
+          "source_line_start": 285,
+          "source_line_end": 302,
+          "sha256": "644cee58a25c189f7b933ee3c09f21b70dcd64b9d95ea96d732f0eb142509d4b",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 1255,
+          "sha256": "75bd6c0f32db2d4e0550685b08302f507298ffd116161104e5330a99dc06cf88",
+          "purpose": "明确标记的编排标题、历史版本、证据边界和公共导航"
+        },
+        {
+          "output_byte_start": 23894,
+          "output_byte_end": 23896,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 25125,
+          "output_byte_end": 25127,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        }
+      ]
+    },
+    {
+      "source": "S021_mathematical_review_v1.md",
+      "source_bytes": 23236,
+      "source_sha256": "46b519432b13ba9e30f0164cb5e1c946515345bce45117c65833de803c65f0f4",
+      "output": "reviews/S021_mathematical_review_v1_science.md",
+      "output_bytes": 18996,
+      "output_sha256": "3082fdc3b2b883ad5f1a61250a52c69df750437653cbe9991b45b788afa8aaf0",
+      "copied_body_sha256": "28fec0b289c138b85764d61a656f0969a5baf8a53df6133cbe0f3604cf6a5432",
+      "spans": [
+        {
+          "source_byte_start": 68,
+          "source_byte_end": 1257,
+          "source_line_start": 3,
+          "source_line_end": 7,
+          "output_byte_start": 949,
+          "output_byte_end": 2138,
+          "sha256": "b2e33dc968604a930069e5bcf06db7188afde5c3f45eff900f54edcd88629113"
+        },
+        {
+          "source_byte_start": 2781,
+          "source_byte_end": 18078,
+          "source_line_start": 22,
+          "source_line_end": 117,
+          "output_byte_start": 2140,
+          "output_byte_end": 17437,
+          "sha256": "35873be07e8a406ef3b83af5e07713514ed927355c1ee33f2647134f79ed49e1"
+        },
+        {
+          "source_byte_start": 20587,
+          "source_byte_end": 21179,
+          "source_line_start": 139,
+          "source_line_end": 139,
+          "output_byte_start": 17439,
+          "output_byte_end": 18031,
+          "sha256": "eb9472d98e813ecf41aeec1cfe0e2aa52a962cde2ad8a1aa21cb898d7dc15c95"
+        },
+        {
+          "source_byte_start": 21334,
+          "source_byte_end": 22295,
+          "source_line_start": 147,
+          "source_line_end": 156,
+          "output_byte_start": 18033,
+          "output_byte_end": 18994,
+          "sha256": "f565fc53aeb2bc848866ae04249d2f667a2df0a3aac465ce58da0918d1a8453e"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 68,
+          "source_line_start": 1,
+          "source_line_end": 2,
+          "sha256": "ecf3d0ad937fc3d8c43bdb3b54fc23b7f821051b119b05279d8788bcaa2f0998",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 1257,
+          "source_byte_end": 2781,
+          "source_line_start": 8,
+          "source_line_end": 21,
+          "sha256": "ac9122b631e14ca8dc83f99a9853f45e0d570d4bc28f741c006791419e5d2f33",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 18078,
+          "source_byte_end": 20587,
+          "source_line_start": 118,
+          "source_line_end": 138,
+          "sha256": "67ad0ba9ac61576f37fa803f13af31cc1a602d34d2e7f01d555e6c5a9a91684d",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 21179,
+          "source_byte_end": 21334,
+          "source_line_start": 140,
+          "source_line_end": 146,
+          "sha256": "841523c60f33686bd4b3127237e19599d0ee3f286cebfa77d5a0fcdbe35c6b9f",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 22295,
+          "source_byte_end": 23236,
+          "source_line_start": 157,
+          "source_line_end": 164,
+          "sha256": "635d7c0eb7347d882112d7187435d34f996c9eb58f12d4e80033c58f71f7a7a9",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 949,
+          "sha256": "be6f140c102b31aea17ea160efd55f278e571d4d0c2fe5d910b8e285756f9e62",
+          "purpose": "明确标记的编排标题、历史版本、证据边界和公共导航"
+        },
+        {
+          "output_byte_start": 2138,
+          "output_byte_end": 2140,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 17437,
+          "output_byte_end": 17439,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 18031,
+          "output_byte_end": 18033,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 18994,
+          "output_byte_end": 18996,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        }
+      ]
+    },
+    {
+      "source": "S021_mathematical_review_v2.md",
+      "source_bytes": 10550,
+      "source_sha256": "023a5e1d3ee2ac2552e68fd151e3eafc90e17bc4fba9ddca4934be571c734ee4",
+      "output": "reviews/S021_mathematical_review_v2.md",
+      "output_bytes": 6432,
+      "output_sha256": "7ba2427ab2616c2bf994e774f45781909d1373669876a12093bd428a479fe8d2",
+      "copied_body_sha256": "630c9a7e0bb3c4b10be40a4aca8ad72136b332ea608ed73974fcc394fd702ea2",
+      "spans": [
+        {
+          "source_byte_start": 566,
+          "source_byte_end": 797,
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "output_byte_start": 937,
+          "output_byte_end": 1168,
+          "sha256": "9e2a2274d99b98a1e5ba10cf3a29f3806ec1ac406c644b6d5de25340e98492b0"
+        },
+        {
+          "source_byte_start": 3197,
+          "source_byte_end": 8457,
+          "source_line_start": 28,
+          "source_line_end": 72,
+          "output_byte_start": 1170,
+          "output_byte_end": 6430,
+          "sha256": "d418e053550df21a25ee2962dabe08dc625e3e0ee6d5d8a69d367c88da248248"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 566,
+          "source_line_start": 1,
+          "source_line_end": 6,
+          "sha256": "136b5ea15c55ee278ff294590d621389af3a240a05eca603a15705568d313209",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 797,
+          "source_byte_end": 3197,
+          "source_line_start": 8,
+          "source_line_end": 27,
+          "sha256": "355b207a68c0e949c39b9df0f6e790541ef4596ed383293e13bf02a4ada6dd70",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 8457,
+          "source_byte_end": 10550,
+          "source_line_start": 73,
+          "source_line_end": 87,
+          "sha256": "9e4e764b367d33b53432ffefa554b38a43b0594f8a8e47b71a272327c496a756",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 937,
+          "sha256": "e1358a5dd600aeb4a95884798f0c679881fd9f26de5b473eac6a0808a418b64d",
+          "purpose": "明确标记的编排标题、历史版本、证据边界和公共导航"
+        },
+        {
+          "output_byte_start": 1168,
+          "output_byte_end": 1170,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 6430,
+          "output_byte_end": 6432,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        }
+      ]
+    },
+    {
+      "source": "beta_blind_endpoint_diagnostic_v1.md",
+      "source_bytes": 23547,
+      "source_sha256": "d11ee159300e8eae610570683d8c7bb38579020b28f48243805dba5c9120947d",
+      "output": "proofs/S022_complete_proof.md",
+      "output_bytes": 20291,
+      "output_sha256": "028f43ae12886781bfd3641712c66720d24c667b59ca22a74c5dbbea5b0a5774",
+      "copied_body_sha256": "9fe1f4a0fd51e0e092037a08e1fa3474221e81b702dfb59d3e81d868aab9724c",
+      "spans": [
+        {
+          "source_byte_start": 286,
+          "source_byte_end": 17823,
+          "source_line_start": 7,
+          "source_line_end": 399,
+          "output_byte_start": 892,
+          "output_byte_end": 18429,
+          "sha256": "f29abf8ae20e18c80bbc07677fd46c604b4f39fabccb8d7e746f5349e69a4b7e"
+        },
+        {
+          "source_byte_start": 18027,
+          "source_byte_end": 18814,
+          "source_line_start": 405,
+          "source_line_end": 417,
+          "output_byte_start": 18431,
+          "output_byte_end": 19218,
+          "sha256": "3f14155ae01ff5670a6989873cfccb5c2836b49a37bb59d61435c8fddef9efcb"
+        },
+        {
+          "source_byte_start": 19309,
+          "source_byte_end": 20378,
+          "source_line_start": 429,
+          "source_line_end": 444,
+          "output_byte_start": 19220,
+          "output_byte_end": 20289,
+          "sha256": "59ca38cf0950f19ab2646466b8c87554b2ec4f538b09f0bef245f4dd27aab65b"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 286,
+          "source_line_start": 1,
+          "source_line_end": 6,
+          "sha256": "0aed0b901c5ea495b685848217fa90a5084b590cea65373cea4eb0b4fd3c447f",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 17823,
+          "source_byte_end": 18027,
+          "source_line_start": 400,
+          "source_line_end": 404,
+          "sha256": "94aef496a0b2afdc8ccb8a399b2f45e0a8453d3d32d6ec102fc5d517e44d6a22",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 18814,
+          "source_byte_end": 19309,
+          "source_line_start": 418,
+          "source_line_end": 428,
+          "sha256": "0040e6006c0c9eb05830b3d9100a14c75a3723850273a38a96501a2ec7dd2f41",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 20378,
+          "source_byte_end": 23547,
+          "source_line_start": 445,
+          "source_line_end": 498,
+          "sha256": "541397634f620471076c06fe75472a0c0bf0fe52b32ffa56cbdf47e624130a26",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 892,
+          "sha256": "202fca240b42ae3850888c5f8693214800882099355d12026c741e683251a1e5",
+          "purpose": "明确标记的编排标题、历史版本、证据边界和公共导航"
+        },
+        {
+          "output_byte_start": 18429,
+          "output_byte_end": 18431,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 19218,
+          "output_byte_end": 19220,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 20289,
+          "output_byte_end": 20291,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        }
+      ]
+    },
+    {
+      "source": "S022_mathematical_review_v1.md",
+      "source_bytes": 19101,
+      "source_sha256": "1beffd77ad9a0a5386e8f438fce4f9fd8d9c7731d111ce6ea45630d0da0c9ad5",
+      "output": "reviews/S022_mathematical_review.md",
+      "output_bytes": 15068,
+      "output_sha256": "b12c98f2237a49c29524c45b408d79d462342bf71eafc0dda464d88bbdd8c8b5",
+      "copied_body_sha256": "6828115f4166bf35c6f5f869b738ae554cd1a59d360113ea7ff01eec5b4a24fb",
+      "spans": [
+        {
+          "source_byte_start": 964,
+          "source_byte_end": 12022,
+          "source_line_start": 23,
+          "source_line_end": 251,
+          "output_byte_start": 902,
+          "output_byte_end": 11960,
+          "sha256": "b4b3b322c78d28575bbdfec744bcf644978d492b05ddf3c86e244867049a04fa"
+        },
+        {
+          "source_byte_start": 12070,
+          "source_byte_end": 12071,
+          "source_line_start": 251,
+          "source_line_end": 251,
+          "output_byte_start": 11962,
+          "output_byte_end": 11963,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "source_byte_start": 12072,
+          "source_byte_end": 12554,
+          "source_line_start": 253,
+          "source_line_end": 260,
+          "output_byte_start": 11965,
+          "output_byte_end": 12447,
+          "sha256": "3dcf76550afc22f03dddee289a0dd849aae21865d5dd1574e131e747ae189b51"
+        },
+        {
+          "source_byte_start": 16067,
+          "source_byte_end": 18169,
+          "source_line_start": 311,
+          "source_line_end": 343,
+          "output_byte_start": 12449,
+          "output_byte_end": 14551,
+          "sha256": "22faea6a793913eb26fe11f29aade7afc6744cffe48449dfcfb5fb1c0971d2cf"
+        },
+        {
+          "source_byte_start": 18216,
+          "source_byte_end": 18729,
+          "source_line_start": 347,
+          "source_line_end": 356,
+          "output_byte_start": 14553,
+          "output_byte_end": 15066,
+          "sha256": "6253941f565b237a779f5d12ebaf25f687e59a6c7555466327f6ff594acf6213"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 964,
+          "source_line_start": 1,
+          "source_line_end": 22,
+          "sha256": "211ed25ac33a36f2a24327b359e38678bd7deef84292fb92c5920b7ac813cdd6",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 12022,
+          "source_byte_end": 12070,
+          "source_line_start": 251,
+          "source_line_end": 251,
+          "sha256": "edef5acf3bcad2517c267cde38f4eca42e317d68a453131b24ae760fa2e4d132",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 12071,
+          "source_byte_end": 12072,
+          "source_line_start": 252,
+          "source_line_end": 252,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 12554,
+          "source_byte_end": 16067,
+          "source_line_start": 261,
+          "source_line_end": 310,
+          "sha256": "f48f741367cd808f891291a2c4c03c777acb7788ce9df87588c5cb0a9e1590ff",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 18169,
+          "source_byte_end": 18216,
+          "source_line_start": 344,
+          "source_line_end": 346,
+          "sha256": "529023d01b6fa9c9708f053db09c779d41b05df1f20edaa3c0d64ee43bf74d37",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        },
+        {
+          "source_byte_start": 18729,
+          "source_byte_end": 19101,
+          "source_line_start": 357,
+          "source_line_end": 362,
+          "sha256": "b459fcacdc22f023e6cf5c56268dd2d366f57965ef13da7594f851598be5defa",
+          "reason": "省略身份控制、管理路径或执行记录、旧提交状态、集中列于SOURCES的来源管理表；不省略科学论证或合法反例"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 902,
+          "sha256": "4392d98aab2f008ea2c1efd976bd26d49945e7d966d0a1ee9834fa763bfce6e0",
+          "purpose": "明确标记的编排标题、历史版本、证据边界和公共导航"
+        },
+        {
+          "output_byte_start": 11960,
+          "output_byte_end": 11962,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 11963,
+          "output_byte_end": 11965,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 12447,
+          "output_byte_end": 12449,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 14551,
+          "output_byte_end": 14553,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        },
+        {
+          "output_byte_start": 15066,
+          "output_byte_end": 15068,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "原文区间之间的编排空行"
+        }
+      ]
+    }
+  ],
+  "binary_copies": [
+    {
+      "source": "DOT_conditions_phase_review_20261028_v2.zip",
+      "source_bytes": 1460410,
+      "source_sha256": "cc8b3cf77d799e65d5cafd51d4738262c76a8c58756ffcf5b968d6a65ff1a188",
+      "output": "inherited/DOT_conditions_phase_review_20261028_v2.zip",
+      "output_bytes": 1460410,
+      "output_sha256": "cc8b3cf77d799e65d5cafd51d4738262c76a8c58756ffcf5b968d6a65ff1a188",
+      "archive_manifest_sha256": "4a997b3126a197cad87e3f43e11d34a0befbfe948e10a1fb8f2e6894b8e5f882"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "obligation": {
+    "obligation_id": "eaab409f486133129646a41fad91ac941d3a8d6122f1aafb40959b09465b9469",
+    "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+    "exact_statement": "For prototype B of D4 with fixed beta_1,beta_2>0, stationary p_theta(+1|a,b)=1/2+theta ab and |theta|<1/2, derive the actual finite-history operator q_N(y|x)=[sum_z exp(beta_1 ac+beta_2 bd)a_N(z,y)]/[sum_z exp(beta_1 ac+beta_2 bd)mu_N(z)] from a legal theta-independent causal circuit, explicitly charging all predecessor binding, Q/K/V, four-context frequency auxiliary, query/local residuals and length/type channels. Cover zero counts and declare exactly what the readout can observe. Prove the finite empirical Walsh-moment formula, show by a positive-probability legal finite history why the population interaction eigenvalue is not generally a finite-history eigenvalue, and prove the population limit and interaction gain tanh(beta_1)tanh(beta_2) using one joint edge-count event, including explicit dependence/mixing and finite-history TV bounds for the specified direct head. Give an actual finite-precision simplex family with explicit finite R=(L,W,H,D_qk,B_param,B_arith,score_range) and a theta-independent vanishing implementation schedule; known-score and exponential approximations and exact probability normalization are charged. Analyze the concrete affine/clipped calibration C_B(q)=clip_[0,1](1/2+(q-1/2)/g), g=tanh(beta_1)tanh(beta_2), with its coefficient precision paid: prove or identify a precise obstruction to per-fixed-theta max-context and actual terminal-query TV consistency on this D4 family. Any conditional terminal and average-risk claims must handle query/history dependence and correct weights. Clearly distinguish nominal algebra from finite computation, fixed networks from families, and this B uniform-family result from A full-context or D5 claims. Use admitted predecessor facts only by exact IDs and contents; this local result does not discharge the conjunctive root.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+        "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+        "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+        "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers >=2",
+          "depends_on": []
+        },
+        {
+          "variable": "beta",
+          "kind": "FORALL",
+          "domain": "fixed positive full-context score gap",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+          "depends_on": [
+            "K",
+            "beta"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "D1 second-order tables on K symbols",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers >=3",
+          "depends_on": []
+        },
+        {
+          "variable": "epsilon",
+          "kind": "FORALL",
+          "domain": "positive accuracy targets",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+      "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "8b81f7c2cc2837a4167d14779d40560aa532ccc877c238e885357bb4351dc7fa"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": [
+    {
+      "artifact_id": "8b81f7c2cc2837a4167d14779d40560aa532ccc877c238e885357bb4351dc7fa",
+      "content_hash": "02bdf0189b40f6ec385d950b0e3b95036d06801afbfa849ef548892dd724037c",
+      "producer": "fact_submit:bacb55fdf2acc000",
+      "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+      "evidence_kind": "LLM_CHECKED_PROOF",
+      "exact_claim": "For prototype B of D4 with fixed beta_1,beta_2>0, stationary p_theta(+1|a,b)=1/2+theta ab and |theta|<1/2, derive the actual finite-history operator q_N(y|x)=[sum_z exp(beta_1 ac+beta_2 bd)a_N(z,y)]/[sum_z exp(beta_1 ac+beta_2 bd)mu_N(z)] from a legal theta-independent causal circuit, explicitly charging all predecessor binding, Q/K/V, four-context frequency auxiliary, query/local residuals and length/type channels. Cover zero counts and declare exactly what the readout can observe. Prove the finite empirical Walsh-moment formula, show by a positive-probability legal finite history why the population interaction eigenvalue is not generally a finite-history eigenvalue, and prove the population limit and interaction gain tanh(beta_1)tanh(beta_2) using one joint edge-count event, including explicit dependence/mixing and finite-history TV bounds for the specified direct head. Give an actual finite-precision simplex family with explicit finite R=(L,W,H,D_qk,B_param,B_arith,score_range) and a theta-independent vanishing implementation schedule; known-score and exponential approximations and exact probability normalization are charged. Analyze the concrete affine/clipped calibration C_B(q)=clip_[0,1](1/2+(q-1/2)/g), g=tanh(beta_1)tanh(beta_2), with its coefficient precision paid: prove or identify a precise obstruction to per-fixed-theta max-context and actual terminal-query TV consistency on this D4 family. Any conditional terminal and average-risk claims must handle query/history dependence and correct weights. Clearly distinguish nominal algebra from finite computation, fixed networks from families, and this B uniform-family result from A full-context or D5 claims. Use admitted predecessor facts only by exact IDs and contents; this local result does not discharge the conjunctive root.",
+      "scope": {
+        "assumptions": [
+          "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+          "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+          "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+          "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+        ],
+        "quantifiers": [
+          {
+            "variable": "K",
+            "kind": "FORALL",
+            "domain": "integers >=2",
+            "depends_on": []
+          },
+          {
+            "variable": "beta",
+            "kind": "FORALL",
+            "domain": "fixed positive full-context score gap",
+            "depends_on": []
+          },
+          {
+            "variable": "predictor_family",
+            "kind": "EXISTS",
+            "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+            "depends_on": [
+              "K",
+              "beta"
+            ]
+          },
+          {
+            "variable": "theta",
+            "kind": "FORALL",
+            "domain": "D1 second-order tables on K symbols",
+            "depends_on": [
+              "K"
+            ]
+          },
+          {
+            "variable": "N",
+            "kind": "FORALL",
+            "domain": "integers >=3",
+            "depends_on": []
+          },
+          {
+            "variable": "epsilon",
+            "kind": "FORALL",
+            "domain": "positive accuracy targets",
+            "depends_on": []
+          }
+        ],
+        "objects": [],
+        "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+        "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+      },
+      "input_hashes": [
+        "02bdf0189b40f6ec385d950b0e3b95036d06801afbfa849ef548892dd724037c",
+        "6a231cbc6dc9fd88e1291234d295b38652a12f4f33199a96d2ac85c6f9db7fe4",
+        "899e13e3de35de82397926f56e26587a062e7789c726ea676465f2a1151b8132"
+      ],
+      "environment_hash": "00de6a4ad8a9a5fb04b461b21b8bcaaff9873fae2e9abc80e9bd30c2547ee0fb",
+      "checker_id": "fact_submit",
+      "checker_version": "1",
+      "checker_result": "PASS",
+      "created_at": "2026-10-24T06:24:57Z",
+      "validity": "VALID"
+    }
+  ],
+  "version": {
+    "version": "B-operator-004/prover-v1",
+    "frozen_at_utc": "2026-10-24T06:18:28.245499+00:00",
+    "obligation_id": "eaab409f486133129646a41fad91ac941d3a8d6122f1aafb40959b09465b9469",
+    "predecessors": [
+      "608003f641535f2c"
+    ],
+    "hash_algorithm": "SHA-256",
+    "files": {
+      "exact-statement.md": "04b29074ad0dadf6ee25f4e9fa79cf4cfc01f8b90ffe80b0e9cd743b4af420cc",
+      "exact-proof.md": "3974f12276f3c6e2621f916e9343e102987deaa32aefc0bbbcc3aa75fd3001dc",
+      "checkpoint-v1.md": "cf2d1a2f941a1481623be97f43711077fe3c2a8c5004586e65e26080d6133b35",
+      "predecessor-verification.json": "05620170aded497cdf05708f4eb59bf0d5a6c2843f8c2b9be111023468d15288",
+      "check_compiled_B.py": "4491df4103fc287b9d59e00c0596a433ef3c45216dc34e9da86cc066c3b23faa",
+      "compiled-check-result.json": "20b6cb002ba79c05f724a054e3728d2f353d44d545ad29b5ac9d057378da24ea",
+      "lead-operator-check-result.json": "815a7f25b25462efba924f1d9b420080fbbceaf71e0ed3f65bdc29d583009984",
+      "scope-budget.md": "48bc712afa9786fcd3ba3a52eda2df103d47f5f3ac7218d6554b2561c71f33d0"
+    },
+    "status_at_freeze": "NOT_YET_SUBMITTED",
+    "scope": "D4 uniform binary B family only; no root closure"
+  },
+  "version_checks": {
+    "exact-statement.md": true,
+    "exact-proof.md": true,
+    "checkpoint-v1.md": true,
+    "predecessor-verification.json": true,
+    "check_compiled_B.py": true,
+    "compiled-check-result.json": true,
+    "lead-operator-check-result.json": true,
+    "scope-budget.md": true
+  },
+  "review": {
+    "verification_report": {
+      "summary": "Reviewed the complete frozen B-operator-004/prover-v1 submission sequentially against contract 3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a (D1-D8). The causal circuit and visible channels, empirical Walsh formulas, positive-probability finite-history counterexample, population interaction gain, common joint-count event, mixing/concentration bounds, finite arithmetic/resource ledger, calibrated consistency, and dependent terminal/conditional risk weights pass. Admitted fact 608003f641535f2c was read; its Sections 2-3 supply the cited common count law within scope, without importing its Route A implementation. No external-paper citations required checking, and no P1/P3/P5/P6 or chain violation was found. Guarantees concern the stated finite-symbol domain, exact bounded rational encodings, an N-dependent precision family, and each fixed theta; they do not close Route A, D5, or the conjunctive root. This independent-context LLM admission review is not formal certification or a claim of cross-model verification. This is an LLM review, not formal verification or external peer review; cross-model independence is not established.",
+      "critical_errors": [],
+      "gaps": []
+    },
+    "verdict": "correct",
+    "repair_hints": ""
+  }
+}

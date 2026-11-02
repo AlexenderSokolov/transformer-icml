@@ -1,0 +1,228 @@
+{
+  "verified_utc": "2026-11-02T06:14:20.934109+00:00",
+  "title": "Finite Precision Prediction from Bounded Causal Attention",
+  "revision": 3,
+  "scientific_freeze_utc": "2026-11-02T06:05:00Z",
+  "pages": 30,
+  "artifacts": {
+    "finite_precision_prediction.pdf": {
+      "sha256": "77b36501b82914d9e03277f0fa0d7d35ae78a51ff69568362737c284a331f9ef",
+      "bytes": 558356
+    },
+    "finite_precision_prediction.tex": {
+      "sha256": "6a96169c9438030288c0ae7b4a5895b857ca47673174c755a24c4ab8990cf4f5",
+      "bytes": 93357
+    },
+    "references.bib": {
+      "sha256": "b239f61a36ce9d2d866bb9543f3ee17e5569fec54ed9114aeb4ab8123a342b3e",
+      "bytes": 2586
+    },
+    "finite_precision_prediction.bbl": {
+      "sha256": "1eb1f3650e9c3f5ff899f68104a8b74dad90a6d6a0f7358f2edecfb45bf7a04c",
+      "bytes": 3164
+    },
+    "README.md": {
+      "sha256": "4ba6ba4425327986320045b743424d197ff6514f01e8bed125ba3ac4edfbf5b6",
+      "bytes": 3609
+    },
+    "build.sh": {
+      "sha256": "bc99700003c7096ffed89a43dbac172df11b8190c8a7b4a123700301250b604b",
+      "bytes": 1645
+    },
+    "SOURCE_MANIFEST.json": {
+      "sha256": "b085580e48f515ca3c88078ecb6d2d5384bf38ed614d25a41f1972baecd1dfd3",
+      "bytes": 13952
+    }
+  },
+  "build": {
+    "engine": "pdfLaTeX",
+    "bibliography": "BibTeX",
+    "status": "success",
+    "overfull_boxes": 0,
+    "underfull_boxes": 0,
+    "undefined_references": 0,
+    "undefined_citations": 0,
+    "warnings": 0,
+    "illegal_source_control_characters": 0,
+    "all_pdf_fonts_embedded": true
+  },
+  "render": {
+    "tool": "pdftoppm",
+    "dpi": 110,
+    "directory": "qa-final",
+    "pages": {
+      "page-01.png": {
+        "sha256": "9082608e2207c3be2e88629d53ee1be3de56918cb658ddf3d905a620277cfa90",
+        "individually_visually_inspected": true
+      },
+      "page-02.png": {
+        "sha256": "6ef2968245f494f3f1138213641a5d7f436e80c2c884a0eacca957a882c47749",
+        "individually_visually_inspected": true
+      },
+      "page-03.png": {
+        "sha256": "48dbd9299133b7d3c8c615fe2c7a02b4d5d5f96df85a9bb312c40b5f2e06d24a",
+        "individually_visually_inspected": true
+      },
+      "page-04.png": {
+        "sha256": "422aef541d8ccdcbd52323f898aa5590266acba40b75c8033c1e8e9c80aeb144",
+        "individually_visually_inspected": true
+      },
+      "page-05.png": {
+        "sha256": "5ce1a8b702d8cb3fd0ac1854d4fb94d4615ad439e305d5dc639101a45d1d8335",
+        "individually_visually_inspected": true
+      },
+      "page-06.png": {
+        "sha256": "a158bc61bb528dc149243706af6b4f8022bc78286854a4652da4895b29943367",
+        "individually_visually_inspected": true
+      },
+      "page-07.png": {
+        "sha256": "fb9183df479f630c8dfe166e0b460d844411b9d25b0ec4e17e5b3e639787573e",
+        "individually_visually_inspected": true
+      },
+      "page-08.png": {
+        "sha256": "3f59236537654e6ad229fae15a515cc1418381eee0bfdc060dd93996bc9965bd",
+        "individually_visually_inspected": true
+      },
+      "page-09.png": {
+        "sha256": "75d4bdc0715dc96ef08b2c06c6e58766c414107556f6c11656c9df2b94020e62",
+        "individually_visually_inspected": true
+      },
+      "page-10.png": {
+        "sha256": "3f8378f3e66a04ef065f87251cda85db6cefeae3d91f18430a36a9a053d870c3",
+        "individually_visually_inspected": true
+      },
+      "page-11.png": {
+        "sha256": "09014553a4969910162445c64e2443b5c6f10468e86ae797d7e66a39e3b69866",
+        "individually_visually_inspected": true
+      },
+      "page-12.png": {
+        "sha256": "39aa5328fba3af5f253f29b81e88fddcd5e8678242986cb7a1d71f496c23e8d4",
+        "individually_visually_inspected": true
+      },
+      "page-13.png": {
+        "sha256": "45b9c7792281ef3b4bcf4df1b301d3938963da798802917d6a338b1d14d367d4",
+        "individually_visually_inspected": true
+      },
+      "page-14.png": {
+        "sha256": "cabeb3fec92d98fb2fc2364110230f351213740b1af95b15aad80bcf2d4d5ce4",
+        "individually_visually_inspected": true
+      },
+      "page-15.png": {
+        "sha256": "bc7b5fa583fb782ce3c19a347190d73d3d995b5f78e8e59856572b2dfa2b35d2",
+        "individually_visually_inspected": true
+      },
+      "page-16.png": {
+        "sha256": "0666efb9d678bd3040dc899f92feaf004ca99ee8c2cf53ce352fa27035e5c6d8",
+        "individually_visually_inspected": true
+      },
+      "page-17.png": {
+        "sha256": "5538999ee9daff4fca803d4480ed7d04e51695d54a627ba28389af41dbf7ab09",
+        "individually_visually_inspected": true
+      },
+      "page-18.png": {
+        "sha256": "c9c36d9919bbf68cffdf9c77013a6b9db8f571d7db65abaaac055fa91c461b3c",
+        "individually_visually_inspected": true
+      },
+      "page-19.png": {
+        "sha256": "c1cb31e51cc9dca32d13966ffa9d111b06ec388f459037fdf819302157aa6187",
+        "individually_visually_inspected": true
+      },
+      "page-20.png": {
+        "sha256": "0d7ba42b110abf9425e2080dcd9a3d18174433c3c342c5d3a5067117c58e97ef",
+        "individually_visually_inspected": true
+      },
+      "page-21.png": {
+        "sha256": "4779ff0c10a1593aa45f2c88b4de13b2a5263a8c8dac51d79b4669ad57b6d2e4",
+        "individually_visually_inspected": true
+      },
+      "page-22.png": {
+        "sha256": "9977e568878d06822c8d542070695f9d68778efbe0418756c9f5258a17b6c0a9",
+        "individually_visually_inspected": true
+      },
+      "page-23.png": {
+        "sha256": "a35b9918259b32181be6743ef325ec8254a5a5236ceaa54da42b9c965d1cbff9",
+        "individually_visually_inspected": true
+      },
+      "page-24.png": {
+        "sha256": "f96f62605f5a02fa98d392783fc67532948b8af797b81ae6b0c665d4efda4bbe",
+        "individually_visually_inspected": true
+      },
+      "page-25.png": {
+        "sha256": "0e69f691b27e2ae9ef75526dfc4b0a65c6b38bfd34bcc8db00d0cbee69499e74",
+        "individually_visually_inspected": true
+      },
+      "page-26.png": {
+        "sha256": "ec431f89446a6cc3e5799860fc06df6970fbcfeb623ccdcc0b52f69aef9bfcb0",
+        "individually_visually_inspected": true
+      },
+      "page-27.png": {
+        "sha256": "753baa9b7bd0851fdb936cd14f703306a2ad19dad30d6b2496703a20739d5bbc",
+        "individually_visually_inspected": true
+      },
+      "page-28.png": {
+        "sha256": "b0756d436c7c4f8ec4aeea363d677a47ad94b89d716d43473dbb0b47d1fbec4c",
+        "individually_visually_inspected": true
+      },
+      "page-29.png": {
+        "sha256": "40e0e987b911a08990a495aa0d2e21d1e639476630ada614cf11408e70397e21",
+        "individually_visually_inspected": true
+      },
+      "page-30.png": {
+        "sha256": "d00af178614c932b1355ea1e5f82f5656bf9f77edf03f8e286456cf5fc69429b",
+        "individually_visually_inspected": true
+      }
+    }
+  },
+  "visual_checks": [
+    "All 30 page images individually inspected.",
+    "Only pages 23 and 24 changed after the support-scope correction; both were re-inspected. All other page images are byte-identical to their inspected versions.",
+    "No text/equation clipping, collisions, missing mathematical glyphs, blank pages or header/footer overlap.",
+    "Proof-map continuation and bibliography remain readable; all cross-references resolve."
+  ],
+  "bindings": {
+    "source_files": 44,
+    "source_hash_mismatches": 0,
+    "preserved_v1_v2_files": 119,
+    "previous_version_hash_mismatches": 0,
+    "bibliography_byte_identical_to_v2": true,
+    "generated_bibliography_byte_identical_to_v2": true
+  },
+  "scientific_review": {
+    "status": "independent PASS recommendation; root acceptance separate",
+    "source_tex_sha256": "6a96169c9438030288c0ae7b4a5895b857ca47673174c755a24c4ab8990cf4f5",
+    "audit_report_sha256": "1b139e2af05e3fb7039703928ab9b3e79a95b00d2d7c1a5e2fb7065092aed33d",
+    "audit_bindings_sha256": "f61efd857964a955e0f247be6b334b50e360fb04be045a1585f8ad96f228ed10",
+    "required_support_scope_correction": "applied and independently delta-reviewed",
+    "note": "Not formal verification or external peer review."
+  },
+  "delivery_inclusions": [
+    "finite_precision_prediction.pdf",
+    "finite_precision_prediction.tex",
+    "references.bib",
+    "finite_precision_prediction.bbl",
+    "README.md",
+    "build.sh",
+    "SOURCE_MANIFEST.json"
+  ],
+  "delivery_exclusions": [
+    "QA_VERIFICATION.json",
+    "PREVIOUS_VERSIONS_BINDINGS.json",
+    "qa/",
+    "qa-final/",
+    "build/",
+    "authoring-scratch/",
+    "audit-deltas/",
+    "build logs",
+    "audit logs",
+    "LaTeX auxiliary files",
+    "clean_rebuild_path.txt"
+  ],
+  "clean_rebuild": {
+    "verified_utc": "2026-11-02T06:14:20.933836+00:00",
+    "directory": "/tmp/manuscript-v3-clean-nQBeUY",
+    "exit_code": 0,
+    "pages": 30,
+    "extracted_text_byte_identical": true,
+    "uses_only_portable_source_files": true
+  }
+}

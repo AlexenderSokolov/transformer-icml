@@ -1,0 +1,266 @@
+{
+  "obligation_id": "52a14a0c60279133c7acc7067c15eb4cfbff32368f8a721e59df9bf3eecd9ff1",
+  "gateway": {
+    "accepted": true,
+    "fact_id": "df40a215d931bd32",
+    "transport_status": "ok",
+    "undefined_symbols": [
+      "(a,e)",
+      "(e,f)",
+      "(s,e)",
+      "(t,q)",
+      "(u,t)",
+      "(x,y)",
+      "A_0",
+      "A_1",
+      "A_H",
+      "A_j",
+      "B_+(a,.)",
+      "B_j",
+      "B_t",
+      "B_t(s,.)",
+      "B_t(s,e)",
+      "C<=10000",
+      "C<=97",
+      "C_001+alpha",
+      "C_100+alpha",
+      "C_s0+C_s1",
+      "C_sc",
+      "C_sc(Z)",
+      "C_sc(z)",
+      "D<=3",
+      "D_00+2alpha",
+      "D_10+2alpha",
+      "D_j",
+      "D_s",
+      "Delta",
+      "E+",
+      "E_m",
+      "F_t",
+      "F_t(i,j)",
+      "F_t(s_i,s_(i+1)",
+      "G+",
+      "I_holds",
+      "I_j",
+      "K(v,.)",
+      "KL(p_(u,t)",
+      "L_+",
+      "L_+(z)",
+      "N+",
+      "N>=3",
+      "N>=6",
+      "O(1/N+k/N+1/Q)",
+      "Omega",
+      "P(v)",
+      "P(x)",
+      "P_bits",
+      "P_bits+mask_bits+Z_meta+K_code",
+      "Q>=4",
+      "R_00",
+      "R_av",
+      "R_av(A,T;u,t)",
+      "R_s",
+      "R_t",
+      "R_t(j,i)",
+      "R_t(s_(i+1)",
+      "S_N",
+      "S_i",
+      "T(X)",
+      "T(x,omega)",
+      "TV(L_(u0,t_+)",
+      "TV(L_-,L_+)",
+      "TV(P,Q)",
+      "TV(PK,QK)",
+      "TV(R_t^j(s,.)",
+      "TV<=1",
+      "Theta",
+      "U_stored+L+1024",
+      "U_stored+T_online+N+L+1",
+      "U_stored+W_gen",
+      "U_stored+W_work",
+      "W+",
+      "W_work",
+      "X_1",
+      "X_N",
+      "X_i",
+      "Z_m",
+      "Z_meta",
+      "Z_meta+N+L+1",
+      "a_gen",
+      "alpha",
+      "b_+(x)",
+      "beta",
+      "dL_+",
+      "d_Ham(X^+,X^-)",
+      "j_c",
+      "j_sc",
+      "l_+(e)",
+      "mu_+",
+      "mu_+(x)",
+      "nI_holds",
+      "nK_code",
+      "nP_bits",
+      "nT_gen",
+      "nT_online",
+      "nU_stored",
+      "nW_gen",
+      "nW_work",
+      "n_1",
+      "n_a",
+      "n_i",
+      "n_r",
+      "na_gen",
+      "omega",
+      "q_A",
+      "q_A(.|Z,N,k,Q)",
+      "r_t",
+      "s_i",
+      "t_+",
+      "wr_t",
+      "x_N",
+      "z_c",
+      "z_xy"
+    ],
+    "research": {
+      "fact_id": "df40a215d931bd32",
+      "obligation_id": "52a14a0c60279133c7acc7067c15eb4cfbff32368f8a721e59df9bf3eecd9ff1",
+      "evidence_id": "3448f22a5b9e86526c831f0518a83b828eaf69eb2acf455fb0057f354dae7cd3",
+      "evidence_kind": "LLM_CHECKED_PROOF"
+    },
+    "root_final_audit_required": false
+  },
+  "obligation": {
+    "obligation_id": "52a14a0c60279133c7acc7067c15eb4cfbff32368f8a721e59df9bf3eecd9ff1",
+    "contract_id": "873515c4586d37a2bde324010bea6ae30f820927b7c25ded15b784a79eef7e45",
+    "exact_statement": "C2: Under current D1-D2,D6 prove the exact full C2 common-channel lower: for each legal N,k>=1, public u0=k/N, Delta=1/640000, c=Delta^2/8, one globally per-input/per-seed hard-k randomized batch T_(N,k), independent of Q/predictor/actual source label, makes conditional-terminal00 full-Z TV<=1/64 and for every common randomized full-Z predictor yields one SAME t_* with R00>=c and R_av>=ck/N. Prove stationary reversal and common atom directly, all intermediate pairs/adaptive commitments/truncated final block/97-episode/full symbol map; unnormalized Jordan cycle removal/path collapse, same input-row common-mass cancellation and bad fraction identity, finite rational seed and global legality; actual-terminal same-witness testing. Preserve unrestricted full-Z strong baseline, no old FULL19/011 premise.",
+    "scope": {
+      "assumptions": [
+        "D1-D2 fix the true stationary D1 source, actual terminal query and one common randomized batch hard-edit observation channel before every encoder.",
+        "All algorithms see only Z,N,k,Q. Last pair is preserved on every input/seed; clean prefix, gap, endpoints, counts and private channel randomness are unavailable.",
+        "The upper is one unknown-parameter family for all sources/channels. The lower fixes one Q/predictor/source-label-independent channel before every full-Z predictor, then selects one source witness for both risks.",
+        "D3-D5 fix exact finite outputs and separate complete DIRECT bit-register and JOINT principal batch-hybrid cost vectors; no old Bstar or architecture superiority is claimed.",
+        "Old native Facts, file reviews and primary sources copied into inputs are provenance, not current-project admissions. All load-bearing clean/statistical/finite premises need valid new-project support."
+      ],
+      "quantifiers": [
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "one D3 deterministic family, two D4 implementations, depends only on Z and public N,k,Q",
+          "depends_on": []
+        },
+        {
+          "variable": "upper_parameters_and_channel",
+          "kind": "FORALL",
+          "domain": "all D1 parameters, all D2 public tuples and all admissible source-independent randomized batch channels",
+          "depends_on": []
+        },
+        {
+          "variable": "lower_public_tuple",
+          "kind": "FORALL",
+          "domain": "N>=6,1<=k<=floor((floor(N/2)-2)/1024)",
+          "depends_on": []
+        },
+        {
+          "variable": "common_channel",
+          "kind": "EXISTS",
+          "domain": "one globally per-input/per-seed hard-k T_(N,k), independent of actual source label, Q and predictor",
+          "depends_on": []
+        },
+        {
+          "variable": "full_observation_predictor",
+          "kind": "FORALL",
+          "domain": "every public Q and every common randomized full-Z predictor, unlimited computation/unrestricted probabilities allowed",
+          "depends_on": []
+        },
+        {
+          "variable": "same_source_witness",
+          "kind": "EXISTS",
+          "domain": "one t in the fixed public pair at u0=k/N witnessing both conditional and average lower bounds",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "N>=3,Q=2^b,b>=1. N>=6: m=floor(N/2),M=m-2,integer0<=k<=floor(M/1024); N3-5:k0 uniform. D1:0<u<1/4,1/4<=t<=3/4. C2:k>=1,u0=k/N,Delta1/640000,t+/-=1/2+/-Delta/2.",
+      "definitions_hash": "fc104078b9455bdd86586decd50902df6688400cc00f06e6b105699efefd0e02"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "3448f22a5b9e86526c831f0518a83b828eaf69eb2acf455fb0057f354dae7cd3"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": {
+    "artifact_id": "3448f22a5b9e86526c831f0518a83b828eaf69eb2acf455fb0057f354dae7cd3",
+    "content_hash": "7d7b0a5414b61fbf2117c9b980d4e7580b0ea9311de07c9dc4a3faa1ef54aaa8",
+    "producer": "fact_submit:7df84be0591ed8e3",
+    "contract_id": "873515c4586d37a2bde324010bea6ae30f820927b7c25ded15b784a79eef7e45",
+    "evidence_kind": "LLM_CHECKED_PROOF",
+    "exact_claim": "C2: Under current D1-D2,D6 prove the exact full C2 common-channel lower: for each legal N,k>=1, public u0=k/N, Delta=1/640000, c=Delta^2/8, one globally per-input/per-seed hard-k randomized batch T_(N,k), independent of Q/predictor/actual source label, makes conditional-terminal00 full-Z TV<=1/64 and for every common randomized full-Z predictor yields one SAME t_* with R00>=c and R_av>=ck/N. Prove stationary reversal and common atom directly, all intermediate pairs/adaptive commitments/truncated final block/97-episode/full symbol map; unnormalized Jordan cycle removal/path collapse, same input-row common-mass cancellation and bad fraction identity, finite rational seed and global legality; actual-terminal same-witness testing. Preserve unrestricted full-Z strong baseline, no old FULL19/011 premise.",
+    "scope": {
+      "assumptions": [
+        "D1-D2 fix the true stationary D1 source, actual terminal query and one common randomized batch hard-edit observation channel before every encoder.",
+        "All algorithms see only Z,N,k,Q. Last pair is preserved on every input/seed; clean prefix, gap, endpoints, counts and private channel randomness are unavailable.",
+        "The upper is one unknown-parameter family for all sources/channels. The lower fixes one Q/predictor/source-label-independent channel before every full-Z predictor, then selects one source witness for both risks.",
+        "D3-D5 fix exact finite outputs and separate complete DIRECT bit-register and JOINT principal batch-hybrid cost vectors; no old Bstar or architecture superiority is claimed.",
+        "Old native Facts, file reviews and primary sources copied into inputs are provenance, not current-project admissions. All load-bearing clean/statistical/finite premises need valid new-project support."
+      ],
+      "quantifiers": [
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "one D3 deterministic family, two D4 implementations, depends only on Z and public N,k,Q",
+          "depends_on": []
+        },
+        {
+          "variable": "upper_parameters_and_channel",
+          "kind": "FORALL",
+          "domain": "all D1 parameters, all D2 public tuples and all admissible source-independent randomized batch channels",
+          "depends_on": []
+        },
+        {
+          "variable": "lower_public_tuple",
+          "kind": "FORALL",
+          "domain": "N>=6,1<=k<=floor((floor(N/2)-2)/1024)",
+          "depends_on": []
+        },
+        {
+          "variable": "common_channel",
+          "kind": "EXISTS",
+          "domain": "one globally per-input/per-seed hard-k T_(N,k), independent of actual source label, Q and predictor",
+          "depends_on": []
+        },
+        {
+          "variable": "full_observation_predictor",
+          "kind": "FORALL",
+          "domain": "every public Q and every common randomized full-Z predictor, unlimited computation/unrestricted probabilities allowed",
+          "depends_on": []
+        },
+        {
+          "variable": "same_source_witness",
+          "kind": "EXISTS",
+          "domain": "one t in the fixed public pair at u0=k/N witnessing both conditional and average lower bounds",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "N>=3,Q=2^b,b>=1. N>=6: m=floor(N/2),M=m-2,integer0<=k<=floor(M/1024); N3-5:k0 uniform. D1:0<u<1/4,1/4<=t<=3/4. C2:k>=1,u0=k/N,Delta1/640000,t+/-=1/2+/-Delta/2.",
+      "definitions_hash": "fc104078b9455bdd86586decd50902df6688400cc00f06e6b105699efefd0e02"
+    },
+    "input_hashes": [
+      "7d7b0a5414b61fbf2117c9b980d4e7580b0ea9311de07c9dc4a3faa1ef54aaa8"
+    ],
+    "environment_hash": "e06b4fda51f30cec2c2838a4716bda47c62904b300fb42ec231dfa3a904fd192",
+    "checker_id": "fact_submit",
+    "checker_version": "1",
+    "checker_result": "PASS",
+    "created_at": "2026-10-26T09:13:17Z",
+    "validity": "VALID"
+  },
+  "proof_file_sha256": "f10c16cca4efde271b33c3fa2de62244098912c110991b30ccd4e40489852e99",
+  "root_obligation_id": "881d17365a7019add4410343d568625dacae67d26aa17548bda2de7f9b860dbb",
+  "root_acceptance": null,
+  "relations": []
+}

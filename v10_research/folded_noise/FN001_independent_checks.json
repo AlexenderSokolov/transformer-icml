@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "collision_cases": 9396,
+  "exact_observation_law_cases": 360,
+  "retained_side_observations": "all four exact terminal pairs; fixed initial bits identical",
+  "finite_rounding_counterexample": {
+    "M": 3,
+    "P": 2,
+    "A": 1,
+    "fine_numerators": [
+      1,
+      2
+    ],
+    "sum": 3,
+    "required_sum": 4
+  },
+  "theorem_sha256": "38d716cdd2703ac3f53338c71f77b86728bf39d25fdd389a81d06d7b975d8399",
+  "limitations": "Exact finite diagnostics only; Hoeffding numerical checks are supplemental, not proof."
+}

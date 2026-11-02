@@ -1,0 +1,9 @@
+{
+  "unit": "RP001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "robust_scalar_packing/RP001_theorem.md",
+  "sha256": "6326dfc083b69a1915679ac01e4dbdad750057cf3c896a3cd0c5787cd504a136",
+  "review": "robust_scalar_packing/RP001_independent_review.md",
+  "time_utc": "2026-11-02T07:47:29.537571+00:00",
+  "scope": "Changed two-coordinate IID encoder, arbitrary initialization, pointwise pre-Q perturbation c/Q with clipping, dyadic Q sufficiently large depending fixed c. Robust risk O(M^-1/2+Q^-2); fixed width/bounds, O(log Q) primitive depth, uniform exact P=2h fractional evaluator and paid O(Q) rational nearest-segment decoder. Root read full original candidate and full final theorem/review, including periodic-shift denominator-divisibility strengthening. No generalJ>2, originalFGrobustness, internalfault, training or novelty claim. Post stage6."
+}

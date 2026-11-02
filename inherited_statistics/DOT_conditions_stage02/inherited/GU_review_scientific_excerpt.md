@@ -1,0 +1,5 @@
+# 继承 GU 原审查科学理由摘录
+
+以下为已提供独立报告的科学理由原文片段，原报告 critical_errors 与 gaps 均为空。原报告全文哈希见 COPY_MAP.json；运行身份、提交包控制字段及无关流程不复制。本次仅继承其既有判断，不进行新的全篇审查。该摘要提及的无关实现范围不成为本阶段前提。
+
+The row-stack event, risk transfers, absorption and Poisson bounds, finite-visit classification, all reachable periodic residues, irreducibility classification, counterexamples, K^4 occupancy estimate, computable modulus, explicit upper bounds and separate lower witnesses establish the stated conditional G1–G6, statistical part of G7, and U1/UC/U2. No critical errors, unresolved gaps, prohibited premise substitutions or dependency cycles were found. Acceptance assumes interface I for F exactly as stated and does not establish I for concrete Pi, its existence, implementation costs, resource optimality, or provenance/file-preservation assertions. 

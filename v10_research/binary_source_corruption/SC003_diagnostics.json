@@ -1,0 +1,729 @@
+{
+  "status": "PASS",
+  "exact_full_path_checks": 20184,
+  "exact_kernel_start_budget_scenarios": 48,
+  "scalar_domain_checks": 180,
+  "scenarios": [
+    {
+      "q": [
+        "1/3",
+        "2/5",
+        "1/4",
+        "3/7"
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "k": 1,
+      "worst_risk": "103523204321/294055272000",
+      "pathwise_bound_expectation": "28239490451/32672808000"
+    },
+    {
+      "q": [
+        "1/3",
+        "2/5",
+        "1/4",
+        "3/7"
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "k": 2,
+      "worst_risk": "103523204321/294055272000",
+      "pathwise_bound_expectation": "28239490451/32672808000"
+    },
+    {
+      "q": [
+        "1/3",
+        "2/5",
+        "1/4",
+        "3/7"
+      ],
+      "start": [
+        0,
+        1
+      ],
+      "k": 1,
+      "worst_risk": "135197047427/381182760000",
+      "pathwise_bound_expectation": "123017791877/127060920000"
+    },
+    {
+      "q": [
+        "1/3",
+        "2/5",
+        "1/4",
+        "3/7"
+      ],
+      "start": [
+        0,
+        1
+      ],
+      "k": 2,
+      "worst_risk": "135197047427/381182760000",
+      "pathwise_bound_expectation": "123017791877/127060920000"
+    },
+    {
+      "q": [
+        "1/3",
+        "2/5",
+        "1/4",
+        "3/7"
+      ],
+      "start": [
+        1,
+        0
+      ],
+      "k": 1,
+      "worst_risk": "137604059923/392073696000",
+      "pathwise_bound_expectation": "39505401073/43563744000"
+    },
+    {
+      "q": [
+        "1/3",
+        "2/5",
+        "1/4",
+        "3/7"
+      ],
+      "start": [
+        1,
+        0
+      ],
+      "k": 2,
+      "worst_risk": "137604059923/392073696000",
+      "pathwise_bound_expectation": "39505401073/43563744000"
+    },
+    {
+      "q": [
+        "1/3",
+        "2/5",
+        "1/4",
+        "3/7"
+      ],
+      "start": [
+        1,
+        1
+      ],
+      "k": 1,
+      "worst_risk": "188866883837/533655864000",
+      "pathwise_bound_expectation": "17943134903/19765032000"
+    },
+    {
+      "q": [
+        "1/3",
+        "2/5",
+        "1/4",
+        "3/7"
+      ],
+      "start": [
+        1,
+        1
+      ],
+      "k": 2,
+      "worst_risk": "188866883837/533655864000",
+      "pathwise_bound_expectation": "17943134903/19765032000"
+    },
+    {
+      "q": [
+        "0",
+        "1/3",
+        "1/5",
+        "1/2"
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "k": 1,
+      "worst_risk": "0",
+      "pathwise_bound_expectation": "0"
+    },
+    {
+      "q": [
+        "0",
+        "1/3",
+        "1/5",
+        "1/2"
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "k": 2,
+      "worst_risk": "0",
+      "pathwise_bound_expectation": "0"
+    },
+    {
+      "q": [
+        "0",
+        "1/3",
+        "1/5",
+        "1/2"
+      ],
+      "start": [
+        0,
+        1
+      ],
+      "k": 1,
+      "worst_risk": "27217/129600",
+      "pathwise_bound_expectation": "5209/8640"
+    },
+    {
+      "q": [
+        "0",
+        "1/3",
+        "1/5",
+        "1/2"
+      ],
+      "start": [
+        0,
+        1
+      ],
+      "k": 2,
+      "worst_risk": "27217/129600",
+      "pathwise_bound_expectation": "5209/8640"
+    },
+    {
+      "q": [
+        "0",
+        "1/3",
+        "1/5",
+        "1/2"
+      ],
+      "start": [
+        1,
+        0
+      ],
+      "k": 1,
+      "worst_risk": "24311/135000",
+      "pathwise_bound_expectation": "18391/45000"
+    },
+    {
+      "q": [
+        "0",
+        "1/3",
+        "1/5",
+        "1/2"
+      ],
+      "start": [
+        1,
+        0
+      ],
+      "k": 2,
+      "worst_risk": "24311/135000",
+      "pathwise_bound_expectation": "18391/45000"
+    },
+    {
+      "q": [
+        "0",
+        "1/3",
+        "1/5",
+        "1/2"
+      ],
+      "start": [
+        1,
+        1
+      ],
+      "k": 1,
+      "worst_risk": "93157/432000",
+      "pathwise_bound_expectation": "79937/144000"
+    },
+    {
+      "q": [
+        "0",
+        "1/3",
+        "1/5",
+        "1/2"
+      ],
+      "start": [
+        1,
+        1
+      ],
+      "k": 2,
+      "worst_risk": "93157/432000",
+      "pathwise_bound_expectation": "79937/144000"
+    },
+    {
+      "q": [
+        "2/7",
+        "1/3",
+        "2/5",
+        "0"
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "k": 1,
+      "worst_risk": "184397384/926485875",
+      "pathwise_bound_expectation": "438710372/926485875"
+    },
+    {
+      "q": [
+        "2/7",
+        "1/3",
+        "2/5",
+        "0"
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "k": 2,
+      "worst_risk": "184397384/926485875",
+      "pathwise_bound_expectation": "438710372/926485875"
+    },
+    {
+      "q": [
+        "2/7",
+        "1/3",
+        "2/5",
+        "0"
+      ],
+      "start": [
+        0,
+        1
+      ],
+      "k": 1,
+      "worst_risk": "7346936/56723625",
+      "pathwise_bound_expectation": "6542552/18907875"
+    },
+    {
+      "q": [
+        "2/7",
+        "1/3",
+        "2/5",
+        "0"
+      ],
+      "start": [
+        0,
+        1
+      ],
+      "k": 2,
+      "worst_risk": "7346936/56723625",
+      "pathwise_bound_expectation": "6542552/18907875"
+    },
+    {
+      "q": [
+        "2/7",
+        "1/3",
+        "2/5",
+        "0"
+      ],
+      "start": [
+        1,
+        0
+      ],
+      "k": 1,
+      "worst_risk": "12912384/73530625",
+      "pathwise_bound_expectation": "326238568/661775625"
+    },
+    {
+      "q": [
+        "2/7",
+        "1/3",
+        "2/5",
+        "0"
+      ],
+      "start": [
+        1,
+        0
+      ],
+      "k": 2,
+      "worst_risk": "12912384/73530625",
+      "pathwise_bound_expectation": "326238568/661775625"
+    },
+    {
+      "q": [
+        "2/7",
+        "1/3",
+        "2/5",
+        "0"
+      ],
+      "start": [
+        1,
+        1
+      ],
+      "k": 1,
+      "worst_risk": "0",
+      "pathwise_bound_expectation": "0"
+    },
+    {
+      "q": [
+        "2/7",
+        "1/3",
+        "2/5",
+        "0"
+      ],
+      "start": [
+        1,
+        1
+      ],
+      "k": 2,
+      "worst_risk": "0",
+      "pathwise_bound_expectation": "0"
+    },
+    {
+      "q": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "k": 1,
+      "worst_risk": "0",
+      "pathwise_bound_expectation": "0"
+    },
+    {
+      "q": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "k": 2,
+      "worst_risk": "0",
+      "pathwise_bound_expectation": "0"
+    },
+    {
+      "q": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "start": [
+        0,
+        1
+      ],
+      "k": 1,
+      "worst_risk": "0",
+      "pathwise_bound_expectation": "0"
+    },
+    {
+      "q": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "start": [
+        0,
+        1
+      ],
+      "k": 2,
+      "worst_risk": "0",
+      "pathwise_bound_expectation": "0"
+    },
+    {
+      "q": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "start": [
+        1,
+        0
+      ],
+      "k": 1,
+      "worst_risk": "0",
+      "pathwise_bound_expectation": "0"
+    },
+    {
+      "q": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "start": [
+        1,
+        0
+      ],
+      "k": 2,
+      "worst_risk": "0",
+      "pathwise_bound_expectation": "0"
+    },
+    {
+      "q": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "start": [
+        1,
+        1
+      ],
+      "k": 1,
+      "worst_risk": "0",
+      "pathwise_bound_expectation": "0"
+    },
+    {
+      "q": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "start": [
+        1,
+        1
+      ],
+      "k": 2,
+      "worst_risk": "0",
+      "pathwise_bound_expectation": "0"
+    },
+    {
+      "q": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "k": 1,
+      "worst_risk": "1",
+      "pathwise_bound_expectation": "1"
+    },
+    {
+      "q": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "k": 2,
+      "worst_risk": "1",
+      "pathwise_bound_expectation": "1"
+    },
+    {
+      "q": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "start": [
+        0,
+        1
+      ],
+      "k": 1,
+      "worst_risk": "1",
+      "pathwise_bound_expectation": "1"
+    },
+    {
+      "q": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "start": [
+        0,
+        1
+      ],
+      "k": 2,
+      "worst_risk": "1",
+      "pathwise_bound_expectation": "1"
+    },
+    {
+      "q": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "start": [
+        1,
+        0
+      ],
+      "k": 1,
+      "worst_risk": "1",
+      "pathwise_bound_expectation": "1"
+    },
+    {
+      "q": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "start": [
+        1,
+        0
+      ],
+      "k": 2,
+      "worst_risk": "1",
+      "pathwise_bound_expectation": "1"
+    },
+    {
+      "q": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "start": [
+        1,
+        1
+      ],
+      "k": 1,
+      "worst_risk": "1",
+      "pathwise_bound_expectation": "1"
+    },
+    {
+      "q": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "start": [
+        1,
+        1
+      ],
+      "k": 2,
+      "worst_risk": "1",
+      "pathwise_bound_expectation": "1"
+    },
+    {
+      "q": [
+        "1/3",
+        "1/3",
+        "2/3",
+        "2/3"
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "k": 1,
+      "worst_risk": "4/9",
+      "pathwise_bound_expectation": "700/729"
+    },
+    {
+      "q": [
+        "1/3",
+        "1/3",
+        "2/3",
+        "2/3"
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "k": 2,
+      "worst_risk": "4/9",
+      "pathwise_bound_expectation": "700/729"
+    },
+    {
+      "q": [
+        "1/3",
+        "1/3",
+        "2/3",
+        "2/3"
+      ],
+      "start": [
+        0,
+        1
+      ],
+      "k": 1,
+      "worst_risk": "4/9",
+      "pathwise_bound_expectation": "2380/2187"
+    },
+    {
+      "q": [
+        "1/3",
+        "1/3",
+        "2/3",
+        "2/3"
+      ],
+      "start": [
+        0,
+        1
+      ],
+      "k": 2,
+      "worst_risk": "4/9",
+      "pathwise_bound_expectation": "2380/2187"
+    },
+    {
+      "q": [
+        "1/3",
+        "1/3",
+        "2/3",
+        "2/3"
+      ],
+      "start": [
+        1,
+        0
+      ],
+      "k": 1,
+      "worst_risk": "4/9",
+      "pathwise_bound_expectation": "2180/2187"
+    },
+    {
+      "q": [
+        "1/3",
+        "1/3",
+        "2/3",
+        "2/3"
+      ],
+      "start": [
+        1,
+        0
+      ],
+      "k": 2,
+      "worst_risk": "4/9",
+      "pathwise_bound_expectation": "2180/2187"
+    },
+    {
+      "q": [
+        "1/3",
+        "1/3",
+        "2/3",
+        "2/3"
+      ],
+      "start": [
+        1,
+        1
+      ],
+      "k": 1,
+      "worst_risk": "4/9",
+      "pathwise_bound_expectation": "764/729"
+    },
+    {
+      "q": [
+        "1/3",
+        "1/3",
+        "2/3",
+        "2/3"
+      ],
+      "start": [
+        1,
+        1
+      ],
+      "k": 2,
+      "worst_risk": "4/9",
+      "pathwise_bound_expectation": "764/729"
+    }
+  ],
+  "limitation": "Finite diagnostics; constants/occupation theorems require written proof and accepted imports."
+}

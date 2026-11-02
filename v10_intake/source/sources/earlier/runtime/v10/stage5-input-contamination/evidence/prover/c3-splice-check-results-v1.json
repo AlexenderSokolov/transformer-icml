@@ -1,0 +1,26 @@
+{
+  "status": "PASS_NEW_SPLICE_CHECKS_ONLY",
+  "primitive_cases": 117,
+  "full_dense_gate_transitions": 278,
+  "emitted_coefficient_bits": 784,
+  "counts": {
+    "2": {
+      "multiply_gates": 86,
+      "divide_gates": 192,
+      "max_register": 27
+    },
+    "3": {
+      "multiply_gates": 168,
+      "divide_gates": 341,
+      "max_register": 35
+    },
+    "5": {
+      "multiply_gates": 416,
+      "divide_gates": 759,
+      "max_register": 51
+    }
+  },
+  "old_diagnostics_run": false,
+  "admission": false,
+  "program_sha256": "2ad0f46cdfc5f3645748d723cec27d33702beb22a91db9b7f7c75fe5b1898268"
+}

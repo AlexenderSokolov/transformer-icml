@@ -1,0 +1,190 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=21mm,headheight=15pt]{geometry}
+\usepackage{fontspec,amsmath,amssymb,booktabs,enumitem,fancyhdr,hyperref}
+\setmainfont{Noto Serif CJK SC}\setsansfont{Noto Sans CJK SC}
+\XeTeXlinebreaklocale "zh"\XeTeXlinebreakskip=0pt plus 1pt
+\hypersetup{hidelinks,pdfauthor={},pdftitle={首次符号刷新障碍与对数弱混合窗口}}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}\setlength{\emergencystretch}{3em}\linespread{1.08}
+\setlist[itemize]{leftmargin=1.25em,itemsep=3pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small 任意初始化二阶预测}\fancyhead[R]{\small 阶段四科学增补}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}
+\newcommand{\TV}{\operatorname{TV}}\newcommand{\E}{\mathbb E}\newcommand{\R}{R_{\mathrm{D2}}}\newcommand{\Rp}{R_{\mathrm{D2}}^+}
+\newcommand{\head}[2]{{\small\sffamily #1}\par\vspace{2pt}{\LARGE\bfseries #2}\par\vspace{5pt}}
+\newcommand{\entry}[1]{\vfill\noindent\small 证明入口\quad #1\normalsize}
+\begin{document}
+\head{当前阶段结论}{对数弱混合窗口现已匹配}
+本阶段汇集 S014、S015 \textbf{两个已接纳工作单元}，共 18 个局部证明单元。S014 证明首次符号刷新不足以恢复平稳统计率；S015 的不同星形族进一步证明
+\[
+ M=K^4,\quad\beta=\frac{\ln K}{4K^4},\quad K\to\infty:
+ \qquad \R(K,M,\beta)=\Theta(K^{-1/8}).
+\]
+\textbf{这取代所附 Stage03 归档的历史窗口开放叙述。} 旧原件、旧 PDF 和旧审查不改写。Stage03 此前未单独交付；其中原样保存的 Stage02 ZIP 才是已交付的更早阶段包。完整联合率仍未闭合。
+
+\textbf{统一实验。} 字母表 $A=\{0,\ldots,K-1\}$，齐次概率表 $\theta$ 在一条轨迹中固定，只作合法 shift：
+\[
+ P_\theta((a,b),(b,c))=\theta_{ab}(c).
+\]
+类 $D_K(2,\beta)$ 允许任意初始 pair 律 $\mu$，要求存在隐藏平稳律 $\pi$，对\textbf{所有} pair $s,t$ 满足
+\[
+ \pi P_\theta=\pi,\qquad P_\theta^2(s,t)\ge\beta\pi(t).
+\]
+允许零边、可约链、稀疏平稳律与奇异初始律。观察完整 $H=(X_1,\ldots,X_{M+2})$，令 $Y_j=(X_{j+1},X_{j+2})$；恰有 $M$ 次已观察 departure，目标是实际末行 $\theta_{Y_M}$。
+\[
+ L_B(\theta,\mu)=\E\TV(B(H),\theta_{Y_M}),\quad \TV(p,q)=\tfrac12\|p-q\|_1,
+\]
+\[
+ \R=\inf_B\sup_{D_K(2,\beta)}L_B,\qquad \Rp=\sup_{D_K(2,\beta)}L_{p^+}.
+\]
+共同算法只使用全历史、公开 $K,M,\beta$ 和源独立种子，不读隐藏参数、平稳律、刷新标签或未来。$\Rp$ 是固定原 add-one 的最坏风险，不是另一个 minimax。
+
+\textbf{统一记号。} $\delta=1-\beta$ 是标量；$\delta_z$ 是符号或状态 $z$ 上的点质量。令
+\[
+ a_h=\min\{1,\sqrt{K^3/(h+1)}\},\quad g_h=\min\{1,\sqrt{K^5/(h+1)}\},
+ \qquad u_g(h)=\min\{1,48\sqrt{K^5/(h+1)}\}.
+\]
+$a=a_M,g=g_M$。所有极限均只沿明确给出的整数序列；阶常数与源、算法无关。
+\entry{proofs/ 与 reviews/ 保留完整科学正文；精确来源与闭包见 SOURCES.md。}
+\newpage
+\head{S014 首次刷新统计障碍}{平稳符号边缘不等于平稳 pair}
+\textbf{不变的原规则。} 全部 $M$ 次 departure 的计数为
+\[
+ C_s(c)=\sum_{j=0}^{M-1}\mathbf1\{Y_j=s,X_{j+3}=c\},\quad
+ n_s=\sum_c C_s(c),\quad p_s^+(c)=\frac{C_s(c)+1}{n_s+K}.
+\]
+对 $K\ge2,M\ge1,0<\beta<1$，全状态 minorization 给出隐藏平稳符号边缘 $p$ 及合法残差表
+\[
+ \theta_s=\beta p+\delta Q_s.
+\]
+以独立 Bernoulli$(\beta)$ 币实现逐符号刷新，但不给算法币标签。若 $E_0$ 为 $M$ 次 departure 全无刷新，则
+\[
+ \E[\mathbf1_{E_0}\TV(p^+_{Y_M},\theta_{Y_M})]
+ \le\delta^M\min\{1,u_g(M)+\beta\}.
+\]
+这是\textbf{无刷新事件的贡献}，不是补事件或总风险上界；$p^+$ 仍使用所有原始计数，未换成后缀算法。
+
+\textbf{发射族反例。} 对 $K\ge14$ 与整数 $q\ge1$，令
+\[
+ m=\left\lfloor\frac{K-2}{4}\right\rfloor,\quad L=m^2,\quad q\ge1,\quad
+ N=2+qL,\quad M=N+1,\quad
+ \alpha=\min\!\left\{\tfrac12,\tfrac18\sqrt{\frac{m^3}{q+1}}\right\}.
+\]
+构造的全表满足原类，$p=\delta_0$。取 $\ell=K-1$，产品初始化 $\mu=\delta_\ell\otimes p$，每个共同全历史算法均有同一均匀符号先验平均下界
+\[
+ \operatorname{Av}_{\sigma}L_N(B;\theta^\sigma,\mu)
+ \ge\delta^{N+1}\alpha/8.
+\]
+$N$ 此处是 departure 数。改从 $(0,\ell)$ 出发，第一步必输出 0；\textbf{完整历史}恰为原产品实验加固定首符号。即时刷新事件 $\tau=0$ 的概率是 $\beta$，且
+\[
+ \operatorname{Av}_{\sigma}\E[\mathrm{loss}_M\mid\tau=0]\ge\delta^M\alpha/8,
+ \quad
+ \operatorname{Av}_{\sigma}\E[\mathbf1_{\{\tau=0\}}\mathrm{loss}_M]
+ \ge\beta\delta^M\alpha/8.
+\]
+在 $q=\lfloor K^4/L\rfloor,\ \beta=\ln K/(4N)$ 的对齐序列上，条件下界为 $\Theta(K^{-1/4})$，而 $a_N,a_M\sim K^{-1/2}$、$\sqrt\beta=o(K^{-1/2})$，故统一恢复到 $O(a_h+\sqrt\beta)$ 不可能。
+
+\textbf{必须保留的限制。} 此族 $B_0=\delta_0$ 的 aggregate 为 $\beta\delta^M\le\sqrt\beta$，覆盖整个该族；其 total-scale 比较只在上述序列 $g_M=1$ 时成立。S014 因而\textbf{没有用自身族否定 aggregate 提议}。S015 换族后得到反证，两者兼容。
+\entry{S014 Lemmas 1--4、Propositions 5--7、Corollary 8、Proposition 9；原审查 unit\_009 范围限定。}
+\newpage
+\head{S015 有限参数定理}{安全零输出相位保留硬观察}
+对整数 $K\ge13,M\ge1$ 与 $0<\beta<1$，令
+\[
+ m=\left\lfloor\frac{K-1}{4}\right\rfloor,\quad L=2m,\quad
+ q=\lfloor M/L\rfloor,\quad d=M-qL,\quad k=(2-d)\bmod L,
+\]
+\[
+ \alpha=\min\!\left\{\tfrac12,\tfrac18\sqrt{\frac{m^3}{q+1}}\right\}.
+\]
+以 0 为中心，星形周期字为 $(1,0,2,0,\ldots,m,0)$；将五个相邻相位换成两次均匀上下文抽样、一次带符号 W 标签及两次固定返回。全部剩余 pair 显式填默认行，因此仍是原字母表上的齐次合法二阶表，不增加外部时钟状态。
+
+\textbf{精确脆弱相位与计数。} 每周期仅
+\[
+ V_{\rm phase}=\{0,1,2,4\}\cup\{6,8,\ldots,L-2\}
+\]
+是脆弱相位，共 $m+1$ 个；其余 $m-1$ 个安全相位的输出本来就是 0。定义公开确定量
+\[
+ r_M=\sum_{j=0}^{d-1}\mathbf1\{(k+j)\bmod L\in V_{\rm phase}\},
+ \qquad H_M=q(m+1)+r_M.
+\]
+空和为零，且 $|H_M-M(m+1)/L|\le L$。\textbf{有限指数始终保留精确 $H_M$}，不把计数误差吞进常数。
+
+\textbf{全状态与全数据桥梁。} 星形族的唯一平稳律是 $\delta_{(0,0)}$，所有起点的两步到 00 质量至少 $\beta$，最大系数恰为 $\beta$。每个余数选择公开且符号无关的初始律。$G$ 为所有计划脆弱时刻均无刷新，有 $P(G)=\delta^{H_M}$。安全时刻可任意刷新而不改变\textbf{任何}已观察符号；条件于 $G$，全历史与 $q$ 个标签三元组加实际末上下文有公共双射。
+
+完整条件实验的相邻符号 KL 至多 $1/8$，故检验 TV 至多 $1/4$。新目标的坐标对比仍需乘 $\delta$。因此对每个共同随机算法，单一均匀先验给出
+\[
+ \operatorname{Av}_{\sigma} L_B\ge\delta^{H_M+1}\alpha/8,
+ \qquad \R\ge\delta^{H_M+1}\alpha/8.
+\]
+同时
+\[
+ \alpha/8\ge2^{-12}\min\{1,\sqrt{K^4/(M+1)}\}.
+\]
+常量预测 $B_0=\delta_0$ 在该族的风险\textbf{精确等于} $\delta^{H_M+1}$；这是 family-only upper，不是全类上界。首个失败的脆弱币立即使实际目标成为默认行，即使它发生在最后一次已观察 departure。
+\entry{S015 Lemma 1、Invariant 2、Lemmas 3--5、Propositions 6--7；完整 m=3、M=1,2 与零标签检查保留。}
+\newpage
+\head{S015 指定对数窗口}{新下界与公开后缀上界相配}
+固定精确序列 $M=K^4,\ \beta=\ln K/(4K^4)$。星形族给出
+\[
+ \alpha\longrightarrow\frac1{64\sqrt2},\qquad
+ \frac{\delta^{H_M+1}}{K^{-1/8}}\longrightarrow1,
+ \qquad
+ \frac{\delta^{H_M+1}\alpha/8}{K^{-1/8}}\longrightarrow\frac1{512\sqrt2}.
+\]
+证明控制的指数误差为
+\[
+ \left|\ln\delta^{H_M+1}+\frac{\ln K}{8}\right|
+ \le\frac{\ln K}{8m}+\beta(L+1)+\frac{(M+1)\beta^2}{2\delta}\longrightarrow0.
+\]
+这是新族的下界证书常数，不是精确 minimax 常数。
+
+\textbf{继承的算法上界。} 令 $u_s(\ell)=\min\{1,48\sqrt{K^3/(\ell+1)}\}$，$h_b=\delta^{\lfloor b/2\rfloor}$。S011 给出的后缀证书是
+\[
+ U_{\rm suf}=\min_{0\le b\le M-1}
+ \min\{u_g(M-b),\ u_s(M-b)+h_bu_g(M-b)\}.
+\]
+整数 $b$ 只依赖公开参数。S011 的总证书 $U$ 是原规则、后缀规则与汇总规则三者的公开确定性最小选择，不读未知真风险。完整公式见 S015 式 (3)。S012 已证明并由 S015 重新检查
+\[
+ U/K^{-1/8}\longrightarrow1.
+\]
+具体取公开后缀长度 $\ell_* =\lfloor K^{7/2}\rfloor$，$b_*=M-\ell_*$，有平稳项至多 $48K^{-1/4}=o(K^{-1/8})$、$h_{b_*}\sim K^{-1/8}$。所有允许后缀的证书又至少为 $h_{M-1}\sim K^{-1/8}$，因而优化也有该比例极限。
+
+结合真正的全类上界和新下界，得到
+\[
+ \frac1{512\sqrt2}\le\liminf_{K\to\infty}K^{1/8}\R
+ \le\limsup_{K\to\infty}K^{1/8}\R\le1.
+\]
+故 $\R=\Theta(K^{-1/8})$。上下常数不同，\textbf{不声称极限存在或精确常数已知}。
+
+\textbf{不要混用算法或族。} 此窗口的既有原 add-one 证书 $U_+$ 最终为 1；这只说明证书未匹配，既不是风险等于 1，也不是原算法不可能匹配的证明。S012 旧全非零时钟的 family-only 风险为 $\delta^{M+1}\sim K^{-1/4}$；本星形族只有约一半相位脆弱，风险为 $\delta^{H_M+1}\sim K^{-1/8}$。不同族的上界不互相限制。
+\entry{S015 Proposition 8；附入早期归档的 S011 Theorem 与 S012 Proposition 9。}
+\newpage
+\head{S015 同族反证与交付边界}{两项明确上界提议被否定}
+令 $C_{\rm ref}$ 为 $M$ 个\textbf{典范符号刷新币}中至少一个为 1。该族 $p=\delta_0$，每行都是 $\theta_s=\beta p+\delta Q_s$。币标签仍潜在。全币为零是 $G$ 的子事件，故
+\[
+ P(G\cap C_{\rm ref})=\delta^{H_M}-\delta^M.
+\]
+若 $H_M=M$，该事件为空，直接使用零下界而不作零概率条件化。否则，事件只要求某个安全币为 1，\textbf{完整硬观察的条件分布仍不改变}。于是
+\[
+ \operatorname{Av}_{\sigma}\E[\mathrm{loss}\,\mathbf1_{C_{\rm ref}}]
+ \ge\frac{\alpha}{8}\left(\delta^{H_M+1}-\delta^{M+1}\right).
+\]
+$B_0=\delta_0$ 在该族的相应贡献正好等于括号。这里是无条件指示函数加权风险，\textbf{不是除以刷新概率后的条件风险}。
+
+在前页精确序列上，括号乘 $\alpha/8$ 后为
+$[1/(512\sqrt2)+o(1)]K^{-1/8}$，而
+\[
+ a\sim K^{-1/2},\qquad g=1,\qquad \sqrt\beta=o(a),\qquad
+ \delta^M\sim K^{-1/4}.
+\]
+所以不存在统一有限常数及共同算法族，能对所有允许源保证
+\[
+ \E[\mathrm{loss}\,\mathbf1_{C_{\rm ref}}]\le C(a+\sqrt\beta),
+\]
+也不存在全类总风险上界阶 $O(a+\delta^M g+\sqrt\beta)$。下界与两个提议的比值分别按 $K^{3/8}$、$K^{1/8}$ 发散。这否定\textbf{两项具体提议}，不是所有统计上界方法。
+
+\textbf{时序与证据。} S014 的发射族只否定统一条件恢复；其自身未否定 weighted 提议。S015 的不同星形族给出新反证，并更新 Stage03 的历史窗口结论；不撤销旧证明。两个原版本均经独立上下文 LLM 审查及接纳；不是形式验证、外部同行评审或首创认证。原有限检查的事实、范围及精度保留，本次编排未重跑。
+
+\textbf{完整闭包。} 新证明／审查位于 proofs/、reviews/；SOURCES.md、BOUNDARIES.md 和 COPY\_MAP.json 给出接口、符号和字节 provenance。所附 Stage03 早期审查 ZIP 保持原字节，内含已交付的 Stage02 ZIP；更早的 MM5、L1MAX 和 GU 科学依赖随其闭合。
+
+\textbf{仍未证明。} 全联合 $(K,M,\beta)$ minimax 率，以及本窗口原全历史 add-one 的匹配上界。后续问题必须继续区分全类与子族、原算法与公共选择器，不能复用已否定的提议。
+
+\texttt{END\_DOT\_STAGE\_OUTPUT}
+\end{document}

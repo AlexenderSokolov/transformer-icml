@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "arithmetic": "Python Fraction exact rational",
+  "scope": "Finite geometry diagnostics only; independent of author implementation",
+  "cases": [
+    {
+      "N": 2,
+      "J": 2,
+      "edges": 4,
+      "phase_checks": 40,
+      "nonincident_pairs": 3,
+      "local_inverse_checks": 24,
+      "minimum_speed": "12/5",
+      "passed": true
+    },
+    {
+      "N": 2,
+      "J": 3,
+      "edges": 10,
+      "phase_checks": 80,
+      "nonincident_pairs": 36,
+      "local_inverse_checks": 86,
+      "minimum_speed": "16/3",
+      "passed": true
+    },
+    {
+      "N": 2,
+      "J": 4,
+      "edges": 22,
+      "phase_checks": 120,
+      "nonincident_pairs": 210,
+      "local_inverse_checks": 210,
+      "minimum_speed": "192/17",
+      "passed": true
+    },
+    {
+      "N": 2,
+      "J": 5,
+      "edges": 46,
+      "phase_checks": 160,
+      "nonincident_pairs": 990,
+      "local_inverse_checks": 458,
+      "minimum_speed": "256/11",
+      "passed": true
+    },
+    {
+      "N": 4,
+      "J": 2,
+      "edges": 8,
+      "phase_checks": 80,
+      "nonincident_pairs": 21,
+      "local_inverse_checks": 28,
+      "minimum_speed": "40/9",
+      "passed": true
+    },
+    {
+      "N": 4,
+      "J": 3,
+      "edges": 36,
+      "phase_checks": 160,
+      "nonincident_pairs": 595,
+      "local_inverse_checks": 184,
+      "minimum_speed": "5440/297",
+      "passed": true
+    },
+    {
+      "N": 4,
+      "J": 4,
+      "edges": 148,
+      "phase_checks": 240,
+      "nonincident_pairs": 10731,
+      "local_inverse_checks": 808,
+      "minimum_speed": "2828800/38313",
+      "passed": true
+    },
+    {
+      "N": 8,
+      "J": 2,
+      "edges": 16,
+      "phase_checks": 160,
+      "nonincident_pairs": 105,
+      "local_inverse_checks": 60,
+      "minimum_speed": "144/17",
+      "passed": true
+    },
+    {
+      "N": 8,
+      "J": 3,
+      "edges": 136,
+      "phase_checks": 320,
+      "nonincident_pairs": 9045,
+      "local_inverse_checks": 628,
+      "minimum_speed": "49920/731",
+      "passed": true
+    },
+    {
+      "N": 16,
+      "J": 2,
+      "edges": 32,
+      "phase_checks": 320,
+      "nonincident_pairs": 465,
+      "local_inverse_checks": 124,
+      "minimum_speed": "544/33",
+      "passed": true
+    }
+  ]
+}

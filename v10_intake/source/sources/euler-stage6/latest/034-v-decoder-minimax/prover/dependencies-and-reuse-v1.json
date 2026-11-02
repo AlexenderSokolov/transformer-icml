@@ -1,0 +1,47 @@
+{
+  "obligation_id": "7e9edb773c2453ce6ca6ab0962158682e758dd98a2e5feefd614a6b6e185c6f8",
+  "direct_predecessors": [
+    {
+      "fact_id": "fef8372728290b45",
+      "evidence_id": "e565455ae8465695ccf1f83e7c7f203d29c2f5bc4e49eb4b5eed822057d94505",
+      "path": "fact_graph/facts/fef8372728290b45.md",
+      "sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025"
+    },
+    {
+      "fact_id": "946d42d5bf502eb4",
+      "evidence_id": "aa23c442ca1006c6ac0b12379f64a0fa500fbbd6a2e41c798b7a4de3952baa82",
+      "path": "fact_graph/facts/946d42d5bf502eb4.md",
+      "sha256": "fe18f4a413fef5da14c5f361aef47a8c5addceac1a3a58d73366ad20f16d8e93"
+    },
+    {
+      "fact_id": "372cbc90282df2cd",
+      "evidence_id": "1a61c7931a3b8ee13da63e8e24e758106308055d829d8e5e60195fbca96d0cf0",
+      "path": "fact_graph/facts/372cbc90282df2cd.md",
+      "sha256": "e7295c4903277b5d403a453f429a62a60a5dc8ca6a6b04e9917646088fb39476"
+    }
+  ],
+  "uses": {
+    "fef8372728290b45": "SRC statement S1-S4/proof sections 2,6-8,9-10: exact clean V, retained-bit interface and lifecycle, original ordered suffix, full costs",
+    "946d42d5bf502eb4": "MM5 for the common full-history predictor composed from any fixed cut decoder and clean SRC prefix, with identity fault",
+    "372cbc90282df2cd": "032 UPPER in the identical final-V fault domain; sections 2-3 finite Euler word, stay circle and T<1 parameter bounds"
+  },
+  "new_self_contained_sections": [
+    "random-label fixed homogeneous table and full path probability",
+    "exact side-information simulation",
+    "guarded erasure of all K actual coordinates",
+    "Beta integrals and bin risk including J=0 and short tail",
+    "finite harmonic/log comparison uniform in every decoder",
+    "capped DEC-MATCH and DEC-SEQUENCE"
+  ],
+  "not_direct": [
+    "016 (only transitive through 032 upper)",
+    "015",
+    "030",
+    "031",
+    "033",
+    "Dot source results"
+  ],
+  "finite_diagnostics_are_premises": false,
+  "gpu_used": 0,
+  "gpu_audit_reserved": 0
+}

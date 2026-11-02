@@ -1,0 +1,318 @@
+{
+  "reports": [
+    {
+      "name": "PACKAGE_DIAGNOSTIC_RERUN_INITIAL.json",
+      "original_sha256": "3459e38f59a1ef80dd44715df74235c92e306ae690b38ff404190ca3bfa94e80",
+      "export_sha256": "00ec066528b78a8b2b4f67bb777130fd6241cd3c3c071d6289b9f3e815bacec3",
+      "original_bytes": 129607,
+      "export_bytes": 129616,
+      "edits": [
+        {
+          "line": 3,
+          "source_byte_start": 22,
+          "source_byte_end": 71,
+          "original_line_sha256": "008f8d6e9633b19bea07749c11ce2057b5ca3954b5438ed7936cf7f42eb0d2e4",
+          "export_line_sha256": "9114c91b21786db30581c2609c403ceafb3cf6996aef32adb0a516379c953b88",
+          "export_line": "  \"restore\": \"DISPOSABLE_PACKAGE_ONLY_RESTORATION\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 1240,
+          "source_byte_start": 125248,
+          "source_byte_end": 125741,
+          "original_line_sha256": "dae6be7aa435b8824a4dfa8c62cd6d51c1fc2fd0a7d06cad3bcec0c3e4c956cf",
+          "export_line_sha256": "0b8e391ecce3c03fa27d2b97aa054a499d9a978e9937b959892ab9f2bffdb391",
+          "export_line": "      \"stderr\": \"Traceback (most recent call last):\\n  File \\\"DISPOSABLE_PACKAGE_ONLY_RESTORATION/run_85/v10_research/stage8_science_audit/independent_exact_checks.py\\\", line 194, in <module>\\n    check(1830<2**11 and 2*(8192+1)**2*32*4 <2**34,'lower_and_upper_constant_slack')\\n  File \\\"DISPOSABLE_PACKAGE_ONLY_RESTORATION/run_85/v10_research/stage8_science_audit/independent_exact_checks.py\\\", line 16, in check\\n    assert ok,key\\n           ^^\\nAssertionError: lower_and_upper_constant_slack\\n\"\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        }
+      ]
+    },
+    {
+      "name": "PACKAGE_DIAGNOSTIC_RERUN_PRE_AUDIT_BINDING_FIX.json",
+      "original_sha256": "686a4c1c700e850b90d50cdfac674ff63289145d4d7f8378789eaafce665d3da",
+      "export_sha256": "0871412b7c5a5acf2d7e7e9b0cd41cc683f98af5ec20c164b790baeb39f122c3",
+      "original_bytes": 141140,
+      "export_bytes": 141149,
+      "edits": [
+        {
+          "line": 3,
+          "source_byte_start": 22,
+          "source_byte_end": 71,
+          "original_line_sha256": "98739b93cf2f0be466b9a83452202a007a18f45db357bcc50492f584ddf71483",
+          "export_line_sha256": "9114c91b21786db30581c2609c403ceafb3cf6996aef32adb0a516379c953b88",
+          "export_line": "  \"restore\": \"DISPOSABLE_PACKAGE_ONLY_RESTORATION\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 1415,
+          "source_byte_start": 131844,
+          "source_byte_end": 132386,
+          "original_line_sha256": "7733ef2651a3de4d58ed340179e430bd4b8b019539ad5a4c35a85805e0f07eea",
+          "export_line_sha256": "1dc39bab8386b85bd287bcec02c6e24cc59dd1e305b0e1e73f0540e45d9469ad",
+          "export_line": "      \"stderr\": \"Traceback (most recent call last):\\n  File \\\"DISPOSABLE_PACKAGE_ONLY_RESTORATION/run_85/v10_research/stage8_science_audit/diagnostic_revisions/independent_exact_checks.v1.py\\\", line 194, in <module>\\n    check(1830<2**11 and 2*(8192+1)**2*32*4 <2**34,'lower_and_upper_constant_slack')\\n  File \\\"DISPOSABLE_PACKAGE_ONLY_RESTORATION/run_85/v10_research/stage8_science_audit/diagnostic_revisions/independent_exact_checks.v1.py\\\", line 16, in check\\n    assert ok,key\\n           ^^\\nAssertionError: lower_and_upper_constant_slack\\n\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        }
+      ]
+    },
+    {
+      "name": "EXACT_AUDIT_RECONCILIATION_REGRESSION.json",
+      "original_sha256": "d3a9279e0782567eeb2ca4db073382c64b9adf08663584fabdf551bdbf9b47a2",
+      "export_sha256": "d3a9279e0782567eeb2ca4db073382c64b9adf08663584fabdf551bdbf9b47a2",
+      "original_bytes": 4583,
+      "export_bytes": 4583,
+      "edits": []
+    },
+    {
+      "name": "REPLAY_HISTORY.json",
+      "original_sha256": "4cc8e361b42ac59149deb57bf47f578aa3414f0763d4f112b4f690bc469c5a34",
+      "export_sha256": "4cc8e361b42ac59149deb57bf47f578aa3414f0763d4f112b4f690bc469c5a34",
+      "original_bytes": 3292,
+      "export_bytes": 3292,
+      "edits": []
+    },
+    {
+      "name": "PACKAGE_DIAGNOSTIC_RERUN.json",
+      "original_sha256": "0c0b95a9b2e76573619a5c550207bd65c70667a0a0130d2266b48269edb62cdc",
+      "export_sha256": "75fd86ca0d990d51be047dd1c2f92b19de0371a77e7263e07ad3e02f3cd46b85",
+      "original_bytes": 144304,
+      "export_bytes": 144313,
+      "edits": [
+        {
+          "line": 3,
+          "source_byte_start": 22,
+          "source_byte_end": 71,
+          "original_line_sha256": "625e176ee3f85bc9f24ad8a16329fcf442220d9f3b8bb5717229c5efe537c9d7",
+          "export_line_sha256": "9114c91b21786db30581c2609c403ceafb3cf6996aef32adb0a516379c953b88",
+          "export_line": "  \"restore\": \"DISPOSABLE_PACKAGE_ONLY_RESTORATION\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 1487,
+          "source_byte_start": 135924,
+          "source_byte_end": 136466,
+          "original_line_sha256": "a2b4b05b4492c1755f246e8c91622687b480f78dd99acb26eed1737ef5bc2871",
+          "export_line_sha256": "1dc39bab8386b85bd287bcec02c6e24cc59dd1e305b0e1e73f0540e45d9469ad",
+          "export_line": "      \"stderr\": \"Traceback (most recent call last):\\n  File \\\"DISPOSABLE_PACKAGE_ONLY_RESTORATION/run_85/v10_research/stage8_science_audit/diagnostic_revisions/independent_exact_checks.v1.py\\\", line 194, in <module>\\n    check(1830<2**11 and 2*(8192+1)**2*32*4 <2**34,'lower_and_upper_constant_slack')\\n  File \\\"DISPOSABLE_PACKAGE_ONLY_RESTORATION/run_85/v10_research/stage8_science_audit/diagnostic_revisions/independent_exact_checks.v1.py\\\", line 16, in check\\n    assert ok,key\\n           ^^\\nAssertionError: lower_and_upper_constant_slack\\n\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        }
+      ]
+    },
+    {
+      "name": "PACKAGE_REBUILD.json",
+      "original_sha256": "dcc3f5a54ae3978d326291ee9902b9d0f5c61f39e7bcb3f357d4e17cd7e96ac8",
+      "export_sha256": "24a8613d16fa086101c9cec94877d9c1de37ec5cdf8b093116c4ca4ed071d8e6",
+      "original_bytes": 300792,
+      "export_bytes": 300929,
+      "edits": [
+        {
+          "line": 3,
+          "source_byte_start": 22,
+          "source_byte_end": 64,
+          "original_line_sha256": "5d8206fee31761ff12c7eea001ceadca853e44d5ca5192ea728353c08d266498",
+          "export_line_sha256": "da39057fc12e69504cd1a7295deeee614a662c05b5885acf5a5877062062bd41",
+          "export_line": "  \"work\": \"DISPOSABLE_PACKAGE_ONLY_RESTORATION\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 9,
+          "source_byte_start": 287,
+          "source_byte_end": 419,
+          "original_line_sha256": "0f36013d06b095bf438e5b039154ea7ab8a8cbe4c09e992c28fa420a7de2c2f4",
+          "export_line_sha256": "65e5eb27f3e832faa6d4f693cb3af397e9f387c5d981f0b601112639393f446f",
+          "export_line": "        \"WORKSPACE_ROOT/v10_research/delivery_stage8/DOT_v10_source_corruption_stage8_20261102/verify_package.py\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 11,
+          "source_byte_start": 440,
+          "source_byte_end": 488,
+          "original_line_sha256": "11f5a6327ff400895b09e7a38391d26c7151ec37807d5ce8d77d1e24a1acbeba",
+          "export_line_sha256": "0a473bcd44011078c7c0dfa1cad649656765f9773ad9162dd1fd8ff7ab54e93f",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/pristine\"\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 14,
+          "source_byte_start": 520,
+          "source_byte_end": 857,
+          "original_line_sha256": "22f3e9daa2e77aafc6638a8e117dc42210cd57bcccbd6b262db368333ce896d7",
+          "export_line_sha256": "6c0854b0efcb4b1f0ed9582741d565489cee14f06c8ed6a5ae991b1705889338",
+          "export_line": "      \"stdout\": \"{\\\"status\\\": \\\"PASS\\\", \\\"payload_files\\\": 179, \\\"restored_paths\\\": 1138, \\\"structured_bindings\\\": 535, \\\"new_accepted_units\\\": [\\\"SC001\\\", \\\"SC002\\\", \\\"SC003\\\", \\\"BT001\\\", \\\"BT002\\\", \\\"EP001\\\"], \\\"scientific_freeze_utc\\\": \\\"2026-11-02T09:22:25.495805+00:00\\\", \\\"restore\\\": \\\"DISPOSABLE_PACKAGE_ONLY_RESTORATION/pristine\\\"}\\n\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 20,
+          "source_byte_start": 924,
+          "source_byte_end": 1022,
+          "original_line_sha256": "bdc7a63612ca1e34995c15fc7fdb5c971c4e7f7856a5e6ad0eb022f5d6010177",
+          "export_line_sha256": "b5d611c65ff7eaf237d6ed6e2d0a6b3817fc9fddc6f1edb87c131a756644e649",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/rebuild/v10_research/source_corruption_manuscript/build.sh\"\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 29,
+          "source_byte_start": 1210,
+          "source_byte_end": 1309,
+          "original_line_sha256": "f764bfcd56964f8e9b74c9a41e2e0e4e3ed33edaafcb48ebcca118e34381c70d",
+          "export_line_sha256": "12b202791cceab05455e1649a68d1700d9c63c6b42d7b22994976759a42f9167",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/rebuild/v10_research/source_corruption_guide/build_guide.py\"\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 32,
+          "source_byte_start": 1341,
+          "source_byte_end": 1528,
+          "original_line_sha256": "94e89af73a5de4ebb238de40cb100c958ce37fc0dfb08ef11c74183745b226af",
+          "export_line_sha256": "edf13e247c5fed5f69dcf24a7ab0aa782accae9cc21dcfdc2334160a4404d6db",
+          "export_line": "      \"stdout\": \"{\\\"output\\\": \\\"DISPOSABLE_PACKAGE_ONLY_RESTORATION/rebuild/v10_research/source_corruption_guide/Chinese-stage8-guide.docx\\\", \\\"native_equations\\\": 93, \\\"logical_pages\\\": 9}\\n\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 39,
+          "source_byte_start": 1735,
+          "source_byte_end": 1846,
+          "original_line_sha256": "23d0a7e66c1454a8b250d332191afc5d109ca1ebd5106dcf109c3166e00fe0ea",
+          "export_line_sha256": "2b5ced80476c1ae51a70e8574f37c0500144819cafd4fff81b99c7a5e9fcd20c",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/rebuild/v10_research/source_corruption_guide/Chinese-stage8-guide.docx\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 41,
+          "source_byte_start": 1870,
+          "source_byte_end": 1962,
+          "original_line_sha256": "b553ebd021f54246d27f41e51c60c0a875180f9d8d1ae203824bf79b27f5a41f",
+          "export_line_sha256": "1c6c36fde3b9648badd417c2cdb2e33b9b8029b552061b9776ad4eaf59233333",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/rebuild/v10_research/source_corruption_guide/render\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 45,
+          "source_byte_start": 2015,
+          "source_byte_end": 2135,
+          "original_line_sha256": "6f9a07d3fdaa476633120dc215c1fdcf16e7e465aed5bda81af74d7e9990b17a",
+          "export_line_sha256": "eb2258451ffe5b71930a57a347d972d2a15037f493fd1f18158abbfa425f1074",
+          "export_line": "      \"stdout\": \"Pages rendered to DISPOSABLE_PACKAGE_ONLY_RESTORATION/rebuild/v10_research/source_corruption_guide/render\\n\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 54,
+          "source_byte_start": 2250,
+          "source_byte_end": 2368,
+          "original_line_sha256": "84cf2bb385af44712f77413e28fc29fc191b74b0447b213724e32c71af89f825",
+          "export_line_sha256": "c0805e6c5df32367eb5cc0615adfadcbebef08a793ecb0f93d46c8bb21d0e3d1",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/pristine/v10_research/source_corruption_manuscript/corrupted_trajectories.pdf\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 55,
+          "source_byte_start": 2368,
+          "source_byte_end": 2429,
+          "original_line_sha256": "0be34e91a860023838910d890145cfe0afc076d7983e029611ff852334154f2f",
+          "export_line_sha256": "edd1c5a32cf459030fc013ab547e74532cfc628e232095228d428722a56e7f00",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/english-original/page\"\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 67,
+          "source_byte_start": 2596,
+          "source_byte_end": 2713,
+          "original_line_sha256": "880ea0e28548f6ad9c70a07ca0d66f0922636b89ec80d4e55d5e9b38291da6da",
+          "export_line_sha256": "d16d48c96472d1ac3edc50b4e61675eeeed674313cdda0d1d440d9b1dc6bd6d5",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/rebuild/v10_research/source_corruption_manuscript/corrupted_trajectories.pdf\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 68,
+          "source_byte_start": 2713,
+          "source_byte_end": 2773,
+          "original_line_sha256": "36e0ccc7a135ffeee1c2874d41387dbcd9c871ac4acf18be88cb460b1e38257f",
+          "export_line_sha256": "0eee19647a780f07666d685496e0bd88831c03503833f83e8e010fa191cb45ec",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/english-rebuilt/page\"\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 78,
+          "source_byte_start": 2916,
+          "source_byte_end": 3034,
+          "original_line_sha256": "84cf2bb385af44712f77413e28fc29fc191b74b0447b213724e32c71af89f825",
+          "export_line_sha256": "c0805e6c5df32367eb5cc0615adfadcbebef08a793ecb0f93d46c8bb21d0e3d1",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/pristine/v10_research/source_corruption_manuscript/corrupted_trajectories.pdf\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 89,
+          "source_byte_start": 105138,
+          "source_byte_end": 105255,
+          "original_line_sha256": "880ea0e28548f6ad9c70a07ca0d66f0922636b89ec80d4e55d5e9b38291da6da",
+          "export_line_sha256": "d16d48c96472d1ac3edc50b4e61675eeeed674313cdda0d1d440d9b1dc6bd6d5",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/rebuild/v10_research/source_corruption_manuscript/corrupted_trajectories.pdf\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 102,
+          "source_byte_start": 207383,
+          "source_byte_end": 207494,
+          "original_line_sha256": "86248a715b6f050b4f854c362548768a051a1f0bf79ece59b10cfb94308d775f",
+          "export_line_sha256": "84890b8a441bde840e5a80f5390236ab98da7db2e5415d877123c092e8f2a781",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/pristine/v10_research/source_corruption_guide/Chinese-stage8-guide.pdf\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 103,
+          "source_byte_start": 207494,
+          "source_byte_end": 207555,
+          "original_line_sha256": "f106aa95a4d4eb7a3efd014ec2b50de294a33c1b340d869a6ff75161a2691f40",
+          "export_line_sha256": "97b48472532e793815e23bfb5e6a56b243240034bc1ecba3d83a4363e9eb8811",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/chinese-original/page\"\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 115,
+          "source_byte_start": 207722,
+          "source_byte_end": 207832,
+          "original_line_sha256": "c8b0606c22d2858c7520141e7a1bc3b5639cedf7aa17976b5be3c7391224aff1",
+          "export_line_sha256": "f02e2a8a553b5518e0f02d73aa2d4266a5a702d2181f4c2851dc01826df9df04",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/rebuild/v10_research/source_corruption_guide/Chinese-stage8-guide.pdf\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 116,
+          "source_byte_start": 207832,
+          "source_byte_end": 207892,
+          "original_line_sha256": "2d6049457794601b857433d97ee78cbe80bec9e5ea3866069477790fac900217",
+          "export_line_sha256": "04a6b6b99ae836ce001055c19b01a2655e5da6cd7440cd17de50ed646b90488b",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/chinese-rebuilt/page\"\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 126,
+          "source_byte_start": 208035,
+          "source_byte_end": 208146,
+          "original_line_sha256": "86248a715b6f050b4f854c362548768a051a1f0bf79ece59b10cfb94308d775f",
+          "export_line_sha256": "84890b8a441bde840e5a80f5390236ab98da7db2e5415d877123c092e8f2a781",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/pristine/v10_research/source_corruption_guide/Chinese-stage8-guide.pdf\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 137,
+          "source_byte_start": 247403,
+          "source_byte_end": 247513,
+          "original_line_sha256": "c8b0606c22d2858c7520141e7a1bc3b5639cedf7aa17976b5be3c7391224aff1",
+          "export_line_sha256": "f02e2a8a553b5518e0f02d73aa2d4266a5a702d2181f4c2851dc01826df9df04",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/rebuild/v10_research/source_corruption_guide/Chinese-stage8-guide.pdf\",\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        },
+        {
+          "line": 147,
+          "source_byte_start": 286815,
+          "source_byte_end": 286915,
+          "original_line_sha256": "085005e7df40e0e8f03163e9d6115c762f9392bfe988423d4e18ce9a2927ee8f",
+          "export_line_sha256": "5207ce7b5009529e18663d661b902a57e49274c7df0f3264eed1485f06184bd0",
+          "export_line": "        \"DISPOSABLE_PACKAGE_ONLY_RESTORATION/rebuild/v10_research/source_corruption_guide/verify_guide.py\"\n",
+          "category": "ephemeral restoration/workspace routing only; statuses, checks and failures unchanged"
+        }
+      ]
+    }
+  ],
+  "boundary": "Only ephemeral restoration/workspace routing strings normalized. Original raw reports retained locally; failures and scientific diagnostic data unchanged."
+}

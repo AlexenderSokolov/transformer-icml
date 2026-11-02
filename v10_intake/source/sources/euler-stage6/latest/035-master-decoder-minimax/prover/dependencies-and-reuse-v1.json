@@ -1,0 +1,59 @@
+{
+  "obligation_id": "8599a1da51c3a58933ee7131d0fd6e995e1f2c8ed84a355e4d1832443e20f57d",
+  "direct_predecessors": [
+    {
+      "fact_id": "fef8372728290b45",
+      "evidence_id": "e565455ae8465695ccf1f83e7c7f203d29c2f5bc4e49eb4b5eed822057d94505",
+      "path": "fact_graph/facts/fef8372728290b45.md",
+      "sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025"
+    },
+    {
+      "fact_id": "946d42d5bf502eb4",
+      "evidence_id": "aa23c442ca1006c6ac0b12379f64a0fa500fbbd6a2e41c798b7a4de3952baa82",
+      "path": "fact_graph/facts/946d42d5bf502eb4.md",
+      "sha256": "fe18f4a413fef5da14c5f361aef47a8c5addceac1a3a58d73366ad20f16d8e93"
+    },
+    {
+      "fact_id": "a1a95aa68be0723e",
+      "evidence_id": "3dd4849df0b1a9bf560d3e2ee0216cd46dd84ddb97fa6863faf53a8aa089cc0a",
+      "path": "fact_graph/facts/a1a95aa68be0723e.md",
+      "sha256": "21d405159a5694c9848e0656187a9d674dc777ffaec1d1f51e5a7541552adfb8"
+    },
+    {
+      "fact_id": "d3e63f7b5e389adf",
+      "evidence_id": "dbadc5e7ba8291254d133f41b62bbb5acb0368631d6a7cb0b9fda79b4a5b8d3a",
+      "path": "fact_graph/facts/d3e63f7b5e389adf.md",
+      "sha256": "f60b0d2057aa2357a5fb424fda8cf6ec0c72b43c770dee330987838528f39a92"
+    }
+  ],
+  "uses": {
+    "fef8372728290b45": "SRC S1-S4/proof sections 2,4,8-10: full ideal head definitions, actual all-string 2/Q coordinate error, exact retained-bit interface/lifecycle, original downstream legality and complete costs",
+    "946d42d5bf502eb4": "MM5 applied to every common full-history predictor composed from a fixed cut decoder and clean SRC prefix with identity kernel",
+    "a1a95aa68be0723e": "033 fixed original-suffix upper bound at D=0 only",
+    "d3e63f7b5e389adf": "034 section 5 finite uniform-prior Beta/bin absolute-loss lemma for all n>=0,b>=2; section 6 scalar logarithmic inequality"
+  },
+  "new_self_contained_sections": [
+    "five-group parameters including a=3 and r=1",
+    "finite Euler existence, new multi-label homogeneous source and all-residue full path law",
+    "all 9K+1 ideal coordinate signed count-change identities, independent of sign arrangement",
+    "global canonical-history kernel with actual 2/Q plus rounding 1/Q error and budget guard",
+    "complete exact-bit simulation from the augmented observation",
+    "multi-pair Bayes conditional independence and random decoder treatment",
+    "finite harmonic/log comparison and real-budget small-grid/saturation branches",
+    "HDEC-MATCH, HDEC-SEQUENCE and original SRC upper implementation costs"
+  ],
+  "not_direct": [
+    "032 four-group source and a>=4 bounds",
+    "033 rho lower-bound attack",
+    "034 reversed V-cut information lower bound",
+    "015",
+    "016",
+    "030",
+    "031",
+    "Dot source results"
+  ],
+  "candidate_clarification": "The illustrative ideal weight list omitted P1 weight 4. The proof explicitly includes it; the frozen q1 change table already had coefficient 4. No target, domain, budget, loss, port or constant is changed.",
+  "finite_diagnostics_are_premises": false,
+  "gpu_used": 0,
+  "gpu_audit_reserved": 0
+}

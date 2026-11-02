@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "date": "2026-10-25",
+  "author": "Prover",
+  "status": "FIXED_CANDIDATE_AWAITING_C3_REVIEW",
+  "obligation_id": "c82d400c69019a551db29a66e99faec5bfbf281097c5c8ae57075ea5789772fb",
+  "existing_route_id": null,
+  "self_contained_main": "c3-proof-v1.md",
+  "embedded_appendix_matches_separate_file": true,
+  "files": {
+    "c3-proof-v1.md": {
+      "sha256": "68dcb797dfe0e2103d2f35034311efa97d9ae496dedf4eafc67c600b34a8679c",
+      "bytes": 58094
+    },
+    "c3-resource-ledger-v1.md": {
+      "sha256": "c00336780dfb8e7cfcdad1ffc2542d8319508b1fdf40f278dcf1960c0105076c",
+      "bytes": 33002
+    },
+    "c3-resource-certificate-v1.json": {
+      "sha256": "2a5aa300d24cebebc8006f2f4ced9ad4fa00f07f562e5d9eb697c534c5765125",
+      "bytes": 35558
+    },
+    "c3-code-audit-v1.md": {
+      "sha256": "5648f1bc74b43d44f7597ae055190e41d21413d207049ec59601210211334ee6",
+      "bytes": 7734
+    },
+    "c3_word_program_v1.py": {
+      "sha256": "187f81b8da04a20412c07dc2fdfbe7387836484e2bc57e873a0dd8045b785a56",
+      "bytes": 12473
+    },
+    "c3-word-operations-v1.json": {
+      "sha256": "9f143a95c8d6b8bcc9ff93e3b49a4230f34a4118f3e06344f4c992aa60e869f1",
+      "bytes": 11390
+    },
+    "check_c3_v1.py": {
+      "sha256": "bb900bf79acf9d7150b27e51ed9565bbb6f24f1d994ef0367644f99f73456241",
+      "bytes": 9454
+    },
+    "c3-check-results-v1.json": {
+      "sha256": "f4c7fdc2bf6a3eb6d232f5b4b29fb4e3fca2b6f965d2d83389b900403c81cd25",
+      "bytes": 2123
+    },
+    "c3-integrity-v1.json": {
+      "sha256": "84facef88077b4449c7c16bea835cb88a82cdb83db17484bf3b766dd89bbb462",
+      "bytes": 721
+    },
+    "c3-native-readback-v1.json": {
+      "sha256": "8c2c01c6822a7f00a71809655233fd75538d83750342c91895f09521db30f427",
+      "bytes": 1774
+    },
+    "c3-handoff-v1.md": {
+      "sha256": "c58696200c9aaf1d4905b651b6a6d7af21c9273c6ee85c3742f40043a015a884",
+      "bytes": 5589
+    }
+  },
+  "source_provenance_only": {
+    "PROBLEM.md": {
+      "sha256": "efc51898a4a702040f9048e2f53121ec59020586b12221fd57e1015940ec5751",
+      "bytes": 12619
+    },
+    "outputs/001-conditional-grid/lead/implementation-checkpoint-v1.md": {
+      "sha256": "ff29424bef9a5225e3d79c6790804514980ccf6f3f047d55a6d229f9640c6ce8",
+      "bytes": 11191
+    },
+    "outputs/001-conditional-grid/lead/integer_predictor_v1.py": {
+      "sha256": "5eae6f7c009cd5e612c74274117109099b249a54dbdd62a6ee15e3da093662d6",
+      "bytes": 7001
+    },
+    "outputs/001-conditional-grid/lead/stats-grid-review-v1.md": {
+      "sha256": "b682098e988151e907df8c508c901742f2d3ee18569b8c376ca32cd904083592",
+      "bytes": 7029
+    },
+    "outputs/001-conditional-grid/counter/adversarial-review-v1.md": {
+      "sha256": "b9273b1e96d5fd16d5eaaa5ed8ce75e8385cd57d6ec9dbe2589582a54f86ad64",
+      "bytes": 21864
+    },
+    "[Non-scientific operational metadata omitted.]": {
+      "sha256": "2174a3d8961b0bd390ae64e6be1b46dea059ba494f63dad98eb5604bba8c3e03",
+      "bytes": 492
+    },
+    "inputs/source-stage2/outputs/002-realization/prover/proof-v1.md": {
+      "sha256": "36260d168f17b9da129179070a70c5e87019a45d98c60f1c343a9e1c5e60287b",
+      "bytes": 33072
+    },
+    "inputs/source-stage2/outputs/005-budget-comparison/counter/count-snap-v1/proof-v1.md": {
+      "sha256": "8b9308eaebe171021dba4ce729531b86316966b8298235919e16602bdf5a5e6a",
+      "bytes": 30894
+    }
+  },
+  "native_predecessors_used": [],
+  "actual_fact_ids": [],
+  "actual_evidence_ids": [],
+  "submissions_this_task": 0,
+  "C1_C2_submission_held_for_queued_verifier": true,
+  "source_files_modified": false,
+  "new_primary_retrievals": 0,
+  "gpu_use": 0,
+  "models": "hybrid, sparse neural, shared word, token padded, global dense padded, fully flattened, sequential baseline, one-shot baseline",
+  "precise_open_gates": [
+    "Independent fixed-version review of the complete C3 certificate and code equivalence audit.",
+    "Lead handles consultation and native-submission scheduling.",
+    "[Non-scientific operational metadata omitted.]",
+    "C4 synthesis, full package admissions and final audit remain outside this bounded delivery."
+  ],
+  "resource_note": "Explicit constructive upper functions with large constants; no full enormous dense graph was materialized, and no optimality or empirical runtime claimed."
+}

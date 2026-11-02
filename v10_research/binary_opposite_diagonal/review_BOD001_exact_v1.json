@@ -1,0 +1,18 @@
+{
+  "status": "PASS_EXACT_RATIONAL_FINITE_DIAGNOSTICS",
+  "horizon": 24,
+  "counts": {
+    "kernels": 85,
+    "positive_certificates": 83,
+    "density_checks": 2040,
+    "count_checks": 340,
+    "trace_checks": 2040,
+    "convolution_checks": 8160,
+    "potential_checks": 340,
+    "survival_checks": 6375
+  },
+  "max_beta_p_t_H_squared": "3969/4096",
+  "max_density_to_stronger_rational_envelope_ratio": "56868009039084453379145559568503828204008300042843411184085568463223743698662387610859979407360000000/236075612261971534227055685191707946194470561728506578506951158596223848303316833176783010424824962423",
+  "method": "Fraction throughout. Exponential envelope tested against strictly smaller rational odd-Taylor lower bound (31 terms). No floating point used. Finite checks do not prove universal claims.",
+  "limitations": "Moderate horizons, finite positive rational kernels and several beta-zero endpoint kernels; theorem constants justified by written review, not coverage."
+}

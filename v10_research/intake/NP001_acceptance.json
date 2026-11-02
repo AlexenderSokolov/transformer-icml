@@ -1,0 +1,9 @@
+{
+  "unit": "NP001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "noise_precision_frontier/NP001_theorem.md",
+  "sha256": "79cae4ebb56694452d63ccb2f6ac1f2d89516e9812c68bba700341ea600e9f54",
+  "review": "noise_precision_frontier/NP001_independent_review.md",
+  "time_utc": "2026-11-02T08:09:06.390192+00:00",
+  "scope": "IID fixedJ independent REAL pre-Q noise delta in[0,1/4], effectiveprecision min(Q,1/delta), robustrisk max(s,tau^J) with sufficientdepth, statistical-ordercapacity/depth distinctconstant sandwich. Commoncoarseattack andIRrealgridoraclevalid; publicfinite dyadicnoisescalecertificate orpaidrationalinput explicit. Fixedpositive noise precludes fixedJ consistency. RationalFA/cut vsoutputbits/fullcost distinctions retained. Rootreadentireproof+fullfreshreview. No generalMarkovupper/growingJuniformsufficiency/postgridfault/training/novelty. Poststage6."
+}

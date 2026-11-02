@@ -1,0 +1,268 @@
+{
+  "kind": "LEAD_READBACK_OF_COMPLETED_INDEPENDENT_REVIEW_NOT_ADMISSION",
+  "author": "Lead",
+  "date": "2026-10-25",
+  "source_task": "[redacted routing identifier]",
+  "root_obligation_id": "d0bdd1d8bf611bb7a6e9c4bb14d8b14e5a71ae8cc5c97776fc079ac13c63b428",
+  "review_sha256": "ab5f63f81d689e85695e610b49e7ea115a7c270f7c317c62867b3c14345687ef",
+  "manifest_sha256": "394eaa09753b66902d30bf47ba3c578954759b6021fb7fa4589c762b933f472d",
+  "pins_verified": [
+    {
+      "path": "PROBLEM.md",
+      "sha256": "efc51898a4a702040f9048e2f53121ec59020586b12221fd57e1015940ec5751",
+      "bytes": 12619
+    },
+    {
+      "path": "inputs/source-stage2/outputs/002-realization/prover/proof-v1.md",
+      "sha256": "36260d168f17b9da129179070a70c5e87019a45d98c60f1c343a9e1c5e60287b",
+      "bytes": 33072
+    },
+    {
+      "path": "inputs/source-stage2/outputs/005-budget-comparison/counter/count-snap-v1/proof-v1.md",
+      "sha256": "8b9308eaebe171021dba4ce729531b86316966b8298235919e16602bdf5a5e6a",
+      "bytes": 30894
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/addendum-checks-v1.json",
+      "sha256": "36bf69b6ebb200b09c7f1bfb334a7ddbbec9e7df747386b5d428d3494e52653a",
+      "bytes": 497
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/adversarial-review-v1.md",
+      "sha256": "b9273b1e96d5fd16d5eaaa5ed8ce75e8385cd57d6ec9dbe2589582a54f86ad64",
+      "bytes": 21864
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/c2-cost-repair-checks-v1.json",
+      "sha256": "e3eaab19cf44ba85ba68cb9140edc6f0c4937dbecc520199746a3abcf7947b60",
+      "bytes": 909
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/c2-cost-repair-manifest-v1.json",
+      "sha256": "dd47db7c699fc274cf289ed7fbc307fc9d17be623e7d7a844242f48589ff00da",
+      "bytes": 2549
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/c2-cost-repair-review-v1.md",
+      "sha256": "3b133d6493154f73556d31722be2b99cd5549e50f0d4a044ab2177259a8f643d",
+      "bytes": 5428
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/c3-adversarial-review-v1.md",
+      "sha256": "f1db7ce9110bdc782e6b15df291154535bf808567d9629711320d850a829c768",
+      "bytes": 11377
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/c3-review-manifest-v1.json",
+      "sha256": "e735da588c341208bc6be8bd4c4b45ed259c187a153ac9b1e89736a2e961ac0d",
+      "bytes": 7005
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/c3-structural-checks-v1.json",
+      "sha256": "94ba5768fa27d7e8d4c5701c0fe8bc8b282666da63b24875ea75b3125dcfe438",
+      "bytes": 7052
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/quantifier-addendum-v1.md",
+      "sha256": "3f2ce979b70829603504a10ab5d1b79bc6f625235ffb0da9653dc734b0fff46a",
+      "bytes": 5796
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/sources/primary-map-v1.md",
+      "sha256": "f5b2fdcfd9b96ce74ebc8141b9dd0dde7c33caa10952aca6dacf90229a9d6f45",
+      "bytes": 3982
+    },
+    {
+      "path": "[Non-scientific operational metadata omitted.]",
+      "sha256": "2174a3d8961b0bd390ae64e6be1b46dea059ba494f63dad98eb5604bba8c3e03",
+      "bytes": 492
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/c2-cost-repair-review-v1.md",
+      "sha256": "4fd1e1c562755ab957e5ca0fe057823521d668fdb6e2a92db54e6fb71d1eedc3",
+      "bytes": 4720
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/c3-input-integrity-v1.json",
+      "sha256": "6d30ea40daef8812c7483b1870b7111bfde546383d51bac7fbf203a61588169f",
+      "bytes": 5445
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/c3-review-v1.md",
+      "sha256": "e8665348447fb61abac0f263d820d79c50aaf967bbef0972af392c83d50202a0",
+      "bytes": 8086
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/fixed-package-manifest-v1.json",
+      "sha256": "ee9392bebf771115d34f91bad2d8c6a0231cdebf912261554e72bceaaf7a4b3b",
+      "bytes": 7263
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/implementation-checkpoint-v1.md",
+      "sha256": "ff29424bef9a5225e3d79c6790804514980ccf6f3f047d55a6d229f9640c6ce8",
+      "bytes": 11191
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/integer_predictor_v1.py",
+      "sha256": "5eae6f7c009cd5e612c74274117109099b249a54dbdd62a6ee15e3da093662d6",
+      "bytes": 7001
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/joint-accuracy-corollary-v1.md",
+      "sha256": "37c3f17f3e427787baa8892e216a5c9b68508f538f24e3a95cdc31c646012c92",
+      "bytes": 5964
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/primary-synthesis-checkpoint-v1.md",
+      "sha256": "b12f56a4e7458c7886370c595d62aad2966b266ed943c7d6614738a7a77dd7f1",
+      "bytes": 4936
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/stats-grid-review-v1.md",
+      "sha256": "b682098e988151e907df8c508c901742f2d3ee18569b8c376ca32cd904083592",
+      "bytes": 7029
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v1/c1-evidence-readback.json",
+      "sha256": "02022ea74a99e7a732ada8bcc044b0074fcdb3c6261968f490fc6723173e772e",
+      "bytes": 3156
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v1/c1-response.raw.json",
+      "sha256": "8b1662b05b1666e5b36265ab06ae4c1da71fcf751eeb1585bc92fe592c47d399",
+      "bytes": 2524
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v1/c2-response.raw.json",
+      "sha256": "302eafcaf12cc877e93648096ca6a878ef334e11390cc14e1e321c0008020d8b",
+      "bytes": 4061
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v1/c2-v1-to-v2.diff",
+      "sha256": "c33d01c2f5a02714b17080d4cbe275a4a578c2fb4d313a5e7f073864c0746bbc",
+      "bytes": 11882
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c2-proof-v1.md",
+      "sha256": "a008ec575571973d7df08ece2468c901744a6c3680df08b15a008c38ff1d7105",
+      "bytes": 14467
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c2-proof-v2.md",
+      "sha256": "b8de1c83444044357790ab8062caa443a701f260b7d631dbae35f85c308f667c",
+      "bytes": 23197
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c3-check-results-v1.json",
+      "sha256": "f4c7fdc2bf6a3eb6d232f5b4b29fb4e3fca2b6f965d2d83389b900403c81cd25",
+      "bytes": 2123
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c3-code-audit-v1.md",
+      "sha256": "5648f1bc74b43d44f7597ae055190e41d21413d207049ec59601210211334ee6",
+      "bytes": 7734
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c3-handoff-v1.md",
+      "sha256": "c58696200c9aaf1d4905b651b6a6d7af21c9273c6ee85c3742f40043a015a884",
+      "bytes": 5589
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c3-integrity-v1.json",
+      "sha256": "84facef88077b4449c7c16bea835cb88a82cdb83db17484bf3b766dd89bbb462",
+      "bytes": 721
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c3-manifest-v1.json",
+      "sha256": "f123e70d912490638c8f8c2bbe1a2b034d4af28dcceb6b62d22018d1264ee87a",
+      "bytes": 4387
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c3-native-readback-v1.json",
+      "sha256": "8c2c01c6822a7f00a71809655233fd75538d83750342c91895f09521db30f427",
+      "bytes": 1774
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c3-proof-v1.md",
+      "sha256": "68dcb797dfe0e2103d2f35034311efa97d9ae496dedf4eafc67c600b34a8679c",
+      "bytes": 58094
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c3-resource-certificate-v1.json",
+      "sha256": "2a5aa300d24cebebc8006f2f4ced9ad4fa00f07f562e5d9eb697c534c5765125",
+      "bytes": 35558
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c3-resource-ledger-v1.md",
+      "sha256": "c00336780dfb8e7cfcdad1ffc2542d8319508b1fdf40f278dcf1960c0105076c",
+      "bytes": 33002
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c3-word-operations-v1.json",
+      "sha256": "9f143a95c8d6b8bcc9ff93e3b49a4230f34a4118f3e06344f4c992aa60e869f1",
+      "bytes": 11390
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c3_word_program_v1.py",
+      "sha256": "187f81b8da04a20412c07dc2fdfbe7387836484e2bc57e873a0dd8045b785a56",
+      "bytes": 12473
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/check_c3_v1.py",
+      "sha256": "bb900bf79acf9d7150b27e51ed9565bbb6f24f1d994ef0367644f99f73456241",
+      "bytes": 9454
+    },
+    {
+      "path": "outputs/001-conditional-grid/verifier/stats-grid-review-v1.md",
+      "sha256": "9a7ec137568f5494d260a23a6bfdf6e945a11edc1fce9cb0a033717127fb2161",
+      "bytes": 17996
+    },
+    {
+      "path": "outputs/001-conditional-grid/verifier/c2-cost-and-c3-review-v1.md",
+      "sha256": "ab5f63f81d689e85695e610b49e7ea115a7c270f7c317c62867b3c14345687ef",
+      "bytes": 21996
+    },
+    {
+      "path": "outputs/001-conditional-grid/verifier/check_c2_cost_and_c3_v1.py",
+      "sha256": "dceb2dfa8d65f3336a2655bc6c0c2c0fee55d47cdbc91f0020316ffb11e29395",
+      "bytes": 11064
+    },
+    {
+      "path": "outputs/001-conditional-grid/verifier/c2-cost-and-c3-checks-v1.json",
+      "sha256": "b6be1d61bc2c8b7310b18f4b0b5c67fde286a563aca9f4a4dc02e118dc6df902",
+      "bytes": 9541
+    },
+    {
+      "path": "outputs/001-conditional-grid/verifier/c2-cost-and-c3-native-state-v1.json",
+      "sha256": "bf4a1538079b4a9c8e036b10864d9b8f1b57e5c5870064b662f3e6cbacfd8037",
+      "bytes": 6510
+    }
+  ],
+  "independent_review_verdicts": {
+    "C2": "PASS local repaired costs; unchanged statistical scope reused",
+    "C3": "PASS nominal finite deterministic realization in separate declared cost models"
+  },
+  "mandatory_repairs": {
+    "C2": [],
+    "C3": []
+  },
+  "native_at_readback": {
+    "C1": "DISCHARGED",
+    "C2": "OPEN",
+    "C3": "OPEN",
+    "C4": "OPEN",
+    "root": "OPEN",
+    "acceptance": null,
+    "fact_ids": [
+      "e418ec34b7dbc4a6"
+    ],
+    "evidence_ids": [
+      "4857f1b1b5d10ab74a979362e3d0c3068c9634016e4ce6b6a0609ed577eb2eea"
+    ]
+  },
+  "old_suspended_count": 7,
+  "old_protection_and_queue_modified": false,
+  "new_fact_ids": [],
+  "new_evidence_ids": [],
+  "next_scientific_action": "First actual submission of repaired C2 v2 and first complete C3 submission through normal assistant gateway, each with fixed-version and dependency checks; do not resubmit C1 or unrepaired C2 v1."
+}

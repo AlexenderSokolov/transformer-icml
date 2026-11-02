@@ -1,0 +1,20 @@
+{
+  "unit": "UI001",
+  "verdict": "PASS",
+  "reviewer": "independent LLM reviewer",
+  "kind": "independent LLM mathematical audit plus independent exact rational finite checks; not formal verification",
+  "source_binding_validation": "ALL_MATCH",
+  "files": {
+    "bounded_attention/BA001_bounded_local_attention_lower_v1.md": "fb589a775220737124a42e96a115eb3471ccbb84933edc2fd488e0d5986f1569",
+    "intake/BA001_acceptance.json": "3d1364e6aeb15a75c73ef2cdd2549096260ca61f74567b0dcb5a951528bef286",
+    "score_precision/SH001_sharp_weight_ratio_threshold_v1.md": "fa8e326047f2df8f01dd7b3112da655937ad7be1a3508ad00b80ccd51b64fd50",
+    "intake/SH001_acceptance.json": "b5e3bb71e0efbd2aa50cdd63857fc96e01165d37d2d38e3f98c0e1529fc68a47",
+    "range_uniform_iid/UI001_diagnostics_v1.json": "b157f23c8b550dad50a7c8979751991549f2879af970a76aeaf9c737810c7c14",
+    "range_uniform_iid/UI001_diagnostics_v1.py": "6239327a7a2a1874b4c1082ceea7f6c4501963c391d01c9ab6a215532dd967c1",
+    "range_uniform_iid/UI001_range_uniform_iid_floor_v1.md": "c4bd8a5d7324ed1cf03c1d746a253b592fbe9a63e9e6020be95e657c13307dde",
+    "range_uniform_iid/UI001_source_bindings_v1.json": "677dc2edcb9b2ef914714fd2eb1523aa15052667382cb8e3d76c81bc3c30ac87",
+    "reviews/UI001_review_v1.md": "6b9b7aa04ae31d85c8ccef80f606468fa075c68397a8c727ce31459333530c1f",
+    "reviews/UI001_independent_checks_v1.py": "3d58f8db5c5118b509d133c3099f551f50f3798ab1d893eac4a99766ee5d969e",
+    "reviews/UI001_independent_checks_v1.json": "6c2ca963928092635b56fe6225400edae5dda700756c09a3b1776165f31f2027"
+  }
+}

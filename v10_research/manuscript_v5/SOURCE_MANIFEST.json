@@ -1,0 +1,1140 @@
+{
+  "title": "Finite Information Cuts in Markov Prediction: Precision, Depth, and Robustness",
+  "revision": 5,
+  "scientific_freeze_utc": "2026-11-02T08:09:06.390192+00:00",
+  "path_base": "Research workspace root; paths identify accompanying proof dossier",
+  "scope": "Preserves v4 core. Adds mixing-depth, clean IID packing/influence/capacity, fold-specific pre-grid failure, robust dyadic and rational geometry, full actual-terminal general-Markov c/Q upper and partial packing depth, and independent-amplitude IID effective precision. All constants fixed in alphabet/dimension as stated. General-Markov D versus R capacity gap remains. All new proofs embedded; earlier explicitly named statistical/operator/identity dependencies remain inherited.",
+  "sources": [
+    {
+      "unit": "FR001 v1",
+      "path": "v10_research/precision_frontier/FR001_full_risk_frontier_v1.md",
+      "sha256": "7c1305193d61115b0f95f3ed28a0321beeaf9a82dac7172c49fde4e8620f4d1f",
+      "bytes": 7844,
+      "role": "Original complete-interface synthesis"
+    },
+    {
+      "unit": "SF001 v1",
+      "path": "v10_research/stationary_frontier/SF001_all_Q_stationary_master_risk_v1.md",
+      "sha256": "832f09ab65d02d20d5cc8831253e563878aede13c00f933125bb5f3790825b71",
+      "bytes": 11028,
+      "role": "Original stationary all-resolution lower"
+    },
+    {
+      "unit": "AU001 v1",
+      "path": "v10_research/arbitrary_frontier/AU001_residual_suffix_precision_upper_v1.md",
+      "sha256": "1fce0c8374f372eeec6d4a21a2b683db02a754b227d39e6e8dd6b4e45e3ca6e1",
+      "bytes": 9844,
+      "role": "Exact complete residual suffix mixture and arbitrary-start upper"
+    },
+    {
+      "unit": "BA001 v1",
+      "path": "v10_research/bounded_attention/BA001_bounded_local_attention_lower_v1.md",
+      "sha256": "fb589a775220737124a42e96a115eb3471ccbb84933edc2fd488e0d5986f1569",
+      "bytes": 18608,
+      "role": "Local complete-message lower including separate IID floor"
+    },
+    {
+      "unit": "BF001 v3",
+      "path": "v10_research/bounded_attention/BF001_encoder_family_frontier_v3.md",
+      "sha256": "31138a756cc5e9cdc6a5cc8c55d11e265672c7048c1acb34266cdfd67411af7a",
+      "bytes": 11414,
+      "role": "Local-family inclusion, all-resolution completion and augmented ledger"
+    },
+    {
+      "unit": "CA001 v3",
+      "path": "v10_research/causal_attention/CA001_causal_bounded_softmax_candidate_v3.md",
+      "sha256": "88e952f840009d8345c4482ca8cd14231f9dd9a28a3d522f12cd7e03b65ea21e",
+      "bytes": 19626,
+      "role": "Fixed-depth influence and complete-message lower"
+    },
+    {
+      "unit": "CA001 causality scope v1",
+      "path": "v10_research/causal_attention/CA001_boundary_branch_causality_scope_note_v1.md",
+      "sha256": "beaa034ffbf56dd913538b2517d167e677b4feb743c7854eb99abdb86ce1c97b",
+      "bytes": 3528,
+      "role": "Boundary branches versus temporal causality"
+    },
+    {
+      "unit": "FA001 v3",
+      "path": "v10_research/causal_attention/FA001_finite_arithmetic_bridge_v3.md",
+      "sha256": "94a9d64f2a2eedf50cb7e918cfeec4e8cac6e78f21de214a528a853b4f17e073",
+      "bytes": 27144,
+      "role": "Finite signed affine/ReLU evaluator and compact parameter format"
+    },
+    {
+      "unit": "CF001 v1",
+      "path": "v10_research/causal_attention/CF001_finite_causal_risk_frontier_v1.md",
+      "sha256": "b87da8c885adf3ec519bc6d85fea8049ee17e89bd56a8babc246aaf7ae22af95",
+      "bytes": 15684,
+      "role": "Finite causal family and changed-encoder upper membership"
+    },
+    {
+      "unit": "PF001 v1",
+      "path": "v10_research/precision_frontier/PF001_all_beta_precision_threshold_v1.md",
+      "sha256": "6070e440b3d882356ba6e8155e1bd35066c306c5b64e6853c1c355c0bc78fde9",
+      "bytes": 12712,
+      "role": "Uniform precision threshold"
+    },
+    {
+      "unit": "NB002 v1",
+      "path": "v10_research/network_bridge/NB002_conservative_guard_sublinear_grid_v1.md",
+      "sha256": "dcf815879aebe23d189403efb5c26e53f64ca8718ffc101b517097a3a32251d3",
+      "bytes": 25853,
+      "role": "Coarse-grid frequency prefix and conservative decoder"
+    },
+    {
+      "unit": "SRC canonical proof",
+      "path": "v10_intake/source/sources/euler-stage6/facts/fef8372728290b45.md",
+      "sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025",
+      "bytes": 67360,
+      "role": "Original finite frequency identities and implementation"
+    },
+    {
+      "unit": "G-U canonical proof",
+      "path": "v10_intake/source/sources/euler-stage6/facts/a12539a93d9f1ee3.md",
+      "sha256": "94f8cb48a2a96dba050584d9c200c8b8eb7c59335c77ae1c8d9fefc6b1240cba",
+      "bytes": 93866,
+      "role": "Inherited universal terminal occupation, section 11.1"
+    },
+    {
+      "unit": "R011 v1 canonical proof",
+      "path": "v10_intake/source/sources/dot-return/readable/proofs/R011_global_rates_and_constant_adaptation_v1.md",
+      "sha256": "1b7133c69131b84c6e7e235338797e683eaa2c0e73b9c83a26612e344f78039d",
+      "bytes": 10913,
+      "role": "Inherited ORIGINAL and common statistical rates and selector"
+    },
+    {
+      "unit": "R001 recovered proof",
+      "path": "v10_research/intake/statistical_dependencies/R001.md",
+      "sha256": "167387db3cb4205864315428957b84001992c66be5c36075d9c761be965d7597",
+      "bytes": 10602,
+      "role": "Inherited event-radius interface"
+    },
+    {
+      "unit": "S024 recovered proof",
+      "path": "v10_research/intake/statistical_dependencies/S024.md",
+      "sha256": "c84c9307ff2e72fdcb1a842de6e3db210d174aaaaa4dc4eca4f6c00a8aa27405",
+      "bytes": 25381,
+      "role": "Inherited stationary and suffix-radius estimates"
+    },
+    {
+      "unit": "S025 recovered proof",
+      "path": "v10_research/intake/statistical_dependencies/S025.md",
+      "sha256": "f8412017f3e4f13ed28ee12a320f0be6adac1bb436bbb0d818444be0d899aaca",
+      "bytes": 26224,
+      "role": "Inherited count/active tails and rejection-restricted selection"
+    },
+    {
+      "unit": "IU001 v1",
+      "path": "v10_research/intermediate_upper/IU001_beta_sensitive_precision_upper_v1.md",
+      "sha256": "4c0adb15aadfb574e156c5ce5f4f4da1ec8447ed515417a71d400c5a52c7b317",
+      "bytes": 23036,
+      "role": "Conditional returns, nonreversible singular-norm bound, terminal occupation"
+    },
+    {
+      "unit": "SB001 v2",
+      "path": "v10_research/score_precision/SB001_loglog_effective_score_budget_v2.md",
+      "sha256": "d10086be4d358e322872daffad4dd10572588d6dcffaecbffefc409df6a217b7",
+      "bytes": 19750,
+      "role": "Triple bank, effective range, mixing refinement and complete ledger"
+    },
+    {
+      "unit": "GW001 v3",
+      "path": "v10_research/growing_weight/GW001_growing_integer_weight_escape_v3.md",
+      "sha256": "44f32cd431c4a304602537b19ab3e9752cd9fcd1a1cfece391e718db47e0da62",
+      "bytes": 24128,
+      "role": "Earlier growing-weight sufficient point and ORIGINAL comparator"
+    },
+    {
+      "unit": "Prior comparison",
+      "path": "v10_research/prior_art/comparison.md",
+      "sha256": "3fc5fd4552f37a65c225227e2ba2660d77349f59b1f9429a33ec8c3fed46a66c",
+      "bytes": 17712,
+      "role": "Targeted primary-source Markov-attention comparison"
+    },
+    {
+      "unit": "Precision comparison",
+      "path": "v10_research/prior_art/precision_frontier_followup.md",
+      "sha256": "d5309891cd86444cb935a2d0f10a3b2c26331466a231a517a018330f97060094",
+      "bytes": 21615,
+      "role": "Primary-source waiting/harmonic and finite-message comparisons"
+    },
+    {
+      "unit": "Bounded-attention comparison",
+      "path": "v10_research/prior_art/bounded_attention_family_comparison.md",
+      "sha256": "0116166d902afed8ec6ee6c6042b426c5a2b515e596d3e8660410a3ff355c494",
+      "bytes": 10335,
+      "role": "Hahn correction and Chiang-Cholak scope"
+    },
+    {
+      "unit": "Score-budget comparison",
+      "path": "v10_research/prior_art/loglog_score_budget_comparison.md",
+      "sha256": "b56feb6ffd0e8604f4281028d6bbc2edbd7b6beb9e824a65d5f00c08ea714ec9",
+      "bytes": 14961,
+      "role": "Weighted inventory and log-log score positioning"
+    },
+    {
+      "unit": "SH001 v1",
+      "path": "v10_research/score_precision/SH001_sharp_weight_ratio_threshold_v1.md",
+      "sha256": "fa8e326047f2df8f01dd7b3112da655937ad7be1a3508ad00b80ccd51b64fd50",
+      "bytes": 12546,
+      "role": "Rescaled rare-suffix tube and sharp fixed-band weight-ratio threshold"
+    },
+    {
+      "unit": "SH001 independent review v1",
+      "path": "v10_research/reviews/SH001_review_v1.md",
+      "sha256": "9c8975a6d70b41b0a087123a409ccd8a9a5a943a7bb44efac7dcebb1c0c2416f",
+      "bytes": 10292,
+      "role": "Independent LLM review of the exact rescaled-tube proof and inherited upper contract"
+    },
+    {
+      "unit": "UI001 v1",
+      "path": "v10_research/range_uniform_iid/UI001_range_uniform_iid_floor_v1.md",
+      "sha256": "c4bd8a5d7324ed1cf03c1d746a253b592fbe9a63e9e6020be95e657c13307dde",
+      "bytes": 10912,
+      "role": "Weight-envelope-uniform IID grid floor"
+    },
+    {
+      "unit": "UI001 full review",
+      "path": "v10_research/reviews/UI001_review_v1.md",
+      "sha256": "6b9b7aa04ae31d85c8ccef80f606468fa075c68397a8c727ce31459333530c1f",
+      "bytes": 12998,
+      "role": "Independent full mathematical review"
+    },
+    {
+      "unit": "UI001 acceptance",
+      "path": "v10_research/intake/UI001_acceptance.json",
+      "sha256": "fa818cc247dc1a7ec564446099bdaba1b1e12fcdbf615824933af92a01760b19",
+      "bytes": 600,
+      "role": "Version-specific acceptance receipt"
+    },
+    {
+      "unit": "TR001 v1",
+      "path": "v10_research/two_resource_frontier/TR001_two_resource_frontier_v1.md",
+      "sha256": "7dca0c09637164c2a632e1e493c7af281109bb52116400c94ee507fe18c493c6",
+      "bytes": 12374,
+      "role": "Complete K>=3 one-block joint frontier and simultaneous budgets"
+    },
+    {
+      "unit": "TR001 full review",
+      "path": "v10_research/two_resource_frontier/TR001_independent_review_v1.md",
+      "sha256": "f077b8da23d4126b9f59b1ba270d82731c8d3383f6474d787e2057b3b3b380e4",
+      "bytes": 9246,
+      "role": "Independent composition review"
+    },
+    {
+      "unit": "TR001 acceptance",
+      "path": "v10_research/intake/TR001_acceptance.json",
+      "sha256": "fad05211ded32ec8281542c15b9872d2d81db3b5e2553e36c25dbcd81f5678ac",
+      "bytes": 683,
+      "role": "Version-specific acceptance receipt"
+    },
+    {
+      "unit": "BI001 v2",
+      "path": "v10_research/binary_frontier/BI001_binary_rare_suffix_lower_v2.md",
+      "sha256": "17725df3f25084fdfbf6f92fa26555fc5c29e15a4341f69a24dd703751201992",
+      "bytes": 9585,
+      "role": "Binary stationary active-Markov-window lower"
+    },
+    {
+      "unit": "BI001 full review",
+      "path": "v10_research/reviews/BI001_review_v1.md",
+      "sha256": "ee1755df7317b8e02efd4eecbb97f0254d8daa894bc5b5558483485b87b775a6",
+      "bytes": 14764,
+      "role": "Full proof review of unchanged mathematical core"
+    },
+    {
+      "unit": "BI001 delta review",
+      "path": "v10_research/reviews/BI001_review_v2.md",
+      "sha256": "a278de9ebc7d156408a1435d94de9b695537cc0542f6bbd3cf8e2e7a32c5cb2d",
+      "bytes": 1794,
+      "role": "Version-2 scope and upper-inclusion review"
+    },
+    {
+      "unit": "BI001 acceptance",
+      "path": "v10_research/intake/BI001_acceptance.json",
+      "sha256": "8ab1673dcff9efacacd3f5adf3b91124297919e511c2a2604aa0a82ca880ec2d",
+      "bytes": 843,
+      "role": "Version-specific acceptance receipt"
+    },
+    {
+      "unit": "BU001 v2",
+      "path": "v10_research/binary_upper/BU001_weighted_return_upper_v2.md",
+      "sha256": "2dc9cf9d13faa6cfa15fffd5ec83a67326ccc95eb6a63291c7b2349136b166f5",
+      "bytes": 10705,
+      "role": "Stationary binary weighted occupation and explicit unchanged-decoder upper"
+    },
+    {
+      "unit": "BU001 full review",
+      "path": "v10_research/reviews/BU001_review_v1.md",
+      "sha256": "84ee2e6b0eeac445976bffe0bf2763b27715696a24d05c3100e0c28169020e80",
+      "bytes": 10292,
+      "role": "Full weighted-return and floor-decoder review"
+    },
+    {
+      "unit": "BU001 delta review",
+      "path": "v10_research/reviews/BU001_review_v2.md",
+      "sha256": "c8438343ca5a1d2b1c7090eabdae96eff910dfca18cbc307ee990ced86c4d118",
+      "bytes": 4592,
+      "role": "Version-2 constants, empty-block and support review"
+    },
+    {
+      "unit": "BU001 acceptance",
+      "path": "v10_research/intake/BU001_acceptance.json",
+      "sha256": "914fd8d84fe31b5c2ea5fb34cfef7a3117a2169ab50738ae209f16ff5bce6e91",
+      "bytes": 654,
+      "role": "Version-specific acceptance receipt"
+    },
+    {
+      "unit": "BS001 v1",
+      "path": "v10_research/binary_stationary_frontier/BS001_binary_stationary_frontier_v1.md",
+      "sha256": "ca116bd9c9a8ee88c62be85d5f0352c2d4f7b3d7df84df6406036c94ac86cb2b",
+      "bytes": 17238,
+      "role": "Complete stationary binary frontier, joint budgets and alphabet contrast"
+    },
+    {
+      "unit": "BS001 full review",
+      "path": "v10_research/binary_stationary_frontier/BS001_independent_review_v1.md",
+      "sha256": "3b33c8bd8889e5613b0d17ea6a128c73440542d03b39e704c91e757bcef263aa",
+      "bytes": 6015,
+      "role": "Independent synthesis review"
+    },
+    {
+      "unit": "BS001 acceptance",
+      "path": "v10_research/intake/BS001_acceptance.json",
+      "sha256": "89cd020d7d8b241d18da2b5df906915d3c1099ebcc7df7e3d8551d6b0a6edc2a",
+      "bytes": 605,
+      "role": "Acceptance before the 06:05 scientific cutoff"
+    },
+    {
+      "unit": "Targeted adjacent-literature screen",
+      "path": "v10_research/prior_art/two_resource_targeted_comparison.md",
+      "sha256": "2b0031b958761126127fa83ff0deece8d50e49cf3972e5d980235d1cfa7fb7cb",
+      "bytes": 2626,
+      "role": "Limited primary-source abstract/model screen; no unread-theorem or novelty claim"
+    },
+    {
+      "unit": "BC001 accepted proof",
+      "path": "v10_research/binary_causal/BC001_binary_stationary_causal_frontier_v1.md",
+      "sha256": "38712b68da30e08d14f41567e84f53b4073b7e2d46280313adc8b69859fc850e",
+      "bytes": 19795,
+      "role": "Load-bearing accepted mathematical proof; exact receipt binding"
+    },
+    {
+      "unit": "BC001 review",
+      "path": "v10_research/binary_causal/BC001_independent_review_v1.md",
+      "sha256": "b5865990f633ff75fb5ce002708d523b735e353ae7daf9e9881f798679604fdd",
+      "bytes": 8978,
+      "role": "Full independent review, delta review or adopted scope note"
+    },
+    {
+      "unit": "BC001 revision_note",
+      "path": "v10_research/binary_causal/BC001_revision_note_v1.md",
+      "sha256": "cf11c2e1172404da7bc63b85ff08c4bdf2778c1bbc65e9e24c016213f53d1937",
+      "bytes": 1674,
+      "role": "Full independent review, delta review or adopted scope note"
+    },
+    {
+      "unit": "BC001 acceptance",
+      "path": "v10_research/intake/BC001_acceptance.json",
+      "sha256": "7d0cbb9c246483fe4f9776fbe2f0d2494ee2e960ce7b4d1b6117f04844406850",
+      "bytes": 711,
+      "role": "Acceptance before the 06:56 UTC scientific freeze; receipt scope is version-specific"
+    },
+    {
+      "unit": "BAI002 accepted proof",
+      "path": "v10_research/binary_arbitrary/BAI002_absorbing_active_core_upper_v1.md",
+      "sha256": "cb8bbd7c4447cf465cb04e757dcd8c3f8d10dc5929dff073c7881988c86ccf7c",
+      "bytes": 7644,
+      "role": "Load-bearing accepted mathematical proof; exact receipt binding"
+    },
+    {
+      "unit": "BAI002 review",
+      "path": "v10_research/binary_arbitrary/BAI002_review_v1.md",
+      "sha256": "b66956a51a2be79356c933ef720f7d3f91703c20f831f1dc87e1e350a74620f9",
+      "bytes": 5060,
+      "role": "Full independent review, delta review or adopted scope note"
+    },
+    {
+      "unit": "BAI002 acceptance",
+      "path": "v10_research/intake/BAI002_acceptance.json",
+      "sha256": "6aca976b80f30965e787ff6b474f543ec66dc881f6a59c56a8fbc21e42988339",
+      "bytes": 571,
+      "role": "Acceptance before the 06:56 UTC scientific freeze; receipt scope is version-specific"
+    },
+    {
+      "unit": "BAI003 accepted proof",
+      "path": "v10_research/binary_arbitrary/BAI003_uniform_absorbing_binary_upper_v2.md",
+      "sha256": "99d209c423664c3fe74d1b32fd68fb89ed31218c58fa2f11c343c3e6a54bd0e4",
+      "bytes": 12048,
+      "role": "Load-bearing accepted mathematical proof; exact receipt binding"
+    },
+    {
+      "unit": "BAI003 review",
+      "path": "v10_research/binary_arbitrary/BAI003_review_v1.md",
+      "sha256": "42459b65016671265fe328864afd395cc87a539c16ef19ffb4b35dc84c8265dc",
+      "bytes": 6936,
+      "role": "Full independent review, delta review or adopted scope note"
+    },
+    {
+      "unit": "BAI003 delta_review",
+      "path": "v10_research/binary_arbitrary/BAI003_review_v2.md",
+      "sha256": "551543ab488b4582b44192396120a32a1d3fcf017668cafa8f9ceb8786225f4a",
+      "bytes": 1915,
+      "role": "Full independent review, delta review or adopted scope note"
+    },
+    {
+      "unit": "BAI003 acceptance",
+      "path": "v10_research/intake/BAI003_acceptance.json",
+      "sha256": "1e9fc79e3a3a23f2f731b17b123e4cf076842e5da6ef32b6860897e5b1da303f",
+      "bytes": 666,
+      "role": "Acceptance before the 06:56 UTC scientific freeze; receipt scope is version-specific"
+    },
+    {
+      "unit": "BAI004 accepted proof",
+      "path": "v10_research/binary_arbitrary/BAI004_fullsupport_initial_delay_lemmas_v5.md",
+      "sha256": "3a3e1bc36f566c50677865c556f6164d3eaf258febcd02bec07b5c4165452910",
+      "bytes": 15778,
+      "role": "Load-bearing accepted mathematical proof; exact receipt binding"
+    },
+    {
+      "unit": "BAI004 review",
+      "path": "v10_research/binary_arbitrary/BAI004_review_v1.md",
+      "sha256": "876bd35df632a0effe4b0cc6a24a397e36ffb5ac7e71ed9e187f2664609314d6",
+      "bytes": 8541,
+      "role": "Full independent or delta review of adopted version"
+    },
+    {
+      "unit": "BAI004 review",
+      "path": "v10_research/binary_arbitrary/BAI004_review_v2.md",
+      "sha256": "1c23149586bc42ad30b628d21d8f2bbc5afbcd345a4a4d036641ca60c76b6d3b",
+      "bytes": 5097,
+      "role": "Full independent or delta review of adopted version"
+    },
+    {
+      "unit": "BAI004 review",
+      "path": "v10_research/binary_arbitrary/BAI004_review_v3.md",
+      "sha256": "3f673186561f0e6087d7de23de5b20b17f04a671348c04e286b055687874e686",
+      "bytes": 1954,
+      "role": "Full independent or delta review of adopted version"
+    },
+    {
+      "unit": "BAI004 review",
+      "path": "v10_research/binary_arbitrary/BAI004_review_v4.md",
+      "sha256": "306a6d39b438559a9c65b5836605ccf90819189044102b3ca1d851b3584592a7",
+      "bytes": 1650,
+      "role": "Full independent or delta review of adopted version"
+    },
+    {
+      "unit": "BAI004 acceptance",
+      "path": "v10_research/intake/BAI004_acceptance.json",
+      "sha256": "85976c6854f4bc657686d77011a9eb7bfcfdc7c4b12a53786fc6fd55540c7eb2",
+      "bytes": 847,
+      "role": "Acceptance before the 06:56 UTC scientific freeze; receipt scope is version-specific"
+    },
+    {
+      "unit": "BOD001 accepted proof",
+      "path": "v10_research/binary_opposite_diagonal/BOD001_opposite_diagonal_occupation_v1.md",
+      "sha256": "a4622a3a805dffdbb43ec3ea6b98be2bec99125d8ce38820290156ef3d063f3c",
+      "bytes": 5492,
+      "role": "Load-bearing accepted mathematical proof; exact receipt binding"
+    },
+    {
+      "unit": "BOD001 review",
+      "path": "v10_research/binary_opposite_diagonal/review_BOD001_full_v1.md",
+      "sha256": "518e3e397bff7f12284b5f4f00b5a9d884216ed44dd265c0c04a41f588d269e1",
+      "bytes": 7813,
+      "role": "Full independent review, delta review or adopted scope note"
+    },
+    {
+      "unit": "BOD001 acceptance",
+      "path": "v10_research/intake/BOD001_acceptance.json",
+      "sha256": "e1d55e83e4a882b1bc03a94014138e82c961f3796cc87ea94ef0c8da333c563a",
+      "bytes": 625,
+      "role": "Acceptance before the 06:56 UTC scientific freeze; receipt scope is version-specific"
+    },
+    {
+      "unit": "WM001 accepted proof",
+      "path": "v10_research/binary_weighted_coupling/WM001_full_support_weighted_mixing_obstruction_v2.md",
+      "sha256": "f89ccc669498f2a9fba09f65eeed1215194104db4b37c72b879694f9eea62960",
+      "bytes": 7759,
+      "role": "Load-bearing accepted mathematical proof; exact receipt binding"
+    },
+    {
+      "unit": "WM001 review",
+      "path": "v10_research/binary_weighted_coupling/WM001_review_v1.md",
+      "sha256": "f635561ad457dd1e3ce2b8ec750a20129bebd361f39b75496d90e41b442b1ddb",
+      "bytes": 3348,
+      "role": "Full independent review, delta review or adopted scope note"
+    },
+    {
+      "unit": "WM001 delta_review",
+      "path": "v10_research/binary_weighted_coupling/WM001_review_v2.md",
+      "sha256": "2398b796bc494d3000abad058bab6d6e125ba90a216f7824a37454c87f765662",
+      "bytes": 3343,
+      "role": "Full independent review, delta review or adopted scope note"
+    },
+    {
+      "unit": "WM001 acceptance",
+      "path": "v10_research/intake/WM001_acceptance.json",
+      "sha256": "61ab4efad4f4ea58e1f92fb91e9a3b38cba2475a35c7960732d87d4757b62ed3",
+      "bytes": 741,
+      "role": "Acceptance before the 06:56 UTC scientific freeze; receipt scope is version-specific"
+    },
+    {
+      "unit": "BIF001 accepted proof",
+      "path": "v10_research/binary_all_start/BIF001_binary_all_initializations_frontier_v1.md",
+      "sha256": "35c6cb3b5c882c9e70dad68dbc8492c08e65ba49f532da84597e5e1e303467f0",
+      "bytes": 21674,
+      "role": "Load-bearing accepted mathematical proof; exact receipt binding"
+    },
+    {
+      "unit": "BIF001 review",
+      "path": "v10_research/binary_all_start/BIF001_independent_review_v1.md",
+      "sha256": "8c952204bf7e2c13aeb7cea5ae4760acf2b00867b670e68a8b0a71aab2851912",
+      "bytes": 7529,
+      "role": "Full independent review, delta review or adopted scope note"
+    },
+    {
+      "unit": "BIF001 acceptance",
+      "path": "v10_research/intake/BIF001_acceptance.json",
+      "sha256": "cc9d2d121521efdc8a1dfabe6beaa5e6551ed2d83b3e196ec3d20787953a7412",
+      "bytes": 700,
+      "role": "Acceptance before the 06:56 UTC scientific freeze; receipt scope is version-specific"
+    },
+    {
+      "unit": "GD001 accepted proof",
+      "path": "v10_research/growing_depth/GD001_upper_derivation.md",
+      "sha256": "5959d2c6f60c1374f9c2702fcf58a9bd5cc1245313e59c0fe95ad635e9e8e50a",
+      "bytes": 12232,
+      "role": "Load-bearing accepted mathematical proof; exact receipt binding"
+    },
+    {
+      "unit": "GD001 accepted proof",
+      "path": "v10_research/growing_depth/GD001_lower_derivation.md",
+      "sha256": "3137d43739fe39e80490b7f8b1c76f85495e4b7078e31c52a8f3ea9b1831e000",
+      "bytes": 9337,
+      "role": "Load-bearing accepted mathematical proof; exact receipt binding"
+    },
+    {
+      "unit": "GD001 accepted proof",
+      "path": "v10_research/growing_depth/GD001_uniform_FA_extension.md",
+      "sha256": "505be0ffc2f7499581cac5ba9da7c018b6f04cb10dc21bce9d3ab7cdba3f5c7e",
+      "bytes": 6637,
+      "role": "Load-bearing accepted mathematical proof; exact receipt binding"
+    },
+    {
+      "unit": "GD001 review",
+      "path": "v10_research/growing_depth/GD001_independent_review.md",
+      "sha256": "6dd03b39a6fca0f082bdfc259bc895cc472d0fe4f9ebf49aafc4a5c0042ad971",
+      "bytes": 6346,
+      "role": "Full independent or delta review of adopted version"
+    },
+    {
+      "unit": "GD001 review",
+      "path": "v10_research/growing_depth/GD001_independent_delta_review.md",
+      "sha256": "4d54b83ac882bf096770cf99aacd4f65886bf56314f492dfee651f21ef6ab092",
+      "bytes": 3107,
+      "role": "Full independent or delta review of adopted version"
+    },
+    {
+      "unit": "GD001 acceptance",
+      "path": "v10_research/intake/GD001_acceptance.json",
+      "sha256": "662c3020f51d0d8cc7595cc375c21281df6ef71eea85dd0e1d153745c8496d08",
+      "bytes": 1246,
+      "role": "Acceptance before the 06:56 UTC scientific freeze; receipt scope is version-specific"
+    },
+    {
+      "unit": "Depth/companding primary-source attribution",
+      "path": "v10_research/prior_art/depth_companding_comparison.md",
+      "sha256": "5b581a65d7ecf418500c018bb7995857b4b930187a4a4512e2860a876cf29972",
+      "bytes": 3058,
+      "role": "Bounded post-freeze attribution screen; no additional scientific result or priority claim"
+    },
+    {
+      "path": "v10_research/mixing_depth/MD001_theorem.md",
+      "sha256": "d7665dbc719fecfab32b2e9c56e6f33a4e70cea7dec5c4efa876c7fff538aed3",
+      "bytes": 7184,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/mixing_depth/MD001_upper.md",
+      "sha256": "f1eb7603649291e7033c658fd81f8443b91fb15a7e77a5801105140699dd5213",
+      "bytes": 9723,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/mixing_depth/MD001_binary_lower.md",
+      "sha256": "d9fe8d4c75c30cce7d9d472e7ed486db0f77f18974200c757538523284871dc3",
+      "bytes": 9643,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/mixing_depth/MD001_independent_review.md",
+      "sha256": "26489d0e7c2a50b298ba395e72a5d4ab67c53a1bdbb4c0c4cd046d99351eb11e",
+      "bytes": 11403,
+      "role": "Independent LLM mathematical review; not formal or external peer review"
+    },
+    {
+      "path": "v10_research/intake/MD001_acceptance.json",
+      "sha256": "5b8d549882d38eb8d3b0a696a64ccddb259e29228bed622434f9342b2a7b3eaa",
+      "bytes": 1009,
+      "role": "Version adoption receipt"
+    },
+    {
+      "path": "v10_research/mixing_depth/MD001_source_bindings.json",
+      "sha256": "8e2234f8cad80536e562d23c25b4732b4f79658a49ed51c703f50f57e0a0f312",
+      "bytes": 2391,
+      "role": "Proof/review dependency identity binding"
+    },
+    {
+      "path": "v10_research/mixing_depth/MD001_review_source_bindings.json",
+      "sha256": "b90029d77f403b4153e92205b6dcc598bbd4574d3ad1655b81992dcbc98ea12f",
+      "bytes": 3581,
+      "role": "Proof/review dependency identity binding"
+    },
+    {
+      "path": "v10_research/folded_grid/FG001_theorem.md",
+      "sha256": "085e94826be642b71acbbeefe5bdc44cc0774da2eae0e1445e4c7f3a8e93d442",
+      "bytes": 13092,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/folded_grid/FG001_independent_review.md",
+      "sha256": "a4df0c5ff75d5ddbb52f3e83fc810a01cee845c791ff73a871367bfe8c60358b",
+      "bytes": 6487,
+      "role": "Independent LLM mathematical review; not formal or external peer review"
+    },
+    {
+      "path": "v10_research/intake/FG001_acceptance.json",
+      "sha256": "77594368ea5a52240e037a6b4c91e3fc3d1cd3c8412e083cf92c614519ad78cc",
+      "bytes": 679,
+      "role": "Version adoption receipt"
+    },
+    {
+      "path": "v10_research/folded_grid/FG001_source_bindings.json",
+      "sha256": "efc7ddb76ef7d1c0c13da14c9be65f2359029830b49f22cf8c2ccccd77d3a9c7",
+      "bytes": 1268,
+      "role": "Proof/review dependency identity binding"
+    },
+    {
+      "path": "v10_research/influence_reveal/IR001_theorem.md",
+      "sha256": "963e3f743c474f3f4c29fcb2f4aa9dfe1283ac82e0821b18df6a99223b09fffe",
+      "bytes": 13157,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/influence_reveal/IR001_independent_review.md",
+      "sha256": "57f1a10851039bc47c6321b08f60198fe8603e98f4462fe6b31de6cc5f13fd59",
+      "bytes": 7076,
+      "role": "Independent LLM mathematical review; not formal or external peer review"
+    },
+    {
+      "path": "v10_research/intake/IR001_acceptance.json",
+      "sha256": "02726788355296cc57311c21f2339e1610f2f99df70a356d88aaea47bf37a07f",
+      "bytes": 704,
+      "role": "Version adoption receipt"
+    },
+    {
+      "path": "v10_research/influence_reveal/IR001_source_bindings.json",
+      "sha256": "89e6e3ddd178cb3b6e1c16973ba9a00ade2a3b31c97c5d6868ab40add0da2de2",
+      "bytes": 3196,
+      "role": "Proof/review dependency identity binding"
+    },
+    {
+      "path": "v10_research/iid_depth_capacity/IC001_theorem.md",
+      "sha256": "a443306b90e55bb05c76f3935b8cca676f9f8b3c6211c21d2e2b34e23dd979e3",
+      "bytes": 13639,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/iid_depth_capacity/IC001_independent_review.md",
+      "sha256": "488b0990edfeae39b9dbdfc1d337822605b39a2d67a0735c327e5d2ab5494318",
+      "bytes": 7120,
+      "role": "Independent LLM mathematical review; not formal or external peer review"
+    },
+    {
+      "path": "v10_research/intake/IC001_acceptance.json",
+      "sha256": "95a41ec851b73c10e5a44c38885808d6969f41c773059e7f165a3af9bcaec898",
+      "bytes": 836,
+      "role": "Version adoption receipt"
+    },
+    {
+      "path": "v10_research/iid_depth_capacity/IC001_source_bindings.json",
+      "sha256": "103572845c9ffdef5808d63db9269aeb53e4430b8a18e8fc4ee16e52c112179c",
+      "bytes": 1989,
+      "role": "Proof/review dependency identity binding"
+    },
+    {
+      "path": "v10_research/folded_noise/FN001_theorem.md",
+      "sha256": "38d716cdd2703ac3f53338c71f77b86728bf39d25fdd389a81d06d7b975d8399",
+      "bytes": 9169,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/folded_noise/FN001_independent_review.md",
+      "sha256": "1ade07b20cae0917f263c3f4b22255de0d62763fda6ca021519e9c197e31dcd1",
+      "bytes": 5709,
+      "role": "Independent LLM mathematical review; not formal or external peer review"
+    },
+    {
+      "path": "v10_research/intake/FN001_acceptance.json",
+      "sha256": "624697e42b9a18b42e15d546feb6ad9ae0d3fc5a3b43bcf370b9327e515baa97",
+      "bytes": 882,
+      "role": "Version adoption receipt"
+    },
+    {
+      "path": "v10_research/folded_noise/FN001_source_bindings.json",
+      "sha256": "e5c3fa74a790d37adb82f2b61ef866c32ad3f9cbf0df23a8ffdb18f30e2cd9c8",
+      "bytes": 928,
+      "role": "Proof/review dependency identity binding"
+    },
+    {
+      "path": "v10_research/robust_scalar_packing/RP001_theorem.md",
+      "sha256": "6326dfc083b69a1915679ac01e4dbdad750057cf3c896a3cd0c5787cd504a136",
+      "bytes": 10092,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/robust_scalar_packing/RP001_independent_review.md",
+      "sha256": "5679eedef7841cd0ccf1acc3b29cd769117dd6408c8dbb5b1620d7880cdfe269",
+      "bytes": 6572,
+      "role": "Independent LLM mathematical review; not formal or external peer review"
+    },
+    {
+      "path": "v10_research/intake/RP001_acceptance.json",
+      "sha256": "940ec6be73cd345d6db885ab826794568ccd7f667fe2231a2cfba4a984559591",
+      "bytes": 882,
+      "role": "Version adoption receipt"
+    },
+    {
+      "path": "v10_research/robust_scalar_packing/RP001_source_bindings.json",
+      "sha256": "bc3be625e1052672463f2a690856a1f68ad69167decda34f4ec9791a61d22c6f",
+      "bytes": 2546,
+      "role": "Proof/review dependency identity binding"
+    },
+    {
+      "path": "v10_research/robust_grid_packing/RG001_theorem.md",
+      "sha256": "fc563812489ea4deba9bbc00e072119f2e26d23f3b6bcab56c40cb5dabd74949",
+      "bytes": 12452,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/robust_grid_packing/RG001_independent_review.md",
+      "sha256": "83faf7be290973d6297f73726c7b2ba285bdf164bbebdd468dd5385d1b80bf30",
+      "bytes": 6616,
+      "role": "Independent LLM mathematical review; not formal or external peer review"
+    },
+    {
+      "path": "v10_research/intake/RG001_acceptance.json",
+      "sha256": "ce650c379e238a5add3806a47e19cadd5a7e40ad719c4df92a4e42b8bbdae4c7",
+      "bytes": 884,
+      "role": "Version adoption receipt"
+    },
+    {
+      "path": "v10_research/robust_grid_packing/RG001_source_bindings.json",
+      "sha256": "dcab8ddb9c0c8268d391d96e111239199d0bf1648c53a2ebcbe46acaf8d7216d",
+      "bytes": 751,
+      "role": "Proof/review dependency identity binding"
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_theorem.md",
+      "sha256": "743367f687c79ea9b3abfbecaa70b206fe62afb5fbb56d1643331aacbfc18383",
+      "bytes": 16763,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_independent_review.md",
+      "sha256": "112ae23fb2015b94077b9236043bdf7593b7fdd11fb648722cffe14fa03932a2",
+      "bytes": 6398,
+      "role": "Independent LLM mathematical review; not formal or external peer review"
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_independent_geometry_review.md",
+      "sha256": "ca739dc0e9d5b1562d6051c1beda83f9616895c64c5caefd6f573d50e2c4cde4",
+      "bytes": 6105,
+      "role": "Independent LLM mathematical review; not formal or external peer review"
+    },
+    {
+      "path": "v10_research/intake/GN001_acceptance.json",
+      "sha256": "9267efd56a4a4a0fc1aa0b50b13712b933e27e72ae9f6e2f0a6716c15b558f07",
+      "bytes": 985,
+      "role": "Version adoption receipt"
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_source_bindings.json",
+      "sha256": "07962de5939343b60865b267a7a4929e95f50a68e5141d37eb56899b8ef70b82",
+      "bytes": 2174,
+      "role": "Proof/review dependency identity binding"
+    },
+    {
+      "path": "v10_research/robust_markov_prediction/MG001_theorem.md",
+      "sha256": "c4f114bb7510f3dd5ead7461d9ebead092e2abe103fc92f96e3af9fbd4ac6623",
+      "bytes": 17685,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/robust_markov_prediction/MG001_independent_review.md",
+      "sha256": "235faf3380a6817931777cde3bce31a977d2e6dae9cc6e6db242ff80d93337b0",
+      "bytes": 9191,
+      "role": "Independent LLM mathematical review; not formal or external peer review"
+    },
+    {
+      "path": "v10_research/intake/MG001_acceptance.json",
+      "sha256": "d2d105f735e724d1057fdc9ad88b6e69a405c3b95eb97ad0a50321335ea23e1a",
+      "bytes": 982,
+      "role": "Version adoption receipt"
+    },
+    {
+      "path": "v10_research/robust_markov_prediction/MG002_source_bindings.json",
+      "sha256": "8ca45427aaf5aa74723a54c454afb6fc37c701ca17bd0109b901cc5fbeed959b",
+      "bytes": 761,
+      "role": "Proof/review dependency identity binding"
+    },
+    {
+      "path": "v10_research/robust_markov_prediction/MG001_source_bindings.json",
+      "sha256": "e5db2eb892fe64da514d58b83b12cf05766b1ae254e982ec60387477e99ce4eb",
+      "bytes": 2279,
+      "role": "Proof/review dependency identity binding"
+    },
+    {
+      "path": "v10_research/robust_markov_prediction/MG002_partial_capacity_extension.md",
+      "sha256": "7b9c72da1bbaa6ddafcba66fabe80cf25b467703bfeca7b9afa8e00f0f8e8d93",
+      "bytes": 7508,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/robust_markov_prediction/MG002_independent_review.md",
+      "sha256": "c5fc32af023948508dd3bea6993ed076bad6fee2a2f594733e76ca372eb5b28f",
+      "bytes": 6151,
+      "role": "Independent LLM mathematical review; not formal or external peer review"
+    },
+    {
+      "path": "v10_research/intake/MG002_acceptance.json",
+      "sha256": "57002e5143588baaba3f25c8baec6c0493dea9b8304ef40d4bb5f9cd2dfae44f",
+      "bytes": 845,
+      "role": "Version adoption receipt"
+    },
+    {
+      "path": "v10_research/noise_precision_frontier/NP001_theorem.md",
+      "sha256": "79cae4ebb56694452d63ccb2f6ac1f2d89516e9812c68bba700341ea600e9f54",
+      "bytes": 19940,
+      "role": "Adopted mathematical proof"
+    },
+    {
+      "path": "v10_research/noise_precision_frontier/NP001_independent_review.md",
+      "sha256": "de58c6bfb3b138cd69cf37d82c29b6133dcc0d3f3c9c8d4df9a8892231a94974",
+      "bytes": 7527,
+      "role": "Independent LLM mathematical review; not formal or external peer review"
+    },
+    {
+      "path": "v10_research/intake/NP001_acceptance.json",
+      "sha256": "a095cadc6461c55ef960ee92a6a41e5f351416ff62b3e867c8d63c217b35fbdd",
+      "bytes": 900,
+      "role": "Version adoption receipt"
+    },
+    {
+      "path": "v10_research/noise_precision_frontier/NP001_source_bindings.json",
+      "sha256": "d8f93a71a7fc79534d8b53cc4b6396857f23b36ed03edacf2bf05377504195dd",
+      "bytes": 2827,
+      "role": "Proof/review dependency identity binding"
+    },
+    {
+      "path": "v10_research/manuscript_v4/SOURCE_MANIFEST.json",
+      "sha256": "6afd145e040a1c36baf1afe7ec1076d4fc4f152eb16396e4479103c08c33e493",
+      "bytes": 28414,
+      "role": "Unchanged previous manuscript and review provenance"
+    },
+    {
+      "path": "v10_research/manuscript_v4/ROOT_RELEASE_QA.json",
+      "sha256": "4d8783bc48353cc56c6d5eac93d437ff786dee678b565ef9fd2b1b8b0ecba187",
+      "bytes": 1169,
+      "role": "Unchanged previous manuscript and review provenance"
+    },
+    {
+      "path": "v10_research/manuscript_v4/QA_VERIFICATION.json",
+      "sha256": "7cd1908d1b24a7bf086292c3579106b7dbdecf8bf9ba30196c20d0cdf19e61eb",
+      "bytes": 5944,
+      "role": "Unchanged previous manuscript and review provenance"
+    },
+    {
+      "path": "v10_research/manuscript_v4/AUDIT_SCIENCE_FRESH.md",
+      "sha256": "b6b4d88006b51e57be05603e8aa7ee3bc1843f5cd8a9bc7a4209790700b7ccbe",
+      "bytes": 19881,
+      "role": "Unchanged previous manuscript and review provenance"
+    },
+    {
+      "path": "v10_research/manuscript_v4/AUDIT_SCIENCE_FRESH_BINDINGS.json",
+      "sha256": "02f9024900753129bebdf807862e7f40939f4f16bf86f58ae1a8cb1017ffbfa4",
+      "bytes": 16745,
+      "role": "Unchanged previous manuscript and review provenance"
+    },
+    {
+      "path": "v10_research/manuscript_v4/finite_precision_prediction.tex",
+      "sha256": "d362bc57b0a42c206e804fd666492744e563b392950bfc6f7924d10b2d1bbd3f",
+      "bytes": 143284,
+      "role": "Unchanged previous manuscript and review provenance"
+    },
+    {
+      "path": "v10_research/manuscript_v4/finite_precision_prediction.pdf",
+      "sha256": "c1aa52913b10f5c9ea9db5a03e0fd7a23dbdf2b6e62413b1703ae7c87d8bec0f",
+      "bytes": 714169,
+      "role": "Unchanged previous manuscript and review provenance"
+    },
+    {
+      "path": "v10_research/prior_art/folded_capacity_comparison.md",
+      "sha256": "0cc7aa4a5f8b2e5c63fd53cf6b323a2807a340cc35491d7ec99cbdb1a23fa5b6",
+      "bytes": 1764,
+      "role": "Targeted primary-source reading scope; no novelty certification"
+    },
+    {
+      "path": "v10_research/prior_art/analog_channel_comparison.md",
+      "sha256": "f96d43581070154e0db47bdc97b64e5be80059803728c167bbf343a6eef6e729",
+      "bytes": 1825,
+      "role": "Targeted primary-source reading scope; no novelty certification"
+    },
+    {
+      "path": "v10_intake/source/DOT_START_PROMPT.txt",
+      "sha256": "8a270ee67ff3f3700441771c6dd0bb74451e80c8ff56a368b174fc90fd331edb",
+      "bytes": 2990,
+      "role": "Original research delegation/source integrity"
+    },
+    {
+      "path": "v10_intake/source/START_HERE.md",
+      "sha256": "6538c4edf19678e9f06b4228aeebd65b959112a4140e33ac73deb980fda28767",
+      "bytes": 5766,
+      "role": "Original research delegation/source integrity"
+    },
+    {
+      "path": "v10_intake/source/SOURCE_MANIFEST.json",
+      "sha256": "6b791cb19b1d496044471e958205ee97f59edd025563c8ab05eadf9c2e058062",
+      "bytes": 156587,
+      "role": "Original research delegation/source integrity"
+    },
+    {
+      "path": "v10_research/delivery_stage7/SCIENTIFIC_FREEZE.json",
+      "sha256": "8a601b2e6af7d25e4be66136220ddfb50b252c4556eb602166931ba695adf8ef",
+      "bytes": 1731,
+      "role": "Scientific scope cutoff binding"
+    },
+    {
+      "path": "v10_research/robust_markov_prediction/MG_final_clip_clarification.md",
+      "sha256": "30832632d00b18ae757cebc68426276d34f26b95dab18ecd67dd782e36dffdbc",
+      "bytes": 3741,
+      "role": "Post-freeze implementation clarification: exact finite pre-attack clipping, enlarged-depth precision selection and complete costs; original accepted proof bytes unchanged"
+    },
+    {
+      "path": "v10_research/robust_markov_prediction/MG_final_clip_clarification_independent_review.md",
+      "sha256": "f7b6fc753bd7ca4b3fedb1f48ca813e9dc6da33a68f8584b610cd6b20d73109f",
+      "bytes": 1979,
+      "role": "Fresh review/binding of the post-freeze exact pre-attack clipping implementation correction"
+    },
+    {
+      "path": "v10_research/robust_markov_prediction/MG_final_clip_clarification_review_binding.json",
+      "sha256": "2e505750e777882b071b20bd2ed34c7110e5b4251e0dd6ec09622e758127a5bc",
+      "bytes": 428,
+      "role": "Fresh review/binding of the post-freeze exact pre-attack clipping implementation correction"
+    }
+  ],
+  "new_acceptance_bindings": [
+    {
+      "unit": "MD001",
+      "accepted_at_utc": "2026-11-02T07:10:03.541878+00:00",
+      "proofs": {
+        "mixing_depth/MD001_theorem.md": "d7665dbc719fecfab32b2e9c56e6f33a4e70cea7dec5c4efa876c7fff538aed3",
+        "mixing_depth/MD001_upper.md": "f1eb7603649291e7033c658fd81f8443b91fb15a7e77a5801105140699dd5213",
+        "mixing_depth/MD001_binary_lower.md": "d9fe8d4c75c30cce7d9d472e7ed486db0f77f18974200c757538523284871dc3"
+      },
+      "review_paths": [
+        "mixing_depth/MD001_independent_review.md"
+      ],
+      "receipt_sha256": "5b8d549882d38eb8d3b0a696a64ccddb259e29228bed622434f9342b2a7b3eaa"
+    },
+    {
+      "unit": "FG001",
+      "accepted_at_utc": "2026-11-02T07:17:06.035523+00:00",
+      "proofs": {
+        "folded_grid/FG001_theorem.md": "085e94826be642b71acbbeefe5bdc44cc0774da2eae0e1445e4c7f3a8e93d442"
+      },
+      "review_paths": [
+        "folded_grid/FG001_independent_review.md"
+      ],
+      "receipt_sha256": "77594368ea5a52240e037a6b4c91e3fc3d1cd3c8412e083cf92c614519ad78cc"
+    },
+    {
+      "unit": "IR001",
+      "accepted_at_utc": "2026-11-02T07:29:11.908517+00:00",
+      "proofs": {
+        "influence_reveal/IR001_theorem.md": "963e3f743c474f3f4c29fcb2f4aa9dfe1283ac82e0821b18df6a99223b09fffe"
+      },
+      "review_paths": [
+        "influence_reveal/IR001_independent_review.md"
+      ],
+      "receipt_sha256": "02726788355296cc57311c21f2339e1610f2f99df70a356d88aaea47bf37a07f"
+    },
+    {
+      "unit": "IC001",
+      "accepted_at_utc": "2026-11-02T07:36:28.147607+00:00",
+      "proofs": {
+        "iid_depth_capacity/IC001_theorem.md": "a443306b90e55bb05c76f3935b8cca676f9f8b3c6211c21d2e2b34e23dd979e3"
+      },
+      "review_paths": [
+        "iid_depth_capacity/IC001_independent_review.md"
+      ],
+      "receipt_sha256": "95a41ec851b73c10e5a44c38885808d6969f41c773059e7f165a3af9bcaec898"
+    },
+    {
+      "unit": "FN001",
+      "accepted_at_utc": "2026-11-02T07:38:08.219608+00:00",
+      "proofs": {
+        "folded_noise/FN001_theorem.md": "38d716cdd2703ac3f53338c71f77b86728bf39d25fdd389a81d06d7b975d8399"
+      },
+      "review_paths": [
+        "folded_noise/FN001_independent_review.md"
+      ],
+      "receipt_sha256": "624697e42b9a18b42e15d546feb6ad9ae0d3fc5a3b43bcf370b9327e515baa97"
+    },
+    {
+      "unit": "RP001",
+      "accepted_at_utc": "2026-11-02T07:47:29.537571+00:00",
+      "proofs": {
+        "robust_scalar_packing/RP001_theorem.md": "6326dfc083b69a1915679ac01e4dbdad750057cf3c896a3cd0c5787cd504a136"
+      },
+      "review_paths": [
+        "robust_scalar_packing/RP001_independent_review.md"
+      ],
+      "receipt_sha256": "940ec6be73cd345d6db885ab826794568ccd7f667fe2231a2cfba4a984559591"
+    },
+    {
+      "unit": "RG001",
+      "accepted_at_utc": "2026-11-02T07:53:37.662254+00:00",
+      "proofs": {
+        "robust_grid_packing/RG001_theorem.md": "fc563812489ea4deba9bbc00e072119f2e26d23f3b6bcab56c40cb5dabd74949"
+      },
+      "review_paths": [
+        "robust_grid_packing/RG001_independent_review.md"
+      ],
+      "receipt_sha256": "ce650c379e238a5add3806a47e19cadd5a7e40ad719c4df92a4e42b8bbdae4c7"
+    },
+    {
+      "unit": "GN001",
+      "accepted_at_utc": "2026-11-02T07:58:43.745479+00:00",
+      "proofs": {
+        "robust_depth_capacity/GN001_theorem.md": "743367f687c79ea9b3abfbecaa70b206fe62afb5fbb56d1643331aacbfc18383"
+      },
+      "review_paths": [
+        "robust_depth_capacity/GN001_independent_review.md",
+        "robust_depth_capacity/GN001_independent_geometry_review.md"
+      ],
+      "receipt_sha256": "9267efd56a4a4a0fc1aa0b50b13712b933e27e72ae9f6e2f0a6716c15b558f07"
+    },
+    {
+      "unit": "MG001",
+      "accepted_at_utc": "2026-11-02T08:05:24.287857+00:00",
+      "proofs": {
+        "robust_markov_prediction/MG001_theorem.md": "c4f114bb7510f3dd5ead7461d9ebead092e2abe103fc92f96e3af9fbd4ac6623"
+      },
+      "review_paths": [
+        "robust_markov_prediction/MG001_independent_review.md"
+      ],
+      "receipt_sha256": "d2d105f735e724d1057fdc9ad88b6e69a405c3b95eb97ad0a50321335ea23e1a"
+    },
+    {
+      "unit": "MG002",
+      "accepted_at_utc": "2026-11-02T08:06:18.467666+00:00",
+      "proofs": {
+        "robust_markov_prediction/MG002_partial_capacity_extension.md": "7b9c72da1bbaa6ddafcba66fabe80cf25b467703bfeca7b9afa8e00f0f8e8d93"
+      },
+      "review_paths": [
+        "robust_markov_prediction/MG002_independent_review.md"
+      ],
+      "receipt_sha256": "57002e5143588baaba3f25c8baec6c0493dea9b8304ef40d4bb5f9cd2dfae44f"
+    },
+    {
+      "unit": "NP001",
+      "accepted_at_utc": "2026-11-02T08:09:06.390192+00:00",
+      "proofs": {
+        "noise_precision_frontier/NP001_theorem.md": "79cae4ebb56694452d63ccb2f6ac1f2d89516e9812c68bba700341ea600e9f54"
+      },
+      "review_paths": [
+        "noise_precision_frontier/NP001_independent_review.md"
+      ],
+      "receipt_sha256": "a095cadc6461c55ef960ee92a6a41e5f351416ff62b3e867c8d63c217b35fbdd"
+    }
+  ],
+  "inherited_acceptance_bindings": [
+    {
+      "unit": "BC001",
+      "accepted_at_utc": "2026-11-02T06:20:02.745397+00:00",
+      "proof_sha256": "38712b68da30e08d14f41567e84f53b4073b7e2d46280313adc8b69859fc850e",
+      "component_proofs": {
+        "binary_causal/BC001_binary_stationary_causal_frontier_v1.md": "38712b68da30e08d14f41567e84f53b4073b7e2d46280313adc8b69859fc850e"
+      }
+    },
+    {
+      "unit": "BAI002",
+      "accepted_at_utc": "2026-11-02T06:11:48.748042+00:00",
+      "proof_sha256": "cb8bbd7c4447cf465cb04e757dcd8c3f8d10dc5929dff073c7881988c86ccf7c",
+      "component_proofs": {
+        "binary_arbitrary/BAI002_absorbing_active_core_upper_v1.md": "cb8bbd7c4447cf465cb04e757dcd8c3f8d10dc5929dff073c7881988c86ccf7c"
+      }
+    },
+    {
+      "unit": "BAI003",
+      "accepted_at_utc": "2026-11-02T06:22:11.855323+00:00",
+      "proof_sha256": "99d209c423664c3fe74d1b32fd68fb89ed31218c58fa2f11c343c3e6a54bd0e4",
+      "component_proofs": {
+        "binary_arbitrary/BAI003_uniform_absorbing_binary_upper_v2.md": "99d209c423664c3fe74d1b32fd68fb89ed31218c58fa2f11c343c3e6a54bd0e4"
+      }
+    },
+    {
+      "unit": "BAI004",
+      "accepted_at_utc": "2026-11-02T06:48:06.138757+00:00",
+      "proof_sha256": "3a3e1bc36f566c50677865c556f6164d3eaf258febcd02bec07b5c4165452910",
+      "component_proofs": {
+        "binary_arbitrary/BAI004_fullsupport_initial_delay_lemmas_v5.md": "3a3e1bc36f566c50677865c556f6164d3eaf258febcd02bec07b5c4165452910"
+      }
+    },
+    {
+      "unit": "BOD001",
+      "accepted_at_utc": "2026-11-02T06:46:59.046482+00:00",
+      "proof_sha256": "a4622a3a805dffdbb43ec3ea6b98be2bec99125d8ce38820290156ef3d063f3c",
+      "component_proofs": {
+        "binary_opposite_diagonal/BOD001_opposite_diagonal_occupation_v1.md": "a4622a3a805dffdbb43ec3ea6b98be2bec99125d8ce38820290156ef3d063f3c"
+      }
+    },
+    {
+      "unit": "WM001",
+      "accepted_at_utc": "2026-11-02T06:36:11.048038+00:00",
+      "proof_sha256": "f89ccc669498f2a9fba09f65eeed1215194104db4b37c72b879694f9eea62960",
+      "component_proofs": {
+        "binary_weighted_coupling/WM001_full_support_weighted_mixing_obstruction_v2.md": "f89ccc669498f2a9fba09f65eeed1215194104db4b37c72b879694f9eea62960"
+      }
+    },
+    {
+      "unit": "BIF001",
+      "accepted_at_utc": "2026-11-02T06:54:16.060989+00:00",
+      "proof_sha256": "35c6cb3b5c882c9e70dad68dbc8492c08e65ba49f532da84597e5e1e303467f0",
+      "component_proofs": {
+        "binary_all_start/BIF001_binary_all_initializations_frontier_v1.md": "35c6cb3b5c882c9e70dad68dbc8492c08e65ba49f532da84597e5e1e303467f0"
+      }
+    },
+    {
+      "unit": "GD001",
+      "accepted_at_utc": "2026-11-02T06:55:04.275963+00:00",
+      "proof_sha256": "5959d2c6f60c1374f9c2702fcf58a9bd5cc1245313e59c0fe95ad635e9e8e50a",
+      "component_proofs": {
+        "growing_depth/GD001_upper_derivation.md": "5959d2c6f60c1374f9c2702fcf58a9bd5cc1245313e59c0fe95ad635e9e8e50a",
+        "growing_depth/GD001_lower_derivation.md": "3137d43739fe39e80490b7f8b1c76f85495e4b7078e31c52a8f3ea9b1831e000",
+        "growing_depth/GD001_uniform_FA_extension.md": "505be0ffc2f7499581cac5ba9da7c018b6f04cb10dc21bce9d3ab7cdba3f5c7e"
+      }
+    }
+  ],
+  "evidence_status": "Independent LLM review and finite diagnostics are not formal verification, external peer review or emitted-network execution.",
+  "literature_read_scope": "Previous v4 bibliography reading preserved. New: Telgarsky Section 3.3; Uss arXiv v2 Sections 2.1-2.4; Taylor et al MITRE abstract/introduction Sections 2.1-2.3 and nearest-curve discussion in 3.1. Bibliographic metadata checked on primary pages. No exhaustive/absence-based novelty claim.",
+  "post_freeze_clarifications": {
+    "description": "One explicit finite implementation correction, not new frozen science: final working-lattice pre-attack cube clipping for both general-Markov constructions. Original acceptance bindings remain unchanged. Fresh review is separately bound when available.",
+    "path": "v10_research/robust_markov_prediction/MG_final_clip_clarification.md",
+    "fresh_review": "v10_research/robust_markov_prediction/MG_final_clip_clarification_independent_review.md"
+  }
+}

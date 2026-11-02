@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "arithmetic": "Fraction exact except the explicitly labeled harmonic/log scalar diagnostic",
+  "counts": {
+    "null_certificate": 6,
+    "alternative_stationarity": 270,
+    "ratio_identity": 270,
+    "acceptance_dp": 270,
+    "kernel_strings": 76656,
+    "scalar_integrals": 90
+  },
+  "minimum_acceptance_probability_exact": "9/16",
+  "minimum_acceptance_probability_float": 0.5625,
+  "minimum_acceptance_case": [
+    64,
+    2,
+    2,
+    "1/4"
+  ],
+  "source_sha256": {
+    "AB001_joint_blindness_obstruction.md": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d",
+    "AB002_addone_failure_and_open_beta_known.md": "7848267fa73e33775ca2aa467230980ee5f89e1d5ae0ae140c0d7955909d219b"
+  },
+  "scope": "Independent finite diagnostics corroborate tested instances; full theorem is assessed separately in the mathematical review, not formally verified."
+}

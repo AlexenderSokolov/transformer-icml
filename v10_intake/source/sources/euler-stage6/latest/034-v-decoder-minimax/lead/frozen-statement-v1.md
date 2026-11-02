@@ -1,0 +1,125 @@
+# REL-V-DECODER-MINIMAX（034）：原SRC最终V切口任意共同读出的联合K信息风险
+
+这是033正常接收后独立nonroot候选，尚未接纳。032/033只证明固定原后缀；本项改变下界算法量词，检验最终V切口的K^4编辑尺度和Psi对数项是否对任意共同读出仍必要。033不是本项前提，不重投031–033，不把rho可公开修复的master攻击冒作信息下界。Lead提出以下随机标签clock与计数分箱路线；全部新增桥均为待核候选。
+
+## 1. 准确实验、可见端口与量词
+
+整数K>=22、M>=1，N=M+2、n_tok=M+3，Y_i=(X_(i+1),X_(i+2))。完整观察X_1^(M+2)，departure仅0<=i<M，actual目标theta_(Y_M)，TV=L1/2。每实验theta固定齐次二阶表，mu任意，允许零边；sup可依公开参数选择源，不逐路径换表。
+
+沿SRC Fact fef8372728290b45原Pi的干净前缀，全部整数h>=h_N=ceil(log2(128(K+1)(M+3)^3))，Q=2^h，保留h_N>=h0。所有master及到V生成的运算干净。实际V∈{1,...,2Q}^K，逐路径
+|V_c-Q(C_c+1)/M|<=78，
+C_c为actual query的真实triple count，J=sum C_c。不是023anchor前缀，不改变V表示。
+
+切口仍在全部V生成后、任何最终sum/quotient之前。公开整数D>=0；共同Markov核T将V替换为W∈{1,...,2Q}^K，逐路径||W-V||_1<=D。核可读完整已观察历史、当前V、公开K,M,h,D及源独立种子；不能读theta、mu、未来、预测器私有种子。核在所有合法历史上满足预算，不能只在见证源上合法。
+
+本项读出类A可依公开K,M,h,D，仅接收W以及SRC该最终切口保留的exact公共/query/actual endpoint/flag bits，并输出任意K维概率向量。允许无限计算和源独立私有随机种子，不要求原ordered grid格式。它不读取历史、clean V/master、旧sum/quotient、evaluator scratch、count table、另存统计或辅助样本；没有额外snapshot或旁路。核能看历史不授予A历史权限。证明须核清所列exact bits的实际内容，并在下界源上给出其与标签参数的关系；不能把遗漏的侧信息偷偷删掉。
+
+定义
+R_dec,V(K,M,h,D)=inf_A sup_(theta,mu) sup_(T合法共同核)
+ E TV(A(W;retained bits),theta_(Y_M))。
+先固定共同A，再取源与核sup；A不知道隐藏源参数。对每个源实验，theta仍固定。inf的算法可依所有公开预算，不可针对隐藏theta逐源选取。R_dec,V是总actual均值风险，不是excess，也不是算法可回读历史的无约束minimax。
+
+令T_K=K^(5/2)/sqrt(M+1)，eta=D/Q，x=K^4 eta；
+Psi(0)=0；Psi(x)=x(1+ln(1/x))于0<x<1；Psi(x)=1于x>=1。
+
+## 2. 完整待证合取
+
+所有上述有限参数：
+2^-120 min(1,T_K+Psi(K^4D/Q))
+ <=R_dec,V(K,M,h,D)
+ <=R_V^Pi(K,M,h,D)
+ <=min(1,64T_K+Psi(K^4D/Q)).                    (DEC-MATCH)
+
+对任何该域公开参数序列：
+R_dec,V(K_n,M_n,h_n,D_n)->0
+ 当且仅当
+K_n^(5/2)/sqrt(M_n+1)->0 且 K_n^4 D_n/Q_n->0。   (DEC-SEQUENCE)
+
+保留D=0、M=1、任意大D、所有h>=h_N、全部horizon余数和全K个可见银行坐标。不同源下界先取max，不能相加为同一源见证。常数非最优，不称统一a.s.、同一源跨全部n、所有Transformer资源最优或物理纠错不可能。若候选失败，保留目标和精确障碍，不静默换成两标签固定decoder、小预算或对齐horizon定理。
+
+上界选择原SRC ordered suffix，准确调用032 Fact372cbc90282df2cd；整个inf读出类包含该有限算法。统计下界用MM5 Fact946d42d5bf502eb4与identity核：任一给定A与干净SRC前缀的组合仍是共同全历史预测器。无需重证既有Fact。
+
+## 3. 新源：全余数clock中植入未知Bernoulli行
+
+仅在T_K<1的非平凡分支构造，整数M>=K^5。沿032的公开a=floor((K-6)/4)>=4，P=a^2，L=P+5，m=floor(M/L)>=4，U=a^2L。四互斥组Agrp,Bgrp,Cgrp,Dgrp及六marker(p0,q0,p1,q1,xi,zeta)=(4a,...,4a+5)与032完全相同。Agrp为0,...,a-1，其余三组依次平移a；有限Euler字w_0,...,w_P闭合于0，全部有序pair恰出现一次含loops，w^0=w，w^1=w+a。
+
+复用032的有限Euler存在性与stay圈，明确列全核：
+(p_s,q_s)->w^s_0，(q_s,w^s_0)->w^s_1，s=0,1；
+(w^s_i,w^s_(i+1))->w^s_(i+2)，0<=i<=P-2；
+最后Agrp pair->xi，(w^0_P,xi)->zeta；
+(xi,zeta)->(1-1/m)delta_p0+(1/m)delta_p1，(zeta,p_s)->q_s；
+最后Bgrp pair->Unif(Cgrp)，(w^1_P,c)->Unif(Dgrp)。
+
+对每个z=(c,e)∈Cgrp×Dgrp引入独立未知参数t_z∈[0,1]。将032的确定query后继改为
+theta_(c,e)=t_z delta_p0+(1-t_z)delta_p1。
+令(e,p0)->q1及(e,p1)->q1，并令(p0,q1)->w^1_0。
+(p1,q1)->w^1_0已在Bgrp规则内，不能覆盖(p0,q0)->w^0_0。
+其它未指定行delta_0。
+需自足证明新增赋值无冲突、shift合法，且两个标签分支等长返回同一Bgrp圈，不改变query间隔L和query选择律。参数t_z是固定theta的一部分，不是逐访问重抽。
+
+初始stay圈仍为032的y_0,...,y_(L-1)，d=M-mL，k=(L-2-d)modL，mu=delta_(y_k)，不依t。必须保留全部初始残段和真实随机激活门；k=L-1时不支付未观察门概率。
+
+须从实际完整路径律证明：首次激活对应末尾前j个旧query的事件A_j有
+p_j=(1/m)(1-1/m)^(m-j-1)>=1/(4m)，0<=j<m。
+j个已完成query和actual末query的选择z_1,...,z_(j+1)条件iid Unif(Cgrp×Dgrp)，每个训练query另有标签ell_i∈{0,1}（ell_i=1表示p0）。给定t，一条完整指定历史的概率是
+p_j a^(-2(j+1)) product_(i=1)^j t_(z_i)^(ell_i)(1-t_(z_i))^(1-ell_i)。
+必须核唯一完整路径及所有标签分支，不从032的确定标签路径律直接宣称新律。actual departure M的标签尚未观察。
+在A_j和actual query z给定时J~Bin(j,1/a^2)，且给定J,t_z，k0=C_p0~Bin(J,t_z)，C_p1=J-k0，其它C=0。J与未知t独立。exact公共/query/endpoint/flag侧信息不得额外泄露这些训练标签；若有必须处理而非删除。
+
+## 4. 全历史合法的实际银行分箱核
+
+取D0=min(D,Q/8)，eta0=D0/Q，x0=K^4 eta0。Psi(x0)=Psi(x)须以K>=22和截断分支明确核算。T_K>=1由统计项覆盖；x0<=256T_K^2时Psi(x0)<=32T_K，同样只用统计下界覆盖。这是总风险的数值分支，不声称零编辑造成信息损失。
+
+仅在T_K<1且x0>256T_K^2时定义新非平凡核。取
+b=floor(eta0 M/8)。
+候选有限界：D0>256K，eta0 M>128K，b>=2，b>=eta0 M/16。
+这些必须从Q>=M+1和完整参数推出，不能漏掉整数取整。
+
+核在actual query属于公开Cgrp×Dgrp时，从完整历史计算真实J与k0=C_p0，令
+k'=b floor(k0/b)。
+构造整数比较计数v_p0=k'，v_p1=J-k'，其它v_c=0，并构造候选银行
+W*_c=max(1,floor(Q(v_c+1)/M))。
+若W*∈{1,...,2Q}^K且||W*-V||_1<=D，则输出W*；否则输出V。其它query也输出V。
+这是单一共同确定核；只用公开量、历史计数与当前V，不读未知t、theta或预测器种子。全历史合法由最终预算guard保证。计数计算属于对抗核权限，不是读出算法免费count table；物理实现未免费提供。
+
+在上述源的所有激活query历史上，须证明guard总通过：
+|W*_c-Q(v_c+1)/M|<=1，全部坐标正且<=2Q，
+||W*-V||_1<=79K+2Q|k0-k'|/M
+ <=79K+D0/4 <D0<=D。
+因此全部真实finite-evaluator误差及其它K-2坐标中的潜在历史信息都被支付并消除，实际可见W恰是(J,k')的确定函数。不能只编辑两个理想坐标而忽略其余实际V的78误差，也不能因解码器看到额外坐标而漏掉信息。
+给解码器额外告知J、A_j、实际query及query选择序列（但不给训练标签）只会让下界更难；需证明该增广实验可模拟其真实可见输入。
+
+## 5. 新Bayes信息桥与有限调和
+
+取有限维参数向量(t_z)的product Unif[0,1]先验，仅作lower证明。每个先验实现仍为合法固定齐次源。核完全不依此隐藏参数值；最终由平均风险<=sup风险取出源，不能把先验标签交给算法。decoder的独立随机种子和所有ties须覆盖。
+
+条件于给定J，积分真实Binomial路径律须自足给
+P(k0=k|J)=1/(J+1)，
+E[t_z|k0=k,J]=(k+1)/(J+2)，0<=k<=J。
+这里参数先验的积分可由有限Beta积分/分部积分直接证明，不引入未经登记外部定理。给定同一分箱k'=b floor(k/b)，k在其整数bin中均匀。
+
+任意K维概率输出q的TV至少|q_p0-t_z|。在每个bin内先对t的条件分布用Jensen，再对bin中k的均匀分布取绝对偏差下界。对连续s个整数，最小绝对偏差和为floor(s^2/4)。候选总体Bayes下界（固定J,b>=2）：
+inf_q E TV(q,theta_z) >= (1/32) min(1,b/(J+1))
+ >= eta0 M/[512(J+1+eta0 M)]。                 (BIN-LOSS)
+须处理最后不满bin、b>J+1、J=0。特别J=0时bin均值论证本身给0，必须直接用Unif[0,1]先验的最小绝对偏差1/4；不能漏掉这一步。允许q质量放在其它K-2标签，TV坐标投影仍有效。对每个随机种子同样成立，再积分。
+
+用新完整路径律、p_j>=1/(4m)、J条件Jensen及有限j求和，预期得到
+Bayes E TV >= eta0 U/2048
+ ln(1+M/[2U(1+eta0 M)])。                      (DEC-HARMONIC)
+保留m=floor(M/L)、j=0、所有余数。由032的U界
+K^4/4096<=U<=K^4，U/M<=4T_K^2，
+及当前x0>256T_K^2分支，以z=eta0 U在[x0/4096,x0]比较，支付Psi(x0)的log和饱和。可用
+x ln(1+1/(10x))>=Psi(x)/16，x>0，
+但要在本文证明短标量不等式与常数。其余分支由MM5统计项支付。
+最后不同源sup lower先取max，再推出固定2^-120的DEC-MATCH；不要把各项加成同源风险。必须对每个A有统一常数，才能取inf_A。DEC-SEQUENCE从该完整有限合取和Psi性质推出。
+
+## 6. 费用、实际意义、范围与分工
+
+这是最终V切口的任意共同后缀信息风险；若成立，可说明在该接口内更换读出不能改善032的联合K,M,D/Q风险阶。上界由同一个原Pi后缀实现，保留SRC完整dense/uncached费用；不把无限计算读出类当作免费算法。真实p=4h+4ell+64，ell=ceil(log2(M+K+4))；六头、全部M+3位置、QKV/mask/input/query/endpoint、products/remainders/guards、holds/copy/clear、输出、offline全格式与逐phase总peak均付费。核/保护器的物理实现、计数扫描、selector、移动、存储与程序另付。没有compiler、literal ledger或batch测量；[Non-scientific operational metadata omitted.]
+
+下界只针对未额外编码的原V可见端口，不能限制改变前缀/编码/快照/可回读接口的算法；不是物理纠错不可能性或全Transformer工作量/宽度下界。不覆盖master任意decoder sharp率，033的rho可公开修复边界继续保留。015二元切口信息下界不被暗中扩大，也不作为必须前提；新Bayes/分箱桥自足。K<22及仅h0不外推。
+
+预计直接Fact前驱仅SRC fef8372728290b45、MM5 946d42d5bf502eb4、032 372cbc90282df2cd。033为动机非数学前提；016若只经032上界使用，不额外登记直接依赖；实质另调用任何Fact须如实注册。新增随机标签源/路径、共同核实际消信息、完整侧信息、Bayes风险桥为新承重内容，不能把讨论或有限枚举当Fact。
+
+[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]失败登记准确一步及解除条件，保持OPEN，不删除目标或把方法失败宣称母题反例。031–033不重投，旧root/依赖不增加逆向前提。[Non-scientific operational metadata omitted.]Dot入口缺失仍未解决，未实际投递不能声称已安排，不创建替代Dot；固定S001–S019及来源限制保留。[Non-scientific operational metadata omitted.][Non-scientific operational metadata omitted.]v10未完成。
+

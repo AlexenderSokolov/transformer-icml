@@ -1,0 +1,12 @@
+{
+  "unit": "BI001",
+  "version": 2,
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "binary_frontier/BI001_binary_rare_suffix_lower_v2.md",
+  "sha256": "17725df3f25084fdfbf6f92fa26555fc5c29e15a4341f69a24dd703751201992",
+  "review": "reviews/BI001_review_v1.md",
+  "delta_review": "reviews/BI001_review_v2.md",
+  "original_review_directory": "../reviews",
+  "time_utc": "2026-11-02T05:52:32.872375+00:00",
+  "scope": "Binary K=2 stationary rare-suffix lower with e=max(sqrt(beta),1/M), beta<=1/256,z=kappaQ<=M/4. Weak-beta<=M^-2 sharp logarithmic weight threshold at square-root grid only with upper inclusion D>=8,r>=3,legal dyadicQ and sufficiently large target multiplier. Intermediate positive-beta matching upper not established by this unit. Diagnostics keep original workspace reviews path for relative imports."
+}

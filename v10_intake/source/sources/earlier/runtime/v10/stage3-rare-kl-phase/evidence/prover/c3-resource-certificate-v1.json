@@ -1,0 +1,811 @@
+{
+  "status": "analytic_upper_bounds",
+  "proof": "c3-resource-ledger-v1.md",
+  "instances": [
+    {
+      "N": 3,
+      "b": 1,
+      "n": 4,
+      "m": 1,
+      "n_m": 2,
+      "ell": 3,
+      "h_A": 8,
+      "p": 108,
+      "v": 12,
+      "frontend_word_bits": 13824,
+      "output_word_bits": 384,
+      "recovery_word_operations": 63,
+      "output_word_operations": 41,
+      "GF": 12328449387264,
+      "GO": 6191185920,
+      "LF": 197255190196256,
+      "LO": 99058974752,
+      "WF": 14155776,
+      "WO": 393216,
+      "hybrid": {
+        "L": 197354249171136,
+        "W": 14155776,
+        "H_total": 8,
+        "H_layer_max": 4,
+        "D_qk_max": 4,
+        "score_range": [
+          0,
+          2
+        ],
+        "explicit_mask_bits": 80,
+        "metadata_bits": 65536,
+        "identity_connections_bound": 2792339238836659814400,
+        "layer_shaped_dense_slots": 39527198292212245452351516864,
+        "dense_neural_parameter_bits": 546423783338320314004619279855616,
+        "shared_evaluator_code_bits": 11141463971082905600,
+        "sparse_program_parameter_address_bits": 2552689527278774706864455680,
+        "rolling_work_bits": 3131635204096,
+        "finite_attention_bit_operations": 88971381408006144,
+        "addressed_word_execution_bit_operations": 383474108012691456,
+        "dense_projection_pointwise_and_attention_bit_operations": 7735052595330483121264798084822273622016,
+        "total_stored_dense_bits": 546423783338331455468590362826832,
+        "total_stored_sparse_bits": 2552689538420238677947426896,
+        "peak_dense_bits": 546423783338331455471721998030928,
+        "peak_sparse_bits": 2552689538420241809582630992,
+        "sparse_neural_bit_operations": 2333607501289601235393902043725824
+      },
+      "padded_batch": {
+        "width_per_token": 14155776,
+        "depth": 197354249171136,
+        "explicit_mask_bits": 128,
+        "slots": 39547033009693171366585086144,
+        "stored_coefficient_bits": 546698184325998400971672230854656,
+        "identity_connections": 11174810175659147526144,
+        "rolling_work_bits": 3131031224320,
+        "online_bit_operations": 7738937036925544340513263416780206899200,
+        "total_stored_bits": 546698184326009542435643313825920,
+        "peak_bits": 546698184326009542438774345050240
+      },
+      "global_dense_padded_batch": {
+        "total_channel_width": 56623104,
+        "depth": 197354249171136,
+        "explicit_mask_bits": 128,
+        "slots": 632752461106226727596738654400,
+        "stored_coefficient_bits": 8747170022332478282297315158425600,
+        "identity_connections": 11174810175659147526144,
+        "rolling_work_bits": 3131031224320,
+        "online_bit_operations": 30955744867513390022266478667400734572544,
+        "total_stored_bits": 8747170022332489423761286241396864,
+        "peak_bits": 8747170022332489423764417272621184
+      },
+      "flattened": {
+        "depth": 1423739457683239168,
+        "width": 229893632,
+        "coefficient_activation_bits": 57492,
+        "holds": 327308634948510157856178176,
+        "dense_slots": 75246171527892404499209907915370752,
+        "dense_parameter_bits": 4326052893481590119468576025870495273984,
+        "sparse_code_bits": 1204328199828055993381899644239872,
+        "rolling_work_bits": 52868178829312,
+        "dense_online_bit_operations": 63670638835723156262012767457112707658723360768,
+        "total_stored_dense_bits": 4326052893481590119468576025870495339600,
+        "total_stored_sparse_bits": 1204328199828055993381899644305488,
+        "peak_dense_bits": 4326052893481590119468576078738674168912,
+        "peak_sparse_bits": 1204328199828055993434767823134800
+      },
+      "generation": {
+        "log_word_bits": 93344,
+        "log_word_operations": 3520,
+        "log_bit_operations": 31406203108065280,
+        "log_scratch_bits": 5974016,
+        "complete_formats": {
+          "hybrid_dense": {
+            "address_word_bits": 107681,
+            "bit_operations": 25951812932082769920875035561969792677504128000,
+            "scratch_bits": 3765725402473911646564133232931417174144,
+            "peak_including_program_bits": 3765725948897694984895588701521780000976
+          },
+          "hybrid_sparse": {
+            "address_word_bits": 107664,
+            "bit_operations": 121198980991523609917909883669424473867264,
+            "scratch_bits": 17589297053727860798106529965975616,
+            "peak_including_program_bits": 17589299606417399218345207913402512
+          },
+          "shared_word": {
+            "address_word_bits": 107636,
+            "bit_operations": 528732602444088095922995586958336,
+            "scratch_bits": 76753566773095209862115648,
+            "peak_including_program_bits": 76753577914843680705038736
+          },
+          "token_padded": {
+            "address_word_bits": 107681,
+            "bit_operations": 25964845313391456840920135217928598757573628928,
+            "scratch_bits": 3767616459930178147856883877189516049536,
+            "peak_including_program_bits": 3767617006628362473866426312832829875456
+          },
+          "global_dense_padded": {
+            "address_word_bits": 107685,
+            "bit_operations": 415468345876939243527825527108064301121200526336,
+            "scratch_bits": 60284096246711943911615116878516177993088,
+            "peak_including_program_bits": 60284104993881966244104540639802419389952
+          },
+          "flattened_dense": {
+            "address_word_bits": 107704,
+            "bit_operations": 205549033321357080537577680245929130059822402353464320,
+            "scratch_bits": 29819724853730635662553398702393993321461109312,
+            "peak_including_program_bits": 29819729179783529144143518170970019191956448912
+          },
+          "flattened_sparse": {
+            "address_word_bits": 107682,
+            "bit_operations": 57199341624891603017377911015475404816127345664,
+            "scratch_bits": 8299806029688632242589567983658486305984,
+            "peak_including_program_bits": 8299807234016832070645561365558130611472
+          },
+          "baseline_sequential": {
+            "address_word_bits": 107655,
+            "bit_operations": 279201651411197568091038424591916635136,
+            "scratch_bits": 40523206570061418433161351597568,
+            "peak_including_program_bits": 40523212451582041322938870502912
+          },
+          "baseline_one_shot": {
+            "address_word_bits": 107655,
+            "bit_operations": 279201651411227643223163341026359284736,
+            "scratch_bits": 40523206570065783524791576104448,
+            "peak_including_program_bits": 40523212451586406415202642515456
+          }
+        }
+      },
+      "baseline": {
+        "count_boolean_gates": 15360,
+        "count_depth": 245792,
+        "stream_count_width": 832,
+        "stream_count_holds": 204498944,
+        "stream_count_dense_slots": 170552365088,
+        "stream_count_parameter_bits": 21830702731264,
+        "stream_count_dense_online_bits": 715348467098058752,
+        "stream_count_work_bits": 425984,
+        "shared_count_code_bits": 65536,
+        "addressed_count_bit_operations": 196608,
+        "one_shot_count_width": 844,
+        "one_shot_count_holds": 207448448,
+        "one_shot_count_dense_slots": 175501632800,
+        "one_shot_count_parameter_bits": 22464208998400,
+        "one_shot_count_dense_online_bits": 736107200459571200,
+        "one_shot_count_work_bits": 432128,
+        "count_coefficient_activation_bits": 128,
+        "add_same_output_phase": {
+          "depth": 99058974752,
+          "width": 393216,
+          "gates": 6191185920,
+          "word_bits": 384
+        },
+        "sequential_complete": {
+          "depth": 99059220576,
+          "width": 393216,
+          "holds": 38951574026886144,
+          "dense_slots": 15316459955555837933664,
+          "total_stored_dense_bits": 5881520622889777518905344,
+          "rolling_work_bits": 604416000,
+          "peak_dense_bits": 5881520622889778123321344,
+          "dense_bit_operations": 578177003311125899151063121920
+        },
+        "one_shot_complete": {
+          "depth": 99059220576,
+          "width": 393216,
+          "holds": 38951574029835840,
+          "dense_slots": 15316459955560787523552,
+          "total_stored_dense_bits": 5881520622890411066411008,
+          "rolling_work_bits": 604422144,
+          "peak_dense_bits": 5881520622890411670833152,
+          "dense_bit_operations": 578177003311146659235728719872
+        }
+      },
+      "shared_word_program": {
+        "total_stored_bits": 11141748470842923088,
+        "rolling_work_bits": 3131635204096,
+        "peak_bits": 11141751602478127184,
+        "online_bit_operations": 383474108012691456,
+        "control_address_bits": 76
+      }
+    },
+    {
+      "N": 8,
+      "b": 2,
+      "n": 9,
+      "m": 4,
+      "n_m": 5,
+      "ell": 4,
+      "h_A": 11,
+      "p": 120,
+      "v": 14,
+      "frontend_word_bits": 15360,
+      "output_word_bits": 448,
+      "recovery_word_operations": 63,
+      "output_word_operations": 41,
+      "GF": 15220306142208,
+      "GO": 8426815488,
+      "LF": 243524898275360,
+      "LO": 134829047840,
+      "WF": 15728640,
+      "WO": 458752,
+      "hybrid": {
+        "L": 243659727323328,
+        "W": 15728640,
+        "H_total": 8,
+        "H_layer_max": 4,
+        "D_qk_max": 4,
+        "score_range": [
+          0,
+          2
+        ],
+        "explicit_mask_bits": 424,
+        "metadata_bits": 163584,
+        "identity_connections_bound": 3830377309123232399360,
+        "layer_shaped_dense_slots": 60245688930031052917502263488,
+        "dense_neural_parameter_bits": 925373358831984607339963719464960,
+        "shared_evaluator_code_bits": 15278817271815372800,
+        "sparse_program_parameter_address_bits": 3894850235475457647317090304,
+        "rolling_work_bits": 8698131021568,
+        "finite_attention_bit_operations": 613403793240883200,
+        "addressed_word_execution_bit_operations": 2634836896458473472,
+        "dense_projection_pointwise_and_attention_bit_operations": 32748444511564733299682925396954542243840,
+        "total_stored_dense_bits": 925373358831999886157235535001768,
+        "total_stored_sparse_bits": 3894850250754274919132627112,
+        "peak_dense_bits": 925373358831999886165933666023336,
+        "peak_sparse_bits": 3894850250754283617263648680,
+        "sparse_neural_bit_operations": 3960408354638981163840524808880128
+      },
+      "padded_batch": {
+        "width_per_token": 15728640,
+        "depth": 243659727323328,
+        "explicit_mask_bits": 648,
+        "slots": 60279015932736462159257419968,
+        "stored_coefficient_bits": 925885684726832058766193970708480,
+        "identity_connections": 34491925202101107425280,
+        "rolling_work_bits": 8697308937984,
+        "online_bit_operations": 32766575886499139533783308958542751334400,
+        "total_stored_bits": 925885684726847337583465786245512,
+        "peak_bits": 925885684726847337592163095183496
+      },
+      "global_dense_padded_batch": {
+        "total_channel_width": 141557760,
+        "depth": 243659727323328,
+        "explicit_mask_bits": 648,
+        "slots": 4882599738680830708503946346688,
+        "stored_coefficient_bits": 74996731986137559682620615885127680,
+        "identity_connections": 34491925202101107425280,
+        "rolling_work_bits": 8697308937984,
+        "online_bit_operations": 294899149646610666681614094362656899072000,
+        "total_stored_bits": 74996731986137574961437887700664712,
+        "peak_bits": 74996731986137574961446585009602696
+      },
+      "flattened": {
+        "depth": 9814704353846378752,
+        "width": 570099712,
+        "coefficient_activation_bits": 63928,
+        "holds": 5595360125492966618758119424,
+        "dense_slots": 3189913207270544388180255272646623488,
+        "dense_parameter_bits": 203924771514391361647587359069753346340864,
+        "sparse_code_bits": 22892811694716722555946263001300992,
+        "rolling_work_bits": 145781337718528,
+        "dense_online_bit_operations": 3337344715103234807656182960796465132768960970752,
+        "total_stored_dense_bits": 203924771514391361647587359069753346504872,
+        "total_stored_sparse_bits": 22892811694716722555946263001465000,
+        "peak_dense_bits": 203924771514391361647587359215534684223400,
+        "peak_sparse_bits": 22892811694716722556092044339183528
+      },
+      "generation": {
+        "log_word_bits": 115232,
+        "log_word_operations": 3904,
+        "log_bit_operations": 53083061830549504,
+        "log_scratch_bits": 7374848,
+        "complete_formats": {
+          "hybrid_dense": {
+            "address_word_bits": 131172,
+            "bit_operations": 65216760267586777003176643891039470165089911808,
+            "scratch_bits": 7768516750381509702334606934381295298752,
+            "peak_including_program_bits": 7768517675754868534334493091616830300520
+          },
+          "hybrid_sparse": {
+            "address_word_bits": 131154,
+            "bit_operations": 274418757391910025386385735682912350258176,
+            "scratch_bits": 32692812146397320300275068176273472,
+            "peak_including_program_bits": 32692816041247571054549987308900584
+          },
+          "shared_word": {
+            "address_word_bits": 131126,
+            "bit_operations": 1076085727149231171626937047860224,
+            "scratch_bits": 128226587303103398473347392,
+            "peak_including_program_bits": 128226602582365150418694632
+          },
+          "token_padded": {
+            "address_word_bits": 131172,
+            "bit_operations": 65252867028975840345844878541588479198463591424,
+            "scratch_bits": 7772817730367361215837421303414536128704,
+            "peak_including_program_bits": 7772818656253045942684758886880322374216
+          },
+          "global_dense_padded": {
+            "address_word_bits": 131178,
+            "bit_operations": 5285965174388607732311060897692533104582915277824,
+            "scratch_bits": 629626963742563507732701569824551382890048,
+            "peak_including_program_bits": 629627038739295493870276531262439083554760
+          },
+          "flattened_dense": {
+            "address_word_bits": 131200,
+            "bit_operations": 14377970970528501105619825028833966974089894510167065600,
+            "scratch_bits": 1712315521452041385482543948746423277205229782976,
+            "peak_including_program_bits": 1712315725376812899873905596333782346958576287848
+          },
+          "flattened_sparse": {
+            "address_word_bits": 131177,
+            "bit_operations": 1613520445241189260247860132023241675831115748352,
+            "scratch_bits": 192192663019382835339829501839974406568960,
+            "peak_including_program_bits": 192192685912194530056552057786237408033960
+          },
+          "baseline_sequential": {
+            "address_word_bits": 131146,
+            "bit_operations": 895549018411606222942481326190052918272,
+            "scratch_bits": 106697523467596016908448921561664,
+            "peak_including_program_bits": 106697536179755016658117853970240
+          },
+          "baseline_one_shot": {
+            "address_word_bits": 131146,
+            "bit_operations": 895549018412035680368451345562808763392,
+            "scratch_bits": 106697523467647183335795402222144,
+            "peak_including_program_bits": 106697536179806183091560406392640
+          }
+        }
+      },
+      "baseline": {
+        "count_boolean_gates": 45056,
+        "count_depth": 720928,
+        "stream_count_width": 1088,
+        "stream_count_holds": 784369664,
+        "stream_count_dense_slots": 854963654688,
+        "stream_count_parameter_bits": 136794184750080,
+        "stream_count_dense_online_bits": 5603089807363276800,
+        "stream_count_work_bits": 696320,
+        "shared_count_code_bits": 102400,
+        "addressed_count_bit_operations": 819200,
+        "one_shot_count_width": 1112,
+        "one_shot_count_holds": 801671936,
+        "one_shot_count_dense_slots": 893063257632,
+        "one_shot_count_parameter_bits": 142890121221120,
+        "one_shot_count_dense_online_bits": 5852779365217075200,
+        "one_shot_count_work_bits": 711680,
+        "count_coefficient_activation_bits": 160,
+        "add_same_output_phase": {
+          "depth": 134829047840,
+          "width": 458752,
+          "gates": 8426815488,
+          "word_bits": 448
+        },
+        "sequential_complete": {
+          "depth": 134829768800,
+          "width": 458752,
+          "holds": 61853096146422784,
+          "dense_slots": 28375354910705142700128,
+          "total_stored_dense_bits": 12712158999749668932408576,
+          "rolling_work_bits": 822805248,
+          "peak_dense_bits": 12712158999749669755213824,
+          "dense_bit_operations": 1457932091353204245028820484096
+        },
+        "one_shot_complete": {
+          "depth": 134829768800,
+          "width": 458752,
+          "holds": 61853096163725440,
+          "dense_slots": 28375354910743243148640,
+          "total_stored_dense_bits": 12712158999755765004170496,
+          "rolling_work_bits": 822820608,
+          "peak_dense_bits": 12712158999755765826991104,
+          "dense_bit_operations": 1457932091353453940128188727296
+        }
+      },
+      "shared_word_program": {
+        "total_stored_bits": 15279261751945347240,
+        "rolling_work_bits": 8698131021568,
+        "peak_bits": 15279270450076368808,
+        "online_bit_operations": 2634836896458473472,
+        "control_address_bits": 80
+      }
+    },
+    {
+      "N": 64,
+      "b": 8,
+      "n": 65,
+      "m": 32,
+      "n_m": 33,
+      "ell": 7,
+      "h_A": 14,
+      "p": 144,
+      "v": 23,
+      "frontend_word_bits": 18432,
+      "output_word_bits": 736,
+      "recovery_word_operations": 63,
+      "output_word_operations": 41,
+      "GF": 21917237058816,
+      "GO": 22743318528,
+      "LF": 350675792941088,
+      "LO": 363893096480,
+      "WF": 18874368,
+      "WO": 753664,
+      "hybrid": {
+        "L": 351039686037696,
+        "W": 18874368,
+        "H_total": 8,
+        "H_layer_max": 4,
+        "D_qk_max": 4,
+        "score_range": [
+          0,
+          2
+        ],
+        "explicit_mask_bits": 21256,
+        "metadata_bits": 1456000,
+        "identity_connections_bound": 6619058217945597476864,
+        "layer_shaped_dense_slots": 124925584194398484739509571776,
+        "dense_neural_parameter_bits": 2302624710191885673880037687647232,
+        "shared_evaluator_code_bits": 26391821462608232576,
+        "sparse_program_parameter_address_bits": 8157645089630500737294680064,
+        "rolling_work_bits": 90454231496576,
+        "finite_attention_bit_operations": 54960089269964636160,
+        "addressed_word_execution_bit_operations": 240061757775308292096,
+        "dense_projection_pointwise_and_attention_bit_operations": 706234478243198626532496389576675840491520,
+        "total_stored_dense_bits": 2302624710191912065701500297357064,
+        "total_stored_sparse_bits": 8157645116022322199904389896,
+        "peak_dense_bits": 2302624710191912065791954528853640,
+        "peak_sparse_bits": 8157645116022412654135886472,
+        "sparse_neural_bit_operations": 10053873375424986332766623820152832
+      },
+      "padded_batch": {
+        "width_per_token": 18874368,
+        "depth": 351039686037696,
+        "explicit_mask_bits": 33800,
+        "slots": 125055011432712512004311077056,
+        "stored_coefficient_bits": 2305013970727757021263461772296192,
+        "identity_connections": 430667394097195851448320,
+        "rolling_work_bits": 90452012709760,
+        "online_bit_operations": 706967331340674849801098999808341122744320,
+        "total_stored_bits": 2305013970727783413084924382018568,
+        "peak_bits": 2305013970727783413175376394728328
+      },
+      "global_dense_padded_batch": {
+        "total_channel_width": 1226833920,
+        "depth": 351039686037696,
+        "explicit_mask_bits": 33800,
+        "slots": 528357368177782435985511491948736,
+        "stored_coefficient_bits": 9738683010252885860084947819599101952,
+        "identity_connections": 430667394097195851448320,
+        "rolling_work_bits": 90452012709760,
+        "online_bit_operations": 45952871742715185196310009062067035642527744,
+        "total_stored_bits": 9738683010252885886476769282208824328,
+        "peak_bits": 9738683010252885886476859734221534088
+      },
+      "flattened": {
+        "depth": 879361779378749559040,
+        "width": 4912815232,
+        "coefficient_activation_bits": 77440,
+        "holds": 4320141944170544330764995297280,
+        "dense_slots": 21224059156363427683133965549794292322560,
+        "dense_parameter_bits": 1643591141068783839781894292176069997459046400,
+        "sparse_code_bits": 21411314702378542666850022507098931200,
+        "rolling_work_bits": 1521793647720320,
+        "dense_online_bit_operations": 32583602678877854861493732860445404314426509623296000,
+        "total_stored_dense_bits": 1643591141068783839781894292176069997460523656,
+        "total_stored_sparse_bits": 21411314702378542666850022507100408456,
+        "peak_dense_bits": 1643591141068783839781894292177591791108243976,
+        "peak_sparse_bits": 21411314702378542666851544300748128776
+      },
+      "generation": {
+        "log_word_bits": 165920,
+        "log_word_operations": 4672,
+        "log_bit_operations": 131704395346739200,
+        "log_scratch_bits": 10618880,
+        "complete_formats": {
+          "hybrid_dense": {
+            "address_word_bits": 185230,
+            "bit_operations": 323597950476299023686113469495991768524220416000,
+            "scratch_bits": 27296971204406263807674366791949551751040,
+            "peak_including_program_bits": 27296973507030973999586432493449849108104
+          },
+          "hybrid_sparse": {
+            "address_word_bits": 185212,
+            "bit_operations": 1146206848679849593392832388372033787461632,
+            "scratch_bits": 96697201102642646787265425633330944,
+            "peak_including_program_bits": 96697209260287762809587625537720840
+          },
+          "shared_word": {
+            "address_word_bits": 185184,
+            "bit_operations": 3707429098781466486041664954564608,
+            "scratch_bits": 312816332234212522617980928,
+            "peak_including_program_bits": 312816358627908437094131464
+          },
+          "token_padded": {
+            "address_word_bits": 185230,
+            "bit_operations": 323933723739366904598822262923053516170527129600,
+            "scratch_bits": 27325295219066068586927591956867976449920,
+            "peak_including_program_bits": 27325297524080039314711005041792358468488
+          },
+          "global_dense_padded": {
+            "address_word_bits": 185242,
+            "bit_operations": 1368797175967231489298283151427783402931964042035200,
+            "scratch_bits": 115456839563856965592498862250780674009672320,
+            "peak_including_program_bits": 115456849302539975845384748727549956218496648
+          },
+          "flattened_dense": {
+            "address_word_bits": 185270,
+            "bit_operations": 231080842755547473250187238087383167642390632184534273638400,
+            "scratch_bits": 19488520365172069247769069979572310651548289372113280,
+            "peak_including_program_bits": 19488522008763210316552909761466602827618286832636936
+          },
+          "flattened_sparse": {
+            "address_word_bits": 185244,
+            "bit_operations": 3009480842953803811182262224008424574027827048415232,
+            "scratch_bits": 253844325166554298923165377826713048267542272,
+            "peak_including_program_bits": 253844346577869001301708044676735555367950728
+          },
+          "baseline_sequential": {
+            "address_word_bits": 185206,
+            "bit_operations": 21373634457329517757200710173141442117632,
+            "scratch_bits": 1803197727912560688942361697475968,
+            "peak_including_program_bits": 1803197880040269827057181778708224
+          },
+          "baseline_one_shot": {
+            "address_word_bits": 185206,
+            "bit_operations": 21373634457496983174440063754472115814400,
+            "scratch_bits": 1803197727926688995500275046440320,
+            "peak_including_program_bits": 1803197880054398134807037019227904
+          }
+        }
+      },
+      "baseline": {
+        "count_boolean_gates": 531456,
+        "count_depth": 8503328,
+        "stream_count_width": 1856,
+        "stream_count_holds": 15782176768,
+        "stream_count_dense_slots": 29323292938272,
+        "stream_count_parameter_bits": 7506762992197632,
+        "stream_count_dense_online_bits": 491963219456664010752,
+        "stream_count_work_bits": 1900544,
+        "shared_count_code_bits": 262144,
+        "addressed_count_bit_operations": 16777216,
+        "one_shot_count_width": 1998,
+        "one_shot_count_holds": 16989649344,
+        "one_shot_count_dense_slots": 33979307191328,
+        "one_shot_count_parameter_bits": 8698702640979968,
+        "one_shot_count_dense_online_bits": 570078176279263182848,
+        "one_shot_count_work_bits": 2045952,
+        "count_coefficient_activation_bits": 256,
+        "add_same_output_phase": {
+          "depth": 363893096480,
+          "width": 753664,
+          "gates": 22743318528,
+          "word_bits": 736
+        },
+        "sequential_complete": {
+          "depth": 363901599840,
+          "width": 753664,
+          "holds": 274253142459767808,
+          "dense_slots": 206695257000258189097056,
+          "total_stored_dense_bits": 152127709138114820081232256,
+          "rolling_work_bits": 2220945280,
+          "peak_dense_bits": 152127709138114822302177536,
+          "dense_bit_operations": 28663294444044609168234403332096
+        },
+        "one_shot_complete": {
+          "depth": 363901599840,
+          "width": 753664,
+          "holds": 274253143667242656,
+          "dense_slots": 206695257004914212110944,
+          "total_stored_dense_bits": 152127709139306761972787584,
+          "rolling_work_bits": 2221090688,
+          "peak_dense_bits": 152127709139306764193878272,
+          "dense_bit_operations": 28663294444122724272039373307904
+        }
+      },
+      "shared_word_program": {
+        "total_stored_bits": 26393695914476150536,
+        "rolling_work_bits": 90454231496576,
+        "peak_bits": 26393786368707647112,
+        "online_bit_operations": 240061757775308292096,
+        "control_address_bits": 89
+      }
+    },
+    {
+      "N": 8,
+      "b": 1024,
+      "n": 9,
+      "m": 4,
+      "n_m": 5,
+      "ell": 4,
+      "h_A": 11,
+      "p": 120,
+      "v": 1036,
+      "frontend_word_bits": 15360,
+      "output_word_bits": 33152,
+      "recovery_word_operations": 63,
+      "output_word_operations": 41,
+      "GF": 15220306142208,
+      "GO": 46142763433984,
+      "LF": 243524898275360,
+      "LO": 738284214943776,
+      "WF": 15728640,
+      "WO": 33947648,
+      "hybrid": {
+        "L": 981809113219264,
+        "W": 33947648,
+        "H_total": 8,
+        "H_layer_max": 4,
+        "D_qk_max": 4,
+        "score_range": [
+          0,
+          2
+        ],
+        "explicit_mask_bits": 424,
+        "metadata_bits": 1340928,
+        "identity_connections_bound": 28893328108895525142528,
+        "layer_shaped_dense_slots": 911076042039799276296234483904,
+        "dense_neural_parameter_bits": 29132102153114627610408162554130432,
+        "shared_evaluator_code_bits": 15278817271815372800,
+        "sparse_program_parameter_address_bits": 89855014556749160641271431168,
+        "rolling_work_bits": 13199039821312,
+        "finite_attention_bit_operations": 613403793240883200,
+        "addressed_word_execution_bit_operations": 24645908013548306432,
+        "dense_projection_pointwise_and_attention_bit_operations": 272136469702936670249883528417459698663424,
+        "total_stored_dense_bits": 29132102153114642889225434370844584,
+        "total_stored_sparse_bits": 89855014572027977913088145320,
+        "peak_dense_bits": 29132102153114642889238633410665896,
+        "peak_sparse_bits": 89855014572027991112127966632,
+        "sparse_neural_bit_operations": 279439031509859534301766121773072384
+      },
+      "padded_batch": {
+        "width_per_token": 33947648,
+        "depth": 981809113219264,
+        "explicit_mask_bits": 648,
+        "slots": 1131478914809973427506443600064,
+        "stored_coefficient_bits": 37510788983780239068693618229321728,
+        "identity_connections": 299970991608837489819648,
+        "rolling_work_bits": 40515568694784,
+        "online_bit_operations": 2865156886403210846834682849268437167898624,
+        "total_stored_bits": 37510788983780254347510890046036104,
+        "peak_bits": 37510788983780254347551405614730888
+      },
+      "global_dense_padded_batch": {
+        "total_channel_width": 305528832,
+        "depth": 981809113219264,
+        "explicit_mask_bits": 648,
+        "slots": 91649787300071903341893036949696,
+        "stored_coefficient_bits": 3038373748571983739590437960956321792,
+        "identity_connections": 299970991608837489819648,
+        "rolling_work_bits": 40515568694784,
+        "online_bit_operations": 25786410627240551663334963629499532133269504,
+        "total_stored_bits": 3038373748571983754869255232773036168,
+        "peak_bits": 3038373748571983754869295748341730952
+      },
+      "flattened": {
+        "depth": 9815442503232274688,
+        "width": 708241408,
+        "coefficient_activation_bits": 194744,
+        "holds": 6951702818632270776071880704,
+        "dense_slots": 4923483806169093735762385554385027328,
+        "dense_parameter_bits": 958818930348593990477310012403157761964032,
+        "sparse_code_bits": 86643354599886174391347740010217472,
+        "rolling_work_bits": 551703060379136,
+        "dense_online_bit_operations": 47801403845582486548867394830192782130156402638848,
+        "total_stored_dense_bits": 958818930348593990477310012403157763305384,
+        "total_stored_sparse_bits": 86643354599886174391347740011558824,
+        "peak_dense_bits": 958818930348593990477310012954860823684520,
+        "peak_sparse_bits": 86643354599886174391899443071937960
+      },
+      "generation": {
+        "log_word_bits": 115232,
+        "log_word_operations": 3904,
+        "log_bit_operations": 53083061830549504,
+        "log_scratch_bits": 7374848,
+        "complete_formats": {
+          "hybrid_dense": {
+            "address_word_bits": 164903,
+            "bit_operations": 3244807113247023561206381051697890535454668862464,
+            "scratch_bits": 307454146646724093217526084624165184513792,
+            "peak_including_program_bits": 307454175778826246332168973849599555358376
+          },
+          "hybrid_sparse": {
+            "address_word_bits": 164885,
+            "bit_operations": 10006093669388483151865720619472499134051328,
+            "scratch_bits": 948207620973375681522891007981702784,
+            "peak_including_program_bits": 948207710828390253550868921069848104
+          },
+          "shared_word": {
+            "address_word_bits": 164856,
+            "bit_operations": 18754110226444290053517012431807488,
+            "scratch_bits": 1777508688116853685992674624,
+            "peak_including_program_bits": 1777508856587588113023962344
+          },
+          "token_padded": {
+            "address_word_bits": 164903,
+            "bit_operations": 4178046413484278444377832031348568087876809503744,
+            "scratch_bits": 395881064690708178101087460445356046757632,
+            "peak_including_program_bits": 395881102201497161881341807956246092793736
+          },
+          "global_dense_padded": {
+            "address_word_bits": 164910,
+            "bit_operations": 338450473842143368158785420796433754584949266736128,
+            "scratch_bits": 32067725752128373825001650596957592548634304,
+            "peak_including_program_bits": 32067728790502122396985405466212825321670472
+          },
+          "flattened_dense": {
+            "address_word_bits": 164928,
+            "bit_operations": 106828057851792276376135834945185772549456141147507532800,
+            "scratch_bits": 10120709666850106218332377892283467307457945352000,
+            "peak_including_program_bits": 10120710625669036566926368369593479710615708657384
+          },
+          "flattened_sparse": {
+            "address_word_bits": 164905,
+            "bit_operations": 9650789751895941927435444078467610403316232598528,
+            "scratch_bits": 914427032978830797223727683975959396969344,
+            "peak_including_program_bits": 914427119622185397109902075323699408528168
+          },
+          "baseline_sequential": {
+            "address_word_bits": 164903,
+            "bit_operations": 3141736692852529351829340280707830733825904292864,
+            "scratch_bits": 297687948829437736865511493945283148404992,
+            "peak_including_program_bits": 297687977036166543860924787832427778152704
+          },
+          "baseline_one_shot": {
+            "address_word_bits": 164903,
+            "bit_operations": 3141736692852529351830019276576785817187001119744,
+            "scratch_bits": 297687948829437736865575830618675525605632,
+            "peak_including_program_bits": 297687977036166543860989124511916227115264
+          }
+        }
+      },
+      "baseline": {
+        "count_boolean_gates": 45056,
+        "count_depth": 720928,
+        "stream_count_width": 1088,
+        "stream_count_holds": 784369664,
+        "stream_count_dense_slots": 854963654688,
+        "stream_count_parameter_bits": 136794184750080,
+        "stream_count_dense_online_bits": 5603089807363276800,
+        "stream_count_work_bits": 696320,
+        "shared_count_code_bits": 102400,
+        "addressed_count_bit_operations": 819200,
+        "one_shot_count_width": 1112,
+        "one_shot_count_holds": 801671936,
+        "one_shot_count_dense_slots": 893063257632,
+        "one_shot_count_parameter_bits": 142890121221120,
+        "one_shot_count_dense_online_bits": 5852779365217075200,
+        "one_shot_count_work_bits": 711680,
+        "count_coefficient_activation_bits": 160,
+        "add_same_output_phase": {
+          "depth": 738284214943776,
+          "width": 33947648,
+          "gates": 46142763433984,
+          "word_bits": 33152
+        },
+        "sequential_complete": {
+          "depth": 738284215664736,
+          "width": 33947648,
+          "holds": 25063012652868974988288,
+          "dense_slots": 850830381485141569802567915616,
+          "total_stored_dense_bits": 28206728806995413293887144629747712,
+          "rolling_work_bits": 4501731604992,
+          "peak_dense_bits": 28206728806995413293891646361352704,
+          "dense_bit_operations": 239388025192835057027694951633902484062208
+        },
+        "one_shot_complete": {
+          "depth": 738284215664736,
+          "width": 33947648,
+          "holds": 25063012652868992290944,
+          "dense_slots": 850830381485141569840668364128,
+          "total_stored_dense_bits": 28206728806995413293893240701509632,
+          "rolling_work_bits": 4501731620352,
+          "peak_dense_bits": 28206728806995413293897742433129984,
+          "dense_bit_operations": 239388025192835057027695201329001852305408
+        }
+      },
+      "shared_word_program": {
+        "total_stored_bits": 168470734427031287720,
+        "rolling_work_bits": 13199039821312,
+        "peak_bits": 168470747626071109032,
+        "online_bit_operations": 24645908013548306432,
+        "control_address_bits": 80
+      }
+    }
+  ],
+  "note": "No full circuit of these deliberately oversized bounds was materialized."
+}

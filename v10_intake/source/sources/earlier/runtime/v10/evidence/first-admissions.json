@@ -1,0 +1,160 @@
+[
+  {
+    "obligation_id": "e63118febbe61f49babfa4ff00fd3f98670834ab63719699cc3023e336bd6736",
+    "status": "DISCHARGED",
+    "proof_path": "[redacted user home]/icml-transformer/runs/probabilistic-20261024/projects/icml-probabilistic/outputs/A-interface-001/prover/exact-proof.md",
+    "proof_sha256": "dc43a371ce803fdc519d8a2d662861439bd1d7b4338803fe14f777188a4a4fbf",
+    "evidence": [
+      {
+        "artifact_id": "83da5d4be4352713fb2833e7c7fa65a03a12797544dfce4961c393ac244bbcb9",
+        "content_hash": "899e13e3de35de82397926f56e26587a062e7789c726ea676465f2a1151b8132",
+        "producer": "fact_submit:56c2430d9a767253",
+        "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+        "evidence_kind": "LLM_CHECKED_PROOF",
+        "exact_claim": "Under D1-D3 and prototype A of D4, for every fixed K>=2 and beta>0 construct a theta-independent causal family implementing the finite-history smoothed conditional reference P_{N,s}=(a_s+lambda_N v0)/(u_s+lambda_N), lambda_N=1/(N-2), v0=1/K, to a deterministic uniform error sup_{H in [K]^N,s} TV(Pi_N(H;s),P_{N,s}) <= epsilon_N with an explicit theta-independent epsilon_N->0. Prove the complete actual circuit: charged fixed predecessor copying, K^2 ReLU context encoding, beta full-context Q/K scores, query-independent values producing matched q_s and uniform (r,mu_all), terminal frequency selection, all residual/query/length channels, and a strictly simplex probability readout covering n_s=0. Give an explicit finite resource upper bound (L,W,H,D_qk,B_param,B_arith,score_range), with defined precision semantics and accounted multiplication, reciprocal, projection or legal replacement, smoothing and rounding. Derive a deterministic located-error bound including q,r,u and query/binding errors; use the shared-statistic identity to avoid an unjustified universal u^{-2} gain. Clearly separate nominal fixed beta from arithmetic errors and fixed networks from accuracy-dependent families. This is a local actual-circuit prerequisite, not C1 or root closure.",
+        "scope": {
+          "assumptions": [
+            "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+            "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+            "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+            "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+          ],
+          "quantifiers": [
+            {
+              "variable": "K",
+              "kind": "FORALL",
+              "domain": "integers >=2",
+              "depends_on": []
+            },
+            {
+              "variable": "beta",
+              "kind": "FORALL",
+              "domain": "fixed positive full-context score gap",
+              "depends_on": []
+            },
+            {
+              "variable": "predictor_family",
+              "kind": "EXISTS",
+              "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+              "depends_on": [
+                "K",
+                "beta"
+              ]
+            },
+            {
+              "variable": "theta",
+              "kind": "FORALL",
+              "domain": "D1 second-order tables on K symbols",
+              "depends_on": [
+                "K"
+              ]
+            },
+            {
+              "variable": "N",
+              "kind": "FORALL",
+              "domain": "integers >=3",
+              "depends_on": []
+            },
+            {
+              "variable": "epsilon",
+              "kind": "FORALL",
+              "domain": "positive accuracy targets",
+              "depends_on": []
+            }
+          ],
+          "objects": [],
+          "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+          "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+        },
+        "input_hashes": [
+          "899e13e3de35de82397926f56e26587a062e7789c726ea676465f2a1151b8132"
+        ],
+        "environment_hash": "6bcbbcb55f80cd6ce9c6c376f9b974a075af3b60f7f74ed34fffa7572892e676",
+        "checker_id": "fact_submit",
+        "checker_version": "1",
+        "checker_result": "PASS",
+        "created_at": "2026-10-24T04:06:07Z",
+        "validity": "VALID"
+      }
+    ]
+  },
+  {
+    "obligation_id": "2541e8fa622d2929cac63d41a2d957a07dd3448d0c8a249ca92a22bce440d565",
+    "status": "DISCHARGED",
+    "proof_path": "[redacted user home]/icml-transformer/runs/probabilistic-20261024/projects/icml-probabilistic/outputs/A-interface-001/counter/exact-proof-v2.md",
+    "proof_sha256": "43518197f731532ca9f5796649619694be3c041a4942f1f793ced58b1e6ab806",
+    "evidence": [
+      {
+        "artifact_id": "72b7498a6a37ef1e50fba9b489697945bcd5220af5a514ef9bf831a9712070ec",
+        "content_hash": "82170d7734472d615c25a172a95fd8a04624154a1d6c0a4b19f53d47dab7b363",
+        "producer": "fact_submit:18e316a9ea8ea420",
+        "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+        "evidence_kind": "LLM_CHECKED_PROOF",
+        "exact_claim": "For the actual Route A circuit and full visible representation Z=(q_s,r,mu_all,query identity,retained local token residuals,length/type/constants) in outputs/A-interface-001/lead/checkpoint-v0.md, classify one precisely declared auxiliary-stream deletion for identifiability of the finite-history target conditional reference: prove a genuine finite-history collision under a legal D1 process (same visible representation and different target empirical conditional distribution), or prove that the proposed deletion remains recoverable. Include all retained query/local/length channels in the comparison, and do not infer impossibility for the undeleted sufficient representation. Construct and fully charge at least one allowed strong comparator (direct conditional/joint-feature, difference-head or direct-correction mechanism) on the same history and TV risk; give explicit resource matching conditions, equalities or gaps, allowing the comparator to reallocate the same budget. This is a scoped information/architecture check, not a finite-N stochastic computational lower bound or the complete C2 comparison.",
+        "scope": {
+          "assumptions": [
+            "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+            "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+            "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+            "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+          ],
+          "quantifiers": [
+            {
+              "variable": "K",
+              "kind": "FORALL",
+              "domain": "integers >=2",
+              "depends_on": []
+            },
+            {
+              "variable": "beta",
+              "kind": "FORALL",
+              "domain": "fixed positive full-context score gap",
+              "depends_on": []
+            },
+            {
+              "variable": "predictor_family",
+              "kind": "EXISTS",
+              "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+              "depends_on": [
+                "K",
+                "beta"
+              ]
+            },
+            {
+              "variable": "theta",
+              "kind": "FORALL",
+              "domain": "D1 second-order tables on K symbols",
+              "depends_on": [
+                "K"
+              ]
+            },
+            {
+              "variable": "N",
+              "kind": "FORALL",
+              "domain": "integers >=3",
+              "depends_on": []
+            },
+            {
+              "variable": "epsilon",
+              "kind": "FORALL",
+              "domain": "positive accuracy targets",
+              "depends_on": []
+            }
+          ],
+          "objects": [],
+          "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+          "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+        },
+        "input_hashes": [
+          "82170d7734472d615c25a172a95fd8a04624154a1d6c0a4b19f53d47dab7b363"
+        ],
+        "environment_hash": "a21689167443c8ad70182fc51f97e438be58c62491a4b5589f60788701a8befd",
+        "checker_id": "fact_submit",
+        "checker_version": "1",
+        "checker_result": "PASS",
+        "created_at": "2026-10-24T04:31:25Z",
+        "validity": "VALID"
+      }
+    ]
+  }
+]

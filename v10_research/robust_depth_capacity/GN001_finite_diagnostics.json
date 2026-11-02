@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "scope": "Finite exact diagnostics, not a universal proof; generic GD theorem supplies uniform all-history guarantee",
+  "rational_signed_conversion": [
+    {
+      "P": 0,
+      "cases": 897,
+      "pass_all": true
+    },
+    {
+      "P": 1,
+      "cases": 897,
+      "pass_all": true
+    },
+    {
+      "P": 4,
+      "cases": 897,
+      "pass_all": true
+    },
+    {
+      "P": 9,
+      "cases": 897,
+      "pass_all": true
+    }
+  ],
+  "cases": [
+    {
+      "N": 2,
+      "J": 2,
+      "h": 8,
+      "d_bound": 240,
+      "max_scalar_affines": 22,
+      "P": 3904,
+      "inputs": 23,
+      "adversarial_corner_checks": 92,
+      "uniform_precut_pass": true,
+      "robust_inverse_pass": true,
+      "error_strictly_below_grid": true
+    },
+    {
+      "N": 2,
+      "J": 3,
+      "h": 8,
+      "d_bound": 540,
+      "max_scalar_affines": 45,
+      "P": 8704,
+      "inputs": 29,
+      "adversarial_corner_checks": 232,
+      "uniform_precut_pass": true,
+      "robust_inverse_pass": true,
+      "error_strictly_below_grid": true
+    },
+    {
+      "N": 2,
+      "J": 4,
+      "h": 8,
+      "d_bound": 960,
+      "max_scalar_affines": 69,
+      "P": 15424,
+      "inputs": 41,
+      "adversarial_corner_checks": 656,
+      "uniform_precut_pass": true,
+      "robust_inverse_pass": true,
+      "error_strictly_below_grid": true
+    },
+    {
+      "N": 4,
+      "J": 2,
+      "h": 8,
+      "d_bound": 360,
+      "max_scalar_affines": 29,
+      "P": 5824,
+      "inputs": 27,
+      "adversarial_corner_checks": 108,
+      "uniform_precut_pass": true,
+      "robust_inverse_pass": true,
+      "error_strictly_below_grid": true
+    },
+    {
+      "N": 4,
+      "J": 3,
+      "h": 8,
+      "d_bound": 810,
+      "max_scalar_affines": 60,
+      "P": 13024,
+      "inputs": 55,
+      "adversarial_corner_checks": 440,
+      "uniform_precut_pass": true,
+      "robust_inverse_pass": true,
+      "error_strictly_below_grid": true
+    },
+    {
+      "N": 8,
+      "J": 2,
+      "h": 8,
+      "d_bound": 480,
+      "max_scalar_affines": 36,
+      "P": 7744,
+      "inputs": 35,
+      "adversarial_corner_checks": 140,
+      "uniform_precut_pass": true,
+      "robust_inverse_pass": true,
+      "error_strictly_below_grid": true
+    }
+  ]
+}

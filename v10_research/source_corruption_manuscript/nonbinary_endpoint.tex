@@ -1,0 +1,549 @@
+\section{Protected endpoints with at least three symbols}
+\label{sec:nonbinary}
+The logarithm in the corruption rate comes from terminal states with few
+previous visits.  It is not an artifact of a compressed representation.
+We first bound the perturbation of a direct full-history estimator, and
+then construct an erasure channel whose \emph{entire output word} has only
+a controlled amount of parameter information.
+Throughout this section $K\geq3$, $M\geq64$, $0\leq\beta\leq1$, and
+$k\in\{0,\ldots,M\}$.  Put $b_0=\max\{\beta,M^{-1}\}$,
+$s=M^{-1/2}$, and
+\[
+ F_3=\begin{cases}
+ 0,&k=0,\\
+ \displaystyle\frac{k}{M}\left[1+\log\left(1+\frac1{b_0k}\right)\right],&k\geq1.
+ \end{cases}
+\]
+
+\subsection{Pathwise stability of corrupted counts}
+Write $C_{abc}$ for the number of clean triples $(a,b,c)$ ending at
+positions $3,\ldots,M+2$, and $C'_{abc}$ for the corresponding corrupted
+counts.  A replacement affects at most three triple locations.  At each
+location, the old and new indicator vectors differ in $\ell_1$ norm by at
+most two.  Consequently, even with adjacent or simultaneous edits,
+\begin{equation}\label{eq:nb-histogram}
+ \|C'-C\|_1\leq6k.
+\end{equation}
+The terminal context $S=(X_{M+1},X_{M+2})$ is preserved.  Set
+$J=\sum_cC_{Sc}$ and let
+\[
+ q_c=\frac{C_{Sc}+1}{J+K},\qquad
+ q'_c=\frac{C'_{Sc}+1}{\sum_dC'_{Sd}+K}.
+\]
+For nonnegative vectors $u,v$ of positive masses $A,B$, insertion of
+$v/A$ and the inequality $|A-B|\leq\|u-v\|_1$ give
+\[
+ \operatorname{TV}(u/A,v/B)
+ \leq\tfrac12\bigl(\|u-v\|_1/A+|A-B|/A\bigr)
+ \leq\|u-v\|_1/A.
+\]
+Apply this to the two smoothed rows, using the \emph{clean} mass in the
+denominator, to obtain the deterministic bound
+\begin{equation}\label{eq:nb-row-stability}
+ \operatorname{TV}(q',q)\leq\min\{1,6k/(J+K)\}.
+\end{equation}
+This argument allows arbitrary changes to row membership.  It does not
+condition row successors on the selected endpoint or treat them as IID.
+
+We use the following inherited analytic interfaces.  They are stated here
+to delimit the dependence on the predecessor dossier; the new corruption
+argument does not re-prove its clean statistical theorem or its stationary
+reverse-return analysis.  The R011 ORIGINAL rule is exactly the clean
+add-one vector $q$ above.  Its uniform consequence applies for every
+$K\geq2$, integer $M\geq1$, $\beta\in[0,1]$, every qualifying source,
+and every initial pair law (including stationary initialization):
+\begin{equation}\label{eq:nb-clean-interface}
+ \mathbb E\operatorname{TV}(q,\theta_S)
+ \leq2^{13}K^{5/2}M^{-1/2}.
+\end{equation}
+R011 gives a finer parameter-dependent bound, but its full collection
+of scales is not needed here: the displayed uniform consequence is the
+only clean upper interface used in this manuscript.  Its $K=2$ domain
+also covers the endpoint result in Section~\ref{sec:endpoint}.
+
+For a pair-chain path $Y_0,\ldots,Y_m$, define its actual-terminal
+occupation count by
+$J_m=\sum_{i=0}^{m-1}\mathbf1\{Y_i=Y_m\}$.
+The IU001 stationary interface, for $\beta>0$, $m\geq1$, $A>0$, and
+integer $\kappa\geq1$, is
+\begin{equation}\label{eq:nb-IU-interface}
+ \mathbb E_{\Pi}\min\{1,A/(J_m+\kappa)\}
+ \leq\frac{dA}{m}\left[17+\log\left(1+\frac{480}{\beta A}\right)\right],
+ \qquad d=|\operatorname{supp}\Pi|\leq K^2.
+\end{equation}
+This is a terminal-query bound under the two-step all-state certificate,
+not an independent stationary-query identity.  The AU001 universal
+interface, valid for every initial law, every $\beta\in[0,1]$, and the
+same domains of $m,A,\kappa$, is
+\begin{equation}\label{eq:nb-AU-interface}
+ \mathbb E_{\nu}\min\{1,A/(J_m+\kappa)\}
+ \leq\Psi\left(\frac{K^4A}{m+1}\right),\qquad
+ \Psi(x)=\begin{cases}x(1+\log(1/x)),&0<x<1,\\0,&x=0,\\1,&x\geq1.
+ \end{cases}
+\end{equation}
+For clarity, the short universal occupation argument can be reproduced.
+For a chain on $d$ states and integer $w\geq1$, put
+$b_m(y)=\mathbb P_y(J_m<w)$ and $B_m=\max_y b_m(y)$.
+The count over a whole path dominates the count over an ending suffix,
+so the Markov property gives $B_{m+1}\leq B_m$.  On each path,
+$\sum_{t=0}^m\mathbf1\{J_t<w\}\leq dw$: each state can be encountered
+with fewer than $w$ previous visits at most $w$ times.  Thus
+\[
+ (m+1)B_m\leq\sum_{t=0}^m B_t
+ \leq\sum_y\sum_{t=0}^m b_t(y)\leq d^2w.
+\]
+Layer cake proves \eqref{eq:nb-AU-interface}.  Indeed, for $0<t<1$ the
+strict threshold $J_m<A/t-\kappa$, when nonempty, is represented by
+$w=\lceil A/t-\kappa\rceil\leq A/t$; integrate
+$\min\{1,K^4A/((m+1)t)\}$.  This also explains why the smoothing
+integer and the strict inequality matter.
+
+\subsection{An exact suffix mixture for arbitrary initialization}
+Assume first $\beta>0$ and $k\geq1$.  Let
+\[
+ u=\lfloor M/2\rfloor,\quad m=\lceil M/2\rceil,\quad
+ r=\lfloor M/4\rfloor,\quad \eta=(1-\beta)^r.
+\]
+For $0<\beta<1$, the matrix
+$R=(P^2-\beta\mathbf1\Pi)/(1-\beta)$ is stochastic on \emph{all}
+pair states, and $\Pi R=\Pi$.  Expanding the powers of
+$P^2=\beta\mathbf1\Pi+(1-\beta)R$ gives
+\begin{equation}\label{eq:nb-suffix-mixture}
+ \mu P^u=(1-\eta)\Pi+\eta\nu,
+ \qquad \nu=\mu R^rP^{u-2r}.
+\end{equation}
+Extending each initial distribution with the ordinary transition matrix
+$P$ gives the same exact mixture for the \emph{entire suffix path}
+$Y_u,\ldots,Y_M$.  In particular, the residual suffix uses $P$, not $R$.
+For $\beta=1$, $P^2=\mathbf1\Pi$ and the residual term is absent.
+The full terminal count dominates the suffix terminal count pathwise.
+Apply \eqref{eq:nb-IU-interface} and \eqref{eq:nb-AU-interface} with
+$A=6k$, $\kappa=K$, and $m\geq M/2$:
+\begin{align}\label{eq:nb-suffix-bound}
+ \mathbb E\min\{1,6k/(J+K)\}
+ &\leq12K^2\frac{k}{M}
+ \left[17+\log\left(1+\frac{80}{\beta k}\right)\right]
+ +\eta\Psi(12K^4k/M).
+\end{align}
+No synthetic regeneration event is supplied to the estimator; this
+mixture is only an analysis of its existing path distribution.
+
+For $\beta\geq1/M$, write $z=M/k\geq1$, $t=M\beta\geq1$,
+$D=12K^4$, and $G=1+\log(1+z/t)$, so $F_3=G/z$.
+We have $\eta\leq1$ and $\eta\leq e\exp(-t/4)$.
+If $z<D$, then $\eta\Psi(D/z)\leq1\leq DG/z$.
+If $z\geq D$, use
+$\log z\leq\log(1+z/t)+\log t$ to obtain
+\[
+ \eta\Psi(D/z)\leq\frac Dz\eta(1+\log z)
+ \leq\frac Dz\{G+e\exp(-t/4)\log t\}
+ \leq\frac{5DG}{z}.
+\]
+The last elementary bound uses $e\exp(-t/4)\log t\leq4$ for $t\geq1$.
+Also $\log(1+80x)\leq\log80+\log(1+x)$.
+For $0\leq\beta<1/M$, apply \eqref{eq:nb-AU-interface} directly to
+the full path.  Splitting at $z=6K^4$ proves
+\[
+ \Psi\left(\frac{6K^4k}{M+1}\right)
+ \leq\Psi(6K^4/z)
+ \leq\frac{6K^4}{z}[1+\log(1+z)]=6K^4F_3.
+\]
+Combining these estimates with \eqref{eq:nb-row-stability} and
+\eqref{eq:nb-clean-interface} gives
+\begin{equation}\label{eq:nb-final-upper}
+ \mathbb E\operatorname{TV}(q',\theta_S)
+ \leq\min\left\{1,2^{13}K^{5/2}s+
+ [12K^2(17+\log80)+60K^4]F_3\right\}.
+\end{equation}
+At $k=0$ the perturbation vanishes and only the clean interface is used.
+The rule $q'$ itself uses neither $k$ nor $\beta$.
+
+\subsection{Exact erasure of arrangements}
+\begin{lemma}[Exchangeable count erasure]\label{lem:nb-erasure}
+Let $V_1,\ldots,V_\ell$ be IID Bernoulli$(p)$ bits, set
+$n=\sum_iV_i$, fix an integer $b\geq1$, and put
+$r=b\lfloor n/b\rfloor$.  Choose uniformly $n-r$ of the one positions
+and replace them by zero.  The output $Z$, conditional on $r$, is uniform
+among weight-$r$ words, independently of $p$.  At most $b-1$ bits are
+changed.  If two further IID Bernoulli$(p)$ bits $U$ are untouched, the
+joint experiment $(Z,U)$ factors through $(r,U)$ followed by a
+$p$-independent channel, with at most
+$4(\lfloor\ell/b\rfloor+1)$ messages.
+\end{lemma}
+\begin{proof}
+Conditional on $n$, the original word is uniform among its
+$\binom\ell n$ arrangements.  A fixed output of weight $r$ is contained
+in $\binom{\ell-r}{n-r}$ original one sets, and is chosen from each one
+set with probability $1/\binom nr$.  Hence
+\[
+ \mathbb P(Z=z\mid n)
+ =\frac{\binom{\ell-r}{n-r}}{\binom\ell n\binom nr}
+ =\frac1{\binom\ell r}.
+\]
+Averaging within a cell of the rounded count leaves this identity
+unchanged.  Conditional on $p$, the two untouched bits are independent
+of the first $\ell$ bits and the erasure randomization.  Thus the same
+uniform-arrangement channel works conditional on $(r,U)$.
+The identity includes $\ell=0$ and the incomplete last count cell.
+\end{proof}
+
+\begin{lemma}[Finite-message Bayes loss]\label{nb:finite-message}
+If a real parameter is uniform on an interval of length $h>0$ and an
+arbitrary stochastic channel emits at most $D$ messages, every
+independently randomized real-valued decoder has expected absolute loss
+at least $h/(4D)$.
+\end{lemma}
+\begin{proof}
+Fix its independent decoding seed, obtaining at most $D$ possible output
+points.  Their radius-$t$ neighborhoods have prior mass at most $2Dt/h$.
+Whatever stochastic encoding is used, the event of error at most $t$
+requires that the parameter lie in that union.  Integrate
+$1-2Dt/h$ over $0\leq t\leq h/(2D)$ and then average the seed.
+\end{proof}
+In Lemma~\ref{lem:nb-erasure}, a full-word decoder can be composed with
+the parameter-independent uniform-arrangement channel, so it is a
+randomized decoder of the finite message.  This is not an assumption
+that the observation is only a histogram.  The protected pair is part
+of the message, and the prior is not asserted to remain uniform after
+conditioning on that pair.  Neither the actual edit mask nor the actual
+attack seed is disclosed.
+
+\subsection{Two IID floors common to all mixing classes}
+\begin{lemma}\label{nb:iid-floors}
+For every $K\geq2$, $M\geq64$, and $\beta\in[0,1]$, the stationary
+protected-endpoint minimax risk is at least $s/64$.  For $k\geq1$ it is
+also at least $k/(96M)$.  Each lower bound is realized by a stationary
+IID binary family and a common corruption kernel across that family.
+\end{lemma}
+\begin{proof}
+Choose two named symbols $C_0,C_1$ and set every source row, including
+unused contexts, to $(1-p)\delta_{C_0}+p\delta_{C_1}$.  Its two-step
+pair matrix has every row equal to the stationary pair law, so it
+satisfies every certificate under consideration.
+For the statistical floor use identity corruption and
+$p_\pm=1/2\pm1/(16\sqrt N)$, $N=M+2$.
+The one-sample divergence is at most $32/(256N)$, hence the product
+KL divergence is at most $1/8$ and Pinsker's inequality bounds product
+TV by $1/4$.  The target laws are separated in TV by $1/(8\sqrt N)$.
+Nearest-target testing and the triangle inequality give average loss at
+least one quarter of this separation times $1-1/4$, namely
+$3/(128\sqrt N)\geq s/64$.
+
+For the corruption floor use one prior uniform on $[1/4,3/4]$ and
+$b=k+1$.  On all-binary input words apply Lemma~\ref{lem:nb-erasure}
+to the first $M$ bits and leave the last two untouched; on every other
+input use identity.  This defines a common map on the entire alphabet
+with at most $k$ edits.  The full output has at most
+$D=4(\lfloor M/b\rfloor+1)$ informative messages.
+Since TV loss dominates the absolute error in the $C_1$ coordinate,
+Lemma~\ref{nb:finite-message} gives
+\[
+ R_{\mathrm{stat}}^{\mathrm{prot}}
+ \geq\frac1{32(\lfloor M/b\rfloor+1)}
+ \geq\frac b{32(M+b)}\geq\frac{k}{96M},
+\]
+where $b\leq M+1\leq2M$.  The statistical and corruption witnesses
+need not coincide: their lower bounds are combined by a maximum.
+\end{proof}
+
+\subsection{Stationary rare suffixes and the full logarithm}
+Suppose $b_0\leq1/16$.  Put $a=1/(2M)$ and $e=b_0-a$.
+For $p\in[1/4,3/4]$, $p_0=1-p$, $p_1=p$, use symbols $W,C_0,C_1$
+and define a first-order chain by
+\begin{align*}
+ T(W,W)&=1-a,& T(W,C_i)&=ap_i,\\
+ T(C_i,W)&=e,&T(C_i,C_j)&=(1-e)p_j.
+\end{align*}
+Its stationary symbol law is
+\[
+ \pi(W)=e/b_0,\qquad\pi(C_i)=ap_i/b_0.
+\]
+Give unused symbols zero stationary mass and set every unused starting
+row to $\pi$.  Direct substitution verifies $\pi T=\pi$.
+The coordinate inequalities $T(y,v)\geq b_0\pi(v)$ hold for every
+starting symbol $y$, including unused ones: the $W$-to-active and
+active-to-$W$ ratios equal $b_0$, while the other inequalities reduce
+to $b_0\leq1$.  Set $\theta_{xy}(v)=T(y,v)$ on \emph{every} pair and
+$\Pi(u,v)=\pi(u)T(u,v)$.  Then $\Pi$ is stationary and
+\begin{equation}\label{eq:nb-allstate-witness}
+ P^2((x,y),(u,v))=T(y,u)T(u,v)
+ \geq b_0\Pi(u,v)\geq\beta\Pi(u,v)
+\end{equation}
+on all pair states, not merely the stationary support.
+Initialize at this stationary pair law, which is not $\pi\otimes\pi$.
+
+Let $L=\lfloor1/(4b_0)\rfloor$, so $4\leq L\leq M/4$.
+For $2\leq j\leq L$, let $E_j$ be the event that the complete word is
+$W^{M+2-j}$ followed by $j$ active letters.  These disjoint events have
+probabilities
+\[
+ w_j=\Pi(W,W)(1-a)^{M-j}a(1-e)^{j-1}.
+\]
+Here $\Pi(W,W)=(1-a/b_0)(1-a)\geq1/4$ is independent of $p$.
+Bernoulli's inequality gives
+$(1-a)^{M-j}\geq1/2$ and
+$(1-e)^{j-1}\geq1-b_0L\geq3/4$.  Thus
+\begin{equation}\label{eq:nb-event-mass}
+ w_j\geq3/(64M)\geq1/(32M).
+\end{equation}
+Conditional on $E_j$, the $j$ active bits are IID Bernoulli$(p)$.
+The same uniform prior on $p$ is retained after this event, before the
+endpoint labels are observed.
+
+Define a single kernel on all words as follows.  If its input is
+$W^{N-j}$ followed by $j$ active symbols with $2\leq j\leq M$, round
+the number of $C_1$ symbols among the first $j-2$ active symbols to a
+multiple of $b=k+1$, using the uniform deletion rule.  Preserve all
+markers and the final pair.  Use identity on every other word.
+This kernel depends on neither $p$ nor $\beta$, preserves the visible
+suffix length $j$, and makes at most $k$ replacements in allowed
+positions on every input.  It is the same kernel for every suffix and
+every parameter value.
+
+At all active terminal pairs the actual future law is
+\begin{equation}\label{eq:nb-true-future}
+ e\delta_W+(1-e)[(1-p)\delta_{C_0}+p\delta_{C_1}].
+\end{equation}
+The return mass $e$ must not be omitted merely because no return
+occurred in the selected past.  For every prediction $q$,
+$\operatorname{TV}(q,\theta_S)\geq|q(C_1)-(1-e)p|$.
+Apply Lemmas~\ref{lem:nb-erasure} and \ref{nb:finite-message} to
+$q(C_1)/(1-e)$, with interval length $1/2$.  Since $1-e\geq1/2$,
+the conditional Bayes loss is at least
+\[
+ \frac1{64[1+(j-2)/b]}.
+\]
+The decoder may be granted the value of $j$, which is already visible.
+The output arrangement adds no information beyond the finite message.
+Sum the losses over the disjoint events, without hiding observations
+outside them:
+\begin{align}\label{eq:nb-harmonic-lower}
+ R_{\mathrm{stat}}^{\mathrm{prot}}
+ &\geq\frac1{2048M}\sum_{\ell=0}^{L-2}\frac1{1+\ell/b}
+ \geq\frac b{2048M}\log\left(1+\frac{L-1}{b}\right).
+\end{align}
+The last inequality integrates a decreasing function over $[0,L-1]$.
+Since $L-1\geq1/(8b_0)$, the function
+$b\log(1+c/b)$ is increasing in $b>0$, and
+$\log(1+x/8)\geq\log(1+x)/8$, it follows that
+\begin{equation}\label{eq:nb-log-lower}
+ R_{\mathrm{stat}}^{\mathrm{prot}}
+ \geq\frac{k}{16384M}\log\left(1+\frac1{b_0k}\right).
+\end{equation}
+The same prior and same kernel were used across all $j$; choosing a
+different source separately at each suffix would not justify this sum.
+
+For $b_0\leq1/16$, maximize \eqref{eq:nb-log-lower} and the IID
+$k/(96M)$ floor to obtain $F_3/32768$.  For $b_0>1/16$,
+$\log(1+1/(b_0k))\leq\log17<3$, so $F_3\leq4k/M$ and the IID floor
+alone is stronger than $F_3/32768$.  Maximizing with the statistical
+floor gives
+\begin{equation}\label{eq:nb-final-lower}
+ R_{\mathrm{stat}}^{\mathrm{prot}}
+ \geq2^{-15}\min\{1,\max(s,F_3)\}.
+\end{equation}
+For $k=0$, use only the statistical floor.  Together with
+\eqref{eq:nb-final-upper} and inclusion of stationary initializations
+among arbitrary ones, this proves the claimed nonbinary profile.
+
+\subsection{The zero-certificate mechanism without a mixing cutoff}
+The preceding construction already covers $\beta=0$, but a simpler
+version illuminates the logarithm and records the original stationary
+strengthening.  This paragraph is valid for every $M\geq2$, not only
+$M\geq64$.
+For arbitrary initialization, start at $WW$, set $\alpha=1/M$, and use
+\[
+ T(W,W)=1-\alpha,\quad T(W,C_i)=\alpha p_i,
+ \quad T(C_i,C_j)=p_j.
+\]
+Unused rows can equal $\delta_W$.  A qualifying stationary law is
+supported on the active IID class, so the source belongs to
+$\mathcal D_2(0)$ despite its nonstationary start.  For
+$2\leq j\leq M$, the event $E_j$ above has mass
+$\alpha(1-\alpha)^{M-j}\geq1/(4M)$, independent of $p$.
+The future active law is exactly Bernoulli$(p)$.
+The same marker erasure gives conditional risk at least
+$1/[32(1+(j-2)/(k+1))]$.  Hence, for $b=k+1$,
+\[
+ R_{\mathrm{all}}^{\mathrm{prot}}
+ \geq\frac b{128M}\log\left(1+\frac{M-1}{b}\right)
+ \geq\frac1{512}\Psi(k/M),\qquad k\geq1.
+\]
+For the last inequality, use $M-1\geq M/2$, monotonicity in $b$, and
+$\log(1+t/2)\geq(1+\log t)/4$ for $t=M/k\geq1$.
+The latter follows by checking $t=1$ and differentiating.
+
+For a stationary version set $a=e=1/M$ in the recurrent marker chain.
+Now $\pi(W)=1/2$, $\pi(C_i)=p_i/2$, and the initialization is
+$\Pi(u,v)=\pi(u)T(u,v)$.  For every $2\leq j\leq M$,
+\[
+ \mathbb P_p(E_j)
+ =\frac{(1-1/M)^M}{2M}\geq\frac1{8M}.
+\]
+The equality includes the initial $WW$ factor; it is independent of
+both $p$ and $j$.  The lower bound follows from
+$(1-1/M)^M\geq1/4$ for $M\geq2$.
+The true future law retains its return mass $e$, reducing the
+conditional lower by at most a factor two.  The same summation yields
+$\Psi(k/M)/2048$.  Thus transience is not needed for the logarithmic
+obstruction.  No concentration cutoff such as $j=O(k^2)$ is needed:
+exact arrangement erasure works for every suffix length.
+
+\section{When the original terminal context is not protected}
+\label{sec:endpoint}
+We now change exactly one part of the experiment.  The adversary may
+replace any of the $N=M+2$ positions, including the final two, subject
+to the same strict budget $k\leq M$.  The prediction target remains
+$\theta_{X_{N-1},X_N}$ at the \emph{original hidden} terminal pair.
+It is not the row indexed by the corrupted endpoint.  Write
+$R_{\mathrm{stat}}^{\mathrm{end}}$ and
+$R_{\mathrm{all}}^{\mathrm{end}}$ for these risks and put
+\[
+ \delta=1-\beta,\qquad
+ H_{\mathrm{end}}=\min\{1,\max(s,k/M,\delta\mathbf1\{k\geq1\})\}.
+\]
+
+\begin{proposition}\label{prop:endpoint}
+For $K\geq2$, $M\geq64$, $0\leq\beta\leq1$, and integer
+$0\leq k\leq M$,
+\[
+ H_{\mathrm{end}}/96\leq R_{\mathrm{stat}}^{\mathrm{end}}
+ \leq R_{\mathrm{all}}^{\mathrm{end}}
+ \leq C_K^{\mathrm{end}}H_{\mathrm{end}},
+ \qquad
+ C_K^{\mathrm{end}}=\max\{2^{13}K^{5/2},\sqrt K/2+3\}.
+\]
+For $k=0$ the clean selected-row add-one rule suffices.  For $k\geq1$
+the pooled empirical distribution of corrupted symbols at positions
+$3,\ldots,N$ suffices.  Neither branch requires $\beta$.
+\end{proposition}
+
+\subsection{What the all-state certificate says about each row}
+Let $\pi(c)=\sum_d\Pi(c,d)$.  Summing
+$P^2(u,(c,d))\geq\beta\Pi(c,d)$ over $d$ gives
+\begin{equation}\label{eq:end-row-domination}
+ \theta_u(c)\geq\beta\pi(c)
+ \quad\hbox{for every pair $u$ and symbol $c$}.
+\end{equation}
+Indeed the first coordinate after two pair transitions is precisely the
+next generated symbol from $u$.  The conclusion includes contexts
+outside stationary support.  For $\beta<1$, write
+$\theta_u=\beta\pi+\delta r_u$, where $r_u$ is a probability vector.
+For $\beta=1$, coordinatewise domination and unit mass imply
+$\theta_u=\pi$.  In every case,
+\begin{equation}\label{eq:end-row-tv}
+ \operatorname{TV}(\theta_u,\pi)\leq\delta.
+\end{equation}
+At $\beta=1$ all generated symbols from position 3 onward are IID
+$\pi$, even for an arbitrary initial pair; no assertion about that
+initial pair being IID is needed.
+
+\subsection{A pooled martingale upper bound}
+For $k\geq1$, let
+$\bar p=M^{-1}\sum_{t=3}^N e_{X_t}$ be the clean generated-symbol
+empirical distribution.  With the natural filtration, define
+$m_t=\theta_{X_{t-2},X_{t-1}}$ and $D_t=e_{X_t}-m_t$.
+These are vector martingale differences.  Orthogonality at distinct
+times gives
+\[
+ \mathbb E\left\|\frac1M\sum_{t=3}^ND_t\right\|_2^2
+ =\frac1{M^2}\sum_{t=3}^N\mathbb E[1-\|m_t\|_2^2]
+ \leq\frac1M.
+\]
+Cauchy--Schwarz and Jensen imply that the expected half-$\ell_1$ norm
+of this martingale average is at most $\sqrt K/(2\sqrt M)$.
+By \eqref{eq:end-row-tv} and convexity, the average $M^{-1}\sum_tm_t$
+is within TV $\delta$ of $\pi$ on every path, as is the true terminal
+next law.  A pathwise triangle inequality therefore yields
+\[
+ \mathbb E\operatorname{TV}(\bar p,\theta_{X_{N-1},X_N})
+ \leq\frac{\sqrt K}{2\sqrt M}+2\delta.
+\]
+Let $\bar p'$ pool the corrupted symbols at positions $3,\ldots,N$.
+Each changed symbol alters this empirical distribution by at most
+$1/M$ in TV, so $\operatorname{TV}(\bar p',\bar p)\leq k/M$ pathwise.
+Edits to the first two positions contribute nothing to this bound.
+Thus
+\begin{equation}\label{eq:end-upper}
+ \mathbb E\operatorname{TV}(\bar p',\theta_{X_{N-1},X_N})
+ \leq\min\{1,\sqrt K s/2+2\delta+k/M\}.
+\end{equation}
+This proof does not reconstruct the endpoint, appeal to mixing-time
+concentration, or substitute an independent query for the actual one.
+For $k=0$, use \eqref{eq:nb-clean-interface} instead: the pooled bias
+$2\delta$ is only an upper-bound artifact in the clean problem.
+These two branches prove the upper in Proposition~\ref{prop:endpoint}.
+
+\subsection{A one-symbol erasure lower bound even for a known source}
+Assume $k\geq1$.  Set $\alpha=\min\{\delta/2,1/4\}$ and consider the
+symmetric first-order binary chain
+\[
+ T(0,0)=T(1,1)=\tfrac12+\alpha,
+ \qquad T(0,1)=T(1,0)=\tfrac12-\alpha.
+\]
+Its stationary symbol law is uniform on $\{0,1\}$.  For $K>2$, set
+unused starting rows to that same binary uniform law and all unused
+stationary masses to zero.  Extend to every second-order row by
+$\theta_{xy}(c)=T(y,c)$ and initialize at
+$\Pi(u,v)=\pi(u)T(u,v)$.  Every starting symbol satisfies
+$T(y,u)\geq(1-2\alpha)\pi(u)$, including unused symbols, so
+\[
+ P^2((x,y),(u,v))=T(y,u)T(u,v)
+ \geq(1-2\alpha)\Pi(u,v)\geq\beta\Pi(u,v).
+\]
+The witness therefore obeys the required all-state certificate.
+
+Use the deterministic common attack that sets only the last symbol to
+$0$ and leaves the rest unchanged.  It makes at most one replacement
+on every word and requires no source parameters.  Grant the estimator
+the entire source law and its stationary initialization.  The output
+then reveals the true prefix through $X_{N-1}$ but not $X_N$.
+Conditionally on that prefix, the probabilities of the two possible
+last bits are $1/2+\alpha$ and $1/2-\alpha$ in some order.  The two
+possible true next-law probabilities of symbol $1$ are
+$1/2-\alpha$ and $1/2+\alpha$.
+For any real prediction, the least posterior absolute error is the
+smaller last-bit probability times the gap between these target values:
+\[
+ (\tfrac12-\alpha)\,2\alpha=\alpha-2\alpha^2.
+\]
+To check this weighted-median formula, the objective is linear below,
+between, and above the two target values, and its minimum occurs at
+the more likely endpoint.  Randomization cannot lower a linear average
+of deterministic risks.  TV loss dominates the absolute error in the
+symbol-$1$ coordinate, including predictions assigning mass to unused
+symbols.  The bound holds after every prefix and hence unconditionally.
+
+If $\delta\leq1/2$, the loss is
+$\delta(1-\delta)/2\geq\delta/4$; if $\delta\geq1/2$, it is
+$1/8\geq\delta/8$.  Therefore
+\begin{equation}\label{eq:end-one-edit}
+ R_{\mathrm{stat}}^{\mathrm{end}}\geq\delta/8,
+ \qquad k\geq1.
+\end{equation}
+This obstruction is uncertainty about a latent final symbol in a
+\emph{known} source, rather than uncertainty in estimating its rows.
+The model does not reveal a replacement indicator: for this particular
+attack that indicator would itself reveal the erased binary symbol.
+No conclusion about all possible visible-mask models follows.
+
+\subsection{Assembly and scope of the endpoint contrast}
+Both IID floors in Lemma~\ref{nb:iid-floors} remain valid.  Their
+identity and first-$M$-symbol erasure kernels are allowed in the enlarged
+corruption class, even though they do not use endpoint edits.
+For $k\geq1$, maximize $s/64$, $k/(96M)$, and
+\eqref{eq:end-one-edit}; this gives
+$\max(s,k/M,\delta)/96$, and hence the required capped lower.
+For $k=0$, only the statistical floor is needed.
+All lower witnesses are stationary, and the inclusion of stationary
+initializations among arbitrary ones completes the proof.
+
+In particular, at any fixed $\beta<1$, one allowed endpoint edit
+prevents consistency for the original-terminal target.  At $\beta=1$
+all source rows coincide and the endpoint ambiguity disappears.
+For positive budgets, statistical-order risk is possible only when
+$1-\beta=O(M^{-1/2})$ and $k=O(\sqrt M)$, and these two conditions
+are also sufficient up to fixed-$K$ constants by the proved bounds.
+This comparison concerns full-history statistical prediction.  It does
+not assert an online adversarial equivalence, a visible-mask result,
+a neural-depth requirement, or a training guarantee.

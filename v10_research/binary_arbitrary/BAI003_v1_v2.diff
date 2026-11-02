@@ -1,0 +1,27 @@
+--- v10_research/binary_arbitrary/BAI003_uniform_absorbing_binary_upper_v1.md	2026-11-01 22:18:29.768980406 -0800
++++ v10_research/binary_arbitrary/BAI003_uniform_absorbing_binary_upper_v2.md	2026-11-01 22:20:10.107535999 -0800
+@@ -1,6 +1,6 @@
+ # BAI003 — Uniform arbitrary-start binary precision upper with an absorbing diagonal
+ 
+-2026-11-02. New author candidate; independent review required. BAI001 and BAI002 v1 files remain unchanged. This strengthens BAI002 by removing ALL compact-active-core assumptions, but does not cover nontrivial full stationary support.
++2026-11-02. Author candidate v2; independent delta review required. BAI001 and BAI002 v1 files remain unchanged. This strengthens BAI002 by removing ALL compact-active-core assumptions, but does not cover nontrivial full stationary support.
+ 
+ ## 1. Result
+ 
+@@ -139,7 +139,7 @@
+ 
+ This proves (5.2).
+ 
+-Section4 therefore bounds (2.2) by56/M for initial A or C (a common slack constant covers all four cases). For initial B, the first transition to A is deterministic, after which the same terminal query and prior A/C counts are those of a length M-1 path. Thus the bound is56/(M-1)<=64/M for M>=8. Mixtures cover arbitrary initial active laws. This completes the proof of (2.2) and (2.1).
++Section4 therefore bounds (2.2) by56/M for initial A or C (a common slack constant covers all four cases). For initial B and M>=9, the first transition to A is deterministic, after which the same terminal query and prior A/C counts are those of a length M-1>=8 path. Thus the bound is56/(M-1)<=64/M. At M=8, the integrand in (2.2) is at most one, which is at most64/M directly. Mixtures cover arbitrary initial active laws. This completes the proof of (2.2) and (2.1).
+ 
+ ## 6. Transfer to the original absorbing binary source
+ 
+@@ -192,3 +192,7 @@
+ For beta>0, a binary stationary class with zero crossing mass has exactly one absorbing diagonal; hence this result resolves that entire boundary case of the general arbitrary-start question. Full-support sources remain open. The theorem does not claim a new lower, a global mixing improvement, optimal constants, external novelty, or external peer review.
+ 
+ Direct dependencies: accepted SB001 v2 for the original add-one comparator and universal terminal occupation; accepted BU001 v2 section4 for the deterministic binary floor reduction and empty-bank bound. The alternating-renewal weighted occupation lemma is newly proved here. Independent review, source hashes, and diagnostics must accompany any proposed acceptance.
++
++## 9. v1-to-v2 correction
++
++The independent reviewer identified one horizon bookkeeping omission in the initial-B proof of (2.2): the M-1 reduction at M=8 would invoke an estimate stated only for horizons at least8. Section5 now handles M=8 by the unit integrand cap and applies the reduction only for M>=9. No theorem constant, source class, predictor, diagnostic formula, or M>=64 risk argument changed. v1 remains preserved.

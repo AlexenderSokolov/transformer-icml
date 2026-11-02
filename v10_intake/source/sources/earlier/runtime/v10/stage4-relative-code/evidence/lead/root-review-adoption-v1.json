@@ -1,0 +1,33 @@
+{
+  "kind": "lead_actual_review_readback_not_new_fact",
+  "root_obligation_id": "82f3b230a8e39f7ef988c219960127d8a94bee1c31d31ae51a328ab8580a3a29",
+  "contract_id": "38d15641fecff6dbee957b6e036c052ecb7f07e6354623e800f7a126cf5270ef",
+  "review_task_id": null,
+  "review_task_state_observed": "ANSWERED",
+  "review_verdict": "SCOPED_PASS_FIXED_C1_C4_MATHEMATICAL_PACKAGE",
+  "report_path": "outputs/001-relative-code/verifier/root-package-review-v1.md",
+  "report_sha256": "7c7562072315f395b20e54645f399d179e4181ef1ab63dbb22016185094e9cf0",
+  "manifest_path": "outputs/001-relative-code/verifier/root-package-review-manifest-v1.json",
+  "manifest_sha256": "0efd5fb38058464146d56de0c1a76a898c093459a2dc5371d7ffbe0de7588e4d",
+  "lead_reading": "Full report, native state and actual native reply; manifest file identities checked, unchanged diagnostic suites not rerun.",
+  "manifest_file_records_checked": 78,
+  "mandatory_math_repairs": [],
+  "new_fact_ids": [],
+  "new_evidence_ids": [],
+  "root_status_observed": "OPEN",
+  "acceptance_observed": null,
+  "root_submission_task_id": null,
+  "root_submission_task_state_at_dispatch": "[Non-scientific operational metadata omitted.]",
+  "root_submission_assignee": null,
+  "submission_predecessors": [
+    "abbd577c047db274",
+    "1a1aca7dd84c60da",
+    "e3080f40f4607948"
+  ],
+  "residual_uncertainty": "No identified mandatory local mathematical repair; admitted proofs and review remain LLM_CHECKED_PROOF, not kernel formalization. Root gateway and independent final audit may still identify defects.",
+  "future_gates_not_claimed": [
+    "root admission",
+    "native final_audit",
+    "actual responsibility receiver-pull receipt"
+  ]
+}

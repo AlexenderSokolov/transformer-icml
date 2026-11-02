@@ -1,0 +1,201 @@
+{
+  "obligation": {
+    "obligation_id": "2294809ab26532cf89c9a323975deb8ff35762008ff93df9e03a124ebbfffb83",
+    "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+    "exact_statement": "Establish a theorem-level statistical-prior and observation-access comparison for the frozen D1-D8 project, without asserting novelty or root closure. For stationary second-order K-symbol histories H of length N, explicitly define the full-ordered-history suffix-average add-one predictor B_N(y)=(N-1)^(-1) sum_{l=2}^N [n_{E_N,y}(H_l)+1]/[n_{E_N}(H_l)+K], where E_N is the actual terminal pair. Give a self-contained finite-N expected KL upper proof using the sequential Dirichlet-one code and pointwise multinomial bound; a candidate bound is U_KN=[2 log K+K^2(K-1)log(1+(N-1)/K^2)]/(N-1). Derive valid actual-terminal expected TV, conditional TV with pi_s, and stationary-weighted risk consequences, and exhibit strictly positive distributions demonstrating why a KL lower bound alone cannot be reversed into a TV lower bound. Verify against the exact primary Han-Jana-Wu arXiv2106.13947v2 Eq95, Lemma6, Theorem22 and Section5.2, separating already-covered statistical objects from this project's actual finite-code/resource claims and resolving any display normalization ambiguity by the self-contained derivation. Prove or refute exact nonfactorization of this statistical predictor through the admitted canonical quantized Route A observation cut: the candidate histories 000100 and001000 have the same eight transition counts and terminal00 but B_N(1)=8/15 and2/5. Check the actual finite score/exponential schedule, all aggregate copies, canonical erasure, query/terminal/public fields and downstream factorization using exact admitted Facts26a62994567c7f02,199c7b2000c58e6b and54c3088eb3c35a36 where their contents apply. Equal decoded unquantized summaries alone are not whole-code identity; if an extra field prevents the collision, retain the failed alternative and classify the exact observation instead. State any randomized-decoder functional approximation consequence separately from prediction-risk lower bounds; these two histories must have positive probability under legal stationary D1/D5 processes. Verify the exact iid per-sensor/communication/regularity assumptions of Han-Ozgur-Weissman arXiv1802.08417v4 Theorem1 and transcript Lemma1; demonstrate the structural-overlap obstruction to the naive iid substitution P(Y0=00,Y1=11)=0 versus vw>0 on D5, and count the alphabet of all eight canonical summary coordinates plus preserved endpoint/query fields, distinguishing b fractional bits from total observation bits and internal registers. Do not claim that another reduction is impossible or that failed direct substitution establishes novelty. Record a source-verified comparison of object, access, architecture, quantifiers, resources and risk. No same-budget circuit implementation is claimed for the suffix-average statistical comparator; any such extension must be independently charged. This is one bounded mathematical comparison prerequisite for C4 and accurate C2 interpretation, not a generic Transformer lower bound, optimal TV rate, novelty certification or root admission.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+        "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+        "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+        "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers >=2",
+          "depends_on": []
+        },
+        {
+          "variable": "beta",
+          "kind": "FORALL",
+          "domain": "fixed positive full-context score gap",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+          "depends_on": [
+            "K",
+            "beta"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "D1 second-order tables on K symbols",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers >=3",
+          "depends_on": []
+        },
+        {
+          "variable": "epsilon",
+          "kind": "FORALL",
+          "domain": "positive accuracy targets",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+      "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "c26b740c85ac169c6d03ea64b7d544c0b36393672ca71098297042024b51d69d"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": [
+    {
+      "artifact_id": "c26b740c85ac169c6d03ea64b7d544c0b36393672ca71098297042024b51d69d",
+      "content_hash": "b581dbe9531e9ec1de571c5194398f44050acb7bbe6371671d57d2990a044e28",
+      "producer": "fact_submit:5dbca35b8e4d3145",
+      "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+      "evidence_kind": "LLM_CHECKED_PROOF",
+      "exact_claim": "Establish a theorem-level statistical-prior and observation-access comparison for the frozen D1-D8 project, without asserting novelty or root closure. For stationary second-order K-symbol histories H of length N, explicitly define the full-ordered-history suffix-average add-one predictor B_N(y)=(N-1)^(-1) sum_{l=2}^N [n_{E_N,y}(H_l)+1]/[n_{E_N}(H_l)+K], where E_N is the actual terminal pair. Give a self-contained finite-N expected KL upper proof using the sequential Dirichlet-one code and pointwise multinomial bound; a candidate bound is U_KN=[2 log K+K^2(K-1)log(1+(N-1)/K^2)]/(N-1). Derive valid actual-terminal expected TV, conditional TV with pi_s, and stationary-weighted risk consequences, and exhibit strictly positive distributions demonstrating why a KL lower bound alone cannot be reversed into a TV lower bound. Verify against the exact primary Han-Jana-Wu arXiv2106.13947v2 Eq95, Lemma6, Theorem22 and Section5.2, separating already-covered statistical objects from this project's actual finite-code/resource claims and resolving any display normalization ambiguity by the self-contained derivation. Prove or refute exact nonfactorization of this statistical predictor through the admitted canonical quantized Route A observation cut: the candidate histories 000100 and001000 have the same eight transition counts and terminal00 but B_N(1)=8/15 and2/5. Check the actual finite score/exponential schedule, all aggregate copies, canonical erasure, query/terminal/public fields and downstream factorization using exact admitted Facts26a62994567c7f02,199c7b2000c58e6b and54c3088eb3c35a36 where their contents apply. Equal decoded unquantized summaries alone are not whole-code identity; if an extra field prevents the collision, retain the failed alternative and classify the exact observation instead. State any randomized-decoder functional approximation consequence separately from prediction-risk lower bounds; these two histories must have positive probability under legal stationary D1/D5 processes. Verify the exact iid per-sensor/communication/regularity assumptions of Han-Ozgur-Weissman arXiv1802.08417v4 Theorem1 and transcript Lemma1; demonstrate the structural-overlap obstruction to the naive iid substitution P(Y0=00,Y1=11)=0 versus vw>0 on D5, and count the alphabet of all eight canonical summary coordinates plus preserved endpoint/query fields, distinguishing b fractional bits from total observation bits and internal registers. Do not claim that another reduction is impossible or that failed direct substitution establishes novelty. Record a source-verified comparison of object, access, architecture, quantifiers, resources and risk. No same-budget circuit implementation is claimed for the suffix-average statistical comparator; any such extension must be independently charged. This is one bounded mathematical comparison prerequisite for C4 and accurate C2 interpretation, not a generic Transformer lower bound, optimal TV rate, novelty certification or root admission.",
+      "scope": {
+        "assumptions": [
+          "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+          "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+          "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+          "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+        ],
+        "quantifiers": [
+          {
+            "variable": "K",
+            "kind": "FORALL",
+            "domain": "integers >=2",
+            "depends_on": []
+          },
+          {
+            "variable": "beta",
+            "kind": "FORALL",
+            "domain": "fixed positive full-context score gap",
+            "depends_on": []
+          },
+          {
+            "variable": "predictor_family",
+            "kind": "EXISTS",
+            "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+            "depends_on": [
+              "K",
+              "beta"
+            ]
+          },
+          {
+            "variable": "theta",
+            "kind": "FORALL",
+            "domain": "D1 second-order tables on K symbols",
+            "depends_on": [
+              "K"
+            ]
+          },
+          {
+            "variable": "N",
+            "kind": "FORALL",
+            "domain": "integers >=3",
+            "depends_on": []
+          },
+          {
+            "variable": "epsilon",
+            "kind": "FORALL",
+            "domain": "positive accuracy targets",
+            "depends_on": []
+          }
+        ],
+        "objects": [],
+        "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+        "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+      },
+      "input_hashes": [
+        "619d25095eb8ddf9b9237bbe003c2b52cb30d8b1f5a4d947ae3d8cc698060996",
+        "6a231cbc6dc9fd88e1291234d295b38652a12f4f33199a96d2ac85c6f9db7fe4",
+        "6b80628d65aa79ef8c6b0c8dd855077e817faff870f0c411802c738f453d6916",
+        "70fecafd40d3c3228ad123491a32a910d45173db852765034c44ead7d0df1c9c",
+        "82170d7734472d615c25a172a95fd8a04624154a1d6c0a4b19f53d47dab7b363",
+        "899e13e3de35de82397926f56e26587a062e7789c726ea676465f2a1151b8132",
+        "92d5355625fbc37cac24cecb4622bef38066f819a0762956c9b04ce324a7d286",
+        "96fe8b12c8d596ba78b97c567c9427cdbeb20106189bcd33130adcb5861d54a9",
+        "b581dbe9531e9ec1de571c5194398f44050acb7bbe6371671d57d2990a044e28",
+        "b7cfd43f5e8c2bd7a5e3ed3fe716bfea9e4dd3395b6be963f9a4ca48eb20a240"
+      ],
+      "environment_hash": "a438181f11f8aea80db1c06f31ac9c391aa0a09c2fcc0efdfa279de3583883cd",
+      "checker_id": "fact_submit",
+      "checker_version": "1",
+      "checker_result": "PASS",
+      "created_at": "2026-10-24T09:53:02Z",
+      "validity": "VALID"
+    }
+  ],
+  "manifest": {
+    "version": "C4-statistical-010/counter-v1",
+    "obligation_id": "2294809ab26532cf89c9a323975deb8ff35762008ff93df9e03a124ebbfffb83",
+    "predecessors": [
+      "26a62994567c7f02",
+      "199c7b2000c58e6b",
+      "54c3088eb3c35a36"
+    ],
+    "sha256": {
+      "exact-statement.md": "177f083545655baf3fac6870fa2b1e498e581d26fe2c338715b09bd6c872359c",
+      "exact-proof.md": "5f7dac028378f03ae0b3c9a0d849a8bb473ec66107d9fd949a407c12e440ee6b",
+      "predecessors.json": "36c3e49fa04bbca0aa89f38dc7a51e1ee75a47765a25c5a9ecea8e0ce5fd45c0",
+      "initial-native-state.json": "cdc9231a0ee82ecf3dc3dbd02879b406066963e25d538001ef72575462a4d902",
+      "math-checkpoint-v0.md": "367b85b980fe98560ecc4271e827239b5a4668f98fa9ea6e9f5f96c439ae5d20",
+      "source-audit.json": "f73985a4fcc4ebc042ef790d9a27c497b5623d187aec3ada38428769cd36c1b0",
+      "seed-input-audit.json": "6e11bc15c8345c631005323aa889a51df5dda3849c6460560cd1f4934a6fc8a0",
+      "check_statistical.py": "b603331b01e6ed7747b26dfc6e538dc08015048374b4440400ec16825a0641cd",
+      "check-results.json": "cc8096e95199d955cf40705ac6005a88e2d4152e3724055856e0e9025a8311b0",
+      "collision-check.json": "34b53ec7b51ac789b5ca3d9933eec670e7abfb541054d4e06b285347bcb46c67"
+    },
+    "claims": "Bounded statistical prior/access theorem; admission pending; root OPEN",
+    "[Non-scientific operational metadata omitted.]": null,
+    "[Non-scientific operational metadata omitted.]": 0
+  },
+  "checks": {
+    "exact-statement.md": true,
+    "exact-proof.md": true,
+    "predecessors.json": true,
+    "initial-native-state.json": true,
+    "math-checkpoint-v0.md": true,
+    "source-audit.json": true,
+    "seed-input-audit.json": true,
+    "check_statistical.py": true,
+    "check-results.json": true,
+    "collision-check.json": true
+  },
+  "reviews": [
+    {
+      "path": "[redacted user home]/icml-transformer/runs/probabilistic-20261024/history/icml-probabilistic/verification/[redacted routing identifier]-policy5b4098d08979fe87/runs/[redacted review run identifier]/verification.json",
+      "review": {
+        "verification_report": {
+          "summary": "Reviewed the frozen C4-statistical-010/counter-v1 submission sequentially under contract 3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a, including P1/P3/P5/P6 and cited-fact chain checks. No critical errors or unresolved gaps were found. The normalized Dirichlet-one code, pointwise multinomial bound, stationarity and KL chain rule establish the stated U_KN with one division by N-1. The actual-terminal, conditional and stationary-weighted TV consequences and the strictly positive KL/TV counterexample are valid.\n\nRead the admitted statements and relevant proof contents of Facts 26a62994567c7f02, 199c7b2000c58e6b and 54c3088eb3c35a36. Their scopes support the expanded finite exponential schedule, complete canonical erasure, endpoint/query fields and deterministic downstream factorization. The two histories have identical canonical observations and distinct suffix averages 8/15 and 2/5; their common probability in the explicit stationary D5 example is 3/896. The randomized-decoder 1/15 consequence is correctly confined to functional approximation. The eight-coordinate alphabet bounds, preserved side fields and precision/resource distinctions are valid.\n\nThe cited results and hypotheses were checked against [Han–Jana–Wu v2](https://arxiv.org/html/2106.13947v2), Eq95, Lemma6, Theorem22 and Section5.2, and [Han–Özgür–Weissman v4](https://arxiv.org/html/1802.08417v4), Theorem1, Assumptions1–3 and transcript Lemma1. The normalization ambiguity is bypassed by the independent derivation, and the overlap example correctly defeats only the naive iid substitution. The theorem-search tool was unavailable under the approval policy; direct primary-source web access resolved the reference checks. This is same-model independent-context LLM admission review, without server-internal attestation or formal certification. Existing admitted dependencies were used within scope rather than re-certified; auxiliary scripts/manifests were not mathematical premises. No same-budget implementation of B_N, prediction-risk lower bound from the collision, novelty judgment or root closure is admitted. This is an LLM review, not formal verification or external peer review; cross-model independence is not established.",
+          "critical_errors": [],
+          "gaps": []
+        },
+        "verdict": "correct",
+        "repair_hints": ""
+      }
+    }
+  ]
+}

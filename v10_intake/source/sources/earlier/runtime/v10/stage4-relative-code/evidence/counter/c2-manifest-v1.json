@@ -1,0 +1,76 @@
+{
+  "unit": "stage4 C2 full finite FULL19 lower v1",
+  "author": "Counter; self-contained adaptation and independent mathematical check",
+  "date": "2026-10-26",
+  "obligation_id": "a287207d73eed1edaa4f7b16c5d2e17f174154036432c3655450afc6bf022359",
+  "contract_id": "38d15641fecff6dbee957b6e036c052ecb7f07e6354623e800f7a126cf5270ef",
+  "root_obligation_id": "82f3b230a8e39f7ef988c219960127d8a94bee1c31d31ae51a328ab8580a3a29",
+  "status": "FIXED_SELF_CONTAINED_PROOF_READY_FOR_NATIVE_SUBMISSION",
+  "predecessors": [],
+  "files": [
+    {
+      "path": "outputs/001-relative-code/counter/c2-proof-v1.md",
+      "sha256": "4fd828ae9a535b297134f8f513955e0cbb9cb0225eb25d081df5b101c9e8887e",
+      "bytes": 22150
+    }
+  ],
+  "source_pins": [
+    {
+      "path": "PROBLEM.md",
+      "author": "Lead contract",
+      "sha256": "34f29e9aa714e81bbd9c92408930d0ce38c051f92f42e1e9ebf7f8158b5a8fab",
+      "bytes": 23007
+    },
+    {
+      "path": "inputs/STAGE_DEFINITIONS.md",
+      "author": "Current D1-D8",
+      "sha256": "1648c98212f71be946dfc8b39ab54497fbad41649bbe3fedc03296c401b8c0ca",
+      "bytes": 16936
+    },
+    {
+      "path": "outputs/001-relative-code/lead/mathematical-checkpoint-v1.md",
+      "author": "Lead stage4",
+      "sha256": "df163b669169b0d59eb28d643b204e76e730dab6795da73e668ab22a27baa564",
+      "bytes": 20695
+    },
+    {
+      "path": "inputs/source-stage3/outputs/010-relative-noise-probe/prover/relative-noise-proof-v1.md",
+      "author": "Prover, 2026-10-25; original sections 2,4-7",
+      "sha256": "a1d49bd0a71f4bdeeaa367c5e58d1089588a959a6bf71c24cab0aa4db6c96256",
+      "bytes": 27357
+    },
+    {
+      "path": "outputs/001-relative-code/lead/checkpoint-manifest-v1.json",
+      "author": "Lead stage4",
+      "sha256": "74dffab4c716bd109dd6e5ce0a8af135c7d863d672a77ef2bb5acd8fc4af6c64",
+      "bytes": 4368
+    },
+    {
+      "path": "inputs/source-stage3/outputs/010-relative-noise-probe/prover/fixed-manifest-v1.json",
+      "author": "Prover source010",
+      "sha256": "674a5e27b0df6d05026a7abd335bdb60f690ff1784113e6229215004c1d65895",
+      "bytes": 3276
+    }
+  ],
+  "lineage": "Original Prover source010 sections 2,4-7; source experiment reproduced and all mathematical premises proved afresh. No old Fact or discussion PASS is an admitted premise.",
+  "checks": [
+    "Exact original A/p and finite L2/L3/Tj/W error",
+    "All fourteen bulk guards; five exact small words383/767/512",
+    "Full19/control law retains initial S2 and protected E_m/S_N",
+    "Overlapping triple covariance; reverse whole-prefix bridge without division by u",
+    "Actual endpoint dependence; common Pi and TV<3/16",
+    "All common randomized decoders; same t_star for conditional and u-weighted average risk",
+    "Whole closed cut box legality, including unchanged application to JOINT"
+  ],
+  "team_consultation": "Attempted euler_team_ask(prover); service denied because only lead may schedule consultations. No teammate response used as evidence.",
+  "budget_policy": null
+
+
+
+
+
+,
+  "old_roots_suspensions_settings": "unchanged",
+  "native_fact_ids": [],
+  "native_evidence_ids": []
+}

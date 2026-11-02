@@ -1,0 +1,726 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,array,longtable,enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue,breaklinks=true]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Finite precision prediction from bounded causal attention}\fancyhead[R]{\small Research synthesis}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\parskip}{3pt}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\setlist{nosep,leftmargin=*}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1\right\rceil}
+\newcommand{\betaz}{\beta_0}
+\newcommand{\Risk}{\mathcal{R}}
+\newcommand{\Dclass}{\mathcal{D}_2(\beta)}
+\newcommand{\Lip}{\operatorname{Lip}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\bl}{\operatorname{bitlength}}
+\newcommand{\unit}[1]{\textsf{#1}}
+\newcommand{\source}[1]{\textnormal{[dossier: \unit{#1}]}}
+\hypersetup{pdftitle={Finite Precision Prediction from Bounded Causal Attention},pdfsubject={AI-assisted mathematical research synthesis},pdfauthor={},pdfkeywords={Markov prediction, causal attention, finite precision, quantization, minimax risk}}
+\title{\vspace{-1.4em}Finite Precision Prediction from\\Bounded Causal Attention}
+\author{}
+\date{Research synthesis revision 2\quad 2 November 2026}
+\begin{document}
+\maketitle\vspace{-1.4em}
+\begin{abstract}
+We study prediction of an unknown homogeneous second-order source at the actual terminal context of its observed trajectory. A finite information cut retains a fixed number of coordinatewise quantized attention summaries and bounded endpoint information, but no history reread or clean internal statistic. For a specified finite evaluator of fixed-depth, bounded-score causal affine/ReLU encoders, the fixed-alphabet minimax expected total-variation risk has order
+\[
+ \max\left\{M^{-1/2},\frac{1+\ln(1+Q/[M\max\{\beta,M^{-1}\}])}{Q}\right\}.
+\]
+Here $Q$ is the final coordinate-grid resolution and $\beta$ indexes an all-state two-step minorization condition with a hidden stationary certificate. The order is the same for stationary and arbitrary initialization. The lower proof counts complete messages near short expectation curves on stationary rare-active-window sources. A causal influence calculation retains the logarithmic inflation of early-token influence; a signed-integer evaluator transfers the result without assuming equality of rounded labels. For an established weighted-inventory representation with a complete triple bank, $Q\asymp\sqrt M$ and integer weight ratio $\kappa\asymp\log M$ suffice for statistical-order risk. A rescaled complete-message argument gives a matching $\Theta(\log M)$ weight-ratio threshold in weak mixing, and a uniform mixing-dependent threshold in a fixed-dimensional one-summary-block family. The corresponding effective range is $\log\log M+O(1)$; no general deep-network lower is asserted. The manuscript separates inherited statistical inputs from the finite-interface arguments and identifies the accompanying complete modular proofs.
+\end{abstract}
+\noindent\textbf{Status and scope.} This is an AI-assisted research synthesis with independent LLM mathematical audits. It is not externally peer reviewed, formally verified, or a submission-ready standalone proof: the full statistical and implementation proof chains are in the accompanying dossier. No authorship or institutional affiliation is assigned. The scientific scope of this revision is frozen at 05:15 UTC on 2 November 2026.
+
+\section{Introduction}
+A normalized attention vector can retain a conditional empirical distribution exactly in real arithmetic while losing statistically important information after coordinate rounding. The difficulty is not simply the number of bits in a prediction. A rare context may contribute only a small fraction of the global attention mass. Dividing by that fraction after a finite information cut amplifies the rounding error; more post-cut computation cannot reconstruct distinctions that the complete message no longer contains.
+
+This manuscript studies that phenomenon in an explicit stochastic experiment. The source table is unknown, transitions may vanish, initialization need not be stationary, and the loss is measured at the actual final pair of the same trajectory used to construct the summary. These choices exclude an independent-query simplification. They also make the occupation count of the terminal context a central random quantity. A mixing promise reduces the numerical penalty, but neither the encoder nor the constructive decoder needs the unknown stationary law or a runtime mixing-parameter estimate.
+
+The main statement has two levels. First, an original finite normalized-statistic interface with $9K+1$ retained scalars has a complete all-resolution risk profile. Second, that profile remains valid after optimizing the encoder within a specified fixed-depth causal family evaluated by a certified finite arithmetic procedure. The second assertion requires more than an analogy with bounded attention: it requires a causal influence estimate, a complete-message concentration and covering argument, and an actual finite-arithmetic upper construction belonging to the family.
+
+The representation can also be changed. A complete $K^3$ triple histogram, with a positive integer amplification of the queried pair before quantization, attains sampling-order risk at square-root grid resolution. A rescaled rare-window proof identifies the necessary and sufficient weight-ratio order, uniformly in the mixing promise, in a fixed-dimensional, fixed-locality, one-global-summary comparison. In weak mixing this ratio is $\Theta(\log M)$ and its effective score range is $\log\log M+O(1)$. This is a tradeoff between score range and the final grid, not a constant-total-precision implementation or a computational advantage over direct counting.
+
+\subsection{Position relative to existing constructions and lower bounds}
+The counting representation is established prior art. Behrens, Biggio and Zdeborov\'a give a weighted inventory with equal-token and unequal-token weights $e$ and $1$, selected mass $ek/[L+(e-1)k]$, and an inversion formula, in an infinite-precision model \citep[Appendix B.3]{behrens2025}. Yehudai et al. study full histogram banks and query-count inversion \citep[Sections 4.1--4.2]{yehudai2026}. Grouping a local tuple as one categorical feature and normalizing a selected sub-block is not a new counting method. The questions here concern the complete post-summary grid, terminal-context occupation, and a lower bound uniform in a growing weight ratio.
+
+Conditional empirical Markov prediction by shallow attention also predates this synthesis. Rajaraman et al. construct constant-depth conditional $k$-gram representations and state logarithmic-bit approximations for their attention-only constructions; their separate layer-normalized construction does not carry the same finite-error analysis \citep[Theorems 4.4 and 5.1; Remarks 4.2 and 5.2]{rajaraman2024}. Real-arithmetic representability and a paid all-operations implementation are therefore distinct claims, not competing descriptions of one theorem.
+
+Bounded-score dilution is likewise a known mechanism. Hahn's sensitivity analysis must be read with the 2021 correction retaining attention-weight variation \citep{hahn2020,hahn2021supp}. Chiang and Cholak show why small continuous sensitivity is not itself information loss: exact recognition can survive shrinking margins, and zero-epsilon normalization or length-scaled logits can evade bounded-Lipschitz assumptions \citep{chiang2022}. Our decoder is unrestricted after the cut, so its impossibility result must follow from the complete finite message, not from a Lipschitz readout hypothesis.
+
+The statistical tools have close predecessors. Han, Jana and Wu use waiting-state sources, a common prior and harmonic averaging in stationary full-history KL prediction; their spectral-gap results also show a mixing-dependent disappearance of a prediction logarithm \citep{han2022}. Those are not same-rate TV results for a quantized interface. Xu and Raginsky give finite-message Bayes lower bounds and the half-logarithmic communication threshold for Bernoulli estimation \citep[Theorem 3 and Example 6]{xu2016}. A generic count of $Q^D$ labels, however, is too weak for our $D$-coordinate bank. The specific obligation is to prove that, with high probability, its \emph{complete} message occupies only $O(1+Qj/M)$ labels on a rare window of length $j$.
+
+Accordingly, the contribution asserted here is a source- and interface-specific synthesis of established mechanisms with explicit additional obligations: complete-message accounting, causal depth, dependence-safe terminal occupation, finite arithmetic, and quantitative growing-range constants. The literature comparison is targeted, not a certificate of novelty or an exhaustive survey.
+
+\section{Experiment and information interfaces}\label{sec:experiment}
+Fix an alphabet $\mathcal A$ of size $K\ge3$, $M\ge64$, and a dyadic resolution $Q=2^h$ with integer $h\ge4$. Observe $X_1,\ldots,X_{M+2}$ from an unknown homogeneous second-order table $\theta_{ab}(c)$. Set
+\[
+ Y_j=(X_{j+1},X_{j+2}),\quad 0\le j\le M,
+ \qquad P((a,b),(b,c))=\theta_{ab}(c).
+\]
+The target is $\theta_{Y_M}$, the next-symbol law at the observed terminal pair. A predictor $\widehat p$ has risk
+\begin{equation}\label{eq:risk}
+ \E_{\theta,\mu}\TV(\widehat p,\theta_{Y_M}),
+ \qquad \TV(p,q)=\frac12\sum_{c\in\mathcal A}|p_c-q_c|,
+\end{equation}
+where $\mu$ is the initial pair law. All expectations are unconditional on the actual trajectory; $Y_M$ is not an independent query.
+
+\begin{definition}[All-state certificate]
+The class $\Dclass$, $0\le\beta\le1$, consists of tables admitting a stationary pair law $\Pi$ such that
+\begin{equation}\label{eq:minor}
+ \Pi P=\Pi,\qquad P^2(s,t)\ge\beta\Pi(t)\quad\text{for every pair }s,t.
+\end{equation}
+The certificate is existential and hidden. In particular, the condition includes starting states outside $\supp\Pi$. Zero transition probabilities are allowed. In the stationary experiment initialization equals a qualifying hidden $\Pi$; in the arbitrary-start experiment $\mu$ is unrestricted.
+\end{definition}
+
+For an encoder family $\mathcal E$, define $\Risk_{\mathcal E,\mathrm{all}}$ as the infimum over encoder/decoder pairs independent of the source law, of the worst risk \eqref{eq:risk} over $\Dclass$ and all $\mu$; use $\Risk_{\mathcal E,\mathrm{stat}}$ for the stationary restriction. Public $K,M,Q,\beta$ may be known when choosing a pair. Source-independent common randomness is permitted, with every uniform architecture bound holding seedwise. The constructive predictors below are deterministic and do not read $\beta$ at a supplied budget.
+
+\subsection{The complete cut and distinct resource coordinates}
+The cut carries a vector $Z_d=Q^{-1}\floor{QF_d}$, finitely many exact boundary symbols $S$, and public metadata. Once the cut is made, the decoder may compute arbitrarily and output any real simplex vector. It may not read the history, clean numerator or denominator, an unquantized residual, another token's output, or a duplicate pre-cut state. This restriction is mathematical access control, not an uncharged physical isolation device.
+
+Grid precision $h$ is not the complete arithmetic word length. A coordinate in $[0,1]$ on the closed grid has $Q+1$ labels and requires $h+1$ unsigned bits. A fixed bounded signed range requires $h+O(1)$ bits. Accumulators must additionally pay $\log M$, signs and full products. The scalar dimension $D$, number of physical heads, attention depth, total retained bits, and depth of an expanded Boolean/ReLU circuit are different quantities. A lower bound for one such coordinate is not a lower bound for all the others.
+
+\subsection{Three bounded encoder models}
+The \emph{original interface} retains the complete $9K+1$ scalar bank of four statistical heads, together with its declared exact query, endpoint and flag fields. Two additional paid singleton heads acquire local predecessor features. Its actual finite exponential evaluator, not ideal softmax, is part of the fixed encoder. The allowed decoder is optimized; the particular conservative decoder used for the upper bound is described in Section~\ref{sec:upper}.
+
+For the \emph{one-summary local family}, fix integers $D,r\ge1$ and constants $0<a\le b<\infty$ independently of $M,\beta,Q$. It returns $D$ ratios
+\begin{equation}\label{eq:localratio}
+ F_d=\frac{\sum_{i=3}^{M+2} w_{di}(L_i,q(S))v_{di}(L_i,q(S))}
+ {\sum_{i=3}^{M+2} w_{di}(L_i,q(S))},\qquad
+ a\le w_{di}\le b,\quad |v_{di}|\le1.
+\end{equation}
+Here $L_i$ is a trailing window of fixed radius $r$, and $S$ contains the first and last $r$ symbols. The source-independent tables may vary with position and public parameters. Every coordinate pools all $M$ keys. Query-selective masks, nonlocal precomputed features and interior exact side statistics are excluded. $D$ counts scalar outputs; several coordinates may share a head and denominator. Arbitrary real tables are allowed for the information lower; the upper uses a specified finite construction.
+
+The \emph{finite causal family} has a fixed architecture budget: depth, head count, dimensions, local radius, affine/ReLU operations per position, uniform state and coefficient bounds, score/value Lipschitz constants, and dense-mask fraction. History states depend only on causal local windows and public finite dyadic tables. All historical parameters are independent of future symbols. The exact boundary field, first and last three symbols in the basic version, may enter only the appended terminal initial query and the decoder. Public masks $\mathcal K_t\subseteq\{1,\ldots,t\}$ are independent of source symbols and boundary branches and satisfy $|\mathcal K_t|\ge ct$ for fixed $c>0$.
+
+Queries, keys and values are affine maps, scores are bounded dot products with bounded public dyadic scale/bias, and positionwise updates/readout are fixed finite affine/ReLU directed acyclic graphs. Ideal states have a declared uniform range on all formal histories. Every public numerical datum is a supplied finite dyadic whose actual description length is charged. Layer normalization and unspecified real nonlinear evaluators are excluded from this finite subclass. Section~\ref{sec:arithmetic} specifies the integer evaluator used to implement each ideal encoder.
+
+The density budget must permit $c\le1/3$. The architecture budget is assumed to accommodate one global block, four statistical heads, radius three, width $12K+4$, output dimension $D\ge9K+1$, affine row-sum bounds at least two, score bound at least two, state bound at least one and a sufficient score Lipschitz bound, for example $4K$. Larger fixed depths can add identity updates. Capacity does not certify arbitrary parameters: each selected network must obey the primitive bounds.
+
+\section{Risk and precision frontiers}\label{sec:main}
+Write
+\begin{equation}\label{eq:profile}
+ \begin{aligned}
+ \betaz&=\max\{\beta,M^{-1}\},&
+ W(M,\beta,Q)&=\frac{1+\ln(1+Q/(M\betaz))}{Q},\\
+ H(M,\beta,Q)&=\max\{M^{-1/2},W(M,\beta,Q)\}.&&
+ \end{aligned}
+\end{equation}
+Constants below may depend on the fixed alphabet and architecture, but not on $M,\beta,Q$. They are not sharp joint-$K$ constants.
+
+\begin{theorem}[Bounded finite information cut]\label{thm:main}
+For the original fixed interface,
+\begin{equation}\label{eq:original}
+ 2^{-336}H\le\Risk_{\mathrm{orig},\mathrm{stat}}
+ \le\Risk_{\mathrm{orig},\mathrm{all}}\le\min\{1,C_KH\},
+ \qquad C_K=2^{16}K^{5/2}+2^{14}K^3+5320K^5.
+\end{equation}
+For the finite causal family of Section~\ref{sec:experiment}, evaluated at target precision $h+3$ by the integer compiler of Section~\ref{sec:arithmetic} and then rounded at resolution $Q$, there is $c_{\mathrm{arch}}>0$ such that
+\begin{equation}\label{eq:causalmain}
+ c_{\mathrm{arch}}H\le\Risk_{\mathrm{causal},\mathrm{stat}}
+ \le\Risk_{\mathrm{causal},\mathrm{all}}\le\min\{1,C_KH\}.
+\end{equation}
+The same profile holds for \eqref{eq:localratio} when $D\ge9K+1$, $r\ge3$, $0<a\le1$ and $6\le b<\infty$, with a lower constant depending on $D,r,a,b$.
+\end{theorem}
+
+The original assertion is \unit{FR001 v1}, the local-family assertion is \unit{BF001 v3}, and the finite causal assertion is \unit{CF001 v1}. The underlying lower, finite arithmetic and upper steps are presented below; the precise dossier map is in Section~\ref{sec:map}. The three upper bounds do not identify the evaluated programs. In particular, the causal upper replaces the original head evaluator. Its deterministic accuracy envelope suffices; neither equality of old and new grid labels nor equality of selector decisions is claimed.
+
+\begin{corollary}[Grid threshold]\label{cor:threshold}
+At fixed alphabet and architecture, the resolution required for statistical-order risk is, up to multiplicative constants,
+\begin{equation}\label{eq:qstar}
+ Q_* =\sqrt M\left[1+\ln\left(1+\frac1{\sqrt M\max\{\beta,M^{-1}\}}\right)\right].
+\end{equation}
+A dyadic budget within a constant factor of $Q_*$ attains a sufficiently large fixed multiple of $M^{-1/2}$. Attaining any specified fixed multiple requires $Q\gtrsim Q_*$, with the lower constant also depending on that multiplier. Thus
+\[
+ h_* =\tfrac12\log_2M+
+ \log_2\left[1+\ln\left(1+\frac1{\sqrt M\max\{\beta,M^{-1}\}}\right)\right]+O(1).
+\]
+\end{corollary}
+\begin{proof}
+Let $s=\sqrt M$, $t=M\betaz$ and $f=1+\ln(1+s/t)$. For $Q=sf$, the inequality $1+sf/t\le f(1+s/t)$ gives $1+\ln(1+Q/t)\le f+\ln f\le2f$, so $W\le2/s$. Increasing $Q$ decreases $W$; dyadic rounding upward costs at most a factor two.
+Conversely suppose $H\le A/s$ with fixed $A>0$, enlarged to $A\ge1$. Then $Q\ge s/A$ from $W\ge1/Q$. By concavity, $\ln(1+x/A)\ge A^{-1}\ln(1+x)$ for $A\ge1$. Therefore $1+\ln(1+Q/t)\ge f/A$, and $W\le A/s$ forces $Q\ge sf/A^2$. Apply the theorem's lower constant to a desired risk multiplier.
+\end{proof}
+
+For $\beta=0$ or $\beta=O(M^{-1})$, the threshold is $\sqrt M\log M$ and $h_*=\frac12\log_2M+\log_2\log M+O(1)$. If $\beta\sqrt M$ is bounded below, it is $\Theta(\sqrt M)$. The expression covers intermediate, length-dependent mixing promises without choosing a new decoder. Selecting a smaller budget from a known class promise is not learning an unknown $\beta$.
+
+\section{Complete messages on stationary rare windows}\label{sec:lower}
+The lower-bound proof has a source part and a representation part. The source is shared across local and causal encoders. The representation analysis must control \emph{every} retained coordinate and side field simultaneously.
+
+\subsection{A legal stationary source with a common prior}
+Use three symbols $W,C_0,C_1$. For $\beta\le1/16$, let
+\[
+ \alpha=\frac1{2M},\qquad \eta=\betaz-\alpha,\qquad
+ p\in[1/4,3/4],\qquad p_0=1-p,\ p_1=p.
+\]
+Define a first-order kernel, embedded in the second-order model, by
+\begin{align}\label{eq:witness}
+ T(W,W)&=1-\alpha,& T(W,C_i)&=\alpha p_i,\notag\\
+ T(C_i,W)&=\eta,& T(C_i,C_j)&=(1-\eta)p_j,\\
+ \pi(W)&=\eta/\betaz,& \pi(C_i)&=\alpha p_i/\betaz.\notag
+\end{align}
+Unused-symbol rows equal $\pi$. Direct substitution gives $\pi T=\pi$ and $T(x,y)\ge\betaz\pi(y)$ for all symbols. Set $\theta_{uv}(x)=T(v,x)$ and $\Pi(u,v)=\pi(u)T(u,v)$. Then
+\[
+ P^2((u,v),(x,y))=T(v,x)T(x,y)\ge\betaz\Pi(x,y)\ge\beta\Pi(x,y),
+\]
+including off-support starting states. Initialize at this hidden stationary pair law.
+
+For $Q\le M/4$, put
+\begin{equation}\label{eq:jcut}
+ J_* =\floor{\min\{(4\betaz)^{-1},M^2/(4Q^2)\}}.
+\end{equation}
+Here $4\le J_*\le M/4$. Let $E_j$ be the word event consisting of $M+2-j$ waiting symbols followed by $j$ active symbols, $2\le j\le J_*$. Its probability is independent of $p$ and obeys
+\begin{equation}\label{eq:eventmass}
+ e_j=\Pi(W,W)\alpha(1-\alpha)^{M-j}(1-\eta)^{j-1}\ge\frac1{32M}.
+\end{equation}
+Conditional on $E_j$, the active suffix is IID Bernoulli$(p)$ \emph{before} conditioning on endpoint information. The events are disjoint. One uniform prior on $p\in[1/4,3/4]$ is used across all $j$, and remains uniform conditional on each $E_j$. We may grant $j$ to the decoder without weakening a lower bound.
+
+The actual next-symbol target on $E_j$ is
+\begin{equation}\label{eq:target}
+ \eta\delta_W+(1-\eta)((1-p)\delta_{C_0}+p\delta_{C_1}).
+\end{equation}
+The no-exit event in the observed suffix does not remove the next-step exit mass $\eta$. This distinction is essential for the stated loss.
+
+\subsection{Local ratios and finite boundary branches}
+For the local model \eqref{eq:localratio}, freeze a possible boundary value $s$ and its query while sampling all $j$ active bits. There are at most $H_b=3^{2r}$ such values on the witness. Write the numerator and denominator sums as $A_{ds}$ and $B_{ds}$ and define
+\[
+ m_{ds}(p)=\frac{\E_p A_{ds}}{\E_p B_{ds}}.
+\]
+This is a ratio of expectations, not an expectation of a ratio. Both denominators are at least $aM$. Replacing one coin changes at most $r$ summands, giving replacement bounds $2br$ and variances at most $2b^2r^2j$. Chebyshev and a union bound over all $2DH_b$ sums imply, with probability at least $9/10$, simultaneous deviations at most $T_b\sqrt j$, where $T_b=br\sqrt{40DH_b}$. Subtracting ratios then gives
+\begin{equation}\label{eq:localtube}
+ |F_{ds}-m_{ds}(p)|\le\frac{2T_b\sqrt j}{aM}.
+\end{equation}
+For a function of independent Bernoulli bits the exact polynomial identity
+\begin{equation}\label{eq:derivative}
+ \frac{d}{dp}\E_pf=\sum_i\E_p[f(B_i=1)-f(B_i=0)]
+\end{equation}
+implies $\|m_s'(p)\|_\infty\le4brj/(aM)$. Thus the whole bank lies near a short one-parameter curve, uniformly over arbitrary public position-dependent tables.
+
+Choose a parameter mesh so that adjacent curve values differ by at most $1/Q$. Because $Q\sqrt j/M\le1/2$, every mesh point's tube intersects only a constant number of grid cells per coordinate. Counting all coordinates and the actual boundary label gives a fixed, $p$-independent set of at most
+\begin{equation}\label{eq:labels}
+ A_b(1+Qj/M),\qquad
+ A_b=H_b(2+4br/a)\bigl(\ceil{8T_b/a+4}+1\bigr)^D
+\end{equation}
+complete good messages. The good event may depend on $p$; the containing alphabet may not. Freezing all possible boundary values first and selecting the actual one afterwards avoids a false assertion of conditional IID.
+
+\begin{lemma}[Good-message Bayes bound]\label{lem:messages}
+Let $p$ be uniform on an interval of length $\ell$. Suppose for every $p$ a good event has probability at least $9/10$, and every complete good message is in one fixed set of at most $R$ labels. Any possibly randomized scalar decoder has mean absolute error at least $\ell/(16R)$.
+\end{lemma}
+\begin{proof}
+Fix the source-independent decoder seed. Radius-$\ell/(8R)$ neighborhoods of its at most $R$ good-message outputs cover at most one quarter of the prior interval. The joint probability of being good and outside those neighborhoods is at least $9/10-1/4$. On that event the error is at least $\ell/(8R)$; multiplying gives a bound stronger than the claim. Average over the seed. No posterior-uniformity assertion after the good event is used.
+\end{proof}
+
+By \eqref{eq:target}, $\TV(v,\theta)\ge(1-\eta)|v(C_1)/(1-\eta)-p|$. Applying the lemma, \eqref{eq:eventmass} and \eqref{eq:labels} yields
+\begin{align}\label{eq:harmonic}
+ \Risk&\ge\frac1{2048A_bM}\sum_{j=2}^{J_*}\frac1{1+Qj/M}\notag\\
+ &\ge\frac1{8192A_bQ}\ln\left(1+\frac18\min\left\{\frac{Q}{M\betaz},\frac M Q\right\}\right).
+\end{align}
+The second cutoff $M/Q$ is real: it comes from the tube thickness in \eqref{eq:jcut}. It cannot simply be dropped.
+
+\subsection{IID floor and completion of the resolution domain}\label{sec:completion}
+On stationary binary IID sources, freezing the boundary gives an $O(1)$-length expectation curve and stochastic thickness $O(M^{-1/2})$. For $Q\le\sqrt M$, the same proof produces at most $A_IQ$ good complete messages and hence $\Risk\ge c_I/Q$. For $Q>\sqrt M$, and also outside the useful rare-window range, take Bernoulli parameters
+\[
+ p_\pm=\tfrac12\pm\frac1{16\sqrt{M+2}}.
+\]
+The history KL divergence is at most $1/8$; Pinsker and two-point testing give risk at least $1/(128\sqrt{M+2})\ge M^{-1/2}/256$, even with full history. These IID sources satisfy \eqref{eq:minor} for every $\beta\le1$. Therefore separate lower witnesses supply a statistical floor, a $1/Q$ floor and \eqref{eq:harmonic}; their maximum, not a sum of their losses, is available.
+
+Here is the all-$Q$ completion used in both bounded-family theorems. If $\beta>1/16$, then $W\le Q^{-1}+16/M\le Q^{-1}+2M^{-1/2}$. If $Q>M/4$ or $Q>M^{3/4}$, $\ln(1+x)\le4x^{1/4}$ gives $W\le5M^{-1/2}$. In the remaining domain put $x=Q/(M\betaz)$ and $y=M/Q$. Since $x\le Q$ and $Q\le M^{3/4}$, $x>y$ implies $x\le y^3$. Thus
+\[
+ \ln(1+x)\le3\ln(1+\min\{x,y\})
+ \le24\ln(1+\min\{x,y\}/8).
+\]
+The three lower bounds therefore control $H$ throughout the legal domain. This calculation neither extrapolates a thin-tube estimate nor imports an original-interface-only lower into a larger family.
+
+\section{Causal depth and the correct influence envelope}\label{sec:causal}
+Recursive causal features require a different representation argument from the local ratio calculation. Hold the appended initial query fixed within a boundary branch. Let the ideal state at row $t$ be $h_t$, and compare two formal histories with discrepancies $\delta_t=\|h_t-h'_t\|$. Assume a head has scores in $[-B,B]$, values bounded by $V$, score Lipschitz constant $S$, value Lipschitz constant $V_L$, and positionwise update Lipschitz constant $F_L$ for the sum norm. Write $H_a$ for the maximum heads per layer.
+
+Along the line segment between two logit vectors, every weight is at most $C/t$, where $C=e^{2B}/c$ for masks of density $c$. The softmax differential is
+\[
+ d\alpha_i=\alpha_i\left(ds_i-\sum_k\alpha_kds_k\right),\qquad
+ \sum_i|d\alpha_i|\le2\sum_i\alpha_i|ds_i|.
+\]
+Separating value and weight changes and integrating gives the conservative bound
+\[
+ \|o_t-o'_t\|\le2VCS\delta_t+
+ \frac{C(V_L+2VS)}{t}\sum_{i\le t}\delta_i.
+\]
+The weight-change term is retained. Summing the heads and applying the update yields
+\begin{equation}\label{eq:recurrence}
+ \delta'_t\le a\delta_t+\frac b t\sum_{i\le t}\delta_i,
+ \quad a=F_L(1+2H_aVCS),\quad b=F_LH_aC(V_L+2VS).
+\end{equation}
+No interpolation of hidden states or global Euclidean Lipschitzness of a dot product is needed; the primitive bounds apply on the declared reachable domain.
+
+\begin{proposition}[Triangular influence]\label{prop:influence}
+Let $A_{ti}=\ind\{i\le t\}/t$, $B_*=aI+bA$, and let the terminal row be $T=M+3$. For depth $L$, readout Lipschitz constant $G$ and initial symbol diameter $\Delta$, a replacement at $i<T$ changes the terminal vector by at most
+\begin{equation}\label{eq:influence}
+ d_i=G\Delta(B_*^L)_{Ti}
+ \le\frac{G\Delta[(a+b)^L-a^L]}{T}
+        [1+\ln(T/i)]^{L-1}.
+\end{equation}
+Moreover $\sum_{i<T}d_i\le C_0$ and $\sum_{i<T}d_i^2\le\Lambda/M$ for architecture constants, while $d_i\le\Gamma/M$ for $i\ge T/2$.
+\end{proposition}
+\begin{proof}
+For $k\ge1$,
+\[
+ (A^k)_{ti}=\frac1t\sum_{i\le u_1\le\cdots\le u_{k-1}\le t}
+ \frac1{u_1\cdots u_{k-1}}
+ \le\frac1t\left(\sum_{u=i}^t\frac1u\right)^{k-1}
+ \le\frac{[1+\ln(t/i)]^{k-1}}t.
+\]
+The empty product covers $k=1$. Binomial expansion of $B_*^L$ proves \eqref{eq:influence}. The row sum of $B_*^L$ is $(a+b)^L$, so the sum bound applies to its actual matrix entries, not merely their larger envelopes. For $m=2L-2$,
+\[
+ I_m=\int_0^1[1+\ln(1/x)]^m\,dx
+     =\sum_{k=0}^m\binom m k k!<\infty.
+\]
+A decreasing-function Riemann sum gives $\Lambda=(G\Delta[(a+b)^L-a^L])^2I_m$. Restricting $i\ge T/2$ gives $\Gamma=G\Delta[(a+b)^L-a^L](1+\ln2)^{L-1}$. Radius-$r$ preprocessing multiplies the sum and late-influence constants by at most $r$ and the square-sum constant by at most $r^2$, since each source symbol affects at most $r$ initial states.
+\end{proof}
+
+A uniform $O(1/T)$ bound for every earlier token is false. With two zero-score scalar causal averaging layers, the map is $A^2$ and
+\begin{equation}\label{eq:counterexample}
+ (A^2)_{T1}=\frac1T\sum_{u=1}^T\frac1u=\frac{H_T}{T}.
+\end{equation}
+This is an admissible bounded one-head example. The theorem uses late-suffix influence and square summability, not the false uniform bound.
+
+For a $j$-coin late suffix, Efron--Stein and \eqref{eq:derivative}, now applied to the entire nonlinear terminal output, give
+\[
+ \operatorname{Var}(F_d)\le\frac{\Gamma^2j}{2M^2},
+ \qquad \| (\E_pF)'\|_\infty\le\frac{\Gamma j}{M}.
+\]
+For a fully IID history they give variance at most $\Lambda/(2M)$ and curve speed at most $C_0$. Thus the same tube count, common prior and domain completion apply, with new architecture constants. Unlike the local proof, the curve here is an expectation of the whole network output; no ratio-of-expectations substitution is made.
+
+\subsection{Boundary information and temporal causality}
+The proof can grant a stronger finite-side-information model: freeze each of finitely many boundary labels and allow branch-dependent tables and parameters. The uniform bounds must hold on \emph{all formal histories in each frozen branch}, including histories inconsistent with that branch's boundary value. Simultaneous branchwise concentration followed by selection of the actual label is valid, and its finite cardinality is counted.
+
+That enlarged model need not be end-to-end causal. For example, assigning every initial history state the future bit $X_{M+2}$ through the branch label preserves causal attention edges but broadcasts future information to row one. The finite causal theorem excludes this behavior: historical tables, parameters and masks are independent of future boundary symbols, and the full boundary field enters only the appended terminal initial query. It is a subclass of the stronger lower-bound model. This scope restriction is not an extra statistical assumption or a claim that lower-triangular masks alone imply temporal causality.
+
+\section{A constructive finite arithmetic bridge}\label{sec:arithmetic}
+The influence argument concerns an ideal bounded architecture. Intermediate rounding is discontinuous and need not satisfy \eqref{eq:recurrence}. The bridge instead proves a uniform end-to-end approximation from explicit signed arithmetic.
+
+\begin{theorem}[Finite evaluator]\label{thm:arithmetic}
+For the finite-data affine/ReLU subclass in Section~\ref{sec:experiment}, an integer evaluator with fractional precision $P=4h+C_{\mathrm{arch}}$ satisfies
+\[
+ \|F_{\mathrm{fin}}(X)-F_{\mathrm{ideal}}(X)\|_\infty\le2^{-h}
+\]
+for every length and every formal history. Full online words additionally include $\log n$ accumulation guards and range/sign allowances. All supplied data, conversion, evaluation, movement and storage costs are charged. This assertion is \unit{FA001 v3}; it excludes arbitrary unevaluated Lipschitz maps and layer normalization.
+\end{theorem}
+\begin{proof}[Constructive proof]
+Set $D_P=2^P$, $\varepsilon=D_P^{-1}$ and represent a signed real by integer $X$ with value $X/D_P$. Rounding is downward, including negative inputs. Convert every supplied dyadic parameter by exact signed division. For an affine coordinate, accumulate the complete signed integer
+\[
+ N_j=D_PB_j+\sum_k A_{jk}X_k,\qquad
+ Y_j=\floor{N_j/D_P}.
+\]
+All products and the entire sum are retained before the single floor; ReLU is exact integer $\max(0,Y_j)$. With ideal input range $U$, discrepancy $\delta\le1$, and fan-in $d$, one affine step has error at most
+\[
+ \|A\|_\infty\delta+d\varepsilon(U+\delta)+2\varepsilon.
+\]
+Finite recursion yields computable constants for each fixed affine/ReLU block.
+
+Interval bounds on the rounded-state cube of radius $R+1$ give an architecture-only integer $a\ge1$ bounding both ideal and finite logits in $[-a,a]$. Shift by $a$, which cancels in softmax. For the exact grid value $x=s_{\mathrm{fin}}+a\in[0,A]$, $A=2a$, let $S=D_Px$, $j_0=\ceil{8A^2}+2$ and $J=j_0+P$. Compute
+\begin{equation}\label{eq:taylor}
+ T_0=D_P,\qquad T_j=\floor{\frac{T_{j-1}S}{jD_P}},\qquad
+ W=\sum_{j=0}^{J}T_j.
+\end{equation}
+The integer $H_a'=3^A$ bounds $e^x$. Each term-rounding error contributes at most $H_a'\varepsilon$ to the sum of all later terms. For $j\ge8A^2$, $A^j/j!\le2^{-j}$ by bounding the last half of the factorial. Hence
+\begin{equation}\label{eq:exp}
+ 1\le W/D_P\le e^x,\qquad
+ 0\le e^x-W/D_P\le(H_a'J+1)\varepsilon.
+\end{equation}
+No exponential or logarithm is evaluated as an oracle.
+
+For $m\ge1$ keys and signed value integers $V_i$, form
+\begin{equation}\label{eq:signedmean}
+ Z=\sum_iW_i\ge mD_P,\qquad N=\sum_iW_iV_i,\qquad
+ O=\floor{N/Z},\qquad o_{\mathrm{fin}}=O/D_P.
+\end{equation}
+There is no extra division by $D_P$ inside $O$. The numerator uses full signed products with $\log m$ sum guards, so cancellation causes no invalid truncation. If finite and ideal values differ by at most $\eta_v$ and shifted weights by at most $\eta_w$, subtracting the two ratios gives
+\[
+ |o_{\mathrm{fin}}-o_{\mathrm{ideal}}|\le
+ \varepsilon+\eta_v+2V\eta_w.
+\]
+Both weight sums are at least $m$ in real units, which removes dependence on key count. Combining this with the affine score bounds and \eqref{eq:exp} gives an error recursion
+\[
+ \delta_{\ell+1}\le a_*\delta_\ell+b_*(P+1)2^{-P}
+\]
+while $\delta_\ell\le1$. The readout and initialization obey the same finite recursion. Choose a computable $C_*\ge1$ dominating all resulting constants and select $C_{\mathrm{arch}}$ by finite search so that
+\[
+ C_*(C_{\mathrm{arch}}+5)2^{-C_{\mathrm{arch}}}\le1.
+\]
+For $P=4h+C_{\mathrm{arch}}$, this ensures $C_*(P+1)2^{-P}\le2^{-h}\le1$. Induction therefore keeps the actual states in the neighborhood used to derive the estimates, closing rather than assuming the bootstrap.
+\end{proof}
+
+If the finite output is within $E/Q$ of an ideal output, enlarging each good-message tube by $E/Q$ transfers the lower proof. With the compiler targeted at $h+3$, $E=1/8$; one may safely use $E=1$ in constants. An arbitrarily small error can cross a grid boundary, so this statement does not imply equality of rounded labels. It also does not say that the expanded finite arithmetic is a fixed-depth ordinary scalar Transformer.
+
+\section{Terminal occupation and the constructive upper}\label{sec:upper}
+This section identifies the inherited statistical inputs and the additional precision analysis. Let
+\[
+ J=\sum_{j=0}^{M-1}\ind\{Y_j=Y_M\},\qquad
+ C_c=\sum_{j=0}^{M-1}\ind\{Y_j=Y_M,X_{j+3}=c\},\qquad
+ H_c=\sum_{t=3}^{M+2}\ind\{X_t=c\}.
+\]
+These are proof variables, not decoder ports. Define the full-history add-one row $q_c=(C_c+1)/(J+K)$ and pooled row $b_c=(H_c+1)/(M+K)$.
+
+\subsection{Inherited full-history statistical statements}
+For precision about dependencies, put $n_0=M+1$, $\delta=1-\beta$ and
+\begin{align*}
+ i&=\min\{1,\sqrt{K/n_0}\},& a_0&=\min\{1,\sqrt{K^3/n_0}\},\\
+ g&=\min\{1,\sqrt{K^5/n_0}\},& h_0&=\min\{1,\sqrt{K^4/n_0}\},\\
+ F_0&=\max\{i,\min\{\delta,a_0\}\},&
+ D_0&=\delta^{n_0}g,\quad T_0'=\delta^{M/2}h_0.
+\end{align*}
+The inherited \unit{R011} scales are
+\begin{equation}\label{eq:inherited}
+ \mathcal L=\max\{F_0,D_0,T_0'\},\qquad
+ \mathcal H_{\mathrm{orig}}=\max\{a_0,D_0,T_0'\}\le g.
+\end{equation}
+Its \emph{ORIGINAL} assertion is $\sup\E\TV(q,\theta_{Y_M})\le2^{13}\mathcal H_{\mathrm{orig}}$. Its common, mixing-blind selector pools when
+\[
+ \TV(q,b)\le\rho(J),\qquad \rho(J)=\min\{g,64\sqrt{K/(J+K)}\},
+\]
+and has risk at most $2^{16}\mathcal L$. The underlying event-radius and rejection-restricted estimates, not just that scalar risk inequality, are used by the finite decoder. These statistical facts are inherited from the full \unit{R011}, \unit{R001}, \unit{S024} and \unit{S025} proof chain; they are not independently reproved in this article. In particular, no unconditional next-sample IID claim is substituted for them. Both scales are at most $K^{5/2}/\sqrt M$.
+
+\subsection{From four bounded heads to a conservative decoder}
+The compressed bank uses four score/value patterns at the terminal query $(a,b)$:
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}\toprule
+Head & Ideal score using supplied dyadics & Values\\\midrule
+$P_1$ & $L_2\ind\{\mathrm{lag2}=a\}+L_2\ind\{\mathrm{lag1}=b\}$ & token, lag2\\
+$P_2$ & $L_2\ind\{\mathrm{lag2}=a\}+L_3\ind\{\mathrm{lag1}=b\}$ & token, lag2\\
+$T$ & $L_2\ind\{\mathrm{lag2}=b\}$ & lag1, initial flag vector\\
+$0$ & $0$ & lag2, lag1, flag vector, flag\\\bottomrule
+\end{tabular}
+\end{center}
+Here $L_2,L_3$ are finite downward approximations to $\ln2,\ln3$ and the flag vector at key three is $e_{X_2}$, zero elsewhere. The table has $2K+2K+2K+(3K+1)=9K+1$ outputs. All features are local bits; equalities are dot products of one-hots. Scores are at most $\ln6<2$, and values lie in $[0,1]$. The public mask is keys $3,\ldots,\min(t,M+2)$ at rows $t\ge3$, with self fallback at rows one and two. Its size is at least $t/3$ including the appended row. Only the terminal query uses future boundary information relative to historical positions.
+
+The exact finite original weights lie in $[1,6]$. Their ratio formula verifies membership in the local family. For the causal-family upper, apply Theorem~\ref{thm:arithmetic} at target $h+3$ instead. The public log approximations are generated at
+\[
+ p_0=4h+4\ceil{\log_2(M+K+4)}+64.
+\]
+Their error perturbs each ideal head coordinate by at most $1/(8Q)$. Compiler error is at most $1/(8Q)$, and final downward rounding costs less than $1/Q$. Thus the new actual bank lies within $5/(4Q)<2/Q$ of the true-log identity bank. Positive Taylor weights and bit-valued projections also keep it on the closed $[0,1]$ grid.
+
+The deterministic identity-and-error ledger in \unit{SRC} and \unit{NB002} then recovers grid frequencies $a_c,y_c\in[0,1]$ satisfying
+\begin{equation}\label{eq:freq}
+ |a_c-C_c/M|\le76/Q,\qquad |y_c-H_c/M|\le6/Q.
+\end{equation}
+All exact endpoint corrections and finite denominators are included in that ledger. This is the precise reusable interface; it does not require the old exponential recurrence once the head-error and range conditions are established.
+
+Normalize positive weights $Ma_c+1$ and $My_c+1$ on the ordered $Q$-simplex grid, giving $\widehat q,\widehat b$. With $E_0=76KM/Q$, $A=J+K$ and $k=K/Q$, \eqref{eq:freq} implies
+\[
+ \TV(\widehat q,q)\le\min\{1,E_0/A\}+k,\qquad
+ \TV(\widehat b,b)\le7k.
+\]
+Let $\widehat A=\sum_c(Ma_c+1)$, $A_-=\max\{K,\widehat A-E_0\}$, and
+\[
+ e_{\mathrm{obs}}=\min\{1,E_0/A_-\}+8k,\qquad
+ \rho_-=\min\{g,64\sqrt{K/A_-}\}.
+\]
+The finite rule pools when $\TV(\widehat q,\widehat b)\le\min\{1,\rho_-+e_{\mathrm{obs}}\}$. The apparent square roots can be eliminated by the exact integer comparisons in \unit{NB002}; they are not runtime real oracles. Since $A_-\le A$, any history pooled by the exact selector is also pooled by the finite rule. Equality of decisions is unnecessary; the one-sided rejection containment is the relevant invariant.
+
+Using the inherited event-radius and rejection estimates, \unit{NB002} establishes the pre-integration reduction
+\begin{equation}\label{eq:preint}
+ \operatorname{risk}\le\min\left\{1,2^{16}\mathcal L+
+ 3\E\min\left\{1,\frac{E_0}{J+K}\right\}
+ +\Prob(J+K<4E_0)+\frac{9K}{Q}\right\}.
+\end{equation}
+This is a substantive inherited interface, not something inferred backwards from a final risk bound. The causal compiler satisfies its deterministic premises, so the same downstream map and reduction apply to the changed encoder.
+
+\subsection{Dependence-safe occupation estimates}
+For any homogeneous chain on $d$ states and arbitrary initialization, let $J_m$ count earlier visits to its actual state at time $m$. Then
+\begin{equation}\label{eq:uc}
+ \Prob(J_m<w)\le\min\{1,d^2w/(m+1)\},\qquad w\in\{1,2,\ldots\}.
+\end{equation}
+Indeed the largest such probability over initial states is nonincreasing in $m$ by terminal-suffix domination and the Markov property. On each deterministic path only the first $w$ occurrences of a state have fewer than $w$ earlier visits. Summing over time and then over the $d$ possible starting states bounds the sum of these maxima by $d^2w$. Monotonicity proves \eqref{eq:uc}. This is the inherited \unit{G/U} occupation argument, reproduced here because it is also used for the changed histogram encoder.
+
+For $d=K^2$, layer cake at the exact integer threshold gives
+\begin{equation}\label{eq:psi}
+ \E\min\{1,A/(J_m+k)\}\le\Psi(K^4A/(m+1)),\quad k\ge1,
+\end{equation}
+where $\Psi(0)=0$, $\Psi(x)=x(1+\ln(1/x))$ on $(0,1)$ and $\Psi(x)=1$ on $[1,\infty)$. Specifically $J_m<A/t-k$ is either empty or $J_m<\ceil{A/t-k}$, and that ceiling is at most $A/t$. There is no independence assumption about the terminal query.
+
+Under stationarity and $\beta>0$, \unit{IU001} proves the sharper bound
+\begin{equation}\label{eq:stationaryocc}
+ \E_\Pi\min\{1,A/(J_m+k)\}
+ \le\frac{dA}{m}\left[17+\ln\left(1+\frac{480}{\beta A}\right)\right],
+ \quad d=|\supp\Pi|\le K^2.
+\end{equation}
+The proof reverses the chain conditional on its actual endpoint $s$. The reversed kernel on positive stationary support satisfies the same two-step minorization. If $p=\Pi(s)$ and $\tau_w$ is its $w$th positive return, the stopped occupation-vector argument gives $\E_s\tau_w=w/p$ and $\Prob_s(J_m<w)\le w/(mp)$. A tilted singular-operator comparison, valid without reversibility, gives
+\[
+ \Prob_s(J_m<mp/16)\le5e^{-\beta mp/96}.
+\]
+Integrating the minimum of this tail and $A/(mpt)$, then averaging over $s$, yields \eqref{eq:stationaryocc}. The factor $p$ cancels only after the conditional estimate has been proved. The full operator and return proof is retained in \unit{IU001}, rather than hidden behind an informal mixing-concentration citation.
+
+\subsection{Exact residual suffix laws}
+A TV burn error alone would leave a nonvanishing additive term as $Q\to\infty$. The all-$Q$ upper instead uses an exact path mixture. Let $u=\floor{M/2}$, $m=M-u$, $r=\floor{M/4}$ and, for $0<\beta<1$,
+\[
+ R=\frac{P^2-\beta\mathbf\Pi}{1-\beta},\qquad
+ \mathbf\Pi(s,t)=\Pi(t),\qquad \epsilon=(1-\beta)^r.
+\]
+All-state minorization makes $R$ stochastic even off support. Since $R\mathbf\Pi=\mathbf\Pi R=\mathbf\Pi$, for every initial $\mu$,
+\begin{equation}\label{eq:mixture}
+ \mu P^u=(1-\epsilon)\Pi+\epsilon\nu,
+ \qquad \nu=\mu R^rP^{u-2r}.
+\end{equation}
+Apply the same original-$P$ path-extension kernel to both components: the \emph{entire} suffix law is a mixture of a stationary $P$ trajectory and an ordinary $P$ trajectory from $\nu$. The residual suffix does not evolve under $R$. At $\beta=1$ the stationary component is exact and the residual is omitted.
+
+Full-history visits dominate suffix visits pathwise. Apply \eqref{eq:stationaryocc} to the stationary component and \eqref{eq:psi} to the residual component in \eqref{eq:preint}. The result from \unit{AU001} is
+\[
+ \operatorname{risk}\le\min\left\{1,2^{16}\mathcal L+
+ \frac{2^{14}K^3}{Q}\left[1+\ln\left(1+\frac Q{\beta KM}\right)\right]
+ +7\epsilon\Psi(152K^5/Q)\right\}.
+\]
+For $\beta M=t\ge1$, $\epsilon\le e e^{-t/4}$ and
+\[
+ \epsilon(1+\ln Q)\le1+\ln(1+Q/t)+4.
+\]
+This bounds the residual by $5320K^5W$. If $\beta<1/M$, the universal occupation bound directly yields the same envelope. Hence
+\[
+ \operatorname{risk}\le\min\{1,2^{16}\mathcal L+(2^{14}K^3+5320K^5)W\}
+ \le\min\{1,C_KH\}.
+\]
+The suffix, reverse chain and residual kernel are analysis objects. The predictor does not compute them or receive another history port. Together with the lower proof and stationary inclusion this completes the theorem's stated modular argument.
+
+\section{Weighted inventories and the effective score budget}\label{sec:score}
+Bounded-range families have a genuine representation restriction. We now change the finite evaluator and retain more coordinates. The construction and upper bounds are \unit{SB001 v2}; the sharp weight-ratio lower is \unit{SH001 v1}. Neither reinterprets the old exponential program.
+
+Two paid singleton-copy heads acquire the previous two one-hots. Paid local Boolean gates form pair keys $p_t(a,b)$ and query-independent one-hot triple values $v_t(a,b,c)$. A dense statistical head has key/query dimension $K^2$ and retains all $K^3$ coordinates. Its exact pair dot product selects the integer weight $\kappa$ on matches and $1$ otherwise, where $\kappa\ge1$ is public. Its effective natural logits are $0,\ln\kappa$; no logarithm or exponential is executed. All $M$ terminal keys have positive weight.
+
+At every row compute exact weighted numerators and denominator, then retain only
+\[
+ z_{abc}=\floor{Q A_{abc}/D}.
+\]
+The decoder selects the $K$ coordinates for the exact terminal pair and normalizes their sum. If all selected floors vanish, it uses the uniform vector. Ordered simplex rounding gives its final $Q$-grid output. The clean $A_{abc},D$, counts and unquantized block mass are not decoder inputs.
+
+\subsection{Deterministic error including the zero-floor branch}
+Let $J$ and $C_c$ denote the earlier occurrences and successors of the terminal pair. For $J>0$, the exact selected block has mass
+\begin{equation}\label{eq:blockmass}
+ r=\frac{\kappa J}{M+(\kappa-1)J}
+\end{equation}
+and conditional composition $C/J$. Nonmatches occupy other coordinates rather than contaminating this composition. If nonnegative $y_c$ sum to $r$ and $f_c=Q^{-1}\floor{Qy_c}$, their lost mass is less than $K/Q$. When $\sum f_c>0$, subtracting normalized vectors gives $\TV(f/\sum f,y/r)\le K/(Qr)$. If all floors vanish, $r<K/Q$, so the same capped bound covers any simplex fallback.
+
+Comparison to add-one smoothing and final ordered rounding therefore gives, on every history including $J=0$,
+\begin{equation}\label{eq:inventoryerr}
+ \TV(T_\kappa,q)\le\frac K{J+K}+
+ \min\left\{1,\frac{K(K+1)M}{\kappa Q(J+K)}\right\}
+ +\frac{2K-1}{Q}.
+\end{equation}
+The inequality uses $1/r=(\kappa-1)/\kappa+M/(\kappa J)$ and $J+K\le(K+1)J$ when $J\ge1$. The first term equals one at $J=0$. No positive mass surviving the grid is assumed.
+
+\begin{theorem}[Amplified triple bank]\label{thm:scoreupper}
+Let $D_K=K^5(K+1)$. For arbitrary initialization and every mixing promise,
+\begin{equation}\label{eq:scoreupper}
+ \operatorname{risk}(T_\kappa)\le\min\left\{1,
+ 2^{13}\mathcal H_{\mathrm{orig}}+\Psi\left(\frac{K^5}{M+1}\right)
+ +\Psi\left(\frac{D_K}{\kappa Q}\right)+\frac{2K-1}{Q}\right\}.
+\end{equation}
+With the integer, mixing-blind choices
+\[
+ L_M=\bl(M+1),\quad \kappa=L_M,\quad
+ h=\max\{4,\ceil{L_M/2}\},\quad Q=2^h,
+\]
+the risk is at most
+\begin{equation}\label{eq:integerpoint}
+ \min\left\{1,\frac{(2^{13}+2)K^{5/2}+3D_K+2K-1}{\sqrt{M+1}}\right\}.
+\end{equation}
+Thus the effective logit range is $\ln\ln(M+1)+O(1)$ at $Q\asymp\sqrt M$.
+\end{theorem}
+\begin{proof}
+Apply \eqref{eq:psi} to the first two terms in \eqref{eq:inventoryerr}, and use the inherited \unit{R011 ORIGINAL} risk bound. This proves \eqref{eq:scoreupper}. At the integer schedule, $\sqrt{M+1}\le Q\le2\sqrt{M+1}$ and $\ln(1+Q)\le L_M$. For $D\ge1,z>0$,
+\[
+ \Psi(D/z)\le\frac{D[1+\ln(1+z)]}{z},\qquad \Psi(x)\le2\sqrt x.
+\]
+Taking $z=L_MQ$ gives $\Psi(D_K/(L_MQ))\le3D_K/Q$, which proves \eqref{eq:integerpoint}. Budget generation needs only bitlength, integer ceiling and a power of two.
+\end{proof}
+
+\subsection{A rescaled tube with uniform weight-ratio constants}
+Fix $K\ge3$ and a one-block local family with at most $D$ coordinates, trailing radius $r$, actual weights in $[1,\kappa]$, values in $[-1,1]$, and only the boundary side information of \eqref{eq:localratio}. Here $\kappa\ge1$ may be real; $D,r$ are fixed independently of $M,\beta,Q,\kappa$. The lower permits arbitrary real public positional tables and source-independent shared randomness. It does not include recursively global features or query-selected masks. Smaller banks can be conceptually zero-padded for this information argument without changing a physical implementation.
+
+The earlier \unit{SB001} substitution in \unit{BA001} gives the valid lower $\Omega(\ln M/(\kappa^{D+1}\sqrt M))$ in weak mixing at $Q\asymp\sqrt M$. It loses a power of $\kappa$ through the number of grid cells across a thickened tube. The following refinement changes the suffix cutoff instead of treating that old constant as uniform.
+
+\begin{proposition}[Rescaled rare-window lower]\label{prop:rescaled}
+Put $z=\kappa Q$, $H_b=3^{2r}$, $T_b=r\sqrt{40DH_b}$ and
+\[
+ N_b=\ceil{8T_b+4}+1,\qquad
+ A_b^*=H_b(2+4r)N_b^D,\qquad c_b=(8192A_b^*)^{-1}.
+\]
+For $0\le\beta\le1/16$ and $z\le M/4$, the stationary minimax risk, optimized over this entire family, satisfies
+\begin{equation}\label{eq:rescaled}
+ \Risk_{\kappa,\mathrm{stat}}\ge
+ \frac{c_b}{z}\ln\left(1+\frac18\min\left\{\frac{z}{M\betaz},\frac Mz\right\}\right).
+\end{equation}
+The constant depends only on $D,r$, not on $\kappa,Q,M,\beta,K$ or the tables. This is \unit{SH001 v1}; it is not a matching all-$Q$ two-resource risk formula.
+\end{proposition}
+\begin{proof}
+Use the stationary witness \eqref{eq:witness}, the same uniform prior and the events $E_j$, but replace \eqref{eq:jcut} by
+\[
+ J_*=\floor{\min\{(4\betaz)^{-1},M^2/(4z^2)\}}.
+\]
+Both terms are at least four, so $J_*\ge4$, $J_*$ is at least half the unfloored minimum, and $z\sqrt{J_*}/M\le1/2$. Freeze every boundary query before sampling the suffix. A coin changes at most $r$ numerator or denominator terms, by at most $2\kappa r$ in total. The simultaneous sum deviations are therefore at most $\kappa T_b\sqrt j$ with probability at least $9/10$. Denominators are at least $M$, giving
+\[
+ |F_{ds}-m_{ds}(p)|\le2\kappa T_b\sqrt j/M,\qquad
+ \|m_s'(p)\|_\infty\le4\kappa rj/M.
+\]
+After scaling by $Q$, the tube thickness is at most $T_b$, independent of $\kappa$. A parameter mesh with gaps at most $M/(4rzj)$ has at most $(2+4r)(1+zj/M)$ points and one grid unit of approximation error. Rounding and the boundary label give at most $A_b^*(1+zj/M)$ complete good messages. Lemma~\ref{lem:messages} and \eqref{eq:eventmass} now yield
+\[
+ \Risk_{\kappa,\mathrm{stat}}\ge
+ \frac1{2048A_b^*M}\sum_{j=2}^{J_*}(1+zj/M)^{-1}.
+\]
+The harmonic comparison from Section~\ref{sec:lower}, with $z$ in place of $Q$, proves \eqref{eq:rescaled}. The prior is unchanged across events and independent seeds. The constant is uniform because $\kappa$ shortens the admissible window and enters the mesh length through $z$; it no longer enlarges the grid-box cross-section.
+\end{proof}
+
+\subsection{The least feasible budget in a square-root grid band}
+Fix $0<c_-\le c_+<\infty$, a legal dyadic $Q$ with $c_-\sqrt M\le Q\le c_+\sqrt M$, and a target multiplier $C>0$. For $a\in\{\mathrm{stat},\mathrm{all}\}$ define
+\begin{equation}\label{eq:kappamin}
+ \kappa_{\min,a}(M,\beta,Q;C)
+ =\inf\{\kappa\in[1,\infty):\Risk_{\kappa,a}\le C/\sqrt M\},
+\end{equation}
+with $\inf\varnothing=+\infty$. The envelope budget $\kappa$ is real and the lower allows real tables; a feasible upper below uses actual integer weights. This definition assumes neither attainment of the infimum nor a noninteger implementation.
+
+The unchanged \unit{SB001} upper is more precise than \eqref{eq:scoreupper}. Put
+\[
+ t=M\betaz,\quad G(z,t)=1+\ln(1+z/t),\quad
+ C'_K=48K^3(K+1)+10D_K.
+\]
+Then its same paid triple bank obeys
+\begin{equation}\label{eq:scoremix}
+ \operatorname{risk}(T_\kappa)\le\min\left\{1,
+ 2^{13}\mathcal H_{\mathrm{orig}}+\Psi\left(\frac{K^5}{M+1}\right)
+ +C'_K\frac{G(\kappa Q,t)}{\kappa Q}+\frac{2K-1}{Q}\right\}.
+\end{equation}
+
+\begin{theorem}[Sharp weight-ratio order in the fixed band]\label{thm:kappa}
+Let $K\ge3$, $D\ge K^3$ and $r\ge3$ be fixed. Set
+\[
+ f=1+\ln(1+Q/(M\betaz)),\qquad
+ C_{\mathrm{suff}}=(2^{13}+2)K^{5/2}+(2C'_K+2K-1)/c_-.
+\]
+For every fixed $C\ge C_{\mathrm{suff}}$, uniformly in $M\ge64$, $\beta\in[0,1]$ and all legal $Q$ in the stated band,
+\begin{equation}\label{eq:kappasharp}
+ c_*f\le\kappa_{\min,\mathrm{stat}}
+ \le\kappa_{\min,\mathrm{all}}\le\ceil f\le2f,
+\end{equation}
+where $c_*>0$ depends on $D,r,c_+,C$. The necessary bound holds for every fixed $C>0$; feasibility at arbitrarily tiny multipliers is not claimed.
+\end{theorem}
+\begin{proof}
+For sufficiency choose the public integer $\kappa=\ceil f$. Since $1+\kappa Q/t\le\kappa(1+Q/t)$,
+\[
+ G(\kappa Q,t)/\kappa\le(f+\ln\kappa)/\kappa\le2.
+\]
+Use $\mathcal H_{\mathrm{orig}}\le K^{5/2}/\sqrt{M+1}$, $\Psi(x)\le2\sqrt x$ and $Q\ge c_-\sqrt M$ in \eqref{eq:scoremix}. This proves arbitrary-start feasibility with $C_{\mathrm{suff}}$. Its all-zero-block and $J=0$ branches remain covered by \eqref{eq:inventoryerr}.
+
+For necessity write $x=Q/(M\betaz)$, so $x\le Q$ and $Q^2/M\le c_+^2$. Choose a finite $F\ge2(1+\ln8)$, depending only on $c_+$, such that for every $s\ge F$,
+\[
+ \frac{e^{s-1}-1}{8c_+^2s}\ge e^{s/2}-1.
+\]
+Such a choice exists by exponential domination. Exhaust the cases. If $\beta>1/16$, then $x\le2c_+$ and $\kappa\ge1\ge f/(1+2c_+)$. If $z>M/4$, then $\kappa>\sqrt M/(4c_+)$, whereas $f\le(1/8+c_+)\sqrt M$; this gives a fixed multiple of $f$ without extrapolating the tube. In the remaining domain \eqref{eq:rescaled} applies. If $f\le F$, use $\kappa\ge f/F$; if $\kappa\ge f$, there is nothing to prove.
+
+Otherwise $f>F$ and $1\le\kappa<f$. The two logarithmic branches satisfy
+\[
+ \ln(1+\kappa x/8)\ge f-1-\ln8\ge f/2,\qquad
+ \ln(1+M/(8\kappa Q))\ge f/2.
+\]
+For the second, use $M/(\kappa Q)\ge x/(\kappa c_+^2)>x/(fc_+^2)$ and $x=e^{f-1}-1$. Thus \eqref{eq:rescaled} and risk at most $C/\sqrt M$ force $\kappa\ge c_bf/(2Cc_+)$. Taking the minimum of the five positive constants
+\[
+ 1,\quad (1+2c_+)^{-1},\quad
+ [4c_+(1/8+c_+)]^{-1},\quad F^{-1},\quad c_b/(2Cc_+)
+\]
+proves uniform necessity. It applies to every feasible real budget, hence its infimum. Stationary inclusion gives the middle inequality in \eqref{eq:kappasharp}.
+\end{proof}
+
+When $\beta\le1/M$, $f\asymp\ln M$ on this band, so $\kappa_{\min,a}=\Theta(\ln M)$ and $\ln\kappa_{\min,a}=\ln\ln M+O(1)$. For bounded $f$, the meaningful uniform range comparison is $1+\ln\kappa_{\min,a}=\Theta(1+\ln f)$, not a positive lower on $\ln\kappa_{\min,a}$. The integer upper changes no program or cost ledger. Specifying $\ceil f$ from a known class promise is not learning $\beta$ or evaluating a free transcendental primitive: an implemented selection rule must pay its supplied-parameter and arithmetic costs. The mixing-blind bitlength schedule in Theorem~\ref{thm:scoreupper} remains available. Bands containing no legal dyadic $Q$ have no instance at that $M$.
+
+\subsection{Uniform attention and representation costs}
+At $\kappa=1$, the construction is ordinary uniform attention over the full triple histogram, followed by conditional block normalization. It is a strong elementary baseline, not a new counting mechanism.
+\begin{corollary}[Uniform full-histogram synthesis]\label{cor:hist}
+At fixed $K\ge3$, its best post-grid decoder has stationary and arbitrary-start risk of order $H(M,\beta,Q)$, uniformly over the legal $\beta,Q$.
+\end{corollary}
+\begin{proof}
+For the upper, set $\kappa=1$ in \eqref{eq:scoremix}: the first two terms are $O_K(M^{-1/2})$, since $\Psi(x)\le2\sqrt x$, and the remaining terms are $O_K(W)$. For the lower, this exact $K^3$ bank belongs to \eqref{eq:localratio} with $a=b=1,r=3$; its decoder risk obeys the local-family $1/Q$, statistical and rare-window lower bounds, combined in Section~\ref{sec:completion} into $\Omega_K(H)$. This is a synthesis of \unit{SB001} and \unit{BA001}, not a separately audited source unit.
+\end{proof}
+
+The full bank pays $K^3$ coordinates instead of the compressed bank's $9K+1$, so fixed-$K$ rate equality does not imply equal dimension or costs. The earlier \unit{GW001 v3} successor-only construction with weights $1,M,M^2$ still gives a valid sufficient point with effective range $2\ln M$. The old \unit{SB001} lower also remains true; the rescaled proof sharpens it rather than refuting it. The sharp ratio theorem is restricted to fixed dimension and locality, one global summary block, the square-root grid band and the specified target multipliers. It supplies neither an exact threshold constant, an all-$Q$ matching two-resource law, nor a lower for arbitrary deep or growing architectures.
+
+\section{Finite resource interpretation}\label{sec:costs}
+The theorems distinguish information at the cut from the cost of producing it. None is a total-memory or runtime optimality claim. Two conservative finite implementations illustrate what is actually paid.
+
+For the affine/ReLU evaluator, let $U$ be the actual number of supplied numerical records, $B_{\mathrm{param}}$ their maximum description length, and $F$ the explicit masks and other public-data bits. With $n=M+3$, a full signed online word has
+\[
+ w=O_{\mathrm{arch}}(P+\log n+\log(P+1)),
+\]
+augmented by $\log(U+F+2)$ when needed for addresses. Converted public parameter records occupy compact $P+O_{\mathrm{arch}}(1)$ slots, not $w$-bit workspace slots. Their total is $O_{\mathrm{arch}}(UP)$; padding them to $w$ bits is a separate format with $O(Uw)$ storage and writes. Original descriptions remain a separate $UB_{\mathrm{param}}$ charge.
+
+One fixed-control multitape schedule scans position-ordered projected arrays, streams row-major masks and biases, and rewinds key/value tapes for every query row. All edges, including masked ones, are checked. Exact products, integer Taylor steps and division give online bitwork
+\[
+ O_{\mathrm{arch}}(n^2(P+1)w^2),
+\]
+plus supplied-parameter conversion $O(U(B_{\mathrm{param}}+P)^2)$. A safe retained-data and working-memory bound is
+\[
+ O_{\mathrm{arch}}(UB_{\mathrm{param}}+UP+F+n+nw+w^4+B_{\mathrm{param}}+P).
+\]
+These are phase sums including code, masks, input, both rolling arrays, output, controllers and scratch. A generator for supplied data adds its actual cost; arbitrary tables are not presumed free to generate. The compressed prototype also pays the finite log-constant generator, $O(p_0^3\log^2(p_0+1))$ work, and the full downstream decoder implementation. Shared buffers reduce peaks only under an explicit lifetime schedule.
+
+For the actual triple-bank program, let $\ell=\ceil{\log_2(n+K+2)}$, $k=\bl(\kappa)$ and $b=64(h+\ell+k+1)$. Persistent words have $b$ bits; products retain their full $2b$ bits and guarded temporaries use at most $4b+4$. A conservative dense Boolean schedule has
+\begin{equation}\label{eq:costtriple}
+ T_0=O(n^2K^6b^2),\qquad
+ S=O(n^2+nK^3b+K^6b+b^2).
+\end{equation}
+It pays the two singleton heads, all local gates, zero-inclusive dense maps, all-token $K^3$ banks, denominator and numerator accumulations, block selection, output normalization, copies, clears, masks, controllers and addresses. The cache consists of the actual integers $1,\kappa$. There is no numerical attention matrix hidden in the space bound.
+
+An addressed sequential evaluator storing $O(T_0b)$ instruction bits can scan the $S$-bit tape for each instruction, costing $O(T_0Sb)$ forward bitwork and $O(T_0b+S)$ peak. Its offline generator pays $O((T_0+S)b^2)$ work. Alternatively, a pure Boolean/ReLU expansion with $T=T_0+b$, $S'=S+b$ has depth $O(T)$, width $O(S')$, $O(TS')$ gates and identity holds, $O(bT(S')^2)$ dense coefficient bits, and $O(b^2T(S')^2)$ dense work. The stored parameters, input, public constants, rolling layers and output must all be included in each phase peak. These are distinct complete implementations, not coordinates to combine into an artificial best-of-both estimate.
+
+At $\kappa=\bl(M+1)$, the weight bitlength is $O(\log\log M)$, but $h$ and accumulation length are still $O(\log M)$. Effective score range $\ln\kappa$ is neither floating-point exponent precision nor the total bits used by the model. Likewise fixed ideal attention depth does not imply fixed depth after arithmetic unrolling.
+
+\section{Proof map and limitations}\label{sec:map}
+The manuscript is modular. It gives the main source construction, message argument, causal influence calculation, arithmetic mechanism, occupation transfer and score tradeoff, while relying on the explicitly identified statistical and implementation proof bodies. The accompanying dossier supplies full statements, proofs, dependency bindings, independent LLM reviews and finite diagnostics. Frozen source headers may describe an earlier candidate status; the accompanying acceptance records identify the adopted versions. An audit is evidence of checking, not formal verification or external peer review.
+
+\begin{center}\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.26\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.42\textwidth}@{}}
+\toprule
+Manuscript result & Dossier proof unit & Load-bearing scope\\\midrule\endhead
+Theorem~\ref{thm:main}, original bank & \unit{FR001 v1}; \unit{SF001 v1}; \unit{AU001 v1} & Stationary all-$Q$ completion, arbitrary-start upper, subset/admissibility composition.\\[4pt]
+Local-family lower and risk & \unit{BA001 v1}; \unit{BF001 v3} & Full bank plus boundary labels; positive bounded weights; actual finite-prefix inclusion and augmented costs.\\[4pt]
+Causal influence and lower & \unit{CA001 v3}, boundary-causality scope note v1 & Matrix-entry envelope, square summability, fixed dense masks, formal frozen-branch domain; no future-dependent historical branches in the causal subclass.\\[4pt]
+Theorem~\ref{thm:arithmetic} & \unit{FA001 v3} & Signed full products, positive-shift Taylor, bootstrap, sequential access and compact parameter slots.\\[4pt]
+Theorem~\ref{thm:main}, finite causal family & \unit{CF001 v1} & Explicit four-head ideal prototype, compiled bank accuracy/range, downstream transfer and complete cost composition.\\[4pt]
+Corollary~\ref{cor:threshold} & \unit{PF001 v1}; \unit{FR001 v1}; \unit{CF001 v1} & Uniform threshold from the all-resolution profile; known-promise budget selection only.\\[4pt]
+Conservative finite decoder & \unit{NB002 v1}; \unit{SRC} & Exact master identities, $76/Q$ and $6/Q$ frequency errors, monotone rejection and event-radius interface.\\[4pt]
+Equations \eqref{eq:inherited} and \eqref{eq:preint} & \unit{R011 v1}; \unit{R001}, \unit{S024}, \unit{S025}; \unit{NB002} & Inherited full-history statistics, ORIGINAL add-one and selector certificates; not reproved as a new statistical theorem.\\[4pt]
+Terminal occupation & \unit{G/U} Section 11.1; \unit{IU001 v1}; \unit{AU001 v1} & Arbitrary-start first-occurrence counting; conditional return/singular-norm proof; complete residual suffix mixture.\\[4pt]
+Theorem~\ref{thm:scoreupper} & \unit{SB001 v2}; \unit{GW001 v3} & Actual $K^3$ bank and integer weights; unchanged finite ledger and inherited ORIGINAL comparator.\\[4pt]
+Proposition~\ref{prop:rescaled}; Theorem~\ref{thm:kappa} & \unit{SH001 v1}; \unit{SB001 v2} & Rescaled rare-window tube with a $\kappa$-independent constant; uniform real-budget infimum lower and integer upper in a fixed square-root grid band.\\[4pt]
+Corollary~\ref{cor:hist} & \unit{SB001 v2} Section 7 at $\kappa=1$; \unit{BA001 v1} & Manuscript synthesis with the two proof lines shown; not a separate accepted unit.\\
+\bottomrule
+\end{longtable}
+\end{center}
+
+The source manifest shipped with the editable manuscript identifies exact paths and SHA-256 hashes for these proof versions. The earlier complete statistical dossier is necessary for the full dependency chain of \unit{R011}; this article does not relabel that inherited result as a new standalone proof. Its universal occupation argument is reproduced, but the all-parameter add-one and adaptive-selector statistical estimates remain inherited inputs.
+
+Several boundaries are substantive. The lower constants still depend on fixed architecture size, so growing dimension, locality or depth cannot be hidden inside a fixed constant. The rescaled one-block weight-ratio theorem removes the earlier power loss in $\kappa$ only for its explicitly stated domain and fixed-band consequence. Query-selective hard masks, unbounded values, unrestricted nonlocal preprocessing, vanishing normalization constants and extra exact ports change the encoder class. Post-cut decoding is already unrestricted; adding computation only there cannot overcome the proved information restriction.
+
+The fixed-$K$ rates do not establish sharp joint-alphabet behavior. The three-symbol witness leaves logarithmic necessity for $K=2$ open. Other losses, higher-order or nonhomogeneous sources, optimal total-resource tradeoffs and physically noisy computation are not settled. The constructions are not claims about convergence of training, successful emitted-network execution or practical numerical constants. Direct counting with access to the full history remains an important paid baseline; no attention-specific computational advantage follows from the present information-cut theorem.
+
+The central conclusion is therefore conditional in a precise and useful way: within the declared bounded finite interfaces, terminal rare-context mass creates a mixing-dependent precision cost that persists under fixed-depth causal feature formation; moving to an established amplified inventory representation changes that cost. The proof obligations that support this conclusion are explicit, and the claims stop before universal architectural or training optimality.
+
+\begingroup
+\small
+\setlength{\bibsep}{4pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

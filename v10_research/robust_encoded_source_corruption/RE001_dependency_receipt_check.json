@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "unit": "MG001",
+      "proof": "robust_markov_prediction/MG001_theorem.md",
+      "expected": "c4f114bb7510f3dd5ead7461d9ebead092e2abe103fc92f96e3af9fbd4ac6623",
+      "actual": "c4f114bb7510f3dd5ead7461d9ebead092e2abe103fc92f96e3af9fbd4ac6623",
+      "match": true
+    },
+    {
+      "unit": "MG002",
+      "proof": "robust_markov_prediction/MG002_partial_capacity_extension.md",
+      "expected": "7b9c72da1bbaa6ddafcba66fabe80cf25b467703bfeca7b9afa8e00f0f8e8d93",
+      "actual": "7b9c72da1bbaa6ddafcba66fabe80cf25b467703bfeca7b9afa8e00f0f8e8d93",
+      "match": true
+    },
+    {
+      "unit": "GD001",
+      "proof": "growing_depth/GD001_upper_derivation.md",
+      "expected": "5959d2c6f60c1374f9c2702fcf58a9bd5cc1245313e59c0fe95ad635e9e8e50a",
+      "actual": "5959d2c6f60c1374f9c2702fcf58a9bd5cc1245313e59c0fe95ad635e9e8e50a",
+      "match": true
+    },
+    {
+      "unit": "GD001",
+      "proof": "growing_depth/GD001_lower_derivation.md",
+      "expected": "3137d43739fe39e80490b7f8b1c76f85495e4b7078e31c52a8f3ea9b1831e000",
+      "actual": "3137d43739fe39e80490b7f8b1c76f85495e4b7078e31c52a8f3ea9b1831e000",
+      "match": true
+    },
+    {
+      "unit": "GD001",
+      "proof": "growing_depth/GD001_uniform_FA_extension.md",
+      "expected": "505be0ffc2f7499581cac5ba9da7c018b6f04cb10dc21bce9d3ab7cdba3f5c7e",
+      "actual": "505be0ffc2f7499581cac5ba9da7c018b6f04cb10dc21bce9d3ab7cdba3f5c7e",
+      "match": true
+    },
+    {
+      "unit": "GN001",
+      "proof": "robust_depth_capacity/GN001_theorem.md",
+      "expected": "743367f687c79ea9b3abfbecaa70b206fe62afb5fbb56d1643331aacbfc18383",
+      "actual": "743367f687c79ea9b3abfbecaa70b206fe62afb5fbb56d1643331aacbfc18383",
+      "match": true
+    },
+    {
+      "unit": "JP001",
+      "proof": "joint_corruption_precision/JP001_theorem.md",
+      "expected": "c94e7d59d463a642853b8e3c52588f735c24175885f9cfddf05fbd8f3f2c0fab",
+      "actual": "c94e7d59d463a642853b8e3c52588f735c24175885f9cfddf05fbd8f3f2c0fab",
+      "match": true
+    },
+    {
+      "unit": "SC002",
+      "proof": "source_symbol_corruption_mixing/SC002_theorem.md",
+      "expected": "40a8950861b486f532ac625fa479cb49cd79241dbb4b08efce6296ae9b6a1f0e",
+      "actual": "40a8950861b486f532ac625fa479cb49cd79241dbb4b08efce6296ae9b6a1f0e",
+      "match": true
+    },
+    {
+      "unit": "SC003",
+      "proof": "binary_source_corruption/SC003_theorem.md",
+      "expected": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "actual": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "match": true
+    },
+    {
+      "unit": "BT002",
+      "proof": "binary_erasure_transport/BT002_entropy_bridge_lower.md",
+      "expected": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "actual": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "match": true
+    },
+    {
+      "unit": "BT002",
+      "proof": "binary_erasure_transport/BT002_scalar_completion.md",
+      "expected": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+      "actual": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+      "match": true
+    }
+  ]
+}

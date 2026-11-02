@@ -1,0 +1,39 @@
+{
+  "science_freeze_utc": "2026-11-02T04:45:00+00:00",
+  "pages": 8,
+  "page_size": "Letter portrait",
+  "native_OMML_equations": 159,
+  "raster_equations": 0,
+  "primary_source_hyperlinks": [
+    "https://aclanthology.org/2020.tacl-1.11.pdf",
+    "https://aclanthology.org/2022.acl-long.527.pdf",
+    "https://arxiv.org/html/2210.02671v6",
+    "https://arxiv.org/html/2407.11542v3",
+    "https://mhahn.info/files/transformers-proof.pdf"
+  ],
+  "structural_checks": "passed",
+  "visual_review": {
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "status": "passed",
+    "render_dir": "qa_release2",
+    "checks": [
+      "All pages rendered; final page 2 reopened and inspected after explicit positive lower-weight hypothesis repair.",
+      "Final pages 1 and 3–8 pixel-identical to prior inspected release images.",
+      "No clipping, overlap, missing glyphs, or defective delimiters; native OMML retained."
+    ]
+  },
+  "sha256": {
+    "Chinese-stage3-guide.docx": "59187ee8777058f8400a656914fae2dec016464d7210d2c33bcc2a674855a8bf",
+    "Chinese-stage3-guide.pdf": "7c1762d14e3d822087a6ac1b8eb299e23b74bf8eaf7acc70301f151890f93cff"
+  },
+  "source_count": 32
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "Independent finite diagnostics, exact rational for source/erasure, floating point for scalar and KL grids; not formal verification",
+  "theorem_sha256": "40a8950861b486f532ac625fa479cb49cd79241dbb4b08efce6296ae9b6a1f0e",
+  "counts": {
+    "exact_all_pair_minorization_entries": 18432,
+    "exact_event_bounds": 828,
+    "exact_enumerated_erasure_cases": 450,
+    "lower_scalar_cases": 517184,
+    "residual_envelope_cases": 960,
+    "iid_kl_and_clean_floor_cases": 9937
+  },
+  "worst_cases": {
+    "minimum_integral_over_log_lower": 1.5188804452292626,
+    "maximum_residual_over_envelope": 0.18649421499707874
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "seed": 71443,
+  "counts": {
+    "coordinates": 10244,
+    "blocks": 3000,
+    "bootstrap": 10000
+  },
+  "worst_normalization_to_bound": 0.8710314284189744,
+  "proof_scope": "finite checks only; not formal verification",
+  "source_sha256": {
+    "GD001_upper_derivation.md": "5959d2c6f60c1374f9c2702fcf58a9bd5cc1245313e59c0fe95ad635e9e8e50a",
+    "GD001_lower_derivation.md": "3137d43739fe39e80490b7f8b1c76f85495e4b7078e31c52a8f3ea9b1831e000"
+  },
+  "post_run_contract_clarification": "Only lower architecture-contract prose changed after execution; all checked expressions unchanged. Preclarification output retained in snapshot; independent delta review binds final contract."
+}

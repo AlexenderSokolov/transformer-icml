@@ -1,0 +1,19 @@
+{
+  "obligation_id": "36441ab5cb65fa3d086e3d2fc5b847cff5acc127ac7ff3a8dfbf0c8137945811",
+  "attempt": 1,
+  "predecessors": [],
+  "proof": {
+    "path": "outputs/001-relative-code/prover/c1-proof-v1.md",
+    "sha256": "c79376878e1487cf09ecec1e7ef30c86f5ef41b3529a11ef09daf131aad9f686",
+    "bytes": 40523
+  },
+  "manifest_sha256": "c6cffe5c7270e84de4fa16f7a8d107a45fb08e833af46c76c857c41f5cae6e55",
+  "state": "REJECTED",
+  "fact_ids": [],
+  "evidence_ids": [],
+  "verdict": "wrong",
+  "failure_id": "9384763cb5650698a5693149ced39abbeba6bfc0bb7e63059f3d3166c42e175d",
+  "repair_hints": "Replace every pd in Sections 5.3 and 6.2 by the explicit product p*d_vis, including event thresholds, the exponential tail, the denominator in (C1.23), the upper chain for v, and y=p*d_vis. State the stack bound as Pr(D>=d_vis,C<p*d_vis/2)<=exp(-p*d_vis/8), keeping this visit threshold distinct from public d. Recheck its propagation through (C1.25), (C1.27), the clean estimator bounds and the final simultaneous bounds.",
+  "raw_gateway_record": "outputs/001-relative-code/prover/c1-gateway-v1.json",
+  "verifier_service_reported_hash": "399d23ed1b4f00a3b8692e51f82805d33e18b24e69b641c98a223406ae97ab14"
+}

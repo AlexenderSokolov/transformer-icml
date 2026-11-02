@@ -1,0 +1,209 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=21mm,headheight=15pt]{geometry}
+\usepackage{fontspec,amsmath,amssymb,booktabs,tabularx,enumitem,fancyhdr,hyperref}
+\setmainfont{Noto Serif CJK SC}\setsansfont{Noto Sans CJK SC}
+\XeTeXlinebreaklocale "zh"\XeTeXlinebreakskip=0pt plus 1pt
+\hypersetup{hidelinks,pdfauthor={},pdftitle={二阶条件预测的全参数风险与常数适应}}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}\setlength{\emergencystretch}{3em}\linespread{1.06}
+\setlist[itemize]{leftmargin=1.25em,itemsep=3pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small 二阶预测的条件统计}\fancyhead[R]{\small 2026年10月30日最终科学结论}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}
+\newcommand{\TV}{\operatorname{TV}}\newcommand{\E}{\mathbb E}\newcommand{\Prob}{\mathbb P}
+\newcommand{\head}[2]{{\small\sffamily #1}\par\vspace{2pt}{\LARGE\bfseries #2}\par\vspace{5pt}}
+\newcommand{\entry}[1]{\vfill{\noindent\small\raggedright 正文入口\quad #1\par}}
+\begin{document}
+\head{全域结论与准确实验}{二阶条件预测的全参数风险}
+\textbf{共同 minimax 与原完整历史 add-one 的风险阶已在全部参数域确定；同一个不读取 $\beta$ 的计数与池化选择器达到常数阶最优适应。} 这是固定统计实验的结论，不是网络实现、最优数值常数或外部首创性结论。
+
+固定整数 $K\ge2$、$M\ge1$ 与 $\beta\in[0,1]$。未知齐次二阶表 $\theta$ 只允许合法 shift 转移
+\[
+ Y_j=(X_{j+1},X_{j+2}),\qquad P((a,b),(b,c))=\theta_{ab}(c).
+\]
+条件类为
+\[
+ \mathcal D_2(\beta)=\{(\theta,\mu):\exists\pi,\ \pi P=\pi,\quad
+ P^2(s,t)\ge\beta\pi(t)\ \text{对全部 }s,t\}.
+\]
+$\mu$ 任意，包含平稳支撑外初始化；$\pi$ 隐藏且可不唯一。$\beta$ 是条件下界，不要求它等于源的最大 minorization 系数。观察\textbf{全部} $X_1,\ldots,X_{M+2}$；只计 departure $0,\ldots,M-1$，目标为实际末对 $Y_M$ 的下一符号律 $\theta_{Y_M}$。风险是\textbf{无条件期望半 $L^1$}，不是平方 TV、独立查询或整个转移表误差。
+
+令 $n=M+1$、$\delta=1-\beta$，全部基本尺度都带 cap：
+\[
+ a=\min\{1,\sqrt{K^3/n}\},\quad g=\min\{1,\sqrt{K^5/n}\},\quad
+ i=\min\{1,\sqrt{K/n}\},
+\]
+\[
+ h_*=\min\{1,\sqrt{K^4/n}\},\qquad F=\max\{i,\min(\delta,a)\},
+\]
+\[
+ D=\delta^n g,\quad T=\delta^{M/2}h_*,\qquad
+ L=\max\{F,D,T\},\quad H=\max\{a,D,T\}.
+\]
+$\beta=1$ 时 $D=T=0$；幂指数严格正，不涉及 $0^0$。有限参数下 $L\ge i>0$。
+
+$R$ 表示允许读取公开 $K,M,\beta$ 的共同 minimax 风险：先固定算法，再对类取最坏源，最后对算法取下确界。允许源独立的随机种子。$R^+$ 是固定原始 add-one 的类内最坏风险。R011 给出统一有限界
+\[
+ \boxed{2^{-17}L\le R\le\min\{1,2^{14}L\}},\qquad
+ \boxed{2^{-24}H\le R^+\le\min\{1,2^{13}H\}}.
+\]
+相对任意 $\mu$ 的一般源基线 $g$，条件信息的作用完整体现在 $F,D,T$，并非把任意初始化悄悄改成平稳初始化。
+\entry{R011 §§1、5、6 及完整独立审查；继承 S016 的共同下界。}
+\newpage
+\head{一个固定规则覆盖全部条件类}{不读取条件参数的常数适应}
+设原始全计数、实际末行次数与两个候选分布为
+\[
+ C_s(c)=\sum_{j=0}^{M-1}\mathbf1\{Y_j=s,X_{j+3}=c\},\quad
+ J=\sum_c C_{Y_M}(c),
+\]
+\[
+ q(c)=\frac{C_{Y_M}(c)+1}{J+K},\qquad
+ b(c)=\frac{\sum_{j=3}^{M+2}\mathbf1\{X_j=c\}+1}{M+K}.
+\]
+$q$ 是原完整历史 $K$ 字母 add-one；$b$ 使用全部 $M$ 个已观察输出池化。定义
+\[
+ \rho(J)=\min\{g,64\sqrt{K/(J+K)}\},\qquad
+ \mathrm{ALG}=\begin{cases}b,&\TV(q,b)\le\rho(J),\\q,&\text{否则}.\end{cases}
+\]
+\textbf{平局选池化。} 这是对每个 $K,M$ 一次固定的确定性历史映射。它不读取 $\beta$、类标签、源表、$\mu$、$\pi$、再生标签、未来输出或额外验证数据；证明分情况不代表算法分情况换规则。无需增加后缀分支即可达到这里的风险阶。
+
+记 $\mathcal R_A(\beta)=\sup_{\mathcal D_2(\beta)}\E\TV(A,\theta_{Y_M})$。同一个 ALG 同时满足
+\[
+ \boxed{\mathcal R_{\mathrm{ALG}}(\beta)\le\min\{1,2^{16}L\}}
+ \qquad(K\ge2,M\ge1,\ \beta\in[0,1]).
+\]
+以真实 minimax 而非一个上界证书为分母，定义
+\[
+ \Gamma_{\rm all}(K,M)=\inf_{A\text{ 不读 }\beta}\ \sup_{\beta\in[0,1]}
+ \frac{\mathcal R_A(\beta)}{R(K,M,\beta)}.
+\]
+由于 $R\ge2^{-17}L>0$，上式合法，并且
+\[
+ \boxed{1\le\Gamma_{\rm all}(K,M)\le2^{33}}.
+\]
+下界 $1$ 来自每个固定 $\beta$ 的 minimax 定义；上界由\textbf{同一} ALG 得到。故无须随 $K,M$ 增长的适应惩罚；这不确定最优数值常数。
+
+原规则相对共同 minimax 的损失也得到统一描述：
+\[
+ \boxed{2^{-38}\frac HL\le\frac{R^+}{R}\le2^{30}\frac HL}.
+\]
+尤其 $\beta=0$ 时 $L=H=g$；$\beta=1$ 时 $L=i,H=a$。原规则在 IID 端点可能显著较差，而同一 ALG 保留一般源端点和 IID 端点的正确阶。既有 S024、S025 在原闭合并集上的保证继续有效。
+
+\textbf{历史结论如何读取。} R005 的 $2^{33}\sqrt{\log(eK)}$ 全域适应上界仍然成立；现在被更强的常数上界\textbf{取代，而非推翻}。继承包中的开放状态与对数上界是当时记录，不重写为从未存在过的结果。
+\entry{R011 §§1、3--7；固定算法源于 S024、S025、R001。}
+\newpage
+\head{填补长历史缺口的全类工具}{任意平稳律的倾斜标签计数桥}
+R009 处理\textbf{整个} $\mathcal D_2(\beta)$，不是把吸收子类结论外推。对 $0<\beta\le1/2$，令 $r=\lfloor M/2\rfloor$、$q_0=\delta^r$。采用 R001 的兼容末端对齐 pair 标签与 symbol 标签；$E_0$ 为 pair 全失败，$N$ 为 symbol 成功数，$E=E_0\cap\{N\ge1\}$。则每个整数 $w\ge1$ 都有
+\[
+ \boxed{\Prob(E,J<w)\le\min\{q_0,10q_0K^3w/n\}},
+\]
+\[
+ \Prob(E_0,J<w)\le\min\{q_0,\delta^M+10q_0K^3w/n\}.
+\]
+\textbf{第一式没有 $\delta^M$ 加性余项。} $J$ 始终保留全部原 departure；隐藏标签只作分析，不给算法提供信息。
+
+\textbf{完整似然与统一杀死核。} 写 $p(c)=\sum_d\pi(c,d)$。全状态条件推出 $\theta_{ab}(c)\ge\beta p(c)$。对于 $z\in[0,1]$，令
+\[
+ A_z((a,b),(b,c))=\theta_{ab}(c)-\beta(1-z)p(c),\quad a_z=\delta+\beta z.
+\]
+块质量 $\ell=\theta_{ab}(c)\theta_{bc}(d)>0$ 时取
+$W=1-\beta\pi(c,d)/\ell$；$\ell=0$ 时取 $W=0$，相应整块及导数质量均为零。对任意完整历史事件 $Q$，
+\[
+ Z_Q(z)=\E[z^N\mathbf1_{E_0}\mathbf1_Q]
+ =\sum_{\rm paths}\mu(Y_0)\mathbf1_Q\prod A_z\prod W.
+\]
+这是非负系数的有限多项式；仅在此生成函数约定 $z=0$ 时 $0^0=1$。$Z_Q(1)-Z_Q(0)=\Prob(E\cap Q)$ 精确成立。标签系统不声称无条件独立。
+
+块核每个条目为两条对应 $A_z$ 边质量乘该块 $W$。其行和的凸弦上界为 $\delta a_z$，所以 $B_z=H_z/(\delta a_z)$ 是\textbf{同一个}次随机核。对固定起始律，令 $f_l$ 为活到 $l$ 且末状态此前出现少于 $w$ 次的概率；确定性前 $w$ 次收费给出 $\sum_l f_l\le K^2w$。标记一条刷新边并只丢掉所在块的 $W$，后缀只需两族各 $K$ 个固定起始律，因此总收费为 $K^3w$，而非 $K^4w$。
+
+写 $e=M\bmod2$。对 $Q=\{J<w\}$，微分后积分得到
+\[
+ Z_Q(1)-Z_Q(0)\le
+ \frac{2\delta^{r-1}(1-\delta^{r+e+1})}{r+e+1}K^3w
+ +\frac{e\delta^r(1-\delta^{r+1})}{r+1}.
+\]
+$r\ge1$ 时两项分别不超过 $8q_0K^3w/n$ 与 $\tfrac14q_0K^3w/n$；$M=1$ 用概率 cap 单独处理。原文 §5 的 ``second term'' 实指\textbf{第一积分项}，是已记录的词语指向问题，代数无误；冻结正文未改。
+\entry{R009 §§1--5 及完整独立审查；所有零质量、奇偶与大 $w$ 情况均保留。}
+\newpage
+\head{从事件证书到统一有限风险界}{全部参数域如何拼合}
+\textbf{长历史弱条件域。} 对 $M\ge K^4$、$0<\beta\le1/2$，令
+$t=\beta n$、$\lambda=-\log\delta$。此时 $a,h_*$ 均未触及 cap，且
+$q_0\le e^{-4t/9}$、$r\lambda\le t$。R009 与 S020 的原行栈事件界给出
+\[
+ B_E=\min\{q_0,80q_0\sqrt{10K^3(K+r\lambda)/n}\}.
+\]
+这是上界事件质量的使用，不是声称条件于标签后原行栈仍 IID。R001 对\textbf{同一事件}给半径代价至多 $\tfrac85B_E$。当 $t\le K$，$B_E<512T$；当 $t>K$，利用 $\sqrt t e^{-4t/9}<1$ 得 $B_E<360a$，故
+\[
+ B_E\le360a+512T.
+\]
+无 symbol 刷新事件的证书为
+\[
+ A=\delta^M\min\{1,48g+\beta\}\le96D+a.
+\]
+R004 的 early/dyadic pair 成功事件\textbf{逐组有上界证书}，其总和 $C\le6400a$。不是从一个标量风险上界反推半径界。非负事件覆盖与逐路径安全性得到
+\[
+ R^+\le A+B_E+C\le6761a+96D+512T\le7369H<2^{13}H,
+\]
+\[
+ \mathcal R_{\mathrm{ALG}}\le2A+\tfrac{13}{5}(B_E+C)
+ \le22107H<2^{15}H.
+\]
+弱条件下 $F\ge a/2$，故 $H\le2L$；这给出第 1、2 页所列共同风险与 ALG 常数。全程无 moderate-log 假设或 $M$ 的上限。
+
+\textbf{其余参数不是外推。} 当 $M\le K^4$、$0<\beta\le1/2$，继承 S019、S024 在 $H_S=\max\{a,\delta^{M/2}\}$ 上的 $128$、$1472$ 上界；因 $h_*>1/2$，有 $H_S\le2H$，同样满足最终常数。$M=K^4$ 两种证明重叠无冲突。
+
+当 $\beta\ge1/2$，由 $(M+1)2^{-M}\le1$ 得 $D,T\le i$，所以\textbf{恰有} $L=F,H=a$。R010 给原规则 $81a$；S024、S025 给同一 ALG $8000F$。$\beta=1$ 直接用 IID 接口；$\beta=0$ 时 $L=H=g$，原规则 $48g$、ALG $49g$，不把端点代入有残余除法或对数的内部式。
+
+\textbf{真正的统计下界。} S016 给 $R\ge2^{-17}L$。因 $q$ 可作共同预测器，$R^+\ge R$；R010 另给每个 $\beta$ 的 $R^+\ge2^{-24}a$。取不同见证下界的\textbf{最大值}而非相加，得到 $R^+\ge2^{-24}H$。这完成两个全参数阶及其比值。
+\entry{R011 §§3--6；R001、R004、R009、R010；S016、S019、S020、S024、S025。}
+\newpage
+\head{新重建与中间成果的准确位置}{原规则地板和吸收子类路径}
+\textbf{R010 是新写完整证明，不是找回历史 S027。} 在所有行均为同一 IID 律 $p$、初始化任意的子类中，令 $a=\min\{1,\sqrt{K^3/n}\}$，则原完整 add-one 满足
+\[
+ 2^{-24}a\le\sup_{p,\mu}\E\TV(q,p)\le\min\{1,\sqrt{423}\,a\}.
+\]
+上界继承 S022；\textbf{平均 TV 下界}由 R010 重建，绝不从平方损失下界取平方根。IID 表在全部起始 pair 上满足 $P^2=\Pi$，因此属于每个 $\mathcal D_2(\beta)$，提供第 4 页所需的原规则地板。它不把共同 IID minimax 的尺度 $i$ 错写成 $a$。
+
+\textbf{下界的承重步骤。} 当 $M<128K^3$，取 $p$ 在 $d=\lfloor K/2\rfloor$ 个字母上均匀。原规则分到支撑外的质量及 Jensen 不等式给
+\[
+ \E\TV(q,p)\ge\frac{1}{2+18M/K^3}\ge\frac1{2306}.
+\]
+大历史时用全字母均匀 IID，并把独立于真实末对的 $M-2$ 个辅助 departure 仅用于分析。对固定行、输出的中心化和 $S$，置 $v=(K-1)/K^4$、$m=M-2$，完整的四阶矩展开给
+\[
+ \E S^2=mv,\qquad \E S^4\le69mv+3m^2v^2.
+\]
+二阶与四阶矩给非平凡噪声概率；再用 Markov 控制随机分母，不假设二者独立。最后逐路径补回与末对相关的两个 departure，得到
+\[
+ \E\TV(q,p)\ge\frac{a}{5308416}\ge2^{-24}a.
+\]
+小 $K$、零计数、相邻重叠三元组与任意初始化上界均已处理。R010 的强条件原规则上界 $81a$ 另通过 S011 的有限 burn 条件核实。
+
+\textbf{R006、R008 保留为有独立范围的中间结果。} 对具有吸收平稳见证 $\pi=\delta_{00}$ 的整个合法子类，允许任意初始律和任意满足
+$\theta_{ab}(0)\theta_{b0}(0)\ge\beta$ 的其他转移。R006 对 $0<\beta<1$、任意质量至多 $q_0$ 的增广事件 $Q$ 给
+\[
+ \Prob(Q,J<w)\le\min\left\{q_0,2\delta^M+
+ \frac{8(K^2+q_0K^3)}{n}w\right\}.
+\]
+它用全路径次随机变换、cutset 收费及吸收点质量 $D_0/t$（$D_0\le K^2-1$ 为暂态数）控制奇异端点；没有假设小吸收风险或条件 IID。临界射线 $M=K^5,\beta=\log K/K^5$ 上，R006 给原规则 $\min(1,8000/K)$，R008 给同一 ALG $\min(1,20000/K)$。结合合法星形子族下界，该\textbf{吸收子类}两种风险均为渐近 $\Theta(1/K)$。
+
+任意 $\pi$ 的全类临界闭合来自\textbf{R009}，全域与同算法适应来自\textbf{R011}；不能用 R006 或 R008 单独代替它们。
+\entry{R010 全文及独立审查；R006、R008 全文及独立审查；S011、S022。}
+\newpage
+\head{科学收束与完整证据入口}{采用范围和历史记录}
+\textbf{原目标 A 与 B 的科学内容已完成。} A 要求全部有限 $K,M,\beta$ 的共同与原规则风险阶和过渡；R011 给 $R\asymp L$、$R^+\asymp H$ 及分离比。B 要求一个不读取 $\beta$ 的规则取得最优阶适应；同一 ALG 的全域比值落在 $[1,2^{33}]$。这里的完成只指这两个统计目标，不表示外部投稿、审稿或实现完成。
+
+原建议窗口 $M=K^5,\beta=\log K/(2K^5)$ 的两种风险均为 $\Theta(K^{-1/2})$；不同的临界窗口 $\beta=\log K/K^5$ 均为 $\Theta(K^{-1})$。前者的旧证书缺口、后者的全类缺口均已被真实上界闭合，不能把旧方法困难当成统计下界。
+
+\textbf{证明与审查完整保留。} 本包直接含 R006、R008、R009、R010、R011 的完整科学证明与五份完整科学审查。只有非科学流程字段和本地路径被显式省略或规范化；复制、省略、编辑的 UTF-8 字节区间、源与输出的不同哈希均见 \texttt{COPY\_MAP.json}。这是编排完整性，不是新一轮数学审查。独立审查为\textbf{独立上下文 LLM 审查}，不称形式验证或外部同行评审。
+
+仅嵌套一个精确继承科学 ZIP，含 R001--R005 与既有 S001--S025 的证明、审查和原复制映射。\texttt{SOURCE\_INDEX.json} 给出每个源的递归 ZIP 入口；\texttt{SOURCES.md} 说明具体依赖。没有附整个项目备份，也没有重新分发多份旧包。继承 S015 的原输入和公开复制件身份始终不同，其既有映射逐区间保留并复核。更早不可获得的编辑前原字节仍不可获得，不虚构还原。
+
+\textbf{实际问题没有被删除。}
+\begin{itemize}
+\item R009 §5 的第一／第二积分项文字指向在外层明确澄清，冻结源未改。
+\item R011 所说 R010 尚待接受是写作时状态；R010 的完整独立审查已经接受，其依赖现已闭合。各证明旧候选状态不代表当前未决。
+\item R005 的对数上界有效但已被更强结果取代；旧包的开放叙述保留为历史。
+\item S024 的失败 NEXT 主张及 S025 的修复、R009 的正势函数与无权 taboo 失败路线均保留。未接受的 R007 替代草稿不在本包，也不是任何前提。
+\end{itemize}
+\textbf{边界与下一步。} 零边、零平稳质量、不可达或可约情况、周期性未被额外排除；合法性仍由所定全状态二步条件决定。$K=2$、$M=1$、奇偶、短长交界和两个 $\beta$ 端点均覆盖。更高阶、非齐次源、改换目标和实现费用不属此结论。数值诊断仅支持列出的有限检查，不替代证明。
+
+现有目标没有剩余数学前提；不为延长工作而追加常数优化或无关扩展。可采用接口即准确命题、固定算法、完整证明、完整审查、来源与边界。更大问题需要新的目标；不宣称文献优先权、精确 minimax 数值、网络资源或硬件可靠性。
+\entry{README、BOUNDARIES、EDITORIAL\_NOTES、RETURN\_CONTRACT\_SUMMARY；R011 完整范围审查。}
+\end{document}

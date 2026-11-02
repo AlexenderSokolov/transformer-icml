@@ -1,0 +1,9 @@
+{
+  "unit": "TR001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "two_resource_frontier/TR001_two_resource_frontier_v1.md",
+  "sha256": "7dca0c09637164c2a632e1e493c7af281109bb52116400c94ee507fe18c493c6",
+  "review": "two_resource_frontier/TR001_independent_review_v1.md",
+  "time_utc": "2026-11-02T05:47:18.863770+00:00",
+  "scope": "Full fixed K>=3,D>=K^3,r>=3 one-block local dense positive-weight encoder minimax risk for integer kappa>=1,dyadic Q>=16,M>=64: max(M^-1/2,1/Q,(1+ln(1+kappa Q/(M beta0)))/(kappa Q)); both initializations, explicit paid SB001 upper unchanged. Joint Q and kappa Q thresholds, not total precision or deep-family optimality."
+}

@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-25",
+  "author": "counter",
+  "kind": "bounded C2 v2 local output/converter-cost repair review",
+  "obligation_id": "8b179af3ef2fe36eca7503ff37e9baca6ba118d546cf884db6ad7e4da0d0b6f8",
+  "reviewed_scope": "Section2a, v1-to-v2 diff and raw gateway response only; no C1 reproof or C2 risk re-review; C3 review excluded",
+  "inputs": [
+    {
+      "path": "outputs/001-conditional-grid/prover/c2-proof-v2.md",
+      "sha256": "b8de1c83444044357790ab8062caa443a701f260b7d631dbae35f85c308f667c",
+      "bytes": 23197
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v1/c2-v1-to-v2.diff",
+      "sha256": "c33d01c2f5a02714b17080d4cbe275a4a578c2fb4d313a5e7f073864c0746bbc",
+      "bytes": 11882
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v1/c2-response.raw.json",
+      "sha256": "302eafcaf12cc877e93648096ca6a878ef334e11390cc14e1e321c0008020d8b",
+      "bytes": 4061
+    }
+  ],
+  "outputs": [
+    {
+      "path": "outputs/001-conditional-grid/counter/c2-cost-repair-review-v1.md",
+      "sha256": "3b133d6493154f73556d31722be2b99cd5549e50f0d4a044ab2177259a8f643d",
+      "bytes": 5428
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/c2-cost-repair-checks-v1.json",
+      "sha256": "e3eaab19cf44ba85ba68cb9140edc6f0c4937dbecc520199746a3abcf7947b60",
+      "bytes": 909
+    }
+  ],
+  "section2a_sha256": "eec6d47c8a3e33c07049e9a8d94c63856a6ef8553ea7a1fc9f1d99ad474233b3",
+  "verdict": "SCOPED_PASS",
+  "mandatory_repairs": [],
+  "optional_clarification": "Say that two K-bit words together hold the full2K-bit generic product, consistent with the later accumulator implementation.",
+  "accepted_predecessor_fact_id": "e418ec34b7dbc4a6",
+  "accepted_predecessor_evidence_id": "4857f1b1b5d10ab74a979362e3d0c3068c9634016e4ce6b6a0609ed577eb2eea",
+  "predecessor_status_from_native_readback": "DISCHARGED",
+  "C2_status_from_native_readback": "OPEN",
+  "existing_failure_preserved": "b97ba0738f1848747bd400c3e74405482a403fe463232e79f62fa7068938d708",
+  "new_fact_ids": [],
+  "new_evidence_ids": [],
+  "native_mutations": [],
+  "native_note": "No new obstacle found. Preserve actual failure pending normal gateway re-review; no manual closure or duplicate failure record.",
+  "ask_calls": 0,
+  "submit_calls": 0,
+  "schedule_calls": 0,
+  "suspension_or_stagnation_mutations": 0,
+  "historical_four_SUSPENDED_preserved": true,
+  "additional_retrievals": 0,
+  "old_diagnostics_run": 0,
+  "old_files_modified": 0,
+  "GPU_ms": 0,
+  "full_C3_or_C4_closure_claimed": false
+}

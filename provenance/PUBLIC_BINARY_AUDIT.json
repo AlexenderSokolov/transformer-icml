@@ -1,0 +1,397 @@
+{
+  "status": "PASS_FOR_INSPECTED_BINARY_SNAPSHOT",
+  "audited_utc": "2026-11-02T12:07:38.615567+00:00",
+  "scope": "Read-only privacy and project-content audit of every staged PDF and DOCX; no source artifact changed.",
+  "counts": {
+    "pdf": 24,
+    "docx": 9
+  },
+  "method": [
+    "Extracted complete PDF text with pdftotext and inspected project titles/opening content.",
+    "Inspected PDF information dictionaries, XMP metadata, annotations and embedded-file/JavaScript presence with pypdf.",
+    "Inspected every DOCX XML and relationship part, core/custom properties, comment and embedded-content inventory.",
+    "Scanned extracted content and metadata for private routing, credential and contact patterns; inspected project attribution and document identity.",
+    "Recomputed every file SHA-256 after inspection to confirm no artifact mutation."
+  ],
+  "findings": [],
+  "private_routing_credential_contact_pattern_findings": 0,
+  "nonempty_personal_author_metadata": 0,
+  "embedded_files_or_macro_findings": 0,
+  "docx_comments": 0,
+  "required_count_checks": {
+    "v10_research/manuscript_v5/finite_precision_prediction.pdf": {
+      "pages": 70
+    },
+    "v10_research/source_corruption_manuscript/corrupted_trajectories.pdf": {
+      "pages": 27
+    },
+    "v10_research/source_corruption_guide/Chinese-stage8-guide.pdf": {
+      "pages": 9
+    },
+    "v10_research/source_corruption_guide/Chinese-stage8-guide.docx": {
+      "omml_count": 93
+    }
+  },
+  "cache_paths_to_exclude_from_payload": [
+    "tests/__pycache__",
+    "tools/__pycache__",
+    "tests/__pycache__/test_public_verify.cpython-312.pyc",
+    "tools/__pycache__/public_verify.cpython-312.pyc"
+  ],
+  "cache_policy": "Exclude all __pycache__ directories and .pyc/.pyo files from the public payload. This audit does not modify them.",
+  "limits": [
+    "No fresh document rebuild or whole-document visual layout review was performed in this audit.",
+    "Pattern scans and structured inspection are bounded privacy evidence, not a guarantee against arbitrary steganography.",
+    "This audit does not re-prove mathematical statements or claim third-party novelty certification."
+  ],
+  "files": [
+    {
+      "path": "inherited_statistics/DOT_conditions_adaptation_closure_20261029_v2/guide_中文.pdf",
+      "sha256": "3af132b961904fd1344c4a4763878d63ec8206db5eb28d2ed68ec10d8e315944",
+      "bytes": 221346,
+      "pages": 6,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "未知条件适应的闭合与吸收结构边界"
+    },
+    {
+      "path": "inherited_statistics/DOT_conditions_global_completion_20261030_v2/guide_中文.pdf",
+      "sha256": "1e67a861b1156dcafe23f0a251735f4b0da624f6812b951d065bd6725cdf1a16",
+      "bytes": 235732,
+      "pages": 6,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "二阶条件预测的全参数风险与常数适应"
+    },
+    {
+      "path": "inherited_statistics/DOT_conditions_next_stage_20261029_v2/guide_中文.pdf",
+      "sha256": "a5f5488a50c273efa78d899c3829e48cbb867a3f36d5819785c20e0b648215c8",
+      "bytes": 229796,
+      "pages": 6,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "长历史弱混合与未知条件的阶段结果"
+    },
+    {
+      "path": "inherited_statistics/DOT_conditions_phase_review_20261028/guide_中文.pdf",
+      "sha256": "60a6e43962e80e4c524450ad2c6d1e2ef282aa0aba0722cbbe484dd32a22215e",
+      "bytes": 277907,
+      "pages": 9,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "二阶预测的条件分层与算法边界"
+    },
+    {
+      "path": "inherited_statistics/DOT_conditions_stage02/summary_中文.pdf",
+      "sha256": "db1a6072f3aa308e5b74b9cc99eb9f4de2ca569f52e15d3ece5504e1d0f76638",
+      "bytes": 248694,
+      "pages": 8,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "数据条件与二阶预测难度 阶段结论"
+    },
+    {
+      "path": "inherited_statistics/DOT_conditions_stage03/summary_中文.pdf",
+      "sha256": "06e1f3622b1d9a8cdf660a48c2877a330416177fd3250f929fb328b87ea4bc50",
+      "bytes": 218906,
+      "pages": 6,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "任意初始化二阶预测的弱混合阶段结果"
+    },
+    {
+      "path": "inherited_statistics/DOT_conditions_stage04/summary_中文.pdf",
+      "sha256": "ea17dad727d17add56981066305ad0b092268a0e060282e54675819c3866a9f2",
+      "bytes": 194081,
+      "pages": 5,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "首次符号刷新障碍与对数弱混合窗口"
+    },
+    {
+      "path": "inherited_statistics/conditions_grouped_statistics_20261030_v1/guide_中文.pdf",
+      "sha256": "ac77b4be77cd05007a285dcf20c0bf64b153a8b76a3c02a4402569b2278451de",
+      "bytes": 211443,
+      "pages": 5,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "分组再生与全参数适应上界"
+    },
+    {
+      "path": "v10_intake/source/sources/dot-return/readable/guide_中文.pdf",
+      "sha256": "1e67a861b1156dcafe23f0a251735f4b0da624f6812b951d065bd6725cdf1a16",
+      "bytes": 235732,
+      "pages": 6,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "二阶条件预测的全参数风险与常数适应"
+    },
+    {
+      "path": "v10_research/depth_initialization_guide/Chinese-stage6-guide.docx",
+      "sha256": "8a1a9b53dc8af682507a4af98fb0383db760cdea8fe536797185b3a7ee4c1486",
+      "bytes": 26112,
+      "omml_count": 180,
+      "embedded_files": 0,
+      "personal_author_metadata_nonempty": false,
+      "comment_count": 0,
+      "macros": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "马尔可夫预测的信息截断与深度"
+    },
+    {
+      "path": "v10_research/depth_initialization_guide/Chinese-stage6-guide.pdf",
+      "sha256": "eed6e40fb767d9481347cb883fe5647ee9cf6f3d55b97303b82d5acd3842816b",
+      "bytes": 481557,
+      "pages": 8,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "马尔可夫预测的信息截断与深度"
+    },
+    {
+      "path": "v10_research/joint_frontier_guide/Chinese-stage5-guide.docx",
+      "sha256": "d0542e5410bb0f93db7469be4ffe3f30f208f7a3ea1214cf7fda182bc1518f73",
+      "bytes": 21908,
+      "omml_count": 126,
+      "embedded_files": 0,
+      "personal_author_metadata_nonempty": false,
+      "comment_count": 0,
+      "macros": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "单块注意力的权重与网格联合前沿"
+    },
+    {
+      "path": "v10_research/joint_frontier_guide/Chinese-stage5-guide.pdf",
+      "sha256": "0331f698656e3dec70944e4413c58a70facdde7b6cd01c379781a4ac4d20a7a6",
+      "bytes": 426703,
+      "pages": 6,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "单块注意力的权重与网格联合前沿"
+    },
+    {
+      "path": "v10_research/manuscript/finite_precision_prediction.pdf",
+      "sha256": "beb04eb769aa87e8f53f33d9eef97065080ac782e3df7b246812804f19734a59",
+      "bytes": 489332,
+      "pages": 19,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "Finite Precision Prediction from Bounded Causal Attention"
+    },
+    {
+      "path": "v10_research/manuscript_v2/finite_precision_prediction.pdf",
+      "sha256": "922dd5c1028e21feaf74759d518121dee329ba4807f9121740c384a62833ea22",
+      "bytes": 499531,
+      "pages": 21,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "Finite Precision Prediction from Bounded Causal Attention"
+    },
+    {
+      "path": "v10_research/manuscript_v3/finite_precision_prediction.pdf",
+      "sha256": "77b36501b82914d9e03277f0fa0d7d35ae78a51ff69568362737c284a331f9ef",
+      "bytes": 558356,
+      "pages": 30,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "Finite Precision Prediction from Bounded Causal Attention"
+    },
+    {
+      "path": "v10_research/manuscript_v4/finite_precision_prediction.pdf",
+      "sha256": "c1aa52913b10f5c9ea9db5a03e0fd7a23dbdf2b6e62413b1703ae7c87d8bec0f",
+      "bytes": 714169,
+      "pages": 45,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "Finite Information Cuts in Markov Prediction: Precision, Range, and Depth"
+    },
+    {
+      "path": "v10_research/manuscript_v5/finite_precision_prediction.pdf",
+      "sha256": "6563cf1c47a356196991c776c2bcbf27dc51068117f4d9d855eca9821ac80653",
+      "bytes": 780752,
+      "pages": 70,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "Finite Information Cuts in Markov Prediction: Precision, Depth, and Robustness"
+    },
+    {
+      "path": "v10_research/precision_robustness_guide/Chinese-stage7-guide.docx",
+      "sha256": "2c25607af9992f87b9f191435b10d1764503b00e5a02518a60f7dc14312a179e",
+      "bytes": 29147,
+      "omml_count": 156,
+      "embedded_files": 0,
+      "personal_author_metadata_nonempty": false,
+      "comment_count": 0,
+      "macros": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "马尔可夫预测的精度容量与鲁棒性"
+    },
+    {
+      "path": "v10_research/precision_robustness_guide/Chinese-stage7-guide.pdf",
+      "sha256": "ee181acf18f00e6e4175ca84b6675a64e42b856c506db6df32a665280f617fcc",
+      "bytes": 496500,
+      "pages": 11,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "马尔可夫预测的精度容量与鲁棒性"
+    },
+    {
+      "path": "v10_research/precision_robustness_guide/precorrection_v1/Chinese-stage7-guide.docx",
+      "sha256": "80f146b629c39eb12a97f2c7cefcdf68879d1d76dac96c53ce86f104df7e37fe",
+      "bytes": 28111,
+      "omml_count": 150,
+      "embedded_files": 0,
+      "personal_author_metadata_nonempty": false,
+      "comment_count": 0,
+      "macros": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "马尔可夫预测的精度容量与鲁棒性"
+    },
+    {
+      "path": "v10_research/precision_robustness_guide/precorrection_v1/Chinese-stage7-guide.pdf",
+      "sha256": "d6ddd139935b0874a5e0ca640163fb5d2cddc2ee7a1accb3dc209f4608ef5243",
+      "bytes": 487055,
+      "pages": 11,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "马尔可夫预测的精度容量与鲁棒性"
+    },
+    {
+      "path": "v10_research/precision_robustness_guide/precorrection_v2/Chinese-stage7-guide.docx",
+      "sha256": "b5b5cc74530a91cc484a324557f5c13151cb6db9789a83ce7114ba1ae8069773",
+      "bytes": 28137,
+      "omml_count": 154,
+      "embedded_files": 0,
+      "personal_author_metadata_nonempty": false,
+      "comment_count": 0,
+      "macros": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "马尔可夫预测的精度容量与鲁棒性"
+    },
+    {
+      "path": "v10_research/precision_robustness_guide/precorrection_v2/Chinese-stage7-guide.pdf",
+      "sha256": "30ccd3dfacbcd55d27d51b2f864c90c50e4cb09fb65a8f212d3c923044862fec",
+      "bytes": 489325,
+      "pages": 11,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "马尔可夫预测的精度容量与鲁棒性"
+    },
+    {
+      "path": "v10_research/precision_robustness_guide/precorrection_v3/Chinese-stage7-guide.docx",
+      "sha256": "35caa0d8523e10ecfd66d008d0396067ea5b702f3748394cb21ed4badf9ce53f",
+      "bytes": 28940,
+      "omml_count": 155,
+      "embedded_files": 0,
+      "personal_author_metadata_nonempty": false,
+      "comment_count": 0,
+      "macros": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "马尔可夫预测的精度容量与鲁棒性"
+    },
+    {
+      "path": "v10_research/precision_robustness_guide/precorrection_v3/Chinese-stage7-guide.pdf",
+      "sha256": "900b7e7088748e114f5299436e6065894175431dbc62db5f45a60ace8b8a5305",
+      "bytes": 492644,
+      "pages": 11,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "马尔可夫预测的精度容量与鲁棒性"
+    },
+    {
+      "path": "v10_research/sharp_ratio_addendum/Chinese-sharp-ratio-addendum.docx",
+      "sha256": "041292e36536db917ab00a9884777c24623f993165c3d2aea48dd1b2e07e41a9",
+      "bytes": 18570,
+      "omml_count": 96,
+      "embedded_files": 0,
+      "personal_author_metadata_nonempty": false,
+      "comment_count": 0,
+      "macros": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "权重比锐阈值补遗"
+    },
+    {
+      "path": "v10_research/sharp_ratio_addendum/Chinese-sharp-ratio-addendum.pdf",
+      "sha256": "29cfefe270f41067e145ebbc91a7a57457150f5d2a157df5ab289ba06fe77686",
+      "bytes": 317292,
+      "pages": 3,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "权重比锐阈值补遗"
+    },
+    {
+      "path": "v10_research/source_corruption_guide/Chinese-stage8-guide.docx",
+      "sha256": "daa27b2b3aaf31bcc9b6d1db553eb1e4d4703c38e8a53edac0113753cab8641b",
+      "bytes": 24117,
+      "omml_count": 93,
+      "embedded_files": 0,
+      "personal_author_metadata_nonempty": false,
+      "comment_count": 0,
+      "macros": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "观测轨迹被改写后还能预测什么"
+    },
+    {
+      "path": "v10_research/source_corruption_guide/Chinese-stage8-guide.pdf",
+      "sha256": "934f07abb41ad673f84e886e5d93058483351fd9cc431f1595906ee7474d8a02",
+      "bytes": 400371,
+      "pages": 9,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "观测轨迹被改写后还能预测什么"
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/corrupted_trajectories.pdf",
+      "sha256": "72cd476dc4ea3ceeb4de2069ceb0320f589d8f1952823223d5650355c3ced64c",
+      "bytes": 481982,
+      "pages": 27,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "Next-Symbol Prediction from Adversarially Corrupted Markov Trajectories"
+    },
+    {
+      "path": "v10_research/stage3_guide/Chinese-stage3-guide.docx",
+      "sha256": "59187ee8777058f8400a656914fae2dec016464d7210d2c33bcc2a674855a8bf",
+      "bytes": 28609,
+      "omml_count": 159,
+      "embedded_files": 0,
+      "personal_author_metadata_nonempty": false,
+      "comment_count": 0,
+      "macros": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "有限精度注意力表示与统计风险"
+    },
+    {
+      "path": "v10_research/stage3_guide/Chinese-stage3-guide.pdf",
+      "sha256": "7c1762d14e3d822087a6ac1b8eb299e23b74bf8eaf7acc70301f151890f93cff",
+      "bytes": 597636,
+      "pages": 8,
+      "embedded_files": 0,
+      "javascript_present": false,
+      "classification": "Project-authored research manuscript or mathematical guide; not a third-party full text.",
+      "title": "有限精度注意力表示与统计风险"
+    }
+  ]
+}

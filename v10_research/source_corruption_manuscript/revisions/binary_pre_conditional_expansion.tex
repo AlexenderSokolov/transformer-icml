@@ -1,0 +1,510 @@
+\section{The binary upper bound}
+\label{bin:upper}
+The distinction between two symbols and three or more symbols enters through a weighted occupation functional, not through a uniform improvement of the chain's mixing time. This section gives a fixed, publicly oriented estimator whose corruption error is bounded by that functional. Write
+\[
+ Y_j=(X_{j+1},X_{j+2}),\quad 0\le j\le M,
+ \qquad J_u=\sum_{j=0}^{M-1}\mathbf 1\{Y_j=u\}.
+\]
+All row counts below use these $M$ departures, and never count the terminal query as a departure. Throughout this section $K=2$, $M\ge64$, and
+\[
+ s=M^{-1/2},\qquad e_*=\max\{\sqrt\beta,M^{-1}\}.
+\]
+For the corruption profile set
+\[
+ F_2=\frac{k}{M}\left[1+\log\left(1+\frac1{k e_*}\right)\right]
+ \quad(k\ge1),\qquad F_2=0\quad(k=0).
+\]
+
+\subsection{A fixed orientation and a pessimistic exit estimate}
+For a pair $u$, designate the successor $d(u)$ to be the complement of its first bit. In the order $00,01,10,11$, the designated successors are $1,1,0,0$. Their true probabilities, used only in the analysis, are
+\[
+ q=(a,b,e,t)=\bigl(\theta_{00}(1),\theta_{01}(1),
+                    \theta_{10}(0),\theta_{11}(0)\bigr).
+\]
+The symbol $e$ here is a row probability, distinct from the cutoff $e_*$. The orientation does not require identifying a minority outcome or knowing the source.
+
+At the preserved terminal pair $u=Y_M$, let $C'$ be the corrupted designated-successor count and $J'$ the corrupted row total. For $k\ge1$, set $B=6k$ and return a binary vector with designated coordinate
+\begin{equation}
+ \widehat q=\frac{(C'-B)_+}{J'+B+2}.
+ \label{bin:estimator}
+\end{equation}
+Its other coordinate is $1-\widehat q$. At $k=0$, use ordinary add-one, with coordinates $(C'_{uv}+1)/(J'+2)$. These are different, explicitly specified branches. Both are deterministic and $\beta$-blind; the first uses the public budget $k$.
+
+\begin{lemma}[Pathwise lower envelope]
+\label{bin:envelope}
+For $k\ge1$, write $C,J$ for the clean designated count and row total at $Y_M$, and put $A=24k+2$. Every admissible corrupted history satisfies
+\begin{equation}
+ \left|\widehat q-q_{Y_M}\right|
+ \le 2\mathbf 1\{J>0\}\left|\frac CJ-q_{Y_M}\right|
+       +\min\left\{q_{Y_M},\frac{A}{J+2}\right\}.
+ \label{bin:pathloss}
+\end{equation}
+\end{lemma}
+\begin{proof}
+One changed symbol belongs to at most three counted triples. A replacement of one triple label changes the complete histogram in $\ell^1$ by at most two. Even with overlapping or adjacent edits, the histogram change is at most $6k=B$. Restriction to the selected binary row gives
+\[
+ |C'-C|+|(J'-C')-(J-C)|\le B.
+\]
+Endpoint protection is essential: the selected clean and corrupted row is the same. Set $n'=(C'-B)_+$, $D=J+2$, and $D'=J'+B+2$. Then
+\[
+ 0\le n'\le C,\quad D'\ge D,\quad C-n'\le2B,
+ \quad 0\le D'-D\le2B.
+\]
+Consequently
+\[
+ 0\le \frac CD-\frac{n'}{D'}
+ =\frac{C-n'}D+\frac{n'}{D'}\frac{D'-D}D
+ \le\frac{4B}{D}.
+\]
+For $J>0$, put $p=C/J$. Since $p-C/(J+2)=2p/(J+2)$,
+\[
+ 0\le p-\widehat q\le\min\{p,A/(J+2)\}.
+\]
+The map $x\mapsto\min\{x,c\}$ is $1$-Lipschitz on nonnegative reals. A triangle inequality therefore proves \eqref{bin:pathloss}. If $J=0$, then $C=n'=\widehat q=0$, and $A\ge2$ makes the second term exactly $q_{Y_M}$. Thus zero rows and attack-created false exits are covered without any purity assumption transferred from a different observation model.
+\end{proof}
+
+\subsection{The inherited occupation interfaces and their domains}
+We explicitly retain three predecessor inputs. These statements are analytic interfaces from the complete predecessor dossier; their earlier proofs are not replaced by a claim that terminal-selected row observations are independent.
+
+First, the original clean add-one theorem R011 gives, for every binary source, every initial pair law, every $\beta\in[0,1]$, and $M\ge64$,
+\begin{equation}
+ S_{\rm add}\le8192\sqrt{32}/\sqrt{M+1}.
+ \label{bin:cleanimport}
+\end{equation}
+Second, the universal terminal-occupation inequality for a four-state chain is
+\begin{equation}
+ \mathbb P(J<w)\le\min\{1,16w/(M+1)\},
+ \qquad w\in\{1,2,\ldots\},
+ \label{bin:universal}
+\end{equation}
+with arbitrary initial law and no mixing requirement. It implies
+\begin{align}
+ \mathbb E\frac1{J+2}&\le\frac{\sqrt{32}}{\sqrt{M+1}},\label{bin:reciprocal}\\
+ \mathbb E\min\{1,A/(J+2)\}&\le\Psi\left(\frac{16A}{M+1}\right),
+ \quad A>0,\label{bin:layer}
+\end{align}
+where $\Psi(x)=x[1+\log(1/x)]$ for $0<x<1$, $\Psi(x)=1$ for $x\ge1$, and $\Psi(0)=0$. Indeed, at layer height $v>0$, a nonempty event $J<A/v-2$ has integer threshold $\lceil A/v-2\rceil\le A/v$; integrating \eqref{bin:universal} proves \eqref{bin:layer}. The bound $\Psi(x)\le\sqrt{2x}$ gives \eqref{bin:reciprocal}. Since
+\[
+ \left|\frac CJ-\frac{C+1}{J+2}\right|
+ =\frac{|2C/J-1|}{J+2}\le\frac1{J+2}\quad(J>0),
+\]
+we obtain
+\begin{equation}
+ \mathbb E\left[\mathbf 1\{J>0\}|C/J-q_{Y_M}|\right]
+ \le(8192+1)\sqrt{32}/\sqrt{M+1}.
+ \label{bin:comparator}
+\end{equation}
+
+Third, the weighted occupation interfaces imported from BIF001, equation (3.4), and BAI003 version 2, equation (6.2), are precisely the following. For the fixed true weights $q=(a,b,e,t)$ and every $A>0$,
+\begin{align}
+ \mathbb E\min\{q_{Y_M},A/(J+2)\}
+ &\le4M^{-1/2}+\frac{16672A}{M}
+       \left[1+\log\left(1+\frac1{\sqrt\beta A}\right)\right]
+ \label{bin:fullsupport}
+\end{align}
+when $M\ge64$, $\beta M^2\ge1$, the stationary pair law has full support, and the all-state certificate holds. This is uniform over \emph{every} initial law. Its crossing weights are $b,e$, not unit caps. Its proof uses first diagonal hitting and weighted terminal occupations; it is not a global square-root-$\beta$ mixing estimate. The diagonal-start component bounds used in that proof hold at every suffix horizon $m\ge8$, even if $\beta m^2<1$.
+
+If $00$ is absorbing, with arbitrary remaining row probabilities and arbitrary initial law, then for every $M\ge8$ and $A>0$,
+\begin{equation}
+ \mathbb E\min\{q_{Y_M},A/(J+2)\}
+ \le\frac{256\max\{A,1\}}M+\frac{16}{M+2},
+ \qquad q=(0,b,e,t).
+ \label{bin:absorbing}
+\end{equation}
+There is no $\beta$ restriction in this interface. Symbol complementation covers absorbing $11$; it sends $q$ to $(t,e,b,a)$ and preserves the same fixed orientation. In particular, this is not a source-dependent branch of the algorithm. These are the occupation statements being imported, not their predecessor quantized-bank estimators or architecture-restricted lower bounds.
+
+\begin{proposition}[Binary robust upper bound]
+\label{bin:upperprop}
+The estimator above satisfies, uniformly over all sources, initial laws, and admissible attacks,
+\[
+ \mathbb E\,\operatorname{TV}(\widehat\theta,\theta_{Y_M})
+ \le\min\{1,2^{17}s+2^{19}F_2\}.
+\]
+\end{proposition}
+\begin{proof}
+Suppose first $k\ge1$, so $k\le A=24k+2\le26k$. For full support and $\beta\ge M^{-2}$, \eqref{bin:fullsupport} gives
+\[
+ \mathbb E\min\{q_{Y_M},A/(J+2)\}\le4s+433472F_2.
+\]
+For positive $\beta$ the non-full-support case is exhaustive as follows. Stationarity has the form $\Pi=(y,x,x,w)$ with $ya=xe$ and $wt=xb$. If $x>0$, the all-state inequalities
+\[
+ P^2(10,01)=ea\ge\beta x,\qquad P^2(01,10)=bt\ge\beta x
+\]
+force all four row parameters positive and hence $y,w>0$. If $x=0$, every supported diagonal is absorbing. Two such diagonals cannot both carry stationary mass under a positive all-state certificate. Thus non-full support is a singleton absorbing diagonal. Equation \eqref{bin:absorbing} then bounds the functional by $6672k/M\le6672F_2$, including starts at unsupported or transient states.
+
+Finally, if $0\le\beta<M^{-2}$, no support classification is needed. Now $e_*=1/M$, and \eqref{bin:layer} gives
+\[
+ \mathbb E\min\{q_{Y_M},A/(J+2)\}
+ \le\Psi(416k/M)\le416\frac{k}{M}[1+\log(1+M/k)].
+\]
+For the last inequality set $z=M/k\ge1$. At $z<416$ the right side exceeds one; at $z\ge416$ substitute the formula for $\Psi(416/z)$ directly. Equality $\beta=M^{-2}$ belongs to the full-support or absorbing strong case. Combining these bounds with \eqref{bin:pathloss} and \eqref{bin:comparator} proves the claim since
+\[
+ 2(8192+1)\sqrt{32}+4<2^{17},\qquad433472<2^{19}.
+\]
+At $k=0$, the clean branch and \eqref{bin:cleanimport} suffice; no singular logarithm is evaluated. Total variation is always at most one.
+\end{proof}
+
+The estimator is a finite rational count algorithm. It can read and retain the corrupted word, identify its final pair, scan the $M$ triples, and maintain two row counters. The output can be represented by a shared positive denominator and two integer numerators; no division, logarithm, or square root is required. All these integers have $O(\log(M+2))$ bits. This observation is not a neural-depth theorem, an attention-budget theorem, or an unknown-$k$ adaptation result.
+
+\section{Binary renewal words and the obstruction to naive erasure}
+\label{bin:obstruction}
+The lower bound requires accounting for the entire arrangement of the corrupted word. In the binary case, simply deleting rare exits does not erase the timing information carried by variable cycle lengths. The following exact obstruction explains why a different transport argument is needed.
+
+Let $S=01$ and $L=101$. Denote by $U_{r,\ell}$ the uniform distribution on words obtained by concatenating $r$ copies of $S$ and $\ell$ copies of $L$ in every possible order. Their common length is $t=2r+3\ell$. The code is prefix-free, so cycle order is uniquely recoverable, and every nonempty returned word ends in $01$.
+
+\begin{proposition}[An exact boundary obstruction and a biased cheap merge]
+\label{bin:obstructionprop}
+For $t=2r+6$, the optimal expected Hamming cost of transport from $U_{r,2}$ to $U_{r+3,0}$ is $t/3+1$. Moreover, the rule that uniformly chooses a consecutive pair of long cycles and replaces $L S^g L$ by $S^{g+3}$ has expected cost $3+2r/(\ell+1)$, but does not in general have marginal $U_{r+3,\ell-2}$.
+\end{proposition}
+\begin{proof}
+For $\ell=2$, write a uniformly sampled word as $S^{g_0}LS^{g_1}LS^{g_2}$. The vector $(g_0,g_1,g_2)$ is uniform over weak compositions of $r$. The target is the single word $S^{r+3}$. Outside $LS^{g_1}L$ the two words agree, and direct comparison inside it gives exactly $2g_1+3$ disagreements. Since $\mathbb E g_1=r/3$, every coupling has cost $2r/3+3=t/3+1$.
+
+For general $\ell$, the gap vector $(g_0,\ldots,g_\ell)$ is again a uniform weak composition of $r$. Choosing uniformly among the $\ell-1$ adjacent pairs in the ordered list of long cycles selects an intervening gap with mean $r/(\ell+1)$, proving the stated mean cost. If the output gap vector is $h=(h_0,\ldots,h_{\ell-2})$, the number of preimages obtained by merging at coordinate $i$ is $\binom{h_i-1}{2}$, interpreted as zero for $h_i<3$. Indeed, the three original gaps involved in that merge sum to $h_i-3$. Thus the output density relative to the uniform target is proportional to
+\[
+ D(h)=\sum_i\binom{h_i-1}{2},
+\]
+which is not constant. For instance, at $(r,\ell)=(1,3)$, the possible target gap vectors have total four, while $D(4,0)=3$ and $D(2,2)=0$. Cheap average cost alone therefore does not establish parameter-independent erasure.
+\end{proof}
+
+The obstruction is a boundary statement, not a disproof of interior constant-step transport. The stronger premise
+\begin{equation}
+ \begin{gathered}
+ \text{for each fixed }\eta>0\text{ there is }C_\eta<\infty
+ \text{ such that, if }r,\ell\ge\eta t,\ \ell\ge2,\\
+ W_1(U_{r,\ell},U_{r+3,\ell-2})\le C_\eta,
+ \qquad t=2r+3\ell,
+ \end{gathered}
+ \label{bin:unprovedT}
+\end{equation}
+remains unproved here. The metric is Hamming distance. It would be sufficient: taking $C_\eta\ge1$, setting $b=\lfloor k/(128C_\eta)\rfloor$, and quantizing $h=(\ell-(t\bmod2))/2$ down to a multiple of $b$ composes at most $b-1$ neighboring-count couplings. For $r,\ell\ge2\eta t$ and $t\ge2b/\eta$, all intermediate counts remain in the required interior. The composed mean distance is at most $C_\eta b$. Accepting its output only when its distance from the original word is at most $k$ enforces a strict budget and loses probability at most $1/128$. Conditional on eligibility and the quantized count, the ideal output has the common uniform target law. An independent-seed small-ball argument of the form proved below then gives order $(1+t/k)^{-1}$ reference loss. Summing over rare-entry suffixes yields the desired harmonic term; separate clean and corruption floors handle bounded $k$ and bounded logarithms. This is only a conditional reduction. The actual lower bound below uses a weaker, proved transport estimate and does not invoke \eqref{bin:unprovedT}.
+
+\section{A stationary binary witness with an all-state certificate}
+\label{bin:witness}
+For $\beta\le1/256$ set
+\[
+ a=\frac1{2M},\qquad e_*=\max\{\sqrt\beta,1/M\},\qquad
+ p\in[1/4,3/4].
+\]
+With pair states $W=00,A=01,B=10,C=11$, define the source by
+\begin{equation}
+ \bigl(\theta_W(1),\theta_A(1),\theta_B(1),\theta_C(1)\bigr)
+       =(a,p,1-e_*,e_*).
+ \label{bin:source}
+\end{equation}
+This is a modified witness, not an identification with a predecessor binary precision witness. Put
+\begin{equation}
+ x=\left(e_*/a+2+\frac p{1-e_*}\right)^{-1},\qquad
+ \Pi=x\left(e_*/a,1,1,\frac p{1-e_*}\right).
+ \label{bin:stationary}
+\end{equation}
+
+\begin{lemma}[Stationarity and minorization]
+\label{bin:certificate}
+The law \eqref{bin:stationary} is stationary and has $\Pi_W\ge1/4$. Its pair kernel obeys $P^2(u,v)\ge\beta\Pi(v)$ for every pair of states $u,v$.
+\end{lemma}
+\begin{proof}
+Direct balance gives the stationary equations: the crossing masses are equal, $\Pi_W a=\Pi_B e_*$, and $\Pi_C(1-e_*)=\Pi_Ap$. Normalization gives \eqref{bin:stationary}. Since $e_*/a\ge2$, $e_*\le1/16$, and $2+p/(1-e_*)\le2.8$, we have $\Pi_W\ge2/4.8>1/4$ and $x\le a/e_*$. The two-step matrix in the stated order is
+\[
+ P^2=\begin{pmatrix}
+ (1-a)^2&(1-a)a&a(1-p)&ap\\
+ (1-p)e_*&(1-p)(1-e_*)&p(1-e_*)&pe_*\\
+ e_*(1-a)&e_*a&(1-e_*)(1-p)&(1-e_*)p\\
+ e_*(1-e_*)&(1-e_*)^2&e_*(1-e_*)&e_*^2
+ \end{pmatrix}.
+\]
+Here $a\le1/128$, $\beta\le e_*^2$, and $\beta\le e_*/16$. For column $W$, every entry is at least $\beta$, using $(1-p)e_*\ge e_*/4$ and $e_*(1-e_*)\ge15e_*/16$, hence dominates $\beta\Pi_W$. In column $A$, the small entry $e_*a$ dominates $\beta a/e_*\ge\beta x$, while $(1-a)a\ge\beta a/e_*$ and the other entries are bounded below by fixed positive constants. For column $B$, the first-row entry is at least $a/4\ge\beta a/e_*$, the last-row entry is at least $\beta$, and the remaining entries have constant lower bounds. For column $C$, the first-row comparison is
+\[
+ ap\ge\frac{\beta pa}{e_*(1-e_*)}\ge\frac{\beta px}{1-e_*}=\beta\Pi_C,
+\]
+using $e_*(1-e_*)\ge\beta$. The second and third rows satisfy the same target comparison because $e_*,1-e_*\ge\beta x/(1-e_*)$; the last row uses $e_*^2\ge\beta\ge\beta\Pi_C$. This verifies the certificate even on states that an initialization might not visit.
+\end{proof}
+
+The active reference chain $R_p$ on $A,B,C$ has
+\[
+ R_p(A,B)=1-p,\quad R_p(A,C)=p,\quad R_p(B,A)=R_p(C,B)=1.
+\]
+Its return cycles to $A$ emit precisely $S$ and $L$. If $\nu_{p,t}$ denotes its law of $t$ emitted bits from $A$, the cycle-count-conditioned law is $U_{r,\ell}$, since every ordering has probability $(1-p)^r p^\ell$.
+
+Initialize the actual source at $\Pi$. Let $E_j$ consist of a prefix of $N-j$ zeros, followed by the first $1$, and then $j-1$ reference transitions. These events, over the different $j$, are disjoint. Relative to the reference law of the suffix, each actual word has probability multiplier
+\begin{equation}
+ \Pi_W(1-a)^{M-j}a(1-e_*)^{N_B+N_C},
+ \label{bin:density}
+\end{equation}
+where $N_B,N_C$ count reference departures. For $j\le1/(4e_*)$, this multiplier is at least $1/(32M)$: use $\Pi_W\ge1/4$, $(1-a)^M\ge1/2$, $a=1/(2M)$, and $(1-e_*)^j\ge1-je_*\ge3/4$. This is pointwise path domination. The probabilities of $E_j$ can depend on $p$; we will not declare a prior uniform after conditioning on $E_j$. At terminal $A$ the true actual prediction target is Bernoulli$(p)$.
+
+\section{Entropy transport to a public canonical bridge}
+\label{bin:transport}
+We now prove the weaker transport estimate that is sufficient for the full minimax rate. For probability measures on a finite bit cube, $W_1$ denotes minimum expected Hamming distance over all couplings.
+
+\begin{lemma}[Uniform coupling, concentration, and entropy transport]
+\label{bin:entropy}
+Let $p,q\in[1/8,7/8]$ and $t\ge1$. With $L_0=326$, every Hamming-$1$-Lipschitz function $f$ satisfies
+\begin{equation}
+ \log\mathbb E_{\nu_{p,t}}
+       \exp\{\lambda(f-\mathbb E_{\nu_{p,t}}f)\}
+       \le tL_0^2\lambda^2/8.
+ \label{bin:mgf}
+\end{equation}
+Consequently, for $\mu\ll\nu_{p,t}$,
+\begin{align}
+ W_1(\mu,\nu_{p,t})&\le L_0\sqrt{t\,\operatorname{KL}(\mu\Vert\nu_{p,t})/2},
+ \label{bin:transportentropy}\\
+ W_1(\nu_{p,t},\nu_{q,t})&\le L_0t|p-q|.
+ \label{bin:transportparameter}
+\end{align}
+\end{lemma}
+\begin{proof}
+The $A$-column of $R_p^5$ is
+\[
+ \bigl(2p(1-p),(1-p)^2,p\bigr),
+\]
+whose entries are at least $1/64$. Two chains with the same parameter and arbitrary initial states can therefore couple at five-step boundaries using this common atom. Conditional bridges fill in each block with the correct marginal law; after meeting, use the same transitions. The expected number of emitted-bit disagreements, also for a truncated final block, is at most
+\[
+ 5\sum_{r\ge0}(63/64)^r=320.
+\]
+Reveal the transitions one at a time in the Doob martingale of $f$. Two possible current transitions change at most one current bit, and their conditional tails can be coupled with expected cost at most $320$. Thus the conditional range of an increment is at most $321\le L_0$. Conditional Hoeffding's lemma followed by iteration gives \eqref{bin:mgf}. If $f$ is initially defined only on the path support, a Hamming-Lipschitz extension to the cube supplies the same conclusion.
+
+For $\lambda>0$, the finite entropy inequality is
+\[
+ \mathbb E_\mu f-\mathbb E_\nu f
+ \le\frac{\operatorname{KL}(\mu\Vert\nu)}\lambda
+       +\frac{tL_0^2\lambda}{8},\qquad\nu=\nu_{p,t}.
+\]
+To check it directly, set
+\[
+ Q(x)=\frac{\nu(x)e^{\lambda f(x)}}{\mathbb E_\nu e^{\lambda f}}.
+\]
+Use nonnegativity of $\operatorname{KL}(\mu\Vert Q)$ and then \eqref{bin:mgf}. Optimizing in $\lambda$ gives $L_0\sqrt{t\operatorname{KL}/2}$, including the zero-entropy case by a limit. Finite Kantorovich--Rubinstein linear-programming duality identifies $W_1$ with the supremum of $\mathbb E_\mu f-\mathbb E_\nu f$ over Hamming-$1$-Lipschitz $f$, proving \eqref{bin:transportentropy}. The finite metric formulation permits zero-probability ambient words through the same extension.
+
+Finally, interpolate from the $p$ law to the $q$ law by changing one transition kernel at a time, with a common preceding segment and a common-$q$ tail. The changed transition disagrees with probability at most $|p-q|$. Conditional on that disagreement, the current bit and coupled continuation cost at most $321\le L_0$. Summing the $t$ hybrid comparisons proves \eqref{bin:transportparameter}.
+\end{proof}
+
+\begin{lemma}[Microcanonical-to-canonical bridge bound]
+\label{bin:bridge}
+Suppose $t=2r+3\ell\ge5$, $m=r+\ell$, and $\widehat p=\ell/m\in[1/8,7/8]$. For any $q\in[1/8,7/8]$, let $\nu^A_{q,t}$ be $\nu_{q,t}$ conditioned on terminal pair $A$. Then
+\begin{equation}
+ W_1(U_{r,\ell},\nu^A_{q,t})
+ \le1024\sqrt{t\log(t+1)}+326t|\widehat p-q|.
+ \label{bin:bridgebound}
+\end{equation}
+Both endpoint measures in this transport have final two bits $01$.
+\end{lemma}
+\begin{proof}
+The event of exactly these cycle counts and a return at time $t$ has $\nu_{\widehat p,t}$-probability
+\[
+ \binom m\ell\widehat p^\ell(1-\widehat p)^r\ge\frac1{m+1}\ge\frac1{t+1}.
+\]
+The equality follows from prefix-free decoding; the first inequality holds because $\ell$ is a mode of Binomial$(m,\ell/m)$ and the distribution has $m+1$ possible values. Conditioning on that event is exactly $U_{r,\ell}$, whence
+\[
+ \operatorname{KL}(U_{r,\ell}\Vert\nu_{\widehat p,t})\le\log(t+1).
+\]
+Likewise $R_q^5(u,A)\ge1/64$ gives terminal-$A$ probability at least $1/64$ for every $t\ge5$, so
+\[
+ \operatorname{KL}(\nu^A_{q,t}\Vert\nu_{q,t})\le\log64.
+\]
+Apply \eqref{bin:transportentropy} to these two conditionings, \eqref{bin:transportparameter} to the intervening parameters, and the triangle inequality and symmetry of $W_1$. The result is
+\[
+ L_0\sqrt{t/2}\bigl(\sqrt{\log(t+1)}+\sqrt{\log64}\bigr)
+      +L_0t|\widehat p-q|.
+\]
+Since $326(1+\sqrt6)/\sqrt2<1024$, this is bounded by \eqref{bin:bridgebound}. Unconditioned intermediate measures are used only in this metric triangle inequality; they are not possible final corrupted outputs.
+\end{proof}
+
+\section{A single strict-budget binary attack and its information bound}
+\label{bin:attack}
+Fix $k\ge1$ and set $c_E=2^{-44}$. For each $t\ge4096$, partition $[1/8,7/8]$ into
+\[
+ n_t=\max\{1,\lceil3\cdot2^{18}t/k\rceil\}
+\]
+equal subintervals. The resulting rational grid has spacing at most $\Delta_t=k/(2^{20}t)$ and at most $2+2^{20}t/k$ points. Round $\widehat p$ to the nearest grid point $q$, breaking ties deterministically. For
+\begin{equation}
+ 4096\le t\le c_E k^2/\log(k+2),
+ \label{bin:entropycutoff}
+\end{equation}
+we have $t\le k^2$ and $\log(t+1)\le2\log(k+2)$. Hence \eqref{bin:bridgebound} is at most
+\begin{equation}
+ \left(1024\sqrt{2c_E}+\frac{326}{2^{20}}\right)k
+       <k/1024.
+ \label{bin:costsmall}
+\end{equation}
+
+For every eligible public count pair $(r,\ell)$, choose a minimum-cost coupling between $U_{r,\ell}$ and $\nu^A_{q,t}$. This is a finite transport problem with rational marginal probabilities; a rational optimal vertex exists. A fixed lexicographic rule can select one. The table depends on $t,k,r,\ell,q$, never on the unknown parameter $p$.
+
+The attack is defined on every binary word of length $N=M+2$. If the word has at least two initial zeros, then a first $1$, and thereafter follows the reference transitions and ends in pair $A$, let $t$ be the number of transitions after that first $1$. Uniquely decode its cycle counts. If \eqref{bin:entropycutoff} holds and $\widehat p\in[1/8,7/8]$, sample a candidate $Y$ through the chosen coupling conditional on the observed suffix $X$. Replace the suffix by $Y$ only when $d_H(X,Y)\le k$; otherwise leave the entire word unchanged. On all other input words, also use identity corruption. This is one source-independent offline randomized kernel. It preserves the zero prefix, the first $1$, and the exact final pair. All changed positions are among the first $M$, and the budget holds on every realization, not only in expectation. By \eqref{bin:costsmall} and Markov's inequality, truncation failure on any eligible microcanonical input class is at most $1/1024$.
+
+\begin{lemma}[Independent-seed small-ball lower bound]
+\label{bin:smallball}
+Let $p$ have the single uniform prior on $I=[1/4,3/4]$. For every fixed $t$ satisfying \eqref{bin:entropycutoff}, every possibly randomized predictor of the complete corrupted word has reference loss, restricted to successful terminal-$A$ paths, at least
+\begin{equation}
+ \frac{2^{-38}}{1+t/k}.
+ \label{bin:referencelower}
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $p\in I$, the $A$-column of $R_p^5$ is bounded below by $1/16$, so the reference terminal-$A$ probability is at least $1/16$ for $t\ge5$. On a return at time $t$, the number $m$ of complete cycles lies between $\lceil t/3\rceil$ and $\lfloor t/2\rfloor$. Before imposing the return event, the successive cycle choices are IID Bernoulli$(p)$. For each fixed possible $m$, Hoeffding's inequality bounds the chance that its first $m$ choices have empirical fraction outside $[1/8,7/8]$ by $2e^{-m/32}$. A union over at most $t$ deterministic values of $m$ gives a bound $2t e^{-t/96}\le1/128$ for $t\ge4096$; the expression is decreasing on this range. Thus eligible endpoint-$A$ mass is at least $1/32$, uniformly in $p$. This argument does not condition the cycle choices into an IID sample at a stopping time. Removing truncation failures leaves success probability at least $1/32-1/1024\ge1/64$.
+
+Consider an auxiliary untruncated observation. On eligible count classes use the sampled bridge $Y$ without the budget test. On all other paths output a fixed public length-$t$ returned word ending in $01$. Such a word exists for every $t\ge2$, since every integer $t\ge2$ is a nonnegative combination of two and three. Prepend the public prefix appropriate to this fixed $t$. The auxiliary observation factors through the selected grid point, or one additional bad label, followed by a channel independent of $p$. Its number of labels is at most
+\begin{equation}
+ D_t=3+2^{20}t/k\le2^{22}(1+t/k).
+ \label{bin:labels}
+\end{equation}
+It is the label count, not the number of possible output words, that is finite here.
+
+For precision about the randomization, first draw the original counts and eligibility under their $p$-dependent law. Then generate the bridge for the selected label using a uniform seed $U$ independent of $p$. Finally, reverse-sample the original suffix from the selected coupling conditional on its counts and this bridge. That reverse disintegration depends on the counts and the coupling, but not on $p$, because the microcanonical law is uniform. The bad label uses the fixed word. This construction reproduces the original joint experiment and its budget-success event. For ineligible counts, the original conditional path can be sampled separately; no agreement is claimed on that branch.
+
+Fix $U$ and the predictor's independent randomization. There are now at most $D_t$ candidate predicted probabilities of symbol $1$, one for each possible auxiliary label. With
+\[
+ \rho=\frac1{512D_t},
+\]
+the union of their radius-$\rho$ neighborhoods has uniform-prior mass at most $2D_t\rho/|I|=1/128$. This bound does not depend on how a parameter-dependent stochastic encoder chooses its label. The prior remains independent of $U$ before that selection. Subtract this neighborhood probability from success mass at least $1/64$. With probability at least $1/128$, the actual and auxiliary observations agree, their true endpoint is $A$, and the prediction error is at least $\rho$. Averaging the fixed seeds yields loss at least
+\[
+ \frac1{65536D_t}\ge\frac{2^{-38}}{1+t/k}.
+\]
+The constant failure probability has been subtracted from a probability bound before multiplying by $\rho$; subtracting it directly from an order-$D_t^{-1}$ risk bound would be invalid. The target on the retained event is the true Bernoulli$(p)$ row, and no posterior after terminal or count conditioning has been called uniform.
+\end{proof}
+
+For the actual stationary witness, put
+\begin{equation}
+ J_* =\left\lfloor\min\left\{\frac1{8e_*},
+                      \frac{2^{-44}k^2}{\log(k+2)}\right\}\right\rfloor,
+ \qquad
+ T=\frac1M\sum_{t=4096}^{J_*}\frac1{1+t/k},
+ \label{bin:sumdefinition}
+\end{equation}
+with an empty sum defined as zero. If $4096\le t\le J_*$ and $j=t+1$, then $j\le1/(4e_*)$ because $e_*\le1/16$, and $j\le M/8+1\le M/4$. The recognizable zero prefix is therefore present, and the density domination \eqref{bin:density} applies. Use the same prior, actual source, stationary initialization, and attack kernel for every disjoint $E_j$. Summing \eqref{bin:referencelower} and discarding all other nonnegative losses gives
+\begin{equation}
+ R_{\rm stat}\ge2^{-43}T.
+ \label{bin:sumbound}
+\end{equation}
+The source supremum is not moved inside a suffix sum. Pointwise domination justifies the common-prior integration even though the rare-entry event probabilities depend on the source parameter.
+
+\section{Exact scalar completion and the binary minimax lower bound}
+\label{bin:completion}
+The transport cutoff is genuine. It is removed from the final profile by a finite scalar inequality, rather than by extending the transport argument to longer suffixes.
+
+\begin{lemma}[Completion with floors and empty sums]
+\label{bin:scalar}
+Let $M\ge64$, $1\le k\le M$, $e_*\ge1/M$, $c>0$, $C\ge1$, and let $j_0$ be a positive integer. Set
+\[
+ \epsilon=k/M,\quad s=M^{-1/2},\quad
+ U=\min\{1/(Ce_*),ck^2/\log(k+2)\},\quad
+ T_0=M^{-1}\sum_{j=j_0}^{\lfloor U\rfloor}(1+j/k)^{-1},
+\]
+where an empty sum is zero. Then
+\begin{equation}
+ \epsilon\left[1+\log\left(1+\frac1{e_*k}\right)\right]
+ \le D(c,C)[1+\log(1+j_0)]\max\{s,\epsilon,T_0\},
+ \label{bin:scalarbound}
+\end{equation}
+where
+\[
+ D(c,C)=7+\log\max\{1,C\}+6\log\max\{1,2/c\}.
+\]
+In particular, for $c=2^{-44}$, $C=8$, and $j_0=4096$, the coefficient in \eqref{bin:scalarbound} is less than $1830$.
+\end{lemma}
+\begin{proof}
+Put $A_0=1/(e_*k)$, $B_0=ck/\log(k+2)$, and
+$L=\log(1+\min\{A_0/C,B_0\})$. We first prove
+\begin{equation}
+ \epsilon[1+\log(1+A_0)]
+ \le D(c,C)\max\{s,\epsilon,\epsilon L\}.
+ \label{bin:scalarintermediate}
+\end{equation}
+If $k\le M^{1/4}$, use $A_0\le M/k\le M$ to obtain
+\[
+ \frac{\epsilon[1+\log(1+A_0)]}{s}
+ \le M^{-1/4}[1+\log(1+M)]
+ \le1+\log2+4/\exp(1)<4.
+\]
+Here the maximum of $x^{-1/4}\log x$ on $x\ge1$ is $4/\exp(1)$, and $D(c,C)\ge7$.
+
+If $k>M^{1/4}$, then $A_0\le M/k<k^3$. Also
+\[
+ \log(k+2)\le2\sqrt k\quad(k\ge1),
+\]
+because the difference is positive at one and its derivative $1/\sqrt k-1/(k+2)$ is positive. Let $q_0=\max\{1,2/c\}$. It follows that $1+\sqrt k\le q_0(1+B_0)$, and hence
+\[
+ \log(1+A_0)\le3\log(1+k)
+ \le6\log(1+\sqrt k)
+ \le6\log q_0+6\log(1+B_0).
+\]
+If $A_0/C\le B_0$, then $1+A_0\le\max\{1,C\}(1+A_0/C)$, so the left side of \eqref{bin:scalarintermediate} is at most
+\[
+ [2+\log\max\{1,C\}]\max\{\epsilon,\epsilon L\}.
+\]
+If $A_0/C>B_0$, the preceding logarithmic bound instead gives
+$[7+6\log q_0]\max\{\epsilon,\epsilon L\}$. Both coefficients are at most $D(c,C)$, proving \eqref{bin:scalarintermediate} throughout the finite domain.
+
+Now $L=\log(1+U/k)$. If $J=\lfloor U\rfloor\ge j_0$, monotonicity gives
+\[
+ \frac{T_0}{\epsilon}
+ =\sum_{j=j_0}^{J}\frac1{k+j}
+ \ge\int_{j_0}^{J+1}\frac{dx}{k+x}
+ \ge L-\log(1+j_0/k).
+\]
+If $J<j_0$, then $U<j_0$ and directly $L\le\log(1+j_0/k)$. Thus in both cases
+\[
+ \epsilon L\le T_0+\epsilon\log(1+j_0)
+ \le[1+\log(1+j_0)]\max\{\epsilon,T_0\}.
+\]
+Combining with \eqref{bin:scalarintermediate} proves \eqref{bin:scalarbound}. At the specified constants, its coefficient is
+\[
+ [7+273\log2][1+\log4097]<1830.
+\]
+No requirement that the sum be nonempty, that $k$ diverge, or that the logarithm be large was used.
+\end{proof}
+
+For completeness, the separate lower floors used in the completion are full-history, stationary IID witnesses. They have all four rows equal to Bernoulli$(p)$ and stationary product pair law, so $P^2$ has every row exactly $\Pi$ and satisfies every certificate $\beta\in[0,1]$.
+
+For the clean floor take identity corruption and
+\[
+ p_\pm=1/2\pm\frac1{16\sqrt{N}},\qquad N=M+2.
+\]
+The elementary Bernoulli bound $\operatorname{KL}(p\Vert q)\le(p-q)^2/[q(1-q)]$ gives full-word KL at most $5/64$, and Pinsker gives total variation below $1/4$. Nearest-target testing, or the triangle inequality integrated against the common part of the two observation laws, implies the conservative bound
+\begin{equation}
+ R_{\rm stat}\ge\frac1{256\sqrt M}.
+ \label{bin:cleanfloor}
+\end{equation}
+The identity attack is admissible for every public budget $k$.
+
+For the corruption floor take the uniform prior on $[1/4,3/4]$ and one common kernel. If there are $n$ ones among the first $M$ IID bits, retain
+\[
+ r=(k+1)\left\lfloor\frac n{k+1}\right\rfloor
+\]
+ones chosen uniformly among those $n$, changing the rest to zero and preserving the final two bits $V$. The edit count is at most $k$. Conditional on $n$, each specified output arrangement of weight $r$ has probability
+\[
+ \frac{\binom{M-r}{n-r}}{\binom Mn\binom nr}
+       =\frac1{\binom Mr}.
+\]
+Thus the entire output factors through $(r,V)$, at most
+$D=4(\lfloor M/(k+1)\rfloor+1)$ labels, followed by a parameter-independent channel. For a uniform prior of interval length $\ell_0$, any such $D$-message experiment has absolute-error Bayes risk at least $\ell_0/(4D)$. To see this, fix independent channel and decoder randomization; the union of radius-$v$ intervals about the $D$ possible predictions has prior mass at most $2Dv/\ell_0$. Integrate the complementary probability for $0\le v\le\ell_0/(2D)$ and then average the seeds. With $\ell_0=1/2$ and $b=k+1$ this proves
+\begin{equation}
+ R_{\rm stat}\ge\frac1{32(1+M/b)}\ge\frac{k}{64M},
+ \qquad1\le k\le M.
+ \label{bin:corruptionfloor}
+\end{equation}
+The last two bits were included in the label, not conditioned away.
+
+\begin{proposition}[Binary stationary lower bound]
+\label{bin:lowerprop}
+For every $M\ge64$, $0\le k\le M$, and $\beta\in[0,1]$,
+\[
+ R_{\rm stat}\ge2^{-54}\max\{M^{-1/2},F_2\}.
+\]
+\end{proposition}
+\begin{proof}
+For $\beta\le1/256$ and $k\ge1$, \eqref{bin:sumbound}, \eqref{bin:cleanfloor}, and \eqref{bin:corruptionfloor} are three separate admissible minimax lower bounds. Their maximum gives
+\[
+ R_{\rm stat}\ge2^{-43}\max\{s,k/M,T\}.
+\]
+Lemma~\ref{bin:scalar} with the exact sum \eqref{bin:sumdefinition} gives
+$\max\{s,F_2\}\le1830\max\{s,k/M,T\}$. Since $1830<2048=2^{11}$, the claimed constant follows. This takes a maximum of different witness bounds, not a sum of their risks.
+
+If $\beta>1/256$, use $\log(1+x)\le x$ and $e_*>1/16$ to obtain
+\[
+ F_2\le k/M+16/M\le k/M+2s.
+\]
+The two IID floors then imply $\max\{s,F_2\}\le576R_{\rm stat}$, more than enough. At $k=0$ use only \eqref{bin:cleanfloor} and define $F_2=0$.
+\end{proof}
+
+Stationary sources are a subset of sources with arbitrary initial law. Combining this lower bound with Proposition~\ref{bin:upperprop} proves the binary part of the main rate. The attack is not asserted efficient or causal, its seed and edit mask are hidden, and it never edits the terminal pair. The result does not establish the stronger interior transport premise \eqref{bin:unprovedT}. The entropy bridge estimate and its cutoff are compatible with Proposition~\ref{bin:obstructionprop}: they control interior empirical parameters, rather than all neighboring count classes.

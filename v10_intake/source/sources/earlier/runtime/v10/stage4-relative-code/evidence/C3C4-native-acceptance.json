@@ -1,0 +1,154 @@
+{
+  "name": "C3_C4_math",
+  "fact_id": "e3080f40f4607948",
+  "evidence_id": "ad7e508eb8e186ae20dcce4f59c12d7b47320100ee5098ec9f81fd68a8d05e8c",
+  "proof_sha256": "2fc89f6bca30288d766fcdb71b26875943f2d6efb5fc9a181b401dba1f7e243a",
+  "fact_bytes_match_CAS": true,
+  "fixed_proof_contained": true,
+  "obligation": {
+    "obligation_id": "db94b7040a4dc4e7d80329a02169b80039a17e1130f74893edd2c85bd848cab8",
+    "contract_id": "38d15641fecff6dbee957b6e036c052ecb7f07e6354623e800f7a126cf5270ef",
+    "exact_statement": "C3 and mathematical C4 under current D1-D8: re-establish the exact finite adapter/bit/compiler/program premises required for the fixed MIX63+output41 and JOINT18+output41 programs; prove all closed-box guards and actual erasure, and every explicit D6 Bstar coordinate including one-shot batch resident banks, masks/metadata, words/addresses, dense zeros/holds, online work/storage/peak, guarded3(b+1) output and offline generation. For N3–5 no frontend/cut or fictitious observations; actual input and uniform guarded writes fit Bstar(6,b,d). With newly admitted C1/C2, prove on d>=32,N=2^(2d+74),Q=2^(2d),u=2^(-d-16) one SAME Phi_* and MIX-selected SAME t_* give JOINT R_av<u/64,R_00<1/64 versus MIX>=3u/64,>=3/64, hence gaps>u/32,>1/32. Carry total conditional displayed upper Theta(eta), not O(eta^2). Prove and explicitly price the alternative gain j=C, locked-count packing when8ceil(log2(M+1))<=19min(d,h), including d>=195, and precomputed-output packing when b<=19min(d,h), including b=2d. Preserve exact three-primary claim mapping and scope: common upper envelope is not equal expenditure, optimized architecture efficiency or arbitrary-encoder lower. This component does not itself establish later independent review or administrative completion.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 fix the stationary source, full actual finite encoders, integer error cut, precise protected/public information and cost model.",
+        "Source-independent predictor family is not supplied unknown u,t. Same-source and same-map witness quantifiers are as C1-C3, not universal per-source dominance.",
+        "All input acquisition, binding, features, masks, finite arithmetic, copies, clears, holds, code, generation and output are charged; no clean-data bypass.",
+        "The common budget is the principal extracted-query one-shot hybrid model, not padded all-phase, streaming, flattened or unit-cost RAM.",
+        "Source files and prior discussion PASS are provenance only. No new proof depends on old Dot absolute noise laws or claims optimized architecture advantage."
+      ],
+      "quantifiers": [
+        {
+          "variable": "joint_predictor_family",
+          "kind": "EXISTS",
+          "domain": "one executable D4 family depending only on observed history and public N,b,d",
+          "depends_on": []
+        },
+        {
+          "variable": "C1_parameters_and_maps",
+          "kind": "FORALL",
+          "domain": "the full C1 domain with unknown u,t and all D3 maps",
+          "depends_on": []
+        },
+        {
+          "variable": "C2_public_tuple",
+          "kind": "FORALL",
+          "domain": "the restricted C2 domain",
+          "depends_on": []
+        },
+        {
+          "variable": "Phi_star",
+          "kind": "EXISTS",
+          "domain": "one deterministic globally admissible public map independent of t and the decoder, for the C2 tuple",
+          "depends_on": []
+        },
+        {
+          "variable": "post_cut_decoder",
+          "kind": "FORALL",
+          "domain": "all common source-independent randomized decoders of the fixed FULL19 cut",
+          "depends_on": []
+        },
+        {
+          "variable": "witness_t",
+          "kind": "EXISTS",
+          "domain": "one of1/4,3/4 witnessing both conditional and u-weighted average lower for that decoder",
+          "depends_on": []
+        },
+        {
+          "variable": "C3_d",
+          "kind": "FORALL",
+          "domain": "integers>=32 with the exact C3 tuple and the same witness/map",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "C1: N>=3,b>=1,Q=2^b,d>=6,eta=2^-d,0<u<1/4,1/4<=t<=3/4,all D3 maps. C2: u=eta/65536,N power2,M*u^2>=2^40,t in{1/4,3/4}. C3 comparison: d>=32,N=2^(2d+74),b=2d,u=2^(-d-16). D6 Bstar forN>=6,b>=1,d>=6.",
+      "definitions_hash": "1648c98212f71be946dfc8b39ab54497fbad41649bbe3fedc03296c401b8c0ca"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "ad7e508eb8e186ae20dcce4f59c12d7b47320100ee5098ec9f81fd68a8d05e8c"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": {
+    "artifact_id": "ad7e508eb8e186ae20dcce4f59c12d7b47320100ee5098ec9f81fd68a8d05e8c",
+    "content_hash": "2b4ea9acf6a505b57bd0c4b217c0183af7d6f15c99af70391b9beb27783aa750",
+    "producer": "fact_submit:a866f38118db8e33",
+    "contract_id": "38d15641fecff6dbee957b6e036c052ecb7f07e6354623e800f7a126cf5270ef",
+    "evidence_kind": "LLM_CHECKED_PROOF",
+    "exact_claim": "C3 and mathematical C4 under current D1-D8: re-establish the exact finite adapter/bit/compiler/program premises required for the fixed MIX63+output41 and JOINT18+output41 programs; prove all closed-box guards and actual erasure, and every explicit D6 Bstar coordinate including one-shot batch resident banks, masks/metadata, words/addresses, dense zeros/holds, online work/storage/peak, guarded3(b+1) output and offline generation. For N3–5 no frontend/cut or fictitious observations; actual input and uniform guarded writes fit Bstar(6,b,d). With newly admitted C1/C2, prove on d>=32,N=2^(2d+74),Q=2^(2d),u=2^(-d-16) one SAME Phi_* and MIX-selected SAME t_* give JOINT R_av<u/64,R_00<1/64 versus MIX>=3u/64,>=3/64, hence gaps>u/32,>1/32. Carry total conditional displayed upper Theta(eta), not O(eta^2). Prove and explicitly price the alternative gain j=C, locked-count packing when8ceil(log2(M+1))<=19min(d,h), including d>=195, and precomputed-output packing when b<=19min(d,h), including b=2d. Preserve exact three-primary claim mapping and scope: common upper envelope is not equal expenditure, optimized architecture efficiency or arbitrary-encoder lower. This component does not itself establish later independent review or administrative completion.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 fix the stationary source, full actual finite encoders, integer error cut, precise protected/public information and cost model.",
+        "Source-independent predictor family is not supplied unknown u,t. Same-source and same-map witness quantifiers are as C1-C3, not universal per-source dominance.",
+        "All input acquisition, binding, features, masks, finite arithmetic, copies, clears, holds, code, generation and output are charged; no clean-data bypass.",
+        "The common budget is the principal extracted-query one-shot hybrid model, not padded all-phase, streaming, flattened or unit-cost RAM.",
+        "Source files and prior discussion PASS are provenance only. No new proof depends on old Dot absolute noise laws or claims optimized architecture advantage."
+      ],
+      "quantifiers": [
+        {
+          "variable": "joint_predictor_family",
+          "kind": "EXISTS",
+          "domain": "one executable D4 family depending only on observed history and public N,b,d",
+          "depends_on": []
+        },
+        {
+          "variable": "C1_parameters_and_maps",
+          "kind": "FORALL",
+          "domain": "the full C1 domain with unknown u,t and all D3 maps",
+          "depends_on": []
+        },
+        {
+          "variable": "C2_public_tuple",
+          "kind": "FORALL",
+          "domain": "the restricted C2 domain",
+          "depends_on": []
+        },
+        {
+          "variable": "Phi_star",
+          "kind": "EXISTS",
+          "domain": "one deterministic globally admissible public map independent of t and the decoder, for the C2 tuple",
+          "depends_on": []
+        },
+        {
+          "variable": "post_cut_decoder",
+          "kind": "FORALL",
+          "domain": "all common source-independent randomized decoders of the fixed FULL19 cut",
+          "depends_on": []
+        },
+        {
+          "variable": "witness_t",
+          "kind": "EXISTS",
+          "domain": "one of1/4,3/4 witnessing both conditional and u-weighted average lower for that decoder",
+          "depends_on": []
+        },
+        {
+          "variable": "C3_d",
+          "kind": "FORALL",
+          "domain": "integers>=32 with the exact C3 tuple and the same witness/map",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "C1: N>=3,b>=1,Q=2^b,d>=6,eta=2^-d,0<u<1/4,1/4<=t<=3/4,all D3 maps. C2: u=eta/65536,N power2,M*u^2>=2^40,t in{1/4,3/4}. C3 comparison: d>=32,N=2^(2d+74),b=2d,u=2^(-d-16). D6 Bstar forN>=6,b>=1,d>=6.",
+      "definitions_hash": "1648c98212f71be946dfc8b39ab54497fbad41649bbe3fedc03296c401b8c0ca"
+    },
+    "input_hashes": [
+      "0904b8be7898b9723a11c8c87b11231fb48a63e05661a11d94918937e0611ba8",
+      "2b4ea9acf6a505b57bd0c4b217c0183af7d6f15c99af70391b9beb27783aa750",
+      "5038dd6457fb762e181e606ab9131e389c8831fe3919511dee51b8a69edb7e25"
+    ],
+    "environment_hash": "433d35a8bab1cec21f86c5a0906295d1877e4c4459df4dbe123ae2bd4bcd3280",
+    "checker_id": "fact_submit",
+    "checker_version": "1",
+    "checker_result": "PASS",
+    "created_at": "2026-10-26T01:50:35Z",
+    "validity": "VALID"
+  },
+  "root_status": "OPEN",
+  "new_stage_acceptance": null
+}

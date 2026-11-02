@@ -1,0 +1,70 @@
+{
+  "triangular_power_envelope": {
+    "pass": true,
+    "max_ratio": 1.0,
+    "sizes": [
+      2,
+      3,
+      8,
+      25,
+      80
+    ],
+    "depths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "squared_log_integral": {
+    "pass": true,
+    "powers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "weight_change_recurrence": {
+    "pass": true,
+    "trials": 300,
+    "max_ratio": 0.08021751941590644
+  },
+  "early_token_uniform_inverse_n_counterexample": [
+    {
+      "n": 10,
+      "n_times_influence": 2.9289682539682538
+    },
+    {
+      "n": 100,
+      "n_times_influence": 5.187377517639621
+    },
+    {
+      "n": 1000,
+      "n_times_influence": 7.485470860550345
+    },
+    {
+      "n": 10000,
+      "n_times_influence": 9.787606036044382
+    }
+  ],
+  "rare_suffix_late_positions": {
+    "pass": true
+  },
+  "public_dense_mask_v2": {
+    "pass": true,
+    "density": 0.3333333333333333,
+    "trials": 200,
+    "max_ratio": 0.023821630563393172
+  },
+  "status": "All finite diagnostics passed; candidate proof still requires independent review."
+}

@@ -1,0 +1,9 @@
+{
+  "verification_report": {
+    "summary": "Reviewed the complete inline C1 proof v1 dated 2026-10-25, with declared artifact SHA256 36260d168f17b9da129179070a70c5e87019a45d98c60f1c343a9e1c5e60287b, against the statement and frozen contract 22e80d3d620c36cfc0bbd297101a5efabe634d7fd696b4cae200963af52af02a. Sequential verification found no mathematical errors or unresolved gaps. The two causal copying heads, four statistical heads with query-independent values, initial-pair and actual-endpoint corrections, recovered normalizers, 35eta+6zeta coordinate bound, smoothed-TV bound, finite log/exp/softmax evaluator, closed-grid bit extraction, signed arithmetic, and exact-simplex output are justified. The resource bounds distinguish alphabetic channels from neural width and charge parameters, masks, holds, arithmetic, memory, and operations under the explicitly stated attention-evaluator convention. The theta-independent schedule and fixed-law max-context almost-sure consistency imply the stated actual-terminal expected and fixed-terminal-state conditional expected TV conclusions. No admitted-fact or external-paper dependency is used; provenance hashes and ancillary diagnostics are not mathematical premises. Scope is C1 and its deterministic prerequisite, without C2-C4 closure, uniform sampling rates over all positive laws, log-loss, or superiority claims. Server-internal or cryptographic attestation is not available or claimed. This is one cold-context LLM admission review, not formal certification; prover-model identity was not independently established, so cross-model independence is not claimed. This is an LLM review, not formal verification or external peer review; cross-model independence is not established.",
+    "critical_errors": [],
+    "gaps": []
+  },
+  "verdict": "correct",
+  "repair_hints": ""
+}

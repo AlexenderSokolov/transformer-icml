@@ -1,0 +1,36 @@
+{
+  "unit": "UI001",
+  "status": "AUTHOR_CANDIDATE_INDEPENDENT_REVIEW_PENDING",
+  "sources": [
+    {
+      "path": "bounded_attention/BA001_bounded_local_attention_lower_v1.md",
+      "sha256": "fb589a775220737124a42e96a115eb3471ccbb84933edc2fd488e0d5986f1569"
+    },
+    {
+      "path": "intake/BA001_acceptance.json",
+      "sha256": "3d1364e6aeb15a75c73ef2cdd2549096260ca61f74567b0dcb5a951528bef286"
+    },
+    {
+      "path": "score_precision/SH001_sharp_weight_ratio_threshold_v1.md",
+      "sha256": "fa8e326047f2df8f01dd7b3112da655937ad7be1a3508ad00b80ccd51b64fd50"
+    },
+    {
+      "path": "intake/SH001_acceptance.json",
+      "sha256": "b5e3bb71e0efbd2aa50cdd63857fc96e01165d37d2d38e3f98c0e1529fc68a47"
+    }
+  ],
+  "new_artifacts": [
+    {
+      "path": "range_uniform_iid/UI001_diagnostics_v1.json",
+      "sha256": "b157f23c8b550dad50a7c8979751991549f2879af970a76aeaf9c737810c7c14"
+    },
+    {
+      "path": "range_uniform_iid/UI001_diagnostics_v1.py",
+      "sha256": "6239327a7a2a1874b4c1082ceea7f6c4501963c391d01c9ab6a215532dd967c1"
+    },
+    {
+      "path": "range_uniform_iid/UI001_range_uniform_iid_floor_v1.md",
+      "sha256": "c4bd8a5d7324ed1cf03c1d746a253b592fbe9a63e9e6020be95e657c13307dde"
+    }
+  ]
+}

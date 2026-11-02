@@ -1,0 +1,12 @@
+{
+  "unit": "FA001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "causal_attention/FA001_finite_arithmetic_bridge_v3.md",
+  "sha256": "94a9d64f2a2eedf50cb7e918cfeec4e8cac6e78f21de214a528a853b4f17e073",
+  "reviews": [
+    "reviews/FA001_review_v2.md",
+    "reviews/FA001_review_v3.md"
+  ],
+  "time_utc": "2026-11-02T04:33:27.657271+00:00",
+  "scope": "Constructive uniform pre-cut error <=1/Q for explicit finite-dyadic affine/ReLU causal masked attention subclass, P=4h+C_arch; compact public P-sized records, signed exact accumulators, sequential multitape and separate PURE costs; branch-conditioned temporal caveat retained"
+}

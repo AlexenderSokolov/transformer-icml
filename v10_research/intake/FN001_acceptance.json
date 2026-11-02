@@ -1,0 +1,9 @@
+{
+  "unit": "FN001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "folded_noise/FN001_theorem.md",
+  "sha256": "38d716cdd2703ac3f53338c71f77b86728bf39d25fdd389a81d06d7b975d8399",
+  "review": "folded_noise/FN001_independent_review.md",
+  "time_utc": "2026-11-02T07:38:08.219608+00:00",
+  "scope": "Specific FG finite encoder, dyadic M and P>=max(log2 M,Jh), single source-independent fine-grid pre-Q-quantization attack. Exact terminal-pair/initial flags retained via balanced-event subprobability coupling. delta=1/(4Q),M=Q^4 gives noisy Omega(Q^-1) versus clean O(Q^-2). No original postcoarsegrid fault claim, arbitrary boundary label, general encoder impossibility, noise-randomness or training claim. Root read full proof+review. Reviewer is separate same-model execution with inherited author context, not blind/model-independent/formal. Post stage6."
+}

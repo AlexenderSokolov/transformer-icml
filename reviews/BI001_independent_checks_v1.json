@@ -1,0 +1,26 @@
+{
+  "status": "PASS_FINITE_DIAGNOSTICS_NOT_FORMAL_VERIFICATION",
+  "symbolic": [
+    "stationarity and normalization",
+    "full 4x4 P squared",
+    "R squared B column and R cubed A column",
+    "topology-specific beta obstruction identity"
+  ],
+  "all_state_parameter_cases": 75,
+  "minimum_minorization_slack": "1/3600000000000",
+  "enumerated_path_density_cases": 675,
+  "positional_local_sum_cases": 336,
+  "maximum_variance_bound_ratio": "14257/307077120",
+  "maximum_derivative_bound_ratio": "13/2176",
+  "maximum_Doob_range_bound_ratio": "1127/26112",
+  "cutoff_harmonic_cases": 60,
+  "minimum_harmonic_ratio_80digits": "1.4426950408889634073599246810018921374266459541529859341354494069311092191811851",
+  "arithmetic": "SymPy symbolic + Fraction exact; harmonic logarithm only mpmath 80 digits",
+  "bindings": {
+    "v10_research/binary_frontier/BI001_binary_rare_suffix_lower_v1.md": "7fee27f4de9040f8509c86c0a7a2fca627623529f0e8d0ff192531a02d1dfb73",
+    "v10_research/bounded_attention/BA001_bounded_local_attention_lower_v1.md": "fb589a775220737124a42e96a115eb3471ccbb84933edc2fd488e0d5986f1569",
+    "v10_research/score_precision/SH001_sharp_weight_ratio_threshold_v1.md": "fa8e326047f2df8f01dd7b3112da655937ad7be1a3508ad00b80ccd51b64fd50",
+    "v10_research/score_precision/SB001_loglog_effective_score_budget_v2.md": "d10086be4d358e322872daffad4dd10572588d6dcffaecbffefc409df6a217b7",
+    "v10_research/range_uniform_iid/UI001_range_uniform_iid_floor_v1.md": "c4bd8a5d7324ed1cf03c1d746a253b592fbe9a63e9e6020be95e657c13307dde"
+  }
+}

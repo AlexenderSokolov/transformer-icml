@@ -1,0 +1,12 @@
+{
+  "unit": "BF001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "bounded_attention/BF001_encoder_family_frontier_v3.md",
+  "sha256": "31138a756cc5e9cdc6a5cc8c55d11e265672c7048c1acb34266cdfd67411af7a",
+  "reviews": [
+    "reviews/BF001_review_v2.md",
+    "reviews/BF001_review_v3.md"
+  ],
+  "time_utc": "2026-11-02T04:04:29.435226+00:00",
+  "scope": "Fixed K,D,r,a,b dense local ratio encoder-family minimax frontier; actual finite SRC inclusion plus paid larger boundary ports; p_aug controls extra addressing; not general Transformer theorem"
+}

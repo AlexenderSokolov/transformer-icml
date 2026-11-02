@@ -1,0 +1,310 @@
+{
+  "kind": "INDEPENDENT_FIXED_FULL_COMBINATION_FILE_SCOPED_REVIEW",
+  "version": 1,
+  "created_at": "2026-10-26T11:35:48.790728+00:00",
+  "reviewer": {
+    "member": "verifier",
+    "provider": null,
+    "model": null,
+    "effort": null
+  },
+  "root_obligation_id": "881d17365a7019add4410343d568625dacae67d26aa17548bda2de7f9b860dbb",
+  "contract_id": "873515c4586d37a2bde324010bea6ae30f820927b7c25ded15b784a79eef7e45",
+  "definitions_hash": "fc104078b9455bdd86586decd50902df6688400cc00f06e6b105699efefd0e02",
+  "verdict": "FILE-SCOPED PASS",
+  "scope": "Independent mathematical review of the exact new full C1/C2/C3 proofs, C4 same-experiment composition, original separate D5 finite resource coordinates and bounded D6 mapping. This is research discussion, not root admission or final audit.",
+  "full_text_read": true,
+  "report": {
+    "path": "outputs/001-input-contamination/verifier/fixed-combination-review-v1.md",
+    "bytes": 19650,
+    "sha256": "dd48f0f7a081b24dc51408318f9fb92841531b6ee1c03e71d5519485ed038d5c"
+  },
+  "native_readback": {
+    "path": "outputs/001-input-contamination/verifier/fixed-review-native-readback-v1.json",
+    "bytes": 6865,
+    "sha256": "83fe96b2ccc6f7f82f5e06208c6aed9655cdf83264fdc8261e93fd9fb06e218e"
+  },
+  "native_frontier_hash_start": "47764359856c626063a362ea0f080309b80ec551ea175c80134fbb6996945041",
+  "native_frontier_hash_end": "47764359856c626063a362ea0f080309b80ec551ea175c80134fbb6996945041",
+  "existing_components": [
+    {
+      "component": "C1",
+      "obligation_id": "b5f118d33a9d9687ac8e3d48ca7df6e5c0403aeba52c026d88087e385e813354",
+      "fact_id": "f9e055bd405c4b56",
+      "evidence_id": "61f169db99848f6794e334ea287037fae00a592f4b5e5254d580c0b9f74a599f",
+      "predecessors": [],
+      "status": "DISCHARGED",
+      "validity": "VALID",
+      "evidence_kind": "LLM_CHECKED_PROOF",
+      "checker_result": "PASS",
+      "authored_path": "outputs/001-input-contamination/prover/c1-proof-v1.md",
+      "authored_sha256": "c80a71242b438eda82b4b1717838a15da30232db18c4b97096f29f45c5101fc3",
+      "canonical_path": "fact_graph/facts/f9e055bd405c4b56.md",
+      "canonical_sha256": "19a572c3d885cba4205e2744f5605005218618ede8ed0deca347b586f2b693cd"
+    },
+    {
+      "component": "C2",
+      "obligation_id": "52a14a0c60279133c7acc7067c15eb4cfbff32368f8a721e59df9bf3eecd9ff1",
+      "fact_id": "df40a215d931bd32",
+      "evidence_id": "3448f22a5b9e86526c831f0518a83b828eaf69eb2acf455fb0057f354dae7cd3",
+      "predecessors": [],
+      "status": "DISCHARGED",
+      "validity": "VALID",
+      "evidence_kind": "LLM_CHECKED_PROOF",
+      "checker_result": "PASS",
+      "authored_path": "outputs/001-input-contamination/counter/c2-proof-v1.md",
+      "authored_sha256": "f10c16cca4efde271b33c3fa2de62244098912c110991b30ccd4e40489852e99",
+      "canonical_path": "fact_graph/facts/df40a215d931bd32.md",
+      "canonical_sha256": "7d7b0a5414b61fbf2117c9b980d4e7580b0ea9311de07c9dc4a3faa1ef54aaa8"
+    },
+    {
+      "component": "C3",
+      "obligation_id": "c9d1bbb51ee633f91f029e917ded7f6e1de7f6e9e227f681761ee9ed66b81bec",
+      "fact_id": "39367951834d7aa7",
+      "evidence_id": "426929d6b208d95764b59cd20f658f51c91334448c86cfb5cdb9b8bf2d5e4b00",
+      "predecessors": [],
+      "status": "DISCHARGED",
+      "validity": "VALID",
+      "evidence_kind": "LLM_CHECKED_PROOF",
+      "checker_result": "PASS",
+      "authored_path": "outputs/001-input-contamination/prover/c3-proof-v1.md",
+      "authored_sha256": "5ac089baa1a28d2f89db223e16542ba43ac153c6930e81806c6627d0e0e22827",
+      "canonical_path": "fact_graph/facts/39367951834d7aa7.md",
+      "canonical_sha256": "421bf5095b3abe9d5ace680cecab8080cf03de703946c3017b614aa97adedacc"
+    }
+  ],
+  "integrity_checked_fixed_artifacts": [
+    {
+      "path": "PROBLEM.md",
+      "bytes": 21726,
+      "sha256": "960299dbb9730b6f8b7d9de81128fabcca03b7342a456beb57572e52d490caca"
+    },
+    {
+      "path": "fact_graph/facts/39367951834d7aa7.md",
+      "bytes": 81274,
+      "sha256": "421bf5095b3abe9d5ace680cecab8080cf03de703946c3017b614aa97adedacc"
+    },
+    {
+      "path": "fact_graph/facts/df40a215d931bd32.md",
+      "bytes": 45580,
+      "sha256": "7d7b0a5414b61fbf2117c9b980d4e7580b0ea9311de07c9dc4a3faa1ef54aaa8"
+    },
+    {
+      "path": "fact_graph/facts/f9e055bd405c4b56.md",
+      "bytes": 47273,
+      "sha256": "19a572c3d885cba4205e2744f5605005218618ede8ed0deca347b586f2b693cd"
+    },
+    {
+      "path": "inputs/SOURCE_CORRECTIONS.md",
+      "bytes": 685,
+      "sha256": "73491ed6da8af1983dfc9922989ae5270494c652268d9447bbaed49fee2a5f6a"
+    },
+    {
+      "path": "inputs/STAGE_DEFINITIONS.md",
+      "bytes": 15528,
+      "sha256": "fc104078b9455bdd86586decd50902df6688400cc00f06e6b105699efefd0e02"
+    },
+    {
+      "path": "inputs/c3-affine-emitter/AFFINE_EMITTER_SEED.md",
+      "bytes": 11610,
+      "sha256": "7ea9c78e8a0c6586d1d2a5d46ae5fd937c10e4b02d6dcbad86548b358b1d08a0"
+    },
+    {
+      "path": "inputs/c3-affine-emitter/method-review.json",
+      "bytes": 2087,
+      "sha256": "eb7188b397e463b90d6cafba53e722230ce20bb68eb482a3c58446739a6c6c87"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/001-relative-code/prover/c3c4-integrated-v1.md",
+      "bytes": 75162,
+      "sha256": "2fc89f6bca30288d766fcdb71b26875943f2d6efb5fc9a181b401dba1f7e243a"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/prover/finite-program-v1.json",
+      "bytes": 14745,
+      "sha256": "3875340ee76fa75ad61cc9db5e4483bb03e1971eeaa9b5d8973545bb2a83ec44"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/prover/upper-program-certificate-v1.md",
+      "bytes": 30431,
+      "sha256": "b1a0de75230bb5ec2cd58417e09f2c0bb3ca7818e2fd513c6e0333f81b7beab4"
+    },
+    {
+      "path": "outputs/001-input-contamination/counter/c2-manifest-v1.json",
+      "bytes": 3995,
+      "sha256": "a3dbcd2847b2834524105ae84b1bd1e49116d425cf146432bcea1ed451e84fa5"
+    },
+    {
+      "path": "outputs/001-input-contamination/counter/c2-proof-v1.md",
+      "bytes": 25674,
+      "sha256": "f10c16cca4efde271b33c3fa2de62244098912c110991b30ccd4e40489852e99"
+    },
+    {
+      "path": "outputs/001-input-contamination/counter/d6-scope-map-v1.md",
+      "bytes": 8542,
+      "sha256": "e4ae322376acca4e3a88e3c591700f5a074388d91637140d48b7a223122ba03f"
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/all-components-native-readback-v1.json",
+      "bytes": 63799,
+      "sha256": "352d3a719e9a87fe28f71e6d50bb5d6600f2bbbfceab67d3179eb1509b5428d7"
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/exact-root-record-v1.json",
+      "bytes": 7548,
+      "sha256": "fb6b375bde632a68181fde92bd80bda38f54df4b25e79bc29b66d86affaa33a7"
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/fixed-combination-v1.md",
+      "bytes": 18305,
+      "sha256": "023534f2978bee9d8132100c1cdd4a85c9208d1afa1a99924dd510617915a553"
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/fixed-full-proof-v1.md",
+      "bytes": 163186,
+      "sha256": "a7c4e4194e68b186cc3cd6a3bdf8e0b9bfb01c0a1981427c588e1e9a38a1b7ae"
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c1-manifest-v1.json",
+      "bytes": 1897,
+      "sha256": "e59565ff06561f8538b65b20052a6f1fa4b675a0bdb6eb826416af2f268a241f"
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c1-proof-v1.md",
+      "bytes": 27254,
+      "sha256": "c80a71242b438eda82b4b1717838a15da30232db18c4b97096f29f45c5101fc3"
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3-gateway-v1.json",
+      "bytes": 2093,
+      "sha256": "fefd9cf62e63453e73bba64da00b28b3b4a589e4e75a11a7436564996288e113"
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3-handoff-v1.md",
+      "bytes": 5031,
+      "sha256": "d903447125b1f893f72b244271f0c7c5e6f5531c6c8b5835fcafd7c17787f360"
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3-manifest-v1.json",
+      "bytes": 3848,
+      "sha256": "87f5ba89c3de96f9e505e93d1e1b30cd7e5c66cda260d890d7c79000a0174cf1"
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3-proof-v1.md",
+      "bytes": 61385,
+      "sha256": "5ac089baa1a28d2f89db223e16542ba43ac153c6930e81806c6627d0e0e22827"
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3-readback-v1.json",
+      "bytes": 8549,
+      "sha256": "426830486a50147da5f9f900258d6ed93987c9daba49c0fd24333c0316a7c5b9"
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3-splice-check-results-v1.json",
+      "bytes": 601,
+      "sha256": "9d73ddb7d8db32afe55b1d35d2865e4ccdd7733303545016a00e67b566cada95"
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3_affine_iterator_v1.py",
+      "bytes": 9473,
+      "sha256": "2ad0f46cdfc5f3645748d723cec27d33702beb22a91db9b7f7c75fe5b1898268"
+    },
+    {
+      "path": "outputs/001-input-contamination/verifier/preparation-review-v1.md",
+      "bytes": 11744,
+      "sha256": "d31f00c7748d05ca7974f7ef3cbff18424f954a07a0ec315d5830bbbc760d8b0"
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/fixed-combination-manifest-v1.json",
+      "bytes": 10356,
+      "sha256": "0596e9f1bd16bbb9c7c132e70a959cdc2147b133580bf9aad72282a657cb288e"
+    }
+  ],
+  "primary_sources_checked": [
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/sources/chen-gao-ren-1511.04144v2.pdf",
+      "bytes": 270809,
+      "sha256": "538cda7c3ea92a31a394e85b2928a6309cd751b9f4afc5e1732b2bf2a4b8f645"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/sources/chen-gao-ren-1511.04144v2.txt",
+      "bytes": 77032,
+      "sha256": "417c7075a3ba495e7862582ccf2fdb8c0b8acf748c24165a22e2616ca5e2d2cd"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/sources/pydi-jog-2020-main.pdf",
+      "bytes": 1495909,
+      "sha256": "df20b171617bd33522b798fa59e9f52ab29401fc463328869297c19dd7d5a19a"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/sources/pydi-jog-2020-main.txt",
+      "bytes": 60125,
+      "sha256": "e30cb88792cd28dcad5f9180f1256fc128ced44745bec4e6659486013c9817c7"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/sources/pydi-jog-2020-supp.pdf",
+      "bytes": 481185,
+      "sha256": "332e09858ae7e474e967a6dcc10274de57a3a9e16f0455296efff664b1e25d74"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/sources/pydi-jog-2020-supp.txt",
+      "bytes": 30741,
+      "sha256": "5498a4f4288f0e396063014b8fca11d4388696fda43a16ddc307f2fb042c0579"
+    }
+  ],
+  "verification": {
+    "fixed_artifacts_match": 28,
+    "component_authored_canonical_hashes_match": 6,
+    "component_authored_text_in_canonical": 3,
+    "complete_text_embeddings_in_full": 6,
+    "c3_source_artifact_hashes_match": 13,
+    "exact_root_equals_native_statement": true,
+    "component_predecessors_empty": true,
+    "original_D1_D7_unchanged": true,
+    "native_three_components_valid_pass_discharged": true,
+    "source_drift_at_close": false,
+    "local_numerical_probes_run": false,
+    "author_checks_rerun": false,
+    "primitive_counts_reviewed_analytically": {
+      "multiply": "14w^2+12w+6",
+      "divide": "20w^2+49w+14"
+    }
+  },
+  "blocking_gaps": [],
+  "required_mathematical_repairs": [],
+  "nonblocking_editorial_notes": [
+    {
+      "id": "E1",
+      "path": "outputs/001-input-contamination/lead/fixed-combination-v1.md",
+      "full_proof_line": 2512,
+      "location": "section5 DIRECT row",
+      "printed_reference": "C3 section5.3",
+      "correct_reference": "C3 section5.2 (full-proof lines1822-1857)",
+      "effect": "Citation only; the actual acquisition proof and charges are present; no change to fixed source during this review."
+    }
+  ],
+  "new_fact_ids": [],
+  "new_evidence_ids": [],
+  "root_status_at_close": "OPEN",
+  "acceptance_at_close": null,
+  "remaining_requirements": [
+    "assistant normal root gateway using exactly the three current Fact predecessors",
+    "fresh separate final_audit",
+    "[Non-scientific operational metadata omitted.]",
+    "v10 mother-problem synthesis after accurate stage closure"
+  ],
+  "actions_not_taken": {
+    "root_submit": true,
+    "component_submit": true,
+    "final_audit": true,
+    "cold_audit": true,
+    "old_diagnostics": true,
+    "old_root_reopening": true,
+    "source_edits": true,
+    "old_suspension_resume": true,
+    "independent_model_cli": true,
+    "external_retrieval": true
+  },
+  "old_suspension_protected": true,
+  "gpu_ms": 0
+}

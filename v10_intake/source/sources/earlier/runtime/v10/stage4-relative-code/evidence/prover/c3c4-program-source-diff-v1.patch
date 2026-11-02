@@ -1,0 +1,498 @@
+--- inputs/source-stage3/outputs/001-conditional-grid/prover/c3_word_program_v1.py
++++ outputs/001-relative-code/prover/c3c4_program_v1.py
+@@ -1,3 +1,8 @@
++# Integrated stage4 C3/C4 executable integer semantics, Prover 2026-10-26.
++# The Program/MIX63/output41 block below is copied from Prover stage3,
++# complete source SHA256 187f81b8da04a20412c07dc2fdfbe7387836484e2bc57e873a0dd8045b785a56.
++# The old certificate/small-N padding routine is deliberately not imported.
++# Python execution is a semantic check, never a unit-cost resource claim.
+ """C3 finite straight-line word programs and conservative resource functions.
+ 
+ All operations are specified in c3-resource-ledger-v1.md. Python is an
+@@ -122,150 +127,340 @@
+     return p
+ 
+ 
+-def certificate(N,b):
+-    assert N>=3 and b>=1
+-    n,m = N+1,N//2
+-    nm=m+1
+-    ell=(N+1).bit_length()  # ceil(log2(N+2))
+-    h=max(4,(256*(N-2)-1).bit_length())
+-    p=4*h+4*(m+3).bit_length()+64
+-    v=b+ell+8
+-    B,O=128*p,32*v
+-    KR=len(recovery_program(max(N,6)).ops)
+-    KO=len(output_program(N,b).ops)
+-    g=lambda z:1024*z*z
+-    GF=KR*g(B)+256*19*(h+1)+1024*B
+-    GO=KO*g(O)+1024*O
+-    LF,LO=16*GF+32,16*GO+32
+-    WF,WO=1024*B,1024*O
+-    BF,BO=B,O
+-    n0=4*n*n+4*nm*nm
+-    meta=128*n*(ell+p+b+16)
+-    # A larger explicit pre-attention/adapter/feature projection envelope.
+-    pre=128
+-    LH=pre+LF+LO
+-    W=max(WF,WO)
+-    I=pre*n*WF+LF*WF+LO*WO
+-    D=pre*(WF+1)**2+LF*(WF+1)**2+LO*(WO+1)**2
+-    dense_bits=(pre+LF)*(WF+1)**2*BF+LO*(WO+1)**2*BO
+-    E=(256*p+512)*n*n+1024*n
+-    TA=E*g(B)
+-    ctrl=(TA+GF+GO+meta+1).bit_length()+ell+16
+-    addressed=4096*(B+O+ctrl)**2*(E+KR+KO+1024*n)
+-    sparse_bits=64*(I+GF+GO+1024*n)*(B+O+ctrl)
+-    kernel_code=4096*g(B)*(B+ctrl)+128*(p+1)*(B+ctrl)**2
+-    rolling=4*n*WF*BF+4*WO*BO+meta
+-    online_dense=256*((pre+LF)*n*(WF+1)**2*BF**2+LO*(WO+1)**2*BO**2)+TA
+-    # Fully flatten every finite evaluator bit step and every retained input.
+-    TF=16*(TA+GF+GO+1024*n*B)+256
+-    SF=4*n*WF+4*WO+128*(B+O+ctrl)
+-    CF=4*(B+O+ctrl+SF.bit_length()+TF.bit_length())
+-    # Offline log generation uses integer common denominators of < 8p^2 bits.
+-    Blog=8*p*p+32
+-    Tlog=(32*p+64)*g(Blog)
+-    # Explicit strong baseline envelopes, including final output word program.
+-    WC=256*ell+64
+-    TC=1024*N*(ell+1)+1024*ell
+-    LC=16*TC+32
+-    BC=32*(ell+1)
+-    Wbatch=WC+2*N+2*ell
+-    result = {
+-        'N':N,'b':b,'n':n,'m':m,'n_m':nm,'ell':ell,'h_A':h,'p':p,'v':v,
+-        'frontend_word_bits':B,'output_word_bits':O,
+-        'recovery_word_operations':KR,'output_word_operations':KO,
+-        'GF':GF,'GO':GO,'LF':LF,'LO':LO,'WF':WF,'WO':WO,
+-        'hybrid':{'L':LH,'W':W,'H_total':8,'H_layer_max':4,'D_qk_max':4,
+-            'score_range':[0,2],'explicit_mask_bits':n0,'metadata_bits':meta,
+-            'identity_connections_bound':I,'layer_shaped_dense_slots':D,
+-            'dense_neural_parameter_bits':dense_bits,
+-            'shared_evaluator_code_bits':kernel_code,
+-            'sparse_program_parameter_address_bits':sparse_bits,
+-            'rolling_work_bits':rolling,
+-            'finite_attention_bit_operations':TA,
+-            'addressed_word_execution_bit_operations':addressed,
+-            'dense_projection_pointwise_and_attention_bit_operations':online_dense},
+-        'padded_batch':{'width_per_token':W,'depth':LH,
+-            'explicit_mask_bits':8*n*n,
+-            'slots':LH*(W+1)**2,'stored_coefficient_bits':LH*(W+1)**2*max(B,O),
+-            'identity_connections':LH*n*W,
+-            'rolling_work_bits':4*n*W*max(B,O)+meta,
+-            'online_bit_operations':256*LH*n*(W+1)**2*max(B,O)**2+TA},
+-        'global_dense_padded_batch':{'total_channel_width':n*W,'depth':LH,
+-            'explicit_mask_bits':8*n*n,
+-            'slots':LH*(n*W+1)**2,
+-            'stored_coefficient_bits':LH*(n*W+1)**2*max(B,O),
+-            'identity_connections':LH*n*W,
+-            'rolling_work_bits':4*n*W*max(B,O)+meta,
+-            'online_bit_operations':256*LH*(n*W+1)**2*max(B,O)**2+TA},
+-        'flattened':{'depth':TF,'width':SF,'coefficient_activation_bits':CF,
+-            'holds':TF*SF,'dense_slots':TF*(SF+1)**2,
+-            'dense_parameter_bits':TF*(SF+1)**2*CF,
+-            'sparse_code_bits':64*TF*(SF+1)*CF,
+-            'rolling_work_bits':4*SF*CF+meta,
+-            'dense_online_bit_operations':256*TF*(SF+1)**2*CF**2},
+-        'generation':{'log_word_bits':Blog,'log_word_operations':32*p+64,
+-            'log_bit_operations':Tlog,'log_scratch_bits':64*Blog},
+-        'baseline':{'count_boolean_gates':TC,'count_depth':LC,
+-            'stream_count_width':WC,'stream_count_holds':LC*WC,
+-            'stream_count_dense_slots':LC*(WC+1)**2,
+-            'stream_count_parameter_bits':LC*(WC+1)**2*BC,
+-            'stream_count_dense_online_bits':256*LC*(WC+1)**2*BC**2,
+-            'stream_count_work_bits':4*WC*BC,
+-            'shared_count_code_bits':4096*(ell+1)**2,
+-            'addressed_count_bit_operations':4096*N*(ell+1)**2,
+-            'one_shot_count_width':Wbatch,'one_shot_count_holds':LC*Wbatch,
+-            'one_shot_count_dense_slots':LC*(Wbatch+1)**2,
+-            'one_shot_count_parameter_bits':LC*(Wbatch+1)**2*BC,
+-            'one_shot_count_dense_online_bits':256*LC*(Wbatch+1)**2*BC**2,
+-            'one_shot_count_work_bits':4*Wbatch*BC,
+-            'count_coefficient_activation_bits':BC,
+-            'add_same_output_phase':{'depth':LO,'width':WO,'gates':GO,'word_bits':O}}
+-    }
+-    hyp=result['hybrid']
+-    hyp['total_stored_dense_bits']=dense_bits+kernel_code+n0+meta
+-    hyp['total_stored_sparse_bits']=sparse_bits+kernel_code+n0+meta
+-    hyp['peak_dense_bits']=hyp['total_stored_dense_bits']+rolling
+-    hyp['peak_sparse_bits']=hyp['total_stored_sparse_bits']+rolling
+-    hyp['sparse_neural_bit_operations']=4096*(I+GF+GO+1024*n)*(B+O+ctrl)**2+TA
+-    shared=kernel_code+4096*g(O)*(O+ctrl)+128*(KR+KO+128*n)*(B+O+ctrl)+n0+meta
+-    result['shared_word_program']={'total_stored_bits':shared,
+-        'rolling_work_bits':rolling,'peak_bits':shared+rolling,
+-        'online_bit_operations':addressed,'control_address_bits':ctrl}
+-    for key in ('padded_batch','global_dense_padded_batch'):
+-        z=result[key]
+-        z['total_stored_bits']=z['stored_coefficient_bits']+kernel_code+8*n*n+meta
+-        z['peak_bits']=z['total_stored_bits']+z['rolling_work_bits']
+-    flat=result['flattened']
+-    flat['total_stored_dense_bits']=flat['dense_parameter_bits']+n0+meta
+-    flat['total_stored_sparse_bits']=flat['sparse_code_bits']+n0+meta
+-    flat['peak_dense_bits']=flat['total_stored_dense_bits']+flat['rolling_work_bits']
+-    flat['peak_sparse_bits']=flat['total_stored_sparse_bits']+flat['rolling_work_bits']
+-    for model,wc in (('sequential',WC),('one_shot',Wbatch)):
+-        zbase=128*n*(ell+b+16)
+-        depth=LC+LO+32
+-        slots=(LC+16)*(wc+1)**2+(LO+16)*(WO+1)**2
+-        par=(LC+16)*(wc+1)**2*BC+(LO+16)*(WO+1)**2*O
+-        work=4*wc*BC+4*WO*O+zbase
+-        total=par+zbase
+-        result['baseline'][model+'_complete']={'depth':depth,'width':max(wc,WO),
+-            'holds':(LC+16)*wc+(LO+16)*WO,'dense_slots':slots,
+-            'total_stored_dense_bits':total,'rolling_work_bits':work,
+-            'peak_dense_bits':total+work,
+-            'dense_bit_operations':256*((LC+16)*(wc+1)**2*BC**2+(LO+16)*(WO+1)**2*O**2)}
+-    def generation(stored,depth):
+-        agen=Blog+B+O+(stored+depth+1).bit_length()+ell+b+16
+-        work=64*Blog+64*(ell+b+p+1)+64*(stored+depth+1)*agen
+-        return {'address_word_bits':agen,
+-            'bit_operations':Tlog+1024*(ell+b+p+1)**2+4096*(stored+depth+1)*agen**2,
+-            'scratch_bits':work,'peak_including_program_bits':stored+work}
+-    variants={'hybrid_dense':(hyp['total_stored_dense_bits'],LH),
+-        'hybrid_sparse':(hyp['total_stored_sparse_bits'],LH),'shared_word':(shared,LH),
+-        'token_padded':(result['padded_batch']['total_stored_bits'],LH),
+-        'global_dense_padded':(result['global_dense_padded_batch']['total_stored_bits'],LH),
+-        'flattened_dense':(flat['total_stored_dense_bits'],TF),
+-        'flattened_sparse':(flat['total_stored_sparse_bits'],TF)}
+-    for k in ('sequential','one_shot'):
+-        z=result['baseline'][k+'_complete']
+-        variants['baseline_'+k]=(z['total_stored_dense_bits'],z['depth'])
+-    result['generation']['complete_formats']={k:generation(*v) for k,v in variants.items()}
++def clog2(x):
++    assert x >= 1
++    return (x-1).bit_length()
++
++
++def parameters(N, bits, d):
++    assert N >= 6 and bits >= 1 and d >= 6
++    m = N//2
++    h = clog2(256*(N-2))
++    p = 4*h+4*clog2(m+4)+64
++    return dict(N=N, b=bits, d=d, n=N+1, m=m, M=m-2, h=h, A=1<<h,
++                p=p, R=1<<p, ell=clog2(N+2), tau=(d+1).bit_length())
++
++
++def full_multiply(x, y, width):
++    assert 0 <= x < 1<<width and 0 <= y < 1<<width
++    acc = 0
++    for j in range(width):
++        acc += (x if ((y>>j)&1) else 0) << j
++        assert 0 <= acc < 1<<(2*width)
++    return acc
++
++
++def restoring_divide(numerator, denominator, width):
++    assert 0 <= numerator < 1<<(2*width)
++    assert 0 < denominator < 1<<width
++    quotient = remainder = 0
++    for j in range(2*width-1, -1, -1):
++        shifted = (remainder<<1) | ((numerator>>j)&1)
++        assert shifted < 1<<(width+1)
++        bit = int(shifted >= denominator)
++        remainder = shifted-denominator if bit else shifted
++        quotient = (quotient<<1) | bit
++        assert 0 <= remainder < denominator
++    assert numerator == quotient*denominator+remainder
++    return quotient, remainder
++
++
++def log_integer(p, q):
++    """Exact common-denominator generator; q=3 gives L2, q=2 gives L3."""
++    assert p >= 1 and q in (2,3)
++    odd_product = 1
++    for j in range(p):
++        odd_product *= 2*j+1
++    power = q
++    for _ in range(p-1):
++        power *= q*q
++    denominator = power*odd_product
++    term_power = q
++    total = 0
++    for j in range(p):
++        td = (2*j+1)*term_power
++        quotient, remainder = divmod(denominator, td)
++        assert remainder == 0
++        total += 2*quotient
++        term_power *= q*q
++    scaled = total << p
++    value = scaled//denominator
++    assert max(denominator, total, scaled, term_power).bit_length() <= 8*p*p+32
++    return value
++
++
++def finite_weight(score, p):
++    R = 1<<p
++    term = total = R
++    for j in range(1,8*p+1):
++        term = (term*score)//(j*R)
++        total += term
++    return total
++
++
++def joint_program(N):
++    assert N >= 6
++    a = 1<<clog2(256*(N-2))
++    names = [f'j{i}{j}{c}' for i in (0,1) for j in (0,1) for c in (0,1)]
++    p = Program(names+['a','b'], [], ['C0','C1'])
++    add = p.add
++    for c in (0,1):
++        add(f'left{c}','MUX','b',f'j01{c}',f'j00{c}')
++        add(f'right{c}','MUX','b',f'j11{c}',f'j10{c}')
++        add(f'selected{c}','MUX','a',f'right{c}',f'left{c}')
++    add('qa','CONST',a);add('twoqa','SHL','qa',1);add('twoM','CONST',2*(N//2-2))
++    for c in (0,1):
++        add(f'full{c}','MUL','twoM',f'selected{c}')
++        add(f'num{c}','ADD',f'full{c}','qa')
++        add(f'C{c}','DIV',f'num{c}','twoqa')
++    assert len(p.ops)==15  # two control ORs, then one reserved operation =18.
++    return p
++
++
++def build(N, bits, d, kind='MIX', hooks=None):
++    """The early branch precedes every frontend, cut and recovery builder."""
++    assert N >= 3 and bits >= 1 and d >= 6 and kind in ('MIX','JOINT')
++    if N < 6:
++        return dict(kind='UNIFORM', N=N, b=bits, d=d,
++                    phases=['READ_ACTUAL_INPUT','INIT_OUTPUT','WRITE_GUARDED_OUTPUT','CLEAR_INPUT'],
++                    words=(1<<(bits-1),1<<(bits-1),1<<bits))
++    hooks = hooks or {}
++    for name in ('frontend','cut','recovery'):
++        if name in hooks:
++            hooks[name]()
++    public=parameters(N,bits,d)
++    if kind=='MIX':
++        # Builder/generator work, before any observation is acquired.
++        public['L2']=log_integer(public['p'],3)
++        public['L3']=log_integer(public['p'],2)
++    return dict(kind=kind, public=public,
++                phases=['READ','ADAPTERS','FEATURES','FINITE_HEADS','COPY_PORT',
++                        'ERASE_ALL_OLD','EXTERNAL_OVERWRITE','READBACK','RECOVERY','OUTPUT'],
++                recovery=recovery_program(N) if kind=='MIX' else joint_program(N),
++                output=output_program(N,bits))
++
++
++def _pair_one_hot(a,b):
++    return [int((a,b)==(i,j)) for i in (0,1) for j in (0,1)]
++
++
++def acquire(history, public, kind):
++    """Concrete singleton bindings and finite query-head semantics."""
++    N,m,M,A,p = [public[k] for k in ('N','m','M','A','p')]
++    assert len(history)==N and set(history) <= {0,1}
++    x = [[1-c,c] for c in history]+[[0,0]]
++    records=[]
++    for i in range(1,N+2):
++        keys=(m,m-1,N,N-1) if i==N+1 else (i-1 if i>1 else i,i-2 if i>2 else i,i,i)
++        heads=[]
++        for key in keys:
++            value=[0,0]
++            for j in range(1,N+2):
++                mask=int(j==key)
++                for c in (0,1):value[c] |= mask & x[j-1][c]
++            heads.append(value)
++        records.append(dict(current=x[i-1][:], lag1=heads[0],lag2=heads[1],h3=heads[2],h4=heads[3]))
++    q=records[-1]
++    a,b=q['h4'][1],q['h3'][1]
++    e0,e1=q['lag2'][1],q['lag1'][1]
++    controls=_pair_one_hot(a,b)+_pair_one_hot(e0,e1)
++    features=[]
++    for k in range(3,m+1):
++        z=records[k-1]
++        l2,l1,c=z['lag2'][1],z['lag1'][1],z['current'][1]
++        features.append([l2,l1,c,int(k==3)])
++    if kind=='JOINT':
++        sums=[0]*8
++        for i,j,c,_ in features:sums[4*i+2*j+c]+=1
++        code=[A*c//M for c in sums]+[0]*11
++        scratch={'sums':sums}
++    else:
++        L2,L3=public['L2'],public['L3']
++        nums=[[0]*v for v in (4,4,4,7)];den=[0]*4
++        for l2,l1,c,f in features:
++            scores=[int(l2==a)*L2+int(l1==b)*L2,
++                    int(l2==a)*L2+int(l1==b)*L3,int(l2==b)*L2,0]
++            bits=lambda z:[1-z,z]
++            vals=[bits(c)+bits(l2),bits(c)+bits(l2),bits(l1)+[f*(1-l1),f*l1],
++                  bits(l2)+bits(l1)+[f*(1-l1),f*l1,f]]
++            for k in range(4):
++                W=finite_weight(scores[k],p);den[k]+=W
++                for c,v in enumerate(vals[k]):nums[k][c]+=W*v
++        code=[A*z//den[k] for k in range(4) for z in nums[k]]
++        scratch={'numerators':nums,'denominators':den}
++    assert len(code)==19 and all(0<=v<=A for v in code)
++    # Enumerated semantic data banks; the proof allocates full physical bounds.
++    banks={'input':history,'onehots':x,'records':records,'features':features,
++           'scratch':scratch,'clean_masters':code,'old_controls':controls}
++    return code,controls,banks
++
++
++def _erase_bank(bank):
++    """Explicit stores to all modeled cells; never a garbage-collection erasure."""
++    keys=list(bank) if isinstance(bank,dict) else range(len(bank))
++    for i in keys:
++        if isinstance(bank[i],(list,dict)):_erase_bank(bank[i])
++        else:bank[i]=0
++
++
++def _bank_zero(bank):
++    vals=bank.values() if isinstance(bank,dict) else bank
++    return all(_bank_zero(v) if isinstance(v,(list,dict)) else v==0 for v in vals)
++
++
++def _external_checked_channel(channel,old,ctl,A,d):
++    """Diagnostic validation belongs to the external channel, not the decoder."""
++    result=list(channel(old,ctl))
++    assert len(result)==19
++    for x,y in zip(old,result):
++        radius=0 if d>=x.bit_length() else x>>d
++        assert 0<=y<=A and abs(y-x)<=radius
+     return result
++
++
++def cut_and_readback(code, controls, banks, public, channel):
++    P=code[:];Pctl=controls[:]
++    _erase_bank(banks)
++    for i in range(len(code)):code[i]=0
++    for i in range(len(controls)):controls[i]=0
++    assert _bank_zero(banks)
++    # Original input of channel exists only inside the external channel call.
++    returned=_external_checked_channel(channel,tuple(P),tuple(Pctl),public['A'],public['d'])
++    for i,v in enumerate(returned):P[i]=v
++    for i in range(len(returned)):returned[i]=0
++    T=P[:];U=Pctl[:]
++    for i in range(len(P)):P[i]=0
++    for i in range(len(Pctl)):Pctl[i]=0
++    return T,U,{'all_old_banks_zero':True,'old_port_zero':not any(P+Pctl),
++                'visible_words':len(T),'protected_bits':len(U)}
++
++
++def decode(words, controls, public, kind):
++    assert len(words)==19 and len(controls)==8
++    assert sum(controls[:4])==sum(controls[4:])==1
++    a=controls[2]|controls[3];b=controls[1]|controls[3]
++    e0=controls[6]|controls[7];e1=controls[5]|controls[7]
++    N,bits,M,A=[public[k] for k in ('N','b','M','A')]
++    assert all(0<=v<=A for v in words)
++    if kind=='MIX':
++        values=dict(zip(MASTER_NAMES,words));values.update(a=a,b=b,e0=e0,e1=e1)
++        counts,env=recovery_program(N).run(values)
++    else:
++        names=joint_program(N).inputs[:8]
++        values=dict(zip(names,words[:8]));values.update(a=a,b=b)
++        counts,env=joint_program(N).run(values)
++    assert all(0<=c<=M for c in counts)
++    result,oenv=output_program(N,bits).run(dict(C0=counts[0],C1=counts[1],a=a,b=b))
++    Q=1<<bits
++    assert sum(result)==Q and all(1<=v<Q for v in result)
++    assert oenv['nearnum']<16*public['m']*Q
++    return tuple(result+[Q]),{'recovery':env,'output':oenv}
++
++
++def run(history,bits,d,kind='MIX',channel=lambda words,controls:words,hooks=None):
++    program=build(len(history),bits,d,kind,hooks)
++    if program['kind']=='UNIFORM':
++        actual_input=list(history)
++        assert set(actual_input)<={0,1}
++        out=program['words']
++        for i in range(len(actual_input)):actual_input[i]=0
++        return out,{'early_uniform':True,'input_read':len(history),'input_cleared':True}
++    owned_history=list(history)  # one actual input read; external caller's data is not decoder memory.
++    code,controls,banks=acquire(owned_history,program['public'],kind)
++    words,ctrl,trace=cut_and_readback(code,controls,banks,program['public'],channel)
++    out,_=decode(words,ctrl,program['public'],kind)
++    return out,trace
++
++
++def transfer_kernel(payload,controls,h,kappa,source_width,channel):
++    """Exact ten-phase logical READ/WRITE schedule; physical compilation is separate."""
++    assert h>=1 and 1<=kappa<=h+1 and len(payload)<=19*kappa
++    assert len(controls)==8 and source_width>=len(payload)+8
++    assert set(payload+controls)<={0,1}
++    R=len(payload);H=19*(h+1)+8
++    old=payload[:]+controls[:]+[1]*(source_width-R-8)
++    P=[None]*H;T=[None]*H;U=[None]*(R+8)
++    actions=0;phases=[]
++    def zero(bank):
++        nonlocal actions
++        for i in range(len(bank)):bank[i]=0;actions+=1
++    def copy(src,i,dst,j):
++        nonlocal actions
++        dst[j]=src[i];actions+=2
++    def end(name,previous):phases.append((name,actions-previous))
++    place=lambda i:(i//kappa)*(h+1)+(i%kappa)
++    t=actions;zero(P);end('INIT_P_FULL',t)
++    t=actions
++    for i in range(R):copy(old,i,P,place(i))
++    end('PLACE_PAYLOAD',t)
++    t=actions
++    for i in range(8):copy(old,R+i,P,19*(h+1)+i)
++    end('COPY_CONTROLS',t)
++    t=actions;zero(old);end('CLEAR_ALL_SOURCE',t)
++    words=[sum(P[i*(h+1)+j]<<j for j in range(h+1)) for i in range(19)]
++    returned=list(channel(tuple(words),tuple(P[-8:])))
++    assert len(returned)==19 and all(0<=v<=1<<h for v in returned)
++    for i,v in enumerate(returned):
++        for j in range(h+1):P[i*(h+1)+j]=(v>>j)&1
++    # The external channel owns the temporary tuple/returned words above.
++    phases.append(('EXTERNAL_OVERWRITE',0))
++    t=actions;zero(U);end('INIT_U',t)
++    t=actions;zero(T)
++    for i in range(H):copy(P,i,T,i)
++    end('FULL_READBACK',t)
++    t=actions;zero(P);end('CLEAR_RETURNED_P',t)
++    t=actions
++    for i in range(R):copy(T,place(i),U,i)
++    for i in range(8):copy(T,19*(h+1)+i,U,R+i)
++    end('UNPACK',t)
++    t=actions;zero(T);end('CLEAR_T',t)
++    assert actions==6*H+5*R+source_width+40
++    assert not any(old+P+T)
++    return U,dict(actions=actions,phases=phases,H=H,R=R,W=source_width,
++                  all_other_logical_banks_zero=True)
++
++
++def alternative_program(N,bits,d,kind):
++    """Public finite loop IR; every loop below has an explicit fixed bound.
++
++    The integrated proof supplies bit/physical compilation and the separate
++    ledger. Source addresses are fixed by the generator, never supplied counts.
++    An IR instruction naming a kernel includes its complete loop body above.
++    """
++    from c3c4_ledger_v1 import alternative_budget
++    budget=alternative_budget(N,bits,d,kind)
++    if not budget['available']:return budget
++    q=parameters(N,bits,d);h=q['h'];M=q['M'];H=budget['full_port_bits']
++    ellC=clog2(M+1);R=budget['payload_bits'];k= h+1 if kind=='GAIN' else min(d,h)
++    acquisition=[('INIT_ALL_SOURCE',budget['source_logical_cells']),
++        ('READ_ACTUAL_INPUT_ONCE',N),('BIND_FIXED_ADJACENT_BITS',N),
++        ('MAKE_8_TRIPLE_BITS_BY_16_ANDS',q['M']),
++        ('ACCUMULATE_8_COUNTS_FULL',q['M']),('MAKE_S_E_ONEHOTS',8)]
++    if kind=='GAIN':
++        conversion=[('GAIN_LITERAL_NUM_DEN',M,q['A']),
++            ('UNIFORM_HEAD_FULL_NUMERATOR',8,q['A']*(1<<q['p'])*M),
++            ('UNIFORM_HEAD_EXACT_DENOMINATOR',q['A']*M*(1<<q['p'])),
++            ('DIVIDE_FULL_AND_SERIALIZE_COUNTS',8,h+1)]
++        post=[('DESERIALIZE_RETURNED_8',h+1),('SELECT_2_AND_CLAMP_0_M',M),
++              ('SHARED_41',output_program(N,bits).ops)]
++    elif kind=='COUNT_PACK':
++        conversion=[('SERIALIZE_8_COUNTS',ellC)]
++        post=[('DESERIALIZE_RETURNED_8',ellC),('SELECT_2_AND_CLAMP_0_M',M),
++              ('SHARED_41',output_program(N,bits).ops)]
++    else:
++        conversion=[('SELECT_2_COUNTS',),('SHARED_41_PRECUT',output_program(N,bits).ops),
++                    ('SERIALIZE_NEXT_ONE',bits)]
++        post=[('DESERIALIZE_NEXT_ONE',bits),('CLAMP_1_Q_MINUS_1',1<<bits),
++              ('SUBTRACT_Q_MINUS_J',1<<bits)]
++    return dict(kind=kind,public=q,budget=budget,acquisition=acquisition,
++        conversion=conversion,
++        transfer=[('INIT_P_FULL',H),('PLACE',R,k,h+1),('COPY_CTL',8),
++                  ('CLEAR_ALL_SOURCE',budget['source_logical_cells']),
++                  ('PURGE_PHYSICAL_ROLLING_COPIES',4*budget['circuit_logical_cells']),
++                  ('EXTERNAL_OVERWRITE',19,h+1,8),('INIT_U',R+8),
++                  ('INIT_AND_FULL_READBACK_T',H),('CLEAR_P',H),
++                  ('UNPACK',R,k,h+1),('COPY_CTL_FROM_T',8),('CLEAR_T',H),
++                  ('PURGE_OLD_PHYSICAL_RETURN_COPIES',4*budget['circuit_logical_cells'])],
++        post=post+[('WRITE_GUARDED_Q_MINUS_J_J_Q',3*(bits+1)),
++                   ('CLEAR_NONOUTPUT_DATA',budget['circuit_logical_cells'])])
++

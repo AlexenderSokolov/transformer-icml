@@ -1,0 +1,91 @@
+{
+  "author_agent": "LLM author",
+  "reviewer_agent": "independent LLM reviewer",
+  "review_type": "Independent child context, same inherited model; LLM review, not formal verification or external peer review.",
+  "frozen_proof": "v10_research/protected_encoding/protected_encoding_proof_v3.md",
+  "frozen_sha256": "91f3068de3bb3ed20b1e8c550ea9e1710e0cfb3e9ba14b0315b0bc1e7ffacdbd",
+  "claims": [
+    {
+      "id": "PE1-H",
+      "statement": "Canonical-grid amplitude1 binary rail coding exactly recovers original master and clean SRC output for every δ<1/2.",
+      "evidence": [
+        "proof §3",
+        "SRC fef8372728290b45 §§3,8,9",
+        "diagnostics.json",
+        "review-v3.md"
+      ],
+      "status": "Symbolic argument with bounded same-model final frozen review; not formal verification"
+    },
+    {
+      "id": "PE1-RISK",
+      "statement": "Protected encoded-prefix minimax is statistical order for δ<1/2; any amplitude1 encoding has actual risk≥5/64 for δ≥1/2 under original exact side information.",
+      "evidence": [
+        "proof §§3,5.4",
+        "016 a53804d650803060",
+        "MM5 946d42d5bf502eb4",
+        "review-v1.md §§1,3",
+        "review-v3.md"
+      ],
+      "status": "Symbolic argument with bounded same-model final frozen review; not formal verification"
+    },
+    {
+      "id": "PE-CAP",
+      "statement": "Exact finite canonical l∞ zero-error message capacity s^m, s=ceil((L+1)/(2e+1)).",
+      "evidence": [
+        "proof §4",
+        "diagnostics.json",
+        "review-v3.md"
+      ],
+      "scope": "Universal message capacity; not a reachable-SRC-image or low-risk resource lower bound.",
+      "status": "Symbolic argument with bounded same-model final frozen review; not formal verification"
+    },
+    {
+      "id": "PE-COST",
+      "statement": "Uniform-p wrapper costs O(K²h³p) dense bits and O(nK²h³p²) dense work fit original SRC upper envelopes.",
+      "evidence": [
+        "proof §5",
+        "SRC §9",
+        "review-v1.md §4",
+        "review-v3.md"
+      ],
+      "scope": "Constructive asymptotic upper bound, not identical numerical resource use or measured profile.",
+      "status": "Symbolic argument with bounded same-model final frozen review; not formal verification"
+    },
+    {
+      "id": "PE-V",
+      "statement": "Final positive-bank exact coding under global L1 budget D with rQ>2D and rK(h+1) charged slots.",
+      "evidence": [
+        "proof §6",
+        "diagnostics.json",
+        "review-v3.md"
+      ],
+      "scope": "Total absolute budget; no constant relative fraction or growing-r envelope absorption claim.",
+      "status": "Symbolic argument with bounded same-model final frozen review; not formal verification"
+    },
+    {
+      "id": "PE-DIRECT",
+      "statement": "Same-input batch direct counter receives identical coding protection and risk≤min(1,49T).",
+      "evidence": [
+        "proof §7",
+        "016 L1+",
+        "review-v3.md"
+      ],
+      "scope": "Sequential bit-program ledger, not the SRC neural-depth claim.",
+      "status": "Symbolic argument with bounded same-model final frozen review; not formal verification"
+    }
+  ],
+  "open": [
+    "Source-history corruption matching lower/β adaptation (root continuation)",
+    "Noisy arithmetic/all-layer fault model",
+    "Training reachability",
+    "Low-risk optimal coding of actual SRC image",
+    "Literature novelty audit (not claimed here)"
+  ],
+  "final_review": {
+    "path": "v10_research/protected_encoding/review-v3.md",
+    "sha256": "2ab63a94bd5b2cbf5a49c3a60c3417e226b671685452afe85f1a159bfd5d7dda",
+    "verdict": "PASS within explicitly stated one-shot canonical-grid model",
+    "proof_sha256": "91f3068de3bb3ed20b1e8c550ea9e1710e0cfb3e9ba14b0315b0bc1e7ffacdbd",
+    "not_formal_verification": true
+  }
+}

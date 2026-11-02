@@ -1,0 +1,150 @@
+{
+  "name": "C1",
+  "fact_id": "abbd577c047db274",
+  "evidence_id": "57a7e25c0478712a0c403c84bf27ee712f28a88e604ff0d1413d39feb21333e7",
+  "obligation": {
+    "obligation_id": "36441ab5cb65fa3d086e3d2fc5b847cff5acc127ac7ff3a8dfbf0c8137945811",
+    "contract_id": "38d15641fecff6dbee957b6e036c052ecb7f07e6354623e800f7a126cf5270ef",
+    "exact_statement": "C1 under current D1-D4: prove one unknown-(u,t) JOINT family on the original A/p schedule obeys simultaneously R_av<=12000000/N+256eta^2+3/Q and R_00<=1800000/(1+Nu)+256eta^2+3/Q^2 for every N>=3, dyadic Q>=2, integer d>=6, D1 u,t and every D3 map. Include a self-contained proof of the clean actual-terminal prefix estimator bounds R_av<=1000000/N and R_00<=160000/(1+Nu), with no old Fact as premise; finite W(0)=R acquisition, zero/small locked integers and pathwise count perturbation, add-one/clipping and Jensen KL transfer, exact positive Q2/Q4/tie/zero branches, all-box16mQ guards with full products/remainders, and no cut/frontend for N3–5. The cut is nineteen words plus eight protected controls and all clean ancestors are erased. Full Bstar accounting is separately proved in the other route, not asserted here.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 fix the stationary source, full actual finite encoders, integer error cut, precise protected/public information and cost model.",
+        "Source-independent predictor family is not supplied unknown u,t. Same-source and same-map witness quantifiers are as C1-C3, not universal per-source dominance.",
+        "All input acquisition, binding, features, masks, finite arithmetic, copies, clears, holds, code, generation and output are charged; no clean-data bypass.",
+        "The common budget is the principal extracted-query one-shot hybrid model, not padded all-phase, streaming, flattened or unit-cost RAM.",
+        "Source files and prior discussion PASS are provenance only. No new proof depends on old Dot absolute noise laws or claims optimized architecture advantage."
+      ],
+      "quantifiers": [
+        {
+          "variable": "joint_predictor_family",
+          "kind": "EXISTS",
+          "domain": "one executable D4 family depending only on observed history and public N,b,d",
+          "depends_on": []
+        },
+        {
+          "variable": "C1_parameters_and_maps",
+          "kind": "FORALL",
+          "domain": "the full C1 domain with unknown u,t and all D3 maps",
+          "depends_on": []
+        },
+        {
+          "variable": "C2_public_tuple",
+          "kind": "FORALL",
+          "domain": "the restricted C2 domain",
+          "depends_on": []
+        },
+        {
+          "variable": "Phi_star",
+          "kind": "EXISTS",
+          "domain": "one deterministic globally admissible public map independent of t and the decoder, for the C2 tuple",
+          "depends_on": []
+        },
+        {
+          "variable": "post_cut_decoder",
+          "kind": "FORALL",
+          "domain": "all common source-independent randomized decoders of the fixed FULL19 cut",
+          "depends_on": []
+        },
+        {
+          "variable": "witness_t",
+          "kind": "EXISTS",
+          "domain": "one of1/4,3/4 witnessing both conditional and u-weighted average lower for that decoder",
+          "depends_on": []
+        },
+        {
+          "variable": "C3_d",
+          "kind": "FORALL",
+          "domain": "integers>=32 with the exact C3 tuple and the same witness/map",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "C1: N>=3,b>=1,Q=2^b,d>=6,eta=2^-d,0<u<1/4,1/4<=t<=3/4,all D3 maps. C2: u=eta/65536,N power2,M*u^2>=2^40,t in{1/4,3/4}. C3 comparison: d>=32,N=2^(2d+74),b=2d,u=2^(-d-16). D6 Bstar forN>=6,b>=1,d>=6.",
+      "definitions_hash": "1648c98212f71be946dfc8b39ab54497fbad41649bbe3fedc03296c401b8c0ca"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "57a7e25c0478712a0c403c84bf27ee712f28a88e604ff0d1413d39feb21333e7"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": {
+    "artifact_id": "57a7e25c0478712a0c403c84bf27ee712f28a88e604ff0d1413d39feb21333e7",
+    "content_hash": "5038dd6457fb762e181e606ab9131e389c8831fe3919511dee51b8a69edb7e25",
+    "producer": "fact_submit:5b0ca65062c8bbca",
+    "contract_id": "38d15641fecff6dbee957b6e036c052ecb7f07e6354623e800f7a126cf5270ef",
+    "evidence_kind": "LLM_CHECKED_PROOF",
+    "exact_claim": "C1 under current D1-D4: prove one unknown-(u,t) JOINT family on the original A/p schedule obeys simultaneously R_av<=12000000/N+256eta^2+3/Q and R_00<=1800000/(1+Nu)+256eta^2+3/Q^2 for every N>=3, dyadic Q>=2, integer d>=6, D1 u,t and every D3 map. Include a self-contained proof of the clean actual-terminal prefix estimator bounds R_av<=1000000/N and R_00<=160000/(1+Nu), with no old Fact as premise; finite W(0)=R acquisition, zero/small locked integers and pathwise count perturbation, add-one/clipping and Jensen KL transfer, exact positive Q2/Q4/tie/zero branches, all-box16mQ guards with full products/remainders, and no cut/frontend for N3–5. The cut is nineteen words plus eight protected controls and all clean ancestors are erased. Full Bstar accounting is separately proved in the other route, not asserted here.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 fix the stationary source, full actual finite encoders, integer error cut, precise protected/public information and cost model.",
+        "Source-independent predictor family is not supplied unknown u,t. Same-source and same-map witness quantifiers are as C1-C3, not universal per-source dominance.",
+        "All input acquisition, binding, features, masks, finite arithmetic, copies, clears, holds, code, generation and output are charged; no clean-data bypass.",
+        "The common budget is the principal extracted-query one-shot hybrid model, not padded all-phase, streaming, flattened or unit-cost RAM.",
+        "Source files and prior discussion PASS are provenance only. No new proof depends on old Dot absolute noise laws or claims optimized architecture advantage."
+      ],
+      "quantifiers": [
+        {
+          "variable": "joint_predictor_family",
+          "kind": "EXISTS",
+          "domain": "one executable D4 family depending only on observed history and public N,b,d",
+          "depends_on": []
+        },
+        {
+          "variable": "C1_parameters_and_maps",
+          "kind": "FORALL",
+          "domain": "the full C1 domain with unknown u,t and all D3 maps",
+          "depends_on": []
+        },
+        {
+          "variable": "C2_public_tuple",
+          "kind": "FORALL",
+          "domain": "the restricted C2 domain",
+          "depends_on": []
+        },
+        {
+          "variable": "Phi_star",
+          "kind": "EXISTS",
+          "domain": "one deterministic globally admissible public map independent of t and the decoder, for the C2 tuple",
+          "depends_on": []
+        },
+        {
+          "variable": "post_cut_decoder",
+          "kind": "FORALL",
+          "domain": "all common source-independent randomized decoders of the fixed FULL19 cut",
+          "depends_on": []
+        },
+        {
+          "variable": "witness_t",
+          "kind": "EXISTS",
+          "domain": "one of1/4,3/4 witnessing both conditional and u-weighted average lower for that decoder",
+          "depends_on": []
+        },
+        {
+          "variable": "C3_d",
+          "kind": "FORALL",
+          "domain": "integers>=32 with the exact C3 tuple and the same witness/map",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "C1: N>=3,b>=1,Q=2^b,d>=6,eta=2^-d,0<u<1/4,1/4<=t<=3/4,all D3 maps. C2: u=eta/65536,N power2,M*u^2>=2^40,t in{1/4,3/4}. C3 comparison: d>=32,N=2^(2d+74),b=2d,u=2^(-d-16). D6 Bstar forN>=6,b>=1,d>=6.",
+      "definitions_hash": "1648c98212f71be946dfc8b39ab54497fbad41649bbe3fedc03296c401b8c0ca"
+    },
+    "input_hashes": [
+      "5038dd6457fb762e181e606ab9131e389c8831fe3919511dee51b8a69edb7e25"
+    ],
+    "environment_hash": "7ce2e39bc7f4810290d56a7a5a4ef4d91f3f9946d7afff0ea0bf47894fa56e8f",
+    "checker_id": "fact_submit",
+    "checker_version": "1",
+    "checker_result": "PASS",
+    "created_at": "2026-10-26T00:02:13Z",
+    "validity": "VALID"
+  },
+  "fact_bytes_match_CAS": true,
+  "new_project_predecessors": [],
+  "root_complete": false
+}

@@ -1,0 +1,150 @@
+{
+  "id": "icml-input-contamination",
+  "title": "v10 第五阶段：计算前历史污染的终点预测风险与完整实现",
+  "note": "Linked from [redacted user home]/icml-transformer/runs/relative-code-20261026/projects/icml-relative-code; frozen root 82f3b230a8e39f7ef988c219960127d8a94bee1c31d31ae51a328ab8580a3a29, Acceptance c7a4b9c1ecbf65fcff1436de945702549aa9cd5d99bd80be36dbd68fdb237fb7. Reviewed probe012 is source-only; all four prior roots and all historical suspensions/failures remain frozen. This stage does not certify novelty or finish the mother problem.",
+  "problem": {
+    "statement": "Establish the following finite input-contamination reliability theorem, under Definitions D1-D7. The true stationary source, actual terminal query, one common observation channel, complete observed information, positive output format and two distinct implementation cost models are part of this contract. Prior project Facts and probe012 file reviews are sources only; establish or legally discharge every load-bearing premise in this new project's normal native evidence chain.\n\nC1. There is one deterministic predictor family A_(N,k,Q), independent of unknown u,t and of the channel, with the exact smoothed-count/clipping/grid rule D3. For every N>=3 and public (k,Q) in D2, every D1 source, and every admissible source-independent randomized batch channel T in D2, its actual terminal average KL satisfies\nR_av(A,T;u,t) <= 16000000/(3N) + 135680*k/N + 3/Q.\nThe algorithm receives only Z,N,k,Q; clean counts are proof variables. Prove the pathwise count/row perturbation, common probability domination through clipping, true-source reciprocal visits and whole-prefix terminal bridge, and positive-grid transfer. Cover k=0, Q=2, Q=4/ties/zero counts and the actual N=3,4,5 no-prefix uniform branch. Do not assume the corrupted path is Markov, replace the terminal query by an independent query, or provide clean endpoints to the predictor.\n\nC2. For every N>=6 and 1<=k<=floor((floor(N/2)-2)/1024), put u0=k/N, Delta=1/640000, t_-=1/2-Delta/2, t_+=1/2+Delta/2 and c=Delta^2/8=1/3276800000000. There exists ONE globally admissible randomized batch T_(N,k), independent of Q, the predictor and the actual hidden source label, such that TV(L_(u0,t_+)(Z | S_N=00), L_(u0,t_-)(Z | S_N=00))<=1/64, where Z=T_(N,k)(X_1^N) and channel-private coins are averaged. For every common possibly randomized predictor using the entire Z (even unrestricted probability outputs and unlimited subsequent computation), there is one SAME t_* in {t_-,t_+} for which\nR_00(A,T_(N,k);u0,t_*) >= c and R_av(A,T_(N,k);u0,t_*) >= c*k/N.\nThe channel is fixed before the predictor; t_* may depend on that predictor. Its support preserves the last pair and changes at most k earlier bits for EVERY input and EVERY private seed. Prove the full reverse-history coupling, intermediate pairs, adaptive boundaries and truncated last block; then the unnormalized Jordan residual flow, one-row common kernel, hard-budget finite seed implementation and actual-terminal same-witness testing argument. Two source-labelled attacks, population/count aliases, or an average transport budget alone do not meet C2.\n\nC3. Construct the D3 predictor as BOTH (i) a Z-only causal finite JOINT attention frontend plus exact selected-query arithmetic and (ii) a Z-only direct eight-count baseline. For each individual observed Z and public tuple they must emit identical guarded output bits. Prove all closed-box arithmetic guards, full products/remainders and safe casts, source-bearing state erasure and no clean bypass. Supply explicit finite generators and prove that each implementation separately obeys every applicable resource bound in D5, including all input/feature/endpoint acquisition, physical banks, scalar-vs-bit distinction, masks/zero coefficients, copies, holds, code/metadata/address handling, online work/storage/peak, output and offline generation/peak. The actual 46-operation output table, JOINT 17+46 and DIRECT 8+46 plus paid acquisition are specified in D4. Do not replace D5 with a new looser envelope, equate the two accounting models, assert old Bstar inclusion, or treat Python integer semantics as unit-cost hardware.\n\nC4. Integrate C1-C3 in the same observation experiment: for either concrete implementation, C1 applies to C2's SAME channel and its selected SAME source witness. State precisely that the pollution contribution has an O(k/N) upper and an Omega(k/N) full-Z lower, with the separate 1/N and 1/Q terms only upper-bounded here. Preserve the direct-count strong baseline and the exact primary comparison in D6; no novelty, JOINT efficiency superiority, all-source bad-risk statement, deterministic-channel attainment, per-time sensor or all-layer/IEEE conclusion is part of the theorem. [Non-scientific operational metadata omitted.] Existing source reviews and old SOLVED roots do not discharge this new contract. After this accurate stage closes, the v10 mother problem still requires synthesis; no frozen prior root is reopened.",
+    "definitions": "# D1. True source, history and loss\n\nThe alphabet is {0,1}. For unknown 0<u<1/4 and 1/4<=t<=3/4 put w=(1-u)/3 and r=ut/w. The pair state order is (00,01,10,11). The stationary pair law is pi=(u,w,w,w), and next-one probabilities in that order are (t,1/2,1-r,1/2). The pair transition shifts the last bit and appends the next symbol. Start (X1,X2) with pi and generate X1,...,X_(N+1) by this law. The observed clean history is only X1,...,XN; Y=X_(N+1) is not observed. The actual terminal pair is S_N=(X_(N-1),X_N). Natural logarithms are used.\n\nFor a predictor receiving the corrupted history below, let q_A(.|Z,N,k,Q) be its output probability vector. Define R_av(A,T;u,t)=E KL(p_(u,t)(.|S_N)||q_A) and R_00=E[the same loss | S_N=00]. Expectations include the source, independent private channel coins and any independent private predictor coins. Arbitrary probability outputs in the lower theorem may have infinite KL. The fixed finite upper predictor is strictly positive. These are actual same-trajectory terminal risks, not cumulative regret divided by N or independent test-query risks.\n\n# D2. Public domain and the common batch observation channel\n\nN is any integer >=3 and Q=2^b with integer b>=1. If N>=6, set m=floor(N/2), M=m-2 and allow integer 0<=k<=floor(M/1024). For N=3,4,5 define k=0; the predictor is a genuine uniform no-prefix branch. The constant 1/1024 defines this conservative domain and is not asserted necessary.\n\nBefore ANY encoder/predictor computation, one randomized batch T maps the complete already-observed X1..XN to Z1..ZN. For EVERY binary input x and EVERY independent private seed omega, T(x,omega) has the same last two bits as x and differs in at most k of positions1..N-2. The rule may use all observed input bits and their terminal pair, plus public N,k,Q. It cannot read future Y, the actual hidden u,t or source label, or source-dependent coins. A channel is one fixed rule over all inputs and all D1 sources; it is not chosen at runtime using the realized source index. The lower theorem's T_(N,k) is additionally independent of Q and predictor.\n\nAll algorithms and baselines see ONLY Z,N,k,Q. They receive no clean history/prefix/gap/E_m/counts, hidden parameters or private channel seed. Since the last pair is preserved, S_N equals the last pair of Z. Any prefix endpoint E_m used by an implementation is the DIRTY pair (Z_(m-1),Z_m), without extra protection. Internal arithmetic is exact finite arithmetic, separately charged. There is no post-statistic eta cut in this experiment. This is not a time-causal sensor, IEEE fault or all-layer perturbation model. The external channel's own computation/randomness is unrestricted and not part of predictor cost; handling all observed input by the predictor is charged.\n\nFor C2 a public two-point experiment uses u0=k/N and t_+/-=1/2+/-1/1280000. Computing a fixed table from both public witness laws is allowed; selecting a row by the actual hidden label is not. T must be globally legal also when other D1 parameters produce its input. Private channel randomness is averaged in the TV/risk statement but the edit constraint is pointwise in every seed. Predictor-private randomization is fresh and independent of channel coins.\n\n# D3. Exactly specified unknown-parameter predictor and output\n\nFor N>=6 and a path z, C_sc(z) counts triples ending at positions3..m, with preceding two symbols s and next symbol c. There are M eligible triples. Let D_s=C_s0+C_s1, alpha=3k+1. Select the row s by the actual last two Z symbols. In the 00 row, r1=clip_[1/4,3/4]((C_001+alpha)/(D_00+2alpha)), r0=1-r1. In row10, r0=min(3/4,(C_100+alpha)/(D_10+2alpha)), r1=1-r0. Rows01 and11 use uniform. No true source parameter enters these formulas.\n\nFor the selected counts C0,C1 define D=C0+C1+2alpha and Zden=4D. N<6 and Q=2 output uniform. For row00 with Q>=4 set z1=min(3D,max(D,4(C1+alpha))), J=floor((2Q*z1+Zden)/(2Zden)); output (Q-J,J)/Q. Half ties go upward. For row10 set z0=min(3D,4(C0+alpha)), z1=Zden-z0, j_c=ceil((Q-1)*z_c/Zden), e=Q-j0-j1; output (j0,j1+e)/Q. In both Q-1 and the division numerator Zden-1, the constant is literal1, not alpha. Rows01/11 are uniform. All candidate branches actually evaluated by the straight-line program must be defined, including when the final uniform MUX discards one.\n\nThe final observable port is THREE b+1-bit fields (out0,out1,Q), each least-significant bit first, thus 3(b+1) bits. The two output numerators are positive and sum to Q. Every retained intermediate/source-bearing bank other than this final output is explicitly erased; public code/indices may remain but cannot contain hidden source data. N=3,4,5 reads exactly N observed bits and writes this same port without instantiating a prefix/head or fictitious sixth input.\n\n# D4. Two finite implementations, arithmetic and deterministic acquisition\n\nThe source implementations copied to inputs/source-stage4/outputs/012-input-contamination/prover/ are fixed specifications and provenance, not automatically accepted proofs: robust_program_v1.py SHA256 5945d29df95eb1499005250e7d0f3835aff91f9846b8e6ce6ac3ef516c0d5600, resource_interface_v1.py SHA256 b11f8f06eec9b1ff2e305b5385e1efc69d3076b527027971a764e58d1ec9603e, finite-program-v1.json SHA256 3875340ee76fa75ad61cc9db5e4483bb03e1971eeaa9b5d8973545bb2a83ec44. The exact semantics are D3 plus the finite operations below; their new-project realization and costs must be proved. The original semantic library c3c4_program_v1.py SHA256 88de55d3243dcff63c1deffc226a645a7fb7949e3a32d662ab55141630f9b570 is also source-only.\n\nJOINT: let h=ceil(log2(256(N-2))), A=2^h, p=4h+4ceil(log2(m+4))+64, R_s=2^p. Four charged singleton bindings produce the causal local lags and observed terminal/dirty prefix endpoint selectors; two-AND triple features and a single zero-score uniform finite head produce eight j_sc=floor(A*C_sc(Z)/M) and eleven explicit zero internal words. Its exact finite zero-score value is R_s, with numerator A*R_s*C_sc and denominator M*R_s. The internal 19 words and eight controls are implementation registers, NOT an observation restriction on other predictors. No real-softmax approximation, free triple table, or clean endpoint is assumed. Six row-selection MUXes and exact count snapping floor((2M*j+A)/(2A)) plus two control ORs use the 17-operation table. Every independent closed j in[0,A] yields a count in[0,M]; on actual observed Z the snap is exact.\n\nDIRECT: own and read the same full Z batch, initialize eight counters, scan every eligible triple and all eight public labels, compute its two AND/equality features and increment each matching counter. Endpoints come only from this owned Z. Six MUXes and two control ORs select the counts. Acquisition loop/control/input reads and cleanup are charged in addition to the eight selected-row operations.\n\nBoth then execute the same 46-operation output table: from the frozen 41-operation output insert after CONST1 the five operations k=CONST(public k), twok=SHL(k,1), threek=ADD(twok,k), alpha=ADD(threek,one), twoalpha=SHL(alpha,1). Only three subsequent operands change to Dsum+twoalpha, C0+alpha, C1+alpha; all grid literal1 operations and eager candidates remain. JOINT has 17+46=63 selected-row/output operations, DIRECT 8+46=54 plus acquisition. This table must be presented self-contained in its new proof, including the retained paid CONST0/CONST2, ceiling residual and terminal MUXes.\n\nOn the closed independent count box C0,C1 in[0,M], D<=3m, Zden<=12m, nearest dividend<32mQ and each ceiling dividend<12mQ. Guards must cover that whole box, not just realizable count sums. With beta as D5, use exact finite primitives with g(beta)=1024beta^2 bit steps and 32beta+32 bit scratch. Multiplication retains the full 2beta-bit product; restoring division retains the full numerator, beta+1-bit shifted remainder and full quotient before a range-justified cast. Carry/borrow, MIN/MAX/MUX/select and comparison costs are real. Neither primitive validity nor the finite compiler is assumed from an old Fact without lawful new-project support.\n\n# D5. Fixed separately priced full resource vectors\n\nThese are sufficient finite implementation bounds, not equality of consumption, optimality or a shared-cap advantage. DIRECT uses an owned-batch packed bit-register machine; JOINT uses principal extracted-query one-shot batch hybrid dense tokenwise tied matrices plus a separately charged finite evaluator. Every Boolean neural channel occupies a full beta-bit physical scalar. The models must not be silently identified, flattened, streamed or treated as unit-cost RAM. All zero matrix/mask entries and retained identities are stored/evaluated. JOINT initially pays all n token banks; nonquery release follows actual full source-state erasure. No old D6 Bstar is a cap or premise here.\n\nDefine bitlength(x)=floor(log2(x))+1 for positive integers, ell=ceil(log2(N+2)), tau=bitlength(k+1), n=N+1. For N>=6, s=ell+b+tau+p+32 with p in D4; for N<6, s=ell+b+tau+32 with no p or prefix parameters. Let beta=128s, g=1024beta^2 and Z_meta=1024ns.\n\nFor DIRECT, N>=6:\nG=(512n+2048)g, E=L=0, W=0, dense_slots=P_bits=mask_bits=I_holds=0,\ncore=G, W_work=8N+8192beta+Z_meta.\nAll neural coordinates are zero. Packed-memory residence and each accessed bit are separately paid; zero neural coordinates do not mean free memory.\n\nFor JOINT, N>=6:\nW=2048beta,\nG=64g+256*19(h+1)+8192beta+128(b+1),\nL=16G+96,\nE=512n^2+16nW+256W+1024(h+b+ell+tau+1),\ndense_slots=(132+L)(W+1)^2,\nP_bits=dense_slots*beta,\nmask_bits=4n^2+(m+1)^2,\nI_holds=132nW+LW,\ncore=256(132n+L)(W+1)^2*beta^2+E*g,\nW_work=4nWbeta+Z_meta.\nFrontend depth allowance132 consists of128 construction layers and four extraction/clear phases. Query depth is L, width per token W, five total heads and at most four simultaneous heads, value width8, QK dimension at most4, score magnitude0. E is finite word-step bundles, each expanded by g, distinct from neural depth and dense MAC work. Metadata is public only; dirty inputs/counts/endpoints are data banks. Actual copies, full-bank scans, liveness and all source-bearing cleanup must justify these numbers.\n\nFor N=3,4,5 BOTH implementations use the actual-input uniform packed bit-register branch:\nG=(128(N+1)+512)g, core=G, E=L=W=dense_slots=P_bits=mask_bits=I_holds=0,\nW_work=8N+8192beta+Z_meta.\nAll heads/layers/values/QK/score coordinates are zero; no N-to6 statistical padding is permitted.\n\nFor either implementation and every N define:\na=beta+bitlength(G+E+Z_meta+N+L+1)+32,\nK_code=4096*g*(beta+a)+4096*(s+1)*(beta+a)^2,\nU_stored=P_bits+mask_bits+Z_meta+K_code,\nT_online=4096(a+beta)^2*core,\npeak_online=U_stored+W_work,\na_gen=beta+bitlength(U_stored+T_online+N+L+1)+s+32,\nEmit=U_stored+L+1024,\nT_gen=1024s^2+4096*Emit*a_gen^2,\nW_gen=64a_gen+64*Emit*a_gen,\npeak_gen=U_stored+W_gen.\nHere g is the defined number 1024beta^2. a is the per-field runtime address-record width and a_gen the separate flat generator address width. The final output length is3(b+1), GPU work0. The separately fixed resource calculator is a transcription reference for these full vectors, not a proof of the charges.\n\nAll input storage/read/validation, full products/remainders, dirty endpoint/control handling, prior copies, physical scalar storage, all-live-state holds, instruction/operand/coefficient fetch and dispatch/address arithmetic, explicit cleanup, public metadata/code/constants, final field initialization/writes and simultaneous storage/working peaks are included. The generator enumerates the primitive wiring, new SSA, loop/phase descriptors, masks/dense zeros, all padded code/metadata bits and final port wiring; all stored bits and layer delimiters are generated with the displayed offline cost/peak. No free hardware primitive, Python GC or precomputed hidden statistic is allowed. No actual allocation of enormous netlists is required for a finite constructive proof, but a formula without an explicit generator/liveness argument is insufficient.\n\n# D6. Quantifier interpretation, baselines and sources\n\nC1 quantifier order is one deterministic family A, then all public tuples, all D1 parameters and all admissible channels. C2 order is each public(N,k>=1), then one globally lawful T independent of Q and predictor, then every Q and every common possibly randomized full-Z predictor, then a witness t_* that simultaneously supports conditional and average bounds. The latter predictor may even know the public two-point experiment and channel; it never receives the private channel seed. Infinite later computation does not add unobserved clean information.\n\nC1 applies to C2's T for either concrete implementation. The two implementations agree on every Z, so this contract cannot establish JOINT statistical superiority. It gives an O(1/N+k/N+1/Q) average upper and an Omega(k/N) contamination lower, plus a positive rare00 conditional lower. It does not claim matched 1/N or1/Q lower terms, full conditional classification, every-source damage, small unconditional history TV, deterministic attack attainment, practical constants, optimized resources or a learning result.\n\nBounded existing primary mapping: Chen/Gao/Ren, arXiv1511.04144v2, is iid Huber-mixture robust testing/modulus, not this common hard-edit dependent observation rule. Pydi/Jog, ICML2020/PMLR119 pp7814-7823 main plus supplement, includes class-dependent point maps and Wasserstein distribution attacks, transport tail cost and submeasures. A whole dependent trajectory can be one feature; dependence itself is not a novelty exclusion. Generic testing/transport/submeasure ideas are prior tools. The new proof must establish the actual D1 conditional full-path Hamming bound and one hard-budget common input-row kernel; class-labelled maps or expected transport alone cannot substitute. These three fixed PDFs and exact location maps are provenance. No claim of novel or publication-central results is required or inferred from the bounded comparison.\n\nSources live only under inputs/source-stage4/ with original relative layout and author/hash records. The previous native C1/C3 Fact identifiers in those files remain old-project provenance, not active new-project Fact IDs. Necessary clean source/visits/full-prefix/grid and deterministic finite primitive/frontend/compiler premises must be self-contained or admitted by a genuinely supported mechanism with matching semantics in this project's normal evidence chain. Old Dot absolute-cube formulas, 5/4 exponents and periodic logarithmic-history claims are not mathematical premises. Preserve the earlier conditional Theta(eta) erratum in historical scope; it is not a parameter or claim of this new model.\n\n# D7. Evidence and completion\n\nThis historical contract required fixed full mathematical review with accurate claims, definitions, dependencies and source versions. Existing source-file reviews and finite diagnostics are not substitutes for the required proof evidence. The recorded evidence level is LLM_CHECKED_PROOF, not formal verification or external peer review. Same-model agreement is not independent cross-model validation. Historical administrative completion requirements are omitted from this public export; their unresolved status is not relabelled a scientific pass. Completion of this stage would not settle the broader research problem.\n",
+    "assumptions": [
+      "D1-D2 fix the true stationary D1 source, actual terminal query and one common randomized batch hard-edit observation channel before every encoder.",
+      "All algorithms see only Z,N,k,Q. Last pair is preserved on every input/seed; clean prefix, gap, endpoints, counts and private channel randomness are unavailable.",
+      "The upper is one unknown-parameter family for all sources/channels. The lower fixes one Q/predictor/source-label-independent channel before every full-Z predictor, then selects one source witness for both risks.",
+      "D3-D5 fix exact finite outputs and separate complete DIRECT bit-register and JOINT principal batch-hybrid cost vectors; no old Bstar or architecture superiority is claimed.",
+      "Old native Facts, file reviews and primary sources copied into inputs are provenance, not current-project admissions. All load-bearing clean/statistical/finite premises need valid new-project support."
+    ],
+    "parameter_domain": "N>=3,Q=2^b,b>=1. N>=6: m=floor(N/2),M=m-2,integer0<=k<=floor(M/1024); N3-5:k0 uniform. D1:0<u<1/4,1/4<=t<=3/4. C2:k>=1,u0=k/N,Delta1/640000,t+/-=1/2+/-Delta/2.",
+    "quantifiers": [
+      {
+        "variable": "predictor_family",
+        "kind": "EXISTS",
+        "domain": "one D3 deterministic family, two D4 implementations, depends only on Z and public N,k,Q"
+      },
+      {
+        "variable": "upper_parameters_and_channel",
+        "kind": "FORALL",
+        "domain": "all D1 parameters, all D2 public tuples and all admissible source-independent randomized batch channels"
+      },
+      {
+        "variable": "lower_public_tuple",
+        "kind": "FORALL",
+        "domain": "N>=6,1<=k<=floor((floor(N/2)-2)/1024)"
+      },
+      {
+        "variable": "common_channel",
+        "kind": "EXISTS",
+        "domain": "one globally per-input/per-seed hard-k T_(N,k), independent of actual source label, Q and predictor"
+      },
+      {
+        "variable": "full_observation_predictor",
+        "kind": "FORALL",
+        "domain": "every public Q and every common randomized full-Z predictor, unlimited computation/unrestricted probabilities allowed"
+      },
+      {
+        "variable": "same_source_witness",
+        "kind": "EXISTS",
+        "domain": "one t in the fixed public pair at u0=k/N witnessing both conditional and average lower bounds"
+      }
+    ],
+    "objects": [],
+    "target_kind": "CLASSIFICATION",
+    "required_evidence_level": "LLM_CHECKED_PROOF",
+    "completion_checks": [
+      "C1 all-channel finite-N actual-terminal upper with lawful clean/source/visit/whole-prefix/grid dependencies and all corner cases.",
+      "C2 full reverse-path and unnormalized-residual construction of one globally hard-budget common channel, arbitrary full-Z randomized predictors, same-source conditional and average lower.",
+      "C3 actual Z-only bit-identical JOINT/DIRECT finite programs and every separate D5 online/offline resource coordinate with explicit generators and physical cleanup.",
+      "C4 same-experiment upper/lower integration, strong direct-count baseline, bounded primary/scope comparison, fixed independent review, normal native evidence/root admission, fresh final audit and actual responsibility handoff."
+    ],
+    "external_help_policy": null,
+    "permitted_tools": []
+  },
+  "team": null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,
+  "task_budget": null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,
+  "workbench": null
+
+
+
+}

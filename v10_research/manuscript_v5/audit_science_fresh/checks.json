@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checks": {
+    "curve_table_exact": 960,
+    "path_continuity": 180,
+    "nonincident_separation": 1940,
+    "adversarial_decode": 3840,
+    "no_pause_positive_speed": 96,
+    "no_pause_tiling": 90,
+    "partial_fold_endpoints": 837,
+    "symmetric_inverse_leakage": 17952,
+    "finite_scale_certificate": 54,
+    "common_attack_oracle": 2925
+  },
+  "total": 28874,
+  "scope": "Fresh independent exact rational finite checks; not universal proofs or emitted-evaluator verification."
+}

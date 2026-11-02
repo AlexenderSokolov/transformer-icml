@@ -1,0 +1,9 @@
+{
+  "unit": "EP001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "terminal_symbol_corruption/EP001_endpoint_corruption.md",
+  "sha256": "bf58470664861f28dbd8746d5b0c54eea1beadd98e87c2c80600b1ec68c796fa",
+  "review": "terminal_symbol_corruption/EP001_boundary_independent_review.md",
+  "time_utc": "2026-11-02T09:20:25.012974+00:00",
+  "scope": "POST-STAGE7. Changed corruption model allows endpoint edits; target remains TRUE hidden original terminal next-law. K>=2,M>=64,0<=k<=M,beta all, bothinit riskTheta_K(min(1,max(s,k/M,(1-beta)1{k>=1}))). Root-authored full proof plus fresh full independent review read by root. All-state marginal certificate, pooled martingale upper, separate clean branch, common one-last-symbol erasure lower even with known source. No corrupted-context target, visiblemask equivalence, causal-online frontier, neuralbudget, growingK or novelty claim."
+}

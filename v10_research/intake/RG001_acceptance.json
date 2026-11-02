@@ -1,0 +1,9 @@
+{
+  "unit": "RG001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "robust_grid_packing/RG001_theorem.md",
+  "sha256": "fc563812489ea4deba9bbc00e072119f2e26d23f3b6bcab56c40cb5dabd74949",
+  "review": "robust_grid_packing/RG001_independent_review.md",
+  "time_utc": "2026-11-02T07:53:37.662254+00:00",
+  "scope": "Fixed J>=2 robust IID arbitraryinitialization risk O_(J,c)(M^-1/2+Q^-J), dyadic Q sufficiently large depending J,c, pointwise c/Q prequantization fault/clipping. Recursive bounded primitive snake depth O_J(log Q), width O(J), coefficients<=4; uniformP exact evaluator with prepool scaling and G=(J-1)(J-2)k/2 guardbits. Paid polynomial segment decoder. Root read full theorem+fresh review including endpoint fiber/localinverse and exact uniformprecision. No generalMarkov/training/internalfault/novelty claim. RP accepted predecessor. Poststage6."
+}

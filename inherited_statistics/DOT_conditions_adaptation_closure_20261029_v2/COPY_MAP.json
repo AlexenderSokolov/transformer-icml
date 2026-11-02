@@ -1,0 +1,1309 @@
+{
+  "format": "Exact UTF-8 byte partitions v1; zero-based half-open byte offsets; one-based inclusive touched lines",
+  "records": [
+    {
+      "source": "structural_survival_diagnostic_v2.md",
+      "source_bytes": 39016,
+      "source_sha256": "3c3c0658bd58613a98b2212871b868ba75c6f1f9350c9ade0f10297d48cd7d3c",
+      "output": "proofs/S023_complete_proof_v2.md",
+      "output_bytes": 33467,
+      "output_sha256": "e20646b7f3b7fdc6a167418a14c383ac05e265e910d95bdaf14c4ae798ed5317",
+      "copied_body_sha256": "68092c28783f91ac1641928cb83eccba1daf2ebd60ddeab747b9c1db29670858",
+      "spans": [
+        {
+          "source_byte_start": 1027,
+          "source_byte_end": 28072,
+          "source_line_start": 7,
+          "source_line_end": 289,
+          "output_byte_start": 985,
+          "output_byte_end": 28030,
+          "sha256": "ce9d28ee3c4894579054e481ee547d7e0758fc889f1227596d2fe7de51520c62"
+        },
+        {
+          "source_byte_start": 28524,
+          "source_byte_end": 33859,
+          "source_line_start": 292,
+          "source_line_end": 316,
+          "output_byte_start": 28031,
+          "output_byte_end": 33366,
+          "sha256": "ff25b7c797d9aba8816db3ed126298f6e8a6d886a77eb03fc932577afb7e5250"
+        },
+        {
+          "source_byte_start": 34023,
+          "source_byte_end": 34124,
+          "source_line_start": 316,
+          "source_line_end": 316,
+          "output_byte_start": 33366,
+          "output_byte_end": 33467,
+          "sha256": "07f8466655814d74d60063587b7a83dfeff8b2125ae7da04e06e77a422f4e4e6"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 1027,
+          "source_line_start": 1,
+          "source_line_end": 6,
+          "sha256": "2118f5a1a989141bab425d3f7221637a0eec15c8e0a7aa67ea56c57c0224bf47",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 28072,
+          "source_byte_end": 28524,
+          "source_line_start": 290,
+          "source_line_end": 291,
+          "sha256": "fafa67742b4398878ea0a89eefdc50b2d90df1979029331d8b64508d92dc505e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 33859,
+          "source_byte_end": 34023,
+          "source_line_start": 316,
+          "source_line_end": 316,
+          "sha256": "6811a5732911557ed27db8f3b3088482af5ab2c2cba707a23cc279a2056013a0",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 34124,
+          "source_byte_end": 39016,
+          "source_line_start": 317,
+          "source_line_end": 346,
+          "sha256": "2040a094b5af202283a52151cbb2a07bd5538e0076d6edc39ea79e45b6796d86",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 985,
+          "sha256": "7a369e1f087ca5ed0789eb543085f05565fa832ac84daa05b79534bd465b784e",
+          "purpose": "明确标记的编排标题、版本状态、历史限定及公共导航"
+        },
+        {
+          "output_byte_start": 28030,
+          "output_byte_end": 28031,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "purpose": "省略行政末句后的标题边界"
+        }
+      ]
+    },
+    {
+      "source": "S023_mathematical_review_v1.md",
+      "source_bytes": 36289,
+      "source_sha256": "882a60c76f93ef89f9a0ee918b905299c379c0c3d8fdfddaab85818834e73484",
+      "output": "reviews/S023_mathematical_review_v1_science.md",
+      "output_bytes": 32082,
+      "output_sha256": "85e517e0491ce18d2bebf68f5c7269f58777e75238e738859636647d82a65d4d",
+      "copied_body_sha256": "f9dd20aa151f0a90616e3dcfb3f3c903a78de56a59a654d4186939cbf2dd7b3a",
+      "spans": [
+        {
+          "source_byte_start": 97,
+          "source_byte_end": 1597,
+          "source_line_start": 3,
+          "source_line_end": 12,
+          "output_byte_start": 892,
+          "output_byte_end": 2392,
+          "sha256": "efaddca8bffa9ced812523cdc5cb4a80764f4638b577ac82806fa676248f0657"
+        },
+        {
+          "source_byte_start": 2937,
+          "source_byte_end": 25813,
+          "source_line_start": 25,
+          "source_line_end": 155,
+          "output_byte_start": 2393,
+          "output_byte_end": 25269,
+          "sha256": "3c986c87c49251bc161a78434bbbf64cbb391e0ec131154cc2f0141cb0b04d33"
+        },
+        {
+          "source_byte_start": 25955,
+          "source_byte_end": 26607,
+          "source_line_start": 155,
+          "source_line_end": 157,
+          "output_byte_start": 25269,
+          "output_byte_end": 25921,
+          "sha256": "322436f2328bc256beb21d8ae0178e0588da7b9d6e0970da5512ea5bd2734b5d"
+        },
+        {
+          "source_byte_start": 26669,
+          "source_byte_end": 27096,
+          "source_line_start": 157,
+          "source_line_end": 164,
+          "output_byte_start": 25921,
+          "output_byte_end": 26348,
+          "sha256": "82e90ae46bb6dd8ecb559c61b245a80765d3a54ec29a6331502e4cf220009f21"
+        },
+        {
+          "source_byte_start": 28244,
+          "source_byte_end": 28247,
+          "source_line_start": 171,
+          "source_line_end": 171,
+          "output_byte_start": 26348,
+          "output_byte_end": 26351,
+          "sha256": "5bbf862f0da903d559930558a8859c2559c555e9c2c5f88e7d36731201232b54"
+        },
+        {
+          "source_byte_start": 28256,
+          "source_byte_end": 28488,
+          "source_line_start": 171,
+          "source_line_end": 172,
+          "output_byte_start": 26351,
+          "output_byte_end": 26583,
+          "sha256": "85b83f438c31c41b757fd5bd49ba6b3652434bf2ddfd50a0705e08befae6d9ce"
+        },
+        {
+          "source_byte_start": 28497,
+          "source_byte_end": 28704,
+          "source_line_start": 172,
+          "source_line_end": 172,
+          "output_byte_start": 26583,
+          "output_byte_end": 26790,
+          "sha256": "ce9b55e494952cbd26f16c85d114f726622ae060293eb3d4daf8872203217390"
+        },
+        {
+          "source_byte_start": 28854,
+          "source_byte_end": 28857,
+          "source_line_start": 174,
+          "source_line_end": 174,
+          "output_byte_start": 26790,
+          "output_byte_end": 26793,
+          "sha256": "5bbf862f0da903d559930558a8859c2559c555e9c2c5f88e7d36731201232b54"
+        },
+        {
+          "source_byte_start": 28866,
+          "source_byte_end": 29078,
+          "source_line_start": 174,
+          "source_line_end": 175,
+          "output_byte_start": 26793,
+          "output_byte_end": 27005,
+          "sha256": "ac4761cce4dcddb90d2a54e5363e66ea388eb70a361cde0043eb263e235bfd7b"
+        },
+        {
+          "source_byte_start": 29087,
+          "source_byte_end": 29289,
+          "source_line_start": 175,
+          "source_line_end": 176,
+          "output_byte_start": 27005,
+          "output_byte_end": 27207,
+          "sha256": "b093f52f488c1c9bc9b608e92632836a13ed293b5fe5ba392957f297838e6344"
+        },
+        {
+          "source_byte_start": 29298,
+          "source_byte_end": 29481,
+          "source_line_start": 176,
+          "source_line_end": 176,
+          "output_byte_start": 27207,
+          "output_byte_end": 27390,
+          "sha256": "587fd9d3ea4c33a03385f768fec9b3207908a5e452bd20836e40c690734c1d89"
+        },
+        {
+          "source_byte_start": 29645,
+          "source_byte_end": 29648,
+          "source_line_start": 178,
+          "source_line_end": 178,
+          "output_byte_start": 27390,
+          "output_byte_end": 27393,
+          "sha256": "5bbf862f0da903d559930558a8859c2559c555e9c2c5f88e7d36731201232b54"
+        },
+        {
+          "source_byte_start": 29678,
+          "source_byte_end": 29851,
+          "source_line_start": 178,
+          "source_line_end": 179,
+          "output_byte_start": 27393,
+          "output_byte_end": 27566,
+          "sha256": "361d4d5e870200ec2442ce6fed2bb726d7d58f8270d286956c82464a8ff5f794"
+        },
+        {
+          "source_byte_start": 29881,
+          "source_byte_end": 30198,
+          "source_line_start": 179,
+          "source_line_end": 180,
+          "output_byte_start": 27566,
+          "output_byte_end": 27883,
+          "sha256": "bf2f11d780677bde3ce3af96d0c402ebb1e14f138b2796249c462723882afd9c"
+        },
+        {
+          "source_byte_start": 30228,
+          "source_byte_end": 30541,
+          "source_line_start": 180,
+          "source_line_end": 181,
+          "output_byte_start": 27883,
+          "output_byte_end": 28196,
+          "sha256": "a172be8194ca21bd9ccd70a378cfb4dae6987554384c395fd935663a92103557"
+        },
+        {
+          "source_byte_start": 30571,
+          "source_byte_end": 30918,
+          "source_line_start": 181,
+          "source_line_end": 182,
+          "output_byte_start": 28196,
+          "output_byte_end": 28543,
+          "sha256": "18794d0b950540313c2096dcd64b28071ded118942920e162a7391d153b9c721"
+        },
+        {
+          "source_byte_start": 30948,
+          "source_byte_end": 31189,
+          "source_line_start": 182,
+          "source_line_end": 183,
+          "output_byte_start": 28543,
+          "output_byte_end": 28784,
+          "sha256": "cc6eec927556a46bccad7f5d3f87c95303fa525ca17df42f55a0dfa1d32c1ad0"
+        },
+        {
+          "source_byte_start": 31219,
+          "source_byte_end": 31485,
+          "source_line_start": 183,
+          "source_line_end": 184,
+          "output_byte_start": 28784,
+          "output_byte_end": 29050,
+          "sha256": "24263b12e7da9ccdce8c83d4a75eae9c95ece0f0f99c1a7db5b3db576ca78742"
+        },
+        {
+          "source_byte_start": 31815,
+          "source_byte_end": 31865,
+          "source_line_start": 187,
+          "source_line_end": 188,
+          "output_byte_start": 29050,
+          "output_byte_end": 29100,
+          "sha256": "88ed0a2fab543ae395e2dd6bf544e74e35fcd1d898b96868f8be426e2555a0bc"
+        },
+        {
+          "source_byte_start": 32170,
+          "source_byte_end": 34666,
+          "source_line_start": 194,
+          "source_line_end": 204,
+          "output_byte_start": 29100,
+          "output_byte_end": 31596,
+          "sha256": "6977bfca22c2f2d062f03c70cf071c7aecc7232ac3d543f4a8f8392ae734574c"
+        },
+        {
+          "source_byte_start": 35222,
+          "source_byte_end": 35708,
+          "source_line_start": 209,
+          "source_line_end": 209,
+          "output_byte_start": 31596,
+          "output_byte_end": 32082,
+          "sha256": "227406b4f187bb0565d7eea4f7a4707cb87b250f7a857026af47d8e082926bdd"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 97,
+          "source_line_start": 1,
+          "source_line_end": 2,
+          "sha256": "a53c313dca54bc5169936e02e26f1e105ee4f7cbc09c852dd17fedc342883717",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 1597,
+          "source_byte_end": 2937,
+          "source_line_start": 13,
+          "source_line_end": 24,
+          "sha256": "3fa7f68c7dc14b690203aef90cefb83866d88578cc4430d0b717d11ed9176a5d",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 25813,
+          "source_byte_end": 25955,
+          "source_line_start": 155,
+          "source_line_end": 155,
+          "sha256": "0cd42ea5f602d3734cbef1565923fae3bdc6dd5cc0574cd0934810ef5d593764",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 26607,
+          "source_byte_end": 26669,
+          "source_line_start": 157,
+          "source_line_end": 157,
+          "sha256": "cd7e0562e1f275900a2a7694879ba55afab49d09f3e4e489d43ea57159f934ba",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 27096,
+          "source_byte_end": 28244,
+          "source_line_start": 165,
+          "source_line_end": 170,
+          "sha256": "a39fbbe6792071d3006865ba1cfcf110fbdc3331e3ca8c5c3fda7ae0aa3dd065",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 28247,
+          "source_byte_end": 28256,
+          "source_line_start": 171,
+          "source_line_end": 171,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 28488,
+          "source_byte_end": 28497,
+          "source_line_start": 172,
+          "source_line_end": 172,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 28704,
+          "source_byte_end": 28854,
+          "source_line_start": 173,
+          "source_line_end": 173,
+          "sha256": "82150cfd43f2782e965dab3eb9b79b9cef2cfb451ef26005220bf99dc57b2c02",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 28857,
+          "source_byte_end": 28866,
+          "source_line_start": 174,
+          "source_line_end": 174,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 29078,
+          "source_byte_end": 29087,
+          "source_line_start": 175,
+          "source_line_end": 175,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 29289,
+          "source_byte_end": 29298,
+          "source_line_start": 176,
+          "source_line_end": 176,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 29481,
+          "source_byte_end": 29645,
+          "source_line_start": 177,
+          "source_line_end": 177,
+          "sha256": "1e4d04884f79f8c94368f258d71ee03ae06af4e558e4fcc4f73d1584c6aba5c5",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 29648,
+          "source_byte_end": 29678,
+          "source_line_start": 178,
+          "source_line_end": 178,
+          "sha256": "53ff009ec0767be7a0d0c17c34ca2aae9f79cf925e03e140d95dc71d179bc767",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 29851,
+          "source_byte_end": 29881,
+          "source_line_start": 179,
+          "source_line_end": 179,
+          "sha256": "53ff009ec0767be7a0d0c17c34ca2aae9f79cf925e03e140d95dc71d179bc767",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 30198,
+          "source_byte_end": 30228,
+          "source_line_start": 180,
+          "source_line_end": 180,
+          "sha256": "53ff009ec0767be7a0d0c17c34ca2aae9f79cf925e03e140d95dc71d179bc767",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 30541,
+          "source_byte_end": 30571,
+          "source_line_start": 181,
+          "source_line_end": 181,
+          "sha256": "53ff009ec0767be7a0d0c17c34ca2aae9f79cf925e03e140d95dc71d179bc767",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 30918,
+          "source_byte_end": 30948,
+          "source_line_start": 182,
+          "source_line_end": 182,
+          "sha256": "53ff009ec0767be7a0d0c17c34ca2aae9f79cf925e03e140d95dc71d179bc767",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 31189,
+          "source_byte_end": 31219,
+          "source_line_start": 183,
+          "source_line_end": 183,
+          "sha256": "53ff009ec0767be7a0d0c17c34ca2aae9f79cf925e03e140d95dc71d179bc767",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 31485,
+          "source_byte_end": 31815,
+          "source_line_start": 185,
+          "source_line_end": 186,
+          "sha256": "528a83e2ae7c90fec5e32bcece1e422cdbe764342934bfa4a6b4aa64430cf998",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 31865,
+          "source_byte_end": 32170,
+          "source_line_start": 189,
+          "source_line_end": 193,
+          "sha256": "ceb9d91c07ec676187d33a7ec204f88c43f1153f240c0c6adfa44e2a2b8305f1",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 34666,
+          "source_byte_end": 35222,
+          "source_line_start": 205,
+          "source_line_end": 208,
+          "sha256": "e789fe10c0c1d0d26f9ebd6935ed145dad368bc3f2feb5de8711a22e3b8c6d62",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 35708,
+          "source_byte_end": 36289,
+          "source_line_start": 210,
+          "source_line_end": 211,
+          "sha256": "da0720cdf0c7ac638ce3f8b37ea9915cfda938edd04c7c66e24a9cf193ab0e7a",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 892,
+          "sha256": "fdd5d0e8482024a4c38bdcdce1b5d3f32b7254eab19a14c0bb5b51af09a44c28",
+          "purpose": "明确标记的编排标题、版本状态、历史限定及公共导航"
+        },
+        {
+          "output_byte_start": 2392,
+          "output_byte_end": 2393,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "purpose": "省略行政末句后的标题边界"
+        }
+      ]
+    },
+    {
+      "source": "S023_mathematical_review_v2.md",
+      "source_bytes": 12138,
+      "source_sha256": "3009c465bae495242b68c0d88284ffd48d834090004e4489f672099f0b3e808a",
+      "output": "reviews/S023_mathematical_review_v2.md",
+      "output_bytes": 8664,
+      "output_sha256": "1be089d8c9c87ecf7c9d536ed98d021a0231514e95dd2b5b52d9465121dda83e",
+      "copied_body_sha256": "e5fe5e815608e3c53789136cf72aa874fd505bc3ea490744b0b32c64cfc5fc01",
+      "spans": [
+        {
+          "source_byte_start": 56,
+          "source_byte_end": 878,
+          "source_line_start": 3,
+          "source_line_end": 9,
+          "output_byte_start": 863,
+          "output_byte_end": 1685,
+          "sha256": "3d6d75dbc3c6b3cd038718bdd9720cfc70002b58de43cc91fe398b4b671ab1a4"
+        },
+        {
+          "source_byte_start": 895,
+          "source_byte_end": 1132,
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "output_byte_start": 1685,
+          "output_byte_end": 1922,
+          "sha256": "e5f639da2f18e22ae6747ae402f9265ca3033ba2a28e10870d4f3d73a56d72f4"
+        },
+        {
+          "source_byte_start": 2229,
+          "source_byte_end": 2284,
+          "source_line_start": 19,
+          "source_line_end": 21,
+          "output_byte_start": 1923,
+          "output_byte_end": 1978,
+          "sha256": "e25e7391b55dd6f38158393c025ac5dff55df86ec8d4d92644601731bec8b7f5"
+        },
+        {
+          "source_byte_start": 2293,
+          "source_byte_end": 2417,
+          "source_line_start": 21,
+          "source_line_end": 21,
+          "output_byte_start": 1978,
+          "output_byte_end": 2102,
+          "sha256": "4a84e5cc0d5b2839783d89751c9a320df1d7097ac9f261163e1e07914a832e6e"
+        },
+        {
+          "source_byte_start": 2823,
+          "source_byte_end": 2826,
+          "source_line_start": 25,
+          "source_line_end": 25,
+          "output_byte_start": 2102,
+          "output_byte_end": 2105,
+          "sha256": "5bbf862f0da903d559930558a8859c2559c555e9c2c5f88e7d36731201232b54"
+        },
+        {
+          "source_byte_start": 2835,
+          "source_byte_end": 2954,
+          "source_line_start": 25,
+          "source_line_end": 26,
+          "output_byte_start": 2105,
+          "output_byte_end": 2224,
+          "sha256": "4b47277c3935ca07ec4d3c3db1b2c9494a98ea922005c342d86e8f931edae62f"
+        },
+        {
+          "source_byte_start": 3421,
+          "source_byte_end": 9341,
+          "source_line_start": 29,
+          "source_line_end": 81,
+          "output_byte_start": 2224,
+          "output_byte_end": 8144,
+          "sha256": "4af281054904ae9b68e0cdd6ea5769505b623444ee081218bffbaa6d4fa1f41f"
+        },
+        {
+          "source_byte_start": 11109,
+          "source_byte_end": 11370,
+          "source_line_start": 102,
+          "source_line_end": 102,
+          "output_byte_start": 8144,
+          "output_byte_end": 8405,
+          "sha256": "8974786467522051610050859dc301ff2ec3730c2cea23876a32040641c2e1a3"
+        },
+        {
+          "source_byte_start": 11408,
+          "source_byte_end": 11503,
+          "source_line_start": 106,
+          "source_line_end": 106,
+          "output_byte_start": 8406,
+          "output_byte_end": 8501,
+          "sha256": "1084fefd0d8fe05b9c1224fb276a6c3448342511abc06425804d9a52d8f1b1a4"
+        },
+        {
+          "source_byte_start": 11558,
+          "source_byte_end": 11721,
+          "source_line_start": 106,
+          "source_line_end": 106,
+          "output_byte_start": 8501,
+          "output_byte_end": 8664,
+          "sha256": "b7bf7a53a50fd57647de3a2dfd8ba0553029aec69709802c1c63b7b7703fb016"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 56,
+          "source_line_start": 1,
+          "source_line_end": 2,
+          "sha256": "24d6a0648c6f94c3ee462298c533ad321a2481cf37de8fb0c0ee091db9334e2b",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 878,
+          "source_byte_end": 895,
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "sha256": "b4065b605392077091e75cf5fa28a785f0f4ab55da0adc0f5cff4804cc35153f",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 1132,
+          "source_byte_end": 2229,
+          "source_line_start": 10,
+          "source_line_end": 18,
+          "sha256": "ccc9a4bf5aef34b4cdff291798b869d608c9f3835fc9e46822fccdc61f876f0b",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 2284,
+          "source_byte_end": 2293,
+          "source_line_start": 21,
+          "source_line_end": 21,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 2417,
+          "source_byte_end": 2823,
+          "source_line_start": 22,
+          "source_line_end": 24,
+          "sha256": "7695c968f84fe4054850bd1233aae9b537aee1c7d39f2911fd12635bd9586f4e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 2826,
+          "source_byte_end": 2835,
+          "source_line_start": 25,
+          "source_line_end": 25,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 2954,
+          "source_byte_end": 3421,
+          "source_line_start": 27,
+          "source_line_end": 28,
+          "sha256": "4ca55ce7589340436f5a6e578719020b1ce5842f47ecc3522b97798487322cad",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 9341,
+          "source_byte_end": 11109,
+          "source_line_start": 82,
+          "source_line_end": 101,
+          "sha256": "321074894bb345e89001fa43942def446c6e08d141ded1590f28f06238e49368",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 11370,
+          "source_byte_end": 11408,
+          "source_line_start": 103,
+          "source_line_end": 105,
+          "sha256": "2786650ae00a8a146fac58540edbf813bff87350791777ac10ff39dc48120aff",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 11503,
+          "source_byte_end": 11558,
+          "source_line_start": 106,
+          "source_line_end": 106,
+          "sha256": "4a59afc1a62e4b5b90a20d4a6d4ca2de45859d4865786d9ee3f336e4f731f2de",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 11721,
+          "source_byte_end": 12138,
+          "source_line_start": 107,
+          "source_line_end": 108,
+          "sha256": "ab1ede3174c4241b393b1f2811ce3e00d088390c7b90ab19194ac077786cd01a",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 863,
+          "sha256": "f12af9ba3404f8700b9c042ace5cd1fae4b227fa7fd8bc52abb5ce61ad40d4ae",
+          "purpose": "明确标记的编排标题、版本状态、历史限定及公共导航"
+        },
+        {
+          "output_byte_start": 1922,
+          "output_byte_end": 1923,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "purpose": "整段省略后的段落边界；不用于句内或表格行拼接"
+        },
+        {
+          "output_byte_start": 8405,
+          "output_byte_end": 8406,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "purpose": "整段省略后的段落边界；不用于句内或表格行拼接"
+        }
+      ]
+    },
+    {
+      "source": "closed_class_adaptation_diagnostic_v1.md",
+      "source_bytes": 27540,
+      "source_sha256": "d1237df20f020e85ddf5c3e7a918736e72a5df2af05982078b953d11e42cf411",
+      "output": "proofs/S024_complete_proof.md",
+      "output_bytes": 25381,
+      "output_sha256": "c84c9307ff2e72fdcb1a842de6e3db210d174aaaaa4dc4eca4f6c00a8aa27405",
+      "copied_body_sha256": "10ea288fde53e9e6758b10f00cf0a9c905ed4182546b727f9bcf8771599ebe10",
+      "spans": [
+        {
+          "source_byte_start": 357,
+          "source_byte_end": 4337,
+          "source_line_start": 8,
+          "source_line_end": 93,
+          "output_byte_start": 978,
+          "output_byte_end": 4958,
+          "sha256": "98674c5384a78b37300fab6079fd2f4fa2619ee8c0317b61f89e8f4e97c27455"
+        },
+        {
+          "source_byte_start": 4346,
+          "source_byte_end": 4433,
+          "source_line_start": 93,
+          "source_line_end": 94,
+          "output_byte_start": 4958,
+          "output_byte_end": 5045,
+          "sha256": "c67bf3a8c3068d081256dc95cac80e2737af03b4cca81ace82bc3cbec25c367d"
+        },
+        {
+          "source_byte_start": 4474,
+          "source_byte_end": 23518,
+          "source_line_start": 94,
+          "source_line_end": 522,
+          "output_byte_start": 5045,
+          "output_byte_end": 24089,
+          "sha256": "9afc12f465fa927a6f1b4bd5227dcdac2aed3d1d60556ac0f4c31934f8ccbe66"
+        },
+        {
+          "source_byte_start": 23807,
+          "source_byte_end": 23898,
+          "source_line_start": 528,
+          "source_line_end": 531,
+          "output_byte_start": 24089,
+          "output_byte_end": 24180,
+          "sha256": "cad3be4c0e81b1c6190e0bbc56838273191b4de8fdf60061b378ef72e7895363"
+        },
+        {
+          "source_byte_start": 23907,
+          "source_byte_end": 25108,
+          "source_line_start": 531,
+          "source_line_end": 551,
+          "output_byte_start": 24180,
+          "output_byte_end": 25381,
+          "sha256": "806eee52997f2ed1e34697037186d463643f069a697145a0394994f618c8c395"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 357,
+          "source_line_start": 1,
+          "source_line_end": 7,
+          "sha256": "2f3f37a71a41fec1a895c6b96606299bcd0ca569a9ee208de36a02d792c65db0",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 4337,
+          "source_byte_end": 4346,
+          "source_line_start": 93,
+          "source_line_end": 93,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 4433,
+          "source_byte_end": 4474,
+          "source_line_start": 94,
+          "source_line_end": 94,
+          "sha256": "b5740d121e74edb44cd17a90f1c8152bd94218ae090a256197d35d7ee5d0b610",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 23518,
+          "source_byte_end": 23807,
+          "source_line_start": 523,
+          "source_line_end": 527,
+          "sha256": "d60a59c822141ee63b8a5c6c25330f3a54c9256a9275ab12d85242508b61c363",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 23898,
+          "source_byte_end": 23907,
+          "source_line_start": 531,
+          "source_line_end": 531,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 25108,
+          "source_byte_end": 27540,
+          "source_line_start": 552,
+          "source_line_end": 605,
+          "sha256": "5115382163edd0f1addaa230c01420b74dc1b84d65accb7f5bcd93f8be7e62c9",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 978,
+          "sha256": "4eab687192aeac67c41f5f4d21e174ef696f951142e8843d4fe29b3431dd547b",
+          "purpose": "明确标记的编排标题、版本状态、历史限定及公共导航"
+        }
+      ]
+    },
+    {
+      "source": "S024_mathematical_review_v1.md",
+      "source_bytes": 27179,
+      "source_sha256": "68d4d4fb3e4d7a7a73c4a5adeebd8396245aa746e6ba622d0ca4e84ba08b9f2e",
+      "output": "reviews/S024_mathematical_review.md",
+      "output_bytes": 22133,
+      "output_sha256": "7541e0ab72fbe9a1f80ec576b4d528b6b6aaa4ab6d082e1c8dab6571a17eb30a",
+      "copied_body_sha256": "8b7ad42c54119d1c6b3438b28264bc1c1846dc990bf5496508268a5fd64450f5",
+      "spans": [
+        {
+          "source_byte_start": 1283,
+          "source_byte_end": 17915,
+          "source_line_start": 26,
+          "source_line_end": 356,
+          "output_byte_start": 931,
+          "output_byte_end": 17563,
+          "sha256": "80f6847bf3bd3c5620b0659fb9727c7b26e958ae19b09bc36cfeb0ac57ee4ba2"
+        },
+        {
+          "source_byte_start": 18282,
+          "source_byte_end": 19415,
+          "source_line_start": 363,
+          "source_line_end": 374,
+          "output_byte_start": 17563,
+          "output_byte_end": 18696,
+          "sha256": "44c36adc25e158b33c6192e0b19ba6d9630468d3c203a66c5f86e721e62efedc"
+        },
+        {
+          "source_byte_start": 22597,
+          "source_byte_end": 22686,
+          "source_line_start": 415,
+          "source_line_end": 419,
+          "output_byte_start": 18696,
+          "output_byte_end": 18785,
+          "sha256": "9600602f3c40feaec4b02271c6f58769ccc61b7c00472ce1204b294efd825d70"
+        },
+        {
+          "source_byte_start": 22695,
+          "source_byte_end": 22803,
+          "source_line_start": 419,
+          "source_line_end": 421,
+          "output_byte_start": 18785,
+          "output_byte_end": 18893,
+          "sha256": "66c314efe86405de53b8cff26154bb70a54a2c1312efbf4f792b23648485bfb6"
+        },
+        {
+          "source_byte_start": 22812,
+          "source_byte_end": 24897,
+          "source_line_start": 421,
+          "source_line_end": 456,
+          "output_byte_start": 18893,
+          "output_byte_end": 20978,
+          "sha256": "dffb970798dcc6a50fd8b7be0c0da674edc29c89a7063be13289a60547517a1f"
+        },
+        {
+          "source_byte_start": 25542,
+          "source_byte_end": 26696,
+          "source_line_start": 467,
+          "source_line_end": 494,
+          "output_byte_start": 20978,
+          "output_byte_end": 22132,
+          "sha256": "2f5fe35206672832e224562485bdaf8416511d5351c2e92579ece81dc6a4fde1"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 1283,
+          "source_line_start": 1,
+          "source_line_end": 25,
+          "sha256": "e097e344a0948d87232ebc62f503bdb2de6596cc07316a731ce966f353fecad4",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 17915,
+          "source_byte_end": 18282,
+          "source_line_start": 357,
+          "source_line_end": 362,
+          "sha256": "726a2acb6690e0949ef0e18c47bb425794d59ebbd9f07c71b61935d132a8c7af",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 19415,
+          "source_byte_end": 22597,
+          "source_line_start": 375,
+          "source_line_end": 414,
+          "sha256": "449c71a23449f8c3b16a51e11f4b7c37917ab0772325847535c7e735f5ca3729",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 22686,
+          "source_byte_end": 22695,
+          "source_line_start": 419,
+          "source_line_end": 419,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 22803,
+          "source_byte_end": 22812,
+          "source_line_start": 421,
+          "source_line_end": 421,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 24897,
+          "source_byte_end": 25542,
+          "source_line_start": 457,
+          "source_line_end": 466,
+          "sha256": "198a8bd494ef267eb6aef4be396f1ea00e957f616408286274c0ba85314ae090",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 26696,
+          "source_byte_end": 27179,
+          "source_line_start": 494,
+          "source_line_end": 500,
+          "sha256": "8deb55be2198814a710f0599f99082378537740b2c910d28ee33db410479ac95",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 931,
+          "sha256": "7f9b759fdce9ca3ef3d4944f9125bdc02be77567fb843dc8dbfc958d4c7dea67",
+          "purpose": "明确标记的编排标题、版本状态、历史限定及公共导航"
+        },
+        {
+          "output_byte_start": 22132,
+          "output_byte_end": 22133,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "purpose": "末尾换行"
+        }
+      ]
+    },
+    {
+      "source": "near_iid_adaptation_diagnostic_v1.md",
+      "source_bytes": 28840,
+      "source_sha256": "0732155622905e5f5b00d819d416f053ecf76019e0a09b29939ec5b0d17fde20",
+      "output": "proofs/S025_complete_proof.md",
+      "output_bytes": 26224,
+      "output_sha256": "f8412017f3e4f13ed28ee12a320f0be6adac1bb436bbb0d818444be0d899aaca",
+      "copied_body_sha256": "2bc5d819b2e8502b5d79cc17f3ddc04da94ea731cd0f185327b302201fd3d222",
+      "spans": [
+        {
+          "source_byte_start": 401,
+          "source_byte_end": 3863,
+          "source_line_start": 9,
+          "source_line_end": 80,
+          "output_byte_start": 942,
+          "output_byte_end": 4404,
+          "sha256": "db12e42689fa2d66036aa457d316bedff972cd6d703b6ac16ef6d75b9b49895d"
+        },
+        {
+          "source_byte_start": 3877,
+          "source_byte_end": 4371,
+          "source_line_start": 80,
+          "source_line_end": 90,
+          "output_byte_start": 4404,
+          "output_byte_end": 4898,
+          "sha256": "73a2f5658e4ffdb71a8d9161d499a733713c92c5107a6ffea7cc04d4d45b32d2"
+        },
+        {
+          "source_byte_start": 4381,
+          "source_byte_end": 23995,
+          "source_line_start": 90,
+          "source_line_end": 527,
+          "output_byte_start": 4898,
+          "output_byte_end": 24512,
+          "sha256": "9687f7a03e91576c67565ec8c2fb7facf588c52f93025f2d74903c69b0b65f12"
+        },
+        {
+          "source_byte_start": 24643,
+          "source_byte_end": 24717,
+          "source_line_start": 538,
+          "source_line_end": 540,
+          "output_byte_start": 24512,
+          "output_byte_end": 24586,
+          "sha256": "97a88fa657fce75aed151e596dfa1920d83f70eec0c6cf89920cab341fe626f2"
+        },
+        {
+          "source_byte_start": 24726,
+          "source_byte_end": 24822,
+          "source_line_start": 540,
+          "source_line_end": 542,
+          "output_byte_start": 24586,
+          "output_byte_end": 24682,
+          "sha256": "e8453cf3e006fdbc551e91f0f1da19462ae1434f5b022a71b47ae342aaf9d374"
+        },
+        {
+          "source_byte_start": 24831,
+          "source_byte_end": 24874,
+          "source_line_start": 542,
+          "source_line_end": 542,
+          "output_byte_start": 24682,
+          "output_byte_end": 24725,
+          "sha256": "7a9950b2c71b3345b86b2398ca78a0d3be1b7f75782556bfe8e9505f9b28b72f"
+        },
+        {
+          "source_byte_start": 24966,
+          "source_byte_end": 26465,
+          "source_line_start": 543,
+          "source_line_end": 568,
+          "output_byte_start": 24725,
+          "output_byte_end": 26224,
+          "sha256": "761ddb941f3b5599e959a62341fdbfbd65dd48f163705ff2c5ee21c25840ae96"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 401,
+          "source_line_start": 1,
+          "source_line_end": 8,
+          "sha256": "90928b2fe068fea76b75b98e801c6595d37f80d103f0057517adb2e1c84c486d",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 3863,
+          "source_byte_end": 3877,
+          "source_line_start": 80,
+          "source_line_end": 80,
+          "sha256": "a122891aad0a93320b2d39902bbc15311adb8251fe21a0c93fc27027cbf9681c",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 4371,
+          "source_byte_end": 4381,
+          "source_line_start": 90,
+          "source_line_end": 90,
+          "sha256": "84cb3082924225f21a4496c059c987f6c5d3c9899fb22e362300e0d70127e002",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 23995,
+          "source_byte_end": 24643,
+          "source_line_start": 528,
+          "source_line_end": 537,
+          "sha256": "701f93bf71c7f9805d38deee3af3c2071f34c4f081dd899c0fd15b6da1c20a11",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 24717,
+          "source_byte_end": 24726,
+          "source_line_start": 540,
+          "source_line_end": 540,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 24822,
+          "source_byte_end": 24831,
+          "source_line_start": 542,
+          "source_line_end": 542,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 24874,
+          "source_byte_end": 24966,
+          "source_line_start": 542,
+          "source_line_end": 543,
+          "sha256": "8d6257f8c657ee6baf765dc3e7fae26e375831a6e07c80a1a21dbe4311b3f87f",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 26465,
+          "source_byte_end": 28840,
+          "source_line_start": 569,
+          "source_line_end": 626,
+          "sha256": "31e9d241c2717ee317066850cb61993fa46add11bec7b7d8b07594a8528e0575",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 942,
+          "sha256": "8f475fc406aaf15ec8a2302352a88dce32b992d6cb44df9fcd284656f917d86e",
+          "purpose": "明确标记的编排标题、版本状态、历史限定及公共导航"
+        }
+      ]
+    },
+    {
+      "source": "S025_mathematical_review_v1.md",
+      "source_bytes": 28290,
+      "source_sha256": "e8a472a379f67d1f637802199b6e9f62303005391be097c6b4e5b42eb9b9b551",
+      "output": "reviews/S025_mathematical_review.md",
+      "output_bytes": 21868,
+      "output_sha256": "8e301bb4cdcedad27ea57a69c9a893f69d4c4f5b7c2a459ec5a334a905cec84d",
+      "copied_body_sha256": "5456cad8f6800028f4d64335cd40d3b625dcd10afa4e33391eef04fd3e3308c9",
+      "spans": [
+        {
+          "source_byte_start": 1254,
+          "source_byte_end": 16944,
+          "source_line_start": 26,
+          "source_line_end": 337,
+          "output_byte_start": 896,
+          "output_byte_end": 16586,
+          "sha256": "946aeebe747064b66263ca834bd449aa8138cc579c7a63800fa56ea62c52ce68"
+        },
+        {
+          "source_byte_start": 17347,
+          "source_byte_end": 18755,
+          "source_line_start": 346,
+          "source_line_end": 360,
+          "output_byte_start": 16586,
+          "output_byte_end": 17994,
+          "sha256": "0d6abcffed9f17a4282e7d1902a10add1e9f981115eabd17d2dc1bb283acef02"
+        },
+        {
+          "source_byte_start": 18913,
+          "source_byte_end": 18914,
+          "source_line_start": 362,
+          "source_line_end": 362,
+          "output_byte_start": 17994,
+          "output_byte_end": 17995,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "source_byte_start": 19582,
+          "source_byte_end": 19667,
+          "source_line_start": 375,
+          "source_line_end": 377,
+          "output_byte_start": 17995,
+          "output_byte_end": 18080,
+          "sha256": "34380b15f33087333257268cbca909df0f6e51388c977d9558528a3b67fd6eaa"
+        },
+        {
+          "source_byte_start": 19676,
+          "source_byte_end": 19813,
+          "source_line_start": 377,
+          "source_line_end": 380,
+          "output_byte_start": 18080,
+          "output_byte_end": 18217,
+          "sha256": "fa2397acc16a16fd2706224d9964e2cca1652c9bd75cbc76d820160d8a223f45"
+        },
+        {
+          "source_byte_start": 19822,
+          "source_byte_end": 22455,
+          "source_line_start": 380,
+          "source_line_end": 420,
+          "output_byte_start": 18217,
+          "output_byte_end": 20850,
+          "sha256": "0bae1422240a3d0c77e8bcb81ad971c4ec340c3c89fe3d9d1926710947e3f704"
+        },
+        {
+          "source_byte_start": 23029,
+          "source_byte_end": 23759,
+          "source_line_start": 430,
+          "source_line_end": 444,
+          "output_byte_start": 20850,
+          "output_byte_end": 21580,
+          "sha256": "1afa507b0630542d78b57cbd21d20ff703685399526998dd8b326ef0a46e9aa1"
+        },
+        {
+          "source_byte_start": 26734,
+          "source_byte_end": 26811,
+          "source_line_start": 483,
+          "source_line_end": 487,
+          "output_byte_start": 21582,
+          "output_byte_end": 21659,
+          "sha256": "f94959d95f2f53c43c60d3b1bf9fb01055c6a3dbd5073755b0aeee4cd3789e10"
+        },
+        {
+          "source_byte_start": 26820,
+          "source_byte_end": 26921,
+          "source_line_start": 487,
+          "source_line_end": 488,
+          "output_byte_start": 21659,
+          "output_byte_end": 21760,
+          "sha256": "f56c88ddf1c76ba5599b73f02571b2121c1c2113ec1072345297d0c21e6d2199"
+        },
+        {
+          "source_byte_start": 26930,
+          "source_byte_end": 27038,
+          "source_line_start": 488,
+          "source_line_end": 488,
+          "output_byte_start": 21760,
+          "output_byte_end": 21868,
+          "sha256": "3a57fcc709ca058724a739e0651b21d12dab20d847ab8dbdeb54d2d473714308"
+        }
+      ],
+      "omitted_source_spans": [
+        {
+          "source_byte_start": 0,
+          "source_byte_end": 1254,
+          "source_line_start": 1,
+          "source_line_end": 25,
+          "sha256": "cbd408f5b2968f4b4f6527adb599d327a553d91e276939fb2276375fc321cfd2",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 16944,
+          "source_byte_end": 17347,
+          "source_line_start": 338,
+          "source_line_end": 345,
+          "sha256": "a5d85d33ee1356dd2d342277413cfddae7bb20203a25a70cd27ef1127a030978",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 18755,
+          "source_byte_end": 18913,
+          "source_line_start": 361,
+          "source_line_end": 361,
+          "sha256": "f59a70034bf9f1deccc09446ca62e0e7d50ba81c02f90a6d79f2adea90ef9053",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 18914,
+          "source_byte_end": 19582,
+          "source_line_start": 363,
+          "source_line_end": 374,
+          "sha256": "a5ab6c10f1a072f8aa584dd1a7348f2a5a9d114b9edf22aa88fa87bf56b6e3e7",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 19667,
+          "source_byte_end": 19676,
+          "source_line_start": 377,
+          "source_line_end": 377,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 19813,
+          "source_byte_end": 19822,
+          "source_line_start": 380,
+          "source_line_end": 380,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 22455,
+          "source_byte_end": 23029,
+          "source_line_start": 421,
+          "source_line_end": 429,
+          "sha256": "c50b4bd3b79140ed95c4b592775e4c4760f775b981206c4229416f585c03b435",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 23759,
+          "source_byte_end": 26734,
+          "source_line_start": 444,
+          "source_line_end": 482,
+          "sha256": "32fa4907f1f6bac589e943066dd032157e21f2562fd04ab518a53406004a12a8",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 26811,
+          "source_byte_end": 26820,
+          "source_line_start": 487,
+          "source_line_end": 487,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 26921,
+          "source_byte_end": 26930,
+          "source_line_start": 488,
+          "source_line_end": 488,
+          "sha256": "2f80158a9d89baf1f433fcd375aa0267edc9604551c54ea5ac79ff306e69242e",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        },
+        {
+          "source_byte_start": 27038,
+          "source_byte_end": 28290,
+          "source_line_start": 489,
+          "source_line_end": 499,
+          "sha256": "4951d633f8d435c9bdcd1b518364ee692d2137ffaa7b399f507798c4aad790b6",
+          "reason": "省略身份／控制／原提交状态、私有位置短语、集中列于 SOURCES 的管理来源表或执行记录；未删科学证明、合法反例、科学错误或修复判断"
+        }
+      ],
+      "editorial_output_spans": [
+        {
+          "output_byte_start": 0,
+          "output_byte_end": 896,
+          "sha256": "9f0760a65d31669146766707b791d788d6ccdd8d3ab8a90c11e8d20371ecf513",
+          "purpose": "明确标记的编排标题、版本状态、历史限定及公共导航"
+        },
+        {
+          "output_byte_start": 21580,
+          "output_byte_end": 21582,
+          "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+          "purpose": "省略行政末句后的标题边界"
+        }
+      ]
+    }
+  ],
+  "binary_copies": [
+    {
+      "source": "DOT_conditions_next_stage_20261029_v2.zip",
+      "source_bytes": 1780367,
+      "source_sha256": "7970826c3b61295768e5ffc9cde39faa2020e0bd702479a915a7b047acb23cee",
+      "output": "inherited/DOT_conditions_next_stage_20261029_v2.zip",
+      "output_bytes": 1780367,
+      "output_sha256": "7970826c3b61295768e5ffc9cde39faa2020e0bd702479a915a7b047acb23cee",
+      "archive_manifest_sha256": "39492dd1fcf58a266c4e5395ef244c926ac42ff10b650b28d3953b5d54c6e8d7"
+    }
+  ]
+}

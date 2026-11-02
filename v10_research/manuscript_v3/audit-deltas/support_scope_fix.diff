@@ -1,0 +1,20 @@
+--- v10_research/manuscript_v3/audit-deltas/pre_support_fix.tex	2026-11-01 22:11:03.517617519 -0800
++++ v10_research/manuscript_v3/finite_precision_prediction.tex	2026-11-01 22:11:03.536962722 -0800
+@@ -914,7 +914,7 @@
+ Zero weights contribute zero before any division. This is \unit{BU001 v2}.
+ \end{lemma}
+ \begin{proof}
+-Stationarity gives $ya=xe$ and $wt_1=xb$. Positive-$\beta$ minorization makes the supported chain irreducible, and its two-step entries imply $e^2\ge\beta y$ and $b^2\ge\beta w$. First-step equations for the largest supported hitting mean $H_s$ give, for example,
++Stationarity gives $ya=xe$ and $wt_1=xb$. If $x=0$, positive $\beta$ permits only a singleton diagonal support; its weight is zero, so the assertion follows directly. Henceforth assume $x>0$. Positive-$\beta$ minorization makes the supported chain irreducible, and its two-step entries and balance now imply $e^2\ge\beta y$ and $b^2\ge\beta w$. First-step equations for the largest supported hitting mean $H_s$ give, for example,
+ \[
+  H_{00}\le\frac{b}{et_1}+\frac2e+\frac1{t_1}+1,\qquad
+  H_{01}\le\frac2a+\frac1{t_1}+2.
+@@ -923,7 +923,7 @@
+ \[
+  H_s\le\frac5{\sqrt\beta\,\Pi_s q_s}.
+ \]
+-The other targets follow by exchanging symbols. Absent states are omitted using the smaller supported first-step system, not evaluated by $0/0$. If $x=0$, positive $\beta$ leaves only a singleton diagonal support and its weight is zero.
++The other targets follow by exchanging symbols. Absent states are omitted using the smaller supported first-step system, not evaluated by $0/0$.
+ 
+ The stationary reverse pair chain becomes the forward chain after swapping pair coordinates. Thus the same bound applies when conditioning on the actual terminal state $s$ and looking backward. Kac gives the mean positive return $1/\Pi_s$. For $\overline H=\max\{H_s,1/\Pi_s\}$,
+ $\overline H\le6/(\sqrt\beta\,\Pi_sq_s)$.

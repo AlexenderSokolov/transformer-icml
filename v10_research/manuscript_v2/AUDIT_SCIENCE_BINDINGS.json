@@ -1,0 +1,243 @@
+{
+  "reviewer": "independent LLM reviewer",
+  "time_utc": "2026-11-02T05:30:15.403581+00:00",
+  "scientific_freeze_utc": "2026-11-02T05:15:00Z",
+  "verdict": "PASS",
+  "required_changes": [],
+  "scope": "Scientific delta audit and Chinese addendum consistency; not external peer review, formal verification, novelty certification, or layout QA",
+  "files": [
+    {
+      "path": "manuscript_v2/finite_precision_prediction.tex",
+      "sha256": "7f07d3af383542b4bb3ccf4e6c050da70077d296e046514241c05335ef3a6e19",
+      "bytes": 65934
+    },
+    {
+      "path": "manuscript/finite_precision_prediction.tex",
+      "sha256": "383a6d82c81901feb31d688aea859794cfad7890112aa06dcac988016ec6c563",
+      "bytes": 60494
+    },
+    {
+      "path": "manuscript/AUDIT_SCIENCE.md",
+      "sha256": "5bdc17355a29ac55d6ec980af178fed10a0943c77376cf98e788f9d61d7a34cb",
+      "bytes": 17654
+    },
+    {
+      "path": "manuscript_v2/SOURCE_MANIFEST.json",
+      "sha256": "7eb7e3a24e4e8e484ad993e96173b28f741557f8242374bd5b0544a120f74254",
+      "bytes": 8721
+    },
+    {
+      "path": "manuscript_v2/V1_PRESERVATION_BINDINGS.json",
+      "sha256": "112d9e5ab8f9861baeebe1ab90be31b815becb17d6416f95b9f1731c1d85c452",
+      "bytes": 6392
+    },
+    {
+      "path": "score_precision/SH001_sharp_weight_ratio_threshold_v1.md",
+      "sha256": "fa8e326047f2df8f01dd7b3112da655937ad7be1a3508ad00b80ccd51b64fd50",
+      "bytes": 12546
+    },
+    {
+      "path": "reviews/SH001_review_v1.md",
+      "sha256": "9c8975a6d70b41b0a087123a409ccd8a9a5a943a7bb44efac7dcebb1c0c2416f",
+      "bytes": 10292
+    },
+    {
+      "path": "reviews/SH001_review_bindings_v1.json",
+      "sha256": "8c277ada2451b3f95908258707bf4b57879a997cbedf81e0c6e975b629837cfb",
+      "bytes": 1307
+    },
+    {
+      "path": "intake/SH001_acceptance.json",
+      "sha256": "b5e3bb71e0efbd2aa50cdd63857fc96e01165d37d2d38e3f98c0e1529fc68a47",
+      "bytes": 597
+    },
+    {
+      "path": "score_precision/SB001_loglog_effective_score_budget_v2.md",
+      "sha256": "d10086be4d358e322872daffad4dd10572588d6dcffaecbffefc409df6a217b7",
+      "bytes": 19750
+    },
+    {
+      "path": "sharp_ratio_addendum/addendum_math_zh.md",
+      "sha256": "f88d2efe1734990c62723c99af5d1cde22c1d783916d63c8cfcf9e7c7f8e8792",
+      "bytes": 7947
+    },
+    {
+      "path": "sharp_ratio_addendum/addendum_final_math_zh.md",
+      "sha256": "7f78a04e39fe198f3433582ed62674162bf30a8983c40b7a5ff54a7f20eb0466",
+      "bytes": 8007
+    },
+    {
+      "path": "sharp_ratio_addendum/Chinese-sharp-ratio-addendum.docx",
+      "sha256": "041292e36536db917ab00a9884777c24623f993165c3d2aea48dd1b2e07e41a9",
+      "bytes": 18570
+    },
+    {
+      "path": "sharp_ratio_addendum/Chinese-sharp-ratio-addendum.pdf",
+      "sha256": "29cfefe270f41067e145ebbc91a7a57457150f5d2a157df5ab289ba06fe77686",
+      "bytes": 317292
+    },
+    {
+      "path": "sharp_ratio_addendum/qa_v3/extracted.txt",
+      "sha256": "cb04e1b0325b69cfc4da568b8bd53f94367d152941f7067b424b8642ca807a5c",
+      "bytes": 10500
+    },
+    {
+      "path": "sharp_ratio_addendum/SOURCE_BINDINGS.json",
+      "sha256": "8036b8a6c23b45acdf667a4981dfe4053a975ddf8fcee92fe9fd6196c8d782d8",
+      "bytes": 3540
+    },
+    {
+      "path": "sharp_ratio_addendum/final_verification.json",
+      "sha256": "0f03c530a82397f20fcbd520abae314043fd22949f0bb8026620ee1b4ed3ce26",
+      "bytes": 828
+    },
+    {
+      "path": "manuscript_v2/AUDIT_SCIENCE.md",
+      "sha256": "c03987ece9e437fef3e76510c907d3d20a0db9eeb4a0d0ef59d3711f4a7898c2",
+      "bytes": 8933
+    }
+  ],
+  "checks": {
+    "v1_preservation_count": 68,
+    "v1_preservation_mismatches": [],
+    "source_manifests": {
+      "manuscript_v2/SOURCE_MANIFEST.json": {
+        "entries": 26,
+        "mismatches": []
+      },
+      "sharp_ratio_addendum/SOURCE_BINDINGS.json": {
+        "entries": 13,
+        "mismatches": []
+      }
+    },
+    "ui001_absent": true,
+    "docx_native_math_objects": 96,
+    "docx_radicals": 9,
+    "docx_fractions": 19
+  },
+  "exact_delta_blocks": [
+    {
+      "operation": "replace",
+      "v1_inclusive": [
+        41,
+        41
+      ],
+      "v2_inclusive": [
+        41,
+        41
+      ]
+    },
+    {
+      "operation": "replace",
+      "v1_inclusive": [
+        49,
+        49
+      ],
+      "v2_inclusive": [
+        49,
+        49
+      ]
+    },
+    {
+      "operation": "replace",
+      "v1_inclusive": [
+        51,
+        51
+      ],
+      "v2_inclusive": [
+        51,
+        51
+      ]
+    },
+    {
+      "operation": "replace",
+      "v1_inclusive": [
+        60,
+        60
+      ],
+      "v2_inclusive": [
+        60,
+        60
+      ]
+    },
+    {
+      "operation": "replace",
+      "v1_inclusive": [
+        500,
+        500
+      ],
+      "v2_inclusive": [
+        500,
+        500
+      ]
+    },
+    {
+      "operation": "replace",
+      "v1_inclusive": [
+        551,
+        572
+      ],
+      "v2_inclusive": [
+        551,
+        600
+      ]
+    },
+    {
+      "operation": "replace",
+      "v1_inclusive": [
+        578,
+        580
+      ],
+      "v2_inclusive": [
+        606,
+        649
+      ]
+    },
+    {
+      "operation": "replace",
+      "v1_inclusive": [
+        585,
+        585
+      ],
+      "v2_inclusive": [
+        654,
+        654
+      ]
+    },
+    {
+      "operation": "replace",
+      "v1_inclusive": [
+        588,
+        588
+      ],
+      "v2_inclusive": [
+        657,
+        657
+      ]
+    },
+    {
+      "operation": "replace",
+      "v1_inclusive": [
+        636,
+        636
+      ],
+      "v2_inclusive": [
+        705,
+        706
+      ]
+    },
+    {
+      "operation": "replace",
+      "v1_inclusive": [
+        644,
+        644
+      ],
+      "v2_inclusive": [
+        714,
+        714
+      ]
+    }
+  ],
+  "source_or_artifact_edits": false,
+  "external_upload": false
+}

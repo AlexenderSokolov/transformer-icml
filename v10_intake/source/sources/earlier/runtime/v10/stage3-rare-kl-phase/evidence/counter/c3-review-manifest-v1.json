@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-25",
+  "author": "counter",
+  "kind": "first actual C3 bounded adversarial fixed-version review",
+  "obligation_id": "c82d400c69019a551db29a66e99faec5bfbf281097c5c8ae57075ea5789772fb",
+  "verdict": "SCOPED_PASS",
+  "mandatory_repairs": [],
+  "scope": "Complete deterministic realization and embedded A-K appendix in the individually declared nominal finite arithmetic/resource domains; not native proof admission, optimality or noise guarantee.",
+  "inputs": {
+    "outputs/001-conditional-grid/prover/c3-proof-v1.md": {
+      "bytes": 58094,
+      "sha256": "68dcb797dfe0e2103d2f35034311efa97d9ae496dedf4eafc67c600b34a8679c"
+    },
+    "outputs/001-conditional-grid/prover/c3-resource-ledger-v1.md": {
+      "bytes": 33002,
+      "sha256": "c00336780dfb8e7cfcdad1ffc2542d8319508b1fdf40f278dcf1960c0105076c"
+    },
+    "outputs/001-conditional-grid/prover/c3-resource-certificate-v1.json": {
+      "bytes": 35558,
+      "sha256": "2a5aa300d24cebebc8006f2f4ced9ad4fa00f07f562e5d9eb697c534c5765125"
+    },
+    "outputs/001-conditional-grid/prover/c3-code-audit-v1.md": {
+      "bytes": 7734,
+      "sha256": "5648f1bc74b43d44f7597ae055190e41d21413d207049ec59601210211334ee6"
+    },
+    "outputs/001-conditional-grid/prover/c3_word_program_v1.py": {
+      "bytes": 12473,
+      "sha256": "187f81b8da04a20412c07dc2fdfbe7387836484e2bc57e873a0dd8045b785a56"
+    },
+    "outputs/001-conditional-grid/prover/c3-word-operations-v1.json": {
+      "bytes": 11390,
+      "sha256": "9f143a95c8d6b8bcc9ff93e3b49a4230f34a4118f3e06344f4c992aa60e869f1"
+    },
+    "outputs/001-conditional-grid/prover/check_c3_v1.py": {
+      "bytes": 9454,
+      "sha256": "bb900bf79acf9d7150b27e51ed9565bbb6f24f1d994ef0367644f99f73456241"
+    },
+    "outputs/001-conditional-grid/prover/c3-check-results-v1.json": {
+      "bytes": 2123,
+      "sha256": "f4c7fdc2bf6a3eb6d232f5b4b29fb4e3fca2b6f965d2d83389b900403c81cd25"
+    },
+    "outputs/001-conditional-grid/prover/c3-integrity-v1.json": {
+      "bytes": 721,
+      "sha256": "84facef88077b4449c7c16bea835cb88a82cdb83db17484bf3b766dd89bbb462"
+    },
+    "outputs/001-conditional-grid/prover/c3-native-readback-v1.json": {
+      "bytes": 1774,
+      "sha256": "8c2c01c6822a7f00a71809655233fd75538d83750342c91895f09521db30f427"
+    },
+    "outputs/001-conditional-grid/prover/c3-handoff-v1.md": {
+      "bytes": 5589,
+      "sha256": "c58696200c9aaf1d4905b651b6a6d7af21c9273c6ee85c3742f40043a015a884"
+    },
+    "PROBLEM.md": {
+      "bytes": 12619,
+      "sha256": "efc51898a4a702040f9048e2f53121ec59020586b12221fd57e1015940ec5751"
+    },
+    "outputs/001-conditional-grid/lead/implementation-checkpoint-v1.md": {
+      "bytes": 11191,
+      "sha256": "ff29424bef9a5225e3d79c6790804514980ccf6f3f047d55a6d229f9640c6ce8"
+    },
+    "outputs/001-conditional-grid/lead/integer_predictor_v1.py": {
+      "bytes": 7001,
+      "sha256": "5eae6f7c009cd5e612c74274117109099b249a54dbdd62a6ee15e3da093662d6"
+    },
+    "outputs/001-conditional-grid/lead/stats-grid-review-v1.md": {
+      "bytes": 7029,
+      "sha256": "b682098e988151e907df8c508c901742f2d3ee18569b8c376ca32cd904083592"
+    },
+    "outputs/001-conditional-grid/counter/adversarial-review-v1.md": {
+      "bytes": 21864,
+      "sha256": "b9273b1e96d5fd16d5eaaa5ed8ce75e8385cd57d6ec9dbe2589582a54f86ad64"
+    },
+    "[Non-scientific operational metadata omitted.]": {
+      "bytes": 492,
+      "sha256": "2174a3d8961b0bd390ae64e6be1b46dea059ba494f63dad98eb5604bba8c3e03"
+    },
+    "inputs/source-stage2/outputs/002-realization/prover/proof-v1.md": {
+      "bytes": 33072,
+      "sha256": "36260d168f17b9da129179070a70c5e87019a45d98c60f1c343a9e1c5e60287b"
+    },
+    "inputs/source-stage2/outputs/005-budget-comparison/counter/count-snap-v1/proof-v1.md": {
+      "bytes": 30894,
+      "sha256": "8b9308eaebe171021dba4ce729531b86316966b8298235919e16602bdf5a5e6a"
+    },
+    "outputs/001-conditional-grid/lead/joint-accuracy-corollary-v1.md": {
+      "bytes": 5964,
+      "sha256": "37c3f17f3e427787baa8892e216a5c9b68508f538f24e3a95cdc31c646012c92"
+    },
+    "outputs/001-conditional-grid/lead/primary-synthesis-checkpoint-v1.md": {
+      "bytes": 4936,
+      "sha256": "b12f56a4e7458c7886370c595d62aad2966b266ed943c7d6614738a7a77dd7f1"
+    },
+    "outputs/001-conditional-grid/counter/sources/primary-map-v1.md": {
+      "bytes": 3982,
+      "sha256": "f5b2fdcfd9b96ce74ebc8141b9dd0dde7c33caa10952aca6dacf90229a9d6f45"
+    },
+    "outputs/001-conditional-grid/counter/quantifier-addendum-v1.md": {
+      "bytes": 5796,
+      "sha256": "3f2ce979b70829603504a10ab5d1b79bc6f625235ffb0da9653dc734b0fff46a"
+    },
+    "outputs/001-conditional-grid/counter/addendum-checks-v1.json": {
+      "bytes": 497,
+      "sha256": "36bf69b6ebb200b09c7f1bfb334a7ddbbec9e7df747386b5d428d3494e52653a"
+    },
+    "outputs/001-conditional-grid/lead/c3-review-v1.md": {
+      "bytes": 8086,
+      "sha256": "e8665348447fb61abac0f263d820d79c50aaf967bbef0972af392c83d50202a0"
+    },
+    "outputs/001-conditional-grid/lead/c3-input-integrity-v1.json": {
+      "bytes": 5445,
+      "sha256": "6d30ea40daef8812c7483b1870b7111bfde546383d51bac7fbf203a61588169f"
+    },
+    "outputs/001-conditional-grid/prover/c3-manifest-v1.json": {
+      "bytes": 4387,
+      "sha256": "f123e70d912490638c8f8c2bbe1a2b034d4af28dcceb6b62d22018d1264ee87a"
+    }
+  },
+  "outputs": [
+    {
+      "path": "outputs/001-conditional-grid/counter/c3-adversarial-review-v1.md",
+      "bytes": 11377,
+      "sha256": "f1db7ce9110bdc782e6b15df291154535bf808567d9629711320d850a829c768"
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/c3-structural-checks-v1.json",
+      "bytes": 7052,
+      "sha256": "94ba5768fa27d7e8d4c5701c0fe8bc8b282666da63b24875ea75b3125dcfe438"
+    }
+  ],
+  "complete_appendix_read_and_exact_match": true,
+  "full_operation_lists_checked": [
+    63,
+    41
+  ],
+  "models_reviewed": [
+    "hybrid token/query dense",
+    "sparse neural with identities",
+    "shared addressed word program",
+    "padded token batch",
+    "globally dense batch",
+    "fully flattened Boolean/ReLU",
+    "sequential-input eight-counter",
+    "one-shot full-history eight-counter"
+  ],
+  "finite_checks_are_not_all_width_proof": true,
+  "C3_native_predecessors_used": [],
+  "known_C1_fact_id": "e418ec34b7dbc4a6",
+  "known_C1_evidence_id": "4857f1b1b5d10ab74a979362e3d0c3068c9634016e4ce6b6a0609ed577eb2eea",
+  "new_fact_ids": [],
+  "new_evidence_ids": [],
+  "graph_mutations": [],
+  "graph_note": "No new mathematical obstacle found; retain pending native C3 review and do not fabricate a diagnostic failure or discharge.",
+  "obsolete_suspended_task_not_resumed": "[redacted routing identifier]",
+  "four_historical_SUSPENDED_and_protection_counts_untouched": true,
+  "ask_calls": 0,
+  "submit_proof_calls": 0,
+  "scheduling_calls": 0,
+  "suspension_stagnation_operations": 0,
+  "old_diagnostic_mains_run": 0,
+  "old_source_writes": 0,
+  "new_primary_retrievals": 0,
+  "GPU_ms": 0,
+  "full_C4_or_root_closure_claimed": false
+}

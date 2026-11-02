@@ -1,0 +1,241 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=21mm,headheight=15pt]{geometry}
+\usepackage{fontspec,amsmath,amssymb,booktabs,tabularx,enumitem,fancyhdr,hyperref}
+\setmainfont{Noto Serif CJK SC}
+\setsansfont{Noto Sans CJK SC}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\hypersetup{hidelinks,pdfauthor={},pdftitle={任意初始化二阶预测的弱混合阶段结果}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{3em}
+\linespread{1.1}
+\setlist[itemize]{leftmargin=1.25em,itemsep=3pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small 任意初始化二阶预测}\fancyhead[R]{\small 阶段三科学增补}
+\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}
+\newcommand{\TV}{\operatorname{TV}}\newcommand{\E}{\mathbb E}
+\newcommand{\R}{R_{\mathrm{D2}}}\newcommand{\Rp}{R_{\mathrm{D2}}^{+}}
+\newcommand{\dd}{\delta}
+\newcommand{\head}[2]{{\small\sffamily #1}\par\vspace{2pt}{\LARGE\bfseries #2}\par\vspace{5pt}}
+\newcommand{\entry}[1]{\vfill\noindent\small 证明入口\quad #1\normalsize}
+\begin{document}
+\head{统一实验与本阶段结论}{弱混合下界推进但联合率仍未闭合}
+本阶段汇集 S010 至 S013 \textbf{四个工作单元}。新吸收时钟下界将一般任意初始化率延伸到 $n\beta\le1$；原算法、后缀算法与汇总算法的保证保持分开。二步状态律 TV 包络可逐时取等，排除了简单加快通用混合指数的捷径。\textbf{完整的 $(K,M,\beta)$ minimax 联合率仍未确定。}
+
+\textbf{固定源与全状态条件。} 整数 $K\ge2,M\ge1$，字母表 $\{0,\ldots,K-1\}$。齐次概率行 $\theta_{ab}(c)$ 在一条轨迹内固定，pair 核只作合法 shift：
+\[
+ P_\theta((a,b),(b,c))=\theta_{ab}(c).
+\]
+类 $D_K(2,\beta)$ 允许任意初始 pair 律 $\mu$，并要求存在隐藏平稳概率律 $\pi$，使
+\[
+ \pi P_\theta=\pi,\qquad P_\theta^2(s,t)\ge\beta\pi(t)\quad\text{对所有 pair }s,t.
+\]
+$\beta\in[0,1]$ 是公开下界，不是最大系数或未知源表的 oracle。允许零边、可约链、零平稳质量及与 $\pi$ 奇异的 $\mu$。
+
+\textbf{观察与目标。} 观察完整 $H=(X_1,\ldots,X_{M+2})$，$Y_j=(X_{j+1},X_{j+2})$。有 $M$ 次已观察 departure；预测未观察的 $X_{M+3}$，目标仍为同轨迹实际末行 $\theta_{Y_M}$。
+\[
+ L_A(\theta,\mu)=\E\TV(A(H),\theta_{Y_M}),\qquad
+ \TV(p,q)=\tfrac12\|p-q\|_1.
+\]
+算法可用全历史、公开 $K,M,\beta$ 与源独立种子；不读隐藏源、平稳律、潜在币或未来。记
+\[
+ \R=\inf_A\sup_{D_K(2,\beta)}L_A,\qquad
+ \Rp=\sup_{D_K(2,\beta)}L_{p^+}.
+\]
+下文 $\delta_z$ 表示状态或符号 $z$ 上的点质量，与标量 $\dd=1-\beta$ 区分。上标 $+$ 是固定原 add-one 的最坏源风险，\textbf{不是}另一 minimax 定义。统一令
+\[
+ \begin{gathered}
+ n=M+1,\quad\dd=1-\beta,\quad i=\min\{1,\sqrt{K/n}\},\\
+ a=\min\{1,\sqrt{K^3/n}\},\quad g=\min\{1,\sqrt{K^5/n}\},\quad
+ F=\max\{i,\min(\dd,a)\}.
+ \end{gathered}
+\]
+\textbf{证据等级。} 原版本已有独立上下文 LLM 数学审查与接纳，不是形式验证或外部同行评审。本 PDF 是新增编排摘要，不是原证明的逐字副本，也不声称新文献首创。
+\entry{完整科学证明与原审查分别在 proofs/、reviews/；精确来源与继承闭包见 SOURCES.md。}
+\newpage
+\head{S011}{三个算法的公开证书不能混用}
+\textbf{原规则。} 在全部 $M$ 次 departure 上计数：
+\[
+ C_s(c)=\sum_{j=0}^{M-1}\mathbf1\{Y_j=s,X_{j+3}=c\},\quad
+ N_s=\sum_c C_s(c),\quad p_s^+(c)=\frac{C_s(c)+1}{N_s+K}.
+\]
+输出行始终是 $s=Y_M$。后缀规则用同一形式，但只计 $j=b,\ldots,M-1$；汇总规则直接输出 $X_3,\ldots,X_{M+2}$ 的经验分布。二者都与原逐行规则不同。
+
+对每个整数 $0\le b\le M-1$，令 $\ell=M-b\ge1$，并定义
+\[
+ u_s(\ell)=\min\{1,48\sqrt{K^3/(\ell+1)}\},\qquad
+ u_g(\ell)=\min\{1,48\sqrt{K^5/(\ell+1)}\}.
+\]
+当 $\beta<1$，$h_b=\dd^{\lfloor b/2\rfloor}$；当 $\beta=1$，$b<2$ 时 $h_b=1$，$b\ge2$ 时 $h_b=0$。避免使用 $0^0$。
+\begin{align*}
+ U_+&=\min\!\left\{u_g(M),\ \min_b\min\!\left\{1,
+ 48\sqrt{\frac{K^3}{M-b+1}}+13\sqrt K\,h_b^{3/4}\right\}\right\},\\[2pt]
+ U_{\rm suf}&=\min_b\min\{u_g(M-b),u_s(M-b)+h_bu_g(M-b)\},\\[2pt]
+ U_{\rm pool}&=\min\{1,\tfrac12\sqrt{K/M}+2\dd\},\qquad
+ U=\min\{U_+,U_{\rm suf},U_{\rm pool}\}.
+\end{align*}
+所有 $b$ 优化范围均为上述有限集合，$M=1$ 时只有 $b=0$。准确结论是
+\[
+ \frac{F}{180}\le\R\le U,\qquad \R\le\Rp\le U_+.
+\]
+$U$ 由公开证书的确定性比较达到，不按未知真风险选择。原规则中的 $b$ 只是分析参数；后缀的公开最小化 $b$ 才是算法真的丢弃前缀。
+
+\textbf{匹配区域。} 若 $\dd\le a$，则 $U\le\min(1,3F)$。若
+\[
+ h_{\lfloor M/2\rfloor}\le1/n,
+\]
+则 $U_+\le\min(1,81a)$，且 $U\le\min(1,81F)$。对\textbf{所有} $\beta\ge1/2$，包含小 $M$，都有 $F/180\le\R\le\min(1,81F)$。这是充分条件，不是必要 burn 阈值。
+
+\textbf{端点与分离。} $\beta=0$ 恢复一般 $g$ 率；$\beta=1$ 强迫所有行同为 $p$，但初始 pair 仍可任意，且
+\[
+ \frac{i}{32\sqrt6}\le\R(K,M,1)
+ \le\min\{1,\tfrac12\sqrt{K/M}\}\le i.
+\]
+原逐行 add-one 并不自动达到 IID 最优阶；旧 S005/S006 的同源算法分离仍适用。
+\entry{S011 §1--3、Proposition 5；原规则依赖 S004，后缀依赖 S003，汇总及平稳子类下界依赖 S006。}
+\newpage
+\head{S010}{正源平滑时钟保留独立价值}
+对 $K\ge12$、$M\ge1$、$0<\beta\le K^{-4}$，定义
+\[
+ \varepsilon=8\sqrt\beta,\quad m=\lfloor K/4\rfloor,\quad L=m^2,\quad
+ q=\lfloor M/L\rfloor,\quad
+ \alpha=\min\{\tfrac12,\tfrac18\sqrt{m^3/(q+1)}\}.
+\]
+S010 对明确平滑时钟族证明了更强有限形式及保守统一形式：
+\[
+ \R\ge(1-\varepsilon)^n\frac\alpha8
+ \ge 2^{-16}(1-8\sqrt\beta)^n g.
+\]
+若再有 $n\sqrt\beta\le2$，则
+\[
+ 2^{-16}e^{-32}g\le\R\le\Rp
+ \le\min\{1,48\sqrt{K^5/n}\}.
+\]
+例如 $M=K^4,\beta=K^{-8}$ 在该域内，$g=1$，因此风险有绝对正常数下界。它不说明所有弱 $\beta$ 区域都为常数风险。
+
+\textbf{为何是合法的正源见证。} 这里 $\sigma$ 是固定的未知符号向量，$\theta^{\sigma,0}$ 为基表，$p_t$ 为周期 Euler 字的第 $t$ 个相邻 pair。将 MM5 的四字母组 Euler clock 做公开 loop rotation，使 $p_5=(0,0)$，并证明每个初始 pair 至多两步进入闭合时钟；在任意长度 $L$ 的状态块中，每个目标 pair 至多访问一次。然后在每个 successor 行中加入同样的均匀符号平滑：
+\[
+ \theta^{\sigma,\varepsilon}_s=(1-\varepsilon)\theta^{\sigma,0}_s+
+ \varepsilon\operatorname{Unif}\{0,\ldots,K-1\}.
+\]
+因此所有\textbf{合法 successor 行坐标}严格为正；pair 核不合法的非 shift 转移仍为零，没有改换状态空间。
+
+完整证明构造并归一化平稳律，利用全起点占用控制得到
+\[
+ \max_t\pi_\varepsilon(t)\le\frac1L+\varepsilon\le\frac{33}{K^2},
+ \qquad P^2(s,t)\ge\frac{64\beta}{K^2}\ge\beta\pi_\varepsilon(t).
+\]
+这对每个 source/target pair 成立，不只是支持内的声明。
+
+\textbf{风险论证保留改变后的目标。} 在 $M$ 次观察转移都未用平滑币的潜在事件上，完整历史仍与训练 triples 及实际末 pair 双射。该事件概率为 $(1-\varepsilon)^M$；新目标的成对坐标对比再缩小 $1-\varepsilon$，所以最终指数为 $n=M+1$，不是 $M$。未知币不提供给算法；没有直接把旧目标 TV 下界乘常数。
+
+\textbf{与 S012 的关系。} S012 在完整源类上给出更强的数值下界，但其吸收见证使用稀疏平稳律。S010 的正源附加性质、原证明和原审查保持有效，不因被数值支配而删除或标错。这里的 $K\ge12$ 与 $0<\beta\le K^{-4}$ 限制也不被擅自扩大。
+\entry{S010 全部八个局部结果；MM5 提供署源构型，L1MAX 只提供原 full-history add-one 的继承上界。}
+\newpage
+\head{S012}{允许稀疏平稳律后得到更强下界}
+对\textbf{全部}整数 $K\ge2,M\ge1$ 及 $\beta\in[0,1]$，
+\[
+ \R\ge\max\!\left\{\frac{F}{180},\ 2^{-16}\dd^n g\right\}.
+\]
+独立 IID 下界 $i/(32\sqrt6)$ 始终保留，尤其 $\beta=1$ 时不能把零生存项当作最优率。不同硬子类的下界按最大值组合，不相加。
+
+\textbf{构造与成员资格。} 对 $K\ge13$，预留符号 $0$；其余四组字母承载原时钟。活跃行以概率 $\beta$ 输出 $0$，否则沿非零时钟；非活跃行一律输出 $0$。由此
+\[
+ \pi=\delta_{(0,0)},\qquad
+ P^2(s,(0,0))=
+ \begin{cases}\beta,&s\text{ 活跃},\\1,&s\text{ 非活跃}.\end{cases}
+\]
+其余目标的平稳质量为零，minorization 自动成立。这是对所有 pair 的合法两步声明；允许的初始律可与 $\pi$ 奇异。
+
+令
+\[
+ m=\lfloor(K-1)/4\rfloor,\quad q=\lfloor M/m^2\rfloor,\quad
+ \alpha=\min\{\tfrac12,\tfrac18\sqrt{m^3/(q+1)}\}.
+\]
+对 $0<\beta<1$，完整历史条件实验、新目标坐标对比和同一有限符号先验给出见证族下界 $\dd^n\alpha/8$。$K=2,\ldots,12$ 由保留全部 $M+2$ 个数据符号的真实 IID 子类处理；$\beta=0,1$ 分别直接验证，不在零概率事件上条件化。
+
+\textbf{真实匹配区域。} 若 $n\beta\le1$，则 $\beta\le1/2$ 且
+$\dd^n\ge e^{-2}$。配合继承的原算法上界，
+\[
+ 2^{-16}e^{-2}g\le\R\le\Rp
+ \le\min\{1,48\sqrt{K^5/n}\}\le48g.
+\]
+原规则仍使用全部历史。对于旧例子 $M=K^4,\beta=K^{-6}$，全部 $K\ge2$ 满足该条件且 $g=1$；因此该例已在真实风险阶上闭合。S011 对它的旧证书计算仍然正确，但不再是本阶段未决窗口。
+
+\textbf{同一见证族的精确限制。} 在指定 horizon-aligned 初始律下，共同常量预测 $B_0(H)=\delta_0$ 对每个符号表都有
+\[
+ L_{B_0}=\dd^{M+1}.
+\]
+生存事件概率 $\dd^M$，其上真实目标的非零总质量恰为 $\dd$；一旦已观察 hazard，末行已是 $\delta_0$，损失为零，包括最后一次 departure 才发生 hazard 的情形。\textbf{这是该族的上界，不是全类上界。}
+\entry{S012 Lemmas 1--4、Propositions 5--6、Corollary 7、Proposition 8；完整族及全部余数初始化均在正文。}
+\newpage
+\head{S013}{状态律混合慢并不推出统计困难}
+固定 $K=2$，令 successor-one 行概率依次为
+\[
+ \theta_{00}(1)=1,\quad\theta_{01}(1)=\beta,\quad
+ \theta_{10}(1)=1,\quad\theta_{11}(1)=1.
+\]
+其余 successor 概率由归一化确定。记 $q=1-\beta$，在状态顺序 $(00,01,10,11)$ 下
+\[
+ P=\begin{pmatrix}0&1&0&0\\0&0&q&\beta\\0&1&0&0\\0&0&0&1\end{pmatrix},\qquad
+ P^2=\begin{pmatrix}0&0&q&\beta\\0&q&0&\beta\\0&0&q&\beta\\0&0&0&1\end{pmatrix}.
+\]
+全部非零转移都符合符号 shift。对 $0<\beta<1$，平稳方程给唯一 $\pi=\delta_{11}$；所有起点两步到 $11$ 的概率分别是 $\beta,\beta,\beta,1$，故最大系数恰为 $\beta$。
+
+从 $\mu=\delta_{10}$ 出发，每个整数 $r\ge0$ 满足
+\begin{align*}
+ \delta_{10}P^{2r}&=q^r\delta_{10}+(1-q^r)\delta_{11},\\
+ \delta_{10}P^{2r+1}&=q^r\delta_{01}+(1-q^r)\delta_{11}.
+\end{align*}
+因此同一源与初始律在每个整数 $t\ge0$ 都达到通用包络：
+\[
+ \TV(\delta_{10}P^t,\delta_{11})=(1-\beta)^{\lfloor t/2\rfloor}=h_t.
+\]
+$t=0,1$ 的距离都是 $1$；奇偶两种情形都精确，非渐近近似。
+
+\textbf{排除的更快形式。} 固定任一内部 $\beta$，不存在有限 $C\ge0$ 能对所有时间统一用 $C(1-\beta)^t$ 替代上述包络，甚至允许 $C$ 依赖这个固定 $\beta$ 也不行。另对任何固定 $c>1/2$，不存在不依赖 $\beta,t$ 的有限 $C\ge0$，使 $C e^{-c\beta t}$ 成为全类统一上界。正文给出明确有限反例参数；不主张 $c\le1/2$ 的最佳性。
+
+\textbf{端点。} $\beta=0$ 时平稳律为
+$w\delta_{11}+(1-w)(\delta_{01}+\delta_{10})/2$，$0\le w\le1$，不唯一；相对见证 $\delta_{11}$，从 $10$ 出发 TV 永为 $1$。$\beta=1$ 时两步 reset 至 $11$，$t\ge2$ 距离为零。
+
+\textbf{已知族的预测风险却为零。} 若明确已知是这个族且 $\beta$ 公开，观察末 pair 后在 $Y_M=01$ 时输出 successor-one 概率 $\beta$，其他行输出 $1$，就逐路径返回真实目标行。对任意 $\mu$、$M\ge1$ 及两个端点都零损失。全类公开 $\beta$ 并不泄露未知表；\textbf{此例不是统计 minimax 下界。}
+\entry{S013 Propositions 1、3--6 与 Invariant 2；唯一继承数学接口为 S011 Lemma 1 的通用 TV 收缩。}
+\newpage
+\head{未闭合窗口与来源边界}{剩余差距是证书差距不是真风险识别}
+沿整数 $K\to\infty$，取
+\[
+ M=K^4,\qquad\beta=\frac{\ln K}{4K^4},\qquad
+ B_{\rm low}=\max\{F/180,2^{-16}\dd^n g\}.
+\]
+$\ln$ 为自然对数。S012 Proposition 9 证明
+\[
+ \frac{B_{\rm low}}{2^{-16}K^{-1/4}}\longrightarrow1,\qquad
+ \frac{U}{K^{-1/8}}\longrightarrow1.
+\]
+这里 $U$ 是 S011 对\textbf{全部合法 burn} 优化后的三个证书最小值，而非某个随意 burn 的估计。计算要点是
+\[
+ \dd^n=K^{-1/4}(1+o(1)),\quad
+ h_{M-1}=K^{-1/8}(1+o(1)),\quad F=K^{-1/2}(1+o(1)).
+\]
+每个后缀证书都至少为 $h_{M-1}$；取公开长度
+$\ell_* =\lfloor K^{7/2}\rfloor$，其平稳项至多 $48K^{-1/4}$，且对应 $h$ 仍为 $K^{-1/8}(1+o(1))$。原算法与汇总证书在该序列最终都为 $1$，所以最终由后缀证书主导。
+
+同一吸收见证族的 $\alpha$ 最终为 $1/2$，其自身 minimax 风险介于 $\dd^n/16$ 与 $\dd^n$，是 $\Theta(K^{-1/4})$。但完整源类目前只有
+\[
+ \underbrace{B_{\rm low}}_{\Theta(K^{-1/4})}
+ \ \le\ \R\ \le\
+ \underbrace{U}_{\Theta(K^{-1/8})}.
+\]
+两端的比值按 $K^{1/8}$ 增长，不能藏入统一常数。\textbf{没有证明完整源类的真实指数等于任一端，也没有完整联合率闭包。}
+
+\textbf{下一必要问题。} 必须进一步识别这一剩余窗口的统计风险。仅改进同一吸收族的 testing 受族上界限制；将一般状态律 TV 换成被 S013 否定的更快指数也无效。这不排除估计器专属分析或其他合法统计论证。本包不包含尚未接纳的后继诊断。
+
+\textbf{可独立阅读的交付。} proofs/ 与 reviews/ 保留四个原工作单元的完整科学论证和原独立审查推理。SOURCES.md 给出精确接口与源哈希；COPY\_MAP.json 对每个保留、省略和新增区间作字节映射；校验脚本只验证完整性。
+
+inherited/ 中的 Stage02 ZIP 是\textbf{先前已交付归档的原样副本}，不是重新打包的旧项目检查点。它包含 S001--S009 及 GU、L1MAX、MM5 的统计科学闭包。其 456828 字节与 SHA-256 身份均重新核对；这不等于本次重读或重证全部旧结果。构建缓存、私有控制与失败打包快照不属于公开集合，第三方论文全文也未附入。
+
+\textbf{保留历史与证据边界。} 原稿及失败记录保持不改；原 review 只审查其原版本，有限检查只是其已报告实例，不是形式证明。新摘要不宣称首创、外部同行评审或全研究结束。
+
+\vfill\small\texttt{END\_DOT\_STAGE\_OUTPUT}
+\end{document}

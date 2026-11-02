@@ -1,0 +1,61 @@
+{
+  "unit": "GN001",
+  "sources": [
+    {
+      "path": "v10_research/iid_depth_capacity/IC001_theorem.md",
+      "sha256": "a443306b90e55bb05c76f3935b8cca676f9f8b3c6211c21d2e2b34e23dd979e3",
+      "bytes": 13639
+    },
+    {
+      "path": "v10_research/influence_reveal/IR001_theorem.md",
+      "sha256": "963e3f743c474f3f4c29fcb2f4aa9dfe1283ac82e0821b18df6a99223b09fffe",
+      "bytes": 13157
+    },
+    {
+      "path": "v10_research/robust_scalar_packing/RP001_theorem.md",
+      "sha256": "6326dfc083b69a1915679ac01e4dbdad750057cf3c896a3cd0c5787cd504a136",
+      "bytes": 10092
+    },
+    {
+      "path": "v10_research/robust_grid_packing/RG001_theorem.md",
+      "sha256": "fc563812489ea4deba9bbc00e072119f2e26d23f3b6bcab56c40cb5dabd74949",
+      "bytes": 12452
+    },
+    {
+      "path": "v10_research/growing_depth/GD001_uniform_FA_extension.md",
+      "sha256": "505be0ffc2f7499581cac5ba9da7c018b6f04cb10dc21bce9d3ab7cdba3f5c7e",
+      "bytes": 6637
+    },
+    {
+      "path": "v10_research/causal_attention/FA001_finite_arithmetic_bridge_v3.md",
+      "sha256": "94a9d64f2a2eedf50cb7e918cfeec4e8cac6e78f21de214a528a853b4f17e073",
+      "bytes": 27144
+    },
+    {
+      "path": "v10_research/intake/IC001_acceptance.json",
+      "sha256": "95a41ec851b73c10e5a44c38885808d6969f41c773059e7f165a3af9bcaec898",
+      "bytes": 836
+    },
+    {
+      "path": "v10_research/intake/IR001_acceptance.json",
+      "sha256": "02726788355296cc57311c21f2339e1610f2f99df70a356d88aaea47bf37a07f",
+      "bytes": 704
+    },
+    {
+      "path": "v10_research/intake/RP001_acceptance.json",
+      "sha256": "940ec6be73cd345d6db885ab826794568ccd7f667fe2231a2cfba4a984559591",
+      "bytes": 882
+    },
+    {
+      "path": "v10_research/intake/RG001_acceptance.json",
+      "sha256": "ce650c379e238a5add3806a47e19cadd5a7e40ad719c4df92a4e42b8bbdae4c7",
+      "bytes": 884
+    },
+    {
+      "path": "v10_research/intake/GD001_acceptance.json",
+      "sha256": "662c3020f51d0d8cc7595cc375c21281df6ef71eea85dd0e1d153745c8496d08",
+      "bytes": 1246
+    }
+  ],
+  "note": "Accepted sources bound; GN proves rational-data extension explicitly, not silently broadening literal dyadic FA."
+}

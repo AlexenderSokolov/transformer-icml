@@ -1,0 +1,9 @@
+{
+  "unit": "SC002",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "source_symbol_corruption_mixing/SC002_theorem.md",
+  "sha256": "40a8950861b486f532ac625fa479cb49cd79241dbb4b08efce6296ae9b6a1f0e",
+  "review": "source_symbol_corruption_mixing/SC002_independent_review.md",
+  "time_utc": "2026-11-02T08:38:34.148340+00:00",
+  "scope": "POST-STAGE7. FixedK>=3, M>=64, allbeta, 0<=k<=M fullhistory symbolcorruption withfinalpair untouched. Stationary and arbitraryinit minimax Theta_K(min(1,max(M^-1/2,(k/M)[1+ln(1+1/(max(beta,1/M)k))]))), corruptiontermzeroatk0. Common erasure kernels preserve wholeword information accounting; exact allstate minorization and true future returnmass; beta/k blind corruptedaddone upper via exact suffix law and occupation. Root read complete proof+fresh review. No binary/jointKsharp/causal-online/maskvisible/computationalbudget/novelty claim."
+}

@@ -1,0 +1,83 @@
+{
+  "unit": "BF001",
+  "version": 2,
+  "reviewer": "independent LLM reviewer",
+  "verdict": "PASS_FIXED_PARAMETER_DECLARED_SCOPE",
+  "time_utc": "2026-11-02T03:59:00.640737+00:00",
+  "blocking_findings": [],
+  "checks": {
+    "all_manifest_hashes_and_lengths_match": true,
+    "generic_BA_lower_not_SRC_specific": true,
+    "domain_completion_constants": true,
+    "actual_finite_weights_and_fullscore_cache": true,
+    "triple_local_values_and_terminal_dense_domain": true,
+    "scalar_D_not_physical_heads": true,
+    "boundary_extra_heads_and_costs": true,
+    "cut_lifetimes_no_hidden_history_port": true,
+    "NB002_coarse_grid_domain": true
+  },
+  "qualification": "Fixed K,D,r,a,b; no growing-architecture word/address or sharp exact-resource claim; augmented PURE and phase peaks must include actual added work/buffers.",
+  "review_binding": {
+    "path": "v10_research/reviews/BF001_review_v2.md",
+    "sha256": "2c6f8a1163c675f2c71c373b76fa66cc0bae797648074bd0496360579625648f",
+    "bytes": 7712
+  },
+  "manifest_binding": {
+    "path": "v10_research/bounded_attention/BF001_source_bindings_v2.json",
+    "sha256": "4b2aa8e641a5cc27a1e56052a336837f7a1e401fb9026e1d04274996aefa47e4",
+    "bytes": 1960
+  },
+  "source_bindings": [
+    {
+      "path": "v10_research/bounded_attention/BF001_encoder_family_frontier_v2.md",
+      "sha256": "bc97fc6fd402a84b2cd2b5e100ae1c905915629aa8c9d5b71e40cdeaf6e05925",
+      "bytes": 10780
+    },
+    {
+      "path": "v10_research/bounded_attention/BA001_bounded_local_attention_lower_v1.md",
+      "sha256": "fb589a775220737124a42e96a115eb3471ccbb84933edc2fd488e0d5986f1569",
+      "bytes": 18608
+    },
+    {
+      "path": "v10_research/bounded_attention/BA001_scalar_coordinate_scope_note.md",
+      "sha256": "3d7067191f31989dbb6c959ab3aa0f2b3c45a38f3e69657441de9ba7733524a1",
+      "bytes": 969
+    },
+    {
+      "path": "v10_research/precision_frontier/FR001_full_risk_frontier_v1.md",
+      "sha256": "7c1305193d61115b0f95f3ed28a0321beeaf9a82dac7172c49fde4e8620f4d1f",
+      "bytes": 7844
+    },
+    {
+      "path": "v10_research/network_bridge/NB002_conservative_guard_sublinear_grid_v1.md",
+      "sha256": "dcf815879aebe23d189403efb5c26e53f64ca8718ffc101b517097a3a32251d3",
+      "bytes": 25853
+    },
+    {
+      "path": "v10_research/strong_mixing_precision/SM002_iid_complete_master_precision_lower_v1.md",
+      "sha256": "170840c84e5633f5b131641aaef8ebaee9db69c5550e878db5002e5446cbb5cc",
+      "bytes": 19286
+    },
+    {
+      "path": "v10_research/intake/BA001_acceptance.json",
+      "sha256": "3d1364e6aeb15a75c73ef2cdd2549096260ca61f74567b0dcb5a951528bef286",
+      "bytes": 485
+    },
+    {
+      "path": "v10_research/intake/FR001_acceptance.json",
+      "sha256": "8f25c492a7f98027714a89d5368b711f57d56f8cd75b7b64993c19e1a86c644b",
+      "bytes": 464
+    },
+    {
+      "path": "v10_intake/source/sources/euler-stage6/facts/fef8372728290b45.md",
+      "sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025",
+      "bytes": 67360
+    },
+    {
+      "path": "v10_research/bounded_attention/BF001_encoder_family_frontier_v1.md",
+      "sha256": "d7f64763ee5e681a9a6ea5704485afaa945b2e60bbd82a1abe5f2baf69f4aeb4",
+      "bytes": 9706,
+      "role": "superseded draft with understated boundary-port costs"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "status": "PASS_TESTED_INSTANCES_ONLY",
+  "exact_stationarity_certificate_checks": 150,
+  "exact_acceptance_cases": 150,
+  "minimum_acceptance": {
+    "value": "9/16",
+    "float": 0.5625,
+    "case": {
+      "M": 64,
+      "k": 2,
+      "t": 2,
+      "a": "1/4"
+    }
+  },
+  "full_word_edit_count_cases": 74640,
+  "source_rows": [
+    {
+      "M": 64,
+      "T": 8,
+      "null_min_certificate": "1/64"
+    },
+    {
+      "M": 65,
+      "T": 8,
+      "null_min_certificate": "1/65"
+    },
+    {
+      "M": 127,
+      "T": 15,
+      "null_min_certificate": "1/127"
+    },
+    {
+      "M": 128,
+      "T": 16,
+      "null_min_certificate": "1/128"
+    },
+    {
+      "M": 256,
+      "T": 32,
+      "null_min_certificate": "1/256"
+    }
+  ],
+  "asymptotic_scalar_examples": [
+    {
+      "log2M": 8,
+      "k": 64,
+      "AB1_over_H": 0.0,
+      "main_over_H": -0.0015865294672170141,
+      "penalty_over_H": 0.0
+    },
+    {
+      "log2M": 12,
+      "k": 512,
+      "AB1_over_H": 0.0,
+      "main_over_H": 5.1141098459676385e-06,
+      "penalty_over_H": 0.20670295828114088
+    },
+    {
+      "log2M": 16,
+      "k": 4096,
+      "AB1_over_H": 0.0,
+      "main_over_H": 0.001914968024324059,
+      "penalty_over_H": 0.21784244438051215
+    },
+    {
+      "log2M": 24,
+      "k": 262144,
+      "AB1_over_H": 0.0,
+      "main_over_H": 0.005999104060225273,
+      "penalty_over_H": 0.1137607620185156
+    },
+    {
+      "log2M": 32,
+      "k": 16777216,
+      "AB1_over_H": 0.0,
+      "main_over_H": 0.010114091950544473,
+      "penalty_over_H": 0.04315345896579711
+    },
+    {
+      "log2M": 48,
+      "k": 68719476736,
+      "AB1_over_H": 0.013760305678543822,
+      "main_over_H": 0.018271881310853243,
+      "penalty_over_H": 0.004511575632309422
+    },
+    {
+      "log2M": 64,
+      "k": 281474976710656,
+      "AB1_over_H": 0.026003904178328437,
+      "main_over_H": 0.02639875738711,
+      "penalty_over_H": 0.0003948532087815598
+    },
+    {
+      "log2M": 96,
+      "k": 4722366482869645213696,
+      "AB1_over_H": 0.04264237089869789,
+      "main_over_H": 0.04264479469965325,
+      "penalty_over_H": 2.423800955358102e-06
+    },
+    {
+      "log2M": 128,
+      "k": 79228162514264337593543950336,
+      "AB1_over_H": 0.0588904213612709,
+      "main_over_H": 0.05889043427214324,
+      "penalty_over_H": 1.2910872332724916e-08
+    }
+  ],
+  "proof_hashes": {
+    "AB001_joint_blindness_obstruction.md": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d",
+    "AB002_addone_failure_and_open_beta_known.md": "7848267fa73e33775ca2aa467230980ee5f89e1d5ae0ae140c0d7955909d219b"
+  },
+  "limitations": "Finite diagnostics corroborate only tested instances; they are not the universal proof, formal verification, or independent review."
+}

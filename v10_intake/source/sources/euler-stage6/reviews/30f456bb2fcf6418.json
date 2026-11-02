@@ -1,0 +1,28 @@
+{
+  "fact_id": "42a4f0a54a7ca79c",
+  "claim": "# RATE-TV：一般二阶源的同轨迹 actual 风险能否去掉对数损失\n\n这是已完成 G/U 条件统计根之后的独立研究问题，不增加旧根或 SRC 的前提，不重开它们。既有实际可靠性增量已经收束；count-snap 与 V 接口的直接译码推论仅作为既有科学来源保留。\n\n对每个固定有限 K>=2、M>=1、N=M+2，令 theta 为任意齐次二阶转移表（允许零边），mu 为任意初始对分布。令 Y_i=(X_(i+1),X_(i+2))，0<=i<=M，已观察 departures 是 i=0,...,M-1。对 s=(a,b) 及 c 属于 {0,...,K-1}，\n\n    C_s,c=sum_(i=0)^(M-1) 1{Y_i=s, X_(i+3)=c},\n    n_s=sum_c C_s,c, p_s,c^+=(C_s,c+1)/(n_s+K),\n    R_K^+(M)=sup_(theta,mu) E_(theta,mu) TV(p^+_(Y_M),theta_(Y_M)).\n\nsup 的源可以随 M 改变；每一条实验轨迹内必须保持齐次。研究实际最后行的同轨迹均值风险，而非独立测试行、时间平均、固定行最大值或条件风险。\n\n主问题是判定以下命题，不能预设其为真：\n\n    对每个固定 K，存在有限常数 C_K，使所有 M>=1 有\n    R_K^+(M)<=min{1,C_K/sqrt(M+1)}.                    (RATE)\n\n若成立，给出可独立核查的证明、一个明确的 C_K 上界及其 K 依赖；准确说明现有 h_N 下同一 Pi 的转移仅另付已接纳全路径 e_N。若不成立，给出固定有限 K0 和齐次源/初始律序列及 M_j→∞，使 sqrt(M_j+1) R^+_(K0)(M_j) 无界的严格见证；再区分所证损失是否真为 sqrt(log M)，不把任何发散因子都称为匹配原粗界。\n\n若只能取得介于现有粗率与 RATE 之间的实质进展，先给精确有限界和未闭合的一步，再按该真实范围登记后继义务；不以探索报告宣称本问题已解决。K 的最优依赖是同一前沿的后续问题，任何非 sharp 的 C_K 必须标明；K 随 M 增长的见证不能反驳固定 K 的 RATE。\n\n可用的当前项目前驱来源是 G/U Fact a12539a93d9f1ee3，其中 UC 给 P(J<v)<=min{1,K^4 v/(M+1)}，J=n_(Y_M)，以及 U2 的 O_K(sqrt(log(M+1)/(M+1))) 上界和任意共同算法的 iid actual 下界 1/(16sqrt(N))。若将统计结论转移给实际 Pi，另用 SRC-Pi Fact fef8372728290b45 的已证明 I。它们不能提供尚未证明的随机样本数条件 iid、错误的 sum max 交换或完整资源优势。\n\n必须处理 J=0、暂态/可约/周期、任意 mu 和随 M 变化的源。不准条件于 J 或 Y_M=s 后将该行样本重置为 iid。任何 row-stack、martingale、renewal 或反向链论证都需保留终端选择与样本计数的相关性。其他估计器上的上界不自动回答 RATE；一般有限状态链 lower 必须说明可嵌入本二阶 pair-chain 的合法转移结构。文献结论必须逐项核对损失、初始化、风险目标与量词。\n\n不涉及重新编译网络、重复计数纠错模块、固定二元故障见证的延展、所有 decoder 的可靠性下界或同精确预算整程序最优性。候选和团队讨论不是 Fact；新实质结论仍走本项目正常证明网关。",
+  "evidence": "verdict: correct",
+  "glossary": {},
+  "links": {
+    "attempt_id": "native-7c65f393981b7bdbe198cb5dea53d09f4ab2bb71e2f42ea692ec8309ec61f32d",
+    "predecessors": [
+      "a12539a93d9f1ee3",
+      "fef8372728290b45"
+    ],
+    "source_id": null
+  },
+  "status": "open",
+  "timestamp_utc": "2026-10-27T12:06:03.409222+00:00",
+  "transport_status": "ok",
+  "verdict": "correct",
+  "verifiable": false,
+  "verification_report": {
+    "critical_errors": [],
+    "gaps": [],
+    "summary": "Reviewed the single frozen RATE-TV v1 submission for run [redacted review run identifier] under contract e6b7592e781948d00eb2a2effb80d8e3ef77e480f8d70f960286bc33faf730af. Runtime-recorded statement SHA256: ffde800ff9369f90f692e81517e53dad06e960478ca3aabe1ea4f9a4ff05d93f; submitted proof-packet SHA256: 1b7e7c7343c458094565d2663edd1900a58a16889285ab435abb458fae9eec6d. Sequential review of sections 1–10 found no critical errors or gaps. The finite row-stack construction reproduces the original history law. The deterministic-length fourth moment and explicitly proved finite Doob bound yield the stated all-row maximum moment. The dyadic-block Hölder step is unconditional and retains dependence between the selected terminal row, its count and the stacks; the geometric sum removes the logarithm. Zero visits, add-one bias, all finite M, arbitrary initialization, zero transitions, transient/reducible/periodic chains and sources changing with M are covered. The calculations establish R_K^+(M)<=min{1,11K^4/sqrt(M+1)}, hence the requested conservative C_K=16K^4. The same admitted Pi at h_N incurs only the all-path e_N; the additional arbitrary-legal-precision bound is also valid (the calculation even gives 51K^4 instead of 100K^4). The iid lower bound is used with its admitted per-horizon source quantifiers and legal pair-chain embedding. Read both cited fact-graph statements, a12539a93d9f1ee3 and fef8372728290b45: their recorded scopes supply UC, the inverse-count moment, the iid actual lower bound and Pi interface I as used, with no inherited P3 defect. These admitted prerequisites were not independently re-proved. No P1/P3/P5/P6 violation or external-paper dependency was found; external theorem search was therefore unnecessary. Candidate/source files supply no unproved mathematical premise. Sharp K dependence, resource optimality, implementation execution and novelty are outside this acceptance. Server-internal identity is not independently attested. This is one frozen independent-context LLM admission review, not formal certification; proof-author model provenance was not independently established, so no cross-model review is claimed and any Sol-authored component receives same-model independent-context review. This is an LLM review, not formal verification or external peer review; cross-model independence is not established."
+  },
+  "write_error": null,
+  "source_record_id": "30f456bb2fcf6418",
+  "source_canonical_json_sha256": "2de46f6d92d39996d9a636ae34caf933a6f481a7adf6ad3521abbe7ff8fc2b11",
+  "export_note": "Scientific claim, glossary, dependencies and complete mathematical report retained. Runtime author/attempt/routing metadata omitted; this JSON is a declared scientific export, not the original serialized record."
+}

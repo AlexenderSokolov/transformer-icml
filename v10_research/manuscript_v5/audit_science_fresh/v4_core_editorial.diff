@@ -1,0 +1,324 @@
+--- v4 core
++++ v5 inherited core
+@@ -156,7 +156,7 @@
+ \[
+  \|F_{\mathrm{fin}}(X)-F_{\mathrm{ideal}}(X)\|_\infty\le2^{-h}
+ \]
+-for every length and every formal history. Full online words additionally include $\log n$ accumulation guards and range/sign allowances. All supplied data, conversion, evaluation, movement and storage costs are charged. This assertion is \unit{FA001 v3}; it excludes arbitrary unevaluated Lipschitz maps and layer normalization.
++for every length and every formal history. Full online words additionally include $\log n$ accumulation guards and range/sign allowances. All supplied data, conversion, evaluation, movement and storage costs are charged. This evaluator excludes arbitrary unevaluated Lipschitz maps and layer normalization.
+ \end{theorem}
+ \begin{proof}[Constructive proof]
+ Set $D_P=2^P$, $\varepsilon=D_P^{-1}$ and represent a signed real by integer $X$ with value $X/D_P$. Rounding is downward, including negative inputs. Convert every supplied dyadic parameter by exact signed division. For an affine coordinate, accumulate the complete signed integer
+@@ -222,7 +222,7 @@
+  F_0&=\max\{i,\min\{\delta,a_0\}\},&
+  D_0&=\delta^{n_0}g,\quad T_0'=\delta^{M/2}h_0.
+ \end{align*}
+-The inherited \unit{R011} scales are
++The inherited full-history statistical scales are
+ \begin{equation}\label{eq:inherited}
+  \mathcal L=\max\{F_0,D_0,T_0'\},\qquad
+  \mathcal H_{\mathrm{orig}}=\max\{a_0,D_0,T_0'\}\le g.
+@@ -231,7 +231,7 @@
+ \[
+  \TV(q,b)\le\rho(J),\qquad \rho(J)=\min\{g,64\sqrt{K/(J+K)}\},
+ \]
+-and has risk at most $2^{16}\mathcal L$. The underlying event-radius and rejection-restricted estimates, not just that scalar risk inequality, are used by the finite decoder. These statistical facts are inherited from the full \unit{R011}, \unit{R001}, \unit{S024} and \unit{S025} proof chain; they are not independently reproved in this article. In particular, no unconditional next-sample IID claim is substituted for them. Both scales are at most $K^{5/2}/\sqrt M$.
++and has risk at most $2^{16}\mathcal L$. The underlying event-radius and rejection-restricted estimates, not just that scalar risk inequality, are used by the finite decoder. These statistical facts are inherited from the full-history statistical, event-radius and rejection proof chain in the accompanying dossier; they are not independently reproved in this article. In particular, no unconditional next-sample IID claim is substituted for them. Both scales are at most $K^{5/2}/\sqrt M$.
+ 
+ \subsection{From four bounded heads to a conservative decoder}
+ The compressed bank uses four score/value patterns at the terminal query $(a,b)$:
+@@ -252,7 +252,7 @@
+ \]
+ Their error perturbs each ideal head coordinate by at most $1/(8Q)$. Compiler error is at most $1/(8Q)$, and final downward rounding costs less than $1/Q$. Thus the new actual bank lies within $5/(4Q)<2/Q$ of the true-log identity bank. Positive Taylor weights and bit-valued projections also keep it on the closed $[0,1]$ grid.
+ 
+-The deterministic identity-and-error ledger in \unit{SRC} and \unit{NB002} then recovers grid frequencies $a_c,y_c\in[0,1]$ satisfying
++The deterministic identity-and-error ledger in the original finite-interface identities and conservative decoder proof then recovers grid frequencies $a_c,y_c\in[0,1]$ satisfying
+ \begin{equation}\label{eq:freq}
+  |a_c-C_c/M|\le76/Q,\qquad |y_c-H_c/M|\le6/Q.
+ \end{equation}
+@@ -268,9 +268,9 @@
+  e_{\mathrm{obs}}=\min\{1,E_0/A_-\}+8k,\qquad
+  \rho_-=\min\{g,64\sqrt{K/A_-}\}.
+ \]
+-The finite rule pools when $\TV(\widehat q,\widehat b)\le\min\{1,\rho_-+e_{\mathrm{obs}}\}$. The apparent square roots can be eliminated by the exact integer comparisons in \unit{NB002}; they are not runtime real oracles. Since $A_-\le A$, any history pooled by the exact selector is also pooled by the finite rule. Equality of decisions is unnecessary; the one-sided rejection containment is the relevant invariant.
+-
+-Using the inherited event-radius and rejection estimates, \unit{NB002} establishes the pre-integration reduction
++The finite rule pools when $\TV(\widehat q,\widehat b)\le\min\{1,\rho_-+e_{\mathrm{obs}}\}$. The apparent square roots can be eliminated by the exact integer comparisons in the conservative finite-decoder proof; they are not runtime real oracles. Since $A_-\le A$, any history pooled by the exact selector is also pooled by the finite rule. Equality of decisions is unnecessary; the one-sided rejection containment is the relevant invariant.
++
++Using the inherited event-radius and rejection estimates, the conservative finite-decoder proof establishes the pre-integration reduction
+ \begin{equation}\label{eq:preint}
+  \operatorname{risk}\le\min\left\{1,2^{16}\mathcal L+
+  3\E\min\left\{1,\frac{E_0}{J+K}\right\}
+@@ -283,7 +283,7 @@
+ \begin{equation}\label{eq:uc}
+  \Prob(J_m<w)\le\min\{1,d^2w/(m+1)\},\qquad w\in\{1,2,\ldots\}.
+ \end{equation}
+-Indeed the largest such probability over initial states is nonincreasing in $m$ by terminal-suffix domination and the Markov property. On each deterministic path only the first $w$ occurrences of a state have fewer than $w$ earlier visits. Summing over time and then over the $d$ possible starting states bounds the sum of these maxima by $d^2w$. Monotonicity proves \eqref{eq:uc}. This is the inherited \unit{G/U} occupation argument, reproduced here because it is also used for the changed histogram encoder.
++Indeed the largest such probability over initial states is nonincreasing in $m$ by terminal-suffix domination and the Markov property. On each deterministic path only the first $w$ occurrences of a state have fewer than $w$ earlier visits. Summing over time and then over the $d$ possible starting states bounds the sum of these maxima by $d^2w$. Monotonicity proves \eqref{eq:uc}. This is the inherited universal occupation argument, reproduced here because it is also used for the changed histogram encoder.
+ 
+ For $d=K^2$, layer cake at the exact integer threshold gives
+ \begin{equation}\label{eq:psi}
+@@ -291,7 +291,7 @@
+ \end{equation}
+ where $\Psi(0)=0$, $\Psi(x)=x(1+\ln(1/x))$ on $(0,1)$ and $\Psi(x)=1$ on $[1,\infty)$. Specifically $J_m<A/t-k$ is either empty or $J_m<\ceil{A/t-k}$, and that ceiling is at most $A/t$. There is no independence assumption about the terminal query.
+ 
+-Under stationarity and $\beta>0$, \unit{IU001} proves the sharper bound
++Under stationarity and $\beta>0$, the inherited stationary occupation analysis proves the sharper bound
+ \begin{equation}\label{eq:stationaryocc}
+  \E_\Pi\min\{1,A/(J_m+k)\}
+  \le\frac{dA}{m}\left[17+\ln\left(1+\frac{480}{\beta A}\right)\right],
+@@ -301,7 +301,7 @@
+ \[
+  \Prob_s(J_m<mp/16)\le5e^{-\beta mp/96}.
+ \]
+-Integrating the minimum of this tail and $A/(mpt)$, then averaging over $s$, yields \eqref{eq:stationaryocc}. The factor $p$ cancels only after the conditional estimate has been proved. The full operator and return proof is retained in \unit{IU001}, rather than hidden behind an informal mixing-concentration citation.
++Integrating the minimum of this tail and $A/(mpt)$, then averaging over $s$, yields \eqref{eq:stationaryocc}. The factor $p$ cancels only after the conditional estimate has been proved. The full operator and return proof is retained in the accompanying stationary-occupation proof, rather than hidden behind an informal mixing-concentration citation.
+ 
+ \subsection{Exact residual suffix laws}
+ A TV burn error alone would leave a nonvanishing additive term as $Q\to\infty$. The all-$Q$ upper instead uses an exact path mixture. Let $u=\floor{M/2}$, $m=M-u$, $r=\floor{M/4}$ and, for $0<\beta<1$,
+@@ -316,7 +316,7 @@
+ \end{equation}
+ Apply the same original-$P$ path-extension kernel to both components: the \emph{entire} suffix law is a mixture of a stationary $P$ trajectory and an ordinary $P$ trajectory from $\nu$. The residual suffix does not evolve under $R$. At $\beta=1$ the stationary component is exact and the residual is omitted.
+ 
+-Full-history visits dominate suffix visits pathwise. Apply \eqref{eq:stationaryocc} to the stationary component and \eqref{eq:psi} to the residual component in \eqref{eq:preint}. The result from \unit{AU001} is
++Full-history visits dominate suffix visits pathwise. Apply \eqref{eq:stationaryocc} to the stationary component and \eqref{eq:psi} to the residual component in \eqref{eq:preint}. The result from arbitrary-start occupation analysis is
+ \[
+  \operatorname{risk}\le\min\left\{1,2^{16}\mathcal L+
+  \frac{2^{14}K^3}{Q}\left[1+\ln\left(1+\frac Q{\beta KM}\right)\right]
+@@ -334,7 +334,7 @@
+ The suffix, reverse chain and residual kernel are analysis objects. The predictor does not compute them or receive another history port. Together with the lower proof and stationary inclusion this completes the theorem's stated modular argument.
+ 
+ \section{Weighted inventories and the effective score budget}\label{sec:score}
+-Bounded-range families have a genuine representation restriction. We now change the finite evaluator and retain more coordinates. The construction and upper bounds are \unit{SB001 v2}; the sharp weight-ratio lower is \unit{SH001 v1}. Neither reinterprets the old exponential program.
++Bounded-range families have a genuine representation restriction. We now change the finite evaluator and retain more coordinates. The complete triple-bank construction and rescaled-window lower below do not reinterpret the old exponential program.
+ 
+ Two paid singleton-copy heads acquire the previous two one-hots. Paid local Boolean gates form pair keys $p_t(a,b)$ and query-independent one-hot triple values $v_t(a,b,c)$. A dense statistical head has key/query dimension $K^2$ and retains all $K^3$ coordinates. Its exact pair dot product selects the integer weight $\kappa$ on matches and $1$ otherwise, where $\kappa\ge1$ is public. Its effective natural logits are $0,\ln\kappa$; no logarithm or exponential is executed. All $M$ terminal keys have positive weight.
+ 
+@@ -378,7 +378,7 @@
+ Thus the effective logit range is $\ln\ln(M+1)+O(1)$ at $Q\asymp\sqrt M$.
+ \end{theorem}
+ \begin{proof}
+-Apply \eqref{eq:psi} to the first two terms in \eqref{eq:inventoryerr}, and use the inherited \unit{R011 ORIGINAL} risk bound. This proves \eqref{eq:scoreupper}. At the integer schedule, $\sqrt{M+1}\le Q\le2\sqrt{M+1}$ and $\ln(1+Q)\le L_M$. For $D\ge1,z>0$,
++Apply \eqref{eq:psi} to the first two terms in \eqref{eq:inventoryerr}, and use the inherited full-history statistical risk bound. This proves \eqref{eq:scoreupper}. At the integer schedule, $\sqrt{M+1}\le Q\le2\sqrt{M+1}$ and $\ln(1+Q)\le L_M$. For $D\ge1,z>0$,
+ \[
+  \Psi(D/z)\le\frac{D[1+\ln(1+z)]}{z},\qquad \Psi(x)\le2\sqrt x.
+ \]
+@@ -388,7 +388,7 @@
+ \subsection{A rescaled tube with uniform weight-ratio constants}
+ Fix $K\ge3$ and a one-block local family with at most $D$ coordinates, trailing radius $r$, actual weights in $[1,\kappa]$, values in $[-1,1]$, and only the boundary side information of \eqref{eq:localratio}. Here $\kappa\ge1$ may be real; $D,r$ are fixed independently of $M,\beta,Q,\kappa$. The lower permits arbitrary real public positional tables and source-independent shared randomness. It does not include recursively global features or query-selected masks. Smaller banks can be conceptually zero-padded for this information argument without changing a physical implementation.
+ 
+-The earlier \unit{SB001} substitution in \unit{BA001} gives the valid lower $\Omega(\ln M/(\kappa^{D+1}\sqrt M))$ in weak mixing at $Q\asymp\sqrt M$. It loses a power of $\kappa$ through the number of grid cells across a thickened tube. The following refinement changes the suffix cutoff instead of treating that old constant as uniform.
++The earlier complete triple-bank construction substitution in local-family analysis gives the valid lower $\Omega(\ln M/(\kappa^{D+1}\sqrt M))$ in weak mixing at $Q\asymp\sqrt M$. It loses a power of $\kappa$ through the number of grid cells across a thickened tube. The following refinement changes the suffix cutoff instead of treating that old constant as uniform.
+ 
+ \begin{proposition}[Rescaled rare-window lower]\label{prop:rescaled}
+ Put $z=\kappa Q$, $H_b=3^{2r}$, $T_b=r\sqrt{40DH_b}$ and
+@@ -401,7 +401,7 @@
+  \Risk_{\kappa,\mathrm{stat}}\ge
+  \frac{c_b}{z}\ln\left(1+\frac18\min\left\{\frac{z}{M\betaz},\frac Mz\right\}\right).
+ \end{equation}
+-The constant depends only on $D,r$, not on $\kappa,Q,M,\beta,K$ or the tables. This is \unit{SH001 v1}; it is not a matching all-$Q$ two-resource risk formula.
++The constant depends only on $D,r$, not on $\kappa,Q,M,\beta,K$ or the tables. This is not a matching all-$Q$ two-resource risk formula.
+ \end{proposition}
+ \begin{proof}
+ Use the stationary witness \eqref{eq:witness}, the same uniform prior and the events $E_j$, but replace \eqref{eq:jcut} by
+@@ -429,7 +429,7 @@
+ \end{equation}
+ with $\inf\varnothing=+\infty$. The envelope budget $\kappa$ is real and the lower allows real tables; a feasible upper below uses actual integer weights. This definition assumes neither attainment of the infimum nor a noninteger implementation.
+ 
+-The unchanged \unit{SB001} upper is more precise than \eqref{eq:scoreupper}. Put
++The unchanged complete triple-bank construction upper is more precise than \eqref{eq:scoreupper}. Put
+ \[
+  t=M\betaz,\quad G(z,t)=1+\ln(1+z/t),\quad
+  C'_K=48K^3(K+1)+10D_K.
+@@ -488,10 +488,10 @@
+ At fixed $K\ge3$, its best post-grid decoder has stationary and arbitrary-start risk of order $H(M,\beta,Q)$, uniformly over the legal $\beta,Q$.
+ \end{corollary}
+ \begin{proof}
+-For the upper, set $\kappa=1$ in \eqref{eq:scoremix}: the first two terms are $O_K(M^{-1/2})$, since $\Psi(x)\le2\sqrt x$, and the remaining terms are $O_K(W)$. For the lower, this exact $K^3$ bank belongs to \eqref{eq:localratio} with $a=b=1,r=3$; its decoder risk obeys the local-family $1/Q$, statistical and rare-window lower bounds, combined in Section~\ref{sec:completion} into $\Omega_K(H)$. This is a synthesis of \unit{SB001} and \unit{BA001}, not a separately audited source unit.
+-\end{proof}
+-
+-The full bank pays $K^3$ coordinates instead of the compressed bank's $9K+1$, so fixed-$K$ rate equality does not imply equal dimension or costs. The earlier \unit{GW001 v3} successor-only construction with weights $1,M,M^2$ still gives a valid sufficient point with effective range $2\ln M$. The old \unit{SB001} lower also remains true; the rescaled proof sharpens it rather than refuting it. The fixed-band theorem above has no exact threshold constant and no implication for arbitrary deep or growing architectures. Section~\ref{sec:joint} extends the one-block analysis to all legal joint weight/grid regimes using an additional uniform IID argument.
++For the upper, set $\kappa=1$ in \eqref{eq:scoremix}: the first two terms are $O_K(M^{-1/2})$, since $\Psi(x)\le2\sqrt x$, and the remaining terms are $O_K(W)$. For the lower, this exact $K^3$ bank belongs to \eqref{eq:localratio} with $a=b=1,r=3$; its decoder risk obeys the local-family $1/Q$, statistical and rare-window lower bounds, combined in Section~\ref{sec:completion} into $\Omega_K(H)$. This is a synthesis of the complete triple-bank construction and local-family analysis, not a separately audited source unit.
++\end{proof}
++
++The full bank pays $K^3$ coordinates instead of the compressed bank's $9K+1$, so fixed-$K$ rate equality does not imply equal dimension or costs. The earlier growing-range successor-only construction with weights $1,M,M^2$ still gives a valid sufficient point with effective range $2\ln M$. The old triple-bank lower also remains true; the rescaled proof sharpens it rather than refuting it. The fixed-band theorem above has no exact threshold constant and no implication for arbitrary deep or growing architectures. Section~\ref{sec:joint} extends the one-block analysis to all legal joint weight/grid regimes using an additional uniform IID argument.
+ 
+ \section{The joint weight-ratio and grid frontier}\label{sec:joint}
+ The fixed-band threshold of Section~\ref{sec:score} does not by itself determine the risk when both resources vary. In particular, the earlier IID tube constant depended on the weight envelope. The next argument proves that even an arbitrarily large finite weight ratio cannot remove the final-grid penalty. Together with the rescaled rare-window lower and the unchanged triple-bank upper, this closes the joint frontier in the one-summary-block family. It does not enlarge the bounded causal family of Theorem~\ref{thm:main}.
+@@ -502,7 +502,7 @@
+ \[
+  \Risk_{\kappa,\mathrm{stat}}\ge c_I(D,r)/Q
+ \]
+-even on stationary binary IID sources. The constant is independent of the weight envelope, alphabet size and mixing promise. The decoder may still return arbitrary real probabilities. This is \unit{UI001 v1}.
++even on stationary binary IID sources. The constant is independent of the weight envelope, alphabet size and mixing promise. The decoder may still return arbitrary real probabilities.
+ \end{proposition}
+ \begin{proof}
+ Use IID Bernoulli$(p)$ observations on two designated symbols, and define every second-order row, including unsupported rows, to emit that same law. Then $P^2(s,t)=\Pi(t)$ on every state, so every $\beta\in[0,1]$ is allowed and the actual terminal target is always $p$. Fix and grant an encoder seed. The following prior and constants do not depend on that seed.
+@@ -590,7 +590,7 @@
+  c=\min\{(256\cdot5)^{-1},c_I/2,c_b/48\},\qquad
+  C_K^{\mathrm{joint}}=(2^{13}+2)K^{5/2}+C'_K+2K-1.
+ \]
+-The lower constants depend only on the fixed $D,r$, not on $\kappa$. This is \unit{TR001 v1}; it is not a theorem for arbitrary deep or growing architectures.
++The lower constants depend only on the fixed $D,r$, not on $\kappa$. This is not a theorem for arbitrary deep or growing architectures.
+ \end{theorem}
+ \begin{proof}
+ The statistical floor from Section~\ref{sec:completion} gives $\Risk\ge M^{-1/2}/256$, and Proposition~\ref{prop:iiduniform} gives $c_I/Q$. Proposition~\ref{prop:rescaled} supplies $c_bL$ only for $\beta\le1/16$ and $z=\kappa Q\le M/4$, where
+@@ -663,7 +663,7 @@
+  \ge\frac{c_{\mathrm{bin}}}{z}
+  \ln\left(1+\frac18\min\left\{\frac{z}{Me_0},\frac Mz\right\}\right),
+ \end{equation}
+-where $c_{\mathrm{bin}}>0$ depends only on $D,r$. This is \unit{BI001 v2}.
++where $c_{\mathrm{bin}}>0$ depends only on $D,r$.
+ \end{proposition}
+ \begin{proof}
+ Order the pair states as $W=00,A=01,B=10,C=11$. Let $a=1/(2M)$, $p\in[1/4,3/4]$, and use the actual homogeneous kernel and stationary law
+@@ -739,7 +739,7 @@
+  \E\min\{q_{Y_M},A/(J+k)\}
+  \le\frac{4A}{M}\left[17+\ln\left(1+\frac{96}{\sqrt\beta A}\right)\right].
+ \end{equation}
+-Zero weights contribute zero before any division. This is \unit{BU001 v2}.
++Zero weights contribute zero before any division.
+ \end{lemma}
+ \begin{proof}
+ Stationarity gives $ya=xe$ and $wt_1=xb$. If $x=0$, positive $\beta$ permits only a singleton diagonal support; its weight is zero, so the assertion follows directly. Henceforth assume $x>0$. Positive-$\beta$ minorization makes the supported chain irreducible, and its two-step entries and balance now imply $e^2\ge\beta y$ and $b^2\ge\beta w$. First-step equations for the largest supported hitting mean $H_s$ give, for example,
+@@ -788,7 +788,7 @@
+  \le\min\left\{1,\frac{2^{17}}{\sqrt M}+\frac3Q+
+  544\,\mathcal W(\kappa Q,Me_0)\right\}.
+ \end{equation}
+-This is \unit{BU001 v2}; its proof here is stationary. Section~\ref{sec:initialization} establishes the arbitrary-start extension by a different path/count argument.
++The proof here is stationary. Section~\ref{sec:initialization} establishes the arbitrary-start extension by a different path/count argument.
+ \end{proposition}
+ \begin{proof}
+ Let $S_0$ be the inherited actual-terminal add-one risk and
+@@ -831,7 +831,7 @@
+ \eqref{eq:binaryreturn}; the weighted term is at most
+ $480[1+\ln(1+z/(M\sqrt\beta))]/z$.
+ Together with $64/z$ and the statistical bounds this is
+-\eqref{eq:binaryupper}. For $\beta<M^{-2}$, including zero, use the unchanged beta-free SB001 bound and
++\eqref{eq:binaryupper}. For $\beta<M^{-2}$, including zero, use the unchanged beta-free triple-bank bound and
+ $\Psi(96/z)\le96[1+\ln(1+z)]/z$ instead. No positive-$\beta$ return argument is used at zero.
+ \end{proof}
+ 
+@@ -849,7 +849,7 @@
+  \le\operatorname{risk}_{\mathrm{stat}}(T_\kappa)
+  \le\min\{1,131619\,\mathcal F_2\},
+ \end{equation}
+-where $c_2=\min\{(256\cdot5)^{-1},c_I/2,c_{\mathrm{bin}}/48\}$ depends only on $D,r$. This is \unit{BS001 v1}. It is a stationary theorem only.
++where $c_2=\min\{(256\cdot5)^{-1},c_I/2,c_{\mathrm{bin}}/48\}$ depends only on $D,r$. It is a stationary theorem only.
+ \end{theorem}
+ \begin{proof}
+ The uniform IID and statistical floors are already binary witnesses. For the logarithmic term repeat the exhaustive completion in Theorem~\ref{thm:joint}, now with $t=Me_0$ and Proposition~\ref{prop:binarylower}. Specifically, when $\beta>1/256$, $e_0>1/16$ and
+@@ -928,7 +928,7 @@
+ \]
+ admits a uniform bound
+ $C n^{-\alpha}+C\exp(-cn\sqrt{\beta_*})$
+-for any fixed $\alpha,C,c>0$, even when $q$ is the row-minority vector. This is the method obstruction \unit{WM001 v2}, not a precision-risk lower bound.
++for any fixed $\alpha,C,c>0$, even when $q$ is the row-minority vector. This weighted endpoint counterexample obstructs a proof method; it is not a precision-risk lower bound.
+ \end{proposition}
+ \begin{proof}
+ Take $0<\eta\le\varepsilon\le1/32$ and
+@@ -978,7 +978,7 @@
+ $\sum_k\Prob_s(\tau_k=n)/k$. At the $k$th positive return there are exactly $k$ earlier visits, including time zero. This is the left side of \eqref{eq:schur}. Nonnegativity follows from the return expansion, and the upper bound follows from $\operatorname{tr}(P^n)\le d$ and nonnegativity of the killed trace.
+ \end{proof}
+ 
+-This identity, proved in \unit{BAI004 v5} and \unit{BOD001}, controls a return to the initial target. For a different terminal target it is used after a first-hit decomposition, rather than as a bound on an independently chosen row.
++This identity controls a return to the initial target. For a different terminal target it is used after a first-hit decomposition, rather than as a bound on an independently chosen row.
+ 
+ \subsection{Absorbing diagonals and alternating geometric runs}
+ Suppose $W$ is absorbing, so $a=0$; no restrictions are placed on the other rows or initial distribution. A true path ending in $A,B,C$ never visited $W$. Its complete-path probability is at most that under the reflected chain
+@@ -1045,12 +1045,12 @@
+  \E\min\{q_{Y_M},A_0/(J+2)\}
+  \le256\max\{A_0,1\}/M+16/(M+2).
+ \]
+-Combined with the historywise floor reduction below, this is \unit{BAI003 v2}'s uniform all-start bound
++Combined with the historywise floor reduction below, this gives the uniform all-start bound
+ \begin{equation}\label{eq:absorbingrisk}
+  \operatorname{risk}(T_\kappa)
+  \le\min\{1,2^{17}M^{-1/2}+3/Q+1600/(\kappa Q)\}.
+ \end{equation}
+-The earlier \unit{BAI002} reflected-core argument obtains the same no-log order when $b,t_1$ stay in a fixed compact subinterval. The run argument is what removes that extra assumption. Neither argument changes the finite predictor.
++The earlier reflected-core argument obtains the same no-log order when $b,t_1$ stay in a fixed compact subinterval. The run argument is what removes that extra assumption. Neither argument changes the finite predictor.
+ 
+ \subsection{Full support: diagonal starts and first-hit convolutions}
+ Assume now $\beta>0$ and full stationary support. All four exits are positive. Write the stationary masses as $(y,x,x,w)$; then
+@@ -1061,7 +1061,7 @@
+ \]
+ The third inequality uses $P^2(W,C)=ab\ge\beta w$ and positive $b$.
+ 
+-The diagonal-to-successor-crossing bound in \unit{BAI004 v5} is
++The diagonal-to-successor-crossing estimate is
+ \begin{equation}\label{eq:diagcross}
+  \E_W\!\left[\ind\{Y_M=A\}\min\{1,A_0/(J_A+2)\}\right]
+  \le\frac{40A_0}{M}
+@@ -1163,7 +1163,7 @@
+  \le\frac{8192A_0}{M}
+  \left[1+\ln\left(1+\frac1{\sqrt\beta A_0}\right)\right].
+ \end{equation}
+-This is \unit{BOD001}; it needs no condition $\beta M^2\ge1$. That fact matters when applying it to a shorter suffix.
++This opposite-diagonal estimate needs no condition $\beta M^2\ge1$. That fact matters when applying it to a shorter suffix.
+ 
+ 
+ \subsection{All initial states, all supports, and the unchanged decoder}
+@@ -1209,7 +1209,7 @@
+ $6\cdot16672+64=100096<2^{17}$
+ on $\mathcal W(z,Me_0)$, where $e_0=\max\{\sqrt\beta,M^{-1}\}$. The statistical coefficient
+ $(2^{14}+4)\sqrt{32}+6$ is also below $2^{17}$.
+-Singleton support uses \eqref{eq:absorbingrisk}. For $0\le\beta<M^{-2}$, use the unchanged beta-free SB001 upper, including $\Psi(96/z)\le96[1+\ln(1+z)]/z$; here $Me_0=1$.
++Singleton support uses \eqref{eq:absorbingrisk}. For $0\le\beta<M^{-2}$, use the unchanged beta-free triple-bank upper, including $\Psi(96/z)\le96[1+\ln(1+z)]/z$; here $Me_0=1$.
+ Thus every support, initialization and cutoff boundary is accounted for.
+ 
+ \begin{theorem}[Binary one-block frontier for both initializations]\label{thm:binaryall}
+@@ -1222,7 +1222,7 @@
+  \le\min\left\{1,\frac{2^{17}}{\sqrt M}+\frac3Q+
+  2^{17}\mathcal W(\kappa Q,Me_0)\right\}.
+ \end{equation}
+-In particular both minimax risks are of order $\mathcal F_2$, with common upper constant $2^{18}+3=262147$. This is \unit{BIF001 v1}.
++In particular both minimax risks are of order $\mathcal F_2$, with common upper constant $2^{18}+3=262147$.
+ \end{theorem}
+ \begin{proof}
+ The preceding support and decoder argument proves the upper. Theorem~\ref{thm:binaryjoint}'s stationary lower applies to the same encoder family, and stationary laws are an admissible subset of arbitrary initializations. No new lower witness or all-regime extrapolation is needed.
+@@ -1239,7 +1239,7 @@
+ \section{Binary fixed-depth causal finite evaluators}\label{sec:binarycausal}
+ The one-block real-table family and the causal finite-evaluator family are different. The binary frontier transfers to the latter only after proving a nonlinear Markov concentration bound and an exact finite-label upper inclusion.
+ 
+-Use the temporal-causality and bounded-primitive conditions of Section~\ref{sec:experiment}, now with $K=2$, fixed radius $r\ge3$ and output budget $D\ge8$. The capacity must admit one global head, width $16$, supplied exact radius-three triple-bit tables, and affine coefficient and row-sum budgets at least two. The main prototype uses row-sum-one projections. Computing the triple bits instead as $\operatorname{ReLU}(u+v+w-2)$ is an optional different local implementation requiring row-sum budget three. Public masks must allow density $c\le1/3$. Historical tables and states cannot use the future boundary label; that label enters only the appended query and decoder. Evaluation remains the fixed-architecture FA001 procedure at target $h+3$.
++Use the temporal-causality and bounded-primitive conditions of Section~\ref{sec:experiment}, now with $K=2$, fixed radius $r\ge3$ and output budget $D\ge8$. The capacity must admit one global head, width $16$, supplied exact radius-three triple-bit tables, and affine coefficient and row-sum budgets at least two. The main prototype uses row-sum-one projections. Computing the triple bits instead as $\operatorname{ReLU}(u+v+w-2)$ is an optional different local implementation requiring row-sum budget three. Public masks must allow density $c\le1/3$. Historical tables and states cannot use the future boundary label; that label enters only the appended query and decoder. Evaluation remains the fixed-architecture signed finite-evaluation procedure at target $h+3$.
+ 
+ \begin{theorem}[Binary bounded causal frontier]\label{thm:binarycausal}
+ Put
+@@ -1254,7 +1254,7 @@
+  \le\Risk_{\mathrm{causal},\mathrm{all}}^{(2)}
+  \le\min\{1,262147\,H_2\}.
+ \]
+-The stationary lower and exact finite prototype are \unit{BC001 v1}; the arbitrary-start upper composition is \unit{BIF001 v1}. Constants depend on the fixed architecture, not on $M,\beta,Q$.
++The proof combines a stationary lower, an exact finite prototype and the arbitrary-start upper. Constants depend on the fixed architecture, not on $M,\beta,Q$.
+ \end{theorem}
+ \begin{proof}
+ For the lower, retain the binary source and active reference chain of Proposition~\ref{prop:binarylower}. Section~\ref{sec:causal} bounds the ideal terminal output's change under any late single-symbol replacement by $\Gamma/M$, already including local preprocessing. The reference chain's two-step coupling has expected disagreement count at most $16$. Telescoping single-symbol replacements along two coupled continuations therefore bounds the difference of their conditional output expectations by $34\Gamma/M$. For a $j$-step active suffix and each frozen branch, the Doob and single-transition derivative arguments give
+@@ -1296,7 +1296,7 @@
+ Thus the final bank is exactly the uniform histogram bank at $\kappa=1$ on every history, not merely close to it. Zero counts remain zero, which is necessary for the binary purity argument. The boundary is used only for post-grid block selection. Theorem~\ref{thm:binaryall}'s upper now applies at $z=Q$ for every initialization, although the encoder implementations are different. Since $\mathcal W(Q,Me_0)\ge1/Q$, the claimed envelope follows.
+ \end{proof}
+ 
+-The finite-cost composition also remains distinct. Charge the complete FA encoder, local-table and mask generation, all-token arrays, every Taylor/edge scan, compact converted records and full arithmetic words from Section~\ref{sec:costs}. Add bank conversion and all-token pointwise decoding. The complete addressed SB001 ledger at $\kappa=1$ is a conservative overcharge for its decoder suffix; using that bound does \emph{not} execute singleton heads inside the dense causal encoder. Add simultaneous phase costs, rather than taking minima across implementations. Optional PURE unrolling applies to the composed bitwork and has much larger depth.
++The finite-cost composition also remains distinct. Charge the complete signed finite encoder, local-table and mask generation, all-token arrays, every Taylor/edge scan, compact converted records and full arithmetic words from Section~\ref{sec:costs}. Add bank conversion and all-token pointwise decoding. The complete addressed triple-bank ledger at $\kappa=1$ is a conservative overcharge for its decoder suffix; using that bound does \emph{not} execute singleton heads inside the dense causal encoder. Add simultaneous phase costs, rather than taking minima across implementations. Optional PURE unrolling applies to the composed bitwork and has much larger depth.
+ 
+ At fixed depth the necessary and sufficient binary grid order is $Z_{*,2}$ in \eqref{eq:binarythreshold}, for both initializations. In particular $\beta=1/M$ permits $Q\asymp\sqrt M$, whereas $\beta\le M^{-2}$ requires $Q\asymp\sqrt M\log M$. The larger-alphabet bounded causal theorem retains the $\beta_0$ cutoff. These distinctions do not depend on an online estimate of the mixing promise.
+ 
+@@ -1442,7 +1442,7 @@
+  \qquad H_{\rm stat}\le\frac{K^{5/2}}{\sqrt{M+1}}.
+  \end{split}
+ \end{equation}
+-Here $\Psi(x)=x(1+\ln(1/x))$ on $0<x<1$, $\Psi(0)=0$ and $\Psi(x)=1$ for $x\ge1$, as earlier. This step inherits the same statistical input as SB001; it is not an independent new proof of that input.
++Here $\Psi(x)=x(1+\ln(1/x))$ on $0<x<1$, $\Psi(0)=0$ and $\Psi(x)=1$ for $x\ge1$, as earlier. This step inherits the same statistical input as the triple bank; it is not an independent new proof of that input.
+ 
+ Set
+ \[
+@@ -1516,7 +1516,7 @@
+ \subsection{Paid depth and arithmetic ledgers}\label{sec:depthcost}
+ There are two complete implementation choices. They should not be combined coordinatewise into an artificial smaller budget.
+ 
+-For the generic growing-depth FA evaluator, let $U$ count supplied numerical records across \emph{all} stages and $F$ count all public mask/metadata bits; neither is depth-independent. With $B_p$ the maximum supplied description length and $n=M+3$, a guarded word can have
++For the generic growing-depth finite evaluator, let $U$ count supplied numerical records across \emph{all} stages and $F$ count all public mask/metadata bits; neither is depth-independent. With $B_p$ the maximum supplied description length and $n=M+3$, a guarded word can have
+ \[
+  w=O_{\rm fixed}\bigl(P+\log(n+1)+\log(d+1)+\log(P+1)+\log(U+F+2)\bigr).
+ \]

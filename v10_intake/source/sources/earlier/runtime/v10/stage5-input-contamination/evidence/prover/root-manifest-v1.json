@@ -1,0 +1,279 @@
+{
+  "kind": "EXACT_ORIGINAL_ROOT_GATEWAY_RECEIPT",
+  "version": 1,
+  "root_obligation_id": "881d17365a7019add4410343d568625dacae67d26aa17548bda2de7f9b860dbb",
+  "contract_id": "873515c4586d37a2bde324010bea6ae30f820927b7c25ded15b784a79eef7e45",
+  "definitions_hash": "fc104078b9455bdd86586decd50902df6688400cc00f06e6b105699efefd0e02",
+  "predecessors": [
+    "f9e055bd405c4b56",
+    "df40a215d931bd32",
+    "39367951834d7aa7"
+  ],
+  "submission_count": 1,
+  "submitted_full_text": {
+    "path": "outputs/001-input-contamination/prover/root-proof-v1.md",
+    "sha256": "587eb09f76074fea9683d318a753697b0a360f662eef6664623726449dcf4eba",
+    "bytes": 167181
+  },
+  "artifacts": [
+    {
+      "path": "outputs/001-input-contamination/prover/root-proof-v1.md",
+      "sha256": "587eb09f76074fea9683d318a753697b0a360f662eef6664623726449dcf4eba",
+      "bytes": 167181
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/root-gateway-v1.json",
+      "sha256": "ec1ec53657bada17f2a4159e6a291a4078ad176a4cc8c48f5d119649b8c9d439",
+      "bytes": 8674
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/root-readback-v1.json",
+      "sha256": "cbbfd67ffd4fe3f81b19f62733c7be36da76cdd2947c876f2ced7e250b7d5509",
+      "bytes": 76065
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/root-pre-submit-state-v1.json",
+      "sha256": "75323986b75f827de4160942ae6195be1729d581a4cce6f351cb7b2d3c1f5b6a",
+      "bytes": 66303
+    }
+  ],
+  "accepted": false,
+  "verdict": "wrong",
+  "transport_status": "ok",
+  "new_fact_ids": [],
+  "new_evidence_ids": [],
+  "failure_id": "667f85ccc24a3a88a121482989dfe78acafc47cb08beeb8c8dfb410cfdea5cb3",
+  "root_status": "OPEN",
+  "root_validity": "VALID",
+  "root_evidence_refs": [],
+  "acceptance": null,
+  "frontier_before": "47764359856c626063a362ea0f080309b80ec551ea175c80134fbb6996945041",
+  "frontier_after": "11d564e9dbc925aa5206e1096f2b6ae5ce6db5b9bbf8936cb76f40bcaa4991ee",
+  "frontier_change_kind": "Native failed-proof record; no root mathematical admission",
+  "verification_summary": "Reviewed Original-root proof submission v1 against frozen contract 873515c4586d37a2bde324010bea6ae30f820927b7c25ded15b784a79eef7e45 and D1-D7, definitions SHA256 fc104078b9455bdd86586decd50902df6688400cc00f06e6b105699efefd0e02. The current C1-C3 Fact files f9e055bd405c4b56, df40a215d931bd32 and 39367951834d7aa7 match the supplied canonical hashes and supply the required scoped interfaces; their statements contain no P3 chain defect. These are inherited admissions, not newly issued component certifications. The submitted text was checked sequentially; no additional defect was identified in the mathematical composition preserving pointwise JOINT/DIRECT identity, one common channel and the same source witness. The bounded D6 comparisons are supported by [Chen/Gao/Ren v2](https://arxiv.org/pdf/1511.04144v2), [Pydi/Jog main](https://proceedings.mlr.press/v119/pydi20a/pydi20a.pdf) and [supplement](https://proceedings.mlr.press/v119/pydi20a/pydi20a-supp.pdf). The required theorem search was attempted first but blocked by tool approval policy; the primary-source web fallback succeeded. [Non-scientific operational metadata omitted.] Consequently the full frozen submission fails the zero-gaps rule; this does not establish falsity of its risk bounds. This review does not supply cross-model validation of same-model results. This is an LLM review, not formal verification or external peer review; cross-model independence is not established.",
+  "critical_errors": [],
+  "gaps": [
+    {
+      "location": "Original-root proof submission v1, Current procedural status and editorial annotation; embedded C4 section 7; C4/D7 final_audit requirement",
+      "issue": "The frozen target requires completion of a fresh separate final_audit. The submission explicitly states that this audit must follow root admission and has not occurred; the embedded combination likewise leaves it for a subsequent Lead action. The component admissions and completed FILE-SCOPED PASS are expressly not that audit. Thus this required part of the exact target remains undischarged. The intended ordering explains the pending event but does not provide evidence that it is complete. Accepting only the mathematical composition would silently narrow the submitted target."
+    },
+    {
+      "location": "Original-root proof submission v1, Current procedural status and editorial annotation; embedded C4 section 7; [Non-scientific operational metadata omitted.]",
+      "issue": "A historical administrative completion requirement was not fulfilled. No new mathematical defect in the combination was identified by this issue. The failed completion gate is retained as a failure, not promoted to a scientific pass."
+    }
+  ],
+  "repair_hints": "Preserve the current C1-C3 admissions and the mathematical composition. [Non-scientific operational metadata omitted.] Submit the resulting completion evidence against the exact C4/D7 requirements. If the gateway requires every completion event before admitting this same root, the owner must explicitly resolve that ordering through separate mathematical-admission and completion obligations or an authorized contract revision; the verifier cannot silently shrink the frozen statement or certify future events.",
+  "components_preserved": [
+    {
+      "obligation_id": "52a14a0c60279133c7acc7067c15eb4cfbff32368f8a721e59df9bf3eecd9ff1",
+      "status": "DISCHARGED",
+      "validity": "VALID",
+      "evidence_refs": [
+        "3448f22a5b9e86526c831f0518a83b828eaf69eb2acf455fb0057f354dae7cd3"
+      ]
+    },
+    {
+      "obligation_id": "b5f118d33a9d9687ac8e3d48ca7df6e5c0403aeba52c026d88087e385e813354",
+      "status": "DISCHARGED",
+      "validity": "VALID",
+      "evidence_refs": [
+        "61f169db99848f6794e334ea287037fae00a592f4b5e5254d580c0b9f74a599f"
+      ]
+    },
+    {
+      "obligation_id": "c9d1bbb51ee633f91f029e917ded7f6e1de7f6e9e227f681761ee9ed66b81bec",
+      "status": "DISCHARGED",
+      "validity": "VALID",
+      "evidence_refs": [
+        "426929d6b208d95764b59cd20f658f51c91334448c86cfb5cdb9b8bf2d5e4b00"
+      ]
+    }
+  ],
+  "fixed_review": "FILE-SCOPED PASS; not a mathematical predecessor or final audit",
+  "fixed_source_artifacts_after_gateway": [
+    {
+      "path": "outputs/001-input-contamination/lead/root-submission-note-v1.md",
+      "sha256": "c023250f92c1b60b717412f1caccd4d9f84dd70006075b801e76b559e8e102d1",
+      "bytes": 11696
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/fixed-full-proof-v1.md",
+      "sha256": "a7c4e4194e68b186cc3cd6a3bdf8e0b9bfb01c0a1981427c588e1e9a38a1b7ae",
+      "bytes": 163186
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/fixed-combination-manifest-v1.json",
+      "sha256": "0596e9f1bd16bbb9c7c132e70a959cdc2147b133580bf9aad72282a657cb288e",
+      "bytes": 10356
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/post-review-native-readback-v1.json",
+      "sha256": "352d3a719e9a87fe28f71e6d50bb5d6600f2bbbfceab67d3179eb1509b5428d7",
+      "bytes": 63799
+    },
+    {
+      "path": "outputs/001-input-contamination/verifier/fixed-combination-review-v1.md",
+      "sha256": "dd48f0f7a081b24dc51408318f9fb92841531b6ee1c03e71d5519485ed038d5c",
+      "bytes": 19650
+    },
+    {
+      "path": "outputs/001-input-contamination/verifier/fixed-combination-review-manifest-v1.json",
+      "sha256": "27c8402bfbd3b902ef7838115230d56171f6d35528c54fa15a8f0422e95f1077",
+      "bytes": 12681
+    },
+    {
+      "path": "PROBLEM.md",
+      "sha256": "960299dbb9730b6f8b7d9de81128fabcca03b7342a456beb57572e52d490caca",
+      "bytes": 21726
+    },
+    {
+      "path": "fact_graph/facts/39367951834d7aa7.md",
+      "sha256": "421bf5095b3abe9d5ace680cecab8080cf03de703946c3017b614aa97adedacc",
+      "bytes": 81274
+    },
+    {
+      "path": "fact_graph/facts/df40a215d931bd32.md",
+      "sha256": "7d7b0a5414b61fbf2117c9b980d4e7580b0ea9311de07c9dc4a3faa1ef54aaa8",
+      "bytes": 45580
+    },
+    {
+      "path": "fact_graph/facts/f9e055bd405c4b56.md",
+      "sha256": "19a572c3d885cba4205e2744f5605005218618ede8ed0deca347b586f2b693cd",
+      "bytes": 47273
+    },
+    {
+      "path": "inputs/SOURCE_CORRECTIONS.md",
+      "sha256": "73491ed6da8af1983dfc9922989ae5270494c652268d9447bbaed49fee2a5f6a",
+      "bytes": 685
+    },
+    {
+      "path": "inputs/STAGE_DEFINITIONS.md",
+      "sha256": "fc104078b9455bdd86586decd50902df6688400cc00f06e6b105699efefd0e02",
+      "bytes": 15528
+    },
+    {
+      "path": "inputs/c3-affine-emitter/AFFINE_EMITTER_SEED.md",
+      "sha256": "7ea9c78e8a0c6586d1d2a5d46ae5fd937c10e4b02d6dcbad86548b358b1d08a0",
+      "bytes": 11610
+    },
+    {
+      "path": "inputs/c3-affine-emitter/method-review.json",
+      "sha256": "eb7188b397e463b90d6cafba53e722230ce20bb68eb482a3c58446739a6c6c87",
+      "bytes": 2087
+    },
+    {
+      "path": "inputs/source-stage4/outputs/001-relative-code/prover/c3c4-integrated-v1.md",
+      "sha256": "2fc89f6bca30288d766fcdb71b26875943f2d6efb5fc9a181b401dba1f7e243a",
+      "bytes": 75162
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/prover/finite-program-v1.json",
+      "sha256": "3875340ee76fa75ad61cc9db5e4483bb03e1971eeaa9b5d8973545bb2a83ec44",
+      "bytes": 14745
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/prover/upper-program-certificate-v1.md",
+      "sha256": "b1a0de75230bb5ec2cd58417e09f2c0bb3ca7818e2fd513c6e0333f81b7beab4",
+      "bytes": 30431
+    },
+    {
+      "path": "outputs/001-input-contamination/counter/c2-manifest-v1.json",
+      "sha256": "a3dbcd2847b2834524105ae84b1bd1e49116d425cf146432bcea1ed451e84fa5",
+      "bytes": 3995
+    },
+    {
+      "path": "outputs/001-input-contamination/counter/c2-proof-v1.md",
+      "sha256": "f10c16cca4efde271b33c3fa2de62244098912c110991b30ccd4e40489852e99",
+      "bytes": 25674
+    },
+    {
+      "path": "outputs/001-input-contamination/counter/d6-scope-map-v1.md",
+      "sha256": "e4ae322376acca4e3a88e3c591700f5a074388d91637140d48b7a223122ba03f",
+      "bytes": 8542
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/all-components-native-readback-v1.json",
+      "sha256": "352d3a719e9a87fe28f71e6d50bb5d6600f2bbbfceab67d3179eb1509b5428d7",
+      "bytes": 63799
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/exact-root-record-v1.json",
+      "sha256": "fb6b375bde632a68181fde92bd80bda38f54df4b25e79bc29b66d86affaa33a7",
+      "bytes": 7548
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/fixed-combination-v1.md",
+      "sha256": "023534f2978bee9d8132100c1cdd4a85c9208d1afa1a99924dd510617915a553",
+      "bytes": 18305
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c1-manifest-v1.json",
+      "sha256": "e59565ff06561f8538b65b20052a6f1fa4b675a0bdb6eb826416af2f268a241f",
+      "bytes": 1897
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c1-proof-v1.md",
+      "sha256": "c80a71242b438eda82b4b1717838a15da30232db18c4b97096f29f45c5101fc3",
+      "bytes": 27254
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3-gateway-v1.json",
+      "sha256": "fefd9cf62e63453e73bba64da00b28b3b4a589e4e75a11a7436564996288e113",
+      "bytes": 2093
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3-handoff-v1.md",
+      "sha256": "d903447125b1f893f72b244271f0c7c5e6f5531c6c8b5835fcafd7c17787f360",
+      "bytes": 5031
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3-manifest-v1.json",
+      "sha256": "87f5ba89c3de96f9e505e93d1e1b30cd7e5c66cda260d890d7c79000a0174cf1",
+      "bytes": 3848
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3-proof-v1.md",
+      "sha256": "5ac089baa1a28d2f89db223e16542ba43ac153c6930e81806c6627d0e0e22827",
+      "bytes": 61385
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3-readback-v1.json",
+      "sha256": "426830486a50147da5f9f900258d6ed93987c9daba49c0fd24333c0316a7c5b9",
+      "bytes": 8549
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3-splice-check-results-v1.json",
+      "sha256": "9d73ddb7d8db32afe55b1d35d2865e4ccdd7733303545016a00e67b566cada95",
+      "bytes": 601
+    },
+    {
+      "path": "outputs/001-input-contamination/prover/c3_affine_iterator_v1.py",
+      "sha256": "2ad0f46cdfc5f3645748d723cec27d33702beb22a91db9b7f7c75fe5b1898268",
+      "bytes": 9473
+    },
+    {
+      "path": "outputs/001-input-contamination/verifier/preparation-review-v1.md",
+      "sha256": "d31f00c7748d05ca7974f7ef3cbff18424f954a07a0ec315d5830bbbc760d8b0",
+      "bytes": 11744
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/root-submission-manifest-v1.json",
+      "sha256": "6cdabe1a3eebc1b24f0b6677ef45d1449a4e74aab8f91ea75184a087301efb16",
+      "bytes": 2135
+    }
+  ],
+  "source_files_modified": false,
+  "exact_root_statement_modified": false,
+  "editorial_annotation": "E1 only: embedded combination section5 DIRECT reference C3 section5.3 means section5.2; original reviewed bytes unchanged",
+  "fresh_final_audit": "NOT_RUN",
+  "private_administrative_metadata": null,
+  "continued_research_changed": false,
+  "model_effort_budget_protections_changed": false,
+  "old_suspension_resumed": false,
+  "old_diagnostics_rerun": false,
+  "unchanged_proof_resubmitted": false,
+  "alternative_root_created": false,
+  "follow_up_owner": "Lead/contract owner must resolve the native C4/D7 ordering objection through an authorized workflow; Prover does not call final_audit or modify the frozen target.",
+  "mother_synthesis": "REMAINS",
+  "hash_convention": "SHA256 of exact saved UTF-8 bytes including final newline; this manifest self-hash is reported separately."
+}

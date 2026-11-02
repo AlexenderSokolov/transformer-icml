@@ -1,0 +1,39 @@
+{
+  "status": "CORRECTED_FULL_REPLAY_PASS_WITH_ALL_GENUINE_FAILURES_RETAINED",
+  "original_report_sha256": "3459e38f59a1ef80dd44715df74235c92e306ae690b38ff404190ca3bfa94e80",
+  "initial_checks": 90,
+  "initial_successful_checks": 89,
+  "failed_script": "v10_research/stage8_science_audit/independent_exact_checks.py",
+  "failed_script_sha256": "d8476e9a15389ed43957ee28566cee08e62a98e2453f6874abecad7aed7b6c97",
+  "retained_original_script": "v10_research/stage8_science_audit/diagnostic_revisions/independent_exact_checks.v1.py",
+  "failure": "Draft source closure captured the fresh auditor harness before correction. Its last constant-slack assertion transcribed the manuscript radical inequality incorrectly. No author theorem/diagnostic failed.",
+  "correction": "Auditor retained genuine v1 and corrected the exact equivalent inequality in the current script. Final replay runs both: corrected current script must pass; exact historical v1 must reproduce its documented assertion failure and is reported separately.",
+  "initial_draft_archive_retained": false,
+  "boundary": "Original failed report and exact v1 script bytes retained. No claim to preserve the overwritten draft ZIP itself and no synthetic historical ZIP reconstruction.",
+  "second_attempt": {
+    "report": "PACKAGE_DIAGNOSTIC_RERUN_PRE_AUDIT_BINDING_FIX.json",
+    "sha256": "686a4c1c700e850b90d50cdfac674ff63289145d4d7f8378789eaafce665d3da",
+    "passing_current_scripts": 90,
+    "expected_historical_failures": 1,
+    "unexpected_failures": 1,
+    "failed_administrative_script": "v10_research/stage8_science_audit/verify_audit.py",
+    "reason": "Its exact 107-file hash+byte-count binding checks correctly rejected four declared routing-only exported review files (BAI003 v1/v2, BT001, BT002). Public runner had not yet reconciled this new administrative checker. No scientific source or diagnostic failed.",
+    "correction": "Exactly eight hash/byte-count JSON pointers in this script consumed SOURCE_BINDINGS.json, in a fresh disposable copy; original-to-export values independently checked. No transitive override, changed verifier, or relaxed assertion.",
+    "regression": "EXACT_AUDIT_RECONCILIATION_REGRESSION.json: original four-file mismatch reproduced; corrected 107 checks pass; undeclared proof tamper still fails.",
+    "original_runner_sha256": "f37f7388e0984929e8bfb607c0aa98bd99696dc0f1b762c85bbe39c5022e3b05",
+    "retained_original_runner": "replay_revisions/run_diagnostics.pre_audit_binding_fix.py",
+    "candidate_zip_sha256": "7a417b003e10ba0a378bf71d96a1522f9a8285b1938be7249adb1275e574d54c",
+    "candidate_zip_retained_locally": "DOT_v10_source_corruption_stage8_20261102_science_sealed_pre_authorization.zip"
+  },
+  "final_replay": {
+    "report": "PACKAGE_DIAGNOSTIC_RERUN.json",
+    "sha256": "0c0b95a9b2e76573619a5c550207bd65c70667a0a0130d2266b48269edb62cdc",
+    "passing_current_scripts": 91,
+    "expected_historical_failures": 1,
+    "unexpected_failures": 0,
+    "script_aliases": 7,
+    "metadata_pointer_reconciliations": 75,
+    "runner_sha256": "6b2dda01be1fcdf271cf171c8579190f78210f839d4e10939c648e6ff578d052",
+    "interpretation": "91 current scripts passed; genuine historical auditor v1 reproduced its expected failure and is not counted as a scientific pass."
+  }
+}

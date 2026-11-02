@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" role="img" aria-labelledby="title desc">
+  <title id="title">研究总架构：概率预测收敛、定量资源与机制可靠性</title>
+  <desc id="desc">从未知二阶随机规律的下一步概率预测出发，依次研究基础收敛、定量资源、机制可靠性和推广。按实际情境次数衡量证据、预测目标可恢复性、完整情境与逐项匹配的信息衰减分别进入相应证明。失败机制反馈到基础假设。图中是研究依赖，不是已完成结论。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#335e72" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="feedback" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#8a7352" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#21394a}.title{font-size:29px;font-weight:700}.heading{font-size:25px;font-weight:700}.body{font-size:22px}.small{font-size:19px;fill:#536875}.side-title{font-size:22px;font-weight:700;fill:#36596b}.side{font-size:20px;fill:#536875}.box{fill:#f5f8fa;stroke:#b7c7d1;stroke-width:1.6}.main{fill:#edf5f8;stroke:#80a9be;stroke-width:1.8}.line{fill:none;stroke:#335e72;stroke-width:2;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1400" height="1000" fill="#fff"/>
+  <text x="35" y="44" class="title">先证明预测能够变准，再解释需要什么、为什么</text>
+  <text x="35" y="77" class="small">同一随机预测任务、同一概率风险；具体分析工具服务于证明中的缺口。</text>
+
+  <rect x="285" y="113" width="610" height="104" rx="14" class="main"/>
+  <text x="590" y="151" text-anchor="middle" class="heading">正确目标：预测下一步的概率分布</text>
+  <text x="590" y="187" text-anchor="middle" class="body">规律未知，有限历史提供证据</text>
+  <path d="M590 217 V262" class="line"/>
+
+  <rect x="285" y="266" width="610" height="128" rx="14" class="main"/>
+  <text x="590" y="305" text-anchor="middle" class="heading">T1 · 基础收敛：什么时候确实变准？</text>
+  <text x="590" y="342" text-anchor="middle" class="body">历史是否足够，实际网络能否利用</text>
+  <text x="590" y="374" text-anchor="middle" class="small">证明正确条件，也说明做不到的情形</text>
+  <path d="M590 394 V439" class="line"/>
+
+  <rect x="285" y="443" width="610" height="128" rx="14" class="main"/>
+  <text x="590" y="482" text-anchor="middle" class="heading">T2 · 定量资源：需要多少历史与计算？</text>
+  <text x="590" y="519" text-anchor="middle" class="body">历史、深度、宽度与精度的共同代价</text>
+  <text x="590" y="551" text-anchor="middle" class="small">分清证据不足与已有证据无法可靠利用</text>
+  <path d="M590 571 V616" class="line"/>
+
+  <rect x="285" y="620" width="610" height="128" rx="14" class="main"/>
+  <text x="590" y="659" text-anchor="middle" class="heading">T3 · 机制与可靠性：怎样保住预测差别？</text>
+  <text x="590" y="696" text-anchor="middle" class="body">匹配结构、归一化与误差传播</text>
+  <text x="590" y="728" text-anchor="middle" class="small">由已发现的障碍推导结构改善，并公平比较</text>
+  <path d="M590 748 V797" class="line"/>
+
+  <rect x="285" y="801" width="610" height="107" rx="14" class="box"/>
+  <text x="590" y="840" text-anchor="middle" class="heading">推广：保留主结论，逐项放宽条件</text>
+  <text x="590" y="877" text-anchor="middle" class="body">未知阶、隐状态、缓慢变化与学习机制</text>
+
+  <text x="1153" y="232" text-anchor="middle" class="side-title">每种工具回答一个具体问题</text>
+  <rect x="947" y="266" width="410" height="128" rx="12" fill="#fafbfc" stroke="#d3dde3"/>
+  <text x="1152" y="303" text-anchor="middle" class="side-title">真正有多少可用证据？</text>
+  <text x="1152" y="339" text-anchor="middle" class="side">按实际情境次数衡量证据</text>
+  <text x="1152" y="372" text-anchor="middle" class="side">再把出现次数连接到历史长度</text>
+  <path d="M947 330 H900" class="line"/>
+
+  <rect x="947" y="443" width="410" height="128" rx="12" fill="#fafbfc" stroke="#d3dde3"/>
+  <text x="1152" y="480" text-anchor="middle" class="side-title">当前预测需要恢复什么？</text>
+  <text x="1152" y="516" text-anchor="middle" class="side">预测目标可恢复性</text>
+  <text x="1152" y="549" text-anchor="middle" class="side">纳入所有头、残差与辅助统计</text>
+  <path d="M947 507 H900" class="line"/>
+
+  <rect x="947" y="620" width="410" height="128" rx="12" fill="#fafbfc" stroke="#d3dde3"/>
+  <text x="1152" y="657" text-anchor="middle" class="side-title">哪种预测差别更容易受损？</text>
+  <text x="1152" y="693" text-anchor="middle" class="side">完整情境与逐项匹配</text>
+  <text x="1152" y="726" text-anchor="middle" class="side">比较各自的信息衰减与恢复代价</text>
+  <path d="M947 684 H900" class="line"/>
+
+  <path d="M285 684 H234 V330 H279" fill="none" stroke="#8a7352" stroke-width="1.8" stroke-dasharray="6 6" marker-end="url(#feedback)"/>
+  <rect x="30" y="454" width="180" height="111" rx="10" fill="#faf6ee" stroke="#e2d8c6"/>
+  <text x="120" y="489" text-anchor="middle" class="side-title" style="fill:#786345">发现失败机制</text>
+  <text x="120" y="522" text-anchor="middle" class="side" style="fill:#786345">返回检验</text>
+  <text x="120" y="550" text-anchor="middle" class="side" style="fill:#786345">基础假设</text>
+  <text x="35" y="958" class="small">实线表示研究依赖；虚线表示反例反馈。基础收敛、资源关系与机制分析共同推进，图中不预设结论已经成立。</text>
+</svg>

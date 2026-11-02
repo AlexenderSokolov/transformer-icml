@@ -1,0 +1,27 @@
+--- v10_research/binary_frontier/BI001_binary_rare_suffix_lower_v1.md	2026-11-01 21:46:30.565485051 -0800
++++ v10_research/binary_frontier/BI001_binary_rare_suffix_lower_v2.md	2026-11-01 21:50:18.469201614 -0800
+@@ -1,6 +1,6 @@
+ # BI001 — Binary rare-suffix lower via a uniformly mixing active chain
+ 
+-2026-11-02. Author candidate; independent review required. No accepted file changed.
++2026-11-02. Author candidate v2; independent delta review required. v1 is preserved unchanged. No accepted file changed.
+ 
+ ## Claim
+ 
+@@ -12,7 +12,7 @@
+ 
+     R_stat >= (c/z) log(1+(1/8) min{z/(M e), M/z}).       (BI1)
+ 
+-Thus at beta=0 and Q comparable to sqrt(M), risk O(M^-1/2) requires kappa=Omega(log M); SB001's binary upper supplies kappa=O(log M). Binary K=2 is **not** an exception to the no-mixing-constraint logarithmic necessity. This proof does NOT establish SH001's exact beta-adaptive threshold for binary sources. Its cutoff uses sqrt(beta), rather than beta.
++Thus throughout beta<=M^-2, and in particular at beta=0, e=1/M. For every fixed D,r>=1 and Q comparable to sqrt(M), risk O(M^-1/2) requires kappa=Omega(log M). For the subclass with D>=8 and r>=3, SB001's binary construction supplies kappa=O(log M) on legal dyadic grids Q>=16 in that band, with risk at most C_suff/sqrt(M). Consequently a matching kappa=Theta(log M) least-feasible-budget claim holds there for each fixed target multiplier C>=C_suff; feasibility for arbitrarily small C is not asserted. Binary K=2 is **not** an exception to the no-mixing-constraint logarithmic necessity. This proof does NOT establish SH001's exact beta-adaptive threshold for binary sources. Its cutoff uses sqrt(beta), rather than beta.
+ 
+ ## 1. Actual binary stationary source and all-state certificate
+ 
+@@ -127,6 +127,6 @@
+ 
+ If e and a are both order 1/M (constant stationary waiting and active masses, order-M active runs), necessarily beta=O(M^-2). This is a rigorous obstruction to this particular witness, NOT a universal upper bound, impossibility theorem, or proof of the optimal binary beta-dependence.
+ 
+-For beta=0, e=1/M and BI1 matches SH001's logarithmic form. The standard SH001 §5 necessity algebra, restricted to beta=0, gives kappa=Omega(log M) when Q is in a fixed sqrt(M) band and risk <=C/sqrt(M). SB001 works for K=2 and kappa=O(log M), so the order is matched there. For positive beta the exact binary threshold remains open.
++For every beta<=M^-2, e=1/M and BI1 matches SH001's beta=0 logarithmic form. The standard SH001 §5 necessity algebra gives kappa=Omega(log M) for every fixed D,r>=1 when Q is in a fixed sqrt(M) band and risk <=C/sqrt(M), for any fixed C>0. For a matching upper within the SAME encoder family, require D>=K^3=8 and r>=3, legal dyadic Q>=16 in the band, and a sufficiently large fixed target multiplier C>=C_suff supplied by SB001. Under precisely those additional conditions, SB001 works for K=2 with kappa=O(log M), so the least feasible budget has order Theta(log M). No upper feasibility at an arbitrarily small prescribed C is claimed. Outside this weak-mixing regime, the exact positive-beta binary threshold remains open.
+ 
+ Dependencies read: original intake instructions; BA001 complete proof; SH001 complete proof; UI001 source/model and uniform-IID scope; SB001 v2 model and upper. Diagnostics, independent audit, and root acceptance are still pending. No external novelty or implementation claim.

@@ -1,0 +1,438 @@
+{
+  "status": "PASS_AUTHORIZATION_ONLY_DELTA",
+  "audit_started_utc": "2026-11-02T11:43:09.976410+00:00",
+  "scope": "Fresh independent exact authorization-only administrative delta and package integrity audit. No scientific diagnostic or document rebuild rerun; no first-hand root reading or visual-inspection attestation.",
+  "checker_sha256": "0d9f5b785bdd61ff30c82a0d12c44c485d5f78ce44a3a72e0de7564f550bd1cd",
+  "findings": [],
+  "final_archive": "DOT_v10_source_corruption_stage8_20261102.zip",
+  "final_archive_sha256": "89d434c7b0d9fe81d6e3b2f47cb64ac6c019b8a3abdd8678910f2a814e451e38",
+  "final_archive_bytes": 27369241,
+  "baseline_archive_sha256": "f2d01ad99dd65c429f47f1abf257dbf32a0b747b2d46201eb40db259178361f2",
+  "baseline_archive_bytes": 27364592,
+  "delta": {
+    "added": [
+      "DOT_v10_source_corruption_stage8_20261102/RELEASE_AUTHORIZATION.md",
+      "DOT_v10_source_corruption_stage8_20261102/authorized_artifacts.json"
+    ],
+    "removed": [],
+    "changed": [
+      "DOT_v10_source_corruption_stage8_20261102/SHA256SUMS.txt",
+      "DOT_v10_source_corruption_stage8_20261102/SOURCE_MANIFEST.json",
+      "DOT_v10_source_corruption_stage8_20261102/START_HERE.md",
+      "DOT_v10_source_corruption_stage8_20261102/START_HERE_中文.md"
+    ]
+  },
+  "payload_files": 188,
+  "all_other_184_prior_payload_files_byte_identical": true,
+  "restorable_paths": 1138,
+  "structured_bindings": 535,
+  "all_1138_local_original_to_export_bindings_freshly_checked": true,
+  "declared_metadata_edited_files": 40,
+  "declared_metadata_line_edits_freshly_reproduced": 43,
+  "authorization_sha256": "859293a6a4499b77b7ca292de294f7944b7fd19ef666f7c11e8e5ac8a8f86189",
+  "authorization_time_utc": "2026-11-02T11:38:19.043843+00:00",
+  "authorization_bindings": [
+    {
+      "path": "v10_research/source_corruption_guide/Chinese-stage8-guide.docx",
+      "authorized_original_sha256": "daa27b2b3aaf31bcc9b6d1db553eb1e4d4703c38e8a53edac0113753cab8641b",
+      "export_sha256": "daa27b2b3aaf31bcc9b6d1db553eb1e4d4703c38e8a53edac0113753cab8641b",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_guide/Chinese-stage8-guide.docx"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_guide/Chinese-stage8-guide.pdf",
+      "authorized_original_sha256": "934f07abb41ad673f84e886e5d93058483351fd9cc431f1595906ee7474d8a02",
+      "export_sha256": "934f07abb41ad673f84e886e5d93058483351fd9cc431f1595906ee7474d8a02",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_guide/Chinese-stage8-guide.pdf"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_guide/README.md",
+      "authorized_original_sha256": "e6e154d57bb01df11f8e7f7411a59fe8d75edc18fe38af24add8d289ca2d56f4",
+      "export_sha256": "e6e154d57bb01df11f8e7f7411a59fe8d75edc18fe38af24add8d289ca2d56f4",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_guide/README.md"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_guide/SOURCE_BINDINGS.json",
+      "authorized_original_sha256": "712176501a45b333b908133d005df207212454ef319cd847cabf1893bc062025",
+      "export_sha256": "712176501a45b333b908133d005df207212454ef319cd847cabf1893bc062025",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_guide/SOURCE_BINDINGS.json"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_guide/VERIFICATION.json",
+      "authorized_original_sha256": "b80245daf27eccea53bd42ad930a8bc34ad3542d4cf18d36347f0066a6ded627",
+      "export_sha256": "b80245daf27eccea53bd42ad930a8bc34ad3542d4cf18d36347f0066a6ded627",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_guide/VERIFICATION.json"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_guide/VISUAL_QA.md",
+      "authorized_original_sha256": "c8b5da21a2077e251aef307ad1afd245984b3317b0be4ae260d1fbc16ac94412",
+      "export_sha256": "c8b5da21a2077e251aef307ad1afd245984b3317b0be4ae260d1fbc16ac94412",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_guide/VISUAL_QA.md"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_guide/build_guide.py",
+      "authorized_original_sha256": "c72ce8cce098eead0b324cc0ae2daa46e1b518b1a56589e3933e66f557dba954",
+      "export_sha256": "c72ce8cce098eead0b324cc0ae2daa46e1b518b1a56589e3933e66f557dba954",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_guide/build_guide.py"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_guide/guide_final_math_zh.md",
+      "authorized_original_sha256": "0ffe24409645c803d16ed82fd46e95cebc77ad49a5a2559bb0ef92c819f6d009",
+      "export_sha256": "0ffe24409645c803d16ed82fd46e95cebc77ad49a5a2559bb0ef92c819f6d009",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_guide/guide_final_math_zh.md"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_guide/guide_math_zh.md",
+      "authorized_original_sha256": "62c25b5efd5bd168f416d1eca34005333ac4baf79c0538d14e73727b420f2a9f",
+      "export_sha256": "62c25b5efd5bd168f416d1eca34005333ac4baf79c0538d14e73727b420f2a9f",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_guide/guide_math_zh.md"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_guide/native_math.docx",
+      "authorized_original_sha256": "0f4f04800113e74ba73ca473e77f3079ffe0ca8cc1bc8cd4acac81b32680c9ab",
+      "export_sha256": "0f4f04800113e74ba73ca473e77f3079ffe0ca8cc1bc8cd4acac81b32680c9ab",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_guide/native_math.docx"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_guide/verify_guide.py",
+      "authorized_original_sha256": "5e3173b7d2a5c2e0d43f0cd68e858c8757d6ea018a21c0d4fa44acbcb0af5c6b",
+      "export_sha256": "5e3173b7d2a5c2e0d43f0cd68e858c8757d6ea018a21c0d4fa44acbcb0af5c6b",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_guide/verify_guide.py"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/AUDIT_SOURCE_BINDINGS.json",
+      "authorized_original_sha256": "ea971106b48edd07d645ff8ea280d212b2c9334ee74f43d6841752a4a2eca8cc",
+      "export_sha256": "ea971106b48edd07d645ff8ea280d212b2c9334ee74f43d6841752a4a2eca8cc",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/AUDIT_SOURCE_BINDINGS.json"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/PRESERVATION_BINDINGS.json",
+      "authorized_original_sha256": "3c42cbc78dd6a53ff70d64cf2d9bcbb911a51497cdb33be1d1c656081c2b4d4c",
+      "export_sha256": "3c42cbc78dd6a53ff70d64cf2d9bcbb911a51497cdb33be1d1c656081c2b4d4c",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/PRESERVATION_BINDINGS.json"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/QA_VERIFICATION.json",
+      "authorized_original_sha256": "39ba4451c4ef166b8742e40301553e7ec5d52463d20d6d94c69da8181214bfdf",
+      "export_sha256": "39ba4451c4ef166b8742e40301553e7ec5d52463d20d6d94c69da8181214bfdf",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/QA_VERIFICATION.json"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/README.md",
+      "authorized_original_sha256": "2537c4c954fb2e84d1f2b78d1f9f559eb0460b81374754f9c0ba14aa1c036602",
+      "export_sha256": "2537c4c954fb2e84d1f2b78d1f9f559eb0460b81374754f9c0ba14aa1c036602",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/README.md"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/SOURCE_MANIFEST.json",
+      "authorized_original_sha256": "1fb378ea2d382ee4db5653b6baf26a821a18399edea2e2c78fc66e9ee708c4be",
+      "export_sha256": "1fb378ea2d382ee4db5653b6baf26a821a18399edea2e2c78fc66e9ee708c4be",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/SOURCE_MANIFEST.json"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/binary.tex",
+      "authorized_original_sha256": "d4b130483d86fe3cb3107136a88c0197025ed2a71118b3e4e2ddba857c10b881",
+      "export_sha256": "d4b130483d86fe3cb3107136a88c0197025ed2a71118b3e4e2ddba857c10b881",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/binary.tex"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/build.sh",
+      "authorized_original_sha256": "71c34ad20502ee5467e8d5a57fa5de259a71b2c2c266d08f542b8827f4dc407f",
+      "export_sha256": "71c34ad20502ee5467e8d5a57fa5de259a71b2c2c266d08f542b8827f4dc407f",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/build.sh"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/check_tolerance.json",
+      "authorized_original_sha256": "2631f6c04694c8942da70d788062be07160577c108a62f57001faa8b8ebc9229",
+      "export_sha256": "2631f6c04694c8942da70d788062be07160577c108a62f57001faa8b8ebc9229",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/check_tolerance.json"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/check_tolerance.py",
+      "authorized_original_sha256": "28f8cd1193604647ba7171c01cebf32cb916645eca870d7530cffa10acf4c13a",
+      "export_sha256": "28f8cd1193604647ba7171c01cebf32cb916645eca870d7530cffa10acf4c13a",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/check_tolerance.py"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/corrupted_trajectories.bbl",
+      "authorized_original_sha256": "9beff69b7c53f262585edbfddae0498fce903af34dfbfed82dc4b3c320f74516",
+      "export_sha256": "9beff69b7c53f262585edbfddae0498fce903af34dfbfed82dc4b3c320f74516",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/corrupted_trajectories.bbl"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/corrupted_trajectories.pdf",
+      "authorized_original_sha256": "72cd476dc4ea3ceeb4de2069ceb0320f589d8f1952823223d5650355c3ced64c",
+      "export_sha256": "72cd476dc4ea3ceeb4de2069ceb0320f589d8f1952823223d5650355c3ced64c",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/corrupted_trajectories.pdf"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/corrupted_trajectories.tex",
+      "authorized_original_sha256": "13345044d06449bb79255d0341e1e2349e061c631584b6c14bdefb6b72451392",
+      "export_sha256": "13345044d06449bb79255d0341e1e2349e061c631584b6c14bdefb6b72451392",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/corrupted_trajectories.tex"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/make_manifest.py",
+      "authorized_original_sha256": "2837a310e9a32b0641b6a15831b9638b1327a3fcd3fd2219a2757edc3929c4fd",
+      "export_sha256": "2837a310e9a32b0641b6a15831b9638b1327a3fcd3fd2219a2757edc3929c4fd",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/make_manifest.py"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/nonbinary_endpoint.tex",
+      "authorized_original_sha256": "ed8d40a5b16664a3dcdc96ae5ece997cc8b8738e55cfa8a01c5af9f62f9297f6",
+      "export_sha256": "ed8d40a5b16664a3dcdc96ae5ece997cc8b8738e55cfa8a01c5af9f62f9297f6",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/nonbinary_endpoint.tex"
+      ]
+    },
+    {
+      "path": "v10_research/source_corruption_manuscript/references.bib",
+      "authorized_original_sha256": "19ce6c2938ec78028d5dece2bb4e0c8804da4672250ddd0058f59ee8901b1929",
+      "export_sha256": "19ce6c2938ec78028d5dece2bb4e0c8804da4672250ddd0058f59ee8901b1929",
+      "source_export_identical": true,
+      "package_chain": [
+        "v10_research/source_corruption_manuscript/references.bib"
+      ]
+    }
+  ],
+  "authorization_source_export_discrepancies": 0,
+  "root_statement_treatment": "Supplied root-role authorization record, byte- and hash-validated. Not a cryptographic signature and not this reviewer's personal reading/visual attestation.",
+  "final_and_nested_zip_archives_crc_path_duplicate_symlink_checked": 17,
+  "nested_zip_bindings": [
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip",
+      "sha256": "99c206d50896496af74758a0560b50e4e7d2ee5f9334d1187dcb5dbce8ff9308"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip",
+      "sha256": "b05c06e2075ff1d9334e46ffda93d0f17bc1460c0942e65e4a2fc5588d1e8a3a"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip",
+      "sha256": "c1607b16a1fcec9a71b7402bb370f50b002011e6abbc7b272e448f0e56513cc0"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip",
+      "sha256": "835aa6f7acccc83317007e20fe179c45a20670486e9cfb0306d60d42fba17502"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip!DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip",
+      "sha256": "aad5e9c5217beaf9ab49f1c1bf411e58e91b2c7522e7c9dcddcdefb5ac2ffad7"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip!DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip!DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip",
+      "sha256": "e3d3cfe43333e2254544b64bb875eac1172a2b75b15a2a2ace085949d4530ccc"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip!DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip!DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip!DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip",
+      "sha256": "6a2f65fd60a81c6b6122d50615287fc3e794a7468029df294fe36e4b7358a562"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip!DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip!DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip!DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip!DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip",
+      "sha256": "cd89a3bdd4efeb384731cb11ada7d730ba1ffb5bae84028742f41b56e9bf7064"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip!DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip!DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip!DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip!DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip!sources/dot-return/original.zip",
+      "sha256": "92baf0b633353ab1790f292ba59d3d019b204f87ae5ae84878b82b59e77e0fe4"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip!DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip!DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip!DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip!DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip!sources/dot-return/original.zip!DOT_conditions_global_completion_20261030_v2/inherited/DOT_conditions_grouped_statistics_20261030_v1.zip",
+      "sha256": "69d786c01d2d4e0394c9eb780701c1ab7c540a7eb7ed0abebf46c8c48bcd38b7"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip!DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip!DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip!DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip!DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip!sources/dot-return/original.zip!DOT_conditions_global_completion_20261030_v2/inherited/DOT_conditions_grouped_statistics_20261030_v1.zip!conditions_grouped_statistics_20261030_v1/inherited/DOT_conditions_adaptation_closure_20261029_v2.zip",
+      "sha256": "f8e702dcfc4dee0a0d0b2c11cfe8b5287de9bdcf6887f7545b4697a234eb3466"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip!DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip!DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip!DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip!DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip!sources/dot-return/original.zip!DOT_conditions_global_completion_20261030_v2/inherited/DOT_conditions_grouped_statistics_20261030_v1.zip!conditions_grouped_statistics_20261030_v1/inherited/DOT_conditions_adaptation_closure_20261029_v2.zip!DOT_conditions_adaptation_closure_20261029_v2/inherited/DOT_conditions_next_stage_20261029_v2.zip",
+      "sha256": "7970826c3b61295768e5ffc9cde39faa2020e0bd702479a915a7b047acb23cee"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip!DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip!DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip!DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip!DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip!sources/dot-return/original.zip!DOT_conditions_global_completion_20261030_v2/inherited/DOT_conditions_grouped_statistics_20261030_v1.zip!conditions_grouped_statistics_20261030_v1/inherited/DOT_conditions_adaptation_closure_20261029_v2.zip!DOT_conditions_adaptation_closure_20261029_v2/inherited/DOT_conditions_next_stage_20261029_v2.zip!DOT_conditions_next_stage_20261029_v2/inherited/DOT_conditions_phase_review_20261028_v2.zip",
+      "sha256": "cc8b3cf77d799e65d5cafd51d4738262c76a8c58756ffcf5b968d6a65ff1a188"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip!DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip!DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip!DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip!DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip!sources/dot-return/original.zip!DOT_conditions_global_completion_20261030_v2/inherited/DOT_conditions_grouped_statistics_20261030_v1.zip!conditions_grouped_statistics_20261030_v1/inherited/DOT_conditions_adaptation_closure_20261029_v2.zip!DOT_conditions_adaptation_closure_20261029_v2/inherited/DOT_conditions_next_stage_20261029_v2.zip!DOT_conditions_next_stage_20261029_v2/inherited/DOT_conditions_phase_review_20261028_v2.zip!DOT_conditions_phase_review_20261028/inherited/DOT_conditions_stage04_20261028.zip",
+      "sha256": "a5f96b4987dfdaccf0c2a98d89f575b81a5ef9267ad3f7a8f9fd27254de6a1a1"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip!DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip!DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip!DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip!DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip!sources/dot-return/original.zip!DOT_conditions_global_completion_20261030_v2/inherited/DOT_conditions_grouped_statistics_20261030_v1.zip!conditions_grouped_statistics_20261030_v1/inherited/DOT_conditions_adaptation_closure_20261029_v2.zip!DOT_conditions_adaptation_closure_20261029_v2/inherited/DOT_conditions_next_stage_20261029_v2.zip!DOT_conditions_next_stage_20261029_v2/inherited/DOT_conditions_phase_review_20261028_v2.zip!DOT_conditions_phase_review_20261028/inherited/DOT_conditions_stage04_20261028.zip!DOT_conditions_stage04/inherited/DOT_conditions_stage03_20261028.zip",
+      "sha256": "d5c85ed930cb1711960993799a1a6fbecd84b96e041db23eae7411c2d608b2fd"
+    },
+    {
+      "chain": "DOT_v10_source_corruption_stage8_20261102.zip!DOT_v10_source_corruption_stage8_20261102/inherited/DOT_v10_precision_stage7_20261102.zip!DOT_v10_precision_stage7_20261102/inherited/DOT_v10_precision_stage6_20261102.zip!DOT_v10_precision_stage6_20261102/inherited/DOT_v10_precision_stage5_20261102.zip!DOT_v10_precision_stage5_20261102/inherited/DOT_v10_precision_stage4_20261102.zip!DOT_v10_precision_stage4_20261102/inherited/DOT_v10_precision_stage3_20261102.zip!DOT_v10_precision_stage3_20261102/inherited/DOT_v10_precision_stage2_20261102.zip!DOT_v10_precision_stage2_20261102/inherited/DOT_v10_precision_stage1_20261102.zip!DOT_v10_precision_stage1_20261102/inherited/DOT_FULL_RESEARCH_20261102.zip!sources/dot-return/original.zip!DOT_conditions_global_completion_20261030_v2/inherited/DOT_conditions_grouped_statistics_20261030_v1.zip!conditions_grouped_statistics_20261030_v1/inherited/DOT_conditions_adaptation_closure_20261029_v2.zip!DOT_conditions_adaptation_closure_20261029_v2/inherited/DOT_conditions_next_stage_20261029_v2.zip!DOT_conditions_next_stage_20261029_v2/inherited/DOT_conditions_phase_review_20261028_v2.zip!DOT_conditions_phase_review_20261028/inherited/DOT_conditions_stage04_20261028.zip!DOT_conditions_stage04/inherited/DOT_conditions_stage03_20261028.zip!DOT_conditions_stage03/inherited/DOT_conditions_stage02_20261028.zip",
+      "sha256": "3f6a415201271c30224c5bef8759d80dd8570168b8a20e555f500178e2ce8c50"
+    }
+  ],
+  "candidate_audit_chain_record_hashes_checked": {
+    "AUDIT_STAGE8_INDEPENDENT.json": "4fab82e91b634a5fcd0ee6372f959f914ac59589df4889426b11dfda42412230",
+    "AUDIT_STAGE8_RECEIPT_DELTA.json": "9db26af32ae3fac6402f54d9fc1918d908dee6f17f999e79c3f2e22fcb3cd9c7",
+    "AUDIT_STAGE8_REPLAY.json": "00ea040b1089251decf039c65e41afe6cd056bbc99a175f2d1d190ef2a5e9cfe",
+    "AUDIT_STAGE8_REBUILD.json": "cc8fac533865101c2a84915b75fd4cd1604f937ae561ca24f2281c6ecf759d5b",
+    "AUDIT_STAGE8_FINAL_REBASE.json": "8665e6ea2281c922d78b094b374090082dea9904b5d045411884369bab4dce3e",
+    "PACKAGE_AUDIT.md": "03f883842f4efd905eec323675faa5be9cdb126a4db635ef740ede374b360747",
+    "PACKAGE_DIAGNOSTIC_RERUN.json": "0c0b95a9b2e76573619a5c550207bd65c70667a0a0130d2266b48269edb62cdc",
+    "PACKAGE_REBUILD.json": "dcc3f5a54ae3978d326291ee9902b9d0f5c61f39e7bcb3f357d4e17cd7e96ac8",
+    "REPLAY_HISTORY.json": "4cc8e361b42ac59149deb57bf47f578aa3414f0763d4f112b4f690bc469c5a34",
+    "AUDIT_STAGE8_SOURCE_INTEGRITY.json": "e958f4f84666c39053925bcac366a6f67b066999aa1781a9f0013c285d2fa1fe",
+    "AUDIT_STAGE8_UNRECONCILED_FAILURE.json": "8367a70a2267542b21a0ae6f2d97211d8154917533617ba7bce9b414d44ad978",
+    "AUDIT_STAGE8_RECONCILIATION_REGRESSION.json": "454f0c314b5bf076845aa93912b041ce1afe54faf510cecdc504ce027c7da364",
+    "AUDIT_STAGE8_REBASE_TO_REPLAY_READY.json": "29d080a3b41f1cf2a52bdabcaa9e8b16af86be045e97942cedd1d80071cfc746"
+  },
+  "prior_candidate_deltas_rechecked": [
+    {
+      "record": "AUDIT_STAGE8_REBASE_TO_REPLAY_READY.json",
+      "added": [
+        "DOT_v10_source_corruption_stage8_20261102/EXACT_AUDIT_RECONCILIATION_REGRESSION.json",
+        "DOT_v10_source_corruption_stage8_20261102/PACKAGE_DIAGNOSTIC_RERUN_PRE_AUDIT_BINDING_FIX.json",
+        "DOT_v10_source_corruption_stage8_20261102/PACKAGE_REBUILD.json",
+        "DOT_v10_source_corruption_stage8_20261102/replay_revisions/TRUE_audit_binding_fix.diff",
+        "DOT_v10_source_corruption_stage8_20261102/replay_revisions/run_diagnostics.pre_audit_binding_fix.py"
+      ],
+      "removed": [],
+      "changed": [
+        "DOT_v10_source_corruption_stage8_20261102/REPLAY_HISTORY.json",
+        "DOT_v10_source_corruption_stage8_20261102/REPORT_EXPORT_PROVENANCE.json",
+        "DOT_v10_source_corruption_stage8_20261102/SHA256SUMS.txt",
+        "DOT_v10_source_corruption_stage8_20261102/SOURCE_MANIFEST.json",
+        "DOT_v10_source_corruption_stage8_20261102/START_HERE.md",
+        "DOT_v10_source_corruption_stage8_20261102/START_HERE_中文.md",
+        "DOT_v10_source_corruption_stage8_20261102/run_diagnostics.py"
+      ]
+    },
+    {
+      "record": "AUDIT_STAGE8_FINAL_REBASE.json",
+      "added": [
+        "DOT_v10_source_corruption_stage8_20261102/PACKAGE_DIAGNOSTIC_RERUN.json"
+      ],
+      "removed": [],
+      "changed": [
+        "DOT_v10_source_corruption_stage8_20261102/BUILD.md",
+        "DOT_v10_source_corruption_stage8_20261102/PACKAGE_REBUILD.json",
+        "DOT_v10_source_corruption_stage8_20261102/REPLAY_HISTORY.json",
+        "DOT_v10_source_corruption_stage8_20261102/REPORT_EXPORT_PROVENANCE.json",
+        "DOT_v10_source_corruption_stage8_20261102/SHA256SUMS.txt",
+        "DOT_v10_source_corruption_stage8_20261102/SOURCE_MANIFEST.json",
+        "DOT_v10_source_corruption_stage8_20261102/START_HERE.md",
+        "DOT_v10_source_corruption_stage8_20261102/START_HERE_中文.md"
+      ]
+    },
+    {
+      "record": "AUDIT_STAGE8_RECEIPT_DELTA.json",
+      "added": [
+        "DOT_v10_source_corruption_stage8_20261102/PACKAGE_AUDIT.md"
+      ],
+      "removed": [],
+      "changed": [
+        "DOT_v10_source_corruption_stage8_20261102/SHA256SUMS.txt",
+        "DOT_v10_source_corruption_stage8_20261102/SOURCE_MANIFEST.json"
+      ]
+    }
+  ],
+  "unchanged_verify_package_py_fresh_execution": {
+    "status": "PASS",
+    "payload_files": 188,
+    "restored_paths": 1138,
+    "structured_bindings": 535,
+    "new_accepted_units": [
+      "SC001",
+      "SC002",
+      "SC003",
+      "BT001",
+      "BT002",
+      "EP001"
+    ],
+    "scientific_freeze_utc": "2026-11-02T09:22:25.495805+00:00",
+    "restore": null
+  },
+  "unchanged_verify_package_py_sha256": "dd9c746af18f457f3538c04420fde56848190eee87a8f03bcc6b457c909ab7e8",
+  "retained_not_reexecuted_evidence": {
+    "current_script_passes": 91,
+    "expected_historical_failures": 1,
+    "unexpected_failures": 0,
+    "byte_identical_aliases": 7,
+    "exact_or_certified_rational_cases": 913221,
+    "rebuilt_pages": 36,
+    "native_OMML": 93
+  },
+  "science_scripts_rerun": false,
+  "document_rebuild_rerun": false,
+  "new_visual_inspection_claimed": false,
+  "scientific_freeze_and_six_unit_scope_unchanged": true,
+  "historical_pending_audit_receipt_unchanged": true,
+  "external_upload_send_submission_or_publication_performed": false,
+  "limitations": "Independent same-model LLM administrative/package audit, not formal verification, peer review, novelty certification, or proof of the open BT001 stronger premise. Root authorization provenance accepted from the parent-supplied role record; mathematical reading and direct visual inspection are not re-performed here.",
+  "audit_finished_utc": "2026-11-02T11:43:16.163009+00:00"
+}

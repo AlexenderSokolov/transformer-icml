@@ -1,0 +1,199 @@
+{
+  "obligation": {
+    "obligation_id": "90dcf323249fdfbcc15d01ac70ce5305ca41ba5324d2418e91b2bde33bb6d847",
+    "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+    "exact_statement": "Fix the expanded finite Route A backend and residual schedule admitted in Fact 0bf422aeee139e59. Construct one fully specified theta-independent finite-code family and observation cut compatible with its general-D1 consistency/located-error upper theorem and the D5 aggregate-channel lower/scaling mechanism of Facts 1c8686b995accf27 and 17afd9045ade0c3d. The expanded backend uses a different interval-exponential polynomial and retains original/clipped aggregate words, query/terminal copies, and downstream selected u0/uI; equal nominal error zeta_N alone does not justify transplanting an information lower bound. Prove an actual finite-code factorization at a cut after aggregate generation and before clipping/selection: every nonaggregate terminal field is a fixed function of supplied query, actual terminal pair and family index in the aggregate-only experiment, every downstream copy/selected-frequency/scratch field is generated solely from the replaced full aggregate codes and those fixed fields, attention scratch is cleared, and no historical row can be reread. Prove or precisely refute transport of the D5 common-center finite-N lower bound to this complete expanded observation for every randomized decoder: one common observation-dependent absolute-delta map must overwrite all numerator/denominator/length/framing copies and return finite admissible full codes on both center and identity branches; retain the genuine joint edge-count event and endpoint-conditioned/actual stationary-weighted risks. In the same expanded family and error model give an achievable explicit TV upper bound, with sampling, smoothing, nominal finite error and new aggregate error counted once, and a nonempty region matching delta/v conditional and delta actual-average scales. Fully charge a single explicit finite resource and input-encoding envelope for expanded A, the strong direct-correction readout and a declared integer value scaling 1<=S<=M followed by a fixed inverse before clipping; prove nominal decoded equality, effective new error delta/S, and S=M's limiting consequence under growing common caps. A larger explicitly proved common cap is allowed but must not be called the unchanged old cap. Choose a theta-independent input-cap/implementation schedule covering off-event nominal codes without circularly defining it through injected arithmetic size. Preserve the original fixed nominal beta and reference consistency. Separate physical absolute-error comparisons from matched relative/rescaled-absolute unit conjugacy; no generic Transformer, total-word precision, deterministic-rounding, log-loss or optimal sample-rate lower bound follows. Use exact admitted predecessors; preserve failed alternatives if the factorization or resource bounds fail. This is a genuine implementation/information compatibility prerequisite for one C1-C3 chain, not root closure or merely an administrative integration label.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+        "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+        "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+        "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers >=2",
+          "depends_on": []
+        },
+        {
+          "variable": "beta",
+          "kind": "FORALL",
+          "domain": "fixed positive full-context score gap",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+          "depends_on": [
+            "K",
+            "beta"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "D1 second-order tables on K symbols",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers >=3",
+          "depends_on": []
+        },
+        {
+          "variable": "epsilon",
+          "kind": "FORALL",
+          "domain": "positive accuracy targets",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+      "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "15f24ebaff4309f7972c662c27a39e0fa9a89854d3d154847e4e0207f383b9fc"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": [
+    {
+      "artifact_id": "15f24ebaff4309f7972c662c27a39e0fa9a89854d3d154847e4e0207f383b9fc",
+      "content_hash": "619d25095eb8ddf9b9237bbe003c2b52cb30d8b1f5a4d947ae3d8cc698060996",
+      "producer": "fact_submit:20ce28ee5d9aec6f",
+      "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+      "evidence_kind": "LLM_CHECKED_PROOF",
+      "exact_claim": "Fix the expanded finite Route A backend and residual schedule admitted in Fact 0bf422aeee139e59. Construct one fully specified theta-independent finite-code family and observation cut compatible with its general-D1 consistency/located-error upper theorem and the D5 aggregate-channel lower/scaling mechanism of Facts 1c8686b995accf27 and 17afd9045ade0c3d. The expanded backend uses a different interval-exponential polynomial and retains original/clipped aggregate words, query/terminal copies, and downstream selected u0/uI; equal nominal error zeta_N alone does not justify transplanting an information lower bound. Prove an actual finite-code factorization at a cut after aggregate generation and before clipping/selection: every nonaggregate terminal field is a fixed function of supplied query, actual terminal pair and family index in the aggregate-only experiment, every downstream copy/selected-frequency/scratch field is generated solely from the replaced full aggregate codes and those fixed fields, attention scratch is cleared, and no historical row can be reread. Prove or precisely refute transport of the D5 common-center finite-N lower bound to this complete expanded observation for every randomized decoder: one common observation-dependent absolute-delta map must overwrite all numerator/denominator/length/framing copies and return finite admissible full codes on both center and identity branches; retain the genuine joint edge-count event and endpoint-conditioned/actual stationary-weighted risks. In the same expanded family and error model give an achievable explicit TV upper bound, with sampling, smoothing, nominal finite error and new aggregate error counted once, and a nonempty region matching delta/v conditional and delta actual-average scales. Fully charge a single explicit finite resource and input-encoding envelope for expanded A, the strong direct-correction readout and a declared integer value scaling 1<=S<=M followed by a fixed inverse before clipping; prove nominal decoded equality, effective new error delta/S, and S=M's limiting consequence under growing common caps. A larger explicitly proved common cap is allowed but must not be called the unchanged old cap. Choose a theta-independent input-cap/implementation schedule covering off-event nominal codes without circularly defining it through injected arithmetic size. Preserve the original fixed nominal beta and reference consistency. Separate physical absolute-error comparisons from matched relative/rescaled-absolute unit conjugacy; no generic Transformer, total-word precision, deterministic-rounding, log-loss or optimal sample-rate lower bound follows. Use exact admitted predecessors; preserve failed alternatives if the factorization or resource bounds fail. This is a genuine implementation/information compatibility prerequisite for one C1-C3 chain, not root closure or merely an administrative integration label.",
+      "scope": {
+        "assumptions": [
+          "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+          "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+          "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+          "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+        ],
+        "quantifiers": [
+          {
+            "variable": "K",
+            "kind": "FORALL",
+            "domain": "integers >=2",
+            "depends_on": []
+          },
+          {
+            "variable": "beta",
+            "kind": "FORALL",
+            "domain": "fixed positive full-context score gap",
+            "depends_on": []
+          },
+          {
+            "variable": "predictor_family",
+            "kind": "EXISTS",
+            "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+            "depends_on": [
+              "K",
+              "beta"
+            ]
+          },
+          {
+            "variable": "theta",
+            "kind": "FORALL",
+            "domain": "D1 second-order tables on K symbols",
+            "depends_on": [
+              "K"
+            ]
+          },
+          {
+            "variable": "N",
+            "kind": "FORALL",
+            "domain": "integers >=3",
+            "depends_on": []
+          },
+          {
+            "variable": "epsilon",
+            "kind": "FORALL",
+            "domain": "positive accuracy targets",
+            "depends_on": []
+          }
+        ],
+        "objects": [],
+        "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+        "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+      },
+      "input_hashes": [
+        "619d25095eb8ddf9b9237bbe003c2b52cb30d8b1f5a4d947ae3d8cc698060996",
+        "6a231cbc6dc9fd88e1291234d295b38652a12f4f33199a96d2ac85c6f9db7fe4",
+        "70fecafd40d3c3228ad123491a32a910d45173db852765034c44ead7d0df1c9c",
+        "82170d7734472d615c25a172a95fd8a04624154a1d6c0a4b19f53d47dab7b363",
+        "899e13e3de35de82397926f56e26587a062e7789c726ea676465f2a1151b8132",
+        "96fe8b12c8d596ba78b97c567c9427cdbeb20106189bcd33130adcb5861d54a9",
+        "b7cfd43f5e8c2bd7a5e3ed3fe716bfea9e4dd3395b6be963f9a4ca48eb20a240"
+      ],
+      "environment_hash": "d54637816d52db0e481dfa5e0e60c062a3b20da0215cd65475679ac14130d359",
+      "checker_id": "fact_submit",
+      "checker_version": "1",
+      "checker_result": "PASS",
+      "created_at": "2026-10-24T08:09:16Z",
+      "validity": "VALID"
+    }
+  ],
+  "version": {
+    "version": 1,
+    "obligation_id": "90dcf323249fdfbcc15d01ac70ce5305ca41ba5324d2418e91b2bde33bb6d847",
+    "predecessors": [
+      "0bf422aeee139e59",
+      "1c8686b995accf27",
+      "17afd9045ade0c3d"
+    ],
+    "files": {
+      "baseline-transport-result.json": "8403ed8eb485d3b06692cff5fd4566aad1f9ddda4fd60505f214a4e3a4119e0b",
+      "check_protocol.py": "ff34433bcbc33c3934c12f4602efdde22e78c69206686e74823f8882e64b83c4",
+      "check_transport_baseline.py": "16de83b50a458a43fa81912808977dd3d0a4ade927e3fef8a467559a624206f0",
+      "dependency-check.json": "d9bf698ebd482e267779e9f8d1400a4bbf43758527008d069ec646f5034f2cb7",
+      "exact-proof.md": "54e09e64663f9398e705ca7e71c83129336cc8366488a8a6bb1ec46b8c2d0bf0",
+      "exact-statement.md": "e9a007d2cdb1838f10e3b5e5103027ad11c31aea9ef7b83d6a2e8033a9ebc848",
+      "failed-alternatives.md": "487961203c9dff90e16d595891e13471cf5502e337e7d12c51c865f51c8528a8",
+      "initial-native-state.json": "4480ca156a3586500d52cba93ea0bc38c414e67241519b2040b39ae41cdbbda4",
+      "lead-input-hashes.json": "051d52b480d8c0554230a181d936d7a28351bb44179bc113e310ac7a454f1016",
+      "mathematics-first.md": "844d527159dde36a5a39bdffbad00964b0382ca133e8a4808d1dc4f27527dc26",
+      "native-submit-request.json": "cad90d7918db3245a74451a0e9f9077b0ef85f97d56da1ad4ca2623e52c40df5",
+      "presubmit-native-state.json": "4480ca156a3586500d52cba93ea0bc38c414e67241519b2040b39ae41cdbbda4",
+      "protocol-check-result.json": "200076bb2543b7df3463f3753fad6c2e4c99ebe979fcafb521d1d11e74524f3e",
+      "separate-precision-scope.json": "2f60447dd5184558cc795a082cb777667a7d80caf4d714924f9bdfaf22485e6c"
+    },
+    "scope": "Expanded finite-code compatibility; complete normalized aggregate-channel D5 lower and attainable upper; new common resource cap and physical scaling. Root OPEN."
+  },
+  "checks": {
+    "baseline-transport-result.json": true,
+    "check_protocol.py": true,
+    "check_transport_baseline.py": true,
+    "dependency-check.json": true,
+    "exact-proof.md": true,
+    "exact-statement.md": true,
+    "failed-alternatives.md": true,
+    "initial-native-state.json": true,
+    "lead-input-hashes.json": true,
+    "mathematics-first.md": true,
+    "native-submit-request.json": true,
+    "presubmit-native-state.json": true,
+    "protocol-check-result.json": true,
+    "separate-precision-scope.json": true
+  },
+  "review": {
+    "verification_report": {
+      "summary": "Reviewed the complete Expanded Route A finite-code compatibility theorem, fixed version 1, sequentially through Sections 1-10 against the candidate statement and frozen contract 3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f1179a (D1-D8; definitions hash 63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc). Service packet hashes are statement aab3e690fdd68cfb9d2ab2b4e32b646c9520bea18bf60627cd125d81d0d0aa89 and proof 002bcbb82537a3b2bddb9897ed526adf12ad53669db2799a902e11f08c958e73. The three direct admitted fact files 0bf422aeee139e59, 1c8686b995accf27 and 17afd9045ade0c3d were read; their SHA-256 hashes match the supplied interfaces and their statements supply the imported claims within scope. Their admissions are inherited, not independently re-certified. No P1/P3/P5/P6 or cited-statement chain violation was found. There are no external-paper citations requiring theorem search.\n\nThe specified nonreducing evaluator, complete-word residual transport and bit erasure establish the cut factorization without a retained normalizer, selected-frequency or historical-row bypass. The common finite-code map handles both center and identity branches, including numerator, denominator, length, framing and padding. The genuine joint D5 event yields common full observation atoms indexed by the actual endpoint, supporting every-randomized-decoder fixed, conditional and stationary-weighted actual-risk lower bound. The correction identity, finite interpolation and exact simplex construction give the stated upper bounds without duplicating sampling or aggregate error. The explicit region and constants support the claimed conditional delta/v and actual-average delta scales.\n\nThe enlarged resource envelope bounds nominal words before choosing the incoming cap, then bounds injected evaluation, avoiding circularity and covering off-event nominal returns. It charges the expanded polynomial, retained fields, formatting, erasure, both readouts and every integer S from 1 through M. Exact nominal decoded equality, unchanged nominal frontend error and effective new error delta/S follow from the fixed evaluator and inverse before clipping. The S=M convergence claim uses growing common caps. Full-code unit conjugacy is correctly restricted to explicitly matched image classes; equality for unrelated unrestricted hard-cap classes is not asserted. The inherited general-D1 located-error and reference-consistency guarantees remain within their declared sites and hypotheses.\n\nAcceptance concerns this finite family and complete aggregate observation, not unrestricted Transformers, fixed total-bit budgets, deterministic rounding, log loss, optimal sample rates or root closure. Auxiliary computation claims were not used as premises or rerun, and the enormous full evaluator was not materialized; the universal assessment is analytical. This independent-context LLM admission judgment is not formal certification; Sol-authored components receive same-model review, and no cross-model assurance is claimed. This is an LLM review, not formal verification or external peer review; cross-model independence is not established.",
+      "critical_errors": [],
+      "gaps": []
+    },
+    "verdict": "correct",
+    "repair_hints": ""
+  }
+}

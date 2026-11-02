@@ -1,0 +1,71 @@
+{
+  "unit": "IR001",
+  "status": "INDEPENDENT_MATHEMATICAL_MODEL_REVIEW_PASS_PENDING_ROOT_ACCEPTANCE",
+  "bindings": [
+    {
+      "path": "v10_research/range_uniform_iid/UI001_range_uniform_iid_floor_v1.md",
+      "sha256": "c4bd8a5d7324ed1cf03c1d746a253b592fbe9a63e9e6020be95e657c13307dde",
+      "role": "Accepted posterior-reveal predecessor; local ratio proof not assumed for new class"
+    },
+    {
+      "path": "v10_research/intake/UI001_acceptance.json",
+      "sha256": "fa818cc247dc1a7ec564446099bdaba1b1e12fcdbf615824933af92a01760b19",
+      "role": "Root acceptance record consulted"
+    },
+    {
+      "path": "v10_research/causal_attention/CA001_causal_bounded_softmax_candidate_v3.md",
+      "sha256": "88e952f840009d8345c4482ca8cd14231f9dd9a28a3d522f12cd7e03b65ea21e",
+      "role": "Actual matrix-entry row sums and formal branch/local-radius contract"
+    },
+    {
+      "path": "v10_research/causal_attention/CA001_boundary_branch_causality_scope_note_v1.md",
+      "sha256": "beaa034ffbf56dd913538b2517d167e677b4feb743c7854eb99abdb86ce1c97b",
+      "role": "Causal scope note"
+    },
+    {
+      "path": "v10_research/growing_depth/GD001_lower_derivation.md",
+      "sha256": "3137d43739fe39e80490b7f8b1c76f85495e4b7078e31c52a8f3ea9b1831e000",
+      "role": "Fixed primitive family and corrected synthetic terminal initialization"
+    },
+    {
+      "path": "v10_research/intake/GD001_acceptance.json",
+      "sha256": "662c3020f51d0d8cc7595cc375c21281df6ef71eea85dd0e1d153745c8496d08",
+      "role": "Root acceptance record consulted"
+    },
+    {
+      "path": "v10_research/folded_grid/FG001_theorem.md",
+      "sha256": "085e94826be642b71acbbeefe5bdc44cc0774da2eae0e1445e4c7f3a8e93d442",
+      "role": "Separately reviewed candidate construction, context only; not used to prove IR floor"
+    },
+    {
+      "path": "v10_research/influence_reveal/IR001_theorem.md",
+      "sha256": "963e3f743c474f3f4c29fcb2f4aa9dfe1283ac82e0821b18df6a99223b09fffe",
+      "role": "New author theorem"
+    },
+    {
+      "path": "v10_research/influence_reveal/IR001_diagnostics.py",
+      "sha256": "7ebaa229166ee5d6b8a5dfaaf6bbf62f7612f17c3a7299cbe5a78d473276d123",
+      "role": "Author finite diagnostic code"
+    },
+    {
+      "path": "v10_research/influence_reveal/IR001_diagnostics.json",
+      "sha256": "941ef05bccb8f8ac5f807e541c576b0e9af382f65d4ce3d8c04a69388225d9c2",
+      "role": "Author finite diagnostic result"
+    },
+    {
+      "path": "v10_research/influence_reveal/IR001_independent_review.md",
+      "sha256": "57f1a10851039bc47c6321b08f60198fe8603e98f4462fe6b31de6cc5f13fd59",
+      "role": "Fresh independent mathematical/model review PASS; not root acceptance"
+    },
+    {
+      "path": "v10_research/influence_reveal/IR001_independent_checks.py",
+      "sha256": "2bd773878e0d99b304ef36ed840ea0983b82f0178624c7ee8a51553a22aeacf4",
+      "role": "Independent exact-rational and numerical diagnostics"
+    },
+    {
+      "path": "v10_research/influence_reveal/IR001_independent_checks.json",
+      "sha256": "a74b641dec81a306788bc90048efe3cd15c56cc7922baf820f71a0ef549996ea",
+      "role": "Independent diagnostics PASS with reviewed theorem binding"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "freeze_utc": "2026-11-02T09:22:25.495805+00:00",
+  "units": [
+    {
+      "unit": "SC001",
+      "scope": "POST-STAGE7. Full corrupted observed history, up to k offline randomized symbol replacements before any encoder, final two positions untouched, actual true terminal target. FixedK>=3 beta0 M>=2 gives Theta_K(max((M+1)^-1/2,Psi(k/M))) for arbitrary and stationary initialization. Exact common-kernel exchangeability erasure accounts for full coin arrangement and protected pair, no concentration cutoff; stationary recurrent witness separate. Root read both complete proofs and full fresh review. No binary/positivebeta/causal-online/visible-mask/internalnetwork/novelty claim.",
+      "acceptance": "v10_research/intake/SC001_acceptance.json"
+    },
+    {
+      "unit": "SC002",
+      "scope": "POST-STAGE7. FixedK>=3, M>=64, allbeta, 0<=k<=M fullhistory symbolcorruption withfinalpair untouched. Stationary and arbitraryinit minimax Theta_K(min(1,max(M^-1/2,(k/M)[1+ln(1+1/(max(beta,1/M)k))]))), corruptiontermzeroatk0. Common erasure kernels preserve wholeword information accounting; exact allstate minorization and true future returnmass; beta/k blind corruptedaddone upper via exact suffix law and occupation. Root read complete proof+fresh review. No binary/jointKsharp/causal-online/maskvisible/computationalbudget/novelty claim.",
+      "acceptance": "v10_research/intake/SC002_acceptance.json"
+    },
+    {
+      "unit": "SC003",
+      "scope": "POST-STAGE7. Binary full corrupted history with final pair protected; all beta/all starts; k-aware beta-blind lower-envelope rational estimator. Upper min(1,2^17s+2^19F), F=(k/M)[1+ln(1+1/(k max(sqrtbeta,1/M)))], F0=0. Only lower floors max(s,k/M)/96 and fixed-positive-beta matching order claimed. Root read full theorem and fresh FULL review, not only prior algebra subreview. Matching moving-beta logarithmic lower remains open. No global sqrtbeta mixing, neural-depth, unknown-k adaptation or novelty claim.",
+      "acceptance": "v10_research/intake/SC003_acceptance.json"
+    },
+    {
+      "unit": "BT001",
+      "scope": "POST-STAGE7. Exact all-count transport obstruction t/3+1, cheap merge marginal-bias formula, modified stationary binary witness/allstatecertificate and reference domination, and conditional implication of UNPROVED interior transport premise. Root read full proof and completed independent review including seed-disintegration clarification. Interior transport T and matching binary logarithmic lower NOT accepted/proved. Floating LP evidence only; no asymptotic or novelty inference.",
+      "acceptance": "v10_research/intake/BT001_acceptance.json"
+    },
+    {
+      "unit": "BT002",
+      "scope": "POST-STAGE7. Binary full-history stationary corruption lower 2^-54 max(s,F2), allbeta M>=64 k0..M, true finalpair protected. Uniform Doeblin concentration/finite entropy transport to coarse public canonical bridge, strict Hamming truncation, independent auxiliary seed small-ball argument, same prior/kernel across suffixes, exact finite-domain scalar cutoff completion. Root read entire mainproof, scalarproof and full fresh review. Combining separately accepted SC003 closes bothinit fixedbinary minimax profile. Does NOT prove BT001 stronger interior O(1) transport, efficient/causal attack, visible seed/mask, edited endpoint, novelty or formalverification.",
+      "acceptance": "v10_research/intake/BT002_acceptance.json"
+    },
+    {
+      "unit": "EP001",
+      "scope": "POST-STAGE7. Changed corruption model allows endpoint edits; target remains TRUE hidden original terminal next-law. K>=2,M>=64,0<=k<=M,beta all, bothinit riskTheta_K(min(1,max(s,k/M,(1-beta)1{k>=1}))). Root-authored full proof plus fresh full independent review read by root. All-state marginal certificate, pooled martingale upper, separate clean branch, common one-last-symbol erasure lower even with known source. No corrupted-context target, visiblemask equivalence, causal-online frontier, neuralbudget, growingK or novelty claim.",
+      "acceptance": "v10_research/intake/EP001_acceptance.json"
+    },
+    {
+      "unit": "IU001",
+      "scope": "Unchanged NB002 beta-sensitive upper only; full reviewer report read by root; not yet a matched frontier",
+      "acceptance": "v10_research/intake/IU001_acceptance.json"
+    },
+    {
+      "unit": "AU001",
+      "scope": "All-Q arbitrary-start upper via residual suffix mixture; unchanged NB002; K>=2,M>=64",
+      "acceptance": "v10_research/intake/AU001_acceptance.json"
+    },
+    {
+      "unit": "BIF001",
+      "scope": "ClosesbinaryK2 arbitrary-initialization sqrtbeta frontier foroneblockintegerweight/dyadicgridanddistinctfixeddepthFAcausalfamily. Allsupportcases/cutoff/suffixdomains, trueexitweights, C262147. Bothinitthreshold/alphabetcontrast. Sameprograms/costs, no globalmixingclaim. Rootreadfullproof/fullfreshreview/allloadbearingnewproofs.",
+      "acceptance": "v10_research/intake/BIF001_acceptance.json"
+    },
+    {
+      "unit": "BAI003",
+      "scope": "All binary sources with absorbing00 or11, arbitraryotherrows/init, unchangedSB no-log2^17/sqrtM+3/Q+1600/(kappaQ). Weightedalternatingrenewaloccupationlemma; fullsupportarbitrarysqrtbetaopen. M8auxiliaryshiftgapfixedv2; poststage5excluded.",
+      "acceptance": "v10_research/intake/BAI003_acceptance.json"
+    }
+  ],
+  "files": {
+    "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+    "cloud_work/conditions-20261028/research/resume_20261030/R011_root_acceptance.json": "1feb2882b9134001ec1b45dbdea8e02e411fa99eb6c738489b929b1fa053b61d",
+    "v10_intake/source/DOT_START_PROMPT.txt": "8a270ee67ff3f3700441771c6dd0bb74451e80c8ff56a368b174fc90fd331edb",
+    "v10_intake/source/START_HERE.md": "6538c4edf19678e9f06b4228aeebd65b959112a4140e33ac73deb980fda28767",
+    "v10_intake/source/sources/dot-return/readable/proofs/R011_global_rates_and_constant_adaptation_v1.md": "1b7133c69131b84c6e7e235338797e683eaa2c0e73b9c83a26612e344f78039d",
+    "v10_research/arbitrary_frontier/AU001_residual_suffix_precision_upper_v1.md": "1fce0c8374f372eeec6d4a21a2b683db02a754b227d39e6e8dd6b4e45e3ca6e1",
+    "v10_research/binary_all_start/BIF001_binary_all_initializations_frontier_v1.md": "35c6cb3b5c882c9e70dad68dbc8492c08e65ba49f532da84597e5e1e303467f0",
+    "v10_research/binary_all_start/BIF001_independent_review_v1.md": "8c952204bf7e2c13aeb7cea5ae4760acf2b00867b670e68a8b0a71aab2851912",
+    "v10_research/binary_arbitrary/BAI003_review_v1.md": "42459b65016671265fe328864afd395cc87a539c16ef19ffb4b35dc84c8265dc",
+    "v10_research/binary_arbitrary/BAI003_review_v2.md": "551543ab488b4582b44192396120a32a1d3fcf017668cafa8f9ceb8786225f4a",
+    "v10_research/binary_arbitrary/BAI003_uniform_absorbing_binary_upper_v2.md": "99d209c423664c3fe74d1b32fd68fb89ed31218c58fa2f11c343c3e6a54bd0e4",
+    "v10_research/binary_erasure_transport/BT001_HANDOFF.md": "57b9122a4d4eb121e3c57a461e53dafbb4c4862fc8f75c11627dd1aebfa18452",
+    "v10_research/binary_erasure_transport/BT001_exact_diagnostic.json": "acefdba4e43dd1930bc155a4ec08fb6fa9d6505062657984305ae6a6551fda73",
+    "v10_research/binary_erasure_transport/BT001_independent_review.md": "a49e047e4d88cf2e29bd71a576572c2e8effe588e90ade15926b5ad036e952f2",
+    "v10_research/binary_erasure_transport/BT001_obstruction_and_reduction.md": "2671d9a079833a82b6c02d87052ae86dd16c321fae8a9fda9848cf74aead8040",
+    "v10_research/binary_erasure_transport/BT001_review_checks.json": "b9663c0ff301f1974d72eeea4928bfaf0f945e1e63074acf782a535703a74917",
+    "v10_research/binary_erasure_transport/BT002_HANDOFF.md": "e1af348631d2fcb51b932dcd111b785446dd9ceda9163dd87e4ae7777a7e4ce0",
+    "v10_research/binary_erasure_transport/BT002_entropy_bridge_lower.md": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+    "v10_research/binary_erasure_transport/BT002_exact_diagnostic.json": "a5dddf6f541dafffefb486e32dbf77a87c08f39491e8fa61d4e9d89064da1aa0",
+    "v10_research/binary_erasure_transport/BT002_independent_review.md": "9171f4e18f4a238965644f67baf0fb81e73efba3c373bf27109c058327312595",
+    "v10_research/binary_erasure_transport/BT002_review_checks.json": "ab4b7ef54775806d2b2ed290a2cd245cf4cf908f24d0637361e0901194dd0e99",
+    "v10_research/binary_erasure_transport/BT002_scalar_checks.json": "59090de64c52824ede3908733d47198fab8ec4ad80806146e3504f40a6c5325f",
+    "v10_research/binary_erasure_transport/BT002_scalar_completion.md": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+    "v10_research/binary_erasure_transport/BT002_source_bindings.json": "bf85485acaf8ea51c784d641db193b7cff529664417ca48c3332d72b0396587d",
+    "v10_research/binary_erasure_transport/BT_STAGE8_PROVENANCE.md": "beebaa3975d22f0f147da19e285324cb4aee7eef522a644d1914c142b6bd2ab8",
+    "v10_research/binary_erasure_transport/BT_STAGE8_SOURCE_MANIFEST.json": "da3af90e66881fa16e68b7160fc63a59a5ad7612fd947eb8c8c700b7afb2f8b5",
+    "v10_research/binary_erasure_transport/check_bt001.py": "0e50ace4976d1835e263af607678cde1bb2b531c1df52c4266ea75feadac78b1",
+    "v10_research/binary_erasure_transport/check_bt002.py": "ea1bfa297bb2ac7b9391d51d962874402c5014177f9144775bae0f88b8cbd609",
+    "v10_research/binary_erasure_transport/check_bt002_review.py": "bab0a701788fbc33d808eab7cf6bf6f91f3020b99e2dcb9a7d86b1e344ccb02c",
+    "v10_research/binary_erasure_transport/check_bt002_scalar.py": "c2f4938465d691e5787a5a1347ce7e6602abed3816c8283871212cd2fe50bd86",
+    "v10_research/binary_erasure_transport/transport_lp.py": "75ee7518918c9fdc6cc1bb148b421170b891cc8741cc9e2338efda9ba33d2e3f",
+    "v10_research/binary_erasure_transport/transport_lp_results.json": "2f149226579fb6361f24e02878a88e41d2d7173eeb458848f445d56aebf0b2cb",
+    "v10_research/binary_source_corruption/SC003_HANDOFF.md": "eeff555eb2d4e3a15afecf428ba8e709e719d127579255a052d560ebc5ffe1ed",
+    "v10_research/binary_source_corruption/SC003_algebra_independent_checks.json": "c57790523223f363da740e1a09414966373fa44356f671f51ce5403e41d2a08b",
+    "v10_research/binary_source_corruption/SC003_algebra_independent_checks.py": "58215fc76e86eb869474230f2bac4ac42c1f376a22ee242f2dd8551b2df2d143",
+    "v10_research/binary_source_corruption/SC003_diagnostics.json": "0e461fab8adb54c1d95f050c6beba550a8b9cce36646396e4c5a47bd9806e98c",
+    "v10_research/binary_source_corruption/SC003_diagnostics.py": "85190c6ab6daa49447792cc7884fc830acfc77c53b223f924b540082b6a81a94",
+    "v10_research/binary_source_corruption/SC003_independent_full_checks.json": "9c6778147f617148c66ff7856dd9439e13c26256813fbd76203474c0a1dcdea3",
+    "v10_research/binary_source_corruption/SC003_independent_full_checks.py": "2fe20a939bde0be37b4d1fef300953c3eb964d0e3ff23795283591e859b88839",
+    "v10_research/binary_source_corruption/SC003_independent_full_review.md": "2d5a735602717ca020d5cd463b75cc28cab25cec0cb5d809f0d14b4770e7d153",
+    "v10_research/binary_source_corruption/SC003_independent_full_review_bindings.json": "c3db62e87337f298a29257e6599fa2827a952408f169c01dd70680c918dc3a89",
+    "v10_research/binary_source_corruption/SC003_source_bindings.json": "0727a74d142e2ff80019853daffb26853a451b8d3afdd4b432b98e9bd25cc795",
+    "v10_research/binary_source_corruption/SC003_theorem.md": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+    "v10_research/delivery_stage8/SCIENTIFIC_FREEZE.json": "6260f393db5403766e57ccfa26a6ee93e88440f8751d7159f027df2ad9daea25",
+    "v10_research/intake/AU001_acceptance.json": "85fda91470729b0ad5759abc6efe60ed12dc6b247aab4e3922ad52246225a473",
+    "v10_research/intake/BAI003_acceptance.json": "1e9fc79e3a3a23f2f731b17b123e4cf076842e5da6ef32b6860897e5b1da303f",
+    "v10_research/intake/BIF001_acceptance.json": "cc9d2d121521efdc8a1dfabe6beaa5e6551ed2d83b3e196ec3d20787953a7412",
+    "v10_research/intake/BT001_acceptance.json": "ddbbdac1b3669d9af1298c6d001d47e1c2335d888cbc9c006e61c6fa1fc7613f",
+    "v10_research/intake/BT002_acceptance.json": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+    "v10_research/intake/EP001_acceptance.json": "b50344445c8050e2f67ee6699a2f0d8b99b77bc3f84b28582fb0b8447cf4a038",
+    "v10_research/intake/IU001_acceptance.json": "a8649f9294d51083c893d67aa5bfa4f83ce6f5cc7d0117be2df92ee7d40697c8",
+    "v10_research/intake/SC001_acceptance.json": "ef4cd2e3c83bd1d07ab9678c215e16d442b3e024af439155ed52c4a9892ee8ce",
+    "v10_research/intake/SC002_acceptance.json": "af1aa004e7b4d86ba1d9e6ba9d0ccb517daa984b249de7d8198560505fc1fb26",
+    "v10_research/intake/SC003_acceptance.json": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+    "v10_research/intermediate_upper/IU001_beta_sensitive_precision_upper_v1.md": "4c0adb15aadfb574e156c5ce5f4f4da1ec8447ed515417a71d400c5a52c7b317",
+    "v10_research/prior_art/source_corruption_screen.md": "31a3a0c741e8018b96aa8859145f74337d7ec6841f39c4b825d35fc4081c3b0f",
+    "v10_research/reviews/AU001_review_v1.md": "d24cfa2538d42f89ee801135889b963ad2459eb5fa8d073d7395f39a387a6a52",
+    "v10_research/reviews/IU001_review_v1.md": "b854cb06682d68c69041b57bbf21e8be021ca9e8180b1fee5def9c4a984ba974",
+    "v10_research/source_symbol_corruption/SC001_HANDOFF.md": "1ef34d9b3ffcff8974100ec20a08c85f37729d6f171f0a65373c7433454b519f",
+    "v10_research/source_symbol_corruption/SC001_diagnostics.json": "fe0ec900b62da372483102232173b8558d72372463ef1cb5c4f4b923b6cf3642",
+    "v10_research/source_symbol_corruption/SC001_diagnostics.py": "4e58de40c543db8671f6bc68f5a012ccf12fc1717d0a4f04feaf400861b75c99",
+    "v10_research/source_symbol_corruption/SC001_independent_review.md": "a9dacfd95bb395d99d4a9f4a5736656f07ef50af571ff3cfc31864ee877bd4c7",
+    "v10_research/source_symbol_corruption/SC001_review_checks.json": "f5aa822f1bcf2d976ff8d4ecc11330d8b3da37ed5b48e7ec91d6bbe9c4345806",
+    "v10_research/source_symbol_corruption/SC001_review_checks.py": "7bb19b3fff2f54b6785556d1f4a97ef876a3be68b9b95fd9743675e861640bf2",
+    "v10_research/source_symbol_corruption/SC001_source_bindings.json": "66f97b13b93093bb6c9b437ce0d65404981c20340110404c32a779dfd9c3bd7e",
+    "v10_research/source_symbol_corruption/SC001_stationary_corollary.md": "45ce21dfdc2f8c08d115406caf5b2e9c1b4ff7cff3ffa3499d2acf3876d8a8d1",
+    "v10_research/source_symbol_corruption/SC001_theorem.md": "8a51b7d48269731c7ac1143a5a0434b93d134e355734cc0ea8a13d9e69dce0df",
+    "v10_research/source_symbol_corruption_mixing/SC002_HANDOFF.md": "5696e9ac3348ed251975da5f65c595ae1a28f0d096e6ea7d1d602a985dbba044",
+    "v10_research/source_symbol_corruption_mixing/SC002_diagnostics.json": "a52fc66924cf64ee2aa422b406142267f7d4e627b16696d69e1ca271c2854653",
+    "v10_research/source_symbol_corruption_mixing/SC002_diagnostics.py": "45d0c6f1e20b8af0d78d6267d8068f72f7fba0257cb32a85b9ca811b8058b67e",
+    "v10_research/source_symbol_corruption_mixing/SC002_independent_review.md": "741b74dd3616ea0cfe7ec6e674328d7aba06ce3c770653f8c3dde23cdde68ce5",
+    "v10_research/source_symbol_corruption_mixing/SC002_review_bindings.json": "53bc019ebc5c10717388efad896e01271721ceabed5f40b676f269c4c71e9bbb",
+    "v10_research/source_symbol_corruption_mixing/SC002_review_checks.json": "7f2c9931e4917cef955451c78c6d14816ef2f79505f56b4fea0e89364a1e5fd8",
+    "v10_research/source_symbol_corruption_mixing/SC002_review_checks.py": "70921b9ab64a7ceb08ec6f4d870a55f1fca6d8f824617398d6e0c05179c09294",
+    "v10_research/source_symbol_corruption_mixing/SC002_source_bindings.json": "31ca35340f3a5fdc3da122d52e412ebfef8ff1e9c1db5d490b6ced0c0eaafec6",
+    "v10_research/source_symbol_corruption_mixing/SC002_theorem.md": "40a8950861b486f532ac625fa479cb49cd79241dbb4b08efce6296ae9b6a1f0e",
+    "v10_research/terminal_symbol_corruption/EP001_boundary_independent_review.md": "8a64c305dbcdd7a66d9db96781d28de7940059cf17b4b9c25f64b11d51d7087d",
+    "v10_research/terminal_symbol_corruption/EP001_boundary_review_bindings.json": "ee6029e9aa92fa83bdaa0bff6fc54b4b3834381e56222f1f2818790797ec0585",
+    "v10_research/terminal_symbol_corruption/EP001_boundary_review_checks.json": "d94ac1db90a52afd47f28a33a98be90aeb863430a7ec0748705ec32cb1b801d2",
+    "v10_research/terminal_symbol_corruption/EP001_boundary_review_checks.py": "bcf1272b5987aa3e284c9f3e2012b8af78fb8c616c5c7e33a8ee8574ad03b248",
+    "v10_research/terminal_symbol_corruption/EP001_endpoint_corruption.md": "bf58470664861f28dbd8746d5b0c54eea1beadd98e87c2c80600b1ec68c796fa"
+  },
+  "guide_source_sha256": "62c25b5efd5bd168f416d1eca34005333ac4baf79c0538d14e73727b420f2a9f",
+  "scope": "Six new accepted units with full component proofs/reviews/receipts, direct inherited interfaces and original mandate. Binding does not claim a fresh transitive proof audit."
+}

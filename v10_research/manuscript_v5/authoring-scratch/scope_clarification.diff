@@ -1,0 +1,29 @@
+--- pre_scope_clarification.tex
++++ finite_precision_prediction.tex
+@@ -1893,7 +1893,7 @@
+ \section{Packing more information through a fixed coordinate bank}\label{sec:iidpacking}
+ A grid floor established for a fixed prefix, a one-block local ratio, or a fixed architecture need not survive optimization over growing-depth nonlinear encoders. This section isolates the issue on IID sources before returning to the general Markov target. Here $Q$ is an internal cut resolution. Decoders may output arbitrary real parameters in the information lower bounds; the constructive decoder produces a paid finite dyadic parameter, not necessarily a multiple of $1/Q$.
+ 
+-Every transition row is Bernoulli$(p)$, with an arbitrary initial pair. The $M$ generated symbols are IID and independent of that pair; their next-symbol target is $p$. The pair kernel has $P^2(s,\cdot)=\operatorname{Bern}(p)^{\otimes2}$ for every $s$, so this is a legal witness for every minorization promise, including $\beta=1$. Exactly $J\ge2$ coordinates in $[0,1]$ are downward quantized at $Q=2^h$, $h\ge1$. Only a fixed finite boundary label and source-independent metadata survive alongside them. For the depth lower, that boundary consists specifically of at most $b$ bits at fixed public positions (conditional on a public independent seed). An arbitrary nonlocal finite-valued statistic is not admitted by that lower.
++In the IID sections we use $M\ge1$ and dyadic $Q\ge2$, overriding the earlier global defaults; specific propositions may impose further restrictions. Every transition row is Bernoulli$(p)$, with an arbitrary initial pair. The $M$ generated symbols are IID and independent of that pair; their next-symbol target is $p$. The pair kernel has $P^2(s,\cdot)=\operatorname{Bern}(p)^{\otimes2}$ for every $s$, so this is a legal witness for every minorization promise, including $\beta=1$. Exactly $J\ge2$ coordinates in $[0,1]$ are downward quantized at $Q=2^h$, $h\ge1$. Only a fixed finite boundary label and source-independent metadata survive alongside them. For the depth lower, that boundary consists specifically of at most $b$ bits at fixed public positions (conditional on a public independent seed). An arbitrary nonlocal finite-valued statistic is not admitted by that lower.
+ 
+ \begin{theorem}[IID capacity and constructive partial folding]\label{thm:iidcapacity}
+ With boundary alphabet size at most $H$, every procedure has
+@@ -1946,7 +1946,7 @@
+ \subsection{An influence-reveal lower valid at growing depth}
+ The next argument replaces a depth-dependent global variance constant by a reveal selected from the actual deterministic influences.
+ \begin{theorem}[Summed-influence floor]\label{thm:iiddepth}
+-Observe $N=M+2$ IID Bernoulli$(p)$ bits with $p\in[1/4,3/4]$. Conditional on each source-independent seed, let the exact boundary consist of at most $b$ bits at public fixed positions. For every frozen branch $s$ and output coordinate $j\le D$, assume on all formal histories
++For every real $Q\ge1$, observe $N=M+2$ IID Bernoulli$(p)$ bits with $p\in[1/4,3/4]$. Conditional on each source-independent seed, let the exact boundary consist of at most $b$ bits at public fixed positions. For every frozen branch $s$ and output coordinate $j\le D$, assume on all formal histories
+ \[
+  |f_{s,j}(x)-f_{s,j}(x^{(i)})|\le c_i^{s,j},\qquad
+  \sum_i c_i^{s,j}\le B,\quad B\ge1.
+@@ -2544,7 +2544,7 @@
+ \section{Independent fault amplitude and effective precision}\label{sec:effectiveprecision}
+ The preceding robust constructions hold for noise of size $c/Q$ with fixed $c$. An independent amplitude cannot be handled by allowing a hidden constant to grow with $Q\delta$. We now rederive the channel bounds uniformly. This section's upper is IID-only. The general-Markov theorem above remains a $c/Q$ theorem; no independent-amplitude Markov upper is asserted here.
+ 
+-Keep the IID experiment, $J\ge2$ exposed coordinates, fixed positional-bit boundary budget $b$, and uniform primitive budgets. The actual finite bank $a\in[0,1]^J$ approximates its ideal bank $f$ within $E/Q$ on every frozen-branch formal history, with fixed $E\ge1$. One real pre-cut perturbation $e$, $\|e\|_\infty\le\delta$, precedes clipping and the $Q$ floor:
++Keep the IID experiment with $M\ge1$, $J\ge2$ exposed coordinates, fixed positional-bit boundary budget $b$, and uniform primitive budgets. The actual finite bank $a\in[0,1]^J$ approximates its ideal bank $f$ within $E/Q$ on every frozen-branch formal history, with fixed $E\ge1$. One real pre-cut perturbation $e$, $\|e\|_\infty\le\delta$, precedes clipping and the $Q$ floor:
+ \[
+  q_j=Q^{-1}\lfloor Q\operatorname{clip}(a_j+e_j)\rfloor,
+  \quad Q=2^h\ge2,\quad 0\le\delta\le1/4.

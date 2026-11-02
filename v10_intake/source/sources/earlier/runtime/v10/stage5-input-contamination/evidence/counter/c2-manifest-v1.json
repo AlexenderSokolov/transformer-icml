@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "member": "counter",
+  "obligation_id": "52a14a0c60279133c7acc7067c15eb4cfbff32368f8a721e59df9bf3eecd9ff1",
+  "predecessors": [],
+  "proof_file": "outputs/001-input-contamination/counter/c2-proof-v1.md",
+  "files": [
+    {
+      "path": "PROBLEM.md",
+      "sha256": "960299dbb9730b6f8b7d9de81128fabcca03b7342a456beb57572e52d490caca",
+      "bytes": 21726
+    },
+    {
+      "path": "inputs/SOURCE_CORRECTIONS.md",
+      "sha256": "73491ed6da8af1983dfc9922989ae5270494c652268d9447bbaed49fee2a5f6a",
+      "bytes": 685
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/common-channel-lower-v1.md",
+      "sha256": "68852906dc7f125afc6e93953843800fd7b4070639e9090915c65cfb400588b3",
+      "bytes": 20363
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/primary-claim-map-v1.md",
+      "sha256": "d188b3fe56d2924c46a0dcbc9f36c56ee86117f08d322145e5cfcb53a3294243",
+      "bytes": 5245
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/sources/download-manifest-v1.json",
+      "sha256": "d153ac8f9445ef7397aac83bc6dd4fa133c7b1f82d0d70aa9bf492917f4b536e",
+      "bytes": 638
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/sources/chen-gao-ren-1511.04144v2.pdf",
+      "sha256": "538cda7c3ea92a31a394e85b2928a6309cd751b9f4afc5e1732b2bf2a4b8f645",
+      "bytes": 270809
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/sources/pydi-jog-2020-main.pdf",
+      "sha256": "df20b171617bd33522b798fa59e9f52ab29401fc463328869297c19dd7d5a19a",
+      "bytes": 1495909
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/sources/pydi-jog-2020-supp.pdf",
+      "sha256": "332e09858ae7e474e967a6dcc10274de57a3a9e16f0455296efff664b1e25d74",
+      "bytes": 481185
+    },
+    {
+      "path": "outputs/001-input-contamination/counter/c2-proof-v1.md",
+      "sha256": "f10c16cca4efde271b33c3fa2de62244098912c110991b30ccd4e40489852e99",
+      "bytes": 25674
+    },
+    {
+      "path": "outputs/001-input-contamination/counter/d6-scope-map-v1.md",
+      "sha256": "e4ae322376acca4e3a88e3c591700f5a074388d91637140d48b7a223122ba03f",
+      "bytes": 8542
+    },
+    {
+      "path": "outputs/001-input-contamination/counter/c2-readback-v1.json",
+      "sha256": "943338e8ab00accddad8ae9a9c1559292d966d4ba13f8b795ba0a97ec081a467",
+      "bytes": 518
+    },
+    {
+      "path": "outputs/001-input-contamination/counter/c2-gateway-v1.json",
+      "sha256": "f75d04ec494bfedb112c4078c98cec9d5d39bafd082deb9afee6689d674820d3",
+      "bytes": 2561
+    },
+    {
+      "path": "outputs/001-input-contamination/counter/c2-admission-v1.json",
+      "sha256": "9ddcc1c89bdac61722e6e529f35ae43af0fadcbdcd1b6d7e2759a3a70c30e268",
+      "bytes": 11003
+    },
+    {
+      "path": "outputs/001-input-contamination/counter/handoff-v1.md",
+      "sha256": "39b542d3313a7b39442d5946439cc047f764318704c1a57877cef9d0bb61424c",
+      "bytes": 4724
+    }
+  ],
+  "source_status": "source-only; no old Fact or file review used as an admission premise",
+  "correction": "CGR PDF digest taken from actual pinned bytes/manifest per SOURCE_CORRECTIONS; originals unchanged",
+  "checks": "proof readback and byte hashes only; no old diagnostic rerun",
+  "budget": null
+
+
+
+,
+  "team_consultation": "euler_team_ask(lead) attempted; tool rejected with only-the-lead-may-schedule; no consultation treated as evidence",
+  "admission": {
+    "accepted": true,
+    "obligation_status": "DISCHARGED",
+    "fact_id": "df40a215d931bd32",
+    "evidence_id": "3448f22a5b9e86526c831f0518a83b828eaf69eb2acf455fb0057f354dae7cd3",
+    "evidence_content_hash": "7d7b0a5414b61fbf2117c9b980d4e7580b0ea9311de07c9dc4a3faa1ef54aaa8",
+    "checker_result": "PASS",
+    "evidence_kind": "LLM_CHECKED_PROOF",
+    "predecessors": []
+  }
+}

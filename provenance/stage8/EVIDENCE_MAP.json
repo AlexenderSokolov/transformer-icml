@@ -1,0 +1,167 @@
+{
+  "scientific_freeze_utc": "2026-11-02T09:22:25.495805+00:00",
+  "accepted_units": [
+    {
+      "unit": "SC001",
+      "receipt": "v10_research/intake/SC001_acceptance.json",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "proof": "v10_research/source_symbol_corruption/SC001_theorem.md",
+      "proof_sha256": "8a51b7d48269731c7ac1143a5a0434b93d134e355734cc0ea8a13d9e69dce0df",
+      "component_proofs": {
+        "v10_research/source_symbol_corruption/SC001_theorem.md": "8a51b7d48269731c7ac1143a5a0434b93d134e355734cc0ea8a13d9e69dce0df",
+        "v10_research/source_symbol_corruption/SC001_stationary_corollary.md": "45ce21dfdc2f8c08d115406caf5b2e9c1b4ff7cff3ffa3499d2acf3876d8a8d1"
+      },
+      "review": "v10_research/source_symbol_corruption/SC001_independent_review.md",
+      "scope": "POST-STAGE7. Full corrupted observed history, up to k offline randomized symbol replacements before any encoder, final two positions untouched, actual true terminal target. FixedK>=3 beta0 M>=2 gives Theta_K(max((M+1)^-1/2,Psi(k/M))) for arbitrary and stationary initialization. Exact common-kernel exchangeability erasure accounts for full coin arrangement and protected pair, no concentration cutoff; stationary recurrent witness separate. Root read both complete proofs and full fresh review. No binary/positivebeta/causal-online/visible-mask/internalnetwork/novelty claim.",
+      "all_scientific_files": [
+        "v10_research/source_symbol_corruption/SC001_HANDOFF.md",
+        "v10_research/source_symbol_corruption/SC001_diagnostics.json",
+        "v10_research/source_symbol_corruption/SC001_diagnostics.py",
+        "v10_research/source_symbol_corruption/SC001_independent_review.md",
+        "v10_research/source_symbol_corruption/SC001_review_checks.json",
+        "v10_research/source_symbol_corruption/SC001_review_checks.py",
+        "v10_research/source_symbol_corruption/SC001_source_bindings.json",
+        "v10_research/source_symbol_corruption/SC001_stationary_corollary.md",
+        "v10_research/source_symbol_corruption/SC001_theorem.md"
+      ]
+    },
+    {
+      "unit": "SC002",
+      "receipt": "v10_research/intake/SC002_acceptance.json",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "proof": "v10_research/source_symbol_corruption_mixing/SC002_theorem.md",
+      "proof_sha256": "40a8950861b486f532ac625fa479cb49cd79241dbb4b08efce6296ae9b6a1f0e",
+      "component_proofs": {},
+      "review": "v10_research/source_symbol_corruption_mixing/SC002_independent_review.md",
+      "scope": "POST-STAGE7. FixedK>=3, M>=64, allbeta, 0<=k<=M fullhistory symbolcorruption withfinalpair untouched. Stationary and arbitraryinit minimax Theta_K(min(1,max(M^-1/2,(k/M)[1+ln(1+1/(max(beta,1/M)k))]))), corruptiontermzeroatk0. Common erasure kernels preserve wholeword information accounting; exact allstate minorization and true future returnmass; beta/k blind corruptedaddone upper via exact suffix law and occupation. Root read complete proof+fresh review. No binary/jointKsharp/causal-online/maskvisible/computationalbudget/novelty claim.",
+      "all_scientific_files": [
+        "v10_research/source_symbol_corruption_mixing/SC002_HANDOFF.md",
+        "v10_research/source_symbol_corruption_mixing/SC002_diagnostics.json",
+        "v10_research/source_symbol_corruption_mixing/SC002_diagnostics.py",
+        "v10_research/source_symbol_corruption_mixing/SC002_independent_review.md",
+        "v10_research/source_symbol_corruption_mixing/SC002_review_bindings.json",
+        "v10_research/source_symbol_corruption_mixing/SC002_review_checks.json",
+        "v10_research/source_symbol_corruption_mixing/SC002_review_checks.py",
+        "v10_research/source_symbol_corruption_mixing/SC002_source_bindings.json",
+        "v10_research/source_symbol_corruption_mixing/SC002_theorem.md"
+      ]
+    },
+    {
+      "unit": "SC003",
+      "receipt": "v10_research/intake/SC003_acceptance.json",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "proof": "v10_research/binary_source_corruption/SC003_theorem.md",
+      "proof_sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "component_proofs": {},
+      "review": "v10_research/binary_source_corruption/SC003_independent_full_review.md",
+      "scope": "POST-STAGE7. Binary full corrupted history with final pair protected; all beta/all starts; k-aware beta-blind lower-envelope rational estimator. Upper min(1,2^17s+2^19F), F=(k/M)[1+ln(1+1/(k max(sqrtbeta,1/M)))], F0=0. Only lower floors max(s,k/M)/96 and fixed-positive-beta matching order claimed. Root read full theorem and fresh FULL review, not only prior algebra subreview. Matching moving-beta logarithmic lower remains open. No global sqrtbeta mixing, neural-depth, unknown-k adaptation or novelty claim.",
+      "all_scientific_files": [
+        "v10_research/binary_source_corruption/SC003_HANDOFF.md",
+        "v10_research/binary_source_corruption/SC003_algebra_independent_checks.json",
+        "v10_research/binary_source_corruption/SC003_algebra_independent_checks.py",
+        "v10_research/binary_source_corruption/SC003_diagnostics.json",
+        "v10_research/binary_source_corruption/SC003_diagnostics.py",
+        "v10_research/binary_source_corruption/SC003_independent_full_checks.json",
+        "v10_research/binary_source_corruption/SC003_independent_full_checks.py",
+        "v10_research/binary_source_corruption/SC003_independent_full_review.md",
+        "v10_research/binary_source_corruption/SC003_independent_full_review_bindings.json",
+        "v10_research/binary_source_corruption/SC003_source_bindings.json",
+        "v10_research/binary_source_corruption/SC003_theorem.md"
+      ]
+    },
+    {
+      "unit": "BT001",
+      "receipt": "v10_research/intake/BT001_acceptance.json",
+      "status": "ROOT_ACCEPTED_SCOPED_OBSTRUCTION_AND_CONDITIONAL_REDUCTION",
+      "proof": "v10_research/binary_erasure_transport/BT001_obstruction_and_reduction.md",
+      "proof_sha256": "2671d9a079833a82b6c02d87052ae86dd16c321fae8a9fda9848cf74aead8040",
+      "component_proofs": {},
+      "review": "v10_research/binary_erasure_transport/BT001_independent_review.md",
+      "scope": "POST-STAGE7. Exact all-count transport obstruction t/3+1, cheap merge marginal-bias formula, modified stationary binary witness/allstatecertificate and reference domination, and conditional implication of UNPROVED interior transport premise. Root read full proof and completed independent review including seed-disintegration clarification. Interior transport T and matching binary logarithmic lower NOT accepted/proved. Floating LP evidence only; no asymptotic or novelty inference.",
+      "all_scientific_files": [
+        "v10_research/binary_erasure_transport/BT001_HANDOFF.md",
+        "v10_research/binary_erasure_transport/BT001_exact_diagnostic.json",
+        "v10_research/binary_erasure_transport/BT001_independent_review.md",
+        "v10_research/binary_erasure_transport/BT001_obstruction_and_reduction.md",
+        "v10_research/binary_erasure_transport/BT001_review_checks.json",
+        "v10_research/binary_erasure_transport/BT002_HANDOFF.md",
+        "v10_research/binary_erasure_transport/BT002_entropy_bridge_lower.md",
+        "v10_research/binary_erasure_transport/BT002_exact_diagnostic.json",
+        "v10_research/binary_erasure_transport/BT002_independent_review.md",
+        "v10_research/binary_erasure_transport/BT002_review_checks.json",
+        "v10_research/binary_erasure_transport/BT002_scalar_checks.json",
+        "v10_research/binary_erasure_transport/BT002_scalar_completion.md",
+        "v10_research/binary_erasure_transport/BT002_source_bindings.json",
+        "v10_research/binary_erasure_transport/BT_STAGE8_PROVENANCE.md",
+        "v10_research/binary_erasure_transport/BT_STAGE8_SOURCE_MANIFEST.json",
+        "v10_research/binary_erasure_transport/check_bt001.py",
+        "v10_research/binary_erasure_transport/check_bt002.py",
+        "v10_research/binary_erasure_transport/check_bt002_review.py",
+        "v10_research/binary_erasure_transport/check_bt002_scalar.py",
+        "v10_research/binary_erasure_transport/transport_lp.log",
+        "v10_research/binary_erasure_transport/transport_lp.py",
+        "v10_research/binary_erasure_transport/transport_lp_results.json"
+      ]
+    },
+    {
+      "unit": "BT002",
+      "receipt": "v10_research/intake/BT002_acceptance.json",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "proof": "v10_research/binary_erasure_transport/BT002_entropy_bridge_lower.md",
+      "proof_sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "component_proofs": {
+        "v10_research/binary_erasure_transport/BT002_entropy_bridge_lower.md": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+        "v10_research/binary_erasure_transport/BT002_scalar_completion.md": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026"
+      },
+      "review": "v10_research/binary_erasure_transport/BT002_independent_review.md",
+      "scope": "POST-STAGE7. Binary full-history stationary corruption lower 2^-54 max(s,F2), allbeta M>=64 k0..M, true finalpair protected. Uniform Doeblin concentration/finite entropy transport to coarse public canonical bridge, strict Hamming truncation, independent auxiliary seed small-ball argument, same prior/kernel across suffixes, exact finite-domain scalar cutoff completion. Root read entire mainproof, scalarproof and full fresh review. Combining separately accepted SC003 closes bothinit fixedbinary minimax profile. Does NOT prove BT001 stronger interior O(1) transport, efficient/causal attack, visible seed/mask, edited endpoint, novelty or formalverification.",
+      "all_scientific_files": [
+        "v10_research/binary_erasure_transport/BT001_HANDOFF.md",
+        "v10_research/binary_erasure_transport/BT001_exact_diagnostic.json",
+        "v10_research/binary_erasure_transport/BT001_independent_review.md",
+        "v10_research/binary_erasure_transport/BT001_obstruction_and_reduction.md",
+        "v10_research/binary_erasure_transport/BT001_review_checks.json",
+        "v10_research/binary_erasure_transport/BT002_HANDOFF.md",
+        "v10_research/binary_erasure_transport/BT002_entropy_bridge_lower.md",
+        "v10_research/binary_erasure_transport/BT002_exact_diagnostic.json",
+        "v10_research/binary_erasure_transport/BT002_independent_review.md",
+        "v10_research/binary_erasure_transport/BT002_review_checks.json",
+        "v10_research/binary_erasure_transport/BT002_scalar_checks.json",
+        "v10_research/binary_erasure_transport/BT002_scalar_completion.md",
+        "v10_research/binary_erasure_transport/BT002_source_bindings.json",
+        "v10_research/binary_erasure_transport/BT_STAGE8_PROVENANCE.md",
+        "v10_research/binary_erasure_transport/BT_STAGE8_SOURCE_MANIFEST.json",
+        "v10_research/binary_erasure_transport/check_bt001.py",
+        "v10_research/binary_erasure_transport/check_bt002.py",
+        "v10_research/binary_erasure_transport/check_bt002_review.py",
+        "v10_research/binary_erasure_transport/check_bt002_scalar.py",
+        "v10_research/binary_erasure_transport/transport_lp.log",
+        "v10_research/binary_erasure_transport/transport_lp.py",
+        "v10_research/binary_erasure_transport/transport_lp_results.json"
+      ]
+    },
+    {
+      "unit": "EP001",
+      "receipt": "v10_research/intake/EP001_acceptance.json",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "proof": "v10_research/terminal_symbol_corruption/EP001_endpoint_corruption.md",
+      "proof_sha256": "bf58470664861f28dbd8746d5b0c54eea1beadd98e87c2c80600b1ec68c796fa",
+      "component_proofs": {},
+      "review": "v10_research/terminal_symbol_corruption/EP001_boundary_independent_review.md",
+      "scope": "POST-STAGE7. Changed corruption model allows endpoint edits; target remains TRUE hidden original terminal next-law. K>=2,M>=64,0<=k<=M,beta all, bothinit riskTheta_K(min(1,max(s,k/M,(1-beta)1{k>=1}))). Root-authored full proof plus fresh full independent review read by root. All-state marginal certificate, pooled martingale upper, separate clean branch, common one-last-symbol erasure lower even with known source. No corrupted-context target, visiblemask equivalence, causal-online frontier, neuralbudget, growingK or novelty claim.",
+      "all_scientific_files": [
+        "v10_research/terminal_symbol_corruption/EP001_boundary_independent_review.md",
+        "v10_research/terminal_symbol_corruption/EP001_boundary_review_bindings.json",
+        "v10_research/terminal_symbol_corruption/EP001_boundary_review_checks.json",
+        "v10_research/terminal_symbol_corruption/EP001_boundary_review_checks.py",
+        "v10_research/terminal_symbol_corruption/EP001_endpoint_corruption.md"
+      ]
+    }
+  ],
+  "history_notes": "BT001 strong interior transport premise remains open. BT002 separately closes the needed lower via weaker entropy transport. Initial C=4 scalar snapshot and early diagnostic output were not retained; no reconstruction or fake diff. Actual guide/manuscript revisions retained.",
+  "administrative_supplements": [
+    "v10_research/binary_erasure_transport/BT_STAGE8_SOURCE_MANIFEST.json",
+    "v10_research/binary_erasure_transport/BT_STAGE8_PROVENANCE.md"
+  ],
+  "limitations": "LLM review and finite diagnostics are not formal verification, external peer review, novelty certification or original-network execution. JP001 and later research excluded."
+}

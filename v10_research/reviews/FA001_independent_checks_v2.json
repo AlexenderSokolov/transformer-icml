@@ -1,0 +1,32 @@
+{
+  "scope": "independent exact finite diagnostics, not proof or cost benchmarks",
+  "compressed_exponent_conversion_cases": 1275,
+  "exp_interval_cases": 69,
+  "odd_even_factorial_tail_cases": 300,
+  "max_taylor_product_bits_observed": 43,
+  "signed_normalization_cases": 30,
+  "precision_choices": [
+    {
+      "Cstar": "1",
+      "Carch": 3
+    },
+    {
+      "Cstar": "7",
+      "Carch": 7
+    },
+    {
+      "Cstar": "1000000000",
+      "Carch": 36
+    },
+    {
+      "Cstar": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "Carch": 341
+    }
+  ],
+  "label_equality_counterexample": {
+    "ideal": "1/4",
+    "actual": "63/256",
+    "Q": 4
+  },
+  "status": "PASS"
+}

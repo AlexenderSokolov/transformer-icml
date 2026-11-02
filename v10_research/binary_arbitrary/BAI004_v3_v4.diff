@@ -1,0 +1,29 @@
+--- v10_research/binary_arbitrary/BAI004_fullsupport_initial_delay_lemmas_v3.md	2026-11-01 22:39:29.523439277 -0800
++++ v10_research/binary_arbitrary/BAI004_fullsupport_initial_delay_lemmas_v4.md	2026-11-01 22:41:21.197056923 -0800
+@@ -1,6 +1,6 @@
+ # BAI004 — Square-root-beta occupation from a diagonal start to its successor crossing
+ 
+-2026-11-02. Author candidate v3, adding the opposite-crossing phase-convolution bound. Independent full/delta review required. v1, accepted BAI003, and delivered materials remain unchanged. This is a strong intermediate lemma, NOT the complete arbitrary-initialization theorem.
++2026-11-02. Author candidate v4, with the opposite-crossing weak-beta boundary explicitly separated. Independent full/delta review required. v1, accepted BAI003, and delivered materials remain unchanged. This is a strong intermediate lemma, NOT the complete arbitrary-initialization theorem.
+ 
+ ## 1. Main intermediate result
+ 
+@@ -196,6 +196,10 @@
+ 
+ The swapped bound is initial C, terminal A. This is also a UNIT-cap bound; no minority/exit weight is needed.
+ 
++### Weak-beta boundary
++
++If beta M²<1, the universal terminal-occupation bound and scalar comparison already proved in section5 give (BAI4.2) directly, even after discarding its terminal-B indicator. This includes beta=0 and any zero row parameters. For the remainder assume beta M²>=1. Then beta>0 and full support forces a,b,e,t>0, so every division by b and every logarithm below is well-defined.
++
+ ### Exact count and phase identity
+ 
+ Starting W means the initial symbol is0. On terminal B=10, the telescoping pair-count identity gives
+@@ -259,3 +263,7 @@
+ ## 10. v2-to-v3 change and remaining scope
+ 
+ v2 is preserved. v3 adds the exact last-A phase convolution, the global C-entry count bound, and (BAI4.2). Sections1 and7 are updated to state that all crossing-terminal contributions from diagonal starts are now controlled. No earlier constant or proof is changed. Opposite-diagonal targets remain the only unproved diagonal-start occupation components. Independent review of the NEW section9 is required; approval of v2 alone is insufficient for v3.
++
++## 11. v3-to-v4 boundary repair
++
++The fresh reviewer identified that section9 divided by b without explicitly separating zero-parameter beta=0 cases. v4 applies the existing universal weak-beta bound first, and restricts the phase/Jensen proof to beta M²>=1, where the full-support certificate forces b,t>0. No constant or positive-parameter argument changes. v3 is preserved.

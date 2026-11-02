@@ -1,0 +1,41 @@
+{
+  "kind": "lead-final-archive-validation",
+  "native_audit_matches_acceptance": true,
+  "valid_discharged_obligations": 5,
+  "valid_pass_evidence": 5,
+  "native_completed_routes": 2,
+  "unchanged_historical_suspended_ids": [
+    "[redacted routing identifier]",
+    "[redacted routing identifier]",
+    "[redacted routing identifier]",
+    "[redacted routing identifier]",
+    "[redacted routing identifier]",
+    "[redacted routing identifier]",
+    "[redacted routing identifier]",
+    "[redacted routing identifier]"
+  ],
+  "actual_resume_return": {
+    "enabled": true,
+    "goal_id": "d0bdd1d8bf611bb7a6e9c4bb14d8b14e5a71ae8cc5c97776fc079ac13c63b428",
+    "status": "RUNNING",
+    "last_frontier_hash": "32130111b7674a70ccbd6e41209c633b02cc6f2be55463f6d0efaccc9772e438",
+    "unchanged_turns": 0
+  },
+  "fixed_proofs": [
+    {
+      "path": "outputs/001-conditional-grid/prover/final-admissions-v3/c4-composition-proof-v3.md",
+      "sha256": "7c63095d16955b4af1fd319330d53c79653dcee4230a2cfee5966d564a5fe16e",
+      "characters": 183510
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/final-admissions-v3/root-conjunction-proof-v1.md",
+      "sha256": "7ac4521ecb6b0bf5cecf22fb92b4a1327220c034f4a6ab04ba1aaf778618ae7b",
+      "characters": 30066
+    }
+  ],
+  "audit_receipt_id": "e96c44d3c5dacd1a35f9e11c0efcf4746ef156b94828614c8141af2433e25a41",
+  "acceptance_id": "0023133f119f97fb765121e714f365df9ebabf074ee1af2b37b9b759ccda33ab",
+  "no_additional_proof_submission_or_audit_retry": true,
+  "scope": "exact C1-C4 stage only; mother problem remains open",
+  "supplement_delivery_claim": "available in shared workspace; no new recipient acknowledgement fabricated"
+}

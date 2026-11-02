@@ -1,0 +1,47 @@
+{
+  "obligation_id": "b5f118d33a9d9687ac8e3d48ca7df6e5c0403aeba52c026d88087e385e813354",
+  "contract_id": "873515c4586d37a2bde324010bea6ae30f820927b7c25ded15b784a79eef7e45",
+  "predecessors": [],
+  "proof_file": "c1-proof-v1.md",
+  "proof_sha256": "c80a71242b438eda82b4b1717838a15da30232db18c4b97096f29f45c5101fc3",
+  "sources": [
+    {
+      "path": "PROBLEM.md",
+      "sha256": "960299dbb9730b6f8b7d9de81128fabcca03b7342a456beb57572e52d490caca",
+      "author": "current project",
+      "use": "D1-D7, exact C1"
+    },
+    {
+      "path": "inputs/AUTONOMOUS_RESEARCH.md",
+      "sha256": "e21e211cfda567f2f5bdca8b5bc7bd42fd59527938bc1ec77d5e50ff22003424",
+      "author": "responsibility instructions",
+      "use": "scope and execution"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/001-relative-code/prover/c1-proof-v2.md",
+      "sha256": "f8f6a56b4b458ff3d0033fa8cd29d27e3e32067dd643c2a9e51ba411ed6dadcf",
+      "author": "Prover stage4",
+      "use": "clean proof and elementary inequalities \u00a7\u00a71-7"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/prover/upper-program-certificate-v1.md",
+      "sha256": "b1a0de75230bb5ec2cd58417e09f2c0bb3ca7818e2fd513c6e0333f81b7beab4",
+      "author": "Prover probe012",
+      "use": "pollution, reciprocal, grid \u00a7\u00a71-4"
+    }
+  ],
+  "gpu_work": 0,
+  "diagnostics_rerun": false,
+  "status": "ACCEPTED",
+  "verdict": "PASS",
+  "fact_id": "f9e055bd405c4b56",
+  "evidence_id": "61f169db99848f6794e334ea287037fae00a592f4b5e5254d580c0b9f74a599f",
+  "evidence_kind": "LLM_CHECKED_PROOF",
+  "obligation_status": "DISCHARGED",
+  "evidence_content_hash": "19a572c3d885cba4205e2744f5605005218618ede8ed0deca347b586f2b693cd",
+  "root_status": "OPEN",
+  "root_final_audit_completed": false,
+  "gateway_file": "c1-gateway-v1.json",
+  "readback_file": "c1-readback-v1.json",
+  "repairs_required": false
+}

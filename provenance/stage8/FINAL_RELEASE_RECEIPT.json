@@ -1,0 +1,121 @@
+{
+  "status": "ROOT_AUTHORIZED_FINAL_STAGE8_ARCHIVE_INDEPENDENT_DELTA_PASS",
+  "recorded_utc": "2026-11-02T11:45:30.354845+00:00",
+  "archive": {
+    "path": "DOT_v10_source_corruption_stage8_20261102.zip",
+    "sha256": "89d434c7b0d9fe81d6e3b2f47cb64ac6c019b8a3abdd8678910f2a814e451e38",
+    "bytes": 27369241
+  },
+  "package_root": "DOT_v10_source_corruption_stage8_20261102",
+  "source_manifest_sha256": "2186c43b00fc63dfb35a7d1aa80571eb9f5414b5e23409eac51d6c7e8ceeba96",
+  "root_authorization": {
+    "path": "authorized_artifacts.json",
+    "sha256": "859293a6a4499b77b7ca292de294f7944b7fd19ef666f7c11e8e5ac8a8f86189",
+    "bytes": 4076,
+    "status": "ROOT_AUTHORIZED_AFTER_FRESH_SCIENCE_AND_VISUAL_QA",
+    "time_utc": "2026-11-02T11:38:19.043843+00:00",
+    "artifact_bindings": 26,
+    "scope": "Root read all three English TeX sources, full Chinese mathematical source, complete fresh scientific audit and package receipt. Root directly inspected all 27 English and nine Chinese rendered pages via labelled three-page contact sheets across two sessions. No layout issues found. New tolerance corollary accepted as explicit derived manuscript result, not seventh frozen unit. Independent LLM checks are not formal or external review.",
+    "identity_boundary": "Supplied root-role record, not a cryptographic signature or packaging-agent visual attestation."
+  },
+  "independent_authorization_delta_audit": {
+    "path": "AUDIT_STAGE8_AUTHORIZATION_DELTA.json",
+    "sha256": "32758798a316c4aa3b8763485f0a722e17d51051f41a47ed5d1e71e34f8d4b5f",
+    "bytes": 32116,
+    "status": "PASS_AUTHORIZATION_ONLY_DELTA",
+    "findings": [],
+    "checker": {
+      "path": "audit_stage8_authorization_delta_independent.py",
+      "sha256": "0d9f5b785bdd61ff30c82a0d12c44c485d5f78ce44a3a72e0de7564f550bd1cd",
+      "bytes": 16713
+    },
+    "audit_finished_utc": "2026-11-02T11:43:16.163009+00:00"
+  },
+  "newly_executed_verification": {
+    "exact_final_archive_delta": {
+      "added": [
+        "DOT_v10_source_corruption_stage8_20261102/RELEASE_AUTHORIZATION.md",
+        "DOT_v10_source_corruption_stage8_20261102/authorized_artifacts.json"
+      ],
+      "removed": [],
+      "changed": [
+        "DOT_v10_source_corruption_stage8_20261102/SHA256SUMS.txt",
+        "DOT_v10_source_corruption_stage8_20261102/SOURCE_MANIFEST.json",
+        "DOT_v10_source_corruption_stage8_20261102/START_HERE.md",
+        "DOT_v10_source_corruption_stage8_20261102/START_HERE_中文.md"
+      ]
+    },
+    "payload_files": 188,
+    "unchanged_prior_payload_files": 184,
+    "original_to_export_bindings_checked": 1138,
+    "declared_metadata_line_edits_checked": 43,
+    "authorization_original_hashes_checked": 26,
+    "structured_bindings_checked": 535,
+    "recursive_zip_archives_checked": 17,
+    "historical_evidence_hashes_checked": 13,
+    "prior_exact_archive_deltas_checked": 3,
+    "unchanged_package_integrity_verifier": {
+      "status": "PASS",
+      "payload_files": 188,
+      "restored_paths": 1138,
+      "structured_bindings": 535,
+      "new_accepted_units": [
+        "SC001",
+        "SC002",
+        "SC003",
+        "BT001",
+        "BT002",
+        "EP001"
+      ],
+      "scientific_freeze_utc": "2026-11-02T09:22:25.495805+00:00",
+      "restore": null
+    }
+  },
+  "retained_not_reexecuted_evidence": {
+    "current_script_passes": 91,
+    "expected_historical_failures": 1,
+    "unexpected_failures": 0,
+    "byte_identical_aliases": 7,
+    "exact_or_certified_rational_cases": 913221,
+    "rebuilt_pages": 36,
+    "native_OMML": 93
+  },
+  "full_scientific_script_replay_rerun": false,
+  "document_rebuild_rerun": false,
+  "new_packaging_agent_visual_inspection_claimed": false,
+  "scientific_freeze_utc": "2026-11-02T09:22:25.495805+00:00",
+  "frozen_units": [
+    "SC001",
+    "SC002",
+    "SC003",
+    "BT001",
+    "BT002",
+    "EP001"
+  ],
+  "scope_boundary": "Only root authorization/status and integrity metadata changed. All scientific, script, rendered, dependency/restoration, inherited archive, historical audit/failure and limitation bytes retained unchanged. BT001 stronger interior transport remains unproved. Tolerance corollary is a derived manuscript result, not a seventh frozen unit. JP001/later science and private memory remain excluded.",
+  "preserved_root_pending_baseline": {
+    "path": "DOT_v10_source_corruption_stage8_20261102_root_pending_audited.zip",
+    "sha256": "f2d01ad99dd65c429f47f1abf257dbf32a0b747b2d46201eb40db259178361f2",
+    "bytes": 27364592
+  },
+  "original_candidate_also_preserved": {
+    "path": "DOT_v10_source_corruption_stage8_20261102_candidate.zip",
+    "sha256": "f2d01ad99dd65c429f47f1abf257dbf32a0b747b2d46201eb40db259178361f2",
+    "bytes": 27364592
+  },
+  "prior_terminal_checkpoint": {
+    "path": "AUTHORIZATION_HISTORY/FINAL_CHECKPOINT.json",
+    "sha256": "fdcfc4fc5950e058e9ebeabd2bcf451f42e5eae2877ccc9287e10cfecc4a6d79",
+    "bytes": 2372
+  },
+  "historical_package_audit": {
+    "path": "PACKAGE_AUDIT.md",
+    "sha256": "03f883842f4efd905eec323675faa5be9cdb126a4db635ef740ede374b360747",
+    "bytes": 8843
+  },
+  "historical_package_audit_pending_gate_resolution": "The unchanged earlier receipt truthfully records its prior pending gate; this later exact authorization closes only that gate.",
+  "external_upload_send_submission_or_publication_performed": false,
+  "remaining_authority_boundary": "Submission, public posting, resource purchases and contact with external people require separate user authorization. Root owns authorized user delivery; packaging agent performed none.",
+  "verification_limits": "Independent same-model LLM administrative/package audit, not formal verification, peer review, novelty certification, or proof of the open BT001 stronger premise. Root authorization provenance accepted from the parent-supplied role record; mathematical reading and direct visual inspection are not re-performed here.",
+  "receipt_location_boundary": "External receipt binds final ZIP and independent audit. Neither is inserted into its own bound archive; no self-referential container hash."
+}

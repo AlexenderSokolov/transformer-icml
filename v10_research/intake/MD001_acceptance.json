@@ -1,0 +1,14 @@
+{
+  "unit": "MD001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "mixing_depth/MD001_theorem.md",
+  "sha256": "d7665dbc719fecfab32b2e9c56e6f33a4e70cea7dec5c4efa876c7fff538aed3",
+  "component_proofs": {
+    "mixing_depth/MD001_theorem.md": "d7665dbc719fecfab32b2e9c56e6f33a4e70cea7dec5c4efa876c7fff538aed3",
+    "mixing_depth/MD001_upper.md": "f1eb7603649291e7033c658fd81f8443b91fb15a7e77a5801105140699dd5213",
+    "mixing_depth/MD001_binary_lower.md": "d9fe8d4c75c30cce7d9d472e7ed486db0f77f18974200c757538523284871dc3"
+  },
+  "review": "mixing_depth/MD001_independent_review.md",
+  "time_utc": "2026-11-02T07:10:03.541878+00:00",
+  "scope": "Sharp fixedQasympsqrtM primitive-depth orderTheta(1+lnf_K), allbeta,bothinit,K>=2; eK=beta0 K>=3 andmaxsqrtbeta1/M binary. CapacityadmittingGDcompander, sameuniformFApaidprecision. NoallQdepthsurface/uniformgrowingdepthgridfloor/PUREclaim. Poststage6freezeexcluded. Rootreadall3proofsandfullfreshreviewwithcost/monotonicityclarifications."
+}

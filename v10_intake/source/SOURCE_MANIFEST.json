@@ -1,0 +1,2739 @@
+{
+  "prepared_at": "2026-11-02T01:36:07.944735+00:00",
+  "user_request_date": "2026-11-02",
+  "source_status": "READY_FOR_USER_TRANSFER; Dot receipt/execution not verified",
+  "raw_dot_archive_sha256": "92baf0b633353ab1790f292ba59d3d019b204f87ae5ae84878b82b59e77e0fe4",
+  "raw_dot_archive_bytes": 2757401,
+  "source_files": [
+    {
+      "path": "sources/dot-return/original.zip",
+      "origin": "DOT_conditions_global_completion_20261030_v2.zip",
+      "role": "User-returned Dot scientific archive, unchanged; includes the complete nested inherited archive.",
+      "bytes": 2757401,
+      "sha256": "92baf0b633353ab1790f292ba59d3d019b204f87ae5ae84878b82b59e77e0fe4",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/BOUNDARIES.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/BOUNDARIES.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 2377,
+      "sha256": "457309a6505ae407ae38f0ebe58674456e34444010720d7e12bbb498071010fe",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/BUILD.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/BUILD.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 1379,
+      "sha256": "a04af7b262fd5861cf49cd2471fb71f41c372b9cee20473e167d7856771434c7",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/COPY_MAP.json",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/COPY_MAP.json",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 95204,
+      "sha256": "d6f0ff5a00da52f8ef4ee3a2337bc0b46b2b98ff6740bd2ddc9a6607357effbb",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/EDITORIAL_NOTES.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/EDITORIAL_NOTES.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 3372,
+      "sha256": "a0a143e55164fa0db5168516b7de2e4014e22f7c141cf79040ea67125e19d1c5",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/README_中文.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/README_中文.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 2811,
+      "sha256": "1485c0f7ca507d46011bae60b8a8c2c4a0404bbcbc19c11c0a3b1c8b00a5ea06",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/RETURN_CONTRACT_SUMMARY.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/RETURN_CONTRACT_SUMMARY.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 2393,
+      "sha256": "d586d14bc5cdac9c0e8b090ef70f41360f253685483256caecca805889f73411",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/SHA256SUMS.txt",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/SHA256SUMS.txt",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 2478,
+      "sha256": "a190bf03628d0c618b960138b6337a1ec2dee4c5f5b87a56e98266323794ce46",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/SOURCES.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/SOURCES.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 3410,
+      "sha256": "bf1c074c2c729cbd17303907cfa5cca7b7bd00fb73cb7771573a12bf935fe264",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/SOURCE_INDEX.json",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/SOURCE_INDEX.json",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 108637,
+      "sha256": "7dd18caf0363d3ff83d943efa75b473d87bd16251561015e0f9514be3b918a30",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/checks/R006_check_result.json",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/checks/R006_check_result.json",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 387,
+      "sha256": "3f9cce472c691cf71af64ee00d1d0f8b9746ef06389ca82ef53e2a1832c19f1d",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/checks/R009_check_result.json",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/checks/R009_check_result.json",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 1383,
+      "sha256": "f8e67b005a4e93e728157849a1e3583509307d9fc3b99ec9e3cb1930040f51ea",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/guide_中文.pdf",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/guide_中文.pdf",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 235732,
+      "sha256": "1e67a861b1156dcafe23f0a251735f4b0da624f6812b951d065bd6725cdf1a16",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/guide_中文.tex",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/guide_中文.tex",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 15476,
+      "sha256": "991230e6174d1713c903037c9e0f722a68be5db0d982636aafd6c0469d7fcf2a",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/proofs/R006_absorbing_cutset_v1.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/proofs/R006_absorbing_cutset_v1.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 10211,
+      "sha256": "064ce06c916f6d50cb069c4e2e6dd2ab1529d65fc3ef34454e8d6bc886a10116",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/proofs/R008_absorbing_blind_corollary_v1.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/proofs/R008_absorbing_blind_corollary_v1.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 3688,
+      "sha256": "f3b19936953696ef989f87d5c0a92d4ec79a1a4b3edbe6997c9dd8873c660b07",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/proofs/R009_general_pi_tilted_cutset_v1.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/proofs/R009_general_pi_tilted_cutset_v1.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 12903,
+      "sha256": "a0372f3a58678e317f6b2bc90dbeb96bd8db28225dae126d5934989d7aed768b",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/proofs/R010_original_iid_lower_reconstruction_v1.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/proofs/R010_original_iid_lower_reconstruction_v1.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 8347,
+      "sha256": "7ed6fa1bd57a9386dc0605b2a8f615b48ca69a05e6857870b0d5b089fa4ed497",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/proofs/R011_global_rates_and_constant_adaptation_v1.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/proofs/R011_global_rates_and_constant_adaptation_v1.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 10913,
+      "sha256": "1b7133c69131b84c6e7e235338797e683eaa2c0e73b9c83a26612e344f78039d",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/reviews/R006_independent_review_v1.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/reviews/R006_independent_review_v1.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 13246,
+      "sha256": "9681dce6c8a38190e0bd69ae13c7a1f0d875a53e7d4d41313677d83a5e693691",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/reviews/R008_independent_review_v1.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/reviews/R008_independent_review_v1.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 10615,
+      "sha256": "752941646336179cdcf8641d248cfcd4a9e9cc69be1839b794c90e91c1f335af",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/reviews/R009_independent_review_v1.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/reviews/R009_independent_review_v1.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 15579,
+      "sha256": "29be86ae94564163260d2f4567f47be971466439ec8929ad6bce10d5eae5a019",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/reviews/R010_independent_review_v1.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/reviews/R010_independent_review_v1.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 8960,
+      "sha256": "937b75c24b554e11cdc1401c78e2e14c17163798c29bdf6f1413fb90319284e9",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/dot-return/readable/reviews/R011_independent_review_v1.md",
+      "origin": "original.zip!/DOT_conditions_global_completion_20261030_v2/reviews/R011_independent_review_v1.md",
+      "role": "Readable exact outer scientific copy; scripts are retained only inside the unchanged original archive and were not run.",
+      "bytes": 13463,
+      "sha256": "39b9a08b264b70cd6f4efa36e39fb32efca27b077cab43c42d3784b972c79e00",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/research-plan/ICML_研究总计划.md",
+      "origin": "plan/ICML_研究总计划.md",
+      "role": "Original v10 long-term scientific plan; status is supplemented by the new RESEARCH_STATE.md.",
+      "bytes": 55984,
+      "sha256": "cd42fa71a891284832291451b00a9d36da27426ef37540fa5c29c76354f654a2",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/research-plan/assets/prediction-mechanism-v10.svg",
+      "origin": "plan/assets/prediction-mechanism-v10.svg",
+      "role": "Figure referenced by the v10 plan.",
+      "bytes": 8859,
+      "sha256": "9faa11cd3ce17ec7163fe3a4438cc1b3e562cb6f58d9e515f7587aaea139035a",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/research-plan/assets/research-roadmap-v10.svg",
+      "origin": "plan/assets/research-roadmap-v10.svg",
+      "role": "Figure referenced by the v10 plan.",
+      "bytes": 6082,
+      "sha256": "14a933a3f1b87788b43bf63452b91fa8d67977f6b6f9c81f6bf099ab5495e7e4",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/A-consistency-accepted-statement-v1.md",
+      "origin": "runtime/v10/evidence/A-consistency-accepted-statement-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3443,
+      "sha256": "725b6f65c1d1e5423b4241b3587617c2f40e1615ce7871c2444475555d908b18",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/A-consistency-native-acceptance.json",
+      "origin": "runtime/v10/evidence/A-consistency-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 11389,
+      "sha256": "f5f0cab2d41375fe292924eb1697b5f5efb43f7bd58d8ecd8b6de24d48cbbe2c",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/B-operator-accepted-handoff-v1.md",
+      "origin": "runtime/v10/evidence/B-operator-accepted-handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4223,
+      "sha256": "c889782c05769f8ebe029f0248ca37ea926d50ec19e901bc65fe9d656edf2dc2",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/B-operator-native-acceptance.json",
+      "origin": "runtime/v10/evidence/B-operator-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 12664,
+      "sha256": "9a3abccb5fda2e404ac939f1fde61866d6aac9ec887a8be7d778d741d027db86",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/C4-independent-review-v1.md",
+      "origin": "runtime/v10/evidence/C4-independent-review-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 30362,
+      "sha256": "bb8d1d07ee6507e2c7561152ef6760885cb818f03d9742f10347553288d1f35d",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/C4-integration-review-v0.md",
+      "origin": "runtime/v10/evidence/C4-integration-review-v0.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 22659,
+      "sha256": "3fea26935d7b16046a8390fea99bc1b0f683498d2d54b90c570da6c6f0b43f9e",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/C4-neighbor-review-v1.md",
+      "origin": "runtime/v10/evidence/C4-neighbor-review-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 16714,
+      "sha256": "8e6ea60f19d7069fa71c60613f974a9155c76d30c72c6ff7089de615ad10c71a",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/compatibility-native-acceptance.json",
+      "origin": "runtime/v10/evidence/compatibility-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 18101,
+      "sha256": "b8aefdc5a01d237df3d92b74a0a53eb9703f9db4d781c3e0d462534a95c783d3",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/counter-accepted-handoff-v2.md",
+      "origin": "runtime/v10/evidence/counter-accepted-handoff-v2.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 5669,
+      "sha256": "81ff5c7e8118a581c6b9297cd0b54869b9f0c1b1396a551034475cf4abdc5ce1",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/first-admissions.json",
+      "origin": "runtime/v10/evidence/first-admissions.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 9730,
+      "sha256": "7ac869bfecb50e3e80126b4893c5a75530f6307647bdfe018a524709c943b525",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/first-math-checkpoint-v0.md",
+      "origin": "runtime/v10/evidence/first-math-checkpoint-v0.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 13621,
+      "sha256": "f019e8a6a01fcdaa323bbffee7a46972aa492f20b736fd4c76e7a713d9f7a2ed",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/floor-bridge-accepted-handoff.md",
+      "origin": "runtime/v10/evidence/floor-bridge-accepted-handoff.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3086,
+      "sha256": "6e95c7c4ffec3ef7cfe24d804a54fcd108985dd9c20d77b01ea23bba4b9fdc12",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/floor-bridge-native-acceptance.json",
+      "origin": "runtime/v10/evidence/floor-bridge-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 15876,
+      "sha256": "c0b910556c3132cb198ba534c558fb6cd8e42f561e9f0dd4ea981155bc0af210",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/joint-risk-accepted-handoff.md",
+      "origin": "runtime/v10/evidence/joint-risk-accepted-handoff.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 6836,
+      "sha256": "62859310794a4b8ce1188c7c4bb387048badc0c3a0f64a49eef724f19377f4a5",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/joint-risk-native-acceptance.json",
+      "origin": "runtime/v10/evidence/joint-risk-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 15782,
+      "sha256": "89e179c7eee58ea3a116907af4ccded75b68ebcde5f2f150a17aef005d1fd57d",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/precision-accepted-handoff.md",
+      "origin": "runtime/v10/evidence/precision-accepted-handoff.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3779,
+      "sha256": "101c3cf214c739c9f258f5120167f76af9fc8236bb5e006a79fa3c5e3c42c7ce",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/precision-native-acceptance.json",
+      "origin": "runtime/v10/evidence/precision-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 14956,
+      "sha256": "9ed1b32caaf5f20d6443a32abb4ae9401c162637ed48dc3734dd2dbc19943895",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/prover-accepted-statement-v1.md",
+      "origin": "runtime/v10/evidence/prover-accepted-statement-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2146,
+      "sha256": "ad80a5fd7f7fa9258ab1418f912d76f397f82a0d422e8c8c9903acb8b4773ebe",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/rare-finite-N-accepted-handoff-v1.md",
+      "origin": "runtime/v10/evidence/rare-finite-N-accepted-handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 6522,
+      "sha256": "2684823adb739444c483f86138f8f7ef5a244c093e5892d16b91194e860b5880",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/rare-finite-N-native-acceptance.json",
+      "origin": "runtime/v10/evidence/rare-finite-N-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 15092,
+      "sha256": "d46ff69711c1768c8f5d365ba7fa841231718fc15abf25c3b28cf32f003e57ba",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/scaling-native-acceptance.json",
+      "origin": "runtime/v10/evidence/scaling-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 11751,
+      "sha256": "957fd4c076df9cfed5abf15568ff4bb8f29e9314da99aad27c30773400b75fda",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/stage1-final/completion-check.json",
+      "origin": "runtime/v10/evidence/stage1-final/completion-check.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1375,
+      "sha256": "1b602035c737b8a99066ace63d4a35f61f9be9f9653bcb94e9faa440c92d56eb",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/stage1-final/copy-receipt.json",
+      "origin": "runtime/v10/evidence/stage1-final/copy-receipt.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1600,
+      "sha256": "873cb55f00c6e8eaba523cc8f2e90a1aebb2990acb98581be4de960c278ac60b",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/stage1-final/final-audit-return-v1.json",
+      "origin": "runtime/v10/evidence/stage1-final/final-audit-return-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1812,
+      "sha256": "e7c1f6a1b7cdb2a7edd6e94373ccf8aada29017d4cda15bd62a9bb8d9a79ab22",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/stage1-final/handoff-zh.md",
+      "origin": "runtime/v10/evidence/stage1-final/handoff-zh.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 7219,
+      "sha256": "19fa4b47fccea36630fdf0e83a8750fbabd08463d606cbb211ac27bc60384c92",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/stage1-final/stage-synthesis-zh.md",
+      "origin": "runtime/v10/evidence/stage1-final/stage-synthesis-zh.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 6085,
+      "sha256": "9cca14e4cbc81af91fef17e751434cb33a0ac85862c2105aeeb09dc468d4e8bc",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/statistical-comparison-native-acceptance.json",
+      "origin": "runtime/v10/evidence/statistical-comparison-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 17156,
+      "sha256": "d22d91d6da3bf71a79f2b878a75c3a0d527953804a7fb311a1fed67a42bb528a",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/evidence/T123-synthesis-native-acceptance.json",
+      "origin": "runtime/v10/evidence/T123-synthesis-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 18110,
+      "sha256": "8d805ec339b26abcdfd9da54524891009b2e96db9725a0ada18a02ae205bc9bd",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/C1-cold-review.json",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/C1-cold-review.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1994,
+      "sha256": "4537145d4aee0b18f1899e65ae9517573ab2f2f3d58bc76ce75dadf9d93bd367",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/C1-native-acceptance.json",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/C1-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 8753,
+      "sha256": "cd1db8a0897ea28c79ef133854118c6f953f36f3ff1e6ace6414898e3bd7fbc5",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/C1-proof-v1.md",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/C1-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 33072,
+      "sha256": "36260d168f17b9da129179070a70c5e87019a45d98c60f1c343a9e1c5e60287b",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/checkpoint-v1.md",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/checkpoint-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 14824,
+      "sha256": "c4bfa424325aae9d8895500824e079ffdce252eb99bfb2b38d2208ef40a465c0",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/count-snap-handoff-v1.md",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/count-snap-handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3597,
+      "sha256": "3a5ff2bbc0ec6dd2e5e02853350e8ed76f49f8024671bda0be3d99d3b9dafe6a",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/count-snap-native-acceptance.json",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/count-snap-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 9941,
+      "sha256": "8cadff7b485d96039a457992f365a2eaaf36f28c5f5bd4d24edaf2c4b32d200d",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/count-snap-proof-v1.md",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/count-snap-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 30894,
+      "sha256": "8b9308eaebe171021dba4ce729531b86316966b8298235919e16602bdf5a5e6a",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/finiteN-reliability-native-acceptance.json",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/finiteN-reliability-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 12829,
+      "sha256": "42d986ca0c66e3f37a3699521b313ba9d831755d49336296af8ccacd97359482",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/finiteN-reliability-proof-v1.md",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/finiteN-reliability-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 47359,
+      "sha256": "2694840f91b432bf98c551ea5607df41a08e757500a785a8a03e019230ddfd4b",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/first-math-copy-receipt.json",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/first-math-copy-receipt.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 908,
+      "sha256": "a68edcd5c8a4e84b99b20e561e58a1e90b49b3cadd0eb404ef24a8197507b3e1",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/implementation-audit-v1.md",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/implementation-audit-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1804,
+      "sha256": "e792c5b7044ceec55824591d40afff4e9ba6dec3fa6ad6d455bf876b366f1ce1",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/root-admission-handoff-v1.md",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/root-admission-handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1339,
+      "sha256": "ed56dcde59efcb642d453dcd19319d7732b62a9f159fb5a242ea83291fa1b258",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/root-native-admission.json",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/root-native-admission.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 27257,
+      "sha256": "70c43451abf070b783a5b4921dd36b2ba9e7c7ce47b96450ddf2e4f7368627bb",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/root-proof-v1.md",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/root-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 52802,
+      "sha256": "e8e2b823e13596651f1d7df04779532a265e8cd6ed768ac2aedede7c208e5232",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/stage2-final/copy-receipt.json",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/stage2-final/copy-receipt.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1575,
+      "sha256": "8b3df5d4d9c7df1a5a3c91f527930569e2de2dbaba9d01229301e136b1610554",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/stage2-final/final-audit-manifest-v1.json",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/stage2-final/final-audit-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 19975,
+      "sha256": "d13dc54bd7f005fdd5fd609649907f5d6c4f40edccb624dd4a6db8077eec2cfd",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/stage2-final/final-audit-outcome-v1.json",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/stage2-final/final-audit-outcome-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1591,
+      "sha256": "6faf9b4e840bf1368498cbbe26412acf4602a725b10f31cd0ab078d699b0ec90",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/stage2-final/final-audit-return-v1.json",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/stage2-final/final-audit-return-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1812,
+      "sha256": "be43500599c0ec116e96a4081f1166646ecaf5d9c974464dbcdb19ed5f061274",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/stage2-final/final-handoff-zh-v1.md",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/stage2-final/final-handoff-zh-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 5234,
+      "sha256": "26dc237799b08ec5825a90ff40b79f0d70ea390d1afc78aa28b81914542e5929",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/strong-comparison-handoff-r1.md",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/strong-comparison-handoff-r1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2290,
+      "sha256": "39b0868d0be1962127731ed5d009dee0cfce3cff3405f6e00847ac00e9efb66e",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/strong-comparison-native-acceptance.json",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/strong-comparison-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 12477,
+      "sha256": "0402ec17318384b4a73d15961b5e217aa3c5d8e50568189fb560634f35694290",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage2-flow-heads/evidence/strong-comparison-proof-r1.md",
+      "origin": "runtime/v10/stage2-flow-heads/evidence/strong-comparison-proof-r1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 59164,
+      "sha256": "86985cf7d50f8d39f4cc9e0d645693e2aaede4cfca9322349ed2dcb186961660",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/c1-evidence-readback.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/c1-evidence-readback.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3156,
+      "sha256": "02022ea74a99e7a732ada8bcc044b0074fcdb3c6261968f490fc6723173e772e",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/c1-fact-readback.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/c1-fact-readback.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 31764,
+      "sha256": "7f0315c5a0a002ce4e9cb0ad9199e91309fe2cf4976d8082573087b53469fb27",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/c1-response.raw.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/c1-response.raw.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2524,
+      "sha256": "8b1662b05b1666e5b36265ab06ae4c1da71fcf751eeb1585bc92fe592c47d399",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/c2-response.raw.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/c2-response.raw.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4061,
+      "sha256": "302eafcaf12cc877e93648096ca6a878ef334e11390cc14e1e321c0008020d8b",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/c2-v1-to-v2.diff",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/c2-v1-to-v2.diff",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 11882,
+      "sha256": "c33d01c2f5a02714b17080d4cbe275a4a578c2fb4d313a5e7f073864c0746bbc",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/handoff-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 7236,
+      "sha256": "88c38c3642191ecb053749cc741853a4d5924bef681e0e257b37ec37c2f8dbe7",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/manifest.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/manifest.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4415,
+      "sha256": "0301fa60b6a4ef5ee3e3716c868ced77f282bcdd7b1312b2372c534a1375fced",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/summary.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v1/summary.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3390,
+      "sha256": "bf6811c67f6720837f6bd9ee594a81a8fb9b07a125b4c560ed31d1728247192c",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/boundary-after.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/boundary-after.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2007,
+      "sha256": "ebd00b28160a257b0183470174c665d16af462e8d6d2289d86d44e3b8ec95e21",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/c2-evidence-readback.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/c2-evidence-readback.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3399,
+      "sha256": "1808105f3873e2f39dfc24d1388124edec50227611db788d20a4cdc713c6e239",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/c2-fact-readback.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/c2-fact-readback.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 36198,
+      "sha256": "10f54dd14526391828dd6d2a99518cce785a9d4a35580019e4390fd8d1e51e52",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/c2-response.raw.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/c2-response.raw.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1621,
+      "sha256": "9a0005b330d99bbc4f2e821f8dca5cda2a556d88a2f2d515b0ea3787b374a926",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/c3-evidence-readback.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/c3-evidence-readback.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3469,
+      "sha256": "7fa51ad04e82edc5b2be606ec8a1389303dd5b40b21247afe143f9cab7230b9f",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/c3-fact-readback.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/c3-fact-readback.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 68942,
+      "sha256": "9322f69e283564771cb68985054af859a15274e83e8f75ab83c37b92573b9263",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/c3-response.raw.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/c3-response.raw.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3440,
+      "sha256": "5a51b052277f93457cd159461e9326eb81141fbfb188931f9c42326a714ba719",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/handoff-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 6762,
+      "sha256": "ac834e0c1fc6258de5f2737261ba5d7b3f87e85a90cc24c13989e9c7bcfe9af1",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/integrity-checks.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/integrity-checks.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 603,
+      "sha256": "03a8a5968f9d7e5616dff724f0feade02a522ab91b30e05cb21b2070b668db23",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/manifest.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/manifest.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 5086,
+      "sha256": "04224e76f510ed53a90549b8ba2dc84fd5433d55534d1359a717c1831fbe0935",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/summary.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/admissions-v2/summary.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 8878,
+      "sha256": "72a66f2399a12ee996e1fc0ccb4fa4197f846b906c1d677b21d77379e320d328",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/counter/adversarial-review-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/counter/adversarial-review-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 21864,
+      "sha256": "b9273b1e96d5fd16d5eaaa5ed8ce75e8385cd57d6ec9dbe2589582a54f86ad64",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/counter/c2-cost-repair-manifest-v1.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/counter/c2-cost-repair-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2549,
+      "sha256": "dd47db7c699fc274cf289ed7fbc307fc9d17be623e7d7a844242f48589ff00da",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/counter/c2-cost-repair-review-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/counter/c2-cost-repair-review-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 5428,
+      "sha256": "3b133d6493154f73556d31722be2b99cd5549e50f0d4a044ab2177259a8f643d",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/counter/c3-adversarial-review-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/counter/c3-adversarial-review-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 11377,
+      "sha256": "f1db7ce9110bdc782e6b15df291154535bf808567d9629711320d850a829c768",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/counter/c3-review-manifest-v1.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/counter/c3-review-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 7005,
+      "sha256": "e735da588c341208bc6be8bd4c4b45ed259c187a153ac9b1e89736a2e961ac0d",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/counter/c4-integration-review-v2.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/counter/c4-integration-review-v2.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4858,
+      "sha256": "061ca17c2f6ce1154f6a0d0000126038b2dcc473da3a92e55570936a538a67ce",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/counter/quantifier-addendum-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/counter/quantifier-addendum-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 5796,
+      "sha256": "3f2ce979b70829603504a10ab5d1b79bc6f625235ffb0da9653dc734b0fff46a",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/counter/sources/primary-map-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/counter/sources/primary-map-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3982,
+      "sha256": "f5b2fdcfd9b96ce74ebc8141b9dd0dde7c33caa10952aca6dacf90229a9d6f45",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v1/c4-response-v2.raw.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v1/c4-response-v2.raw.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 7516,
+      "sha256": "102ed57920200e8dd5dbf87ee5fd4f13613f87b179b3816849b3795ab597d009",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v1/c4-verdict.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v1/c4-verdict.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 6710,
+      "sha256": "bf77452d74aaa37ab1ee02eb4e4ee0c408c60e439d65052b090f96472a1221c7",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v1/execution-report-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v1/execution-report-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4199,
+      "sha256": "154a8cd065bf408a28ee8358f393480e2253925822dda6ce17afbee0d3045481",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v1/manifest.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v1/manifest.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 7750,
+      "sha256": "eac723cd4519dbcdb8f2d9ff9e1ff8247ba79837ab5e08de0e9f8e084bba67c2",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v1/request-response-integrity.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v1/request-response-integrity.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1072,
+      "sha256": "2b7035820e19b0cdb8fa884ef32a761b13ca0a37561a14d4c513ac2d8d17a82e",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v1/responsibility-handoff-zh-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v1/responsibility-handoff-zh-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 9653,
+      "sha256": "087d605d408aa83fc51a8711e14964eead22d56b946840af24549d0f46cb0ebb",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/c4-evidence-readback.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/c4-evidence-readback.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3423,
+      "sha256": "fed02670fdb2f3679e8e2d26bcb87119e90e53719c2ee8053a92db830ee79fc0",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/c4-fact-integrity.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/c4-fact-integrity.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1375,
+      "sha256": "6efdfe7e251aabb77ce0d71b3a0190bfaaa3c6221be6dce633423efa3111f053",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/c4-obligation-readback.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/c4-obligation-readback.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2937,
+      "sha256": "194e76b002adcc582d9c14379b7bd55e45691dd69f130f319f9e3d4525413909",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/c4-verdict.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/c4-verdict.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4330,
+      "sha256": "37fd70c97ff1f00dc6b5bb25f43d5daf7280eb225199112af69d065149a506fe",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/root-conjunction-proof-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/root-conjunction-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 30381,
+      "sha256": "7ac4521ecb6b0bf5cecf22fb92b4a1327220c034f4a6ab04ba1aaf778618ae7b",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/root-evidence-readback.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/root-evidence-readback.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 6952,
+      "sha256": "f9e0c4245e1f5afd4a7f09abd988e9b2f09bf98d9b921a6d6854cc426a7fe4d7",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/root-fact-integrity.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/root-fact-integrity.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4849,
+      "sha256": "6dcd6b4b230675eb284ca904eb18c4a2864609e9f1d13f727a9413d8db4eb4b8",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/root-obligation-readback.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/root-obligation-readback.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 6393,
+      "sha256": "4e2ef8e28a85aab99fd77dab07eae21c89e1ffdee727bd4c252bce0fcd200631",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/root-verdict.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/root-verdict.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1034,
+      "sha256": "795136cff364b2aaf7149962d35fbd2e774d1cd982c8958617bed826def673ce",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/first-checkpoint-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/first-checkpoint-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 5934,
+      "sha256": "7c19965199c6cd92dc578c3a3f4d91009fbefc2948754b5de6e21b292dce8b4a",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/implementation-checkpoint-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/implementation-checkpoint-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 11191,
+      "sha256": "ff29424bef9a5225e3d79c6790804514980ccf6f3f047d55a6d229f9640c6ce8",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/lead/c4-counter-return-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/lead/c4-counter-return-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4812,
+      "sha256": "3349516baee38b4a1c29d17fdc0b34bd0a7bb8573b5e23ff3684071b974a2c6b",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/lead/fixed-package-manifest-v2.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/lead/fixed-package-manifest-v2.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 16038,
+      "sha256": "9bf3e8dcac27b349c5d079c7f55dd9f9bc6272d63f58350c27f1cce97dc18c2c",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/lead/integration-theorem-v2.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/lead/integration-theorem-v2.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 19133,
+      "sha256": "c12b62d4b6d9d8e8977b40724d157f3835b46ec713220ec8e21ddeedf140825e",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/lead/joint-accuracy-corollary-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/lead/joint-accuracy-corollary-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 5964,
+      "sha256": "37c3f17f3e427787baa8892e216a5c9b68508f538f24e3a95cdc31c646012c92",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/lead/primary-comparison-v2.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/lead/primary-comparison-v2.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 9425,
+      "sha256": "b9d021f516a61d2d73dfe9f0c0b5279237674f44c037e65868cca3c0c302b4a5",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/lead/primary-synthesis-checkpoint-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/lead/primary-synthesis-checkpoint-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4936,
+      "sha256": "b12f56a4e7458c7886370c595d62aad2966b266ed943c7d6614738a7a77dd7f1",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/lead/stats-grid-review-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/lead/stats-grid-review-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 7029,
+      "sha256": "b682098e988151e907df8c508c901742f2d3ee18569b8c376ca32cd904083592",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/lead/verifier-return-gate-v1.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/lead/verifier-return-gate-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 10402,
+      "sha256": "c65e81ce0901aba978a14bce2bcdf9b82e6777cad1b6a87e3a9ac4233a66b2c6",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/prover/c1-proof-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/prover/c1-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 21542,
+      "sha256": "5884ffc213a0aaa950b48f881abd4519440800737485b5c3aae9d293c38fb38d",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/prover/c2-cost-check-results-v2.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/prover/c2-cost-check-results-v2.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 426,
+      "sha256": "d711c2f37cc85af5af12b9a9c4eacd6fff3c0c27ebf053384e4639e6bbc03a32",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/prover/c2-proof-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/prover/c2-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 14467,
+      "sha256": "a008ec575571973d7df08ece2468c901744a6c3680df08b15a008c38ff1d7105",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/prover/c2-proof-v2.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/prover/c2-proof-v2.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 23197,
+      "sha256": "b8de1c83444044357790ab8062caa443a701f260b7d631dbae35f85c308f667c",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/prover/c3-code-audit-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/prover/c3-code-audit-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 7734,
+      "sha256": "5648f1bc74b43d44f7597ae055190e41d21413d207049ec59601210211334ee6",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/prover/c3-handoff-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/prover/c3-handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 5589,
+      "sha256": "c58696200c9aaf1d4905b651b6a6d7af21c9273c6ee85c3742f40043a015a884",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/prover/c3-manifest-v1.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/prover/c3-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4387,
+      "sha256": "f123e70d912490638c8f8c2bbe1a2b034d4af28dcceb6b62d22018d1264ee87a",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/prover/c3-proof-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/prover/c3-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 58094,
+      "sha256": "68dcb797dfe0e2103d2f35034311efa97d9ae496dedf4eafc67c600b34a8679c",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/prover/c3-resource-certificate-v1.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/prover/c3-resource-certificate-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 35558,
+      "sha256": "2a5aa300d24cebebc8006f2f4ced9ad4fa00f07f562e5d9eb697c534c5765125",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/prover/c3-resource-ledger-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/prover/c3-resource-ledger-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 33002,
+      "sha256": "c00336780dfb8e7cfcdad1ffc2542d8319508b1fdf40f278dcf1960c0105076c",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/prover/handoff-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/prover/handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4244,
+      "sha256": "c2210264292f82d78cc3a6b71774322319061d0c074124c65eec3746035a40cd",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/admission-readback.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/admission-readback.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 44888,
+      "sha256": "88e963dca583d012ef2f5c85a04d01313ba433e423fca659fdd65694988d22c7",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/archive-validation.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/archive-validation.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1747,
+      "sha256": "b88f71bbd4aa031b56bf42d18c4121c73ebfbc0fd5d26ee02e9991ec47c95e1d",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/audit-response.raw.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/audit-response.raw.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1812,
+      "sha256": "e5dcfd501b2764740eadb9c168ae266e289660143d60a54b0b272cbe6d1b4154",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/audit-result.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/audit-result.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1591,
+      "sha256": "7ba094f009b17d5b464867f3e1e03e9e83f68933257287045be81429a3aaaedb",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/frontier-after-final-audit.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/frontier-after-final-audit.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 7693,
+      "sha256": "87aa2639d2989ba787c47685917b615f63776e7b7e2c163515e3635f8c021d26",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/frontier-before-final-audit.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/frontier-before-final-audit.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 13206,
+      "sha256": "94a6888499f40b3fdcfc56c16add1dd4d723bd2ed664efc377017681a9418746",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/manifest.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/manifest.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3936,
+      "sha256": "4668ee99492b41febea8a667fef8e91403d9894b4efe78468c8ba61fd8703cfd",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/supplementary-handoff-zh-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/supplementary-handoff-zh-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 7320,
+      "sha256": "e2f834058d5df988c00b7829e0af353ddf937918692140e1973418348a63c6a0",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/v2-v3-diff-check.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/v2-v3-diff-check.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 499,
+      "sha256": "9f7a665cba8c4feb484281c03379fa9dfe1cb0c9c9e4f733707a41ebf47e399f",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/verification-artifact.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/verification-artifact.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1977,
+      "sha256": "93628d2272150df09dffd5a2504b6d200c1d6fc5f643380bc6a78ddaad2b91a9",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/verifier/c2-cost-and-c3-manifest-v1.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/verifier/c2-cost-and-c3-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 10218,
+      "sha256": "394eaa09753b66902d30bf47ba3c578954759b6021fb7fa4589c762b933f472d",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/verifier/c2-cost-and-c3-review-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/verifier/c2-cost-and-c3-review-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 21996,
+      "sha256": "ab5f63f81d689e85695e610b49e7ea115a7c270f7c317c62867b3c14345687ef",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/verifier/manifest-v1.json",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/verifier/manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2814,
+      "sha256": "a0c2b5d56770f3c4dcae4f3d3a75961be107b108a6a071a8408e30382ce77806",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage3-rare-kl-phase/evidence/verifier/stats-grid-review-v1.md",
+      "origin": "runtime/v10/stage3-rare-kl-phase/evidence/verifier/stats-grid-review-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 17996,
+      "sha256": "9a7ec137568f5494d260a23a6bfdf6e945a11edc1fce9cb0a033717127fb2161",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/C1-native-acceptance.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/C1-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 8435,
+      "sha256": "170b53166fcf199f843a0e359b5b0542ace74b7409b3d4473a81fe95a32d6f6f",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/C2-native-acceptance.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/C2-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 8261,
+      "sha256": "2d3469b88e0f51b2ed74491f1eb7c23b87520f924d18a4456e6644976e5adff4",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/C3C4-native-acceptance.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/C3C4-native-acceptance.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 9723,
+      "sha256": "2567d03a32040907a4de1d76e443462469706d581d45fe66434671a5cb2316e5",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/checkpoint-manifest-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/checkpoint-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4368,
+      "sha256": "74dffab4c716bd109dd6e5ce0a8af135c7d863d672a77ef2bb5acd8fc4af6c64",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/counter/c2-admitted-state-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/counter/c2-admitted-state-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 617,
+      "sha256": "d742fcee85f6b06304d8306c7da2c167e5efb1dd44040505b1cd8e38ab76173c",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/counter/c2-handoff-v1.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/counter/c2-handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3150,
+      "sha256": "2cf6acb971ce87e9f2eb9eacdbe1484a3e25a4f07031451545c6960a61d695e1",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/counter/c2-manifest-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/counter/c2-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3294,
+      "sha256": "d41f02adc4165609963173a4c61f31706415a0e1546b731c5493bc4414423a11",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/counter/c2-native-result-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/counter/c2-native-result-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2716,
+      "sha256": "975ae417b73146a8ecbb6f329b743396b81258ed915d835ffae793f6435817e4",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/counter/c2-proof-v1.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/counter/c2-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 22150,
+      "sha256": "4fd828ae9a535b297134f8f513955e0cbb9cb0225eb25d081df5b101c9e8887e",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/lead/root-review-adoption-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/lead/root-review-adoption-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1744,
+      "sha256": "e2232d76a5917f7a506034248d268e7a3af812326976bb4914e7d5f952992c02",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/lead/root-review-packet-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/lead/root-review-packet-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 6306,
+      "sha256": "1508a58ebbb9422bf3f56ded151509419e3d8cc4fc69eec39f65824bd69f954f",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/lead/root-synthesis-v1.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/lead/root-synthesis-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 14866,
+      "sha256": "e06797a4eccfc8e098e559a3fb5856a35b5287925fd0e17b1c21af9894de7fdb",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/mathematical-checkpoint-v1.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/mathematical-checkpoint-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 20695,
+      "sha256": "df163b669169b0d59eb28d643b204e76e730dab6795da73e668ab22a27baa564",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-admission-v2.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-admission-v2.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 8593,
+      "sha256": "5b146bf7e0fccebb6ca338fc5d2aa4a31a3d32aed782d8758746b521a4ec6aeb",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-consultation-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-consultation-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 544,
+      "sha256": "6814bc76920f044a263cb593d734ead45e3fd8efb25fbf6a68955b0ceeb4e273",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-gateway-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-gateway-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 5539,
+      "sha256": "050f039f00095e43b4da34988a2a2adcd5564d72838045ed3c8da0e6541be01d",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-gateway-v2.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-gateway-v2.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3174,
+      "sha256": "f64fa24af5e8d90627922293c748b8b4ca7001aaf9fa242cd80fb79115dce8d4",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-lead-handoff-v2.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-lead-handoff-v2.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3011,
+      "sha256": "97262c4b3c4262da7057710d89cf3f820cd63fc6ee42f66f58739308fb43c1f7",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-manifest-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3698,
+      "sha256": "c6cffe5c7270e84de4fa16f7a8d107a45fb08e833af46c76c857c41f5cae6e55",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-manifest-v2.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-manifest-v2.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4147,
+      "sha256": "4d8ca4683947fa99fa90c0d8946e48e1da8daf54ce3c956ec562ab9b3c887c2e",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-payload-check-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-payload-check-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 221,
+      "sha256": "f7ff177164dea1090411b8f71f84cae2833241f532adb24dbd4f47d10804adf3",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-payload-check-v2.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-payload-check-v2.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 221,
+      "sha256": "67d75df879b53b4a6ea7b10c7ccf38b74a037f3fc292b4e538ac6e94433ce5d4",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-proof-v1.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 40523,
+      "sha256": "c79376878e1487cf09ecec1e7ef30c86f5ef41b3529a11ef09daf131aad9f686",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-proof-v2.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-proof-v2.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 44213,
+      "sha256": "f8f6a56b4b458ff3d0033fa8cd29d27e3e32067dd643c2a9e51ba411ed6dadcf",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-submission-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-submission-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1195,
+      "sha256": "ea09cd5da3754d4fb13c34064418cf1c2f229a112892fdd40876bc6cd9f1e782",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c1-submission-v2.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c1-submission-v2.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 793,
+      "sha256": "1e3dac2a15d22f679bf28b750e56df5fb97ff623d56985c142c338df4c3846db",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-admission-manifest-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-admission-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 900,
+      "sha256": "f6c6168e0bf7c771ee8a6d813a3aa61e3cf88dbca70fb4468a7428faafc3fdb4",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-admission-manifest-v1.sha256",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-admission-manifest-v1.sha256",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 98,
+      "sha256": "a11ccba5b46393c103efa82ce9cd47e2632506ef9541756b65b427acc9ac2946",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-admission-readback-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-admission-readback-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 17139,
+      "sha256": "b947d4717cc6ca30935fd7e91d207f8a6324af72980dd0be86fcc6d381473fb6",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-check-results-pre-integration.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-check-results-pre-integration.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 49143,
+      "sha256": "2c3118d659a3461c379387c8f4c01002530a8c856fbc876ba39536bfe3f8bc35",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-check-results-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-check-results-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 50341,
+      "sha256": "6819173fae1f250d81e4bcbd7424b7001fe6ed898e27335a2a31e1a848aad0d3",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-controlled-differences-v1.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-controlled-differences-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1432,
+      "sha256": "7d93de222970b2937ce0abf8d8ba1ed0b2831b65bc08ecd34f972fa68c0f133a",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-gateway-result-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-gateway-result-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2782,
+      "sha256": "5c3c7026260ee33f58180a4cbb0d697e67840f71d505f5401b71a3c983e040f5",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-handoff-v1.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4137,
+      "sha256": "64890b05ac62b3798ea36a625f53d163976e4d277649cb82448e178abbe471dc",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-integrated-v1.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-integrated-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 75162,
+      "sha256": "2fc89f6bca30288d766fcdb71b26875943f2d6efb5fc9a181b401dba1f7e243a",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-ledger-source-diff-v1.patch",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-ledger-source-diff-v1.patch",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 9149,
+      "sha256": "403a69f947b1e19275d5a96e1f6db68786c0450b02e126374b3df1c5fd638271",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-manifest-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 14635,
+      "sha256": "d0fbf2941c77a0ce252db1fa35d5379fea07a71dd23238d0d0b0a9fe95668e25",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-manifest-v1.sha256",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-manifest-v1.sha256",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 88,
+      "sha256": "7fed92eecc5182dc2526305cf132d66a69f17bbcffc76d63c986ec28b4176aa0",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-native-inputs-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-native-inputs-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 30434,
+      "sha256": "0560f18fb8be43362e7e9824c5858b1f257ef442d851e5f079734192661c82ed",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-program-source-diff-v1.patch",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-program-source-diff-v1.patch",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 22657,
+      "sha256": "0c616d660902802558adc4cd198aa461716434e2cb4fe4620132f0971f77d591",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4-source-list-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4-source-list-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3623,
+      "sha256": "116f3176d9e0c13b44b96bfa395b5a84ff5769d93f917f8bf288b3fd926e63ca",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4_checks_v1.py",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4_checks_v1.py",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 8004,
+      "sha256": "8b18f4303e9dcf2a14e54fe0ba0a19b01499f6e02f51d96bf09d547936787536",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4_ledger_v1.py",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4_ledger_v1.py",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 6459,
+      "sha256": "9614c95c8d1595f034fe000b760802e636f9948bd08417e4adbdbb4485831ab5",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/prover/c3c4_program_v1.py",
+      "origin": "runtime/v10/stage4-relative-code/evidence/prover/c3c4_program_v1.py",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 19132,
+      "sha256": "88de55d3243dcff63c1deffc226a645a7fb7949e3a32d662ab55141630f9b570",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/stage4-final/final-audit-result-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/stage4-final/final-audit-result-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1812,
+      "sha256": "3068b841b8b680c9b53162c043e4b999b7a34adc1376f2f74d1cff1532ab9132",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/stage4-final/final-native-readback-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/stage4-final/final-native-readback-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 75065,
+      "sha256": "efa87cce1ca8ac79138ca151657ae701781bf186175f1eed2e694106804eaed0",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/stage4-final/scientific-handoff-integrity-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/stage4-final/scientific-handoff-integrity-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 376,
+      "sha256": "980be78fdd9f91732419a527eeedbad66176b9d21e6b7aa0e06fa0d3cade29c8",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/stage4-final/scientific-handoff-manifest-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/stage4-final/scientific-handoff-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 9969,
+      "sha256": "a3651ad395a5340cebd0fb0bbd6c0a9255df94e1be729090bac465e5400889de",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/stage4-final/scientific-handoff-zh-v1.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/stage4-final/scientific-handoff-zh-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 15038,
+      "sha256": "617d829cc637c4809ac6aeb6bdb39cf19059cb893c791652e2b7f387f45807a8",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/verifier/checkpoint-review-v1.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/verifier/checkpoint-review-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 16444,
+      "sha256": "401e78c99f38d2f9f25311707f5c27bf7791fea44ef986177f8d12695d2d04f9",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/verifier/checkpoint-review-v1.sha256",
+      "origin": "runtime/v10/stage4-relative-code/evidence/verifier/checkpoint-review-v1.sha256",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 90,
+      "sha256": "0c1dd556f7d419f802b6c025b3d248b0ba4d55f4652032eca7efc0f84f7e1339",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/verifier/root-package-checks-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/verifier/root-package-checks-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 24145,
+      "sha256": "0cd4360eadbce09a6fefb6f0b4c54d44521918ffac54b06f6ef6113e43140ea0",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/verifier/root-package-native-readback-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/verifier/root-package-native-readback-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3750,
+      "sha256": "4fa43266a38ca9ea80d6fb180a61580b435c3b1a43255e8b5be749d75aa08d29",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/verifier/root-package-review-manifest-v1.json",
+      "origin": "runtime/v10/stage4-relative-code/evidence/verifier/root-package-review-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 33501,
+      "sha256": "0efd5fb38058464146d56de0c1a76a898c093459a2dc5371d7ffbe0de7588e4d",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/evidence/verifier/root-package-review-v1.md",
+      "origin": "runtime/v10/stage4-relative-code/evidence/verifier/root-package-review-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 21477,
+      "sha256": "7c7562072315f395b20e54645f399d179e4181ef1ab63dbb22016185094e9cf0",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/counter/c2-admission-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/counter/c2-admission-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 11003,
+      "sha256": "9ddcc1c89bdac61722e6e529f35ae43af0fadcbdcd1b6d7e2759a3a70c30e268",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/counter/c2-gateway-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/counter/c2-gateway-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2561,
+      "sha256": "f75d04ec494bfedb112c4078c98cec9d5d39bafd082deb9afee6689d674820d3",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/counter/c2-manifest-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/counter/c2-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3995,
+      "sha256": "a3dbcd2847b2834524105ae84b1bd1e49116d425cf146432bcea1ed451e84fa5",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/counter/c2-proof-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/counter/c2-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 25674,
+      "sha256": "f10c16cca4efde271b33c3fa2de62244098912c110991b30ccd4e40489852e99",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/counter/c2-readback-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/counter/c2-readback-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 518,
+      "sha256": "943338e8ab00accddad8ae9a9c1559292d966d4ba13f8b795ba0a97ec081a467",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/counter/d6-scope-map-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/counter/d6-scope-map-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 8542,
+      "sha256": "e4ae322376acca4e3a88e3c591700f5a074388d91637140d48b7a223122ba03f",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/counter/handoff-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/counter/handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 4724,
+      "sha256": "39b542d3313a7b39442d5946439cc047f764318704c1a57877cef9d0bb61424c",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/facts/39367951834d7aa7.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/facts/39367951834d7aa7.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 81274,
+      "sha256": "421bf5095b3abe9d5ace680cecab8080cf03de703946c3017b614aa97adedacc",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/facts/df40a215d931bd32.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/facts/df40a215d931bd32.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 45580,
+      "sha256": "7d7b0a5414b61fbf2117c9b980d4e7580b0ea9311de07c9dc4a3faa1ef54aaa8",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/facts/f9e055bd405c4b56.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/facts/f9e055bd405c4b56.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 47273,
+      "sha256": "19a572c3d885cba4205e2744f5605005218618ede8ed0deca347b586f2b693cd",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/first-handoff/checkpoint-manifest-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/first-handoff/checkpoint-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3301,
+      "sha256": "28961a47f89eb01ee3fb572a5def9204e3ad5f43a2551b6a2f484d9e33ef5dbd",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/first-handoff/FRONTIER.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/first-handoff/FRONTIER.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3181,
+      "sha256": "fb3e5ab952e194035fc6cb929a8d73d47716c2ab6b46e96fac9a33de3689847c",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/first-handoff/mathematical-checkpoint-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/first-handoff/mathematical-checkpoint-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 14696,
+      "sha256": "25499c426e891a348f3382e572b55ed4587581cf865597282c0a029220c401f7",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/lead/fixed-combination-manifest-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/lead/fixed-combination-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 10356,
+      "sha256": "0596e9f1bd16bbb9c7c132e70a959cdc2147b133580bf9aad72282a657cb288e",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/lead/fixed-full-proof-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/lead/fixed-full-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 163186,
+      "sha256": "a7c4e4194e68b186cc3cd6a3bdf8e0b9bfb01c0a1981427c588e1e9a38a1b7ae",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/lead/root-gateway-blocker-handoff-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/lead/root-gateway-blocker-handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 6561,
+      "sha256": "e60fd3f85074485a2bf7638b3bba58f205eeff61bc81d3e65d0030ada370082f",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/lead/root-submission-manifest-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/lead/root-submission-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2135,
+      "sha256": "6cdabe1a3eebc1b24f0b6677ef45d1449a4e74aab8f91ea75184a087301efb16",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/lead/root-submission-note-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/lead/root-submission-note-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 11696,
+      "sha256": "c023250f92c1b60b717412f1caccd4d9f84dd70006075b801e76b559e8e102d1",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/c1-gateway-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/c1-gateway-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3337,
+      "sha256": "17ceded00bc73a8485ff030aada48687209e1208ec3ed55f8bbf4097345d1a21",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/c1-manifest-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/c1-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 1897,
+      "sha256": "e59565ff06561f8538b65b20052a6f1fa4b675a0bdb6eb826416af2f268a241f",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/c1-proof-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/c1-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 27254,
+      "sha256": "c80a71242b438eda82b4b1717838a15da30232db18c4b97096f29f45c5101fc3",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/c1-readback-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/c1-readback-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 8592,
+      "sha256": "53186008ffb57716b5cd675c06635558b14b87b2c502cb76f62f7c28cc1daabb",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/c3-gateway-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/c3-gateway-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2093,
+      "sha256": "fefd9cf62e63453e73bba64da00b28b3b4a589e4e75a11a7436564996288e113",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/c3-handoff-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/c3-handoff-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 5031,
+      "sha256": "d903447125b1f893f72b244271f0c7c5e6f5531c6c8b5835fcafd7c17787f360",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/c3-manifest-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/c3-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 3848,
+      "sha256": "87f5ba89c3de96f9e505e93d1e1b30cd7e5c66cda260d890d7c79000a0174cf1",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/c3-proof-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/c3-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 61385,
+      "sha256": "5ac089baa1a28d2f89db223e16542ba43ac153c6930e81806c6627d0e0e22827",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/c3-readback-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/c3-readback-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 8549,
+      "sha256": "426830486a50147da5f9f900258d6ed93987c9daba49c0fd24333c0316a7c5b9",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/c3-splice-check-results-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/c3-splice-check-results-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 601,
+      "sha256": "9d73ddb7d8db32afe55b1d35d2865e4ccdd7733303545016a00e67b566cada95",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/c3_affine_iterator_v1.py",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/c3_affine_iterator_v1.py",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 9473,
+      "sha256": "2ad0f46cdfc5f3645748d723cec27d33702beb22a91db9b7f7c75fe5b1898268",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/root-gateway-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/root-gateway-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 8674,
+      "sha256": "ec1ec53657bada17f2a4159e6a291a4078ad176a4cc8c48f5d119649b8c9d439",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/root-manifest-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/root-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 14451,
+      "sha256": "b7709c00f70a7a7c568251bc4d9186de8a23a674224bf7560187d3779f8ec7e2",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/root-pre-submit-state-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/root-pre-submit-state-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 66303,
+      "sha256": "75323986b75f827de4160942ae6195be1729d581a4cce6f351cb7b2d3c1f5b6a",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/root-proof-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/root-proof-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 167181,
+      "sha256": "587eb09f76074fea9683d318a753697b0a360f662eef6664623726449dcf4eba",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/prover/root-readback-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/prover/root-readback-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 76065,
+      "sha256": "cbbfd67ffd4fe3f81b19f62733c7be36da76cdd2947c876f2ced7e250b7d5509",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/verifier/fixed-combination-review-manifest-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/verifier/fixed-combination-review-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 12681,
+      "sha256": "27c8402bfbd3b902ef7838115230d56171f6d35528c54fa15a8f0422e95f1077",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/verifier/fixed-combination-review-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/verifier/fixed-combination-review-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 19650,
+      "sha256": "dd48f0f7a081b24dc51408318f9fb92841531b6ee1c03e71d5519485ed038d5c",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/verifier/preparation-manifest-v1.json",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/verifier/preparation-manifest-v1.json",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 2265,
+      "sha256": "0aa88305f3a96dbf63dde716a7d21adb22cf49adad2f6221b500aad3ae1060b1",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/evidence/verifier/preparation-review-v1.md",
+      "origin": "runtime/v10/stage5-input-contamination/evidence/verifier/preparation-review-v1.md",
+      "role": "Earlier local scientific material; original candidate/failure/version status retained. Not automatically a new premise.",
+      "bytes": 11744,
+      "sha256": "d31f00c7748d05ca7974f7ef3cbff18424f954a07a0ec315d5830bbbc760d8b0",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage5-input-contamination/research.definition.json",
+      "origin": "runtime/v10/stage5-input-contamination/research.definition.json",
+      "role": "Historical scientific contract, review or contribution discussion; dates and status retained.",
+      "bytes": 27346,
+      "sha256": "93fa2cfd06a9b597e4380fe699839e1ac673d856956ca786a744cf529ef7994c",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage4-relative-code/final-closure-review.md",
+      "origin": "runtime/v10/stage4-relative-code/final-closure-review.md",
+      "role": "Historical scientific contract, review or contribution discussion; dates and status retained.",
+      "bytes": 1331,
+      "sha256": "cc986fc6f86e94bcd6dca737a1df52e88711d9600e0e3898be6a54028e4b63d1",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/notes/RESEARCH_REVIEW_20261026.md",
+      "origin": "notes/RESEARCH_REVIEW_20261026.md",
+      "role": "Historical scientific contract, review or contribution discussion; dates and status retained.",
+      "bytes": 39548,
+      "sha256": "2857e71298dd64a371a1e650c38e5dba2042ed4e8899f5eb0879a3d307c5fa70",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/notes/ORAL_PAPER_REVIEW.md",
+      "origin": "notes/ORAL_PAPER_REVIEW.md",
+      "role": "Historical scientific contract, review or contribution discussion; dates and status retained.",
+      "bytes": 20803,
+      "sha256": "4d11b4f3fab4721d9346a8c90c2d88dd00a836f7d6e7438f6fc258db0a354283",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/counter/assessment-v1.md",
+      "origin": "runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/counter/assessment-v1.md",
+      "role": "Preserved method limitation, not a statistical impossibility theorem.",
+      "bytes": 18221,
+      "sha256": "8dbfe070cba1aefc6f78de19aa1a346f7d2832e7b18155f24d2316239e247c58",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/lead/bounded-frontier-question-v1.md",
+      "origin": "runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/lead/bounded-frontier-question-v1.md",
+      "role": "Preserved method limitation, not a statistical impossibility theorem.",
+      "bytes": 6609,
+      "sha256": "8a198af293ad5ba4db5de2d05c761a23c4a9aa1df59018030fa1f85f13085223",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/prover/handoff-v1.md",
+      "origin": "runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/prover/handoff-v1.md",
+      "role": "Preserved method limitation, not a statistical impossibility theorem.",
+      "bytes": 4211,
+      "sha256": "3cfb9a577ef428ade6d8a60f79289bc5a99d25cafdf2bbb7977547c1a8b7fb68",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/earlier/runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/prover/joint-k-frontier-diagnostic-v1.md",
+      "origin": "runtime/v10/stage6-general-prediction/evidence/anchor-joint-k-frontier/prover/joint-k-frontier-diagnostic-v1.md",
+      "role": "Preserved method limitation, not a statistical impossibility theorem.",
+      "bytes": 32351,
+      "sha256": "8a1ba3557d4d94340e2637d07f400eb71bdd863cafd83cd313603e6cf9e7d092",
+      "copy": "exact bytes"
+    },
+    {
+      "path": "sources/euler-stage6/facts/0207544e0e3e9f82.md",
+      "origin": "fact_graph/facts/0207544e0e3e9f82.md",
+      "bytes": 86022,
+      "sha256": "434eabfeb767622688a43f111bddd53e0ebe4cec7a78b3cd791724f4587367b0",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/0723a6812d695b45.md",
+      "origin": "fact_graph/facts/0723a6812d695b45.md",
+      "bytes": 62137,
+      "sha256": "d601e040a5ad761840d79ebc39abc153b78d58313e8b3a32ee27e42d90123a61",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/218f9761113dfd29.md",
+      "origin": "fact_graph/facts/218f9761113dfd29.md",
+      "bytes": 31237,
+      "sha256": "6e0774d089917773d78c9c797c444d22026a04d292460ab227901584f3d9ce1b",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/358c10ed9ccac6da.md",
+      "origin": "fact_graph/facts/358c10ed9ccac6da.md",
+      "bytes": 84531,
+      "sha256": "22c603516d2a5e49828e2a4027f257b2d41c84e7ad160e4065c02a895a814fb5",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/372cbc90282df2cd.md",
+      "origin": "fact_graph/facts/372cbc90282df2cd.md",
+      "bytes": 77241,
+      "sha256": "e7295c4903277b5d403a453f429a62a60a5dc8ca6a6b04e9917646088fb39476",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/42a4f0a54a7ca79c.md",
+      "origin": "fact_graph/facts/42a4f0a54a7ca79c.md",
+      "bytes": 54415,
+      "sha256": "6072584be9ef8d6b13ea50ffa161853b91d69cacba0e923d717c9e8e3d44d787",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/5110203ec700e7e1.md",
+      "origin": "fact_graph/facts/5110203ec700e7e1.md",
+      "bytes": 90077,
+      "sha256": "4948f1c3c5749d93ed962b6c459213be3b844ae2bd210066d6dd9da5791d3334",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/53aa09cd3b53aefb.md",
+      "origin": "fact_graph/facts/53aa09cd3b53aefb.md",
+      "bytes": 76584,
+      "sha256": "996eea7019cedc81c51cf10c39e40f04f2c95a3587a5963b93166bbf9c76dc2d",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/8a4d1b9aef15dae8.md",
+      "origin": "fact_graph/facts/8a4d1b9aef15dae8.md",
+      "bytes": 89269,
+      "sha256": "7b646cf36163843cd4f1608313429226f55283c57dd5b23770a7d6ad3083e2da",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/911384a1c6a812b0.md",
+      "origin": "fact_graph/facts/911384a1c6a812b0.md",
+      "bytes": 57964,
+      "sha256": "f951de7a9ac180fdf6994dc8a1ae3a0fe4d198bcc01aeaf507206aae70044461",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/92fe834eff46119d.md",
+      "origin": "fact_graph/facts/92fe834eff46119d.md",
+      "bytes": 82454,
+      "sha256": "08559aa04ef42613a6f7a2f754a409aeba1cf7768f760949a14c85cd5f73d487",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/946d42d5bf502eb4.md",
+      "origin": "fact_graph/facts/946d42d5bf502eb4.md",
+      "bytes": 50613,
+      "sha256": "fe18f4a413fef5da14c5f361aef47a8c5addceac1a3a58d73366ad20f16d8e93",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/972b387639dbc156.md",
+      "origin": "fact_graph/facts/972b387639dbc156.md",
+      "bytes": 64620,
+      "sha256": "c88d4000c73784800ec5558e0048781654ff97178dee94ca1a7b4a5c854dc9a0",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/a12539a93d9f1ee3.md",
+      "origin": "fact_graph/facts/a12539a93d9f1ee3.md",
+      "bytes": 93866,
+      "sha256": "94f8cb48a2a96dba050584d9c200c8b8eb7c59335c77ae1c8d9fefc6b1240cba",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/a1a95aa68be0723e.md",
+      "origin": "fact_graph/facts/a1a95aa68be0723e.md",
+      "bytes": 93680,
+      "sha256": "21d405159a5694c9848e0656187a9d674dc777ffaec1d1f51e5a7541552adfb8",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/a53804d650803060.md",
+      "origin": "fact_graph/facts/a53804d650803060.md",
+      "bytes": 82248,
+      "sha256": "bc24d183f5299df636e67f0b439aadbcd4d79671b69c327ed7083ddfab857c6f",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/ba0c003ce6db282a.md",
+      "origin": "fact_graph/facts/ba0c003ce6db282a.md",
+      "bytes": 46767,
+      "sha256": "5adefe23f085c1a704e0e7e8cb45185c177e90b2323f75d11a24026b9b420e7a",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/bad63120212ba712.md",
+      "origin": "fact_graph/facts/bad63120212ba712.md",
+      "bytes": 61386,
+      "sha256": "44d4a4cad4a97f832e5502bcd409a97def3ec8faae76b41282ef94a5530024ff",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/c4d2925dfe8d1748.md",
+      "origin": "fact_graph/facts/c4d2925dfe8d1748.md",
+      "bytes": 77304,
+      "sha256": "e606b4b2a4462ef36e45c14910d7aa0ced89c343dc57e1b02705b1a8daab72f8",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/c5ca8f2e82eafcfc.md",
+      "origin": "fact_graph/facts/c5ca8f2e82eafcfc.md",
+      "bytes": 102426,
+      "sha256": "92c451b503e6a288fa1b2a6f7eec3efd4e02cb737ae0caaad88d86b991105538",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/ca2de64e8dbb95d4.md",
+      "origin": "fact_graph/facts/ca2de64e8dbb95d4.md",
+      "bytes": 44701,
+      "sha256": "723b8bef9fc7669355a92318eb604e7f509beb957ad6f174d9f19854dcaf780f",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/d3e63f7b5e389adf.md",
+      "origin": "fact_graph/facts/d3e63f7b5e389adf.md",
+      "bytes": 89100,
+      "sha256": "f60b0d2057aa2357a5fb424fda8cf6ec0c72b43c770dee330987838528f39a92",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/e7e6b1b84b74cbea.md",
+      "origin": "fact_graph/facts/e7e6b1b84b74cbea.md",
+      "bytes": 80013,
+      "sha256": "5c530be9cd4b9bd233649db3d6104f2698be86cfbb0735aa720a656c42dd432b",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/ed3adf29f858da12.md",
+      "origin": "fact_graph/facts/ed3adf29f858da12.md",
+      "bytes": 111865,
+      "sha256": "92832afc95fe451d6132a6c7c3263e6b7f2404840f3ca06d2eea7f9d1bc9454d",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/f26fe010ee257079.md",
+      "origin": "fact_graph/facts/f26fe010ee257079.md",
+      "bytes": 71895,
+      "sha256": "4fbc7de1cdc401ca7e1f6cf6c93831fda86425b6ac48af2b90cf3930184cb532",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/f55e7fd4cc0fb570.md",
+      "origin": "fact_graph/facts/f55e7fd4cc0fb570.md",
+      "bytes": 54780,
+      "sha256": "f4f3a03e4c8e0c84f5f10dfd0b0cfbbada741c3e7b78b820cfb2e16e7c14eed7",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/fd1a83454c2bf962.md",
+      "origin": "fact_graph/facts/fd1a83454c2bf962.md",
+      "bytes": 92662,
+      "sha256": "53fe55d27285baa6486282528617861d788dd56013da2846ca341d03b3b9f0a1",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/facts/fef8372728290b45.md",
+      "origin": "fact_graph/facts/fef8372728290b45.md",
+      "bytes": 67360,
+      "sha256": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/032-v-bank-joint-k/lead/frozen-statement-v1.md",
+      "origin": "outputs/032-v-bank-joint-k/lead/frozen-statement-v1.md",
+      "bytes": 9476,
+      "sha256": "7311bf5eca3b4800d0da5a9e292ed8299c224856137f7016ffe0ebf64e15ab64",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/032-v-bank-joint-k/prover/complete-proof-v1.md",
+      "origin": "outputs/032-v-bank-joint-k/prover/complete-proof-v1.md",
+      "bytes": 25100,
+      "sha256": "a993aaa8c844642fa8c99b6c569453f0de8cf747a33cb76af7b5f98fbc1d1f00",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/032-v-bank-joint-k/prover/handoff-v1.md",
+      "origin": "outputs/032-v-bank-joint-k/prover/handoff-v1.md",
+      "bytes": 6066,
+      "sha256": "2ffe6a484b02afde7329bb239564235b5ea6c2bbbc603250d9e0b541a6844792",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/032-v-bank-joint-k/prover/dependencies-and-reuse-v1.json",
+      "origin": "outputs/032-v-bank-joint-k/prover/dependencies-and-reuse-v1.json",
+      "bytes": 2090,
+      "sha256": "0e485d7730f10d4ccb5514283ed855bada0a719c8a05ae7f3c2b49c7d4ef9e3c",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/032-v-bank-joint-k/prover/acceptance-check-v1.json",
+      "origin": "outputs/032-v-bank-joint-k/prover/acceptance-check-v1.json",
+      "bytes": 1069,
+      "sha256": "952fea8da16c8b2da3854e80aaec45814c9e491c16f93c41d8d4b487d3765ac9",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/032-v-bank-joint-k/counter/assessment-v1.md",
+      "origin": "outputs/032-v-bank-joint-k/counter/assessment-v1.md",
+      "bytes": 11052,
+      "sha256": "c602703b62ce90173794b78586fbe823dc9a0772a08f5f32d10b81407376c898",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/033-master-v-joint-k/lead/frozen-statement-v1.md",
+      "origin": "outputs/033-master-v-joint-k/lead/frozen-statement-v1.md",
+      "bytes": 10358,
+      "sha256": "ce5b7f80c718738c2d672959d4ef662023f4cc2e681ef9bbc2f7e94de8a8043c",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/033-master-v-joint-k/prover/complete-proof-v1.md",
+      "origin": "outputs/033-master-v-joint-k/prover/complete-proof-v1.md",
+      "bytes": 28629,
+      "sha256": "8e45e24a4c897e5ef888482dec0a5f446c5074f48431aeaaaedacae7fd2b803f",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/033-master-v-joint-k/prover/handoff-v1.md",
+      "origin": "outputs/033-master-v-joint-k/prover/handoff-v1.md",
+      "bytes": 6589,
+      "sha256": "2e0e5ca7916bbbcb5da03c454e973192561a9fb56a985ec43ece3f730d400309",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/033-master-v-joint-k/prover/dependencies-and-reuse-v1.json",
+      "origin": "outputs/033-master-v-joint-k/prover/dependencies-and-reuse-v1.json",
+      "bytes": 2506,
+      "sha256": "e3e8e8d6a4ca389d63e00ada12d416b4c9e7eb36556825d38b2ab8b29e8fff9e",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/033-master-v-joint-k/prover/acceptance-check-v1.json",
+      "origin": "outputs/033-master-v-joint-k/prover/acceptance-check-v1.json",
+      "bytes": 1093,
+      "sha256": "7e225c82b2629cec4c09a6f4091800f61f213e50369ebf6973cbc6767e56e10e",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/033-master-v-joint-k/counter/assessment-v1.md",
+      "origin": "outputs/033-master-v-joint-k/counter/assessment-v1.md",
+      "bytes": 12676,
+      "sha256": "7d0e793a05b514ccee87065414d55af31acc97daa920d2ad72c7d524fc896bb3",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/034-v-decoder-minimax/lead/frozen-statement-v1.md",
+      "origin": "outputs/034-v-decoder-minimax/lead/frozen-statement-v1.md",
+      "bytes": 11914,
+      "sha256": "0385830f0ad7f25dee0334213fcd8d099a6ae6b551ba06efc5ccc32c5261586e",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/034-v-decoder-minimax/prover/complete-proof-v1.md",
+      "origin": "outputs/034-v-decoder-minimax/prover/complete-proof-v1.md",
+      "bytes": 30353,
+      "sha256": "17ba6dc117edec4d1315a175f972ab541226eded4525e23652e194c656c1650f",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/034-v-decoder-minimax/prover/handoff-v1.md",
+      "origin": "outputs/034-v-decoder-minimax/prover/handoff-v1.md",
+      "bytes": 4821,
+      "sha256": "6d8186e2fc60d67edb23f1185086ea1d759bf5ec402116f325dce4886803d539",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/034-v-decoder-minimax/prover/dependencies-and-reuse-v1.json",
+      "origin": "outputs/034-v-decoder-minimax/prover/dependencies-and-reuse-v1.json",
+      "bytes": 2016,
+      "sha256": "ac6a9741a826c0a39ca24e95275a35b45bdcd68df867e2fad5893dba989ed3ac",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/034-v-decoder-minimax/prover/acceptance-check-v1.json",
+      "origin": "outputs/034-v-decoder-minimax/prover/acceptance-check-v1.json",
+      "bytes": 1041,
+      "sha256": "089098790de1b4727ead4b9c16e01163da9f438bfe4b0c30bd8e0090aac12512",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/034-v-decoder-minimax/counter/assessment-v1.md",
+      "origin": "outputs/034-v-decoder-minimax/counter/assessment-v1.md",
+      "bytes": 13896,
+      "sha256": "87bc712df047298b7d1f90d161e54e018304f9b7211044fb95b98a1fc2a13eb6",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/035-master-decoder-minimax/lead/frozen-statement-v1.md",
+      "origin": "outputs/035-master-decoder-minimax/lead/frozen-statement-v1.md",
+      "bytes": 13615,
+      "sha256": "35098190dd9e303fcf413a311df3058b129868f76a99514be7ad0c72c67cff1c",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/035-master-decoder-minimax/prover/complete-proof-v1.md",
+      "origin": "outputs/035-master-decoder-minimax/prover/complete-proof-v1.md",
+      "bytes": 35222,
+      "sha256": "36644f069fa7ee96f1f837a47fcd823b83ed85f3bc377242174ffbce63dcdcec",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/035-master-decoder-minimax/prover/handoff-v1.md",
+      "origin": "outputs/035-master-decoder-minimax/prover/handoff-v1.md",
+      "bytes": 6192,
+      "sha256": "cca9d17d5ee3110ed1c38362ca2e4dc3934ca274b3862310492efcda1069de5a",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/035-master-decoder-minimax/prover/dependencies-and-reuse-v1.json",
+      "origin": "outputs/035-master-decoder-minimax/prover/dependencies-and-reuse-v1.json",
+      "bytes": 3075,
+      "sha256": "7db27f15359eafadb3841f7886f874d90ae1ffeb310dce15f9db3fd45c50ffc1",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/035-master-decoder-minimax/prover/acceptance-check-v1.json",
+      "origin": "outputs/035-master-decoder-minimax/prover/acceptance-check-v1.json",
+      "bytes": 1065,
+      "sha256": "d476de40d37f876919d76943c4a4489f50c338b284a2806566387413aa3e0891",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/latest/035-master-decoder-minimax/counter/assessment-v1.md",
+      "origin": "outputs/035-master-decoder-minimax/counter/assessment-v1.md",
+      "bytes": 17065,
+      "sha256": "94499938c27f247626ce5d380c0cf5c55901aa9f9a101a9301a0d4e73236b113",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/PROBLEM.md",
+      "origin": "PROBLEM.md",
+      "bytes": 15293,
+      "sha256": "83f9a22b5707158907f405b32d2998ac1ae71fb9620ead3d89899ac8404369c1",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/FRONTIER-historical-20261029.md",
+      "origin": "outputs/FRONTIER.md",
+      "bytes": 51613,
+      "sha256": "67873113052713323a6781050b71309659daada1e91bb07302682eccd049b615",
+      "copy": "exact bytes",
+      "role": "Exact accepted Euler mathematical source or declared historical scientific frontier."
+    },
+    {
+      "path": "sources/euler-stage6/COPY_MANIFEST.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 14643,
+      "sha256": "ddc0a05010fbb2497315359dc8941fcf3cc204cb26fcbd3a2ec2e650fc8189bc",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/FACT_INDEX.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 477262,
+      "sha256": "0ee009f1624bd4b9f78bec6f2d23119d40536504bca376050d153d3b0e1b6735",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/OPEN_OBLIGATIONS.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 27822,
+      "sha256": "835d66bd0046f0b7df623741c5e4ac91b9d6e6a0325b29f0cadf9e8c26d9f39d",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/1516eb2581b53a69.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 10354,
+      "sha256": "19582382f85e5c63443ac4d1c7e2bd4b2ad06e930f196b176b5593b88484847a",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/30f456bb2fcf6418.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 6520,
+      "sha256": "d8d1de00ef30e3c103450a904cc70ccaadf8c46e68e8cc00043a4977cda9c758",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/38a3ea554da86655.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 8883,
+      "sha256": "daba5022c63b14726ba893a491c7b0ef11b3cd2d97b7ac6567cb7222947a53e8",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/436676c23cf56405.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 9013,
+      "sha256": "c763fdf11e9cc9f7327d0ac84b6abaeed8cbf375ce0d5f2f5b136f178b7854c7",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/4807f8203cafb55e.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 16091,
+      "sha256": "3719a1ac73fc4ba4c25e6894894c915dc60cc3bea43cbf64ae33a44c5a0be7fb",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/5516df93feffd0e5.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 5822,
+      "sha256": "7cd8e8cf9ab7e51781d848a7d47bf8cb20f492d43143440c120a835029cc223a",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/59f42fb564433f49.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 9976,
+      "sha256": "e445b775809e29c884f3256ef0325a40d229f7a9b9900b281c305b3c015d00d2",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/686d47049ed14443.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 12984,
+      "sha256": "9cb1d2708df8425efeef677f97dab480b63d29c378c52aa01d4daf2c5adf9cda",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/72bd1bc75c67d552.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 7779,
+      "sha256": "4f0a36b4a7cc19437fbf200f748d4796609422e72b824f21104eb1ffa2a038ee",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/765b6eab6fa11104.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 10216,
+      "sha256": "1bc674a689d151c04a962ffbf6f6a1542d993a5b636d9dfe6317c47f50e106c6",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/847712d42050dc84.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 8386,
+      "sha256": "7a70c1baf65de93d968878ec4132e0b24a0a7eb699f7f63b88efe008863918b0",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/85b6c14bc1e0ee52.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 10514,
+      "sha256": "58461cb5fda07a23813295cc57674ef5891d05f7d9ed69fccd686d30d71e5acc",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/85b9ad6d1e3f1731.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 7911,
+      "sha256": "8a30d7b97daacea5cc96946e083efe9db818dceea2f74db1b918c7306881a9de",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/8dd6096a9e3f131f.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 12525,
+      "sha256": "c09a5b00b3b2ccc54d92b82553ddf3a55683308e548614ba3be7e355b8e0f436",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/90b6e83c41b126a8.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 12385,
+      "sha256": "b112485e339f1f5743cd7e8ef9575fad8909791bb656e768447e16035989eecd",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/91c974617839c5cc.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 10681,
+      "sha256": "d0af1645cdd8a44b70513aad3186a96aa6b4a3427e60e34f059479d674d7d527",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/98b8dbb958991e9c.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 12157,
+      "sha256": "27a0c9333853581c4f1b8f646faf3cc21b7032596b81a6cad1a6289ca000f739",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/9b382f399b575123.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 13147,
+      "sha256": "2f5935fa55cb50387c470fded377b3720116856f73ad990d489524df0a828baa",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/9cadcedf9a61d5db.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 16034,
+      "sha256": "a8a3b8a63cc74463e625d04e190cb69682db2e11c015fdb46dabaaf8adb0583b",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/a462801213d5af21.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 11573,
+      "sha256": "f585db1dc86ce4bc2470370d59f45918288617c71a3d97df6852b1b5a084af3a",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/b26c40a2615424e3.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 7217,
+      "sha256": "d2b8631a3f82786836b38e55090eebcc00e0193608f071085894e727473c0bdc",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/b51a9e94d2fb9352.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 15194,
+      "sha256": "c028ecec9f53fe42f0c9fc499cedb6a880364881c78a0de5e5914eef611c5c97",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/b6ba51fecd33c5aa.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 13617,
+      "sha256": "545f7d3b438efd20349385a8e38d609a3a5b422882b53297fdda4f83e9228d60",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/b7bec3ea8817e34e.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 9608,
+      "sha256": "fba873d6c543b4089da8f5492e1eddbf8af6447b6cb2ea9055b9366b80a8cb22",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/e7e1a8acd087d794.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 14863,
+      "sha256": "21d9801d32267d9b3c42830b3c1b5a0c010351e26f30a4eb295d1d31604feb04",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/efe2b8e024ec2101.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 12502,
+      "sha256": "4094993e4508d662e6c37c6b9252eb956b4348fad7dfd328d26cc5ddff40636e",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/fbda7ae6f956028d.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 8760,
+      "sha256": "d888e00d3457b49c1aefe9e192b08b08605529cd0930217908fdb135fc7741e5",
+      "copy": "declared scientific export"
+    },
+    {
+      "path": "sources/euler-stage6/reviews/fda3ed2c1ce030b9.json",
+      "origin": "declared Euler scientific export",
+      "role": "Generated exact-claim/index/review export; complete mathematical report retained. See export_note where present.",
+      "bytes": 13944,
+      "sha256": "ee2205221dc3ca2387d6ea7dbfffc35c2a350fe0ca41af8130ad3831a1ce7405",
+      "copy": "declared scientific export"
+    }
+  ],
+  "historical_non_scientific_exclusions": [
+    "runtime/v10/evidence/first-handoff-status.json",
+    "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/c4-call-times.json",
+    "runtime/v10/stage3-rare-kl-phase/evidence/final-admissions-v3/root-call-times.json",
+    "runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/mailbox-after.json",
+    "runtime/v10/stage3-rare-kl-phase/evidence/stage3-final/research-state-after.json",
+    "runtime/v10/stage5-input-contamination/evidence/lead/fixed-review-dispatch-v1.json",
+    "runtime/v10/stage5-input-contamination/evidence/lead/root-submission-dispatch-v1.json"
+  ],
+  "validation_boundary": "Byte identity, archive readability, source locator bindings and current native admission identities checked. No fresh proof acceptance, numerical rerun, or formal verification."
+}

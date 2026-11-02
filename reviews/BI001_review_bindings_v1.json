@@ -1,0 +1,16 @@
+{
+  "status": "INDEPENDENT_REVIEW_PASS_NOT_ROOT_ACCEPTANCE",
+  "candidate_and_dependencies": {
+    "v10_research/binary_frontier/BI001_binary_rare_suffix_lower_v1.md": "7fee27f4de9040f8509c86c0a7a2fca627623529f0e8d0ff192531a02d1dfb73",
+    "v10_research/bounded_attention/BA001_bounded_local_attention_lower_v1.md": "fb589a775220737124a42e96a115eb3471ccbb84933edc2fd488e0d5986f1569",
+    "v10_research/score_precision/SH001_sharp_weight_ratio_threshold_v1.md": "fa8e326047f2df8f01dd7b3112da655937ad7be1a3508ad00b80ccd51b64fd50",
+    "v10_research/score_precision/SB001_loglog_effective_score_budget_v2.md": "d10086be4d358e322872daffad4dd10572588d6dcffaecbffefc409df6a217b7",
+    "v10_research/range_uniform_iid/UI001_range_uniform_iid_floor_v1.md": "c4bd8a5d7324ed1cf03c1d746a253b592fbe9a63e9e6020be95e657c13307dde"
+  },
+  "review_artifacts": {
+    "reviews/BI001_review_v1.md": "ee1755df7317b8e02efd4eecbb97f0254d8daa894bc5b5558483485b87b775a6",
+    "reviews/BI001_independent_checks_v1.py": "92e609a3a44ccd67b642ce9c6b61c4fe56f9e8e22d30fccce3a165e4debe7065",
+    "reviews/BI001_independent_checks_v1.json": "43cab192f3fb97878d62c31c6bf0171de54c8e1060edeb14e8fbd06235823964"
+  },
+  "scope_qualification": "SB001 matching binary upper requires D>=8,r>=3,legal dyadic Q and sufficiently large fixed target-risk multiplier; optimal intermediate-positive-beta cutoff remains open."
+}

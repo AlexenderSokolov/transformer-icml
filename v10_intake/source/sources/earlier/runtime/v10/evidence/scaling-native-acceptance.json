@@ -1,0 +1,180 @@
+{
+  "obligation": {
+    "obligation_id": "cb8b2c4ac7dddf9090c503899e3e31c86ac69c2589419d7578bfeffbb189fd54",
+    "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+    "exact_statement": "For the same Route A finite frontend, complete visible representation, history/query and TV risk, analyze the legal comparator replacing matched values x_j by S x_j and uniform values (x_j,c_j) by S(x_j,c_j), for a declared positive integer S independent of theta, followed by a charged fixed linear factor 1/S before the existing correction/simplex readout. Prove ideal equality to unscaled A and determine how a coordinatewise absolute perturbation delta at the same post-attention location propagates after rescaling; distinguish this from a matched relative-error or rescaled-absolute-error model. Fully account for extra value/activation range, parameter magnitude/storage, incoming rational encoding cap, linear computation and all duplicate/residual streams, with explicit conditions under which both designs fit one common resource cap (in particular investigate S=N-2 under the existing conservative cap). Show exactly which normalized-summary lower-bound claims remain valid or are evaded. Do not infer new information, optimality, a generic precision lower bound, or architecture superiority from a change of units. This is a mathematical same-budget/located-error comparison prerequisite for the parent finite-N theorem, not a change of the frozen root.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+        "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+        "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+        "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers >=2",
+          "depends_on": []
+        },
+        {
+          "variable": "beta",
+          "kind": "FORALL",
+          "domain": "fixed positive full-context score gap",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+          "depends_on": [
+            "K",
+            "beta"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "D1 second-order tables on K symbols",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers >=3",
+          "depends_on": []
+        },
+        {
+          "variable": "epsilon",
+          "kind": "FORALL",
+          "domain": "positive accuracy targets",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+      "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "08fd5f7d038ae66faac60372a7f0a74c53081f5ab5d4780dcc186a2ce5658808"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": [
+    {
+      "artifact_id": "08fd5f7d038ae66faac60372a7f0a74c53081f5ab5d4780dcc186a2ce5658808",
+      "content_hash": "70fecafd40d3c3228ad123491a32a910d45173db852765034c44ead7d0df1c9c",
+      "producer": "fact_submit:784556de291cb971",
+      "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+      "evidence_kind": "LLM_CHECKED_PROOF",
+      "exact_claim": "For the same Route A finite frontend, complete visible representation, history/query and TV risk, analyze the legal comparator replacing matched values x_j by S x_j and uniform values (x_j,c_j) by S(x_j,c_j), for a declared positive integer S independent of theta, followed by a charged fixed linear factor 1/S before the existing correction/simplex readout. Prove ideal equality to unscaled A and determine how a coordinatewise absolute perturbation delta at the same post-attention location propagates after rescaling; distinguish this from a matched relative-error or rescaled-absolute-error model. Fully account for extra value/activation range, parameter magnitude/storage, incoming rational encoding cap, linear computation and all duplicate/residual streams, with explicit conditions under which both designs fit one common resource cap (in particular investigate S=N-2 under the existing conservative cap). Show exactly which normalized-summary lower-bound claims remain valid or are evaded. Do not infer new information, optimality, a generic precision lower bound, or architecture superiority from a change of units. This is a mathematical same-budget/located-error comparison prerequisite for the parent finite-N theorem, not a change of the frozen root.",
+      "scope": {
+        "assumptions": [
+          "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+          "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+          "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+          "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+        ],
+        "quantifiers": [
+          {
+            "variable": "K",
+            "kind": "FORALL",
+            "domain": "integers >=2",
+            "depends_on": []
+          },
+          {
+            "variable": "beta",
+            "kind": "FORALL",
+            "domain": "fixed positive full-context score gap",
+            "depends_on": []
+          },
+          {
+            "variable": "predictor_family",
+            "kind": "EXISTS",
+            "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+            "depends_on": [
+              "K",
+              "beta"
+            ]
+          },
+          {
+            "variable": "theta",
+            "kind": "FORALL",
+            "domain": "D1 second-order tables on K symbols",
+            "depends_on": [
+              "K"
+            ]
+          },
+          {
+            "variable": "N",
+            "kind": "FORALL",
+            "domain": "integers >=3",
+            "depends_on": []
+          },
+          {
+            "variable": "epsilon",
+            "kind": "FORALL",
+            "domain": "positive accuracy targets",
+            "depends_on": []
+          }
+        ],
+        "objects": [],
+        "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+        "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+      },
+      "input_hashes": [
+        "6a231cbc6dc9fd88e1291234d295b38652a12f4f33199a96d2ac85c6f9db7fe4",
+        "70fecafd40d3c3228ad123491a32a910d45173db852765034c44ead7d0df1c9c",
+        "82170d7734472d615c25a172a95fd8a04624154a1d6c0a4b19f53d47dab7b363",
+        "899e13e3de35de82397926f56e26587a062e7789c726ea676465f2a1151b8132"
+      ],
+      "environment_hash": "e2d7aeb5b2362805a6b5c3f8c0447dc6309d49c42baa3bf01b680e6bdff570ef",
+      "checker_id": "fact_submit",
+      "checker_version": "1",
+      "checker_result": "PASS",
+      "created_at": "2026-10-24T05:19:21Z",
+      "validity": "VALID"
+    }
+  ],
+  "version": {
+    "version": "A-rare-003-scaling-v1",
+    "obligation_id": "cb8b2c4ac7dddf9090c503899e3e31c86ac69c2589419d7578bfeffbb189fd54",
+    "predecessors": [
+      "3a69c2fa3d459b1d",
+      "338012727e3d5f81",
+      "608003f641535f2c"
+    ],
+    "files": {
+      "scaling-exact-statement-v1.md": "7c48d184ea43cb911d9aaa824d069c7ae4d8b62900cf759401eb4b1e6ffbac74",
+      "scaling-exact-proof-v1.md": "e944ce9d66fd37c4b0ba23b880e0ad623103f2d6a521b683f5ea5433202dd062",
+      "native-scaling-v1-request.json": "6f3770a6bef451fba5dc170cf9f9bc54d0e441448cafd8f96b25482ca04c6923",
+      "predecessor-verification.json": "1c08f36f7e830aeac5c31a876da23b6174e2e806ce3f1fd05505efbd5f9e06c8",
+      "check_mechanisms.py": "fb3eff904e6ef9e7382a486b4748460213c7f6f8525220be370d70f32c03e22a",
+      "mechanism-check-result.json": "2a6adf5599fd4f5e2c67005c4c38c4e8868402169809cce58fae5667f3b3d940"
+    },
+    "status": "FROZEN_BEFORE_SUBMISSION"
+  },
+  "version_checks": {
+    "scaling-exact-statement-v1.md": true,
+    "scaling-exact-proof-v1.md": true,
+    "native-scaling-v1-request.json": true,
+    "predecessor-verification.json": true,
+    "check_mechanisms.py": true,
+    "mechanism-check-result.json": true
+  },
+  "review": {
+    "verification_report": {
+      "summary": "Reviewed Scaling child — exact proof v1 sequentially under frozen contract 3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a, D1–D8 (definitions hash 63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc). Submission proof SHA-256: 02ebb5998fc410ff03a76aa849dfd279c4e8c3cb0d9facee9b9f8060f4eef754. Read prerequisite facts 3a69c2fa3d459b1d, 338012727e3d5f81 and 608003f641535f2c; all file hashes match the supplied interfaces, applications respect their scopes, and their statements have no P3 chain defect. Exact decoded-output equality, the delta/S located-error bound, matched-error conjugacy, complete visible-stream handling, and rational encoding/range/computation charges are justified. The S=N−2 comparison fits the existing Rstar(b_in) envelope subject to the stated incoming-code and range conditions. The fixed-theta consistency argument evades persistent fixed-absolute-error claims extended to that enlarged architecture class while preserving lower bounds for the original normalized interface; it establishes no generic precision or optimality result. No external-paper theorem is invoked, so external search was unnecessary. This is one cold LLM admission review using inherited admitted facts, not a full independent reverification of those facts, formal certification, or server-internal attestation. The parent finite-N theorem and frozen root are outside this review. No critical mathematical error, unresolved gap, or P1/P3/P5/P6 violation was found. This is an LLM review, not formal verification or external peer review; cross-model independence is not established.",
+      "critical_errors": [],
+      "gaps": []
+    },
+    "verdict": "correct",
+    "repair_hints": ""
+  }
+}

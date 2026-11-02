@@ -1,0 +1,60 @@
+{
+  "kind": "VERIFIER_INTERFACE_PREPARATION_RESEARCH_DISCUSSION_NOT_ADMISSION",
+  "created_at": "2026-10-26T09:21:53.134781+00:00",
+  "root_obligation_id": "881d17365a7019add4410343d568625dacae67d26aa17548bda2de7f9b860dbb",
+  "configuration": {
+    "model": null,
+    "effort": null
+  },
+  "pins": [
+    {
+      "path": "inputs/STAGE_DEFINITIONS.md",
+      "bytes": 15528,
+      "sha256": "fc104078b9455bdd86586decd50902df6688400cc00f06e6b105699efefd0e02"
+    },
+    {
+      "path": "outputs/001-input-contamination/lead/mathematical-checkpoint-v1.md",
+      "bytes": 14696,
+      "sha256": "25499c426e891a348f3382e572b55ed4587581cf865597282c0a029220c401f7"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/001-relative-code/prover/c1-proof-v2.md",
+      "bytes": 44213,
+      "sha256": "f8f6a56b4b458ff3d0033fa8cd29d27e3e32067dd643c2a9e51ba411ed6dadcf"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/verifier/combined-review-v1.md",
+      "bytes": 20767,
+      "sha256": "3a35311ecb0bcb0567a1b14f2aa245ab0570986229663d71064bc46921ad64fd"
+    },
+    {
+      "path": "outputs/001-input-contamination/verifier/preparation-review-v1.md",
+      "bytes": 11744,
+      "sha256": "d31f00c7748d05ca7974f7ef3cbff18424f954a07a0ec315d5830bbbc760d8b0"
+    }
+  ],
+  "conclusion": "No concrete required change to current definitions, quantifiers or checkpoint interface checklist identified; C3 full finite certificate remains pending.",
+  "new_fact_ids": [],
+  "new_evidence_ids": [],
+  "existing_component_records_readback": [
+    {
+      "component": "C1",
+      "fact_id": "f9e055bd405c4b56",
+      "evidence_id": "61f169db99848f6794e334ea287037fae00a592f4b5e5254d580c0b9f74a599f"
+    },
+    {
+      "component": "C2",
+      "fact_id": "df40a215d931bd32",
+      "evidence_id": "3448f22a5b9e86526c831f0518a83b828eaf69eb2acf455fb0057f354dae7cd3"
+    }
+  ],
+  "root_status_readback": "OPEN",
+  "c3_status_readback": "OPEN",
+  "fixed_combination_review_performed": false,
+  "proof_submitted": false,
+  "audit_performed": false,
+  "old_diagnostics_rerun": false,
+  "source_files_changed": false,
+  "gpu_ms": 0,
+  "team_consultation": "ask rejected: only the lead may schedule team consultations; members/messages read only"
+}

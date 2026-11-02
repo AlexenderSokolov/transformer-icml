@@ -1,0 +1,399 @@
+{
+  "date": "2026-10-25",
+  "author": "Lead",
+  "kind": "Fixed C4 composition candidate using admitted C1-C3; no root acceptance",
+  "root_obligation_id": "d0bdd1d8bf611bb7a6e9c4bb14d8b14e5a71ae8cc5c97776fc079ac13c63b428",
+  "contract_id": "d9e5e1f1efba187dfce2e80b395a1db533e89e8a97bd11c6f2f1e51d1ee9bb3e",
+  "package": {
+    "path": "outputs/001-conditional-grid/lead/fixed-package-candidate-v2.md",
+    "sha256": "7da57327e4b60288358aacde288aa27a156e944247324b6e2c40da878676ce2f",
+    "bytes": 188206
+  },
+  "embedded_sources": [
+    {
+      "title": "Current exact definitions and contract",
+      "path": "PROBLEM.md",
+      "author": "Euler project",
+      "sha256": "efc51898a4a702040f9048e2f53121ec59020586b12221fd57e1015940ec5751",
+      "bytes": 12619,
+      "embedded_verbatim": true
+    },
+    {
+      "title": "Integrated theorem, pathwise composition proof and admitted dependencies",
+      "path": "outputs/001-conditional-grid/lead/integration-theorem-v2.md",
+      "author": "Lead",
+      "sha256": "c12b62d4b6d9d8e8977b40724d157f3835b46ec713220ec8e21ddeedf140825e",
+      "bytes": 19133,
+      "embedded_verbatim": true
+    },
+    {
+      "title": "C1 statistical proof — admitted within native scope",
+      "path": "outputs/001-conditional-grid/prover/c1-proof-v1.md",
+      "author": "Prover",
+      "sha256": "5884ffc213a0aaa950b48f881abd4519440800737485b5c3aae9d293c38fb38d",
+      "bytes": 21542,
+      "embedded_verbatim": true
+    },
+    {
+      "title": "C2 grid classification and repaired converter — admitted exact version",
+      "path": "outputs/001-conditional-grid/prover/c2-proof-v2.md",
+      "author": "Prover",
+      "sha256": "b8de1c83444044357790ab8062caa443a701f260b7d631dbae35f85c308f667c",
+      "bytes": 23197,
+      "embedded_verbatim": true
+    },
+    {
+      "title": "C3 deterministic nominal realization and full cost appendix — admitted exact version",
+      "path": "outputs/001-conditional-grid/prover/c3-proof-v1.md",
+      "author": "Prover",
+      "sha256": "68dcb797dfe0e2103d2f35034311efa97d9ae496dedf4eafc67c600b34a8679c",
+      "bytes": 58094,
+      "embedded_verbatim": true
+    },
+    {
+      "title": "Executable integer predictor reference",
+      "path": "outputs/001-conditional-grid/lead/integer_predictor_v1.py",
+      "author": "Lead adaptation; source authors and hash retained in file",
+      "sha256": "5eae6f7c009cd5e612c74274117109099b249a54dbdd62a6ee15e3da093662d6",
+      "bytes": 7001,
+      "embedded_verbatim": true
+    },
+    {
+      "title": "Exact word-program interpreter and resource functions",
+      "path": "outputs/001-conditional-grid/prover/c3_word_program_v1.py",
+      "author": "Prover",
+      "sha256": "187f81b8da04a20412c07dc2fdfbe7387836484e2bc57e873a0dd8045b785a56",
+      "bytes": 12473,
+      "embedded_verbatim": true
+    },
+    {
+      "title": "Full finite-code equivalence audit",
+      "path": "outputs/001-conditional-grid/prover/c3-code-audit-v1.md",
+      "author": "Prover",
+      "sha256": "5648f1bc74b43d44f7597ae055190e41d21413d207049ec59601210211334ee6",
+      "bytes": 7734,
+      "embedded_verbatim": true
+    },
+    {
+      "title": "Joint accuracy consequences and corrected necessary-condition scope",
+      "path": "outputs/001-conditional-grid/lead/joint-accuracy-corollary-v2.md",
+      "author": "Lead, incorporating Counter correction",
+      "sha256": "723991a156c95a912a7a7ef8dfe72c653789836f07804f62e660da5df8e4a42a",
+      "bytes": 6773,
+      "embedded_verbatim": true
+    },
+    {
+      "title": "Pinned primary theorem and assumption map",
+      "path": "outputs/001-conditional-grid/counter/sources/primary-map-v1.md",
+      "author": "Counter",
+      "sha256": "f5b2fdcfd9b96ce74ebc8141b9dd0dde7c33caa10952aca6dacf90229a9d6f45",
+      "bytes": 3982,
+      "embedded_verbatim": true
+    },
+    {
+      "title": "Detailed primary comparison, resource domains and Chinese scientific synthesis",
+      "path": "outputs/001-conditional-grid/lead/primary-comparison-v2.md",
+      "author": "Lead",
+      "sha256": "b9d021f516a61d2d73dfe9f0c0b5279237674f44c037e65868cca3c0c302b4a5",
+      "bytes": 9425,
+      "embedded_verbatim": true
+    }
+  ],
+  "companion_evidence_and_review_files": [
+    {
+      "path": "outputs/001-conditional-grid/prover/c3-resource-certificate-v1.json",
+      "sha256": "2a5aa300d24cebebc8006f2f4ced9ad4fa00f07f562e5d9eb697c534c5765125",
+      "bytes": 35558
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/c3-word-operations-v1.json",
+      "sha256": "9f143a95c8d6b8bcc9ff93e3b49a4230f34a4118f3e06344f4c992aa60e869f1",
+      "bytes": 11390
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v1/c1-request.json",
+      "sha256": "64f6538cf5f54fa49862891af74f421950794fecf8487a903ab9d481d1865d6a",
+      "bytes": 22171
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v1/c1-response.raw.json",
+      "sha256": "8b1662b05b1666e5b36265ab06ae4c1da71fcf751eeb1585bc92fe592c47d399",
+      "bytes": 2524
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v1/c1-evidence-readback.json",
+      "sha256": "02022ea74a99e7a732ada8bcc044b0074fcdb3c6261968f490fc6723173e772e",
+      "bytes": 3156
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v1/c2-request.json",
+      "sha256": "50b72bb6a25e4e50f6befae1112b2d29552f1a6d457edd36efda2be865975e55",
+      "bytes": 14935
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v1/c2-response.raw.json",
+      "sha256": "302eafcaf12cc877e93648096ca6a878ef334e11390cc14e1e321c0008020d8b",
+      "bytes": 4061
+    },
+    {
+      "path": "[Non-scientific operational metadata omitted.]",
+      "sha256": "2174a3d8961b0bd390ae64e6be1b46dea059ba494f63dad98eb5604bba8c3e03",
+      "bytes": 492
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/c3-review-v1.md",
+      "sha256": "e8665348447fb61abac0f263d820d79c50aaf967bbef0972af392c83d50202a0",
+      "bytes": 8086
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/c2-cost-repair-review-v1.md",
+      "sha256": "4fd1e1c562755ab957e5ca0fe057823521d668fdb6e2a92db54e6fb71d1eedc3",
+      "bytes": 4720
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/c2-cost-repair-review-v1.md",
+      "sha256": "3b133d6493154f73556d31722be2b99cd5549e50f0d4a044ab2177259a8f643d",
+      "bytes": 5428
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/c3-adversarial-review-v1.md",
+      "sha256": "f1db7ce9110bdc782e6b15df291154535bf808567d9629711320d850a829c768",
+      "bytes": 11377
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/quantifier-addendum-v1.md",
+      "sha256": "3f2ce979b70829603504a10ab5d1b79bc6f625235ffb0da9653dc734b0fff46a",
+      "bytes": 5796
+    },
+    {
+      "path": "outputs/001-conditional-grid/verifier/stats-grid-review-v1.md",
+      "sha256": "9a7ec137568f5494d260a23a6bfdf6e945a11edc1fce9cb0a033717127fb2161",
+      "bytes": 17996
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/fixed-package-manifest-v1.json",
+      "sha256": "ee9392bebf771115d34f91bad2d8c6a0231cdebf912261554e72bceaaf7a4b3b",
+      "bytes": 7263
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/integration-checkpoint-v1.md",
+      "sha256": "80488522022a01651b0d8ddc5fbe46e57f08b62ecdca2113dee560a730214d43",
+      "bytes": 14040
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/primary-synthesis-checkpoint-v1.md",
+      "sha256": "b12f56a4e7458c7886370c595d62aad2966b266ed943c7d6614738a7a77dd7f1",
+      "bytes": 4936
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/c2-c3-admission-readback-v1.json",
+      "sha256": "8c25b9b3fe5e57e2b833d35b88099e6d252bfa0efc022448fa8cac306a8684c9",
+      "bytes": 10000
+    },
+    {
+      "path": "outputs/001-conditional-grid/lead/verifier-return-gate-v1.json",
+      "sha256": "c65e81ce0901aba978a14bce2bcdf9b82e6777cad1b6a87e3a9ac4233a66b2c6",
+      "bytes": 10402
+    },
+    {
+      "path": "outputs/001-conditional-grid/verifier/c2-cost-and-c3-review-v1.md",
+      "sha256": "ab5f63f81d689e85695e610b49e7ea115a7c270f7c317c62867b3c14345687ef",
+      "bytes": 21996
+    },
+    {
+      "path": "outputs/001-conditional-grid/verifier/c2-cost-and-c3-manifest-v1.json",
+      "sha256": "394eaa09753b66902d30bf47ba3c578954759b6021fb7fa4589c762b933f472d",
+      "bytes": 10218
+    },
+    {
+      "path": "outputs/001-conditional-grid/verifier/c2-cost-and-c3-checks-v1.json",
+      "sha256": "b6be1d61bc2c8b7310b18f4b0b5c67fde286a563aca9f4a4dc02e118dc6df902",
+      "bytes": 9541
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/sources/HJW-review-pages.txt",
+      "sha256": "5c056b84def2baa02eb7b92385385705e32048f92d39f50ce3e433c85a9a6159",
+      "bytes": 27395
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/sources/Paulin-review-pages.txt",
+      "sha256": "a9394c6bb883ef303569f48925beda863c5a422b3b9c916a14b925f2e1706f2c",
+      "bytes": 10430
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/sources/GB-review-pages.txt",
+      "sha256": "4b5b5f1748847f9fec0d47461265afa939d0bd15d64f655388540dcec83d4ae4",
+      "bytes": 14456
+    },
+    {
+      "path": "outputs/001-conditional-grid/counter/sources/entropy-18-00262-published.pdf",
+      "sha256": "cae05b607164d7ff44315b3cd5ab1f9b00f5514bd799b3984f561cb72f4e6e84",
+      "bytes": 284964
+    },
+    {
+      "path": "inputs/source-stage2/outputs/009-rare-kl-rate/counter/sources/2106.13947v2.pdf",
+      "sha256": "0b7b2e83fd0e405507eccb02b954129e4a0dc5f7926e1cc6d3a71f45e3e40cf7",
+      "bytes": 691599
+    },
+    {
+      "path": "inputs/source-stage2/outputs/009-rare-kl-rate/counter/sources/1212.2015v5.pdf",
+      "sha256": "7a54a70c47954687e87800c5e7dcc9df37a47568ed13f35c5c170a5728d92a82",
+      "bytes": 700521
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/handoff-v1.md",
+      "sha256": "ac834e0c1fc6258de5f2737261ba5d7b3f87e85a90cc24c13989e9c7bcfe9af1",
+      "bytes": 6762
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/c1-evidence-before.json",
+      "sha256": "02022ea74a99e7a732ada8bcc044b0074fcdb3c6261968f490fc6723173e772e",
+      "bytes": 3156
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/SHA256SUMS.txt",
+      "sha256": "ad2bd70111ddbb588883c917d62d0b54fe2be3035c6196965bd49ffdb182d895",
+      "bytes": 3444
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/pin-check-after.json",
+      "sha256": "19c9b71c79c86d8f16ed5f95bcd481188fe0f1270a6d188e1603791cc384bf21",
+      "bytes": 14598
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/admissions-v1-preservation-before.json",
+      "sha256": "3d0ce9feeee8e2fe792fd1927eed5811aef61ac128211ebbd6ae9589ccbd35b2",
+      "bytes": 3904
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/state-before.raw.json",
+      "sha256": "5d006666e0ea6ee1eae2b691e142e491336fe79a5bb66283408826ab854d280d",
+      "bytes": 81563
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/state-after-c3.raw.json",
+      "sha256": "2b1fe60bb89648dfac31d82bdb57e480ca28540e879d7f6b5e1b029aeb1969a3",
+      "bytes": 77697
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/input-pins.json",
+      "sha256": "d72ca86dd19e1a01b47c2c378bebec7670418163393ee1ed35b48b112628cc79",
+      "bytes": 1347
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/c2-request.json",
+      "sha256": "8859733b63a4633a0c8504d6a66b7ee0f22dcde72ecff0a115d5e2982b5dd558",
+      "bytes": 23820
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/c3-obligation-readback.json",
+      "sha256": "2b5a696eaf92bc55fb93b4bfa7368c88a402bd0bf5f753ca6b5019df7a25d626",
+      "bytes": 3199
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/c2-evidence-readback.json",
+      "sha256": "1808105f3873e2f39dfc24d1388124edec50227611db788d20a4cdc713c6e239",
+      "bytes": 3399
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/members-readback.raw.json",
+      "sha256": "5cf7310589f5e76711a3a8947cf83fac3f945d7006a45ef93d83e61904f9fc4a",
+      "bytes": 6318
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/c2-response.raw.json",
+      "sha256": "9a0005b330d99bbc4f2e821f8dca5cda2a556d88a2f2d515b0ea3787b374a926",
+      "bytes": 1621
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/boundary-before.json",
+      "sha256": "ebd00b28160a257b0183470174c665d16af462e8d6d2289d86d44e3b8ec95e21",
+      "bytes": 2007
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/c3-evidence-readback.json",
+      "sha256": "7fa51ad04e82edc5b2be606ec8a1389303dd5b40b21247afe143f9cab7230b9f",
+      "bytes": 3469
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/pin-check-before.json",
+      "sha256": "19c9b71c79c86d8f16ed5f95bcd481188fe0f1270a6d188e1603791cc384bf21",
+      "bytes": 14598
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/summary.json",
+      "sha256": "72a66f2399a12ee996e1fc0ccb4fa4197f846b906c1d677b21d77379e320d328",
+      "bytes": 8878
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/c3-request.json",
+      "sha256": "4cfebb480a717e33dc8a035023f7f09fa1cd09f1f512cb362a62943892106795",
+      "bytes": 59371
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/integrity-checks.json",
+      "sha256": "03a8a5968f9d7e5616dff724f0feade02a522ab91b30e05cb21b2070b668db23",
+      "bytes": 603
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/c3-response.raw.json",
+      "sha256": "5a51b052277f93457cd159461e9326eb81141fbfb188931f9c42326a714ba719",
+      "bytes": 3440
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/c2-fact-readback.md",
+      "sha256": "10f54dd14526391828dd6d2a99518cce785a9d4a35580019e4390fd8d1e51e52",
+      "bytes": 36198
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/boundary-after.json",
+      "sha256": "ebd00b28160a257b0183470174c665d16af462e8d6d2289d86d44e3b8ec95e21",
+      "bytes": 2007
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/c3-fact-readback.md",
+      "sha256": "9322f69e283564771cb68985054af859a15274e83e8f75ab83c37b92573b9263",
+      "bytes": 68942
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/c2-obligation-readback.json",
+      "sha256": "49bd72dbf1310135671b572053d9691031df1b3e4282b0131083707dca3c7748",
+      "bytes": 3057
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/state-after-c2.raw.json",
+      "sha256": "81ecd4333a85c921098b4a60605b6f7106736897d21c7c55d2de13c186722222",
+      "bytes": 77205
+    },
+    {
+      "path": "outputs/001-conditional-grid/prover/admissions-v2/manifest.json",
+      "sha256": "04224e76f510ed53a90549b8ba2dc84fd5433d55534d1359a717c1831fbe0935",
+      "bytes": 5086
+    }
+  ],
+  "accepted_facts": [
+    "e418ec34b7dbc4a6",
+    "4f0e99ed26dfeeeb",
+    "a47d648004a9a607"
+  ],
+  "accepted_evidence": [
+    "4857f1b1b5d10ab74a979362e3d0c3068c9634016e4ce6b6a0609ed577eb2eea",
+    "a4152a1fc70cbd2d4ece0bea8390fb68c0ed76beb4e11a8d9dd495a8250764ee",
+    "3e576827ab335e24f661561d9aa89f035a36925f450dd2daf0be3b166ab3cd27"
+  ],
+  "pending_obligations": [
+    "C4",
+    "root"
+  ],
+  "assembly_new_fact_ids": [],
+  "assembly_new_evidence_ids": [],
+  "final_audit_done": false,
+  "primary_retrievals_this_task": 0,
+  "old_suspended_count_preserved": 8,
+  "old_queue_or_protection_mutations": 0,
+  "source_v1_manifest": {
+    "path": "outputs/001-conditional-grid/lead/fixed-package-manifest-v1.json",
+    "sha256": "ee9392bebf771115d34f91bad2d8c6a0231cdebf912261554e72bceaaf7a4b3b",
+    "bytes": 7263
+  }
+}

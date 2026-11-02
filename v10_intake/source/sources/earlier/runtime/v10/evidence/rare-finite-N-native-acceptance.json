@@ -1,0 +1,189 @@
+{
+  "obligation": {
+    "obligation_id": "76492bdb2ee1bd1c726e7d431e985ab7ff223c669d340fa8983ccdaa5c038b27",
+    "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+    "exact_statement": "On the stationarily initialized D5 binary family, with rare frequency v in (0,1/4), w=(1-v)/3, t in [1/4,3/4], N>=3 and M=N-2, prove a finite-N statistical-versus-computational result for the complete actual single-query Route A representation Z_N(s)=(qtilde_N(s),r_N,mu_N(all four),query identity,retained terminal token residuals,raw-zero,length/type/constants), with no further raw-history access. Start from the admitted finite frontend and its explicit nominal matched-head error zeta_N, keeping every declared stream and its finite rational encoding. Establish a uniform explicit joint concentration bound for all eight empirical transition frequencies around pi_s p_t(y|s), preserving structural pair-chain zeros and endpoint dependence; a proposed bound is Pr(max|A_N-A_t|>h)<=16 exp(-M h^2/289). Transfer it to the full aggregate vector, and prove the correctly conditioned bound given the actual terminal query. For two D5 parameters t_±=1/2±Delta/2, 0<Delta<=1/2, give one common, admissible, observation-dependent post-aggregation error map (coordinate error <=delta on every q/r/mu copy, exact unchanged query/terminal/length channels) under which every decoder, including randomized ones, has a positive finite-N fixed-context and actual terminal-query conditional TV lower bound in an explicit nonempty sample/precision region. Account for the full finite encoding, including a common center encoding and all off-event outputs; no denominator-bit or residual bypass may be omitted. Derive the properly stationary-weighted actual average-risk consequence, not an independent-query substitution. In the same history, risk, bounded-encoding error model and explicit common resource envelope, prove a corresponding achievable upper bound using the admitted legal A or strong direct-correction implementation, showing how sampling error, implementation error and new aggregate perturbations enter and when the mechanism has a delta/v loss scale for fixed beta. Distinguish this scoped aggregate-channel necessity from an unrestricted Transformer lower bound, and from generic output quantization, deterministic rounding and independent random noise. Give valid constants or explicit asymptotic quantifiers and identify nonoptimal sample dependence; no population-only argument or deliberately slow inverse is allowed. This is one local finite-N prerequisite, not root closure.",
+    "scope": {
+      "assumptions": [
+        "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+        "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+        "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+        "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+      ],
+      "quantifiers": [
+        {
+          "variable": "K",
+          "kind": "FORALL",
+          "domain": "integers >=2",
+          "depends_on": []
+        },
+        {
+          "variable": "beta",
+          "kind": "FORALL",
+          "domain": "fixed positive full-context score gap",
+          "depends_on": []
+        },
+        {
+          "variable": "predictor_family",
+          "kind": "EXISTS",
+          "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+          "depends_on": [
+            "K",
+            "beta"
+          ]
+        },
+        {
+          "variable": "theta",
+          "kind": "FORALL",
+          "domain": "D1 second-order tables on K symbols",
+          "depends_on": [
+            "K"
+          ]
+        },
+        {
+          "variable": "N",
+          "kind": "FORALL",
+          "domain": "integers >=3",
+          "depends_on": []
+        },
+        {
+          "variable": "epsilon",
+          "kind": "FORALL",
+          "domain": "positive accuracy targets",
+          "depends_on": []
+        }
+      ],
+      "objects": [],
+      "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+      "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+    },
+    "desired_output": "A checked proof step",
+    "created_by": "lead",
+    "version": 1,
+    "status": "DISCHARGED",
+    "evidence_refs": [
+      "6e7d85eeb765e6dece0c1b4a62cc8eba0ccd876a84902fe9da926710b9ba0dfb"
+    ],
+    "validity": "VALID"
+  },
+  "evidence": [
+    {
+      "artifact_id": "6e7d85eeb765e6dece0c1b4a62cc8eba0ccd876a84902fe9da926710b9ba0dfb",
+      "content_hash": "96fe8b12c8d596ba78b97c567c9427cdbeb20106189bcd33130adcb5861d54a9",
+      "producer": "fact_submit:a5b5a34ee1edb68d",
+      "contract_id": "3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a",
+      "evidence_kind": "LLM_CHECKED_PROOF",
+      "exact_claim": "On the stationarily initialized D5 binary family, with rare frequency v in (0,1/4), w=(1-v)/3, t in [1/4,3/4], N>=3 and M=N-2, prove a finite-N statistical-versus-computational result for the complete actual single-query Route A representation Z_N(s)=(qtilde_N(s),r_N,mu_N(all four),query identity,retained terminal token residuals,raw-zero,length/type/constants), with no further raw-history access. Start from the admitted finite frontend and its explicit nominal matched-head error zeta_N, keeping every declared stream and its finite rational encoding. Establish a uniform explicit joint concentration bound for all eight empirical transition frequencies around pi_s p_t(y|s), preserving structural pair-chain zeros and endpoint dependence; a proposed bound is Pr(max|A_N-A_t|>h)<=16 exp(-M h^2/289). Transfer it to the full aggregate vector, and prove the correctly conditioned bound given the actual terminal query. For two D5 parameters t_±=1/2±Delta/2, 0<Delta<=1/2, give one common, admissible, observation-dependent post-aggregation error map (coordinate error <=delta on every q/r/mu copy, exact unchanged query/terminal/length channels) under which every decoder, including randomized ones, has a positive finite-N fixed-context and actual terminal-query conditional TV lower bound in an explicit nonempty sample/precision region. Account for the full finite encoding, including a common center encoding and all off-event outputs; no denominator-bit or residual bypass may be omitted. Derive the properly stationary-weighted actual average-risk consequence, not an independent-query substitution. In the same history, risk, bounded-encoding error model and explicit common resource envelope, prove a corresponding achievable upper bound using the admitted legal A or strong direct-correction implementation, showing how sampling error, implementation error and new aggregate perturbations enter and when the mechanism has a delta/v loss scale for fixed beta. Distinguish this scoped aggregate-channel necessity from an unrestricted Transformer lower bound, and from generic output quantization, deterministic rounding and independent random noise. Give valid constants or explicit asymptotic quantifiers and identify nonoptimal sample dependence; no population-only argument or deliberately slow inverse is allowed. This is one local finite-N prerequisite, not root closure.",
+      "scope": {
+        "assumptions": [
+          "D1-D8 are the frozen first-stage definitions; theta is unknown at prediction time.",
+          "Stationary initialization and strictly positive symbol-successor probabilities hold per fixed theta, without a common lower bound across the rare family.",
+          "All network-visible side information and resources are charged. Primary guarantees are forward guarantees, not unproved learnability claims.",
+          "Full-context and itemwise kernels, rare and uniform process families, and distinct error models remain separately scoped."
+        ],
+        "quantifiers": [
+          {
+            "variable": "K",
+            "kind": "FORALL",
+            "domain": "integers >=2",
+            "depends_on": []
+          },
+          {
+            "variable": "beta",
+            "kind": "FORALL",
+            "domain": "fixed positive full-context score gap",
+            "depends_on": []
+          },
+          {
+            "variable": "predictor_family",
+            "kind": "EXISTS",
+            "domain": "a D3 causal simplex-predictor family indexed by N and accuracy, with a theta-independent epsilon_N->0 implementation schedule and C1-C3 qualified guarantees",
+            "depends_on": [
+              "K",
+              "beta"
+            ]
+          },
+          {
+            "variable": "theta",
+            "kind": "FORALL",
+            "domain": "D1 second-order tables on K symbols",
+            "depends_on": [
+              "K"
+            ]
+          },
+          {
+            "variable": "N",
+            "kind": "FORALL",
+            "domain": "integers >=3",
+            "depends_on": []
+          },
+          {
+            "variable": "epsilon",
+            "kind": "FORALL",
+            "domain": "positive accuracy targets",
+            "depends_on": []
+          }
+        ],
+        "objects": [],
+        "parameter_domain": "K integers >=2; N integers >=3; theta as D1; fixed beta>0 (A), beta_1,beta_2>0 (B); target accuracy epsilon>0 and failure probability alpha in (0,1); finite resource vectors as D3. Rare parameters and interaction parameters exactly as D4-D5. Additional uniform-rate bounds are explicit conditional subfamilies, not changes to the mother problem.",
+        "definitions_hash": "63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc"
+      },
+      "input_hashes": [
+        "6a231cbc6dc9fd88e1291234d295b38652a12f4f33199a96d2ac85c6f9db7fe4",
+        "70fecafd40d3c3228ad123491a32a910d45173db852765034c44ead7d0df1c9c",
+        "82170d7734472d615c25a172a95fd8a04624154a1d6c0a4b19f53d47dab7b363",
+        "899e13e3de35de82397926f56e26587a062e7789c726ea676465f2a1151b8132",
+        "96fe8b12c8d596ba78b97c567c9427cdbeb20106189bcd33130adcb5861d54a9"
+      ],
+      "environment_hash": "0375d084aac712f2de00f85b965c684e05b1c52cee9846813f1099b840057e8b",
+      "checker_id": "fact_submit",
+      "checker_version": "1",
+      "checker_result": "PASS",
+      "created_at": "2026-10-24T05:36:33Z",
+      "validity": "VALID"
+    }
+  ],
+  "version": {
+    "version": "A-rare-003-parent-v1",
+    "obligation_id": "76492bdb2ee1bd1c726e7d431e985ab7ff223c669d340fa8983ccdaa5c038b27",
+    "predecessors": [
+      "3a69c2fa3d459b1d",
+      "338012727e3d5f81",
+      "17afd9045ade0c3d"
+    ],
+    "files": {
+      "parent-exact-statement-v1.md": "de949dfe70bd3855ad9f68a9a28a1ceb5d5bc63e59a186ae13cc8780fa4af36b",
+      "parent-exact-proof-v1.md": "46746718ad0670663cc8f78b8d717b9431dc4afdf3261b660b7baf525f62d8be",
+      "joint-concentration.md": "344e5f92c1ba894dc4dd65cc041e81e9e3058791117db575f75da0b493ef8ecd",
+      "native-parent-v1-request.json": "bd1e5d40ce96c02ffbc93ff82b7c2018474f391c2d0bf96768b040ec00e9fca5",
+      "parent-predecessor-verification.json": "55842c84092e1c419b65bc6622df362c889f5ed4a9d3af83bd38f9d636fc303c",
+      "check_mechanisms.py": "fb3eff904e6ef9e7382a486b4748460213c7f6f8525220be370d70f32c03e22a",
+      "mechanism-check-result.json": "2a6adf5599fd4f5e2c67005c4c38c4e8868402169809cce58fae5667f3b3d940",
+      "check_mask.py": "8a99de40b80f33e1f3dde4eb48295ae270f6facf365d38ff362f21c701646c14",
+      "mask-check-result.json": "460e4f059b583c43368ad332fb68de1e0b4b7b3d50eb46a34b69620058057fcf",
+      "scaling-admission-status.json": "d327e2cdb74b59acf650e878afd07bf82b6eaca8fda8390bdaa296d2ea09b43c"
+    },
+    "status": "FROZEN_BEFORE_SUBMISSION"
+  },
+  "version_checks": {
+    "parent-exact-statement-v1.md": true,
+    "parent-exact-proof-v1.md": true,
+    "joint-concentration.md": true,
+    "native-parent-v1-request.json": true,
+    "parent-predecessor-verification.json": true,
+    "check_mechanisms.py": true,
+    "mechanism-check-result.json": true,
+    "check_mask.py": true,
+    "mask-check-result.json": true,
+    "scaling-admission-status.json": true
+  },
+  "review": {
+    "verification_report": {
+      "summary": "Reviewed the single frozen submission 'Parent finite-N theorem — exact proof v1' sequentially against contract 3aa0ff5ddc4dd7295ab94404797636c9f50fa30cd6e7249cc5f98467b5f1179a (definitions hash 63aee8beb4ce60c7807648c68e5515288aa52f9546c0187b544f33b68fbfb4bc). The service request records proof SHA-256 737f87b298eb2923a88f6818599233c8d02cca7fb701f299df4e47ce0789fa19 and statement SHA-256 254d14a663a71b01c8fa715cffef0ba2b2eed2b46c9a46681382abccb7787618. Checked the D5 stationary pair chain, two-step minorization, Doob concentration constant 289, joint-statistic transfer, endpoint-conditioned probabilities, complete finite-code masking and identity returns, randomized-decoder common-atom inequalities, stationary-weighted actual risks, implementation/error propagation, common resource envelope, and explicit nonempty sample/precision and asymptotic regions. Read admitted facts 3a69c2fa3d459b1d, 338012727e3d5f81 and 17afd9045ade0c3d; their file hashes match the supplied source hashes. Their scopes support the imported frontend, direct correction and S=M comparison; the dependency statements, including 608003f641535f2c, introduce no unsupported conditional narrowing or circular dependence. Inherited facts were used within their admitted scopes, not independently recertified. No external-paper citations require lookup, and no P1/P3/P5/P6 violation or unresolved mathematical error or gap was found. This is one cold-context LLM admission judgment, not formal certification or a claim of cross-model independence. Supporting computation scripts were not rerun and are not needed for the analytic arguments checked here. Acceptance covers the declared complete normalized aggregate representation and whole-code bounded adversarial channel, its achievable bounds and charged scaling comparator; it does not establish an unrestricted Transformer lower bound, rounding/random-noise theorem, optimal sample dependence, or root closure. This is an LLM review, not formal verification or external peer review; cross-model independence is not established.",
+      "critical_errors": [],
+      "gaps": []
+    },
+    "verdict": "correct",
+    "repair_hints": ""
+  }
+}

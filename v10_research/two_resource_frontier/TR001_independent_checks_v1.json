@@ -1,0 +1,19 @@
+{
+  "verdict": "PASS",
+  "arithmetic": "65-digit Decimal logarithms; exact Python integer domain predicates where applicable; comparison tolerance 1e-58 relative to max(1, magnitudes)",
+  "counts": {
+    "source_hashes": 13,
+    "legal_surface_points": 17948,
+    "A": 5397,
+    "B": 8939,
+    "C": 10469,
+    "D": 5221,
+    "threshold_implications": 66148,
+    "allocations": 349,
+    "scalar_necessity": 2091,
+    "scalar_sufficiency": 306,
+    "kl": 35
+  },
+  "candidate_sha256": "7dca0c09637164c2a632e1e493c7af281109bb52116400c94ee507fe18c493c6",
+  "limits": "Finite checks corroborate scalar completion and threshold algebra only; do not test minimax risk or establish a universal proof."
+}

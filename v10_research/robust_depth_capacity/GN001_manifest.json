@@ -1,0 +1,77 @@
+{
+  "unit": "GN001",
+  "status": "INDEPENDENT_LLM_REVIEW_PASS_ROOT_ACCEPTANCE_PENDING",
+  "time_utc": "2026-11-02T07:57:45.350621+00:00",
+  "files": [
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_HANDOFF.md",
+      "sha256": "9b51a0ca45147c7e9e681457d9b452f0c180c3488435f6efa3b0995eb52a75fa",
+      "bytes": 2385
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_derivation_notes.md",
+      "sha256": "61840c0e7bc830a6ee7b01986aeb39a01be87e5408de74b2d195a9b9bd46dbf0",
+      "bytes": 2318
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_finite_diagnostics.json",
+      "sha256": "6bb8bcfecaf9d50500f8b72979010df623adfcee8cbb552112e0a7e85f5ceeaf",
+      "bytes": 2256
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_independent_full_checks.json",
+      "sha256": "fec413077e468c13dd3a47c4a8001741899b125a3b414f40eb04cb5799f378ee",
+      "bytes": 281
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_independent_full_checks.py",
+      "sha256": "ebb95eb1ad9675f3e7e9f3623a291f84940b7b70b209c7b7b6774eb0eb318bbd",
+      "bytes": 2428
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_independent_geometry.json",
+      "sha256": "8d6d153ba2c58e33ddbbab1f34ae1122580a6136f01a1f9c85178fbfa74e12cd",
+      "bytes": 2254
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_independent_geometry.py",
+      "sha256": "c693eb0dd0fd7fe89dd307538266d5af4a476cb958a30e055e1b6f4be737aacd",
+      "bytes": 4158
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_independent_geometry_review.md",
+      "sha256": "ca739dc0e9d5b1562d6051c1beda83f9616895c64c5caefd6f573d50e2c4cde4",
+      "bytes": 6105
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_independent_review.md",
+      "sha256": "112ae23fb2015b94077b9236043bdf7593b7fdd11fb648722cffe14fa03932a2",
+      "bytes": 6398
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_initial_derivation.md",
+      "sha256": "5b81b15d1a36ca867210c4f8b82f4f5aad4c8f81ba96850e64b92d52ff53318b",
+      "bytes": 16339
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_source_bindings.json",
+      "sha256": "07962de5939343b60865b267a7a4929e95f50a68e5141d37eb56899b8ef70b82",
+      "bytes": 2174
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/GN001_theorem.md",
+      "sha256": "743367f687c79ea9b3abfbecaa70b206fe62afb5fbb56d1643331aacbfc18383",
+      "bytes": 16763
+    },
+    {
+      "path": "v10_research/robust_depth_capacity/check_gn001_finite.py",
+      "sha256": "9bf5e5858b2ebd9a1b43b0efbe821b3c2d0d7fce0c406ca220423ff1ebebc422",
+      "bytes": 3923
+    }
+  ],
+  "verification": [
+    "all three exact diagnostic scripts rerun successfully",
+    "review bound to final theorem hash",
+    "frozen sources unmodified"
+  ]
+}

@@ -1,0 +1,45 @@
+--- v10_research/source_corruption_manuscript/revisions/binary_pre_conditional_expansion.tex	2026-11-02 01:29:32.672215039 -0800
++++ v10_research/source_corruption_manuscript/binary.tex	2026-11-02 01:29:32.682739174 -0800
+@@ -176,7 +176,41 @@
+  \end{gathered}
+  \label{bin:unprovedT}
+ \end{equation}
+-remains unproved here. The metric is Hamming distance. It would be sufficient: taking $C_\eta\ge1$, setting $b=\lfloor k/(128C_\eta)\rfloor$, and quantizing $h=(\ell-(t\bmod2))/2$ down to a multiple of $b$ composes at most $b-1$ neighboring-count couplings. For $r,\ell\ge2\eta t$ and $t\ge2b/\eta$, all intermediate counts remain in the required interior. The composed mean distance is at most $C_\eta b$. Accepting its output only when its distance from the original word is at most $k$ enforces a strict budget and loses probability at most $1/128$. Conditional on eligibility and the quantized count, the ideal output has the common uniform target law. An independent-seed small-ball argument of the form proved below then gives order $(1+t/k)^{-1}$ reference loss. Summing over rare-entry suffixes yields the desired harmonic term; separate clean and corruption floors handle bounded $k$ and bounded logarithms. This is only a conditional reduction. The actual lower bound below uses a weaker, proved transport estimate and does not invoke \eqref{bin:unprovedT}.
++remains unproved here. The metric is Hamming distance. The following reduction is explicitly conditional on this premise; the subsequent entropy proof does not use it.
++
++\paragraph{Why the interior premise would suffice.}
++First, there are absolute $\eta_0>0$ and $t_0$ such that, uniformly for $p\in[1/4,3/4]$ and $t\ge t_0$, the reference chain introduced in the next section has
++\begin{equation}
++ \mathbb P_p\{Y_t=A,\ r,\ell\ge\eta_0t\}\ge1/32.
++ \label{bin:conditionalinterior}
++\end{equation}
++Indeed, its fifth-step $A$-column is $(2p(1-p),(1-p)^2,p)$, so terminal-$A$ probability is at least $1/16$ for every $t\ge5$. At least $n=\lfloor t/3\rfloor$ complete cycles occur by time $t$, since every cycle has length at most three. Among the first $n$ IID cycle choices, both types occur at least $n/8$ except on an event of probability at most $2\exp(-n/32)$ by Hoeffding's inequality. Choose $t_0$ so that this probability is at most $1/32$ and $n/8\ge t/32$. Subtracting this event from the terminal probability proves \eqref{bin:conditionalinterior} with $\eta_0=1/32$. No IID assertion after conditioning on the fixed-time endpoint is used.
++
++Assume \eqref{bin:unprovedT} for $\eta=\eta_0/2$ and enlarge $C_\eta$ to at least one. Put $b=\lfloor k/(128C_\eta)\rfloor$ and first suppose $b\ge1$. For a returned word of length $t$, set $r_t=t\bmod2$; necessarily $\ell\equiv r_t\pmod2$. Quantize
++\[
++ h=(\ell-r_t)/2,\qquad h_0=b\lfloor h/b\rfloor,
++ \qquad\ell_0=r_t+2h_0.
++\]
++Starting with counts satisfying $r,\ell\ge2\eta t$, compose at most $b-1$ couplings in \eqref{bin:unprovedT}. Each step reduces the long-cycle count by two and increases the short-cycle count by three. If $t\ge2b/\eta$, all intermediate counts remain at least $\eta t$. Coupling composition and the Hamming triangle inequality bound the expected distance from the original word to the final word by $C_\eta b$. The final marginal is exactly $U_{r_0,\ell_0}$, where $2r_0+3\ell_0=t$.
++
++Define the attack on recognizable reference suffixes with these counts and lengths by sampling this composition and accepting its final output only if its distance from the \emph{original} suffix is at most $k$; use identity elsewhere. This is one kernel on all input words, uses no $p$, and preserves the exact terminal pair. The strict-budget truncation loses probability at most $C_\eta b/k\le1/128$ on each eligible class. Conditional on eligibility and $(t,\ell_0)$, the untruncated output has the common law $U_{r_0,\ell_0}$ even after mixing original counts within its cell. At a fixed $t$ there are at most $1+t/(2b)$ such labels; append one bad label for ineligible inputs. This is a finite-label factorization, not a claim that only that many words are possible.
++
++For full justification of the randomization, sample the original counts and eligibility under their $p$-dependent distribution; generate the ideal output from the common target law with an independent seed; then reverse-sample the original arrangement using the selected coupling conditional on its counts and ideal output. The reverse conditional law is independent of $p$. Thus the prior is independent of the auxiliary seed before label selection. The success mass is at least $1/32-1/128=3/128$ by \eqref{bin:conditionalinterior}. Fixing that seed and decoder randomness leaves at most $2+t/(2b)$ candidate scalar predictions. The union of their sufficiently small radius-$c/(2+t/(2b))$ neighborhoods has uniform-prior mass less than half the success mass. The small-ball argument proved in detail in Lemma~\ref{bin:smallball} therefore gives a reference loss at least $c_1/(1+t/b)$ with an absolute $c_1>0$. It subtracts bad mass from a probability, not directly from a vanishing risk bound.
++
++Use the stationary source and path domination of Section~\ref{bin:witness}, with the same uniform prior and the same attack for every suffix length. Write $H=\lfloor1/(4e_*)\rfloor-1$ and $t_1=\max\{t_0,\lceil2b/\eta\rceil\}$. Since $b\ge1$, there is a constant $C_1$ depending only on $\eta,t_0$ such that $t_1\le C_1b$. The disjoint suffixes yield a lower bound proportional to
++\[
++ \frac1M\sum_{t=t_1}^{H}\frac1{1+t/b}.
++\]
++The sum is zero if its range is empty. Otherwise integral comparison bounds it below by
++\[
++ \frac bM\left[\log(1+H/b)-\log(1+C_1)\right]_+.
++\]
++For $e_*\le1/16$, $H\ge1/(8e_*)$. Also $b$ and $k$ differ by fixed multiplicative constants when $b\ge1$, because $k/(256C_\eta)\le b\le k/(128C_\eta)$. Consequently the separate IID floor $ck/M$ absorbs the omitted initial range and the bounded difference of logarithms, giving the complete corruption profile up to constants depending only on $C_\eta,\eta,t_0$. If $b=0$, then $k<128C_\eta$ is bounded: using $e_*\ge1/M$,
++\[
++ \frac{k}{\sqrt M}[1+\log(1+M/k)]
++ \le k\,[1+\log2+2/\exp(1)],
++\]
++so a constant multiple of the clean floor covers the full corruption term. For $\beta>1/256$, the inequality $F_2\le k/M+2M^{-1/2}$ and the two IID floors suffice directly. This completes only the implication from \eqref{bin:unprovedT}. The stronger premise remains open; the proved route below replaces it by a weaker entropy transport estimate with a genuine length cutoff.
+ 
+ \section{A stationary binary witness with an all-state certificate}
+ \label{bin:witness}

@@ -1,0 +1,89 @@
+{
+  "kind": "STAGE5_FIRST_MATHEMATICAL_CHECKPOINT_NOT_ADMISSION",
+  "root_obligation_id": "881d17365a7019add4410343d568625dacae67d26aa17548bda2de7f9b860dbb",
+  "source_pins": [
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/prover/upper-program-certificate-v1.md",
+      "bytes": 30431,
+      "sha256": "b1a0de75230bb5ec2cd58417e09f2c0bb3ca7818e2fd513c6e0333f81b7beab4",
+      "role": "source_only_not_admission"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/counter/common-channel-lower-v1.md",
+      "bytes": 20363,
+      "sha256": "68852906dc7f125afc6e93953843800fd7b4070639e9090915c65cfb400588b3",
+      "role": "source_only_not_admission"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/verifier/combined-review-v1.md",
+      "bytes": 20767,
+      "sha256": "3a35311ecb0bcb0567a1b14f2aa245ab0570986229663d71064bc46921ad64fd",
+      "role": "source_only_not_admission"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/verifier/review-manifest-v1.json",
+      "bytes": 15377,
+      "sha256": "e8f66fa1aaa7c310453826e633d713ceb0e40f2ba00d0e01aa1d1b21ca8430a1",
+      "role": "source_only_not_admission"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/lead/probe-result-zh-v1.md",
+      "bytes": 11523,
+      "sha256": "6b7b09bdffe0bd03ffea8189c4e67b6d07ec268a610a03acd14438aca07d9093",
+      "role": "source_only_not_admission"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/prover/robust_program_v1.py",
+      "bytes": 7827,
+      "sha256": "5945d29df95eb1499005250e7d0f3835aff91f9846b8e6ce6ac3ef516c0d5600",
+      "role": "source_only_not_admission"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/prover/resource_interface_v1.py",
+      "bytes": 3094,
+      "sha256": "b11f8f06eec9b1ff2e305b5385e1efc69d3076b527027971a764e58d1ec9603e",
+      "role": "source_only_not_admission"
+    },
+    {
+      "path": "inputs/source-stage4/outputs/012-input-contamination/prover/finite-program-v1.json",
+      "bytes": 14745,
+      "sha256": "3875340ee76fa75ad61cc9db5e4483bb03e1971eeaa9b5d8973545bb2a83ec44",
+      "role": "source_only_not_admission"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "outputs/001-input-contamination/lead/mathematical-checkpoint-v1.md",
+      "bytes": 14696,
+      "sha256": "25499c426e891a348f3382e572b55ed4587581cf865597282c0a029220c401f7"
+    },
+    {
+      "path": "outputs/FRONTIER.md",
+      "bytes": 3181,
+      "sha256": "fb3e5ab952e194035fc6cb929a8d73d47716c2ab6b46e96fac9a33de3689847c"
+    },
+    {
+      "path": "inputs/STAGE_DEFINITIONS.md",
+      "bytes": 15528,
+      "sha256": "fc104078b9455bdd86586decd50902df6688400cc00f06e6b105699efefd0e02"
+    }
+  ],
+  "fact_ids": [],
+  "evidence_ids": [],
+  "old_diagnostics_run": false,
+  "source_proofs_reexecuted": false,
+  "full_netlist_materialized": false,
+  "source_files_changed": false,
+  "audit_performed": false,
+  "responsibility_receiver_pull_confirmed": false,
+  "[Non-scientific operational metadata omitted.]": {
+    "[Non-scientific operational metadata omitted.]": null,
+    "[Non-scientific operational metadata omitted.]": null,
+    "[Non-scientific operational metadata omitted.]": null,
+    "[Non-scientific operational metadata omitted.]": null,
+    "[Non-scientific operational metadata omitted.]": null,
+    "wall_ms": null,
+    "tool_cpu_ms": null,
+    "[Non-scientific operational metadata omitted.]": null
+  }
+}
