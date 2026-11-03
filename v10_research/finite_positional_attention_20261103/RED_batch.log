@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_full_batch_suffix (__main__.Contract.test_full_batch_suffix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "v10_research/finite_positional_attention_20261103/test_program.py", line 19, in test_full_batch_suffix
+    self.assertTrue(hasattr(self.m, 'evaluate'), 'full batch suffix missing')
+AssertionError: False is not true : full batch suffix missing
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

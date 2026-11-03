@@ -1,0 +1,81 @@
+{
+  "scope": "ACG001 independent full review; local only; accepted stochastic interfaces imported",
+  "artifacts": {
+    "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+    "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+    "v10_research/resumption_20261103/recovered_science/intake/positional_finite_manuscript_root_acceptance.json": "1b79729ec9686c9f0e69c73adf02d4d6e7cf24091515af19a0752fbca3ad67f8",
+    "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+    "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+    "v10_research/resumption_20261103/order_two_transfer/AUTHOR_SOURCE_BINDINGS.json": "5e3fe48f7bd031b9cd7bb396b39dec8d277dc0b7b0b08cb5fc75f4cd836c102b",
+    "v10_research/resumption_20261103/order_two_transfer/review_root/REVIEW.md": "dc5d05bd1060bac1c5d31c615066a16b5917b342305413350578372de81179f3",
+    "v10_research/resumption_20261103/order_two_transfer/review_root/PMC_INTERFACE_ADDENDUM.md": "cc6e2d447a5fd09fd36dacac5184753ed24f65cb63f5859f2e11af0dac7539ef",
+    "v10_research/resumption_20261103/order_two_transfer/review_root/PMC_INTERFACE_BINDINGS.json": "bd78aafdba209df9c6a32f96b0c1516cf4607282fd1a493c22c428faa5c1bd98",
+    "v10_research/approximate_gate_statistics_20261103/SOURCE_BINDINGS.json": "0da8966dca1f66eeb471f963009fd2c94a5e41a8c278c61c18a83e290fce797c",
+    "v10_research/approximate_gate_statistics_20261103/review_independent/REVIEW.md": "4f126db027b31fb2a23d0fcd385e34a605b65cacc4d37990bd00797da489f67b",
+    "v10_research/approximate_gate_statistics_20261103/review_independent/check.py": "dee08439d5ba22aef7c02e481ecc0882eea8577e3c2bff68e72676cc7856c861",
+    "v10_research/approximate_gate_statistics_20261103/review_independent/checks.json": "062e00522a310fc4f70275cbbeb3bf391d6fbe97edaacd18da2974a1ddb17dd0",
+    "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06"
+  },
+  "receipt_checks": [
+    {
+      "receipt": "v10_research/resumption_20261103/recovered_science/intake/positional_finite_manuscript_root_acceptance.json",
+      "artifact": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "match": true
+    },
+    {
+      "receipt": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "artifact": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "match": true
+    },
+    {
+      "receipt": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "artifact": "v10_research/resumption_20261103/order_two_transfer/AUTHOR_SOURCE_BINDINGS.json",
+      "match": true
+    },
+    {
+      "receipt": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "artifact": "v10_research/resumption_20261103/order_two_transfer/review_root/REVIEW.md",
+      "match": true
+    },
+    {
+      "receipt": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "artifact": "v10_research/resumption_20261103/order_two_transfer/review_root/PMC_INTERFACE_ADDENDUM.md",
+      "match": true
+    },
+    {
+      "receipt": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "artifact": "v10_research/resumption_20261103/order_two_transfer/review_root/PMC_INTERFACE_BINDINGS.json",
+      "match": true
+    },
+    {
+      "binding": "v10_research/resumption_20261103/order_two_transfer/AUTHOR_SOURCE_BINDINGS.json",
+      "artifact": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "match": true
+    },
+    {
+      "binding": "v10_research/resumption_20261103/order_two_transfer/AUTHOR_SOURCE_BINDINGS.json",
+      "artifact": "v10_research/resumption_20261103/recovered_science/intake/positional_finite_manuscript_root_acceptance.json",
+      "match": true
+    },
+    {
+      "binding": "v10_research/approximate_gate_statistics_20261103/SOURCE_BINDINGS.json",
+      "artifact": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "match": true
+    },
+    {
+      "binding": "v10_research/approximate_gate_statistics_20261103/SOURCE_BINDINGS.json",
+      "artifact": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+      "match": true
+    },
+    {
+      "binding": "v10_research/approximate_gate_statistics_20261103/SOURCE_BINDINGS.json",
+      "artifact": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "match": true
+    },
+    {
+      "binding": "v10_research/approximate_gate_statistics_20261103/SOURCE_BINDINGS.json",
+      "artifact": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "match": true
+    }
+  ]
+}

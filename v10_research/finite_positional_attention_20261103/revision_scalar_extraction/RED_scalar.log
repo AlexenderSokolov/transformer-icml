@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_scalar_grid_bit_extraction (__main__.Contract.test_scalar_grid_bit_extraction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "v10_research/finite_positional_attention_20261103/test_program.py", line 19, in test_scalar_grid_bit_extraction
+    self.assertTrue(hasattr(self.m, 'scalar_grid_bits'), 'paid scalar extraction missing')
+AssertionError: False is not true : paid scalar extraction missing
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

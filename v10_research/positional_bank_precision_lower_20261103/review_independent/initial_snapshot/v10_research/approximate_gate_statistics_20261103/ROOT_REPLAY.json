@@ -1,0 +1,9 @@
+{
+  "utc": "2026-11-03T03:26:02.323832+00:00",
+  "exit_code": 0,
+  "isolated_replay_matches": true,
+  "stdout": "{\n  \"status\": \"PASS\",\n  \"arithmetic\": \"fractions.Fraction exact rational; integer comparisons only\",\n  \"counts\": {\n    \"clipping_cases\": 18900,\n    \"pathwise_cases\": 61380,\n    \"loss_checks\": 273501,\n    \"zero_J\": 135,\n    \"zero_delta\": 8187,\n    \"fractional_delta\": 36996,\n    \"gate_equalities\": 2511,\n    \"accepted\": 37398,\n    \"rejected\": 23982,\n    \"false_accept_status\": 2622,\n    \"false_reject_status\": 2010,\n    \"ceiling_cases\": 3520,\n    \"quantization_cases\": 76626,\n    \"word_edit_pairs\": 14344\n  },\n  \"limits\": \"Finite diagnostics only. No source-law probability theorem or all-real proof inferred from enumeration.\"\n}\n",
+  "artifact_hashes_verified": 14,
+  "receipt_comparisons_verified": 12,
+  "setup_history": "First isolation copied checker directly into shallow /tmp directory; its unused ROOT=BASE.parents[2] raised IndexError before tests. Reran unchanged checker in preserved relative directory depth; no accepted source or output was altered."
+}

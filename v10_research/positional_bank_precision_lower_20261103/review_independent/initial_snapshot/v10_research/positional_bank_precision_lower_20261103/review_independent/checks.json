@@ -1,0 +1,223 @@
+{
+  "status": "PASS",
+  "risk_constant_checks": "PASS_EXACT",
+  "exact_expectation_cases": 18,
+  "exact_sensitivity_maxima": [
+    2,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2
+  ],
+  "exact_minimum_absolute_derivative": "8/65",
+  "rounding_cell_cases": [
+    {
+      "M": 64,
+      "h": 0,
+      "threshold_roots_with_multiplicity": 0,
+      "separation": 0.041666666666666664,
+      "threshold_margin": 0.1267361111111111
+    },
+    {
+      "M": 64,
+      "h": 1,
+      "threshold_roots_with_multiplicity": 1,
+      "separation": 0.038675134594812866,
+      "threshold_margin": 0.0610042339640731
+    },
+    {
+      "M": 64,
+      "h": 2,
+      "threshold_roots_with_multiplicity": 6,
+      "separation": 0.01484546540610876,
+      "threshold_margin": 0.005446758601407749
+    },
+    {
+      "M": 64,
+      "h": 3,
+      "threshold_roots_with_multiplicity": 8,
+      "separation": 0.013523138347364886,
+      "threshold_margin": 0.006578693902920525
+    },
+    {
+      "M": 64,
+      "h": 4,
+      "threshold_roots_with_multiplicity": 13,
+      "separation": 0.010712406622891931,
+      "threshold_margin": 0.0030217958868429856
+    },
+    {
+      "M": 64,
+      "h": 5,
+      "threshold_roots_with_multiplicity": 29,
+      "separation": 0.005632293541738553,
+      "threshold_margin": 0.002407131913818027
+    },
+    {
+      "M": 64,
+      "h": 6,
+      "threshold_roots_with_multiplicity": 51,
+      "separation": 0.0032147100766702166,
+      "threshold_margin": 0.002379096382401944
+    },
+    {
+      "M": 65,
+      "h": 0,
+      "threshold_roots_with_multiplicity": 0,
+      "separation": 0.041666666666666664,
+      "threshold_margin": 0.1267361111111111
+    },
+    {
+      "M": 65,
+      "h": 1,
+      "threshold_roots_with_multiplicity": 1,
+      "separation": 0.038675134594812866,
+      "threshold_margin": 0.05621955344154889
+    },
+    {
+      "M": 65,
+      "h": 2,
+      "threshold_roots_with_multiplicity": 6,
+      "separation": 0.01484546540610876,
+      "threshold_margin": 0.005446758601407749
+    },
+    {
+      "M": 65,
+      "h": 3,
+      "threshold_roots_with_multiplicity": 8,
+      "separation": 0.015573932999624137,
+      "threshold_margin": 0.0075444191107353386
+    },
+    {
+      "M": 65,
+      "h": 4,
+      "threshold_roots_with_multiplicity": 10,
+      "separation": 0.010712406622891931,
+      "threshold_margin": 0.0030217958868429856
+    },
+    {
+      "M": 65,
+      "h": 5,
+      "threshold_roots_with_multiplicity": 29,
+      "separation": 0.005632293541738553,
+      "threshold_margin": 0.0021790404820617314
+    },
+    {
+      "M": 65,
+      "h": 6,
+      "threshold_roots_with_multiplicity": 50,
+      "separation": 0.0033248898650981573,
+      "threshold_margin": 0.0017522342351170082
+    },
+    {
+      "M": 127,
+      "h": 0,
+      "threshold_roots_with_multiplicity": 0,
+      "separation": 0.041666666666666664,
+      "threshold_margin": 0.1267361111111111
+    },
+    {
+      "M": 127,
+      "h": 1,
+      "threshold_roots_with_multiplicity": 1,
+      "separation": 0.038675134594812866,
+      "threshold_margin": 0.058555381728135514
+    },
+    {
+      "M": 127,
+      "h": 2,
+      "threshold_roots_with_multiplicity": 6,
+      "separation": 0.01484546540610876,
+      "threshold_margin": 0.005446758601407749
+    },
+    {
+      "M": 127,
+      "h": 3,
+      "threshold_roots_with_multiplicity": 8,
+      "separation": 0.014566798425131458,
+      "threshold_margin": 0.007071207596207369
+    },
+    {
+      "M": 127,
+      "h": 4,
+      "threshold_roots_with_multiplicity": 10,
+      "separation": 0.010712406622891931,
+      "threshold_margin": 0.0030217958868429856
+    },
+    {
+      "M": 127,
+      "h": 5,
+      "threshold_roots_with_multiplicity": 29,
+      "separation": 0.005632293541738553,
+      "threshold_margin": 0.002407131913818027
+    },
+    {
+      "M": 127,
+      "h": 6,
+      "threshold_roots_with_multiplicity": 50,
+      "separation": 0.0032147100766702166,
+      "threshold_margin": 0.002379096382401944
+    },
+    {
+      "M": 10000000001,
+      "h": 0,
+      "threshold_roots_with_multiplicity": 0,
+      "separation": 0.041666666666666664,
+      "threshold_margin": 0.1267361111111111
+    },
+    {
+      "M": 10000000001,
+      "h": 1,
+      "threshold_roots_with_multiplicity": 1,
+      "separation": 0.038675134594812866,
+      "threshold_margin": 0.06100423393297267
+    },
+    {
+      "M": 10000000001,
+      "h": 2,
+      "threshold_roots_with_multiplicity": 6,
+      "separation": 0.01484546540610876,
+      "threshold_margin": 0.005446758601407749
+    },
+    {
+      "M": 10000000001,
+      "h": 3,
+      "threshold_roots_with_multiplicity": 8,
+      "separation": 0.01352313836054105,
+      "threshold_margin": 0.0065786939091522405
+    },
+    {
+      "M": 10000000001,
+      "h": 4,
+      "threshold_roots_with_multiplicity": 10,
+      "separation": 0.010712406622891931,
+      "threshold_margin": 0.0030217958868429856
+    },
+    {
+      "M": 10000000001,
+      "h": 5,
+      "threshold_roots_with_multiplicity": 29,
+      "separation": 0.005632293541738553,
+      "threshold_margin": 0.002407131913818027
+    },
+    {
+      "M": 10000000001,
+      "h": 6,
+      "threshold_roots_with_multiplicity": 50,
+      "separation": 0.0032147100766702166,
+      "threshold_margin": 0.002379096382401944
+    }
+  ],
+  "notes": [
+    "Finite checks complement the analytic proof; not a proof over every M,h.",
+    "Independent code imports no author implementation.",
+    "All mean, derivative, sensitivity and cell-margin assertions use rational arithmetic."
+  ]
+}

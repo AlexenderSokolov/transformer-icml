@@ -1,5 +1,13 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 新阶段：有限位置注意力与统计库精度（2026-11-03）
+
+已接纳 CCH001、ACG001、FPA001 和 PBP001：近似位置统计不必精确恢复门控位；明确计费的有限注意力程序实现该接口；固定十二坐标舍入统计库的干净风险为 Θ(max{M⁻¹ᐟ²,2⁻ʰ})。这不是所有编码器、整网精度或训练性能的下界，也不宣称优于拥有同样信息的流式计数器。
+
+- [中文综述与四项证明](v10_research/positional_attention_stage_20261103/RESEARCH_SUMMARY.zh.md)
+- [最终六项测试版本的复现入口](v10_research/finite_positional_attention_20261103/ROOT_REPRODUCTION_NOTES.md)
+- [冻结清单](v10_research/positional_attention_stage_20261103/STAGE_SCIENCE_FREEZE.json) · [公开身份与核验边界](provenance/positional_attention_20261103/PUBLICATION_SCOPE_AND_CHECKS.json)
+
 ## 新阶段：信道模型不确定性（2026-11-03）
 
 已接纳 UMC001、UWC001、CAF001 和 CMF001，研究真实信道未知时的可辨识边界、完整消息编码、模型误差精度与通信长度，以及接近不可辨识边界的成本。名义信道固定，补充消息与全消息实验分别计费；二阶结论保留指定临界全状态条件。

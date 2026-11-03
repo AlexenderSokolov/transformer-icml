@@ -1,0 +1,34 @@
+{
+  "utc": "2026-11-03T03:39:36.621458+00:00",
+  "status": "ROOT_ALL_FOUR_REPLAYS_PASS",
+  "isolated": true,
+  "candidate_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+  "program_sha256": "9892df19071f4c8573f59ad9ca9bdc6f681632f7b37b335df2f906e29d0e51eb",
+  "results": [
+    {
+      "script": "test_program.py",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 92.608s\n\nOK\n"
+    },
+    {
+      "script": "review_independent/check.py",
+      "exit_code": 0,
+      "stdout": "{\n  \"arithmetic\": 1680,\n  \"metadata\": 11,\n  \"program_sha256\": \"9892df19071f4c8573f59ad9ca9bdc6f681632f7b37b335df2f906e29d0e51eb\",\n  \"replacements\": 2440,\n  \"words\": 1644\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "review_independent/check_batch.py",
+      "exit_code": 0,
+      "stdout": "{\n  \"full_batch_cases\": 9,\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "review_independent/check_extraction.py",
+      "exit_code": 0,
+      "stdout": "{\n  \"H=0_H=1_h=0_included\": true,\n  \"canonical_grid_cases\": 8204,\n  \"h_range\": [\n    0,\n    12\n  ],\n  \"off_grid_not_a_bit_confirmed\": true,\n  \"prior_datapath_AST_unchanged\": true,\n  \"program_sha256\": \"9892df19071f4c8573f59ad9ca9bdc6f681632f7b37b335df2f906e29d0e51eb\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "comparison_note": "Primary reviewer counts match original report; expected program hash is updated by explicit scalar-only amendment. Batch/extraction JSON match exactly. Author six-test suite rerun on final code. Historical five-test logs/manifests remain frozen."
+}

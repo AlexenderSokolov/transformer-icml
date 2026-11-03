@@ -1,5 +1,12 @@
 # 资料导航
 
+## 有限位置注意力阶段入口
+
+- [中文综述](../v10_research/positional_attention_stage_20261103/RESEARCH_SUMMARY.zh.md) · [研究方向与强基线比较](../v10_research/research_direction_review_20261103/ASSESSMENT.md)
+- [ACG：近似统计接口](../v10_research/approximate_gate_statistics_20261103/CANDIDATE.md) · [FPA：完整有限构造](../v10_research/finite_positional_attention_20261103/CANDIDATE.md)
+- [PBP：固定统计库精度下界](../v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md) · [CCH：条件信道可靠性](../v10_research/conditional_channel_20261103/CANDIDATE.md)
+- [当前复现说明](../v10_research/finite_positional_attention_20261103/ROOT_REPRODUCTION_NOTES.md) · [冻结源清单](../v10_research/positional_attention_stage_20261103/STAGE_SCIENCE_FREEZE.json) · [公开身份协调](../provenance/positional_attention_20261103/PUBLIC_EXPORT_RECONCILIATION.json)
+
 ## 未知信道阶段入口
 
 - [中文综述与四项证明](../v10_research/channel_uncertainty_stage_20261103/RESEARCH_SUMMARY.zh.md)

@@ -1,0 +1,71 @@
+{
+  "unit": "CCH001",
+  "status": "AUTHOR_SOURCE_BINDINGS_NOT_ACCEPTANCE",
+  "sources": [
+    {
+      "unit": "CMF001",
+      "source": "v10_research/channel_margin_frontier_20261103/CANDIDATE.md",
+      "sha256": "2618aaf7d6a5610827697c6c86a6c0c5f9a5eef44460edbc944de56d6ec0b476",
+      "receipt": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "cd2d9a2bafb1783a109fbbc247a4629bd7d4639d9dab91ec1a1386d58eeabae9",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "CAF001",
+      "source": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+      "sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+      "receipt": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "17e57534a5e0b811e09579c868d47f819ea11b6a88ae233606732ba0fad9da4d",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "UMC001",
+      "source": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "receipt": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "UWC001",
+      "source": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+      "sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+      "receipt": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "4f8f7716d992d4bdb2c594b875c51b1f8df85ff43557877243931ae15aa066fb",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "O2T001",
+      "source": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "receipt": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "WMC001",
+      "source": "v10_research/resumption_20261103/whole_message_cost/CANDIDATE.md",
+      "sha256": "502b3a7e37c8adda33722ca324bade02efeab1c9d140c59abb3d812bba3eca62",
+      "receipt": "v10_research/resumption_20261103/whole_message_cost/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "c7b730b9ace89de683f321683058bb90065f30d74256dcb9c66f35d671807396",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "BCC001",
+      "source": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+      "sha256": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+      "receipt": "v10_research/resumption_20261103/channel_classification/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "c1d2c41fb616c683379e51a9146dc74cc869001621c439992cc6af01ecc3dfdf",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "BSC001",
+      "source": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "receipt": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+      "accepted_hash_verified": true
+    }
+  ],
+  "limits": "Direct interfaces and model sections read; imported statistical and algebraic proofs not independently rederived. Hash identity is not proof validation."
+}

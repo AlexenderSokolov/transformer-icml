@@ -1,0 +1,23 @@
+--- v10_research/positional_bank_precision_lower_20261103/CANDIDATE.before_standard_lemmas.md	2026-11-02 19:35:13.914552466 -0800
++++ v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md	2026-11-02 19:35:13.949499860 -0800
+@@ -99,7 +99,19 @@
+ 
+ No all-encoder bit-count lower follows: arbitrary encoders could spend their bits on a different parameter summary, and arbitrary architectures could expose different information. Adding hidden history or other counts invalidates the observation premise. The constants are intentionally loose, and the crossover C is only a proof device, not a practical sample-size recommendation.
+ 
+-## 8. Diagnostics and source status
++## 8. Elementary probability inequalities used above
++
++For completeness, the two general inequalities used in the lower proof have short derivations. All input distributions here have finite support.
++
++**Bounded differences.** Let F depend on independent coordinates, with changing coordinate i alone changing F by at most c_i. Reveal coordinates in order and let Z_i be the Doob martingale increments. Conditional on the revealed prefix, Z_i has mean zero and lies in an interval of length at most c_i: integrate over the same independent remaining coordinates when comparing two possible values of coordinate i. For any centered random variable Z in an interval of length c, put g(lambda)=log E exp(lambda Z). Its second derivative is the variance under the exponentially tilted law, which is at most c^2/4. Indeed, if the interval is [a,b], then (Z-a)(b-Z)>=0 gives Var(Z)<= (E Z-a)(b-E Z)<= (b-a)^2/4 under any law on that interval. As g(0)=g'(0)=0, integration gives g(lambda)<=lambda^2 c^2/8 for either sign of lambda. Apply this conditional bound to each Z_i and iterate conditional expectations to obtain
++
++    E exp(lambda(F-E F)) <= exp(lambda^2 sum_i c_i^2/8).
++
++Markov's inequality and optimization at lambda=4t/sum_i c_i^2 give Pr(F-E F>=t)<=exp(-2t^2/sum_i c_i^2). Apply the same argument to -F and add the tails. The zero-sensitivity case is deterministic and immediate. This proves the inequality used in section 4 without assuming independent count summands.
++
++**Pinsker for finite laws.** Let P,Q be finite probability laws. If P has positive mass where Q is zero, KL(P||Q) is infinite and the bound is immediate. Otherwise take A={x:P(x)>Q(x)}, so TV(P,Q)=P(A)-Q(A). The log-sum inequality on A and its complement yields KL(P||Q)>=kl(P(A)||Q(A)). To derive log-sum, write each group's sum as its P-mass times the expectation of log(P(x)/Q(x)) under normalized P weights; convexity of -log gives a lower bound equal to that mass times the log of the ratio of group masses. Zero group masses follow by continuity. For fixed q in (0,1), binary divergence f(p)=kl(p||q) has f(q)=f'(q)=0 and f''(p)=1/[p(1-p)]>=4. Integrating twice from q to p gives f(p)>=2(p-q)^2. Boundary cases follow by continuity or infinite divergence. Consequently KL(P||Q)>=2 TV(P,Q)^2, which is precisely the Pinsker estimate used in section 6. KL additivity for independent products follows by expanding the log of their product-density ratio into a sum and taking expectations.
++
++## 9. Diagnostics and source status
+ 
+ `check.py` uses only exact rational/integer arithmetic. It enumerates short binary words to verify expectation formulas and per-bit sensitivity, checks rational derivative minima, isolates threshold roots by exact sign bisection and verifies certified interior pairs for selected M,h, and checks the numerical inequalities used above with rational Taylor sums. It also exhibits that expectation and rounding do not commute. These finite checks diagnose the proof and indexing; they do not replace the all-M argument, concentration inequality, or two-point theorem.
+ 

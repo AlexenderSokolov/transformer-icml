@@ -1,0 +1,37 @@
+FFFF
+======================================================================
+FAIL: test_all_small_words_all_banks (__main__.Contract.test_all_small_words_all_banks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "v10_research/finite_positional_attention_20261103/test_program.py", line 13, in setUp
+    self.assertTrue(P.exists(), 'finite attention evaluator has not been implemented')
+AssertionError: False is not true : finite attention evaluator has not been implemented
+
+======================================================================
+FAIL: test_bit_arithmetic (__main__.Contract.test_bit_arithmetic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "v10_research/finite_positional_attention_20261103/test_program.py", line 13, in setUp
+    self.assertTrue(P.exists(), 'finite attention evaluator has not been implemented')
+AssertionError: False is not true : finite attention evaluator has not been implemented
+
+======================================================================
+FAIL: test_boundary_and_fault_readout (__main__.Contract.test_boundary_and_fault_readout)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "v10_research/finite_positional_attention_20261103/test_program.py", line 13, in setUp
+    self.assertTrue(P.exists(), 'finite attention evaluator has not been implemented')
+AssertionError: False is not true : finite attention evaluator has not been implemented
+
+======================================================================
+FAIL: test_masks_exact_legal_keys (__main__.Contract.test_masks_exact_legal_keys)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "v10_research/finite_positional_attention_20261103/test_program.py", line 13, in setUp
+    self.assertTrue(P.exists(), 'finite attention evaluator has not been implemented')
+AssertionError: False is not true : finite attention evaluator has not been implemented
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=4)

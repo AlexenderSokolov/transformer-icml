@@ -1,5 +1,13 @@
 # 公开版本的来源、校验与复现
 
+## 有限位置注意力阶段的版本与复现
+
+本阶段按冻结清单纳入 83 个源文件。证明、程序、有限检查 JSON 输出及数学修订差异保持原字节；六个非数学文件共九行只去除私有上下文链接、主机路径前缀或内部指向措辞，精确原始/公开身份见[协调表](../provenance/positional_attention_20261103/PUBLIC_EXPORT_RECONCILIATION.json)。SRC 的两个旧源身份沿用既有公开映射，不覆盖已发布文件，也不把原始哈希误称为公开副本哈希。
+
+请从仓库根目录、在隔离副本中运行 [ROOT_REPRODUCTION_NOTES](../v10_research/finite_positional_attention_20261103/ROOT_REPRODUCTION_NOTES.md) 的显式命令。原 REPRODUCE、MANIFEST、五项测试日志及审阅保留历史含义；当前版本由标量修订清单、增补审阅和最终接纳凭据绑定，包含六项测试。历史 MANIFEST 的相对路径按原单元目录解释，不应在修订快照目录中当作完整独立包执行。
+
+科学复跑由源凭据报告，本次发布只检查精确身份、语法和依赖映射；CI 验证公开 inventory 与拒绝损坏案例，不重证数学。此前缺失历史及重建 PDF 边界不变。[本阶段核验说明](../provenance/positional_attention_20261103/PUBLICATION_SCOPE_AND_CHECKS.json) 列出具体范围。
+
 ## 未知信道阶段的核验范围
 
 本阶段冻结 45 个源文件，包括四个接纳目录、中文综述、方法来源与 freeze 清单。数学正文、诊断代码、已有输出和真实修订记录保持原字节。仅一行审查署名作非数学规范化，原始与公开哈希见[精确协调表](../provenance/channel_uncertainty_20261103/PUBLIC_EXPORT_RECONCILIATION.json)。历史接纳记录继续绑定原始身份，新 inventory 绑定公开字节。

@@ -1,0 +1,39 @@
+{
+  "utc": "2026-11-03T03:36:54.986196+00:00",
+  "isolated": true,
+  "status": "ROOT_TWO_REPLAYS_PASS",
+  "artifact_bindings_verified": 17,
+  "results": [
+    {
+      "script": "check.py",
+      "exit_code": 0,
+      "matches_stored_report": true,
+      "stdout_summary": "Author full JSON output byte-identical"
+    },
+    {
+      "script": "review_independent/check.py",
+      "exit_code": 0,
+      "matches_stored_report": true,
+      "stdout_summary": {
+        "status": "PASS",
+        "expectation_cases": 18,
+        "cell_cases": 28,
+        "derivative_min": "8/65",
+        "sensitivity": [
+          2,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          2
+        ]
+      }
+    }
+  ]
+}

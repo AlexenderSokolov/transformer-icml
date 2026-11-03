@@ -1,0 +1,58 @@
+{
+  "author_artifacts": {
+    "CANDIDATE.md": "50eeb61314fcdcc06d4e88f1e0405797238d788db6f911557d6954326de5acc5",
+    "GREEN.log": "2480d2dd2ca0b92935eb39d33d2b942bbe21e0f137022f49b1db61c945db5659",
+    "MANIFEST.json": "a5faa2ee70805c6b253b13993d9c509d0365913cd689c1ef7baf6a5804b7e45e",
+    "RED.log": "7f740b2690294a66559415b41e6f497b0cac166ea5193df2637b13eb939e0746",
+    "RED_batch.log": "8bb4266a72504d199563b959e81736c5c51d90a12e979b8f4c808154a66de048",
+    "REPRODUCE.md": "7b3c2eedc1cc8a96a5bf5c198772ae0011f6da133f3a668cc3667950ca33d2c2",
+    "ROOT_DISCOVERY.log": "e70fec2825d9bf206d27463a792768195039599cb39bcca66339f47283f84cce",
+    "SOURCE_BINDINGS.json": "bf94894a7f0838eba37c0a23c6909f033fb049b13f2b761022da4db7f086e480",
+    "program.py": "6c7763f133e53614fc653b6a4b179f508ca75f0a4d2394ff7fe17681e1bd26df",
+    "test_program.py": "5eec4e32d3855a74d002b0ab910a0ffafe1faffa0c82fa1121db7d2e9aa737b3"
+  },
+  "batch_checks": {
+    "full_batch_cases": 9,
+    "status": "PASS"
+  },
+  "independent_artifacts": {
+    "REVIEW.md": "85586b51cfc7a9057dc1530d1f20d39f93a1d8ff9aafd32839b5ca74cea8a85b",
+    "batch_checks.json": "1afc50bbf27c8a9f371843a89e690707717780f00fd9ffc4434deeb67b621b32",
+    "check.py": "fa432b1a1443d2244a25184b63d9d430ef0abc177ab8764e9eb51c7a0a315c0c",
+    "check_batch.py": "e21bb50b6655886ae31ff2fe0f5989bdd302536a9443702e16494815539988d4",
+    "checks.json": "dcd760ede7c0e7ccb4d91c5bb4e98f08daea79045d38a34d8f2ab4b95a68f19b"
+  },
+  "independent_checks": {
+    "arithmetic": 1680,
+    "metadata": 11,
+    "program_sha256": "6c7763f133e53614fc653b6a4b179f508ca75f0a4d2394ff7fe17681e1bd26df",
+    "replacements": 2440,
+    "words": 1644
+  },
+  "limits": [
+    "Only explicitly permitted paid singleton/self/query masks; not dense-causal-only",
+    "Canonical grid master replacement with exact endpoint and arithmetic",
+    "Hybrid finite-attention cost is separated from PURE expansion",
+    "No whole-network precision reduction, training result, architecture-wide lower bound or advantage over equal-information counter"
+  ],
+  "requested_changes_resolved": [
+    "Accepted ACG001 receipt explicitly imported",
+    "Exact b=2 count-only across-budget competitive-factor obstruction stated"
+  ],
+  "review_kind": "Separate author/reviewer; full mathematical and finite-program audit, not formal or external peer review",
+  "source_artifacts": {
+    "v10_intake/source/sources/euler-stage6/FACT_INDEX.json": "0ee009f1624bd4b9f78bec6f2d23119d40536504bca376050d153d3b0e1b6735",
+    "v10_intake/source/sources/euler-stage6/facts/fef8372728290b45.md": "33ea4cbe839a4ad72453cb20f8f74263a1d330e766027f7e65638c494da4c025",
+    "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+    "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+    "v10_research/approximate_gate_statistics_20261103/ROOT_REPLAY.json": "27514f8441d0a514166934053a092610bc277092b6dd9a0d0dffb2f1d88d2ed2",
+    "v10_research/research_direction_review_20261103/ASSESSMENT.md": "a4d884b8e07323bd565d3bac631b3153f6d74e54bbe2b3fd3397e8767676245a",
+    "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+    "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+    "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88"
+  },
+  "unit": "FPA001",
+  "unresolved_blockers": [],
+  "utc": "2026-11-03T03:31:41.253345+00:00",
+  "verdict": "PASS_IN_DECLARED_SCOPE"
+}
