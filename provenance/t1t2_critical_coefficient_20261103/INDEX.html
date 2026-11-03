@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>T1/T2：指定系数的临界尺度与固定常数风险</title><style>body{font:17px/1.65 system-ui,sans-serif;max-width:1050px;margin:2rem auto;padding:0 1rem;color:#182632}h1,h2{color:#163f5c}a{color:#075c97}pre{white-space:pre-wrap;background:#edf3f5;padding:1rem}.warning{background:#fff2d8;padding:1rem;border-left:5px solid #aa6800}li{margin:.4rem 0}</style>
+<h1>T1/T2：指定系数的临界尺度与固定常数风险</h1>
+<p>本阶段归档十份解析研究、实际澄清、绑定原文的 LLM 数学审查，以及 LLM 研究价值与文献审计。没有新增实验、随机数据、训练、枚举或历史研究程序执行。审查不是形式验证、外部人类同行评审或创新性认证。</p>
+<div class="warning"><strong>只讨论一个明确图、一个明确系数方向和一个固定源。</strong>位置输入、其余权重和算术均按指定 exact-real 构造；不存在一般 Transformer、任意扰动、普通量化或 IEEE 硬件结论。固定 c 后取 N 极限、随 N 改变 c<sub>N</sub>、固定非零误差三种问题不能混同。</div>
+<h2>1. 共同模型与损失</h2>
+<p>沿用<a href="../t1t2_fixed_parameter_20261103/INDEX.html">四块固定参数、二类词表 softmax 构造</a>：无 LN、全因果、两枚 BOS、输入 (1,i,i²,ln i,x)、原 snap 与 gates、四个 anchors 和最后 Gaussian/log-position 读出。L=N+2，只把 lag-one copy 头的分数改为</p>
+<pre>s(i,j)=2i(i−1)j−(1+η_N)ij²，η_N=c/L。</pre>
+<p>它将 Q 投影中原标量 −4 改成 −4(1+c/L)，绝对权重变化的<strong>大小</strong>为4c/L。每个长度的受扰权重不同；原图不变。所有其他参数、mask、BOS、lag-two 头和输入不变。</p>
+<p>源也始终固定：均匀平稳 pair 初始化，θ<sub>00</sub>(1)=3/4、θ<sub>10</sub>(1)=1/4、θ<sub>01</sub>(1)=θ<sub>11</sub>(1)=1/2。每个两步 pair 转移至少1/16，是全支持、真正二阶且快混合的源。风险对同一条观测轨迹的真实末状态 next-token 条件分布取平均 TV，不是独立查询或源类 minimax 下界。</p>
+<h2>2. c=2 的临界尺度反例与必须合读的 L1 更正</h2>
+<ol><li><a href="../../v10_research/critical_coefficient_risk_20261103_1823/critical_scale_markov_risk_v1.html">c=2 主稿</a>。</li><li><a href="../../v10_research/critical_coefficient_risk_20261103_1823/moving_target_l1_clarification_v1.html">移动随机目标的 L1 表述更正</a>，必须与主稿合读。</li><li><a href="../../v10_research/critical_coefficient_risk_20261103_1823/critical_scale_independent_review_20261103_1824.md">绑定两份原件的联合解析审查</a>。</li></ol>
+<p>η<sub>N</sub>=2/(N+2) 时风险趋于583/3072。证明把历史复制分成相对长度1/4、1/2、1/4的确定性区间，排除 O(log N) 个可能接近切换点的行；未假定半整数 tie 自动正确。依赖同轨迹的有限窗口遍历平均、实际四 anchors、真实末端查询及最终 softmax 得到该常数，不外推较早 q<sub>N</sub> 的证明。</p>
+<p class="warning">主稿 §2 的“same limit in L1”是被保留的历史措辞，准确结论是 E|P<sub>N</sub>−p<sub>X<sub>N−3</sub>,X<sub>N</sub></sub>|→0。随机比较量随 N 改变，<strong>不声称它本身收敛</strong>。四个 anchor 分别趋于固定常数，平稳性固定移动末窗口的分布，反三角不等式才把该 L1 误差转成风险极限。</p>
+<p>与既有<a href="../../v10_research/copy_coefficient_tolerance_20261103_1819/two_sided_safe_window_v1.html">|η|≤1/[8(N+2)] 的逐词充分安全窗口</a>对照，可说此指定系数已有同为 Θ(1/N) 阶的安全侧与一个失败侧例子。它不意味着同常数、符号对称、风险单调或所有窗口外扰动失败。</p>
+<h2>3. 固定正 c 的开区间与两个分别证明的端点</h2>
+<p><a href="../../v10_research/coefficient_constant_transition_20261103_1826/constant_scale_transition_v1.html">固定 c 转变主稿</a>和<a href="../../v10_research/coefficient_constant_transition_20261103_1826/constant_transition_independent_review_20261103_1827.md">对应审查</a>原本只决定两个开区间，后来端点附录须成组读取：</p>
+<ul><li><strong>0&lt;c&lt;1/2 固定：</strong>所有充分大的 N，对每个输入词，受扰和未扰动最终输出恰相同。风险因而在该固定源上趋零；不承诺该开区间证明的长度条件在小 N 成立。</li>
+<li><strong>c=1/2：</strong><a href="../../v10_research/coefficient_constant_transition_20261103_1826/half_endpoint_safe_addendum_v1.html">独立端点附录</a>与<a href="../../v10_research/coefficient_constant_transition_20261103_1826/half_endpoint_independent_review_20261103_1828.md">审查</a>给更强结论：每个 N≥2、每个词均输出相同。N=2 只说明两模型相等，不说共同输出恰为1/2。</li>
+<li><strong>1/2&lt;c&lt;3/2 固定：</strong>实际末态平均 TV 趋于 (11c−3)/[16(4c−1)]，例如 c=1 为1/6。真实查询使用有依赖的末窗口，未引入独立-query 假设。</li>
+<li><strong>c=3/2：</strong><a href="../../v10_research/coefficient_constant_transition_20261103_1826/three_halves_endpoint_addendum_v1.html">单独端点附录</a>与<a href="../../v10_research/coefficient_constant_transition_20261103_1826/three_halves_endpoint_independent_review_20261103_1829.md">审查</a>给极限27/160。历史尾部可被排除为异常行，但末端查询另算，不能漏掉它。X<sub>N−2</sub> 的该端点查询解释从 N≥3 使用，不给 N=2 虚构 X<sub>0</sub>。</li></ul>
+<div class="warning">两个开区间加 c=1/2 的独立结论，显示<strong>先固定 c、再取长度极限</strong>的风险函数在 c=1/2 的正侧跳变，右极限为5/32。固定有限 N 的 softmax/ReLU 图仍对参数连续，不存在所声称的有限长度不连续。这不是一般网络的临界常数。随 N 靠近端点的 c<sub>N</sub> 边界层未解决；一般 c&gt;3/2 未由这组区间证明覆盖，但上节<strong>特定 c=2</strong> 已另有证明，不能说它也未知。</div>
+<p>所有这些长度相关 η<sub>N</sub>=c/L 的结果，都不同于<a href="../../v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/drift_risk_counterexample_v1.html">先固定 η=1/(2q) 再取极限的3/16</a>。不能把3/16、583/3072、27/160混成同一量词公式。</p>
+<h2>4. 价值、先例与真正的数值边界</h2>
+<p><a href="../../v10_research/critical_perturbation_value_audit_20261103_1831/research_value_and_prior_art.html">研究价值与先例审计</a>是本项目的 LLM 研究角色评估，不是外部审稿、证明验收或优先权认定。它承认图、源、方向均为分析而选择；价值在于明确跟踪完整预测风险和固定长度/跨长度均匀稳定性的差别，不是发现一切模型共同的机制。</p>
+<p class="warning">原 Q 标量<strong>−4 可被常用二进制浮点格式精确表示</strong>。不能说一次普通舍入必然产生本稿选定的 c/L 扰动。真实量化涉及格点、共享尺度、多参数、激活及运算实现，本批没有量化或训练实验，也不证明 SGD 通常产生该方向。参数误差大小依赖固定坐标与 Q/K 重标度，不是跨架构不变量。</p>
+<p>Liu Proposition 4 已有位置 QK 精确约束和长序列失败先例，Chen 已有复制/匹配误差到完整输出的桥接，其他文献各有输入、参数和数值范围。未找到完全相同量词不是原创性证据。审计只是定向阅读，第三方原文只链接、不转载；既有 Liu PDF 抓取大小限制与索引文本核对范围保留在<a href="../t1t2_coefficient_perturbation_20261103/INDEX.html">上一阶段索引</a>和原审查中。专用整数后端精确保留原系数，不与此非零反事实实值误差冲突，也不自动证明完整标准浮点实现无误。</p>
+<h2>5. 身份、历史和复核边界</h2>
+<p>各原稿的“待审”和尚未解决端点等原始状态保留，与实际后续附录/审查共同阅读，不静默改写旧结论。价值审计只在公开副本中最小中性化一处非数学操作措辞，原件保持不变，精确身份及变更区间见映射。</p>
+<ul><li><a href="SOURCE_EXPORT_MAP.json">十件原始与公开身份</a> · <a href="EXPORT_CHANGES.json">公开变化</a> · <a href="SOURCE_RECONCILIATION.json">已公开依赖与限制</a>。</li><li><a href="HASH_REFERENCE_BINDINGS.json">哈希引用</a> · <a href="BOUND_PAIRS.json">正文/审查绑定</a> · <a href="VERSION_HISTORY.json">真实澄清和端点关系</a> · <a href="LINK_CENSUS.json">链接范围</a>。</li><li><a href="STAGE_FILE_MANIFEST.json">本阶段清单</a> · <a href="../PUBLIC_INVENTORY.json">公共库存</a> · <a href="../../tools/public_verify.py">字节完整性检查器</a>。</li></ul>
+<p>仓库 CI 验证文件集合和字节，不重证数学，不填补早期未保留的历史或旧 MM5 版本身份差异。无新许可证、投稿、部署或外部评审声明。</p></html>

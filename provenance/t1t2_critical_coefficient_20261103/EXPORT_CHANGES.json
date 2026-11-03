@@ -1,0 +1,32 @@
+{
+  "schema": "safe-metadata-export-diff-v1",
+  "base_commit": "ea6fc12d1b165260c0e248d91474a32206ffed25",
+  "coordinates": "UTF-8 byte offsets, zero-based half-open.",
+  "removed_text_policy": "Removed private process text is not reproduced. Only its byte count, span hash and coordinates are retained; every unchanged complementary byte is verified. Existing inherited normalizations remain separately mapped.",
+  "change_count": 1,
+  "changes": [
+    {
+      "source_record_id": "CCR010",
+      "path": "v10_research/critical_perturbation_value_audit_20261103_1831/research_value_and_prior_art.html",
+      "change_id": "CCR010-META-001",
+      "kind": "nonmathematical_private_process_neutralization",
+      "original_utf8_byte_range_zero_based_half_open": [
+        11238,
+        11271
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        11238,
+        11253
+      ],
+      "removed_span_bytes": 33,
+      "removed_span_sha256": "9973001f87d2726d98f3cf970340811dfe87703a3b7c42dd87cc1e0126e96229",
+      "replacement": "未来可指定",
+      "replacement_bytes": 15,
+      "replacement_sha256": "cd9b9b4386c7928cbdd987a24aa796feecb6d328eebec7d675ef95c554621302",
+      "reason": "Neutralize one nonmathematical process clause while retaining the hypothetical unperformed research proposal and every technical condition. Removed values are not reproduced.",
+      "all_unchanged_complements_verified": true
+    }
+  ],
+  "byte_exact_source_count": 9,
+  "normalized_source_count": 1
+}

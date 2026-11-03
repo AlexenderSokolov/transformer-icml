@@ -1,0 +1,200 @@
+{
+  "base_commit": "ea6fc12d1b165260c0e248d91474a32206ffed25",
+  "preferred_critical_risk_reader_entry_source_id": "CCR001",
+  "preferred_constant_scale_reader_entry_source_id": "CCR004",
+  "mandatory_correction_source_id": "CCR002",
+  "transitions": [],
+  "no_reconstructed_revisions": true,
+  "review_bindings": [
+    {
+      "review_source_id": "CCR003",
+      "reviewed_source_ids": [
+        "CCR001",
+        "CCR002"
+      ],
+      "referenced_selected_source_ids": [
+        "CCR001",
+        "CCR002"
+      ],
+      "exact_original_digest_bindings": {
+        "CCR001": "17e2400856f88047f3376aab80a2062ab13c7e9eb259e9f11db86f6f2a3d4797",
+        "CCR002": "5894f3e194d1bce9c1b4115b7859d98f432108b20fc05b8554654da90bb798fb"
+      },
+      "referenced_already_public_paths": [],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. The exact reviewed source bytes are bound; filenames and historical pending-review wording do not prove precise freeze-before-review chronology. Citing dependencies does not freshly certify them."
+    },
+    {
+      "review_source_id": "CCR005",
+      "reviewed_source_ids": [
+        "CCR004"
+      ],
+      "referenced_selected_source_ids": [
+        "CCR004"
+      ],
+      "exact_original_digest_bindings": {
+        "CCR004": "2d8d6b8c668d1726cd16673b161f8c4a779f3889ea9f13dc0ccc1381ae0d27d0"
+      },
+      "referenced_already_public_paths": [],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. The exact reviewed source bytes are bound; filenames and historical pending-review wording do not prove precise freeze-before-review chronology. Citing dependencies does not freshly certify them."
+    },
+    {
+      "review_source_id": "CCR007",
+      "reviewed_source_ids": [
+        "CCR006",
+        "CCR004"
+      ],
+      "referenced_selected_source_ids": [
+        "CCR004",
+        "CCR006"
+      ],
+      "exact_original_digest_bindings": {
+        "CCR004": "2d8d6b8c668d1726cd16673b161f8c4a779f3889ea9f13dc0ccc1381ae0d27d0",
+        "CCR006": "3f246d6b28a1e7c778405558b36354bedc473a5fcf05f9ebf51b1e95cba95486"
+      },
+      "referenced_already_public_paths": [],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. The exact reviewed source bytes are bound; filenames and historical pending-review wording do not prove precise freeze-before-review chronology. Citing dependencies does not freshly certify them."
+    },
+    {
+      "review_source_id": "CCR009",
+      "reviewed_source_ids": [
+        "CCR008",
+        "CCR004"
+      ],
+      "referenced_selected_source_ids": [
+        "CCR004",
+        "CCR008"
+      ],
+      "exact_original_digest_bindings": {
+        "CCR004": "2d8d6b8c668d1726cd16673b161f8c4a779f3889ea9f13dc0ccc1381ae0d27d0",
+        "CCR008": "0fd1ee653f8314403fc9db27f921d9816dc486364c42091af76587d5365e7cc0"
+      },
+      "referenced_already_public_paths": [],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. The exact reviewed source bytes are bound; filenames and historical pending-review wording do not prove precise freeze-before-review chronology. Citing dependencies does not freshly certify them."
+    }
+  ],
+  "separate_corrections": [
+    {
+      "original_source_id": "CCR001",
+      "clarification_source_id": "CCR002",
+      "review_source_id": "CCR003",
+      "kind": "actual_separate_moving_target_l1_correction",
+      "summary": "The original phrase same limit in L1 must be replaced in interpretation by E|P_N-p_(X_(N-3),X_N)| tending to zero. The moving random comparator need not converge. Reverse triangle inequality and stationarity preserve risk 583/3072. Original bytes remain immutable."
+    }
+  ],
+  "separate_consequences": [
+    {
+      "source_id": "CCR006",
+      "input_source_id": "CCR004",
+      "review_source_id": "CCR007",
+      "kind": "actual_separate_half_endpoint_addendum",
+      "scope": "Establishes all-word output equality for all N>=2 at c=1/2, separately from the original open intervals."
+    },
+    {
+      "source_id": "CCR008",
+      "input_source_id": "CCR004",
+      "review_source_id": "CCR009",
+      "kind": "actual_separate_three_halves_endpoint_addendum",
+      "scope": "Establishes 27/160 at fixed c=3/2 with a separate terminal score-gap proof; excludes varying c_N and c>3/2."
+    }
+  ],
+  "metadata_only_export_changes": [
+    "CCR010-META-001"
+  ],
+  "historical_review_wording": "Candidate/awaiting-review statements remain dated source history. Separate scoped LLM reviews do not establish precise freeze-before-review chronology or external human peer review. Filenames are not trusted completion times. The genuine L1 correction and two endpoint addenda remain separate; no mathematical source was silently repaired or historical revision reconstructed.",
+  "historical_record_gaps": [
+    {
+      "record": "Inherited three-block integer-backend review and aggregate-run evidence",
+      "status": "OVERWRITTEN_ORIGINAL_BYTES_UNAVAILABLE",
+      "referenced_original_sha256": "69c60c139b59e572ea0c0fb300d53741d24e1a8157a5a54fd16d9dfdda6d3316",
+      "original_byte_count": null,
+      "original_git_blob_sha1": null,
+      "current_distinct_version_source_id_in_existing_stage": "FPC019",
+      "current_distinct_version_original_identity": {
+        "bytes": 8685,
+        "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+        "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc"
+      },
+      "existing_public_evidence_paths": [
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/evidence_limit_addendum_20261103_1641.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/dense_visit_clarification.html"
+      ],
+      "limitation": "Exact overwritten review bytes remain unavailable. The current review is a distinct version; only seven aggregate output lines survive without original per-case records, environment, assertion state or exit code. No run was repeated and no missing record reconstructed."
+    }
+  ],
+  "inherited_identity_limit": {
+    "status": "original_source_of_already_public_sanitized_export",
+    "referenced_original_identity": {
+      "bytes": 14746,
+      "sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+      "git_blob_sha1": "5aa3f546594f5bb5209565c7e7b8153f6fca20fb"
+    },
+    "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+    "public_identity": {
+      "bytes": 14732,
+      "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+      "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+    },
+    "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ea6fc12d1b165260c0e248d91474a32206ffed25/cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+    "digest_matches_public_bytes": false,
+    "mapping_path": "provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+    "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ea6fc12d1b165260c0e248d91474a32206ffed25/provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+    "mapping_kind": "published byte-coordinate original/export mapping evidence",
+    "mapping_evidence": {
+      "original": {
+        "bytes": 14746,
+        "sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+        "git_blob_sha1": "5aa3f546594f5bb5209565c7e7b8153f6fca20fb"
+      },
+      "public": {
+        "bytes": 14732,
+        "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+        "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+      },
+      "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+      "original_byte_range_zero_based_half_open": [
+        11082,
+        11144
+      ],
+      "removed_span_sha256": "2e2b8488e00c6b6b3b4c92f1a6df559d99e57d3affbcf6633f63b51b20cd2c3c",
+      "replacement": "Paths below are relative to the repository root.",
+      "reason": "single nonmathematical host-root sentence replacement; verified by full byte comparison"
+    },
+    "mapping_rechecked_at_base_commit": "ea6fc12d1b165260c0e248d91474a32206ffed25",
+    "all_unchanged_complementary_bytes_verified": true
+  },
+  "historical_external_reading_scopes": [
+    {
+      "source_record_id": "CCR010",
+      "scope": "Targeted original-paper queries and a bounded literature/value assessment; reuses the earlier directed audit and adds quantization and length-generalization papers. Not a complete literature search, full-text archive or novelty certificate. This publication audit does not newly fetch the papers."
+    },
+    {
+      "existing_source_path": "v10_research/position_perturbation_prior_art_20261103_1817/prior_art_audit.html",
+      "scope": "Earlier audit reports targeted queries and partial primary-text reading. Its reported source-specific scope is retained, not upgraded to fresh complete-PDF verification."
+    },
+    {
+      "existing_source_path": "v10_research/copy_coefficient_tolerance_20261103_1819/two_sided_safe_window_independent_review_20261103_1821.md",
+      "scope": "Existing review records an OpenReview verification page and conference indexed primary text displaying proposition and section."
+    },
+    {
+      "existing_source_path": "v10_research/copy_coefficient_tolerance_20261103_1819/liu_link_addendum_independent_review_20261103_1821.md",
+      "scope": "Existing link-addendum review records a large conference-PDF retrieval size limit and indexed primary text. This is not a successful complete-PDF retrieval."
+    }
+  ],
+  "scope_limits": [
+    "Only the specified exact-real four-block, no-LN graph, one coefficient and fixed stationary positive fast-mixing order-two binary source are covered. No general architecture, minimax, learned-parameter or ordinary IEEE conclusion follows.",
+    "The score-relative coefficient eta_N=c/(N+2) and absolute scalar-weight change 4c/(N+2) differ. These are N-dependent perturbed models, not one fixed deployment. The previous fixed-q 3/16 limit has different quantifiers.",
+    "Critical c=2 uses the genuine moving-target correction: only the L1 difference tends to zero. Neither the moving terminal comparator nor terminal window is asserted to converge; no independent query is introduced.",
+    "Fixed-c open intervals require both endpoint companions and reviews for the combined positive-c statement. Varying c_N and c>3/2 remain outside that group, apart from the separately proved c=2 example.",
+    "The c=1/2 all-N claim compares final model outputs, not entire residual vectors or an exact common 1/2 output at N=2. The c=3/2 terminal data-index formula requires N>=3.",
+    "The asymptotic risk function has right-hand limit 5/32 at fixed c=1/2; finite-N softmax/ReLU outputs remain continuous in parameters. This is not a universal or finite-N sharp robustness threshold.",
+    "The original Q scalar -4 is exactly representable in common binary floating-point formats. Chosen real coefficient errors are not evidence that standard rounding, practical quantization or training creates these errors or risks.",
+    "The inherited architecture, Gaussian error and R011 statistical proof/review remain dependencies with their original bounds and N=2 qualifications. This audit rehashes actual dependencies, not every historical repository byte or every prior proof.",
+    "Historical pending-review wording is preserved. Separate LLM analytical reviews are not external human peer review, formal verification, numerical validation or novelty certification.",
+    "Prior-art URLs are inventoried without fresh fetching. Liu and Chen antecedents and different historical reading limits remain explicit. No third-party full text, new license or other repository content is added.",
+    "Only one nonmathematical process clause in CCR010 is neutralized. All mathematical, technical-condition, review, correction, scholarly-attribution and historical scientific bytes are unchanged.",
+    "No scientific or archived program was executed; no experiments, simulations, scientific enumeration, RNG, model initialization, source overwrites or remote writes occurred."
+  ]
+}
