@@ -1,5 +1,11 @@
 # 资料导航
 
+## 未知信道阶段入口
+
+- [中文综述与四项证明](../v10_research/channel_uncertainty_stage_20261103/RESEARCH_SUMMARY.zh.md)
+- [方法来源](../v10_research/channel_uncertainty_stage_20261103/METHOD_ANTECEDENTS.md) · [实际阅读范围](../v10_research/channel_uncertainty_stage_20261103/READ_SCOPE.json)
+- [冻结源清单](../v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json) · [公开身份映射](../provenance/channel_uncertainty_20261103/SOURCE_EXPORT_MAP.json)
+
 ## 2026-11-03 新入口
 
 - [最新中文综述及六个接纳目录](../v10_research/resumption_20261103/RESEARCH_SUMMARY.zh.md)

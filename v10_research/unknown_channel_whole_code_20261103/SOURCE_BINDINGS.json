@@ -1,0 +1,37 @@
+{
+  "unit": "UWC001",
+  "utc": "2026-11-03T02:28:59.157025+00:00",
+  "status": "AUTHOR_SOURCE_BINDINGS_NOT_ACCEPTANCE",
+  "read_in_full": {
+    "v10_research/resumption_20261103/efficient_message_code/CANDIDATE.md": "e23770d66efaff55489af3905b78642992ab1d2a7b55448912765694bb2e64b9",
+    "v10_research/resumption_20261103/efficient_message_code/ROOT_ACCEPTANCE.json": "c6a5a6430c7e8f79cc7d1c10762e7158bb9608cea6688997e1c069970fdd0b11",
+    "v10_research/resumption_20261103/whole_message_cost/CANDIDATE.md": "502b3a7e37c8adda33722ca324bade02efeab1c9d140c59abb3d812bba3eca62",
+    "v10_research/resumption_20261103/whole_message_cost/ROOT_ACCEPTANCE.json": "c7b730b9ace89de683f321683058bb90065f30d74256dcb9c66f35d671807396",
+    "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+    "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+    "v10_research/channel_uncertainty_20261103/CANDIDATE.md": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2"
+  },
+  "accepted_receipt_checks": [
+    {
+      "unit": "PMC001",
+      "candidate_sha256": "e23770d66efaff55489af3905b78642992ab1d2a7b55448912765694bb2e64b9",
+      "receipt_candidate_match": true,
+      "status": "ROOT_ACCEPTED_MATHEMATICAL_CONSTRUCTION_AFTER_INDEPENDENT_REVIEW_AND_REPLAY"
+    },
+    {
+      "unit": "WMC001",
+      "candidate_sha256": "502b3a7e37c8adda33722ca324bade02efeab1c9d140c59abb3d812bba3eca62",
+      "receipt_candidate_match": true,
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_FULL_REVIEW_AND_ROOT_REPLAY"
+    },
+    {
+      "unit": "O2T001",
+      "candidate_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "receipt_candidate_match": true,
+      "status": "ROOT_ACCEPTED_DUAL_REVIEWED_TRANSFER_WITH_PMC_INTERFACE"
+    }
+  ],
+  "UMC001_status": "Read candidate snapshot for context; no accepted supplemental theorem needed.",
+  "candidate_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+  "external_writes": false
+}

@@ -1,0 +1,92 @@
+{
+  "status": "PASS_WITH_EXPLICIT_IMPORTED_DEPENDENCIES",
+  "candidate_sha256": "2618aaf7d6a5610827697c6c86a6c0c5f9a5eef44460edbc944de56d6ec0b476",
+  "artifacts": [
+    {
+      "path": "v10_research/channel_margin_frontier_20261103/CANDIDATE.md",
+      "sha256": "2618aaf7d6a5610827697c6c86a6c0c5f9a5eef44460edbc944de56d6ec0b476",
+      "bytes": 26665
+    },
+    {
+      "path": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "sha256": "91fc571cc634a3c3912cffa578bc3bc1ff2c201d904deb19cbbc273b1a497a23",
+      "bytes": 2848
+    },
+    {
+      "path": "v10_research/channel_margin_frontier_20261103/review_independent/REVIEW.md",
+      "sha256": "60e6b717656c9f4bbb9d11619f988e1f33335baebc0ed55fee8650564f89f39d",
+      "bytes": 5732
+    },
+    {
+      "path": "v10_research/channel_margin_frontier_20261103/review_independent/check.py",
+      "sha256": "29d4ce25dee8aaccdea451c4cfba04f28790ad7b0b6cace2b95c3674bd492501",
+      "bytes": 2232
+    },
+    {
+      "path": "v10_research/channel_margin_frontier_20261103/review_independent/checks.json",
+      "sha256": "566b547e28ee7e20e2025d64a1e4cc3a8fb27924f969641751d6a20b4f479e02",
+      "bytes": 513
+    },
+    {
+      "path": "v10_research/channel_margin_frontier_20261103/history/CANDIDATE.before_witness_wording.md",
+      "sha256": "0f0d28c8270ce53c662de2f098027c776a30f23d227079a2bce338f0adbc10c1",
+      "bytes": 26479
+    },
+    {
+      "path": "v10_research/channel_margin_frontier_20261103/history/witness_wording.diff",
+      "sha256": "682364e2106cab526bee568b0ee30ce1a9c805eeebb43db6e925b670f824c9fc",
+      "bytes": 1018
+    }
+  ],
+  "accepted_sources": [
+    {
+      "unit": "FOT001",
+      "source": "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/triple_access/FOT001_candidate.md",
+      "sha256": "700db043416260a3d7e4796d6513ee60b90c2f2704a4d183be526d2aef9fef1d",
+      "receipt": "v10_research/resumption_20261103/recovered_science/intake/FOT001_root_acceptance.json",
+      "receipt_sha256": "cd1ce17b8b71c0316d1d41b058f94596e8cba61b80980fc079b508e6c8b7eb07",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "BSC001",
+      "source": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "receipt": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "UMC001",
+      "source": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "receipt": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "UWC001",
+      "source": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+      "sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+      "receipt": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "4f8f7716d992d4bdb2c594b875c51b1f8df85ff43557877243931ae15aa066fb",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "CAF001",
+      "source": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+      "sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+      "receipt": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "17e57534a5e0b811e09579c868d47f819ea11b6a88ae233606732ba0fad9da4d",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "O2T001",
+      "source": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "receipt": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+      "accepted_hash_verified": true
+    }
+  ],
+  "scope": "Complete actual source review plus final wording diff; independent finite checks are corroboration only. No formal/external peer review or novelty certification."
+}

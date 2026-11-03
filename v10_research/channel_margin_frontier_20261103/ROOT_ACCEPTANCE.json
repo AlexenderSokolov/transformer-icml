@@ -1,0 +1,22 @@
+{
+  "unit": "CMF001",
+  "utc": "2026-11-03T03:12:50.543524+00:00",
+  "status": "ROOT_ACCEPTED_WITH_EXPLICIT_IMPORTED_DEPENDENCIES",
+  "candidate_sha256": "2618aaf7d6a5610827697c6c86a6c0c5f9a5eef44460edbc944de56d6ec0b476",
+  "result": "For fixed finite informative nominal binary channel and all known 0<=alpha<d/2, gamma=d/2-alpha: supplemental redundancy Theta(H/ gamma^2), whole-message redundancy Theta(log M/gamma^2), uniformly in alpha with nominal-dependent constants and M threshold. At or beyond midpoint, impossibility.",
+  "root_review": "Complete original candidate read and checked before recovery; final actual wording diff and full independent source-bound review read. Seven artifact and six source/receipt bindings verified; isolated diagnostic replay byte-identical.",
+  "proof_points": "Constrained-risk square-root inequality; both ordered chi-square affinities and unrelated mixtures; finite FOT transport retaining actual-terminal risk; capacity/grid/Fano only for paid whole-message model; far/near uniform splice.",
+  "limits": "Source-bound LLM review, not blind, formal, external peer review or novelty certification. Accepted statistical dependencies imported. Nominal fixed; no uniformity in varying d. No uniform polylog resources as gamma tends to zero; radius representation cost separate. Local, not yet published.",
+  "artifacts": {
+    "CANDIDATE.md": "2618aaf7d6a5610827697c6c86a6c0c5f9a5eef44460edbc944de56d6ec0b476",
+    "ROOT_REPLAY.json": "94b8ff35d3e74cef7c2fabc95c21e51920abf227105dabe83159d02a5dc2757b",
+    "SOURCE_BINDINGS.json": "91fc571cc634a3c3912cffa578bc3bc1ff2c201d904deb19cbbc273b1a497a23",
+    "history/CANDIDATE.before_witness_wording.md": "0f0d28c8270ce53c662de2f098027c776a30f23d227079a2bce338f0adbc10c1",
+    "history/witness_wording.diff": "682364e2106cab526bee568b0ee30ce1a9c805eeebb43db6e925b670f824c9fc",
+    "review_independent/REVIEW.md": "60e6b717656c9f4bbb9d11619f988e1f33335baebc0ed55fee8650564f89f39d",
+    "review_independent/REVIEW_DRAFT.md": "6b5a07182310534b954e700f67def2c9348d4338380b1f9eed2df2a78f15683f",
+    "review_independent/bindings.json": "f27f930ee9eb2ac8a12e5e495b912176d2421ce5389366affe960aa041d74df4",
+    "review_independent/check.py": "29d4ce25dee8aaccdea451c4cfba04f28790ad7b0b6cace2b95c3674bd492501",
+    "review_independent/checks.json": "566b547e28ee7e20e2025d64a1e4cc3a8fb27924f969641751d6a20b4f479e02"
+  }
+}

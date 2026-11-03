@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-03T02:34:26.020917+00:00",
+  "unit": "UWC001",
+  "status": "ROOT_ACCEPTED_AFTER_FULL_INDEPENDENT_REVIEW_AND_ROOT_REPLAY",
+  "scope": "Whole-message, no free counts/query, known fixed rational nominal finite-output binary-input channel and row-TV radius alpha, hidden fixed fresh memoryless true channel. Same protocol over all channels/sources/unknown source-edit budgets; F unrestricted first-order or O2 all-state critical certificate.",
+  "result": "If alpha<d/2, robust code any B-bit payload uses R<=240*m0*B,m0=ceil(4/(d/2-alpha)^2), maximal error<=2^-6B. Total prediction communication Theta(log M); if alpha>=d/2 or d=0, worst clean risk >=1/8 at all finite lengths.",
+  "resources": "Nominal threshold hard-bit primitive, fixed12k distance inner code with nearest-Hamming decoder, RS/BW outer code. Polynomial exponents independent of channel gap; fixed gap/nominal constants charged. Preprocessing O(B^13 log(B+1)) using linear-amortized Hamming counts, or a conservative higher polynomial bit bound. Design/auxiliary/coding polynomial B; resident input and full scan separate.",
+  "root_read": "Complete actual candidate, complete source-bound independent review and exact bindings. Three accepted source candidates/receipts independently checked. Checker root-rerun isolated; stdout byte-identical.",
+  "limits": "Fixed rational nominal parameters; true channel may be arbitrary real and is never numerically queried. No calibration, variable/adaptive code, correlated/adversarial noise, unrestricted O2, neural/learning or novelty claim. Standard coding ingredients. Mathematical construction, not full implementation/benchmark. Local unpublished, outside earlier612b76d release.",
+  "artifacts": {
+    "CANDIDATE.md": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+    "SOURCE_BINDINGS.json": "e4e61e61b109cc1d8e5b943688f1af6e19aab254e23fb5749c01af5871e5839c",
+    "review_independent/REVIEW.md": "30ddf2a4f07e51965bf96113a6ae2a170e06052d33b6dfa80540c6aa5394c9c7",
+    "review_independent/bindings.json": "1935464dc012add22497d0c276955546a08560c1fb1ea41e528383a75938e975",
+    "review_independent/check.py": "8c76a412a8ab1785b790a5fbb0abffafaec4e4642afcb5df40f143e283566c54",
+    "review_independent/checks.json": "e71bafdcbcbf6219204a9bcac1c989198d785a875ab0d686c1692c452b1fa1dd",
+    "ROOT_REPLAY.json": "7256402f23ae818c2277197429a832940cfe3c6c3986842f1f7f4eec38f72069"
+  }
+}

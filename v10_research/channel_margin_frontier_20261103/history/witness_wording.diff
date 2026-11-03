@@ -1,0 +1,13 @@
+--- CANDIDATE.before_witness_wording.md
++++ CANDIDATE.md
+@@ -72,7 +72,9 @@
+ 
+ This is a self-contained standard constrained-risk argument, not a claim of a new inequality. Crucially a is the CLEAN actual-terminal risk in the source-mixture application; Q/P, not P/Q, appears in the Cauchy–Schwarz step. We prove both ordered channel affinities below so either pair of encoded words is covered. Averaging pointwise inequalities conditional on independent public seeds is legitimate with a uniform ρ; changing the seed law according to the word or attack would not be.
+ 
+-## 4. A least-informative admissible channel and arbitrary-code affinities
++## 4. An admissible low-information witness and arbitrary-code affinities
++
++We use only this witness’s concrete affinity and capacity upper bounds; no Blackwell ordering, global capacity minimum over the TV ball, or exact least-favorable property is asserted.
+ 
+ For 0≤α<d/2 define signed measure ν=P1−P0, probability μ=(P0+P1)/2, and s=γ/d∈(0,1/2]. Set
+ 

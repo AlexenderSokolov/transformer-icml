@@ -1,0 +1,46 @@
+{
+  "utc": "2026-11-03T02:37:32.211429+00:00",
+  "review_status": "PASS_SOURCE_BOUND_ANALYTIC_REVIEW_NOT_ROOT_ACCEPTANCE",
+  "blind_review": false,
+  "sources": [
+    {
+      "unit": "BCC001",
+      "path": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+      "sha256": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+      "receipt": "v10_research/resumption_20261103/channel_classification/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "c1d2c41fb616c683379e51a9146dc74cc869001621c439992cc6af01ecc3dfdf",
+      "accepted_candidate_hash_verified": true
+    },
+    {
+      "unit": "BSC001",
+      "path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "receipt": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+      "accepted_candidate_hash_verified": true
+    },
+    {
+      "unit": "O2T001",
+      "path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "receipt": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+      "accepted_candidate_hash_verified": true
+    },
+    {
+      "unit": "UMC001",
+      "path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "receipt": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+      "accepted_candidate_hash_verified": true
+    }
+  ],
+  "artifacts": {
+    "CANDIDATE.md": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+    "SOURCE_BINDINGS.json": "c87991e6487207f371cbb2d1059d43e79c662015a60421f6b5abd2bce9544edc",
+    "review/FULL_REVIEW.md": "6e6d573aad74dd1f0f32fa41bde1fc6d027fc68a006a1d5a3cf0bf2a07cf38ff",
+    "review/checks.py": "5d779941fc73aa2e65a7b34e2140541fbda9a191269b9972f960f8dafaa78814",
+    "review/checks.json": "99fbf1f8883f89a1b12e125269f2fb97ff3c69f90e0aebf1c6eb49b970eb41e6"
+  }
+}

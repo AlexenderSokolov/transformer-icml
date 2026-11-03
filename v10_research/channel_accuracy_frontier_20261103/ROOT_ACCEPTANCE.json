@@ -1,0 +1,20 @@
+{
+  "utc": "2026-11-03T02:41:26.548609+00:00",
+  "unit": "CAF001",
+  "status": "ROOT_ACCEPTED_AFTER_COMPLETE_SOURCE_BOUND_REVIEW_AND_ROOT_REPLAY",
+  "scope": "Supplemental noiseless count/terminal baseline; fixed finite informative nominal binary channel; any known0<=alpha<=alpha_max<d/2, alpha may depend on M; true hidden channel fixed within each experiment. F unrestricted first-order and O2 critical all-state certificate kept separate.",
+  "result": "For fixed feasible target G_j+2, uniformly large M with threshold independent of alpha: disjoint nominal supports require Theta(1+lnM/(1+ln1/alpha)); unequal overlapping supports Theta(ln L_M+lnM/(1+ln1/alpha)); equal distinct supports Theta(lnM). Ratio term defined0 at alpha=0. Constants depend on fixed nominal/alpha_max/target, not alpha schedule.",
+  "proof_points": "Finite likelihood implication used directly for radius-dependent full-support witness; nominal overlap supplies lnL lower. Small-radius two-slot decoder explicitly erases double hits, abstains below nonerasure threshold, and bounds baseline-loss contribution by conditional abstention probability. Real Chernoff threshold and all integer ceilings retained.",
+  "root_read": "Entire247-line candidate and full actual-source independent review; all5 artifact and4 source/receipt bindings verified. Root isolated replay reproduces diagnostic JSON exactly. Review explicitly source-bound, not claimed blind.",
+  "resources": "One scan plus counters; supplied rational alpha may have arbitrarily long representation and reading it is an additional input cost. No calibration-sample or precision-bit guarantee inferred from a given radius.",
+  "limits": "Fixed positive distance to identifiability boundary; no alpha_max approaching d/2, whole-message theorem, feedback, variable length, arbitrary-order/no-mixing O2 or neural/learnability claim. LLM review not formal/external peer review; no novelty certification. Local unpublished, outside612b76d.",
+  "artifacts": {
+    "CANDIDATE.md": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+    "SOURCE_BINDINGS.json": "c87991e6487207f371cbb2d1059d43e79c662015a60421f6b5abd2bce9544edc",
+    "review/FULL_REVIEW.md": "6e6d573aad74dd1f0f32fa41bde1fc6d027fc68a006a1d5a3cf0bf2a07cf38ff",
+    "review/bindings.json": "d884e41c559d74033f0e24fec163734a066581be3a42aa020351f1275502e666",
+    "review/checks.py": "5d779941fc73aa2e65a7b34e2140541fbda9a191269b9972f960f8dafaa78814",
+    "review/checks.json": "99fbf1f8883f89a1b12e125269f2fb97ff3c69f90e0aebf1c6eb49b970eb41e6",
+    "ROOT_REPLAY.json": "b4cacc8e3a68c7e8b3039d1fb72f59ea06c8f6e729a17a06cd4743ee1b42f887"
+  }
+}

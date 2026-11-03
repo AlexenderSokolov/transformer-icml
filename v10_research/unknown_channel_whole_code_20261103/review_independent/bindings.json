@@ -1,0 +1,30 @@
+{
+  "accepted_dependencies": {
+    "efficient_message_code": {
+      "candidate_sha256": "e23770d66efaff55489af3905b78642992ab1d2a7b55448912765694bb2e64b9",
+      "matches_receipt": true,
+      "receipt_sha256": "c6a5a6430c7e8f79cc7d1c10762e7158bb9608cea6688997e1c069970fdd0b11"
+    },
+    "order_two_transfer": {
+      "candidate_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "matches_receipt": true,
+      "receipt_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd"
+    },
+    "whole_message_cost": {
+      "candidate_sha256": "502b3a7e37c8adda33722ca324bade02efeab1c9d140c59abb3d812bba3eca62",
+      "matches_receipt": true,
+      "receipt_sha256": "c7b730b9ace89de683f321683058bb90065f30d74256dcb9c66f35d671807396"
+    }
+  },
+  "additional_full_read": {
+    "O2T_PMC_INTERFACE_ADDENDUM_sha256": "cc6e2d447a5fd09fd36dacac5184753ed24f65cb63f5859f2e11af0dac7539ef"
+  },
+  "artifacts": {
+    "CANDIDATE.md": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+    "SOURCE_BINDINGS.json": "e4e61e61b109cc1d8e5b943688f1af6e19aab254e23fb5749c01af5871e5839c",
+    "review_independent/REVIEW.md": "30ddf2a4f07e51965bf96113a6ae2a170e06052d33b6dfa80540c6aa5394c9c7",
+    "review_independent/check.py": "8c76a412a8ab1785b790a5fbb0abffafaec4e4642afcb5df40f143e283566c54",
+    "review_independent/checks.json": "e71bafdcbcbf6219204a9bcac1c989198d785a875ab0d686c1692c452b1fa1dd"
+  },
+  "review_status": "PASS_ACTUAL_SOURCE_BOUND_MATHEMATICAL_REVIEW"
+}

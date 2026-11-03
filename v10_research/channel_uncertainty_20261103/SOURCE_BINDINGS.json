@@ -1,0 +1,33 @@
+{
+  "unit": "UMC001",
+  "status": "LOCAL_AUTHOR_CANDIDATE",
+  "utc": "2026-11-03T02:18:28.006666+00:00",
+  "source_hashes": {
+    "v10_research/resumption_20261103/channel_classification/CANDIDATE.md": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+    "v10_research/resumption_20261103/channel_classification/ROOT_ACCEPTANCE.json": "c1d2c41fb616c683379e51a9146dc74cc869001621c439992cc6af01ecc3dfdf",
+    "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+    "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+    "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+    "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd"
+  },
+  "receipt_binding_checks": [
+    {
+      "path": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+      "receipt_hash": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+      "actual_hash": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+      "match": true
+    },
+    {
+      "path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "receipt_hash": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "actual_hash": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "match": true
+    },
+    {
+      "path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "receipt_hash": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "actual_hash": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "match": true
+    }
+  ]
+}

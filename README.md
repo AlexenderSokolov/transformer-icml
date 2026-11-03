@@ -1,5 +1,13 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 新阶段：信道模型不确定性（2026-11-03）
+
+已接纳 UMC001、UWC001、CAF001 和 CMF001，研究真实信道未知时的可辨识边界、完整消息编码、模型误差精度与通信长度，以及接近不可辨识边界的成本。名义信道固定，补充消息与全消息实验分别计费；二阶结论保留指定临界全状态条件。
+
+- [本阶段中文综述及四个证明入口](v10_research/channel_uncertainty_stage_20261103/RESEARCH_SUMMARY.zh.md)
+- [方法来源与实际阅读范围](v10_research/channel_uncertainty_stage_20261103/METHOD_ANTECEDENTS.md)
+- [冻结清单](v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json) · [公开导出与核验边界](provenance/channel_uncertainty_20261103/PUBLICATION_SCOPE_AND_CHECKS.json)
+
 ## 最新进展：2026-11-03
 
 新增阶段区分“免费精确计数下的补充消息”与“全部信息均须付费的完整预测消息”。六个已接纳研究目录给出固定信道的长度分类、全消息通信成本、明确计费的编码构造，并在给定临界全状态条件下迁回二阶预测；不声称一般无混合二阶结论、新纠错码、训练可达性或新颖性认证。

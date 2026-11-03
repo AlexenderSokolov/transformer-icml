@@ -1,0 +1,2848 @@
+{
+  "base_commit": "612b76dda2417e9da8933c04dc89232d796ed4bc",
+  "units": [
+    "UMC001",
+    "UWC001",
+    "CAF001",
+    "CMF001"
+  ],
+  "source_files": 45,
+  "freeze_members_verified": 44,
+  "receipt_artifact_bindings_verified": 35,
+  "source_math_and_diagnostic_code_changes": 0,
+  "diagnostic_python_sources_parsed_not_executed": 5,
+  "nonmathematical_export_changes": {
+    "files": 1,
+    "lines": 1
+  },
+  "privacy_unresolved_pattern_hits": [],
+  "structured_bindings": 201,
+  "structured_binding_counts": {
+    "RESOLVED": 201
+  },
+  "source_binding_resolutions": [
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.CANDIDATE.md",
+      "declared_path": "CANDIDATE.md",
+      "expected_original_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+          "public_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.SOURCE_BINDINGS.json",
+      "declared_path": "SOURCE_BINDINGS.json",
+      "expected_original_sha256": "d2ee413c8fdb3c86dd3cf3b6df6b66482fed06ca27d5afae5b51a11ab00b3135",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "d2ee413c8fdb3c86dd3cf3b6df6b66482fed06ca27d5afae5b51a11ab00b3135",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.history/CANDIDATE.before_mgf_proof.md",
+      "declared_path": "history/CANDIDATE.before_mgf_proof.md",
+      "expected_original_sha256": "3f5aeb2b8fde5adf6007be49bb5ece803fc5c0c0c0a3ebb6f53acef4bbdecd58",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/history/CANDIDATE.before_mgf_proof.md",
+          "public_sha256": "3f5aeb2b8fde5adf6007be49bb5ece803fc5c0c0c0a3ebb6f53acef4bbdecd58",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.history/mgf_proof.diff",
+      "declared_path": "history/mgf_proof.diff",
+      "expected_original_sha256": "ab44f35a3f34478cd30f28b48a873a9b8327c9d2ca6654c7c3d091445bf21a77",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/history/mgf_proof.diff",
+          "public_sha256": "ab44f35a3f34478cd30f28b48a873a9b8327c9d2ca6654c7c3d091445bf21a77",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review/full_review.md",
+      "declared_path": "review/full_review.md",
+      "expected_original_sha256": "6108afbbaa197eff877d68ed96607faab34ac8b585fd7cf397bd0b102d7ccb79",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/full_review.md",
+          "public_sha256": "6108afbbaa197eff877d68ed96607faab34ac8b585fd7cf397bd0b102d7ccb79",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review/FINAL_VERSION_ADDENDUM.md",
+      "declared_path": "review/FINAL_VERSION_ADDENDUM.md",
+      "expected_original_sha256": "e651fb8b090d4f413326464e51f1b73859fdfcab16eeaa91caf95d6fe3daf566",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/FINAL_VERSION_ADDENDUM.md",
+          "public_sha256": "e651fb8b090d4f413326464e51f1b73859fdfcab16eeaa91caf95d6fe3daf566",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review/bindings.json",
+      "declared_path": "review/bindings.json",
+      "expected_original_sha256": "5a84bd88ad9e261750042a4736097cf01eed088767e81d43e1215307571574be",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+          "public_sha256": "5a84bd88ad9e261750042a4736097cf01eed088767e81d43e1215307571574be",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review/checks.py",
+      "declared_path": "review/checks.py",
+      "expected_original_sha256": "235cdc164c5316b1525db9450127e6e33ee692391dedce4401d70ccad19be045",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/checks.py",
+          "public_sha256": "235cdc164c5316b1525db9450127e6e33ee692391dedce4401d70ccad19be045",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review/checks.json",
+      "declared_path": "review/checks.json",
+      "expected_original_sha256": "50821463d91e2ace9142806c3be4907cd92829d6a66c826528ed8d9ce0872b28",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/checks.json",
+          "public_sha256": "50821463d91e2ace9142806c3be4907cd92829d6a66c826528ed8d9ce0872b28",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review/accepted_artifact_verification.json",
+      "declared_path": "review/accepted_artifact_verification.json",
+      "expected_original_sha256": "160968c0f08430a1b2a2654e21989886b6eaedf87c69e2b1c9687fd5abfb95d8",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+          "public_sha256": "160968c0f08430a1b2a2654e21989886b6eaedf87c69e2b1c9687fd5abfb95d8",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.ROOT_REPLAY.json",
+      "declared_path": "ROOT_REPLAY.json",
+      "expected_original_sha256": "4523d81366139ab76da9dbb2fee47905f67b3279e7a31c5a9a478c12a5fa5942",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/ROOT_REPLAY.json",
+          "public_sha256": "4523d81366139ab76da9dbb2fee47905f67b3279e7a31c5a9a478c12a5fa5942",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/SOURCE_BINDINGS.json",
+      "location": "$.source_hashes.v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+      "expected_original_sha256": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+          "public_sha256": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/SOURCE_BINDINGS.json",
+      "location": "$.source_hashes.v10_research/resumption_20261103/channel_classification/ROOT_ACCEPTANCE.json",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "c1d2c41fb616c683379e51a9146dc74cc869001621c439992cc6af01ecc3dfdf",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/ROOT_ACCEPTANCE.json",
+          "public_sha256": "c1d2c41fb616c683379e51a9146dc74cc869001621c439992cc6af01ecc3dfdf",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/SOURCE_BINDINGS.json",
+      "location": "$.source_hashes.v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "expected_original_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+          "public_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/SOURCE_BINDINGS.json",
+      "location": "$.source_hashes.v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+          "public_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/SOURCE_BINDINGS.json",
+      "location": "$.source_hashes.v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "expected_original_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+          "public_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/SOURCE_BINDINGS.json",
+      "location": "$.source_hashes.v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+          "public_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[0].path",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+      "expected_original_sha256": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+          "public_sha256": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[1].path",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/review/INDEPENDENT_ANALYTIC_REVIEW.md",
+      "expected_original_sha256": "db86abb79859ac2cedc54be8c5be04ee0232ff3885a10274e76544093dbd7512",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/review/INDEPENDENT_ANALYTIC_REVIEW.md",
+          "public_sha256": "55414f01c46b8fb28634690706346b67bf1eb2192600fd1e4a5e8e95507d71ac",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[2].path",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/review/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "d6928b1a908cb0375137dfe2bd36004876b07cd0f5240640898798ae1aeb6ca4",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/review/SOURCE_BINDINGS.json",
+          "public_sha256": "d6928b1a908cb0375137dfe2bd36004876b07cd0f5240640898798ae1aeb6ca4",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[3].path",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/review/finite_channel_checker.py",
+      "expected_original_sha256": "3c0ec02b8d7addb7702f8c4e8853491d91d2ca32c708a4f78cdc3e9b66a123de",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/review/finite_channel_checker.py",
+          "public_sha256": "3c0ec02b8d7addb7702f8c4e8853491d91d2ca32c708a4f78cdc3e9b66a123de",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[4].path",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/review/FINITE_CHECK_RESULT.json",
+      "expected_original_sha256": "934384ee5e106c735db7bf02c53b6b4ca772d4397d567c5b82fc21ddc22320a2",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/review/FINITE_CHECK_RESULT.json",
+          "public_sha256": "934384ee5e106c735db7bf02c53b6b4ca772d4397d567c5b82fc21ddc22320a2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[5].path",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/ROOT_REPLAY.json",
+      "expected_original_sha256": "016be07fc782293ac32f4ccec04e082e2f6fb376b4c59a9df28aee16179de976",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/ROOT_REPLAY.json",
+          "public_sha256": "016be07fc782293ac32f4ccec04e082e2f6fb376b4c59a9df28aee16179de976",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[6].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "expected_original_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+          "public_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[7].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/review/independent_bsc_likelihood_challenge.md",
+      "expected_original_sha256": "2c75cb4d52a6fe27d07a1d4487de6b30218577548845a0e4c75104fdf818d266",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/review/independent_bsc_likelihood_challenge.md",
+          "public_sha256": "2c75cb4d52a6fe27d07a1d4487de6b30218577548845a0e4c75104fdf818d266",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[8].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/review/source_bound_sharp_review.md",
+      "expected_original_sha256": "fe705321cfbfc870cbbc3139674392e7de08ac92816be320ea6e7921c22658cd",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/review/source_bound_sharp_review.md",
+          "public_sha256": "fe705321cfbfc870cbbc3139674392e7de08ac92816be320ea6e7921c22658cd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[9].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/review/source_bound_bindings.json",
+      "expected_original_sha256": "fe7e3c423846ae12193dbc3f6ced72a86ae99c5ded78cf1a7884a0f04564d832",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/review/source_bound_bindings.json",
+          "public_sha256": "fe7e3c423846ae12193dbc3f6ced72a86ae99c5ded78cf1a7884a0f04564d832",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[10].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/review/source_bound_checks.json",
+      "expected_original_sha256": "12ba0b2b04f31327d527685315cecfe3bf2f4aeb748b9610c8b755bcf6d4cddb",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/review/source_bound_checks.json",
+          "public_sha256": "12ba0b2b04f31327d527685315cecfe3bf2f4aeb748b9610c8b755bcf6d4cddb",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[11].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/history/README.md",
+      "expected_original_sha256": "acc64b13360d12abbcdebde6c76733674a2f9da9631d6eec86b6fb5e6c1cbfec",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/history/README.md",
+          "public_sha256": "acc64b13360d12abbcdebde6c76733674a2f9da9631d6eec86b6fb5e6c1cbfec",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[12].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/history/PROVENANCE.md",
+      "expected_original_sha256": "c29bd49c6f8c22686257d5d24d6769d4276f8b2c06cce701f0dfe7601d24e733",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/history/PROVENANCE.md",
+          "public_sha256": "deaee240c1deaba8e289dce215caa36adf2ce21dea2d690ae67d3700bf39d1c6",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[13].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/history/actual_terminal_loss_fix.diff",
+      "expected_original_sha256": "62a7703d0afe7caa527d7b2b492439430735b335bad88abc88cc38b8861bc138",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/history/actual_terminal_loss_fix.diff",
+          "public_sha256": "62a7703d0afe7caa527d7b2b492439430735b335bad88abc88cc38b8861bc138",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[14].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/history/CHANNEL_LIKELIHOOD_LOWER.before_actual_terminal_fix.md",
+      "expected_original_sha256": "9438863ac9fd276bb7c6a6db51ace719c26b40b613940fb4b768ed0c6e611fae",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/history/CHANNEL_LIKELIHOOD_LOWER.before_actual_terminal_fix.md",
+          "public_sha256": "9438863ac9fd276bb7c6a6db51ace719c26b40b613940fb4b768ed0c6e611fae",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[15].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "expected_original_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+          "public_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[16].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/TRANSFER.md",
+      "expected_original_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/TRANSFER.md",
+          "public_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[17].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/AUTHOR_SOURCE_BINDINGS.json",
+      "expected_original_sha256": "5e3fe48f7bd031b9cd7bb396b39dec8d277dc0b7b0b08cb5fc75f4cd836c102b",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/AUTHOR_SOURCE_BINDINGS.json",
+          "public_sha256": "5e3fe48f7bd031b9cd7bb396b39dec8d277dc0b7b0b08cb5fc75f4cd836c102b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[18].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/review_root/REVIEW.md",
+      "expected_original_sha256": "dc5d05bd1060bac1c5d31c615066a16b5917b342305413350578372de81179f3",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/review_root/REVIEW.md",
+          "public_sha256": "75a377b67dd9f0c69ab386a8cad3ffc2b1b5a91cec9ad561faa0fa0ca8be41ff",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[19].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/review_root/bindings.json",
+      "expected_original_sha256": "da59b76de6dfb242ed717774fc79e670d28c766cfc6ee9c0a0c466ff971c977f",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/review_root/bindings.json",
+          "public_sha256": "da59b76de6dfb242ed717774fc79e670d28c766cfc6ee9c0a0c466ff971c977f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[20].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/review_root/check.py",
+      "expected_original_sha256": "e691dc50c80d28ee6055919050d296862b0221c07ae47a5b90bf687604fe0347",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/review_root/check.py",
+          "public_sha256": "e691dc50c80d28ee6055919050d296862b0221c07ae47a5b90bf687604fe0347",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[21].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/review_root/checks.json",
+      "expected_original_sha256": "db94d6ef82c0b64ad7c30feeaf27f88d1bc423749cbad1c64305367659a6a7d9",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/review_root/checks.json",
+          "public_sha256": "db94d6ef82c0b64ad7c30feeaf27f88d1bc423749cbad1c64305367659a6a7d9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[22].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/review/REVIEW.md",
+      "expected_original_sha256": "73525ee16328b4edb3b094edacf85247fea4e20b8a387a6c678f46365dac6f17",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/review/REVIEW.md",
+          "public_sha256": "73525ee16328b4edb3b094edacf85247fea4e20b8a387a6c678f46365dac6f17",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[23].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/review/bindings.json",
+      "expected_original_sha256": "1d2e5516b004e700498a10ae1381608ae52b093c75cb4fc65c17e6a55d7662f1",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/review/bindings.json",
+          "public_sha256": "1d2e5516b004e700498a10ae1381608ae52b093c75cb4fc65c17e6a55d7662f1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[24].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/review/checks.py",
+      "expected_original_sha256": "1011b50c635ca1a7cdc7b9842ee1471b18d81648a1b1850dc797bfa7d2f250e7",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/review/checks.py",
+          "public_sha256": "1011b50c635ca1a7cdc7b9842ee1471b18d81648a1b1850dc797bfa7d2f250e7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[25].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/review/checks.json",
+      "expected_original_sha256": "d84bd9c0fad5c98a2c14fcb24518e473df89d5ba7c188247ac8a39efdf2d30e2",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/review/checks.json",
+          "public_sha256": "d84bd9c0fad5c98a2c14fcb24518e473df89d5ba7c188247ac8a39efdf2d30e2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[26].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/review_root/PMC_INTERFACE_ADDENDUM.md",
+      "expected_original_sha256": "cc6e2d447a5fd09fd36dacac5184753ed24f65cb63f5859f2e11af0dac7539ef",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/review_root/PMC_INTERFACE_ADDENDUM.md",
+          "public_sha256": "cc6e2d447a5fd09fd36dacac5184753ed24f65cb63f5859f2e11af0dac7539ef",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[27].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/review_root/PMC_INTERFACE_BINDINGS.json",
+      "expected_original_sha256": "bd78aafdba209df9c6a32f96b0c1516cf4607282fd1a493c22c428faa5c1bd98",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/review_root/PMC_INTERFACE_BINDINGS.json",
+          "public_sha256": "bd78aafdba209df9c6a32f96b0c1516cf4607282fd1a493c22c428faa5c1bd98",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "location": "$.artifacts[28].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/ROOT_REPLAY.json",
+      "expected_original_sha256": "62aebcc6370531d87c6332fddf4b8f37b5c6b70eac4069263e06e6aee2a7815c",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/ROOT_REPLAY.json",
+          "public_sha256": "62aebcc6370531d87c6332fddf4b8f37b5c6b70eac4069263e06e6aee2a7815c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[0].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "expected_original_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+          "public_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[1].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "d2ee413c8fdb3c86dd3cf3b6df6b66482fed06ca27d5afae5b51a11ab00b3135",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "d2ee413c8fdb3c86dd3cf3b6df6b66482fed06ca27d5afae5b51a11ab00b3135",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[2].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/history/CANDIDATE.before_mgf_proof.md",
+      "expected_original_sha256": "3f5aeb2b8fde5adf6007be49bb5ece803fc5c0c0c0a3ebb6f53acef4bbdecd58",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/history/CANDIDATE.before_mgf_proof.md",
+          "public_sha256": "3f5aeb2b8fde5adf6007be49bb5ece803fc5c0c0c0a3ebb6f53acef4bbdecd58",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[3].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/history/mgf_proof.diff",
+      "expected_original_sha256": "ab44f35a3f34478cd30f28b48a873a9b8327c9d2ca6654c7c3d091445bf21a77",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/history/mgf_proof.diff",
+          "public_sha256": "ab44f35a3f34478cd30f28b48a873a9b8327c9d2ca6654c7c3d091445bf21a77",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[4].path",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+      "expected_original_sha256": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+          "public_sha256": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[5].path",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "c1d2c41fb616c683379e51a9146dc74cc869001621c439992cc6af01ecc3dfdf",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/ROOT_ACCEPTANCE.json",
+          "public_sha256": "c1d2c41fb616c683379e51a9146dc74cc869001621c439992cc6af01ecc3dfdf",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[6].path",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/review/INDEPENDENT_ANALYTIC_REVIEW.md",
+      "expected_original_sha256": "db86abb79859ac2cedc54be8c5be04ee0232ff3885a10274e76544093dbd7512",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/review/INDEPENDENT_ANALYTIC_REVIEW.md",
+          "public_sha256": "55414f01c46b8fb28634690706346b67bf1eb2192600fd1e4a5e8e95507d71ac",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[7].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "expected_original_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+          "public_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[8].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+          "public_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[9].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "expected_original_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+          "public_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[10].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+          "public_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[11].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/review_root/REVIEW.md",
+      "expected_original_sha256": "dc5d05bd1060bac1c5d31c615066a16b5917b342305413350578372de81179f3",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/review_root/REVIEW.md",
+          "public_sha256": "75a377b67dd9f0c69ab386a8cad3ffc2b1b5a91cec9ad561faa0fa0ca8be41ff",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[12].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/review_root/PMC_INTERFACE_ADDENDUM.md",
+      "expected_original_sha256": "cc6e2d447a5fd09fd36dacac5184753ed24f65cb63f5859f2e11af0dac7539ef",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/review_root/PMC_INTERFACE_ADDENDUM.md",
+          "public_sha256": "cc6e2d447a5fd09fd36dacac5184753ed24f65cb63f5859f2e11af0dac7539ef",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[13].path",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/triple_access/FOT002_matched_original_experiment.md",
+      "expected_original_sha256": "55948f2f3516a9bffa09aa05d01dd81154d962dea847a796362a7206b861120a",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/triple_access/FOT002_matched_original_experiment.md",
+          "public_sha256": "55948f2f3516a9bffa09aa05d01dd81154d962dea847a796362a7206b861120a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[14].path",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/intake/FOT002_root_acceptance.json",
+      "expected_original_sha256": "7602468b6f4c4f4757d80576c1ccf875b277175d1460d7e3008c8d4f2b068b1f",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/intake/FOT002_root_acceptance.json",
+          "public_sha256": "7602468b6f4c4f4757d80576c1ccf875b277175d1460d7e3008c8d4f2b068b1f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[15].path",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/intake/FOT003_root_acceptance.json",
+      "expected_original_sha256": "301c9522f4e1b28f06f3114e9950641cbc345fef7c104bb78b356d6a9ab1b994",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/intake/FOT003_root_acceptance.json",
+          "public_sha256": "301c9522f4e1b28f06f3114e9950641cbc345fef7c104bb78b356d6a9ab1b994",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[16].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/review/full_review.md",
+      "expected_original_sha256": "6108afbbaa197eff877d68ed96607faab34ac8b585fd7cf397bd0b102d7ccb79",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/full_review.md",
+          "public_sha256": "6108afbbaa197eff877d68ed96607faab34ac8b585fd7cf397bd0b102d7ccb79",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[17].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/review/checks.py",
+      "expected_original_sha256": "235cdc164c5316b1525db9450127e6e33ee692391dedce4401d70ccad19be045",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/checks.py",
+          "public_sha256": "235cdc164c5316b1525db9450127e6e33ee692391dedce4401d70ccad19be045",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[18].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/review/checks.json",
+      "expected_original_sha256": "50821463d91e2ace9142806c3be4907cd92829d6a66c826528ed8d9ce0872b28",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/checks.json",
+          "public_sha256": "50821463d91e2ace9142806c3be4907cd92829d6a66c826528ed8d9ce0872b28",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[19].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "expected_original_sha256": "160968c0f08430a1b2a2654e21989886b6eaedf87c69e2b1c9687fd5abfb95d8",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+          "public_sha256": "160968c0f08430a1b2a2654e21989886b6eaedf87c69e2b1c9687fd5abfb95d8",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "location": "$.files[20].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/review/FINAL_VERSION_ADDENDUM.md",
+      "expected_original_sha256": "e651fb8b090d4f413326464e51f1b73859fdfcab16eeaa91caf95d6fe3daf566",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/FINAL_VERSION_ADDENDUM.md",
+          "public_sha256": "e651fb8b090d4f413326464e51f1b73859fdfcab16eeaa91caf95d6fe3daf566",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.CANDIDATE.md",
+      "declared_path": "CANDIDATE.md",
+      "expected_original_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+          "public_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.SOURCE_BINDINGS.json",
+      "declared_path": "SOURCE_BINDINGS.json",
+      "expected_original_sha256": "e4e61e61b109cc1d8e5b943688f1af6e19aab254e23fb5749c01af5871e5839c",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "e4e61e61b109cc1d8e5b943688f1af6e19aab254e23fb5749c01af5871e5839c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review_independent/REVIEW.md",
+      "declared_path": "review_independent/REVIEW.md",
+      "expected_original_sha256": "30ddf2a4f07e51965bf96113a6ae2a170e06052d33b6dfa80540c6aa5394c9c7",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/review_independent/REVIEW.md",
+          "public_sha256": "30ddf2a4f07e51965bf96113a6ae2a170e06052d33b6dfa80540c6aa5394c9c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review_independent/bindings.json",
+      "declared_path": "review_independent/bindings.json",
+      "expected_original_sha256": "1935464dc012add22497d0c276955546a08560c1fb1ea41e528383a75938e975",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/review_independent/bindings.json",
+          "public_sha256": "1935464dc012add22497d0c276955546a08560c1fb1ea41e528383a75938e975",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review_independent/check.py",
+      "declared_path": "review_independent/check.py",
+      "expected_original_sha256": "8c76a412a8ab1785b790a5fbb0abffafaec4e4642afcb5df40f143e283566c54",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/review_independent/check.py",
+          "public_sha256": "8c76a412a8ab1785b790a5fbb0abffafaec4e4642afcb5df40f143e283566c54",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review_independent/checks.json",
+      "declared_path": "review_independent/checks.json",
+      "expected_original_sha256": "e71bafdcbcbf6219204a9bcac1c989198d785a875ab0d686c1692c452b1fa1dd",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/review_independent/checks.json",
+          "public_sha256": "e71bafdcbcbf6219204a9bcac1c989198d785a875ab0d686c1692c452b1fa1dd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.ROOT_REPLAY.json",
+      "declared_path": "ROOT_REPLAY.json",
+      "expected_original_sha256": "7256402f23ae818c2277197429a832940cfe3c6c3986842f1f7f4eec38f72069",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/ROOT_REPLAY.json",
+          "public_sha256": "7256402f23ae818c2277197429a832940cfe3c6c3986842f1f7f4eec38f72069",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/SOURCE_BINDINGS.json",
+      "location": "$.read_in_full.v10_research/resumption_20261103/efficient_message_code/CANDIDATE.md",
+      "declared_path": "v10_research/resumption_20261103/efficient_message_code/CANDIDATE.md",
+      "expected_original_sha256": "e23770d66efaff55489af3905b78642992ab1d2a7b55448912765694bb2e64b9",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/efficient_message_code/CANDIDATE.md",
+          "public_sha256": "e23770d66efaff55489af3905b78642992ab1d2a7b55448912765694bb2e64b9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/SOURCE_BINDINGS.json",
+      "location": "$.read_in_full.v10_research/resumption_20261103/efficient_message_code/ROOT_ACCEPTANCE.json",
+      "declared_path": "v10_research/resumption_20261103/efficient_message_code/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "c6a5a6430c7e8f79cc7d1c10762e7158bb9608cea6688997e1c069970fdd0b11",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/efficient_message_code/ROOT_ACCEPTANCE.json",
+          "public_sha256": "c6a5a6430c7e8f79cc7d1c10762e7158bb9608cea6688997e1c069970fdd0b11",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/SOURCE_BINDINGS.json",
+      "location": "$.read_in_full.v10_research/resumption_20261103/whole_message_cost/CANDIDATE.md",
+      "declared_path": "v10_research/resumption_20261103/whole_message_cost/CANDIDATE.md",
+      "expected_original_sha256": "502b3a7e37c8adda33722ca324bade02efeab1c9d140c59abb3d812bba3eca62",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/whole_message_cost/CANDIDATE.md",
+          "public_sha256": "502b3a7e37c8adda33722ca324bade02efeab1c9d140c59abb3d812bba3eca62",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/SOURCE_BINDINGS.json",
+      "location": "$.read_in_full.v10_research/resumption_20261103/whole_message_cost/ROOT_ACCEPTANCE.json",
+      "declared_path": "v10_research/resumption_20261103/whole_message_cost/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "c7b730b9ace89de683f321683058bb90065f30d74256dcb9c66f35d671807396",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/whole_message_cost/ROOT_ACCEPTANCE.json",
+          "public_sha256": "c7b730b9ace89de683f321683058bb90065f30d74256dcb9c66f35d671807396",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/SOURCE_BINDINGS.json",
+      "location": "$.read_in_full.v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "expected_original_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+          "public_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/SOURCE_BINDINGS.json",
+      "location": "$.read_in_full.v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+          "public_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/SOURCE_BINDINGS.json",
+      "location": "$.read_in_full.v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "declared_path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "expected_original_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+          "public_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/review_independent/bindings.json",
+      "location": "$.artifacts.CANDIDATE.md",
+      "declared_path": "CANDIDATE.md",
+      "expected_original_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+          "public_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/review_independent/bindings.json",
+      "location": "$.artifacts.SOURCE_BINDINGS.json",
+      "declared_path": "SOURCE_BINDINGS.json",
+      "expected_original_sha256": "e4e61e61b109cc1d8e5b943688f1af6e19aab254e23fb5749c01af5871e5839c",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "e4e61e61b109cc1d8e5b943688f1af6e19aab254e23fb5749c01af5871e5839c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/review_independent/bindings.json",
+      "location": "$.artifacts.review_independent/REVIEW.md",
+      "declared_path": "review_independent/REVIEW.md",
+      "expected_original_sha256": "30ddf2a4f07e51965bf96113a6ae2a170e06052d33b6dfa80540c6aa5394c9c7",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/review_independent/REVIEW.md",
+          "public_sha256": "30ddf2a4f07e51965bf96113a6ae2a170e06052d33b6dfa80540c6aa5394c9c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/review_independent/bindings.json",
+      "location": "$.artifacts.review_independent/check.py",
+      "declared_path": "review_independent/check.py",
+      "expected_original_sha256": "8c76a412a8ab1785b790a5fbb0abffafaec4e4642afcb5df40f143e283566c54",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/review_independent/check.py",
+          "public_sha256": "8c76a412a8ab1785b790a5fbb0abffafaec4e4642afcb5df40f143e283566c54",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/unknown_channel_whole_code_20261103/review_independent/bindings.json",
+      "location": "$.artifacts.review_independent/checks.json",
+      "declared_path": "review_independent/checks.json",
+      "expected_original_sha256": "e71bafdcbcbf6219204a9bcac1c989198d785a875ab0d686c1692c452b1fa1dd",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/review_independent/checks.json",
+          "public_sha256": "e71bafdcbcbf6219204a9bcac1c989198d785a875ab0d686c1692c452b1fa1dd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.CANDIDATE.md",
+      "declared_path": "CANDIDATE.md",
+      "expected_original_sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+          "public_sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.SOURCE_BINDINGS.json",
+      "declared_path": "SOURCE_BINDINGS.json",
+      "expected_original_sha256": "c87991e6487207f371cbb2d1059d43e79c662015a60421f6b5abd2bce9544edc",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "c87991e6487207f371cbb2d1059d43e79c662015a60421f6b5abd2bce9544edc",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review/FULL_REVIEW.md",
+      "declared_path": "review/FULL_REVIEW.md",
+      "expected_original_sha256": "6e6d573aad74dd1f0f32fa41bde1fc6d027fc68a006a1d5a3cf0bf2a07cf38ff",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/review/FULL_REVIEW.md",
+          "public_sha256": "8f06ff54414d7da88ea4974c1a1e601681a4a7fd71ffa696f683cbf3585701ff",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review/bindings.json",
+      "declared_path": "review/bindings.json",
+      "expected_original_sha256": "d884e41c559d74033f0e24fec163734a066581be3a42aa020351f1275502e666",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+          "public_sha256": "d884e41c559d74033f0e24fec163734a066581be3a42aa020351f1275502e666",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review/checks.py",
+      "declared_path": "review/checks.py",
+      "expected_original_sha256": "5d779941fc73aa2e65a7b34e2140541fbda9a191269b9972f960f8dafaa78814",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/review/checks.py",
+          "public_sha256": "5d779941fc73aa2e65a7b34e2140541fbda9a191269b9972f960f8dafaa78814",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review/checks.json",
+      "declared_path": "review/checks.json",
+      "expected_original_sha256": "99fbf1f8883f89a1b12e125269f2fb97ff3c69f90e0aebf1c6eb49b970eb41e6",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/review/checks.json",
+          "public_sha256": "99fbf1f8883f89a1b12e125269f2fb97ff3c69f90e0aebf1c6eb49b970eb41e6",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.ROOT_REPLAY.json",
+      "declared_path": "ROOT_REPLAY.json",
+      "expected_original_sha256": "b4cacc8e3a68c7e8b3039d1fb72f59ea06c8f6e729a17a06cd4743ee1b42f887",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/ROOT_REPLAY.json",
+          "public_sha256": "b4cacc8e3a68c7e8b3039d1fb72f59ea06c8f6e729a17a06cd4743ee1b42f887",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[0].path",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+      "expected_original_sha256": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+          "public_sha256": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[0].receipt",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "c1d2c41fb616c683379e51a9146dc74cc869001621c439992cc6af01ecc3dfdf",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/ROOT_ACCEPTANCE.json",
+          "public_sha256": "c1d2c41fb616c683379e51a9146dc74cc869001621c439992cc6af01ecc3dfdf",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[1].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "expected_original_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+          "public_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[1].receipt",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+          "public_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[2].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "expected_original_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+          "public_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[2].receipt",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+          "public_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[3].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "expected_original_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+          "public_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[3].receipt",
+      "declared_path": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.sources[0].path",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+      "expected_original_sha256": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/CANDIDATE.md",
+          "public_sha256": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.sources[0].receipt",
+      "declared_path": "v10_research/resumption_20261103/channel_classification/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "c1d2c41fb616c683379e51a9146dc74cc869001621c439992cc6af01ecc3dfdf",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/channel_classification/ROOT_ACCEPTANCE.json",
+          "public_sha256": "c1d2c41fb616c683379e51a9146dc74cc869001621c439992cc6af01ecc3dfdf",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.sources[1].path",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "expected_original_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+          "public_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.sources[1].receipt",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+          "public_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.sources[2].path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "expected_original_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+          "public_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.sources[2].receipt",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+          "public_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.sources[3].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "expected_original_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+          "public_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.sources[3].receipt",
+      "declared_path": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.artifacts.CANDIDATE.md",
+      "declared_path": "CANDIDATE.md",
+      "expected_original_sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+          "public_sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.artifacts.SOURCE_BINDINGS.json",
+      "declared_path": "SOURCE_BINDINGS.json",
+      "expected_original_sha256": "c87991e6487207f371cbb2d1059d43e79c662015a60421f6b5abd2bce9544edc",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "c87991e6487207f371cbb2d1059d43e79c662015a60421f6b5abd2bce9544edc",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.artifacts.review/FULL_REVIEW.md",
+      "declared_path": "review/FULL_REVIEW.md",
+      "expected_original_sha256": "6e6d573aad74dd1f0f32fa41bde1fc6d027fc68a006a1d5a3cf0bf2a07cf38ff",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/review/FULL_REVIEW.md",
+          "public_sha256": "8f06ff54414d7da88ea4974c1a1e601681a4a7fd71ffa696f683cbf3585701ff",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.artifacts.review/checks.py",
+      "declared_path": "review/checks.py",
+      "expected_original_sha256": "5d779941fc73aa2e65a7b34e2140541fbda9a191269b9972f960f8dafaa78814",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/review/checks.py",
+          "public_sha256": "5d779941fc73aa2e65a7b34e2140541fbda9a191269b9972f960f8dafaa78814",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "location": "$.artifacts.review/checks.json",
+      "declared_path": "review/checks.json",
+      "expected_original_sha256": "99fbf1f8883f89a1b12e125269f2fb97ff3c69f90e0aebf1c6eb49b970eb41e6",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/review/checks.json",
+          "public_sha256": "99fbf1f8883f89a1b12e125269f2fb97ff3c69f90e0aebf1c6eb49b970eb41e6",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.CANDIDATE.md",
+      "declared_path": "CANDIDATE.md",
+      "expected_original_sha256": "2618aaf7d6a5610827697c6c86a6c0c5f9a5eef44460edbc944de56d6ec0b476",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/CANDIDATE.md",
+          "public_sha256": "2618aaf7d6a5610827697c6c86a6c0c5f9a5eef44460edbc944de56d6ec0b476",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.ROOT_REPLAY.json",
+      "declared_path": "ROOT_REPLAY.json",
+      "expected_original_sha256": "94b8ff35d3e74cef7c2fabc95c21e51920abf227105dabe83159d02a5dc2757b",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/ROOT_REPLAY.json",
+          "public_sha256": "94b8ff35d3e74cef7c2fabc95c21e51920abf227105dabe83159d02a5dc2757b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.SOURCE_BINDINGS.json",
+      "declared_path": "SOURCE_BINDINGS.json",
+      "expected_original_sha256": "91fc571cc634a3c3912cffa578bc3bc1ff2c201d904deb19cbbc273b1a497a23",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "91fc571cc634a3c3912cffa578bc3bc1ff2c201d904deb19cbbc273b1a497a23",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.history/CANDIDATE.before_witness_wording.md",
+      "declared_path": "history/CANDIDATE.before_witness_wording.md",
+      "expected_original_sha256": "0f0d28c8270ce53c662de2f098027c776a30f23d227079a2bce338f0adbc10c1",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/history/CANDIDATE.before_witness_wording.md",
+          "public_sha256": "0f0d28c8270ce53c662de2f098027c776a30f23d227079a2bce338f0adbc10c1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.history/witness_wording.diff",
+      "declared_path": "history/witness_wording.diff",
+      "expected_original_sha256": "682364e2106cab526bee568b0ee30ce1a9c805eeebb43db6e925b670f824c9fc",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/history/witness_wording.diff",
+          "public_sha256": "682364e2106cab526bee568b0ee30ce1a9c805eeebb43db6e925b670f824c9fc",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review_independent/REVIEW.md",
+      "declared_path": "review_independent/REVIEW.md",
+      "expected_original_sha256": "60e6b717656c9f4bbb9d11619f988e1f33335baebc0ed55fee8650564f89f39d",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/REVIEW.md",
+          "public_sha256": "60e6b717656c9f4bbb9d11619f988e1f33335baebc0ed55fee8650564f89f39d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review_independent/REVIEW_DRAFT.md",
+      "declared_path": "review_independent/REVIEW_DRAFT.md",
+      "expected_original_sha256": "6b5a07182310534b954e700f67def2c9348d4338380b1f9eed2df2a78f15683f",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/REVIEW_DRAFT.md",
+          "public_sha256": "6b5a07182310534b954e700f67def2c9348d4338380b1f9eed2df2a78f15683f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review_independent/bindings.json",
+      "declared_path": "review_independent/bindings.json",
+      "expected_original_sha256": "f27f930ee9eb2ac8a12e5e495b912176d2421ce5389366affe960aa041d74df4",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+          "public_sha256": "f27f930ee9eb2ac8a12e5e495b912176d2421ce5389366affe960aa041d74df4",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review_independent/check.py",
+      "declared_path": "review_independent/check.py",
+      "expected_original_sha256": "29d4ce25dee8aaccdea451c4cfba04f28790ad7b0b6cace2b95c3674bd492501",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/check.py",
+          "public_sha256": "29d4ce25dee8aaccdea451c4cfba04f28790ad7b0b6cace2b95c3674bd492501",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.artifacts.review_independent/checks.json",
+      "declared_path": "review_independent/checks.json",
+      "expected_original_sha256": "566b547e28ee7e20e2025d64a1e4cc3a8fb27924f969641751d6a20b4f479e02",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/checks.json",
+          "public_sha256": "566b547e28ee7e20e2025d64a1e4cc3a8fb27924f969641751d6a20b4f479e02",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[0].source",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/triple_access/FOT001_candidate.md",
+      "expected_original_sha256": "700db043416260a3d7e4796d6513ee60b90c2f2704a4d183be526d2aef9fef1d",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/triple_access/FOT001_candidate.md",
+          "public_sha256": "700db043416260a3d7e4796d6513ee60b90c2f2704a4d183be526d2aef9fef1d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[0].receipt",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/intake/FOT001_root_acceptance.json",
+      "expected_original_sha256": "cd1ce17b8b71c0316d1d41b058f94596e8cba61b80980fc079b508e6c8b7eb07",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/intake/FOT001_root_acceptance.json",
+          "public_sha256": "cd1ce17b8b71c0316d1d41b058f94596e8cba61b80980fc079b508e6c8b7eb07",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[1].source",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "expected_original_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+          "public_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[1].receipt",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+          "public_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[2].source",
+      "declared_path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "expected_original_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+          "public_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[2].receipt",
+      "declared_path": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[3].source",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+      "expected_original_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+          "public_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[3].receipt",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "4f8f7716d992d4bdb2c594b875c51b1f8df85ff43557877243931ae15aa066fb",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "4f8f7716d992d4bdb2c594b875c51b1f8df85ff43557877243931ae15aa066fb",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[4].source",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+      "expected_original_sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+          "public_sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.sources[4].receipt",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "17e57534a5e0b811e09579c868d47f819ea11b6a88ae233606732ba0fad9da4d",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "17e57534a5e0b811e09579c868d47f819ea11b6a88ae233606732ba0fad9da4d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "location": "$.additional_receipt_read.path",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+          "public_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.artifacts[0].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/CANDIDATE.md",
+      "expected_original_sha256": "2618aaf7d6a5610827697c6c86a6c0c5f9a5eef44460edbc944de56d6ec0b476",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/CANDIDATE.md",
+          "public_sha256": "2618aaf7d6a5610827697c6c86a6c0c5f9a5eef44460edbc944de56d6ec0b476",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.artifacts[1].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "91fc571cc634a3c3912cffa578bc3bc1ff2c201d904deb19cbbc273b1a497a23",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "91fc571cc634a3c3912cffa578bc3bc1ff2c201d904deb19cbbc273b1a497a23",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.artifacts[2].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/review_independent/REVIEW.md",
+      "expected_original_sha256": "60e6b717656c9f4bbb9d11619f988e1f33335baebc0ed55fee8650564f89f39d",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/REVIEW.md",
+          "public_sha256": "60e6b717656c9f4bbb9d11619f988e1f33335baebc0ed55fee8650564f89f39d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.artifacts[3].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/review_independent/check.py",
+      "expected_original_sha256": "29d4ce25dee8aaccdea451c4cfba04f28790ad7b0b6cace2b95c3674bd492501",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/check.py",
+          "public_sha256": "29d4ce25dee8aaccdea451c4cfba04f28790ad7b0b6cace2b95c3674bd492501",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.artifacts[4].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/review_independent/checks.json",
+      "expected_original_sha256": "566b547e28ee7e20e2025d64a1e4cc3a8fb27924f969641751d6a20b4f479e02",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/checks.json",
+          "public_sha256": "566b547e28ee7e20e2025d64a1e4cc3a8fb27924f969641751d6a20b4f479e02",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.artifacts[5].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/history/CANDIDATE.before_witness_wording.md",
+      "expected_original_sha256": "0f0d28c8270ce53c662de2f098027c776a30f23d227079a2bce338f0adbc10c1",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/history/CANDIDATE.before_witness_wording.md",
+          "public_sha256": "0f0d28c8270ce53c662de2f098027c776a30f23d227079a2bce338f0adbc10c1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.artifacts[6].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/history/witness_wording.diff",
+      "expected_original_sha256": "682364e2106cab526bee568b0ee30ce1a9c805eeebb43db6e925b670f824c9fc",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/history/witness_wording.diff",
+          "public_sha256": "682364e2106cab526bee568b0ee30ce1a9c805eeebb43db6e925b670f824c9fc",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.accepted_sources[0].source",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/triple_access/FOT001_candidate.md",
+      "expected_original_sha256": "700db043416260a3d7e4796d6513ee60b90c2f2704a4d183be526d2aef9fef1d",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/triple_access/FOT001_candidate.md",
+          "public_sha256": "700db043416260a3d7e4796d6513ee60b90c2f2704a4d183be526d2aef9fef1d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.accepted_sources[0].receipt",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/intake/FOT001_root_acceptance.json",
+      "expected_original_sha256": "cd1ce17b8b71c0316d1d41b058f94596e8cba61b80980fc079b508e6c8b7eb07",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/intake/FOT001_root_acceptance.json",
+          "public_sha256": "cd1ce17b8b71c0316d1d41b058f94596e8cba61b80980fc079b508e6c8b7eb07",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.accepted_sources[1].source",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "expected_original_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+          "public_sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.accepted_sources[1].receipt",
+      "declared_path": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+          "public_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.accepted_sources[2].source",
+      "declared_path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "expected_original_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+          "public_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.accepted_sources[2].receipt",
+      "declared_path": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.accepted_sources[3].source",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+      "expected_original_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+          "public_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.accepted_sources[3].receipt",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "4f8f7716d992d4bdb2c594b875c51b1f8df85ff43557877243931ae15aa066fb",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "4f8f7716d992d4bdb2c594b875c51b1f8df85ff43557877243931ae15aa066fb",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.accepted_sources[4].source",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+      "expected_original_sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+          "public_sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.accepted_sources[4].receipt",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "17e57534a5e0b811e09579c868d47f819ea11b6a88ae233606732ba0fad9da4d",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "17e57534a5e0b811e09579c868d47f819ea11b6a88ae233606732ba0fad9da4d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.accepted_sources[5].source",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+      "expected_original_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md",
+          "public_sha256": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "location": "$.accepted_sources[5].receipt",
+      "declared_path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+          "public_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/READ_SCOPE.json",
+      "location": "$.local_candidates[0].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "expected_original_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+          "public_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/READ_SCOPE.json",
+      "location": "$.local_candidates[1].path",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+      "expected_original_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+          "public_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/READ_SCOPE.json",
+      "location": "$.local_candidates[2].path",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+      "expected_original_sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+          "public_sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[0].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "expected_original_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+          "public_sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[1].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[2].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/ROOT_REPLAY.json",
+      "expected_original_sha256": "4523d81366139ab76da9dbb2fee47905f67b3279e7a31c5a9a478c12a5fa5942",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/ROOT_REPLAY.json",
+          "public_sha256": "4523d81366139ab76da9dbb2fee47905f67b3279e7a31c5a9a478c12a5fa5942",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[3].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "d2ee413c8fdb3c86dd3cf3b6df6b66482fed06ca27d5afae5b51a11ab00b3135",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "d2ee413c8fdb3c86dd3cf3b6df6b66482fed06ca27d5afae5b51a11ab00b3135",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[4].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/history/CANDIDATE.before_mgf_proof.md",
+      "expected_original_sha256": "3f5aeb2b8fde5adf6007be49bb5ece803fc5c0c0c0a3ebb6f53acef4bbdecd58",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/history/CANDIDATE.before_mgf_proof.md",
+          "public_sha256": "3f5aeb2b8fde5adf6007be49bb5ece803fc5c0c0c0a3ebb6f53acef4bbdecd58",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[5].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/history/mgf_proof.diff",
+      "expected_original_sha256": "ab44f35a3f34478cd30f28b48a873a9b8327c9d2ca6654c7c3d091445bf21a77",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/history/mgf_proof.diff",
+          "public_sha256": "ab44f35a3f34478cd30f28b48a873a9b8327c9d2ca6654c7c3d091445bf21a77",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[6].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/review/FINAL_VERSION_ADDENDUM.md",
+      "expected_original_sha256": "e651fb8b090d4f413326464e51f1b73859fdfcab16eeaa91caf95d6fe3daf566",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/FINAL_VERSION_ADDENDUM.md",
+          "public_sha256": "e651fb8b090d4f413326464e51f1b73859fdfcab16eeaa91caf95d6fe3daf566",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[7].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+      "expected_original_sha256": "160968c0f08430a1b2a2654e21989886b6eaedf87c69e2b1c9687fd5abfb95d8",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/accepted_artifact_verification.json",
+          "public_sha256": "160968c0f08430a1b2a2654e21989886b6eaedf87c69e2b1c9687fd5abfb95d8",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[8].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+      "expected_original_sha256": "5a84bd88ad9e261750042a4736097cf01eed088767e81d43e1215307571574be",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/bindings.json",
+          "public_sha256": "5a84bd88ad9e261750042a4736097cf01eed088767e81d43e1215307571574be",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[9].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/review/checks.json",
+      "expected_original_sha256": "50821463d91e2ace9142806c3be4907cd92829d6a66c826528ed8d9ce0872b28",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/checks.json",
+          "public_sha256": "50821463d91e2ace9142806c3be4907cd92829d6a66c826528ed8d9ce0872b28",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[10].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/review/checks.py",
+      "expected_original_sha256": "235cdc164c5316b1525db9450127e6e33ee692391dedce4401d70ccad19be045",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/checks.py",
+          "public_sha256": "235cdc164c5316b1525db9450127e6e33ee692391dedce4401d70ccad19be045",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[11].path",
+      "declared_path": "v10_research/channel_uncertainty_20261103/review/full_review.md",
+      "expected_original_sha256": "6108afbbaa197eff877d68ed96607faab34ac8b585fd7cf397bd0b102d7ccb79",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_20261103/review/full_review.md",
+          "public_sha256": "6108afbbaa197eff877d68ed96607faab34ac8b585fd7cf397bd0b102d7ccb79",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[12].path",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+      "expected_original_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+          "public_sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[13].path",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "4f8f7716d992d4bdb2c594b875c51b1f8df85ff43557877243931ae15aa066fb",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "4f8f7716d992d4bdb2c594b875c51b1f8df85ff43557877243931ae15aa066fb",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[14].path",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/ROOT_REPLAY.json",
+      "expected_original_sha256": "7256402f23ae818c2277197429a832940cfe3c6c3986842f1f7f4eec38f72069",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/ROOT_REPLAY.json",
+          "public_sha256": "7256402f23ae818c2277197429a832940cfe3c6c3986842f1f7f4eec38f72069",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[15].path",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "e4e61e61b109cc1d8e5b943688f1af6e19aab254e23fb5749c01af5871e5839c",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "e4e61e61b109cc1d8e5b943688f1af6e19aab254e23fb5749c01af5871e5839c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[16].path",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/review_independent/REVIEW.md",
+      "expected_original_sha256": "30ddf2a4f07e51965bf96113a6ae2a170e06052d33b6dfa80540c6aa5394c9c7",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/review_independent/REVIEW.md",
+          "public_sha256": "30ddf2a4f07e51965bf96113a6ae2a170e06052d33b6dfa80540c6aa5394c9c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[17].path",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/review_independent/bindings.json",
+      "expected_original_sha256": "1935464dc012add22497d0c276955546a08560c1fb1ea41e528383a75938e975",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/review_independent/bindings.json",
+          "public_sha256": "1935464dc012add22497d0c276955546a08560c1fb1ea41e528383a75938e975",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[18].path",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/review_independent/check.py",
+      "expected_original_sha256": "8c76a412a8ab1785b790a5fbb0abffafaec4e4642afcb5df40f143e283566c54",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/review_independent/check.py",
+          "public_sha256": "8c76a412a8ab1785b790a5fbb0abffafaec4e4642afcb5df40f143e283566c54",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[19].path",
+      "declared_path": "v10_research/unknown_channel_whole_code_20261103/review_independent/checks.json",
+      "expected_original_sha256": "e71bafdcbcbf6219204a9bcac1c989198d785a875ab0d686c1692c452b1fa1dd",
+      "resolutions": [
+        {
+          "path": "v10_research/unknown_channel_whole_code_20261103/review_independent/checks.json",
+          "public_sha256": "e71bafdcbcbf6219204a9bcac1c989198d785a875ab0d686c1692c452b1fa1dd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[20].path",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+      "expected_original_sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+          "public_sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[21].path",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/CHECKS.json",
+      "expected_original_sha256": "6c80b2750f1dc6867c66c7d910241cd750611d24a2f536a075c39543be2c881d",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/CHECKS.json",
+          "public_sha256": "6c80b2750f1dc6867c66c7d910241cd750611d24a2f536a075c39543be2c881d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[22].path",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "17e57534a5e0b811e09579c868d47f819ea11b6a88ae233606732ba0fad9da4d",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "17e57534a5e0b811e09579c868d47f819ea11b6a88ae233606732ba0fad9da4d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[23].path",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/ROOT_REPLAY.json",
+      "expected_original_sha256": "b4cacc8e3a68c7e8b3039d1fb72f59ea06c8f6e729a17a06cd4743ee1b42f887",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/ROOT_REPLAY.json",
+          "public_sha256": "b4cacc8e3a68c7e8b3039d1fb72f59ea06c8f6e729a17a06cd4743ee1b42f887",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[24].path",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "c87991e6487207f371cbb2d1059d43e79c662015a60421f6b5abd2bce9544edc",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "c87991e6487207f371cbb2d1059d43e79c662015a60421f6b5abd2bce9544edc",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[25].path",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/checks.py",
+      "expected_original_sha256": "47d3f998ca2a616fda446ce83cc4ba0d396489f6ed6cec68e185653851ec9a85",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/checks.py",
+          "public_sha256": "47d3f998ca2a616fda446ce83cc4ba0d396489f6ed6cec68e185653851ec9a85",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[26].path",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/review/FULL_REVIEW.md",
+      "expected_original_sha256": "6e6d573aad74dd1f0f32fa41bde1fc6d027fc68a006a1d5a3cf0bf2a07cf38ff",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/review/FULL_REVIEW.md",
+          "public_sha256": "8f06ff54414d7da88ea4974c1a1e601681a4a7fd71ffa696f683cbf3585701ff",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[27].path",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+      "expected_original_sha256": "d884e41c559d74033f0e24fec163734a066581be3a42aa020351f1275502e666",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/review/bindings.json",
+          "public_sha256": "d884e41c559d74033f0e24fec163734a066581be3a42aa020351f1275502e666",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[28].path",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/review/checks.json",
+      "expected_original_sha256": "99fbf1f8883f89a1b12e125269f2fb97ff3c69f90e0aebf1c6eb49b970eb41e6",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/review/checks.json",
+          "public_sha256": "99fbf1f8883f89a1b12e125269f2fb97ff3c69f90e0aebf1c6eb49b970eb41e6",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[29].path",
+      "declared_path": "v10_research/channel_accuracy_frontier_20261103/review/checks.py",
+      "expected_original_sha256": "5d779941fc73aa2e65a7b34e2140541fbda9a191269b9972f960f8dafaa78814",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_accuracy_frontier_20261103/review/checks.py",
+          "public_sha256": "5d779941fc73aa2e65a7b34e2140541fbda9a191269b9972f960f8dafaa78814",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[30].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/CANDIDATE.md",
+      "expected_original_sha256": "2618aaf7d6a5610827697c6c86a6c0c5f9a5eef44460edbc944de56d6ec0b476",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/CANDIDATE.md",
+          "public_sha256": "2618aaf7d6a5610827697c6c86a6c0c5f9a5eef44460edbc944de56d6ec0b476",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[31].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "cd2d9a2bafb1783a109fbbc247a4629bd7d4639d9dab91ec1a1386d58eeabae9",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "cd2d9a2bafb1783a109fbbc247a4629bd7d4639d9dab91ec1a1386d58eeabae9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[32].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/ROOT_REPLAY.json",
+      "expected_original_sha256": "94b8ff35d3e74cef7c2fabc95c21e51920abf227105dabe83159d02a5dc2757b",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/ROOT_REPLAY.json",
+          "public_sha256": "94b8ff35d3e74cef7c2fabc95c21e51920abf227105dabe83159d02a5dc2757b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[33].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "91fc571cc634a3c3912cffa578bc3bc1ff2c201d904deb19cbbc273b1a497a23",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "91fc571cc634a3c3912cffa578bc3bc1ff2c201d904deb19cbbc273b1a497a23",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[34].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/history/CANDIDATE.before_witness_wording.md",
+      "expected_original_sha256": "0f0d28c8270ce53c662de2f098027c776a30f23d227079a2bce338f0adbc10c1",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/history/CANDIDATE.before_witness_wording.md",
+          "public_sha256": "0f0d28c8270ce53c662de2f098027c776a30f23d227079a2bce338f0adbc10c1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[35].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/history/witness_wording.diff",
+      "expected_original_sha256": "682364e2106cab526bee568b0ee30ce1a9c805eeebb43db6e925b670f824c9fc",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/history/witness_wording.diff",
+          "public_sha256": "682364e2106cab526bee568b0ee30ce1a9c805eeebb43db6e925b670f824c9fc",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[36].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/review_independent/REVIEW.md",
+      "expected_original_sha256": "60e6b717656c9f4bbb9d11619f988e1f33335baebc0ed55fee8650564f89f39d",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/REVIEW.md",
+          "public_sha256": "60e6b717656c9f4bbb9d11619f988e1f33335baebc0ed55fee8650564f89f39d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[37].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/review_independent/REVIEW_DRAFT.md",
+      "expected_original_sha256": "6b5a07182310534b954e700f67def2c9348d4338380b1f9eed2df2a78f15683f",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/REVIEW_DRAFT.md",
+          "public_sha256": "6b5a07182310534b954e700f67def2c9348d4338380b1f9eed2df2a78f15683f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[38].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+      "expected_original_sha256": "f27f930ee9eb2ac8a12e5e495b912176d2421ce5389366affe960aa041d74df4",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/bindings.json",
+          "public_sha256": "f27f930ee9eb2ac8a12e5e495b912176d2421ce5389366affe960aa041d74df4",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[39].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/review_independent/check.py",
+      "expected_original_sha256": "29d4ce25dee8aaccdea451c4cfba04f28790ad7b0b6cace2b95c3674bd492501",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/check.py",
+          "public_sha256": "29d4ce25dee8aaccdea451c4cfba04f28790ad7b0b6cace2b95c3674bd492501",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[40].path",
+      "declared_path": "v10_research/channel_margin_frontier_20261103/review_independent/checks.json",
+      "expected_original_sha256": "566b547e28ee7e20e2025d64a1e4cc3a8fb27924f969641751d6a20b4f479e02",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_margin_frontier_20261103/review_independent/checks.json",
+          "public_sha256": "566b547e28ee7e20e2025d64a1e4cc3a8fb27924f969641751d6a20b4f479e02",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[41].path",
+      "declared_path": "v10_research/channel_uncertainty_stage_20261103/METHOD_ANTECEDENTS.md",
+      "expected_original_sha256": "1dd658d340f5cd92b36d9add0d55a1e83febbe6dff26390f29cb3d2246eb29ea",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_stage_20261103/METHOD_ANTECEDENTS.md",
+          "public_sha256": "1dd658d340f5cd92b36d9add0d55a1e83febbe6dff26390f29cb3d2246eb29ea",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[42].path",
+      "declared_path": "v10_research/channel_uncertainty_stage_20261103/READ_SCOPE.json",
+      "expected_original_sha256": "dcd898afa797fc27e57472c4365cc2372d872910ca54837b51b45f7438adf393",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_stage_20261103/READ_SCOPE.json",
+          "public_sha256": "dcd898afa797fc27e57472c4365cc2372d872910ca54837b51b45f7438adf393",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/channel_uncertainty_stage_20261103/STAGE_SCIENCE_FREEZE.json",
+      "location": "$.artifacts[43].path",
+      "declared_path": "v10_research/channel_uncertainty_stage_20261103/RESEARCH_SUMMARY.zh.md",
+      "expected_original_sha256": "8a79556062f03fa1e52941b455233cf97fde65e84ded06b025d89cde19b6a727",
+      "resolutions": [
+        {
+          "path": "v10_research/channel_uncertainty_stage_20261103/RESEARCH_SUMMARY.zh.md",
+          "public_sha256": "8a79556062f03fa1e52941b455233cf97fde65e84ded06b025d89cde19b6a727",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    }
+  ],
+  "scope_limits": [
+    "The source classes remain separate: unrestricted binary first-order tables and binary order-two tables with the specified critical all-state certificate.",
+    "The nominal channel is fixed. No uniform result in varying nominal row distance is claimed; input representation and shrinking-margin costs remain charged.",
+    "The source-bound independent LLM reviews are not blind review, external peer review, formal verification or novelty certification.",
+    "Finite diagnostic replays are reported only where performed in the original receipts. Publication preparation did not rerun the scientific programs.",
+    "Historical missing notes, the unavailable old source-closure audit and new-rebuild PDF status from the previous release remain unchanged.",
+    "Conditional channel-memory research is outside this frozen release.",
+    "No new license, workflow permissions, deployment or third-party full-text artifacts are added."
+  ]
+}

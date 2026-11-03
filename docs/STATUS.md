@@ -1,5 +1,9 @@
 # 当前状态：位置计数与未知预算适应
 
+## 2026-11-03：未知信道阶段
+
+新增四个接纳单元 UMC001、UWC001、CAF001、CMF001。结论和统一量词见[本阶段综述](../v10_research/channel_uncertainty_stage_20261103/RESEARCH_SUMMARY.zh.md)。固定名义信道下，模型误差的可辨识边界、精度过渡及余量趋零成本分别取证。含历史依赖的信道扩展仍在本阶段范围之外。
+
 ## 2026-11-03 状态补充
 
 最新结果、适用模型和文献边界见[本阶段中文综述](../v10_research/resumption_20261103/RESEARCH_SUMMARY.zh.md)。六个接纳目录是 noisy_gate、bsc_sharp、channel_classification、whole_message_cost、efficient_message_code、order_two_transfer；对应接纳范围由各自 ROOT_ACCEPTANCE.json 固定。补充消息与全消息不同，一阶无混合条件与二阶给定临界全状态条件不同。下面的 2026-11-02 记录保持历史含义。

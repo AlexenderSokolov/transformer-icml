@@ -1,0 +1,92 @@
+{
+  "date_utc": "2026-11-03",
+  "scope": "Narrow method antecedent check; not exhaustive novelty search or proof validation",
+  "external_writes": false,
+  "copyrighted_pdfs_included": false,
+  "local_candidates": [
+    {
+      "path": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "read_scope": "Relevant methods/model sections: UMC §§1–7; UWC §§1–7; CAF §§1–8. Combined initial display was truncated; UWC §§1–7 reread separately."
+    },
+    {
+      "path": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+      "sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+      "read_scope": "Relevant methods/model sections: UMC §§1–7; UWC §§1–7; CAF §§1–8. Combined initial display was truncated; UWC §§1–7 reread separately."
+    },
+    {
+      "path": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+      "sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+      "read_scope": "Relevant methods/model sections: UMC §§1–7; UWC §§1–7; CAF §§1–8. Combined initial display was truncated; UWC §§1–7 reread separately."
+    }
+  ],
+  "sources": [
+    {
+      "id": "SahaRamdas2024v1",
+      "url": "https://arxiv.org/html/2408.14015v1",
+      "primary": true,
+      "read_scope": [
+        "§1.1 neighborhood definitions (1),(2) and historical discussion",
+        "§2.1 equations (16),(17) and Theorem 2.1"
+      ],
+      "status": "Selected primary passages read, not full paper",
+      "supports": "TV-neighborhood robust testing and distinction from mixture contamination",
+      "does_not_establish": "Current Markov prediction experiment or communication frontier"
+    },
+    {
+      "id": "MerhavFeder2006v1",
+      "url": "https://arxiv.org/pdf/cs/0604069v1",
+      "primary": true,
+      "read_scope": [
+        "§2 DMC/message model; equations (1)–(5),(9)",
+        "§4 equations (15)–(18), Theorem 1 and proof"
+      ],
+      "status": "Selected primary passages read, not full paper",
+      "version_note": "arXiv header identifies cs/0604069v1, 18 Apr 2006; rendered title page additionally displays July 4, 2018; no resolution of this display discrepancy attempted",
+      "supports": "Erasure/undetected-error separation and competitive-minimax unknown-channel decoder",
+      "does_not_establish": "Conditional maximal gate error or adaptive Markov risk"
+    },
+    {
+      "id": "Chow1970",
+      "url": "https://www.researchgate.net/profile/Fabrice-Clerot/post/Do-you-know-a-Bayes-classifier-which-creates-unrecognized-regions/attachment/59d61e9ec49f478072e97562/AS%3A271742742794240%401441799926252/download/Chow%2B-%2BOn%2Boptimum%2Brecognition%2Band%2Breject%2Btradeoff.pdf",
+      "doi": "10.1109/TIT.1970.1054406",
+      "primary": true,
+      "host": "Third-party scan of original paper; not author-hosted",
+      "read_scope": [
+        "Printed pp.41–42 §§I–III, posterior accept/reject equations (2-prime),(4-prime)"
+      ],
+      "status": "Selected original-paper passages read via extracted text; screenshot requested for p.42",
+      "supports": "Generic posterior-threshold reject option",
+      "does_not_establish": "CAF two-slot probabilities or fallback risk multiplier"
+    }
+  ],
+  "unread_classical_leads": [
+    {
+      "id": "Huber1965",
+      "doi": "10.1214/aoms/1177699803",
+      "attempts": [
+        "DOI open: inaccessible",
+        "Project Euclid full HTML: iframe-only wrapper",
+        "Project Euclid Download endpoint: inaccessible"
+      ],
+      "original_theorem_read": false,
+      "indirect_context_only": "Saha–Ramdas §1.1"
+    },
+    {
+      "id": "Forney1968",
+      "doi": "10.1109/TIT.1968.1054129",
+      "attempts": [
+        "DOI open: inaccessible"
+      ],
+      "original_theorem_read": false,
+      "indirect_context_only": "Merhav–Feder §2; bibliographic search metadata"
+    }
+  ],
+  "limitations": [
+    "No exhaustive prior-art search",
+    "No full-paper claims for selected-passage reads",
+    "No theorem imported from unread classical originals",
+    "No proof that earlier work cannot subsume the local result",
+    "No modification of the three candidate proofs"
+  ]
+}

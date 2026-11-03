@@ -1,0 +1,57 @@
+{
+  "unit": "CMF001",
+  "status": "AUTHOR_SOURCE_BINDINGS_ONLY_NOT_ACCEPTANCE",
+  "utc": "2026-11-03T02:52:54.458738+00:00",
+  "sources": [
+    {
+      "unit": "FOT001",
+      "source": "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/triple_access/FOT001_candidate.md",
+      "sha256": "700db043416260a3d7e4796d6513ee60b90c2f2704a4d183be526d2aef9fef1d",
+      "bytes": 11001,
+      "receipt": "v10_research/resumption_20261103/recovered_science/intake/FOT001_root_acceptance.json",
+      "receipt_sha256": "cd1ce17b8b71c0316d1d41b058f94596e8cba61b80980fc079b508e6c8b7eb07",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "BSC001",
+      "source": "v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md",
+      "sha256": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+      "bytes": 16142,
+      "receipt": "v10_research/resumption_20261103/bsc_sharp/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "UMC001",
+      "source": "v10_research/channel_uncertainty_20261103/CANDIDATE.md",
+      "sha256": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+      "bytes": 17028,
+      "receipt": "v10_research/channel_uncertainty_20261103/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "86834a07e6da8c03f57cc821518faeb991a0d15d249e28d447b18ebce17b9859",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "UWC001",
+      "source": "v10_research/unknown_channel_whole_code_20261103/CANDIDATE.md",
+      "sha256": "c42e4f3476dd2a28a1c1899cd018f2cc911a1fd4206093a7027ec50589d9e442",
+      "bytes": 21927,
+      "receipt": "v10_research/unknown_channel_whole_code_20261103/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "4f8f7716d992d4bdb2c594b875c51b1f8df85ff43557877243931ae15aa066fb",
+      "accepted_hash_verified": true
+    },
+    {
+      "unit": "CAF001",
+      "source": "v10_research/channel_accuracy_frontier_20261103/CANDIDATE.md",
+      "sha256": "af6cd9940eacf3f1757eca6c0b8c9a886d7110ade2c544f623c1be279d4e7484",
+      "bytes": 21450,
+      "receipt": "v10_research/channel_accuracy_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "receipt_sha256": "17e57534a5e0b811e09579c868d47f819ea11b6a88ae233606732ba0fad9da4d",
+      "accepted_hash_verified": true
+    }
+  ],
+  "additional_receipt_read": {
+    "path": "v10_research/resumption_20261103/order_two_transfer/ROOT_ACCEPTANCE.json",
+    "sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd"
+  },
+  "limitations": "Imported source proofs remain accepted dependencies. O2 statistical proofs imported through CAF001/UWC001 interfaces. This manifest verifies file identity, not mathematical correctness or independent review."
+}

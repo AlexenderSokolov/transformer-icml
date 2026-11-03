@@ -1,5 +1,11 @@
 # 公开版本的来源、校验与复现
 
+## 未知信道阶段的核验范围
+
+本阶段冻结 45 个源文件，包括四个接纳目录、中文综述、方法来源与 freeze 清单。数学正文、诊断代码、已有输出和真实修订记录保持原字节。仅一行审查署名作非数学规范化，原始与公开哈希见[精确协调表](../provenance/channel_uncertainty_20261103/PUBLIC_EXPORT_RECONCILIATION.json)。历史接纳记录继续绑定原始身份，新 inventory 绑定公开字节。
+
+五个有限诊断脚本应在隔离副本中运行，避免覆盖冻结输出；本次发布准备只作身份检查和语法解析，没有重跑数学诊断。此前历史文件缺失及新重建 PDF 的边界继续有效，详见[本阶段核验说明](../provenance/channel_uncertainty_20261103/PUBLICATION_SCOPE_AND_CHECKS.json)。
+
 ## 2026-11-03 恢复与公开校验边界
 
 本次恢复了可读的科学文本和完整集成证明，但并未恢复全部旧历史闭包。31 页稿和 6 页稿是新构建 PDF，不是原 PDF 字节恢复。新审计位于 [RECOVERY_AND_SOURCE_RESOLUTION.json](../provenance/resumption_20261103/RECOVERY_AND_SOURCE_RESOLUTION.json)，不冒充未恢复的旧来源审计。

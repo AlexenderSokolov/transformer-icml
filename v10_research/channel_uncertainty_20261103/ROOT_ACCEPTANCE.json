@@ -1,0 +1,25 @@
+{
+  "utc": "2026-11-03T02:25:41.835718+00:00",
+  "unit": "UMC001",
+  "status": "ROOT_ACCEPTED_AFTER_SOURCE_BOUND_FULL_REVIEW_AND_ROOT_REPLAY",
+  "scope": "Fixed known finite-output nominal binary-input channel and fixed rowwise-TV radius alpha; true memoryless channel hidden, rule uniform over channel and original protected-source-edit experiment. Supplemental model retains exact count/terminal baseline. Separate F unrestricted first-order and O2 critical all-state P2>=Pi/M source classes.",
+  "results": "Let d=TV(P0,P1). At alpha=0 inherited support classification; if 0<alpha<d/2, necessary and sufficient feasible constant-factor length Theta(log M); if alpha>=d/2 (including d=0), robust minimax equals baseline exactly for every finite length.",
+  "upper": "Known nominal-event threshold and repetition, each conditional error <=exp(-2R*(d/2-alpha)^2). Uses no true-channel likelihood or calibration.",
+  "lower": "Fixed positive-radius full-support distinct-row witness plus accepted likelihood-transport lower; common midpoint gives exact impossibility boundary.",
+  "root_read": "Entire candidate plus final actual mgf/integer-length/bit-cost diff; complete independent review and final-version history addendum. Final21 bindings verified; persisted checker root-replayed in isolated directory with identical output.",
+  "history": "Original before-file actually retained. Intermediate reviewer binding snapshot not retained; final-version addendum discloses that without reconstructing fake evidence.",
+  "limits": "Fixed radius, not alpha_M; no whole-message robust coding upper in this unit; no unrestricted order-two, correlated noise, variable/adaptive length, calibration, neural/learning or novelty claim. Finite numeric tests not universal proof. Local unpublished, separate from commit612b76d.",
+  "artifacts": {
+    "CANDIDATE.md": "4051fa63b42f582efdbbba7f70f151b297d52f5ee449b22b570abbba4debb5e2",
+    "SOURCE_BINDINGS.json": "d2ee413c8fdb3c86dd3cf3b6df6b66482fed06ca27d5afae5b51a11ab00b3135",
+    "history/CANDIDATE.before_mgf_proof.md": "3f5aeb2b8fde5adf6007be49bb5ece803fc5c0c0c0a3ebb6f53acef4bbdecd58",
+    "history/mgf_proof.diff": "ab44f35a3f34478cd30f28b48a873a9b8327c9d2ca6654c7c3d091445bf21a77",
+    "review/full_review.md": "6108afbbaa197eff877d68ed96607faab34ac8b585fd7cf397bd0b102d7ccb79",
+    "review/FINAL_VERSION_ADDENDUM.md": "e651fb8b090d4f413326464e51f1b73859fdfcab16eeaa91caf95d6fe3daf566",
+    "review/bindings.json": "5a84bd88ad9e261750042a4736097cf01eed088767e81d43e1215307571574be",
+    "review/checks.py": "235cdc164c5316b1525db9450127e6e33ee692391dedce4401d70ccad19be045",
+    "review/checks.json": "50821463d91e2ace9142806c3be4907cd92829d6a66c826528ed8d9ce0872b28",
+    "review/accepted_artifact_verification.json": "160968c0f08430a1b2a2654e21989886b6eaedf87c69e2b1c9687fd5abfb95d8",
+    "ROOT_REPLAY.json": "4523d81366139ab76da9dbb2fee47905f67b3279e7a31c5a9a478c12a5fa5942"
+  }
+}
