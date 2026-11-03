@@ -1,0 +1,13 @@
+# Additive audit scope clarification
+
+3 November 2026. This accompanies REPORT.md without overwriting it or changing any fitted model, dataset, checkpoint, protocol or earlier smoke report.
+
+Three further observations from independent review were checked against the saved arrays:
+
+1. **Independent generation does not mean disjoint word sets.** The training and validation prior trajectories used separate seeds and were independently generated as specified. Their finite binary supports nevertheless overlap: 9 distinct validation strings occur in training, representing 25 of the 2,048 validation trajectories. There are 2,022 unique training words and 2,029 unique validation words. The reported prior-validation mean is evaluated on the entire specified independent sample, not on a word-disjoint split. No such split was claimed or enforced; do not describe all validation strings as previously unseen.
+
+2. **The collision check reuses four supplied training words.** The collision prediction screen is an in-sample four-point fit test, not independent collision generalization. The additional boundary words w(31), w(32) and their complements produce the same four gate/orientation feature classes, so they only check indexing. The fresh prior trajectories provide the held-out distributional evaluation, with the exact-word overlap caveat above. All three initialization runs share both datasets and the minibatch stream.
+
+3. **Count scaling led to substantial tanh saturation.** The fractions of ordinary-prior validation hidden activations with absolute value greater than 0.99 are 0.75836, 0.75797 and 0.69754 for seeds 20261103201, 20261103202 and 20261103203. The corresponding collision-stratum fraction is zero in all three. This is a descriptive consequence of the changed optimizer trajectory, not evidence that a numerical condition number improved, that every gradient became better behaved, or that the learned function has a stable uniform margin. The effective first-layer W norms are also much larger in the original normalized coordinates; the retained checkpoints and diagnostics expose this rather than treating rescaling as free algorithmic improvement.
+
+The retained conclusion is unchanged and narrow: with explicit Q supervision and oversampled supplied collision cases, the count-scaled parameterization passes a finite average/in-sample screen under the fixed Adam budget, while the equivalent normalized parameterization does not. The large held-out errors recorded in REPORT.md, including errors above 0.4, explicitly prevent a small uniform approximation claim. Neither report establishes natural learned robustness or general-source prediction guarantees.

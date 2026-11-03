@@ -1,0 +1,20 @@
+paths equal True True metric arrays equal True True
+stress rows 960 max tv difference 0 max mean/SE difference 0 invalid cells 0
+certificate 64 iid_half min P^2 0.25 1/M 0.015625 min P²-pi/M 0.24609375
+certificate 64 sticky_a_quarter_t_2_over_M min P^2 0.015625 1/M 0.015625 min P²-pi/M 0.014062499999999999
+certificate 64 sticky_a_equals_t_2_over_M min P^2 0.015625 1/M 0.015625 min P²-pi/M 0.00827205882352941
+certificate 128 iid_half min P^2 0.25 1/M 0.0078125 min P²-pi/M 0.248046875
+certificate 128 sticky_a_quarter_t_2_over_M min P^2 0.0078125 1/M 0.0078125 min P²-pi/M 0.007378472222222222
+certificate 128 sticky_a_equals_t_2_over_M min P^2 0.0078125 1/M 0.0078125 min P²-pi/M 0.004024621212121211
+certificate 256 iid_half min P^2 0.25 1/M 0.00390625 min P²-pi/M 0.2490234375
+certificate 256 sticky_a_quarter_t_2_over_M min P^2 0.00390625 1/M 0.00390625 min P²-pi/M 0.003791360294117647
+certificate 256 sticky_a_equals_t_2_over_M min P^2 0.00390625 1/M 0.00390625 min P²-pi/M 0.001983173076923077
+clean rows 30 max TV mean discrepancy 0 max KL mean/SE discrepancy 0
+random_edit 64 head-first-half 0.50392848 0.49959717 largest relative uniform departure 0.02649190179566152
+random_edit 128 head-first-half 0.50392679 0.49959529 largest relative uniform departure 0.027116033890030034
+random_edit 256 head-first-half 0.50392645 0.49959456 largest relative uniform departure 0.027425900789940227
+learned_edit 64 head-first-half 0.47718365 0.47833323 largest relative uniform departure 1.2608858618444798
+learned_edit 128 head-first-half 0.4772741 0.47844761 largest relative uniform departure 1.3039620186817875
+learned_edit 256 head-first-half 0.47727749 0.47845069 largest relative uniform departure 1.2919318935609856
+independent finite proposal loss maximum discrepancy 0 selected index/inf mismatch 0
+A stress nonzero-k candidate sets 15360 infinite max 4009 multiple infinity 3440 infinite identity selected 3226 selected TV not candidate max 5855 max individual TV gap 0.9375

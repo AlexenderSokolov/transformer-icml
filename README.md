@@ -1,5 +1,13 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 有限学习实验：失败的冒烟测试与受监督读出校准（2026-11-03）
+
+[位置池化冒烟报告](v10_research/learned_position_pilot_20261103/REPORT.md)与[独立审阅后的解释修正](v10_research/learned_position_pilot_20261103/REPORT_REVIEW_AMENDMENT.md)：一个初始化、每种条件 200 次更新没有显示有用的位置保护。有限 CE 攻击合法但不是整个编辑球的最坏攻击；不同模型可能选择不同污染词，近均匀随机对照和消融也不能支持孤立因果结论。
+
+[固定半程读出校准](v10_research/readout_conditioning_calibration_20261103/REPORT.md)与[审计补充](v10_research/readout_conditioning_calibration_20261103/REPORT_AUDIT_ADDENDUM.md)：明确提供 Q 教师和位置特征后，计数缩放版本通过有限平均/四个训练碰撞词的拟合筛选，等价的归一化参数化在相同 Adam 预算下没有通过。但验证集仍有 0.401–0.434 的最大个体误差；三次初始化共用数据和批次，训练/验证样本也存在相同词重合。
+
+这两项是有完整失败记录、逐样本数据与独立 LLM 审计的探索实验，不是新定理、自然学得鲁棒性或一致逼近保证。此前的 55 页稿件与理论阶段不变。[公开范围](provenance/empirical_position_20261103/PUBLICATION_SCOPE_AND_CHECKS.json) · [隔离复现步骤](provenance/empirical_position_20261103/PUBLIC_REPLAY.md) · [仅省略重复重跑与缓存](provenance/empirical_position_20261103/OMISSIONS_AND_REPLAY.json)。
+
 ## 后续研究：干净目标与位置鲁棒性（2026-11-03）
 
 [中文阶段总结](v10_research/learning_objective_stage_20261103/RESEARCH_SUMMARY.zh.md)：CTO001 区分精确干净总体最优与近似最优的鲁棒行为；PGT001 分析给定位置特征后的单偏置精确总体下降；PBF001 给出保留鲁棒性的偏置窗口与投影更新。另有 [14 万条轨迹的固定先验诊断](v10_research/clean_objective_experiment_20261103/REPORT.md)及[科学图](v10_research/clean_objective_experiment_20261103/synthetic_clean_objective.png)。

@@ -1,0 +1,905 @@
+{
+  "scope": "The original artifact hash manifests are retained unchanged. Only listed duplicate independent/root replay outputs are absent from the active public inventory. Every original smoke_v1 and calibration_v1 record is included, including all intermediate checkpoints and full/per-fit/aggregate update traces. Independent reruns can be regenerated in an isolated writable checkout; numerical and environment-dependent metadata have different reproducibility guarantees.",
+  "excluded_generated_artifacts": [
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/ARTIFACT_HASHES.json",
+      "bytes": 3937,
+      "sha256": "3824642605229f1ca3a8b3d6788a309384568ec36decddbba254580618263dab",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/half_edit_0.npz",
+      "bytes": 4400,
+      "sha256": "33afab94d5c7cc578a6efde290a109dcb3985f5b854f59c33c8d08fc211591b2",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/half_edit_100.npz",
+      "bytes": 4400,
+      "sha256": "15dadae1d9796f0fb039b5d5feea51c15020a20c6b4e7f4a7b2f60962c2972ce",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/half_edit_150.npz",
+      "bytes": 4400,
+      "sha256": "d1826f2756b7e10589bd5348babcd1c0d3406a348c7a28c6a6a1e820ff446e44",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/half_edit_200.npz",
+      "bytes": 4400,
+      "sha256": "bc95b1e2f5dc4361224a4b52b740263bdda74242a81eaa52e49584020a22b848",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/half_edit_50.npz",
+      "bytes": 4400,
+      "sha256": "b658a5a7091ae191655e6809015874a548976d821ef3e1a33c5f6c07ac11f82b",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/learned_clean_0.npz",
+      "bytes": 4412,
+      "sha256": "6776b69ef6146d930e15c15a763838658f2fdfa228e26c0588f0a9aeabb99876",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/learned_clean_100.npz",
+      "bytes": 4412,
+      "sha256": "d5deeb4fd041460a7a1b33f5f8bdfd44c5ce1a7a11e17c85e4dae2da293f61c7",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/learned_clean_150.npz",
+      "bytes": 4412,
+      "sha256": "e45eff8d4d96aa4b4a351dbd1d6f8d3004f97573ce2ed93e384c1662a5b87de5",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/learned_clean_200.npz",
+      "bytes": 4412,
+      "sha256": "d21b5d9d2fc220abce92c13a65d6b7533f93193080d2e0fc9ccf9c4396ac98f1",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/learned_clean_50.npz",
+      "bytes": 4412,
+      "sha256": "603864184a1eabd9d314866ddb2efe411f02357edd942fadfac4bf473a5e56a6",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/learned_edit_0.npz",
+      "bytes": 4412,
+      "sha256": "6776b69ef6146d930e15c15a763838658f2fdfa228e26c0588f0a9aeabb99876",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/learned_edit_100.npz",
+      "bytes": 4412,
+      "sha256": "53761d608bf6c12b775266b2681440c0d32dde60518e865a61cd91a3496d6e93",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/learned_edit_150.npz",
+      "bytes": 4412,
+      "sha256": "01eeba9323d11646d3e42972a04cdf120fe892edd368495ec9efa901d35b3db9",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/learned_edit_200.npz",
+      "bytes": 4412,
+      "sha256": "559e6d64b34da0c81fffdb2d51a8c9762c06bff200200c398487f9766cbbd043",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/learned_edit_50.npz",
+      "bytes": 4412,
+      "sha256": "cf10591447587f5070bbc249e185c72cc7512feeff877b9fea0184dce35adc08",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/random_edit_0.npz",
+      "bytes": 4408,
+      "sha256": "b282af8c5b9d3c1f2d6ed3418ea9b584c03fe06d82659cb50e0fa700b8bd1157",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/random_edit_100.npz",
+      "bytes": 4408,
+      "sha256": "57fe7f274d7ebc9b77089299d61356d7cc25036efb2abde39bf83538ec673c23",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/random_edit_150.npz",
+      "bytes": 4408,
+      "sha256": "4ddc2b63380862d2234f97e5921bf1806ee43dd154d8e2ec3e2a7d27bf854ef1",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/random_edit_200.npz",
+      "bytes": 4408,
+      "sha256": "f0ab5b633a736f04d4dd3968e9e9d05e81d4a05f9bbd2a5709e5680f777faef9",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/random_edit_50.npz",
+      "bytes": 4408,
+      "sha256": "788ea764699328f67a195147527376d6b528110b9c7bd5a6683eea97a163505d",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/uniform_edit_0.npz",
+      "bytes": 4412,
+      "sha256": "2911f9039d8ebdd8da8c504b536eaa9b21adba0612ba5ee410470f6daa4eaa85",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/uniform_edit_100.npz",
+      "bytes": 4412,
+      "sha256": "13d2626faa5d5922648357f9b5ff1b2124d0a17570b2b21af44051d8f2702f45",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/uniform_edit_150.npz",
+      "bytes": 4412,
+      "sha256": "9c47b3c421e50094629d72085620b8656228039d3800524dfb7e67d67b172018",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/uniform_edit_200.npz",
+      "bytes": 4412,
+      "sha256": "906c80498ced74856dca5c6a7ced0997d43d8ed8199910501e3831ee515423ca",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/checkpoints/uniform_edit_50.npz",
+      "bytes": 4412,
+      "sha256": "3ebec48d9c225c5fe5e8e249654a1a2fae81faf3536fe245c72a2586b2729167",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/clean_evaluation.csv",
+      "bytes": 4240,
+      "sha256": "29b7f29aa2bae33a0b4d1eb6775d13d5ffab0825224c7407449c69a1ea39dd09",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/descriptive_panel_maxima.csv",
+      "bytes": 4890,
+      "sha256": "8739736d87fd1ad05275d23651de31e8a800abf237530b3a7600cfc3be79915d",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/evaluation_paths.npz",
+      "bytes": 383374,
+      "sha256": "a08f2e740c43566833c920a61379243753705c8fe1063e4b97cb61694ddc93ec",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/half_edit_training.csv",
+      "bytes": 23744,
+      "sha256": "cc5f3a137de25c25ffaf5e941480d57ae0b2c99021dc8775c276b7cfd3e59e59",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/learned_clean_training.csv",
+      "bytes": 26394,
+      "sha256": "23c29f59b6f96b4d5ebe3d2173e291bfee1bca4500e73495005730d035594aa4",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/learned_edit_training.csv",
+      "bytes": 27520,
+      "sha256": "a02ee1bcd89c2b9dc1197bc18b235bf08d4ceb37963f6c9b4f149b84672ef12d",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/profiles.csv",
+      "bytes": 2956,
+      "sha256": "4adc63a870f8d0a6cfaf4aee4848343098d7931f35dfc05b225c25a81d583f3f",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/random_edit_training.csv",
+      "bytes": 24199,
+      "sha256": "968f86180c347280329edd784243ef2431b83162f59df3ca2933fc61005c266a",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/results.json",
+      "bytes": 25937,
+      "sha256": "3f13ffbda8fd0ad1bf234ef8153f7ce5ace71a581345bb52493e1d502e05d0ff",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/stress_evaluation.csv",
+      "bytes": 144884,
+      "sha256": "6800a8b24cca79f740e6009c60a76f0f728c362dea1a74bbe3936cd1d26d621e",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/tests.log",
+      "bytes": 979,
+      "sha256": "19e0faaae9ca6fa7af7473c7deca7cdf0eb4bbbbdcd1dc24832d7cc352ec78ec",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/training.csv",
+      "bytes": 125721,
+      "sha256": "6f27ef33b08904855727c2ddcc06cadc5751b8480c3c3e04bebb8cd4cc0f446a",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/trajectory_metrics.npz",
+      "bytes": 2876323,
+      "sha256": "411cf945f2cae9e7333fbedbcafeaae31139327ee6306965d3503e3c2dd57eb3",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/independent_replay/uniform_edit_training.csv",
+      "bytes": 24388,
+      "sha256": "f4bd18c977a59460728c4a93e08c492111c07102121774f93a183fc3e16ee4b9",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/ARTIFACT_HASHES.json",
+      "bytes": 6268,
+      "sha256": "c6fd3c8ac7d9aa0fcc0ccb53e213a9daec4913824c872dab411db2d1351edafa",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoint_metrics.csv",
+      "bytes": 19064,
+      "sha256": "7de9898066e694fb95bf676af16e3693927573575532039dc4e43eb80e17d669",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_count_scaled_20261103201_step0.npz",
+      "bytes": 6972,
+      "sha256": "1e9c5614c8f524bb323dff6e2450bec41e0c7155b75c445fe774b0e5b246c274",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_count_scaled_20261103201_step1000.npz",
+      "bytes": 6972,
+      "sha256": "e74e83c57707e729cd3ba955f256569bfe264f710a91b5b341a8de005a4aa719",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_count_scaled_20261103201_step200.npz",
+      "bytes": 6972,
+      "sha256": "cea5e2e23f521f65a92e2066c07721729b615458f290f67af5cceabbcbf00210",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_count_scaled_20261103201_step2000.npz",
+      "bytes": 6972,
+      "sha256": "c787c9b27e0d28a64c58dfb261c85205ca60d8fbc38c2f94db68a9dc71cc9af7",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_count_scaled_20261103202_step0.npz",
+      "bytes": 6972,
+      "sha256": "351b8d89b3f116167872764cdb69b432ef862283e556bf2bcc6fb5c335e3c0ba",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_count_scaled_20261103202_step1000.npz",
+      "bytes": 6972,
+      "sha256": "d75c9e0a1530c235a25a5f22ae43be259a1440b9f3eba9c6ad833b3f4580d7d7",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_count_scaled_20261103202_step200.npz",
+      "bytes": 6972,
+      "sha256": "80b0b6a20364a990dd9dca87bef2f21ad24cb590d45f81c013cfd2a815d35f2a",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_count_scaled_20261103202_step2000.npz",
+      "bytes": 6972,
+      "sha256": "c7272790937137782db4075f0e22d88796e4521f5a83ec0f220c973dea1b3cb3",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_count_scaled_20261103203_step0.npz",
+      "bytes": 6972,
+      "sha256": "b5097430714dd629562c64328b71768f3cc3042985a04e885c6f467a22a7b886",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_count_scaled_20261103203_step1000.npz",
+      "bytes": 6972,
+      "sha256": "f7fd4ad23437acd504b5f81a88dc9c2a0cabbf3a6c3625da9158d2563adb6ee5",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_count_scaled_20261103203_step200.npz",
+      "bytes": 6972,
+      "sha256": "a7b78b2c05d5cc3e3e5506deadf7a02e3917ff2eaa63b931b70dfc8322668287",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_count_scaled_20261103203_step2000.npz",
+      "bytes": 6972,
+      "sha256": "194080a39090d0136e6daa25bc911f107589d122a898eddcd1b007d583ea95c7",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_normalized_20261103201_step0.npz",
+      "bytes": 6964,
+      "sha256": "8d081a5ffcd2e8b8638d8d5434f5c26e6c751da5064c89e14a86768e6f0b967e",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_normalized_20261103201_step1000.npz",
+      "bytes": 6964,
+      "sha256": "9fb63e693a97426a90f59543c0376bc984611e6e9e7bada4f05b6feeedd9b67e",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_normalized_20261103201_step200.npz",
+      "bytes": 6964,
+      "sha256": "4c49ce3242c33e09491361668ac08307d6ddfa56f7a6bd52232ccf2619cd71a2",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_normalized_20261103201_step2000.npz",
+      "bytes": 6964,
+      "sha256": "97d2fa14182a124a78534809f2422a2f176a0d37da22145dff4a865b09546055",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_normalized_20261103202_step0.npz",
+      "bytes": 6964,
+      "sha256": "15b734fc4a4a28c65451153346ee43b52d62d54bbf0f1a85a6d773b1a1e421cd",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_normalized_20261103202_step1000.npz",
+      "bytes": 6964,
+      "sha256": "42b061657edc7016f32fc63bcd3e5485cb9180c0307c4d5f266ef836f34ac09d",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_normalized_20261103202_step200.npz",
+      "bytes": 6964,
+      "sha256": "1d9c251e3a69a083e619b1bc87c2c06e76fff8efb17fa26b90c93b62781c25c5",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_normalized_20261103202_step2000.npz",
+      "bytes": 6964,
+      "sha256": "d4415a930569041a143e1576f08b2a87decd3f01102d19eec41b3e7b4edc9385",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_normalized_20261103203_step0.npz",
+      "bytes": 6964,
+      "sha256": "02ed562dca5a6e44803b96634d1255b6da2ff52216e31cd7ee5a8037982a55e7",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_normalized_20261103203_step1000.npz",
+      "bytes": 6964,
+      "sha256": "280a086cd785745b4e362647406fbea7fa5ff7f172a180adfebbdd1ce8913223",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_normalized_20261103203_step200.npz",
+      "bytes": 6964,
+      "sha256": "5778ef65a36a2a1def10a921ff20a60e8e8c6d9712bfa571a5c0c545daa84855",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/half_normalized_20261103203_step2000.npz",
+      "bytes": 6964,
+      "sha256": "77ad0d567033b475883b062a56b9aef27451bdb0dce3506a808f47fa8387f5a3",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/uniform_control_20261103201_step0.npz",
+      "bytes": 6964,
+      "sha256": "f298bb18ec07a9e4a37220bd40ed933fd4926f9c74e54bcf0a141d61d946d245",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/uniform_control_20261103201_step1000.npz",
+      "bytes": 6964,
+      "sha256": "5671a4b0697f5fa236f460f93645121907999563dd40887a443c48b6188bec77",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/uniform_control_20261103201_step200.npz",
+      "bytes": 6964,
+      "sha256": "e768535134cb85fd35223f28a85d795f2a1c2b3778e9dbfa6184023438a28684",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/uniform_control_20261103201_step2000.npz",
+      "bytes": 6964,
+      "sha256": "246f612f2ddba4dc2fa7362a917f8d24112044eb8c48d5f5a232746dab637c35",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/uniform_control_20261103202_step0.npz",
+      "bytes": 6964,
+      "sha256": "fa0c8a95265f376e05930f8f7438c10d89dbe42a6c76820ee8876668972792a7",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/uniform_control_20261103202_step1000.npz",
+      "bytes": 6964,
+      "sha256": "fd05b897fc80e34dece1a28a9f74f41cce780bf8250f9aef45ff182fa82e24b4",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/uniform_control_20261103202_step200.npz",
+      "bytes": 6964,
+      "sha256": "9758157c2080cd943ffe13a6c50f57f5ca9439fc1525c1c56125c3f9e9e1d797",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/uniform_control_20261103202_step2000.npz",
+      "bytes": 6964,
+      "sha256": "e7f3a591b23042e0a9db14033b038bb5043d7969d4309388cbafbadcbb036253",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/uniform_control_20261103203_step0.npz",
+      "bytes": 6964,
+      "sha256": "ab8e26d61c32a0c050fa6c20d577349fb96ea4866070094d0a11cd29dff231e2",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/uniform_control_20261103203_step1000.npz",
+      "bytes": 6964,
+      "sha256": "eaa7302adf9228d5bc287bb11040abcc2eaa7402e5bfce3b8ba6ad22e720e697",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/uniform_control_20261103203_step200.npz",
+      "bytes": 6964,
+      "sha256": "98755682f24379539d5c84fd5f87e0a197e40e569219dedc0a337ff7432bec5e",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/checkpoints/uniform_control_20261103203_step2000.npz",
+      "bytes": 6964,
+      "sha256": "f7fc18fd25c4e1d6150af8eae64e939008bda2065f49d74d03ab35a2bc8251c5",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/final_metrics.csv",
+      "bytes": 5665,
+      "sha256": "06efa73c9321f98304640b858dc87b7519a7f0d010386550bf90bd50d3ba55c7",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/final_predictions.npz",
+      "bytes": 251414,
+      "sha256": "d09335b07b17affc0cb2c645f86d8a6f108e44f57fbf525fbf1983e8385db799",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/frozen_data.npz",
+      "bytes": 384825,
+      "sha256": "6d8936a8442ec86ad0163ec83d59088746db1d4236f5b59e3e430a2e70350bf5",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/half_count_scaled_20261103201_updates.csv",
+      "bytes": 680221,
+      "sha256": "d7bf4804622793160fb189dce544db669286ca1ff465ccf74dd727b443b5e8a1",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/half_count_scaled_20261103202_updates.csv",
+      "bytes": 680744,
+      "sha256": "583f15e5408bbec61ae6470d35ee4737ef2d6aca940a5b156598e3e36776bd8f",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/half_count_scaled_20261103203_updates.csv",
+      "bytes": 679753,
+      "sha256": "b7f8e4a9124ef73473cd8ba09478f50a1ce236f45d4baf80e5c66d6ed1e1241a",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/half_normalized_20261103201_updates.csv",
+      "bytes": 667561,
+      "sha256": "752a198364714ed316998bf0f1d84291527f8c957c311dca3779bd93f4a2bcdb",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/half_normalized_20261103202_updates.csv",
+      "bytes": 667893,
+      "sha256": "a18bed83e79145567114ca0e1544a16262452ba6f629089ba6e731248d6c6b8c",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/half_normalized_20261103203_updates.csv",
+      "bytes": 666757,
+      "sha256": "5442b12983df66a88b8e476410704488dda511e8bef9fa65b17c488f6bf3cedc",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/pre_fit_checks.json",
+      "bytes": 305,
+      "sha256": "7928d467dcbb695d3c20cc525c943d0634cf6095dd562ab70b460c6eac3d7440",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/results.json",
+      "bytes": 16693,
+      "sha256": "f163409f5965fc220cf6c3a88dcf56c1f0aae46f9e0d712f789bdc801169109a",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/tests.log",
+      "bytes": 764,
+      "sha256": "32d3c1e077d930e657400703d4b556793956c550eac2d766c67e82fc299be1e1",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/uniform_control_20261103201_updates.csv",
+      "bytes": 670599,
+      "sha256": "6de9309e4c3b861c1d9cef07767712d08bc07594b12e91b89f9a60dc921b8e8f",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/uniform_control_20261103202_updates.csv",
+      "bytes": 671360,
+      "sha256": "8fdd838ad07dd6e55dabd7da4ea50ae3cc73ba76027072d13633a1cd66a3daca",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/uniform_control_20261103203_updates.csv",
+      "bytes": 670229,
+      "sha256": "7013258f2b0d7b8cafc22cba8ac9a2672957f3a1370abf7c8d7ad9d2e1070800",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/replay/updates.csv",
+      "bytes": 6052845,
+      "sha256": "a234e3178cc7c3a1578f88d6409a10f50eb0f1e3039c1ef403704f0a2be978fa",
+      "reason": "Duplicate independent replay output; retained review reports record its actual comparison, and rerun regenerates it"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/ARTIFACT_HASHES.json",
+      "bytes": 6268,
+      "sha256": "f8afaac730a8e0ba3c10a2bc40aa9b80e97a03a4cdf5a4ae2ca22551ff7cc3fa",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoint_metrics.csv",
+      "bytes": 19064,
+      "sha256": "7de9898066e694fb95bf676af16e3693927573575532039dc4e43eb80e17d669",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_count_scaled_20261103201_step0.npz",
+      "bytes": 6972,
+      "sha256": "1e9c5614c8f524bb323dff6e2450bec41e0c7155b75c445fe774b0e5b246c274",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_count_scaled_20261103201_step1000.npz",
+      "bytes": 6972,
+      "sha256": "e74e83c57707e729cd3ba955f256569bfe264f710a91b5b341a8de005a4aa719",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_count_scaled_20261103201_step200.npz",
+      "bytes": 6972,
+      "sha256": "cea5e2e23f521f65a92e2066c07721729b615458f290f67af5cceabbcbf00210",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_count_scaled_20261103201_step2000.npz",
+      "bytes": 6972,
+      "sha256": "c787c9b27e0d28a64c58dfb261c85205ca60d8fbc38c2f94db68a9dc71cc9af7",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_count_scaled_20261103202_step0.npz",
+      "bytes": 6972,
+      "sha256": "351b8d89b3f116167872764cdb69b432ef862283e556bf2bcc6fb5c335e3c0ba",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_count_scaled_20261103202_step1000.npz",
+      "bytes": 6972,
+      "sha256": "d75c9e0a1530c235a25a5f22ae43be259a1440b9f3eba9c6ad833b3f4580d7d7",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_count_scaled_20261103202_step200.npz",
+      "bytes": 6972,
+      "sha256": "80b0b6a20364a990dd9dca87bef2f21ad24cb590d45f81c013cfd2a815d35f2a",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_count_scaled_20261103202_step2000.npz",
+      "bytes": 6972,
+      "sha256": "c7272790937137782db4075f0e22d88796e4521f5a83ec0f220c973dea1b3cb3",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_count_scaled_20261103203_step0.npz",
+      "bytes": 6972,
+      "sha256": "b5097430714dd629562c64328b71768f3cc3042985a04e885c6f467a22a7b886",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_count_scaled_20261103203_step1000.npz",
+      "bytes": 6972,
+      "sha256": "f7fd4ad23437acd504b5f81a88dc9c2a0cabbf3a6c3625da9158d2563adb6ee5",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_count_scaled_20261103203_step200.npz",
+      "bytes": 6972,
+      "sha256": "a7b78b2c05d5cc3e3e5506deadf7a02e3917ff2eaa63b931b70dfc8322668287",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_count_scaled_20261103203_step2000.npz",
+      "bytes": 6972,
+      "sha256": "194080a39090d0136e6daa25bc911f107589d122a898eddcd1b007d583ea95c7",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_normalized_20261103201_step0.npz",
+      "bytes": 6964,
+      "sha256": "8d081a5ffcd2e8b8638d8d5434f5c26e6c751da5064c89e14a86768e6f0b967e",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_normalized_20261103201_step1000.npz",
+      "bytes": 6964,
+      "sha256": "9fb63e693a97426a90f59543c0376bc984611e6e9e7bada4f05b6feeedd9b67e",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_normalized_20261103201_step200.npz",
+      "bytes": 6964,
+      "sha256": "4c49ce3242c33e09491361668ac08307d6ddfa56f7a6bd52232ccf2619cd71a2",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_normalized_20261103201_step2000.npz",
+      "bytes": 6964,
+      "sha256": "97d2fa14182a124a78534809f2422a2f176a0d37da22145dff4a865b09546055",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_normalized_20261103202_step0.npz",
+      "bytes": 6964,
+      "sha256": "15b734fc4a4a28c65451153346ee43b52d62d54bbf0f1a85a6d773b1a1e421cd",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_normalized_20261103202_step1000.npz",
+      "bytes": 6964,
+      "sha256": "42b061657edc7016f32fc63bcd3e5485cb9180c0307c4d5f266ef836f34ac09d",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_normalized_20261103202_step200.npz",
+      "bytes": 6964,
+      "sha256": "1d9c251e3a69a083e619b1bc87c2c06e76fff8efb17fa26b90c93b62781c25c5",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_normalized_20261103202_step2000.npz",
+      "bytes": 6964,
+      "sha256": "d4415a930569041a143e1576f08b2a87decd3f01102d19eec41b3e7b4edc9385",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_normalized_20261103203_step0.npz",
+      "bytes": 6964,
+      "sha256": "02ed562dca5a6e44803b96634d1255b6da2ff52216e31cd7ee5a8037982a55e7",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_normalized_20261103203_step1000.npz",
+      "bytes": 6964,
+      "sha256": "280a086cd785745b4e362647406fbea7fa5ff7f172a180adfebbdd1ce8913223",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_normalized_20261103203_step200.npz",
+      "bytes": 6964,
+      "sha256": "5778ef65a36a2a1def10a921ff20a60e8e8c6d9712bfa571a5c0c545daa84855",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/half_normalized_20261103203_step2000.npz",
+      "bytes": 6964,
+      "sha256": "77ad0d567033b475883b062a56b9aef27451bdb0dce3506a808f47fa8387f5a3",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/uniform_control_20261103201_step0.npz",
+      "bytes": 6964,
+      "sha256": "f298bb18ec07a9e4a37220bd40ed933fd4926f9c74e54bcf0a141d61d946d245",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/uniform_control_20261103201_step1000.npz",
+      "bytes": 6964,
+      "sha256": "5671a4b0697f5fa236f460f93645121907999563dd40887a443c48b6188bec77",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/uniform_control_20261103201_step200.npz",
+      "bytes": 6964,
+      "sha256": "e768535134cb85fd35223f28a85d795f2a1c2b3778e9dbfa6184023438a28684",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/uniform_control_20261103201_step2000.npz",
+      "bytes": 6964,
+      "sha256": "246f612f2ddba4dc2fa7362a917f8d24112044eb8c48d5f5a232746dab637c35",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/uniform_control_20261103202_step0.npz",
+      "bytes": 6964,
+      "sha256": "fa0c8a95265f376e05930f8f7438c10d89dbe42a6c76820ee8876668972792a7",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/uniform_control_20261103202_step1000.npz",
+      "bytes": 6964,
+      "sha256": "fd05b897fc80e34dece1a28a9f74f41cce780bf8250f9aef45ff182fa82e24b4",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/uniform_control_20261103202_step200.npz",
+      "bytes": 6964,
+      "sha256": "9758157c2080cd943ffe13a6c50f57f5ca9439fc1525c1c56125c3f9e9e1d797",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/uniform_control_20261103202_step2000.npz",
+      "bytes": 6964,
+      "sha256": "e7f3a591b23042e0a9db14033b038bb5043d7969d4309388cbafbadcbb036253",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/uniform_control_20261103203_step0.npz",
+      "bytes": 6964,
+      "sha256": "ab8e26d61c32a0c050fa6c20d577349fb96ea4866070094d0a11cd29dff231e2",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/uniform_control_20261103203_step1000.npz",
+      "bytes": 6964,
+      "sha256": "eaa7302adf9228d5bc287bb11040abcc2eaa7402e5bfce3b8ba6ad22e720e697",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/uniform_control_20261103203_step200.npz",
+      "bytes": 6964,
+      "sha256": "98755682f24379539d5c84fd5f87e0a197e40e569219dedc0a337ff7432bec5e",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/checkpoints/uniform_control_20261103203_step2000.npz",
+      "bytes": 6964,
+      "sha256": "f7fc18fd25c4e1d6150af8eae64e939008bda2065f49d74d03ab35a2bc8251c5",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/final_metrics.csv",
+      "bytes": 5666,
+      "sha256": "63b28c74d746f3d957b2f32c0cd969cec42a99f72c4ec4a7cd90f309e02bdd49",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/final_predictions.npz",
+      "bytes": 251414,
+      "sha256": "d09335b07b17affc0cb2c645f86d8a6f108e44f57fbf525fbf1983e8385db799",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/frozen_data.npz",
+      "bytes": 384825,
+      "sha256": "6d8936a8442ec86ad0163ec83d59088746db1d4236f5b59e3e430a2e70350bf5",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/half_count_scaled_20261103201_updates.csv",
+      "bytes": 680221,
+      "sha256": "d7bf4804622793160fb189dce544db669286ca1ff465ccf74dd727b443b5e8a1",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/half_count_scaled_20261103202_updates.csv",
+      "bytes": 680744,
+      "sha256": "583f15e5408bbec61ae6470d35ee4737ef2d6aca940a5b156598e3e36776bd8f",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/half_count_scaled_20261103203_updates.csv",
+      "bytes": 679753,
+      "sha256": "b7f8e4a9124ef73473cd8ba09478f50a1ce236f45d4baf80e5c66d6ed1e1241a",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/half_normalized_20261103201_updates.csv",
+      "bytes": 667561,
+      "sha256": "752a198364714ed316998bf0f1d84291527f8c957c311dca3779bd93f4a2bcdb",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/half_normalized_20261103202_updates.csv",
+      "bytes": 667893,
+      "sha256": "a18bed83e79145567114ca0e1544a16262452ba6f629089ba6e731248d6c6b8c",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/half_normalized_20261103203_updates.csv",
+      "bytes": 666757,
+      "sha256": "5442b12983df66a88b8e476410704488dda511e8bef9fa65b17c488f6bf3cedc",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/pre_fit_checks.json",
+      "bytes": 305,
+      "sha256": "7928d467dcbb695d3c20cc525c943d0634cf6095dd562ab70b460c6eac3d7440",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/results.json",
+      "bytes": 16696,
+      "sha256": "a8891971500883e4cbcf5d0da52fc49729d8895cb4ccd7df673023751db1efc2",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/tests.log",
+      "bytes": 764,
+      "sha256": "21b22b883d6c3359dd94f3cef354a5d6e7ee86a47a75f3789f0f25316908b897",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/uniform_control_20261103201_updates.csv",
+      "bytes": 670599,
+      "sha256": "6de9309e4c3b861c1d9cef07767712d08bc07594b12e91b89f9a60dc921b8e8f",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/uniform_control_20261103202_updates.csv",
+      "bytes": 671360,
+      "sha256": "8fdd838ad07dd6e55dabd7da4ea50ae3cc73ba76027072d13633a1cd66a3daca",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/uniform_control_20261103203_updates.csv",
+      "bytes": 670229,
+      "sha256": "7013258f2b0d7b8cafc22cba8ac9a2672957f3a1370abf7c8d7ad9d2e1070800",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/root_replay/updates.csv",
+      "bytes": 6052845,
+      "sha256": "a234e3178cc7c3a1578f88d6409a10f50eb0f1e3039c1ef403704f0a2be978fa",
+      "reason": "Redundant root replay output; original calibration outputs and source-bound review evidence are retained"
+    }
+  ],
+  "cache_exclusion": "Regenerable Python caches are excluded. No cache is a scientific source dependency.",
+  "retained_data": [
+    "Pilot: complete original smoke_v1, including all 25 checkpoints, aggregate and per-condition training traces, synthetic evaluation words/source tables, per-trajectory losses and proposal indices, cell metrics and profiles.",
+    "Calibration: complete original calibration_v1, including all 36 checkpoints, all 18,000 aggregate update rows and per-fit traces, frozen words/Q targets/shared minibatch indices, final predictions, checkpoint/final metrics, tail checks and audit addendum."
+  ],
+  "replay_boundaries": [
+    "Both author runners have complete source/configuration inputs and refuse to overwrite an existing output directory. The public pilot PLAN.md differs only by declared internal-process prose edits, so its historical seal does not validate unchanged. Use the explicit isolated-copy preparation procedure: it verifies every selected exported identity, preserves the original seal as a separate historical file, and substitutes only the exactly mapped PLAN.md hash in the working seal. Do not reseal arbitrary inputs. Numerical arrays and CSVs can be regenerated; wall-clock/environment records can differ.",
+    "The unchanged pilot independent checker immediately loads its omitted independent_replay arrays. Reproduce that run into the expected location before running the full historical checker; retained final models and arrays otherwise support its final stress reconstruction.",
+    "The unchanged calibration independent checker has all 36 original checkpoints and every original ARTIFACT_HASHES entry available. Its original forward/metric/hash audit can run directly in an isolated copy. Only its optional independent-run comparison is skipped until review_independent/replay is regenerated.",
+    "Final models contain weights, not complete Adam optimizer state. Whole runs are replayable from seeds; exact mid-step continuation requires rebuilding optimizer history.",
+    "Original reports and complete original output directories are retained. This omission record excludes only redundant replay copies and caches, not original training records."
+  ]
+}

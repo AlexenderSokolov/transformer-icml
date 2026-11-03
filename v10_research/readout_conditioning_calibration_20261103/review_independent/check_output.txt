@@ -1,0 +1,21 @@
+train teacher_max_diff 0.0 n 2048
+validation teacher_max_diff 0.0 n 2048
+collision teacher_max_diff 0.0 n 4
+collision J,C,D,Q [(1, 0, 1, 0.125), (1, 0, 0, 0.875), (1, 1, 1, 0.875), (1, 1, 0, 0.125)] H0 [0, 1, 0, 2, 1, 0, 2, 58]
+boundary teacher_max_diff 0.0 n 4
+boundary J,C,D,Q [(1, 0, 1, 0.125), (1, 0, 0, 0.875), (1, 1, 1, 0.875), (1, 1, 0, 0.125)] H0 [0, 1, 0, 2, 1, 0, 2, 58]
+train independent_rng_rebuild True
+validation independent_rng_rebuild True
+minibatches rebuild True True
+train validation distinct exact word overlap 9 unique train 2022 unique validation 2029
+collision exact overlap train/validation 0 0
+all checkpoints 36 independently recomputed max diff 1.6653345369377348e-16
+matched init effective W maxdiff 20261103201 0.0
+matched init effective W maxdiff 20261103202 0.0
+matched init effective W maxdiff 20261103203 0.0
+scaled holdout abs error 20261103201 max 0.4339221265978155 over .05 34 over .1 14 over .25 3
+scaled holdout abs error 20261103202 max 0.40128875885557624 over .05 34 over .1 13 over .25 7
+scaled holdout abs error 20261103203 max 0.4231805814411226 over .05 30 over .1 14 over .25 4
+hash check 53 bad 0
+replay frozen_data.npz equal True
+replay final_predictions.npz equal True

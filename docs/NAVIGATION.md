@@ -1,5 +1,13 @@
 # 资料导航
 
+## 学习位置与读出校准的经验阶段
+
+- [最初研究方向](../v10_research/learned_position_direction_20261103/RECOMMENDATION.md) · [实际冒烟协议](../v10_research/learned_position_pilot_20261103/protocol.json)
+- [冒烟报告](../v10_research/learned_position_pilot_20261103/REPORT.md) · [必须一并阅读的修正](../v10_research/learned_position_pilot_20261103/REPORT_REVIEW_AMENDMENT.md) · [独立审阅](../v10_research/learned_position_pilot_20261103/review_independent/REVIEW.md)
+- [校准设计](../v10_research/readout_conditioning_calibration_design_20261103/PROPOSAL.md) · [实际校准报告](../v10_research/readout_conditioning_calibration_20261103/REPORT.md) · [共享数据、重合词与饱和现象补充](../v10_research/readout_conditioning_calibration_20261103/REPORT_AUDIT_ADDENDUM.md) · [独立审阅](../v10_research/readout_conditioning_calibration_20261103/review_independent/REVIEW.md)
+- [校准全部最终指标](../v10_research/readout_conditioning_calibration_20261103/calibration_v1/final_metrics.csv) · [个体尾部检查](../v10_research/readout_conditioning_calibration_20261103/POSTHOC_TAIL_CHECKS.json)
+- [来源映射](../provenance/empirical_position_20261103/SOURCE_EXPORT_MAP.json) · [复现方法](../provenance/empirical_position_20261103/PUBLIC_REPLAY.md) · [省略项及边界](../provenance/empirical_position_20261103/OMISSIONS_AND_REPLAY.json)
+
 ## 干净训练目标阶段入口
 
 - [中文总结](../v10_research/learning_objective_stage_20261103/RESEARCH_SUMMARY.zh.md) · [阶段冻结清单](../v10_research/learning_objective_stage_20261103/STAGE_SCIENCE_FREEZE.json)

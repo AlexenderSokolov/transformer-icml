@@ -1,0 +1,2311 @@
+{
+  "base_commit": "120b7d563bc2ca038e7b9eec90ea6fdc13680d79",
+  "source_files": 141,
+  "selected_original_bytes": 17022975,
+  "proof_status": "Exploratory empirical studies with source-bound independent LLM audit, not accepted general theorems",
+  "source_program_csv_npz_changes": 0,
+  "python_sources_parsed_not_executed": 8,
+  "nonmathematical_export_changes": {
+    "files": 5,
+    "traceback_lines": 2,
+    "non_scientific_metadata_entries": 2,
+    "internal_process_prose_lines": 3
+  },
+  "privacy_unresolved_pattern_hits": [],
+  "structured_binding_counts": {
+    "RESOLVED": 152
+  },
+  "source_binding_resolutions": [
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[0].path",
+      "declared_path": "v10_research/learning_objective_stage_20261103/RESEARCH_SUMMARY.zh.md",
+      "expected_original_sha256": "c524c1f8b415889a43e82719e93445ce392704641a065bb90f0337cc7918418e",
+      "resolutions": [
+        {
+          "path": "v10_research/learning_objective_stage_20261103/RESEARCH_SUMMARY.zh.md",
+          "public_sha256": "afa8b5c5ddae0f85656cc52e4c45f9cfec086958838b62441e7192cfab03d93e",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[1].path",
+      "declared_path": "v10_research/clean_training_objective_20261103/CANDIDATE.md",
+      "expected_original_sha256": "1405c661827773bba64c8d8ae91f8eb8a9b2bf17ffc6a66e3be69525f1674bb2",
+      "resolutions": [
+        {
+          "path": "v10_research/clean_training_objective_20261103/CANDIDATE.md",
+          "public_sha256": "1405c661827773bba64c8d8ae91f8eb8a9b2bf17ffc6a66e3be69525f1674bb2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[2].path",
+      "declared_path": "v10_research/clean_training_objective_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "3860866b7635a794e47da72c16c537c0a1950076cde59e98356a1cd391b9c279",
+      "resolutions": [
+        {
+          "path": "v10_research/clean_training_objective_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "3860866b7635a794e47da72c16c537c0a1950076cde59e98356a1cd391b9c279",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[3].path",
+      "declared_path": "v10_research/positional_gate_training_20261103/CANDIDATE.md",
+      "expected_original_sha256": "91dcb755e6544fa04e728ab92bf48a7cb864e1e28fc9e4cbdbe0fc38257cb0be",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_gate_training_20261103/CANDIDATE.md",
+          "public_sha256": "91dcb755e6544fa04e728ab92bf48a7cb864e1e28fc9e4cbdbe0fc38257cb0be",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[4].path",
+      "declared_path": "v10_research/positional_gate_training_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "bdb9af190abb84accada8b84cb71274735ecae10cbfabeec4da06a9c22c5ae95",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_gate_training_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "bdb9af190abb84accada8b84cb71274735ecae10cbfabeec4da06a9c22c5ae95",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[5].path",
+      "declared_path": "v10_research/positional_bias_frontier_20261103/CANDIDATE.md",
+      "expected_original_sha256": "437d945df88004758d4153385fd00699dd33ea5bee378a4e2aebbf797a9fc642",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bias_frontier_20261103/CANDIDATE.md",
+          "public_sha256": "437d945df88004758d4153385fd00699dd33ea5bee378a4e2aebbf797a9fc642",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[6].path",
+      "declared_path": "v10_research/positional_bias_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "8aeacce62ed73368a738597d9a604b5f1efc72893efd56253395bf624e66f6db",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bias_frontier_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "8aeacce62ed73368a738597d9a604b5f1efc72893efd56253395bf624e66f6db",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[7].path",
+      "declared_path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md",
+      "expected_original_sha256": "84c1a5d4fcf9958331c257c0cf23a13c73c5627bb6fb4f1866bc10bf1ecb6bd9",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md",
+          "public_sha256": "84c1a5d4fcf9958331c257c0cf23a13c73c5627bb6fb4f1866bc10bf1ecb6bd9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[8].path",
+      "declared_path": "v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md",
+      "expected_original_sha256": "e8f264d46c43f914a321eddfb736369de7563a775a6035c95a1187065236e933",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md",
+          "public_sha256": "e8f264d46c43f914a321eddfb736369de7563a775a6035c95a1187065236e933",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[9].path",
+      "declared_path": "v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+      "expected_original_sha256": "764c7364a5b7e03cae6afa6898a68c75e84eb9603fdabe0d1bde8904f7341a9f",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+          "public_sha256": "5e65d2646bca23c975a6273fcedc4bdd1aadd8bd68b8390d4ed02b58d90c7c28",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[10].path",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+      "expected_original_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+          "public_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[11].path",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[12].path",
+      "declared_path": "v10_research/clean_objective_experiment_20261103/experiment.py",
+      "expected_original_sha256": "fe1dba26856e8548527788a6008ccbd2ca2430b7bc309f35d306192aa349250d",
+      "resolutions": [
+        {
+          "path": "v10_research/clean_objective_experiment_20261103/experiment.py",
+          "public_sha256": "fe1dba26856e8548527788a6008ccbd2ca2430b7bc309f35d306192aa349250d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "location": "$.local_sources[13].path",
+      "declared_path": "v10_research/clean_objective_experiment_20261103/REPORT.md",
+      "expected_original_sha256": "65949fa58ac71b0be83b10e7c931c086bd619e4301bba2b48240ea0b27f42f55",
+      "resolutions": [
+        {
+          "path": "v10_research/clean_objective_experiment_20261103/REPORT.md",
+          "public_sha256": "65949fa58ac71b0be83b10e7c931c086bd619e4301bba2b48240ea0b27f42f55",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/DELIVERY_HASHES.json",
+      "location": "$.REPORT.md",
+      "declared_path": "REPORT.md",
+      "expected_original_sha256": "1be5a405bd7ef48190792f8127a6c8974f7fbf7321480d8b122e5e19d620b394",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/REPORT.md",
+          "public_sha256": "1be5a405bd7ef48190792f8127a6c8974f7fbf7321480d8b122e5e19d620b394",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/DELIVERY_HASHES.json",
+      "location": "$.README.md",
+      "declared_path": "README.md",
+      "expected_original_sha256": "29a59ee46420dbfb1f339e50eba6c931140e85c33f10ff44865c632fc5026046",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/README.md",
+          "public_sha256": "29a59ee46420dbfb1f339e50eba6c931140e85c33f10ff44865c632fc5026046",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/DELIVERY_HASHES.json",
+      "location": "$.verification.json",
+      "declared_path": "verification.json",
+      "expected_original_sha256": "be8ce2981e0b0df244bc48a817b4805c541e65a951371b7b16882461fc12dccf",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/verification.json",
+          "public_sha256": "be8ce2981e0b0df244bc48a817b4805c541e65a951371b7b16882461fc12dccf",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/DELIVERY_HASHES.json",
+      "location": "$.tests_final.log",
+      "declared_path": "tests_final.log",
+      "expected_original_sha256": "103a1d947c48dd1adeabbd5e0372571f118820aef4398ba53974690d4682891e",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/tests_final.log",
+          "public_sha256": "103a1d947c48dd1adeabbd5e0372571f118820aef4398ba53974690d4682891e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/DELIVERY_HASHES.json",
+      "location": "$.smoke_v1_console.log",
+      "declared_path": "smoke_v1_console.log",
+      "expected_original_sha256": "82346694c17f1ef442b69e4ff4cacfdbf44ace2a36501011f11809ba210c066c",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1_console.log",
+          "public_sha256": "82346694c17f1ef442b69e4ff4cacfdbf44ace2a36501011f11809ba210c066c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/DELIVERY_HASHES.json",
+      "location": "$.PRE_RUN_HASHES.json",
+      "declared_path": "PRE_RUN_HASHES.json",
+      "expected_original_sha256": "09c6efdbca5cb02a7bbbe96794fc4c2efb25903ceb95f2455433128fa7d0599f",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/PRE_RUN_HASHES.json",
+          "public_sha256": "09c6efdbca5cb02a7bbbe96794fc4c2efb25903ceb95f2455433128fa7d0599f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/PRE_RUN_HASHES.json",
+      "location": "$.files.protocol.json",
+      "declared_path": "protocol.json",
+      "expected_original_sha256": "60116208617928e118e660e7ecab5d9f049544078c9bab7762354e9a3d684955",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/protocol.json",
+          "public_sha256": "60116208617928e118e660e7ecab5d9f049544078c9bab7762354e9a3d684955",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/PRE_RUN_HASHES.json",
+      "location": "$.files.PLAN.md",
+      "declared_path": "PLAN.md",
+      "expected_original_sha256": "693fea35b3875b3193f228c50d0dd5668bcf6b498ce32abe1f7828037e6a0a1c",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/PLAN.md",
+          "public_sha256": "e73728f09d77783a42070bf8d8ecdcedc9a5f3eef4723b65a076f5bd07a80538",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/PRE_RUN_HASHES.json",
+      "location": "$.files.pilot.py",
+      "declared_path": "pilot.py",
+      "expected_original_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/pilot.py",
+          "public_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/PRE_RUN_HASHES.json",
+      "location": "$.files.test_pilot.py",
+      "declared_path": "test_pilot.py",
+      "expected_original_sha256": "2c2308f47578abfbfd4a9a706d44fc3ea8872b9b7f65a74752be885a354ddc1a",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/test_pilot.py",
+          "public_sha256": "2c2308f47578abfbfd4a9a706d44fc3ea8872b9b7f65a74752be885a354ddc1a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/PRE_RUN_HASHES.json",
+      "location": "$.files.run.py",
+      "declared_path": "run.py",
+      "expected_original_sha256": "46f096731a3b8c7fc96e666078ad8cfc7c008839ad74d554eccd966838861b1a",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/run.py",
+          "public_sha256": "46f096731a3b8c7fc96e666078ad8cfc7c008839ad74d554eccd966838861b1a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_edit_0.npz",
+      "declared_path": "checkpoints/half_edit_0.npz",
+      "expected_original_sha256": "33afab94d5c7cc578a6efde290a109dcb3985f5b854f59c33c8d08fc211591b2",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/half_edit_0.npz",
+          "public_sha256": "33afab94d5c7cc578a6efde290a109dcb3985f5b854f59c33c8d08fc211591b2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_edit_100.npz",
+      "declared_path": "checkpoints/half_edit_100.npz",
+      "expected_original_sha256": "15dadae1d9796f0fb039b5d5feea51c15020a20c6b4e7f4a7b2f60962c2972ce",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/half_edit_100.npz",
+          "public_sha256": "15dadae1d9796f0fb039b5d5feea51c15020a20c6b4e7f4a7b2f60962c2972ce",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_edit_150.npz",
+      "declared_path": "checkpoints/half_edit_150.npz",
+      "expected_original_sha256": "d1826f2756b7e10589bd5348babcd1c0d3406a348c7a28c6a6a1e820ff446e44",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/half_edit_150.npz",
+          "public_sha256": "d1826f2756b7e10589bd5348babcd1c0d3406a348c7a28c6a6a1e820ff446e44",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_edit_200.npz",
+      "declared_path": "checkpoints/half_edit_200.npz",
+      "expected_original_sha256": "bc95b1e2f5dc4361224a4b52b740263bdda74242a81eaa52e49584020a22b848",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/half_edit_200.npz",
+          "public_sha256": "bc95b1e2f5dc4361224a4b52b740263bdda74242a81eaa52e49584020a22b848",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_edit_50.npz",
+      "declared_path": "checkpoints/half_edit_50.npz",
+      "expected_original_sha256": "b658a5a7091ae191655e6809015874a548976d821ef3e1a33c5f6c07ac11f82b",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/half_edit_50.npz",
+          "public_sha256": "b658a5a7091ae191655e6809015874a548976d821ef3e1a33c5f6c07ac11f82b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/learned_clean_0.npz",
+      "declared_path": "checkpoints/learned_clean_0.npz",
+      "expected_original_sha256": "6776b69ef6146d930e15c15a763838658f2fdfa228e26c0588f0a9aeabb99876",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/learned_clean_0.npz",
+          "public_sha256": "6776b69ef6146d930e15c15a763838658f2fdfa228e26c0588f0a9aeabb99876",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/learned_clean_100.npz",
+      "declared_path": "checkpoints/learned_clean_100.npz",
+      "expected_original_sha256": "d5deeb4fd041460a7a1b33f5f8bdfd44c5ce1a7a11e17c85e4dae2da293f61c7",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/learned_clean_100.npz",
+          "public_sha256": "d5deeb4fd041460a7a1b33f5f8bdfd44c5ce1a7a11e17c85e4dae2da293f61c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/learned_clean_150.npz",
+      "declared_path": "checkpoints/learned_clean_150.npz",
+      "expected_original_sha256": "e45eff8d4d96aa4b4a351dbd1d6f8d3004f97573ce2ed93e384c1662a5b87de5",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/learned_clean_150.npz",
+          "public_sha256": "e45eff8d4d96aa4b4a351dbd1d6f8d3004f97573ce2ed93e384c1662a5b87de5",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/learned_clean_200.npz",
+      "declared_path": "checkpoints/learned_clean_200.npz",
+      "expected_original_sha256": "d21b5d9d2fc220abce92c13a65d6b7533f93193080d2e0fc9ccf9c4396ac98f1",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/learned_clean_200.npz",
+          "public_sha256": "d21b5d9d2fc220abce92c13a65d6b7533f93193080d2e0fc9ccf9c4396ac98f1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/learned_clean_50.npz",
+      "declared_path": "checkpoints/learned_clean_50.npz",
+      "expected_original_sha256": "603864184a1eabd9d314866ddb2efe411f02357edd942fadfac4bf473a5e56a6",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/learned_clean_50.npz",
+          "public_sha256": "603864184a1eabd9d314866ddb2efe411f02357edd942fadfac4bf473a5e56a6",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/learned_edit_0.npz",
+      "declared_path": "checkpoints/learned_edit_0.npz",
+      "expected_original_sha256": "6776b69ef6146d930e15c15a763838658f2fdfa228e26c0588f0a9aeabb99876",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/learned_edit_0.npz",
+          "public_sha256": "6776b69ef6146d930e15c15a763838658f2fdfa228e26c0588f0a9aeabb99876",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/learned_edit_100.npz",
+      "declared_path": "checkpoints/learned_edit_100.npz",
+      "expected_original_sha256": "53761d608bf6c12b775266b2681440c0d32dde60518e865a61cd91a3496d6e93",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/learned_edit_100.npz",
+          "public_sha256": "53761d608bf6c12b775266b2681440c0d32dde60518e865a61cd91a3496d6e93",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/learned_edit_150.npz",
+      "declared_path": "checkpoints/learned_edit_150.npz",
+      "expected_original_sha256": "01eeba9323d11646d3e42972a04cdf120fe892edd368495ec9efa901d35b3db9",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/learned_edit_150.npz",
+          "public_sha256": "01eeba9323d11646d3e42972a04cdf120fe892edd368495ec9efa901d35b3db9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/learned_edit_200.npz",
+      "declared_path": "checkpoints/learned_edit_200.npz",
+      "expected_original_sha256": "559e6d64b34da0c81fffdb2d51a8c9762c06bff200200c398487f9766cbbd043",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/learned_edit_200.npz",
+          "public_sha256": "559e6d64b34da0c81fffdb2d51a8c9762c06bff200200c398487f9766cbbd043",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/learned_edit_50.npz",
+      "declared_path": "checkpoints/learned_edit_50.npz",
+      "expected_original_sha256": "cf10591447587f5070bbc249e185c72cc7512feeff877b9fea0184dce35adc08",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/learned_edit_50.npz",
+          "public_sha256": "cf10591447587f5070bbc249e185c72cc7512feeff877b9fea0184dce35adc08",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/random_edit_0.npz",
+      "declared_path": "checkpoints/random_edit_0.npz",
+      "expected_original_sha256": "b282af8c5b9d3c1f2d6ed3418ea9b584c03fe06d82659cb50e0fa700b8bd1157",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/random_edit_0.npz",
+          "public_sha256": "b282af8c5b9d3c1f2d6ed3418ea9b584c03fe06d82659cb50e0fa700b8bd1157",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/random_edit_100.npz",
+      "declared_path": "checkpoints/random_edit_100.npz",
+      "expected_original_sha256": "57fe7f274d7ebc9b77089299d61356d7cc25036efb2abde39bf83538ec673c23",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/random_edit_100.npz",
+          "public_sha256": "57fe7f274d7ebc9b77089299d61356d7cc25036efb2abde39bf83538ec673c23",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/random_edit_150.npz",
+      "declared_path": "checkpoints/random_edit_150.npz",
+      "expected_original_sha256": "4ddc2b63380862d2234f97e5921bf1806ee43dd154d8e2ec3e2a7d27bf854ef1",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/random_edit_150.npz",
+          "public_sha256": "4ddc2b63380862d2234f97e5921bf1806ee43dd154d8e2ec3e2a7d27bf854ef1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/random_edit_200.npz",
+      "declared_path": "checkpoints/random_edit_200.npz",
+      "expected_original_sha256": "f0ab5b633a736f04d4dd3968e9e9d05e81d4a05f9bbd2a5709e5680f777faef9",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/random_edit_200.npz",
+          "public_sha256": "f0ab5b633a736f04d4dd3968e9e9d05e81d4a05f9bbd2a5709e5680f777faef9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/random_edit_50.npz",
+      "declared_path": "checkpoints/random_edit_50.npz",
+      "expected_original_sha256": "788ea764699328f67a195147527376d6b528110b9c7bd5a6683eea97a163505d",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/random_edit_50.npz",
+          "public_sha256": "788ea764699328f67a195147527376d6b528110b9c7bd5a6683eea97a163505d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_edit_0.npz",
+      "declared_path": "checkpoints/uniform_edit_0.npz",
+      "expected_original_sha256": "2911f9039d8ebdd8da8c504b536eaa9b21adba0612ba5ee410470f6daa4eaa85",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/uniform_edit_0.npz",
+          "public_sha256": "2911f9039d8ebdd8da8c504b536eaa9b21adba0612ba5ee410470f6daa4eaa85",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_edit_100.npz",
+      "declared_path": "checkpoints/uniform_edit_100.npz",
+      "expected_original_sha256": "13d2626faa5d5922648357f9b5ff1b2124d0a17570b2b21af44051d8f2702f45",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/uniform_edit_100.npz",
+          "public_sha256": "13d2626faa5d5922648357f9b5ff1b2124d0a17570b2b21af44051d8f2702f45",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_edit_150.npz",
+      "declared_path": "checkpoints/uniform_edit_150.npz",
+      "expected_original_sha256": "9c47b3c421e50094629d72085620b8656228039d3800524dfb7e67d67b172018",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/uniform_edit_150.npz",
+          "public_sha256": "9c47b3c421e50094629d72085620b8656228039d3800524dfb7e67d67b172018",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_edit_200.npz",
+      "declared_path": "checkpoints/uniform_edit_200.npz",
+      "expected_original_sha256": "906c80498ced74856dca5c6a7ced0997d43d8ed8199910501e3831ee515423ca",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/uniform_edit_200.npz",
+          "public_sha256": "906c80498ced74856dca5c6a7ced0997d43d8ed8199910501e3831ee515423ca",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_edit_50.npz",
+      "declared_path": "checkpoints/uniform_edit_50.npz",
+      "expected_original_sha256": "3ebec48d9c225c5fe5e8e249654a1a2fae81faf3536fe245c72a2586b2729167",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/checkpoints/uniform_edit_50.npz",
+          "public_sha256": "3ebec48d9c225c5fe5e8e249654a1a2fae81faf3536fe245c72a2586b2729167",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.clean_evaluation.csv",
+      "declared_path": "clean_evaluation.csv",
+      "expected_original_sha256": "29b7f29aa2bae33a0b4d1eb6775d13d5ffab0825224c7407449c69a1ea39dd09",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/clean_evaluation.csv",
+          "public_sha256": "29b7f29aa2bae33a0b4d1eb6775d13d5ffab0825224c7407449c69a1ea39dd09",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.descriptive_panel_maxima.csv",
+      "declared_path": "descriptive_panel_maxima.csv",
+      "expected_original_sha256": "8739736d87fd1ad05275d23651de31e8a800abf237530b3a7600cfc3be79915d",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/descriptive_panel_maxima.csv",
+          "public_sha256": "8739736d87fd1ad05275d23651de31e8a800abf237530b3a7600cfc3be79915d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.evaluation_paths.npz",
+      "declared_path": "evaluation_paths.npz",
+      "expected_original_sha256": "a08f2e740c43566833c920a61379243753705c8fe1063e4b97cb61694ddc93ec",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/evaluation_paths.npz",
+          "public_sha256": "a08f2e740c43566833c920a61379243753705c8fe1063e4b97cb61694ddc93ec",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.half_edit_training.csv",
+      "declared_path": "half_edit_training.csv",
+      "expected_original_sha256": "cc5f3a137de25c25ffaf5e941480d57ae0b2c99021dc8775c276b7cfd3e59e59",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/half_edit_training.csv",
+          "public_sha256": "cc5f3a137de25c25ffaf5e941480d57ae0b2c99021dc8775c276b7cfd3e59e59",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.learned_clean_training.csv",
+      "declared_path": "learned_clean_training.csv",
+      "expected_original_sha256": "23c29f59b6f96b4d5ebe3d2173e291bfee1bca4500e73495005730d035594aa4",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/learned_clean_training.csv",
+          "public_sha256": "23c29f59b6f96b4d5ebe3d2173e291bfee1bca4500e73495005730d035594aa4",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.learned_edit_training.csv",
+      "declared_path": "learned_edit_training.csv",
+      "expected_original_sha256": "a02ee1bcd89c2b9dc1197bc18b235bf08d4ceb37963f6c9b4f149b84672ef12d",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/learned_edit_training.csv",
+          "public_sha256": "a02ee1bcd89c2b9dc1197bc18b235bf08d4ceb37963f6c9b4f149b84672ef12d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.profiles.csv",
+      "declared_path": "profiles.csv",
+      "expected_original_sha256": "4adc63a870f8d0a6cfaf4aee4848343098d7931f35dfc05b225c25a81d583f3f",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/profiles.csv",
+          "public_sha256": "4adc63a870f8d0a6cfaf4aee4848343098d7931f35dfc05b225c25a81d583f3f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.random_edit_training.csv",
+      "declared_path": "random_edit_training.csv",
+      "expected_original_sha256": "968f86180c347280329edd784243ef2431b83162f59df3ca2933fc61005c266a",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/random_edit_training.csv",
+          "public_sha256": "968f86180c347280329edd784243ef2431b83162f59df3ca2933fc61005c266a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.results.json",
+      "declared_path": "results.json",
+      "expected_original_sha256": "73449da59a54db8be541169763f7b0bd9baf50fe1940ebb161858ff26c1adae6",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/results.json",
+          "public_sha256": "73449da59a54db8be541169763f7b0bd9baf50fe1940ebb161858ff26c1adae6",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.stress_evaluation.csv",
+      "declared_path": "stress_evaluation.csv",
+      "expected_original_sha256": "6800a8b24cca79f740e6009c60a76f0f728c362dea1a74bbe3936cd1d26d621e",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/stress_evaluation.csv",
+          "public_sha256": "6800a8b24cca79f740e6009c60a76f0f728c362dea1a74bbe3936cd1d26d621e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.tests.log",
+      "declared_path": "tests.log",
+      "expected_original_sha256": "5141245cbd811a109739b020fd5419e3c80d49402e08594b8eb771204e3671b6",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/tests.log",
+          "public_sha256": "5141245cbd811a109739b020fd5419e3c80d49402e08594b8eb771204e3671b6",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.training.csv",
+      "declared_path": "training.csv",
+      "expected_original_sha256": "6f27ef33b08904855727c2ddcc06cadc5751b8480c3c3e04bebb8cd4cc0f446a",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/training.csv",
+          "public_sha256": "6f27ef33b08904855727c2ddcc06cadc5751b8480c3c3e04bebb8cd4cc0f446a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.trajectory_metrics.npz",
+      "declared_path": "trajectory_metrics.npz",
+      "expected_original_sha256": "411cf945f2cae9e7333fbedbcafeaae31139327ee6306965d3503e3c2dd57eb3",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/trajectory_metrics.npz",
+          "public_sha256": "411cf945f2cae9e7333fbedbcafeaae31139327ee6306965d3503e3c2dd57eb3",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/ARTIFACT_HASHES.json",
+      "location": "$.uniform_edit_training.csv",
+      "declared_path": "uniform_edit_training.csv",
+      "expected_original_sha256": "f4bd18c977a59460728c4a93e08c492111c07102121774f93a183fc3e16ee4b9",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/smoke_v1/uniform_edit_training.csv",
+          "public_sha256": "f4bd18c977a59460728c4a93e08c492111c07102121774f93a183fc3e16ee4b9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/results.json",
+      "location": "$.code_hashes.protocol.json",
+      "declared_path": "protocol.json",
+      "expected_original_sha256": "60116208617928e118e660e7ecab5d9f049544078c9bab7762354e9a3d684955",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/protocol.json",
+          "public_sha256": "60116208617928e118e660e7ecab5d9f049544078c9bab7762354e9a3d684955",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/results.json",
+      "location": "$.code_hashes.PLAN.md",
+      "declared_path": "PLAN.md",
+      "expected_original_sha256": "693fea35b3875b3193f228c50d0dd5668bcf6b498ce32abe1f7828037e6a0a1c",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/PLAN.md",
+          "public_sha256": "e73728f09d77783a42070bf8d8ecdcedc9a5f3eef4723b65a076f5bd07a80538",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/results.json",
+      "location": "$.code_hashes.pilot.py",
+      "declared_path": "pilot.py",
+      "expected_original_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/pilot.py",
+          "public_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/results.json",
+      "location": "$.code_hashes.test_pilot.py",
+      "declared_path": "test_pilot.py",
+      "expected_original_sha256": "2c2308f47578abfbfd4a9a706d44fc3ea8872b9b7f65a74752be885a354ddc1a",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/test_pilot.py",
+          "public_sha256": "2c2308f47578abfbfd4a9a706d44fc3ea8872b9b7f65a74752be885a354ddc1a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/learned_position_pilot_20261103/smoke_v1/results.json",
+      "location": "$.code_hashes.run.py",
+      "declared_path": "run.py",
+      "expected_original_sha256": "46f096731a3b8c7fc96e666078ad8cfc7c008839ad74d554eccd966838861b1a",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/run.py",
+          "public_sha256": "46f096731a3b8c7fc96e666078ad8cfc7c008839ad74d554eccd966838861b1a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/ADDITIVE_AUDIT_BINDINGS.json",
+      "location": "$.files.REPORT.md",
+      "declared_path": "REPORT.md",
+      "expected_original_sha256": "b4eb8b8497c13112b4d3377dbe1558e0b387f60170e4cb839355fd16f392ec1b",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/REPORT.md",
+          "public_sha256": "b4eb8b8497c13112b4d3377dbe1558e0b387f60170e4cb839355fd16f392ec1b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/ADDITIVE_AUDIT_BINDINGS.json",
+      "location": "$.files.REPORT_AUDIT_ADDENDUM.md",
+      "declared_path": "REPORT_AUDIT_ADDENDUM.md",
+      "expected_original_sha256": "3686e8548077085e96e71cd2659cbe79d4a001411370d2c12a1b837dab803719",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/REPORT_AUDIT_ADDENDUM.md",
+          "public_sha256": "3686e8548077085e96e71cd2659cbe79d4a001411370d2c12a1b837dab803719",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/ADDITIVE_AUDIT_BINDINGS.json",
+      "location": "$.files.DELIVERY_HASHES.json",
+      "declared_path": "DELIVERY_HASHES.json",
+      "expected_original_sha256": "bc73e89e5f014ad070cb79f4deb85e54772a55a3d6f75a4c889f838f423f9c40",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/DELIVERY_HASHES.json",
+          "public_sha256": "bc73e89e5f014ad070cb79f4deb85e54772a55a3d6f75a4c889f838f423f9c40",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/DELIVERY_HASHES.json",
+      "location": "$.REPORT.md",
+      "declared_path": "REPORT.md",
+      "expected_original_sha256": "b4eb8b8497c13112b4d3377dbe1558e0b387f60170e4cb839355fd16f392ec1b",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/REPORT.md",
+          "public_sha256": "b4eb8b8497c13112b4d3377dbe1558e0b387f60170e4cb839355fd16f392ec1b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/DELIVERY_HASHES.json",
+      "location": "$.README.md",
+      "declared_path": "README.md",
+      "expected_original_sha256": "9e3d87ca12338df3f7164a83a6c4f232a5343aedd9bb9503dc0afc652d9f93c6",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/README.md",
+          "public_sha256": "9e3d87ca12338df3f7164a83a6c4f232a5343aedd9bb9503dc0afc652d9f93c6",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/DELIVERY_HASHES.json",
+      "location": "$.LEDGER.md",
+      "declared_path": "LEDGER.md",
+      "expected_original_sha256": "075ae0c16b3c389d7b20c5b9ce3cab4950f9b7abb0944878a66091a823c177b7",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/LEDGER.md",
+          "public_sha256": "075ae0c16b3c389d7b20c5b9ce3cab4950f9b7abb0944878a66091a823c177b7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/DELIVERY_HASHES.json",
+      "location": "$.AUTHOR_VERIFICATION.json",
+      "declared_path": "AUTHOR_VERIFICATION.json",
+      "expected_original_sha256": "99e2726fb565adbaad14c54f4c2e914bdb3cd9ac7c26fefd2ccfc388c5a93307",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/AUTHOR_VERIFICATION.json",
+          "public_sha256": "99e2726fb565adbaad14c54f4c2e914bdb3cd9ac7c26fefd2ccfc388c5a93307",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/DELIVERY_HASHES.json",
+      "location": "$.POSTHOC_TAIL_CHECKS.json",
+      "declared_path": "POSTHOC_TAIL_CHECKS.json",
+      "expected_original_sha256": "2253ac7ee73b8d3baa19bde83920c0a91a41916db72790cecbf648abc041db73",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/POSTHOC_TAIL_CHECKS.json",
+          "public_sha256": "2253ac7ee73b8d3baa19bde83920c0a91a41916db72790cecbf648abc041db73",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/DELIVERY_HASHES.json",
+      "location": "$.PRE_RUN_HASHES.json",
+      "declared_path": "PRE_RUN_HASHES.json",
+      "expected_original_sha256": "13706559ef06309b9992244ea5622a23a991b0669159cae698b6c2356d5800da",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/PRE_RUN_HASHES.json",
+          "public_sha256": "13706559ef06309b9992244ea5622a23a991b0669159cae698b6c2356d5800da",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/DELIVERY_HASHES.json",
+      "location": "$.tests_final.log",
+      "declared_path": "tests_final.log",
+      "expected_original_sha256": "19861123492e7dee672fcf6c553a29c86dde26827a8f52c1dd87a6508334fc53",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/tests_final.log",
+          "public_sha256": "19861123492e7dee672fcf6c553a29c86dde26827a8f52c1dd87a6508334fc53",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/DELIVERY_HASHES.json",
+      "location": "$.calibration_v1_console.log",
+      "declared_path": "calibration_v1_console.log",
+      "expected_original_sha256": "469052f59d11155b6a6256c961f712b1b2bd44d7cf34c4bcd644ee909fe02dd0",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1_console.log",
+          "public_sha256": "469052f59d11155b6a6256c961f712b1b2bd44d7cf34c4bcd644ee909fe02dd0",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/PRE_RUN_HASHES.json",
+      "location": "$.files.protocol.json",
+      "declared_path": "protocol.json",
+      "expected_original_sha256": "48ce82d7ec2b9d159d4bded3c471b925e957f1569871c675a3ea3ea69463d65a",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/protocol.json",
+          "public_sha256": "48ce82d7ec2b9d159d4bded3c471b925e957f1569871c675a3ea3ea69463d65a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/PRE_RUN_HASHES.json",
+      "location": "$.files.PLAN.md",
+      "declared_path": "PLAN.md",
+      "expected_original_sha256": "9c891dfe5c7e911b97d0ecd7e0b000cadc09430e85cbc7dd481eba4539129559",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/PLAN.md",
+          "public_sha256": "9c891dfe5c7e911b97d0ecd7e0b000cadc09430e85cbc7dd481eba4539129559",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/PRE_RUN_HASHES.json",
+      "location": "$.files.test_calibration.py",
+      "declared_path": "test_calibration.py",
+      "expected_original_sha256": "b29f08e42126c378428f38a0edc1a588555ed67d69cc5b61ee6045ba1cf28264",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/test_calibration.py",
+          "public_sha256": "b29f08e42126c378428f38a0edc1a588555ed67d69cc5b61ee6045ba1cf28264",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/PRE_RUN_HASHES.json",
+      "location": "$.files.calibration.py",
+      "declared_path": "calibration.py",
+      "expected_original_sha256": "68c4b91287ec3ea791d54a2a4f279ea8d96e613d8509b006aaede06c96fef09f",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration.py",
+          "public_sha256": "68c4b91287ec3ea791d54a2a4f279ea8d96e613d8509b006aaede06c96fef09f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/PRE_RUN_HASHES.json",
+      "location": "$.files.run.py",
+      "declared_path": "run.py",
+      "expected_original_sha256": "da3070a910b2e9de2034232880fcae65b697f1989b88609fe664d8c2883760b7",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/run.py",
+          "public_sha256": "da3070a910b2e9de2034232880fcae65b697f1989b88609fe664d8c2883760b7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/PRE_RUN_HASHES.json",
+      "location": "$.files.../readout_conditioning_calibration_design_20261103/PROPOSAL.md",
+      "declared_path": "../readout_conditioning_calibration_design_20261103/PROPOSAL.md",
+      "expected_original_sha256": "318bb6ba43d7369d42fc934526eb4a2e40994c8a3929a4b5bdc799d677ab9eeb",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_design_20261103/PROPOSAL.md",
+          "public_sha256": "318bb6ba43d7369d42fc934526eb4a2e40994c8a3929a4b5bdc799d677ab9eeb",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/PRE_RUN_HASHES.json",
+      "location": "$.files.../learned_position_pilot_20261103/pilot.py",
+      "declared_path": "../learned_position_pilot_20261103/pilot.py",
+      "expected_original_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/pilot.py",
+          "public_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoint_metrics.csv",
+      "declared_path": "checkpoint_metrics.csv",
+      "expected_original_sha256": "7de9898066e694fb95bf676af16e3693927573575532039dc4e43eb80e17d669",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoint_metrics.csv",
+          "public_sha256": "7de9898066e694fb95bf676af16e3693927573575532039dc4e43eb80e17d669",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_count_scaled_20261103201_step0.npz",
+      "declared_path": "checkpoints/half_count_scaled_20261103201_step0.npz",
+      "expected_original_sha256": "1e9c5614c8f524bb323dff6e2450bec41e0c7155b75c445fe774b0e5b246c274",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step0.npz",
+          "public_sha256": "1e9c5614c8f524bb323dff6e2450bec41e0c7155b75c445fe774b0e5b246c274",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_count_scaled_20261103201_step1000.npz",
+      "declared_path": "checkpoints/half_count_scaled_20261103201_step1000.npz",
+      "expected_original_sha256": "e74e83c57707e729cd3ba955f256569bfe264f710a91b5b341a8de005a4aa719",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step1000.npz",
+          "public_sha256": "e74e83c57707e729cd3ba955f256569bfe264f710a91b5b341a8de005a4aa719",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_count_scaled_20261103201_step200.npz",
+      "declared_path": "checkpoints/half_count_scaled_20261103201_step200.npz",
+      "expected_original_sha256": "cea5e2e23f521f65a92e2066c07721729b615458f290f67af5cceabbcbf00210",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step200.npz",
+          "public_sha256": "cea5e2e23f521f65a92e2066c07721729b615458f290f67af5cceabbcbf00210",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_count_scaled_20261103201_step2000.npz",
+      "declared_path": "checkpoints/half_count_scaled_20261103201_step2000.npz",
+      "expected_original_sha256": "c787c9b27e0d28a64c58dfb261c85205ca60d8fbc38c2f94db68a9dc71cc9af7",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step2000.npz",
+          "public_sha256": "c787c9b27e0d28a64c58dfb261c85205ca60d8fbc38c2f94db68a9dc71cc9af7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_count_scaled_20261103202_step0.npz",
+      "declared_path": "checkpoints/half_count_scaled_20261103202_step0.npz",
+      "expected_original_sha256": "351b8d89b3f116167872764cdb69b432ef862283e556bf2bcc6fb5c335e3c0ba",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step0.npz",
+          "public_sha256": "351b8d89b3f116167872764cdb69b432ef862283e556bf2bcc6fb5c335e3c0ba",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_count_scaled_20261103202_step1000.npz",
+      "declared_path": "checkpoints/half_count_scaled_20261103202_step1000.npz",
+      "expected_original_sha256": "d75c9e0a1530c235a25a5f22ae43be259a1440b9f3eba9c6ad833b3f4580d7d7",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step1000.npz",
+          "public_sha256": "d75c9e0a1530c235a25a5f22ae43be259a1440b9f3eba9c6ad833b3f4580d7d7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_count_scaled_20261103202_step200.npz",
+      "declared_path": "checkpoints/half_count_scaled_20261103202_step200.npz",
+      "expected_original_sha256": "80b0b6a20364a990dd9dca87bef2f21ad24cb590d45f81c013cfd2a815d35f2a",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step200.npz",
+          "public_sha256": "80b0b6a20364a990dd9dca87bef2f21ad24cb590d45f81c013cfd2a815d35f2a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_count_scaled_20261103202_step2000.npz",
+      "declared_path": "checkpoints/half_count_scaled_20261103202_step2000.npz",
+      "expected_original_sha256": "c7272790937137782db4075f0e22d88796e4521f5a83ec0f220c973dea1b3cb3",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step2000.npz",
+          "public_sha256": "c7272790937137782db4075f0e22d88796e4521f5a83ec0f220c973dea1b3cb3",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_count_scaled_20261103203_step0.npz",
+      "declared_path": "checkpoints/half_count_scaled_20261103203_step0.npz",
+      "expected_original_sha256": "b5097430714dd629562c64328b71768f3cc3042985a04e885c6f467a22a7b886",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step0.npz",
+          "public_sha256": "b5097430714dd629562c64328b71768f3cc3042985a04e885c6f467a22a7b886",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_count_scaled_20261103203_step1000.npz",
+      "declared_path": "checkpoints/half_count_scaled_20261103203_step1000.npz",
+      "expected_original_sha256": "f7fd4ad23437acd504b5f81a88dc9c2a0cabbf3a6c3625da9158d2563adb6ee5",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step1000.npz",
+          "public_sha256": "f7fd4ad23437acd504b5f81a88dc9c2a0cabbf3a6c3625da9158d2563adb6ee5",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_count_scaled_20261103203_step200.npz",
+      "declared_path": "checkpoints/half_count_scaled_20261103203_step200.npz",
+      "expected_original_sha256": "a7b78b2c05d5cc3e3e5506deadf7a02e3917ff2eaa63b931b70dfc8322668287",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step200.npz",
+          "public_sha256": "a7b78b2c05d5cc3e3e5506deadf7a02e3917ff2eaa63b931b70dfc8322668287",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_count_scaled_20261103203_step2000.npz",
+      "declared_path": "checkpoints/half_count_scaled_20261103203_step2000.npz",
+      "expected_original_sha256": "194080a39090d0136e6daa25bc911f107589d122a898eddcd1b007d583ea95c7",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step2000.npz",
+          "public_sha256": "194080a39090d0136e6daa25bc911f107589d122a898eddcd1b007d583ea95c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_normalized_20261103201_step0.npz",
+      "declared_path": "checkpoints/half_normalized_20261103201_step0.npz",
+      "expected_original_sha256": "8d081a5ffcd2e8b8638d8d5434f5c26e6c751da5064c89e14a86768e6f0b967e",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_normalized_20261103201_step0.npz",
+          "public_sha256": "8d081a5ffcd2e8b8638d8d5434f5c26e6c751da5064c89e14a86768e6f0b967e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_normalized_20261103201_step1000.npz",
+      "declared_path": "checkpoints/half_normalized_20261103201_step1000.npz",
+      "expected_original_sha256": "9fb63e693a97426a90f59543c0376bc984611e6e9e7bada4f05b6feeedd9b67e",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_normalized_20261103201_step1000.npz",
+          "public_sha256": "9fb63e693a97426a90f59543c0376bc984611e6e9e7bada4f05b6feeedd9b67e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_normalized_20261103201_step200.npz",
+      "declared_path": "checkpoints/half_normalized_20261103201_step200.npz",
+      "expected_original_sha256": "4c49ce3242c33e09491361668ac08307d6ddfa56f7a6bd52232ccf2619cd71a2",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_normalized_20261103201_step200.npz",
+          "public_sha256": "4c49ce3242c33e09491361668ac08307d6ddfa56f7a6bd52232ccf2619cd71a2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_normalized_20261103201_step2000.npz",
+      "declared_path": "checkpoints/half_normalized_20261103201_step2000.npz",
+      "expected_original_sha256": "97d2fa14182a124a78534809f2422a2f176a0d37da22145dff4a865b09546055",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_normalized_20261103201_step2000.npz",
+          "public_sha256": "97d2fa14182a124a78534809f2422a2f176a0d37da22145dff4a865b09546055",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_normalized_20261103202_step0.npz",
+      "declared_path": "checkpoints/half_normalized_20261103202_step0.npz",
+      "expected_original_sha256": "15b734fc4a4a28c65451153346ee43b52d62d54bbf0f1a85a6d773b1a1e421cd",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_normalized_20261103202_step0.npz",
+          "public_sha256": "15b734fc4a4a28c65451153346ee43b52d62d54bbf0f1a85a6d773b1a1e421cd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_normalized_20261103202_step1000.npz",
+      "declared_path": "checkpoints/half_normalized_20261103202_step1000.npz",
+      "expected_original_sha256": "42b061657edc7016f32fc63bcd3e5485cb9180c0307c4d5f266ef836f34ac09d",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_normalized_20261103202_step1000.npz",
+          "public_sha256": "42b061657edc7016f32fc63bcd3e5485cb9180c0307c4d5f266ef836f34ac09d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_normalized_20261103202_step200.npz",
+      "declared_path": "checkpoints/half_normalized_20261103202_step200.npz",
+      "expected_original_sha256": "1d9c251e3a69a083e619b1bc87c2c06e76fff8efb17fa26b90c93b62781c25c5",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_normalized_20261103202_step200.npz",
+          "public_sha256": "1d9c251e3a69a083e619b1bc87c2c06e76fff8efb17fa26b90c93b62781c25c5",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_normalized_20261103202_step2000.npz",
+      "declared_path": "checkpoints/half_normalized_20261103202_step2000.npz",
+      "expected_original_sha256": "d4415a930569041a143e1576f08b2a87decd3f01102d19eec41b3e7b4edc9385",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_normalized_20261103202_step2000.npz",
+          "public_sha256": "d4415a930569041a143e1576f08b2a87decd3f01102d19eec41b3e7b4edc9385",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_normalized_20261103203_step0.npz",
+      "declared_path": "checkpoints/half_normalized_20261103203_step0.npz",
+      "expected_original_sha256": "02ed562dca5a6e44803b96634d1255b6da2ff52216e31cd7ee5a8037982a55e7",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_normalized_20261103203_step0.npz",
+          "public_sha256": "02ed562dca5a6e44803b96634d1255b6da2ff52216e31cd7ee5a8037982a55e7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_normalized_20261103203_step1000.npz",
+      "declared_path": "checkpoints/half_normalized_20261103203_step1000.npz",
+      "expected_original_sha256": "280a086cd785745b4e362647406fbea7fa5ff7f172a180adfebbdd1ce8913223",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_normalized_20261103203_step1000.npz",
+          "public_sha256": "280a086cd785745b4e362647406fbea7fa5ff7f172a180adfebbdd1ce8913223",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_normalized_20261103203_step200.npz",
+      "declared_path": "checkpoints/half_normalized_20261103203_step200.npz",
+      "expected_original_sha256": "5778ef65a36a2a1def10a921ff20a60e8e8c6d9712bfa571a5c0c545daa84855",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_normalized_20261103203_step200.npz",
+          "public_sha256": "5778ef65a36a2a1def10a921ff20a60e8e8c6d9712bfa571a5c0c545daa84855",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/half_normalized_20261103203_step2000.npz",
+      "declared_path": "checkpoints/half_normalized_20261103203_step2000.npz",
+      "expected_original_sha256": "77ad0d567033b475883b062a56b9aef27451bdb0dce3506a808f47fa8387f5a3",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_normalized_20261103203_step2000.npz",
+          "public_sha256": "77ad0d567033b475883b062a56b9aef27451bdb0dce3506a808f47fa8387f5a3",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_control_20261103201_step0.npz",
+      "declared_path": "checkpoints/uniform_control_20261103201_step0.npz",
+      "expected_original_sha256": "f298bb18ec07a9e4a37220bd40ed933fd4926f9c74e54bcf0a141d61d946d245",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/uniform_control_20261103201_step0.npz",
+          "public_sha256": "f298bb18ec07a9e4a37220bd40ed933fd4926f9c74e54bcf0a141d61d946d245",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_control_20261103201_step1000.npz",
+      "declared_path": "checkpoints/uniform_control_20261103201_step1000.npz",
+      "expected_original_sha256": "5671a4b0697f5fa236f460f93645121907999563dd40887a443c48b6188bec77",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/uniform_control_20261103201_step1000.npz",
+          "public_sha256": "5671a4b0697f5fa236f460f93645121907999563dd40887a443c48b6188bec77",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_control_20261103201_step200.npz",
+      "declared_path": "checkpoints/uniform_control_20261103201_step200.npz",
+      "expected_original_sha256": "e768535134cb85fd35223f28a85d795f2a1c2b3778e9dbfa6184023438a28684",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/uniform_control_20261103201_step200.npz",
+          "public_sha256": "e768535134cb85fd35223f28a85d795f2a1c2b3778e9dbfa6184023438a28684",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_control_20261103201_step2000.npz",
+      "declared_path": "checkpoints/uniform_control_20261103201_step2000.npz",
+      "expected_original_sha256": "246f612f2ddba4dc2fa7362a917f8d24112044eb8c48d5f5a232746dab637c35",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/uniform_control_20261103201_step2000.npz",
+          "public_sha256": "246f612f2ddba4dc2fa7362a917f8d24112044eb8c48d5f5a232746dab637c35",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_control_20261103202_step0.npz",
+      "declared_path": "checkpoints/uniform_control_20261103202_step0.npz",
+      "expected_original_sha256": "fa0c8a95265f376e05930f8f7438c10d89dbe42a6c76820ee8876668972792a7",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/uniform_control_20261103202_step0.npz",
+          "public_sha256": "fa0c8a95265f376e05930f8f7438c10d89dbe42a6c76820ee8876668972792a7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_control_20261103202_step1000.npz",
+      "declared_path": "checkpoints/uniform_control_20261103202_step1000.npz",
+      "expected_original_sha256": "fd05b897fc80e34dece1a28a9f74f41cce780bf8250f9aef45ff182fa82e24b4",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/uniform_control_20261103202_step1000.npz",
+          "public_sha256": "fd05b897fc80e34dece1a28a9f74f41cce780bf8250f9aef45ff182fa82e24b4",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_control_20261103202_step200.npz",
+      "declared_path": "checkpoints/uniform_control_20261103202_step200.npz",
+      "expected_original_sha256": "9758157c2080cd943ffe13a6c50f57f5ca9439fc1525c1c56125c3f9e9e1d797",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/uniform_control_20261103202_step200.npz",
+          "public_sha256": "9758157c2080cd943ffe13a6c50f57f5ca9439fc1525c1c56125c3f9e9e1d797",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_control_20261103202_step2000.npz",
+      "declared_path": "checkpoints/uniform_control_20261103202_step2000.npz",
+      "expected_original_sha256": "e7f3a591b23042e0a9db14033b038bb5043d7969d4309388cbafbadcbb036253",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/uniform_control_20261103202_step2000.npz",
+          "public_sha256": "e7f3a591b23042e0a9db14033b038bb5043d7969d4309388cbafbadcbb036253",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_control_20261103203_step0.npz",
+      "declared_path": "checkpoints/uniform_control_20261103203_step0.npz",
+      "expected_original_sha256": "ab8e26d61c32a0c050fa6c20d577349fb96ea4866070094d0a11cd29dff231e2",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/uniform_control_20261103203_step0.npz",
+          "public_sha256": "ab8e26d61c32a0c050fa6c20d577349fb96ea4866070094d0a11cd29dff231e2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_control_20261103203_step1000.npz",
+      "declared_path": "checkpoints/uniform_control_20261103203_step1000.npz",
+      "expected_original_sha256": "eaa7302adf9228d5bc287bb11040abcc2eaa7402e5bfce3b8ba6ad22e720e697",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/uniform_control_20261103203_step1000.npz",
+          "public_sha256": "eaa7302adf9228d5bc287bb11040abcc2eaa7402e5bfce3b8ba6ad22e720e697",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_control_20261103203_step200.npz",
+      "declared_path": "checkpoints/uniform_control_20261103203_step200.npz",
+      "expected_original_sha256": "98755682f24379539d5c84fd5f87e0a197e40e569219dedc0a337ff7432bec5e",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/uniform_control_20261103203_step200.npz",
+          "public_sha256": "98755682f24379539d5c84fd5f87e0a197e40e569219dedc0a337ff7432bec5e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.checkpoints/uniform_control_20261103203_step2000.npz",
+      "declared_path": "checkpoints/uniform_control_20261103203_step2000.npz",
+      "expected_original_sha256": "f7fc18fd25c4e1d6150af8eae64e939008bda2065f49d74d03ab35a2bc8251c5",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/uniform_control_20261103203_step2000.npz",
+          "public_sha256": "f7fc18fd25c4e1d6150af8eae64e939008bda2065f49d74d03ab35a2bc8251c5",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.final_metrics.csv",
+      "declared_path": "final_metrics.csv",
+      "expected_original_sha256": "a49e51702234eb827ee36a8ff47682eba14c5eeef1c433228811ffb0a2a145a8",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/final_metrics.csv",
+          "public_sha256": "a49e51702234eb827ee36a8ff47682eba14c5eeef1c433228811ffb0a2a145a8",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.final_predictions.npz",
+      "declared_path": "final_predictions.npz",
+      "expected_original_sha256": "d09335b07b17affc0cb2c645f86d8a6f108e44f57fbf525fbf1983e8385db799",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/final_predictions.npz",
+          "public_sha256": "d09335b07b17affc0cb2c645f86d8a6f108e44f57fbf525fbf1983e8385db799",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.frozen_data.npz",
+      "declared_path": "frozen_data.npz",
+      "expected_original_sha256": "6d8936a8442ec86ad0163ec83d59088746db1d4236f5b59e3e430a2e70350bf5",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/frozen_data.npz",
+          "public_sha256": "6d8936a8442ec86ad0163ec83d59088746db1d4236f5b59e3e430a2e70350bf5",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.half_count_scaled_20261103201_updates.csv",
+      "declared_path": "half_count_scaled_20261103201_updates.csv",
+      "expected_original_sha256": "d7bf4804622793160fb189dce544db669286ca1ff465ccf74dd727b443b5e8a1",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/half_count_scaled_20261103201_updates.csv",
+          "public_sha256": "d7bf4804622793160fb189dce544db669286ca1ff465ccf74dd727b443b5e8a1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.half_count_scaled_20261103202_updates.csv",
+      "declared_path": "half_count_scaled_20261103202_updates.csv",
+      "expected_original_sha256": "583f15e5408bbec61ae6470d35ee4737ef2d6aca940a5b156598e3e36776bd8f",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/half_count_scaled_20261103202_updates.csv",
+          "public_sha256": "583f15e5408bbec61ae6470d35ee4737ef2d6aca940a5b156598e3e36776bd8f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.half_count_scaled_20261103203_updates.csv",
+      "declared_path": "half_count_scaled_20261103203_updates.csv",
+      "expected_original_sha256": "b7f8e4a9124ef73473cd8ba09478f50a1ce236f45d4baf80e5c66d6ed1e1241a",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/half_count_scaled_20261103203_updates.csv",
+          "public_sha256": "b7f8e4a9124ef73473cd8ba09478f50a1ce236f45d4baf80e5c66d6ed1e1241a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.half_normalized_20261103201_updates.csv",
+      "declared_path": "half_normalized_20261103201_updates.csv",
+      "expected_original_sha256": "752a198364714ed316998bf0f1d84291527f8c957c311dca3779bd93f4a2bcdb",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/half_normalized_20261103201_updates.csv",
+          "public_sha256": "752a198364714ed316998bf0f1d84291527f8c957c311dca3779bd93f4a2bcdb",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.half_normalized_20261103202_updates.csv",
+      "declared_path": "half_normalized_20261103202_updates.csv",
+      "expected_original_sha256": "a18bed83e79145567114ca0e1544a16262452ba6f629089ba6e731248d6c6b8c",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/half_normalized_20261103202_updates.csv",
+          "public_sha256": "a18bed83e79145567114ca0e1544a16262452ba6f629089ba6e731248d6c6b8c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.half_normalized_20261103203_updates.csv",
+      "declared_path": "half_normalized_20261103203_updates.csv",
+      "expected_original_sha256": "5442b12983df66a88b8e476410704488dda511e8bef9fa65b17c488f6bf3cedc",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/half_normalized_20261103203_updates.csv",
+          "public_sha256": "5442b12983df66a88b8e476410704488dda511e8bef9fa65b17c488f6bf3cedc",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.pre_fit_checks.json",
+      "declared_path": "pre_fit_checks.json",
+      "expected_original_sha256": "7928d467dcbb695d3c20cc525c943d0634cf6095dd562ab70b460c6eac3d7440",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/pre_fit_checks.json",
+          "public_sha256": "7928d467dcbb695d3c20cc525c943d0634cf6095dd562ab70b460c6eac3d7440",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.results.json",
+      "declared_path": "results.json",
+      "expected_original_sha256": "c2d13ec7537977467375a23b91d23b33c09659e918cbad201b1a15c8548146e5",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/results.json",
+          "public_sha256": "c2d13ec7537977467375a23b91d23b33c09659e918cbad201b1a15c8548146e5",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.tests.log",
+      "declared_path": "tests.log",
+      "expected_original_sha256": "9dcd55070315837c5cc9ba469cc2fac503e1993c923c6850da0b7bf986a7105e",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/tests.log",
+          "public_sha256": "9dcd55070315837c5cc9ba469cc2fac503e1993c923c6850da0b7bf986a7105e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.uniform_control_20261103201_updates.csv",
+      "declared_path": "uniform_control_20261103201_updates.csv",
+      "expected_original_sha256": "6de9309e4c3b861c1d9cef07767712d08bc07594b12e91b89f9a60dc921b8e8f",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/uniform_control_20261103201_updates.csv",
+          "public_sha256": "6de9309e4c3b861c1d9cef07767712d08bc07594b12e91b89f9a60dc921b8e8f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.uniform_control_20261103202_updates.csv",
+      "declared_path": "uniform_control_20261103202_updates.csv",
+      "expected_original_sha256": "8fdd838ad07dd6e55dabd7da4ea50ae3cc73ba76027072d13633a1cd66a3daca",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/uniform_control_20261103202_updates.csv",
+          "public_sha256": "8fdd838ad07dd6e55dabd7da4ea50ae3cc73ba76027072d13633a1cd66a3daca",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.uniform_control_20261103203_updates.csv",
+      "declared_path": "uniform_control_20261103203_updates.csv",
+      "expected_original_sha256": "7013258f2b0d7b8cafc22cba8ac9a2672957f3a1370abf7c8d7ad9d2e1070800",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/uniform_control_20261103203_updates.csv",
+          "public_sha256": "7013258f2b0d7b8cafc22cba8ac9a2672957f3a1370abf7c8d7ad9d2e1070800",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/ARTIFACT_HASHES.json",
+      "location": "$.updates.csv",
+      "declared_path": "updates.csv",
+      "expected_original_sha256": "a234e3178cc7c3a1578f88d6409a10f50eb0f1e3039c1ef403704f0a2be978fa",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/updates.csv",
+          "public_sha256": "a234e3178cc7c3a1578f88d6409a10f50eb0f1e3039c1ef403704f0a2be978fa",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/results.json",
+      "location": "$.sealed_inputs.protocol.json",
+      "declared_path": "protocol.json",
+      "expected_original_sha256": "48ce82d7ec2b9d159d4bded3c471b925e957f1569871c675a3ea3ea69463d65a",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/protocol.json",
+          "public_sha256": "48ce82d7ec2b9d159d4bded3c471b925e957f1569871c675a3ea3ea69463d65a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/results.json",
+      "location": "$.sealed_inputs.PLAN.md",
+      "declared_path": "PLAN.md",
+      "expected_original_sha256": "9c891dfe5c7e911b97d0ecd7e0b000cadc09430e85cbc7dd481eba4539129559",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/PLAN.md",
+          "public_sha256": "9c891dfe5c7e911b97d0ecd7e0b000cadc09430e85cbc7dd481eba4539129559",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/results.json",
+      "location": "$.sealed_inputs.test_calibration.py",
+      "declared_path": "test_calibration.py",
+      "expected_original_sha256": "b29f08e42126c378428f38a0edc1a588555ed67d69cc5b61ee6045ba1cf28264",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/test_calibration.py",
+          "public_sha256": "b29f08e42126c378428f38a0edc1a588555ed67d69cc5b61ee6045ba1cf28264",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/results.json",
+      "location": "$.sealed_inputs.calibration.py",
+      "declared_path": "calibration.py",
+      "expected_original_sha256": "68c4b91287ec3ea791d54a2a4f279ea8d96e613d8509b006aaede06c96fef09f",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/calibration.py",
+          "public_sha256": "68c4b91287ec3ea791d54a2a4f279ea8d96e613d8509b006aaede06c96fef09f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/results.json",
+      "location": "$.sealed_inputs.run.py",
+      "declared_path": "run.py",
+      "expected_original_sha256": "da3070a910b2e9de2034232880fcae65b697f1989b88609fe664d8c2883760b7",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_20261103/run.py",
+          "public_sha256": "da3070a910b2e9de2034232880fcae65b697f1989b88609fe664d8c2883760b7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/results.json",
+      "location": "$.sealed_inputs.../readout_conditioning_calibration_design_20261103/PROPOSAL.md",
+      "declared_path": "../readout_conditioning_calibration_design_20261103/PROPOSAL.md",
+      "expected_original_sha256": "318bb6ba43d7369d42fc934526eb4a2e40994c8a3929a4b5bdc799d677ab9eeb",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_design_20261103/PROPOSAL.md",
+          "public_sha256": "318bb6ba43d7369d42fc934526eb4a2e40994c8a3929a4b5bdc799d677ab9eeb",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/results.json",
+      "location": "$.sealed_inputs.../learned_position_pilot_20261103/pilot.py",
+      "declared_path": "../learned_position_pilot_20261103/pilot.py",
+      "expected_original_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/pilot.py",
+          "public_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_design_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files[0].path",
+      "declared_path": "v10_research/learned_position_pilot_20261103/REPORT.md",
+      "expected_original_sha256": "1be5a405bd7ef48190792f8127a6c8974f7fbf7321480d8b122e5e19d620b394",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/REPORT.md",
+          "public_sha256": "1be5a405bd7ef48190792f8127a6c8974f7fbf7321480d8b122e5e19d620b394",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_design_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files[1].path",
+      "declared_path": "v10_research/learned_position_pilot_20261103/REPORT_REVIEW_AMENDMENT.md",
+      "expected_original_sha256": "33634c4307e6dba53872cbef580a38d6dd7c5c5ca280b8f303aafbb663cd80d7",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/REPORT_REVIEW_AMENDMENT.md",
+          "public_sha256": "33634c4307e6dba53872cbef580a38d6dd7c5c5ca280b8f303aafbb663cd80d7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_design_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files[2].path",
+      "declared_path": "v10_research/learned_position_pilot_20261103/review_independent/REVIEW.md",
+      "expected_original_sha256": "d00a104b788bb497c640b41912da1ca0f10ec456257892ecea6eb26d5918cf83",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/review_independent/REVIEW.md",
+          "public_sha256": "d00a104b788bb497c640b41912da1ca0f10ec456257892ecea6eb26d5918cf83",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_design_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files[3].path",
+      "declared_path": "v10_research/learned_position_pilot_20261103/review_independent/check_output.txt",
+      "expected_original_sha256": "f18511de446e800c20daed07e9fbfb3fc52ad788d59426c91afd624aa0614add",
+      "resolutions": [
+        {
+          "path": "v10_research/learned_position_pilot_20261103/review_independent/check_output.txt",
+          "public_sha256": "f18511de446e800c20daed07e9fbfb3fc52ad788d59426c91afd624aa0614add",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/readout_conditioning_calibration_design_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files[4].path",
+      "declared_path": "v10_research/readout_conditioning_calibration_design_20261103/PROPOSAL.md",
+      "expected_original_sha256": "318bb6ba43d7369d42fc934526eb4a2e40994c8a3929a4b5bdc799d677ab9eeb",
+      "resolutions": [
+        {
+          "path": "v10_research/readout_conditioning_calibration_design_20261103/PROPOSAL.md",
+          "public_sha256": "318bb6ba43d7369d42fc934526eb4a2e40994c8a3929a4b5bdc799d677ab9eeb",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "omitted_artifacts": [],
+      "status": "RESOLVED"
+    }
+  ],
+  "scope_limits": [
+    "The pilot is one initialization and 200 updates per condition. Nonuniform learned pooling did not demonstrate useful positional protection; that failure does not prove inability of the architecture or fixed-half readout.",
+    "Finite CE-selected proposals are legal word-derived edits preserving terminal bits, not the full Hamming ball or source-TV maximizers. Each predictor chooses its own attack; paired clean words need not yield identical corrupted inputs. A has infinite-CE ties. Post-hoc true-source comparisons are diagnostics, never authority to use the hidden source for attack selection.",
+    "The random frozen control is near uniform. Uniform-profile ablation changes features and attack selection and can induce distribution shift; it is not isolated causal proof. Finite-panel maxima and pointwise standard errors are not general-source bounds or simultaneous confidence intervals.",
+    "Calibration explicitly supervises Q with fixed positional features and oversampled supplied collision words. It has no attacks and is not natural next-token feature discovery. Count-scaled and normalized representations share the same fixed-M function class and initial function, but Adam is parameterization-sensitive.",
+    "Three calibration initializations share the same datasets and minibatch stream. Independently sampled training/validation sets have 9 overlapping distinct words, accounting for 25 validation trajectories; collision checks reuse four supplied training words. They are not independent data replications or unseen-collision generalization.",
+    "All scaled fits pass a finite average/in-sample screen, yet maximum held-out absolute errors remain 0.401–0.434, with 13–14 of 2,048 errors above 0.1 per fit. No small uniform approximation, minimax robustness or general statistical learning guarantee follows.",
+    "Original reports, earlier design budgets and pending-review language remain chronological records. Additive review amendments and current publication navigation govern interpretation; no historical report or numerical result was overwritten.",
+    "The publisher verified identities, privacy, code syntax, source resolution and numeric-array schemas without rerunning training or scientific audits. Source reports record their actual independent replays; these are not external peer review, formal verification, preregistration or trusted external timestamps.",
+    "All prior published bytes, including the 55-page manuscript, remain unchanged except five navigation pages and the active inventory. No new license, workflow, permissions, credentials or deployment. Prior missing-history boundaries are not enlarged or falsely resolved."
+  ]
+}

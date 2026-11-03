@@ -1,0 +1,18 @@
+{
+  "protocol": "learned-position exploratory smoke v1",
+  "created_utc": "2026-11-03T05:24:00Z",
+  "status": "Fixed before pilot sampling; exploratory, not preregistration; stop after smoke for review",
+  "dtype": "float64",
+  "rng": "numpy.random.Generator(PCG64)",
+  "model_seed": 20261103101,
+  "training_seed": 20261103102,
+  "test_seed": 20261103103,
+  "unit_test_seed": 20261103104,
+  "model": {"knots": 8, "learned_heads": 2, "uniform_heads": 1, "input_features": 9, "hidden_width": 32, "pool_init_sd": 0.01, "readout_initialization": "W independent normal sd sqrt(2/(9+32)); v normal sd sqrt(2/(32+1)); b and c zero; RNG draws a, W, v in that order", "output_floor": "(M+2)^(-2)", "position_coordinate": "(i+0.5)/M", "horizon_feature": "1/M"},
+  "conditions": ["learned_clean", "learned_edit", "uniform_edit", "random_edit", "half_edit"],
+  "training": {"steps": 200, "batch_size": 64, "horizons": [64,128], "horizon_schedule": "alternate 64,128 starting at 64", "budget_schedule": "cycle index step%3 through [1,floor(sqrt(M)),floor(M/8)]", "prior": "four independent Uniform[0,1) rows; independent uniform initial pair", "data_draw_order": "p shape(batch,4), initial integers shape(batch), then M random(batch) transition arrays", "target": "clean-word exact CTO posterior B=(C+1)/(J+2)", "edit_objective": "0.5 clean CE + 0.5 maximum CE over identity and nine structured block proposals", "optimizer": {"name":"Adam","readout_lr":0.003,"pool_lr":0.01,"beta1":0.9,"beta2":0.999,"epsilon":1e-8,"weight_decay":0}, "checkpoints": [0,50,100,150,200]},
+  "attacks": {"training": "identity; for start 0,floor((M-k)/2),M-k, each overwrite0,overwrite1,flip of length k", "heldout": "identity; same three operations on starts floor((M-k)/4),floor(3*(M-k)/4), and sparse distinct floor(linspace(0,M-1,k)) positions", "selection": "maximize CE(B(clean_word),predictor(candidate)); first-index tie; no source table or future label", "endpoint": "only positions 0,...,M-1 editable; M,M+1 protected", "k0": "identity only"},
+  "evaluation": {"horizons":[64,128,256], "clean_prior_paths":2048, "stress_paths_per_source_start":256, "stress_sources":["iid_half","sticky_a_quarter_t_2_over_M","sticky_a_equals_t_2_over_M"], "starts":[0,3], "budget_schedule":"unique sorted [0,floor(sqrt(M)),floor(M/8)]", "attack_families":["training","heldout"], "baselines":["B","A","Q"], "metrics":"conditional clean CE against B and excess KL; actual-source TV; stress normalized by max(M^-0.5,k/M); approximate pointwise MC SE, no minimax upper or significance claim", "max_source_scope":"finite-panel descriptive maximum only; no asymptotic slope fit"},
+  "stop": "One 200-step, one-seed smoke run of each condition; report all outputs and calibration failures before expansion",
+  "limits": ["No end-to-end Transformer", "No global Hamming-ball attack optimization", "No worst-case or all-source learning guarantee", "Only finite float64 computation, no finite-bit theorem", "Single seed and small sample exploratory smoke"]
+}

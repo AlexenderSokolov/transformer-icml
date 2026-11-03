@@ -1,0 +1,139 @@
+{
+  "rule": "Exact original/export pairs reconcile only two non-scientific intake metadata removals, internal routing/authorization prose normalization and two traceback path normalizations. No removed private values are disclosed. Original mathematical discussion, programs, protocols, numerical outputs and binary arrays are unchanged.",
+  "changes": [
+    {
+      "path": "v10_research/learned_position_direction_20261103/SOURCE_BINDINGS.json",
+      "operation": "delete",
+      "original_lines": [
+        5,
+        12
+      ],
+      "public_lines": [
+        5,
+        4
+      ],
+      "category": "Remove two non-scientific intake references; no scientific dependency removed",
+      "original_file_sha256": "320276d6e443ff3ead8cd828fdbdbf479d483d9bc5d05fe9134b9d30583b804e",
+      "export_file_sha256": "db888a6feff7adf0dc4096b29f5aa1f0bf1c8b1f826101f503635a0a1e96f459",
+      "original_region_sha256": "7d1ddd32f2c4735962d7c9979f79bb4695e1f6bf2d0f1a863c2836cd7377c92b",
+      "export_region_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_region": []
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/LEDGER.md",
+      "operation": "replace",
+      "original_lines": [
+        7,
+        7
+      ],
+      "public_lines": [
+        7,
+        7
+      ],
+      "category": "Normalize internal routing or authorization prose; scientific plan, constraints and history unchanged",
+      "original_file_sha256": "94365c0b2dd06717c275429f13816d145ab8a3676c3ce8491234209da485dfde",
+      "export_file_sha256": "7ab25d467286d90562e8fa9cd635eff0ef78c699eb0c38dda3d21dd98f9e7463",
+      "original_region_sha256": "e691873b03db7d48eda1e6661806352416adefe8005bbbef4bbe69b94bd812b4",
+      "export_region_sha256": "8d3860504f0a47ccd49627f746558e17f5eeb1370035a45f187ed148bbb67e36",
+      "public_region": [
+        "- Implementation was kept separate from earlier frozen scientific files."
+      ]
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/PLAN.md",
+      "operation": "replace",
+      "original_lines": [
+        5,
+        5
+      ],
+      "public_lines": [
+        5,
+        5
+      ],
+      "category": "Normalize internal routing or authorization prose; scientific plan, constraints and history unchanged",
+      "original_file_sha256": "693fea35b3875b3193f228c50d0dd5668bcf6b498ce32abe1f7828037e6a0a1c",
+      "export_file_sha256": "e73728f09d77783a42070bf8d8ecdcedc9a5f3eef4723b65a076f5bd07a80538",
+      "original_region_sha256": "24720931ee249499244f9679fef44613d6ca4f900d206f088e83f1a64d273888",
+      "export_region_sha256": "0717e00a66b9865ddb33ef3a44a5ed659763c4bccff09fa0855c1bb3b6966da7",
+      "public_region": [
+        "Spec: ../learned_position_direction_20261103/RECOMMENDATION.md. This plan specifies the smaller exploratory smoke run below."
+      ]
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/PLAN.md",
+      "operation": "replace",
+      "original_lines": [
+        15,
+        15
+      ],
+      "public_lines": [
+        15,
+        15
+      ],
+      "category": "Normalize internal routing or authorization prose; scientific plan, constraints and history unchanged",
+      "original_file_sha256": "693fea35b3875b3193f228c50d0dd5668bcf6b498ce32abe1f7828037e6a0a1c",
+      "export_file_sha256": "e73728f09d77783a42070bf8d8ecdcedc9a5f3eef4723b65a076f5bd07a80538",
+      "original_region_sha256": "84f9fc0bae175e36b9959aacdc44cccca53f7856481dd6177c27901928582dd5",
+      "export_region_sha256": "12c5e2475237b544480a00293e809ff07c125142b7df5768008d60ca2f33f6bd",
+      "public_region": [
+        "Scientific constraints: no hidden theta/label access by attack functions, no data-selected hyperparameter changes, no finite tests described as minimax proof."
+      ]
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/tests_red.log",
+      "operation": "replace",
+      "original_lines": [
+        2,
+        2
+      ],
+      "public_lines": [
+        2,
+        2
+      ],
+      "category": "Replace a private absolute host prefix with the same repository-relative traceback path; original failure and code line unchanged",
+      "original_file_sha256": "87b5238fa1ab069b9bfd4a5e3ba79e02d5eab3883184761402f2e3b994741682",
+      "export_file_sha256": "e4d316c9deb7a66a95a28bb163367b43259e5b0303c7c33b26eb62f05b987073",
+      "original_region_sha256": "198731d5c47ad43d130eccef289a5abec17c4efe93625a63bbca2c4e7e0ebdaf",
+      "export_region_sha256": "eb6cfe3925a1a2197a9b21510a39437eb60ffc70be3307aeed147cd6203c2ba7",
+      "public_region": [
+        "  File \"v10_research/learned_position_pilot_20261103/test_pilot.py\", line 4, in <module>"
+      ]
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/tests_red.log",
+      "operation": "replace",
+      "original_lines": [
+        2,
+        2
+      ],
+      "public_lines": [
+        2,
+        2
+      ],
+      "category": "Replace a private absolute host prefix with the same repository-relative traceback path; original failure and code line unchanged",
+      "original_file_sha256": "57163d6bdfe3e4cb94999c4e35523fe343116bf1a99cdc295b316d6dc437d58b",
+      "export_file_sha256": "6de5d7779a35d7525f4105cc5be267fab7049e2007e2d1cc9fe03011d6e93bfc",
+      "original_region_sha256": "04bf90e1da94b43c07f8c0799c2c5d8e5355410a2c6c15847c4530b12165cc6d",
+      "export_region_sha256": "f5cd5ca3aa16f04f36ff913a1894e55874a025207ab64fa7005cd610eea40cf1",
+      "public_region": [
+        "  File \"v10_research/readout_conditioning_calibration_20261103/test_calibration.py\", line 3, in <module>"
+      ]
+    }
+  ],
+  "prior_maps": [
+    "provenance/consolidated_manuscript_20261103/SOURCE_EXPORT_MAP.json",
+    "provenance/learning_objective_20261103/SOURCE_EXPORT_MAP.json"
+  ],
+  "inherited_nonidentical_pairs": [
+    {
+      "path": "v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+      "original_sha256": "764c7364a5b7e03cae6afa6898a68c75e84eb9603fdabe0d1bde8904f7341a9f",
+      "public_sha256": "5e65d2646bca23c975a6273fcedc4bdd1aadd8bd68b8390d4ed02b58d90c7c28"
+    },
+    {
+      "path": "v10_research/learning_objective_stage_20261103/RESEARCH_SUMMARY.zh.md",
+      "original_sha256": "c524c1f8b415889a43e82719e93445ce392704641a065bb90f0337cc7918418e",
+      "public_sha256": "afa8b5c5ddae0f85656cc52e4c45f9cfec086958838b62441e7192cfab03d93e"
+    }
+  ]
+}

@@ -1,5 +1,11 @@
 # 当前状态：位置计数与未知预算适应
 
+## 2026-11-03：两项有限经验研究
+
+新增阶段包含[学习位置池化冒烟测试](../v10_research/learned_position_pilot_20261103/REPORT.md)及[解释修正](../v10_research/learned_position_pilot_20261103/REPORT_REVIEW_AMENDMENT.md)，然后是[固定半程读出校准](../v10_research/readout_conditioning_calibration_20261103/REPORT.md)及[审计补充](../v10_research/readout_conditioning_calibration_20261103/REPORT_AUDIT_ADDENDUM.md)。前者没有展示有用的学习位置保护；后者只支持特定 Q 监督、碰撞词加权和固定优化预算下的参数化差别。
+
+校准的有限平均筛选通过不代表一致拟合：仍有个体误差超过 0.4。三个初始化共享数据/批次，四个碰撞词也是训练词；独立抽样的先验训练/验证集包含 9 个共同字符串，占 25 条验证轨迹。原始报告与补充均保留，不将结果改写成最坏情形学习保证、一般 SGD 结论或新理论单元。原设计的较大预算与随后缩小的实际冒烟测试预算保持各自历史身份。
+
 ## 2026-11-03：干净目标、单偏置动态与约束窗口
 
 本次阶段包含三个已接纳数学单元 CTO001、PGT001、PBF001，以及一个已审阅的固定规模合成诊断。见[中文总结](../v10_research/learning_objective_stage_20261103/RESEARCH_SUMMARY.zh.md)。精确总体干净目标可以选中计数型 Bayes 规则；给定特征后的单偏置精确下降最终趋向该规则；适当投影则在这个明确模型内保留鲁棒性。

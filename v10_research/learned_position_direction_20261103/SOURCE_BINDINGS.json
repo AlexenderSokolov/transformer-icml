@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-03",
+  "status": "Design recommendation only; no model implemented or trained",
+  "local_sources": [
+    {
+      "path": "v10_research/learning_objective_stage_20261103/RESEARCH_SUMMARY.zh.md",
+      "sha256": "c524c1f8b415889a43e82719e93445ce392704641a065bb90f0337cc7918418e"
+    },
+    {
+      "path": "v10_research/clean_training_objective_20261103/CANDIDATE.md",
+      "sha256": "1405c661827773bba64c8d8ae91f8eb8a9b2bf17ffc6a66e3be69525f1674bb2"
+    },
+    {
+      "path": "v10_research/clean_training_objective_20261103/ROOT_ACCEPTANCE.json",
+      "sha256": "3860866b7635a794e47da72c16c537c0a1950076cde59e98356a1cd391b9c279"
+    },
+    {
+      "path": "v10_research/positional_gate_training_20261103/CANDIDATE.md",
+      "sha256": "91dcb755e6544fa04e728ab92bf48a7cb864e1e28fc9e4cbdbe0fc38257cb0be"
+    },
+    {
+      "path": "v10_research/positional_gate_training_20261103/ROOT_ACCEPTANCE.json",
+      "sha256": "bdb9af190abb84accada8b84cb71274735ecae10cbfabeec4da06a9c22c5ae95"
+    },
+    {
+      "path": "v10_research/positional_bias_frontier_20261103/CANDIDATE.md",
+      "sha256": "437d945df88004758d4153385fd00699dd33ea5bee378a4e2aebbf797a9fc642"
+    },
+    {
+      "path": "v10_research/positional_bias_frontier_20261103/ROOT_ACCEPTANCE.json",
+      "sha256": "8aeacce62ed73368a738597d9a604b5f1efc72893efd56253395bf624e66f6db"
+    },
+    {
+      "path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md",
+      "sha256": "84c1a5d4fcf9958331c257c0cf23a13c73c5627bb6fb4f1866bc10bf1ecb6bd9"
+    },
+    {
+      "path": "v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md",
+      "sha256": "e8f264d46c43f914a321eddfb736369de7563a775a6035c95a1187065236e933"
+    },
+    {
+      "path": "v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+      "sha256": "764c7364a5b7e03cae6afa6898a68c75e84eb9603fdabe0d1bde8904f7341a9f"
+    },
+    {
+      "path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+      "sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1"
+    },
+    {
+      "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+      "sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7"
+    },
+    {
+      "path": "v10_research/clean_objective_experiment_20261103/experiment.py",
+      "sha256": "fe1dba26856e8548527788a6008ccbd2ca2430b7bc309f35d306192aa349250d"
+    },
+    {
+      "path": "v10_research/clean_objective_experiment_20261103/REPORT.md",
+      "sha256": "65949fa58ac71b0be83b10e7c931c086bd619e4301bba2b48240ea0b27f42f55"
+    }
+  ],
+  "external_read_scope": [
+    {
+      "url": "https://papers.neurips.cc/paper_files/paper/2024/file/75b0edb869e2cd509d64d0e8ff446bc1-Paper-Conference.pdf",
+      "scope": "Prior central audit; fresh original search excerpts plus arXiv v1 https://arxiv.org/html/2402.11004 sections 3.1-3.3; no new full-proof verification."
+    },
+    {
+      "url": "https://arxiv.org/html/2402.14735",
+      "scope": "Task 1, assumptions and main-theorem setup; original ICML proceedings page verified."
+    },
+    {
+      "url": "https://arxiv.org/html/2508.07208",
+      "scope": "Section 5 assumptions, staged training, Appendix D setup; inherits separate prior central audit, not a new proof verification."
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/934ebba637be11105cff78e86a99eb08-Paper-Conference.pdf",
+      "scope": "Pages 1-3 abstract, contributions and task setup only."
+    }
+  ],
+  "limitations": [
+    "Scoped literature review, not novelty certification",
+    "No numerical experiment or finite-precision training theorem",
+    "No frozen artifacts modified; no publication"
+  ]
+}
