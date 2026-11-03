@@ -1,0 +1,186 @@
+{
+  "reviewed_artifact_source_id": "RRI016",
+  "review_source_id": "RRI008",
+  "reviewed_original_sha256": "712074054227ff98d1ecac36f54dde2c2aa035d12aa9973b98b8fa9ccb4e1115",
+  "historical_versions_not_reviewed_by_RRI008": [
+    "RRI013",
+    "RRI014",
+    "RRI015"
+  ],
+  "policy": "These are actual distinct retained versions, not reconstructed or relabeled copies of v4. Later clarifications do not rewrite earlier process history.",
+  "transitions": [
+    {
+      "from_source_id": "RRI013",
+      "to_source_id": "RRI014",
+      "from_sha256": "2d541df24210b3d137740c74013b36b105fa2ceb0873ac28d8529ed14535e591",
+      "to_sha256": "4f5d7fa7448d28536031b9319bc253258ec2d5ae8661279873e377ad476bee4e",
+      "summary": "v2 adds the compact-causal v3 synthesis/correction/review row and specialized-backend resource ledger, plus version labeling.",
+      "distinct_historical_content_preserved": true,
+      "difference_spans": [
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            90,
+            90
+          ],
+          "new_utf8_byte_range": [
+            90,
+            93
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "d621227e8838de1b8cfed28db05aa588ab7dbf04108c98343bb5f1f859aa18c2"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            635,
+            635
+          ],
+          "new_utf8_byte_range": [
+            638,
+            649
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "2ae01b28ecf232eb3f4565810b3a814639045f09da20d13e47d7841cbb288363"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            2517,
+            2517
+          ],
+          "new_utf8_byte_range": [
+            2531,
+            3406
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "c764e489b54ab482f9f8172c28524bf610fe96efef4ae6f58bc06053fb03cbb3"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            8052,
+            8052
+          ],
+          "new_utf8_byte_range": [
+            8941,
+            9573
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "0d016b0d2487aa15980a6ce8835e20519d5bd905103dc0a0a160c2177da34a10"
+        }
+      ]
+    },
+    {
+      "from_source_id": "RRI014",
+      "to_source_id": "RRI015",
+      "from_sha256": "4f5d7fa7448d28536031b9319bc253258ec2d5ae8661279873e377ad476bee4e",
+      "to_sha256": "98de5fcbd8f5485b0ed2603cc7d15c1a88dcf3371bd9801e10aefa66ee4fca30",
+      "summary": "v3 adds the Trottner same-chain-query/noise scope comparison and Goel-Bartlett attention/kernel-regression antecedent, plus version labeling.",
+      "distinct_historical_content_preserved": true,
+      "difference_spans": [
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            92,
+            93
+          ],
+          "new_utf8_byte_range": [
+            92,
+            93
+          ],
+          "old_span_sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "new_span_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            648,
+            649
+          ],
+          "new_utf8_byte_range": [
+            648,
+            649
+          ],
+          "old_span_sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "new_span_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            10910,
+            10910
+          ],
+          "new_utf8_byte_range": [
+            10910,
+            11922
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "1ea5d9f004130c88a41b6b7eefd74f61ffd20e03904a4908c8c2af0f35def27f"
+        }
+      ]
+    },
+    {
+      "from_source_id": "RRI015",
+      "to_source_id": "RRI016",
+      "from_sha256": "98de5fcbd8f5485b0ed2603cc7d15c1a88dcf3371bd9801e10aefa66ee4fca30",
+      "to_sha256": "712074054227ff98d1ecac36f54dde2c2aa035d12aa9973b98b8fa9ccb4e1115",
+      "summary": "v4 explicitly separates the compact construction's length-dependent parameters from the fixed-parameter proposed next question, plus version labeling.",
+      "distinct_historical_content_preserved": true,
+      "difference_spans": [
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            92,
+            93
+          ],
+          "new_utf8_byte_range": [
+            92,
+            93
+          ],
+          "old_span_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+          "new_span_sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            648,
+            649
+          ],
+          "new_utf8_byte_range": [
+            648,
+            649
+          ],
+          "old_span_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+          "new_span_sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            14022,
+            14022
+          ],
+          "new_utf8_byte_range": [
+            14022,
+            14138
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "345dca8c844ff6008ec87e5c6b2ce33951f9720a793abecdf8e9e1af0279250a"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            14032,
+            14032
+          ],
+          "new_utf8_byte_range": [
+            14148,
+            14153
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "86b73f81f18e66a47df57675b98ec611818c65fce6a4e4d08c42a59802c6c709"
+        }
+      ]
+    }
+  ]
+}

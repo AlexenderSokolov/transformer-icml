@@ -1,0 +1,28 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>受限读出障碍与研究决策记录</title><style>body{font:16px/1.65 system-ui,sans-serif;max-width:1060px;margin:2em auto;padding:0 1.2em;color:#17212b}h1,h2{color:#123e57}a{color:#125e92}.note{background:#fff3d5;padding:1em;border-left:4px solid #ad7d13}code{overflow-wrap:anywhere}li{margin:.4em 0}</style></head><body>
+<h1>受限读出障碍与研究决策记录</h1>
+<p>2026-11-03。本批归档 16 份原始研究文本，包括完整证明、实际更正、定向先行工作审计、独立 LLM 审查，以及决策记录 v1–v4。它们都是分析性材料，不含本批新实验。所有来源原字节保留；审查不是形式化证明、外部同行评审或新颖性认证。</p>
+<div class="note"><strong>先读范围与更正。</strong> 这里证明的是两种严格受限表示和读出接口中的障碍，不是一般 Transformer 不可能。ReLU 组的可选 BOS 有限长度项须由 +12 改为 +13；同质 softmax 组须结合开集/长度编码更正。先行工作已覆盖分段线性、倒数逼近、注意力计数等主要工具，未找到完全相同的组合定理不能当作创新证明。</div>
+<h2>一、固定直方图库与有限 ReLU 读出</h2>
+<ul>
+<li><a href="../../v10_research/fixed_histogram_relu_obstruction_20261103_1617/fixed_readout_population_obstruction_v1.html">基础证明</a>：固定的归一化计数库在源族上趋于 (u,v) 的仿射曲面，目标为 v/u。每一个固定有限 ReLU 读出，或固定 ReLU logits 后接二元 softmax，在某个源上具有正的极限风险。该源和误差可依赖读出；不是对全部有限网络的统一正常数。</li>
+<li><strong><a href="../../v10_research/fixed_histogram_relu_obstruction_20261103_1617/optional_bos_boundary_correction_v1.html">必须合读：可选 BOS 边界更正</a></strong>：八坐标公式的 +12 保留；若另给 1/(M+1) BOS 坐标，有限 M 的有效界为 g<sub>BOS</sub>(M)=[8√(129M/4)+13]/(M+1)。渐近结论不变。</li>
+<li><a href="../../v10_research/fixed_histogram_relu_obstruction_20261103_1617/uniform_width_lipschitz_addendum_v1.html">固定宽深与统一 Lipschitz 增补</a>：仅对标量截断 ReLU，R=3(W+1)<sup>d</sup>，所给源先验下的极限风险至少 3/(81920R²)。有限长度再减 K g<sub>BOS</sub>(M)。允许随 M 变化的权重时，需要统一 K≤K₀；不能无条件交换极限和最优读出。</li>
+<li><a href="../../v10_research/independent_histogram_relu_review_20261103_1618/independent_review.html">基础独立审查</a>；<a href="../../v10_research/independent_uniform_width_review_20261103_1620/independent_review.html">增补及 BOS 更正联合审查</a>。后者明确承认先前审查漏掉可选坐标项，原记录保留。</li>
+<li><a href="../../v10_research/histogram_relu_prior_art_20261103_1621/prior_art_audit.html">先行工作审计</a>：Telgarsky 2017 已有倒数的固定规模 L1 下界及任意精度 ReLU 逼近；曲率、分段线性与统计桥接应分开评价。</li>
+</ul>
+<p>额外注意力、除法、丰富残差/值通道、无界长度/位置输入以及没有统一 Lipschitz 控制的长度依赖读出均不在上述结论内。量化宽深常数不由基础稿的最终 softmax 论证自动得到。</p>
+<h2>二、固定参数、同类型同质 softmax 接口</h2>
+<ul>
+<li><a href="../../v10_research/fixed_softmax_bank_obstruction_20261103_1623/analytic_attention_obstruction_v1.html">解析延拓障碍基础稿</a>：有限个固定参数头，只能使用全局归一化计数库及同类型候选相同的分数/值。有限分支的解析延拓与源族上的 v/u 不相容，因此每个固定模型有某个源的正极限误差。</li>
+<li><strong><a href="../../v10_research/fixed_softmax_bank_obstruction_20261103_1623/scope_and_length_correction_v1.html">必须合读：源区域与长度编码更正</a></strong>：原示例是开子楔而非紧矩形；1/(M+1) 虽趋零仍能单射编码长度。障碍依赖允许的固定连续运算在极限保持有限，而非长度信息论上不可知。</li>
+<li><a href="../../v10_research/independent_softmax_bank_review_20261103_1625/independent_review.html">基础独立审查</a>；<a href="../../v10_research/independent_softmax_bank_review_20261103_1625/clarification_review.html">更正审查</a>；<a href="../../v10_research/homogeneous_softmax_prior_art_20261103_1627/prior_art_audit.html">定向先行工作审计</a>。</li>
+</ul>
+<p>该模型排除同类型内部的位置异质状态、随 N 增长的分数、硬类型 mask、不受控除法/舍入以及其他未声明通道。四锚头加反归一化、长度依赖紧凑构造和丰富位置模型并不与它矛盾。这里没有全部模型统一正误差常数，也没有一般因果 Transformer 下界。</p>
+<h2>三、决策记录与历史</h2>
+<p><a href="../../v10_research/research_decision_record_20261103_1611/decision_record_v4.html">决策记录 v4</a>与<a href="../../v10_research/independent_decision_record_review_20261103_1615/independent_review.html">其独立审查</a>汇总统计率、软匹配、精度与资源接口，明确已有方法重合。它是形成于本批两个读出障碍之前的历史决策快照，其中“下一问题”是当时的研究问题，不是已完成的一般定理或最新全局状态。</p>
+<p>保留真实早期版本：<a href="../../v10_research/research_decision_record_20261103_1611/decision_record_v1.html">v1</a>、<a href="../../v10_research/research_decision_record_20261103_1611/decision_record_v2.html">v2</a>、<a href="../../v10_research/research_decision_record_20261103_1611/decision_record_v3.html">v3</a>。v4 审查只绑定 v4，不能反向当作这些历史版本的逐字审查。</p>
+<div class="note"><strong>当前公开闭包不完整，不能称全包自包含。</strong> v4 的 16 个本地伙伴链接中，14 个在本次发布后可访问，2 个尚未公开。历史链接和文字不篡改；以下两项不是本包附件，也不应被描述为已经公开。它们将另行归档后才能补齐这部分决策记录闭包：<ul><li>v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html<br>原 SHA-256：<code>61696e5d49c65ed3e47e40601740b2a5b0f53fcd3c70635dd2ed9bd397cf8246</code></li><li>v10_research/independent_synthesis_v3_review_20261103_1520/review.html<br>原 SHA-256：<code>920f765a6ea6cc77c1e13ed4ce416d1ac1541e4c6394692cfbdcb397107eb331</code></li></ul>其未公开状态不改变本批 ReLU 与同质 softmax 证明自身的声明范围。引用指纹不等于正文可访问，也不意味着本次重新证明了所有继承结果。</div>
+<h2>四、身份、链接与可复核范围</h2>
+<p><a href="SOURCE_EXPORT_MAP.json">原件与公开副本身份</a>、<a href="EXPORT_CHANGES.json">零改动记录</a>、<a href="SOURCE_RECONCILIATION.json">依赖与公开路径</a>、<a href="HASH_REFERENCE_BINDINGS.json">内容指纹清单</a>、<a href="LINK_CENSUS.json">链接可访问性清单</a>、<a href="BOUND_PAIRS.json">证明/更正/审查绑定</a>、<a href="DECISION_HISTORY.json">真实版本变更记录</a>、<a href="STAGE_FILE_MANIFEST.json">本批文件清单</a>。</p>
+<p>完整仓库检出后，可运行既有的 <code>python -I -B tools/public_verify.py</code> 检查库存成员、字节长度和 SHA-256。它不证明数学，不验证所有外部论文锚点，也不重跑历史实验；本次发布另核对 Git 对象、固定提交和新文本字节。本批没有运行历史程序、生成随机数据或新模型，没有将既往丢失/覆盖的记录声称为已恢复。外部论文仅提供原始文献链接及限定阅读比较，不重分发全文。</p>
+</body></html>

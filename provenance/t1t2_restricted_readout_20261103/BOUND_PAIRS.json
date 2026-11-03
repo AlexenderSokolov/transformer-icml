@@ -1,0 +1,63 @@
+{
+  "base_commit": "8af1364146bfadaa56aeef2976dd2f9465c9a7ca",
+  "required_read_together": [
+    {
+      "role": "fixed histogram/ReLU obstruction and real correction history",
+      "source_ids": [
+        "RRI001",
+        "RRI009",
+        "RRI003",
+        "RRI002",
+        "RRI012",
+        "RRI006"
+      ],
+      "requirement": "Original note and addendum retain +12. Use +13 for finite-M deviation when optional BOS input is present; +12 remains valid for eight coordinates only. The initial review missed that bookkeeping issue and the later review acknowledges it. Original and correction must be distributed together.",
+      "boundary": "Specified normalized representation only. Fixed finite clipped ReLU or individual fixed two-logit readout; uniform 3/(81920R^2) population bound only for scalar clipped width/depth-bounded ReLU. Length-dependent weights require a common Lipschitz bound. No general Transformer lower and no uniform all-size floor."
+    },
+    {
+      "role": "homogeneous softmax original, scope/length correction and reviews",
+      "source_ids": [
+        "RRI004",
+        "RRI011",
+        "RRI005",
+        "RRI010",
+        "RRI007"
+      ],
+      "requirement": "Retain the original incorrect compact-rectangle label with its mandatory separate open-sub-wedge clarification. BOS mass is injective in length although it converges to zero. Original, correction, and both LLM reviews must be distributed together.",
+      "boundary": "Within-type homogeneous scores/values on the fixed finite operation interface. No position heterogeneity, hard type masks, uncontrolled division, N-dependent parameters/scores or unbounded length signals. Analytic denominators stay positive through the origin. Witness depends on each fixed model; no parameter-uniform numerical constant. Valid source set may be any subset of the declared wedge with nonempty open interior."
+    },
+    {
+      "role": "decision history and v4-only independent review",
+      "source_ids": [
+        "RRI013",
+        "RRI014",
+        "RRI015",
+        "RRI016",
+        "RRI008"
+      ],
+      "requirement": "Keep all four actual versions, distinguish v1-v3 historical status and v4-only review, and prominently disclose the two unshipped compact-synthesis dependencies.",
+      "boundary": "The standard-causal fixed-parameter model in the next-question section is not resolved by these restricted-interface notes or by the length-indexed construction."
+    }
+  ],
+  "prior_art_boundary": "Telgarsky already provides reciprocal fixed-size L1 lower bounds and arbitrary-accuracy finite ReLU approximation. Piecewise-affine/curvature and analytic-identity mechanisms, histograms, BOS counting and normalized attention have established antecedents. No mechanism novelty or exhaustive-priority claim.",
+  "inherited_required_pairings": [
+    {
+      "paths": [
+        "v10_research/softmax_precision_bridge_20261103_1603/finite_precision_bridge_v1.html",
+        "v10_research/softmax_precision_bridge_20261103_1603/copy_leakage_correction_v1.html",
+        "v10_research/independent_precision_bridge_review_20261103_1604/independent_review.html",
+        "v10_research/independent_precision_bridge_review_20261103_1604/correction_review.html"
+      ],
+      "requirement": "Original erroneous equality, separate leakage correction, and both LLM reviews remain separate and pinned."
+    },
+    {
+      "paths": [
+        "v10_research/uniform_value_bank_counterexample_20261103_1608/uniform_head_bank_v1.html",
+        "v10_research/uniform_value_bank_counterexample_20261103_1608/exact_count_rounding_addendum_v1.html",
+        "v10_research/independent_uniform_bank_review_20261103_1608/independent_review.html",
+        "v10_research/independent_bank_rounding_review_20261103_1609/independent_review.html"
+      ],
+      "requirement": "Direct ratio and known-M exact-count rounding are distinct paid sufficient routes, not necessity claims."
+    }
+  ]
+}

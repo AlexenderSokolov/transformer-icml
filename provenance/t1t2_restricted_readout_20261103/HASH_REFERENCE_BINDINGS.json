@@ -1,0 +1,380 @@
+{
+  "base_commit": "8af1364146bfadaa56aeef2976dd2f9465c9a7ca",
+  "sha256_reference_occurrences": 15,
+  "unique_referenced_sha256": 9,
+  "all_identified": true,
+  "all_publicly_accessible_after_16_source_export": false,
+  "unshipped_references": [
+    {
+      "referenced_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+      "referenced_original_sha256": "61696e5d49c65ed3e47e40601740b2a5b0f53fcd3c70635dd2ed9bd397cf8246",
+      "role": "length-indexed compact-causal synthesis v3",
+      "status": "UNSHIPPED_AT_PINNED_BASE",
+      "public_path": null,
+      "public_identity": null,
+      "pinned_url": null,
+      "evidence": "Absent by path and referenced SHA-256 from the complete base tree/inventory; no verified public export mapping was found. Not selected for this 16-source export.",
+      "required_handling": "Do not imply a working public source link or self-contained dependency closure. Resolve separately or disclose prominently without silently substituting a different proof."
+    },
+    {
+      "referenced_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_original_sha256": "920f765a6ea6cc77c1e13ed4ce416d1ac1541e4c6394692cfbdcb397107eb331",
+      "role": "independent LLM review of that synthesis",
+      "status": "UNSHIPPED_AT_PINNED_BASE",
+      "public_path": null,
+      "public_identity": null,
+      "pinned_url": null,
+      "evidence": "Absent by path and referenced SHA-256 from the complete base tree/inventory; no verified public export mapping was found. Not selected for this 16-source export.",
+      "required_handling": "Do not imply a working public source link or self-contained dependency closure. Resolve separately or disclose prominently without silently substituting a different proof."
+    }
+  ],
+  "references": [
+    {
+      "source_record_id": "RRI002",
+      "referencing_path": "v10_research/fixed_histogram_relu_obstruction_20261103_1617/optional_bos_boundary_correction_v1.html",
+      "referenced_sha256": "b4e518e2d69970ea2ca00509f894edff7d191d9684a0f8ae39ce1b97e092f4c8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        303,
+        367
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        303,
+        367
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "RRI001",
+        "public_path": "v10_research/fixed_histogram_relu_obstruction_20261103_1617/fixed_readout_population_obstruction_v1.html",
+        "proposed_public_identity": {
+          "bytes": 9497,
+          "sha256": "b4e518e2d69970ea2ca00509f894edff7d191d9684a0f8ae39ce1b97e092f4c8",
+          "git_blob_sha1": "0320e4808b574f91476c039cfbd69801e6e60370"
+        }
+      }
+    },
+    {
+      "source_record_id": "RRI002",
+      "referencing_path": "v10_research/fixed_histogram_relu_obstruction_20261103_1617/optional_bos_boundary_correction_v1.html",
+      "referenced_sha256": "6e28a7c4401259a3ac316ca433836d760d6509d660ffa30c352bd12d76db062f",
+      "original_utf8_byte_range_zero_based_half_open": [
+        420,
+        484
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        420,
+        484
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "RRI003",
+        "public_path": "v10_research/fixed_histogram_relu_obstruction_20261103_1617/uniform_width_lipschitz_addendum_v1.html",
+        "proposed_public_identity": {
+          "bytes": 4989,
+          "sha256": "6e28a7c4401259a3ac316ca433836d760d6509d660ffa30c352bd12d76db062f",
+          "git_blob_sha1": "1de022da5fbafad641820ab311878e75d74b1d61"
+        }
+      }
+    },
+    {
+      "source_record_id": "RRI003",
+      "referencing_path": "v10_research/fixed_histogram_relu_obstruction_20261103_1617/uniform_width_lipschitz_addendum_v1.html",
+      "referenced_sha256": "b4e518e2d69970ea2ca00509f894edff7d191d9684a0f8ae39ce1b97e092f4c8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        521,
+        585
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        521,
+        585
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "RRI001",
+        "public_path": "v10_research/fixed_histogram_relu_obstruction_20261103_1617/fixed_readout_population_obstruction_v1.html",
+        "proposed_public_identity": {
+          "bytes": 9497,
+          "sha256": "b4e518e2d69970ea2ca00509f894edff7d191d9684a0f8ae39ce1b97e092f4c8",
+          "git_blob_sha1": "0320e4808b574f91476c039cfbd69801e6e60370"
+        }
+      }
+    },
+    {
+      "source_record_id": "RRI005",
+      "referencing_path": "v10_research/fixed_softmax_bank_obstruction_20261103_1623/scope_and_length_correction_v1.html",
+      "referenced_sha256": "95631f57531d8e9d0cc31f4bccaee9230367e60ca758529965089a183c83f30d",
+      "original_utf8_byte_range_zero_based_half_open": [
+        366,
+        430
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        366,
+        430
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "RRI004",
+        "public_path": "v10_research/fixed_softmax_bank_obstruction_20261103_1623/analytic_attention_obstruction_v1.html",
+        "proposed_public_identity": {
+          "bytes": 9848,
+          "sha256": "95631f57531d8e9d0cc31f4bccaee9230367e60ca758529965089a183c83f30d",
+          "git_blob_sha1": "e351a99904e720e822d479c5a45835b2209747ae"
+        }
+      }
+    },
+    {
+      "source_record_id": "RRI008",
+      "referencing_path": "v10_research/independent_decision_record_review_20261103_1615/independent_review.html",
+      "referenced_sha256": "712074054227ff98d1ecac36f54dde2c2aa035d12aa9973b98b8fa9ccb4e1115",
+      "original_utf8_byte_range_zero_based_half_open": [
+        592,
+        656
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        592,
+        656
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "RRI016",
+        "public_path": "v10_research/research_decision_record_20261103_1611/decision_record_v4.html",
+        "proposed_public_identity": {
+          "bytes": 15436,
+          "sha256": "712074054227ff98d1ecac36f54dde2c2aa035d12aa9973b98b8fa9ccb4e1115",
+          "git_blob_sha1": "77163e4725260239da6ea0e5526b896cf6fa8f5e"
+        }
+      }
+    },
+    {
+      "source_record_id": "RRI008",
+      "referencing_path": "v10_research/independent_decision_record_review_20261103_1615/independent_review.html",
+      "referenced_sha256": "61696e5d49c65ed3e47e40601740b2a5b0f53fcd3c70635dd2ed9bd397cf8246",
+      "original_utf8_byte_range_zero_based_half_open": [
+        2107,
+        2171
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2107,
+        2171
+      ],
+      "resolution": {
+        "referenced_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+        "referenced_original_sha256": "61696e5d49c65ed3e47e40601740b2a5b0f53fcd3c70635dd2ed9bd397cf8246",
+        "role": "length-indexed compact-causal synthesis v3",
+        "status": "UNSHIPPED_AT_PINNED_BASE",
+        "public_path": null,
+        "public_identity": null,
+        "pinned_url": null,
+        "evidence": "Absent by path and referenced SHA-256 from the complete base tree/inventory; no verified public export mapping was found. Not selected for this 16-source export.",
+        "required_handling": "Do not imply a working public source link or self-contained dependency closure. Resolve separately or disclose prominently without silently substituting a different proof."
+      }
+    },
+    {
+      "source_record_id": "RRI008",
+      "referencing_path": "v10_research/independent_decision_record_review_20261103_1615/independent_review.html",
+      "referenced_sha256": "920f765a6ea6cc77c1e13ed4ce416d1ac1541e4c6394692cfbdcb397107eb331",
+      "original_utf8_byte_range_zero_based_half_open": [
+        2201,
+        2265
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2201,
+        2265
+      ],
+      "resolution": {
+        "referenced_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+        "referenced_original_sha256": "920f765a6ea6cc77c1e13ed4ce416d1ac1541e4c6394692cfbdcb397107eb331",
+        "role": "independent LLM review of that synthesis",
+        "status": "UNSHIPPED_AT_PINNED_BASE",
+        "public_path": null,
+        "public_identity": null,
+        "pinned_url": null,
+        "evidence": "Absent by path and referenced SHA-256 from the complete base tree/inventory; no verified public export mapping was found. Not selected for this 16-source export.",
+        "required_handling": "Do not imply a working public source link or self-contained dependency closure. Resolve separately or disclose prominently without silently substituting a different proof."
+      }
+    },
+    {
+      "source_record_id": "RRI008",
+      "referencing_path": "v10_research/independent_decision_record_review_20261103_1615/independent_review.html",
+      "referenced_sha256": "97ebbf5d680f5d0e8dfcd30b86924bdfcaa751082ca6f5cd6723f5b43c09c384",
+      "original_utf8_byte_range_zero_based_half_open": [
+        2318,
+        2382
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2318,
+        2382
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/rare_unknown_u_addone_20261103_1502/fractional_grid_precision_correction_v1.html",
+        "public_identity": {
+          "bytes": 1422,
+          "sha256": "97ebbf5d680f5d0e8dfcd30b86924bdfcaa751082ca6f5cd6723f5b43c09c384",
+          "git_blob_sha1": "0733e1d45a095bc2eeab7c68903db649dad9f508"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/8af1364146bfadaa56aeef2976dd2f9465c9a7ca/v10_research/rare_unknown_u_addone_20261103_1502/fractional_grid_precision_correction_v1.html"
+      }
+    },
+    {
+      "source_record_id": "RRI009",
+      "referencing_path": "v10_research/independent_histogram_relu_review_20261103_1618/independent_review.html",
+      "referenced_sha256": "b4e518e2d69970ea2ca00509f894edff7d191d9684a0f8ae39ce1b97e092f4c8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        608,
+        672
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        608,
+        672
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "RRI001",
+        "public_path": "v10_research/fixed_histogram_relu_obstruction_20261103_1617/fixed_readout_population_obstruction_v1.html",
+        "proposed_public_identity": {
+          "bytes": 9497,
+          "sha256": "b4e518e2d69970ea2ca00509f894edff7d191d9684a0f8ae39ce1b97e092f4c8",
+          "git_blob_sha1": "0320e4808b574f91476c039cfbd69801e6e60370"
+        }
+      }
+    },
+    {
+      "source_record_id": "RRI010",
+      "referencing_path": "v10_research/independent_softmax_bank_review_20261103_1625/clarification_review.html",
+      "referenced_sha256": "02e4f85cdcc69c9fa463e413d074a942c25285faa19c1709432de80c0f49284c",
+      "original_utf8_byte_range_zero_based_half_open": [
+        338,
+        402
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        338,
+        402
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "RRI005",
+        "public_path": "v10_research/fixed_softmax_bank_obstruction_20261103_1623/scope_and_length_correction_v1.html",
+        "proposed_public_identity": {
+          "bytes": 1419,
+          "sha256": "02e4f85cdcc69c9fa463e413d074a942c25285faa19c1709432de80c0f49284c",
+          "git_blob_sha1": "68f0fc8637d65ae3f154c3785aba1b083e71336f"
+        }
+      }
+    },
+    {
+      "source_record_id": "RRI010",
+      "referencing_path": "v10_research/independent_softmax_bank_review_20261103_1625/clarification_review.html",
+      "referenced_sha256": "95631f57531d8e9d0cc31f4bccaee9230367e60ca758529965089a183c83f30d",
+      "original_utf8_byte_range_zero_based_half_open": [
+        453,
+        517
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        453,
+        517
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "RRI004",
+        "public_path": "v10_research/fixed_softmax_bank_obstruction_20261103_1623/analytic_attention_obstruction_v1.html",
+        "proposed_public_identity": {
+          "bytes": 9848,
+          "sha256": "95631f57531d8e9d0cc31f4bccaee9230367e60ca758529965089a183c83f30d",
+          "git_blob_sha1": "e351a99904e720e822d479c5a45835b2209747ae"
+        }
+      }
+    },
+    {
+      "source_record_id": "RRI011",
+      "referencing_path": "v10_research/independent_softmax_bank_review_20261103_1625/independent_review.html",
+      "referenced_sha256": "95631f57531d8e9d0cc31f4bccaee9230367e60ca758529965089a183c83f30d",
+      "original_utf8_byte_range_zero_based_half_open": [
+        629,
+        693
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        629,
+        693
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "RRI004",
+        "public_path": "v10_research/fixed_softmax_bank_obstruction_20261103_1623/analytic_attention_obstruction_v1.html",
+        "proposed_public_identity": {
+          "bytes": 9848,
+          "sha256": "95631f57531d8e9d0cc31f4bccaee9230367e60ca758529965089a183c83f30d",
+          "git_blob_sha1": "e351a99904e720e822d479c5a45835b2209747ae"
+        }
+      }
+    },
+    {
+      "source_record_id": "RRI012",
+      "referencing_path": "v10_research/independent_uniform_width_review_20261103_1620/independent_review.html",
+      "referenced_sha256": "6e28a7c4401259a3ac316ca433836d760d6509d660ffa30c352bd12d76db062f",
+      "original_utf8_byte_range_zero_based_half_open": [
+        600,
+        664
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        600,
+        664
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "RRI003",
+        "public_path": "v10_research/fixed_histogram_relu_obstruction_20261103_1617/uniform_width_lipschitz_addendum_v1.html",
+        "proposed_public_identity": {
+          "bytes": 4989,
+          "sha256": "6e28a7c4401259a3ac316ca433836d760d6509d660ffa30c352bd12d76db062f",
+          "git_blob_sha1": "1de022da5fbafad641820ab311878e75d74b1d61"
+        }
+      }
+    },
+    {
+      "source_record_id": "RRI012",
+      "referencing_path": "v10_research/independent_uniform_width_review_20261103_1620/independent_review.html",
+      "referenced_sha256": "b4e518e2d69970ea2ca00509f894edff7d191d9684a0f8ae39ce1b97e092f4c8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        699,
+        763
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        699,
+        763
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "RRI001",
+        "public_path": "v10_research/fixed_histogram_relu_obstruction_20261103_1617/fixed_readout_population_obstruction_v1.html",
+        "proposed_public_identity": {
+          "bytes": 9497,
+          "sha256": "b4e518e2d69970ea2ca00509f894edff7d191d9684a0f8ae39ce1b97e092f4c8",
+          "git_blob_sha1": "0320e4808b574f91476c039cfbd69801e6e60370"
+        }
+      }
+    },
+    {
+      "source_record_id": "RRI012",
+      "referencing_path": "v10_research/independent_uniform_width_review_20261103_1620/independent_review.html",
+      "referenced_sha256": "2be339d3e80077bc12a88d50bf996dcba37a669e0de126986e70c7de72c70032",
+      "original_utf8_byte_range_zero_based_half_open": [
+        866,
+        930
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        866,
+        930
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "RRI002",
+        "public_path": "v10_research/fixed_histogram_relu_obstruction_20261103_1617/optional_bos_boundary_correction_v1.html",
+        "proposed_public_identity": {
+          "bytes": 1395,
+          "sha256": "2be339d3e80077bc12a88d50bf996dcba37a669e0de126986e70c7de72c70032",
+          "git_blob_sha1": "dee6519aa77e978547201706033326222bd3779c"
+        }
+      }
+    }
+  ]
+}
