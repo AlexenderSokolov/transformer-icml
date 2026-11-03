@@ -1,0 +1,222 @@
+{
+  "base_commit": "d37f7d9a969d2981b34adb661a7404eaddc21704",
+  "required_read_together": [
+    {
+      "role": "Mandatory five-file same-graph group",
+      "source_ids": [
+        "SGA002",
+        "SGA003",
+        "SGA004",
+        "SGA005",
+        "SGA006"
+      ],
+      "preferred_reader_entry_source_id": "SGA002",
+      "requirement": "All five files must ship and be read together. Preserve exact-real same-input and same-non-LN-weight comparison, eight frozen positive-epsilon whole-width pre-LN operations, fixed full-causal graph, bounded fixed token embeddings, source/token-independent paid positional features, every Q/K/V and FFN branch reading LN, no hidden score/input bypass, fixed affine softmax output and per-fixed-model quantifiers. Not equal FLOPs, realized scores, dynamic range, precision, hardware, training, post-LN, local attention, zero-epsilon, length-scaled scores or generic Transformer impossibility. Yang Lemma 7 is a position-valued-expectation bound, not arbitrary-value or TV error with the same constant."
+    },
+    {
+      "role": "Historical role-perspective assessment with mandatory existing correction",
+      "source_ids": [
+        "SGA001"
+      ],
+      "mandatory_existing_public_paths": [
+        "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v2.html",
+        "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_independent_review_20261103_1749.md"
+      ],
+      "requirement": "Historical LLM role-perspective adversarial theory assessment, not an actual ICML reviewer report, external human peer review, source-bound mathematical acceptance or novelty certification. Its overbroad denial of A^5/N necessity is superseded within the complete arbitrary-initial minimax class by the mandatory existing threshold v2 clarification and its scoped same-reviewer correction. Scientific wording is retained; two nonmathematical private-process statements are neutrally normalized."
+    }
+  ],
+  "review_bindings": [
+    {
+      "review_source_id": "SGA006",
+      "reviewed_source_ids": [
+        "SGA002",
+        "SGA003",
+        "SGA004",
+        "SGA005"
+      ],
+      "mandatory_clarification_source_ids": [
+        "SGA003",
+        "SGA005"
+      ],
+      "exact_original_digest_bindings": {
+        "SGA002": "047c4cb1b18b8f351ab382629902ab7f7fecef13a11eaddcd1c499267089722f",
+        "SGA003": "73cc7606cee34df051c4c5fbabcb744221c6579a5d7e46fad0993ef8b8c6f44b",
+        "SGA004": "0eafa7de0a76300abd142ef798ebd0fd511ad6aea8b7bdd20bf9cfe3c9d9fb4a",
+        "SGA005": "5b7874a4c1d97f89fd72e9ef82fa442c683c4c3ee3a38515b6bb1ec83169fc63"
+      },
+      "scope": "Independent scoped LLM analytic review, not external human peer review, formal verification, experiments or novelty clearance. Main-file awaiting-review wording remains dated history; filenames and prose do not prove exact freeze-before-review chronology."
+    }
+  ],
+  "inherited_required_pairings": [
+    {
+      "stage": "t1t2_fixed_parameter",
+      "source_ids_in_existing_stage": [
+        "FPC010",
+        "FPC011",
+        "FPC012",
+        "FPC013",
+        "FPC014",
+        "FPC022",
+        "FPC023",
+        "FPC024",
+        "FPC025",
+        "FPC026",
+        "FPC027",
+        "FPC028"
+      ],
+      "paths": [
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v1.html",
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html",
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+        "v10_research/independent_fixed_parameter_review_20261103_1634/independent_review.html",
+        "v10_research/fixed_parameter_markov_prior_20261103_1632/prior_art_table.html",
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+        "v10_research/independent_vocab_softmax_review_20261103_1640/independent_review.html",
+        "v10_research/independent_vocab_rate_review_20261103_1641/independent_review.html",
+        "v10_research/four_block_integer_backend_20261103_1645/deterministic_vocab_backend_v1.html",
+        "v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+        "v10_research/four_block_vocab_prior_art_20261103_1649/prior_art_audit.html"
+      ],
+      "not_newly_selected_exports": true
+    },
+    {
+      "stage": "t1t2_alphabet_limits",
+      "source_ids_in_existing_stage": [
+        "ALP001",
+        "ALP002",
+        "ALP005",
+        "ALP006",
+        "ALP007",
+        "ALP008",
+        "ALP009",
+        "ALP010",
+        "ALP016",
+        "ALP017",
+        "ALP018",
+        "ALP019",
+        "ALP020"
+      ],
+      "paths": [
+        "v10_research/fixed_alphabet_causal_extension_20261103_1653/alphabet_extension_candidate_v1.html",
+        "v10_research/fixed_alphabet_causal_extension_20261103_1653/independent_analytic_review_20261103_1655.md",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/statistical_alphabet_bounds_v1.html",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/independent_analytic_review_20261103_1708.md",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/history_length_corollary_v1.html",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/history_length_corollary_v2.html",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/history_length_corollary_v2_review_20261103_1709.md",
+        "v10_research/alphabet_terminal_tv_prior_art_20261103_1711/prior_art_audit.html",
+        "v10_research/independent_r011_common_k5_20261103_1721/read_only_audit.html",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_trace_independent_review_20261103_1721.md",
+        "v10_research/nonstationary_a5_obstruction_20261103_1721/periodic_clock_obstruction_v1.html",
+        "v10_research/nonstationary_a5_obstruction_20261103_1721/independent_analytic_review_20261103_1723.md",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_odd_alphabet_correction_20261103_1732.html"
+      ],
+      "not_newly_selected_exports": true
+    },
+    {
+      "stage": "t1t2_preln_synthesis",
+      "source_ids_in_existing_stage": [
+        "PLN001",
+        "PLN002",
+        "PLN003",
+        "PLN004",
+        "PLN005",
+        "PLN006",
+        "PLN007",
+        "PLN008",
+        "PLN009",
+        "PLN010",
+        "PLN011",
+        "PLN015",
+        "PLN016",
+        "PLN017",
+        "PLN018",
+        "PLN019"
+      ],
+      "paths": [
+        "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html",
+        "v10_research/layernorm_position_interface_20261103_1726/layernorm_copy_scope_v1.html",
+        "v10_research/layernorm_position_interface_20261103_1726/input_and_quantifiers_clarification_v1.html",
+        "v10_research/layernorm_position_interface_20261103_1726/score_interface_clarification_v1.html",
+        "v10_research/layernorm_position_interface_20261103_1726/independent_analytic_review_20261103_1728.md",
+        "v10_research/layernorm_position_interface_20261103_1726/clarifications_independent_review_20261103_1729.md",
+        "v10_research/layernorm_position_interface_20261103_1726/prior_art_alignment_addendum_v1.html",
+        "v10_research/layernorm_position_interface_20261103_1726/prior_art_link_correction_v1.html",
+        "v10_research/bounded_causal_sensitivity_prior_art_20261103_1728/prior_art_audit.html",
+        "v10_research/preln_finite_resource_tradeoff_20261103_1731/finite_resource_risk_bound_v1.html",
+        "v10_research/preln_finite_resource_tradeoff_20261103_1731/independent_analytic_review_20261103_1732.md",
+        "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2.html",
+        "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2_independent_review_20261103_1740.md",
+        "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v1.html",
+        "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v2.html",
+        "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_independent_review_20261103_1749.md"
+      ],
+      "not_newly_selected_exports": true
+    }
+  ],
+  "prior_art_scope": "Bounded paper summaries and links, not third-party full texts or exhaustive novelty clearance.",
+  "inherited_identity_limit": {
+    "status": "CURRENT_BODY_HAS_A_PUBLIC_SCIENTIFIC_COPY_AND_SCOPED_REVIEW_BUT_OLD_REVIEW_MISMATCH_REMAINS",
+    "current_original_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+    "current_public_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_statistical_proof.md",
+    "current_public_identity": {
+      "bytes": 21262,
+      "sha256": "4d5e865ebe00846662cef1830be02bf52cc2b839eca8a0600f8baa501ada6078",
+      "git_blob_sha1": "d8aef0a80a3dd33a01dba631a454d4fccf4ffda1"
+    },
+    "current_original_to_public_map": "inherited_statistics/DOT_conditions_stage02/COPY_MAP.json",
+    "old_report_requested_proof_sha256": "5fef432092c4d7394021f1651dbcd086b660028b2a62c1297342340892dd6d24",
+    "old_report_does_not_bind_current_original": true,
+    "mismatch_cause": "Unresolved. No equality or wrapper-only explanation is established.",
+    "current_body_review_path": "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_trace_independent_review_20261103_1721.md",
+    "mandatory_review_count_correction_path": "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_odd_alphabet_correction_20261103_1732.html",
+    "published_prior_binding_path": "provenance/t1t2_alphabet_limits_20261103/HASH_REFERENCE_BINDINGS.json"
+  },
+  "threshold_correction": {
+    "status": "MANDATORY_EXISTING_PUBLIC_CORRECTION_FOR_HISTORICAL_ASSESSMENT",
+    "affected_source_record_id": "SGA001",
+    "historical_statement_retained": true,
+    "preferred_clarification_path": "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v2.html",
+    "retained_clarification_v1_path": "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v1.html",
+    "correction_review_path": "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_independent_review_20261103_1749.md",
+    "earlier_corrected_review_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2_independent_review_20261103_1740.md",
+    "scope": "The construction upper bound alone gives sufficiency. Conditional on inherited MM5/R011 bounds, A_N^5/N -> 0 is also necessary for vanishing worst-source actual-terminal expected TV on the complete arbitrary-initial homogeneous second-order source class, using inf_Q sup_(theta,mu) with one Q throughout the source supremum. It is not a pointwise fixed-source, every-subclass, or internal-network-resource optimality result. The displayed fixed-risk necessary constant is restricted to 0 < r < 2^-16.",
+    "chronology": "These are existing separate published clarifications of the same overbroad threshold wording. They were not newly authored as a response to SGA001; no such causal chronology is asserted. The correction reviewer explicitly corrects that reviewer's earlier synthesis review; no identity claim tying that reviewer to SGA001 is made.",
+    "original_statement": {
+      "span_sha256": "086badf23e28244012725b5fbfbc01e9b1c1fe8f441b644574700569664cbe68",
+      "original_utf8_byte_range_zero_based_half_open": [
+        2985,
+        3035
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2985,
+        3035
+      ]
+    },
+    "preferred_clarification_identity": {
+      "bytes": 5708,
+      "sha256": "ec7264e6ad8148f41c05bb215a529804c083555093281a1bcba00fca885fcac4",
+      "git_blob_sha1": "ff23f344fa870c355707e350233117d5696178d3"
+    },
+    "preferred_clarification_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/d37f7d9a969d2981b34adb661a7404eaddc21704/v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v2.html",
+    "retained_clarification_v1_identity": {
+      "bytes": 5451,
+      "sha256": "d719740729d3c61d438473b4c3e4b7ffce8d92d6166628ef24171835543bbd44",
+      "git_blob_sha1": "dd15f2d1c909c3a2556189f0b719701ab6a933d9"
+    },
+    "retained_clarification_v1_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/d37f7d9a969d2981b34adb661a7404eaddc21704/v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v1.html",
+    "correction_review_identity": {
+      "bytes": 4008,
+      "sha256": "3a7b9490b731fef173d639eb98b31393c5b34eb32d9d9b3c42471757c960ba15",
+      "git_blob_sha1": "edfb06fbf671f9c8a54667cd739ad7d09ba5303e"
+    },
+    "correction_review_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/d37f7d9a969d2981b34adb661a7404eaddc21704/v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_independent_review_20261103_1749.md",
+    "earlier_corrected_review_identity": {
+      "bytes": 4610,
+      "sha256": "8b5aa37f3c886df420b0ca3bb4019f9e8310c90ac98ceb295f0ab2a37501c969",
+      "git_blob_sha1": "cde7528586d9dd7d1ebf050b51fda987981953bc"
+    },
+    "earlier_corrected_review_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/d37f7d9a969d2981b34adb661a7404eaddc21704/v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2_independent_review_20261103_1740.md"
+  }
+}

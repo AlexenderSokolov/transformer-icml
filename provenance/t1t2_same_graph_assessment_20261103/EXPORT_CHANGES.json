@@ -1,0 +1,49 @@
+{
+  "schema": "safe-metadata-export-diff-v1",
+  "base_commit": "d37f7d9a969d2981b34adb661a7404eaddc21704",
+  "coordinates": "UTF-8 byte offsets, zero-based half-open.",
+  "removed_text_policy": "Public records contain only byte coordinates, lengths, hashes and neutral reasons, never removed private values.",
+  "change_count": 2,
+  "changes": [
+    {
+      "source_record_id": "SGA001",
+      "path": "v10_research/adversarial_theory_assessment_20261103_1746/icml_style_assessment.html",
+      "kind": "private_process_metadata_normalization",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1410,
+        1470
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1410,
+        1470
+      ],
+      "removed_span_bytes": 60,
+      "removed_span_sha256": "36fca64f64f5dc2ee9aa9995de9a14b7cd55a26d760ae89b55cfb9a0f7dd1bfd",
+      "replacement_span_bytes": 60,
+      "replacement_span_sha256": "274613a615b618db79fc36f59ca340ef1da369eda8680463148bae8c9bb5a5b4",
+      "reason": "Normalize a private project-process statement while preserving the absence of reported experiments.",
+      "removed_text_published": false
+    },
+    {
+      "source_record_id": "SGA001",
+      "path": "v10_research/adversarial_theory_assessment_20261103_1746/icml_style_assessment.html",
+      "kind": "private_process_metadata_normalization",
+      "original_utf8_byte_range_zero_based_half_open": [
+        8568,
+        8628
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        8568,
+        8610
+      ],
+      "removed_span_bytes": 60,
+      "removed_span_sha256": "2bbd1edd685ab8e27722d15bbe9bb246b57e0518e18e03679b2c524e7f823f61",
+      "replacement_span_bytes": 42,
+      "replacement_span_sha256": "04c7949b6448c20b8992094b028b01a405116d6a7fd3e13c2494a7099cb2a9d8",
+      "reason": "Remove a private future-authorization reference while preserving the hypothetical status of implementation validation.",
+      "removed_text_published": false
+    }
+  ],
+  "byte_exact_source_count": 5,
+  "normalized_source_count": 1
+}

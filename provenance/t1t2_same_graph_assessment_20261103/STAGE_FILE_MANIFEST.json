@@ -1,0 +1,91 @@
+{
+  "schema": "t1t2-same-graph-assessment-stage-files-v1",
+  "source_count": 6,
+  "files": [
+    {
+      "path": "provenance/t1t2_same_graph_assessment_20261103/BOUND_PAIRS.json",
+      "bytes": 13723,
+      "sha256": "6f2e2a5afe9cd29210a2ae44f05523245376e0339ba3650cc50d8b6a3fa90e0d",
+      "git_blob_sha1": "482e0e825cc2f64ace3ba772711308efc4e08f2c"
+    },
+    {
+      "path": "provenance/t1t2_same_graph_assessment_20261103/EXPORT_CHANGES.json",
+      "bytes": 2060,
+      "sha256": "5f36e01c2c4f6786f8f08be8aa51ca843e2751988873a71d64f04dc1e5fdea22",
+      "git_blob_sha1": "78bcf34b3a0401f0c5c842b6e86c9c362fee3218"
+    },
+    {
+      "path": "provenance/t1t2_same_graph_assessment_20261103/HASH_REFERENCE_BINDINGS.json",
+      "bytes": 17767,
+      "sha256": "0657c6bbe1cfe5c33268f9c3a5e875a54e8c283f08915681c2898a08fc968128",
+      "git_blob_sha1": "8df6ff0cbc70dda95138ad71a2b41e8abc4903d3"
+    },
+    {
+      "path": "provenance/t1t2_same_graph_assessment_20261103/INDEX.html",
+      "bytes": 6947,
+      "sha256": "8c5ee8ba6ca1cd463f0ff54b75609495f556a226f3ea57092e9cba9e9e3662b4",
+      "git_blob_sha1": "572e498ecf5ee8949e94495b2e7022855c935132"
+    },
+    {
+      "path": "provenance/t1t2_same_graph_assessment_20261103/LINK_CENSUS.json",
+      "bytes": 53732,
+      "sha256": "b9aa46b5fae85dd781cfb4624650e09e31d2dfb3231eacf3c543258e38984d9c",
+      "git_blob_sha1": "1261bbab881bda688614ff47fd19c1bb2ed606f7"
+    },
+    {
+      "path": "provenance/t1t2_same_graph_assessment_20261103/SOURCE_EXPORT_MAP.json",
+      "bytes": 10838,
+      "sha256": "e2145f18c101395b4275a3501f9a6149f1b783e64b45f42399e183957d863bce",
+      "git_blob_sha1": "4b615f2e21ff8b1e0bb4f6852d66c887f832be74"
+    },
+    {
+      "path": "provenance/t1t2_same_graph_assessment_20261103/SOURCE_RECONCILIATION.json",
+      "bytes": 57009,
+      "sha256": "c4a3c20fde925c49672ec824c8906c6b884e299acb02b4f8eb97790c39b6d97a",
+      "git_blob_sha1": "b8ebe717f42592e476c94b71dad6de12647fc80b"
+    },
+    {
+      "path": "provenance/t1t2_same_graph_assessment_20261103/VERSION_HISTORY.json",
+      "bytes": 9244,
+      "sha256": "9a9b71bf38817a748ab32d3d9253bd656c45f743f8917ea6fe420bbc0b0e929a",
+      "git_blob_sha1": "4399c895d5bf127e5c3c4353acf6f6b6a325e501"
+    },
+    {
+      "path": "v10_research/adversarial_theory_assessment_20261103_1746/icml_style_assessment.html",
+      "bytes": 13009,
+      "sha256": "2a31a8b90c1ca260757cd890f896694d13bd06a0ec609d96f970cd1c8efb74ac",
+      "git_blob_sha1": "cacf35f63a3277425c39dc68d171f3411639bd3d"
+    },
+    {
+      "path": "v10_research/same_graph_layernorm_separation_20261103_1751/independent_analytic_review_20261103_1753.md",
+      "bytes": 5831,
+      "sha256": "965d10d2e537ed28f87259d1a44363754ab459928c3613aabad18f9e033c1d10",
+      "git_blob_sha1": "143608433c9e47e524294ec2ba431d974f62ce35"
+    },
+    {
+      "path": "v10_research/same_graph_layernorm_separation_20261103_1751/input_padding_boundary_clarification_v1.html",
+      "bytes": 2032,
+      "sha256": "73cc7606cee34df051c4c5fbabcb744221c6579a5d7e46fad0993ef8b8c6f44b",
+      "git_blob_sha1": "308b1b1ffd6ac7a5ac445729a92b69f46f7c8cd6"
+    },
+    {
+      "path": "v10_research/same_graph_layernorm_separation_20261103_1751/same_graph_structural_separation_v1.html",
+      "bytes": 10010,
+      "sha256": "047c4cb1b18b8f351ab382629902ab7f7fecef13a11eaddcd1c499267089722f",
+      "git_blob_sha1": "143832a329ecc9f6a1debddd72b1d370d83aba62"
+    },
+    {
+      "path": "v10_research/same_graph_layernorm_separation_20261103_1751/yang_lemma7_scope_correction_v1.html",
+      "bytes": 898,
+      "sha256": "5b7874a4c1d97f89fd72e9ef82fa442c683c4c3ee3a38515b6bb1ec83169fc63",
+      "git_blob_sha1": "feeca55b998b90ceec900eff68cade6db2209eeb"
+    },
+    {
+      "path": "v10_research/same_graph_layernorm_separation_20261103_1751/yang_prior_art_addendum_v1.html",
+      "bytes": 1834,
+      "sha256": "0eafa7de0a76300abd142ef798ebd0fd511ad6aea8b7bdd20bf9cfe3c9d9fb4a",
+      "git_blob_sha1": "0cf7914e2d7da005870896bedc9147baa589e1f9"
+    }
+  ],
+  "self_reference_boundary": "This manifest excludes itself and provenance/PUBLIC_INVENTORY.json. Its identity is bound by the repository inventory and Git commit. Original-source hashes and public-export hashes are distinct."
+}

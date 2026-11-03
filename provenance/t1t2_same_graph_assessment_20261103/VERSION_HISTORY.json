@@ -1,0 +1,140 @@
+{
+  "base_commit": "d37f7d9a969d2981b34adb661a7404eaddc21704",
+  "preferred_same_graph_reader_entry_source_id": "SGA002",
+  "historical_assessment_source_id": "SGA001",
+  "transitions": [],
+  "no_reconstructed_revisions": true,
+  "review_bindings": [
+    {
+      "review_source_id": "SGA006",
+      "reviewed_source_ids": [
+        "SGA002",
+        "SGA003",
+        "SGA004",
+        "SGA005"
+      ],
+      "mandatory_clarification_source_ids": [
+        "SGA003",
+        "SGA005"
+      ],
+      "exact_original_digest_bindings": {
+        "SGA002": "047c4cb1b18b8f351ab382629902ab7f7fecef13a11eaddcd1c499267089722f",
+        "SGA003": "73cc7606cee34df051c4c5fbabcb744221c6579a5d7e46fad0993ef8b8c6f44b",
+        "SGA004": "0eafa7de0a76300abd142ef798ebd0fd511ad6aea8b7bdd20bf9cfe3c9d9fb4a",
+        "SGA005": "5b7874a4c1d97f89fd72e9ef82fa442c683c4c3ee3a38515b6bb1ec83169fc63"
+      },
+      "scope": "Independent scoped LLM analytic review, not external human peer review, formal verification, experiments or novelty clearance. Main-file awaiting-review wording remains dated history; filenames and prose do not prove exact freeze-before-review chronology."
+    }
+  ],
+  "separate_corrections": [
+    {
+      "original_source_id": "SGA002",
+      "clarification_source_id": "SGA003",
+      "review_source_id": "SGA006",
+      "kind": "actual_separate_coordinate_padding_boundary_clarification",
+      "summary": "Fixes common slot placement and padding, distinguishes add-one reference from exact N=2 network output, and retains N>=4 for the negative finite-N bound. No source overwrite."
+    },
+    {
+      "original_source_id": "SGA004",
+      "correction_source_id": "SGA005",
+      "review_source_id": "SGA006",
+      "kind": "actual_separate_Yang_Lemma_7_scope_correction",
+      "summary": "The bound concerns the position-valued expectation for integer 1<=t<=n and gamma>=1, not arbitrary values or softmax TV. The original addendum remains unchanged."
+    }
+  ],
+  "historical_review_wording": "The main source awaiting-review sentence and historical LLM assessment framing remain as source history. The separate review is explicitly bound, without inferring exact freeze-before-review chronology or treating the role-perspective assessment as source-bound proof acceptance. SGA001 superseded scientific wording is retained and prominently paired with the already-existing current correction; no new scientific correction or causal chronology is invented.",
+  "historical_record_gaps": [
+    {
+      "record": "Earliest D’Angelo AUDIT version",
+      "status": "Original complete bytes were not retained. The current AUDIT and later clarification do not reconstruct or certify those bytes.",
+      "original_name": "AUDIT.md (earliest overwritten version)",
+      "original_sha256": null,
+      "existing_public_evidence_paths": [
+        "v10_research/prior_art_dangelo_full_20261103/AUDIT.md",
+        "v10_research/dangelo_addone_public_clarification_20261103_1537/addone_overlap_and_limits_v1.html"
+      ]
+    },
+    {
+      "record": "Two early Route B searches",
+      "status": "Complete contemporaneous per-path originals are absent. Later deterministic replay is a different operation, and the first comparison was invalidated.",
+      "original_name": "Complete contemporaneous per-path records; no exact recoverable filename is established.",
+      "original_sha256": null,
+      "existing_public_evidence_paths": [
+        "v10_research/independent_route_b_review_20261103_1226/PROVENANCE_ADDENDUM.md",
+        "v10_research/route_b_finite_prefix_20261103_1223/PROVENANCE_CORRECTION_20261103.html"
+      ]
+    },
+    {
+      "record": "BT002 initial scalar draft and old diagnostic",
+      "status": "Original snapshots and true before/after diffs were not retained; later checks do not restore the original evidence.",
+      "original_name": "BT002 initial scalar draft and associated old diagnostic; original byte identities are not established.",
+      "original_sha256": null,
+      "existing_public_evidence_paths": [
+        "v10_research/binary_erasure_transport/BT_STAGE8_PROVENANCE.md"
+      ]
+    }
+  ],
+  "inherited_identity_limit": {
+    "status": "CURRENT_BODY_HAS_A_PUBLIC_SCIENTIFIC_COPY_AND_SCOPED_REVIEW_BUT_OLD_REVIEW_MISMATCH_REMAINS",
+    "current_original_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+    "current_public_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_statistical_proof.md",
+    "current_public_identity": {
+      "bytes": 21262,
+      "sha256": "4d5e865ebe00846662cef1830be02bf52cc2b839eca8a0600f8baa501ada6078",
+      "git_blob_sha1": "d8aef0a80a3dd33a01dba631a454d4fccf4ffda1"
+    },
+    "current_original_to_public_map": "inherited_statistics/DOT_conditions_stage02/COPY_MAP.json",
+    "old_report_requested_proof_sha256": "5fef432092c4d7394021f1651dbcd086b660028b2a62c1297342340892dd6d24",
+    "old_report_does_not_bind_current_original": true,
+    "mismatch_cause": "Unresolved. No equality or wrapper-only explanation is established.",
+    "current_body_review_path": "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_trace_independent_review_20261103_1721.md",
+    "mandatory_review_count_correction_path": "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_odd_alphabet_correction_20261103_1732.html",
+    "published_prior_binding_path": "provenance/t1t2_alphabet_limits_20261103/HASH_REFERENCE_BINDINGS.json"
+  },
+  "threshold_correction": {
+    "status": "MANDATORY_EXISTING_PUBLIC_CORRECTION_FOR_HISTORICAL_ASSESSMENT",
+    "affected_source_record_id": "SGA001",
+    "historical_statement_retained": true,
+    "preferred_clarification_path": "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v2.html",
+    "retained_clarification_v1_path": "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v1.html",
+    "correction_review_path": "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_independent_review_20261103_1749.md",
+    "earlier_corrected_review_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2_independent_review_20261103_1740.md",
+    "scope": "The construction upper bound alone gives sufficiency. Conditional on inherited MM5/R011 bounds, A_N^5/N -> 0 is also necessary for vanishing worst-source actual-terminal expected TV on the complete arbitrary-initial homogeneous second-order source class, using inf_Q sup_(theta,mu) with one Q throughout the source supremum. It is not a pointwise fixed-source, every-subclass, or internal-network-resource optimality result. The displayed fixed-risk necessary constant is restricted to 0 < r < 2^-16.",
+    "chronology": "These are existing separate published clarifications of the same overbroad threshold wording. They were not newly authored as a response to SGA001; no such causal chronology is asserted. The correction reviewer explicitly corrects that reviewer's earlier synthesis review; no identity claim tying that reviewer to SGA001 is made.",
+    "original_statement": {
+      "span_sha256": "086badf23e28244012725b5fbfbc01e9b1c1fe8f441b644574700569664cbe68",
+      "original_utf8_byte_range_zero_based_half_open": [
+        2985,
+        3035
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2985,
+        3035
+      ]
+    },
+    "preferred_clarification_identity": {
+      "bytes": 5708,
+      "sha256": "ec7264e6ad8148f41c05bb215a529804c083555093281a1bcba00fca885fcac4",
+      "git_blob_sha1": "ff23f344fa870c355707e350233117d5696178d3"
+    },
+    "preferred_clarification_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/d37f7d9a969d2981b34adb661a7404eaddc21704/v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v2.html",
+    "retained_clarification_v1_identity": {
+      "bytes": 5451,
+      "sha256": "d719740729d3c61d438473b4c3e4b7ffce8d92d6166628ef24171835543bbd44",
+      "git_blob_sha1": "dd15f2d1c909c3a2556189f0b719701ab6a933d9"
+    },
+    "retained_clarification_v1_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/d37f7d9a969d2981b34adb661a7404eaddc21704/v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v1.html",
+    "correction_review_identity": {
+      "bytes": 4008,
+      "sha256": "3a7b9490b731fef173d639eb98b31393c5b34eb32d9d9b3c42471757c960ba15",
+      "git_blob_sha1": "edfb06fbf671f9c8a54667cd739ad7d09ba5303e"
+    },
+    "correction_review_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/d37f7d9a969d2981b34adb661a7404eaddc21704/v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_independent_review_20261103_1749.md",
+    "earlier_corrected_review_identity": {
+      "bytes": 4610,
+      "sha256": "8b5aa37f3c886df420b0ca3bb4019f9e8310c90ac98ceb295f0ab2a37501c969",
+      "git_blob_sha1": "cde7528586d9dd7d1ebf050b51fda987981953bc"
+    },
+    "earlier_corrected_review_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/d37f7d9a969d2981b34adb661a7404eaddc21704/v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2_independent_review_20261103_1740.md"
+  }
+}
