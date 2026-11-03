@@ -1,0 +1,20 @@
+Reviewer: distinct independent AI reviewer (private routing identifier omitted).
+Public export: reviewer attribution normalized; scientific report below preserved verbatim.
+Verbatim scientific report:
+
+The proposed result is valid under the stated stationary model, with θ interpreted as the probability of the next bit being 1, γ > 0, δ ∈ (0, 1), and the estimates clipped to [0, 1].
+
+For the reverse chain, write a = ut/w. In state order 00, 01, 10, 11, its transition rows are
+
+- (1 − t, 0, t, 0)
+- (a, 0, 1 − a, 0)
+- (0, 1/2, 0, 1/2)
+- (0, 1/2, 0, 1/2).
+
+The two-step Dobrushin coefficient is at most 3/4, so the claimed 7/8 contraction is conservative. Consequently, the sum of the claimed mixing bounds over positive lags is 15, giving the stated conditional mean bound.
+
+The conditional variance can in fact be bounded by 31(v + 15): each covariance is bounded using the reverse-chain contraction, and the positive-lag bounds sum to 15. Thus 61(v + 15) is safe. Chebyshev then gives the stated 1220/v bound when v ≥ 60; the sharper variance estimate would give 620/v.
+
+For the martingale step, apply the exponential supermartingale at the kth visit to 00 and union-bound over possible positive visit counts. The unconditional failure probability is at most uδ. Dividing by P(S_N = 00) = u gives the conditional δ bound, without requiring the query to be independent of the path. The J = 0 case has Z = 0.
+
+The decoder inequality also follows. Expand the numerator difference using the true h and the clipped estimated q. The product perturbation contributes e_h, while the denominator perturbation contributes at most another e_h because the true add-one prediction lies in [0, 1]. Projection onto [0, 1] cannot increase error, and the estimated denominator is at least 2 + m(h − e_h)₊.

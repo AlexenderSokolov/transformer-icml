@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Route A explicit QKV specification</title><style>body{font:16px/1.65 system-ui;max-width:980px;margin:2em auto;padding:0 1em;color:#17212b}h1,h2{color:#163d5b}pre{white-space:pre-wrap;background:#f1f5f8;padding:1em}</style><body><h1>Explicit Q/K/V maps for the candidate structured-mask network</h1>
+<p>2026-11-03. Additive detail for unchanged <a href="route_a_terminal_report_v1.html">Route A v1</a>; all three correction/clarification addenda in the same folder apply. Status provisional, subject to independent review, exact-real attention logits and declared finite-error ports.</p>
+<p>Write P<sub>raw</sub>, P<sub>key</sub>, P<sub>query</sub> for fixed coordinate projections from a token's residual state. At each legal historical token i≥3 after block 1, P<sub>key</sub>h<sub>i</sub>=e<sub>(X_{i−2},X_{i−1})</sub>, P<sub>raw</sub>h<sub>i</sub>=X<sub>i</sub>, while at terminal token N, P<sub>query</sub>h<sub>N</sub>=e<sub>(X_{N−1},X_N)</sub>. The key and query are four-dimensional separately stored coordinates. Every mapping is shared across token positions.</p>
+<pre>Block 1, lag head a=1 or a=2:
+  W_Q=0; W_K=0; W_V=P_raw, with output projection to a distinct lag-a coordinate.
+  Structural mask at i≥3: {i−a}; at i=1,2: {i}.
+  The scalar softmax output is exactly the selected token's raw bit.
+
+Block 2, matching head A, with d_k=4 and 1/sqrt(d_k)=1/2:
+  W_Q=2 log(2) P_query;  W_K=P_key;  W_V=P_raw.
+  At terminal N the allowed key set is {3,…,N}; thus the score is
+  log(2) &lt;e_(X_{N−1},X_N),e_(X_{i−2},X_{i−1})&gt;.
+
+Block 2, uniform head B:
+  W_Q=0; W_K=0; W_V=(P_raw,P_key), a five-coordinate value.
+  It uses the same terminal mask {3,…,N}.
+  Nonterminal queries can use self-only masks; their outputs are not used later.
+</pre>
+<p>Because the query and key one-hot dot product is 0 or 1, the matching weights are exactly 1 or 2 before normalization, yielding q=(C_all+C_s)/(m+J_s). Head B outputs r and all four J_a/m in its respective coordinates. The two heads run simultaneously from the first block's outputs. The last observed X_N is legitimately a historical successor at i=N and simultaneously part of the terminal query, in different coordinates; X_{N+1} is never read.</p>
+<p>Feature construction, selection, spline widths, final projection and resource costs are as in the base report plus its addenda. These matrices are not an implementation for a model in which local singleton masks or early-key exclusion are forbidden; no dense-mask conversion, finite-bit realization, lower bound, training result or novelty certification is inferred.</p>
+</body></html>

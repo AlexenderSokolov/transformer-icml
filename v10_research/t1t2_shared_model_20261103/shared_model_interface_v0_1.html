@@ -1,0 +1,36 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>T1/T2 共同模型接口（暂定草案）</title><style>body{max-width:960px;margin:2em auto;padding:0 1.2em;font:16px/1.65 system-ui,sans-serif;color:#17212b}pre{white-space:pre-wrap;background:#f3f6f9;padding:1em;overflow-wrap:anywhere}h1,h2{color:#163d5b}table{border-collapse:collapse}td,th{border:1px solid #aaa;padding:.5em;vertical-align:top}.tag{background:#fff2cc;padding:.6em}</style></head><body>
+<h1>T1/T2 共同模型与风险接口 v0.1</h1><p class="tag"><strong>状态：暂定工作草案，不是冻结规格、已证明主定理、创新性认证或 Gate 0/1 通过。</strong>它统一 A/B 的变量和证明义务；稀有族合法性另行独立审计。本草案无随机试验、公开写入或旧成果覆盖。</p>
+<h2>1. 随机过程、观察与参数权限</h2>
+<p>首轮字母表 X={0,1}，N≥3；θ=(θ_ab)_(a,b∈X)，其中 θ_ab=Pθ(X_(t+1)=1 | X_(t−1)=a,X_t=b)。S_t=(X_(t−1),X_t)。成对链只允许 (a,b)→(b,c)，其概率是 θ_ab 当 c=1、1−θ_ab 当 c=0。指定族 Θ 中每个核具有唯一平稳分布 πθ，先从平稳初始化 S₂~πθ，另在具体命题中列出不可约、遍历及 mixing 常数。基准族可要求 η≤θ_ab≤1−η，但不把四状态一步全正当作结构假设。稀有族与基准族的均匀下界不可混用；慢混合族是后续压力测试。</p>
+<p>推理者接收且仅接收 X₁:ₙ、预先声明的公开位置/长度和允许的体系结构参数；看不到 θ 或未来。参数 φ 可以依赖公开的族边界、N、精度目标或先验，须在每个命题声明依赖及一致性量词，但不得按未知测试 θ 选取。训练长度 T_train、任务数 n_task、先验和训练算法与推理历史 N 分开记账；手工存在构造不推出训练可达。</p>
+<h2>2. 三类对象和实际末位置</h2><pre>
+S_N=(X_(N−1),X_N),     pθ(1|S_N)=θ_(S_N).
+I_N={2,…,N−1}, M=N−2.
+J_s=∑_(t∈I_N) 1{S_t=s},    C_s=∑_(t∈I_N) 1{S_t=s} X_(t+1).
+u_s=J_s/M,   r=(∑_s C_s)/M,
+reference p̃_s=(C_s+α)/(J_s+2α), α&gt;0;
+Transformer p_φ(·|X₁:ₙ) ∈ Δ({0,1}).
+</pre><p>经验频率 p̂_s=C_s/J_s 仅对 J_s&gt;0 定义；其余情形使用明示回退/平滑。历史完整三元组恰有 N−2 项；含 X_N 的最后一个历史三元组合法，而以 S_N 为起点的后继 X_(N+1) 不可见。S_N 与计数同一轨迹相关，不能当独立查询。α 的选择及允许随 N 变化的方式待定。</p>
+<h2>3. 风险和三角分解</h2><pre>
+R_N(θ,φ)=Eθ TV(p_φ(·|X₁:ₙ), Bernoulli(θ_(S_N))).
+R_N,s(θ,φ)=Eθ[TV(…) | S_N=s]   (πθ(s)&gt;0).
+R_N(θ,φ)=∑_s πθ(s)R_N,s(θ,φ)  (stationary initialization).
+R_worst= sup_(θ∈Θ) R_N(θ,φ),   R_Π=E_(θ~Π) R_N(θ,φ).
+</pre><p>二元 TV 恰为成功概率绝对差。若以相同历史的 p̃_(S_N) 为统计参照，再定义同一网络的精确实数运算输出 p^real，实际数值实现输出 p^num，则逐路径三角不等式给出：</p><pre>
+E TV(p^num,pθ) ≤ E TV(p̃,pθ) + E TV(p^real,p̃) + E TV(p^num,p^real).
+</pre><p>这只是定义与三角不等式，不是已证速率；三项依赖同一轨迹，无须也不得假定独立。下界独立证明。条件于罕见 s 的下界转为总体风险时至少须乘 πθ(s)，且参数变化时 πθ 和条件分布的变化必须纳入证明。对 KL/对数损失另要求输出远离 0/1 等充分条件，不能从 TV 界直接推 KL 界。</p>
+<h2>4. 实际因果计算图：可比较的两个版本</h2><p><strong>标准 decoder 参考版 D（候选，不是唯一指定结构）：</strong>token i 的 hᵢ⁽⁰⁾=E(Xᵢ)+Pᵢ，i=1,…,N；允许位置编码家族及其位数均记账。每层每头用 qᵢ=W_Qhᵢ，kⱼ=W_Khⱼ，vⱼ=W_Vhⱼ，logit zᵢⱼ=qᵢ·kⱼ/√d_k 加明示位置偏置；mask 为 j≤i。对合法 j，aᵢⱼ=exp(zᵢⱼ)/∑_(k≤i)exp(zᵢk)，其他为 0；oᵢʰ=∑ⱼaᵢⱼvⱼ。设 h̄ᵢ=hᵢ+W_O concatₕ(oᵢʰ)，hᵢ⁺=h̄ᵢ+FFN(h̄ᵢ)，最后从 h_N 的指定读出产生概率，如二类 softmax。每层所有头同步读取上一层状态。以上无 LayerNorm/RMSNorm；若添加必须另列顺序、数值误差和成本。若 BOS 存在必须加入输入索引与账本，不能把免费额外 token 混入此模型。</p>
+<p><strong>解耦/有结构 mask 参考版 R：</strong>可显式拆分 token、位置、查询、键和值子空间，可允许指定因果 singleton/稀疏 masks 和固定工作通道；必须列出每个 mask、所有 heads、辅助坐标和 readout。其附加访问/几何条件不能免费迁移至 D。后者的标准完整因果 mask 和 R 的 singleton mask 不是同一个模型；任何从 R 编译到 D 的误差及成本是独立证明义务。硬编码因果 mask 内 singleton 能精确复制；一个 head 在至少两个可见项且有限 logits 时权重严格为正，通常不是原始 target value 的精确 singleton。若目标分数比其他 m−1 项至少高 Δ、值范数≤B，则该头输出与目标值之差≤2B(m−1)e^(−Δ)；这只证明该头的泄漏界，不排除后续电路在有限离散输入上纠错，也不是全网络下界。</p>
+<p>相邻绑定必须付费：在历史位置 i=t+1 构造 (X_(i−2),X_(i−1),X_i) 的 tokenwise/attention 特征，并在 i=N 构造终端对；再由下一同步层以当前 query 从准备好的历史行聚合。对于历史 i=N 的行和终端 query 共处同一 token，必须在不同坐标保留各自用途；任何压缩、residual 旁路、其他 head、位置通道和 FFN 都在全网络可见接口中。绝不能把未来 query 编进过去 value。</p>
+<h2>5. A/B 共享的抽象统计接口（尚未宣称已由 D/R 实现）</h2><p>路线 A 对 s=S_N 的理想匹配权重为 e^β（历史情境等于 s）和 1（其余），γ=e^β−1。理想单头数值为：</p><pre>
+q_s = (r+γ u_s p̂_s)/(1+γu_s),  J_s&gt;0;
+q_s=r 当 J_s=0；γu_s&gt;0 时 p̂_s=q_s+(q_s−r)/(γu_s).
+</pre><p>为获得 q、r、u 所需的独立头/坐标、归一化、边界及有限精度，必须从 Q/K/V 与实际 mask 推出，而非假定。若 J_s=0、β=0、或 u_s 极小，分别需要回退、不可逆分析或稳定化；平滑、截断、概率投影和倒数/乘法误差要进入风险。无条件简单代数不会证明条件风险、有限实现或训练。</p>
+<p>路线 B 将 0/1 转为 ±1。对历史状态 t=(c,d)、查询 s=(a,b)，K(s,t)=exp(β₁ac+β₂bd)。若理想聚合头仅见历史 successor，有限随机前缀算子：</p><pre>
+A_N(s,t)=K(s,t)J_t / ∑_v K(s,v)J_v,
+q_N(s)=∑_t A_N(s,t)p̂_t,
+</pre><p>约定 J_t=0 的项为 0，且仅对有计数的项定义经验比例。非均匀随机占据时 A_N 一般不是均匀 Walsh 卷积；零计数可能降秩，条件数与目标读出方向需单独分析。均匀总体下 1、a、b、ab 的谱为 1、tanh β₁、tanh β₂、tanh β₁ tanh β₂，是基础计算而非单独新贡献。所有其他 heads、residual、输入、位置和 FFN 都可保留信息，单头小特征值不能推全网下界。A/B 结论只在同一过程族、终端风险与成本账本下合流。</p>
+<h2>6. 资源和关键量词</h2><p>记录 N 与 M、各 J_s；总层数 L、共享块重复次数；hidden d、每头 d_k 和 d_v、每层 H；logit gap/温度及范数界；分别记 score、hidden、softmax、累加器、权重、读出与输出的格式、动态范围和精度 b；统计特征/位置表示、mask 存储、输入预处理、缓存、工作内存、FLOPs 或操作数；含除法、exp、概率投影及精度开销。不能用单一 b 混掉数值路径。标记 φ/精度/宽度是否随 N 或 ε 变化；与硬匹配、平滑二阶计数、Bayes/Dirichlet、D’Angelo、Rajaraman 及普通流式计数器按相同历史、公开信息、资源和精度比较；超出部分明确计费。固定 β 与 β→∞ 要分开。现阶段没有声称 L 深度收益、最优性或架构分离。</p>
+<h2>7. 核心数学缺口与审计状态</h2><ol><li>从具体有限因果 Q/K/V、mask、端点绑定和输出读出推导 A 或 B 的实际通道；边界及同步层数精确。</li><li>对相关 Markov 前缀证明参考统计的非渐近 TV 风险，直接处理随机终端和零/小占据；将 joint error 经实际恢复算子传播，而非把均值近似代替联合分布。</li><li>给出全网络计算/数值差的可证上界与有意义的 N,L,d,H,b 资源条件，和相同信息/资源的直接校正及计数器对照。</li><li>对完整历史统计不足另证 Le Cam/Fano 或其他下界；对架构障碍精确定义完整受限可见接口，包括所有旁路。罕见族、常数、完整轨迹 KL 和末位置条件下界须由独立审计确认。</li><li>确认完整先例是否蕴含候选结论，复核量词和训练信息，再邀请独立重建；只有其后才能判断 Gate 0/1 等状态。</li></ol>
+<h2>8. 溯源与未决选择</h2><ul><li>内部先例：<code>v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md</code>；BCJ001 早于 ACG/PBP 并涵盖定位统计、有限精度与其指定鲁棒实验；FPA 是不同端口下更具体的混合电路实现，不可把端口下界互换。见 <code>v10_research/research_direction_review_20261103/REASSESSMENT.md</code>、<code>v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.md</code>。历史接受及内部 LLM 审查不等于外部同行审查或本阶段 Gate 通过。</li><li><a href="https://arxiv.org/pdf/2607.02800v1">D’Angelo et al., Proposition 3.1 与 §§3–4</a>：既有解耦双层 partial-mask 插值；内部 <code>v10_research/prior_art/comparison.md</code> 记录全局匹配有限 β，但局部复制与早期抑制使用极限。不可称本草案为完整有限精度再现或其公式的新发现。</li><li><a href="https://arxiv.org/abs/2610.41038">Akman et al., arXiv:2610.41038</a>：本地 PDF 摘要和引言叙述 stationary ergodic/HMM、截断滤波器、深度 M+1 与最优控制训练，必须按其完整假设和定理继续比较；此处不以摘要断言是否蕴含未知核、单条轨迹预测风险或资源主张。</li><li>未决：首个定理使用 D 还是 R、稀疏 mask 与输入/公开位置权限、基准族与显式 mixing 参数、α、权重是否可随 N 改变、readout 形式、精度/exp 模型及同预算比较。以上均为未决的候选约定。</li></ul>
+</body></html>

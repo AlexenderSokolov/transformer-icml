@@ -1,0 +1,33 @@
+{
+  "status": "STATIC_SELECTED_HELPER_REVIEW_ONLY",
+  "source_sha256": "dc5981163780ccb18a7415fe06832281e668ce6be3d1e6b331704b17a1e1f665",
+  "stdlib_imports": [
+    "csv",
+    "fractions",
+    "hashlib",
+    "io",
+    "json",
+    "os",
+    "re",
+    "stat",
+    "sys"
+  ],
+  "dynamic_code_calls": [
+    {
+      "name": "exec",
+      "line": 211
+    },
+    {
+      "name": "compile",
+      "line": 211
+    }
+  ],
+  "dynamic_code_boundary": "Only the new retained-record validator bytes are compiled/executed, after matching the fixed expected SHA-256 and trusted stage manifest. No original research script is executed/imported.",
+  "write_network_process_apis_present": false,
+  "existing_22_frozen_deliverables_unchanged": true,
+  "requires_isolated_python_and_no_bytecode": true,
+  "exact_candidate_full_validation": "PENDING_PARENT_FINAL_MANIFEST",
+  "global_inventory_excluded": "provenance/PUBLIC_INVENTORY.json",
+  "unit_test_groups": 12,
+  "normal_and_optimized_unit_tests": "PASS"
+}

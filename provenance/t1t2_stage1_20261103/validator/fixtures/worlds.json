@@ -1,0 +1,138 @@
+{
+  "cases": [
+    {
+      "word": "00011011",
+      "theta_11": "1/4",
+      "stationary_pi": [
+        "3/11",
+        "3/11",
+        "3/11",
+        "2/11"
+      ],
+      "factors": [
+        {
+          "context": "00",
+          "outcome": 0,
+          "probability": "1/2"
+        },
+        {
+          "context": "00",
+          "outcome": 1,
+          "probability": "1/2"
+        },
+        {
+          "context": "01",
+          "outcome": 1,
+          "probability": "1/2"
+        },
+        {
+          "context": "11",
+          "outcome": 0,
+          "probability": "3/4"
+        },
+        {
+          "context": "10",
+          "outcome": 1,
+          "probability": "1/2"
+        },
+        {
+          "context": "01",
+          "outcome": 1,
+          "probability": "1/2"
+        }
+      ],
+      "trajectory_probability": "9/1408",
+      "terminal": "11",
+      "J": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "C": [
+        1,
+        2,
+        1,
+        0
+      ],
+      "r": "2/3",
+      "old_successor": [
+        3,
+        1
+      ],
+      "recent_successor": [
+        2,
+        2
+      ],
+      "add_half_output": "1/4"
+    },
+    {
+      "word": "00100111",
+      "theta_11": "3/4",
+      "stationary_pi": [
+        "1/5",
+        "1/5",
+        "1/5",
+        "2/5"
+      ],
+      "factors": [
+        {
+          "context": "00",
+          "outcome": 1,
+          "probability": "1/2"
+        },
+        {
+          "context": "01",
+          "outcome": 0,
+          "probability": "1/2"
+        },
+        {
+          "context": "10",
+          "outcome": 0,
+          "probability": "1/2"
+        },
+        {
+          "context": "00",
+          "outcome": 1,
+          "probability": "1/2"
+        },
+        {
+          "context": "01",
+          "outcome": 1,
+          "probability": "1/2"
+        },
+        {
+          "context": "11",
+          "outcome": 1,
+          "probability": "3/4"
+        }
+      ],
+      "trajectory_probability": "3/640",
+      "terminal": "11",
+      "J": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "C": [
+        2,
+        1,
+        0,
+        1
+      ],
+      "r": "2/3",
+      "old_successor": [
+        3,
+        1
+      ],
+      "recent_successor": [
+        2,
+        2
+      ],
+      "add_half_output": "3/4"
+    }
+  ],
+  "equal_prior_lower": "3/2560",
+  "rng": false
+}

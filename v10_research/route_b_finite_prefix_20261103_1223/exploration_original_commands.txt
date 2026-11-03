@@ -1,0 +1,35 @@
+First exploratory command (BUG: d[k][1] is a list, so list != c[q] is not the intended comparison; result discarded):
+python - <<'PY'
+from itertools import product
+from collections import defaultdict
+for N in range(7,17):
+ d={}
+ for x in product((0,1), repeat=N):
+  j=[0]*4; c=[0]*4
+  for i in range(2,N):
+   s=2*x[i-2]+x[i-1]; j[s]+=1; c[s]+=x[i]
+  q=2*x[-2]+x[-1]
+  k=(q,tuple(j),c[0]+c[1],c[2]+c[3],c[0]+c[2],c[1]+c[3])
+  if k in d and d[k][1]!=c[q]:
+   y,p=d[k]; print('N',N,'x', ''.join(map(str,y)), 'y',''.join(map(str,x)),'q',q,'J',j,'C1',p,'C2',c, 'marg', k[2:]);raise SystemExit
+  d[k]=(x,c[:])
+PY
+Observed original stdout: N 7 x 0000100 y 0001000 q 0 J [3, 1, 1, 0] C1 [1, 0, 0, 0] C2 [1, 0, 0, 0] marg (1, 0, 1, 0)
+
+Second exploratory command (corrected criterion):
+python - <<'PY'
+from itertools import product
+for N in range(7,19):
+ d={}
+ for x in product((0,1), repeat=N):
+  j=[0]*4; c=[0]*4
+  for i in range(2,N):
+   s=2*x[i-2]+x[i-1]; j[s]+=1;c[s]+=x[i]
+  q=2*x[-2]+x[-1]; k=(q,tuple(j),c[0]+c[1],c[2]+c[3],c[0]+c[2],c[1]+c[3])
+  if k in d and d[k][1][q]!=c[q]:
+   y,p=d[k];print('N',N,'x',''.join(map(str,y)),'y',''.join(map(str,x)),'q',q,'J',j,'C1',p,'C2',c, 'marg',k[2:]);raise SystemExit
+  d[k]=(x,c[:])
+PY
+Observed original stdout: N 8 x 00011011 y 00100111 q 3 J [2, 2, 1, 1] C1 [1, 2, 1, 0] C2 [2, 1, 0, 1] marg (3, 1, 2, 2)
+
+Neither original invocation saved a full per-path log. The files produced by replay.py are reconstructed deterministic replays, not original logs. No random sampling occurred.

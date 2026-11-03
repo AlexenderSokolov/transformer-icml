@@ -1,0 +1,23 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>稀有情境快速混合族：独立核查</title><style>body{font:16px/1.65 system-ui,sans-serif;color:#17212b;max-width:1000px;margin:2rem auto;padding:0 1.2rem}h1,h2{color:#173d5a}pre{white-space:pre-wrap;background:#f2f5f7;padding:1em;border-radius:5px;overflow-wrap:anywhere}.box{border-left:4px solid #137b61;padding:.1em 1em;background:#eff9f5}.warn{border-left-color:#bb6a19;background:#fff8eb}code{font-family:ui-monospace,monospace}</style></head><body>
+<h1>稀有情境、快速混合的 u 族：独立核查</h1><p>2026-11-03。研究模型检查，不是创新性声明、Transformer 架构下界或对已有结果的重新认领。所有计算严格使用有理数；未采样。</p>
+<div class="box"><p><b>结论：</b>给定的转移核合法、平稳分布正确，而且两步到 11 的 1/8 下界成立并在整个参数类上最优。完整轨迹 KL 与 n u Δ² 同阶，其中 n=N−2。末位置固定为 00 的条件历史不能视为无条件历史；本文给出实际条件 KL 的精确倒链表达与一个统计下界。</p></div>
+<h2>1. 参数、核与平稳性</h2><p>令 0&lt;u&lt;1/4，w=(1−u)/3，k=u/w∈(0,1)，t∈[1/4,3/4]，h=kt∈(0,3/4)。状态按 00,01,10,11 排列。X<sub>1:N</sub> 的末状态为 S<sub>N</sub>=(X<sub>N−1</sub>,X<sub>N</sub>)。</p><pre>P = [ 1−t   t      0      0   ]
+    [ 0     0      1/2    1/2 ]
+    [ h     1−h    0      0   ]
+    [ 0     0      1/2    1/2 ]
+π = (u,w,w,w).</pre><p>每行和为 1，允许边的概率均严格为正。πP 的前两项分别是 u(1−t)+wh=u 和 ut+w(1−h)=w；后两项都是 w。平稳总体下一符号为 1 的概率是 ut+w/2+w(1−h)+w/2=2w，与 t 无关。若 u↓0，合法边 10→00 的概率 h↓0，故不存在对 u 一致的逐条边正下界；这不妨碍以下统一混合。</p>
+<h2>2. 精确两步矩阵与一致混合</h2><pre>P² = [ (1−t)²   t(1−t)    t/2       t/2     ]
+     [ h/2       (1−h)/2   1/4       1/4     ]
+     [ h(1−t)    ht        (1−h)/2   (1−h)/2 ]
+     [ h/2       (1−h)/2   1/4       1/4     ].</pre><p>第四列依次为 t/2、1/4、(1−h)/2、1/4，全部≥1/8。该常数精确：t=1/4 时，00 出发正好等于 1/8。因此 P²(x,·)≥(1/8)δ<sub>11</sub>(·)，对任意初始分布 μ 和整数 m≥0，</p><pre>‖μP^m−π‖TV ≤ (7/8)^⌊m/2⌋.</pre><p>这是基于两步共同质量的耦合或 Dobrushin 收缩。它是不求锐的显式上界；一致快速混合与 π(00)=u→0 同时成立。</p>
+<h2>3. 全轨迹似然、精确 KL 和量级</h2><p>任意初始对分布 μ、两组同一支持的过程参数，路径概率为 μ(x₁x₂) 乘以从 i=2 到 N−1 的转移概率。一般初始分布可能不同，必须保留初始对 KL；后续期望访问次数也由该初始分布决定。</p><p>若两过程各自平稳初始化，参数为 (u,t) 与 (v,t′)，令 wᵤ=(1−u)/3、wᵥ=(1−v)/3、h=ut/wᵤ、h′=vt′/wᵥ，则精确有</p><pre>D(Pᵤ,ₜ(X₁:N) ‖ Pᵥ,ₜ′(X₁:N))
+ = kl(u‖v) + (N−2)[u kl(t‖t′) + wᵤ kl(h‖h′)].</pre><p>所有 kl 均为自然对数的 Bernoulli KL。初项来自四状态 π 的 KL，等于 kl(u‖v)。固定同一 u 时初项为零，这是先前公式没有初项的原因，不应推广到不同 u。</p><p>令 Δ=t−t′，固定 u。由于 t,t′∈[1/4,3/4] 且 k&lt;1，由 Bernoulli Pinsker 下界及 KL≤(p−q)²/[q(1−q)]，</p><pre>2(N−2)uΔ² ≤ D(Pₜ‖Pₜ′) ≤ (64/3)(N−2)uΔ².</pre><p>上界使用 kl(t‖t′)≤(16/3)Δ² 和 kl(kt‖kt′)≤16kΔ²。10 状态的稀有转移亦贡献信息，因此不能仅凭 00 的访问次数证明全轨迹不可辨。</p>
+<h2>4. 真实末查询：精确条件 KL 与统计下界</h2><p>固定 u 时，所有 t 的末状态分布相同且 Pr(S<sub>N</sub>=00)=u。但给定该事件后，历史的分布改变。平稳链倒转，使用状态相同排列，</p><pre>P* = [ 1−t   0    t      0   ]
+     [ h     0    1−h    0   ]
+     [ 0     1/2  0      1/2 ]
+     [ 0     1/2  0      1/2 ].</pre><p>令 n=N−2，A<sub>j</sub>=(P*<sup>j</sup>)(00,00)，B<sub>j</sub>=(P*<sup>j</sup>)(00,01)。从确定的终点 00 倒着走，链式公式给出精确等式</p><pre>D(Pₜ(X₁:N | S_N=00) ‖ Pₜ′(X₁:N | S_N=00))
+ = Σ_{j=0}^{n−1} [A_j kl(t‖t′) + B_j kl(h‖h′)].</pre><p>这里 A、B 依据第一个参数 t 的倒链计算。P*² 的 11 列为 t/2、(1−h)/2、1/4、1/4，同样≥1/8，故 A<sub>j</sub>≤u+(7/8)<sup>⌊j/2⌋</sup> 且 ΣA<sub>j</sub>≤nu+16。直接用 ΣB<sub>j</sub>≤n 和 k≤4u，得到</p><pre>D(Pₜ(·|S_N=00) ‖ Pₜ′(·|S_N=00))
+ ≤ [(208/3)nu+256/3] Δ² ≤ (256/3)(1+nu)Δ².</pre><p>故选择 Δ=[16√(1+nu)]⁻¹，t<sub>±</sub>=1/2±Δ/2，条件 KL≤1/3。对任意可访问完整历史 X₁:N 的预测器，甚至允许其知道 u，二点测试与 Pinsker 不等式给出</p><pre>max_{t∈{t₋,t₊}} Eₜ[ TV(预测, Bern(t)) | S_N=00 ]
+ ≥ (1−1/√6) / [32√(1+(N−2)u)].</pre><p>证明：两条件风险之和至少 Δ(1−TV(条件历史分布))，再除以 2；TV≤√(KL/2)≤1/√6。这是用于核验的保守统计结论；并未证明匹配上界或网络计算下界。N=2 时空和为零，倒链公式仍成立。</p><div class="box warn"><p><b>风险口径：</b>对每个参数，平均风险至少等于 u 乘其末状态 00 条件风险；因此由上述二点论证推出的总体最坏风险下界还需乘 u。参数对在状态 10 的预测也不同，但不能通过假定其损失大小来扩大这个下界。把条件风险直接称为平均风险是错误的；同样不能把无条件轨迹 KL 当作条件轨迹 KL。</p></div>
+<h2>5. 和软通道及既有工作的边界</h2><p>总体软读取 q₀₀(t)=(2w+γut)/(1+γu)，分母非零时对 t 的敏感度为 γu/(1+γu)。此式是先前已经记录的总体恒等式，并不意味着随机前缀下的联合统计量只携带总体均值信息；若 γ=0，该通道无 t 敏感度。固定参数下也不保证直接读取偏差严格为正：t=2w 是允许的零偏差例子。有限路径噪声、可见的全部旁路与同预算比较均未在此建立。</p><p>来源承接：先前的 u 族、KL 与软通道表述；既有 <code>v10_research/resumption_20261103/order_two_transfer/CANDIDATE.md</code> 及其 <code>review_root/REVIEW.md</code> 提供不同证书模型下已接受的二阶接口，不将该结果误写为本文新证明。<code>v10_research/rare_state_enumeration_20261103/REPORT.md</code> 是有限字枚举，不是本 u 族的概率或架构定理。本报告不判定外部先例或新颖性。</p>
+<h2>6. 可复现性与修正记录</h2><p><code>check_family_v2.py</code> 将四组有理参数和 N∈{2,3,4,7} 的完整输入、所有轨迹精确 P/Q 概率、矩阵、末事件、条件边计数、倒链状态占据和断言结果保存在 <code>cases_v2.jsonl</code>。所有 16 组、共 624 条路径通过。有限算例是独立算术校验，不取代上面的全参数证明。</p><p><code>check_family_v1.py</code> 的显示行误报 600 条，实际枚举和断言均正确；v1 全部原件保留，v2 更正为 624，详细 JSONL 经逐字节比对一致。完整记录在 <code>attempts_and_corrections.txt</code>，哈希在 <code>SHA256SUMS.txt</code>。复核时请使用新的输出文件名，脚本会拒绝覆盖。</p></body></html>

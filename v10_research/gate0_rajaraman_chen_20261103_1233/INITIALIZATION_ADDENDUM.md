@@ -1,0 +1,5 @@
+# Chen initial-law mapping clarification
+
+Chen et al. §2.1 describes drawing the first r_n symbols from a fixed μ₀ and drawing the task kernel π from prior P in separate generation steps. This is more specific than saying “general initial distribution”: it does not automatically model a kernel-dependent stationary initial distribution μ^π across a prior with different stationary laws. For v10’s u-family at a fixed u while t varies, all kernels share the pair-stationary law (u,w,w,w), so that law can be chosen as common μ₀. For a prior mixing different u values, their stationary laws differ, and Chen’s specified fixed μ₀ does not directly equal stationary initialization for every kernel. Their proofs analyze convergence toward μ^π from μ₀. No claim follows that the difference makes their result inapplicable in every modified model; a bridge or theorem recheck is required. Source: https://arxiv.org/html/2409.10559v1#S2.SS1 .
+
+This addendum accompanies `primary_source_audit.html` SHA-256 2376f7f31179eff3c34e34f3a1af53a33cad8a26df0ac5376171799768b7306c. It leaves that reviewed file unchanged.

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "v10_research/route_a_terminal_inference_20261103_1223/build_consolidated_v2.py", line 12, in <module>
+    sub('The output is the probability vector (1−p,p), not an assumed output softmax. No LayerNorm or unpriced external division is used.', 'The ideal output is the probability vector (1−p,p), not an assumed output softmax. A backend with a final numerical error must additionally execute the explicitly costed post-error saturation and preserve the exact complement, or analyze separate saturation/normalization errors. The added saturation is one scalar clip operation or one further ReLU block if counted as a neural layer. No LayerNorm or unpriced external division is used.')
+  File "v10_research/route_a_terminal_inference_20261103_1223/build_consolidated_v2.py", line 7, in sub
+    assert s.count(old)==1,(old[:100],s.count(old));s=s.replace(old,new)
+           ^^^^^^^^^^^^^^^
+AssertionError: ('The output is the probability vector (1−p,p), not an assumed output softmax. No LayerNorm or unprice', 0)

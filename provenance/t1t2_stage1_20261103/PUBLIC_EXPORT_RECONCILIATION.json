@@ -1,0 +1,1789 @@
+{
+  "schema": "t1t2-public-export-reconciliation-v1",
+  "base_commit": "2740a1e6d71761560367f05c3480cede6777cd73",
+  "scope": "134 frozen research sources, their declared public exports, and bounded already-public dependencies. This is not a reconstruction of all historical project material.",
+  "hash_semantics": "Historical source hashes bind the original reviewed text. A changed public copy has a distinct identity in SOURCE_EXPORT_MAP.json. The current exact delivered-byte allowlist is STAGE_FILE_MANIFEST.json and the repository PUBLIC_INVENTORY.json; historical checksum files are not those allowlists.",
+  "inherited_public_files": [
+    {
+      "path": "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md",
+      "bytes": 10352,
+      "sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+      "git_blob_sha1": "8977fce82c0d716e6170b1aa5b980ec6ca07aca8"
+    },
+    {
+      "path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+      "bytes": 14732,
+      "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+      "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+    },
+    {
+      "path": "cloud_work/conditions-20261028/research/resume_20261030/R011_root_acceptance.json",
+      "bytes": 4641,
+      "sha256": "1feb2882b9134001ec1b45dbdea8e02e411fa99eb6c738489b929b1fa053b61d",
+      "git_blob_sha1": "adf4a2e8633d965f4f9b0c0874a6f6a606cea0a2"
+    },
+    {
+      "path": "inherited_statistics/DOT_conditions_global_completion_20261030_v2/COPY_MAP.json",
+      "bytes": 95204,
+      "sha256": "d6f0ff5a00da52f8ef4ee3a2337bc0b46b2b98ff6740bd2ddc9a6607357effbb",
+      "git_blob_sha1": "83e62dfb0bade971e0304931fc3815ed40b94ff9"
+    },
+    {
+      "path": "inherited_statistics/DOT_conditions_global_completion_20261030_v2/reviews/R011_independent_review_v1.md",
+      "bytes": 13463,
+      "sha256": "39b9a08b264b70cd6f4efa36e39fb32efca27b077cab43c42d3784b972c79e00",
+      "git_blob_sha1": "790bc916ec577ebed93055968873c515a5254849"
+    },
+    {
+      "path": "provenance/consolidated_manuscript_20261103/SOURCE_EXPORT_MAP.json",
+      "bytes": 36462,
+      "sha256": "37be41789ba121264c3b88c04210581d93448f8d73be016334b2eb38bc309086",
+      "git_blob_sha1": "82ff041ee932a35847bc8c445c0226e2ce6a49c9"
+    },
+    {
+      "path": "v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+      "bytes": 11866,
+      "sha256": "5e65d2646bca23c975a6273fcedc4bdd1aadd8bd68b8390d4ed02b58d90c7c28",
+      "git_blob_sha1": "f791de051384774d8810db9b4cf0e6009b5fb195"
+    },
+    {
+      "path": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.md",
+      "bytes": 8339,
+      "sha256": "4e5c513f7164eea40ad87dc5041c7393623e4a9ad9186c135a56aa7981c19493",
+      "git_blob_sha1": "7b6de5e0b349327bca4fd830fb680e68ae88fdac"
+    },
+    {
+      "path": "v10_research/research_direction_review_20261103/REASSESSMENT.md",
+      "bytes": 11947,
+      "sha256": "74d3084857d54acb8d14decbeb610c784e2f18fe47341b5a9da23a931c4d2216",
+      "git_blob_sha1": "3446e8a9950a6c5851d95f9ad14ea44e34e58469"
+    }
+  ],
+  "inherited_original_public_pairs": [
+    {
+      "path": "v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+      "original_sha256": "764c7364a5b7e03cae6afa6898a68c75e84eb9603fdabe0d1bde8904f7341a9f",
+      "public_sha256": "5e65d2646bca23c975a6273fcedc4bdd1aadd8bd68b8390d4ed02b58d90c7c28",
+      "public_bytes": 11866,
+      "git_blob_sha1": "f791de051384774d8810db9b4cf0e6009b5fb195",
+      "status": "EXISTING_PUBLIC_EXPORT_IDENTITY_PAIR",
+      "map": "provenance/consolidated_manuscript_20261103/SOURCE_EXPORT_MAP.json",
+      "new_copy_or_overwrite_proposed": false
+    },
+    {
+      "path": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.md",
+      "original_sha256": "4e5c513f7164eea40ad87dc5041c7393623e4a9ad9186c135a56aa7981c19493",
+      "public_sha256": "4e5c513f7164eea40ad87dc5041c7393623e4a9ad9186c135a56aa7981c19493",
+      "public_bytes": 8339,
+      "git_blob_sha1": "7b6de5e0b349327bca4fd830fb680e68ae88fdac",
+      "status": "EXACT",
+      "map": "provenance/consolidated_manuscript_20261103/SOURCE_EXPORT_MAP.json",
+      "new_copy_or_overwrite_proposed": false
+    },
+    {
+      "path": "v10_research/research_direction_review_20261103/REASSESSMENT.md",
+      "original_sha256": "05167473c100a8053a2e67ac06c100c086936f35d2e605d4b9fdf6b4b915db52",
+      "public_sha256": "74d3084857d54acb8d14decbeb610c784e2f18fe47341b5a9da23a931c4d2216",
+      "public_bytes": 11947,
+      "git_blob_sha1": "3446e8a9950a6c5851d95f9ad14ea44e34e58469",
+      "status": "EXISTING_PUBLIC_EXPORT_IDENTITY_PAIR",
+      "map": "provenance/consolidated_manuscript_20261103/SOURCE_EXPORT_MAP.json",
+      "new_copy_or_overwrite_proposed": false
+    }
+  ],
+  "r011_review_mapping": {
+    "receipt_bound_original_review_sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+    "public_same_path_review": {
+      "path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+      "bytes": 14732,
+      "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+      "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+    },
+    "canonical_science_review": {
+      "path": "inherited_statistics/DOT_conditions_global_completion_20261030_v2/reviews/R011_independent_review_v1.md",
+      "bytes": 13463,
+      "sha256": "39b9a08b264b70cd6f4efa36e39fb32efca27b077cab43c42d3784b972c79e00",
+      "git_blob_sha1": "790bc916ec577ebed93055968873c515a5254849"
+    },
+    "canonical_review_copy_map": {
+      "path": "inherited_statistics/DOT_conditions_global_completion_20261030_v2/COPY_MAP.json",
+      "bytes": 95204,
+      "sha256": "d6f0ff5a00da52f8ef4ee3a2337bc0b46b2b98ff6740bd2ddc9a6607357effbb",
+      "git_blob_sha1": "83e62dfb0bade971e0304931fc3815ed40b94ff9"
+    },
+    "binding": [
+      {
+        "source": "R011_independent_review_v1.md",
+        "source_category": "frozen_scientific_review",
+        "source_sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+        "source_bytes": 14746,
+        "output": "reviews/R011_independent_review_v1.md",
+        "output_sha256": "39b9a08b264b70cd6f4efa36e39fb32efca27b077cab43c42d3784b972c79e00",
+        "output_bytes": 13463
+      }
+    ],
+    "boundary": "The historical receipt includes an excluded administrative dependency. Only the listed already-public scientific proof, review records and identity maps are used. No full historical receipt closure or equality between the original and either public review hash is claimed."
+  },
+  "source_reference_census": {
+    "method": "All standalone lowercase SHA-256 strings in selected UTF-8 documentary source files (excluding numerical JSONL/TSV and program code) were enumerated. Hashes in actual source/export mapping metadata are checked separately. This is not a parser for every informal mathematical citation.",
+    "counts": {
+      "EXCLUDED_THIRD_PARTY_PDF_RETRIEVAL_IDENTITY": 3,
+      "EXCLUDED_THIRD_PARTY_FULLTEXT_RETRIEVAL_IDENTITY": 1,
+      "SELECTED_ORIGINAL": 167,
+      "EXACT_INHERITED_PUBLIC": 8,
+      "MAPPED_INHERITED_ORIGINAL": 2
+    },
+    "references": [
+      {
+        "source_path": "v10_research/akman_prior_art_audit_20261103/AUDIT.md",
+        "line": 3,
+        "sha256": "6111e4a02a9647c657c775cbf17e590d19eb9370607e773c02fa02df25f0aeb0",
+        "status": "EXCLUDED_THIRD_PARTY_PDF_RETRIEVAL_IDENTITY",
+        "targets": []
+      },
+      {
+        "source_path": "v10_research/akman_prior_art_audit_20261103/SHA256SUMS.txt",
+        "line": 1,
+        "sha256": "6111e4a02a9647c657c775cbf17e590d19eb9370607e773c02fa02df25f0aeb0",
+        "status": "EXCLUDED_THIRD_PARTY_PDF_RETRIEVAL_IDENTITY",
+        "targets": []
+      },
+      {
+        "source_path": "v10_research/akman_prior_art_audit_20261103/SHA256SUMS.txt",
+        "line": 2,
+        "sha256": "929772e77f31ce13e53560e1fd77ff163b48ddabad8156707068e47aaf8372f8",
+        "status": "EXCLUDED_THIRD_PARTY_FULLTEXT_RETRIEVAL_IDENTITY",
+        "targets": []
+      },
+      {
+        "source_path": "v10_research/akman_prior_art_audit_20261103/SHA256SUMS.txt",
+        "line": 3,
+        "sha256": "eac84e4f17e87b0f4c92e7419831fdcd6a67ae629230ef6eb9550527ede629c0",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/akman_prior_art_audit_20261103/AUDIT.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/gate0_rajaraman_chen_20261103_1233/INITIALIZATION_ADDENDUM.md",
+        "line": 5,
+        "sha256": "2376f7f31179eff3c34e34f3a1af53a33cad8a26df0ac5376171799768b7306c",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/gate0_rajaraman_chen_20261103_1233/primary_source_audit.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/addenda_review.html",
+        "line": 4,
+        "sha256": "e0b7d0a7da5025bfea810557824b9c4180e50db9027a3adba526048f5fb913ea",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/baseline_accounting_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/addenda_review.html",
+        "line": 5,
+        "sha256": "b58815ea1a0bea1726ffb9e3698cc35313880102dd52a7a7e1c98cb9a2ce3e02",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/output_projection_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/addenda_review.html",
+        "line": 6,
+        "sha256": "04b5f05914ec11b644f0f26eaa25d6c96ee7b5a0bfb422308b4635a9de7c73b4",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/scope_antecedents_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/addenda_review.html",
+        "line": 11,
+        "sha256": "3d4bdb15966a79cb67766e91babee3b81017376a79f42c8c4141bfd85a7aa78d",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/strong_mixing_precision/SM001_strong_mixing_half_log_precision_v1.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/addenda_review.html",
+        "line": 11,
+        "sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+        "status": "EXACT_INHERITED_PUBLIC",
+        "targets": [
+          "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/consolidated_v2_review.html",
+        "line": 2,
+        "sha256": "4c6af6c108e36b161476622f1514da360f0a258e940a91a8a737828949599fdf",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/consolidated_v2_source.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/consolidated_v2_review.html",
+        "line": 2,
+        "sha256": "bf0b6b88f8596233878ed73119f3f4ccabedda04f37ee5405841e5c7d044cc57",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/route_a_terminal_report_v2.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/consolidated_v3_comparison_review.html",
+        "line": 2,
+        "sha256": "2f6030e99b4bc0ae4c6f3c20958a0d690d03c860653236aa898b86a2cc0dad17",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/route_a_terminal_report_v3.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/consolidated_v3_comparison_review.html",
+        "line": 2,
+        "sha256": "4c6af6c108e36b161476622f1514da360f0a258e940a91a8a737828949599fdf",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/consolidated_v2_source.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/consolidated_v3_comparison_review.html",
+        "line": 2,
+        "sha256": "78361879e52fa0301def0998f19f10435d0481375324c712be1a8e688b0bf3c8",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/consolidated_v3_source.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/consolidated_v3_comparison_review.html",
+        "line": 2,
+        "sha256": "bf0b6b88f8596233878ed73119f3f4ccabedda04f37ee5405841e5c7d044cc57",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/route_a_terminal_report_v2.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/consolidated_v3_comparison_review.html",
+        "line": 2,
+        "sha256": "ff2661039684049ceb5a1032754cb502d3da139ade01467bb90c18d93c92d41a",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_arch_spline_review_20261103_1226/consolidated_v2_review.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/final_corrections_review.html",
+        "line": 3,
+        "sha256": "06e060ddfcdc52d1ce2e6f6824cf7b0ea2e3973e1ec704619f19f7a66ab8fbff",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/qkv_spec_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/final_corrections_review.html",
+        "line": 3,
+        "sha256": "1aee214f3a229a8b565ac33e03042e84ee95ce1b19504b747ddd3a4c7ac5c58f",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_arch_spline_review_20261103_1226/report.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/final_corrections_review.html",
+        "line": 3,
+        "sha256": "1be28f3e062056639fc9a314f20827103423ec15f3696c8d616b4e5b3f99dd8a",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_arch_spline_review_20261103_1226/addenda_review.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/final_corrections_review.html",
+        "line": 3,
+        "sha256": "464cc5d3f4b616df9c704c8bf5fec3d229321021b0bda307ca5458cceff82a97",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/saturation_error_correction_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_arch_spline_review_20261103_1226/report.html",
+        "line": 3,
+        "sha256": "349d25a0f19e955fb063312df3adf5b436be7418d2e6d032f93d7ca6c63af4c5",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/report_source.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_route_b_review_20261103_1226/PROVENANCE_ADDENDUM.md",
+        "line": 3,
+        "sha256": "1931ea61a33509cfae6c63e143ff897ffb05e2703997a4693213fc5e98f0ad1c",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_finite_prefix_20261103_1223/PROVENANCE_CORRECTION_20261103.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_route_b_review_20261103_1226/PROVENANCE_ADDENDUM.md",
+        "line": 3,
+        "sha256": "8c092b0c29f3f78de423b39e97608640b8ce055f23bd5251446220450d0a2586",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_finite_prefix_20261103_1223/route_b_research.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_route_b_review_20261103_1226/REVIEW.md",
+        "line": 3,
+        "sha256": "8c092b0c29f3f78de423b39e97608640b8ce055f23bd5251446220450d0a2586",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_finite_prefix_20261103_1223/route_b_research.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_stage1_cross_source_review_20261103_1238/LINK_COUNT_CORRECTION.html",
+        "line": 1,
+        "sha256": "ad06031db88202a9d49c985cda5a864eedbd6a0898583e7f31cef8d6e7ad7ece",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_stage1_cross_source_review_20261103_1238/REVIEW.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_stage1_cross_source_review_20261103_1238/REVIEW.html",
+        "line": 1,
+        "sha256": "01dd24ee9f4c46719a71077124e6f5b7e7e63e5c05ec814574fa170764fd8c93",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/t1t2_stage1_synthesis_20261103_1233/stage1_report_v2.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_stage1_cross_source_review_20261103_1238/REVIEW.html",
+        "line": 1,
+        "sha256": "b623f5ee9052e09adcb87ff00773550574dbbf023dce3ac6e3ac84b2c955e428",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/t1t2_stage1_synthesis_20261103_1233/gate0_rajaraman_chen_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_valg_family_review_20261103_1213/REVIEW.md",
+        "line": 3,
+        "sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_valg_family_review_20261103_1213/REVIEW.md",
+        "line": 3,
+        "sha256": "d8fb74335079407d2c296650eae437d27155e79eefedd1412f4dfde145055abe",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/cases_v1.jsonl",
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/cases_v2.jsonl"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_valg_family_review_20261103_1213/verification.log",
+        "line": 2,
+        "sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_valg_family_review_20261103_1213/verification.log",
+        "line": 3,
+        "sha256": "d8fb74335079407d2c296650eae437d27155e79eefedd1412f4dfde145055abe",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/cases_v1.jsonl",
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/cases_v2.jsonl"
+        ]
+      },
+      {
+        "source_path": "v10_research/prior_art_dangelo_full_20261103/INCIDENT_ORIGINAL_BYTES_20261103.md",
+        "line": 9,
+        "sha256": "dbf4ca4474c8a681ca9280d95c4741f39825656adfa9d02d087c28373b3af116",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/prior_art_dangelo_full_20261103/AUDIT.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/prior_art_dangelo_full_20261103/INCIDENT_ORIGINAL_BYTES_20261103.md",
+        "line": 10,
+        "sha256": "af88c81b3a20dcf9662fc1dce028547d41aa803aa43a2e227aaf6aae20033836",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/prior_art_dangelo_full_20261103/SELF_CHECK.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/prior_art_dangelo_full_20261103/INCIDENT_ORIGINAL_BYTES_20261103.md",
+        "line": 11,
+        "sha256": "028e588fdcb220ddd51dbe3b16ac33554c299bfd18a09b00beb9b403c75fcf85",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/review_dangelo_independent_20261103/REVIEW.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/prior_art_dangelo_full_20261103/INCIDENT_ORIGINAL_BYTES_20261103.md",
+        "line": 12,
+        "sha256": "48a6d23363202c6cbdc3928848a598f54850a80d28b7b8b8372e0f4db0e81855",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/prior_art_dangelo_full_20261103/ADDENDUM_INDEPENDENT_REVIEW_20261103.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/SHA256SUMS.txt",
+        "line": 1,
+        "sha256": "8c5e50b06f5288658863e8d291b755a660f3837b80de81b99058c52c464a0969",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/check_family_v1.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/SHA256SUMS.txt",
+        "line": 2,
+        "sha256": "d91bf4a3808d535d5c4158ae3c0ef96f94b97319396c8b948365f48b55bb84df",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/check_family_v2.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/SHA256SUMS.txt",
+        "line": 3,
+        "sha256": "d8fb74335079407d2c296650eae437d27155e79eefedd1412f4dfde145055abe",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/cases_v1.jsonl",
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/cases_v2.jsonl"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/SHA256SUMS.txt",
+        "line": 4,
+        "sha256": "d8fb74335079407d2c296650eae437d27155e79eefedd1412f4dfde145055abe",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/cases_v1.jsonl",
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/cases_v2.jsonl"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/SHA256SUMS.txt",
+        "line": 5,
+        "sha256": "dd670daa23b870bc6211e0be311db79051743ea7975de4acb9026c79d8b90822",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/run_v1.log"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/SHA256SUMS.txt",
+        "line": 6,
+        "sha256": "eb443f3f377169757ab66175a74f085116feb925d8035c895ea42f159db17799",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/run_v2.log"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/SHA256SUMS.txt",
+        "line": 7,
+        "sha256": "e0e178eac579d4ec17765001a90a5ea1ac933d9cf4e29648912660512afbdb00",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/attempts_and_corrections.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/SHA256SUMS.txt",
+        "line": 8,
+        "sha256": "9b31cbb854031547294a7b3ee45b5df483135f251c105e117120efde4ea619d2",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/SHA256_REPORT_V2.txt",
+        "line": 1,
+        "sha256": "6a74ea64e275e067cd5b2b660282d1ecfbf68556d26c68631bd1a8806d1c2413",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v2.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/SHA256_REPORT_V3.txt",
+        "line": 1,
+        "sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/SHA256_SCOPE_CLARIFICATION_V1.txt",
+        "line": 1,
+        "sha256": "a9fe2765a7972eb02a95df7af0cec35cc6eeea0f420c6cc1fe929b9989e02bdd",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_scope_clarification_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_scope_clarification_v1.html",
+        "line": 7,
+        "sha256": "c238f0e376863695ac9a0274e15e581cb1dc9b349d0bf03ea36f7df48752aea6",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_valg_family_review_20261103_1213/REVIEW.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_scope_clarification_v1.html",
+        "line": 7,
+        "sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 1,
+        "sha256": "349d25a0f19e955fb063312df3adf5b436be7418d2e6d032f93d7ca6c63af4c5",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/report_source.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 2,
+        "sha256": "f3ffa02c8b981c99e09afb006c4ca0f8ba0f4c2753af924cd07ffcc9f7b065e1",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/route_a_terminal_report_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 3,
+        "sha256": "2d0f928b3292511e3632109f379c85b34419be64f35ddc0965deaa364245f81b",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/check_exhaustive.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 4,
+        "sha256": "4549d301ecbeebd0ca1264a75f76bd62af46cbce834bcf31fc6c6e4612a5b61c",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/check_exhaustive.log"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 5,
+        "sha256": "e995852f6929d9fb1d0aa23a36bb92c86b65bc61648cf2a025a8d91481ea7005",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/exact_cases.jsonl"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 6,
+        "sha256": "8571ef8de5c3d751ed2df01483bfc07ad3e7ea7cfbf9dcbf33e381e168c55481",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/render_report.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 7,
+        "sha256": "3b78b183fce4724ae3802180379b979d9223c81f9f31a7d08e0763bd954ee0ad",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/RESEARCH_LOG.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 8,
+        "sha256": "f47ad8367c95fe1a4af2ff0a590df2c069f1229ddb25c1191ee1fdb5843d5a91",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/INDEPENDENT_BOUND_REVIEW.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 9,
+        "sha256": "b58815ea1a0bea1726ffb9e3698cc35313880102dd52a7a7e1c98cb9a2ce3e02",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/output_projection_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 10,
+        "sha256": "e0b7d0a7da5025bfea810557824b9c4180e50db9027a3adba526048f5fb913ea",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/baseline_accounting_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 11,
+        "sha256": "04b5f05914ec11b644f0f26eaa25d6c96ee7b5a0bfb422308b4635a9de7c73b4",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/scope_antecedents_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 12,
+        "sha256": "06e060ddfcdc52d1ce2e6f6824cf7b0ea2e3973e1ec704619f19f7a66ab8fbff",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/qkv_spec_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 13,
+        "sha256": "464cc5d3f4b616df9c704c8bf5fec3d229321021b0bda307ca5458cceff82a97",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/saturation_error_correction_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 14,
+        "sha256": "bf0b6b88f8596233878ed73119f3f4ccabedda04f37ee5405841e5c7d044cc57",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/route_a_terminal_report_v2.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 15,
+        "sha256": "4c6af6c108e36b161476622f1514da360f0a258e940a91a8a737828949599fdf",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/consolidated_v2_source.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 16,
+        "sha256": "82fb3538d6f6dc9ce3689f57ab3f4b40c87ace645e98bbba7d112b8e2b0199a2",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/build_consolidated_v2.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 17,
+        "sha256": "8bba48b41fb1a9c07deba14bb5e4f51d61cb2f98fbbff8ed269e22b7268c1f59",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/build_consolidated_v2_attempt1.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 18,
+        "sha256": "2ee74678f2871d5306040bc1e93b6932fe39d0e2911f61c3848ba5cdc2a83fec",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/build_v2_attempt1.log"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 19,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/build_v2_attempt2.log"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 20,
+        "sha256": "2f6030e99b4bc0ae4c6f3c20958a0d690d03c860653236aa898b86a2cc0dad17",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/route_a_terminal_report_v3.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 21,
+        "sha256": "78361879e52fa0301def0998f19f10435d0481375324c712be1a8e688b0bf3c8",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/consolidated_v3_source.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 22,
+        "sha256": "b93edfadd6b8ea1cfd97debcc2e75d570142763653b2799f3884617ee1389fdb",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/build_consolidated_v3.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/SHA256SUMS.txt",
+        "line": 23,
+        "sha256": "de13394f79bc3c002908a7fa1a777908afe8bde69bd675e86d142ec74544b459",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/build_v3.log"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_terminal_inference_20261103_1223/scope_antecedents_addendum_v1.html",
+        "line": 9,
+        "sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+        "status": "EXACT_INHERITED_PUBLIC",
+        "targets": [
+          "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_b_finite_prefix_20261103_1223/PROVENANCE_CORRECTION_20261103.html",
+        "line": 1,
+        "sha256": "8c092b0c29f3f78de423b39e97608640b8ce055f23bd5251446220450d0a2586",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_finite_prefix_20261103_1223/route_b_research.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_b_finite_prefix_20261103_1223/PROVENANCE_CORRECTION_20261103.html",
+        "line": 1,
+        "sha256": "dbf4ca4474c8a681ca9280d95c4741f39825656adfa9d02d087c28373b3af116",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/prior_art_dangelo_full_20261103/AUDIT.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/GATE0_ADDENDUM_SHA256SUMS.txt",
+        "line": 2,
+        "sha256": "b623f5ee9052e09adcb87ff00773550574dbbf023dce3ac6e3ac84b2c955e428",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/t1t2_stage1_synthesis_20261103_1233/gate0_rajaraman_chen_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/GATE0_ADDENDUM_SHA256SUMS.txt",
+        "line": 3,
+        "sha256": "01dd24ee9f4c46719a71077124e6f5b7e7e63e5c05ec814574fa170764fd8c93",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/t1t2_stage1_synthesis_20261103_1233/stage1_report_v2.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/GATE0_ADDENDUM_SHA256SUMS.txt",
+        "line": 4,
+        "sha256": "2376f7f31179eff3c34e34f3a1af53a33cad8a26df0ac5376171799768b7306c",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/gate0_rajaraman_chen_20261103_1233/primary_source_audit.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/GATE0_ADDENDUM_SHA256SUMS.txt",
+        "line": 5,
+        "sha256": "ed6df1783c06405449c2633e76b8467e3efa1a3e71fa024576bb7cadad239214",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/gate0_rajaraman_chen_20261103_1233/INITIALIZATION_ADDENDUM.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 12,
+        "sha256": "bd7c0c202ed27573f34f09d05318df0731538d5fc657c0a3ea4a7b23f95c5d5c",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/t1t2_shared_model_20261103/shared_model_interface_v0_1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 13,
+        "sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 14,
+        "sha256": "a9fe2765a7972eb02a95df7af0cec35cc6eeea0f420c6cc1fe929b9989e02bdd",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_scope_clarification_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 15,
+        "sha256": "c238f0e376863695ac9a0274e15e581cb1dc9b349d0bf03ea36f7df48752aea6",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_valg_family_review_20261103_1213/REVIEW.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 16,
+        "sha256": "dbf4ca4474c8a681ca9280d95c4741f39825656adfa9d02d087c28373b3af116",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/prior_art_dangelo_full_20261103/AUDIT.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 17,
+        "sha256": "af88c81b3a20dcf9662fc1dce028547d41aa803aa43a2e227aaf6aae20033836",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/prior_art_dangelo_full_20261103/SELF_CHECK.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 18,
+        "sha256": "48a6d23363202c6cbdc3928848a598f54850a80d28b7b8b8372e0f4db0e81855",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/prior_art_dangelo_full_20261103/ADDENDUM_INDEPENDENT_REVIEW_20261103.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 19,
+        "sha256": "4686cbf2f504a01f3881008f58fb6be1823dac04572c33eb4cc156d982b76d2c",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/prior_art_dangelo_full_20261103/INCIDENT_ORIGINAL_BYTES_20261103.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 20,
+        "sha256": "028e588fdcb220ddd51dbe3b16ac33554c299bfd18a09b00beb9b403c75fcf85",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/review_dangelo_independent_20261103/REVIEW.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 21,
+        "sha256": "eac84e4f17e87b0f4c92e7419831fdcd6a67ae629230ef6eb9550527ede629c0",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/akman_prior_art_audit_20261103/AUDIT.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 22,
+        "sha256": "6111e4a02a9647c657c775cbf17e590d19eb9370607e773c02fa02df25f0aeb0",
+        "status": "EXCLUDED_THIRD_PARTY_PDF_RETRIEVAL_IDENTITY",
+        "targets": []
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 23,
+        "sha256": "063b8850fa0d295097d59d9c274f16e0ec6d010c4327bd8d7ca62e52eb9fb8da",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_akman_assumptions_20261103/REVIEW.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 24,
+        "sha256": "8c092b0c29f3f78de423b39e97608640b8ce055f23bd5251446220450d0a2586",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_finite_prefix_20261103_1223/route_b_research.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 25,
+        "sha256": "1931ea61a33509cfae6c63e143ff897ffb05e2703997a4693213fc5e98f0ad1c",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_finite_prefix_20261103_1223/PROVENANCE_CORRECTION_20261103.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 26,
+        "sha256": "f11e82f4ab560293b5b3e1981b96d04e0ffde1bf4b943192fffed22d7f677df6",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_finite_prefix_20261103_1223/exploration_original_commands.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 27,
+        "sha256": "fd6ec90c639c718a8698385a61d9c9163de202b8e2ce2e8dc6c31c3b1e283fbb",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_route_b_review_20261103_1226/REVIEW.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 28,
+        "sha256": "32c5fef0974b1371d1720adbabe13ba5f223a6dbb90a29f5d81d9221cf89079e",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_route_b_review_20261103_1226/PROVENANCE_ADDENDUM.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 29,
+        "sha256": "2f6030e99b4bc0ae4c6f3c20958a0d690d03c860653236aa898b86a2cc0dad17",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/route_a_terminal_report_v3.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 30,
+        "sha256": "78361879e52fa0301def0998f19f10435d0481375324c712be1a8e688b0bf3c8",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/consolidated_v3_source.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 31,
+        "sha256": "f47ad8367c95fe1a4af2ff0a590df2c069f1229ddb25c1191ee1fdb5843d5a91",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/INDEPENDENT_BOUND_REVIEW.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 32,
+        "sha256": "b58815ea1a0bea1726ffb9e3698cc35313880102dd52a7a7e1c98cb9a2ce3e02",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/output_projection_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 33,
+        "sha256": "464cc5d3f4b616df9c704c8bf5fec3d229321021b0bda307ca5458cceff82a97",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/saturation_error_correction_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 34,
+        "sha256": "06e060ddfcdc52d1ce2e6f6824cf7b0ea2e3973e1ec704619f19f7a66ab8fbff",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/qkv_spec_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 35,
+        "sha256": "e0b7d0a7da5025bfea810557824b9c4180e50db9027a3adba526048f5fb913ea",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/baseline_accounting_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 36,
+        "sha256": "04b5f05914ec11b644f0f26eaa25d6c96ee7b5a0bfb422308b4635a9de7c73b4",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_terminal_inference_20261103_1223/scope_antecedents_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 37,
+        "sha256": "3a96c8b0da3c67a86eeef7e10ff1d439d908418f3e004f8c0efe542c9c9c9fd6",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_independent_architecture_review_20261103_1226/review.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 38,
+        "sha256": "1aee214f3a229a8b565ac33e03042e84ee95ce1b19504b747ddd3a4c7ac5c58f",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_arch_spline_review_20261103_1226/report.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 39,
+        "sha256": "1be28f3e062056639fc9a314f20827103423ec15f3696c8d616b4e5b3f99dd8a",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_arch_spline_review_20261103_1226/addenda_review.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 40,
+        "sha256": "3a269421ad80e96d98cdf3d42dbdcf60c8c01f072aa2e0dd9acc1fcd80f2a45f",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_arch_spline_review_20261103_1226/final_corrections_review.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 41,
+        "sha256": "ff2661039684049ceb5a1032754cb502d3da139ade01467bb90c18d93c92d41a",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_arch_spline_review_20261103_1226/consolidated_v2_review.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 42,
+        "sha256": "9c34ea5540f78aee6b9db9b422b42426fd846c30af9774f45e0c568b27f13b8e",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_arch_spline_review_20261103_1226/consolidated_v3_comparison_review.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 43,
+        "sha256": "764c7364a5b7e03cae6afa6898a68c75e84eb9603fdabe0d1bde8904f7341a9f",
+        "status": "MAPPED_INHERITED_ORIGINAL",
+        "targets": [
+          "v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 44,
+        "sha256": "05167473c100a8053a2e67ac06c100c086936f35d2e605d4b9fdf6b4b915db52",
+        "status": "MAPPED_INHERITED_ORIGINAL",
+        "targets": [
+          "v10_research/research_direction_review_20261103/REASSESSMENT.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 45,
+        "sha256": "4e5c513f7164eea40ad87dc5041c7393623e4a9ad9186c135a56aa7981c19493",
+        "status": "EXACT_INHERITED_PUBLIC",
+        "targets": [
+          "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 46,
+        "sha256": "43e86ee5c6c0f2a0c25e1204eafd0404c7618234b79837bd416d53df1aef5e88",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/t1t2_stage1_synthesis_20261103_1233/stage1_report.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+        "line": 47,
+        "sha256": "01dd24ee9f4c46719a71077124e6f5b7e7e63e5c05ec814574fa170764fd8c93",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/t1t2_stage1_synthesis_20261103_1233/stage1_report_v2.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_gate0_review_20261103_1250/REVIEW.html",
+        "line": 3,
+        "sha256": "13462d89942d492f3a563f647a3edac1e790c8c0c9e01e7b34f8d2e7c3015cd3",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/gate0_yuksel_izzo_audit_20261103_1247/GATE0_AUDIT.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_port_collision_20261103_1256/independent_review.html",
+        "line": 11,
+        "sha256": "3fb4f1e0ffc74b727368dafdb73c375152bae68075a1fb8790af1a0ee3bf2689",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/exact_cases.jsonl"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_port_collision_20261103_1256/independent_review.html",
+        "line": 11,
+        "sha256": "4f55de4c3fc292fc08473560c5e4d64ef3ffa1297daa1fa31394ae4f28f8366b",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/check_collision.log"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_port_collision_20261103_1256/independent_review.html",
+        "line": 11,
+        "sha256": "a64f91f3ccb30896160ccf690d11792cd044bbf5191c71ea67f1433912313711",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/check_positionwise.log"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_port_collision_20261103_1256/independent_review.html",
+        "line": 11,
+        "sha256": "ad04d3e70ee9645b096a732b324179c0d09b3ee11199a186751c2675aa74feeb",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/check_positionwise.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_port_collision_20261103_1256/independent_review.html",
+        "line": 11,
+        "sha256": "b5a520bad1989c94a615f0ceae3db780991d29bcfa114783468d8a5a3d254cea",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/check_collision.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_port_collision_20261103_1256/independent_review.html",
+        "line": 11,
+        "sha256": "f8921f122bba8b536754baae6a7836b5722a2b2a698220ea42fc5b49e8e8c670",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/positionwise_cases.jsonl"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_terminal_port_review_20261103_1259/REVIEW.md",
+        "line": 3,
+        "sha256": "4ae17319588e6579f2ca58826d0630eaf1409fa8b3e688b803ca37283cbc03b9",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/risk_comparison_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_terminal_port_review_20261103_1259/REVIEW.md",
+        "line": 3,
+        "sha256": "809c8a14b021c507c2c2781d5b5f83594dca7ea2157bfae63221bc86ee30d6ef",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/population_signal_correction_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_terminal_port_review_20261103_1259/REVIEW.md",
+        "line": 3,
+        "sha256": "b557994fb9ee0c6cb2ff87ea26980c049d4b94cc65b66c82264c92ac4199a368",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/route_b_terminal_identifiability_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_terminal_port_review_20261103_130017_2/PRECISION_TIE_ADDENDUM_20261103_1301.txt",
+        "line": 4,
+        "sha256": "b557994fb9ee0c6cb2ff87ea26980c049d4b94cc65b66c82264c92ac4199a368",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/route_b_terminal_identifiability_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_terminal_port_review_20261103_130017_2/PRECISION_TIE_ADDENDUM_20261103_1301.txt",
+        "line": 5,
+        "sha256": "4ae17319588e6579f2ca58826d0630eaf1409fa8b3e688b803ca37283cbc03b9",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/risk_comparison_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_terminal_port_review_20261103_130017_2/PRECISION_TIE_ADDENDUM_20261103_1301.txt",
+        "line": 6,
+        "sha256": "809c8a14b021c507c2c2781d5b5f83594dca7ea2157bfae63221bc86ee30d6ef",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/population_signal_correction_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_terminal_port_review_20261103_130017_2/PRECISION_TIE_ADDENDUM_20261103_1301.txt",
+        "line": 7,
+        "sha256": "571b7f653417a2aec888ceacb5cfd7278a3dd217cb74f0611d1de6c48f01b48a",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/precision_tie_correction_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_terminal_port_review_20261103_130017_2/REVIEW.txt",
+        "line": 3,
+        "sha256": "b557994fb9ee0c6cb2ff87ea26980c049d4b94cc65b66c82264c92ac4199a368",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/route_b_terminal_identifiability_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_terminal_port_review_20261103_130017_2/REVIEW.txt",
+        "line": 4,
+        "sha256": "4ae17319588e6579f2ca58826d0630eaf1409fa8b3e688b803ca37283cbc03b9",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/risk_comparison_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/independent_terminal_port_review_20261103_130017_2/REVIEW.txt",
+        "line": 5,
+        "sha256": "809c8a14b021c507c2c2781d5b5f83594dca7ea2157bfae63221bc86ee30d6ef",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/population_signal_correction_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/INDEPENDENT_REVIEW_HASHES.txt",
+        "line": 1,
+        "sha256": "4f55de4c3fc292fc08473560c5e4d64ef3ffa1297daa1fa31394ae4f28f8366b",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/check_collision.log"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/INDEPENDENT_REVIEW_HASHES.txt",
+        "line": 2,
+        "sha256": "b5a520bad1989c94a615f0ceae3db780991d29bcfa114783468d8a5a3d254cea",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/check_collision.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/INDEPENDENT_REVIEW_HASHES.txt",
+        "line": 3,
+        "sha256": "a64f91f3ccb30896160ccf690d11792cd044bbf5191c71ea67f1433912313711",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/check_positionwise.log"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/INDEPENDENT_REVIEW_HASHES.txt",
+        "line": 4,
+        "sha256": "ad04d3e70ee9645b096a732b324179c0d09b3ee11199a186751c2675aa74feeb",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/check_positionwise.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/INDEPENDENT_REVIEW_HASHES.txt",
+        "line": 5,
+        "sha256": "3fb4f1e0ffc74b727368dafdb73c375152bae68075a1fb8790af1a0ee3bf2689",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/exact_cases.jsonl"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/INDEPENDENT_REVIEW_HASHES.txt",
+        "line": 6,
+        "sha256": "d2bc6311888f305764d0fa8645eb8114c3d9a5455e2d71265911b9aabe6aa0a4",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/independent_review.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/INDEPENDENT_REVIEW_HASHES.txt",
+        "line": 7,
+        "sha256": "f8921f122bba8b536754baae6a7836b5722a2b2a698220ea42fc5b49e8e8c670",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/independent_port_collision_20261103_1256/positionwise_cases.jsonl"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 1,
+        "sha256": "f10ddfad09906bb223ba05841efbea60e999a08532387337ac910d5e1b545c81",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/report_source.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 2,
+        "sha256": "50c7f7c457442696be173ce36e13149221f056171f9f0a1f2ec1a3b2280d357d",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/route_a_rare_soft_threshold_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 3,
+        "sha256": "ac399c5771182772339f844eed65523bd959917db58025b3121885be4230c7a0",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/render.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 4,
+        "sha256": "1f750ab757e62b9ec37adcf50b4270b760b73710088c2b0e063e8250d94f2e54",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/check_collision.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 5,
+        "sha256": "1dda0118b4d8008ca6bc4851308ca67c3ff25391cb10b9881e2a98ec3a65af8d",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/check_collision.log"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 6,
+        "sha256": "b5486a9a79563ad07bb3c6186d4cb377173dcd2f5e9020568f821342ea390532",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/cases.jsonl"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 7,
+        "sha256": "983691a961fd3e6a368b139dd2be8b73e26336a858e386534496f4e78e82e9de",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/prior_art_comparison_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 8,
+        "sha256": "3440465a370f129109acb859c526bf9099e1872b0555142bcec2e88d04275b97",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/dangelo_composite_mapping_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 9,
+        "sha256": "0c6d1863049c55b2a4b90b832e0fab6af9c886ff5a3d1dec84334671022c4318",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/all_state_port_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 10,
+        "sha256": "8e85e8061c702f554ed459d2cdc0b02fae8e57507a0420c8bed93cc4ddcf787d",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/independent_direct_risk_review.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 11,
+        "sha256": "5f09ca2bc5f4adedff9e18c9dc6dab60fd36b09846870ed846f9db622dfa935d",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/RUN_LOG.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 12,
+        "sha256": "d636f6bc6b74ff017c5da1f543be558b1db8c185687eebf930cc62e580cfd567",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/unknown_u_score_schedule_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 13,
+        "sha256": "8bbbf6cd24dd6862c5635e1589a5273d8afbc9619ccdfcd0a05ddd3f788b17eb",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/unknown_u_independent_review.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 14,
+        "sha256": "0d0b2189f7df3c6478831c72abcc7b4a6b911e31713b264659c9e17be0e23701",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/check_refined_port.py"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 15,
+        "sha256": "38e707b08ecb2abb7eb4e9d6f088d0a01785a5a5a4d8dc9a29ccaf1b0ee74cf6",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/check_refined_port.log"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 16,
+        "sha256": "fb13814f567f373d8f6fe31cb41848f0cedf42d9367b73216943ee70310319cd",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/refined_port_cases.jsonl"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_rare_soft_threshold_20261103_1255/SHA256SUMS.txt",
+        "line": 17,
+        "sha256": "e8ed77f304c08446331925d0bc13d3f3da1b1f1fe7ed0fbf8ae397cfba01c183",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/RUN_LOG_ADDENDUM.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_b_terminal_identifiability_20261103_1256/population_signal_correction_v1.html",
+        "line": 1,
+        "sha256": "b557994fb9ee0c6cb2ff87ea26980c049d4b94cc65b66c82264c92ac4199a368",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/route_b_terminal_identifiability_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_b_terminal_identifiability_20261103_1256/precision_tie_correction_v1.html",
+        "line": 1,
+        "sha256": "b557994fb9ee0c6cb2ff87ea26980c049d4b94cc65b66c82264c92ac4199a368",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/route_b_terminal_identifiability_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_b_terminal_identifiability_20261103_1256/risk_comparison_addendum_v1.html",
+        "line": 1,
+        "sha256": "b557994fb9ee0c6cb2ff87ea26980c049d4b94cc65b66c82264c92ac4199a368",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_b_terminal_identifiability_20261103_1256/route_b_terminal_identifiability_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/INDEPENDENT_REVIEW_SHA256.txt",
+        "line": 1,
+        "sha256": "deedbdbc747770b7bc58a39cfb4f953de555c4f5acb7a798a762ac8c41247f2f",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/adversarial_soft_novelty_review_20261103_1307/independent_citation_adversarial_review_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/SHA256SUMS.txt",
+        "line": 1,
+        "sha256": "15657e58f3d352c6ccfb057cded790e7d2d7563d7a54f2d76005ca17ae011bbe",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_novelty_gate_20261103_1307/novelty_comparison_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/SHA256SUMS.txt",
+        "line": 2,
+        "sha256": "611a685a662edefcd6d56657e74dc53ef6cea887b4f7e0766297902316393098",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_novelty_gate_20261103_1307/source_identity.txt"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/SHA256SUMS.txt",
+        "line": 3,
+        "sha256": "0fb81bcc857a31ea071851929dc3f11db0140010e325ae9ccb7eb47f0ab7ba04",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_novelty_gate_20261103_1307/adversarial_baseline_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/adversarial_baseline_addendum_v1.html",
+        "line": 2,
+        "sha256": "deedbdbc747770b7bc58a39cfb4f953de555c4f5acb7a798a762ac8c41247f2f",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/adversarial_soft_novelty_review_20261103_1307/independent_citation_adversarial_review_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/novelty_comparison_v1.html",
+        "line": 4,
+        "sha256": "50c7f7c457442696be173ce36e13149221f056171f9f0a1f2ec1a3b2280d357d",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/route_a_rare_soft_threshold_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/novelty_comparison_v1.html",
+        "line": 4,
+        "sha256": "d636f6bc6b74ff017c5da1f543be558b1db8c185687eebf930cc62e580cfd567",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/unknown_u_score_schedule_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/novelty_comparison_v1.html",
+        "line": 15,
+        "sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+        "status": "EXACT_INHERITED_PUBLIC",
+        "targets": [
+          "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/novelty_comparison_v1.html",
+        "line": 23,
+        "sha256": "809f2b5f0e6c2631122d61299a5133f5fa8f3ee3b4c8c42ed3d3a78983068626",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/izzo_primary_audit_20261103/ADDENDUM_20261103.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/novelty_comparison_v1.html",
+        "line": 23,
+        "sha256": "d3875d54499912bf92b81fd2eb2e4b8dcf47e2b004bbd825bc27cac43f8d575c",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/izzo_primary_audit_20261103/REPORT.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/source_identity.txt",
+        "line": 1,
+        "sha256": "50c7f7c457442696be173ce36e13149221f056171f9f0a1f2ec1a3b2280d357d",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/route_a_rare_soft_threshold_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/source_identity.txt",
+        "line": 1,
+        "sha256": "d636f6bc6b74ff017c5da1f543be558b1db8c185687eebf930cc62e580cfd567",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/unknown_u_score_schedule_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/source_identity.txt",
+        "line": 5,
+        "sha256": "1feb2882b9134001ec1b45dbdea8e02e411fa99eb6c738489b929b1fa053b61d",
+        "status": "EXACT_INHERITED_PUBLIC",
+        "targets": [
+          "cloud_work/conditions-20261028/research/resume_20261030/R011_root_acceptance.json"
+        ]
+      },
+      {
+        "source_path": "v10_research/route_a_novelty_gate_20261103_1307/source_identity.txt",
+        "line": 5,
+        "sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+        "status": "EXACT_INHERITED_PUBLIC",
+        "targets": [
+          "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/adversarial_soft_novelty_review_20261103_1307/independent_citation_adversarial_review_v1.html",
+        "line": 28,
+        "sha256": "50c7f7c457442696be173ce36e13149221f056171f9f0a1f2ec1a3b2280d357d",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/route_a_rare_soft_threshold_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/adversarial_soft_novelty_review_20261103_1307/independent_citation_adversarial_review_v1.html",
+        "line": 29,
+        "sha256": "d636f6bc6b74ff017c5da1f543be558b1db8c185687eebf930cc62e580cfd567",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/unknown_u_score_schedule_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/adversarial_soft_novelty_review_20261103_1307/independent_citation_adversarial_review_v1.html",
+        "line": 30,
+        "sha256": "3440465a370f129109acb859c526bf9099e1872b0555142bcec2e88d04275b97",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/route_a_rare_soft_threshold_20261103_1255/dangelo_composite_mapping_addendum_v1.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/adversarial_soft_novelty_review_20261103_1307/independent_citation_adversarial_review_v1.html",
+        "line": 31,
+        "sha256": "13462d89942d492f3a563f647a3edac1e790c8c0c9e01e7b34f8d2e7c3015cd3",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/gate0_yuksel_izzo_audit_20261103_1247/GATE0_AUDIT.html"
+        ]
+      },
+      {
+        "source_path": "v10_research/adversarial_soft_novelty_review_20261103_1307/independent_citation_adversarial_review_v1.html",
+        "line": 31,
+        "sha256": "809f2b5f0e6c2631122d61299a5133f5fa8f3ee3b4c8c42ed3d3a78983068626",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/izzo_primary_audit_20261103/ADDENDUM_20261103.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/adversarial_soft_novelty_review_20261103_1307/independent_citation_adversarial_review_v1.html",
+        "line": 31,
+        "sha256": "d3875d54499912bf92b81fd2eb2e4b8dcf47e2b004bbd825bc27cac43f8d575c",
+        "status": "SELECTED_ORIGINAL",
+        "targets": [
+          "v10_research/izzo_primary_audit_20261103/REPORT.md"
+        ]
+      },
+      {
+        "source_path": "v10_research/adversarial_soft_novelty_review_20261103_1307/independent_citation_adversarial_review_v1.html",
+        "line": 32,
+        "sha256": "1feb2882b9134001ec1b45dbdea8e02e411fa99eb6c738489b929b1fa053b61d",
+        "status": "EXACT_INHERITED_PUBLIC",
+        "targets": [
+          "cloud_work/conditions-20261028/research/resume_20261030/R011_root_acceptance.json"
+        ]
+      },
+      {
+        "source_path": "v10_research/adversarial_soft_novelty_review_20261103_1307/independent_citation_adversarial_review_v1.html",
+        "line": 32,
+        "sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+        "status": "EXACT_INHERITED_PUBLIC",
+        "targets": [
+          "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md"
+        ]
+      }
+    ]
+  },
+  "historical_manifest_exceptions": [
+    {
+      "path": "v10_research/t1t2_stage1_synthesis_20261103_1233/SOURCE_SHA256SUMS.txt",
+      "status": "DERIVED_HISTORICAL_SCIENTIFIC_LEDGER",
+      "explanation": "The original administrative rows are omitted completely and a relocated research path is mapped. The 36 retained scientific entries preserve original source hashes; an excluded-paper retrieval hash is metadata only. It is not a current export allowlist."
+    },
+    {
+      "path": "v10_research/akman_prior_art_audit_20261103/SHA256SUMS.txt",
+      "status": "UNCHANGED_HISTORICAL_RETRIEVAL_LEDGER",
+      "explanation": "Original audit/PDF/full-text retrieval identities remain. Only the own-research audit and this checksum ledger are selected. Neither the third-party PDF nor its full extracted text is redistributed."
+    }
+  ],
+  "bounded_antecedents": [
+    {
+      "path": "v10_research/strong_mixing_precision/SM001_strong_mixing_half_log_precision_v1.md",
+      "status": "UNCHANGED_HISTORICAL_AUTHOR_CANDIDATE",
+      "boundary": "A user-project method antecedent, especially the self-contained reverse-chain lemma in section 3. Its original review-pending status is retained. The historical theorem package, auxiliary source bindings and diagnostics are not newly replayed or fully imported. It is not a newly accepted theorem in this stage."
+    }
+  ],
+  "actual_missing_records": [
+    "The original overwritten D’Angelo audit version and its contemporaneous complete hash were not retained.",
+    "The original Route B path search did not save complete contemporaneous per-path records. Later buggy and corrected replay artifacts are labeled later records, not recovery.",
+    "The refined-port log summary of 7,290 equation-(10) subcases is not an additional separately retained case archive. Existing recorded fields support limited derived consistency checking."
+  ],
+  "outcome_boundary": "Reviews are independent LLM reviews, not external peer review, formal proof or novelty certification. The stage records provisional interfaces and restricted results. Gate0 is incomplete, a general nonlinear fixed-bit theorem is not established, and known direct-head scaling antecedents are credited."
+}

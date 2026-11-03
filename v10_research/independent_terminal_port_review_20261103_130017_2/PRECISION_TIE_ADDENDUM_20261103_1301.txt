@@ -1,0 +1,11 @@
+Independent review addendum, 3 November 2026 UTC
+
+This addendum binds the four independently hash-checked artifacts:
+- Route B candidate: b557994fb9ee0c6cb2ff87ea26980c049d4b94cc65b66c82264c92ac4199a368
+- Risk comparison addendum: 4ae17319588e6579f2ca58826d0630eaf1409fa8b3e688b803ca37283cbc03b9
+- Population signal correction: 809c8a14b021c507c2c2781d5b5f83594dca7ea2157bfae63221bc86ee30d6ef
+- Precision tie correction: 571b7f653417a2aec888ceacb5cfd7278a3dd217cb74f0611d1de6c48f01b48a
+
+The precision tie correction is mathematically sound under its declared exact J, C, beta, D and error assumptions. If M rho epsilon=1/2, an actual half-integer reconstructed count must attain the upper bound D epsilon/(2|sinh beta|)=1/2, so D=M exp(|beta|). Because M>0 and beta is finite and nonzero, this forces all coordinates to match when beta>0 and none when beta<0. The matching successor count is therefore the known C or 0, respectively. If D is smaller, the error is strictly below 1/2. This supports exact side-information-aware tie resolution; it does not justify ignoring errors in side ports or allowing arbitrary coarser precision. For query-bit complement, recover the requested coordinate-0 margin by subtracting the matching count from exact C as in the candidate.
+
+This review does not claim formal verification. No RNG, numerical or exhaustive tests, source edits, or external writes were performed; this addendum is a new file.

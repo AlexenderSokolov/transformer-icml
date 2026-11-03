@@ -1,0 +1,25 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>T1/T2 公开档案：只读核验与复现边界</title><style>body{font:16px/1.7 system-ui,sans-serif;max-width:960px;margin:32px auto;padding:0 24px;color:#172b3a}a{color:#075f91}h1,h2{color:#173f5c}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f6f8;padding:14px}.note{border-left:5px solid #a96516;padding:12px;background:#fff7e8}code{overflow-wrap:anywhere}</style></head><body>
+<h1>公开档案核验与复现边界</h1><p><a href="INDEX.html">返回阶段入口</a> · <a href="STAGE_FILE_MANIFEST.json">完整新增清单</a> · <a href="SOURCE_EXPORT_MAP.json">134 项原始/公开身份</a></p>
+<div class="note">默认检查只读已保存文件，不执行任何旧研究程序、搜索、模型初始化或随机采样。它检查字节身份与有限记录一致性，不重新证明数学、不恢复缺失历史、不认证新颖性。</div>
+<h2>1. 安全的默认核验</h2><p>使用可信的完整 Git 仓库检出和 POSIX Python 3.10+。先确认检出对应预期公开提交。仓库原有 <code>tools/public_verify.py</code> 检查全库存的成员、长度和 SHA-256；工作流不改动。下列新入口检查本阶段和九个明确继承的公开文件，并对 14 个数值文件的 58,048 条现存记录作有限一致性检查。</p>
+<p>在仓库根目录执行。清单的信任锚来自已经核验的仓库库存或外部发布记录，不能把任意待审文件自己计算的哈希当作独立可信的期望值。库存自引用文件被原有规则排除；阶段清单不包含自身或全局库存，其自身身份由全局库存和 Git 提交绑定。</p>
+<pre>python -I -B tools/public_verify.py
+MANIFEST_SHA=$(python -I -B -c 'import json; d=json.load(open("provenance/PUBLIC_INVENTORY.json")); print(next(r["sha256"] for r in d["files"] if r["path"]=="provenance/t1t2_stage1_20261103/STAGE_FILE_MANIFEST.json"))')
+python -I -B provenance/t1t2_stage1_20261103/verify_public_archive.py "$PWD" --manifest-sha256 "$MANIFEST_SHA"
+python -I -B -O provenance/t1t2_stage1_20261103/verify_public_archive.py "$PWD" --manifest-sha256 "$MANIFEST_SHA"</pre>
+<p>检查器只向标准输出报告，不写回文件。请不要用输出重定向覆盖档案中的历史日志。单独的数值检查器为 <a href="validator/verify_retained_records.py">verify_retained_records.py</a>；它不替代外层完整字节核验。<a href="validator/RETAINED_RECORD_VALIDATOR_REPORT.md">检查范围及测试报告</a>说明哪些保存字段被核查、哪些量不重算。随附单元测试只使用已保存样本与人工损坏夹具，并在新临时目录写测试文件，不是生产只读入口。</p>
+<h2>2. 原始科学身份与公开副本</h2><p>134 个冻结来源共 17,898,206 原始字节；公开来源共 17,898,737 字节。83 项保持逐字节一致，51 项仅有声明的非数学隐私、归属、行政引用或相对链接规范化。所有数值记录保持原字节；18 个历史程序中 16 个原字节不变，两份历史 HTML 构建器只改报告字符串，程序控制结构、算术常量及数值逻辑不变。源码、真实纠正和独立审阅均保留。</p>
+<p><a href="EXPORT_CHANGES.json">变更位置表</a>给出原/公开 SHA-256、行或字节区域及类别，不公开被移除的私有值。<a href="PUBLIC_EXPORT_RECONCILIATION.json">绑定核对</a>枚举文档中181处显式 SHA-256 引用：167 个选定原始身份、8 个既有公开身份、2 个原始/既有公开映射和4个不随包分发的第三方资料检索身份。引用哈希说明审阅当时读了哪个原始来源，不能声称该哈希在已改写的公开副本上仍直接匹配。</p>
+<p>历史 <code>SHA256SUMS</code> 不自动等于本次公开 allowlist。综合报告的科学校验表是显式派生版本，删除行政输入行、映射一处研究路径，并保留科学原始哈希。Akman 的旧检索清单按原字节保留，但全文 PDF 与文本提取不再分发。新阶段清单和全局库存才是当前公开字节的完整身份表。</p>
+<h2>3. 不要直接把旧脚本当默认重放入口</h2><p>历史脚本为完整留档而保存，其原命令可能写固定相对输出、依赖未分发的文献全文，或重建先前已有的枚举记录。默认检查不会调用它们；本次发布准备也没有运行这些旧程序。尤其报告构建器的历史输入哈希或输出位置不是本次公开版本的自动构建契约。</p>
+<p>若另行研究性执行，应先人工读源码和绑定，使用独立副本和全新输出目录，不覆盖任何原件或把后生成输出冒充原始记录。公开副本已隐私规范化时，只能在独立副本中依据映射明确调整输入绑定，记录修改与输出身份；不能悄悄跳过校验，也不能宣称恢复了已排除的原始内容。所需第三方全文请从原论文链接依法自行获取，不得把未获取输入说成已复现。这里没有提供或运行这种历史生成重放。</p>
+<h2>4. 有限检查的实际含义</h2><ul>
+<li>58,048 是14个已保存文件中的记录计数，包含保留在不同来源路径的相同证据，不表示同样多的独立研究案例。992 个刻意重复的样条输入对按原记录保留，不能简单去重。</li>
+<li>验证器核查类型、有界规范有理数、已有输入键顺序指纹、保存的计数/概率和、若干比率/误差/界关系。它不生成新词、不重算全模型、网络或路径搜索，也不把有限算术结果提升为普遍定理。</li>
+<li>稀有族 v1 日志曾错记600，后纠正为624；两份各含624条内嵌路径记录的文件按各自来源保留（每份16条顶层 JSONL 记录）。受限端口细化记录的7,290个派生子情形并非另一个独立保存数据集。</li>
+<li>错误谓词的旧 Route B 记录是弃用历史。正确重放记录不会使原搜索日志变为已保存，也不会反向证明错误版本正确。</li>
+</ul>
+<h2>5. 依赖、权利和未恢复材料</h2><p>九个既有公开依赖包括 R011 的证明/审阅记录/身份映射，以及原有稿件的来源核对与映射。公开 R011 审阅与原审阅的哈希不同，映射明确保留这种差异。其历史记录的行政依赖不随本阶段导入，不宣称递归恢复整个旧项目。</p>
+<p>SM001 作为用户项目的历史方法稿按原字节补充，保留作者候选、审阅待定状态；这里引用其可读方法先例，不宣称旧完整定理包、诊断和依赖都已重新核验。被覆盖的 D’Angelo 原审计和原 Route B 同时期路径搜索日志仍不可恢复。无完整第三方论文或全文提取、用户行政计划附件、私有消息/路由/主机路径；无新增许可证、投稿或部署。</p>
+<p>所有新 HTML 可从仓库下载后在本地打开。相对链接以仓库布局为准；GitHub 文件页面本身不承诺渲染 HTML。外部论文链接是引用，不表示本次重新打开或完整审核了每篇论文。独立审阅是 LLM 审阅，不是外部同行评议或形式验证。结论范围以<a href="INDEX.html">阶段入口中的纠正优先级</a>和相应原文为准。</p>
+</body></html>

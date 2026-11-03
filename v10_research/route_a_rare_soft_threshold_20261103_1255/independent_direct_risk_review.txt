@@ -1,0 +1,8 @@
+Independent reviewer: separate bounded LLM mathematical review.
+Review scope: supplied direct-q risk-bound argument and β-threshold formulas, not full report, collision, prior-art completeness, or formal verification. No theorem acceptance is established. The bounded LLM review response, verbatim:
+
+The proposed direct-q risk bound and constants are valid for every γ ≥ 0, including γ = 0.
+
+The forward chain’s two-step probability of state 11 is at least 1/8 from every state, supporting Var(r) ≤ 31/m. Conditioning on S_N = 00 gives E|r − μ| ≤ √(31/v). The occupancy and martingale terms yield the remaining stated constants.
+
+The necessary and sufficient inequalities for γu also follow. When expressing them as thresholds on β = log(1 + γ), clamp a negative lower bound on γu to zero. The sufficient condition requires D₀ < ε, as stated.
