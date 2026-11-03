@@ -1,0 +1,35 @@
+{
+  "candidate_batches": {
+    "hold": {
+      "actual_candidate_arrays_reconstructed": true,
+      "batches": 12,
+      "drawn": 98304,
+      "eligible": 1086,
+      "saved": 1024
+    },
+    "natural": {
+      "actual_candidate_arrays_reconstructed": true,
+      "batches": 1,
+      "drawn": 8192,
+      "eligible": 8192,
+      "saved": 8192
+    },
+    "train": {
+      "actual_candidate_arrays_reconstructed": true,
+      "batches": 1,
+      "drawn": 8192,
+      "eligible": 6551,
+      "saved": 2048
+    }
+  },
+  "journal_prepared_records_reconciled_with_csv_and_adam": 12000,
+  "max_final_metric_discrepancy": 0.0,
+  "max_final_prediction_discrepancy": 0.0,
+  "max_journal_parameter_discrepancy": 0.0,
+  "model_and_adam_checkpoints_reconciled": 24,
+  "output_hashes": 61,
+  "sealed_files": 18,
+  "status": "author_reconciliation_passed_not_independent_audit",
+  "structural_unseen20_previous_input_group_intersections": 0,
+  "training_group_intersections": 0
+}

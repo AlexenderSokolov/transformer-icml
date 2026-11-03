@@ -1,0 +1,82 @@
+{
+  "name": "Rare-weight follow-up confirmation (not blind)",
+  "status": "UNSEALED; review and root permission required before sealing or run",
+  "question": "In a non-blind fresh-data follow-up using the original hash split extended by a predeclared reserve rule, does redistributing a fixed empirical-prior objective mass toward rare configurations improve sampled heldout rare-word Q accuracy, and at what natural-prior and collision-fit cost?",
+  "M": 64,
+  "representation": "original fixed-half count-scaled width-32 tanh readout; 353 trainable parameters; same floor and architecture as calibration",
+  "prior": "Original independent Uniform[0,1) transition-row prior with uniform initial pair, using pilot.prior_batch",
+  "rare": "J<=6 OR D==0, with J and D selected-terminal-row integer counts",
+  "group": "(J,C,D,U), with C the count followed by symbol 1 and U=2*terminal_first+terminal_second",
+  "group_partition": "Collision groups always assigned train. All other groups assigned holdout iff integer big-endian SHA256 of ASCII 'v10-rare-split-20261103:J,C,D,U' is divisible by 5; otherwise train. No training-prior or collision example has a holdout group. Amendment: reserve every enumerated J<=3 group absent from all old calibration and completed-ablation input/evaluation word arrays (20 vectors in 18 groups) as heldout, regardless of the original hash. Collision groups remain train; none are in this reserved set.",
+  "training_prior_words": 2048,
+  "training_prior_sampling": "fresh prior draws retained iff the group is train under the amended split, first 2048 in generation order; the 18 reserved groups are excluded",
+  "natural_prior_evaluation_words": 8192,
+  "natural_prior_evaluation_sampling": "fresh independent unconditioned prior; may share feature groups or exact words with train; no disjointness claim",
+  "rare_group_heldout_words": 1024,
+  "rare_group_heldout_sampling": "fresh independent prior draws retained iff rare and heldout under the amended split, first 1024 in generation order",
+  "draw_batch_size": 8192,
+  "maximum_draw_batches_per_rejection_set": 128,
+  "data_seeds": {
+    "training": 20261103501,
+    "natural_evaluation": 20261103502,
+    "rare_group_heldout": 20261103503,
+    "minibatches": 20261103504
+  },
+  "initialization_seeds": [
+    20261103601,
+    20261103602,
+    20261103603
+  ],
+  "collision_words": "same four w(8), w(54), and their complements as original calibration; oversampled and trained, never claimed independent",
+  "objective": {
+    "corrected": "0.5*[p*mean_CE(rare prior)+(1-p)*mean_CE(nonrare prior)]+0.5*mean_CE(collision), where p=empirical rare proportion of the fixed prior training set",
+    "rare_boost": "0.5*[0.5*mean_CE(rare prior)+0.5*mean_CE(nonrare prior)]+0.5*mean_CE(collision)",
+    "interpretation": "Both optimize weighted empirical objectives conditional on the train-group distribution. Corrected reconstructs the empirical training-prior average exactly in expectation, not the unconditioned source prior. Rare_boost is a deliberate different objective, not an unbiased estimator of corrected."
+  },
+  "batch": {
+    "rare": 32,
+    "nonrare": 32,
+    "collision": 64,
+    "sampling": "with replacement within each fixed frozen training stratum; identical index stream in both conditions and all seeds",
+    "correction_weights": "relative to equal-proposal prior draw, corrected per-example factors are 2p for rare, 2(1-p) for nonrare; rare_boost both factors 1"
+  },
+  "optimization": {
+    "optimizer": "Adam",
+    "learning_rate": 0.003,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "epsilon": 1e-08,
+    "steps": 2000,
+    "checkpoints": [
+      0,
+      200,
+      1000,
+      2000
+    ]
+  },
+  "primary_endpoint": "At step 2000, mean absolute Q error on the 1024 sampled held-out rare words conditional on the amended group split, weighted equally per sampled word, evaluated separately for each paired initialization; no checkpoint selection.",
+  "predefined_support_screen": "For each of three paired initializations, rare-boost sampled rare-heldout mean absolute error <= 0.8 times corrected, natural-prior mean KL increase <= 0.002, and in-sample collision maximum absolute error <= 0.05. Descriptive exploratory screen, not a hypothesis test or a uniform guarantee.",
+  "secondary": [
+    "natural-prior mean KL, mean absolute error, and errors>0.1",
+    "rare-heldout mean KL, mean absolute error, q95, maximum, and errors>0.1",
+    "collision maximum error",
+    "training rare/nonrare mean and max errors",
+    "group intersections and word overlap counts",
+    "all selected checkpoint metrics and per-example predictions",
+    "all 11 exact J<=3 structural-heldout vectors, full and previously reported eight-vector subset: individual predictions, unweighted mean and maximum errors; separately report all sampled rare heldout statistics",
+    "The exact prior-seen eight structural vectors and all eleven structural vectors are secondary diagnostics; their identities and prior outcomes were exposed, so they are not blind or newly unseen groups.",
+    "Equal-weight structural test over the 20 enumerated J<=3 full feature vectors in 18 groups absent from all old calibration and ablation input/evaluation arrays. These groups are excluded from fresh training. Enumeration identities and Q targets were already present in the existing enumeration; previous model predictions on these vectors were not inspected. This is not historically blind."
+  ],
+  "stopping": "Stop on any failed check, rejected-sample draw cap, nonfinite gradient/parameters, or after six fixed fits. Do not alter or extend a failed protocol without a newly sealed amendment. No new seeds, widths, objectives, steps, or attacks.",
+  "limits": [
+    "feature-group holdout is defined at (J,C,D,U), not independent latent sources or uniform all-word coverage",
+    "natural-prior evaluation is unconditioned and independent but not feature- or word-disjoint",
+    "both arms share one training and evaluation draw and minibatch stream; three initializations are not independent data replications",
+    "changed weights also change stochastic-gradient variance, so cannot attribute outcomes solely to objective landscape",
+    "a result cannot prove or disprove width-32 representability, global optimizer impossibility, source risk, minimax robustness, or asymptotic SGD behavior",
+    "exact large-width interpolation and all-state evaluation do not isolate weighting; a certified width-32 obstruction would be more decisive about architecture but is not established",
+    "the hash split was chosen after prior inspection; eight-vector historical structural subset was absent from old calibration groups, but has since been exposed and is not blind or novel for this follow-up",
+    "Follow-up confirmation is not blind: group identities and results have been exposed; fresh sampled words use the original hash split extended by a predeclared reserve rule."
+  ],
+  "structural_heldout": "The exact enumeration has 11 heldout vectors in 9 groups; the previously reported eight-vector subset is a secondary diagnostic. Group identities and prior results were exposed. Neither slice is blind or a novel unseen feature-group evaluation. The newly reserved structural set contains exactly 20 vectors in 18 groups absent from all previous input/evaluation arrays, as determined by the deterministic rule in this amendment. No previous model predictions on them were inspected; identities and targets were present in the existing enumeration, so this is not historically blinded."
+}

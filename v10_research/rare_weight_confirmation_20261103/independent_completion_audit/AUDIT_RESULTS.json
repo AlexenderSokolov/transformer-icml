@@ -1,0 +1,123 @@
+{
+  "author_result_bindings": 74,
+  "candidate_batches": {
+    "hold": {
+      "batches": 12,
+      "drawn": 98304,
+      "eligible_before_truncation": 1086,
+      "saved": 1024
+    },
+    "natural": {
+      "batches": 1,
+      "drawn": 8192,
+      "eligible_before_truncation": 8192,
+      "saved": 8192
+    },
+    "train": {
+      "batches": 1,
+      "drawn": 8192,
+      "eligible_before_truncation": 6551,
+      "saved": 2048
+    }
+  },
+  "candidate_words_reconstructed": 114688,
+  "checkpoints_checked": 24,
+  "console_sha256": "76c053e0e64b91a6b70eb027f444d1474b458cbfb93a838f08a89d73c44b39cc",
+  "final_details": [
+    {
+      "arm": "corrected",
+      "collision_max": 0.0020762950075982056,
+      "natural_KL": 0.002128084547239235,
+      "rare_heldout_MAE": 0.07179371288673195,
+      "seed": 20261103601,
+      "unseen20_MAE": 0.16152271571256382,
+      "unseen20_max": 0.3258724132011854
+    },
+    {
+      "arm": "rare_boost",
+      "collision_max": 0.0030442187660894016,
+      "natural_KL": 0.002373190491585883,
+      "rare_heldout_MAE": 0.052171825788539745,
+      "seed": 20261103601,
+      "unseen20_MAE": 0.12417430473698007,
+      "unseen20_max": 0.3897791763111741
+    },
+    {
+      "arm": "corrected",
+      "collision_max": 0.0013740233326099416,
+      "natural_KL": 0.002371051884016875,
+      "rare_heldout_MAE": 0.0769455715225224,
+      "seed": 20261103602,
+      "unseen20_MAE": 0.17637600765686778,
+      "unseen20_max": 0.3995508236304993
+    },
+    {
+      "arm": "rare_boost",
+      "collision_max": 0.006198758208464494,
+      "natural_KL": 0.0021437488826547323,
+      "rare_heldout_MAE": 0.050913157340765014,
+      "seed": 20261103602,
+      "unseen20_MAE": 0.12836241525438302,
+      "unseen20_max": 0.38016137281390744
+    },
+    {
+      "arm": "corrected",
+      "collision_max": 0.0008144832031944382,
+      "natural_KL": 0.0022206253598211568,
+      "rare_heldout_MAE": 0.0765280334794591,
+      "seed": 20261103603,
+      "unseen20_MAE": 0.17883757771995346,
+      "unseen20_max": 0.40225799537616147
+    },
+    {
+      "arm": "rare_boost",
+      "collision_max": 0.0075594776975255185,
+      "natural_KL": 0.0026294942339664396,
+      "rare_heldout_MAE": 0.051702756286460094,
+      "seed": 20261103603,
+      "unseen20_MAE": 0.12683280405111902,
+      "unseen20_max": 0.40294817188855403
+    }
+  ],
+  "final_prediction_arrays_checked": 42,
+  "heldout_group_intersection_train": 0,
+  "journal_entries_checked": 12000,
+  "max_adam_parameter_error": 3.3306690738754696e-16,
+  "max_checkpoint_state_error": 3.3306690738754696e-16,
+  "max_gradient_error": 3.5388358909926865e-16,
+  "max_loss_error": 2.220446049250313e-16,
+  "max_metric_error": 3.3306690738754696e-16,
+  "max_prediction_error": 3.3306690738754696e-16,
+  "minibatch_steps_checked": 2000,
+  "natural_train_distinct_word_overlap": 15,
+  "output_hashes": 61,
+  "reserved_features": 20,
+  "reserved_group_intersection_train": 0,
+  "reserved_groups": 18,
+  "reviewed_sealed_inputs": 18,
+  "screens": [
+    {
+      "collision_max": 0.0030442187660894016,
+      "natural_KL_change": 0.000245105944346648,
+      "pass": true,
+      "ratio": 0.7266907322490841,
+      "seed": 20261103601
+    },
+    {
+      "collision_max": 0.006198758208464494,
+      "natural_KL_change": -0.00022730300136214292,
+      "pass": true,
+      "ratio": 0.6616775512007529,
+      "seed": 20261103602
+    },
+    {
+      "collision_max": 0.0075594776975255185,
+      "natural_KL_change": 0.0004088688741452828,
+      "pass": true,
+      "ratio": 0.6756054472553202,
+      "seed": 20261103603
+    }
+  ],
+  "status": "PASS",
+  "train_rare": 115
+}

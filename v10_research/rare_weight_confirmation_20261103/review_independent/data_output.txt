@@ -1,0 +1,21 @@
+reserve groups 18 vectors 20
+train batches 1 drawn 8192 eligible 6551 selected 2048 all raw/seed/flags verified
+natural batches 1 drawn 8192 eligible 8192 selected 8192 all raw/seed/flags verified
+hold batches 12 drawn 98304 eligible 1086 selected 1024 all raw/seed/flags verified
+train n 2048 groups 1713 hold count 0
+natural n 8192 groups 5333 hold count 1609
+rare_heldout n 1024 groups 143 hold count 1024
+collision n 4 groups 4 hold count 0
+structural_heldout n 11 groups 9 hold count 11
+structural_previous8 n 8 groups 7 hold count 8
+structural_unseen20 n 20 groups 18 hold count 20
+group exclusions verified
+minibatch RNG verified p 0.05615234375
+checkpoint metric rows 24 max discrepancy 1.6653345369377348e-16
+PRE_RUN_HASHES.json count 18 bad []
+REVIEW_AND_RUN_APPROVAL.json count 18 bad []
+confirmation_v1/ARTIFACT_HASHES.json count 61 bad []
+review markers match True True
+seed 20261103601 primary ratio 0.726690732249084 natural_KL_diff 0.0002451059443466471 natural_MAE_diff 0.0062613595803522794 reserve20_mean_corr_boost 0.16152271571256382 0.12417430473698003 reserve20_max_corr_boost 0.3258724132011854 0.3897791763111739
+seed 20261103602 primary ratio 0.6616775512007528 natural_KL_diff -0.00022730300136214248 natural_MAE_diff 0.006206670780389922 reserve20_mean_corr_boost 0.17637600765686773 0.12836241525438302 reserve20_max_corr_boost 0.39955082363049926 0.38016137281390744
+seed 20261103603 primary ratio 0.6756054472553205 natural_KL_diff 0.00040886887414528237 natural_MAE_diff 0.008178728619412184 reserve20_mean_corr_boost 0.17883757771995343 0.12683280405111902 reserve20_max_corr_boost 0.40225799537616147 0.40294817188855403

@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_module_exists (test_enumeration.EnumerationTest.test_module_exists)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "v10_research/rare_state_enumeration_20261103/test_enumeration.py", line 10, in test_module_exists
+    self.assertIsNotNone(e, 'enumerator must exist')
+AssertionError: unexpectedly None : enumerator must exist
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

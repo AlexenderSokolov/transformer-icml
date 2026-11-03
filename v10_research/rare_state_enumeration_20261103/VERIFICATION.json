@@ -1,0 +1,47 @@
+{
+  "collision_groups": [
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "feature_split": {
+    "holdout": 11,
+    "train": 117
+  },
+  "feature_vectors": 128,
+  "groups": {
+    "holdout": 9,
+    "train": 99
+  },
+  "holdout_by_J_Dzero": {
+    "J=1, D=0": 1,
+    "J=2, D=0": 3,
+    "J=2, D=>0": 4,
+    "J=3, D=>0": 3
+  },
+  "json_sha256": "61661dbc7aa4458a122ea2a364e685036864f6dffa36cf3a26a15b0578868880",
+  "literal_calibration_oracle_witnesses": 128,
+  "replay_byte_identical": true,
+  "reverse_dp_exact_set_match": true
+}

@@ -1,0 +1,125 @@
+{
+  "base_commit": "9ec12d44364d5d7dc1098f1ffd737f461c8c4cc9",
+  "source_files": 163,
+  "selected_original_bytes": 141072238,
+  "original_experiment_files": 154,
+  "enumeration_dependency_files": 9,
+  "scientific_omissions": [],
+  "cache_exclusions": [
+    {
+      "path": "v10_research/rare_weight_ablation_20261103/__pycache__/experiment.cpython-312.pyc",
+      "reason": "Regenerable Python bytecode cache"
+    },
+    {
+      "path": "v10_research/rare_weight_ablation_20261103/__pycache__/test_experiment.cpython-312.pyc",
+      "reason": "Regenerable Python bytecode cache"
+    },
+    {
+      "path": "v10_research/rare_weight_confirmation_20261103/__pycache__/launch_exclusive.cpython-312.pyc",
+      "reason": "Regenerable Python bytecode cache"
+    },
+    {
+      "path": "v10_research/rare_weight_confirmation_20261103/__pycache__/validate_update_journal.cpython-312.pyc",
+      "reason": "Regenerable Python bytecode cache"
+    },
+    {
+      "path": "v10_research/rare_weight_confirmation_20261103/__pycache__/experiment.cpython-312.pyc",
+      "reason": "Regenerable Python bytecode cache"
+    },
+    {
+      "path": "v10_research/rare_weight_confirmation_20261103/__pycache__/test_experiment.cpython-312.pyc",
+      "reason": "Regenerable Python bytecode cache"
+    },
+    {
+      "path": "v10_research/rare_state_enumeration_20261103/__pycache__/enumerate_rare.cpython-312.pyc",
+      "reason": "Regenerable Python bytecode cache"
+    },
+    {
+      "path": "v10_research/rare_state_enumeration_20261103/__pycache__/test_enumeration.cpython-312.pyc",
+      "reason": "Regenerable Python bytecode cache"
+    }
+  ],
+  "source_math_program_configuration_or_seal_changes": false,
+  "privacy_changes": {
+    "files": 1,
+    "lines": 1
+  },
+  "python_sources_parsed": 20,
+  "privacy_unresolved_hits": [],
+  "structured_binding_occurrences": 340,
+  "exact_inherited_dependencies": [
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/ANALYSIS.md",
+      "bytes": 7715,
+      "sha256": "c4b12a9887d05aa805166dafcec27ee7074ae448c15343d053b7e361e4055bc2",
+      "git_blob_sha1": "767dade79c7cb117ae048127d8a5b61bff854044"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/pilot.py",
+      "bytes": 6921,
+      "sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+      "git_blob_sha1": "e962a91a259648d87a725b8d2e935ac83e75d16a"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/REPORT.md",
+      "bytes": 8584,
+      "sha256": "b4eb8b8497c13112b4d3377dbe1558e0b387f60170e4cb839355fd16f392ec1b",
+      "git_blob_sha1": "2404db423f5ad70df9effa303a90613df56b7d15"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration.py",
+      "bytes": 3900,
+      "sha256": "68c4b91287ec3ea791d54a2a4f279ea8d96e613d8509b006aaede06c96fef09f",
+      "git_blob_sha1": "a6ae7862de67d34a6680b0c1ab5e2f9c035ffcc5"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/frozen_data.npz",
+      "bytes": 384825,
+      "sha256": "6d8936a8442ec86ad0163ec83d59088746db1d4236f5b59e3e430a2e70350bf5",
+      "git_blob_sha1": "f1a2b39ad3417183ee9d92bbad3d93424cf55ed8"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/protocol.json",
+      "bytes": 2861,
+      "sha256": "48ce82d7ec2b9d159d4bded3c471b925e957f1569871c675a3ea3ea69463d65a",
+      "git_blob_sha1": "6c1f50bd8d0dea74e04f9d72e58e7e0158312753"
+    }
+  ],
+  "journal_representation": {
+    "manifest": "provenance/rare_weight_20261103/JOURNAL_CHUNKS.json",
+    "chunks": 17,
+    "source_bytes": 71171358,
+    "source_sha256": "8869667903e50345fa375bd91b85dc9db0b8aef071b0f1cbdd27b9fa2f8ddf75",
+    "compression": "none",
+    "byte_reconstruction_verified": true
+  },
+  "preservation_boundaries": [
+    "The initial ablation did not contemporaneously retain 128,000 rejected/truncated candidate words or original latent probability tables and transition uniforms. Retained initial pairs are recoverable from retained word bits, but unavailable rejected words do not yield their starts. Nothing missing is described as recovered.",
+    "First-run checkpoints contain model parameters but not Adam moments; per-update CSVs have norms rather than full gradients. Seeds and code can support compatibility reconstruction, not recovery of original uncaptured records.",
+    "The follow-up retains all 14 committed candidate batches and intents, 114,688 original candidates, all latent tables/starts/uniforms/flags/PRNG states, all minibatches, 12,000 full update proposals and summaries, 24 complete model-and-Adam checkpoints, metrics/predictions and console. These do not repair the first run.",
+    "A durable intent does not preserve uncommitted RAM-only values. A write-ahead record alone does not prove application; complete-run audits reconcile every prepared update with CSV, checkpoint states and console. No automatic restart or silent repair is provided."
+  ],
+  "scientific_scope": [
+    "Explicit Q supervision and fixed-half features, not natural next-token learning, learned robustness, source-risk guarantees, general SGD or a width-32 impossibility result.",
+    "Both three-pair screens pass under their different predeclared endpoints. Rarity boosting improves finite conditional mean errors while natural-prior mean absolute error worsens. Worst errors remain large; mean benefit is not uniform improvement.",
+    "The original and follow-up structural samples and fresh conditional samples differ. Twenty input-novel vectors in 18 prior-input-absent groups are nonblind, not an untouched preregistered sample. Three initializations share each dataset and minibatch stream.",
+    "Both arms share initial parameters and sampled indices, making a finite weighting intervention, but changed weights also change gradient variance; no landscape/noise causal decomposition is established.",
+    "Review reports are source-bound independent LLM audits, not external peer review, formal verification or novelty certification. Local scientific review gates do not supply trusted external timestamps. Historical pending-review statuses remain as recorded.",
+    "Existing science and frozen manuscript are unchanged except five navigation pages and the active inventory. No new license, permissions, credentials, workflow or deployment."
+  ],
+  "publisher_check_scope": "Source identities/privacy, journal raw-byte splitting/reconstruction, schemas and public-only audit replay. No new experiment sampling or fitting is performed by the publisher.",
+  "publisher_public_replay": {
+    "status": "PASS",
+    "copied_exact_public_inputs": 168,
+    "reconstructed_original_journal_bytes": 71171358,
+    "source_sha256": "8869667903e50345fa375bd91b85dc9db0b8aef071b0f1cbdd27b9fa2f8ddf75",
+    "original_ablation_completion_audit": "PASS; byte-identical historical output",
+    "followup_full_gradient_and_adam_completion_audit": "PASS; byte-identical historical output",
+    "complete_journal_validation_records": 12000,
+    "optimized_python_refused": true,
+    "existing_destinations_refused": true,
+    "corrupt_or_missing_chunk_refused_without_publishing_journal": true,
+    "all_original_sources_and_public_copy_unchanged": true,
+    "new_experiment_sampling_or_training": false
+  }
+}

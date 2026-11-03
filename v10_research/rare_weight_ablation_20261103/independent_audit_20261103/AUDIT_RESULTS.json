@@ -1,0 +1,114 @@
+{
+  "checkpoint_count": 24,
+  "checkpoint_metric_values_checked": 1008,
+  "final_prediction_arrays_checked": 36,
+  "final_recomputed": [
+    {
+      "arm": "corrected",
+      "collision_max": 0.0005639464416100637,
+      "heldout_MAE": 0.0575971996340049,
+      "heldout_max": 0.7374554506530839,
+      "natural_KL": 0.0017220193565889229,
+      "natural_MAE": 0.008883734085073928,
+      "novel_MAE": 0.10835441397295739,
+      "seed": 20261103201,
+      "structural_max": 0.4520705588569117
+    },
+    {
+      "arm": "rare_boost",
+      "collision_max": 0.0036909829998443833,
+      "heldout_MAE": 0.029002796562532754,
+      "heldout_max": 0.5943777800151567,
+      "natural_KL": 0.001481460051075605,
+      "natural_MAE": 0.015285909520448376,
+      "novel_MAE": 0.034362893025365535,
+      "seed": 20261103201,
+      "structural_max": 0.38517413719772164
+    },
+    {
+      "arm": "corrected",
+      "collision_max": 0.0007755093304698812,
+      "heldout_MAE": 0.047284174581933944,
+      "heldout_max": 0.7480123227701021,
+      "natural_KL": 0.0014267654936054824,
+      "natural_MAE": 0.007554335039869414,
+      "novel_MAE": 0.0751431209879834,
+      "seed": 20261103202,
+      "structural_max": 0.452796372603706
+    },
+    {
+      "arm": "rare_boost",
+      "collision_max": 0.0045123653758251114,
+      "heldout_MAE": 0.02970841595447516,
+      "heldout_max": 0.5414179889050457,
+      "natural_KL": 0.000990860323875812,
+      "natural_MAE": 0.010959094894213001,
+      "novel_MAE": 0.03445798322554011,
+      "seed": 20261103202,
+      "structural_max": 0.33046408295614016
+    },
+    {
+      "arm": "corrected",
+      "collision_max": 0.0012430410265417136,
+      "heldout_MAE": 0.05650242042512063,
+      "heldout_max": 0.7490570402087492,
+      "natural_KL": 0.0017822532463415783,
+      "natural_MAE": 0.009772397051312562,
+      "novel_MAE": 0.11250700932751798,
+      "seed": 20261103203,
+      "structural_max": 0.4549943455690526
+    },
+    {
+      "arm": "rare_boost",
+      "collision_max": 0.002207916425656653,
+      "heldout_MAE": 0.03196436112795649,
+      "heldout_max": 0.5471482161243071,
+      "natural_KL": 0.0012115184192616833,
+      "natural_MAE": 0.012233168319097373,
+      "novel_MAE": 0.050401854689510084,
+      "seed": 20261103203,
+      "structural_max": 0.3600412178841277
+    }
+  ],
+  "group_counts": {
+    "rare_holdout": 124,
+    "structural_holdout": 9,
+    "structural_novel": 7,
+    "train": 1749
+  },
+  "heldout_intersection_train": 0,
+  "max_checkpoint_metric_error": 1.1102230246251565e-16,
+  "max_final_prediction_error": 0.0,
+  "max_literal_target_error": 0,
+  "natural_train_distinct_word_overlap": 14,
+  "old_intersection_novel": 0,
+  "run_output_hashes_verified": 32,
+  "screens": [
+    {
+      "collision_max": 0.0036909829998443833,
+      "natural_KL_change": -0.00024055930551331777,
+      "pass": true,
+      "ratio": 0.31713422430526617,
+      "seed": 20261103201
+    },
+    {
+      "collision_max": 0.0045123653758251114,
+      "natural_KL_change": -0.0004359051697296705,
+      "pass": true,
+      "ratio": 0.4585647065557804,
+      "seed": 20261103202
+    },
+    {
+      "collision_max": 0.002207916425656653,
+      "natural_KL_change": -0.0005707348270798951,
+      "pass": true,
+      "ratio": 0.44798857414106324,
+      "seed": 20261103203
+    }
+  ],
+  "sealed_input_hashes_verified": 15,
+  "status": "PASS",
+  "structural_intersection_train": 0,
+  "train_rare": 133,
+  "updates_rows_checked": 12000
+}

@@ -1,5 +1,13 @@
 # 资料导航
 
+## 稀有加权实验与完整训练档案
+
+- [低计数精确枚举与分组](../v10_research/rare_state_enumeration_20261103/REPORT.md) · [128 个可行特征与见证](../v10_research/rare_state_enumeration_20261103/rare_states.json)
+- [首次协议](../v10_research/rare_weight_ablation_20261103/protocol.json) · [完成报告](../v10_research/rare_weight_ablation_20261103/COMPLETED_RUN_REPORT.md) · [初始对更正](../v10_research/rare_weight_ablation_20261103/COMPLETED_RUN_REPORT_CORRECTION.md) · [独立完成审计](../v10_research/rare_weight_ablation_20261103/independent_audit_20261103/REVIEW.md)
+- [保留修正协议](../v10_research/rare_weight_confirmation_20261103/PROTOCOL_AMENDMENT.md) · [后续结果](../v10_research/rare_weight_confirmation_20261103/RESULTS_REPORT.md) · [独立全轨迹审计](../v10_research/rare_weight_confirmation_20261103/independent_completion_audit/REVIEW.md) · [另一路独立复核](../v10_research/rare_weight_confirmation_20261103/review_independent/REVIEW.md)
+- [原始候选批次](../v10_research/rare_weight_confirmation_20261103/confirmation_v1/candidate_batches) · [完整逐步摘要](../v10_research/rare_weight_confirmation_20261103/confirmation_v1/updates.csv) · [检查点](../v10_research/rare_weight_confirmation_20261103/confirmation_v1/checkpoints)
+- [完整日志分块映射](../provenance/rare_weight_20261103/JOURNAL_CHUNKS.json) · [安全重建与复现](../provenance/rare_weight_20261103/PUBLIC_REPLAY.md) · [所有来源身份](../provenance/rare_weight_20261103/SOURCE_EXPORT_MAP.json)
+
 ## 固定半程尾部与特征几何
 
 - [完整分析与有限集合证明](../v10_research/fixed_half_tail_geometry_20261103/ANALYSIS.md) · [完整原始结果](../v10_research/fixed_half_tail_geometry_20261103/RESULTS.json)

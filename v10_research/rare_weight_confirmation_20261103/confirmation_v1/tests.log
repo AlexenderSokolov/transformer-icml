@@ -1,0 +1,20 @@
+test_atomic_nested_output (test_experiment.PreservationTests.test_atomic_nested_output) ... ok
+test_exclusive_console_creation (test_experiment.PreservationTests.test_exclusive_console_creation) ... ok
+test_full_update_journal_and_partial_detection (test_experiment.PreservationTests.test_full_update_journal_and_partial_detection) ... ok
+test_immutable_atomic_npz_rejects_duplicate (test_experiment.PreservationTests.test_immutable_atomic_npz_rejects_duplicate) ... ok
+test_incremental_updates_and_full_optimizer_roundtrip (test_experiment.PreservationTests.test_incremental_updates_and_full_optimizer_roundtrip) ... ok
+test_interrupted_batch_has_durable_intent_not_candidate_data (test_experiment.PreservationTests.test_interrupted_batch_has_durable_intent_not_candidate_data) ... ok
+test_journal_prefix_and_fixed_completion_modes (test_experiment.PreservationTests.test_journal_prefix_and_fixed_completion_modes) ... ok
+test_original_draw_order_and_rng_state (test_experiment.PreservationTests.test_original_draw_order_and_rng_state) ... ok
+test_persisted_batches_and_truncation (test_experiment.PreservationTests.test_persisted_batches_and_truncation) ... ok
+test_rejected_candidates_and_selection_flags (test_experiment.PreservationTests.test_rejected_candidates_and_selection_flags) ... ok
+test_exact_reweight_identity (test_experiment.Tests.test_exact_reweight_identity) ... ok
+test_forced_collision_and_hash_split (test_experiment.Tests.test_forced_collision_and_hash_split) ... ok
+test_inputs_exact (test_experiment.Tests.test_inputs_exact) ... ok
+test_reserved_structural_groups_are_previous_input_disjoint (test_experiment.Tests.test_reserved_structural_groups_are_previous_input_disjoint) ... ok
+test_weighted_gradient (test_experiment.Tests.test_weighted_gradient) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.296s
+
+OK

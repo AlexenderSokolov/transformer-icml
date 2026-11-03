@@ -1,5 +1,11 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 稀有样本加权：均值收益、尾部代价与完整记录（2026-11-03）
+
+[初次加权实验](v10_research/rare_weight_ablation_20261103/COMPLETED_RUN_REPORT.md)与[保留缺口更正](v10_research/rare_weight_ablation_20261103/COMPLETED_RUN_REPORT_CORRECTION.md)、[新数据后续实验](v10_research/rare_weight_confirmation_20261103/RESULTS_REPORT.md)及[完整轨迹独立审计](v10_research/rare_weight_confirmation_20261103/independent_completion_audit/REVIEW.md)均已整理。两次有限筛选均通过，但自然先验平均绝对误差变差，条件尾部最大误差仍很大；三个初始化共享数据/批次，后续不是盲确认，也不是学得鲁棒性或一致逼近保证。
+
+全部实际保留的脚本、参数、原始候选/潜变量/均匀随机数、逐步更新、检查点、指标和失败历史均入档。第一次未保留的 128,000 个拒绝/截断候选及潜变量不能冒称已恢复；第二次完整留存不修复这个历史缺口。71,171,358 字节全更新日志以 17 个无压缩字节块保存，可[逐字节重建并安全复核](provenance/rare_weight_20261103/PUBLIC_REPLAY.md)。
+
 ## 固定半程特征与稀有大误差（2026-11-03）
 
 [完整分析](v10_research/fixed_half_tail_geometry_20261103/ANALYSIS.md)证明：在 M=64，已提供的半程计数特征足以确定 Q；有限集合上也存在极大宽度、精确实数的 tanh 插值构造。这不是宽度 32 的容量结论、有限精度方案或学习保证。

@@ -1,0 +1,28 @@
+train reconstruction matches True drawn 8192 accepted before truncation 6559 rejected 1633 accepted discarded 4511
+rare_heldout reconstruction matches True drawn 122880 accepted before truncation 1097 rejected 121783 accepted discarded 73
+natural reconstruction matches True
+train n 2048 groups 1747 hold groups 0
+natural n 8192 groups 5420 hold groups 1575
+rare_heldout n 1024 groups 124 hold groups 1024
+collision n 4 groups 4 hold groups 0
+structural_heldout n 11 groups 9 hold groups 11
+structural_novel n 8 groups 7 hold groups 8
+max teacher discrepancy 0
+group intersections 0 0 novel groups old intersection 0
+saved collision unique groups {(np.int64(1), np.int64(0), np.int64(1), np.int64(2)), (np.int64(1), np.int64(1), np.int64(0), np.int64(1)), (np.int64(1), np.int64(0), np.int64(0), np.int64(2)), (np.int64(1), np.int64(1), np.int64(1), np.int64(1))}
+p 0.06494140625 stream matches True True True
+checkpoint rows 24 max checkpoint/prediction metric discrepancy 1.942890293094024e-16
+initial weights equal 20261103201 True
+natural KL paired mean,SE 20261103201 -0.00024055930551331793 0.00014936880344840227 MAE change 0.006402175435374448
+initial weights equal 20261103202 True
+natural KL paired mean,SE 20261103202 -0.00043590516972967085 0.00013424652127812546 MAE change 0.0034047598543435875
+initial weights equal 20261103203 True
+natural KL paired mean,SE 20261103203 -0.0005707348270798951 0.00014918625034754455 MAE change 0.0024607712677848104
+PRE_RUN_HASHES.json num 15 bad []
+ablation_v1/ARTIFACT_HASHES.json num 32 bad []
+updates rows 12000
+first-step weighted objectives max err 1.1102230246251565e-16 gradient norms max err 8.881784197001252e-16
+seed 20261103201 ('corrected', 'novel_mae', 0.10835441397295739, 'fullstruct_max', 0.4520705588569117, 'held_mae', 0.0575971996340049, 'natural_mae', 0.008883734085073928, 'natural_kl', 0.0017220193565889294) ('rare_boost', 'novel_mae', 0.034362893025365535, 'fullstruct_max', 0.38517413719772164, 'held_mae', 0.029002796562532754, 'natural_mae', 0.015285909520448376, 'natural_kl', 0.0014814600510756114)
+seed 20261103202 ('corrected', 'novel_mae', 0.0751431209879834, 'fullstruct_max', 0.452796372603706, 'held_mae', 0.047284174581933944, 'natural_mae', 0.007554335039869414, 'natural_kl', 0.0014267654936054907) ('rare_boost', 'novel_mae', 0.03445798322554011, 'fullstruct_max', 0.33046408295614016, 'held_mae', 0.02970841595447516, 'natural_mae', 0.010959094894213001, 'natural_kl', 0.0009908603238758212)
+seed 20261103203 ('corrected', 'novel_mae', 0.11250700932751798, 'fullstruct_max', 0.4549943455690526, 'held_mae', 0.05650242042512063, 'natural_mae', 0.009772397051312562, 'natural_kl', 0.0017822532463415853) ('rare_boost', 'novel_mae', 0.050401854689510084, 'fullstruct_max', 0.3600412178841277, 'held_mae', 0.03196436112795649, 'natural_mae', 0.012233168319097373, 'natural_kl', 0.0012115184192616922)
+final training predictions max discrepancy 1.6653345369377348e-16

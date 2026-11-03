@@ -1,0 +1,42 @@
+{
+  "frozen_data_sha256": "6e1895d519caa6200b13586a889f0fdc4996764ad46ba39e167b48a3ad253eff",
+  "heldout_train_distinct_word_overlap": 0,
+  "holdout_sampling": {
+    "accepted_before_truncation": 1086,
+    "drawn": 98304,
+    "saved": 1024
+  },
+  "natural_sampling": {
+    "accepted_before_truncation": 8192,
+    "drawn": 8192,
+    "saved": 8192
+  },
+  "natural_train_distinct_word_overlap": 15,
+  "nonrare_count": 1933,
+  "p_empirical_rare": 0.05615234375,
+  "rare_count": 115,
+  "rare_factors_boost": [
+    1,
+    1
+  ],
+  "rare_factors_corrected": [
+    0.1123046875,
+    1.8876953125
+  ],
+  "rare_heldout_group_count": 143,
+  "structural_heldout_feature_count": 11,
+  "structural_heldout_group_count": 9,
+  "structural_previous8_feature_count": 8,
+  "structural_previous8_group_count": 7,
+  "structural_unseen20_feature_count": 20,
+  "structural_unseen20_group_count": 18,
+  "train_group_count": 1717,
+  "train_intersection_rare_groups": 0,
+  "train_intersection_struct_groups": 0,
+  "train_intersection_structural_unseen20_groups": 0,
+  "train_sampling": {
+    "accepted_before_truncation": 6551,
+    "drawn": 8192,
+    "saved": 2048
+  }
+}
