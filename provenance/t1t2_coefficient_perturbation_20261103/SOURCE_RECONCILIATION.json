@@ -1,0 +1,998 @@
+{
+  "base_commit": "54ef11e04709b49cd515ed7478c4a5f240e7e091",
+  "base_tree": "422d2210bf0628d2330fdd860d62ff846469b7fa",
+  "self_contained": false,
+  "scope": "Actual cached public bytes rehashed against fresh direct inventory and complete tree. Immediate construction/risk/perturbation/backend dependencies, corrections, reviews and relevant provenance are checked, not every older repository byte or inherited proof. Exactly 13 selected sources are newly exported. External URLs are inventoried without fresh fetching.",
+  "dependency_routes": [
+    {
+      "path": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "bytes": 33606,
+      "sha256": "9bec751d657af6c1dafb6c775a9fdc39819ae9aa8df642d8439a4bbf03e482ae",
+      "git_blob_sha1": "6e53153cc45ee02d24680d0e67267017f53c2f0c",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "roles": [
+        "Existing published source identities, exact metadata normalization, read-together restrictions, version history or hash bindings."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "bytes": 9332,
+      "sha256": "62ca38d64bb896e537977ad9c7fa1bb26af1e7616e8e51f479eb00a2fdfce210",
+      "git_blob_sha1": "078446c9839318f71b2655ae8806e5b0647d5b21",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "roles": [
+        "Existing published source identities, exact metadata normalization, read-together restrictions, version history or hash bindings."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "provenance/t1t2_fixed_parameter_20261103/BOUND_PAIRS.json",
+      "bytes": 6130,
+      "sha256": "eb2d8111cfbfc7a892528775f80ce5be4c700c7b27d7ee43cfe60dec6b2eb44f",
+      "git_blob_sha1": "4eef6be481131ce6d03d529cea18849c7cc0f7e1",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_fixed_parameter_20261103/BOUND_PAIRS.json",
+      "roles": [
+        "Existing published source identities, exact metadata normalization, read-together restrictions, version history or hash bindings."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "provenance/t1t2_fixed_parameter_20261103/VERSION_HISTORY.json",
+      "bytes": 12867,
+      "sha256": "86732cbd1bbc67e65540adb2e6300b789be3e1646d25fe9a65317463eb38183e",
+      "git_blob_sha1": "46c86976a406e1b366139acae6ecfecb3fc6cd34",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_fixed_parameter_20261103/VERSION_HISTORY.json",
+      "roles": [
+        "Existing published source identities, exact metadata normalization, read-together restrictions, version history or hash bindings."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "provenance/t1t2_fixed_parameter_20261103/HASH_REFERENCE_BINDINGS.json",
+      "bytes": 125485,
+      "sha256": "fae4f96802cf0b8f2884623ef81653e46d0d2add9f496458434bd72bbb36ed19",
+      "git_blob_sha1": "7eb3940f550e760ad6b8641a2c0a9b52e76b085c",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_fixed_parameter_20261103/HASH_REFERENCE_BINDINGS.json",
+      "roles": [
+        "Existing published source identities, exact metadata normalization, read-together restrictions, version history or hash bindings."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "bytes": 20570,
+      "sha256": "a11d2c055d7a1242f1983943926f3d70133aedcb164a152e1390f0ac68780493",
+      "git_blob_sha1": "8ba46a30d31b93e603edb98d146c81714a2d174a",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "roles": [
+        "Existing published source identities, exact metadata normalization, read-together restrictions, version history or hash bindings."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "provenance/t1t2_alphabet_limits_20261103/EXPORT_CHANGES.json",
+      "bytes": 7427,
+      "sha256": "339ef46c6fd4795fad5bb3d7dd0d7e9b864c7848fecce9e47bb238b348b31bc1",
+      "git_blob_sha1": "f57fefd14304b526e1ff368e1e4c28fa49331714",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_alphabet_limits_20261103/EXPORT_CHANGES.json",
+      "roles": [
+        "Existing published source identities, exact metadata normalization, read-together restrictions, version history or hash bindings."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "provenance/t1t2_alphabet_limits_20261103/BOUND_PAIRS.json",
+      "bytes": 9584,
+      "sha256": "b8b1778120de838486b39882d37b58bdd8733f39fd1da95065eb5854ba4eee0f",
+      "git_blob_sha1": "be369e5c69e6800677a7ca51a5264837ed83fbfe",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_alphabet_limits_20261103/BOUND_PAIRS.json",
+      "roles": [
+        "Existing published source identities, exact metadata normalization, read-together restrictions, version history or hash bindings."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "provenance/t1t2_alphabet_limits_20261103/VERSION_HISTORY.json",
+      "bytes": 8319,
+      "sha256": "e55c0bed94b74989229827973ed79558eae60371f1e2b01a512e72b729764163",
+      "git_blob_sha1": "2daf201bbcfbd58c6a28709ea119790b03782740",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_alphabet_limits_20261103/VERSION_HISTORY.json",
+      "roles": [
+        "Existing published source identities, exact metadata normalization, read-together restrictions, version history or hash bindings."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "provenance/t1t2_alphabet_limits_20261103/HASH_REFERENCE_BINDINGS.json",
+      "bytes": 56618,
+      "sha256": "5b236c86cafb78aaa559926a80664ededbf10dca5dd8ef89190b372701e34cb5",
+      "git_blob_sha1": "dccbd3d6d08ab978cc94ee044ec707242219f048",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_alphabet_limits_20261103/HASH_REFERENCE_BINDINGS.json",
+      "roles": [
+        "Existing published source identities, exact metadata normalization, read-together restrictions, version history or hash bindings."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v1.html",
+      "bytes": 1926,
+      "sha256": "1554e2be7fd89a8f4f385e7def328282db4c7a18c95b5ddaf8a1413f274f1333",
+      "git_blob_sha1": "d3c0e51ee0568c93c569016f75cb0dc854135c86",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v1.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html",
+      "bytes": 2065,
+      "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+      "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export.",
+        "Explicit full source digest in a selected original/export.",
+        "Relative hyperlink in a selected source.",
+        "Textual path or basename in a selected source."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "bytes": 11346,
+      "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+      "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export.",
+        "Explicit full source digest in a selected original/export."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/independent_fixed_parameter_review_20261103_1634/independent_review.html",
+      "bytes": 5110,
+      "sha256": "bd46136bac1aac44c0b5dcd716767572737a918b1144101f2c435107e2b6ba01",
+      "git_blob_sha1": "e9d4986a5f2801b2446ca959ae66475990e71fd1",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/independent_fixed_parameter_review_20261103_1634/independent_review.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/fixed_parameter_markov_prior_20261103_1632/prior_art_table.html",
+      "bytes": 9697,
+      "sha256": "079b64fe3e3bfdb3362af3157b669301f37000108c41696f9b893b1ef34b1172",
+      "git_blob_sha1": "bc32193272e495670486f60da7046d1e6b3130ae",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/fixed_parameter_markov_prior_20261103_1632/prior_art_table.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/fixed_parameter_integer_backend_20261103_1637/deterministic_integer_backend_v1.html",
+      "bytes": 10585,
+      "sha256": "962ca335827e4366855a4229798b92ae910c0b3a1996a7b990193757befa98cc",
+      "git_blob_sha1": "cb579d10a344acc8aa43f35c82eb9c50343dc4f5",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/fixed_parameter_integer_backend_20261103_1637/deterministic_integer_backend_v1.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/check_small_words.py",
+      "bytes": 1243,
+      "sha256": "c5e2639e746d6e0647d7d09ae81acc36fe2b179e1bc6fa6f239841ddaedae40d",
+      "git_blob_sha1": "dc9fd520abe46a7cb926454a1213283eb17161d4",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/review_fixed_parameter_integer_backend_20261103_1638/check_small_words.py",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/dense_visit_clarification.html",
+      "bytes": 1853,
+      "sha256": "8a9be4f3b59d38be0fe60ea5d4491913c90d6a10a341e8796a3383fe92456091",
+      "git_blob_sha1": "b10fe0cd42a1cd2f7dccccb70664ee8d839f776b",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/review_fixed_parameter_integer_backend_20261103_1638/dense_visit_clarification.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export.",
+        "Inherited backend retention and evidence-limit record; no old bytes or successful validation reconstructed."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/evidence_limit_addendum_20261103_1641.txt",
+      "bytes": 1054,
+      "sha256": "12e724f0b75b0ade8e31000cf2ef2bdb6e0828f646e41a520aab8e90f464faf1",
+      "git_blob_sha1": "9b7081450a9ab4a956ef95931c49f5268d7f0f91",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/review_fixed_parameter_integer_backend_20261103_1638/evidence_limit_addendum_20261103_1641.txt",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export.",
+        "Inherited backend retention and evidence-limit record; no old bytes or successful validation reconstructed."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+      "bytes": 8685,
+      "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+      "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export.",
+        "Inherited backend retention and evidence-limit record; no old bytes or successful validation reconstructed."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+      "bytes": 2046,
+      "sha256": "0c33928792830d80af45b820971d28a1e83a39b473e3c3e74a8f1dd9e55fd2be",
+      "git_blob_sha1": "7d7a0b43b5a5fc7fc7ad8c5c1478adbd1e30d0f3",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export.",
+        "Inherited backend retention and evidence-limit record; no old bytes or successful validation reconstructed."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+      "bytes": 1578,
+      "sha256": "e20984ffd88995ef023ce2cb695d3e25c3f4f7dcb3e85d31319b664b814ebd24",
+      "git_blob_sha1": "e082274a57c13ed95c5e1e98212f0392c90c3f27",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export.",
+        "Inherited backend retention and evidence-limit record; no old bytes or successful validation reconstructed."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+      "bytes": 11260,
+      "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+      "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export.",
+        "Explicit full source digest in a selected original/export.",
+        "Relative hyperlink in a selected source.",
+        "Textual path or basename in a selected source."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+      "bytes": 3436,
+      "sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+      "git_blob_sha1": "8fea7b3466fa914393d3bd9447937e9084ee6ab1",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export.",
+        "Explicit full source digest in a selected original/export.",
+        "Relative hyperlink in a selected source.",
+        "Textual path or basename in a selected source.",
+        "Manually identified non-filename textual dependency in a selected source."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/independent_vocab_softmax_review_20261103_1640/independent_review.html",
+      "bytes": 6933,
+      "sha256": "495db51ff52e21ad1fecb4131ebe35dd64c208468d20c95e8115d5ccbc0e5ba5",
+      "git_blob_sha1": "67eac079067f908b225482f7c2460aba1ca93b6b",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/independent_vocab_softmax_review_20261103_1640/independent_review.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/independent_vocab_rate_review_20261103_1641/independent_review.html",
+      "bytes": 4175,
+      "sha256": "f8b6066b4c3bcacc446b082eabcfc04d4999168e854938a772e6fb77d9f9011b",
+      "git_blob_sha1": "e2a72f82c7664f2d4b3c34610d3a4e21422158aa",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/independent_vocab_rate_review_20261103_1641/independent_review.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/four_block_integer_backend_20261103_1645/deterministic_vocab_backend_v1.html",
+      "bytes": 11698,
+      "sha256": "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b",
+      "git_blob_sha1": "09524dcaf17c95bf142ba058ef915c82e31bc116",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/four_block_integer_backend_20261103_1645/deterministic_vocab_backend_v1.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export.",
+        "Manually identified non-filename textual dependency in a selected source."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+      "bytes": 7337,
+      "sha256": "3edee0b42c69903da41faa7f2434dcca9568595726fabb95d72d3548abf0245a",
+      "git_blob_sha1": "803dfbf7088c6f2daf098eef77da15e540a89769",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/four_block_vocab_prior_art_20261103_1649/prior_art_audit.html",
+      "bytes": 12875,
+      "sha256": "dbf2df38b14b7b0f5b2c106abf620f5de418a028a659000e096273cd4b4ac937",
+      "git_blob_sha1": "e6392fa95e0e2e2a831248c494a143f4eadc2e76",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/four_block_vocab_prior_art_20261103_1649/prior_art_audit.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/fixed_parameter_perturbation_20261103_1658/perturbation_bounds_v1.html",
+      "bytes": 9280,
+      "sha256": "d92ec0a43232dbaa9c20e9eef65e24d4d4623d2ae822d5d488c31effbf20d802",
+      "git_blob_sha1": "43c5db120f7b223b5d44b0ba4674b7451f9c0337",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/fixed_parameter_perturbation_20261103_1658/perturbation_bounds_v1.html",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export.",
+        "Manually identified non-filename textual dependency in a selected source."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "v10_research/fixed_parameter_perturbation_20261103_1658/independent_analytic_review_20261103_1700.md",
+      "bytes": 6912,
+      "sha256": "aa7782c7b2efd8d73d31c98e7b818c9d43f46f6fc7d762867ba7c0dfc045cc6e",
+      "git_blob_sha1": "022ca90748250396483196d580357f6075ade282",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/v10_research/fixed_parameter_perturbation_20261103_1658/independent_analytic_review_20261103_1700.md",
+      "roles": [
+        "Existing immediate construction, perturbation, backend, correction, historical-evidence or scoped-review companion. Not a newly selected export."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+      "bytes": 16079,
+      "sha256": "6e8b9793ed17833040841c25156bf3c67cf71283d9d18dfb8a33607245ce2216",
+      "git_blob_sha1": "ce12bec502fe58a3b6fc21db4ce77f8aea2d81d8",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+      "roles": [
+        "Existing byte-coordinate identity mapping for the R011 review original and current public export."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+      "bytes": 14732,
+      "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+      "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+      "roles": [
+        "Inherited R011 independent review, metadata-normalized public bytes distinct from original source digest."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    },
+    {
+      "path": "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md",
+      "bytes": 10352,
+      "sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+      "git_blob_sha1": "8977fce82c0d716e6170b1aa5b980ec6ca07aca8",
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md",
+      "roles": [
+        "Inherited R011 proof for the unperturbed actual-terminal statistical risk; not freshly re-proved.",
+        "Manually identified non-filename textual dependency in a selected source."
+      ],
+      "verification": "Actual cached bytes match the freshly retrieved base inventory and complete base Git tree."
+    }
+  ],
+  "missing_selected_companions": [],
+  "unavailable_or_unshipped_historical_originals": [
+    {
+      "record": "Inherited three-block integer-backend review and aggregate-run evidence",
+      "status": "OVERWRITTEN_ORIGINAL_BYTES_UNAVAILABLE",
+      "referenced_original_sha256": "69c60c139b59e572ea0c0fb300d53741d24e1a8157a5a54fd16d9dfdda6d3316",
+      "original_byte_count": null,
+      "original_git_blob_sha1": null,
+      "current_distinct_version_source_id_in_existing_stage": "FPC019",
+      "current_distinct_version_original_identity": {
+        "bytes": 8685,
+        "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+        "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc"
+      },
+      "existing_public_evidence_paths": [
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/evidence_limit_addendum_20261103_1641.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/dense_visit_clarification.html"
+      ],
+      "limitation": "Exact overwritten review bytes remain unavailable. The current review is a distinct version; only seven aggregate output lines survive without original per-case records, original environment, assertion state or exit code. No run was repeated and no missing record reconstructed."
+    }
+  ],
+  "historical_record_gaps": [
+    {
+      "record": "Inherited three-block integer-backend review and aggregate-run evidence",
+      "status": "OVERWRITTEN_ORIGINAL_BYTES_UNAVAILABLE",
+      "referenced_original_sha256": "69c60c139b59e572ea0c0fb300d53741d24e1a8157a5a54fd16d9dfdda6d3316",
+      "original_byte_count": null,
+      "original_git_blob_sha1": null,
+      "current_distinct_version_source_id_in_existing_stage": "FPC019",
+      "current_distinct_version_original_identity": {
+        "bytes": 8685,
+        "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+        "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc"
+      },
+      "existing_public_evidence_paths": [
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/evidence_limit_addendum_20261103_1641.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/dense_visit_clarification.html"
+      ],
+      "limitation": "Exact overwritten review bytes remain unavailable. The current review is a distinct version; only seven aggregate output lines survive without original per-case records, original environment, assertion state or exit code. No run was repeated and no missing record reconstructed."
+    }
+  ],
+  "inherited_original_public_identities": [
+    {
+      "source_record_id_in_existing_stage": "FPC010",
+      "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v1.html",
+      "original_identity": {
+        "bytes": 1926,
+        "sha256": "1554e2be7fd89a8f4f385e7def328282db4c7a18c95b5ddaf8a1413f274f1333",
+        "git_blob_sha1": "d3c0e51ee0568c93c569016f75cb0dc854135c86"
+      },
+      "public_identity": {
+        "bytes": 1926,
+        "sha256": "1554e2be7fd89a8f4f385e7def328282db4c7a18c95b5ddaf8a1413f274f1333",
+        "git_blob_sha1": "d3c0e51ee0568c93c569016f75cb0dc854135c86"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC011",
+      "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html",
+      "original_identity": {
+        "bytes": 2065,
+        "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+        "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f"
+      },
+      "public_identity": {
+        "bytes": 2065,
+        "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+        "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC012",
+      "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "original_identity": {
+        "bytes": 11346,
+        "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+        "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+      },
+      "public_identity": {
+        "bytes": 11346,
+        "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+        "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC013",
+      "public_path": "v10_research/independent_fixed_parameter_review_20261103_1634/independent_review.html",
+      "original_identity": {
+        "bytes": 5110,
+        "sha256": "bd46136bac1aac44c0b5dcd716767572737a918b1144101f2c435107e2b6ba01",
+        "git_blob_sha1": "e9d4986a5f2801b2446ca959ae66475990e71fd1"
+      },
+      "public_identity": {
+        "bytes": 5110,
+        "sha256": "bd46136bac1aac44c0b5dcd716767572737a918b1144101f2c435107e2b6ba01",
+        "git_blob_sha1": "e9d4986a5f2801b2446ca959ae66475990e71fd1"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC014",
+      "public_path": "v10_research/fixed_parameter_markov_prior_20261103_1632/prior_art_table.html",
+      "original_identity": {
+        "bytes": 9697,
+        "sha256": "079b64fe3e3bfdb3362af3157b669301f37000108c41696f9b893b1ef34b1172",
+        "git_blob_sha1": "bc32193272e495670486f60da7046d1e6b3130ae"
+      },
+      "public_identity": {
+        "bytes": 9697,
+        "sha256": "079b64fe3e3bfdb3362af3157b669301f37000108c41696f9b893b1ef34b1172",
+        "git_blob_sha1": "bc32193272e495670486f60da7046d1e6b3130ae"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC015",
+      "public_path": "v10_research/fixed_parameter_integer_backend_20261103_1637/deterministic_integer_backend_v1.html",
+      "original_identity": {
+        "bytes": 10585,
+        "sha256": "962ca335827e4366855a4229798b92ae910c0b3a1996a7b990193757befa98cc",
+        "git_blob_sha1": "cb579d10a344acc8aa43f35c82eb9c50343dc4f5"
+      },
+      "public_identity": {
+        "bytes": 10585,
+        "sha256": "962ca335827e4366855a4229798b92ae910c0b3a1996a7b990193757befa98cc",
+        "git_blob_sha1": "cb579d10a344acc8aa43f35c82eb9c50343dc4f5"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC016",
+      "public_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/check_small_words.py",
+      "original_identity": {
+        "bytes": 1243,
+        "sha256": "c5e2639e746d6e0647d7d09ae81acc36fe2b179e1bc6fa6f239841ddaedae40d",
+        "git_blob_sha1": "dc9fd520abe46a7cb926454a1213283eb17161d4"
+      },
+      "public_identity": {
+        "bytes": 1243,
+        "sha256": "c5e2639e746d6e0647d7d09ae81acc36fe2b179e1bc6fa6f239841ddaedae40d",
+        "git_blob_sha1": "dc9fd520abe46a7cb926454a1213283eb17161d4"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC017",
+      "public_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/dense_visit_clarification.html",
+      "original_identity": {
+        "bytes": 1853,
+        "sha256": "8a9be4f3b59d38be0fe60ea5d4491913c90d6a10a341e8796a3383fe92456091",
+        "git_blob_sha1": "b10fe0cd42a1cd2f7dccccb70664ee8d839f776b"
+      },
+      "public_identity": {
+        "bytes": 1853,
+        "sha256": "8a9be4f3b59d38be0fe60ea5d4491913c90d6a10a341e8796a3383fe92456091",
+        "git_blob_sha1": "b10fe0cd42a1cd2f7dccccb70664ee8d839f776b"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC018",
+      "public_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/evidence_limit_addendum_20261103_1641.txt",
+      "original_identity": {
+        "bytes": 1054,
+        "sha256": "c9bb7121150d4b6f6ded75c8f52054fda03ced886ec71bbbaffa0115cb75429e",
+        "git_blob_sha1": "86d6e9ddccec5332dd8037af6b201aca505fa404"
+      },
+      "public_identity": {
+        "bytes": 1054,
+        "sha256": "12e724f0b75b0ade8e31000cf2ef2bdb6e0828f646e41a520aab8e90f464faf1",
+        "git_blob_sha1": "9b7081450a9ab4a956ef95931c49f5268d7f0f91"
+      },
+      "original_and_public_byte_equal": false,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 1,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC019",
+      "public_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+      "original_identity": {
+        "bytes": 8685,
+        "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+        "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc"
+      },
+      "public_identity": {
+        "bytes": 8685,
+        "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+        "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC020",
+      "public_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+      "original_identity": {
+        "bytes": 2040,
+        "sha256": "1714c5adb457011e610c53f0ee371755e96bc180d6850294458e3bc3e37ec30a",
+        "git_blob_sha1": "6a780b6a961afd97a7812dbe14d6e3ef2a306953"
+      },
+      "public_identity": {
+        "bytes": 2046,
+        "sha256": "0c33928792830d80af45b820971d28a1e83a39b473e3c3e74a8f1dd9e55fd2be",
+        "git_blob_sha1": "7d7a0b43b5a5fc7fc7ad8c5c1478adbd1e30d0f3"
+      },
+      "original_and_public_byte_equal": false,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 5,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC021",
+      "public_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+      "original_identity": {
+        "bytes": 1550,
+        "sha256": "84808de8f8b807c9127e3feaf33b1edcf99cefbdf1967584ba14465aa1e839cd",
+        "git_blob_sha1": "35697ceccf7128ebc05f9f9bcfb388b7f8433c2a"
+      },
+      "public_identity": {
+        "bytes": 1578,
+        "sha256": "e20984ffd88995ef023ce2cb695d3e25c3f4f7dcb3e85d31319b664b814ebd24",
+        "git_blob_sha1": "e082274a57c13ed95c5e1e98212f0392c90c3f27"
+      },
+      "original_and_public_byte_equal": false,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 2,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC022",
+      "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+      "original_identity": {
+        "bytes": 11260,
+        "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+        "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+      },
+      "public_identity": {
+        "bytes": 11260,
+        "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+        "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC023",
+      "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+      "original_identity": {
+        "bytes": 3436,
+        "sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+        "git_blob_sha1": "8fea7b3466fa914393d3bd9447937e9084ee6ab1"
+      },
+      "public_identity": {
+        "bytes": 3436,
+        "sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+        "git_blob_sha1": "8fea7b3466fa914393d3bd9447937e9084ee6ab1"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC024",
+      "public_path": "v10_research/independent_vocab_softmax_review_20261103_1640/independent_review.html",
+      "original_identity": {
+        "bytes": 6933,
+        "sha256": "495db51ff52e21ad1fecb4131ebe35dd64c208468d20c95e8115d5ccbc0e5ba5",
+        "git_blob_sha1": "67eac079067f908b225482f7c2460aba1ca93b6b"
+      },
+      "public_identity": {
+        "bytes": 6933,
+        "sha256": "495db51ff52e21ad1fecb4131ebe35dd64c208468d20c95e8115d5ccbc0e5ba5",
+        "git_blob_sha1": "67eac079067f908b225482f7c2460aba1ca93b6b"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC025",
+      "public_path": "v10_research/independent_vocab_rate_review_20261103_1641/independent_review.html",
+      "original_identity": {
+        "bytes": 4175,
+        "sha256": "f8b6066b4c3bcacc446b082eabcfc04d4999168e854938a772e6fb77d9f9011b",
+        "git_blob_sha1": "e2a72f82c7664f2d4b3c34610d3a4e21422158aa"
+      },
+      "public_identity": {
+        "bytes": 4175,
+        "sha256": "f8b6066b4c3bcacc446b082eabcfc04d4999168e854938a772e6fb77d9f9011b",
+        "git_blob_sha1": "e2a72f82c7664f2d4b3c34610d3a4e21422158aa"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC026",
+      "public_path": "v10_research/four_block_integer_backend_20261103_1645/deterministic_vocab_backend_v1.html",
+      "original_identity": {
+        "bytes": 11698,
+        "sha256": "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b",
+        "git_blob_sha1": "09524dcaf17c95bf142ba058ef915c82e31bc116"
+      },
+      "public_identity": {
+        "bytes": 11698,
+        "sha256": "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b",
+        "git_blob_sha1": "09524dcaf17c95bf142ba058ef915c82e31bc116"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC027",
+      "public_path": "v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+      "original_identity": {
+        "bytes": 7337,
+        "sha256": "3edee0b42c69903da41faa7f2434dcca9568595726fabb95d72d3548abf0245a",
+        "git_blob_sha1": "803dfbf7088c6f2daf098eef77da15e540a89769"
+      },
+      "public_identity": {
+        "bytes": 7337,
+        "sha256": "3edee0b42c69903da41faa7f2434dcca9568595726fabb95d72d3548abf0245a",
+        "git_blob_sha1": "803dfbf7088c6f2daf098eef77da15e540a89769"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "FPC028",
+      "public_path": "v10_research/four_block_vocab_prior_art_20261103_1649/prior_art_audit.html",
+      "original_identity": {
+        "bytes": 12875,
+        "sha256": "dbf2df38b14b7b0f5b2c106abf620f5de418a028a659000e096273cd4b4ac937",
+        "git_blob_sha1": "e6392fa95e0e2e2a831248c494a143f4eadc2e76"
+      },
+      "public_identity": {
+        "bytes": 12875,
+        "sha256": "dbf2df38b14b7b0f5b2c106abf620f5de418a028a659000e096273cd4b4ac937",
+        "git_blob_sha1": "e6392fa95e0e2e2a831248c494a143f4eadc2e76"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_fixed_parameter_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "ALP003",
+      "public_path": "v10_research/fixed_parameter_perturbation_20261103_1658/perturbation_bounds_v1.html",
+      "original_identity": {
+        "bytes": 9280,
+        "sha256": "d92ec0a43232dbaa9c20e9eef65e24d4d4623d2ae822d5d488c31effbf20d802",
+        "git_blob_sha1": "43c5db120f7b223b5d44b0ba4674b7451f9c0337"
+      },
+      "public_identity": {
+        "bytes": 9280,
+        "sha256": "d92ec0a43232dbaa9c20e9eef65e24d4d4623d2ae822d5d488c31effbf20d802",
+        "git_blob_sha1": "43c5db120f7b223b5d44b0ba4674b7451f9c0337"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_alphabet_limits_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    },
+    {
+      "source_record_id_in_existing_stage": "ALP004",
+      "public_path": "v10_research/fixed_parameter_perturbation_20261103_1658/independent_analytic_review_20261103_1700.md",
+      "original_identity": {
+        "bytes": 6912,
+        "sha256": "aa7782c7b2efd8d73d31c98e7b818c9d43f46f6fc7d762867ba7c0dfc045cc6e",
+        "git_blob_sha1": "022ca90748250396483196d580357f6075ade282"
+      },
+      "public_identity": {
+        "bytes": 6912,
+        "sha256": "aa7782c7b2efd8d73d31c98e7b818c9d43f46f6fc7d762867ba7c0dfc045cc6e",
+        "git_blob_sha1": "022ca90748250396483196d580357f6075ade282"
+      },
+      "original_and_public_byte_equal": true,
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "existing_change_map": "provenance/t1t2_alphabet_limits_20261103/EXPORT_CHANGES.json",
+      "verified_existing_change_count": 0,
+      "not_newly_exported": true
+    }
+  ],
+  "inherited_identity_limit": {
+    "status": "original_source_of_already_public_sanitized_export",
+    "referenced_original_identity": {
+      "bytes": 14746,
+      "sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+      "git_blob_sha1": "5aa3f546594f5bb5209565c7e7b8153f6fca20fb"
+    },
+    "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+    "public_identity": {
+      "bytes": 14732,
+      "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+      "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+    },
+    "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+    "digest_matches_public_bytes": false,
+    "mapping_path": "provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+    "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+    "mapping_kind": "published byte-coordinate original/export mapping evidence",
+    "mapping_evidence": {
+      "original": {
+        "bytes": 14746,
+        "sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+        "git_blob_sha1": "5aa3f546594f5bb5209565c7e7b8153f6fca20fb"
+      },
+      "public": {
+        "bytes": 14732,
+        "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+        "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+      },
+      "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+      "original_byte_range_zero_based_half_open": [
+        11082,
+        11144
+      ],
+      "removed_span_sha256": "2e2b8488e00c6b6b3b4c92f1a6df559d99e57d3affbcf6633f63b51b20cd2c3c",
+      "replacement": "Paths below are relative to the repository root.",
+      "reason": "single nonmathematical host-root sentence replacement; verified by full byte comparison"
+    },
+    "mapping_rechecked_at_base_commit": "54ef11e04709b49cd515ed7478c4a5f240e7e091",
+    "all_unchanged_complementary_bytes_verified": true
+  },
+  "semantic_text_references": [
+    {
+      "source_record_id": "CPR001",
+      "phrase": "The earlier norm-based sufficient bound",
+      "phrase_sha256": "01ba0d4c5778aadc9fe4c2e95ec9cf3bf73a3cdda2728cb58ff1db0d6b95da0f",
+      "public_path": "v10_research/fixed_parameter_perturbation_20261103_1658/perturbation_bounds_v1.html",
+      "status": "already_public_pinned_dependency",
+      "interpretation": "The earlier conservative all-parameter sufficient bound remains separate from this final-risk example.",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10280,
+        10319
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10280,
+        10319
+      ]
+    },
+    {
+      "source_record_id": "CPR001",
+      "phrase": "The original exact-integer backend",
+      "phrase_sha256": "dd7d9b196f5d69ffc6bbd5869166a1d9c5562e13d3a269a44e624df9054e8905",
+      "public_path": "v10_research/four_block_integer_backend_20261103_1645/deterministic_vocab_backend_v1.html",
+      "status": "already_public_pinned_dependency",
+      "interpretation": "The graph-specific growing-word integer backend stores this coefficient exactly; not a nonzero analog-noise or generic IEEE model.",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10143,
+        10177
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10143,
+        10177
+      ]
+    },
+    {
+      "source_record_id": "CPR007",
+      "phrase": "its triangular-quantifier clarification",
+      "phrase_sha256": "4b7ba7160a1a3e73baba2975adcc3bce49f18bf889393e71e8310f7634d4eb26",
+      "public_path": "v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/triangular_perturbation_quantifier_clarification_v1.html",
+      "status": "selected_proposed_export",
+      "interpretation": "Mandatory quantifier clarification, with scoped review CPR006.",
+      "original_utf8_byte_range_zero_based_half_open": [
+        529,
+        568
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        529,
+        568
+      ]
+    },
+    {
+      "source_record_id": "CPR010",
+      "phrase": "the established pathwise O(N⁻¹/²) vocabulary-output approximation",
+      "phrase_sha256": "62358f073b708c9430c2ac91603883315fcb33ec5f2ba1a199262875d2e9420d",
+      "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+      "status": "already_public_pinned_dependency",
+      "interpretation": "Existing uniform Gaussian/log-position pathwise approximation.",
+      "original_utf8_byte_range_zero_based_half_open": [
+        5640,
+        5709
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5640,
+        5709
+      ]
+    },
+    {
+      "source_record_id": "CPR010",
+      "phrase": "fixed-binary-alphabet statistical bound",
+      "phrase_sha256": "e2895e56728edc26f7df99080cce5415c9f9909cdece988ae90c1a87835be4e5",
+      "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md",
+      "status": "already_public_pinned_dependency",
+      "interpretation": "Inherited R011 statistical bound and its separately mapped review; N=2 is the trivial boundary branch.",
+      "original_utf8_byte_range_zero_based_half_open": [
+        5714,
+        5753
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5714,
+        5753
+      ]
+    },
+    {
+      "source_record_id": "CPR010",
+      "phrase": "The specialized integer backend",
+      "phrase_sha256": "f008cf60de5df4815d35c9a17756aa376a73f4ac955d5e27ad2a432426470ce2",
+      "public_path": "v10_research/four_block_integer_backend_20261103_1645/deterministic_vocab_backend_v1.html",
+      "status": "already_public_pinned_dependency",
+      "interpretation": "One-entry exact-coefficient storage is distinct from hardware-wide robustness.",
+      "original_utf8_byte_range_zero_based_half_open": [
+        7874,
+        7905
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        7874,
+        7905
+      ]
+    }
+  ],
+  "scope_limits": [
+    "Only the specified exact-real four-block graph, one coefficient and declared fixed-source/special-eta family are covered; not arbitrary perturbations, all networks or a source-class minimax lower bound.",
+    "The coefficient absolute change is 4|eta|; for eta=1/(2q) it is 2/q. Preserve this distinction from score-relative eta.",
+    "The fixed-q model is fixed across N. Triangular q_N or safe eta_N sequences change weights with N; perturbation tending to zero separately needs q_N tending to infinity.",
+    "A sufficient two-sided exact-output window and a particular positive failing sequence do not establish a sharp threshold, monotonicity, outside-window necessity or an optimal onset exponent.",
+    "The unperturbed statistical risk uses inherited R011 proof/review and boundary qualifications; current checks do not independently re-prove it.",
+    "Historical candidate-before-review wording is preserved. Separate LLM reviews are neither external human peer review nor formal verification, numerical validation or novelty certification.",
+    "Liu and Chen are close antecedents. External URLs are inventoried, not freshly fetched by this audit; differing historical paper-reading limits remain explicit.",
+    "No scientific program or archived script was executed, no experiment, simulation, scientific enumeration, model initialization or RNG use occurred. Existing archived execution evidence is not strengthened by this audit."
+  ]
+}

@@ -1,0 +1,27 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>T1/T2：单系数扰动、末端风险与安全窗口</title><style>body{font:17px/1.65 system-ui,sans-serif;max-width:1050px;margin:2rem auto;padding:0 1rem;color:#182632}h1,h2{color:#163f5c}a{color:#075c97}pre{white-space:pre-wrap;background:#edf3f5;padding:1rem}.warning{background:#fff2d8;padding:1rem;border-left:5px solid #aa6800}li{margin:.4rem 0}</style>
+<h1>T1/T2：单系数扰动、末端风险与安全窗口</h1>
+<p>本阶段保留十三份解析研究、量词澄清、定向先例审计与绑定原件的 LLM 审查。没有新增实验、随机数据、训练、枚举或运行历史研究程序。解析审查不是形式验证、外部人类同行评审或新颖性认证。</p>
+<div class="warning"><strong>这是一个指定网络、指定系数方向的精确实数分析。</strong>不是任意 Transformer、任意扰动、所有源、固定字长浮点或 SGD 的下界。下列固定 q、随 N 改变的 q<sub>N</sub>、逐长度安全窗口是不同量词，必须区分。</div>
+<h2>1. 固定系数误差可以产生非零端到端风险</h2>
+<p>先读<a href="../../v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/drift_risk_counterexample_v1.html">固定源漂移反例</a>及<a href="../../v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/independent_analytic_review_20261103_1810.md">独立解析审查</a>。所用是既有四块、无 LN、全因果、二类词表 softmax 的固定参数图，支付输入 (1,i,i²,ln i,x)、两枚值为1/2的 BOS 及 exact-real 运算。只将第一块 lag-one 头的一项分数改为</p>
+<pre>sη(i,j)=2i(i−1)j−(1+η)ij²，η=1/(2q)，q 为固定正整数。</pre>
+<p>这把对应 Q 投影权重 −4 改成 −4(1+η)，绝对权重变化为4η=2/q；其余权重、lag-two 头、mask、gates 和读出均不变。相对分数系数误差 η 与绝对权重变化2/q不是同一个数。</p>
+<p>源固定为二元二阶链 θ<sub>00</sub>(1)=3/4、θ<sub>10</sub>(1)=1/4、θ<sub>01</sub>(1)=θ<sub>11</sub>(1)=1/2，从均匀平稳 pair 律开始。每个两步 pair 转移至少1/16，源全支持且几何快混合。每个 q 先固定，再令 N→∞，受扰完整模型相对于同一轨迹真实末状态条件分布的平均 TV 风险趋于3/16。q 可先选得任意大，使固定正扰动任意小，但证明只覆盖 η=1/(2q)，不覆盖所有实数 η 或另一符号。</p>
+<p>证明跟踪实际 gates、非平稳索引计数、四个 anchors、真实末态查询及最终 softmax，不是把注意力选错直接等同于预测失败。漂移索引 f(k)=round[2q(k+1)/(2q+1)]−2；依赖计数用有限块混合与 bad-pair 协方差界，未假设 iid。未扰动图在同源的风险趋零依赖既有逐词近似与固定源经验转移行收敛；更强全源一致速率需要另带继承统计假设。</p>
+<h2>2. 有限 N、三角序列与非常保守的长度界</h2>
+<ul><li><a href="../../v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/finite_n_explicit_bound_v1.html">显式有限 N 风险差界</a> · <a href="../../v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/finite_n_independent_review_20261103_1814.md">对应审查</a>。原稿保留 cutoff、均值/方差、早期非整值 gate、BOS、非匹配质量及最终 softmax 常数。N≥K<sub>q,N</sub> 时适用非平凡分支，否则使用平凡界；固定 q 给 O<sub>q</sub>(√(log N/N)) 的风险差上界，不是实测收敛速度。</li>
+<li><a href="../../v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/triangular_perturbation_quantifier_clarification_v1.html">必须合读的三角量词澄清</a> · <a href="../../v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/triangular_quantifier_independent_review_20261103_1814.md">澄清审查</a>。</li>
+<li><a href="../../v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/polynomial_onset_addendum_v1.html">闭式充分长度附录</a> · <a href="../../v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/polynomial_onset_independent_review_20261103_1816.md">条件于有限界的解析审查</a>。</li></ul>
+<div class="warning">q<sub>N</sub>[ln(q<sub>N</sub>+1)+ln(N+2)]/N→0 使风险趋于3/16，但<strong>另须 q<sub>N</sub>→∞ 才能说权重扰动2/q<sub>N</sub>趋零</strong>。例如最终为正整数的 floor[N/ln²(N+2)] 满足两条件。此时每个 N 使用不同扰动权重，源和未扰动图固定；不能称一个固定受扰网络。固定 q 的结论则始终是固定非零误差。</div>
+<p>N≥[10⁶(q+1)]⁴ 足以使该例的实际末态平均 TV 风险&gt;3/32。它是刻意巨大、非最优的充分长度界，不是首次失效时间、必要长度、最优指数或实践预测，也不是一般扰动的统一保证。</p>
+<h2>3. 同一个系数的双符号充分安全窗口</h2>
+<p><a href="../../v10_research/copy_coefficient_tolerance_20261103_1819/two_sided_safe_window_v1.html">双符号安全窗口</a>与<a href="../../v10_research/copy_coefficient_tolerance_20261103_1819/two_sided_safe_window_independent_review_20261103_1821.md">独立解析审查</a>证明：N≥2、L=N+2，仍只改变上述系数，若 |η|≤1/(8L)，则对<strong>每个输入词，完整最终词表输出恰等于未扰动图</strong>。这对应绝对权重变化≤1/(2L)。原 ReLU snap 的1/4裕度和指定图的后续依赖隔离是关键，不能推给一般 residual 网络。</p>
+<p>原始 attention 权重和未使用槽位可能变化，完整 residual state 不要求相等。N=2 的两网络输出相等，但该共同的有限分数输出不必恰为1/2。逐 N 的安全 η<sub>N</sub> 仍不是一个固定非零系数跨所有长度。</p>
+<p class="warning">现有证明对比的是 O(1/N) 的双符号<strong>充分</strong>窗口，以及 η<sub>N</sub>∼ln²N/(2N) 的一个正向失败序列。没有证明尖锐阈值、随 |η| 单调变化、窗口外全部失败或其他坐标的鲁棒性。专用整数后端可精确保存这一系数，不被类比噪声反例否定。</p>
+<h2>4. 先例与读取范围</h2>
+<p><a href="../../v10_research/position_perturbation_prior_art_20261103_1817/prior_art_audit.html">定向先例审计</a>应与上述数学稿合读，但它不独立认证3/16证明。Liu 等 Proposition 4 已讨论特定 flip-flop 模型的位置 QK 精确约束和长序列失效；Chen 的 induction-head 工作已有复制/匹配到完整输出的误差桥接。因此“小位置系数误差导致长序列失败”不能声称一般新发现，未找到相同量词也不证明原创。</p>
+<p>安全窗口原稿的 OpenReview 链接可能出现验证页。保留<a href="../../v10_research/copy_coefficient_tolerance_20261103_1819/liu_primary_link_addendum_v1.html">Liu 原文链接增补</a>和<a href="../../v10_research/copy_coefficient_tolerance_20261103_1819/liu_link_addendum_independent_review_20261103_1821.md">其审查</a>：该次大 PDF 直接抓取超过检索大小限制，实际核对使用会议原文的索引文本，不可描述成完整 PDF 逐页复核。各文献审计的实际读取范围各自保留，未作穷尽检索。第三方论文只链接，不附完整文本或 PDF。</p>
+<h2>5. 原件、当前访问与完整性</h2>
+<p>构造背景见<a href="../t1t2_fixed_parameter_20261103/INDEX.html">固定参数与词表 softmax 索引</a>，固定源无 LN/插入 LN 对照见<a href="../t1t2_same_graph_assessment_20261103/INDEX.html">同图结构比较</a>。原稿“待审”等状态作为历史字节保留，另附实际审查绑定；文件名时间不是独立的准确事件时间证据。</p>
+<ul><li><a href="SOURCE_EXPORT_MAP.json">十三来源与实际公开身份</a> · <a href="EXPORT_CHANGES.json">公开映射变化</a> · <a href="SOURCE_RECONCILIATION.json">既有依赖与证据限制</a>。</li><li><a href="HASH_REFERENCE_BINDINGS.json">引用哈希</a> · <a href="BOUND_PAIRS.json">原文/审查绑定</a> · <a href="VERSION_HISTORY.json">澄清关系</a> · <a href="LINK_CENSUS.json">链接范围</a>。</li><li><a href="STAGE_FILE_MANIFEST.json">阶段清单</a> · <a href="../PUBLIC_INVENTORY.json">公共库存</a> · <a href="../../tools/public_verify.py">字节完整性检查器</a>。</li></ul>
+<p>检查器和仓库 CI 检验文件集合与字节，不重证数学或重建未保存的历史。继承 MM5 版本身份差异及以前缺失记录仍按既有映射披露。本阶段没有新的许可、投稿、训练结果或常规浮点保证。</p></html>

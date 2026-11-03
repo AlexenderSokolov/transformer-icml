@@ -1,0 +1,235 @@
+{
+  "base_commit": "54ef11e04709b49cd515ed7478c4a5f240e7e091",
+  "preferred_drift_reader_entry_source_id": "CPR001",
+  "preferred_safe_window_reader_entry_source_id": "CPR010",
+  "transitions": [],
+  "no_reconstructed_revisions": true,
+  "review_bindings": [
+    {
+      "review_source_id": "CPR002",
+      "reviewed_source_ids": [
+        "CPR001"
+      ],
+      "referenced_selected_source_ids": [
+        "CPR001"
+      ],
+      "exact_original_digest_bindings": {
+        "CPR001": "7e41058add6b41818414502fd83bc4959da6f30ae57c1be3c4af6fc3f8689821"
+      },
+      "referenced_already_public_paths": [
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html"
+      ],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. A dependency citation is not a new independent proof of every cited theorem. Exact source identities are bound; filename times and pending-review wording do not prove precise freeze-before-review chronology."
+    },
+    {
+      "review_source_id": "CPR005",
+      "reviewed_source_ids": [
+        "CPR003"
+      ],
+      "referenced_selected_source_ids": [
+        "CPR001",
+        "CPR002",
+        "CPR003"
+      ],
+      "exact_original_digest_bindings": {
+        "CPR001": "7e41058add6b41818414502fd83bc4959da6f30ae57c1be3c4af6fc3f8689821",
+        "CPR002": "3bad79cb076d596b5916455e9e0dd72efba7dece6e2f6cfbec1f7383646c46b3",
+        "CPR003": "fa808a23149bf3b7a4590f144cebdafe3a6ca1f1299c694d7bfe53e7b1ed0bd1"
+      },
+      "referenced_already_public_paths": [],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. A dependency citation is not a new independent proof of every cited theorem. Exact source identities are bound; filename times and pending-review wording do not prove precise freeze-before-review chronology."
+    },
+    {
+      "review_source_id": "CPR006",
+      "reviewed_source_ids": [
+        "CPR004"
+      ],
+      "referenced_selected_source_ids": [
+        "CPR003",
+        "CPR004",
+        "CPR005"
+      ],
+      "exact_original_digest_bindings": {
+        "CPR003": "fa808a23149bf3b7a4590f144cebdafe3a6ca1f1299c694d7bfe53e7b1ed0bd1",
+        "CPR004": "4bde65c05294d1a624016e003e7983a508d4dd9348c727b332ffb5ee76c5f016",
+        "CPR005": "c894323dfd568b66130642d781a9cab2b01a9dce53f978640a95c4137b83f509"
+      },
+      "referenced_already_public_paths": [],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. A dependency citation is not a new independent proof of every cited theorem. Exact source identities are bound; filename times and pending-review wording do not prove precise freeze-before-review chronology."
+    },
+    {
+      "review_source_id": "CPR008",
+      "reviewed_source_ids": [
+        "CPR007"
+      ],
+      "referenced_selected_source_ids": [
+        "CPR003",
+        "CPR004",
+        "CPR007"
+      ],
+      "exact_original_digest_bindings": {
+        "CPR003": "fa808a23149bf3b7a4590f144cebdafe3a6ca1f1299c694d7bfe53e7b1ed0bd1",
+        "CPR004": "4bde65c05294d1a624016e003e7983a508d4dd9348c727b332ffb5ee76c5f016",
+        "CPR007": "89db4cd6edce51dbb6ea9289c8f281f3d79811b2b09932456e8f4a0fc346873e"
+      },
+      "referenced_already_public_paths": [],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. A dependency citation is not a new independent proof of every cited theorem. Exact source identities are bound; filename times and pending-review wording do not prove precise freeze-before-review chronology."
+    },
+    {
+      "review_source_id": "CPR011",
+      "reviewed_source_ids": [
+        "CPR010"
+      ],
+      "referenced_selected_source_ids": [
+        "CPR001",
+        "CPR003",
+        "CPR004",
+        "CPR010"
+      ],
+      "exact_original_digest_bindings": {
+        "CPR001": "7e41058add6b41818414502fd83bc4959da6f30ae57c1be3c4af6fc3f8689821",
+        "CPR003": "fa808a23149bf3b7a4590f144cebdafe3a6ca1f1299c694d7bfe53e7b1ed0bd1",
+        "CPR004": "4bde65c05294d1a624016e003e7983a508d4dd9348c727b332ffb5ee76c5f016",
+        "CPR010": "f149643c6519a05a974d077c1c05d7940a720fb1d405ef3a2c32ceb900e0b249"
+      },
+      "referenced_already_public_paths": [
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html"
+      ],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. A dependency citation is not a new independent proof of every cited theorem. Exact source identities are bound; filename times and pending-review wording do not prove precise freeze-before-review chronology."
+    },
+    {
+      "review_source_id": "CPR013",
+      "reviewed_source_ids": [
+        "CPR012"
+      ],
+      "referenced_selected_source_ids": [
+        "CPR010",
+        "CPR011",
+        "CPR012"
+      ],
+      "exact_original_digest_bindings": {
+        "CPR010": "f149643c6519a05a974d077c1c05d7940a720fb1d405ef3a2c32ceb900e0b249",
+        "CPR011": "58f2d76ac7add79f6f4ef52e84d0d9b2b92ae999c7219289344c3c8be2af239f",
+        "CPR012": "40805242ddd9e77eda1c4f54e03c216d7b0d57fc3b578045d6f196d95f397ba0"
+      },
+      "referenced_already_public_paths": [],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. A dependency citation is not a new independent proof of every cited theorem. Exact source identities are bound; filename times and pending-review wording do not prove precise freeze-before-review chronology."
+    }
+  ],
+  "separate_corrections": [
+    {
+      "original_source_id": "CPR003",
+      "clarification_source_id": "CPR004",
+      "review_source_id": "CPR006",
+      "kind": "actual_separate_triangular_quantifier_clarification",
+      "summary": "The growth condition gives risk convergence; perturbation magnitude tending to zero additionally requires q_N tending to infinity. Different N use different perturbed weights. CPR003 and its review CPR005 are preserved without rewriting."
+    },
+    {
+      "original_source_id": "CPR010",
+      "clarification_source_id": "CPR012",
+      "review_source_id": "CPR013",
+      "kind": "actual_separate_primary_link_addendum",
+      "summary": "Adds the NeurIPS conference PDF route for Liu after possible OpenReview verification pages. This is a source-link addendum, not a mathematical correction or evidence of successful full-PDF retrieval."
+    }
+  ],
+  "separate_consequence": {
+    "source_id": "CPR007",
+    "input_source_id": "CPR003",
+    "review_source_id": "CPR008",
+    "scope": "Actual algebraic onset addendum, not a replacement for the finite-N theorem or a new optimality result."
+  },
+  "historical_review_wording": "Candidate/awaiting-review statements remain dated source history. Exact separate review bindings do not establish precise freeze-before-review chronology or external human peer review. Filename timestamps are not trusted creation/completion times. No source has been silently repaired or historical revision reconstructed.",
+  "historical_record_gaps": [
+    {
+      "record": "Inherited three-block integer-backend review and aggregate-run evidence",
+      "status": "OVERWRITTEN_ORIGINAL_BYTES_UNAVAILABLE",
+      "referenced_original_sha256": "69c60c139b59e572ea0c0fb300d53741d24e1a8157a5a54fd16d9dfdda6d3316",
+      "original_byte_count": null,
+      "original_git_blob_sha1": null,
+      "current_distinct_version_source_id_in_existing_stage": "FPC019",
+      "current_distinct_version_original_identity": {
+        "bytes": 8685,
+        "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+        "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc"
+      },
+      "existing_public_evidence_paths": [
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/evidence_limit_addendum_20261103_1641.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/dense_visit_clarification.html"
+      ],
+      "limitation": "Exact overwritten review bytes remain unavailable. The current review is a distinct version; only seven aggregate output lines survive without original per-case records, original environment, assertion state or exit code. No run was repeated and no missing record reconstructed."
+    }
+  ],
+  "inherited_identity_limit": {
+    "status": "original_source_of_already_public_sanitized_export",
+    "referenced_original_identity": {
+      "bytes": 14746,
+      "sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+      "git_blob_sha1": "5aa3f546594f5bb5209565c7e7b8153f6fca20fb"
+    },
+    "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+    "public_identity": {
+      "bytes": 14732,
+      "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+      "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+    },
+    "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+    "digest_matches_public_bytes": false,
+    "mapping_path": "provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+    "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+    "mapping_kind": "published byte-coordinate original/export mapping evidence",
+    "mapping_evidence": {
+      "original": {
+        "bytes": 14746,
+        "sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+        "git_blob_sha1": "5aa3f546594f5bb5209565c7e7b8153f6fca20fb"
+      },
+      "public": {
+        "bytes": 14732,
+        "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+        "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+      },
+      "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+      "original_byte_range_zero_based_half_open": [
+        11082,
+        11144
+      ],
+      "removed_span_sha256": "2e2b8488e00c6b6b3b4c92f1a6df559d99e57d3affbcf6633f63b51b20cd2c3c",
+      "replacement": "Paths below are relative to the repository root.",
+      "reason": "single nonmathematical host-root sentence replacement; verified by full byte comparison"
+    },
+    "mapping_rechecked_at_base_commit": "54ef11e04709b49cd515ed7478c4a5f240e7e091",
+    "all_unchanged_complementary_bytes_verified": true
+  },
+  "historical_external_reading_scopes": [
+    {
+      "source_record_id": "CPR009",
+      "scope": "The source reports targeted queries and partial primary-text reading, including direct checking of Liu C.3 and Chen C.6. Preserve this historical reported scope without treating it as this publication audit re-fetching the papers."
+    },
+    {
+      "source_record_id": "CPR011",
+      "scope": "The source records an OpenReview browser-verification page and conference indexed primary text displaying the proposition/section."
+    },
+    {
+      "source_record_id": "CPR013",
+      "scope": "The source records a large conference-PDF fetch exceeding the retrieval size limit, with the proposition/section exposed by the conference PDF search index. This is not a successful complete-PDF fetch."
+    }
+  ],
+  "scope_limits": [
+    "Only the specified exact-real four-block graph, one coefficient and declared fixed-source/special-eta family are covered; not arbitrary perturbations, all networks or a source-class minimax lower bound.",
+    "The coefficient absolute change is 4|eta|; for eta=1/(2q) it is 2/q. Preserve this distinction from score-relative eta.",
+    "The fixed-q model is fixed across N. Triangular q_N or safe eta_N sequences change weights with N; perturbation tending to zero separately needs q_N tending to infinity.",
+    "A sufficient two-sided exact-output window and a particular positive failing sequence do not establish a sharp threshold, monotonicity, outside-window necessity or an optimal onset exponent.",
+    "The unperturbed statistical risk uses inherited R011 proof/review and boundary qualifications; current checks do not independently re-prove it.",
+    "Historical candidate-before-review wording is preserved. Separate LLM reviews are neither external human peer review nor formal verification, numerical validation or novelty certification.",
+    "Liu and Chen are close antecedents. External URLs are inventoried, not freshly fetched by this audit; differing historical paper-reading limits remain explicit.",
+    "No scientific program or archived script was executed, no experiment, simulation, scientific enumeration, model initialization or RNG use occurred. Existing archived execution evidence is not strengthened by this audit."
+  ]
+}

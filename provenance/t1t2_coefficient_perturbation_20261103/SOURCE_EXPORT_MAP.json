@@ -1,0 +1,282 @@
+{
+  "schema": "coefficient-perturbation-source-export-v1",
+  "base_commit": "54ef11e04709b49cd515ed7478c4a5f240e7e091",
+  "source_count": 13,
+  "source_bytes": 58099,
+  "export_bytes": 58099,
+  "byte_exact_count": 13,
+  "metadata_normalized_count": 0,
+  "scientific_text_policy": "All 13 sources are byte-for-byte exports. Every mathematical, source, digest, correction, scholarly attribution, historical status and scoped-review byte is preserved. No scientific or metadata repair is performed.",
+  "files": [
+    {
+      "source_record_id": "CPR001",
+      "path": "v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/drift_risk_counterexample_v1.html",
+      "original": {
+        "bytes": 10371,
+        "sha256": "7e41058add6b41818414502fd83bc4959da6f30ae57c1be3c4af6fc3f8689821",
+        "git_blob_sha1": "c85d15d27eec030d3a0fcfecff73f558811ce910"
+      },
+      "export": {
+        "bytes": 10371,
+        "sha256": "7e41058add6b41818414502fd83bc4959da6f30ae57c1be3c4af6fc3f8689821",
+        "git_blob_sha1": "c85d15d27eec030d3a0fcfecff73f558811ce910"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Historical analytic candidate for one specified exact-real four-block graph, one scalar coefficient and eta=1/(2q), fixed q before N tends to infinity. Same fixed stationary positive fast-mixing source and actual-terminal expected TV limit 3/16. Pending-review wording retained; separate CPR002 binds its exact digest. Not arbitrary eta, all models, training, IEEE arithmetic or novelty certification.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": null
+    },
+    {
+      "source_record_id": "CPR002",
+      "path": "v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/independent_analytic_review_20261103_1810.md",
+      "original": {
+        "bytes": 5556,
+        "sha256": "3bad79cb076d596b5916455e9e0dd72efba7dece6e2f6cfbec1f7383646c46b3",
+        "git_blob_sha1": "2832d5c6aba27d47a0220e2207082aeb48ddc05c"
+      },
+      "export": {
+        "bytes": 5556,
+        "sha256": "3bad79cb076d596b5916455e9e0dd72efba7dece6e2f6cfbec1f7383646c46b3",
+        "git_blob_sha1": "2832d5c6aba27d47a0220e2207082aeb48ddc05c"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Independent scoped LLM analytic review of CPR001 and exact referenced construction dependencies. No formal verification, external human peer review, experiment or novelty clearance.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": "Independent scoped LLM analytical review, not human external peer review or formal verification."
+    },
+    {
+      "source_record_id": "CPR003",
+      "path": "v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/finite_n_explicit_bound_v1.html",
+      "original": {
+        "bytes": 7329,
+        "sha256": "fa808a23149bf3b7a4590f144cebdafe3a6ca1f1299c694d7bfe53e7b1ed0bd1",
+        "git_blob_sha1": "7584c97cd34aae7a7f8f22cfbd1d9976a1d4e7d5"
+      },
+      "export": {
+        "bytes": 7329,
+        "sha256": "fa808a23149bf3b7a4590f144cebdafe3a6ca1f1299c694d7bfe53e7b1ed0bd1",
+        "git_blob_sha1": "7584c97cd34aae7a7f8f22cfbd1d9976a1d4e7d5"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Conservative explicit finite-N absolute deviation bound around risk 3/16. Read with CPR004 and reviews CPR005/CPR006. A sufficient computable onset is not the first failure length or a sharp threshold.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": null
+    },
+    {
+      "source_record_id": "CPR004",
+      "path": "v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/triangular_perturbation_quantifier_clarification_v1.html",
+      "original": {
+        "bytes": 1119,
+        "sha256": "4bde65c05294d1a624016e003e7983a508d4dd9348c727b332ffb5ee76c5f016",
+        "git_blob_sha1": "6309c213ed121a297677355cf380a14e3ee79114"
+      },
+      "export": {
+        "bytes": 1119,
+        "sha256": "4bde65c05294d1a624016e003e7983a508d4dd9348c727b332ffb5ee76c5f016",
+        "git_blob_sha1": "6309c213ed121a297677355cf380a14e3ee79114"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Actual immutable triangular-quantifier clarification: the general growth condition gives the risk limit; perturbation 2/q_N tending to zero additionally requires q_N tending to infinity. Each N then uses a different perturbed model, with source and unperturbed graph fixed.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": null
+    },
+    {
+      "source_record_id": "CPR005",
+      "path": "v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/finite_n_independent_review_20261103_1814.md",
+      "original": {
+        "bytes": 4550,
+        "sha256": "c894323dfd568b66130642d781a9cab2b01a9dce53f978640a95c4137b83f509",
+        "git_blob_sha1": "b77e2301556fe6553b59ee41f6b07b8f52e7ef41"
+      },
+      "export": {
+        "bytes": 4550,
+        "sha256": "c894323dfd568b66130642d781a9cab2b01a9dce53f978640a95c4137b83f509",
+        "git_blob_sha1": "b77e2301556fe6553b59ee41f6b07b8f52e7ef41"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Independent scoped LLM analytic review of CPR003, with explicit original CPR001/CPR002 digest dependencies and the distinction between the risk limit and vanishing perturbations. Not external human peer review or formal verification.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": "Independent scoped LLM analytical review, not human external peer review or formal verification."
+    },
+    {
+      "source_record_id": "CPR006",
+      "path": "v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/triangular_quantifier_independent_review_20261103_1814.md",
+      "original": {
+        "bytes": 1112,
+        "sha256": "dc185eb7e12e17a5f3d16270a8d39e2816046331ef9ad96d1c65152afed548d8",
+        "git_blob_sha1": "47c5017b93e5dfb35cbbf14bc61d20f90683e5b8"
+      },
+      "export": {
+        "bytes": 1112,
+        "sha256": "dc185eb7e12e17a5f3d16270a8d39e2816046331ef9ad96d1c65152afed548d8",
+        "git_blob_sha1": "47c5017b93e5dfb35cbbf14bc61d20f90683e5b8"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Independent scoped LLM analytic review of CPR004, bound also to CPR003 and CPR005. Preserves different fixed-q and triangular-network quantifiers.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": "Independent scoped LLM analytical review, not human external peer review or formal verification."
+    },
+    {
+      "source_record_id": "CPR007",
+      "path": "v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/polynomial_onset_addendum_v1.html",
+      "original": {
+        "bytes": 2558,
+        "sha256": "89db4cd6edce51dbb6ea9289c8f281f3d79811b2b09932456e8f4a0fc346873e",
+        "git_blob_sha1": "4187f25b700ef22884e87537d329779fb1c5b29a"
+      },
+      "export": {
+        "bytes": 2558,
+        "sha256": "89db4cd6edce51dbb6ea9289c8f281f3d79811b2b09932456e8f4a0fc346873e",
+        "git_blob_sha1": "4187f25b700ef22884e87537d329779fb1c5b29a"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Actual immutable algebraic consequence: N >= [10^6(q+1)]^4 suffices for risk > 3/32 in the declared example. An intentionally enormous sufficient O(q^4) onset, not first failure, necessity or an optimal exponent. Pending-review wording retained.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": null
+    },
+    {
+      "source_record_id": "CPR008",
+      "path": "v10_research/fixed_coefficient_end_to_end_risk_20261103_1809/polynomial_onset_independent_review_20261103_1816.md",
+      "original": {
+        "bytes": 2524,
+        "sha256": "8a83584ac3f231c199b3eaf93d4ddeba30039247f3380eb0a3fbd63bfa7591fe",
+        "git_blob_sha1": "102d63da69684575932891f326cb060e8accf1bb"
+      },
+      "export": {
+        "bytes": 2524,
+        "sha256": "8a83584ac3f231c199b3eaf93d4ddeba30039247f3380eb0a3fbd63bfa7591fe",
+        "git_blob_sha1": "102d63da69684575932891f326cb060e8accf1bb"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Independent scoped LLM analytic review of CPR007 conditional on the cited finite-N bound and quantifier clarification. Human-readable does not mean human-authored or external peer-reviewed.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": "Independent scoped LLM analytical review, not human external peer review or formal verification."
+    },
+    {
+      "source_record_id": "CPR009",
+      "path": "v10_research/position_perturbation_prior_art_20261103_1817/prior_art_audit.html",
+      "original": {
+        "bytes": 8629,
+        "sha256": "206f40e42475087df6354d74974ae0b29b7d005f56e09db97e510d0bec1101e2",
+        "git_blob_sha1": "e27bd4620e7094d564fa74a9c7e62a03707c74dd"
+      },
+      "export": {
+        "bytes": 8629,
+        "sha256": "206f40e42475087df6354d74974ae0b29b7d005f56e09db97e510d0bec1101e2",
+        "git_blob_sha1": "e27bd4620e7094d564fa74a9c7e62a03707c74dd"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Targeted non-exhaustive prior-art audit, not an independent proof acceptance or novelty certificate. Liu Proposition 4 and Chen copier-to-output analysis preclude generic novelty claims; source-specific reading scopes are retained.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": null
+    },
+    {
+      "source_record_id": "CPR010",
+      "path": "v10_research/copy_coefficient_tolerance_20261103_1819/two_sided_safe_window_v1.html",
+      "original": {
+        "bytes": 7996,
+        "sha256": "f149643c6519a05a974d077c1c05d7940a720fb1d405ef3a2c32ceb900e0b249",
+        "git_blob_sha1": "5c6c0c50579ffda67eed96e4cee686724ea11579"
+      },
+      "export": {
+        "bytes": 7996,
+        "sha256": "f149643c6519a05a974d077c1c05d7940a720fb1d405ef3a2c32ceb900e0b249",
+        "git_blob_sha1": "5c6c0c50579ffda67eed96e4cee686724ea11579"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Two-sided all-word exact-output equality for the same one-entry perturbation when |eta| <= 1/[8(N+2)], N>=2. A sufficient safe window, not a sharp threshold, monotone risk law, arbitrary perturbation guarantee or equality of full residual vectors. Pending-review wording retained.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": null
+    },
+    {
+      "source_record_id": "CPR011",
+      "path": "v10_research/copy_coefficient_tolerance_20261103_1819/two_sided_safe_window_independent_review_20261103_1821.md",
+      "original": {
+        "bytes": 4557,
+        "sha256": "58f2d76ac7add79f6f4ef52e84d0d9b2b92ae999c7219289344c3c8be2af239f",
+        "git_blob_sha1": "647bf4e06f2792ee4a5fa66357bdde910ef279e3"
+      },
+      "export": {
+        "bytes": 4557,
+        "sha256": "58f2d76ac7add79f6f4ef52e84d0d9b2b92ae999c7219289344c3c8be2af239f",
+        "git_blob_sha1": "647bf4e06f2792ee4a5fa66357bdde910ef279e3"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Independent scoped LLM analytic review of CPR010 and its exact named dependencies. Retains OpenReview verification-page observation and indexed conference-primary-text reading scope. Not a full prior-art search, numerical experiment or formal verification.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": "Independent scoped LLM analytical review, not human external peer review or formal verification."
+    },
+    {
+      "source_record_id": "CPR012",
+      "path": "v10_research/copy_coefficient_tolerance_20261103_1819/liu_primary_link_addendum_v1.html",
+      "original": {
+        "bytes": 880,
+        "sha256": "40805242ddd9e77eda1c4f54e03c216d7b0d57fc3b578045d6f196d95f397ba0",
+        "git_blob_sha1": "c2ae48c2b31dbcc29abb4c526b2a8f51186f1d20"
+      },
+      "export": {
+        "bytes": 880,
+        "sha256": "40805242ddd9e77eda1c4f54e03c216d7b0d57fc3b578045d6f196d95f397ba0",
+        "git_blob_sha1": "c2ae48c2b31dbcc29abb4c526b2a8f51186f1d20"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Actual immutable additional Liu primary-source link for CPR010, not a mathematical correction or claim that the PDF was fully downloaded.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": null
+    },
+    {
+      "source_record_id": "CPR013",
+      "path": "v10_research/copy_coefficient_tolerance_20261103_1819/liu_link_addendum_independent_review_20261103_1821.md",
+      "original": {
+        "bytes": 918,
+        "sha256": "e9e7a084945c5126a66cca718e7d289eb768e427c2dfcb66fa7581738823b0cc",
+        "git_blob_sha1": "03d1e28d81071ee24e85fe2b0db7418ebe451e04"
+      },
+      "export": {
+        "bytes": 918,
+        "sha256": "e9e7a084945c5126a66cca718e7d289eb768e427c2dfcb66fa7581738823b0cc",
+        "git_blob_sha1": "03d1e28d81071ee24e85fe2b0db7418ebe451e04"
+      },
+      "byte_exact": true,
+      "changed": false,
+      "change_count": 0,
+      "source_status": "Independent scoped LLM review of CPR012 and its exact CPR010/CPR011 bindings. Records that the large PDF fetch exceeded the retrieval size limit and that indexed primary text exposed the proposition and section. Not a full independent prior-art search.",
+      "public_status": "Proposed export only; not a publication receipt.",
+      "review_identity": "Independent scoped LLM analytical review, not human external peer review or formal verification."
+    }
+  ],
+  "scope_limits": [
+    "Only the specified exact-real four-block graph, one coefficient and declared fixed-source/special-eta family are covered; not arbitrary perturbations, all networks or a source-class minimax lower bound.",
+    "The coefficient absolute change is 4|eta|; for eta=1/(2q) it is 2/q. Preserve this distinction from score-relative eta.",
+    "The fixed-q model is fixed across N. Triangular q_N or safe eta_N sequences change weights with N; perturbation tending to zero separately needs q_N tending to infinity.",
+    "A sufficient two-sided exact-output window and a particular positive failing sequence do not establish a sharp threshold, monotonicity, outside-window necessity or an optimal onset exponent.",
+    "The unperturbed statistical risk uses inherited R011 proof/review and boundary qualifications; current checks do not independently re-prove it.",
+    "Historical candidate-before-review wording is preserved. Separate LLM reviews are neither external human peer review nor formal verification, numerical validation or novelty certification.",
+    "Liu and Chen are close antecedents. External URLs are inventoried, not freshly fetched by this audit; differing historical paper-reading limits remain explicit.",
+    "No scientific program or archived script was executed, no experiment, simulation, scientific enumeration, model initialization or RNG use occurred. Existing archived execution evidence is not strengthened by this audit."
+  ]
+}

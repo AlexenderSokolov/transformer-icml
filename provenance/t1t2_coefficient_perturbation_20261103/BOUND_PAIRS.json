@@ -1,0 +1,313 @@
+{
+  "base_commit": "54ef11e04709b49cd515ed7478c4a5f240e7e091",
+  "required_read_together": [
+    {
+      "role": "Fixed-q end-to-end drift example and exact review",
+      "source_ids": [
+        "CPR001",
+        "CPR002"
+      ],
+      "requirement": "For each integer q>=1 fix eta=1/(2q) first, changing Q coefficient -4 to -4(1+eta), absolute change 2/q. Same fixed stationary positive fast-mixing binary order-two source. Preserve real copy gates, dependent nonstationary-index counts, all anchors, actual terminal query and final vocabulary softmax yielding expected TV limit 3/16. Not all eta, signs, sources or networks."
+    },
+    {
+      "role": "Finite-N estimate with actual triangular-quantifier clarification and two reviews",
+      "source_ids": [
+        "CPR001",
+        "CPR002",
+        "CPR003",
+        "CPR004",
+        "CPR005",
+        "CPR006"
+      ],
+      "requirement": "The general condition q_N[ln(q_N+1)+ln(N+2)]/N -> 0 gives the risk limit but does not alone imply a vanishing perturbation; also require q_N -> infinity. Each N uses different perturbed weights; fixed source and unperturbed graph remain unchanged. The finite-N bound has N>=K branch and trivial bound otherwise."
+    },
+    {
+      "role": "Conservative polynomial onset and conditional analytic review",
+      "source_ids": [
+        "CPR003",
+        "CPR004",
+        "CPR005",
+        "CPR006",
+        "CPR007",
+        "CPR008"
+      ],
+      "requirement": "Retain N >= [10^6(q+1)]^4 as sufficient for risk > 3/32 in the declared example. It is intentionally enormous, not first failure length, necessary threshold, practical prediction or optimal exponent."
+    },
+    {
+      "role": "Two-sided one-coefficient exact-output window with mathematical and source-link reviews",
+      "source_ids": [
+        "CPR001",
+        "CPR003",
+        "CPR004",
+        "CPR009",
+        "CPR010",
+        "CPR011",
+        "CPR012",
+        "CPR013"
+      ],
+      "requirement": "For N>=2 and |eta|<=1/[8(N+2)], both signs give exactly identical final outputs on all words under the specified dependency wiring. Full residual states and attention distributions need not match. N=2 compares the two network outputs, not an assertion that either output equals 1/2. Compare the O(1/N) sufficient window with the particular positive eta_N~ln^2(N)/(2N) failing sequence, without sharpness, monotonicity or a general outside-window lower bound."
+    },
+    {
+      "role": "Mandatory targeted prior-art and actual retrieval-scope record",
+      "source_ids": [
+        "CPR009",
+        "CPR011",
+        "CPR012",
+        "CPR013"
+      ],
+      "requirement": "Liu Proposition 4 already supplies a position-QK exact-constraint/long-length failure antecedent in its flip-flop model; Chen supplies a differently scoped copier-to-output bridge. Preserve author names and all original source attributions. The reviews retain OpenReview verification-page and large-PDF size-limit observations, and indexed-primary-text reading. Do not flatten these distinct historical reading scopes into a fresh full-PDF verification or exhaustive novelty search."
+    }
+  ],
+  "review_bindings": [
+    {
+      "review_source_id": "CPR002",
+      "reviewed_source_ids": [
+        "CPR001"
+      ],
+      "referenced_selected_source_ids": [
+        "CPR001"
+      ],
+      "exact_original_digest_bindings": {
+        "CPR001": "7e41058add6b41818414502fd83bc4959da6f30ae57c1be3c4af6fc3f8689821"
+      },
+      "referenced_already_public_paths": [
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html"
+      ],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. A dependency citation is not a new independent proof of every cited theorem. Exact source identities are bound; filename times and pending-review wording do not prove precise freeze-before-review chronology."
+    },
+    {
+      "review_source_id": "CPR005",
+      "reviewed_source_ids": [
+        "CPR003"
+      ],
+      "referenced_selected_source_ids": [
+        "CPR001",
+        "CPR002",
+        "CPR003"
+      ],
+      "exact_original_digest_bindings": {
+        "CPR001": "7e41058add6b41818414502fd83bc4959da6f30ae57c1be3c4af6fc3f8689821",
+        "CPR002": "3bad79cb076d596b5916455e9e0dd72efba7dece6e2f6cfbec1f7383646c46b3",
+        "CPR003": "fa808a23149bf3b7a4590f144cebdafe3a6ca1f1299c694d7bfe53e7b1ed0bd1"
+      },
+      "referenced_already_public_paths": [],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. A dependency citation is not a new independent proof of every cited theorem. Exact source identities are bound; filename times and pending-review wording do not prove precise freeze-before-review chronology."
+    },
+    {
+      "review_source_id": "CPR006",
+      "reviewed_source_ids": [
+        "CPR004"
+      ],
+      "referenced_selected_source_ids": [
+        "CPR003",
+        "CPR004",
+        "CPR005"
+      ],
+      "exact_original_digest_bindings": {
+        "CPR003": "fa808a23149bf3b7a4590f144cebdafe3a6ca1f1299c694d7bfe53e7b1ed0bd1",
+        "CPR004": "4bde65c05294d1a624016e003e7983a508d4dd9348c727b332ffb5ee76c5f016",
+        "CPR005": "c894323dfd568b66130642d781a9cab2b01a9dce53f978640a95c4137b83f509"
+      },
+      "referenced_already_public_paths": [],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. A dependency citation is not a new independent proof of every cited theorem. Exact source identities are bound; filename times and pending-review wording do not prove precise freeze-before-review chronology."
+    },
+    {
+      "review_source_id": "CPR008",
+      "reviewed_source_ids": [
+        "CPR007"
+      ],
+      "referenced_selected_source_ids": [
+        "CPR003",
+        "CPR004",
+        "CPR007"
+      ],
+      "exact_original_digest_bindings": {
+        "CPR003": "fa808a23149bf3b7a4590f144cebdafe3a6ca1f1299c694d7bfe53e7b1ed0bd1",
+        "CPR004": "4bde65c05294d1a624016e003e7983a508d4dd9348c727b332ffb5ee76c5f016",
+        "CPR007": "89db4cd6edce51dbb6ea9289c8f281f3d79811b2b09932456e8f4a0fc346873e"
+      },
+      "referenced_already_public_paths": [],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. A dependency citation is not a new independent proof of every cited theorem. Exact source identities are bound; filename times and pending-review wording do not prove precise freeze-before-review chronology."
+    },
+    {
+      "review_source_id": "CPR011",
+      "reviewed_source_ids": [
+        "CPR010"
+      ],
+      "referenced_selected_source_ids": [
+        "CPR001",
+        "CPR003",
+        "CPR004",
+        "CPR010"
+      ],
+      "exact_original_digest_bindings": {
+        "CPR001": "7e41058add6b41818414502fd83bc4959da6f30ae57c1be3c4af6fc3f8689821",
+        "CPR003": "fa808a23149bf3b7a4590f144cebdafe3a6ca1f1299c694d7bfe53e7b1ed0bd1",
+        "CPR004": "4bde65c05294d1a624016e003e7983a508d4dd9348c727b332ffb5ee76c5f016",
+        "CPR010": "f149643c6519a05a974d077c1c05d7940a720fb1d405ef3a2c32ceb900e0b249"
+      },
+      "referenced_already_public_paths": [
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html"
+      ],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. A dependency citation is not a new independent proof of every cited theorem. Exact source identities are bound; filename times and pending-review wording do not prove precise freeze-before-review chronology."
+    },
+    {
+      "review_source_id": "CPR013",
+      "reviewed_source_ids": [
+        "CPR012"
+      ],
+      "referenced_selected_source_ids": [
+        "CPR010",
+        "CPR011",
+        "CPR012"
+      ],
+      "exact_original_digest_bindings": {
+        "CPR010": "f149643c6519a05a974d077c1c05d7940a720fb1d405ef3a2c32ceb900e0b249",
+        "CPR011": "58f2d76ac7add79f6f4ef52e84d0d9b2b92ae999c7219289344c3c8be2af239f",
+        "CPR012": "40805242ddd9e77eda1c4f54e03c216d7b0d57fc3b578045d6f196d95f397ba0"
+      },
+      "referenced_already_public_paths": [],
+      "scope": "Independent scoped LLM analytic review; not external human peer review, formal verification, experiment or novelty clearance. A dependency citation is not a new independent proof of every cited theorem. Exact source identities are bound; filename times and pending-review wording do not prove precise freeze-before-review chronology."
+    }
+  ],
+  "inherited_required_pairings": [
+    {
+      "stage": "t1t2_fixed_parameter",
+      "source_ids_in_existing_stage": [
+        "FPC010",
+        "FPC011",
+        "FPC012",
+        "FPC013",
+        "FPC014",
+        "FPC015",
+        "FPC016",
+        "FPC017",
+        "FPC018",
+        "FPC019",
+        "FPC020",
+        "FPC021",
+        "FPC022",
+        "FPC023",
+        "FPC024",
+        "FPC025",
+        "FPC026",
+        "FPC027",
+        "FPC028"
+      ],
+      "paths": [
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v1.html",
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html",
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+        "v10_research/independent_fixed_parameter_review_20261103_1634/independent_review.html",
+        "v10_research/fixed_parameter_markov_prior_20261103_1632/prior_art_table.html",
+        "v10_research/fixed_parameter_integer_backend_20261103_1637/deterministic_integer_backend_v1.html",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/check_small_words.py",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/dense_visit_clarification.html",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/evidence_limit_addendum_20261103_1641.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+        "v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+        "v10_research/independent_vocab_softmax_review_20261103_1640/independent_review.html",
+        "v10_research/independent_vocab_rate_review_20261103_1641/independent_review.html",
+        "v10_research/four_block_integer_backend_20261103_1645/deterministic_vocab_backend_v1.html",
+        "v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+        "v10_research/four_block_vocab_prior_art_20261103_1649/prior_art_audit.html"
+      ],
+      "not_newly_selected_exports": true
+    },
+    {
+      "stage": "t1t2_alphabet_limits",
+      "source_ids_in_existing_stage": [
+        "ALP003",
+        "ALP004"
+      ],
+      "paths": [
+        "v10_research/fixed_parameter_perturbation_20261103_1658/perturbation_bounds_v1.html",
+        "v10_research/fixed_parameter_perturbation_20261103_1658/independent_analytic_review_20261103_1700.md"
+      ],
+      "not_newly_selected_exports": true
+    },
+    {
+      "role": "Unperturbed actual-terminal risk interface",
+      "paths": [
+        "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md",
+        "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md"
+      ],
+      "requirement": "For N>=3 use the R011 bound at M=N-2>=1; N=2 uses the trivial TV cap. Its review original digest and metadata-normalized public digest are unequal and explicitly mapped. This audit verifies bytes, not a fresh proof of R011.",
+      "not_newly_selected_exports": true
+    }
+  ],
+  "prior_art_scope": "Targeted bounded paper summaries and links, not third-party full texts, a fresh external-source fetch or exhaustive novelty clearance. Liu position-coefficient drift and Chen copier-to-output analysis preclude generic novelty claims.",
+  "inherited_identity_limit": {
+    "status": "original_source_of_already_public_sanitized_export",
+    "referenced_original_identity": {
+      "bytes": 14746,
+      "sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+      "git_blob_sha1": "5aa3f546594f5bb5209565c7e7b8153f6fca20fb"
+    },
+    "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+    "public_identity": {
+      "bytes": 14732,
+      "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+      "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+    },
+    "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+    "digest_matches_public_bytes": false,
+    "mapping_path": "provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+    "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/54ef11e04709b49cd515ed7478c4a5f240e7e091/provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+    "mapping_kind": "published byte-coordinate original/export mapping evidence",
+    "mapping_evidence": {
+      "original": {
+        "bytes": 14746,
+        "sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+        "git_blob_sha1": "5aa3f546594f5bb5209565c7e7b8153f6fca20fb"
+      },
+      "public": {
+        "bytes": 14732,
+        "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+        "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+      },
+      "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+      "original_byte_range_zero_based_half_open": [
+        11082,
+        11144
+      ],
+      "removed_span_sha256": "2e2b8488e00c6b6b3b4c92f1a6df559d99e57d3affbcf6633f63b51b20cd2c3c",
+      "replacement": "Paths below are relative to the repository root.",
+      "reason": "single nonmathematical host-root sentence replacement; verified by full byte comparison"
+    },
+    "mapping_rechecked_at_base_commit": "54ef11e04709b49cd515ed7478c4a5f240e7e091",
+    "all_unchanged_complementary_bytes_verified": true
+  },
+  "historical_external_reading_scopes": [
+    {
+      "source_record_id": "CPR009",
+      "scope": "The source reports targeted queries and partial primary-text reading, including direct checking of Liu C.3 and Chen C.6. Preserve this historical reported scope without treating it as this publication audit re-fetching the papers."
+    },
+    {
+      "source_record_id": "CPR011",
+      "scope": "The source records an OpenReview browser-verification page and conference indexed primary text displaying the proposition/section."
+    },
+    {
+      "source_record_id": "CPR013",
+      "scope": "The source records a large conference-PDF fetch exceeding the retrieval size limit, with the proposition/section exposed by the conference PDF search index. This is not a successful complete-PDF fetch."
+    }
+  ],
+  "scope_limits": [
+    "Only the specified exact-real four-block graph, one coefficient and declared fixed-source/special-eta family are covered; not arbitrary perturbations, all networks or a source-class minimax lower bound.",
+    "The coefficient absolute change is 4|eta|; for eta=1/(2q) it is 2/q. Preserve this distinction from score-relative eta.",
+    "The fixed-q model is fixed across N. Triangular q_N or safe eta_N sequences change weights with N; perturbation tending to zero separately needs q_N tending to infinity.",
+    "A sufficient two-sided exact-output window and a particular positive failing sequence do not establish a sharp threshold, monotonicity, outside-window necessity or an optimal onset exponent.",
+    "The unperturbed statistical risk uses inherited R011 proof/review and boundary qualifications; current checks do not independently re-prove it.",
+    "Historical candidate-before-review wording is preserved. Separate LLM reviews are neither external human peer review nor formal verification, numerical validation or novelty certification.",
+    "Liu and Chen are close antecedents. External URLs are inventoried, not freshly fetched by this audit; differing historical paper-reading limits remain explicit.",
+    "No scientific program or archived script was executed, no experiment, simulation, scientific enumeration, model initialization or RNG use occurred. Existing archived execution evidence is not strengthened by this audit."
+  ]
+}
