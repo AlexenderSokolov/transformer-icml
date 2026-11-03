@@ -1,0 +1,1344 @@
+{
+  "base_commit": "ebc59ae031056463179e8e72d987be5c0eef9ee1",
+  "census_scope": "Every full 64-hex SHA-256 and standalone 40-hex SHA-1 literal in the selected source originals and exports.",
+  "sha256_reference_occurrences": 46,
+  "unique_referenced_sha256": 25,
+  "sha1_reference_occurrences": 0,
+  "all_identified": true,
+  "all_referenced_originals_publicly_available": false,
+  "current_claims_have_selected_or_mapped_scientific_routes_with_disclosed_historical_limits": true,
+  "binding_is_not_scientific_certification": true,
+  "bindings": {
+    "0dca6ea2cf1e7f97084f03293469c1c861c1c6a39ed6c7c63ec94c0425e3878d": {
+      "status": "exact_selected_source",
+      "source_record_id": "ALP012",
+      "public_path": "v10_research/unbounded_alphabet_nofreelunch_20261103_1713/fixed_reference_correction_v1.html",
+      "original_identity": {
+        "bytes": 1324,
+        "sha256": "0dca6ea2cf1e7f97084f03293469c1c861c1c6a39ed6c7c63ec94c0425e3878d",
+        "git_blob_sha1": "92fc48fe0bcaca6fbb6871eb0acf37f86705cb3e"
+      },
+      "proposed_public_identity": {
+        "bytes": 1324,
+        "sha256": "0dca6ea2cf1e7f97084f03293469c1c861c1c6a39ed6c7c63ec94c0425e3878d",
+        "git_blob_sha1": "92fc48fe0bcaca6fbb6871eb0acf37f86705cb3e"
+      },
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "digest_matches_proposed_public_bytes": true
+    },
+    "183226fb17217faa36a58e9f018e4dda81e013543610fb8677d38a809e8e7bf6": {
+      "status": "original_source_of_selected_metadata_normalized_export",
+      "source_record_id": "ALP018",
+      "public_path": "v10_research/nonstationary_a5_obstruction_20261103_1721/periodic_clock_obstruction_v1.html",
+      "original_identity": {
+        "bytes": 8019,
+        "sha256": "183226fb17217faa36a58e9f018e4dda81e013543610fb8677d38a809e8e7bf6",
+        "git_blob_sha1": "7f932ed630dc7cae5aa200bbea405d370b449ce2"
+      },
+      "proposed_public_identity": {
+        "bytes": 7961,
+        "sha256": "ba8325a9eae2d35ba6d269685238339650f75d11d11e70a9a8e3fbd7a4e96fd5",
+        "git_blob_sha1": "a9bd87ce8da93c59a1be79a5b5eface7c2390442"
+      },
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "digest_matches_proposed_public_bytes": false
+    },
+    "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3": {
+      "status": "original_source_of_already_public_scientific_copy",
+      "referenced_original_identity": {
+        "bytes": 22934,
+        "sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+        "git_blob_sha1": "f630d5755f2f5e77b01cf2c69b24ecf134fcda58"
+      },
+      "public_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_statistical_proof.md",
+      "public_identity": {
+        "bytes": 21262,
+        "sha256": "4d5e865ebe00846662cef1830be02bf52cc2b839eca8a0600f8baa501ada6078",
+        "git_blob_sha1": "d8aef0a80a3dd33a01dba631a454d4fccf4ffda1"
+      },
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/inherited_statistics/DOT_conditions_stage02/inherited/MM5_statistical_proof.md",
+      "digest_matches_public_bytes": false,
+      "mapping_path": "inherited_statistics/DOT_conditions_stage02/COPY_MAP.json",
+      "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/inherited_statistics/DOT_conditions_stage02/COPY_MAP.json",
+      "mapping_kind": "published byte-coordinate scientific-copy mapping checked against original and current public bytes",
+      "mapping_evidence": {
+        "original": {
+          "bytes": 22934,
+          "sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+          "git_blob_sha1": "f630d5755f2f5e77b01cf2c69b24ecf134fcda58"
+        },
+        "public": {
+          "bytes": 21262,
+          "sha256": "4d5e865ebe00846662cef1830be02bf52cc2b839eca8a0600f8baa501ada6078",
+          "git_blob_sha1": "d8aef0a80a3dd33a01dba631a454d4fccf4ffda1"
+        },
+        "public_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_statistical_proof.md",
+        "map_path": "inherited_statistics/DOT_conditions_stage02/COPY_MAP.json",
+        "map_identity": {
+          "bytes": 36254,
+          "sha256": "9f995772649616096ac491664df2cdeacb31c21752bc59db6e4da463dae0529a",
+          "git_blob_sha1": "b55c51ebde4fc27b9151354396d8761fe2705ff3"
+        },
+        "copy_spans": [
+          {
+            "source_byte_start": 639,
+            "source_byte_end": 19627,
+            "source_line_start": 8,
+            "source_line_end": 335,
+            "output_byte_start": 307,
+            "output_byte_end": 19295,
+            "sha256": "1523021213352f0e88cbdfa01dc80a753a84d8a667aa14d6fe59564b688af204"
+          },
+          {
+            "source_byte_start": 19649,
+            "source_byte_end": 20129,
+            "source_line_start": 335,
+            "source_line_end": 338,
+            "output_byte_start": 19295,
+            "output_byte_end": 19775,
+            "sha256": "a8c558283d1bef4b2530257c9407ae86367419bdfe8c805f865f912a582000e2"
+          },
+          {
+            "source_byte_start": 20310,
+            "source_byte_end": 21795,
+            "source_line_start": 343,
+            "source_line_end": 368,
+            "output_byte_start": 19777,
+            "output_byte_end": 21262,
+            "sha256": "473ab47aafba1ce82ffd329dcf02fe80053ae5a19f79af4fb3920927d93decac"
+          }
+        ],
+        "copied_body_sha256": "9addffcca07d5e60a34d7e32546db23011fa22f92e5c53b9b8a167c00168dcf5",
+        "interpretation": "Existing scientific-copy/excerpt mapping, not equality of full original and public file and not a new mathematical review."
+      }
+    },
+    "30cbb000d4493f18bc29f94cf46da94d719d6bc522c123204be7b0efe7cf4070": {
+      "status": "original_source_of_already_public_scientific_copy",
+      "referenced_original_identity": {
+        "bytes": 50822,
+        "sha256": "30cbb000d4493f18bc29f94cf46da94d719d6bc522c123204be7b0efe7cf4070",
+        "git_blob_sha1": "cd769e663b9c4c362acb1fc7a538268e489141ce"
+      },
+      "public_path": "inherited_statistics/DOT_conditions_stage03/proofs/S012_complete_proof.md",
+      "public_identity": {
+        "bytes": 43629,
+        "sha256": "7021dea45b1a262cd6ff71caee4cd8a1f7a973828313100d3d6ad5acbfe09132",
+        "git_blob_sha1": "31143d69050a0f771f1666c7e3d00df3f49ab5b1"
+      },
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/inherited_statistics/DOT_conditions_stage03/proofs/S012_complete_proof.md",
+      "digest_matches_public_bytes": false,
+      "mapping_path": "inherited_statistics/DOT_conditions_stage03/COPY_MAP.json",
+      "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/inherited_statistics/DOT_conditions_stage03/COPY_MAP.json",
+      "mapping_kind": "published byte-coordinate scientific-copy mapping checked against original and current public bytes",
+      "mapping_evidence": {
+        "original": {
+          "bytes": 50822,
+          "sha256": "30cbb000d4493f18bc29f94cf46da94d719d6bc522c123204be7b0efe7cf4070",
+          "git_blob_sha1": "cd769e663b9c4c362acb1fc7a538268e489141ce"
+        },
+        "public": {
+          "bytes": 43629,
+          "sha256": "7021dea45b1a262cd6ff71caee4cd8a1f7a973828313100d3d6ad5acbfe09132",
+          "git_blob_sha1": "31143d69050a0f771f1666c7e3d00df3f49ab5b1"
+        },
+        "public_path": "inherited_statistics/DOT_conditions_stage03/proofs/S012_complete_proof.md",
+        "map_path": "inherited_statistics/DOT_conditions_stage03/COPY_MAP.json",
+        "map_identity": {
+          "bytes": 48859,
+          "sha256": "7da2fac2abc97f3815a54cb1b838e334bb8c22e3498ac3a40c182fb7fa6e7b2e",
+          "git_blob_sha1": "b3980024aaac71b12ec655609ef51459d1507106"
+        },
+        "copy_spans": [
+          {
+            "source_byte_start": 230,
+            "source_byte_end": 931,
+            "source_line_start": 5,
+            "source_line_end": 11,
+            "output_byte_start": 714,
+            "output_byte_end": 1415,
+            "sha256": "bc4aa724eec4b4d8ed662c6b5bd5e28e38c0d2d68b8962aa67aa642efbbf3a4e"
+          },
+          {
+            "source_byte_start": 2123,
+            "source_byte_end": 5369,
+            "source_line_start": 20,
+            "source_line_end": 68,
+            "output_byte_start": 1416,
+            "output_byte_end": 4662,
+            "sha256": "1ebb8e0fa2f182856128c9be42a50fd9160a74b942a10d742f84de2e0c174d15"
+          },
+          {
+            "source_byte_start": 5497,
+            "source_byte_end": 5510,
+            "source_line_start": 68,
+            "source_line_end": 70,
+            "output_byte_start": 4662,
+            "output_byte_end": 4675,
+            "sha256": "3026aaae288de25cb9841b3c235b9e3430747c4daf02b41964bb194e8b74105b"
+          },
+          {
+            "source_byte_start": 5542,
+            "source_byte_end": 6202,
+            "source_line_start": 70,
+            "source_line_end": 71,
+            "output_byte_start": 4675,
+            "output_byte_end": 5335,
+            "sha256": "e742cbbd9f40bf2308dacc7c5795f10ac05c28e1c5480a45ed0f23dc45c3bc9e"
+          },
+          {
+            "source_byte_start": 6234,
+            "source_byte_end": 7917,
+            "source_line_start": 71,
+            "source_line_end": 77,
+            "output_byte_start": 5335,
+            "output_byte_end": 7018,
+            "sha256": "d4b0203ff0df40297cb8eb4c2e6455625ee6a617edab937eb71e43a3cf3493d8"
+          },
+          {
+            "source_byte_start": 8079,
+            "source_byte_end": 44249,
+            "source_line_start": 80,
+            "source_line_end": 428,
+            "output_byte_start": 7019,
+            "output_byte_end": 43189,
+            "sha256": "e0648c7e200771fae08cb13e9755dfece838db3f4b02d360e2abc4547b8061c6"
+          },
+          {
+            "source_byte_start": 47438,
+            "source_byte_end": 47816,
+            "source_line_start": 443,
+            "source_line_end": 443,
+            "output_byte_start": 43190,
+            "output_byte_end": 43568,
+            "sha256": "5394d9dea4de3d46e67cc2e85c818bfafb17258bae3f7ca140c407b8881712b6"
+          },
+          {
+            "source_byte_start": 47855,
+            "source_byte_end": 47915,
+            "source_line_start": 443,
+            "source_line_end": 443,
+            "output_byte_start": 43568,
+            "output_byte_end": 43628,
+            "sha256": "6d41892b7dce576cc433866addfc93be49a1d52817e5671a4735012fe76b54d0"
+          },
+          {
+            "source_byte_start": 48069,
+            "source_byte_end": 48070,
+            "source_line_start": 443,
+            "source_line_end": 443,
+            "output_byte_start": 43628,
+            "output_byte_end": 43629,
+            "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+          }
+        ],
+        "copied_body_sha256": "5fc9a76a01636495c00ca00249cdc8777e4d2a2abb03750af1e7b912437f75e3",
+        "interpretation": "Existing scientific-copy/excerpt mapping, not equality of full original and public file and not a new mathematical review."
+      }
+    },
+    "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8": {
+      "status": "exact_already_public_bytes",
+      "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "public_identity": {
+        "bytes": 11346,
+        "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+        "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+      },
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "digest_matches_public_bytes": true
+    },
+    "4b1c19e4c27dc540cd81122c187d9b4c8b32c3ea9e5105e289201d25796774ba": {
+      "status": "original_source_of_selected_metadata_normalized_export",
+      "source_record_id": "ALP006",
+      "public_path": "v10_research/minimax_alphabet_bounds_20261103_1706/independent_analytic_review_20261103_1708.md",
+      "original_identity": {
+        "bytes": 8491,
+        "sha256": "4b1c19e4c27dc540cd81122c187d9b4c8b32c3ea9e5105e289201d25796774ba",
+        "git_blob_sha1": "22dced496c92941cc922158c92296c057557e317"
+      },
+      "proposed_public_identity": {
+        "bytes": 8444,
+        "sha256": "cae36c0fa9d55bfdad4c8599e22b734503b8a7be87e258b6bc619133a95ad0f5",
+        "git_blob_sha1": "dc2b913059ed499a4cd59aaf614f5e475c2b9084"
+      },
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "digest_matches_proposed_public_bytes": false
+    },
+    "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a": {
+      "status": "original_source_of_already_public_sanitized_export",
+      "referenced_original_identity": {
+        "bytes": 14746,
+        "sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+        "git_blob_sha1": "5aa3f546594f5bb5209565c7e7b8153f6fca20fb"
+      },
+      "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+      "public_identity": {
+        "bytes": 14732,
+        "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+        "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+      },
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+      "digest_matches_public_bytes": false,
+      "mapping_path": "provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+      "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+      "mapping_kind": "published byte-coordinate original/export mapping evidence",
+      "mapping_evidence": {
+        "original": {
+          "bytes": 14746,
+          "sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+          "git_blob_sha1": "5aa3f546594f5bb5209565c7e7b8153f6fca20fb"
+        },
+        "public": {
+          "bytes": 14732,
+          "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+          "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+        },
+        "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+        "original_byte_range_zero_based_half_open": [
+          11082,
+          11144
+        ],
+        "removed_span_sha256": "2e2b8488e00c6b6b3b4c92f1a6df559d99e57d3affbcf6633f63b51b20cd2c3c",
+        "replacement": "Paths below are relative to the repository root.",
+        "reason": "single nonmathematical host-root sentence replacement; verified by full byte comparison"
+      }
+    },
+    "5e8f3c963d0ba9386fad3e8b77cadb57b0b442293c4167b2b799e3dd40bcd78e": {
+      "status": "exact_selected_source",
+      "source_record_id": "ALP011",
+      "public_path": "v10_research/unbounded_alphabet_nofreelunch_20261103_1713/unbounded_alphabet_reduction_v1.html",
+      "original_identity": {
+        "bytes": 7285,
+        "sha256": "5e8f3c963d0ba9386fad3e8b77cadb57b0b442293c4167b2b799e3dd40bcd78e",
+        "git_blob_sha1": "a449e2d18cf9ddc78da76840ccea87598eedfb79"
+      },
+      "proposed_public_identity": {
+        "bytes": 7285,
+        "sha256": "5e8f3c963d0ba9386fad3e8b77cadb57b0b442293c4167b2b799e3dd40bcd78e",
+        "git_blob_sha1": "a449e2d18cf9ddc78da76840ccea87598eedfb79"
+      },
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "digest_matches_proposed_public_bytes": true
+    },
+    "5fef432092c4d7394021f1651dbcd086b660028b2a62c1297342340892dd6d24": {
+      "status": "OLD_REVIEW_REQUESTED_BODY_IDENTITY_UNRESOLVED",
+      "referenced_original_sha256": "5fef432092c4d7394021f1651dbcd086b660028b2a62c1297342340892dd6d24",
+      "public_path": null,
+      "original_bytes": null,
+      "original_git_blob_sha1": null,
+      "evidence": "The old MM5 report records this requested-body digest. No equality, wrapper-only difference or transformation to current original 19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3 has been established.",
+      "required_handling": "Do not bind the old review to the current body. ALP017 directly reviews the current original and separately preserves this unresolved discrepancy."
+    },
+    "808edc31256bc1d54b7e64c220eb50e294dc50f1939616897e729c1b8234b2ec": {
+      "status": "original_source_of_already_public_scientific_copy",
+      "referenced_original_identity": {
+        "bytes": 37468,
+        "sha256": "808edc31256bc1d54b7e64c220eb50e294dc50f1939616897e729c1b8234b2ec",
+        "git_blob_sha1": "96ee66d04b39ae62eb234a30425753bd0c76c2d5"
+      },
+      "public_path": "inherited_statistics/DOT_conditions_stage03/proofs/S011_complete_proof.md",
+      "public_identity": {
+        "bytes": 30903,
+        "sha256": "8286e13dabe19b4b7adc72ab11bc65a5a8594f70c507c6321bc398f46860c762",
+        "git_blob_sha1": "1c686dec0e858365a2c8f743f4c80ff177bc9b09"
+      },
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/inherited_statistics/DOT_conditions_stage03/proofs/S011_complete_proof.md",
+      "digest_matches_public_bytes": false,
+      "mapping_path": "inherited_statistics/DOT_conditions_stage03/COPY_MAP.json",
+      "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/inherited_statistics/DOT_conditions_stage03/COPY_MAP.json",
+      "mapping_kind": "published byte-coordinate scientific-copy mapping checked against original and current public bytes",
+      "mapping_evidence": {
+        "original": {
+          "bytes": 37468,
+          "sha256": "808edc31256bc1d54b7e64c220eb50e294dc50f1939616897e729c1b8234b2ec",
+          "git_blob_sha1": "96ee66d04b39ae62eb234a30425753bd0c76c2d5"
+        },
+        "public": {
+          "bytes": 30903,
+          "sha256": "8286e13dabe19b4b7adc72ab11bc65a5a8594f70c507c6321bc398f46860c762",
+          "git_blob_sha1": "1c686dec0e858365a2c8f743f4c80ff177bc9b09"
+        },
+        "public_path": "inherited_statistics/DOT_conditions_stage03/proofs/S011_complete_proof.md",
+        "map_path": "inherited_statistics/DOT_conditions_stage03/COPY_MAP.json",
+        "map_identity": {
+          "bytes": 48859,
+          "sha256": "7da2fac2abc97f3815a54cb1b838e334bb8c22e3498ac3a40c182fb7fa6e7b2e",
+          "git_blob_sha1": "b3980024aaac71b12ec655609ef51459d1507106"
+        },
+        "copy_spans": [
+          {
+            "source_byte_start": 2044,
+            "source_byte_end": 6917,
+            "source_line_start": 15,
+            "source_line_end": 110,
+            "output_byte_start": 704,
+            "output_byte_end": 5577,
+            "sha256": "ee4bb785524edcbbb46a1929246c8411b7b37363adaae5e3dd331133ff97e4c9"
+          },
+          {
+            "source_byte_start": 7076,
+            "source_byte_end": 9010,
+            "source_line_start": 110,
+            "source_line_end": 122,
+            "output_byte_start": 5577,
+            "output_byte_end": 7511,
+            "sha256": "cd4f0af18f08bf9ace8deed3897e68763e5c7f820b0828bcea57e9c1a51aa025"
+          },
+          {
+            "source_byte_start": 9023,
+            "source_byte_end": 9214,
+            "source_line_start": 122,
+            "source_line_end": 122,
+            "output_byte_start": 7511,
+            "output_byte_end": 7702,
+            "sha256": "246dcd42de6d88c05d21225e6b410b7ce8b478c410a48d3b4f5e2fc0c56aeac5"
+          },
+          {
+            "source_byte_start": 9227,
+            "source_byte_end": 32426,
+            "source_line_start": 122,
+            "source_line_end": 378,
+            "output_byte_start": 7702,
+            "output_byte_end": 30901,
+            "sha256": "a371a82ae7cba298c87a7ff6fd203b9831d338b3bf26bdd11b0976d1125ddd33"
+          },
+          {
+            "source_byte_start": 32501,
+            "source_byte_end": 32503,
+            "source_line_start": 378,
+            "source_line_end": 379,
+            "output_byte_start": 30901,
+            "output_byte_end": 30903,
+            "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070"
+          }
+        ],
+        "copied_body_sha256": "2b6f85b00f81b0f31b4473f2e349f66e80efbb81bcf8cb74c387bfe0de0a8efe",
+        "interpretation": "Existing scientific-copy/excerpt mapping, not equality of full original and public file and not a new mathematical review."
+      }
+    },
+    "87b8129d99c89f8909a77fa9d711df70dfbe8a64bd107ccda1dc7fb90e8cb788": {
+      "status": "exact_selected_source",
+      "source_record_id": "ALP005",
+      "public_path": "v10_research/minimax_alphabet_bounds_20261103_1706/statistical_alphabet_bounds_v1.html",
+      "original_identity": {
+        "bytes": 11038,
+        "sha256": "87b8129d99c89f8909a77fa9d711df70dfbe8a64bd107ccda1dc7fb90e8cb788",
+        "git_blob_sha1": "ad2c8074c580ed69673196dedc523aeac3f364f0"
+      },
+      "proposed_public_identity": {
+        "bytes": 11038,
+        "sha256": "87b8129d99c89f8909a77fa9d711df70dfbe8a64bd107ccda1dc7fb90e8cb788",
+        "git_blob_sha1": "ad2c8074c580ed69673196dedc523aeac3f364f0"
+      },
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "digest_matches_proposed_public_bytes": true
+    },
+    "8e15f6d3850f3831fec343b6afe169806c0bd128099253ccc673f1f7e561f8d6": {
+      "status": "exact_selected_source",
+      "source_record_id": "ALP013",
+      "public_path": "v10_research/unbounded_alphabet_nofreelunch_20261103_1713/iid_prior_supremum_addendum_v1.html",
+      "original_identity": {
+        "bytes": 4507,
+        "sha256": "8e15f6d3850f3831fec343b6afe169806c0bd128099253ccc673f1f7e561f8d6",
+        "git_blob_sha1": "570d00e2478fd0420c9ccf16cf40570163ad990f"
+      },
+      "proposed_public_identity": {
+        "bytes": 4507,
+        "sha256": "8e15f6d3850f3831fec343b6afe169806c0bd128099253ccc673f1f7e561f8d6",
+        "git_blob_sha1": "570d00e2478fd0420c9ccf16cf40570163ad990f"
+      },
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "digest_matches_proposed_public_bytes": true
+    },
+    "936695593c9b1dd7daf923f67771281bb439fb8e351286a364e9a38fcbcbe040": {
+      "status": "exact_selected_source",
+      "source_record_id": "ALP007",
+      "public_path": "v10_research/minimax_alphabet_bounds_20261103_1706/history_length_corollary_v1.html",
+      "original_identity": {
+        "bytes": 1683,
+        "sha256": "936695593c9b1dd7daf923f67771281bb439fb8e351286a364e9a38fcbcbe040",
+        "git_blob_sha1": "b14a654b4f971cc2bbee1fe927ea0900788b058b"
+      },
+      "proposed_public_identity": {
+        "bytes": 1683,
+        "sha256": "936695593c9b1dd7daf923f67771281bb439fb8e351286a364e9a38fcbcbe040",
+        "git_blob_sha1": "b14a654b4f971cc2bbee1fe927ea0900788b058b"
+      },
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "digest_matches_proposed_public_bytes": true
+    },
+    "94f8cb48a2a96dba050584d9c200c8b8eb7c59335c77ae1c8d9fefc6b1240cba": {
+      "status": "UNSHIPPED_HISTORICAL_INTERFACE",
+      "referenced_original_identity": {
+        "bytes": 93866,
+        "sha256": "94f8cb48a2a96dba050584d9c200c8b8eb7c59335c77ae1c8d9fefc6b1240cba",
+        "git_blob_sha1": "a2ed0d9c4046bf14629e667e2afdb91e7584c9f1"
+      },
+      "public_path": null,
+      "evidence": "No identical digest or verified original/public mapping in the current inventory and examined public maps. Original remains locally available but is not selected.",
+      "required_handling": "ALP016 retains its limited historical reliance; ALP017 supplies an independent small-K two-point proof, without pretending this original is public."
+    },
+    "a579c445522658691ac9686f804f28e0bcc3f695647c901242ab66875af375f5": {
+      "status": "exact_selected_source",
+      "source_record_id": "ALP008",
+      "public_path": "v10_research/minimax_alphabet_bounds_20261103_1706/history_length_corollary_v2.html",
+      "original_identity": {
+        "bytes": 1856,
+        "sha256": "a579c445522658691ac9686f804f28e0bcc3f695647c901242ab66875af375f5",
+        "git_blob_sha1": "7e3d356e77ea870daf013060e8dcb8a0c0952288"
+      },
+      "proposed_public_identity": {
+        "bytes": 1856,
+        "sha256": "a579c445522658691ac9686f804f28e0bcc3f695647c901242ab66875af375f5",
+        "git_blob_sha1": "7e3d356e77ea870daf013060e8dcb8a0c0952288"
+      },
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "digest_matches_proposed_public_bytes": true
+    },
+    "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf": {
+      "status": "exact_already_public_bytes",
+      "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md",
+      "public_identity": {
+        "bytes": 10352,
+        "sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+        "git_blob_sha1": "8977fce82c0d716e6170b1aa5b980ec6ca07aca8"
+      },
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md",
+      "digest_matches_public_bytes": true
+    },
+    "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8": {
+      "status": "exact_already_public_bytes",
+      "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+      "public_identity": {
+        "bytes": 11260,
+        "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+        "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+      },
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+      "digest_matches_public_bytes": true
+    },
+    "c0f503d24a2fa1b590b85bf23ee3daf62d51d5d64bcdccfe7a57bc60769507fd": {
+      "status": "original_source_of_selected_metadata_normalized_export",
+      "source_record_id": "ALP017",
+      "public_path": "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_trace_independent_review_20261103_1721.md",
+      "original_identity": {
+        "bytes": 6475,
+        "sha256": "c0f503d24a2fa1b590b85bf23ee3daf62d51d5d64bcdccfe7a57bc60769507fd",
+        "git_blob_sha1": "a821ab58042db688295681c517629366b215df0b"
+      },
+      "proposed_public_identity": {
+        "bytes": 6418,
+        "sha256": "6e12f01bf32241526e552f7a3621d1d34c7234274d2a0efd5969c4f9bbe9e425",
+        "git_blob_sha1": "d39cadb533e7b6edc5843672570c95ef721f6169"
+      },
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "digest_matches_proposed_public_bytes": false
+    },
+    "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7": {
+      "status": "exact_already_public_bytes",
+      "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+      "public_identity": {
+        "bytes": 3436,
+        "sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+        "git_blob_sha1": "8fea7b3466fa914393d3bd9447937e9084ee6ab1"
+      },
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+      "digest_matches_public_bytes": true
+    },
+    "d28778b2e116a6a0717d844ff0df27c39800775e0fbd9b08c3e4d9e37d7baa0a": {
+      "status": "original_source_of_already_public_scientific_copy",
+      "referenced_original_identity": {
+        "bytes": 27596,
+        "sha256": "d28778b2e116a6a0717d844ff0df27c39800775e0fbd9b08c3e4d9e37d7baa0a",
+        "git_blob_sha1": "4802b459b3845f7ae62d0d64e3592a2075d28b1e"
+      },
+      "public_path": "inherited_statistics/DOT_conditions_phase_review_20261028/proofs/S016_complete_proof.md",
+      "public_identity": {
+        "bytes": 23244,
+        "sha256": "bfb6ab6e9bd403d4a8502da6474b51f8b31940189dad339cfa5dac1b5ecbf645",
+        "git_blob_sha1": "a4881c27bf8ae0c80fabc559a3d3c2534482d3de"
+      },
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/inherited_statistics/DOT_conditions_phase_review_20261028/proofs/S016_complete_proof.md",
+      "digest_matches_public_bytes": false,
+      "mapping_path": "inherited_statistics/DOT_conditions_phase_review_20261028/COPY_MAP.json",
+      "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/inherited_statistics/DOT_conditions_phase_review_20261028/COPY_MAP.json",
+      "mapping_kind": "published byte-coordinate scientific-copy mapping checked against original and current public bytes",
+      "mapping_evidence": {
+        "original": {
+          "bytes": 27596,
+          "sha256": "d28778b2e116a6a0717d844ff0df27c39800775e0fbd9b08c3e4d9e37d7baa0a",
+          "git_blob_sha1": "4802b459b3845f7ae62d0d64e3592a2075d28b1e"
+        },
+        "public": {
+          "bytes": 23244,
+          "sha256": "bfb6ab6e9bd403d4a8502da6474b51f8b31940189dad339cfa5dac1b5ecbf645",
+          "git_blob_sha1": "a4881c27bf8ae0c80fabc559a3d3c2534482d3de"
+        },
+        "public_path": "inherited_statistics/DOT_conditions_phase_review_20261028/proofs/S016_complete_proof.md",
+        "map_path": "inherited_statistics/DOT_conditions_phase_review_20261028/COPY_MAP.json",
+        "map_identity": {
+          "bytes": 43299,
+          "sha256": "096c647fdf37e6e53f8187c89de1d1c7c3b2bd1e740eb5c4da0f902f45976d48",
+          "git_blob_sha1": "72ce14778b28f183d36ec8a8a1818f5741b73ebb"
+        },
+        "copy_spans": [
+          {
+            "source_byte_start": 162,
+            "source_byte_end": 1339,
+            "source_line_start": 5,
+            "source_line_end": 19,
+            "output_byte_start": 1328,
+            "output_byte_end": 2505,
+            "sha256": "41405457971ebcac0733d1b762bb15f78481ea9d32be19dc3c4b5fc32d7d7ad9"
+          },
+          {
+            "source_byte_start": 2525,
+            "source_byte_end": 4874,
+            "source_line_start": 29,
+            "source_line_end": 51,
+            "output_byte_start": 2507,
+            "output_byte_end": 4856,
+            "sha256": "3a07d1836878c97ec0f537f5290bb6674f52dbd4800767a8fbad8b628b246a04"
+          },
+          {
+            "source_byte_start": 5012,
+            "source_byte_end": 23396,
+            "source_line_start": 52,
+            "source_line_end": 297,
+            "output_byte_start": 4858,
+            "output_byte_end": 23242,
+            "sha256": "6975161a622a1d7a8b9b6483993893667b605a28379a0f90246834cf631ba3a8"
+          }
+        ],
+        "copied_body_sha256": "f5a6365c258361b13af685e784d5cbe92b77d2bb86f157397221202cc6512563",
+        "interpretation": "Existing scientific-copy/excerpt mapping, not equality of full original and public file and not a new mathematical review."
+      }
+    },
+    "d92ec0a43232dbaa9c20e9eef65e24d4d4623d2ae822d5d488c31effbf20d802": {
+      "status": "exact_selected_source",
+      "source_record_id": "ALP003",
+      "public_path": "v10_research/fixed_parameter_perturbation_20261103_1658/perturbation_bounds_v1.html",
+      "original_identity": {
+        "bytes": 9280,
+        "sha256": "d92ec0a43232dbaa9c20e9eef65e24d4d4623d2ae822d5d488c31effbf20d802",
+        "git_blob_sha1": "43c5db120f7b223b5d44b0ba4674b7451f9c0337"
+      },
+      "proposed_public_identity": {
+        "bytes": 9280,
+        "sha256": "d92ec0a43232dbaa9c20e9eef65e24d4d4623d2ae822d5d488c31effbf20d802",
+        "git_blob_sha1": "43c5db120f7b223b5d44b0ba4674b7451f9c0337"
+      },
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "digest_matches_proposed_public_bytes": true
+    },
+    "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b": {
+      "status": "exact_already_public_bytes",
+      "public_path": "v10_research/four_block_integer_backend_20261103_1645/deterministic_vocab_backend_v1.html",
+      "public_identity": {
+        "bytes": 11698,
+        "sha256": "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b",
+        "git_blob_sha1": "09524dcaf17c95bf142ba058ef915c82e31bc116"
+      },
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/v10_research/four_block_integer_backend_20261103_1645/deterministic_vocab_backend_v1.html",
+      "digest_matches_public_bytes": true
+    },
+    "e76264bb4b470c9fbc329853344015a466d99d93b17b2c56314c4425334ce26f": {
+      "status": "exact_selected_source",
+      "source_record_id": "ALP014",
+      "public_path": "v10_research/unbounded_alphabet_nofreelunch_20261103_1713/independent_analytic_review_20261103_1714.md",
+      "original_identity": {
+        "bytes": 4678,
+        "sha256": "e76264bb4b470c9fbc329853344015a466d99d93b17b2c56314c4425334ce26f",
+        "git_blob_sha1": "f37094c9e429e43240bddfa990479cc6c6386c17"
+      },
+      "proposed_public_identity": {
+        "bytes": 4678,
+        "sha256": "e76264bb4b470c9fbc329853344015a466d99d93b17b2c56314c4425334ce26f",
+        "git_blob_sha1": "f37094c9e429e43240bddfa990479cc6c6386c17"
+      },
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "digest_matches_proposed_public_bytes": true
+    },
+    "f0a9621a62655aaa41cf4c45fcfcf183580511ed52465be1bf11b988e45e24ff": {
+      "status": "exact_selected_source",
+      "source_record_id": "ALP001",
+      "public_path": "v10_research/fixed_alphabet_causal_extension_20261103_1653/alphabet_extension_candidate_v1.html",
+      "original_identity": {
+        "bytes": 13480,
+        "sha256": "f0a9621a62655aaa41cf4c45fcfcf183580511ed52465be1bf11b988e45e24ff",
+        "git_blob_sha1": "9cc4a7554fdaffc08bd89d894cb887cbfef73307"
+      },
+      "proposed_public_identity": {
+        "bytes": 13480,
+        "sha256": "f0a9621a62655aaa41cf4c45fcfcf183580511ed52465be1bf11b988e45e24ff",
+        "git_blob_sha1": "9cc4a7554fdaffc08bd89d894cb887cbfef73307"
+      },
+      "source_export_map": "provenance/t1t2_alphabet_limits_20261103/SOURCE_EXPORT_MAP.json",
+      "digest_matches_proposed_public_bytes": true
+    },
+    "feb0d0fcc5ca03efa229425c24afa521b3ec6226786fd4b5bccae5983555862e": {
+      "status": "original_source_of_already_public_scientific_copy",
+      "referenced_original_identity": {
+        "bytes": 2261,
+        "sha256": "feb0d0fcc5ca03efa229425c24afa521b3ec6226786fd4b5bccae5983555862e",
+        "git_blob_sha1": "4f0c3e0554fae6b0191189e6868466669d50d1ea"
+      },
+      "public_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_review_scientific_excerpt.md",
+      "public_identity": {
+        "bytes": 1555,
+        "sha256": "4d47d00208b072a31f4004697e71358b22c39ef1d3b3c75c0615a1dca3b80a0a",
+        "git_blob_sha1": "9563cd2469c5069bf17294256e2bed8a6a6209bf"
+      },
+      "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/inherited_statistics/DOT_conditions_stage02/inherited/MM5_review_scientific_excerpt.md",
+      "digest_matches_public_bytes": false,
+      "mapping_path": "inherited_statistics/DOT_conditions_stage02/COPY_MAP.json",
+      "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/ebc59ae031056463179e8e72d987be5c0eef9ee1/inherited_statistics/DOT_conditions_stage02/COPY_MAP.json",
+      "mapping_kind": "published byte-coordinate scientific-copy mapping checked against original and current public bytes",
+      "mapping_evidence": {
+        "original": {
+          "bytes": 2261,
+          "sha256": "feb0d0fcc5ca03efa229425c24afa521b3ec6226786fd4b5bccae5983555862e",
+          "git_blob_sha1": "4f0c3e0554fae6b0191189e6868466669d50d1ea"
+        },
+        "public": {
+          "bytes": 1555,
+          "sha256": "4d47d00208b072a31f4004697e71358b22c39ef1d3b3c75c0615a1dca3b80a0a",
+          "git_blob_sha1": "9563cd2469c5069bf17294256e2bed8a6a6209bf"
+        },
+        "public_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_review_scientific_excerpt.md",
+        "map_path": "inherited_statistics/DOT_conditions_stage02/COPY_MAP.json",
+        "map_identity": {
+          "bytes": 36254,
+          "sha256": "9f995772649616096ac491664df2cdeacb31c21752bc59db6e4da463dae0529a",
+          "git_blob_sha1": "b55c51ebde4fc27b9151354396d8761fe2705ff3"
+        },
+        "copy_spans": [
+          {
+            "source_byte_start": 447,
+            "source_byte_end": 1168,
+            "source_line_start": 4,
+            "source_line_end": 4,
+            "output_byte_start": 381,
+            "output_byte_end": 1102,
+            "sha256": "a905d0483ade9e67be0c5a69dbe83d1e0f3fff32a7fe7220901ceee6b81bcd12"
+          },
+          {
+            "source_byte_start": 1288,
+            "source_byte_end": 1385,
+            "source_line_start": 4,
+            "source_line_end": 4,
+            "output_byte_start": 1102,
+            "output_byte_end": 1199,
+            "sha256": "32312cc67a775b5b3a0e700e7287b2440a2d832ec3c95344e4cdf62288e59512"
+          },
+          {
+            "source_byte_start": 1423,
+            "source_byte_end": 1610,
+            "source_line_start": 4,
+            "source_line_end": 4,
+            "output_byte_start": 1199,
+            "output_byte_end": 1386,
+            "sha256": "8691ed26d23d3f02ef58613f3117a5a48e87f025d0c7e44d80b898237f57db51"
+          },
+          {
+            "source_byte_start": 1655,
+            "source_byte_end": 1824,
+            "source_line_start": 4,
+            "source_line_end": 4,
+            "output_byte_start": 1386,
+            "output_byte_end": 1555,
+            "sha256": "7afab9e86872cd47a690fb69d204fa0e5c7ac11fcc5456cd3120685eb02d0063"
+          }
+        ],
+        "copied_body_sha256": "6b3c3ef3dfe526eed414d3b2fa6fc8cadda5c3e461ababedb365616c4efe673d",
+        "interpretation": "Existing scientific-copy/excerpt mapping, not equality of full original and public file and not a new mathematical review."
+      }
+    }
+  },
+  "references": [
+    {
+      "source_record_id": "ALP001",
+      "referenced_sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        7232,
+        7296
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        7232,
+        7296
+      ]
+    },
+    {
+      "source_record_id": "ALP001",
+      "referenced_sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+      "original_utf8_byte_range_zero_based_half_open": [
+        7326,
+        7390
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        7326,
+        7390
+      ]
+    },
+    {
+      "source_record_id": "ALP002",
+      "referenced_sha256": "f0a9621a62655aaa41cf4c45fcfcf183580511ed52465be1bf11b988e45e24ff",
+      "original_utf8_byte_range_zero_based_half_open": [
+        615,
+        679
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        615,
+        679
+      ]
+    },
+    {
+      "source_record_id": "ALP002",
+      "referenced_sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        884,
+        948
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        837,
+        901
+      ]
+    },
+    {
+      "source_record_id": "ALP002",
+      "referenced_sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1143,
+        1207
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1041,
+        1105
+      ]
+    },
+    {
+      "source_record_id": "ALP002",
+      "referenced_sha256": "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1287,
+        1351
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1185,
+        1249
+      ]
+    },
+    {
+      "source_record_id": "ALP002",
+      "referenced_sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1358,
+        1422
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1256,
+        1320
+      ]
+    },
+    {
+      "source_record_id": "ALP004",
+      "referenced_sha256": "d92ec0a43232dbaa9c20e9eef65e24d4d4623d2ae822d5d488c31effbf20d802",
+      "original_utf8_byte_range_zero_based_half_open": [
+        499,
+        563
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        499,
+        563
+      ]
+    },
+    {
+      "source_record_id": "ALP004",
+      "referenced_sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        688,
+        752
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        688,
+        752
+      ]
+    },
+    {
+      "source_record_id": "ALP004",
+      "referenced_sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+      "original_utf8_byte_range_zero_based_half_open": [
+        873,
+        937
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        873,
+        937
+      ]
+    },
+    {
+      "source_record_id": "ALP004",
+      "referenced_sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1063,
+        1127
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1063,
+        1127
+      ]
+    },
+    {
+      "source_record_id": "ALP004",
+      "referenced_sha256": "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1240,
+        1304
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1240,
+        1304
+      ]
+    },
+    {
+      "source_record_id": "ALP006",
+      "referenced_sha256": "87b8129d99c89f8909a77fa9d711df70dfbe8a64bd107ccda1dc7fb90e8cb788",
+      "original_utf8_byte_range_zero_based_half_open": [
+        600,
+        664
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        600,
+        664
+      ]
+    },
+    {
+      "source_record_id": "ALP006",
+      "referenced_sha256": "f0a9621a62655aaa41cf4c45fcfcf183580511ed52465be1bf11b988e45e24ff",
+      "original_utf8_byte_range_zero_based_half_open": [
+        794,
+        858
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        794,
+        858
+      ]
+    },
+    {
+      "source_record_id": "ALP006",
+      "referenced_sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1055,
+        1119
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1008,
+        1072
+      ]
+    },
+    {
+      "source_record_id": "ALP007",
+      "referenced_sha256": "87b8129d99c89f8909a77fa9d711df70dfbe8a64bd107ccda1dc7fb90e8cb788",
+      "original_utf8_byte_range_zero_based_half_open": [
+        356,
+        420
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        356,
+        420
+      ]
+    },
+    {
+      "source_record_id": "ALP008",
+      "referenced_sha256": "87b8129d99c89f8909a77fa9d711df70dfbe8a64bd107ccda1dc7fb90e8cb788",
+      "original_utf8_byte_range_zero_based_half_open": [
+        427,
+        491
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        427,
+        491
+      ]
+    },
+    {
+      "source_record_id": "ALP009",
+      "referenced_sha256": "a579c445522658691ac9686f804f28e0bcc3f695647c901242ab66875af375f5",
+      "original_utf8_byte_range_zero_based_half_open": [
+        178,
+        242
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        178,
+        242
+      ]
+    },
+    {
+      "source_record_id": "ALP009",
+      "referenced_sha256": "936695593c9b1dd7daf923f67771281bb439fb8e351286a364e9a38fcbcbe040",
+      "original_utf8_byte_range_zero_based_half_open": [
+        319,
+        383
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        319,
+        383
+      ]
+    },
+    {
+      "source_record_id": "ALP009",
+      "referenced_sha256": "87b8129d99c89f8909a77fa9d711df70dfbe8a64bd107ccda1dc7fb90e8cb788",
+      "original_utf8_byte_range_zero_based_half_open": [
+        429,
+        493
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        429,
+        493
+      ]
+    },
+    {
+      "source_record_id": "ALP012",
+      "referenced_sha256": "5e8f3c963d0ba9386fad3e8b77cadb57b0b442293c4167b2b799e3dd40bcd78e",
+      "original_utf8_byte_range_zero_based_half_open": [
+        308,
+        372
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        308,
+        372
+      ]
+    },
+    {
+      "source_record_id": "ALP014",
+      "referenced_sha256": "5e8f3c963d0ba9386fad3e8b77cadb57b0b442293c4167b2b799e3dd40bcd78e",
+      "original_utf8_byte_range_zero_based_half_open": [
+        696,
+        760
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        696,
+        760
+      ]
+    },
+    {
+      "source_record_id": "ALP014",
+      "referenced_sha256": "87b8129d99c89f8909a77fa9d711df70dfbe8a64bd107ccda1dc7fb90e8cb788",
+      "original_utf8_byte_range_zero_based_half_open": [
+        885,
+        949
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        885,
+        949
+      ]
+    },
+    {
+      "source_record_id": "ALP014",
+      "referenced_sha256": "4b1c19e4c27dc540cd81122c187d9b4c8b32c3ea9e5105e289201d25796774ba",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1080,
+        1144
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1080,
+        1144
+      ]
+    },
+    {
+      "source_record_id": "ALP015",
+      "referenced_sha256": "0dca6ea2cf1e7f97084f03293469c1c861c1c6a39ed6c7c63ec94c0425e3878d",
+      "original_utf8_byte_range_zero_based_half_open": [
+        510,
+        574
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        510,
+        574
+      ]
+    },
+    {
+      "source_record_id": "ALP015",
+      "referenced_sha256": "8e15f6d3850f3831fec343b6afe169806c0bd128099253ccc673f1f7e561f8d6",
+      "original_utf8_byte_range_zero_based_half_open": [
+        630,
+        694
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        630,
+        694
+      ]
+    },
+    {
+      "source_record_id": "ALP015",
+      "referenced_sha256": "5e8f3c963d0ba9386fad3e8b77cadb57b0b442293c4167b2b799e3dd40bcd78e",
+      "original_utf8_byte_range_zero_based_half_open": [
+        751,
+        815
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        751,
+        815
+      ]
+    },
+    {
+      "source_record_id": "ALP015",
+      "referenced_sha256": "e76264bb4b470c9fbc329853344015a466d99d93b17b2c56314c4425334ce26f",
+      "original_utf8_byte_range_zero_based_half_open": [
+        899,
+        963
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        899,
+        963
+      ]
+    },
+    {
+      "source_record_id": "ALP016",
+      "referenced_sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1265,
+        1329
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1265,
+        1329
+      ]
+    },
+    {
+      "source_record_id": "ALP016",
+      "referenced_sha256": "d28778b2e116a6a0717d844ff0df27c39800775e0fbd9b08c3e4d9e37d7baa0a",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1349,
+        1413
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1349,
+        1413
+      ]
+    },
+    {
+      "source_record_id": "ALP016",
+      "referenced_sha256": "30cbb000d4493f18bc29f94cf46da94d719d6bc522c123204be7b0efe7cf4070",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1433,
+        1497
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1433,
+        1497
+      ]
+    },
+    {
+      "source_record_id": "ALP016",
+      "referenced_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1535,
+        1599
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1535,
+        1599
+      ]
+    },
+    {
+      "source_record_id": "ALP016",
+      "referenced_sha256": "94f8cb48a2a96dba050584d9c200c8b8eb7c59335c77ae1c8d9fefc6b1240cba",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1695,
+        1759
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1695,
+        1759
+      ]
+    },
+    {
+      "source_record_id": "ALP017",
+      "referenced_sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        912,
+        976
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        855,
+        919
+      ]
+    },
+    {
+      "source_record_id": "ALP017",
+      "referenced_sha256": "d28778b2e116a6a0717d844ff0df27c39800775e0fbd9b08c3e4d9e37d7baa0a",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1050,
+        1114
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        993,
+        1057
+      ]
+    },
+    {
+      "source_record_id": "ALP017",
+      "referenced_sha256": "808edc31256bc1d54b7e64c220eb50e294dc50f1939616897e729c1b8234b2ec",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1221,
+        1285
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1164,
+        1228
+      ]
+    },
+    {
+      "source_record_id": "ALP017",
+      "referenced_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1438,
+        1502
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1381,
+        1445
+      ]
+    },
+    {
+      "source_record_id": "ALP017",
+      "referenced_sha256": "feb0d0fcc5ca03efa229425c24afa521b3ec6226786fd4b5bccae5983555862e",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1684,
+        1748
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1627,
+        1691
+      ]
+    },
+    {
+      "source_record_id": "ALP017",
+      "referenced_sha256": "5fef432092c4d7394021f1651dbcd086b660028b2a62c1297342340892dd6d24",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1808,
+        1872
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1751,
+        1815
+      ]
+    },
+    {
+      "source_record_id": "ALP018",
+      "referenced_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+      "original_utf8_byte_range_zero_based_half_open": [
+        963,
+        1027
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        952,
+        1016
+      ]
+    },
+    {
+      "source_record_id": "ALP019",
+      "referenced_sha256": "183226fb17217faa36a58e9f018e4dda81e013543610fb8677d38a809e8e7bf6",
+      "original_utf8_byte_range_zero_based_half_open": [
+        135,
+        199
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        135,
+        199
+      ]
+    },
+    {
+      "source_record_id": "ALP019",
+      "referenced_sha256": "c0f503d24a2fa1b590b85bf23ee3daf62d51d5d64bcdccfe7a57bc60769507fd",
+      "original_utf8_byte_range_zero_based_half_open": [
+        658,
+        722
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        658,
+        722
+      ]
+    },
+    {
+      "source_record_id": "ALP019",
+      "referenced_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+      "original_utf8_byte_range_zero_based_half_open": [
+        3433,
+        3497
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        3433,
+        3497
+      ]
+    },
+    {
+      "source_record_id": "ALP019",
+      "referenced_sha256": "5fef432092c4d7394021f1651dbcd086b660028b2a62c1297342340892dd6d24",
+      "original_utf8_byte_range_zero_based_half_open": [
+        3630,
+        3694
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        3630,
+        3694
+      ]
+    },
+    {
+      "source_record_id": "ALP020",
+      "referenced_sha256": "c0f503d24a2fa1b590b85bf23ee3daf62d51d5d64bcdccfe7a57bc60769507fd",
+      "original_utf8_byte_range_zero_based_half_open": [
+        713,
+        777
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        713,
+        777
+      ]
+    },
+    {
+      "source_record_id": "ALP020",
+      "referenced_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1213,
+        1277
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1213,
+        1277
+      ]
+    }
+  ],
+  "standalone_sha1_references": [],
+  "inherited_identity_limit": {
+    "status": "CURRENT_BODY_REVIEW_BOUND_OLD_REVIEW_MISMATCH_UNRESOLVED",
+    "current_original_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+    "current_public_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_statistical_proof.md",
+    "current_public_identity": {
+      "bytes": 21262,
+      "sha256": "4d5e865ebe00846662cef1830be02bf52cc2b839eca8a0600f8baa501ada6078",
+      "git_blob_sha1": "d8aef0a80a3dd33a01dba631a454d4fccf4ffda1"
+    },
+    "current_original_to_public_map": "inherited_statistics/DOT_conditions_stage02/COPY_MAP.json",
+    "fresh_current_body_review_source_id": "ALP017",
+    "mandatory_review_count_correction_source_id": "ALP020",
+    "odd_m_pair_count": "ALP017 says m/2 successor pairs; ALP020 corrects this to floor(m/2), with an unpaired symbol of mass 1/m when m is odd. For m>=3, floor(m/2)/m>=1/3 preserves alpha/8. Original MM5 already uses the correct count.",
+    "fresh_review_original_identity": {
+      "bytes": 6475,
+      "sha256": "c0f503d24a2fa1b590b85bf23ee3daf62d51d5d64bcdccfe7a57bc60769507fd",
+      "git_blob_sha1": "a821ab58042db688295681c517629366b215df0b"
+    },
+    "fresh_review_export_identity": {
+      "bytes": 6418,
+      "sha256": "6e12f01bf32241526e552f7a3621d1d34c7234274d2a0efd5969c4f9bbe9e425",
+      "git_blob_sha1": "d39cadb533e7b6edc5843672570c95ef721f6169"
+    },
+    "old_report_original_sha256": "feb0d0fcc5ca03efa229425c24afa521b3ec6226786fd4b5bccae5983555862e",
+    "old_report_public_excerpt_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_review_scientific_excerpt.md",
+    "old_report_requested_proof_sha256": "5fef432092c4d7394021f1651dbcd086b660028b2a62c1297342340892dd6d24",
+    "old_report_does_not_bind_current_original": true,
+    "mismatch_cause": "UNRESOLVED; no equality or wrapper-only explanation established.",
+    "upper_lower_distinction": "ALP001/002 invoke the R011 arbitrary-initial add-one A^5 upper; ALP003/004 preserve that conditional baseline under perturbations; ALP005/006 compare it to narrower stationary/mixing results. R011 beta=0 uses inherited original upper 48g separately from its COMMON lower via S016/S011/S012/MM5. ALP016/017 inspect the beta=0 lower, not every R011 upper or adaptation claim. ALP018/019 give a periodic-clock occupation counterexample and positive-transition smoothing, not fixed-positive-mixing or architecture bounds.",
+    "historical_unshipped_iid_interface": "94f8cb48a2a96dba050584d9c200c8b8eb7c59335c77ae1c8d9fefc6b1240cba",
+    "small_K_independent_replacement_argument_source_id": "ALP017"
+  }
+}

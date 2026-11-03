@@ -1,0 +1,201 @@
+{
+  "base_commit": "ebc59ae031056463179e8e72d987be5c0eef9ee1",
+  "transitions": [
+    {
+      "from_source_id": "ALP007",
+      "to_source_id": "ALP008",
+      "from_original_identity": {
+        "bytes": 1683,
+        "sha256": "936695593c9b1dd7daf923f67771281bb439fb8e351286a364e9a38fcbcbe040",
+        "git_blob_sha1": "b14a654b4f971cc2bbee1fe927ea0900788b058b"
+      },
+      "to_original_identity": {
+        "bytes": 1856,
+        "sha256": "a579c445522658691ac9686f804f28e0bcc3f695647c901242ab66875af375f5",
+        "git_blob_sha1": "7e3d356e77ea870daf013060e8dcb8a0c0952288"
+      },
+      "actual_retained_versions": true,
+      "summary": "v2 excludes epsilon=0 from reciprocal formulas and separately states finite-N positive minimax risk; v1 is genuinely retained.",
+      "difference_spans": [
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            205,
+            205
+          ],
+          "new_utf8_byte_range": [
+            205,
+            209
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "c786e6a1d6d1e85efc9f67d5069e598319a33023845bfb8fb3910e9fa58d7c40"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            209,
+            209
+          ],
+          "new_utf8_byte_range": [
+            213,
+            280
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "4d68572e45082b7cd049492320fa47d741edc9b5db02d0e9f970a356eabb5a82"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            615,
+            615
+          ],
+          "new_utf8_byte_range": [
+            686,
+            691
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "ed2d5ef622e9ba23bf432cab6bce05f98086f96794eee4a57aac923a002e33e2"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            1028,
+            1028
+          ],
+          "new_utf8_byte_range": [
+            1104,
+            1201
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "e4470163b55d1d84eb31bd89a2ae964fc906e91d4127a27a2318e12a64b1eaf9"
+        }
+      ]
+    }
+  ],
+  "review_bindings": [
+    {
+      "review_source_id": "ALP002",
+      "reviewed_source_ids": [
+        "ALP001"
+      ]
+    },
+    {
+      "review_source_id": "ALP004",
+      "reviewed_source_ids": [
+        "ALP003"
+      ]
+    },
+    {
+      "review_source_id": "ALP006",
+      "reviewed_source_ids": [
+        "ALP005"
+      ]
+    },
+    {
+      "review_source_id": "ALP009",
+      "reviewed_source_ids": [
+        "ALP008"
+      ],
+      "compared_retained_source_ids": [
+        "ALP007"
+      ],
+      "conditional_dependency_source_ids": [
+        "ALP005"
+      ]
+    },
+    {
+      "review_source_id": "ALP014",
+      "reviewed_source_ids": [
+        "ALP011"
+      ],
+      "requires_correction_source_ids": [
+        "ALP012"
+      ]
+    },
+    {
+      "review_source_id": "ALP015",
+      "reviewed_source_ids": [
+        "ALP012",
+        "ALP013"
+      ],
+      "context_source_ids": [
+        "ALP011",
+        "ALP014"
+      ]
+    },
+    {
+      "review_source_id": "ALP017",
+      "reviewed_inherited_original_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+      "public_scientific_copy_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_statistical_proof.md",
+      "scope": "Direct current-body beta=0 lower review and independent small-K argument; old review mismatch unresolved."
+    },
+    {
+      "review_source_id": "ALP019",
+      "reviewed_source_ids": [
+        "ALP018"
+      ],
+      "current_body_review_source_id": "ALP017",
+      "scope": "Occupation counterexample, positive-transition smoothing and source identity limits."
+    }
+  ],
+  "separate_corrections": [
+    {
+      "original_source_id": "ALP017",
+      "correction_source_id": "ALP020",
+      "summary": "Actual separate odd-m pair-count correction; m/2 is not integral when m is odd. Original MM5 uses b=floor(m/2), with b/m>=1/3 for m>=3. The alpha/8 and later conservative lower constant remain unchanged; no original review is silently repaired."
+    },
+    {
+      "original_source_id": "ALP011",
+      "correction_source_id": "ALP012",
+      "identifying_review_source_id": "ALP014",
+      "correction_review_source_id": "ALP015",
+      "summary": "Original incorrectly excluded a common fixed dominating measure. Separate correction distinguishes common domination from uniform density-ratio bounds and a common Doeblin minorizing measure; original bytes remain."
+    },
+    {
+      "original_source_id": "ALP011",
+      "supplement_source_id": "ALP013",
+      "supplement_review_source_id": "ALP015",
+      "summary": "Separate classical iid supremum-one baseline; does not replace the strict-order-two A^3 construction or claim a single fixed hard source."
+    }
+  ],
+  "historical_review_wording": "Candidate required/pending-review wording is preserved. Separate reviews are hash-bound without inferring a freeze-before-review timeline, actual creation time or review-completion time from filenames or prose.",
+  "mm5_original_public_and_review_identity": {
+    "status": "CURRENT_BODY_REVIEW_BOUND_OLD_REVIEW_MISMATCH_UNRESOLVED",
+    "current_original_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+    "current_public_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_statistical_proof.md",
+    "current_public_identity": {
+      "bytes": 21262,
+      "sha256": "4d5e865ebe00846662cef1830be02bf52cc2b839eca8a0600f8baa501ada6078",
+      "git_blob_sha1": "d8aef0a80a3dd33a01dba631a454d4fccf4ffda1"
+    },
+    "current_original_to_public_map": "inherited_statistics/DOT_conditions_stage02/COPY_MAP.json",
+    "fresh_current_body_review_source_id": "ALP017",
+    "mandatory_review_count_correction_source_id": "ALP020",
+    "odd_m_pair_count": "ALP017 says m/2 successor pairs; ALP020 corrects this to floor(m/2), with an unpaired symbol of mass 1/m when m is odd. For m>=3, floor(m/2)/m>=1/3 preserves alpha/8. Original MM5 already uses the correct count.",
+    "fresh_review_original_identity": {
+      "bytes": 6475,
+      "sha256": "c0f503d24a2fa1b590b85bf23ee3daf62d51d5d64bcdccfe7a57bc60769507fd",
+      "git_blob_sha1": "a821ab58042db688295681c517629366b215df0b"
+    },
+    "fresh_review_export_identity": {
+      "bytes": 6418,
+      "sha256": "6e12f01bf32241526e552f7a3621d1d34c7234274d2a0efd5969c4f9bbe9e425",
+      "git_blob_sha1": "d39cadb533e7b6edc5843672570c95ef721f6169"
+    },
+    "old_report_original_sha256": "feb0d0fcc5ca03efa229425c24afa521b3ec6226786fd4b5bccae5983555862e",
+    "old_report_public_excerpt_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_review_scientific_excerpt.md",
+    "old_report_requested_proof_sha256": "5fef432092c4d7394021f1651dbcd086b660028b2a62c1297342340892dd6d24",
+    "old_report_does_not_bind_current_original": true,
+    "mismatch_cause": "UNRESOLVED; no equality or wrapper-only explanation established.",
+    "upper_lower_distinction": "ALP001/002 invoke the R011 arbitrary-initial add-one A^5 upper; ALP003/004 preserve that conditional baseline under perturbations; ALP005/006 compare it to narrower stationary/mixing results. R011 beta=0 uses inherited original upper 48g separately from its COMMON lower via S016/S011/S012/MM5. ALP016/017 inspect the beta=0 lower, not every R011 upper or adaptation claim. ALP018/019 give a periodic-clock occupation counterexample and positive-transition smoothing, not fixed-positive-mixing or architecture bounds.",
+    "historical_unshipped_iid_interface": "94f8cb48a2a96dba050584d9c200c8b8eb7c59335c77ae1c8d9fefc6b1240cba",
+    "small_K_independent_replacement_argument_source_id": "ALP017"
+  },
+  "prior_art_author_reading_scope": {
+    "source_record_id": "ALP010",
+    "target_source_record_id": "ALP005",
+    "target_details_from_summary": true,
+    "author_independently_read_target_manuscript": false,
+    "not_proof_review_or_novelty_clearance": true
+  }
+}
