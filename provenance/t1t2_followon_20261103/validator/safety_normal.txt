@@ -1,0 +1,39 @@
+test_accepts_all_saved_records_without_writes (__main__.RetainedRecordTests.test_accepts_all_saved_records_without_writes) ... ok
+test_rejects_blank_line (__main__.RetainedRecordTests.test_rejects_blank_line) ... ok
+test_rejects_boolean_as_integer (__main__.RetainedRecordTests.test_rejects_boolean_as_integer) ... ok
+test_rejects_deep_json (__main__.RetainedRecordTests.test_rejects_deep_json) ... ok
+test_rejects_directory_symlink (__main__.RetainedRecordTests.test_rejects_directory_symlink) ... ok
+test_rejects_duplicate_input (__main__.RetainedRecordTests.test_rejects_duplicate_input) ... ok
+test_rejects_duplicate_json_key (__main__.RetainedRecordTests.test_rejects_duplicate_json_key) ... ok
+test_rejects_extra_field (__main__.RetainedRecordTests.test_rejects_extra_field) ... ok
+test_rejects_false_gate_status (__main__.RetainedRecordTests.test_rejects_false_gate_status) ... ok
+test_rejects_fifo_without_blocking (__main__.RetainedRecordTests.test_rejects_fifo_without_blocking) ... ok
+test_rejects_file_symlink (__main__.RetainedRecordTests.test_rejects_file_symlink) ... ok
+test_rejects_invalid_utf8 (__main__.RetainedRecordTests.test_rejects_invalid_utf8) ... ok
+test_rejects_json_float (__main__.RetainedRecordTests.test_rejects_json_float) ... ok
+test_rejects_missing_field (__main__.RetainedRecordTests.test_rejects_missing_field) ... ok
+test_rejects_missing_file (__main__.RetainedRecordTests.test_rejects_missing_file) ... ok
+test_rejects_missing_final_newline (__main__.RetainedRecordTests.test_rejects_missing_final_newline) ... ok
+test_rejects_missing_row (__main__.RetainedRecordTests.test_rejects_missing_row) ... ok
+test_rejects_no_bos_count_range (__main__.RetainedRecordTests.test_rejects_no_bos_count_range) ... ok
+test_rejects_no_bos_equality_corruption (__main__.RetainedRecordTests.test_rejects_no_bos_equality_corruption) ... ok
+test_rejects_no_bos_terminal_corruption (__main__.RetainedRecordTests.test_rejects_no_bos_terminal_corruption) ... ok
+test_rejects_noncanonical_object_rational (__main__.RetainedRecordTests.test_rejects_noncanonical_object_rational) ... ok
+test_rejects_noncanonical_string_rational (__main__.RetainedRecordTests.test_rejects_noncanonical_string_rational) ... ok
+test_rejects_nonfinite_json (__main__.RetainedRecordTests.test_rejects_nonfinite_json) ... ok
+test_rejects_oversized_file (__main__.RetainedRecordTests.test_rejects_oversized_file) ... ok
+test_rejects_oversized_line (__main__.RetainedRecordTests.test_rejects_oversized_line) ... ok
+test_rejects_oversized_rational (__main__.RetainedRecordTests.test_rejects_oversized_rational) ... ok
+test_rejects_population_equality_corruption (__main__.RetainedRecordTests.test_rejects_population_equality_corruption) ... ok
+test_rejects_reordered_keys (__main__.RetainedRecordTests.test_rejects_reordered_keys) ... ok
+test_rejects_reverse_moment_bound_corruption (__main__.RetainedRecordTests.test_rejects_reverse_moment_bound_corruption) ... ok
+test_rejects_reverse_status_corruption (__main__.RetainedRecordTests.test_rejects_reverse_status_corruption) ... ok
+test_rejects_root_symlink (__main__.RetainedRecordTests.test_rejects_root_symlink) ... ok
+test_rejects_truncated_json (__main__.RetainedRecordTests.test_rejects_truncated_json) ... ok
+test_rejects_unsafe_relative_paths (__main__.RetainedRecordTests.test_rejects_unsafe_relative_paths) ... ok
+test_rejects_zero_denominator (__main__.RetainedRecordTests.test_rejects_zero_denominator) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.448s
+
+OK

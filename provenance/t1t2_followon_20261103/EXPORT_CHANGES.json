@@ -1,0 +1,783 @@
+{
+  "schema": "t1t2-followon-nonmathematical-change-map-v1",
+  "scope": "Only administrative context, reviewer routing/provenance labels and validation-checklist labels. No removed private values appear in this map.",
+  "offset_semantics": "Zero-based half-open character ranges in decoded UTF-8 text; byte ranges refer to original bytes. One-based original line numbers.",
+  "changed_files": 15,
+  "mathematical_or_numerical_logic_changed": false,
+  "changes": [
+    {
+      "source_record_id": "FOL002",
+      "path": "v10_research/route_b_source_novelty_20261103_1312/novelty_assessment_v1.html",
+      "nonmathematical_regions": [
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            10819,
+            10846
+          ],
+          "public_character_range": [
+            10819,
+            10852
+          ],
+          "original_byte_range": [
+            10862,
+            10889
+          ],
+          "public_replacement": "a full formal validation workflow",
+          "original_line": 10,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL007",
+      "path": "v10_research/route_a_sensitivity_bottleneck_20261103_1341/RUN_LOG.txt",
+      "nonmathematical_regions": [
+        {
+          "category": "private_administrative_context",
+          "original_character_range": [
+            12,
+            40
+          ],
+          "public_character_range": [
+            12,
+            28
+          ],
+          "original_byte_range": [
+            12,
+            40
+          ],
+          "public_replacement": "Followed Route A",
+          "original_line": 1,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "review_provenance_label",
+          "original_character_range": [
+            247,
+            290
+          ],
+          "public_character_range": [
+            235,
+            268
+          ],
+          "original_byte_range": [
+            247,
+            290
+          ],
+          "public_replacement": "An independent LLM review checked",
+          "original_line": 1,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            1173,
+            1193
+          ],
+          "public_character_range": [
+            1151,
+            1175
+          ],
+          "original_byte_range": [
+            1173,
+            1193
+          ],
+          "public_replacement": "Full validation workflow",
+          "original_line": 2,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL008",
+      "path": "v10_research/route_a_sensitivity_bottleneck_20261103_1341/RUN_LOG_ADDENDUM.txt",
+      "nonmathematical_regions": [
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            1183,
+            1203
+          ],
+          "public_character_range": [
+            1183,
+            1207
+          ],
+          "original_byte_range": [
+            1183,
+            1203
+          ],
+          "public_replacement": "Full validation workflow",
+          "original_line": 2,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL013",
+      "path": "v10_research/route_a_sensitivity_bottleneck_20261103_1341/build_v2.py",
+      "nonmathematical_regions": [
+        {
+          "category": "review_provenance_label",
+          "original_character_range": [
+            1139,
+            1163
+          ],
+          "public_character_range": [
+            1139,
+            1172
+          ],
+          "original_byte_range": [
+            1149,
+            1173
+          ],
+          "public_replacement": "An independent LLM review checked",
+          "original_line": 11,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            1343,
+            1373
+          ],
+          "public_character_range": [
+            1352,
+            1382
+          ],
+          "original_byte_range": [
+            1353,
+            1383
+          ],
+          "public_replacement": "a complete validation workflow",
+          "original_line": 11,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "review_provenance_label",
+          "original_character_range": [
+            1518,
+            1542
+          ],
+          "public_character_range": [
+            1527,
+            1560
+          ],
+          "original_byte_range": [
+            1530,
+            1554
+          ],
+          "public_replacement": "An independent LLM review checked",
+          "original_line": 11,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            1957,
+            1987
+          ],
+          "public_character_range": [
+            1975,
+            2005
+          ],
+          "original_byte_range": [
+            1969,
+            1999
+          ],
+          "public_replacement": "a complete validation workflow",
+          "original_line": 11,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL022",
+      "path": "v10_research/route_a_sensitivity_bottleneck_20261103_1341/independent_uniform_comparison_review.txt",
+      "nonmathematical_regions": [
+        {
+          "category": "private_reviewer_routing",
+          "original_character_range": [
+            0,
+            87
+          ],
+          "public_character_range": [
+            0,
+            33
+          ],
+          "original_byte_range": [
+            0,
+            87
+          ],
+          "public_replacement": "Independent LLM review, verbatim:",
+          "original_line": 1,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL024",
+      "path": "v10_research/route_a_sensitivity_bottleneck_20261103_1341/q_only_budget_clarification_v1.html",
+      "nonmathematical_regions": [
+        {
+          "category": "review_provenance_label",
+          "original_character_range": [
+            2326,
+            2350
+          ],
+          "public_character_range": [
+            2326,
+            2359
+          ],
+          "original_byte_range": [
+            2393,
+            2417
+          ],
+          "public_replacement": "An independent LLM review checked",
+          "original_line": 10,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL028",
+      "path": "v10_research/route_a_sensitivity_bottleneck_20261103_1341/report_source.txt",
+      "nonmathematical_regions": [
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            152,
+            172
+          ],
+          "public_character_range": [
+            152,
+            178
+          ],
+          "original_byte_range": [
+            152,
+            172
+          ],
+          "public_replacement": "full validation acceptance",
+          "original_line": 2,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "review_provenance_label",
+          "original_character_range": [
+            235,
+            273
+          ],
+          "public_character_range": [
+            241,
+            274
+          ],
+          "original_byte_range": [
+            235,
+            273
+          ],
+          "public_replacement": "An independent LLM review checked",
+          "original_line": 2,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "review_provenance_label",
+          "original_character_range": [
+            12319,
+            12343
+          ],
+          "public_character_range": [
+            12320,
+            12353
+          ],
+          "original_byte_range": [
+            12704,
+            12728
+          ],
+          "public_replacement": "An independent LLM review checked",
+          "original_line": 79,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            12523,
+            12553
+          ],
+          "public_character_range": [
+            12533,
+            12563
+          ],
+          "original_byte_range": [
+            12908,
+            12938
+          ],
+          "public_replacement": "a complete validation workflow",
+          "original_line": 79,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL029",
+      "path": "v10_research/route_a_sensitivity_bottleneck_20261103_1341/report_v2_source.txt",
+      "nonmathematical_regions": [
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            152,
+            172
+          ],
+          "public_character_range": [
+            152,
+            178
+          ],
+          "original_byte_range": [
+            152,
+            172
+          ],
+          "public_replacement": "full validation acceptance",
+          "original_line": 2,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "review_provenance_label",
+          "original_character_range": [
+            235,
+            273
+          ],
+          "public_character_range": [
+            241,
+            274
+          ],
+          "original_byte_range": [
+            235,
+            273
+          ],
+          "public_replacement": "An independent LLM review checked",
+          "original_line": 2,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "review_provenance_label",
+          "original_character_range": [
+            12642,
+            12666
+          ],
+          "public_character_range": [
+            12643,
+            12676
+          ],
+          "original_byte_range": [
+            13029,
+            13053
+          ],
+          "public_replacement": "An independent LLM review checked",
+          "original_line": 79,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            13081,
+            13111
+          ],
+          "public_character_range": [
+            13091,
+            13121
+          ],
+          "original_byte_range": [
+            13468,
+            13498
+          ],
+          "public_replacement": "a complete validation workflow",
+          "original_line": 79,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL033",
+      "path": "v10_research/route_a_sensitivity_bottleneck_20261103_1341/sensitivity_bottleneck_v1.html",
+      "nonmathematical_regions": [
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            608,
+            628
+          ],
+          "public_character_range": [
+            608,
+            634
+          ],
+          "original_byte_range": [
+            608,
+            628
+          ],
+          "public_replacement": "full validation acceptance",
+          "original_line": 1,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "review_provenance_label",
+          "original_character_range": [
+            691,
+            729
+          ],
+          "public_character_range": [
+            697,
+            730
+          ],
+          "original_byte_range": [
+            691,
+            729
+          ],
+          "public_replacement": "An independent LLM review checked",
+          "original_line": 1,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "review_provenance_label",
+          "original_character_range": [
+            13023,
+            13047
+          ],
+          "public_character_range": [
+            13024,
+            13057
+          ],
+          "original_byte_range": [
+            13408,
+            13432
+          ],
+          "public_replacement": "An independent LLM review checked",
+          "original_line": 37,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            13227,
+            13257
+          ],
+          "public_character_range": [
+            13237,
+            13267
+          ],
+          "original_byte_range": [
+            13612,
+            13642
+          ],
+          "public_replacement": "a complete validation workflow",
+          "original_line": 37,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL034",
+      "path": "v10_research/route_a_sensitivity_bottleneck_20261103_1341/sensitivity_bottleneck_v2.html",
+      "nonmathematical_regions": [
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            616,
+            636
+          ],
+          "public_character_range": [
+            616,
+            642
+          ],
+          "original_byte_range": [
+            618,
+            638
+          ],
+          "public_replacement": "full validation acceptance",
+          "original_line": 1,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "review_provenance_label",
+          "original_character_range": [
+            699,
+            737
+          ],
+          "public_character_range": [
+            705,
+            738
+          ],
+          "original_byte_range": [
+            701,
+            739
+          ],
+          "public_replacement": "An independent LLM review checked",
+          "original_line": 1,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "review_provenance_label",
+          "original_character_range": [
+            13354,
+            13378
+          ],
+          "public_character_range": [
+            13355,
+            13388
+          ],
+          "original_byte_range": [
+            13743,
+            13767
+          ],
+          "public_replacement": "An independent LLM review checked",
+          "original_line": 37,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            13793,
+            13823
+          ],
+          "public_character_range": [
+            13803,
+            13833
+          ],
+          "original_byte_range": [
+            14182,
+            14212
+          ],
+          "public_replacement": "a complete validation workflow",
+          "original_line": 37,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL036",
+      "path": "v10_research/route_a_bos_causal_compile_20261103_1411/bos_causal_compilation_candidate_v1.html",
+      "nonmathematical_regions": [
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            9915,
+            9946
+          ],
+          "public_character_range": [
+            9915,
+            9941
+          ],
+          "original_byte_range": [
+            10200,
+            10231
+          ],
+          "public_replacement": "Proof-diagnostic snapshots",
+          "original_line": 6,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            9977,
+            10003
+          ],
+          "public_character_range": [
+            9972,
+            9998
+          ],
+          "original_byte_range": [
+            10262,
+            10288
+          ],
+          "public_replacement": "a full validation workflow",
+          "original_line": 6,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL037",
+      "path": "v10_research/route_a_bos_causal_compile_20261103_1411/bos_causal_compilation_candidate_v2.html",
+      "nonmathematical_regions": [
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            10210,
+            10241
+          ],
+          "public_character_range": [
+            10210,
+            10236
+          ],
+          "original_byte_range": [
+            10498,
+            10529
+          ],
+          "public_replacement": "Proof-diagnostic snapshots",
+          "original_line": 6,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            10272,
+            10298
+          ],
+          "public_character_range": [
+            10267,
+            10293
+          ],
+          "original_byte_range": [
+            10560,
+            10586
+          ],
+          "public_replacement": "a full validation workflow",
+          "original_line": 6,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL041",
+      "path": "v10_research/route_a_bos_causal_compile_20261103_1411/no_bos_causal_compilation_candidate_v3.html",
+      "nonmathematical_regions": [
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            11031,
+            11062
+          ],
+          "public_character_range": [
+            11031,
+            11057
+          ],
+          "original_byte_range": [
+            11331,
+            11362
+          ],
+          "public_replacement": "Proof-diagnostic snapshots",
+          "original_line": 6,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            11093,
+            11119
+          ],
+          "public_character_range": [
+            11088,
+            11114
+          ],
+          "original_byte_range": [
+            11393,
+            11419
+          ],
+          "public_replacement": "a full validation workflow",
+          "original_line": 6,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL042",
+      "path": "v10_research/route_a_bos_causal_compile_20261103_1411/no_bos_causal_compilation_reviewed_v4.html",
+      "nonmathematical_regions": [
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            610,
+            640
+          ],
+          "public_character_range": [
+            610,
+            640
+          ],
+          "original_byte_range": [
+            610,
+            640
+          ],
+          "public_replacement": "a complete validation workflow",
+          "original_line": 1,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            11755,
+            11786
+          ],
+          "public_character_range": [
+            11755,
+            11781
+          ],
+          "original_byte_range": [
+            12063,
+            12094
+          ],
+          "public_replacement": "Proof-diagnostic snapshots",
+          "original_line": 6,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            11817,
+            11843
+          ],
+          "public_character_range": [
+            11812,
+            11838
+          ],
+          "original_byte_range": [
+            12125,
+            12151
+          ],
+          "public_replacement": "a full validation workflow",
+          "original_line": 6,
+          "mathematical_content_changed": false
+        }
+      ]
+    },
+    {
+      "source_record_id": "FOL045",
+      "path": "v10_research/route_a_causal_prior_audit_20261103_1409/primary_overlap_review.html",
+      "nonmathematical_regions": [
+        {
+          "category": "review_scope_label",
+          "original_character_range": [
+            9035,
+            9095
+          ],
+          "public_character_range": [
+            9035,
+            9075
+          ],
+          "original_byte_range": [
+            9167,
+            9229
+          ],
+          "public_replacement": "the final as-yet unspecified compilation",
+          "original_line": 9,
+          "mathematical_content_changed": false
+        },
+        {
+          "category": "validation_limitation_label",
+          "original_character_range": [
+            9109,
+            9124
+          ],
+          "public_character_range": [
+            9089,
+            9115
+          ],
+          "original_byte_range": [
+            9243,
+            9258
+          ],
+          "public_replacement": "a full validation workflow",
+          "original_line": 9,
+          "mathematical_content_changed": false
+        }
+      ]
+    }
+  ]
+}

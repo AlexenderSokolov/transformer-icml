@@ -1,0 +1,12 @@
+Independent addendum, 3 November 2026 UTC
+
+Verified source SHA-256:
+family_aware_single_head_candidate_v1.html: 24f6de7002c68f1cb9ca4d7e08e5fbdb9f56a436fff61151997e68acfd69c979
+zero_history_comparison_correction_v1.html: 7af7bb4b49613795b27d70539e3b2e1744597f2d5b1cf7a2b89615de0bad1abf
+terminal_only_baseline_addendum_v1.html: 11d9eb363289cc8b2fa34ea8143c082c3fa3cedc6eb45b6a2232aa075150fbff
+
+The baseline addendum's exact minimax u/2 statement is correct, including for parameter-independent randomized terminal-pair-only rules. The terminal pair has the same law at both t endpoints. On the same query and randomization realization, the two losses sum to at least the difference of the two targets. Averaging over 00 and 10 contributes u(1/2)+w(u/w)(1/2)=u, so one endpoint risk is at least u/2. Substituting t0=1/2 attains u/2 in the worst case. The result is restricted to this declared family and terminal-pair-only experiment; it does not impose a full-history or architecture lower bound. In light of this refinement, the small-precision, large-M upper bound established in the comparison correction is strictly below the optimal terminal-pair-only worst-case risk, still without an equal-budget separation.
+
+The precision clarification is correct: for fixed beta and ideal q the sampling term is O(M^-1/2); the displayed total bound has an additive 2 rho_beta epsilon_q, and preserving that rate also requires epsilon_q and separately charged output errors to decay at least at that rate. An upper bound's nonzero floor does not itself prove a nonzero limiting actual risk.
+
+Analytic review only, not formal certification. No source overwrite, tests, RNG, numerical enumeration, or external writes.

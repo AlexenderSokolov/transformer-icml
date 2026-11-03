@@ -1,0 +1,5 @@
+Independent LLM review, verbatim:
+
+The uniform separation is valid with sup, not necessarily max, over the half-open u interval. Uniform moment errors are O(√(log m/m)), and λ(u)≤λ(1/4) gives the η/4 lower uniformly before inf_F and liminf_m. The same F₁ gives uniform risk→0. Specify Lq,Lr,Lh≥0 and common seed laws across the two t values for each u. For a clean q-only comparison, choose the low-class Lr≥Λ and Lh≥Λγ/2; otherwise F₁ may also exceed those r/h budgets.
+
+Explicitly, for every admissible F and u, max_t R_{u,t} ≥ η/4 − Lq·G(u,m) − Lr·A(m) − Lh·u·b(u,m); optionally apply the positive part to the entire right side. Since u₀<1/4, the high decoder’s Λ exceeds any Lq satisfying the stated margin.
