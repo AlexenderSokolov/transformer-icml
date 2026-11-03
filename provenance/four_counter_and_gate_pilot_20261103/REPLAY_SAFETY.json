@@ -1,0 +1,88 @@
+{
+  "new_scientific_random_draws_performed": 0,
+  "new_model_initializations": 0,
+  "original_native_executable_runs": 0,
+  "original_random_or_model_verifiers_rerun": false,
+  "programs": [
+    {
+      "path": "v10_research/four_counter_dp_20261103/four_counter.py",
+      "classification": "SAMPLING_FREE_DETERMINISTIC_MODULE",
+      "explanation": "Only original module executed by new verifier; itertools and integer recurrence."
+    },
+    {
+      "path": "v10_research/four_counter_dp_20261103/review_independent/check_theorem.py",
+      "classification": "GENERATES_MODEL_PARAMETERS",
+      "explanation": "Calls Model(203) for each M; not run."
+    },
+    {
+      "path": "v10_research/four_counter_dp_20261103/review_independent/float_counterexample.py",
+      "classification": "SAMPLING_FREE_COUNTEREXAMPLE",
+      "explanation": "Counterexample recomputed by new verifier; original output matched, original script not separately executed."
+    },
+    {
+      "path": "v10_research/four_counter_dp_20261103/verify.py",
+      "classification": "GENERATES_MODEL_PARAMETERS",
+      "explanation": "Calls Model(123) for each M; not run."
+    },
+    {
+      "path": "v10_research/exact_dp_pilot_20261103/archive_randomness.py",
+      "classification": "REGENERATES_RANDOM_DRAWS",
+      "explanation": "Top-level PRNG reconstruction and writes archive; not run."
+    },
+    {
+      "path": "v10_research/exact_dp_pilot_20261103/archive_test_oracles.py",
+      "classification": "REGENERATES_RANDOM_DRAWS",
+      "explanation": "Top-level seeded reconstruction and writes archives; not run."
+    },
+    {
+      "path": "v10_research/exact_dp_pilot_20261103/followup.py",
+      "classification": "SAVED_INPUTS_BUT_OVERWRITES_RESULTS",
+      "explanation": "Reuses saved words; executes native DP, generates timings and overwrites outputs; not run."
+    },
+    {
+      "path": "v10_research/exact_dp_pilot_20261103/review_independent/check_records.py",
+      "classification": "REGENERATES_RANDOM_DRAWS",
+      "explanation": "Top-level seeded benchmark reconstruction; not run."
+    },
+    {
+      "path": "v10_research/exact_dp_pilot_20261103/run.py",
+      "classification": "GENERATES_WORDS_AND_OVERWRITES_ARCHIVE",
+      "explanation": "Main calls seeded data generator and overwrites data/results; not run."
+    },
+    {
+      "path": "v10_research/exact_dp_pilot_20261103/test_dp.py",
+      "classification": "GENERATES_TEST_WORDS_AND_RUNS_NATIVE_CODE",
+      "explanation": "Main samples seeded words, runs native DP and writes test rows; not run."
+    },
+    {
+      "path": "v10_research/exact_dp_pilot_review_20261103/bitwise_probe.py",
+      "classification": "GENERATES_WORDS_AND_MODEL_PARAMETERS",
+      "explanation": "Generates seven batches of random words and seeded models; not run."
+    },
+    {
+      "path": "v10_research/exact_dp_pilot_review_20261103/review.py",
+      "classification": "STATICALLY_READ_ONLY_NUMPY_PILOT_PATH",
+      "explanation": "Uses saved uniforms and deterministic statistics/proposals, no Model/RNG calls in reviewed path; not executed here."
+    },
+    {
+      "path": "v10_research/exact_dp_pilot_review_20261103/review_all.py",
+      "classification": "STATICALLY_READ_ONLY_NUMPY_PILOT_PATH",
+      "explanation": "Same as review.py, with all45 independent DP optima; not executed here."
+    }
+  ],
+  "compiled_artifact": {
+    "path": "v10_research/exact_dp_pilot_20261103/dp",
+    "status": "Exact original bytes retained; not executed or rebuilt in publication preparation."
+  },
+  "public_verifier": "verify_public_archive.py reads archived values, enumerates deterministic masks and executes only the sampling-free four_counter module. No seed replay, model initialization, network or checkout writes.",
+  "missing_records": [
+    "Original benchmark: 720 uniforms and contemporaneous PRNG states.",
+    "Original small tests: contemporaneous generator states and underlying bits.",
+    "Complete intermediate and terminal DP state sets and scores.",
+    "The 700,000 probe words, their generator states and a probe-specific environment receipt.",
+    "The 5,712 repeated seeded model parameter entries and states.",
+    "Transient values and states from three historical checker seed replays."
+  ],
+  "reconstruction_boundary": "Retrospective archives are preserved as reconstructions; nothing is relabeled as contemporaneous capture. Missing records are not recovered.",
+  "future_sampling": "Historical scripts may sample or overwrite outputs if executed. A separately reviewed pre-run raw capture guard is required for new sampling; this release does not provide or claim that guard."
+}

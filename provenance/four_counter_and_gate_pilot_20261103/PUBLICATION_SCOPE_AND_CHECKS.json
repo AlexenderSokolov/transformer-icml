@@ -1,0 +1,123 @@
+{
+  "base_commit": "9bd30b558468805b99bb89d4fd81afb1686f16f9",
+  "source_files": 54,
+  "selected_original_bytes": 1088278,
+  "extant_scientific_omissions": [],
+  "excluded_regenerable_caches": [
+    "v10_research/exact_dp_pilot_20261103/__pycache__/run.cpython-312.pyc",
+    "v10_research/exact_dp_pilot_20261103/__pycache__/test_dp.cpython-312.pyc",
+    "v10_research/four_counter_dp_20261103/__pycache__/four_counter.cpython-312.pyc"
+  ],
+  "privacy_changes": {
+    "files": 4,
+    "line_regions": 4
+  },
+  "mathematical_program_binary_raw_record_or_original_seal_changes": false,
+  "python_sources_parsed": 13,
+  "privacy_unresolved_hits": [],
+  "structured_binding_counts": {
+    "EXACT_PUBLIC_BYTES": 60,
+    "DECLARED_CURRENT_EXPORT_PAIR": 5
+  },
+  "scientific_scope": [
+    "The four-counter integer recurrence has O(M^5) transitions and O(M^4) rolling states for fixed-half selected-row inputs and protected endpoints, with additional readout, comparison, bit and witness costs.",
+    "The rational reconstruction does not make the float-converting model_inputs/maximize a generic exact-rational oracle. The Fraction counterexample and additive correction remain exact. No bitwise pilot-input or generic neural argmax certificate is claimed.",
+    "The benchmark evaluates a fixed smoothed gate Q with clean-history B and float64 CE, not a trained neural readout. There are 36 initial and nine outcome-informed follow-up cases on 12 saved histories from three fixed source tables.",
+    "Higher float64 CE does not imply larger source error: four initial cases reverse that ranking. The nine follow-up cases reuse observed histories and are not independent confirmation.",
+    "The preserved C++/Python timings have different intervals; entire_case_wall_s is whole evaluation, not isolated subprocess time. Runtime caps do not establish a hard end-to-end deadline. No controlled throughput or general practical-efficiency claim.",
+    "All actual retained scripts, configuration, binary, 45 case records with 900 proposal entries, 448 test rows, 5,976 retrospective oracle entries and reconstruction archives are included. Missing records are explicitly not recovered.",
+    "No new scientific random values, model initializations, native timing or unsafe historical replays were generated in preparation. The new public verifier uses only saved values and deterministic enumeration."
+  ],
+  "missing_history": [
+    "Original benchmark: 720 uniforms and contemporaneous PRNG states.",
+    "Original small tests: contemporaneous generator states and underlying bits.",
+    "Complete intermediate and terminal DP state sets and scores.",
+    "The 700,000 probe words, their generator states and a probe-specific environment receipt.",
+    "The 5,712 repeated seeded model parameter entries and states.",
+    "Transient values and states from three historical checker seed replays."
+  ],
+  "publisher_public_replay": {
+    "status": "PASS",
+    "selected_sources": 54,
+    "verified_public_files": 61,
+    "historical_bindings": 65,
+    "declared_export_pair_occurrences": 5,
+    "retained_record_checks": {
+      "data_words": 12,
+      "saved_reconstruction_uniforms": 720,
+      "initial": {
+        "count": 36,
+        "statuses": {
+          "ok": 36
+        },
+        "positive_gap": 27,
+        "tied_gap": 9,
+        "source_error_dp_greater": 22,
+        "source_error_dp_smaller": 4,
+        "source_error_equal": 10,
+        "max_gap": 1.435712788524874,
+        "internal_cpp_wall_range_s": [
+          6.0984e-05,
+          0.00737563
+        ],
+        "max_peak_states": 1433,
+        "max_nodes": 43273
+      },
+      "followup": {
+        "count": 9,
+        "statuses": {
+          "ok": 9
+        },
+        "positive_gap": 9,
+        "tied_gap": 0,
+        "source_error_dp_greater": 9,
+        "source_error_dp_smaller": 0,
+        "source_error_equal": 0,
+        "max_gap": 1.447186595731381,
+        "internal_cpp_wall_range_s": [
+          0.001189419,
+          0.237126621
+        ],
+        "max_peak_states": 41726,
+        "max_nodes": 1833734
+      },
+      "proposal_entries": 900,
+      "max_recomputed_objective_discrepancy": 0.0,
+      "test_rows": 448,
+      "retrospective_oracle_rows_checked": 5976,
+      "retrospective_test_state_records_word_bindings_checked": 32,
+      "rng_state_evolution_validated": false,
+      "full_45_case_optima_recomputed": false
+    },
+    "deterministic_four_counter_checks": {
+      "complete_bank_maps": 3056,
+      "literal_word_masks": 21824,
+      "legal_witnesses": 27576,
+      "range": "M=2 through 6, every history and budget",
+      "float_counterexample_log_byte_identical": true,
+      "pilot_model_input_comparisons_rerun": false,
+      "random_model_initializations": 0,
+      "generic_exact_rational_utility_claim": false
+    },
+    "scientific_prng_calls": 0,
+    "new_model_initializations": 0,
+    "native_executable_runs": 0,
+    "original_rng_states_recovered": false,
+    "all_45_case_optima_recomputed": false,
+    "checkout_writes": false,
+    "optimized_python": "REFUSED",
+    "tampered_source": "REFUSED",
+    "tampered_reconciliation": "REFUSED",
+    "symlink_input": "REFUSED",
+    "symlink_inventory": "REFUSED",
+    "originals_unchanged": true,
+    "public_copy_unchanged": true,
+    "environment": {
+      "python": "3.12.14",
+      "dependencies": "Python standard library only"
+    },
+    "local_scope": "Public-only retained-record arithmetic and deterministic four-counter enumeration; no scientific random draws, model initializations, original random verifier replay, native executable run or missing-history recovery."
+  },
+  "review_identity": "Source-bound independent LLM audits, not external peer review, formal proof or novelty certification.",
+  "earlier_material": "No prior manuscript, training archive, source map, historical failure or workflow is modified."
+}

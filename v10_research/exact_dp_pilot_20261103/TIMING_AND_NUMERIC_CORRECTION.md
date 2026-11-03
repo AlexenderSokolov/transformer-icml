@@ -1,0 +1,9 @@
+# Timing and numerical correction
+
+This is an additive correction. The original pre-run protocol, follow-up protocol, executable, raw data, output records and logs are preserved unchanged.
+
+1. `FOLLOWUP_PROTOCOL.md` said the follow-up would measure isolated whole child-process wall time including launch. It did not: `entire_case_wall_s` in `followup_results.jsonl` measures the whole `evaluate_case` call, including proposal construction/scoring, launching and waiting for the C++ process, parsing, and result validation. It cannot be interpreted as a separate child-process measurement. The C++ `wall_s` and `cpu_s` fields measure its own program interval and do not include Python-to-process launch overhead. A separately measured child-process wall time is not available from these runs. The initial `proposal.wall_s` is Python proposal construction plus scalar evaluation, while C++ time excludes launch; these are not a controlled head-to-head speed ratio or a measurement of the original vectorized pilot's training loop.
+
+2. The DP state transitions and integer costs are exact, but the terminal CE objective is evaluated and compared with double-precision logarithms. Thus `objective` and its reported maximizing witness are float64-comparison results, not a rigorous exact-real CE argmax certificate. Exhaustive small tests match a separate float64 brute force to 1e-12; no bound on exact-real comparison error or near ties has been proven. The earlier abstract theorem explicitly requires exact objective comparisons. This also applies to comparisons against float64 proposal objectives.
+
+3. The compiler reported a misleading-indentation warning in `dp.cpp` line 38. By C++ statement semantics, the `break` executes only when status is non-ok; the following swap and peak update execute if the break is not taken. The original source and warning remain archived. Review should verify this control flow rather than infer behavior from indentation.

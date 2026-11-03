@@ -1,0 +1,555 @@
+{
+  "rule": "All 54 extant noncache scientific artifacts are retained. Four prose/metadata lines remove private host or coordination/publication routing only. Math, source programs, binary, raw records, original seals and numerical/history corrections remain exact. Five of 65 historical binding occurrences resolve through the explicit current original/public pairs; no checksum is rewritten.",
+  "changes": [
+    {
+      "path": "v10_research/exact_dp_pilot_20261103/PROTOCOL.md",
+      "original_lines": [
+        11,
+        11
+      ],
+      "public_lines": [
+        11,
+        11
+      ],
+      "category": "Remove only the non-scientific publication-process clause; retain the prior-unit preservation instruction and all experimental design.",
+      "original_file_sha256": "29c224d9158373d2bebd01513e5fcc4c45a78f275fb14b8fafce9ae02472131f",
+      "export_file_sha256": "091178c638dda9cfc3f55404daf4ca58fce0014daaefa3a40bef92ffb3f0780d",
+      "original_region_sha256": "e246668e937a4509302074fdae96f85139f82209141c570fc8fe484345d39ed4",
+      "export_region_sha256": "bda64c18645795a98da5c5e95bdad2ae3e752f47ac5138cacf810e0afe0fd906",
+      "public_region": [
+        "Before benchmark, run independent tests: Python exhaustive edited-mask oracle against DP for all words at M=4, k=0..4; separate random deterministic cases M=5..8 and budgets 0..3. Validate clean and attacked J,C,D,Q, CE and objective, protected endpoint, edit budget, existence of exact witness and maximum among all legal words, as well as original candidate family inclusion. Tests and all cases must be saved as machine-readable raw records. Do not run pilot if tests fail. No modifications of previous units."
+      ]
+    },
+    {
+      "path": "v10_research/exact_dp_pilot_20261103/REPORT.md",
+      "original_lines": [
+        3,
+        3
+      ],
+      "public_lines": [
+        3,
+        3
+      ],
+      "category": "Remove nonmathematical publication/coordinator routing; preserve the historical pending-review status.",
+      "original_file_sha256": "168d3e9a9a5b4fdf1186286d2c622ee542c16f222b8b04db2f49ad248102fab2",
+      "export_file_sha256": "7632ae2610b8e82bd6edb1fc22477a70a1a0ed32dadbaa4d5bd3c546b29886e3",
+      "original_region_sha256": "3ad2507914825f83c21103ae1d8d6884de390436a4946963dd0f40f991193bb3",
+      "export_region_sha256": "6642cbab9a557d60437a173c2001c89693b262721c70ebea0b92a4f4c2cbceb8",
+      "public_region": [
+        "2026-11-03. Exploratory local run, not preregistration, no statistical inference or optimization guarantee for neural training. See `TIMING_AND_NUMERIC_CORRECTION.md` for controlling timing and float64 limitations. Independent review remains pending at this writing."
+      ]
+    },
+    {
+      "path": "v10_research/exact_dp_pilot_20261103/environment.txt",
+      "original_lines": [
+        2,
+        2
+      ],
+      "public_lines": [
+        2,
+        2
+      ],
+      "category": "Remove a private container hostname; retain compiler, kernel, platform and thread settings.",
+      "original_file_sha256": "bcf38412dcbb38f380c802d165625ecbee4b20db4b8ec719a53a25bb2acadaa5",
+      "export_file_sha256": "c0cc7929fb659965c40faf1e8c14b22c5abd8c90450514ef35e91aca33d4d6fa",
+      "original_region_sha256": "eacd2048a8979141fd8a72dc230f6f1e936356b7fc250f625e375c8aeb5a154c",
+      "export_region_sha256": "b26dca6d4287f252b6349cdf1d2bc4b752231c48c19fa9701e17f83393d33351",
+      "public_region": [
+        "Linux [host removed] 6.18.57 #1 SMP Tue Oct 20 21:56:04 UTC 2026 x86_64 GNU/Linux"
+      ]
+    },
+    {
+      "path": "v10_research/exact_dp_pilot_review_20261103/REVIEW.md",
+      "original_lines": [
+        15,
+        15
+      ],
+      "public_lines": [
+        15,
+        15
+      ],
+      "category": "Remove coordinating-agent attribution; preserve every recorded hash and scientific statement.",
+      "original_file_sha256": "a2339d2f530a9c12a96b59ee87aa83c462a2ae0493ebcdcca81b61731988efc1",
+      "export_file_sha256": "28d9021450e0a3c4d4b671468ed5c355190a1197c28c4fbc75bcd0758a3f897d",
+      "original_region_sha256": "bc1bfb6a8d101a45362d85251952f685e1264f8895c1160649c0f6385ba84154",
+      "export_region_sha256": "aa0f90ab7a5fe5e312274063b9040cd7d02946466162ea9d87004ea70ad2b635",
+      "public_region": [
+        "- `sha256sum -c` passed for both initial and follow-up manifests and all four-counter manifest entries. The recorded hashes match: `TIMING_AND_NUMERIC_CORRECTION.md` 7fe32007d672de3a3c2ceaf524c539d4ca85332f697b65a655a7db4139699c75, `PRESERVATION_CORRECTION.md` 21c861b75317158e3752e0c1f3969e5134e03dfe8ab8c51c13bc6a259dc0dac0, and `REPORT.md` 168d3e9a9a5b4fdf1186286d2c622ee542c16f222b8b04db2f49ad248102fab2. Hashes bind these present bytes, not their claimed creation time."
+      ]
+    }
+  ],
+  "source_binding_resolutions": [
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/AUDIT_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/TIMING_AND_NUMERIC_CORRECTION.md",
+      "expected_original_sha256": "7fe32007d672de3a3c2ceaf524c539d4ca85332f697b65a655a7db4139699c75",
+      "public_sha256": "7fe32007d672de3a3c2ceaf524c539d4ca85332f697b65a655a7db4139699c75",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/AUDIT_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/PRESERVATION_CORRECTION.md",
+      "expected_original_sha256": "21c861b75317158e3752e0c1f3969e5134e03dfe8ab8c51c13bc6a259dc0dac0",
+      "public_sha256": "21c861b75317158e3752e0c1f3969e5134e03dfe8ab8c51c13bc6a259dc0dac0",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/AUDIT_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/REPORT.md",
+      "expected_original_sha256": "168d3e9a9a5b4fdf1186286d2c622ee542c16f222b8b04db2f49ad248102fab2",
+      "public_sha256": "7632ae2610b8e82bd6edb1fc22477a70a1a0ed32dadbaa4d5bd3c546b29886e3",
+      "status": "DECLARED_CURRENT_EXPORT_PAIR"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/AUDIT_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/PRE_RUN_SHA256.txt",
+      "expected_original_sha256": "2c89b1c76f7def69d49c6e054893e79fe5481da0793ed7a0afa576bf4b32e1db",
+      "public_sha256": "2c89b1c76f7def69d49c6e054893e79fe5481da0793ed7a0afa576bf4b32e1db",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/AUDIT_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/FOLLOWUP_PRE_RUN_SHA256.txt",
+      "expected_original_sha256": "f9df73a2426e0dd6db55fdd486a36281ac2b78d1df7d1225f672285991fbfb0b",
+      "public_sha256": "f9df73a2426e0dd6db55fdd486a36281ac2b78d1df7d1225f672285991fbfb0b",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/AUDIT_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/randomness_replayed.json",
+      "expected_original_sha256": "5feabf69e5444a2ef8aa9c9483a549af4428defc4d3cc54c89f435d1b532df5a",
+      "public_sha256": "5feabf69e5444a2ef8aa9c9483a549af4428defc4d3cc54c89f435d1b532df5a",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/AUDIT_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/test_random_states.json",
+      "expected_original_sha256": "2cfa7cbbdc68ea8199b11b9562a44cc79f2a5deae4aed941ccd17cce39bc5d00",
+      "public_sha256": "2cfa7cbbdc68ea8199b11b9562a44cc79f2a5deae4aed941ccd17cce39bc5d00",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/AUDIT_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/test_oracle_candidates.jsonl.gz",
+      "expected_original_sha256": "1b68366c4ddf9da4ad1ebdcac63d735e040aad7095f13bb0c5d8db619f47b7d4",
+      "public_sha256": "1b68366c4ddf9da4ad1ebdcac63d735e040aad7095f13bb0c5d8db619f47b7d4",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/AUDIT_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/results.jsonl",
+      "expected_original_sha256": "d31a6840bc1d60d3867219bfc12271e39e9e14ed88915b885b7f9390def999a2",
+      "public_sha256": "d31a6840bc1d60d3867219bfc12271e39e9e14ed88915b885b7f9390def999a2",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/AUDIT_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/followup_results.jsonl",
+      "expected_original_sha256": "60cc916e50ddf2d1285c103566d21ecbc9c01541bc1f064cbd7739e25ef525cf",
+      "public_sha256": "60cc916e50ddf2d1285c103566d21ecbc9c01541bc1f064cbd7739e25ef525cf",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/FOLLOWUP_PRE_RUN_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/FOLLOWUP_PROTOCOL.md",
+      "expected_original_sha256": "107a8f84cf247dc2d553def47bc6e5824c81222922ac4f323d50cf38b58943eb",
+      "public_sha256": "107a8f84cf247dc2d553def47bc6e5824c81222922ac4f323d50cf38b58943eb",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/FOLLOWUP_PRE_RUN_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/followup.py",
+      "expected_original_sha256": "8094ce1a261c4346a4e39cc7953b2df2183b7139040ecf51803d78eba91b7dae",
+      "public_sha256": "8094ce1a261c4346a4e39cc7953b2df2183b7139040ecf51803d78eba91b7dae",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/FOLLOWUP_PRE_RUN_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/dp",
+      "expected_original_sha256": "51e1ce7e260603d6989c50a5e34e55a2a8d12e88da18f9fdecc7c673f566688b",
+      "public_sha256": "51e1ce7e260603d6989c50a5e34e55a2a8d12e88da18f9fdecc7c673f566688b",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/FOLLOWUP_PRE_RUN_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/run.py",
+      "expected_original_sha256": "dbaf1203d6c031bbfabc0350a8f1958f8ed4f7d03357d8bebdc33fad34e4dd51",
+      "public_sha256": "dbaf1203d6c031bbfabc0350a8f1958f8ed4f7d03357d8bebdc33fad34e4dd51",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/FOLLOWUP_PRE_RUN_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/data.json",
+      "expected_original_sha256": "8ff35504f48a82c1d9c56e5c42dc619ce5a3ae7758dc81b3f7de08d67149ec2f",
+      "public_sha256": "8ff35504f48a82c1d9c56e5c42dc619ce5a3ae7758dc81b3f7de08d67149ec2f",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/PRE_RUN_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/PROTOCOL.md",
+      "expected_original_sha256": "29c224d9158373d2bebd01513e5fcc4c45a78f275fb14b8fafce9ae02472131f",
+      "public_sha256": "091178c638dda9cfc3f55404daf4ca58fce0014daaefa3a40bef92ffb3f0780d",
+      "status": "DECLARED_CURRENT_EXPORT_PAIR"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/PRE_RUN_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/dp.cpp",
+      "expected_original_sha256": "ee4dc5e48ef5c5167f7bbe24e7d9613282056b2f22ab02e210e065309903f755",
+      "public_sha256": "ee4dc5e48ef5c5167f7bbe24e7d9613282056b2f22ab02e210e065309903f755",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/PRE_RUN_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/dp",
+      "expected_original_sha256": "51e1ce7e260603d6989c50a5e34e55a2a8d12e88da18f9fdecc7c673f566688b",
+      "public_sha256": "51e1ce7e260603d6989c50a5e34e55a2a8d12e88da18f9fdecc7c673f566688b",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/PRE_RUN_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/test_dp.py",
+      "expected_original_sha256": "93f36a6f58cee8861f5be169de060867962f36f3080c3b014f9a9875d3e2ffc8",
+      "public_sha256": "93f36a6f58cee8861f5be169de060867962f36f3080c3b014f9a9875d3e2ffc8",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/PRE_RUN_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/run.py",
+      "expected_original_sha256": "dbaf1203d6c031bbfabc0350a8f1958f8ed4f7d03357d8bebdc33fad34e4dd51",
+      "public_sha256": "dbaf1203d6c031bbfabc0350a8f1958f8ed4f7d03357d8bebdc33fad34e4dd51",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/PRE_RUN_SHA256.txt",
+      "path": "v10_research/learned_position_pilot_20261103/pilot.py",
+      "expected_original_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+      "public_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/PRE_RUN_SHA256.txt",
+      "path": "v10_research/exact_dp_pilot_20261103/test_results.log",
+      "expected_original_sha256": "27bc92f08ce5c4d76afcc0a0811f3977079ff195a00e303ae14173a7a8ca7574",
+      "public_sha256": "27bc92f08ce5c4d76afcc0a0811f3977079ff195a00e303ae14173a7a8ca7574",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/PROTOCOL.md",
+      "expected_original_sha256": "29c224d9158373d2bebd01513e5fcc4c45a78f275fb14b8fafce9ae02472131f",
+      "public_sha256": "091178c638dda9cfc3f55404daf4ca58fce0014daaefa3a40bef92ffb3f0780d",
+      "status": "DECLARED_CURRENT_EXPORT_PAIR"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/FOLLOWUP_PROTOCOL.md",
+      "expected_original_sha256": "107a8f84cf247dc2d553def47bc6e5824c81222922ac4f323d50cf38b58943eb",
+      "public_sha256": "107a8f84cf247dc2d553def47bc6e5824c81222922ac4f323d50cf38b58943eb",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/PRE_RUN_SHA256.txt",
+      "expected_original_sha256": "2c89b1c76f7def69d49c6e054893e79fe5481da0793ed7a0afa576bf4b32e1db",
+      "public_sha256": "2c89b1c76f7def69d49c6e054893e79fe5481da0793ed7a0afa576bf4b32e1db",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/FOLLOWUP_PRE_RUN_SHA256.txt",
+      "expected_original_sha256": "f9df73a2426e0dd6db55fdd486a36281ac2b78d1df7d1225f672285991fbfb0b",
+      "public_sha256": "f9df73a2426e0dd6db55fdd486a36281ac2b78d1df7d1225f672285991fbfb0b",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/dp.cpp",
+      "expected_original_sha256": "ee4dc5e48ef5c5167f7bbe24e7d9613282056b2f22ab02e210e065309903f755",
+      "public_sha256": "ee4dc5e48ef5c5167f7bbe24e7d9613282056b2f22ab02e210e065309903f755",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/dp",
+      "expected_original_sha256": "51e1ce7e260603d6989c50a5e34e55a2a8d12e88da18f9fdecc7c673f566688b",
+      "public_sha256": "51e1ce7e260603d6989c50a5e34e55a2a8d12e88da18f9fdecc7c673f566688b",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/run.py",
+      "expected_original_sha256": "dbaf1203d6c031bbfabc0350a8f1958f8ed4f7d03357d8bebdc33fad34e4dd51",
+      "public_sha256": "dbaf1203d6c031bbfabc0350a8f1958f8ed4f7d03357d8bebdc33fad34e4dd51",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/followup.py",
+      "expected_original_sha256": "8094ce1a261c4346a4e39cc7953b2df2183b7139040ecf51803d78eba91b7dae",
+      "public_sha256": "8094ce1a261c4346a4e39cc7953b2df2183b7139040ecf51803d78eba91b7dae",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/test_dp.py",
+      "expected_original_sha256": "93f36a6f58cee8861f5be169de060867962f36f3080c3b014f9a9875d3e2ffc8",
+      "public_sha256": "93f36a6f58cee8861f5be169de060867962f36f3080c3b014f9a9875d3e2ffc8",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/test_cases.jsonl",
+      "expected_original_sha256": "45b6861338ff0e41d3f731e15b8f29109ca63fd04b8033fb34ddbabbcc23c666",
+      "public_sha256": "45b6861338ff0e41d3f731e15b8f29109ca63fd04b8033fb34ddbabbcc23c666",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/test_results.log",
+      "expected_original_sha256": "27bc92f08ce5c4d76afcc0a0811f3977079ff195a00e303ae14173a7a8ca7574",
+      "public_sha256": "27bc92f08ce5c4d76afcc0a0811f3977079ff195a00e303ae14173a7a8ca7574",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/data.json",
+      "expected_original_sha256": "8ff35504f48a82c1d9c56e5c42dc619ce5a3ae7758dc81b3f7de08d67149ec2f",
+      "public_sha256": "8ff35504f48a82c1d9c56e5c42dc619ce5a3ae7758dc81b3f7de08d67149ec2f",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/results.jsonl",
+      "expected_original_sha256": "d31a6840bc1d60d3867219bfc12271e39e9e14ed88915b885b7f9390def999a2",
+      "public_sha256": "d31a6840bc1d60d3867219bfc12271e39e9e14ed88915b885b7f9390def999a2",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/followup_results.jsonl",
+      "expected_original_sha256": "60cc916e50ddf2d1285c103566d21ecbc9c01541bc1f064cbd7739e25ef525cf",
+      "public_sha256": "60cc916e50ddf2d1285c103566d21ecbc9c01541bc1f064cbd7739e25ef525cf",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/randomness_replayed.json",
+      "expected_original_sha256": "5feabf69e5444a2ef8aa9c9483a549af4428defc4d3cc54c89f435d1b532df5a",
+      "public_sha256": "5feabf69e5444a2ef8aa9c9483a549af4428defc4d3cc54c89f435d1b532df5a",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/test_random_states.json",
+      "expected_original_sha256": "2cfa7cbbdc68ea8199b11b9562a44cc79f2a5deae4aed941ccd17cce39bc5d00",
+      "public_sha256": "2cfa7cbbdc68ea8199b11b9562a44cc79f2a5deae4aed941ccd17cce39bc5d00",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/test_oracle_candidates.jsonl.gz",
+      "expected_original_sha256": "1b68366c4ddf9da4ad1ebdcac63d735e040aad7095f13bb0c5d8db619f47b7d4",
+      "public_sha256": "1b68366c4ddf9da4ad1ebdcac63d735e040aad7095f13bb0c5d8db619f47b7d4",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/PRESERVATION_CORRECTION.md",
+      "expected_original_sha256": "21c861b75317158e3752e0c1f3969e5134e03dfe8ab8c51c13bc6a259dc0dac0",
+      "public_sha256": "21c861b75317158e3752e0c1f3969e5134e03dfe8ab8c51c13bc6a259dc0dac0",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/TIMING_AND_NUMERIC_CORRECTION.md",
+      "expected_original_sha256": "7fe32007d672de3a3c2ceaf524c539d4ca85332f697b65a655a7db4139699c75",
+      "public_sha256": "7fe32007d672de3a3c2ceaf524c539d4ca85332f697b65a655a7db4139699c75",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/REPORT.md",
+      "expected_original_sha256": "168d3e9a9a5b4fdf1186286d2c622ee542c16f222b8b04db2f49ad248102fab2",
+      "public_sha256": "7632ae2610b8e82bd6edb1fc22477a70a1a0ed32dadbaa4d5bd3c546b29886e3",
+      "status": "DECLARED_CURRENT_EXPORT_PAIR"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_20261103/AUDIT_SHA256.txt",
+      "expected_original_sha256": "c090c21a8099b195fcbd3c978e04ef75cc5e59a0b2d1a3ef2579b36d34b0c289",
+      "public_sha256": "c090c21a8099b195fcbd3c978e04ef75cc5e59a0b2d1a3ef2579b36d34b0c289",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_review_20261103/bitwise_probe.py",
+      "expected_original_sha256": "9fbd9c818c2372330a8c1ab0fe35010519424b78b30c51a42d0358f8ca6dd469",
+      "public_sha256": "9fbd9c818c2372330a8c1ab0fe35010519424b78b30c51a42d0358f8ca6dd469",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/exact_dp_pilot_review_20261103/bitwise_probe.log",
+      "expected_original_sha256": "48cffb05dc797f4aa031e50d1ec4240ac677c84858c96c0d00bfce74fd43b733",
+      "public_sha256": "48cffb05dc797f4aa031e50d1ec4240ac677c84858c96c0d00bfce74fd43b733",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/four_counter_dp_20261103/review_independent/check_theorem.py",
+      "expected_original_sha256": "9d45daaf20ff3232e45f42aa00a170919d979af4159d13e1c8fa74ea72cc5b7f",
+      "public_sha256": "9d45daaf20ff3232e45f42aa00a170919d979af4159d13e1c8fa74ea72cc5b7f",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/four_counter_dp_20261103/review_independent/check_theorem.log",
+      "expected_original_sha256": "a98ce3e820efbcae987195801ec41c27325ba1056230a8fb6d1cfbabd9e9b4e8",
+      "public_sha256": "a98ce3e820efbcae987195801ec41c27325ba1056230a8fb6d1cfbabd9e9b4e8",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_review_20261103/SHA256SUMS",
+      "path": "v10_research/exact_dp_pilot_review_20261103/REVIEW.md",
+      "expected_original_sha256": "a2339d2f530a9c12a96b59ee87aa83c462a2ae0493ebcdcca81b61731988efc1",
+      "public_sha256": "28d9021450e0a3c4d4b671468ed5c355190a1197c28c4fbc75bcd0758a3f897d",
+      "status": "DECLARED_CURRENT_EXPORT_PAIR"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_review_20261103/SHA256SUMS",
+      "path": "v10_research/exact_dp_pilot_review_20261103/review.py",
+      "expected_original_sha256": "d0252c757d1bc913ef9297b50abb26c19389ad03ac2b2ce380e1674ad4d2efc7",
+      "public_sha256": "d0252c757d1bc913ef9297b50abb26c19389ad03ac2b2ce380e1674ad4d2efc7",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_review_20261103/SHA256SUMS",
+      "path": "v10_research/exact_dp_pilot_review_20261103/review.log",
+      "expected_original_sha256": "4daf80ec4f23a53ca6cdc15eb92cd78a8745eeaa12922844ed8ca8d73865a874",
+      "public_sha256": "4daf80ec4f23a53ca6cdc15eb92cd78a8745eeaa12922844ed8ca8d73865a874",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_review_20261103/SHA256SUMS",
+      "path": "v10_research/exact_dp_pilot_review_20261103/review_all.py",
+      "expected_original_sha256": "576c037d14465bf1d932acdb1c119f7cac97e686ad209bfbc5539283b20d82b8",
+      "public_sha256": "576c037d14465bf1d932acdb1c119f7cac97e686ad209bfbc5539283b20d82b8",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_review_20261103/SHA256SUMS",
+      "path": "v10_research/exact_dp_pilot_review_20261103/review_all.log",
+      "expected_original_sha256": "4f690176e76a957d1936baef1748a48a09212b803b20382aa77614140cc0e33f",
+      "public_sha256": "4f690176e76a957d1936baef1748a48a09212b803b20382aa77614140cc0e33f",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_review_20261103/SHA256SUMS",
+      "path": "v10_research/exact_dp_pilot_review_20261103/bitwise_probe.py",
+      "expected_original_sha256": "9fbd9c818c2372330a8c1ab0fe35010519424b78b30c51a42d0358f8ca6dd469",
+      "public_sha256": "9fbd9c818c2372330a8c1ab0fe35010519424b78b30c51a42d0358f8ca6dd469",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/exact_dp_pilot_review_20261103/SHA256SUMS",
+      "path": "v10_research/exact_dp_pilot_review_20261103/bitwise_probe.log",
+      "expected_original_sha256": "48cffb05dc797f4aa031e50d1ec4240ac677c84858c96c0d00bfce74fd43b733",
+      "public_sha256": "48cffb05dc797f4aa031e50d1ec4240ac677c84858c96c0d00bfce74fd43b733",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/four_counter_dp_20261103/SHA256SUMS",
+      "path": "v10_research/four_counter_dp_20261103/four_counter.py",
+      "expected_original_sha256": "47435e6f62008f64a079cfb14e7f5540c39b99d74c71dd47fd61503aea937179",
+      "public_sha256": "47435e6f62008f64a079cfb14e7f5540c39b99d74c71dd47fd61503aea937179",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/four_counter_dp_20261103/SHA256SUMS",
+      "path": "v10_research/four_counter_dp_20261103/verify.py",
+      "expected_original_sha256": "c263f2a4563215792fe841ca3947967de7729583f791a283b8e904c49d3c111d",
+      "public_sha256": "c263f2a4563215792fe841ca3947967de7729583f791a283b8e904c49d3c111d",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/four_counter_dp_20261103/SHA256SUMS",
+      "path": "v10_research/four_counter_dp_20261103/RESEARCH_NOTE.md",
+      "expected_original_sha256": "94726e5d5d8fd8c938fc4e7a40a7e7a1c660ba9904910663a49cbf0560162b66",
+      "public_sha256": "94726e5d5d8fd8c938fc4e7a40a7e7a1c660ba9904910663a49cbf0560162b66",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/four_counter_dp_20261103/SHA256SUMS",
+      "path": "v10_research/four_counter_dp_20261103/VERIFICATION.txt",
+      "expected_original_sha256": "a0a5077e6390d83aeea3402b36f366f24e10a13071c7083bb7da019d8555d133",
+      "public_sha256": "a0a5077e6390d83aeea3402b36f366f24e10a13071c7083bb7da019d8555d133",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/four_counter_dp_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/four_counter_dp_20261103/RESEARCH_NOTE.md",
+      "expected_original_sha256": "94726e5d5d8fd8c938fc4e7a40a7e7a1c660ba9904910663a49cbf0560162b66",
+      "public_sha256": "94726e5d5d8fd8c938fc4e7a40a7e7a1c660ba9904910663a49cbf0560162b66",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/four_counter_dp_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/four_counter_dp_20261103/four_counter.py",
+      "expected_original_sha256": "47435e6f62008f64a079cfb14e7f5540c39b99d74c71dd47fd61503aea937179",
+      "public_sha256": "47435e6f62008f64a079cfb14e7f5540c39b99d74c71dd47fd61503aea937179",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/four_counter_dp_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/four_counter_dp_20261103/verify.py",
+      "expected_original_sha256": "c263f2a4563215792fe841ca3947967de7729583f791a283b8e904c49d3c111d",
+      "public_sha256": "c263f2a4563215792fe841ca3947967de7729583f791a283b8e904c49d3c111d",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/four_counter_dp_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/four_counter_dp_20261103/VERIFICATION.txt",
+      "expected_original_sha256": "a0a5077e6390d83aeea3402b36f366f24e10a13071c7083bb7da019d8555d133",
+      "public_sha256": "a0a5077e6390d83aeea3402b36f366f24e10a13071c7083bb7da019d8555d133",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/four_counter_dp_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/four_counter_dp_20261103/SHA256SUMS",
+      "expected_original_sha256": "dd279e99234ad4d843c131476159f5e34f7830782f1b187b9d0248b758a8f2a0",
+      "public_sha256": "dd279e99234ad4d843c131476159f5e34f7830782f1b187b9d0248b758a8f2a0",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/four_counter_dp_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/four_counter_dp_20261103/ADDITIVE_CORRECTION.md",
+      "expected_original_sha256": "f59e552e8cf1fa99d10dc19591b89575d94bfb1e6e6dace4fcd7d882941a7c68",
+      "public_sha256": "f59e552e8cf1fa99d10dc19591b89575d94bfb1e6e6dace4fcd7d882941a7c68",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/four_counter_dp_20261103/review_independent/INPUT_BINDINGS.json",
+      "path": "v10_research/learned_position_pilot_20261103/pilot.py",
+      "expected_original_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+      "public_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+      "status": "EXACT_PUBLIC_BYTES"
+    }
+  ],
+  "inherited_dependencies": [
+    {
+      "path": "v10_research/learned_position_pilot_20261103/pilot.py",
+      "original": {
+        "bytes": 6921,
+        "sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+        "git_blob_sha1": "e962a91a259648d87a725b8d2e935ac83e75d16a"
+      },
+      "public": {
+        "bytes": 6921,
+        "sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+        "git_blob_sha1": "e962a91a259648d87a725b8d2e935ac83e75d16a"
+      },
+      "role": "Exact sibling pilot.py imported by archived verifiers/benchmark; read and identity-checked, never imported or executed by the new safe public verifier."
+    }
+  ],
+  "historical_limit": "The original benchmark RNG draws/states and complete DP terminal/intermediate traces were not captured; retrospective archives do not recover contemporaneous records. Later missing 700,000 words and 5,712 repeated model entries remain missing. See the unmodified ADDITIONAL_PRESERVATION_AUDIT. Naive original-hash checks of normalized public prose do not all pass; use explicit identity pairs. Prior project-wide original/public maps and missing-history limits remain unchanged."
+}

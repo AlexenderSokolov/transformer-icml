@@ -1,5 +1,11 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 四计数 DP 与固定门函数试验：完整现存记录及缺失说明（2026-11-03）
+
+[四计数证明](v10_research/four_counter_dp_20261103/RESEARCH_NOTE.md)给出固定半程输入的 O(M^5) 扫描、O(M^4) 滚动状态；但[补充纠正](v10_research/four_counter_dp_20261103/ADDITIVE_CORRECTION.md)明确，现有程序先转浮点，并非通用精确有理或逐位等同神经输入的优化器。[45 次固定门函数评估](v10_research/exact_dp_pilot_20261103/REPORT.md)不是神经训练，CE 最大值采用浮点比较，时间口径另有[纠正](v10_research/exact_dp_pilot_20261103/TIMING_AND_NUMERIC_CORRECTION.md)。
+
+全部 54 项现存非缓存文件公开，包括原二进制、脚本、参数、候选、见证、时间和重构档案。**这不等于原始采样全保存**：原始随机轨迹、完整 DP 状态，以及后续 700,000 个诊断词和重复模型参数未全部留存。请先读[保留缺口审计](v10_research/exact_dp_pilot_20261103/review_independent/ADDITIONAL_PRESERVATION_AUDIT.md)及[不采样的公共核验](provenance/four_counter_and_gate_pilot_20261103/PUBLIC_REPLAY.md)。历史脚本若直接执行可能采样或覆盖输出，不能把后补重放冒充原始记录。
+
 ## 固定计数读出的精确离线攻击（2026-11-03）
 
 [完整证明与诊断](v10_research/exact_attacker_dp_20261103/RESEARCH_NOTE.md)给出严格保护末尾二元组、至多 k 次编辑的最小代价动态规划。对选定 J,C,D 三计数读出，扫描 O(M^4)、滚动状态 O(M^3)；完整前后半段转移直方图为 O(M^9)/O(M^8)。位运算、精确读出/比较和见证重建成本另计，不能据此宣称实际高效。

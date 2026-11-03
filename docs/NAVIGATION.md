@@ -1,5 +1,13 @@
 # 资料导航
 
+## 四计数与固定门试验档案
+
+- [四计数正文](../v10_research/four_counter_dp_20261103/RESEARCH_NOTE.md) · [浮点/有理纠正](../v10_research/four_counter_dp_20261103/ADDITIVE_CORRECTION.md) · [独立审阅](../v10_research/four_counter_dp_20261103/review_independent/REVIEW.md)
+- [固定门试验报告](../v10_research/exact_dp_pilot_20261103/REPORT.md) · [原协议](../v10_research/exact_dp_pilot_20261103/PROTOCOL.md) · [初始全部记录](../v10_research/exact_dp_pilot_20261103/results.jsonl) · [跟进全部记录](../v10_research/exact_dp_pilot_20261103/followup_results.jsonl)
+- [时间与数值纠正](../v10_research/exact_dp_pilot_20261103/TIMING_AND_NUMERIC_CORRECTION.md) · [保留纠正](../v10_research/exact_dp_pilot_20261103/PRESERVATION_CORRECTION.md) · [后续诊断缺失审计](../v10_research/exact_dp_pilot_20261103/review_independent/ADDITIONAL_PRESERVATION_AUDIT.md)
+- [固定门独立审阅](../v10_research/exact_dp_pilot_20261103/review_independent/REVIEW.md) · [补充独立审阅与原日志](../v10_research/exact_dp_pilot_review_20261103/REVIEW.md)
+- [安全公共核验与历史脚本风险](../provenance/four_counter_and_gate_pilot_20261103/PUBLIC_REPLAY.md) · [54 项来源身份](../provenance/four_counter_and_gate_pilot_20261103/SOURCE_EXPORT_MAP.json) · [公开编辑映射](../provenance/four_counter_and_gate_pilot_20261103/PUBLIC_EXPORT_RECONCILIATION.json)
+
 ## 精确计数攻击动态规划
 
 - [完整递推、证明与成本](../v10_research/exact_attacker_dp_20261103/RESEARCH_NOTE.md) · [真实两次修正历史](../v10_research/exact_attacker_dp_20261103)
