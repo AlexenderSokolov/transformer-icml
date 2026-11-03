@@ -1,0 +1,58 @@
+{
+  "base_commit": "79f767fdb4ad168a6001872bdca028dbdd0f7e96",
+  "required_read_together": [
+    {
+      "role": "precision bridge correction history",
+      "source_ids": [
+        "PIR014",
+        "PIR007",
+        "PIR013",
+        "PIR006"
+      ],
+      "requirement": "Original illustrative equality is preserved; mandatory separate leakage correction and both LLM reviews must be distributed and read together."
+    },
+    {
+      "role": "uniform value-bank precision routes",
+      "source_ids": [
+        "PIR017",
+        "PIR009",
+        "PIR016",
+        "PIR003"
+      ],
+      "requirement": "Direct-ratio sufficient precision and known-M exact-scaling/rounding stronger sufficient route must be distinguished; neither is a necessity claim."
+    },
+    {
+      "role": "finite-history scalar temperature bound",
+      "source_ids": [
+        "PIR001",
+        "PIR004"
+      ],
+      "requirement": "Deterministic beta, specified scalar output and fixed source; not architecture-wide."
+    },
+    {
+      "role": "uniform conditioned soft bias and scoped prior art",
+      "source_ids": [
+        "PIR015",
+        "PIR010",
+        "PIR012"
+      ],
+      "requirement": "Stationary reverse-mixing source and actual terminal conditioning; no novelty certification."
+    },
+    {
+      "role": "fixed-beta richer interface",
+      "source_ids": [
+        "PIR002",
+        "PIR005"
+      ],
+      "requirement": "Four anchor heads, extra BOS coordinate, inversion/division and precision are paid assumptions; beta=0 uniform attention is not zero temperature."
+    },
+    {
+      "role": "separate resource models",
+      "source_ids": [
+        "PIR011",
+        "PIR008"
+      ],
+      "requirement": "Finite-state output resolution and individual-bit probes are separate restrictions, not generic architecture or hardware bounds."
+    }
+  ]
+}
