@@ -1,0 +1,16 @@
+# Independent PMC001 → O2T001 coding-interface addendum
+
+2026-11-03. **PASS for this interface substitution**, conditional only on root disposition of O2T001 itself. This separate addendum does not modify the earlier audit or retroactively change its source status. Read the complete actual PMC001 CANDIDATE.md (all coding statements, maximal-error proof, resource ledger and first-order instantiation) and ROOT_ACCEPTANCE.json. All six receipt-bound PMC artifacts match their hashes. The underlying coding lemmas are imported from accepted PMC001, not claimed independently reproved here.
+
+PMC001's general coding lemma, unlike its illustrative first-order instantiation, accepts **every B-bit message**, with no Markov source assumption. For fixed known rational finite-output binary-input memoryless W with distinct rows, it supplies fixed R≤20 C_W B, maximal error ≤2^(−6B), and preprocessing, online coding, design storage and auxiliary space poly_W(B). Disjoint supports admit direct R=B coding. Fresh channel noise conditional on the entire pre-channel experiment is precisely O2T001's requirement. Conditional independence of inner errors is used after fixing the payload; averaging arbitrary source/attack-dependent payload laws does not weaken the maximal bound.
+
+Use O2T001's unchanged B=2ceil(log2(M+1))+2 and payload **(J,C,d,G)**, not PMC's first-order (J,C_flip,t,G) interpretation. Sender selects the pair row using both protected symbols, with d=1−Z_M. Receiver sets q=C/J when J>0 and G=1, otherwise q=0; its symbol-1 probability is q if d=1, and 1−q if d=0. In particular rejection returns symbol 1−d, not a universal zero fallback or the first-order terminal-bit rule. Malformed decoded fields use any fixed distribution; every output has loss in [0,1]. On correct payload decoding this reproduces the exact O2 estimator, including J=0 and gate equality. No uncharged endpoint, query, seed or extra payload field is introduced.
+
+Coupling therefore gives uniformly over the original order-two critical-certificate experiment
+
+    risk ≤ C2 g_M(k)+2^(−6B) ≤ (C2+1)g_M(k),
+    C2=8519680,
+
+since B≥2log2(M+1) implies 2^(−6B)≤(M+1)^(−12)≤M^(−1/2)≤g_M(k). The already established IID cardinality lower is unchanged. Thus **total physical communication remains Θ_W(log M)** while the coarse WMC codebook is replaced by **poly_W(log M)** preprocessing, online coding, design and auxiliary storage. Full sample processing remains O(M log M)+poly_W(log M) bit time: one scan with eight triple counters, four half-row counters, rolling three bits and position. If input resides in memory, add M+2 bits; this is not O(log M) total workspace.
+
+No new source assumption is needed or removed. The result retains general binary order-two sources with supplied all-state P²≥Π/M, arbitrary initial pair including unsupported starts, strict protected edits, next-symbol target, and fixed length. The computational improvement is restricted to fixed rational known W; arbitrary-real statistical existence and identical-row impossibility are separate existing statements. Channel-dependent polynomial exponents may be large. This is accepted mathematical constructibility, not a completed implementation, practical benchmark, neural realization or learning theorem. Independent LLM interface review is not formal or external peer verification. Local only.

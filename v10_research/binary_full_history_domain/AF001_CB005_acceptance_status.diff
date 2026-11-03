@@ -1,0 +1,61 @@
+--- AF001_initial_candidate.md
++++ AF001_full_history_domain_classification.md
+@@ -1,6 +1,6 @@
+ # AF001 — Exact supplied-certificate domain criterion for full-history budget adaptation (candidate)
+ 
+-2026-11-02. New synthesis candidate; fresh full independent review and root acceptance required. The ALL-START positive direction is explicitly CONDITIONAL on independent root acceptance of CB005's displayed interface below. The stationary positive interface CB004 and the weak/negative KA001 interfaces are already separately accepted. No accepted proof is changed.
++2026-11-02. New synthesis candidate; fresh full independent review and root acceptance required. The initial draft made the all-start positive direction conditional on CB005. Its exact upper has now been independently root-accepted at intake/CB005_root_acceptance.json; the actual initial draft and this status-only revision are preserved. CB004 and KA001 are also separately accepted. This synthesis itself remains a new candidate. No accepted proof is changed.
+ 
+ ## 1. Exact experiment and public-domain assertion
+ 
+@@ -23,7 +23,7 @@
+ 
+     sup_((M,beta) in E) G_full(M,beta)<infinity.      (AF1)
+ 
+-Conditional on accepted CB005's all-start upper, the SAME equivalence holds when the guarantee is required for every initial pair law, including unsupported states.
++With accepted CB005's all-start upper, the SAME equivalence holds when the guarantee is required for every initial pair law, including unsupported states.
+ 
+ Equivalently, adaptation is possible exactly when E lies in some fixed union
+ 
+@@ -37,13 +37,13 @@
+ 
+     C_weak(B)=2^16+96[1+(1/2)log B], B>=1.          (2.1)
+ 
+-Accepted CB004 supplies a stationary balance-gated empirical rule A_bal, independent of both k and beta. Its exact all-start analogue, currently the separate CB005 candidate, is the CONDITIONAL interface
++Accepted CB004 supplies a stationary balance-gated empirical rule A_bal, independent of both k and beta. Its independently accepted all-start analogue CB005 supplies the interface
+ 
+     R_all(A_bal)<=min{1,2^16/sqrt(M)
+                        +2^16/(M sqrt(beta))
+                        +2^23 k/M}, beta>0.         (2.2)
+ 
+-The stationary CB004 bound is at least as strong as(2.2), replacing its second2^16 by4096. No all-start conclusion is licensed by CB004 alone. AF001's all-start assertion must remain conditional until CB005's exact proof, full review and root receipt are bound. If its interface changes, this dependency must be checked again, not silently assumed.
++The stationary CB004 bound is at least as strong as(2.2), replacing its second2^16 by4096. No all-start conclusion is licensed by CB004 alone. CB005's exact proof, full review and root receipt must be bound as an inherited dependency. The current acceptance postdates the actual initial AF001 draft. If accepted interface bytes ever change, this dependency must be checked again, not silently assumed.
+ 
+ The rule A_bal uses the protected terminal row u. From the corrupted word it computes J1'_u, its departure count in the first floor(M/2) times, full departure count J'_u, and full designated-successor count C'_u. Designations are00->1,01->1,10->0,11->0. It outputs C'/J' when J'>0 and512J1'>=J', otherwise designated probability0. This description fixes the same map used in both inherited results.
+ 
+@@ -85,7 +85,7 @@
+ 
+ Both procedures are total maps and the branch is public. They need not estimate which source parameter regime is true beyond the supplied certificate. Overlap of the bands is allowed; the weak-first convention resolves it. The rule is defined outside E too, but no guarantee there is asserted.
+ 
+-Stationary sufficiency already follows from accepted interfaces. All-start sufficiency follows from the SAME selector if and only if the requested CB005 upper interface is independently accepted. No unsupported-start conclusion is imported from stationary reversal.
++Stationary sufficiency already follows from accepted interfaces. All-start sufficiency follows from the SAME selector using the now-accepted CB005 upper interface. No unsupported-start conclusion is imported from stationary reversal.
+ 
+ ## 4. Unbounded G forces an actual-beta constrained-risk contradiction
+ 
+@@ -143,7 +143,7 @@
+ 
+ ## 6. Consequences and observation-resource boundary
+ 
+-For beta=M^-gamma, gamma>=0, the two terms are M^(2-gamma) and M^(gamma-1). Their minimum is bounded exactly when gamma<=1 or gamma>=2. Thus supplied-beta full-history adaptation is possible in those two outer ranges and impossible for1<gamma<2; the all-start positive assertion retains the CB005 condition until acceptance. Fixed valid positive factors at the boundary curves are absorbed into B.
++For beta=M^-gamma, gamma>=0, the two terms are M^(2-gamma) and M^(gamma-1). Their minimum is bounded exactly when gamma<=1 or gamma>=2. Thus supplied-beta full-history adaptation is possible in those two outer ranges and impossible for1<gamma<2; both initialization conventions are covered by their accepted upper interfaces. Fixed valid positive factors at the boundary curves are absorbed into B.
+ 
+ The procedure needs much less than arbitrary ordering: the global triple histogram, four first-half row occupations and the protected terminal pair suffice, plus actual supplied beta for the selector. This follows from the explicit inherited algorithms, not from a new encoder implementation.
+ 
+@@ -151,6 +151,6 @@
+ 
+ ## 7. Acceptance boundary and provenance
+ 
+-The stationary inputs KA001/CB004 and the negative BK002/KA001 interfaces are accepted separately. CB005's ALL-START upper is a new dependency under fresh audit at the time of this draft. AF001 is itself a new candidate; accepted component status does not bypass its fresh full review.
++The stationary inputs KA001/CB004 and the negative BK002/KA001 interfaces are accepted separately. CB005's ALL-START upper is now an accepted dependency, following its fresh full audit and root receipt. AF001 is itself a new candidate; accepted component status does not bypass its fresh full review.
+ 
+ No proof above assumes the unproved weighted-semigroup route in WT001. The explicit class/metadata, budget, initialization, exceptional-horizon and beta-blindness distinctions must remain in any review and final handoff. Diagnostics are finite corroboration, not formal verification, external peer review or a novelty assessment.

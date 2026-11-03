@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "counts": {
+    "reconstruction_and_first_edit_cancellation": 4080,
+    "exact_suffix_half_bit": 4080,
+    "suffix_window_access": 36848,
+    "induced_kernel_support_pairs": 5440,
+    "horizon_and_oracle_constants": 129761,
+    "log_argument_order": 129761,
+    "iid_channel_identity": 2658
+  },
+  "actual_repair_diff_verified": true,
+  "actual_message_scope_diff_verified": true,
+  "candidate_sha256": "55948f2f3516a9bffa09aa05d01dd81154d962dea847a796362a7206b861120a",
+  "scope": "Independent finite interface checks, not independent reproof of accepted generic FOU lemmas or root acceptance."
+}

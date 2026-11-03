@@ -1,0 +1,34 @@
+--- KH001_pre_freeze_editorial.md
++++ KH001_histogram_strong_side_obstruction.md
+@@ -30,7 +30,7 @@
+ 
+ no histogram-plus-pairs estimator supplied beta_M and blind to k can attain the known-k profile with one finite constant over all budgets. Failure is stationary. This extends the histogram-only negative region above beta=1/M; it does not transfer to full-history predictors.
+ 
+-Together with KA001's separately reviewed/accepted status when available, the resulting power-law interpretation is stated in §9, not silently used as a premise here.
++Together with separately accepted KA001 (receipt `intake/KA001_acceptance.json`), the resulting power-law interpretation is stated in §9, not silently used as a premise for the present lower bound.
+ 
+ ## 2. Explicit asymmetric null — the long prefix is not free
+ 
+@@ -78,7 +78,7 @@
+     a delta>=delta^2*w,
+     (1-tau)tau=x delta(1-tau)/w>=delta^2*x.
+ 
+-The delta(1-tau) and delta^2 entries dominate their target delta^2*w. The e delta and delta e entries dominate delta^2*x. Because x=y*a/e<=a/e, the two entries (1-a)a and e*a also dominate delta^2*x. The remaining four entries are at least9/16 and their targets at most1/16. This covers all sixteen entries by the same exact partition as the accepted BK001 certificate, with the present parameters explicitly checked.
++The delta(1-tau) and delta^2 entries dominate their target delta^2*w. The e delta and delta e entries dominate delta^2*x. Because x=y*a/e<=a/e, the three positions (00,01), (00,10), and (10,01), with entries (1-a)a, a*e, and e*a, also dominate delta^2*x. The remaining four entries are at least9/16 and their targets at most1/16. This covers all sixteen entries by the same exact partition as the accepted BK001 certificate, with the present parameters explicitly checked.
+ 
+ The four length-three paths into 11 used in BK001 give
+ 
+@@ -226,8 +226,8 @@
+ 
+ ## 9. Power-law implication and dependency boundary
+ 
+-For beta_M=M^(-gamma) with1/2<gamma<=1, condition (1.2) holds and this theorem gives histogram-plus-pairs nonadaptivity. For1<gamma<2, KA001's intermediate full-history obstruction, if independently accepted, also rules out histogram procedures. For0<=gamma<=1/2 and gamma>=2, KA001's ordinary-add-one uppers, if independently accepted, work for the histogram statistic as well.
+-
+-Thus the combination would give a complete POWER-LAW classification for this exact statistic: adaptive at gamma<=1/2 or gamma>=2, nonadaptive at1/2<gamma<2. This is not a classification for unrestricted full-history estimators, arbitrary non-power-law curves, or richer boundary interfaces. KA001 is not required for the finite (KH1) theorem or the stronger-side negative result; its status must be checked separately before promoting the combined table.
+-
+-The new probabilistic ingredients are the exact reversal/coupling composition and its corrected departure counts. BK001 supplies canonicalization; SC003/BT002 supply the known-k benchmark. All diagnostics and independent review are separate requirements. No external novelty, formal-verification, efficient/casual attacker, revealed mask/seed, edited-target, neural-resource or training claim is made.
++For beta_M=M^(-gamma) with1/2<gamma<=1, condition (1.2) holds and this theorem gives histogram-plus-pairs nonadaptivity. For1<gamma<2, accepted KA001's intermediate full-history obstruction also rules out histogram procedures. For0<=gamma<=1/2 and gamma>=2, accepted KA001's ordinary-add-one uppers work for the histogram statistic as well.
++
++Thus the combination gives a complete POWER-LAW classification for this exact statistic: adaptive at gamma<=1/2 or gamma>=2, nonadaptive at1/2<gamma<2. This is not a classification for unrestricted full-history estimators, arbitrary non-power-law curves, or richer boundary interfaces. KA001 is not required for the finite (KH1) theorem or the stronger-side negative result; its exact accepted bytes and receipt are separate inherited dependencies for the combined table.
++
++The new probabilistic ingredients are the exact reversal/coupling composition and its corrected departure counts. BK001 supplies canonicalization; SC003/BT002 supply the known-k benchmark. All diagnostics and independent review are separate requirements. No external novelty, formal-verification, efficient/causal attacker, revealed mask/seed, edited-target, neural-resource or training claim is made.

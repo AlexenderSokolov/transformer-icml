@@ -1,0 +1,10 @@
+{
+  "unit": "CB004",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "critical_beta_adaptation/CB004_stationary_critical_adaptation.md",
+  "sha256": "a322c2fe08b76cf84f587b91e4ab504e2e02468e8c1a617fd7b868e14f643155",
+  "review": "critical_beta_adaptation/CB004_BP001_independent_full_review.md",
+  "review_sha256": "8f43dadd17dc0736678faf1f7200516e8db4db4bb39c8882f48d09370bfb60f3",
+  "time_utc": "2026-11-02T14:19:42.998810+00:00",
+  "scope": "STATIONARY ONLY. Same unknown-k and unknown-beta balance-gated estimator. Risk <= min(1,2^16/sqrtM+4096/(M sqrtbeta)+2^23 k/M). Uses full triple counts, first-half row counts and protected terminal pair. All-budget minimax order beta>=c/M. Requires BP001; no arbitrary-start conclusion. Root read full proof and review. Independent LLM audit, not formal/external review or novelty certification. Not yet published."
+}

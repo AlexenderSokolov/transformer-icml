@@ -1,0 +1,28 @@
+--- KH003_initial_candidate.md
++++ KH003_boundary_window_obstruction.md
+@@ -93,7 +93,7 @@
+     L0>=j-5k/16>=11k/16>=r-2,
+     L1=M-L0-E_sk>=M-j-3k/8>=53M/64>=r-2.          (4.1)
+ 
+-The second line uses j,k<=M/8; r<=k/4 makes its last inequality valid. Canonicalization prepends all L1 loops at initial11 and appends all L0 loops at final00. Hence on G it has first-r1 and last-r0. Also (2.2) gives distance<=7k/16<k. These statements are not asserted on every sample conditioned on F_r.
++The second line uses j,k<=M/8; r<=k/4 makes its last inequality valid. Canonicalization prepends all L1 loops at initial11 and appends all L0 loops at final00. Hence on G it has first-r1 and last-r0. Also (2.2) gives distance<=7k/16<k. In fact F_r alone already forces L0,L1>=r-2: its constant boundary windows contain these self-loops. Thus these particular output windows are automatically preserved under this canonicalization. We nevertheless retain an explicit output-window check in the kernel below; it is safe and makes the accepted-statistic interface directly testable.
+ 
+ Define the kernel, fixed per public(M,beta,k,r), to be identity except on x^(j), J0<=j<=T. On such an input:
+ 1. sample an actual stationary Q_j word conditional on F_r;
+@@ -109,7 +109,7 @@
+ 
+     T_r(Can(X))=T_r(X),
+ 
+-because X was conditioned on its genuine windows and the output window test is mandatory. Canonicalization alone would not justify this identity for the augmented statistic.
++because X was conditioned on its genuine windows and the defined kernel explicitly checks them on output. Alternatively, the constant-window loop observation above proves this equality. Canonicalization without the genuine original-window condition would not justify equality for this augmented statistic.
+ 
+ ## 5. Loss and nonconstant null masses
+ 
+@@ -164,6 +164,6 @@
+ 
+ The observation retains only triple counts and two genuine boundary windows. It does not preserve all length-r pattern counts, sliding-window embeddings, arbitrary local feature summaries or the full ordered word. No conclusion about an encoder follows without a separately proved reduction to this exact statistic.
+ 
+-The earlier KH003_boundary_window_exploration_unreviewed.md records the actual exploratory derivation. Original-window conditioning, its probability cost, the reversed transition indices and the output window test are indispensable. They are not optional bookkeeping.
++The earlier KH003_boundary_window_exploration_unreviewed.md records the actual exploratory derivation. Original-window conditioning, its probability cost and the reversed transition indices must be justified. The explicit output-window test is retained in this attack, although it is redundant for these constant conditioned windows as explained in §4; no minimality claim about the test is made.
+ 
+ Independent full review and exact diagnostics must separately audit these additions, all inherited source bindings, randomization, finite-k legality and the growing-window/domain limits. No external novelty, external peer review, formal verification, efficient or causal attack, revealed edit mask, edited target, neural/training consequence or publication claim is made.

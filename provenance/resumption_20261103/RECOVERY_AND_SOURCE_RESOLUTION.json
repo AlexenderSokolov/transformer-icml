@@ -1,0 +1,736 @@
+{
+  "status": "CURRENT_SOURCES_READABLE_WITH_DECLARED_HISTORICAL_GAPS; NOT_ORIGINAL_FULL_CLOSURE_RESTORATION",
+  "scope": "Current accepted six-unit channel/communication stage, recovered complete integrated manuscripts and explicit historical scientific recovery. This audit is newly generated; it is not the unavailable 2026-11-02 source-closure audit.",
+  "structured_hash_binding_count": 772,
+  "binding_status_counts": {
+    "EXACT_SOURCE_IDENTITY_RESOLVED": 590,
+    "HISTORICAL_BINDING_NOT_EXACTLY_RECOVERED_IN_SELECTED_SOURCES": 182
+  },
+  "original_missing_list_items": 95,
+  "historical_gap_resolutions": [
+    {
+      "original_relative_path": "binary_mixture_window/OMD001_occupation_mixture_domination.md",
+      "expected_sha256": "4868e360097d6231c97d54949ff381954514bfb08a7e11f65b0c744410780422",
+      "expected_bytes": 7618,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "binary_mixture_window/WPC001_MW002_ACCEPTED_BINDINGS.json",
+      "expected_sha256": "9f3684a14437750d4d735e2237df7f5ec9beee2aafbb5098f55578f6a22a2c4b",
+      "expected_bytes": 6916,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "binary_mixture_window/WPC001_MW002_ACCEPTED_HANDOFF.md",
+      "expected_sha256": "71e7545e89a7a2933890d4cc2234e09fd1adacb38828becc126386b6e2727e76",
+      "expected_bytes": 5324,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "binary_mixture_window/sublinear_windows/MW002_sublinear_window_obstruction.md",
+      "expected_sha256": "7f62bad702f9c984efa500560b3a71c78088658885927a846ec5c89bc5454226",
+      "expected_bytes": 14089,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "binary_positional_bit/PIB001_minimal_positional_bit.md",
+      "expected_sha256": "bd7422d42fb2106c8c53d893b3f12f5605d94b3df9f2a3590806c9e8d618a7c2",
+      "expected_bytes": 7348,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "binary_prefix_fraction/APC001_adaptation_constant_bounds.md",
+      "expected_sha256": "77351cf3e0dcf5389e5faafac0f6bcc118e001fe2586aad124726dcf19db6141",
+      "expected_bytes": 4421,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "binary_prefix_fraction/LPB001_linear_prefix_balance.md",
+      "expected_sha256": "21593aaa63211748038fef6bc1fb0ce1d7eda42f24c3b6947636034e96cbfd04",
+      "expected_bytes": 13866,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "binary_prefix_fraction/long_prefix_gate/LBG001_inverse_lemma.md",
+      "expected_sha256": "adf7df6e8bbaf32f49bb3ddd9cf048c653955b908cc7d4503c58d97568471fa7",
+      "expected_bytes": 6612,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "binary_prefix_fraction/long_prefix_gate/LGA001_logarithmic_adaptation.md",
+      "expected_sha256": "6e499e5fcca0b89f344bb541700220d03e1aefbc7e113957c208efe7d4570421",
+      "expected_bytes": 7435,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "binary_source_corruption/SC003_theorem.md",
+      "expected_sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "expected_bytes": 12757,
+      "exact_local_resolutions": [
+        "v10_research/binary_source_corruption/SC003_theorem.md",
+        "resumption_20261103/remote_recovery/inherited_extension/files/v10_research/binary_source_corruption/SC003_theorem.md"
+      ],
+      "status": "EXACT_ORIGINAL_AVAILABLE"
+    },
+    {
+      "original_relative_path": "binary_upper/BU001_weighted_return_upper_v2.md",
+      "expected_sha256": "2dc9cf9d13faa6cfa15fffd5ec83a67326ccc95eb6a63291c7b2349136b166f5",
+      "expected_bytes": 10705,
+      "exact_local_resolutions": [
+        "v10_research/binary_upper/BU001_weighted_return_upper_v2.md",
+        "resumption_20261103/remote_recovery/inherited_extension/files/v10_research/binary_upper/BU001_weighted_return_upper_v2.md"
+      ],
+      "status": "EXACT_ORIGINAL_AVAILABLE"
+    },
+    {
+      "original_relative_path": "critical_beta_adaptation/CB004_stationary_critical_adaptation.md",
+      "expected_sha256": "a322c2fe08b76cf84f587b91e4ab504e2e02468e8c1a617fd7b868e14f643155",
+      "expected_bytes": 10088,
+      "exact_local_resolutions": [
+        "resumption_20261103/remote_recovery/files/v10_research/critical_beta_adaptation/CB004_stationary_critical_adaptation.md"
+      ],
+      "status": "EXACT_ORIGINAL_AVAILABLE"
+    },
+    {
+      "original_relative_path": "critical_beta_adaptation/CB005_all_start_critical_adaptation.md",
+      "expected_sha256": "5e514451e88672533b5a376e43265b8a382ac0b59e816e3ef06212ea5be6db52",
+      "expected_bytes": 13357,
+      "exact_local_resolutions": [
+        "resumption_20261103/remote_recovery/files/v10_research/critical_beta_adaptation/CB005_all_start_critical_adaptation.md"
+      ],
+      "status": "EXACT_ORIGINAL_AVAILABLE"
+    },
+    {
+      "original_relative_path": "critical_beta_adaptation/balance_probe/BP001_stationary_weighted_balance.md",
+      "expected_sha256": "22b60eedf31f1e990e990a8b64ad733a1a3acc9723a421fdc6d677866c771271",
+      "expected_bytes": 8525,
+      "exact_local_resolutions": [
+        "resumption_20261103/remote_recovery/files/v10_research/critical_beta_adaptation/balance_probe/BP001_stationary_weighted_balance.md"
+      ],
+      "status": "EXACT_ORIGINAL_AVAILABLE"
+    },
+    {
+      "original_relative_path": "finite_horizon_window_adaptation/FHW001_candidate.md",
+      "expected_sha256": "fd52447006ce2dde7cc8264579d8eb753388c1d0a02143ab6253046397e301a0",
+      "expected_bytes": 6194,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "finite_horizon_window_adaptation/PLAN.md",
+      "expected_sha256": "a0ade915f2927c67cb305b2590740f87191c6f2c7bc1e1688482f57e9b9509d4",
+      "expected_bytes": 2141,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "finite_horizon_window_adaptation/review/REVIEW.md",
+      "expected_sha256": "bec85528f25ef2a23f88105f1ab7342414e46e9c815e1415b59373ac0ad1c8f8",
+      "expected_bytes": 11449,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "finite_horizon_window_adaptation/review/independent_checks.py",
+      "expected_sha256": "f73b71f1fc89c9acf755fea3972bb8885ebe89892850870e6b1f8daf6a0a0fd0",
+      "expected_bytes": 3968,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "finite_horizon_window_adaptation/review/independent_checks_results.json",
+      "expected_sha256": "3c2e76505245441d1765042e86ca612011be57701ea966830486d648938a8f93",
+      "expected_bytes": 218102,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "finite_horizon_window_adaptation/review/source_bindings.json",
+      "expected_sha256": "5f515e4bd4f1680099bda5c1b91bcac495a7479c80b2b4095fc1c6ee305e13eb",
+      "expected_bytes": 1782,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "finite_horizon_window_adaptation/root_checks.json",
+      "expected_sha256": "142664b7501df747b7355c80e76511259fe195eed74870f052c0f978e3b34cb5",
+      "expected_bytes": 236,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "finite_horizon_window_adaptation/root_checks.py",
+      "expected_sha256": "33ca387a0f1a481a21c15245deed31f3d595daeb0c21332df971bd601b7a84ff",
+      "expected_bytes": 1628,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "first_order_positional_probe/prior_work/FIRST_ORDER_SCREEN.md",
+      "expected_sha256": "15fe4e8443ce5ff56daa949d18d5a974dca7c10b1c0a2be19b1290ee4064de88",
+      "expected_bytes": 8168,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "first_order_positional_probe/prior_work/READING_SCOPE.json",
+      "expected_sha256": "d76f2f854be93e55883279eed45ab405de3261d6d1a17322f6325db22d09293d",
+      "expected_bytes": 7407,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "first_order_positional_probe/synthesis_decision/DECISION_MEMO.md",
+      "expected_sha256": "2f6e7200136493722e92086f5178b68bf9af32edd6ca8ed4d87db52e1fe30e26",
+      "expected_bytes": 13983,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "first_order_positional_probe/synthesis_decision/ROOT_DECISION.md",
+      "expected_sha256": "7ffc37da611c15d73928b6fe1e9c35629db955bd91b6d763e6507706fd9fc8d6",
+      "expected_bytes": 1941,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "intake/FHW001_root_acceptance.json",
+      "expected_sha256": "5a558919635725ba3300bcfba5aae37c8688b94087cdff697353f6687c4990d5",
+      "expected_bytes": 1968,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "intake/positional_manuscript_root_acceptance.json",
+      "expected_sha256": "ea36f64f49d862ff517b18dd171cb218d64c402a1e32393bd8ab919f9d56acf4",
+      "expected_bytes": 15121,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/NEGATIVE_PROOF_SOURCE_CLOSURE.md",
+      "expected_sha256": "f84f515bc739d8d1902d04ec9640dd6d2599cb2a319f013b1552151ceec32fa4",
+      "expected_bytes": 11701,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/POSITIVE_PROOF_CLOSURE.md",
+      "expected_sha256": "8cc6c16b8d18c1a23c462b677d4ddc5b53a15a65118b4738dc40835d6aa5c229",
+      "expected_bytes": 8870,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/PROOF_DEPENDENCIES.json",
+      "expected_sha256": "de03a18def7e71ea01c3558cd7caeb7f6114206f28fe396efc7bf393db7effca",
+      "expected_bytes": 45986,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/THEOREMS_AND_NOTATION.md",
+      "expected_sha256": "da21504912d8289fee287a03342fb6b6a297d94679245873f4ff24393943e2e0",
+      "expected_bytes": 34396,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/build/main.pdf",
+      "expected_sha256": "3a0f1b326a9497d297e3a921b280b65916dbfb4a59ac9c62f3cd7e225945a85f",
+      "expected_bytes": 487323,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/main.tex",
+      "expected_sha256": "14d28267f015ebb7ca50e30b7abb098e17597582cbbd2e08af4138ea6ce35ec7",
+      "expected_bytes": 25023,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/complete_negative/full_review.md",
+      "expected_sha256": "77c5388799c85add87e55ff22158942e98c3c1e33c12bfd2ac0a1de4a62458d2",
+      "expected_bytes": 15201,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/complete_negative/independent_checks.json",
+      "expected_sha256": "a1199a1b879b32f7e2e1bebae0cc6a7c05cd131d86f13002a2c51934b1f05740",
+      "expected_bytes": 541,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/complete_negative/independent_checks.py",
+      "expected_sha256": "c7a051a6a1688134a18f2650147930631818cb3542d9918d1cd5c74b63d5827b",
+      "expected_bytes": 4106,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/complete_negative/revised_byte_acceptance.md",
+      "expected_sha256": "08cc60a5ae7e94e2828e093602622edb3ae1636085e3bba769d0cc695514b21d",
+      "expected_bytes": 2219,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/complete_negative/revised_byte_verification.json",
+      "expected_sha256": "99bd0a8ec7dc1be8bd8dd32ae23aa58a6b87bda13c25dd33cea44b0f129b8c7d",
+      "expected_bytes": 1311,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/complete_negative/source_bindings.json",
+      "expected_sha256": "f67c2b8be74bd9fc08e494974e05e80858c28d6cc6c688bbd537a0751cfc81b1",
+      "expected_bytes": 2933,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/complete_positive/EDITORIAL_REBIND.md",
+      "expected_sha256": "98aaa8a389f8e3561af34f812a00e76412400909d0eba0e6d9f4ae34fa70491f",
+      "expected_bytes": 2208,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/complete_positive/REVIEW.md",
+      "expected_sha256": "64fc68bb320110230796e946a701bb003af9991ffcfe5689b3a6455ef75e4cc2",
+      "expected_bytes": 17528,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/complete_positive/editorial_rebind.json",
+      "expected_sha256": "3d942118f1610e8c6d0861df2d37983ee0cfd541dc986a6ee257fdbc956aeb3b",
+      "expected_bytes": 1642,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/complete_positive/independent_checks.py",
+      "expected_sha256": "40ad81ed271fb8b784e607f3838a77ebb05589a3a497ca4cefa0054c880b452f",
+      "expected_bytes": 4701,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/complete_positive/independent_checks_results.json",
+      "expected_sha256": "3a9c3b8e31ed9aa71debf12c0371834425bcdd97e0b1a9bc6c13d82f09309219",
+      "expected_bytes": 280,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/complete_positive/source_bindings.json",
+      "expected_sha256": "53cdd480fdf76e4fc1f1761f7842cf52925c15d8e919f94509ce0dd347ad9d93",
+      "expected_bytes": 4150,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/main_claims/REVIEW.md",
+      "expected_sha256": "ea3ae85cf1ef2a55538141bb81f778119529e4d32f82c157e32e587e346bd5b6",
+      "expected_bytes": 14693,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/main_claims/REVISED_BYTE_BINDINGS.json",
+      "expected_sha256": "3a0fc40fcefb12f76e0e787ac7a7642da96fa90d7a463f528c6f7803323d422f",
+      "expected_bytes": 3869,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/main_claims/REVISED_BYTE_REVIEW.md",
+      "expected_sha256": "efcb96cacbad0dbf5d2e06e77b411b11423598b5e164b7cae4e7c9f4b1ad8498",
+      "expected_bytes": 4686,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/reviews/main_claims/SHA_BINDINGS.json",
+      "expected_sha256": "2d1daae00f2a25348cb0cf4928e7b5bdf5cc570eda8ea8888cdbd6faef5ed5b2",
+      "expected_bytes": 5006,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/revisions/NEGATIVE_PROOF_SOURCE_CLOSURE_before_editorial_20261102T184200Z.md",
+      "expected_sha256": "85163ccdaeb1692a89f00228aae8a74bc9196351ff71588ec3ca15a3da260ff0",
+      "expected_bytes": 9453,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/revisions/main_claims_edits_20261102/main.before.tex",
+      "expected_sha256": "75a19d9311a8f610fd67dd1432c847f29233b7d3e19e56b32880fde20c7060ca",
+      "expected_bytes": 24829,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/revisions/main_claims_edits_20261102/page_comparison.json",
+      "expected_sha256": "6d9db8f6a60f3303882d30989a6141eea21ae68f3d584aa176aaeaa67295cd63",
+      "expected_bytes": 794,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/revisions/proofs_negative_before_editorial_20261102T184200Z.tex",
+      "expected_sha256": "f673c4f7efe051d5e613f6e937d804de055fd775e7e7b5dbaf18541f9fc45646",
+      "expected_bytes": 28704,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_20261102/revisions/proofs_negative_editorial_20261102T184200Z.diff",
+      "expected_sha256": "e7bad3f3ea8a583e1faa67091241ddf906cbdefe567c757fb6c221a4696c3b39",
+      "expected_bytes": 2222,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/ARTIFACT_SHA256SUMS",
+      "expected_sha256": "dd1c71115b958e866736b1d174ece7d55addd2422fbea179a3f303713a184c6d",
+      "expected_bytes": 2570,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/EXACT_WORD_ILLUSTRATION.json",
+      "expected_sha256": "e358cdc5b5441631e03e6a39a3db9fdb28da83c65b98e5fb3ee5e4de8a43cb31",
+      "expected_bytes": 1202,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/HANDOFF.md",
+      "expected_sha256": "2ed7b41d485613dc87b0d59e0a1a496cd58408754cf294839670d5555fdea478",
+      "expected_bytes": 3388,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/ISOLATED_REPLAY_RESULT.json",
+      "expected_sha256": "6643f2475c863d3b136eb28e70992c5ef3fead9613870e0be2d68f6f484d3bd6",
+      "expected_bytes": 174,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/README.md",
+      "expected_sha256": "002b20ec85574ab9d8571b6806e997b71f980e1e88fb3fe30586fb3a587dc6c5",
+      "expected_bytes": 3457,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/RELATED_WORK_AUDIT.md",
+      "expected_sha256": "7fc7bdb9a4e20cd08ab7d21c15722b79b4dac28e0591ffb144c50135622594d4",
+      "expected_bytes": 17553,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/RELATED_WORK_SOURCES.json",
+      "expected_sha256": "2ced30ee76e2825f20e4ba25939827ec0d29b550582080d6020f08e2f89f5834",
+      "expected_bytes": 19008,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/STATUS.md",
+      "expected_sha256": "7f642f041ebf61546b17fea1fc3a0e9221f8d5c4a58b125d38ec672f177a4519",
+      "expected_bytes": 1379,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/build/main.log",
+      "expected_sha256": "561983ffdec5a9802ab28580147abad77da1e79c0c3060cb8bf590c2759413a4",
+      "expected_bytes": 27656,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/build/main.pdf",
+      "expected_sha256": "a64010995fee9d9ef284c9e1434bd9d079bb6e7ca3c171024fa6145fe0dee9fd",
+      "expected_bytes": 507274,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/build_transcript.txt",
+      "expected_sha256": "20fd790ce07479bc97148f78644f93b413a89f3da6c6461b01c185ef18a472d1",
+      "expected_bytes": 28160,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/positional_finite_manuscript_root_acceptance.json",
+      "expected_sha256": "1b79729ec9686c9f0e69c73adf02d4d6e7cf24091515af19a0752fbca3ad67f8",
+      "expected_bytes": 3554,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/provenance/FHW001_candidate.md",
+      "expected_sha256": "fd52447006ce2dde7cc8264579d8eb753388c1d0a02143ab6253046397e301a0",
+      "expected_bytes": 6194,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/provenance/FHW001_root_acceptance.json",
+      "expected_sha256": "5a558919635725ba3300bcfba5aae37c8688b94087cdff697353f6687c4990d5",
+      "expected_bytes": 1968,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/provenance/REVIEW.md",
+      "expected_sha256": "bec85528f25ef2a23f88105f1ab7342414e46e9c815e1415b59373ac0ad1c8f8",
+      "expected_bytes": 11449,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/provenance/positional_manuscript_root_acceptance.json",
+      "expected_sha256": "ea36f64f49d862ff517b18dd171cb218d64c402a1e32393bd8ab919f9d56acf4",
+      "expected_bytes": 15121,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/provenance/source_bindings.json",
+      "expected_sha256": "5f515e4bd4f1680099bda5c1b91bcac495a7479c80b2b4095fc1c6ee305e13eb",
+      "expected_bytes": 1782,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/reviews/integration/checks_results.json",
+      "expected_sha256": "18e721d6ef17e5ccc2b1933377abf4f73a6a8dd9a1cddca60f6671103155cf52",
+      "expected_bytes": 77124,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/revisions/acceptance_metadata/ARTIFACT_SHA256SUMS.historical",
+      "expected_sha256": "dd1c71115b958e866736b1d174ece7d55addd2422fbea179a3f303713a184c6d",
+      "expected_bytes": 2570,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/revisions/acceptance_metadata/README.md.before",
+      "expected_sha256": "4cc91269721311a91b94f5e3ec205d8bf80fa985803c3d156223973f95d2051c",
+      "expected_bytes": 2671,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/revisions/acceptance_metadata/README.md.diff",
+      "expected_sha256": "2e32cbce2fcb6861e5b9a7e1260f07d6408da8dda9fb5b16aec85db77c3ee858",
+      "expected_bytes": 1544,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/revisions/acceptance_metadata/STATUS.md.before",
+      "expected_sha256": "b8edcbb62bf80c8e8bfb7af28d484179a075aa1b26332b538bc32a516f3bdc89",
+      "expected_bytes": 880,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/revisions/acceptance_metadata/STATUS.md.diff",
+      "expected_sha256": "ac7c0317988ff47e911b605498e486c3c8aecb1ce2c919c60bfa037f38eb432f",
+      "expected_bytes": 1548,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/revisions/build_first_attempt.txt",
+      "expected_sha256": "c6159f9a0f6920ed1425b5bc0f5f196d195f0dc10d42d353ee76d3bbe69ab754",
+      "expected_bytes": 16664,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/revisions/main.before_root_wording.tex",
+      "expected_sha256": "1e116628c8827d740b04bb3cd74ab3b2907ce6951fa3a3492350e372cb4bf810",
+      "expected_bytes": 27560,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/revisions/proof_heading_fix.diff",
+      "expected_sha256": "675a4695c1a80221dba7fa01d41d2343514c794eab6b8a5a96c2c13744a4df5b",
+      "expected_bytes": 2330,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/revisions/proofs_finite_horizon.before_heading_fix.tex",
+      "expected_sha256": "75ca852580c10c69209c110198806707a03e6f8a7eab7f721bde95bf79738a4a",
+      "expected_bytes": 5584,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/revisions/root_wording.diff",
+      "expected_sha256": "a64d8e5fae338f2e12a06101031cb9a59e27b8db48612b8271019806bfeea7b2",
+      "expected_bytes": 1836,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/v1_to_v2_main.diff",
+      "expected_sha256": "372f4bb1f395ea9f79488b62a4a1dc2fa6bb9ce5a96ed386c865e92a3adc0d68",
+      "expected_bytes": 10396,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "positional_manuscript_finite_20261102/validate_sources.py",
+      "expected_sha256": "d1e75264886ab20179758d9fe363d1f534023a2d2ea6e066fa3ddfe28ec06e83",
+      "expected_bytes": 2022,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "richer_count_consolidation_20261102/ARTIFACT_SHA256SUMS",
+      "expected_sha256": "417caf3641ded2cfef93dfd41fd6f9598bafdf6453d7141a3b0639b038021ecb",
+      "expected_bytes": 1613,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "richer_count_consolidation_20261102/HANDOFF.md",
+      "expected_sha256": "e8ccedc921f9c0809a714f840c085a853b782b6d5eec43633b803aa5edf64c62",
+      "expected_bytes": 4440,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "richer_count_consolidation_20261102/README.md",
+      "expected_sha256": "c3aa9cfd35e3311e96344934e2d8d566adf4ce2ee4dd97dd72c943cc5e04f45b",
+      "expected_bytes": 2681,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "richer_count_consolidation_20261102/STATUS.md",
+      "expected_sha256": "566bab06788336383a9cf3a643a09fb5a0eb610add4fc603403903320171ecd2",
+      "expected_bytes": 1970,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "richer_count_consolidation_20261102/build/main.pdf",
+      "expected_sha256": "8704b536fa4f88d212343142a11272673f2dbcbe7d97bde5da9f2c1dc1efc95b",
+      "expected_bytes": 403461,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "richer_count_consolidation_20261102/revisions/acceptance_metadata/README.md.before",
+      "expected_sha256": "d6094d5c1e9e3591ebf9f917b3bc411f9d8435ede951f1a74974d063ad5577e1",
+      "expected_bytes": 1341,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "richer_count_consolidation_20261102/revisions/acceptance_metadata/README.md.diff",
+      "expected_sha256": "87dfc9251cd970797185664ef15b1dbc7bf0f8948299b3df27f7c4a64f05b846",
+      "expected_bytes": 2462,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "richer_count_consolidation_20261102/revisions/acceptance_metadata/STATUS.md.before",
+      "expected_sha256": "db1a124799639948b4aff7b9fbe695b6f42b0fc6a6fbe9453c11417bd8ef9372",
+      "expected_bytes": 1030,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "richer_count_consolidation_20261102/revisions/acceptance_metadata/STATUS.md.diff",
+      "expected_sha256": "354b6d17bf5af16ca4ff37fcc04c4af81008588796c64b0210141814ee3b6ef3",
+      "expected_bytes": 3254,
+      "exact_local_resolutions": [],
+      "status": "HISTORICAL_STANDALONE_NOT_EXACTLY_RECOVERED"
+    },
+    {
+      "original_relative_path": "robust_markov_prediction/MG001_theorem.md",
+      "expected_sha256": "c4f114bb7510f3dd5ead7461d9ebead092e2abe103fc92f96e3af9fbd4ac6623",
+      "expected_bytes": 17685,
+      "exact_local_resolutions": [
+        "v10_research/robust_markov_prediction/MG001_theorem.md"
+      ],
+      "status": "EXACT_ORIGINAL_AVAILABLE"
+    }
+  ],
+  "integrated_proof_reading_resolutions": [
+    {
+      "role": "Generic probability and finite-horizon arguments used by current accepted interfaces",
+      "readable_sources": [
+        "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+        "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex"
+      ],
+      "qualification": "Read the complete accepted integrated proof; this is not a claim to recover missing standalone historical notes or their diagnostics."
+    },
+    {
+      "role": "FOU001 upper interface",
+      "readable_sources": [
+        "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/UPPER_CANDIDATE.md",
+        "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex"
+      ],
+      "qualification": "Both complete current texts are available; their original acceptance scopes remain in the separate receipts."
+    },
+    {
+      "role": "FOT001 relocation dependency",
+      "readable_sources": [
+        "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/triple_access/FOT001_candidate.md",
+        "v10_research/resumption_20261103/recovered_science/binary_mixture_window/window_preserving/WPC001_window_preserving_canonicalization.md",
+        "v10_research/resumption_20261103/recovered_science/reviews/WPC001_MW002_independent_20261102/full_review.md"
+      ],
+      "qualification": "Exact recovered proof/review bytes; a shared historical review does not imply every separate MW002 artifact was recovered."
+    },
+    {
+      "role": "FOT002 full-history oracle floor",
+      "readable_sources": [
+        "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/triple_access/FOT002_matched_original_experiment.md",
+        "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex"
+      ],
+      "qualification": "Complete integrated lower proof is available; historical standalone source replay is not asserted."
+    }
+  ],
+  "public_identity_rule": "Original review/path-normalized source identities are retained in acceptance and history. Public bytes are bound by the new exact inventory and export reconciliation. A historical validator requiring an original review hash is not claimed to pass unchanged against sanitized public bytes.",
+  "old_missing_audit": {
+    "path": "provenance/increment3/SOURCE_CLOSURE_AUDIT.json",
+    "git_blob_sha1": "146c9be4fb2015937cb393c19d48e084498257ab",
+    "bytes": 771068,
+    "sha256": "a1c34fc1ee4725c44c5612a46948fdc9b842f4e94522aa4fbb0ad4ed6c7fc96f",
+    "status": "NOT_RECOVERED; NOT_RECONSTRUCTED"
+  },
+  "science_checks_rerun_by_publication_preparation": false,
+  "binding_audit_limit": "The complete historical graph was screened locally. The count does not establish historical closure restoration; exact missing declarations and integrated reading alternatives below delimit the scope. Original per-source binding files remain present in the scientific tree."
+}

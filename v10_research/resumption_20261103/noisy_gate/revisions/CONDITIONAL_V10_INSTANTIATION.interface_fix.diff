@@ -1,0 +1,31 @@
+--- v10_research/resumption_20261103/noisy_gate/revisions/CONDITIONAL_V10_INSTANTIATION.before_interface_fix_3ed7652d.md	2026-11-02 17:22:33.095570924 -0800
++++ v10_research/resumption_20261103/noisy_gate/CONDITIONAL_V10_INSTANTIATION.md	2026-11-02 17:22:33.112902849 -0800
+@@ -4,7 +4,7 @@
+ 
+ ## Inputs reported from recovered science
+ 
+-Model: M>=64, raw path X_0,...,X_(M-1), exact eight triple counts and a protected final pair in the base observation; initial pair recoverable by flow. First-order TABLE family with arbitrary initial pair; corruption budgets k=0,...,M; normalization
++Model: M>=64, raw path X_0,...,X_(M+1), comprising M+2 symbols and M consecutive triples. Editable positions are 0,...,M-1; the final positions M,M+1 are protected. The base observation consists of exact eight triple counts and that protected final pair; the initial pair is recoverable by flow. First-order TABLE family with arbitrary initial pair; corruption budgets k=0,...,M; normalization
+ 
+ g_k=max{M^(-1/2), k/M},   g_min=M^(-1/2).
+ 
+@@ -28,7 +28,7 @@
+ 
+ ## 1. One noisy supplemental bit
+ 
+-Apply an independent BSC_eta to the supplemental gate *after corruption/encoding*. The base counts and protected pair remain exact. Noise is fresh and unavailable to corruption/encoding. Assume the concrete loss is bounded in [0,1] for the additive upper bound.
++Apply an independent BSC_eta to the supplemental gate *after corruption/encoding*. The base counts and protected pair remain exact. Noise is sampled last, after the attack and supplemental encoding have both been fixed; its realized coins are unavailable to either. The exact supplemental message is a function of the corrupted full word (and, for an allowed randomized encoder, independent private coins), not an extra parameter oracle. Although the abstract reduction can condition on parameter-dependent hidden messages, such an oracle is not an admissible encoder in this concrete experiment. Assume the concrete loss is bounded in [0,1] for the additive upper bound.
+ 
+ Then, for 0<eta<=1/2,
+ 
+@@ -68,6 +68,10 @@
+ 
+ At eta=1/2 all encoded supplemental messages are independent uniform, regardless of R, so no improvement is possible under this model. None of these claims extend automatically to correlated noise, adversarial channel errors, noise-aware attacks, or a model in which the base triple counts/final pair are themselves noisy.
+ 
++## Clean floor and admissible-message information constraint
++
++The root-reported clean lower floor Gamma_exact>=1/96 is inherited from the full-history IID lower bound by data processing: at k=0 the base observation and admissible exact message are functions of the observed full word, with at most independent estimator/encoder randomness. They therefore cannot outperform a full-history procedure in that lower-bound experiment. This argument requires that the supplemental encoder is not given the unknown parameter or independent parameter-revealing side information. The numerical full-history IID bound is a recovered historical dependency, not proved in this note. Under these hypotheses the conditional visible-erasure companion may use 1/96 as its size-uniform clean floor.
++
+ ## Research status
+ 
+ The abstract statistical-experiment reduction is proved locally in the companion note and is awaiting independent review. The concrete v10 conclusions here are conditional on recovery and verification of the precise historical lower/upper hypotheses, estimator randomization convention, matched attack families, and bounded concrete loss. No material has been published or pushed.

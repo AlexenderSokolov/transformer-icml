@@ -1,0 +1,47 @@
+{
+  "utc": "2026-11-03T01:57:54.902429+00:00",
+  "status": "LOCAL_SCIENCE_AND_SYNTHESIS_FROZEN_FOR_EXACT_EXPORT_REVIEW",
+  "units": {
+    "noisy_gate": {
+      "receipt_sha256": "02dbfeed89a0bfe03ebe6483acc3eb6fe65549d24e9d1e112a4d7b750d0cfcab",
+      "status": "ROOT_ACCEPTED_ABSTRACT_CHANNEL_THEOREMS_AND_VERIFIED_FIRST_ORDER_APPLICATION",
+      "bound_artifact_count": 8
+    },
+    "bsc_sharp": {
+      "receipt_sha256": "19e6070e6d5c1a1aef6da470b0607cccb5e235c189672de1062ffd20dfc46572",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_DERIVATION_AND_SOURCE_BOUND_FULL_REVIEW",
+      "bound_artifact_count": 9
+    },
+    "channel_classification": {
+      "receipt_sha256": "c1d2c41fb616c683379e51a9146dc74cc869001621c439992cc6af01ecc3dfdf",
+      "status": "ROOT_ACCEPTED_AFTER_FULL_REVIEW_AND_REPLAY",
+      "bound_artifact_count": 6
+    },
+    "whole_message_cost": {
+      "receipt_sha256": "c7b730b9ace89de683f321683058bb90065f30d74256dcb9c66f35d671807396",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_FULL_REVIEW_AND_ROOT_REPLAY",
+      "bound_artifact_count": 8
+    },
+    "efficient_message_code": {
+      "receipt_sha256": "c6a5a6430c7e8f79cc7d1c10762e7158bb9608cea6688997e1c069970fdd0b11",
+      "status": "ROOT_ACCEPTED_MATHEMATICAL_CONSTRUCTION_AFTER_INDEPENDENT_REVIEW_AND_REPLAY",
+      "bound_artifact_count": 6
+    },
+    "order_two_transfer": {
+      "receipt_sha256": "2ec10889047eb840080c8a5539c71207631d07e05e818f41c12ad6d153d65bfd",
+      "status": "ROOT_ACCEPTED_DUAL_REVIEWED_TRANSFER_WITH_PMC_INTERFACE",
+      "bound_artifact_count": 14
+    }
+  },
+  "extra_artifacts": {
+    "RESEARCH_SUMMARY.zh.md": "fa947d45a1872f52c05ced0fde6e7eb9ecd03865273e072185f4f5088c858540",
+    "reliability_prior_art/AUDIT.md": "d25b21f937b592cae4cd2d0a79fbd3caf1ab75e1cc8cb95247e4c3bc5d5d738e",
+    "reliability_prior_art/READ_SCOPE.md": "00c8579e29ec8c1b67d812eab04aa7d2a79034b5624836d5d1bec4bfedf15692",
+    "rebuilt_documents/REBUILD_RECEIPT.json": "1dcce65c99a8b1f436b5b3596119839fbe759a002532dd7356cd37af60b7de3d",
+    "ROOT_RECOVERY_VERIFICATION.json": "d82e4040f9b6e54a2802b1250604a5deb3ddee6d44cafd37da04b9d241632d58",
+    "ROOT_REMOTE_RECOVERY_REPLAY.json": "c74ce8e8eb730ff9a226f4e3f75a5162c746c757ead70411485ce3c20ef00b4b",
+    "ROOT_INHERITED_RECOVERY_REPLAY.json": "9c9c38b8bc42e4a48ddacfc537502c5b1089a290f6c8919607e2b987245a3678"
+  },
+  "scope": "Fixes this stage claims and local-source identity; public export allowlist, privacy transformations and final repository commit require their own exact receipts. No declaration of complete historical-file restoration or new external publication.",
+  "limits": "Independent LLM review and finite corroboration, not formal or external peer verification. Standard-method novelty boundaries retained. Original PDFs not recovered; rebuilt outputs separately identified."
+}

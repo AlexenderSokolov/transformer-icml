@@ -1,0 +1,11 @@
+--- FOC001_before_g_definition.md
++++ ORDER_ADAPTATION_CANDIDATE.md
+@@ -27,7 +27,7 @@
+ 
+ For each fixed b in{0,1}, define an induced stochastic kernel on suffix words w: apply the original kernel to the full input (b,w), and retain only its output suffix. This is a fixed map on every suffix word for the fixed constant b, not an oracle using a hidden table or initial law. It changes at most k suffix coordinates on every outcome and protects the final symbol (indeed the final pair), so belongs to the FOU001 attack class. Any edits to or information use of the omitted coordinate are already integrated into this induced map. Predictor randomness remains independent. The actual predictor is the SAME suffix map for both b and is not given b. The uniform FOU bound applies conditional on each b and every conditional initial law, and averaging proves it for the original arbitrary initial pair.
+ 
+-FOU001 gives
++For g_M(k)=max(M^(-1/2),k/M), FOU001 gives
+ 
+ R<=min(1,1024/sqrt(M)+2^20 k/M) <=2^21 g_M(k).
+ 

@@ -1,0 +1,54 @@
+{
+  "status": "READ_ONLY_VERIFICATION_PASS",
+  "time_utc": "2026-11-02T14:30:17.630329+00:00",
+  "total_verified_bindings": 231,
+  "manifests": [
+    {
+      "manifest": "binary_budget_adaptation/AB_SOURCE_BINDINGS.json",
+      "sha256": "988b0d60052ca9323d58e72ff421553bf007bfb0ba407e93fc7467a5bbfb407e",
+      "verified_bindings": 42
+    },
+    {
+      "manifest": "binary_beta_known_adaptation/BK001_ACCEPTED_BINDINGS.json",
+      "sha256": "f66fe9d62f3a8537a013e1475379881eefb04ffa89cb2737e92de3be3aa3a0b5",
+      "verified_bindings": 12
+    },
+    {
+      "manifest": "binary_beta_known_adaptation/BK002_ACCEPTED_BINDINGS.json",
+      "sha256": "538887724895b50acac746749a35178d0d7ef29a80bbbf7260ff201c12a4e4cf",
+      "verified_bindings": 27
+    },
+    {
+      "manifest": "binary_beta_known_adaptation/BK002_ALL16_ADOPTED_BINDINGS.json",
+      "sha256": "bdc6d97742c7c25a684a8fa7061fbfc76aec48df9410ddb3b1a903808f864dee",
+      "verified_bindings": 11
+    },
+    {
+      "manifest": "binary_certificate_adaptation_phase/KA001_ACCEPTED_BINDINGS.json",
+      "sha256": "488d6779ff2aa8965a529f2fd47b270bfa84729e9c207eb400e7f8f7d0d675e7",
+      "verified_bindings": 29
+    },
+    {
+      "manifest": "binary_certificate_adaptation_phase/KH001_ACCEPTED_BINDINGS.json",
+      "sha256": "6bb5622c75c9b1c5a76ad76c1d0abf76ad5762bf0ccb90980d4cdb728cc5958a",
+      "verified_bindings": 25
+    },
+    {
+      "manifest": "binary_certificate_adaptation_phase/KH002_ACCEPTED_BINDINGS.json",
+      "sha256": "436e64f3f6c70a5d096a812f18995f708a3866bc560497abbe9fb67d836c5aa8",
+      "verified_bindings": 24
+    },
+    {
+      "manifest": "binary_certificate_adaptation_phase/KH003_ACCEPTED_BINDINGS.json",
+      "sha256": "dd1d5463f546d3d934a9b4a7d9ba3313a17b3dd2d51df2fb794a6f3be5ac5003",
+      "verified_bindings": 33
+    },
+    {
+      "manifest": "binary_certificate_adaptation_phase/KH004_ACCEPTED_BINDINGS.json",
+      "sha256": "46603d4e987b657fb064aced0bf74563daf2591b61dbd3a893eda659bb272032",
+      "verified_bindings": 28
+    }
+  ],
+  "audit_history": "Initial combined audit used wrong base for historical AB v10_intake source paths and stopped on nonexisting doubled prefix; corrected by using that manifest original workspace-relative convention. No hash mismatch and no artifact modification occurred.",
+  "scope": "No accepted artifact or existing manifest regenerated/changed. This is binding integrity, not a new mathematical review."
+}

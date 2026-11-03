@@ -1,5 +1,12 @@
 # 资料导航
 
+## 2026-11-03 新入口
+
+- [最新中文综述及六个接纳目录](../v10_research/resumption_20261103/RESEARCH_SUMMARY.zh.md)
+- [31 页新重建完整稿](../v10_research/resumption_20261103/rebuilt_documents/positional_manuscript_finite_20261102/main.pdf) · [6 页新重建综合稿](../v10_research/resumption_20261103/rebuilt_documents/richer_count_consolidation_20261102/main.pdf)
+- [标准方法与有限文献核查](../v10_research/resumption_20261103/reliability_prior_art/AUDIT.md) · [实际阅读范围](../v10_research/resumption_20261103/reliability_prior_art/READ_SCOPE.md)
+- [当前来源与历史缺口](../provenance/resumption_20261103/RECOVERY_AND_SOURCE_RESOLUTION.json)
+
 ## 阅读顺序
 
 1. [当前状态](STATUS.md)：明确对象、量词、条件和剩余问题。
@@ -72,3 +79,20 @@ AB001／AB002 的 [共同审查](../v10_research/binary_budget_adaptation/review
 - **CB002**：[证明](../v10_research/critical_beta_adaptation/CB002_near_prefix_veto_partial.md) · [完整审查](../v10_research/critical_beta_adaptation/CB002_independent_full_review.md) · [接纳记录](../v10_research/intake/CB002_acceptance.json)。
 
 精确来源与脱敏差异见[第二次来源映射](../provenance/increment2/SOURCE_MAP.json)，历史预期哈希与公开哈希的严格对照见[绑定协调表](../provenance/increment2/BINDING_RECONCILIATION.json)。
+
+## 第三次已接纳研究增量：位置计数、适应域与有限切口
+
+[英文阶段综述](../v10_research/adaptation_stage_synthesis/positional_counts_adaptation.md) · [中文阶段总结](../v10_research/adaptation_stage_synthesis/research_summary_zh.md) · [当前比较与十项完整证据](STATUS.md)。
+
+- **KH001**：[证明](../v10_research/binary_certificate_adaptation_phase/KH001_histogram_strong_side_obstruction.md) · [完整审查](../v10_research/reviews/KH001_independent_full_review.md) · [接纳记录](../v10_research/intake/KH001_acceptance.json)。
+- **KH002**：[证明](../v10_research/binary_certificate_adaptation_phase/KH002_histogram_domain_classification.md) · [完整审查](../v10_research/reviews/KH002_independent_full_review.md) · [接纳记录](../v10_research/intake/KH002_acceptance.json)。
+- **CB003**：[证明](../v10_research/critical_beta_adaptation/CB003_fixed_veto_bypass.md) · [完整审查](../v10_research/critical_beta_adaptation/CB003_independent_full_review.md) · [接纳记录](../v10_research/intake/CB003_acceptance.json)。
+- **KH003**：[证明](../v10_research/binary_certificate_adaptation_phase/KH003_boundary_window_obstruction.md) · [完整审查](../v10_research/reviews/KH003_independent_full_review.md) · [接纳记录](../v10_research/intake/KH003_root_acceptance.json)。
+- **CB004**：[证明](../v10_research/critical_beta_adaptation/CB004_stationary_critical_adaptation.md) · [完整审查](../v10_research/critical_beta_adaptation/CB004_BP001_independent_full_review.md) · [接纳记录](../v10_research/intake/CB004_root_acceptance.json)。
+- **BP001**：[证明](../v10_research/critical_beta_adaptation/balance_probe/BP001_stationary_weighted_balance.md) · [完整审查](../v10_research/critical_beta_adaptation/CB004_BP001_independent_full_review.md) · [接纳记录](../v10_research/intake/BP001_root_acceptance.json)。
+- **CB005**：[证明](../v10_research/critical_beta_adaptation/CB005_all_start_critical_adaptation.md) · [完整审查](../v10_research/critical_beta_adaptation/CB005_independent_full_review.md) · [接纳记录](../v10_research/intake/CB005_root_acceptance.json)。
+- **KH004**：[证明](../v10_research/binary_certificate_adaptation_phase/KH004_constant_crossing_window_obstruction.md) · [完整审查](../v10_research/reviews/KH004_independent_full_review.md) · [接纳记录](../v10_research/intake/KH004_root_acceptance.json)。
+- **AF001**：[证明](../v10_research/binary_full_history_domain/AF001_full_history_domain_classification.md) · [完整审查](../v10_research/reviews/AF001_independent_full_review.md) · [接纳记录](../v10_research/intake/AF001_root_acceptance.json)。
+- **BCJ001**：[证明](../v10_research/balanced_joint_finite_cut/BCJ001_theorem.md) · [完整审查](../v10_research/balanced_joint_finite_cut/BCJ001_independent_full_review.md) · [接纳记录](../v10_research/intake/BCJ001_root_acceptance.json)。
+
+来源、非数学公开导出差异与历史路径恢复见[第三次来源映射](../provenance/increment3/SOURCE_MAP.json)及[严格协调表](../provenance/increment3/BINDING_RECONCILIATION.json)。明确未审查的研究探索只作真实历史，不计入十个已接纳单元。

@@ -1,0 +1,10 @@
+{
+  "unit": "CB003",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "critical_beta_adaptation/CB003_fixed_veto_bypass.md",
+  "sha256": "b86a78837e59bcc2a690475f66f1eeaf46405f5006722c59f080828d8dada8b9",
+  "review": "critical_beta_adaptation/CB003_independent_full_review.md",
+  "review_sha256": "aba93ebb058acd3da9d45da1fdb986dbbba1721bde25065cc96d394ed0e489f5",
+  "time_utc": "2026-11-02T13:40:32.637398+00:00",
+  "scope": "POST-STAGE8 restricted-estimator counterexample. Root read complete proof and independent review. Deterministic strict-k protected attack disables CB002 fixed near-prefix veto using h+1 prefix edits and inserts floor(k/4) suffix ones; exact counts force W(AB003) logarithmic suboptimality at stationary beta1/M null for specified large-k domain. Failure of THIS composition only, not full-history critical-curve impossibility; CB001/CB002 increment bounds unchanged. No formal/external-review/novelty/training claim."
+}

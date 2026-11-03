@@ -1,0 +1,23 @@
+{
+  "utc": "2026-11-03T01:39:01.025738+00:00",
+  "unit": "BCC001",
+  "status": "ROOT_ACCEPTED_AFTER_FULL_REVIEW_AND_REPLAY",
+  "scope": "Fixed known finite-output binary-input memoryless channel, full corrupted-word encoding, noiseless triple-count/terminal-pair baseline, hidden budget, original first-order table and arbitrary-initial-pair experiment. Physical input length fixed in advance.",
+  "classification": {
+    "identical_rows": "No finite-length schedule improves baseline; constant adaptation impossible.",
+    "disjoint_supports": "One physical input suffices; zero fails asymptotically.",
+    "unequal_overlapping_supports": "Sharp feasible constant-factor length Theta_W(log log M).",
+    "equal_supports_distinct_rows": "Sharp feasible constant-factor length Theta_W(log M)."
+  },
+  "root_read": "Complete candidate and independent full review; six bound artifacts verified and exact checker independently rerun. Accepted BSC001 likelihood source already read and its root receipt validated; historical pending labels retained, superseded by this acceptance.",
+  "key_checks": "One-sided exclusive event balanced through two actual channel uses; only coarsened transcript is BEC. Each likelihood-test conditional error separately bounded by h^R. Finite same-support channel has bounded ratios. Full-history floor separate from exact-gate comparison.",
+  "limits": "Constants depend on fixed W. Feasible targets such as Cg+1, not arbitrary tiny constants. Partial-support fixed-R risk exponents not claimed sharp. No variable/adaptive length, infinite alphabet, M-dependent channel, side-channel, neural/learning or novelty claim. Independent LLM review not formal/external peer review. Local unpublished.",
+  "artifacts": {
+    "CANDIDATE.md": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+    "review/INDEPENDENT_ANALYTIC_REVIEW.md": "db86abb79859ac2cedc54be8c5be04ee0232ff3885a10274e76544093dbd7512",
+    "review/SOURCE_BINDINGS.json": "d6928b1a908cb0375137dfe2bd36004876b07cd0f5240640898798ae1aeb6ca4",
+    "review/finite_channel_checker.py": "3c0ec02b8d7addb7702f8c4e8853491d91d2ca32c708a4f78cdc3e9b66a123de",
+    "review/FINITE_CHECK_RESULT.json": "934384ee5e106c735db7bf02c53b6b4ca772d4397d567c5b82fc21ddc22320a2",
+    "ROOT_REPLAY.json": "016be07fc782293ac32f4ccec04e082e2f6fb376b4c59a9df28aee16179de976"
+  }
+}

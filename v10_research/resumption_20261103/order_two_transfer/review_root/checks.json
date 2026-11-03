@@ -1,0 +1,12 @@
+{
+  "exhaustive_words": 32760,
+  "M_range": [
+    1,
+    12
+  ],
+  "zero_count_cases": 1396,
+  "rejected_gate_cases": 5356,
+  "checks": "flow reconstructs initial pair; selected J,C,d,G reproduces exact symbol prediction including zero/rejection; field bounds",
+  "scope": "Finite deterministic corroboration only; M below theorem threshold is permitted for pathwise identities, not a risk simulation.",
+  "constant_C2": 8519680
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS_FINITE_INDEPENDENT_CHECKS",
+  "arithmetic": "Exact integers/Fraction throughout; large word probabilities use the analytic Bernoulli inequality rather than materializing giant rational powers",
+  "counts": {
+    "large_full_words": 28,
+    "small_count_geometry": 7710,
+    "strict_identity_cases": 100,
+    "all16_certificate": 64,
+    "small_exact_word_probabilities": 233,
+    "profile_domain": 28,
+    "accepted_receipt_hashes": 4
+  },
+  "proof_sha256": "b86a78837e59bcc2a690475f66f1eeaf46405f5006722c59f080828d8dada8b9",
+  "scope": "Explicit failure of W(AB003) only; not a full-history impossibility theorem or formal/external verification."
+}

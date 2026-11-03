@@ -1,0 +1,10 @@
+--- FOT002_before_message_scope_clarification.md
++++ FOT002_matched_original_experiment.md
+@@ -50,6 +50,6 @@
+ 
+ ## Direct consequences and limits
+ 
+-Prescribed raw widths have a uniform finite factor iff their normalized liminf is positive. Counts plus initial/final pairs (r=2) cost orderlogM. A full-word encoder may instead send FOU001's exact half-visit bit for the truncated suffix X1,...,X_(M+1) after corruption; the reconstructed suffix pair counts and last symbol suffice to decode it, with risk<=1024/sqrt(M)+2^20k/M. A one-symbol alphabet leaves at most the r=2 baseline and cannot achieve a uniform constant. Thus the minimum fixed supplemental alphabet is two in this richer-count model too; scanning and exact counters are not charged as message bits, and the message is fault-free.
++Prescribed raw widths have a uniform finite factor iff their normalized liminf is positive. Counts plus initial/final pairs (r=2) cost orderlogM. In a SEPARATE scan-and-message model over the r=2 baseline only (eight triple counts plus initial/final pairs, with no growing raw windows), a full-word encoder may instead send FOU001's exact half-visit bit for the truncated suffix X1,...,X_(M+1) after corruption; the reconstructed suffix pair counts and last symbol suffice to decode it, with risk<=1024/sqrt(M)+2^20k/M. A one-symbol alphabet leaves at most the r=2 baseline and cannot achieve a uniform constant. Thus the minimum fixed supplemental alphabet is two over this r=2 richer-count baseline; this is not asserted when arbitrary additional raw windows remain available; scanning and exact counters are not charged as message bits, and the message is fault-free.
+ 
+ These are same-map adaptation factors, not a logarithmic risk penalty at each individual budget. Exact-oracle normalization changes constants according to the displayed sandwich. No neural, causal-attack, noisy-message, source-order-learning, leading-constant or novelty claim is made. No accepted manuscript has been edited by this interface candidate.

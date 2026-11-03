@@ -1,0 +1,181 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array,microtype}
+\usepackage[margin=0.9in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\ind}{\mathbf1}
+\newcommand{\stat}{\mathrm{stat}}
+\newcommand{\all}{\mathrm{all}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\title{Richer-count first-order consolidation addendum}
+\author{}
+\date{2 November 2026 \quad Local integration draft}
+\begin{document}
+\maketitle
+\vspace{-1.3em}
+\begin{abstract}
+A binary first-order transition table already exhibits a logarithmic price for unknown-budget prediction from eight triple counts and boundary windows. In the original length-$M+2$, protected-terminal-pair experiment, the finite factor is between $2^{-33}\ell$ and $2^{17}\ell$, where $\ell=1+\ln((M+2)/r)$. The upper allows arbitrary initial pair laws and requires no mixing certificate. The key interface discards the first symbol, reconstructs the corrupted suffix counts, and applies one suffix-only predictor. This addendum consolidates accepted local results and their proof dependencies; it is not a standalone complete proof supplement or a replacement manuscript. Its scientific integration acceptance is pending fresh review.
+\end{abstract}
+\section{One common experiment}
+Fix integers $M\ge64$, $2\le r\le M+2$. A clean word is $X_0,\ldots,X_{M+1}\in\{0,1\}$. Its initial \emph{pair} has an arbitrary hidden law $\mu$. A hidden first-order table $T$ governs exactly the transitions from $X_1$ onward:
+\[
+ \Pr(X_{i+1}=b\mid X_0,\ldots,X_i)=T(X_i,b),\qquad 1\le i\le M.
+\]
+The initial edge need not follow $T$. There are $M$ triple departures but $M+1$ ordinary edges. For the stationary subclass, $\mu(a,b)=\pi(a)T(a,b)$ for a stationary symbol law $\pi$.
+
+A source-independent offline kernel $K$ maps the word to $Z$ and, on \emph{every} input and outcome, changes at most integer $k\in\{0,\ldots,M\}$ coordinates among $0,\ldots,M-1$. The final two symbols are protected: $(Z_M,Z_{M+1})=(X_M,X_{M+1})$. The kernel is a fixed word-to-word map, not a map receiving the true law. Predictor randomness is independent of attack randomness.
+
+The observation is
+\[
+ \mathcal T_r(Z)=\big((H_{abc}(Z))_{a,b,c\in\{0,1\}},\ Z_{0:r-1},\ Z_{M+2-r:M+1}\big),
+ \quad H_{abc}(Z)=\sum_{i=0}^{M-1}\ind\{Z_iZ_{i+1}Z_{i+2}=abc\}.
+\]
+Windows may overlap; all counts and supplied symbols are exact. The predictor outputs a next-symbol distribution. Its unconditional unsquared risk is
+\[
+ R(A;T,\mu,K)=\E\,\TV\big(A(\mathcal T_r(Z)),T(X_{M+1},\cdot)\big).
+\]
+This equals the actual-terminal-pair prediction loss after lifting both distributions to pairs whose first coordinate is $X_{M+1}$. No independent test query is substituted.
+
+For each fixed $(M,r)$, one map $A$ must serve \emph{all} budgets. With $g_M(k)=\max\{M^{-1/2},k/M\}$ define
+\[
+ \Lambda_\star(M,r)=\inf_{A\;k\text{-blind}}\ \sup_{\substack{k\in\{0,\ldots,M\},\ T,\mu,K\\\text{qualifying }\star\text{ experiments}}}
+ \frac{R(A;T,\mu,K)}{g_M(k)},\qquad \star\in\{\stat,\all\}.
+\]
+Maps may be randomized and depend on $M,r$, not on the hidden table, law or budget. No infimum or worst case is assumed attained.
+\newpage
+\section{Finite characterization and exact benchmark}
+\begin{theorem}[First-order richer-count window price]
+In the common experiment, for all first-order tables without a mixing assumption,
+\[
+ \boxed{\quad 2^{-33}\ell\ \le\ \Lambda_\stat(M,r)\ \le\ \Lambda_\all(M,r)\ \le\ 2^{17}\ell,\quad
+ \ell=1+\ln\frac{M+2}{r}.\quad}
+\]
+The same inequalities hold if the source tables are restricted to the original all-state pair-chain certificate $P^2(u,v)\ge M^{-1}\Pi(v)$, where $P((a,b),(b,c))=T(b,c)$ and $\Pi$ is its stationary pair law. The upper covers all tables; stationary lower witnesses already satisfy this restriction.
+\end{theorem}
+The certificate is not required for first-order sufficiency. This statement does not remove the certificate from any second-order upper theorem. The lower tests clean and attacked risks of the same map; it is not a logarithmic risk penalty at each individual budget.
+
+Let $R_\star^{\mathcal T}(M,k;r)$ denote the corresponding minimax risk when $k$ is supplied, using the same observation and source convention.
+\begin{proposition}[Same-information known-budget scale]
+For either source convention and every allowed $M,r,k$,
+\[
+ \frac{g_M(k)}{96}\le R_\stat^{\mathcal T}(M,k;r)
+ \le R_\all^{\mathcal T}(M,k;r)\le 2^{16}g_M(k).
+\]
+The floor holds even with full corrupted history; the upper uses only reconstructed suffix counts and the terminal symbol.
+\end{proposition}
+These constants matter. If $D_\star$ is the optimal factor defined as above but normalized at budget $k$ by the \emph{exact} $R_\star^{\mathcal T}(M,k;r)$, then
+\[
+ 2^{-16}\Lambda_\star\le D_\star\le96\Lambda_\star.
+\]
+In particular $2^{-49}\ell\le D_\stat\le96\,2^{17}\ell$ and the same outer bounds hold for $D_\all$. No ordering between the two exact-oracle factors is inferred from these separate normalizations.
+
+\begin{corollary}[Raw widths and fixed fractions]
+For any prescribed integer widths $2\le r_M\le M+2$, a single budget-blind family has a finite uniform factor over all $M\ge64$ if and only if
+\[
+ \liminf_{M\to\infty}r_M/M>0.
+\]
+For $r_M=\max\{2,\lceil\alpha(M+2)\rceil\}$ and fixed $0<\alpha\le1$, the optimal uniform factor has order $1+\ln(1/\alpha)$, with absolute constants. The horizon tends to infinity with $\alpha$ fixed before studying $\alpha\downarrow0$.
+\end{corollary}
+Indeed the finite upper is uniform in $M$ for each fixed fraction, and the finite lower converges to the displayed logarithmic scale. Positive liminf bounds all sufficiently large horizons; the finitely many earlier ones are harmless since loss is at most one and $g_M\ge M^{-1/2}$. If the liminf vanishes, a subsequence makes $\ell$ diverge. Thus counts plus both endpoint pairs ($r=2$) cost order $\ln M$. The stronger numerical fixed-fraction lower from the second-order manuscript is \emph{not} transferred to the first-order subclass.
+\newpage
+\section{The corrected upper interface}
+\textbf{Discard $X_0$.} An arbitrary initial pair cannot be treated as an ordinary first-order initial edge. For example, the identity table with initial pair $01$ generates $0111\cdots$. The homogeneous suffix $X_1,\ldots,X_{M+1}$ has exactly $M$ actual transitions. On every corrupted word, its ordinary pair counts satisfy
+\begin{equation}\label{eq:counts}
+ N'_{ab}=\sum_{c=0}^1 H_{abc}(Z)
+ +\ind\{(Z_M,Z_{M+1})=(a,b)\}
+ -\ind\{(Z_0,Z_1)=(a,b)\}.
+\end{equation}
+Both endpoint pairs are observed because $r\ge2$. All terms refer to the \emph{corrupted} word. The sum counts edges $0,\ldots,M-1$; adding edge $M$ and subtracting edge $0$ leaves edges $1,\ldots,M$. In particular an edit of $Z_0$ cancels exactly. These nonnegative counts sum to $M$.
+
+\textbf{Conditioning is proof-only.} For each fixed clean $X_0=b$ of positive probability, the suffix starts with an arbitrary conditional law of $X_1$ and thereafter follows $T$. Define $K_b$ on \emph{every} suffix word by prepending the fixed bit $b$, applying $K$, and deleting its first output coordinate. This is a fixed source-independent suffix kernel. It changes at most $k$ suffix symbols and protects the terminal symbol (indeed both final symbols). It is legal in the larger one-protected-symbol attack class of the natural first-order upper. The same predictor is applied for both values of $b$; uniformity in the initial law and kernel permits averaging the two conditional bounds. Neither $b$ nor any clean symbol is supplied to the predictor.
+
+\textbf{Suffix-only access is essential.} Put $r'=\min(r,M+1)$ and
+$m=\min\{r'-1,\lfloor M/2\rfloor\}$. The actual last $r'$ symbols of the suffix are available. Its first $r'$ symbols need not be: they could require the unavailable original symbol $Z_r$. The accepted upper uses only counts and the last $m+1$ symbols, so this missing prefix is irrelevant. The suffix exposes $m$ ordinary departures, not the pair-state formula $r-2$.
+
+For the selected terminal symbol $u=Z_{M+1}$, let $J'_u=\sum_bN'_{ub}$, $C'_u=N'_{u,1-u}$, and let $O'_u$ be $J'_u$ minus the number of departures from $u$ among the last $m$ suffix edges. Use
+\[
+ \widehat q=\begin{cases}C'_u/J'_u,&J'_u>0\ \text{and }512O'_u\ge J'_u,\\0,&\text{otherwise.}\end{cases}
+\]
+This defines one measurable budget-blind map on the common observation. The natural first-order bound at horizon $M$ gives $2^{17}\ell'g_M$, where $\ell'=1+\ln((M+1)/r')\le\ell$ (including $r=M+2$, when both equal one).
+
+\textbf{Imported analytic interface.} For $T(0,1)=a,T(1,0)=t>0$, stationary weights $p=(t,a)/(a+t)$ and $h=(B/t,B/a)$, $B=\max(1,a+t)$, satisfy $\sum_up_uq_uh_u=B\le2$. Generic occupation, empirical row-stack, reciprocal-return and old-visit imbalance lemmas then yield the gate bound. Reducible boundaries use direct two-state first-hit control; periodic tables are allowed. The known-budget count estimator is $(C'-6k)_+/(J'+6k+2)$ for $k\ge1$, and $(C'+1)/(J'+2)$ for $k=0$, giving $2^{16}g_M$. This paragraph identifies dependencies, not a replacement proof of their universal lemmas.
+\newpage
+\section{Lower interface and independent oracle floor}
+The richer-count lower is a separate first-order derivation, not a consequence of the natural pair-count lower. It uses $N=M+1$ ordinary edges on the same $M+2=N+1$ symbols. With stationary alternatives $T_a(0,1)=a$, $T_a(1,0)=t$, set ordinary counts $v=N_{00}$, $u=N_{01}$, and $F_1=\{X_0=1,X_N=0\}$. The exact skeleton identity is
+\[
+ Q_a(F_1,v,u)=\pi_1(a)\binom{v+u}{u}a^u(1-a)^v h_{N-v-u,u},
+ \quad h_{H,u}=t\binom{H-1}{u}t^u(1-t)^{H-1-u}.
+\]
+Infeasible indices have zero mass. The stationary factor is retained in the equality. For $u\ge1$ the beta integral is bounded by $1/u$. At fixed $v$, the remaining sum is $tR_{N-v-1}\le t$, since $R_0=1$, $R_1=1-t$ and
+$R_n=(1-t)R_{n-1}+tR_{n-2}$. Thus fixed-$v$ mixture mass with $u\ge u_0$ is at most $t/u_0$. On the stronger endpoint event $F=\{X_0X_1=11,X_{N-1}X_N=00\}$, triple-departure occupation is $j=J_{00}=v-1$; it is not $v$.
+
+The accepted triple-preserving interior relocation freezes both windows, moves only $111$ and $000$ loops to ordered retained $11,00$ visits, and restores the interior length. On its good event it preserves all eight counts and both alternative windows, with Hamming distance at most $3J_{\rm cross}+4r-5$ from $1^{N+1-j}0^j$. That null word has $J_{00}=j-2$, not $j$; matching is between the \emph{output} and sampled alternative, not the null input. A predeclared mixture proposes once; actual Hamming and final-pair checks accept or return the input unchanged. All other inputs also use identity. This produces one legal strict-budget kernel, with no resampling and no true-source input.
+
+Good-event control includes a separate ordinary-$00$ count condition, endpoint-conditioned coupling, and the forced-edge discrepancy $1+\sigma$. The risk argument discards nonnegative losses before reducing mixture coefficients, and only then uses the signed triangle bound. Its finite contradiction uses the same map's clean risk and a chosen legal integer attacked budget. It proves, for every richer-observation map, a factor at least $2^{-32}\ell$ relative to $g_N$, even within the all-state certificate $1/(N-1)$ class.
+
+\textbf{Pay the horizon conversion.} Pointwise at the same budget,
+\[
+ g_N\le g_M\le\frac{M+1}{M}g_N,\qquad
+ \frac{R}{g_M}\ge\frac{M}{M+1}\frac{R}{g_N}.
+\]
+Take suprema, then the infimum over maps: the lower is at least $(M/(M+1))2^{-32}\ell\ge2^{-33}\ell$. All budgets $0,\ldots,N-1$ become precisely $0,\ldots,M$. No substitution $N=M$ or attainment is used.
+
+\textbf{The oracle floor has its own IID proof.} Stationary IID Bernoulli sources lie in the first-order subclass and have $P^2(u,\cdot)=\Pi$. Clean two-point testing gives at least $1/(64\sqrt M)$. For $k\ge1$, bucket the ones among the first $M$ symbols in multiples of $k+1$ and uniformly retain that many ones, preserving the final pair. This edits at most $k$ bits on every input. Conditional on retained size and the final pair, the arrangement is parameter-independent. There are at most $4(\lfloor M/(k+1)\rfloor+1)$ labels, \emph{including all four protected labels}. The frozen-seed covering argument yields at least $k/(96M)$. Combining the two witnesses gives $g_M/96$ even for full history. This uses the actual IID argument, not a restriction of an arbitrary second-order lower.
+\newpage
+\section{Exact message access and the second-order extension}
+\begin{corollary}[Two-symbol supplemental alphabet]
+In a separate scan-and-message model, the decoder receives \emph{only} the $r=2$ baseline (eight triple counts, initial pair and final pair) plus one exact message from a fixed finite alphabet. No growing raw windows or other side channels are supplied. A budget-blind encoder may scan the full already corrupted word. The minimum alphabet size for a finite uniform $g_M$ factor is exactly two, for either stationary or arbitrary initial pairs.
+\end{corollary}
+To see sufficiency, discard $Z_0$ and write $W_i=Z_{i+1}$ for $0\le i\le M$. For $u=W_M$, set
+\[
+ J'_u=\sum_{i=0}^{M-1}\ind\{W_i=u\},\qquad
+ J'_{u,\rm half}=\sum_{i=0}^{\lfloor M/2\rfloor-1}\ind\{W_i=u\},\qquad
+ B=\ind\{512J'_{u,\rm half}\ge J'_u\}.
+\]
+The decoder reconstructs counts by (\ref{eq:counts}) and uses $C'_u/J'_u$ only when $J'_u>0$ and $B=1$, otherwise zero. Its risk is at most
+\[
+ \min\{1,1024M^{-1/2}+2^{20}k/M\}.
+\]
+The same conditional-kernel argument applies to this fixed suffix encoder/decoder. A one-symbol alphabet is constant, leaving the $r=2$ baseline, whose factor diverges by Theorem~1. This proves necessity only in the stated baseline model. Scanning and exact counters are uncharged message-side resources; the bit is fault-free, not a sampled raw coordinate, noisy bit, or bounded-precision implementation.
+
+\subsection*{An assumption-bearing extension, not an order-only phase diagram}
+Both rows below use the original $M+2$ word, $M$ triple departures, strict edits protecting the final pair, eight exact triple counts and both raw windows. Factors are relative to $g_M$; $\ell=1+\ln((M+2)/r)$.
+\begin{center}\small
+\begin{tabular}{p{0.22\linewidth}p{0.28\linewidth}p{0.35\linewidth}}
+\toprule
+Transition class & Assumption for upper & Accepted finite factor range\\
+\midrule
+Binary first-order table & None; arbitrary initial pair & $2^{-33}\ell\le\Lambda_\stat\le\Lambda_\all\le2^{17}\ell$\\[5pt]
+Binary second-order table & All-state $P^2(u,v)\ge\Pi(v)/M$; arbitrary initial pair & $2^{-30}\ell\le\Gamma_\stat\le\Gamma_\all\le2^{20}\ell$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The second-order statement is retained from the accepted finite manuscript, including its complete supplement and review closure. It adds source coverage under a supplied certificate; the first-order lower already establishes the qualitative positional obstruction. Its stronger fixed-fraction numerical lower remains within that theorem's own source class. Its separate message theorem has its own access scope, not an inherited removal of the initial-pair input here.
+
+The accepted natural first-order experiment instead has $N+1$ symbols, $N$ ordinary departures, four pair counts and one protected terminal symbol. Its factor range $2^{-30}[1+\ln((N+1)/r)]$ to $2^{17}[1+\ln((N+1)/r)]$ supports the upper machinery but is not itself the richer-count lower. Full-history joint budget/certificate adaptation and unknown-order questions are excluded from this addendum's dependency chain.
+\newpage
+\section{Proof map, reading limits, and status}
+This is a consolidation interface, not a standalone complete proof supplement. Reader-facing statements above are bound to exact proof, review and acceptance files by \texttt{SOURCE\_MAP.json}; historical ``candidate'' headings do not override later receipts. The required proof closure is:
+\begin{enumerate}
+\item \textbf{Generic positive lemmas:} universal occupation, row-stack empirical error, first-hit/return trace, endpoint and occupation tails, weighted half-imbalance, old-prefix reciprocal, weighted minimum, and deterministic gate perturbation. Their full proofs are in the accepted positive supplement. The natural first-order upper specializes them to two states, treats reducible boundaries separately, and proves the exact half-visit-bit bound.
+\item \textbf{Richer-observation lower:} the independent first-order fixed-$v$ skeleton and renewal mixture, conditional endpoint good event with separate $00$ control, all-row certificate check, legal single-proposal kernel, and finite clean-versus-attacked contradiction. The deterministic triple/window relocation is an accepted separate lemma; the natural pair-count lower is contextual only, not a replacement for this derivation.
+\item \textbf{Common-model interface:} corrupted-count reconstruction, discarded-first-edge correction, induced fixed-$b$ kernel, suffix-only measurability, paid $N=M+1$ lower conversion, and the independent protected-two-symbol IID oracle floor. These are the matching steps detailed on pages 3--4.
+\item \textbf{Extension closure:} the accepted finite second-order manuscript's positive, negative and finite-horizon supplements remain required for its table row. Their source-specific four-state arguments are not imported into the no-certificate first-order upper.
+\end{enumerate}
+A future standalone supplement would have to reproduce the full proofs in items 1--3 (and item 4 if retaining the extension), not merely cite this map. No new theorem branch, neural realization, full-history impossibility, or joint order-adaptation claim is added.
+
+\subsection*{Closest-work comparison, inherited bounded read scope}
+The following comparisons inherit the local primary-source audits and their version/read-scope ledgers. This addendum did not reread every external paper. No inspected subsumption was established by those audits; that is not an exhaustive novelty or priority conclusion.
+\begin{itemize}
+\item \textbf{Han--Jana--Wu (2023):} actual-terminal prediction and suffix methods are direct antecedents. The journal's squared-TV discussion is not an unsquared-TV theorem for this edited, restricted-observation experiment; the binary squared-loss open question is not resolved here. See \href{https://doi.org/10.1109/TIT.2023.3239508}{journal DOI}, model (1) and section VI.A as bounded in the audit.
+\item \textbf{Jain--Orlitsky--Ravindrakumar and Bhatt et al.:} unknown-contamination adaptation is established prior work. The former's geometric selection needs simultaneous validity of all appropriate balls; the latter supplies confidence intersection in an IID mean model. Separate expected risks here do not supply that premise. A random terminal target alone is \emph{not} a barrier to their pointwise logic. Audited scopes: \href{https://arxiv.org/pdf/2202.05453v1}{2022 note}, sections 2--3; \href{https://proceedings.mlr.press/v162/bhatt22a/bhatt22a.pdf}{ICML 2022 paper}, section 6/Appendix A.7.
+\item \textbf{Robust counts and Markov types:} Ghosh's transition-mixture parametric inference and Leskel\"a--Dreveton's parallel-trajectory robust count estimator differ in attack, target and guarantee. They preclude broad anti-count claims. Markov exchangeability, finite stacks and constrained-risk arguments are antecedents; bounded-Hamming matching, protected boundaries and mixture control still require the proofs listed above. Exact versions and reading limits are in the inherited audit ledgers.
+\end{itemize}
+\textbf{Status boundary.} Underlying units have local root acceptance after independent LLM review; this assembled addendum awaits fresh integration review and root disposition. Build/render checks are separate evidence, not scientific acceptance, formal verification, external peer review or publication permission. Accepted source files remain unchanged. No authorship, affiliation, license, novelty, learning, or Transformer-performance claim is introduced.
+\end{document}

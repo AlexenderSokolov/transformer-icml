@@ -1,15 +1,28 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 最新进展：2026-11-03
+
+新增阶段区分“免费精确计数下的补充消息”与“全部信息均须付费的完整预测消息”。六个已接纳研究目录给出固定信道的长度分类、全消息通信成本、明确计费的编码构造，并在给定临界全状态条件下迁回二阶预测；不声称一般无混合二阶结论、新纠错码、训练可达性或新颖性认证。
+
+- [最新中文综述、完整证明与审查入口](v10_research/resumption_20261103/RESEARCH_SUMMARY.zh.md)
+- [完整有限时域稿：新重建 31 页 PDF](v10_research/resumption_20261103/rebuilt_documents/positional_manuscript_finite_20261102/main.pdf) · [恢复的 LaTeX 源码](v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex)
+- [综合稿：新重建 6 页 PDF](v10_research/resumption_20261103/rebuilt_documents/richer_count_consolidation_20261102/main.pdf)
+- [有限文献核查与新颖性边界](v10_research/resumption_20261103/reliability_prior_art/AUDIT.md)
+- [恢复范围与来源缺口](provenance/resumption_20261103/RECOVERY_AND_SOURCE_RESOLUTION.json) · [公开导出编辑映射](provenance/resumption_20261103/PUBLIC_EXPORT_RECONCILIATION.json)
+
+两份 PDF 是从恢复源码新编译的输出，不是找回的旧 PDF 二进制。完整集成证明可读，不等于旧独立笔记、历史诊断和原来源审计已全部恢复。下文保留此前各阶段的原有条件与历史记录。
+
 这项研究讨论未知二阶随机过程的下一符号概率预测：历史长度、可见信息、网络结构、内部精度、计算成本与扰动，分别怎样限制可达风险。仓库保留完整证明、审查、诊断、真实失败与修订记录；不同模型的结论不互相替代。
 
-**科学状态截至 2026-11-02。** 第八阶段有六个冻结单元，之后另有十一项已审查接纳的研究更新（首次四项，第二次七项）。这里的“接纳”是项目内证据状态，不是期刊录用、形式证明或外部同行评审。
+**科学状态截至 2026-11-02。** 第八阶段有六个冻结单元，之后另有二十一项已审查接纳的研究更新（首次四项，第二次七项，第三次十项）。这里的“接纳”是项目内证据状态，不是期刊录用、形式证明或外部同行评审。
 
-第二次增量的科学边界截至 2026-11-02 13:37 UTC：BK002 的二元、对 beta 一致的全历史否定结论已接纳；预先指定 beta 约为 1/M 曲线上的全历史问题仍未由本次增量解决。CB001／CB002 只是风险增量引理，不是完整适应估计器。
+第三次增量截至 2026-11-02 14:39 UTC：二元完整历史的给定 beta、未知 k 适应已有精确公开域分类；在 beta ≥ c/M，同一个不读取 k 或 beta 的平衡门控规则覆盖任意初始化及全部预算。全局直方图加短首尾窗口仍可能不足，四个前半段行计数则提供一个充分构造。没有声称这些计数数量最少或首尾窗口阈值尖锐。
 
 ## 从这里开始
 
 | 阅读目的 | 入口 |
 |---|---|
+| 最新适应阶段综述 | [English](v10_research/adaptation_stage_synthesis/positional_counts_adaptation.md) · [中文](v10_research/adaptation_stage_synthesis/research_summary_zh.md) |
 | 先了解结论、条件和未解项 | [当前状态与分析](docs/STATUS.md) |
 | 看方法、失败、修订及阶段决定 | [按日期整理的研究日志](docs/RESEARCH_LOG.md) |
 | 找证明、完整审查、诊断和历版文稿 | [资料导航](docs/NAVIGATION.md) |
@@ -17,7 +30,7 @@
 | 第八阶段中文说明：9 页，93 个原生可编辑公式 | [DOCX](v10_research/source_corruption_guide/Chinese-stage8-guide.docx) · [PDF](v10_research/source_corruption_guide/Chinese-stage8-guide.pdf) |
 | 内部信息切口、精度、深度与可靠性：英文 v5，70 页 | [PDF](v10_research/manuscript_v5/finite_precision_prediction.pdf) · [LaTeX](v10_research/manuscript_v5/finite_precision_prediction.tex) |
 | 前期精度与可靠性中文说明 | [第七阶段 DOCX](v10_research/precision_robustness_guide/Chinese-stage7-guide.docx) · [PDF](v10_research/precision_robustness_guide/Chinese-stage7-guide.pdf) |
-| 核对原始文件、公开导出与路径对应 | [初次来源映射](provenance/PUBLIC_SOURCE_MAP.json) · [第二次来源映射](provenance/increment2/SOURCE_MAP.json) · [公开校验工具](tools/public_verify.py) · [复现边界与操作](docs/REPRODUCIBILITY.md) |
+| 核对原始文件、公开导出与路径对应 | [初次来源映射](provenance/PUBLIC_SOURCE_MAP.json) · [第二次来源映射](provenance/increment2/SOURCE_MAP.json) · [第三次来源映射](provenance/increment3/SOURCE_MAP.json) · [公开校验工具](tools/public_verify.py) · [复现边界与操作](docs/REPRODUCIBILITY.md) |
 
 ## 三条主线
 
@@ -29,7 +42,7 @@
 
 - **BT001 的强内部常数步输运前提仍未证明。** BT002 通过独立的较弱熵输运路线证明二元下界，不依赖那个开放前提。
 - **EP001 改变终点编辑权限，不改变预测目标。** 目标仍是原始隐藏轨迹的真实终点条件分布。
-- **AB001 排除的是同一个估计器同时不知道 `k` 和 `beta` 的统一适应。** BK002 进一步排除二元模型中给定 `beta` 但对所有 `beta` 一致的全历史未知 `k` 适应；预先指定 `beta` 约为 `1/M` 曲线仍未由本增量解决。AB002 只证明普通 add-one 估计器的对数级失配。
+- **AB001 排除的是同一个估计器同时不知道 `k` 和 `beta` 的统一适应。** BK002 进一步排除二元模型中给定 `beta` 但对所有 `beta` 一致的全历史未知 `k` 适应；CB005 已解决 `beta ≥ c/M` 的任意初始化正向适应，AF001 给出给定 beta 的完整公开域分类，但不能把其并集选择器说成 beta 盲。AB002 只证明普通 add-one 估计器的对数级失配。
 - 独立 LLM 审查、有限诊断与构建复现各有证据范围，均不等于形式验证、外部同行评审、新颖性认证、训练可达性或真实网络运行证明。
 
 原始科学版本不被事后改成“当时已经完成”。历史文件中的候选、待批准或尚未发布措辞，按其写作时点理解；后续状态见带时间与哈希的接纳记录及公开来源映射。原始用户指令、私人运行记录、凭据与无关文件不属于公开研究材料。

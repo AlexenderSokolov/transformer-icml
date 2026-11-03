@@ -1,0 +1,450 @@
+{
+  "generated_utc": "2026-11-02T14:37:36.978444+00:00",
+  "purpose": "Scientific synthesis source map, not a new proof or acceptance authority",
+  "accepted_sources": [
+    {
+      "unit": "SC003",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/SC003_acceptance.json",
+        "sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+        "bytes": 864
+      },
+      "proof": {
+        "path": "binary_source_corruption/SC003_theorem.md",
+        "sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+        "bytes": 12757
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "binary_source_corruption/SC003_independent_full_review.md",
+        "sha256": "2d5a735602717ca020d5cd463b75cc28cab25cec0cb5d809f0d14b4770e7d153",
+        "bytes": 17136
+      },
+      "accepted_scope_verbatim": "POST-STAGE7. Binary full corrupted history with final pair protected; all beta/all starts; k-aware beta-blind lower-envelope rational estimator. Upper min(1,2^17s+2^19F), F=(k/M)[1+ln(1+1/(k max(sqrtbeta,1/M)))], F0=0. Only lower floors max(s,k/M)/96 and fixed-positive-beta matching order claimed. Root read full theorem and fresh FULL review, not only prior algebra subreview. Matching moving-beta logarithmic lower remains open. No global sqrtbeta mixing, neural-depth, unknown-k adaptation or novelty claim.",
+      "contributor_reading_scope": "Previously read complete theorem and exact intake receipt; revisited receipt for this synthesis."
+    },
+    {
+      "unit": "BT002",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/BT002_acceptance.json",
+        "sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+        "bytes": 1307
+      },
+      "proof": {
+        "path": "binary_erasure_transport/BT002_entropy_bridge_lower.md",
+        "sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+        "bytes": 13700
+      },
+      "component_proofs": [
+        {
+          "path": "binary_erasure_transport/BT002_entropy_bridge_lower.md",
+          "sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+          "bytes": 13700
+        },
+        {
+          "path": "binary_erasure_transport/BT002_scalar_completion.md",
+          "sha256": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+          "bytes": 4963
+        }
+      ],
+      "review": {
+        "path": "binary_erasure_transport/BT002_independent_review.md",
+        "sha256": "9171f4e18f4a238965644f67baf0fb81e73efba3c373bf27109c058327312595",
+        "bytes": 7551
+      },
+      "accepted_scope_verbatim": "POST-STAGE7. Binary full-history stationary corruption lower 2^-54 max(s,F2), allbeta M>=64 k0..M, true finalpair protected. Uniform Doeblin concentration/finite entropy transport to coarse public canonical bridge, strict Hamming truncation, independent auxiliary seed small-ball argument, same prior/kernel across suffixes, exact finite-domain scalar cutoff completion. Root read entire mainproof, scalarproof and full fresh review. Combining separately accepted SC003 closes bothinit fixedbinary minimax profile. Does NOT prove BT001 stronger interior O(1) transport, efficient/causal attack, visible seed/mask, edited endpoint, novelty or formalverification.",
+      "contributor_reading_scope": "Previously read complete main and scalar proofs and exact intake receipt; revisited receipt for this synthesis."
+    },
+    {
+      "unit": "AB003",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/AB003_acceptance.json",
+        "sha256": "eb4a51922f764ee65bc3dffa77e253d5345f2ce0d0e8c577ca655fc24f79b67d",
+        "bytes": 948
+      },
+      "proof": {
+        "path": "binary_budget_adaptation/AB003_small_budget_hard_threshold.md",
+        "sha256": "fe3260f31f76a99576897d931e23ab939e0ebf8eb04e8cf31591b2b908d392e8",
+        "bytes": 11456
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "binary_budget_adaptation/review_ab003_full.md",
+        "sha256": "0d4ec9fb2f4672fc5b2c850b0e553caebd83871a8ec808931b75fa25193ada90",
+        "bytes": 10452
+      },
+      "accepted_scope_verbatim": "POST-STAGE8. Root read full proof including section8 and full independent review. Hard-threshold estimator jointly k/beta-blind attains binary known-k profile for k<=sqrtM, all beta and all starts. With AB001, uniform optimal joint-blind adaptation over 0<=k<=b_M exists iff b_M=O(sqrtM), constants may depend on public range envelope. Not pointwise impossibility at every larger budget; supplied-beta all-budget adaptation remains open. No neural-depth/training/novelty/formal/external-review claim.",
+      "contributor_reading_scope": "Previously read complete proof and exact intake receipt; revisited receipt for this synthesis."
+    },
+    {
+      "unit": "BK001",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/BK001_acceptance.json",
+        "sha256": "5bc61da0716e6645abdd9d538ea69b15dece11a0be00fb7f05b255e114cf6226",
+        "bytes": 1121
+      },
+      "proof": {
+        "path": "binary_beta_known_adaptation/BK001_histogram_adaptation_obstruction.md",
+        "sha256": "edbfc9cd372df7497ff7462eded0e6c85a3ee4f99f21bd7310f460bd1f0fcb5a",
+        "bytes": 12706
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "binary_beta_known_adaptation/BK001_independent_full_review.md",
+        "sha256": "ec654b57d3a82c66fb70e9801febc517f83a4fa1e3f6a06fa93b5b66f186628b",
+        "bytes": 16388
+      },
+      "accepted_scope_verbatim": "POST-STAGE8. Root read complete initial proof, sole exact endpoint-bound delta and full independent review. Same advertised beta=1/M, stationary binary sources, exact triple histogram plus initial/final pairs ONLY. Exact constrained-risk bound rules out unknown-k adaptation across all budgets for that restricted statistic. Strict source-independent Hamming kernel uses auxiliary clean sample canonicalization and pays fixed-null-length occupancy mismatch and endpoint conditioning. Does NOT settle full-history supplied-beta adaptation, richer fixed boundary windows, or known-k minimax. No efficiency/neural/novelty/formal/external-review claim.",
+      "contributor_reading_scope": "Previously read complete proof and exact intake receipt; revisited receipt for this synthesis."
+    },
+    {
+      "unit": "BK002",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/BK002_acceptance.json",
+        "sha256": "0ed8c82368501bc8e720201e82eb7eab18726fdbc0292c1ec6efd5ae3fd88a3d",
+        "bytes": 1173
+      },
+      "proof": {
+        "path": "binary_beta_known_adaptation/BK002_full_history_supplied_beta_obstruction.md",
+        "sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12",
+        "bytes": 15223
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "reviews/BK002_independent_full_review.md",
+        "sha256": "41f6a35a5224271a6f8cc70a8b84e4099526257b47aef19eb6f64779ca41c3a4",
+        "bytes": 17477
+      },
+      "accepted_scope_verbatim": "POST-STAGE8. Root read complete frozen reference-sampler proof and fresh full independent review. Same supplied beta=1/k^2, stationary binary sources, FULL corrupted history. Exact finite constrained-risk lower with constants3/2048 and32 proves no uniform-in-beta unknown-k oracle-rate adaptation across all budgets. Together with AB003, adaptation uniformly over0<=k<=b_M exists iff b_M=O(sqrtM), even when beta supplied; sufficiency all starts, necessity stationary. Not pointwise every-large-k impossibility, not fixed-positive-beta with beta-dependent constants, not resolution of prescribed beta=1/M full-history curve. Optional actual-clean sampler unadopted. No formal/external-review/novelty/training claim.",
+      "contributor_reading_scope": "Previously read complete proof and exact intake receipt; revisited receipt for this synthesis."
+    },
+    {
+      "unit": "KA001",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/KA001_acceptance.json",
+        "sha256": "f98aac7691f919d2583acf53601f7c9e654924620a9e952623e063849e9f2843",
+        "bytes": 955
+      },
+      "proof": {
+        "path": "binary_certificate_adaptation_phase/KA001_certificate_phase_partial.md",
+        "sha256": "5cf1f9ba5dca0e5cb7dd2a703bca163f87e46f5eb16ddf5563837d873e9072e7",
+        "bytes": 10978
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "reviews/KA001_independent_full_review.md",
+        "sha256": "a479f51f29c59f3ba180b743fd9e72f1fd14e9cd634ca910f17ca371f1ce893f",
+        "bytes": 17603
+      },
+      "accepted_scope_verbatim": "POST-STAGE8. Root read complete frozen candidate and full fresh review. BINARY full-history unknown-k adaptation with supplied beta: weak beta<=C/M² positive, prescribed intermediate curves M beta->0 and M² beta->infinity negative via exact BK002 nesting/floors, strong beta>=c/sqrtM positive. Constants depend on fixed C/c; upper all starts, lower stationary. PARTIAL phase classification only, critical beta~1/M and remaining gap unresolved. No formal/external-review/novelty/training claim.",
+      "contributor_reading_scope": "Exact acceptance receipt; no fresh full proof review is claimed by this synthesis."
+    },
+    {
+      "unit": "KH001",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/KH001_acceptance.json",
+        "sha256": "2fa945234c1eb9cbc9ddfe2acef3d852a15ea03eb29895c04962d8003effd881",
+        "bytes": 1074
+      },
+      "proof": {
+        "path": "binary_certificate_adaptation_phase/KH001_histogram_strong_side_obstruction.md",
+        "sha256": "311adf683a22370fe765f61045a96af4a201e611ceeb9136f53a2b1f8cc7fd27",
+        "bytes": 14506
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "reviews/KH001_independent_full_review.md",
+        "sha256": "0d091d9b6830232e698c6d29ea428a9fe3c21aa4acbba7bbaeb32cb4b5ab5839",
+        "bytes": 20754
+      },
+      "accepted_scope_verbatim": "POST-STAGE8. Root read full pre-freeze proof, exact editorial diff and full fresh review. HISTOGRAM+INITIAL/FINAL PAIRS ONLY: prescribed beta>=1/M with beta sqrtM->0 nonadaptive across budgets. Asymmetric null weights, actual targetbeta, stationary binary-order2 reversal, corrected departure counts, reverse conditioning and fixed-null Hamming costs. Together KA001 completes stated power-law classification for this exact statistic, NOT full histories or arbitrary non-power curves. Kernel fixed per public(M,beta,k), common across source laws, not beta-blind. No formal/external-review/novelty/efficiency claim.",
+      "contributor_reading_scope": "Exact acceptance receipt; no fresh full proof review is claimed by this synthesis."
+    },
+    {
+      "unit": "KH002",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/KH002_acceptance.json",
+        "sha256": "3bbc8a59d94724bed2352067fe0fa287d1d8476190a01c9a30dbb5b43f3b51aa",
+        "bytes": 965
+      },
+      "proof": {
+        "path": "binary_certificate_adaptation_phase/KH002_histogram_domain_classification.md",
+        "sha256": "970bfefb6041cdb989148819eb526c789d86591992375b84b05de2dd72bf9702",
+        "bytes": 8404
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "reviews/KH002_independent_full_review.md",
+        "sha256": "4ae4315cc3fe19cfc020b040ae49b7485591806b46f636a7add2f85d38fed502",
+        "bytes": 18804
+      },
+      "accepted_scope_verbatim": "POST-STAGE8. Root read full frozen proof and independent review. EXACT TRIPLE HISTOGRAM+INITIAL/FINAL PAIRS ONLY: arbitrary public certificate-domain all-budget adaptation iff sup min(M²beta,1/(beta sqrtM)) finite, G(M,0)=0. Same ordinary add-one positive weak/strong union all starts; stationary negative via witness beta_w=max(beta,1/M), actual beta metadata/benchmark and true targetbeta_w kept distinct. No full-history, richer windows, efficiency, formal/external-review or novelty classification.",
+      "contributor_reading_scope": "Exact acceptance receipt and proof sections 1–4 for domain statement and metadata nesting; no fresh full proof audit."
+    },
+    {
+      "unit": "CB001",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/CB001_acceptance.json",
+        "sha256": "e09c7d0b901d92beefbf940596a94c72287534d3d8cca9a059316ccdd2a849e2",
+        "bytes": 1005
+      },
+      "proof": {
+        "path": "critical_beta_adaptation/CB001_long_run_veto_partial.md",
+        "sha256": "192b14816e982e6f81d7651d50ef271b14feb5dad4c0c0249c51eedc94033772",
+        "bytes": 9582
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "critical_beta_adaptation/CB001_independent_full_review.md",
+        "sha256": "e3746bbaa36f1641bdba5efbfa55b95cb57ec7515b4a493c2c23f349202c7c51",
+        "bytes": 5805
+      },
+      "accepted_scope_verbatim": "POST-STAGE8 PARTIAL lemma. Root read corrected full proof and full independent review. General binary all-state positive-beta, arbitrary starts: order-sensitive exact-long-run veto increases clean risk by at most min(1,40/(M sqrtbeta)) at L=floorM/2. Neutralizes specifically stated BK001/BK002 attack supports on critical null. Does NOT establish arbitrary-corruption risk, near-run bound, or complete critical-curve unknown-k adaptation. CB2 general-L and specialization clarified with genuine diff. No formal/external-review/novelty/training claim.",
+      "contributor_reading_scope": "Authored complete proof and read full independent review and receipt; accepted bytes unchanged."
+    },
+    {
+      "unit": "CB002",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/CB002_acceptance.json",
+        "sha256": "4a5459b3bb0ff7caf2499884f412cda91064551885a37d1f3bafab772be83b14",
+        "bytes": 992
+      },
+      "proof": {
+        "path": "critical_beta_adaptation/CB002_near_prefix_veto_partial.md",
+        "sha256": "69c55c6ab40e939c5392beb022c213c8506e8aa464b3f0b2f3f23b0db0eabe11",
+        "bytes": 11001
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "critical_beta_adaptation/CB002_independent_full_review.md",
+        "sha256": "ebab47127d2be0b26a062eb79cac1dcc6e886d5796140ac4e83ca7248bd488c6",
+        "bytes": 8090
+      },
+      "accepted_scope_verbatim": "POST-STAGE8 PARTIAL theorem. Root read full frozen proof and full independent review. BINARY arbitrary-start full-history near-prefix veto has strict-Hamming arbitrary-k RISK-INCREMENT bound over any baseline; at beta1/M adds at most min(1,2^11/sqrtM+2^9k/M). Independent fixed-size stack inclusion and embedded diagonal trace, no conditional-binomial claim. Does NOT establish all-budget adaptation or bound baseline risk outside veto. Later failure candidate not adopted here. No formal/external-review/novelty/neural/training claim.",
+      "contributor_reading_scope": "Authored complete proof and read full independent review and receipt; accepted bytes unchanged."
+    },
+    {
+      "unit": "CB003",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/CB003_acceptance.json",
+        "sha256": "83d76b6aacfc2079a48b2c4c981e0850b8b1d0d8e8a21ad11f1bda0d53b64ca6",
+        "bytes": 966
+      },
+      "proof": {
+        "path": "critical_beta_adaptation/CB003_fixed_veto_bypass.md",
+        "sha256": "b86a78837e59bcc2a690475f66f1eeaf46405f5006722c59f080828d8dada8b9",
+        "bytes": 6084
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "critical_beta_adaptation/CB003_independent_full_review.md",
+        "sha256": "aba93ebb058acd3da9d45da1fdb986dbbba1721bde25065cc96d394ed0e489f5",
+        "bytes": 5312
+      },
+      "accepted_scope_verbatim": "POST-STAGE8 restricted-estimator counterexample. Root read complete proof and independent review. Deterministic strict-k protected attack disables CB002 fixed near-prefix veto using h+1 prefix edits and inserts floor(k/4) suffix ones; exact counts force W(AB003) logarithmic suboptimality at stationary beta1/M null for specified large-k domain. Failure of THIS composition only, not full-history critical-curve impossibility; CB001/CB002 increment bounds unchanged. No formal/external-review/novelty/training claim.",
+      "contributor_reading_scope": "Authored complete proof and read full independent review and receipt; accepted bytes unchanged."
+    },
+    {
+      "unit": "KH003",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/KH003_root_acceptance.json",
+        "sha256": "2e235bca197c131dc82fd3a0893fc38e0d50576b1c49ca3912f8e2a25f782db2",
+        "bytes": 882
+      },
+      "proof": {
+        "path": "binary_certificate_adaptation_phase/KH003_boundary_window_obstruction.md",
+        "sha256": "09adb8433d97011dbe7772ed9b0f1f903ed245d73299db02d7d6bc477fc358a4",
+        "bytes": 11850
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "reviews/KH003_independent_full_review.md",
+        "sha256": "e1e4de95324004d6acfc31029e27104d7d82e20718959bca08f185db52c3e742",
+        "bytes": 25119
+      },
+      "accepted_scope_verbatim": "Exact triple histogram plus genuine first/last r symbols only. Finite constrained risk, critical r=o(M^(1/6)) obstruction, bounded-width domain classification. Not all interior length-r pattern counts; r=2/3 shorter counts already recoverable. Stationary witnesses; no sharp growing-width threshold. Root read full proof and review. Independent LLM audit, not formal/external review or novelty certification. Not yet published.",
+      "contributor_reading_scope": "Exact acceptance receipt; no fresh full proof review is claimed by this synthesis."
+    },
+    {
+      "unit": "KH004",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/KH004_root_acceptance.json",
+        "sha256": "99e006c273ed1e93f820d3be3df77f37d430790bc03a723712214d61527c4be3",
+        "bytes": 942
+      },
+      "proof": {
+        "path": "binary_certificate_adaptation_phase/KH004_constant_crossing_window_obstruction.md",
+        "sha256": "ec332fdd75eed3401f389804f4f1ed21a46b1bc1d8a8c09f68088676e47da814",
+        "bytes": 12985
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "reviews/KH004_independent_full_review.md",
+        "sha256": "91a9b91e5131706b03c852b79f14f78dbda03c2faf3610698cf89861efd0ece8",
+        "bytes": 14659
+      },
+      "accepted_scope_verbatim": "Root read full frozen proof and complete independent review. Triple histogram plus genuine first/last r symbols only; constant-crossing stationary witnesses yield finite KH4 and nonadaptivity at beta=1/M for every prescribed r=o(M^(1/3)). Does not classify r~M^(1/3), all interior pattern counts, full history, local encoders or neural architectures. KH003 remains unchanged. Independent LLM corroboration, not formal/external review or novelty certification. Not yet published.",
+      "contributor_reading_scope": "Exact acceptance receipt and proof sections 1–3 plus opening of section 4; use only accepted statement/scope, no fresh full proof audit."
+    },
+    {
+      "unit": "CB004",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/CB004_root_acceptance.json",
+        "sha256": "de78d50ac35f4f07f3f043a3f105deb2a0e783f9410ffee6dfd77cc873fe560d",
+        "bytes": 884
+      },
+      "proof": {
+        "path": "critical_beta_adaptation/CB004_stationary_critical_adaptation.md",
+        "sha256": "a322c2fe08b76cf84f587b91e4ab504e2e02468e8c1a617fd7b868e14f643155",
+        "bytes": 10088
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "critical_beta_adaptation/CB004_BP001_independent_full_review.md",
+        "sha256": "8f43dadd17dc0736678faf1f7200516e8db4db4bb39c8882f48d09370bfb60f3",
+        "bytes": 17073
+      },
+      "accepted_scope_verbatim": "STATIONARY ONLY. Same unknown-k and unknown-beta balance-gated estimator. Risk <= min(1,2^16/sqrtM+4096/(M sqrtbeta)+2^23 k/M). Uses full triple counts, first-half row counts and protected terminal pair. All-budget minimax order beta>=c/M. Requires BP001; no arbitrary-start conclusion. Root read full proof and review. Independent LLM audit, not formal/external review or novelty certification. Not yet published.",
+      "contributor_reading_scope": "Authored complete proof and read full fresh two-component review and receipt; accepted bytes unchanged."
+    },
+    {
+      "unit": "BP001",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/BP001_root_acceptance.json",
+        "sha256": "18e837f16311816a8ca44ac77fd722dc05e3f8436a56eb1e3edc8754c5961d80",
+        "bytes": 764
+      },
+      "proof": {
+        "path": "critical_beta_adaptation/balance_probe/BP001_stationary_weighted_balance.md",
+        "sha256": "22b60eedf31f1e990e990a8b64ad733a1a3acc9723a421fdc6d677866c771271",
+        "bytes": 8525
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "critical_beta_adaptation/CB004_BP001_independent_full_review.md",
+        "sha256": "8f43dadd17dc0736678faf1f7200516e8db4db4bb39c8882f48d09370bfb60f3",
+        "bytes": 17073
+      },
+      "accepted_scope_verbatim": "STATIONARY ONLY weighted imbalance ingredient, unit-cross gamma=(a,1,1,t), reverse-window indices paid. No global sqrtbeta mixing or arbitrary-start claim. Root read full proof and review. Independent LLM audit, not formal/external review or novelty certification. Not yet published.",
+      "contributor_reading_scope": "Read complete companion proof, full fresh two-component review and receipt; accepted bytes unchanged."
+    },
+    {
+      "unit": "CB005",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/CB005_root_acceptance.json",
+        "sha256": "fcb7152503d8bae6ced2224b5d527ca8b6c8efe2094abc6f4a983eee88daa5ad",
+        "bytes": 1033
+      },
+      "proof": {
+        "path": "critical_beta_adaptation/CB005_all_start_critical_adaptation.md",
+        "sha256": "5e514451e88672533b5a376e43265b8a382ac0b59e816e3ef06212ea5be6db52",
+        "bytes": 13357
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "critical_beta_adaptation/CB005_independent_full_review.md",
+        "sha256": "b8976cae54be86f6b9c110f207256c38ec5c81913cc1156af0bd913cba47c57a",
+        "bytes": 17290
+      },
+      "accepted_scope_verbatim": "Root read complete frozen proof and full fresh independent review. ALL-START binary protected-terminal corruption, including unsupported singleton starts. SAME unknown-k/unknown-beta gate estimator has min(1,2^16/sqrtM+2^16/(M sqrtbeta)+2^23 k/M). All-budget oracle order on beta>=c/M. Uses global triple counts plus four first-half row counts and protected pair. No global sqrtbeta mixing, formal/external review, architecture implementation or novelty certification. First-hit scale has established Norris-Peres-Zhai prior art documented separately. Not yet published.",
+      "contributor_reading_scope": "Authored complete proof; reread complete proof, full fresh all-start review and exact receipt during handoff; accepted bytes unchanged."
+    },
+    {
+      "unit": "AF001",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/AF001_root_acceptance.json",
+        "sha256": "a02c48ceca42df35f0a60c2c85473085dd03c46cf22337bd88568a0eaee8bd1e",
+        "bytes": 1026
+      },
+      "proof": {
+        "path": "binary_full_history_domain/AF001_full_history_domain_classification.md",
+        "sha256": "17860bb034c34c388d12ccb83b942dc88fb4bf88ee15c2d7d63df099a230ebd4",
+        "bytes": 11930
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "reviews/AF001_independent_full_review.md",
+        "sha256": "536d219827b93643853c9fc21f6a1ec791af431e0e36a93b0656c62a75bbc992",
+        "bytes": 11691
+      },
+      "accepted_scope_verbatim": "Root read full initial proof, actual status-only diff to frozen final and full fresh independent review. Exact arbitrary public-domain full-history supplied-beta allbudget adaptation iff sup min(M²beta,1/(M beta)) finite, zero at beta0. Both initialization conventions, including unsupported starts. Public actual-beta selector weak add-one/strong balance; NOT generally beta-blind across union. Negative uses same actual metadata and stationary witnesses. No minimality of four half-counts, neural resource, formal/external review or novelty claim. Not yet published.",
+      "contributor_reading_scope": "Read complete frozen proof, complete fresh independent review, and exact acceptance receipt for this synthesis; this reading is not an additional independent review."
+    },
+    {
+      "unit": "BCJ001",
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+      "receipt": {
+        "path": "intake/BCJ001_root_acceptance.json",
+        "sha256": "27c1aa7efdc86752c63fd0b1f41b9c303a2aedff965ce81721f3abca7c54699f",
+        "bytes": 1122
+      },
+      "proof": {
+        "path": "balanced_joint_finite_cut/BCJ001_theorem.md",
+        "sha256": "95d5aac1ee2504955e55c1e82241c8a07d219661e2620c6e083acf5c8701554d",
+        "bytes": 19465
+      },
+      "component_proofs": [],
+      "review": {
+        "path": "balanced_joint_finite_cut/BCJ001_independent_full_review.md",
+        "sha256": "9cce8092070916078baa9b1cb82dcc9a9d6872b0013568996e4310a9f4c413ef",
+        "bytes": 13435
+      },
+      "accepted_scope_verbatim": "Root read full frozen proof and full independent review. Fixed12coordinate uniform paid bank (8triples+4half-row subfrequencies), protected terminal pair only. Strict source k edits then one-shot VECTOR linfinity portnoise delta then clip/Qfloor. SAME unknown-k/delta/beta rational gate has stated allstart/stationary bounds; matching fixed-prefix capmax(M^-1/2,k/M,delta,1/Q) on beta>=c/M. Fresh complete12port IID precision lower, coarsening and BT002 simulation. All positional/mask/working-bit/isolation costs included; h fractional not total bits. Not optimized-encoder lower or fixed neuraldepth claim, formal/external review or novelty certification. Not yet published.",
+      "contributor_reading_scope": "Read complete frozen proof, complete fresh independent review, and exact acceptance receipt for this synthesis; this reading is not an additional independent review."
+    }
+  ],
+  "pending_sources": [],
+  "provenance_note": {
+    "path": "critical_beta_adaptation/CB005_first_hit_prior_art_note.md",
+    "sha256": "f31ca9fd7c2958c9fe247f22b1355522d0e9f276a0f9e794162e0fe47c59898c",
+    "bytes": 1502
+  },
+  "external_source": {
+    "title": "Surprise probabilities in Markov chains",
+    "authors": "James Norris, Yuval Peres, Alex Zhai",
+    "version": "arXiv:1408.0822v1 (2014)",
+    "url": "https://arxiv.org/pdf/1408.0822",
+    "reading_scope": "Title/abstract, Proposition 1.1 statement, complete Lemma 2.1 and Proposition 1.1 proof in section 2; not the full paper or a comprehensive novelty search."
+  },
+  "outline": {
+    "path": "adaptation_stage_synthesis/OUTLINE_AND_SOURCE_MAP.md",
+    "sha256": "07211529de2bc78f565a26c41b6463e2d2a3c3f537f658bc42394e0cc7585a58",
+    "bytes": 6681,
+    "role": "Historical outline prepared before the two final receipts; not current acceptance authority"
+  },
+  "status_rule": "Exact receipts and hash bindings establish inherited acceptance. Historical candidate headers, outline and earlier source map remain as genuine chronology; all eighteen cited source units are now accepted. This synthesis itself is a new exposition awaiting root reading, not a new theorem.",
+  "earlier_source_map": {
+    "path": "adaptation_stage_synthesis/SOURCE_MAP_before_AF001_BCJ001_receipts.json",
+    "sha256": "ed079c9e0a9bc83fe247b148915acc8c3ae3e5d7dcc0d322f2f0e4e9e085397d",
+    "bytes": 25622
+  },
+  "manuscripts": [
+    {
+      "path": "adaptation_stage_synthesis/positional_counts_adaptation.md",
+      "sha256": "f38d29476f2d76b018b5148aebcf2f6d337ddb4064f42b124e6fa61251a876cf",
+      "bytes": 13705
+    },
+    {
+      "path": "adaptation_stage_synthesis/research_summary_zh.md",
+      "sha256": "413c06fc456919ef9f345a59a72770e93dbaee26a9ee72a4b3aca3dd6d60c329",
+      "bytes": 6637
+    }
+  ]
+}

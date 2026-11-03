@@ -1,0 +1,47 @@
+--- initial_author_checker
++++ final_author_checker
+@@ -1,22 +1,23 @@
+ #!/usr/bin/env python3
+-"""Author finite algebra/interface checks. CB005 remains conditional until receipt."""
++"""Author finite algebra/interface checks. CB005 is accepted; AF001 remains a new candidate."""
+ from pathlib import Path
+ from fractions import Fraction as F
+ from collections import Counter
+ from math import isqrt
+ import hashlib,json,datetime
+ D=Path(__file__).resolve().parent;R=D.parent;counts=Counter()
+-proof=D/'AF001_full_history_domain_classification.md';ph='597d6f1473298fdbb6013b09134c2caff67aaf3dd9537180d577262e7e014072'
++proof=D/'AF001_full_history_domain_classification.md';ph='17860bb034c34c388d12ccb83b942dc88fb4bf88ee15c2d7d63df099a230ebd4'
+ h=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+ def ck(v,k):
+  assert v,k
+  counts[k]+=1
+ def G(M,b):
+  return F(0) if b==0 else min(M*M*b,1/(M*b))
+-ck(h(proof)==ph,'candidate_hash');ck(h(D/'AF001_initial_candidate.md')==ph,'initial_snapshot')
++ck(h(proof)==ph,'candidate_hash');ck(h(D/'AF001_initial_candidate.md')=='597d6f1473298fdbb6013b09134c2caff67aaf3dd9537180d577262e7e014072','actual_preacceptance_snapshot')
+ accepted=[]
+-for u in ['KA001','CB004','BK002','AB001','SC003','BT002','KH002']:
+- p=R/f'intake/{u}_acceptance.json';q=json.loads(p.read_text())
++for u in ['KA001','CB004','CB005','BK002','AB001','SC003','BT002','KH002']:
++ suffix='_root_acceptance.json' if u in ['CB004','CB005'] else '_acceptance.json'
++ p=R/f'intake/{u}{suffix}';q=json.loads(p.read_text())
+  ck(h(R/q['proof'])==q['sha256'],'accepted_source_hash')
+  if 'review_sha256' in q:ck(h(R/q['review'])==q['review_sha256'],'accepted_review_hash')
+  accepted.append({'unit':u,'receipt':str(p.relative_to(R)),'proof_sha256':q['sha256']})
+@@ -60,11 +61,11 @@
+ for j in range(1,20):
+  M=64+j**4;beta=F(2,M*M) if j%2 else F(1,2*M)
+  ck(G(M,beta)<=2,'oscillating_fixed_union')
+-# The upper is an inherited conditional interface, not an accepted source claim.
++# The now-accepted upper interface is still checked against its exact frozen snapshot.
+ cb5=R/'critical_beta_adaptation/CB005_all_start_critical_adaptation.md'
+ cb5hash=h(cb5)
+-ck(cb5hash=='5e514451e88672533b5a376e43265b8a382ac0b59e816e3ef06212ea5be6db52','conditional_CB005_snapshot')
++ck(cb5hash=='5e514451e88672533b5a376e43265b8a382ac0b59e816e3ef06212ea5be6db52','accepted_CB005_snapshot')
+ ck(h(proof)==ph,'unchanged_candidate')
+-out={'unit':'AF001','status':'PASS_FINITE_CHECKS_ALL_START_REMAINS_CONDITIONAL','proof_sha256':ph,'generated_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'arithmetic':'Exact integers/Fractions and certified integer square-root floors; no approximate pass/fail tests.','counts':dict(counts),'accepted_sources':accepted,'conditional_dependency':{'path':str(cb5.relative_to(R)),'sha256':cb5hash,'status':'CANDIDATE_INTERFACE_NOT_YET_ACCEPTANCE_AUTHORITY'},'finite_lower_records':finite,'limitations':'Checks do not accept CB005, prove its generic occupation bound, certify universal-map/domain quantifiers or establish logarithmic/asymptotic limits. Fresh full review and CB005 root receipt are required.'}
++out={'unit':'AF001','status':'PASS_FINITE_CHECKS_CANDIDATE_NOT_YET_ACCEPTED','proof_sha256':ph,'generated_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'arithmetic':'Exact integers/Fractions and certified integer square-root floors; no approximate pass/fail tests.','counts':dict(counts),'accepted_sources':accepted,'accepted_CB005_dependency':{'path':str(cb5.relative_to(R)),'sha256':cb5hash,'receipt':'intake/CB005_root_acceptance.json'},'finite_lower_records':finite,'limitations':'Checks do not reprove accepted CB005 generic occupation bounds or certify universal-map/domain quantifiers and logarithmic/asymptotic limits. AF001 still requires fresh full review and root acceptance.'}
+ (D/'AF001_author_diagnostics.json').write_text(json.dumps(out,indent=2)+'\n')
+-print(json.dumps({'status':out['status'],'counts':dict(counts),'conditional_CB005_sha256':cb5hash}))
++print(json.dumps({'status':out['status'],'counts':dict(counts),'accepted_CB005_sha256':cb5hash}))

@@ -1,0 +1,209 @@
+{
+  "generated_utc": "2026-11-02T14:21:34.648330+00:00",
+  "unit": "KH003",
+  "status": "ROOT_ACCEPTED_EXACT_BINDINGS_VERIFIED",
+  "scope": "Exact triples plus first/last-r windows; critical r=o(M^(1/6)); bounded-width domain criterion. Not a sharp width threshold or full-history result.",
+  "root_receipt": {
+    "path": "intake/KH003_root_acceptance.json",
+    "sha256": "2e235bca197c131dc82fd3a0893fc38e0d50576b1c49ca3912f8e2a25f782db2",
+    "bytes": 882,
+    "role": "root acceptance authority"
+  },
+  "artifacts": [
+    {
+      "path": "binary_certificate_adaptation_phase/KH003_boundary_window_obstruction.md",
+      "sha256": "09adb8433d97011dbe7772ed9b0f1f903ed245d73299db02d7d6bc477fc358a4",
+      "bytes": 11850,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH003_author_diagnostics.json",
+      "sha256": "7de9fdd4d4d937c9f4ff393927acd92271a5b3a4c3a1b14b6920109e5d48daea",
+      "bytes": 7055,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/check_kh003.py",
+      "sha256": "95d840389294f5544cceafdbfba588a79ed11121a562f9f58b18be9bb4f85178",
+      "bytes": 4938,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH003_HANDOFF.md",
+      "sha256": "ace06d4a1395abe0974447e85e6c70a340d54d260ab502555069564121f161f6",
+      "bytes": 3904,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/build_kh003_bindings.py",
+      "sha256": "6ab723f1e8bda936e435eab650702bd5f4bada6a3398ae739d567171ec5f1637",
+      "bytes": 2979,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/revisions/KH003_initial_candidate.md",
+      "sha256": "17a4c9ea015a18a874b670b7d920cd43605eb4d862f38c3afe161de96282a410",
+      "bytes": 11314,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/revisions/KH003_constant_window_clarification.diff",
+      "sha256": "fcb7d6ae7d82228ac31d4a08d92755330b91532bede4448766befb513ffff95f",
+      "bytes": 3200,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/revisions/KH003_constant_window_revision_record.json",
+      "sha256": "a1b98c770c8470afeddb30e204e3f3130dec0ca96af9670f187050a7dc7aede6",
+      "bytes": 503,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "reviews/KH003_independent_full_review.md",
+      "sha256": "e1e4de95324004d6acfc31029e27104d7d82e20718959bca08f185db52c3e742",
+      "bytes": 25119,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "reviews/KH003_independent_exact_checks.py",
+      "sha256": "1ed5c2c4207b3c125b58647b3735ee85783409df4975cafd8b84a02e1d13bb60",
+      "bytes": 15054,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "reviews/KH003_independent_exact_checks.json",
+      "sha256": "59a124b749d5da76989ddc02702a0025ddd066b1d8a32a6c335c02219fb2e346",
+      "bytes": 67941,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "reviews/KH003_independent_review_bindings.json",
+      "sha256": "35fdf46e14e025ed026ade39afd0cb8434f7c01857cac6468f163fab006a5794",
+      "bytes": 10088,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "reviews/KH003_inherited_bindings_audit.json",
+      "sha256": "b880bd62e4df421160e3876db5b59498eb373a6356bf74aa5b365a956ddbf3ae",
+      "bytes": 12802,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "reviews/KH003_audit_snapshots/KH003_received.md",
+      "sha256": "09adb8433d97011dbe7772ed9b0f1f903ed245d73299db02d7d6bc477fc358a4",
+      "bytes": 11850,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "reviews/KH003_audit_snapshots/checker_exact_nested_roots.diff",
+      "sha256": "72feb6bd76bb86a46625ea38c526c81fe6ae23666dba7b5e7315c1c03ff866a5",
+      "bytes": 4019,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "reviews/KH003_audit_snapshots/checker_revision_record.json",
+      "sha256": "475818bcfb5fe66e4c607db0194f6b430a03b76eddb4574bcd623b5e0270b9db",
+      "bytes": 621,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "reviews/KH003_audit_snapshots/checks_before_exact_nested_roots.json",
+      "sha256": "198f40a1a94137bdbc2af6c6a1a03622e8d40bdffd933fd0008810c982d8da62",
+      "bytes": 67271,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    },
+    {
+      "path": "reviews/KH003_audit_snapshots/checks_before_exact_nested_roots.py",
+      "sha256": "0d1ba9bfb7499a5a4c35dbf74bf6af2dd4823f21997baeb308c07c03b0881c3a",
+      "bytes": 14414,
+      "role": "accepted proof/review/diagnostic or actual revision artifact"
+    }
+  ],
+  "sources": [
+    {
+      "path": "intake/KH001_acceptance.json",
+      "sha256": "2fa945234c1eb9cbc9ddfe2acef3d852a15ea03eb29895c04962d8003effd881",
+      "bytes": 1074,
+      "role": "accepted receipt"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH001_histogram_strong_side_obstruction.md",
+      "sha256": "311adf683a22370fe765f61045a96af4a201e611ceeb9136f53a2b1f8cc7fd27",
+      "bytes": 14506,
+      "role": "accepted inherited source"
+    },
+    {
+      "path": "intake/KH002_acceptance.json",
+      "sha256": "3bbc8a59d94724bed2352067fe0fa287d1d8476190a01c9a30dbb5b43f3b51aa",
+      "bytes": 965,
+      "role": "accepted receipt"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH002_histogram_domain_classification.md",
+      "sha256": "970bfefb6041cdb989148819eb526c789d86591992375b84b05de2dd72bf9702",
+      "bytes": 8404,
+      "role": "accepted inherited source"
+    },
+    {
+      "path": "intake/BK001_acceptance.json",
+      "sha256": "5bc61da0716e6645abdd9d538ea69b15dece11a0be00fb7f05b255e114cf6226",
+      "bytes": 1121,
+      "role": "accepted receipt"
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK001_histogram_adaptation_obstruction.md",
+      "sha256": "edbfc9cd372df7497ff7462eded0e6c85a3ee4f99f21bd7310f460bd1f0fcb5a",
+      "bytes": 12706,
+      "role": "accepted inherited source"
+    },
+    {
+      "path": "intake/KA001_acceptance.json",
+      "sha256": "f98aac7691f919d2583acf53601f7c9e654924620a9e952623e063849e9f2843",
+      "bytes": 955,
+      "role": "accepted receipt"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KA001_certificate_phase_partial.md",
+      "sha256": "5cf1f9ba5dca0e5cb7dd2a703bca163f87e46f5eb16ddf5563837d873e9072e7",
+      "bytes": 10978,
+      "role": "accepted inherited source"
+    },
+    {
+      "path": "intake/SC003_acceptance.json",
+      "sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+      "bytes": 864,
+      "role": "accepted receipt"
+    },
+    {
+      "path": "binary_source_corruption/SC003_theorem.md",
+      "sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "bytes": 12757,
+      "role": "accepted inherited source"
+    },
+    {
+      "path": "intake/BT002_acceptance.json",
+      "sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+      "bytes": 1307,
+      "role": "accepted receipt"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_entropy_bridge_lower.md",
+      "sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "bytes": 13700,
+      "role": "accepted inherited source"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_scalar_completion.md",
+      "sha256": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+      "bytes": 4963,
+      "role": "accepted comparison scalar completion"
+    }
+  ],
+  "unreviewed_history_not_dependency": {
+    "path": "binary_certificate_adaptation_phase/KH003_boundary_window_exploration_unreviewed.md",
+    "sha256": "3ae0331f1dbcc0929be011a36e24275610fb777bc5fdd7a43301760164d066c1",
+    "bytes": 4101,
+    "role": "actual exploration; not accepted premise"
+  },
+  "review_independence": "Fresh independent mathematical/code review; reviewer inspected author diagnostics first, so not a blind diagnostic audit."
+}

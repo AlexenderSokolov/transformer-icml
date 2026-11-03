@@ -1,0 +1,52 @@
+{
+  "status": "ROOT_RELEASE_AUTHORIZED_FOR_THIRD_SCIENTIFIC_INCREMENT",
+  "time_utc": "2026-11-02T14:39:29.010689+00:00",
+  "units": [
+    "KH001",
+    "KH002",
+    "CB003",
+    "KH003",
+    "CB004",
+    "BP001",
+    "CB005",
+    "KH004",
+    "AF001",
+    "BCJ001"
+  ],
+  "synthesis_artifacts": [
+    {
+      "path": "adaptation_stage_synthesis/positional_counts_adaptation.md",
+      "sha256": "f38d29476f2d76b018b5148aebcf2f6d337ddb4064f42b124e6fa61251a876cf",
+      "bytes": 13705
+    },
+    {
+      "path": "adaptation_stage_synthesis/research_summary_zh.md",
+      "sha256": "413c06fc456919ef9f345a59a72770e93dbaee26a9ee72a4b3aca3dd6d60c329",
+      "bytes": 6637
+    },
+    {
+      "path": "adaptation_stage_synthesis/SOURCE_MAP.json",
+      "sha256": "a761532378461440a7064bc0b0cd51fba95d3934b7be04233bb18e1f7592d44b",
+      "bytes": 28717
+    },
+    {
+      "path": "adaptation_stage_synthesis/OUTLINE_AND_SOURCE_MAP.md",
+      "sha256": "07211529de2bc78f565a26c41b6463e2d2a3c3f537f658bc42394e0cc7585a58",
+      "bytes": 6681
+    },
+    {
+      "path": "adaptation_stage_synthesis/SOURCE_MAP_before_AF001_BCJ001_receipts.json",
+      "sha256": "ed079c9e0a9bc83fe247b148915acc8c3ae3e5d7dcc0d322f2f0e4e9e085397d",
+      "bytes": 25622
+    }
+  ],
+  "root_checks": {
+    "full_English_and_Chinese_read": true,
+    "artifact_hashes": 5,
+    "local_links": 28,
+    "all20_accepted_proof_review_hashes_verified": true,
+    "snapshot_claim_correction_diff_read": true,
+    "publisher_ten_unit_scientific_comparison_read": true
+  },
+  "scope": "Publish authorized public non-sensitive research only to AlexenderSokolov/transformer-icml; final privacy/source closure check required, expected-head non-force update, remote and CI verification. Exclude later PBA001 candidate and private operational files. Existing immutable history remains preserved."
+}

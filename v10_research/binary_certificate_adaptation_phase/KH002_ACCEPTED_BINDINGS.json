@@ -1,0 +1,155 @@
+{
+  "generated_utc": "2026-11-02T13:52:38.155639+00:00",
+  "unit": "KH002",
+  "status": "ROOT_ACCEPTED_EXACT_BINDINGS_VERIFIED",
+  "scope": "Exact arbitrary-domain criterion ONLY for triple histogram plus initial/final pairs.",
+  "root_receipt": {
+    "path": "intake/KH002_acceptance.json",
+    "sha256": "3bbc8a59d94724bed2352067fe0fa287d1d8476190a01c9a30dbb5b43f3b51aa",
+    "bytes": 965,
+    "role": "root acceptance authority"
+  },
+  "artifacts": [
+    {
+      "path": "binary_certificate_adaptation_phase/KH002_histogram_domain_classification.md",
+      "sha256": "970bfefb6041cdb989148819eb526c789d86591992375b84b05de2dd72bf9702",
+      "bytes": 8404,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH002_author_diagnostics.json",
+      "sha256": "1efc84fb62ae40cbc68ecc280428fa6f1dcf82b976f09bf5a4d9a78ce1a69c2b",
+      "bytes": 14365,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/check_kh002.py",
+      "sha256": "c6f6a48d29288cf40b7c5eeff3b814df46a9b10dfadc77b4938848e6fe4a4859",
+      "bytes": 4004,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH002_HANDOFF.md",
+      "sha256": "41bcc9eaa962df253014c8fc3e28802242009ba4773fc449a1841597eeefc03e",
+      "bytes": 3778,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/build_kh002_bindings.py",
+      "sha256": "81b7f2ec29da7e9f316b106c8c99bc1338d53351fb2a930c5b29cc15e894c817",
+      "bytes": 2930,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/revisions/KH002_initial_candidate.md",
+      "sha256": "970bfefb6041cdb989148819eb526c789d86591992375b84b05de2dd72bf9702",
+      "bytes": 8404,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/revisions/check_kh002_before_receipt_schema_guard.py",
+      "sha256": "0b71ae41bb057d90cbf5b56758a3873bb028017789c1492407d888620e8c7326",
+      "bytes": 3980,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/revisions/check_kh002_receipt_schema_guard.diff",
+      "sha256": "363d97f416adf61535e9bd6b532109c10b65536549a9c2ca468a4d47a26e833d",
+      "bytes": 509,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/revisions/check_kh002_failed_first_run.txt",
+      "sha256": "e3e1ac232ea27a6b0d4658f8969feab124173a477a5e980f993ecfe3123601e0",
+      "bytes": 278,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "reviews/KH002_independent_full_review.md",
+      "sha256": "4ae4315cc3fe19cfc020b040ae49b7485591806b46f636a7add2f85d38fed502",
+      "bytes": 18804,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "reviews/KH002_independent_exact_checks.py",
+      "sha256": "5b9965ff9dfbc2b9a66a9cb3fcef4495e3ae89addd2f1ae36423313ad594f0da",
+      "bytes": 10371,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "reviews/KH002_independent_exact_checks.json",
+      "sha256": "bd405f2653980c1aa0041b9c96c9267f24b1fdc76ecb1bb76e5b8f4548e7028c",
+      "bytes": 7921,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "reviews/KH002_independent_review_bindings.json",
+      "sha256": "710fbcca58994c5facf32a747abe57a8e197c315825e401970d3a75c7879dde2",
+      "bytes": 3207,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    },
+    {
+      "path": "reviews/KH002_audit_snapshots/KH002_received.md",
+      "sha256": "970bfefb6041cdb989148819eb526c789d86591992375b84b05de2dd72bf9702",
+      "bytes": 8404,
+      "role": "accepted proof/review/check/snapshot or actual diagnostic-revision artifact"
+    }
+  ],
+  "sources": [
+    {
+      "path": "intake/KH001_acceptance.json",
+      "sha256": "2fa945234c1eb9cbc9ddfe2acef3d852a15ea03eb29895c04962d8003effd881",
+      "bytes": 1074,
+      "role": "exact accepted receipt"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH001_histogram_strong_side_obstruction.md",
+      "sha256": "311adf683a22370fe765f61045a96af4a201e611ceeb9136f53a2b1f8cc7fd27",
+      "bytes": 14506,
+      "role": "accepted dependency"
+    },
+    {
+      "path": "intake/KA001_acceptance.json",
+      "sha256": "f98aac7691f919d2583acf53601f7c9e654924620a9e952623e063849e9f2843",
+      "bytes": 955,
+      "role": "exact accepted receipt"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KA001_certificate_phase_partial.md",
+      "sha256": "5cf1f9ba5dca0e5cb7dd2a703bca163f87e46f5eb16ddf5563837d873e9072e7",
+      "bytes": 10978,
+      "role": "accepted dependency"
+    },
+    {
+      "path": "intake/SC003_acceptance.json",
+      "sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+      "bytes": 864,
+      "role": "exact accepted receipt"
+    },
+    {
+      "path": "binary_source_corruption/SC003_theorem.md",
+      "sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "bytes": 12757,
+      "role": "accepted dependency"
+    },
+    {
+      "path": "intake/BT002_acceptance.json",
+      "sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+      "bytes": 1307,
+      "role": "exact accepted receipt"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_entropy_bridge_lower.md",
+      "sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "bytes": 13700,
+      "role": "accepted dependency"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_scalar_completion.md",
+      "sha256": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+      "bytes": 4963,
+      "role": "accepted comparison scalar completion"
+    }
+  ],
+  "proof_revision_history": "None; actual original and independent snapshots equal accepted bytes. Only author checker optional-receipt-field guard changed after documented first-run KeyError."
+}

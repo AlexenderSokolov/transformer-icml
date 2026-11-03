@@ -1,0 +1,57 @@
+{
+  "unit": "CB003",
+  "status": "INDEPENDENT_FULL_REVIEW_PASS_NO_REVISION",
+  "time_utc": "2026-11-02T13:37:56.817423+00:00",
+  "scope": "Explicit deterministic legal-kernel counterexample to W(AB003) at beta=1/M only; no universal full-history adaptation impossibility.",
+  "proof_sha256": "b86a78837e59bcc2a690475f66f1eeaf46405f5006722c59f080828d8dada8b9",
+  "review_sha256": "aba93ebb058acd3da9d45da1fdb986dbbba1721bde25065cc96d394ed0e489f5",
+  "artifacts": [
+    {
+      "path": "critical_beta_adaptation/CB003_fixed_veto_bypass.md",
+      "sha256": "b86a78837e59bcc2a690475f66f1eeaf46405f5006722c59f080828d8dada8b9"
+    },
+    {
+      "path": "critical_beta_adaptation/CB003_independent_full_review.md",
+      "sha256": "aba93ebb058acd3da9d45da1fdb986dbbba1721bde25065cc96d394ed0e489f5"
+    },
+    {
+      "path": "critical_beta_adaptation/CB003_independent_checks.py",
+      "sha256": "b6393e6a97b745925acd542bfd8f6c17359de011e3c3b96c116d6e91bc2175e9"
+    },
+    {
+      "path": "critical_beta_adaptation/CB003_independent_checks.json",
+      "sha256": "24c43cd527e35412ec7294c9b54a64e3620ca83e144dcce69c221f9c9873051c"
+    },
+    {
+      "path": "critical_beta_adaptation/review_snapshots/CB003_received.md",
+      "sha256": "b86a78837e59bcc2a690475f66f1eeaf46405f5006722c59f080828d8dada8b9"
+    },
+    {
+      "path": "critical_beta_adaptation/review_snapshots/CB003_reviewed.md",
+      "sha256": "b86a78837e59bcc2a690475f66f1eeaf46405f5006722c59f080828d8dada8b9"
+    },
+    {
+      "path": "critical_beta_adaptation/review_snapshots/CB003_received_to_reviewed.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_receipts": [
+    {
+      "path": "intake/AB003_acceptance.json",
+      "sha256": "eb4a51922f764ee65bc3dffa77e253d5345f2ce0d0e8c577ca655fc24f79b67d"
+    },
+    {
+      "path": "intake/CB002_acceptance.json",
+      "sha256": "4a5459b3bb0ff7caf2499884f412cda91064551885a37d1f3bafab772be83b14"
+    },
+    {
+      "path": "intake/SC003_acceptance.json",
+      "sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3"
+    },
+    {
+      "path": "intake/BT002_acceptance.json",
+      "sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50"
+    }
+  ],
+  "review_kind": "Independent LLM full mathematical audit plus exact finite diagnostics; not formal or external peer review."
+}

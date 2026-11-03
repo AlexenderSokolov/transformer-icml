@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "parameter_B_range": [
+    1,
+    100000
+  ],
+  "BW_tests": [
+    {
+      "k": 3,
+      "K": 1,
+      "irreducible": 11,
+      "corrected_cases": 60,
+      "evaluation_zero_errors_included": true
+    },
+    {
+      "k": 4,
+      "K": 2,
+      "irreducible": 19,
+      "corrected_cases": 90,
+      "evaluation_zero_errors_included": true
+    },
+    {
+      "k": 4,
+      "K": 3,
+      "irreducible": 19,
+      "corrected_cases": 120,
+      "evaluation_zero_errors_included": true
+    },
+    {
+      "k": 5,
+      "K": 4,
+      "irreducible": 37,
+      "corrected_cases": 150,
+      "evaluation_zero_errors_included": true
+    },
+    {
+      "k": 7,
+      "K": 3,
+      "irreducible": 131,
+      "corrected_cases": 120,
+      "evaluation_zero_errors_included": true
+    },
+    {
+      "k": 8,
+      "K": 5,
+      "irreducible": 283,
+      "corrected_cases": 180,
+      "evaluation_zero_errors_included": true
+    }
+  ],
+  "limits": "Finite arithmetic diagnostics only. Does not execute inner exhaustive search, channel sampling, or benchmark full construction.",
+  "checker_sha256": "e74ec5f1d19bcd6fbdcd64df8b6c3a759bb1f31c7317494d7fed35fb2505185f"
+}

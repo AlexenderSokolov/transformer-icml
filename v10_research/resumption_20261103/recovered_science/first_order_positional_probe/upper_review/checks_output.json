@@ -1,0 +1,17 @@
+{
+  "exhaustive_edit_checks": {
+    "N": "1..7",
+    "protected_word_pairs": 43688,
+    "all_window_checks": 334960,
+    "result": "pass; tighter J/O <= k, C <= 2k"
+  },
+  "quantizer_checks": {
+    "N": "1..40",
+    "combinatorial_cases": 22960,
+    "result": "pass"
+  },
+  "constant_and_endpoint_checks": {
+    "N": "64..2000; every r",
+    "result": "pass"
+  }
+}

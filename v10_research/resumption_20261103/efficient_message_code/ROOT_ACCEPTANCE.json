@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-03T01:46:08.228654+00:00",
+  "unit": "PMC001",
+  "status": "ROOT_ACCEPTED_MATHEMATICAL_CONSTRUCTION_AFTER_INDEPENDENT_REVIEW_AND_REPLAY",
+  "scope": "Fixed known rational finite-output binary-input memoryless W with distinct rows. Every B>=1 has deterministic constructible fixed-length code R<=20*C_W*B, maximal error<=2^-6B, preprocessing/encoding/decoding/design/auxiliary space polynomial in B with W-dependent constants/exponents.",
+  "mechanism": "Small q=O(B) inner greedy distance code, Reed-Solomon outer evaluation, exact integer ML, homogeneous Welch-Berlekamp nullspace decoder with quotient/distance/padding checks. Standard coding ingredients explicitly attributed, not new coding method.",
+  "integration": "Accepted WMC001 payload B=2ceil(log2(M+1))+2 yields total communication O_W(log M), coding resources poly_W(log M), one M+2-symbol scan O(M log M) bit time and O(log M) counters. Full sample processing O(M log M)+poly_W(log M).",
+  "storage": "Full code/table/matrix and exact arithmetic charged. Auxiliary/design polylog excludes resident raw input; add M+2 bits if input stored. Not O(log M) total workspace.",
+  "root_read": "Entire actual candidate and entire independent review; all bindings verified; root independently reran persisted checker in isolated directory and obtained byte-identical JSON.",
+  "limits": "Theoretical constructibility, not a complete executed implementation, practical complexity, optimal leading coefficient, neural model or learnability result. Rational channel computation distinguished from arbitrary real mathematical existence. Channel constants can be huge. No external publication.",
+  "artifacts": {
+    "CANDIDATE.md": "e23770d66efaff55489af3905b78642992ab1d2a7b55448912765694bb2e64b9",
+    "review/REVIEW.md": "6772ffd3a8c14a268cd6a22e4ec4b216b9b1518f896fa056ce7db37b5dbba440",
+    "review/bindings.json": "c5b4bc6238559324b389ff37ba7923bee2b81cf08f0f3962c81757f8ba375939",
+    "review/checks.py": "e74ec5f1d19bcd6fbdcd64df8b6c3a759bb1f31c7317494d7fed35fb2505185f",
+    "review/checks.json": "cfdee85c344539ed07c858bedc962599864a284b42ce7d8c5cddb9408339b954",
+    "ROOT_REPLAY.json": "a429af802091b385d8a3aecf7fbeef9854359f82e45f14d00c76bcbead25d4fe"
+  }
+}

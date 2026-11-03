@@ -1,0 +1,224 @@
+{
+  "rule": "Never change historical expected hashes. First verify exact public path and public SHA256, then reconcile only the explicitly declared original/export pair. A historical file reference may resolve to an authentic retained old snapshot only through an exact declared path/hash mapping.",
+  "new_pairs": [
+    {
+      "path": "v10_research/adaptation_stage_synthesis/MANUSCRIPT_BINDINGS.json",
+      "original_sha256": "c6b89eff7b478ec4569a74e8a4db7861477121ce4145d205de6bc2d8ab300de9",
+      "public_export_sha256": "5fa9c708d5f908f1eec3cb975efc37d01051b8d4d10d24563eb4cb08b684378f"
+    },
+    {
+      "path": "v10_research/balanced_joint_finite_cut/BCJ001_HANDOFF.md",
+      "original_sha256": "8b3d2724fcb1cbc93c2833d3de8c222ff3dbec82cde218df26a3a8facde855e0",
+      "public_export_sha256": "863ee4947f74bcbdb7dc725cd8fddab7c3e3643f992dace21d1d565b7daed2d1"
+    },
+    {
+      "path": "v10_research/balanced_joint_finite_cut/BCJ001_accepted_bindings.json",
+      "original_sha256": "034a36cd1d9895bcf411fc7036493546d1eec469970c586f4d56871e6b81bbe9",
+      "public_export_sha256": "7cb57c460d7398364c5c85152e2ae5dda199db18c0d3a0a45c871eaed76ecf6b"
+    },
+    {
+      "path": "v10_research/balanced_joint_finite_cut/BCJ001_independent_full_review.md",
+      "original_sha256": "9cce8092070916078baa9b1cb82dcc9a9d6872b0013568996e4310a9f4c413ef",
+      "public_export_sha256": "1e74c502da8fcda31603fc7fc2fa1229747521c3774da55aaf21c8a29a14f64b"
+    },
+    {
+      "path": "v10_research/binary_certificate_adaptation_phase/KH001_histogram_strong_side_obstruction.md",
+      "original_sha256": "311adf683a22370fe765f61045a96af4a201e611ceeb9136f53a2b1f8cc7fd27",
+      "public_export_sha256": "0aae45d6f3cb00d3d92748af9dcf29bcb1a2bf3c7e02659b071f57ddd7765eb5"
+    },
+    {
+      "path": "v10_research/binary_certificate_adaptation_phase/KH002_HANDOFF.md",
+      "original_sha256": "41bcc9eaa962df253014c8fc3e28802242009ba4773fc449a1841597eeefc03e",
+      "public_export_sha256": "ea48170a845e87497d96ef1d2fc34f2abe476f4dabbec2f83bcd8615ee0c8310"
+    },
+    {
+      "path": "v10_research/binary_certificate_adaptation_phase/revisions/KH001_pre_freeze_editorial.md",
+      "original_sha256": "293dbc410fd0fc49b4221174fff570a6ad4ddecd79c08704208660db2cee38cd",
+      "public_export_sha256": "abe8f811691d0fe3f59e38c13495189d65577e0deeda26c0cb9be16d7114b5f3"
+    },
+    {
+      "path": "v10_research/binary_full_history_domain/AF001_CB005_acceptance_status.diff",
+      "original_sha256": "89f9011f5da309f33471497b8d0fadf51cb6416bfa20119e8eceea0354001a68",
+      "public_export_sha256": "5d337b8ca0b664302134ab42bdcab159af04d4a32012e65ec6173db501bf4fe7"
+    },
+    {
+      "path": "v10_research/binary_full_history_domain/AF001_full_history_domain_classification.md",
+      "original_sha256": "17860bb034c34c388d12ccb83b942dc88fb4bf88ee15c2d7d63df099a230ebd4",
+      "public_export_sha256": "3e15bf53b0de1767c3d53d0ecd3da01af1ffec6a3699dbc562441436a4668ab3"
+    },
+    {
+      "path": "v10_research/binary_full_history_domain/AF001_initial_candidate.md",
+      "original_sha256": "597d6f1473298fdbb6013b09134c2caff67aaf3dd9537180d577262e7e014072",
+      "public_export_sha256": "78dc9575358e707e326111e3b78a5c39ca6c9c033e6f153e92392a53ea71c3c3"
+    },
+    {
+      "path": "v10_research/critical_beta_adaptation/BALANCE_REDUCTION_WORKING.md",
+      "original_sha256": "a98748c00157e017b00d56fab1ae1876d01370826e94dcdafa1961ece36a1ed3",
+      "public_export_sha256": "8b85a00107d716b5fd863be4e28f08b523b25032130fde743fbf025751eaddca"
+    },
+    {
+      "path": "v10_research/critical_beta_adaptation/CB004_BP001_independent_full_review.md",
+      "original_sha256": "8f43dadd17dc0736678faf1f7200516e8db4db4bb39c8882f48d09370bfb60f3",
+      "public_export_sha256": "71f3d0faeef0cacfb6c4afacf864c223d8bb5f1c4f799418d7669c0c6d259af4"
+    },
+    {
+      "path": "v10_research/critical_beta_adaptation/CB004_BP001_independent_review_bindings.json",
+      "original_sha256": "f879249fb02170ab4757653c2996c216de849a3b528f5504c2dc372906c0df15",
+      "public_export_sha256": "c02c2278aa795922fa205e696e96fc5c2badbc84785b988ad34b070997dd39f0"
+    },
+    {
+      "path": "v10_research/critical_beta_adaptation/CB005_independent_full_review.md",
+      "original_sha256": "b8976cae54be86f6b9c110f207256c38ec5c81913cc1156af0bd913cba47c57a",
+      "public_export_sha256": "3ffdc99d4acf6efa8adc55105ad0bb26d311f9fb51bc89e3113babe214dfd835"
+    },
+    {
+      "path": "v10_research/critical_beta_adaptation/CB005_independent_review_bindings.json",
+      "original_sha256": "5dd5140da1000d2f74411f78861a3b298a66f3ece2a4f072d7dbd85239f4f87c",
+      "public_export_sha256": "adf7f52066303772f2000d964cfb1c3d54f24583636e86b192e309b59d625f22"
+    },
+    {
+      "path": "v10_research/prior_art/occupation_balance_hitting_screen.md",
+      "original_sha256": "26ffa8b4c75b857e104b551b480b8e5c74d92c8c0dc621776a2ad7fa09779de4",
+      "public_export_sha256": "23a6457fbdfe6a94349c15653f1d640f753c1f71c07d67ca99efdc2ab11e14ad"
+    },
+    {
+      "path": "v10_research/reviews/AF001_audit_snapshots/AF001_received.md",
+      "original_sha256": "17860bb034c34c388d12ccb83b942dc88fb4bf88ee15c2d7d63df099a230ebd4",
+      "public_export_sha256": "3e15bf53b0de1767c3d53d0ecd3da01af1ffec6a3699dbc562441436a4668ab3"
+    },
+    {
+      "path": "v10_research/reviews/AF001_independent_full_review.md",
+      "original_sha256": "536d219827b93643853c9fc21f6a1ec791af431e0e36a93b0656c62a75bbc992",
+      "public_export_sha256": "d28bf7a7f7ca75dec491f019b7e63c625ede1eb4df5868ea6c7de6974f568063"
+    },
+    {
+      "path": "v10_research/reviews/KH001_audit_snapshots/KH001_received.md",
+      "original_sha256": "311adf683a22370fe765f61045a96af4a201e611ceeb9136f53a2b1f8cc7fd27",
+      "public_export_sha256": "0aae45d6f3cb00d3d92748af9dcf29bcb1a2bf3c7e02659b071f57ddd7765eb5"
+    },
+    {
+      "path": "v10_research/reviews/KH001_independent_full_review.md",
+      "original_sha256": "0d091d9b6830232e698c6d29ea428a9fe3c21aa4acbba7bbaeb32cb4b5ab5839",
+      "public_export_sha256": "277d008944ad1405dc960ae340f43e80a0cef9839bf95a82c464a966cdf600d8"
+    },
+    {
+      "path": "v10_research/reviews/KH002_independent_full_review.md",
+      "original_sha256": "4ae4315cc3fe19cfc020b040ae49b7485591806b46f636a7add2f85d38fed502",
+      "public_export_sha256": "aea3585ab5ec385bfc2696cd058b0c0b9bad497023ced8431e3ba48c4eb63169"
+    },
+    {
+      "path": "v10_research/reviews/KH002_independent_review_bindings.json",
+      "original_sha256": "710fbcca58994c5facf32a747abe57a8e197c315825e401970d3a75c7879dde2",
+      "public_export_sha256": "44c561c8f675258f1e329a509b2bcc78daafb49e46baa45e5af353b64d7c7b0a"
+    },
+    {
+      "path": "v10_research/reviews/KH003_independent_full_review.md",
+      "original_sha256": "e1e4de95324004d6acfc31029e27104d7d82e20718959bca08f185db52c3e742",
+      "public_export_sha256": "ee9d0f5c967bb478b57d84a12324330c93d4cb792006800869ccffea72f6635f"
+    },
+    {
+      "path": "v10_research/reviews/KH003_independent_review_bindings.json",
+      "original_sha256": "35fdf46e14e025ed026ade39afd0cb8434f7c01857cac6468f163fab006a5794",
+      "public_export_sha256": "fb45d3177328aa4794f3c726a572052fd322b0dd337fd98d8bfd4f1deb703d53"
+    },
+    {
+      "path": "v10_research/reviews/KH004_independent_full_review.md",
+      "original_sha256": "91a9b91e5131706b03c852b79f14f78dbda03c2faf3610698cf89861efd0ece8",
+      "public_export_sha256": "3c530c9b9bd07c5768d214b2c20c979297bb0930e638ac230e46c8bb6ba8cb1a"
+    },
+    {
+      "path": "v10_research/reviews/KH004_independent_review_bindings.json",
+      "original_sha256": "375df311c5590931f274a9d91c0bf6ff61aae0c511156018fc3669d12f38d7a2",
+      "public_export_sha256": "052cf6814150d194a508253192691ebe0534baab515994ba2b24095a9352c58e"
+    }
+  ],
+  "inherited_pairs": [
+    {
+      "path": "v10_research/binary_beta_known_adaptation/BK001_ACCEPTED_BINDINGS.json",
+      "original_sha256": "f66fe9d62f3a8537a013e1475379881eefb04ffa89cb2737e92de3be3aa3a0b5",
+      "initial_public_sha256": "e3fa229f3a7b731b91297f67131aebdc58f3c18b5705edf39ab554a81cc1aed4",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "pair_already_declared": true
+    },
+    {
+      "path": "v10_research/binary_beta_known_adaptation/BK001_HANDOFF.md",
+      "original_sha256": "f3ac84fda88cfe523797fb9505afa3ca6534b4ced9beaee0353cfd82723c67a7",
+      "initial_public_sha256": "c689414308c0090944d3c0fab6e25605bbb10e8274ba4db68b237f0d1520c91a",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "pair_already_declared": true
+    },
+    {
+      "path": "v10_research/binary_beta_known_adaptation/revisions/BK001_endpoint_bound_revision_record.json",
+      "original_sha256": "e6878299f1ebebe3e1b3f5828eb12d45b472f9339d165577f164383db18539aa",
+      "initial_public_sha256": "598e472b0445dc49fdee796ddfed4f68710c0f77c4cbe71028f51b3a56dec947",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "pair_already_declared": true
+    },
+    {
+      "path": "v10_research/binary_budget_adaptation/review_joint_blindness_full.md",
+      "original_sha256": "07050ce099a0e1770f0dd4b59c11911938e1bed798246c23256093d25f4629c5",
+      "initial_public_sha256": "a87760d42e80ca57631abf3096a8b1c84a5627995f1b0561817973a91a030170",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "pair_already_declared": true
+    },
+    {
+      "path": "v10_research/binary_erasure_transport/BT002_independent_review.md",
+      "original_sha256": "9171f4e18f4a238965644f67baf0fb81e73efba3c373bf27109c058327312595",
+      "initial_public_sha256": "d4b76e0845a324886ddf5079a7df7742899f2122ae823b5ea924ab9ce8895376",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "pair_already_declared": true
+    },
+    {
+      "path": "v10_research/critical_beta_adaptation/CB001_independent_full_review.md",
+      "original_sha256": "e3746bbaa36f1641bdba5efbfa55b95cb57ec7515b4a493c2c23f349202c7c51",
+      "initial_public_sha256": "da080d677376c2c605ee23fadeea9754d9106f46382736ff6e8f4a06e743ae2b",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "pair_already_declared": true
+    },
+    {
+      "path": "v10_research/critical_beta_adaptation/CB002_HANDOFF.md",
+      "original_sha256": "4d44e584dd9962424323897507ce27f44c96178c30a73439dfc95dedbd32aa4a",
+      "initial_public_sha256": "2e327696e97a20c4c471f1f3a00322834d253baa2996d44045b6d9f8207f72ff",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "pair_already_declared": true
+    },
+    {
+      "path": "v10_research/reviews/BU001_review_v1.md",
+      "original_sha256": "84ee2e6b0eeac445976bffe0bf2763b27715696a24d05c3100e0c28169020e80",
+      "initial_public_sha256": "9eca05622d9fb9dc20a5feef83e4946812f71c37969880dd355b4b2a40258796",
+      "privacy_reconciliation_required": true,
+      "action": "reuse existing initial-tree export; do not overwrite",
+      "pair_already_declared": true
+    }
+  ],
+  "historical_path_resolution": [
+    {
+      "original_recorded_path": "critical_beta_adaptation/CB004_BP001_HANDOFF.md",
+      "retained_snapshot": "v10_research/critical_beta_adaptation/revisions/CB004_BP001_HANDOFF_before_snapshot_claim_correction.md",
+      "reason": "Actual retained pre-correction bytes, explicitly identified by the historical owner path, recorded path and expected hash. Current canonical path has the later corrected artifact. Exact snapshot and real revision evidence preserve the original identity.",
+      "expected_original_sha256": "b18da5d2f053539e3557cf37235554938e69d67a20365f3a9fdf6a3261b0b48a",
+      "owner": "v10_research/critical_beta_adaptation/revisions/CB004_BP001_ACCEPTED_BINDINGS_before_snapshot_claim_correction.json"
+    },
+    {
+      "original_recorded_path": "critical_beta_adaptation/CB004_BP001_ACCEPTED_BINDINGS.json",
+      "retained_snapshot": "v10_research/critical_beta_adaptation/revisions/CB004_BP001_ACCEPTED_BINDINGS_before_snapshot_claim_correction.json",
+      "reason": "Actual retained pre-correction bytes, explicitly identified by the historical owner path, recorded path and expected hash. Current canonical path has the later corrected artifact. Exact snapshot and real revision evidence preserve the original identity.",
+      "expected_original_sha256": "cca33480f7fe3b4354b8bbb245f80a2038e397998cd6b30d58d59706f228f01f",
+      "owner": "v10_research/critical_beta_adaptation/revisions/CB005_ACCEPTED_BINDINGS_before_snapshot_claim_correction.json"
+    },
+    {
+      "original_recorded_path": "reviews/KH003_independent_exact_checks.py",
+      "retained_snapshot": "v10_research/reviews/KH003_audit_snapshots/checks_before_exact_nested_roots.py",
+      "reason": "Actual retained pre-correction bytes, explicitly identified by the historical owner path, recorded path and expected hash. Current canonical path has the later corrected artifact. Exact snapshot and real revision evidence preserve the original identity.",
+      "expected_original_sha256": "0d1ba9bfb7499a5a4c35dbf74bf6af2dd4823f21997baeb308c07c03b0881c3a",
+      "owner": "v10_research/reviews/KH003_audit_snapshots/checks_before_exact_nested_roots.json"
+    }
+  ]
+}

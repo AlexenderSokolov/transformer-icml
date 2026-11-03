@@ -1,0 +1,21 @@
+--- v10_research/resumption_20261103/bsc_sharp/history/CHANNEL_LIKELIHOOD_LOWER.before_actual_terminal_fix.md	2026-11-02 17:30:01.768429547 -0800
++++ v10_research/resumption_20261103/bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md	2026-11-02 17:29:38.022927656 -0800
+@@ -87,7 +87,7 @@
+ 
+ This is one well-defined source-independent strict-budget kernel on every word/outcome. It preserves both final symbols everywhere, depends on no source parameter, encoder coin, decoder coin or channel noise, and in fact does not depend on `(E,D)` at all. After its output the encoder and channel run normally. On `F∩G` every proposal passes the tests, and both null input and output end `00`.
+ 
+-Let `ℓ_a(y)` denote clean expected loss of the full encoder-channel-decoder rule on word `y`, against target `a`, and let `b_a(y)` denote its expected loss on word `C_r(y)` against null target `β`. The subscript `a` on `b_a` only records the proposal integral; the actual null target is always `β`. By (7),
++Let `ℓ_a(y)` denote the expected loss of the full encoder-channel-decoder rule on word `y` against the TRUE clean `Q_a` next-symbol target at its actual last symbol (zero-to-one parameter `a` when that symbol is zero; one-to-zero parameter `t` when it is one). On `F` this is exactly loss against target `a`. Let `b_a(y)`, used only on `F∩G`, denote its expected loss on word `C_r(y)` against null target `β`. The subscript `a` on `b_a` only records the proposal integral; the actual null target is always `β`. By (7),
+ 
+ `b_a(y)≥a−β−κℓ_a(y)` on `F∩G`.
+ 
+@@ -169,7 +169,8 @@
+ 4. It is invalid to transport the signed triangle expression before restriction/transport of nonnegative actual null loss. Section 4 retains the legal ordering.
+ 5. It would be invalid to let baseline or attack reveal the BSC noise and still use the conditional BSC pmfs. Fresh conditional noise is essential.
+ 6. It would be invalid to claim arbitrary initial-pair upper bounds by treating the first edge as homogeneous; the repaired FOT002 suffix interface is explicitly used instead.
+-7. No claim is made that the overlap review was wrong. Its abstract result remains valid; this is a stronger application-specific use of the restored mixture construction.
++7. A channel with zero transition probabilities (for example an erasure channel retaining an unerased symbol) need not have any finite all-input likelihood ratio. The BSC proof must not be silently exported to such channels; this is why it can give a different length order from an overlap-only argument.
++8. No claim is made that the overlap review was wrong. Its abstract result remains valid; this is a stronger application-specific use of the restored mixture construction.
+ 
+ ## Review status
+ 

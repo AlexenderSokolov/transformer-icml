@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-03T01:49:54.026340+00:00",
+  "status": "BOTH_ISOLATED_CHECKERS_EXIT_0_BYTE_IDENTICAL",
+  "reports": [
+    {
+      "folder": "review_root",
+      "script_sha256": "e691dc50c80d28ee6055919050d296862b0221c07ae47a5b90bf687604fe0347",
+      "report_sha256": "db94d6ef82c0b64ad7c30feeaf27f88d1bc423749cbad1c64305367659a6a7d9",
+      "byte_identical": true
+    },
+    {
+      "folder": "review",
+      "script_sha256": "1011b50c635ca1a7cdc7b9842ee1471b18d81648a1b1850dc797bfa7d2f250e7",
+      "report_sha256": "d84bd9c0fad5c98a2c14fcb24518e473df89d5ba7c188247ac8a39efdf2d30e2",
+      "byte_identical": true
+    }
+  ],
+  "scope": "Pathwise payload/flow/reflection and certificates, not full statistical or asymptotic proof verification."
+}

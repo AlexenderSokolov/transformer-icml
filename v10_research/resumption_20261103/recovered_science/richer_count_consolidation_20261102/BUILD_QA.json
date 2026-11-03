@@ -1,0 +1,12 @@
+{
+  "status": "BUILD_AND_SIX_PAGE_VISUAL_QA_PASS",
+  "scientific_acceptance": "PENDING_FRESH_INTEGRATION_REVIEW_AND_ROOT",
+  "source_sha256": "f5f20b1bce67e3c000d56cde43a9169f79c27d665b085be72ae98368a14b0c31",
+  "pdf_sha256": "8704b536fa4f88d212343142a11272673f2dbcbe7d97bde5da9f2c1dc1efc95b",
+  "pages": 6,
+  "render_command": "pdftoppm -r 100 -png build/main.pdf build/page",
+  "visual_inspection": "Each final page 1 through 6 inspected individually using view_image; no clipping, overlaps, illegible math, or table defects",
+  "latex_warnings": [],
+  "source_integrity": "All SOURCE_SHA256SUMS dependencies rechecked after build; four direct proof-to-receipt bindings verified",
+  "no_external_writes": true
+}

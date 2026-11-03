@@ -1,0 +1,161 @@
+{
+  "generated_utc": "2026-11-02T13:40:12.209465+00:00",
+  "unit": "KH001",
+  "status": "ROOT_ACCEPTED_EXACT_BINDINGS_VERIFIED",
+  "scope": "Histogram+initial/final PAIRS only; stronger-side prescribed curves and combined power-law classification, not full history.",
+  "root_receipt": {
+    "path": "intake/KH001_acceptance.json",
+    "sha256": "2fa945234c1eb9cbc9ddfe2acef3d852a15ea03eb29895c04962d8003effd881",
+    "bytes": 1074,
+    "role": "root acceptance authority"
+  },
+  "artifacts": [
+    {
+      "path": "binary_certificate_adaptation_phase/KH001_histogram_strong_side_obstruction.md",
+      "sha256": "311adf683a22370fe765f61045a96af4a201e611ceeb9136f53a2b1f8cc7fd27",
+      "bytes": 14506,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH001_author_diagnostics.json",
+      "sha256": "b06759eb475bad2dac3e2420b35a4120f9b73eeade630d614d720c70226a6ac0",
+      "bytes": 6138,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/check_kh001.py",
+      "sha256": "870c6121690f79c56d0030f46585d41b41f013f645ebf4d8a759e3552ae1846b",
+      "bytes": 5880,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH001_HANDOFF.md",
+      "sha256": "fd01655abb950899fcede301574b08322927f210ef36c0f56e61606ac58438c3",
+      "bytes": 4807,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/build_kh001_bindings.py",
+      "sha256": "f37dd480849447753530af075fdb0bd51a35e80a7098d624c7d94014cec3fda6",
+      "bytes": 3020,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/revisions/KH001_pre_freeze_editorial.md",
+      "sha256": "293dbc410fd0fc49b4221174fff570a6ad4ddecd79c08704208660db2cee38cd",
+      "bytes": 14441,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/revisions/KH001_pre_freeze_editorial.diff",
+      "sha256": "24a72de8a201c4f6aca67987bcf68a4578e38793bcbc8a3e1b12d05f20c5af06",
+      "bytes": 4401,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/revisions/KH001_pre_freeze_revision_record.json",
+      "sha256": "c6e25b9d124bdb45afdd86760281e6fcbe16613221dc11f6e0fc86af25af2f4b",
+      "bytes": 468,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "reviews/KH001_independent_full_review.md",
+      "sha256": "0d091d9b6830232e698c6d29ea428a9fe3c21aa4acbba7bbaeb32cb4b5ab5839",
+      "bytes": 20754,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "reviews/KH001_independent_exact_checks.py",
+      "sha256": "b0b11ec679765c9a8b856a2c4fb5226093eb5aa82ca742b56ed41994ad42d64e",
+      "bytes": 11450,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "reviews/KH001_independent_exact_checks.json",
+      "sha256": "a4eeb4323165ace0e51e8730835ff91ea1d3a835f12daf4e2bd0714e44c883c1",
+      "bytes": 24776,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "reviews/KH001_independent_review_bindings.json",
+      "sha256": "03d364ee586ba470bcde3a2857b5d6d3770fd0d9da382f52b5768f0a1c3e29ea",
+      "bytes": 3683,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "reviews/KH001_audit_snapshots/KH001_received.md",
+      "sha256": "311adf683a22370fe765f61045a96af4a201e611ceeb9136f53a2b1f8cc7fd27",
+      "bytes": 14506,
+      "role": "accepted unit/review/check/actual revision artifact"
+    },
+    {
+      "path": "reviews/KH001_audit_snapshots/received_to_reviewed.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "accepted unit/review/check/actual revision artifact"
+    }
+  ],
+  "sources": [
+    {
+      "path": "intake/BK001_acceptance.json",
+      "sha256": "5bc61da0716e6645abdd9d538ea69b15dece11a0be00fb7f05b255e114cf6226",
+      "bytes": 1121,
+      "role": "accepted dependency receipt"
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK001_histogram_adaptation_obstruction.md",
+      "sha256": "edbfc9cd372df7497ff7462eded0e6c85a3ee4f99f21bd7310f460bd1f0fcb5a",
+      "bytes": 12706,
+      "role": "accepted source"
+    },
+    {
+      "path": "intake/KA001_acceptance.json",
+      "sha256": "f98aac7691f919d2583acf53601f7c9e654924620a9e952623e063849e9f2843",
+      "bytes": 955,
+      "role": "accepted dependency receipt"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KA001_certificate_phase_partial.md",
+      "sha256": "5cf1f9ba5dca0e5cb7dd2a703bca163f87e46f5eb16ddf5563837d873e9072e7",
+      "bytes": 10978,
+      "role": "accepted source"
+    },
+    {
+      "path": "intake/SC003_acceptance.json",
+      "sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+      "bytes": 864,
+      "role": "accepted dependency receipt"
+    },
+    {
+      "path": "binary_source_corruption/SC003_theorem.md",
+      "sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "bytes": 12757,
+      "role": "accepted source"
+    },
+    {
+      "path": "intake/BT002_acceptance.json",
+      "sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+      "bytes": 1307,
+      "role": "accepted dependency receipt"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_entropy_bridge_lower.md",
+      "sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "bytes": 13700,
+      "role": "accepted source"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_scalar_completion.md",
+      "sha256": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+      "bytes": 4963,
+      "role": "accepted comparison scalar completion"
+    }
+  ],
+  "unreviewed_history_not_dependency": {
+    "path": "binary_certificate_adaptation_phase/KH001_RESEARCH_HISTORY.md",
+    "sha256": "0f048f5d2c26a04321470c56ad80f1750f256b04d0f6b2321ccf16d82a8e76e4",
+    "bytes": 3886,
+    "role": "retrospective actual research history; not proof premise"
+  },
+  "revision_history": "One actual pre-freeze editorial revision; exact before copy and true diff verified. No revision during frozen review."
+}

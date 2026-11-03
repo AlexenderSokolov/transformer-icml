@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "checks": {
+    "words": 33260,
+    "payload_cases": 33260,
+    "flow_cases": 133040,
+    "zero_denominator": 1396,
+    "rejections": 5356,
+    "reflection_paths": 19683,
+    "certificate_entries": 192
+  },
+  "receipt_source_matches": {
+    "channel_classification/CANDIDATE.md": "cfe0d389433447f9508bde42ae9772d34fbcf92fb4334d1127364b37fbe3666e",
+    "whole_message_cost/CANDIDATE.md": "502b3a7e37c8adda33722ca324bade02efeab1c9d140c59abb3d812bba3eca62",
+    "bsc_sharp/CHANNEL_LIKELIHOOD_LOWER.md": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+    "recovered_science/positional_manuscript_finite_20261102/main.tex": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+    "recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+    "recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+    "recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639"
+  },
+  "limits": "Finite combinatorial/arithmetic diagnostics, not statistical risk or asymptotic proof verification."
+}

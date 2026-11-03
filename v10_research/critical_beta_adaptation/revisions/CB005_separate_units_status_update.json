@@ -1,0 +1,22 @@
+{
+  "time_utc": "2026-11-02T14:39:15.210227+00:00",
+  "kind": "Handoff-manifest status-only update",
+  "reason": "AF001 and BCJ001 now have separate root receipts. Replace the historical excluded_pending_units category with excluded_separate_units. No mathematical claim or inherited proof/review/receipt changes.",
+  "before_binding": {
+    "path": "critical_beta_adaptation/revisions/CB005_ACCEPTED_BINDINGS_before_separate_units_status_update.json",
+    "sha256": "5ddd98d4b24d677e4eebba6bda04466c1cebc658c16b5b6e38a9661dc7983c7b",
+    "bytes": 10942
+  },
+  "separate_receipts": [
+    {
+      "path": "intake/AF001_root_acceptance.json",
+      "sha256": "a02c48ceca42df35f0a60c2c85473085dd03c46cf22337bd88568a0eaee8bd1e",
+      "bytes": 1026
+    },
+    {
+      "path": "intake/BCJ001_root_acceptance.json",
+      "sha256": "27c1aa7efdc86752c63fd0b1f41b9c303a2aedff965ce81721f3abca7c54699f",
+      "bytes": 1122
+    }
+  ]
+}

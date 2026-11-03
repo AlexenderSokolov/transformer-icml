@@ -1,0 +1,15 @@
+{
+  "status": "PASS_TESTED_INSTANCES_ONLY",
+  "counts": {
+    "source_receipts": 2,
+    "stationary_all16": 36,
+    "target_hitting_moment_checks": 144,
+    "weighted_hitting_scales": 144,
+    "return_tail_numeric_comparisons": 576,
+    "path_reverse_window_identities": 24384,
+    "exact_word_reversal": 6096
+  },
+  "arithmetic": "Exact Fraction for algebra, moments, certificate and word laws; floating exp only for explicitly numeric tail comparisons",
+  "proof_sha256": "22b60eedf31f1e990e990a8b64ad733a1a3acc9723a421fdc6d677866c771271",
+  "scope": "Stationary weighted imbalance only; no arbitrary-start gate-bias or standalone estimator claim."
+}

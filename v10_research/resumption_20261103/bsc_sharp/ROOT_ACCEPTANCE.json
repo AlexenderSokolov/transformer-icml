@@ -1,0 +1,25 @@
+{
+  "utc": "2026-11-03T01:33:47.814257+00:00",
+  "unit": "BSC001",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_DERIVATION_AND_SOURCE_BOUND_FULL_REVIEW",
+  "scope": "Fixed known 0<eta<1/2, finite-length binary message, fresh iid post-corruption BSC, noiseless triple histogram and protected final pair, first-order table with arbitrary initial pair, law-independent codes/kernels, one procedure for all budgets. Necessary and sufficient message-length order Theta_eta(log M) for feasible constant adaptation factors.",
+  "finite_lower": "N=M+1>=2^160, k=ceil(N^(3/4)), r=2, kappa=((1-eta)/eta)^R<=N^(1/8) imply original g_M-normalized minimax factor >=2^-32 log(M+1). More generally Gamma_N>=rho*c*L/[64(1+rho*kappa*L*sqrt(N)/k)] under displayed FOT001 conditions.",
+  "mechanism": "Keep target-distance term under attacked channel; multiply only nonnegative clean-loss penalty by likelihood ratio. Original legal mixture attack unchanged.",
+  "root_read": "Complete current proof, original draft before correction as tool text, independent derivation review and source-bound review, exact current correction and provenance limitation, original FOT001/2/3 and FOU proof/review interfaces and WPC proof. Current 14 source bindings independently verified.",
+  "correction": "Global a-target loss was invalid off endpoint event F. Current ell_a is true actual-terminal clean loss; on F it reduces to a-target. Root and author independently noticed before source-bound review.",
+  "history_limit": "Before file is post-edit inverse reconstruction, not a contemporaneous snapshot; no independent pre-edit hash. Diff proves current file difference only; no invented historical provenance.",
+  "tests": "Reviewer reports 16352 suffix identities and arithmetic checks; root verified bindings and analytic constants, not a rerun of that unpersisted inline checker. Earlier 65 channel exact-rational cases independently root-replayed.",
+  "relationship": "Closes prior application-specific BSC Omega(log log M)-O(log M) gap; prior abstract common-component theorem remains correct and frozen. Visible-erasure Theta(log log M) remains distinct because finite likelihood domination fails at support zeros.",
+  "limits": "No sharp leading constants, variable-eta uniformity, variable/adaptive length, corrupted public counts, leaked noise, neural implementation, training or novelty certification. LLM review is not formal/external peer review. Local unpublished.",
+  "artifacts": {
+    "CHANNEL_LIKELIHOOD_LOWER.md": "d410a88fa63ae0de06bb7140296f85fc0ca3fa7b63c8bed8964fec81a4b9072e",
+    "review/independent_bsc_likelihood_challenge.md": "2c75cb4d52a6fe27d07a1d4487de6b30218577548845a0e4c75104fdf818d266",
+    "review/source_bound_sharp_review.md": "fe705321cfbfc870cbbc3139674392e7de08ac92816be320ea6e7921c22658cd",
+    "review/source_bound_bindings.json": "fe7e3c423846ae12193dbc3f6ced72a86ae99c5ded78cf1a7884a0f04564d832",
+    "review/source_bound_checks.json": "12ba0b2b04f31327d527685315cecfe3bf2f4aeb748b9610c8b755bcf6d4cddb",
+    "history/README.md": "acc64b13360d12abbcdebde6c76733674a2f9da9631d6eec86b6fb5e6c1cbfec",
+    "history/PROVENANCE.md": "c29bd49c6f8c22686257d5d24d6769d4276f8b2c06cce701f0dfe7601d24e733",
+    "history/actual_terminal_loss_fix.diff": "62a7703d0afe7caa527d7b2b492439430735b335bad88abc88cc38b8861bc138",
+    "history/CHANNEL_LIKELIHOOD_LOWER.before_actual_terminal_fix.md": "9438863ac9fd276bb7c6a6db51ace719c26b40b613940fb4b768ed0c6e611fae"
+  }
+}

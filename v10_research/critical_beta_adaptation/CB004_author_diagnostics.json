@@ -1,0 +1,16 @@
+{
+  "status": "PASS_TESTED_INSTANCES_ONLY",
+  "arithmetic": "Exact integer/Fraction; no approximate roots",
+  "counts": {
+    "receipts": 3,
+    "prefix_conditional_scalar": 100001,
+    "perturbation_cases": 100000,
+    "active_ratio": 97682,
+    "false_active": 37,
+    "false_inactive": 2071,
+    "assembly": 99936
+  },
+  "proof_sha256": "a322c2fe08b76cf84f587b91e4ab504e2e02468e8c1a617fd7b868e14f643155",
+  "companion_sha256": "22b60eedf31f1e990e990a8b64ad733a1a3acc9723a421fdc6d677866c771271",
+  "scope": "Only finite checks for new reduction/assembly; full theorem additionally needs BP001 return concentration and independent complete review; stationary initialization only."
+}

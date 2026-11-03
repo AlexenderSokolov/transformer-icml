@@ -1,0 +1,39 @@
+{
+  "status": "PASS_LOCAL_SOURCE_BUILD_CHECKS_NOT_PROOF_REVIEW",
+  "input_bindings_verified": 9,
+  "v1_bound_inputs_unchanged": true,
+  "byte_identical_copies": [
+    "references.bib",
+    "sections/proofs_positive.tex",
+    "sections/proofs_negative.tex"
+  ],
+  "exact_main_diff_verified": true,
+  "tex_warnings_or_overfull_underfull": false,
+  "pdf_pages": 31,
+  "main_narrative_pages": 8,
+  "rendered_pages": 31,
+  "visual_scope": "All 31 pages inspected in six contact sheets; pages 3,4,28,29,30 also inspected at full rendered resolution. No clipping, overlap, missing glyph or layout defect observed.",
+  "scientific_review": "Pending fresh independent integration review and root acceptance.",
+  "artifacts": {
+    "main.tex": {
+      "sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+      "bytes": 27555
+    },
+    "sections/proofs_finite_horizon.tex": {
+      "sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "bytes": 5620
+    },
+    "build/main.pdf": {
+      "sha256": "a64010995fee9d9ef284c9e1434bd9d079bb6e7ca3c171024fa6145fe0dee9fd",
+      "bytes": 507274
+    },
+    "build/main.log": {
+      "sha256": "561983ffdec5a9802ab28580147abad77da1e79c0c3060cb8bf590c2759413a4",
+      "bytes": 27656
+    },
+    "build_transcript.txt": {
+      "sha256": "20fd790ce07479bc97148f78644f93b413a89f3da6c6461b01c185ef18a472d1",
+      "bytes": 28160
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "status": "ROOT_ACCEPTED_SCIENTIFIC_CONSOLIDATION_AFTER_INDEPENDENT_LLM_REVIEW",
+  "utc": "2026-11-02T18:57:48.167026+00:00",
+  "scope": "Finite-horizon positional manuscript v2, exact revised sources; inherited v1 proof bytes preserved",
+  "root_read": "Complete original v1 main/proofs and new finite proof, complete v1-to-v2 diff, both actual editorial diffs and complete fresh integration review.",
+  "bindings_verified": 21,
+  "visual": "Author reports all31 pages via six contact sheets and full-size pages3,4,28,29,30. Root independently inspected those5 full-size pages; no clipping/overlap/missing symbols found.",
+  "build": "31pages,8main; clean logs and artifact checksums verified",
+  "tests": "Root original FHW585cases pass. Fresh integration129761+84 diagnostics reported and hash-bound, not root-rerun.",
+  "limits": "Independent LLM review, not formal verification/external peer review/novelty certification. Constants conservative. Same-map competitive lower, not every-budget risk lower.",
+  "publication": "UNPUBLISHED, original pending approval untouched",
+  "artifacts": {
+    "main.tex": {
+      "sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+      "bytes": 27555
+    },
+    "sections/proofs_finite_horizon.tex": {
+      "sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "bytes": 5620
+    },
+    "sections/proofs_positive.tex": {
+      "sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "bytes": 32814
+    },
+    "sections/proofs_negative.tex": {
+      "sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "bytes": 28723
+    },
+    "references.bib": {
+      "sha256": "048b7410ef67d989febc1fa5dee881fc48df624377e8ad330cdc71986cbb486b",
+      "bytes": 3885
+    },
+    "build/main.pdf": {
+      "sha256": "a64010995fee9d9ef284c9e1434bd9d079bb6e7ca3c171024fa6145fe0dee9fd",
+      "bytes": 507274
+    },
+    "VALIDATION.json": {
+      "sha256": "e2f92f0ab774ff6f3e4a54b5e39a287b23297ab2b2fc2cdf3b07d9b6686fb136",
+      "bytes": 1423
+    },
+    "SOURCE_BINDINGS.json": {
+      "sha256": "f22c74785ba32a96086234e1e7d11d4f5d9b25bc9be78f26d253e8ea18166cfc",
+      "bytes": 1588
+    },
+    "reviews/integration/REVIEW.md": {
+      "sha256": "a39575f4e56a9eaa800781fabe760996c872cc1c3b0b2256fbd56d99561d0fdf",
+      "bytes": 9795
+    },
+    "reviews/integration/source_bindings.json": {
+      "sha256": "9c2fbb7053afefdea47c6ea9d03a4c20f6a0e587a67d0d2ee03412d31554007b",
+      "bytes": 4061
+    },
+    "reviews/integration/checks.py": {
+      "sha256": "1ee2881e35170e48a2b3afa36e102004433b3882e8645672203e5816b5592409",
+      "bytes": 4866
+    },
+    "reviews/integration/checks_results.json": {
+      "sha256": "18e721d6ef17e5ccc2b1933377abf4f73a6a8dd9a1cddca60f6671103155cf52",
+      "bytes": 77124
+    },
+    "v1_to_v2_main.diff": {
+      "sha256": "372f4bb1f395ea9f79488b62a4a1dc2fa6bb9ce5a96ed386c865e92a3adc0d68",
+      "bytes": 10396
+    },
+    "revisions/root_wording.diff": {
+      "sha256": "a64d8e5fae338f2e12a06101031cb9a59e27b8db48612b8271019806bfeea7b2",
+      "bytes": 1836
+    },
+    "revisions/proof_heading_fix.diff": {
+      "sha256": "675a4695c1a80221dba7fa01d41d2343514c794eab6b8a5a96c2c13744a4df5b",
+      "bytes": 2330
+    }
+  },
+  "dependency_receipts": {
+    "FHW001_root_acceptance.json": "5a558919635725ba3300bcfba5aae37c8688b94087cdff697353f6687c4990d5",
+    "positional_manuscript_root_acceptance.json": "ea36f64f49d862ff517b18dd171cb218d64c402a1e32393bd8ab919f9d56acf4"
+  }
+}

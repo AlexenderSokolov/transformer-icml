@@ -1,0 +1,34 @@
+{
+  "proof_receipt_bindings": [
+    {
+      "unit": "FOU001",
+      "path": "v10_research/first_order_positional_probe/UPPER_CANDIDATE.md",
+      "sha256": "5d8f7eadb212dd129a124553170cd75633f9b648307acc5e852848291168b2db",
+      "receipt_match": true,
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW"
+    },
+    {
+      "unit": "FOL001",
+      "path": "v10_research/first_order_positional_probe/lower/FOL001_candidate.md",
+      "sha256": "2393de755fda2bb385f2c64a16ef6733d69c76b6829eaf65d076fac1c539b511",
+      "receipt_match": true,
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW"
+    },
+    {
+      "unit": "FOT001",
+      "path": "v10_research/first_order_positional_probe/triple_access/FOT001_candidate.md",
+      "sha256": "700db043416260a3d7e4796d6513ee60b90c2f2704a4d183be526d2aef9fef1d",
+      "receipt_match": true,
+      "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW"
+    },
+    {
+      "unit": "FOT002",
+      "path": "v10_research/first_order_positional_probe/triple_access/FOT002_matched_original_experiment.md",
+      "sha256": "55948f2f3516a9bffa09aa05d01dd81154d962dea847a796362a7206b861120a",
+      "receipt_match": true,
+      "status": "ROOT_ACCEPTED_AFTER_INTERFACE_REPAIR_AND_INDEPENDENT_REVIEW"
+    }
+  ],
+  "all_sources_exist": true,
+  "source_count": 42
+}

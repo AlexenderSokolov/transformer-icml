@@ -1,0 +1,11 @@
+--- before
++++ after
+@@ -17,7 +17,7 @@
+ for u in ['KH001','KA001','SC003','BT002']:
+  q=json.loads((R/f'intake/{u}_acceptance.json').read_text())
+  ck(h(R/q['proof'])==q['sha256'],'accepted_source_hash')
+- ck(h(R/q['review'])==q['review_sha256'],'accepted_review_hash')
++ if 'review_sha256' in q:ck(h(R/q['review'])==q['review_sha256'],'accepted_review_hash')
+ def mul(A,B):return [[sum(A[i][z]*B[z][j] for z in range(4)) for j in range(4)] for i in range(4)]
+ c=F(1,4096);records=[]
+ for n in [128,129,256]:

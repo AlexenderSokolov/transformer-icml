@@ -1,0 +1,47 @@
+# FOT002 independent interface audit
+
+2026-11-02. Independent LLM reviewer.
+
+**Verdict:** the repaired matched theorem, known-budget sandwich, and intended endpoint-baseline consequences are valid interfaces of accepted FOT001/FOU001. No mathematical correction is required in the theorem. The reviewer recommended making the minimum-alphabet baseline explicit. Root applied this wording clarification, preserving the actual intermediate before-file and a separate diff. The final text explicitly restricts it to counts plus endpoint pairs (r=2), replacing growing raw windows; it does not claim two symbols are necessary when full or linear-width windows are already supplied. This resolves the scope ambiguity without changing any theorem constant or proof.
+
+Final candidate reviewed SHA256: `55948f2f3516a9bffa09aa05d01dd81154d962dea847a796362a7206b861120a`. Initial reviewed intermediate SHA256: `36adb103ec0e8cbd96fcb07fc595ed01b8c510916612edf68b204ec39b211c9d`. This review is not root acceptance. No manuscript or accepted source was edited.
+
+## Read scope and reliance
+
+Read the complete current FOT002 candidate, actual before-file and complete initial-pair-repair diff; read complete accepted FOU001 `UPPER_CANDIDATE.md` and its root receipt; read FOT001 root receipt (and previously independently reviewed the entire unchanged FOT001 proof). Read the entire original `lem:oracle-floor` proof in `positional_manuscript_finite_20261102/sections/proofs_negative.tex`, rather than importing a second-order minimax claim by source-class restriction. Accepted generic probabilistic lemmas underlying FOU are relied on as accepted dependencies, not re-proved here. This audit specifically verifies their use in the distinct richer-observation experiment.
+
+## Arbitrary initial pair: repaired transfer
+
+The initial pair law need not have the form pi(x0)T(x0,x1). Indeed identity table and deterministic initial pair 01 produce 0111..., which cannot be treated as a homogeneous word starting at X0. Applying FOU to all M+1 edges was therefore invalid as an interface, even though the old rate constants were conservative. The retained before/diff records this actual correction and the independent check confirms the two actual diffs reproduce the intermediate and then final bytes in order.
+
+Discarding X0 leaves X1,...,X(M+1) with M genuine transitions. For any corrupted word Z, summing Habc over c counts the ordinary edge ab at indices 0,...,M-1. Add the terminal edge at M and subtract the initial edge at 0 to get exactly the suffix edges 1,...,M. All terms are observable for r>=2. In particular subtraction must use corrupted (Z0,Z1), as the candidate does. Even an edit of Z0 cancels identically in this formula. The resulting counts are nonnegative pathwise and sum to M.
+
+For each fixed b with positive probability of clean X0=b, the conditional suffix starts with some arbitrary distribution of X1 and thereafter follows T. Prepending fixed b, invoking the fixed original kernel, and dropping its first output coordinate defines a source-independent suffix kernel Kb on every suffix input. Its suffix Hamming count is at most the original full-word count and it protects the last symbol (indeed two), so it belongs to FOU's larger attack class. The fact that b may correlate with the source under the joint law is harmless: for either fixed value the map itself contains no law-dependent quantity. Zero-probability conditions need not be analyzed. FOU is uniform over each conditional start and each Kb. Applying exactly the same suffix predictor for both b and then averaging proves the unconditional bound. No conditional clean X0 is revealed to the predictor.
+
+FOU's displayed gate uses pair counts, terminal symbol, and last m+1 symbols, m=min(r'-1,floor(M/2)); it does not need the first r' symbols. Thus the original observation need not reconstruct the truncated initial window, which could otherwise require the unavailable original Xr. It does supply the required suffix of length r'=min(r,M+1). All parameter domains hold: M>=64, 0<=k<=M and 1<=r'<=M+1. The attack has fewer editable positions than FOU allows; that only restricts its class. No stationarity, positivity, certificate, or aperiodicity is introduced by this transfer.
+
+## Upper constants and common prediction target
+
+FOU at N'=M gives 2^17[1+ln((M+1)/r')]gM. For r<=M+1, (M+1)/r'<=(M+2)/r, while r=M+2 gives both logarithmic factors exactly 1. Hence the claimed 2^17 ell upper follows with no extra factor. The known-budget map only needs reconstructed counts and actual terminal symbol, so the same transfer gives 2^16 gM.
+
+The original actual terminal pair is unchanged by the kernel. Under a first-order table its outgoing next-symbol distribution depends only on the final symbol. Equivalently its next-pair distribution is supported on the two states whose first coordinate is that final symbol. The binary prediction lifts to this support without changing TV. Thus the terminal-pair loss and FOU terminal-symbol loss coincide, including arbitrary initial pairs and reducible/periodic tables.
+
+## Lower constants and source inclusion
+
+For each fixed richer-observation map FOT001 applies at N=M+1. Its stationary witnesses and strict budgets 0..N-1 are precisely stationary witnesses and budgets 0..M here, with the same protected two coordinates and supplied beta=1/M. Its lower is relative to gN, not gM. Since gN<=gM<=[(M+1)/M]gN, taking the same supremum gives a factor at least M/(M+1) times the FOT lower. Infimizing preserves that uniform inequality. Consequently the lower is >=2^-33 ell, with exactly ell=1+ln((M+2)/r). The original lower domain M>=64 corresponds to FOT N>=65. The certificate-restricted lower also belongs to the all-first-order-table class; arbitrary initial laws contain the stationary class. These justify all stationary/all-start and class-inclusion arrows. No optimizer attainment is assumed.
+
+## Actual original oracle-floor proof
+
+The proof uses stationary IID Bernoulli sources only. For n=M+2 its clean two-point experiment gives loss >=3/(128 sqrt(n))>=1/(64 sqrt(M)). Identity corruption is legal for every k. The edit witness buckets the number of ones in the first M editable bits by multiples of k+1, uniformly retaining the bucketed subset. It edits at most k bits on every input and preserves both final symbols. The retained-set arrangement conditional on size and terminal pair is source-independent; there are exactly at most 4(floor(M/(k+1))+1) labels, accounting for every protected-pair possibility rather than conditioning them away. The frozen-channel-seed covering argument gives >=1/[32(floor(M/(k+1))+1)]>=k/(96M). Combining separate clean and edit minimax witnesses yields gM/96. Each IID pair chain has P² equal to its stationary law on every row. Thus these witnesses meet the first-order and beta=1/M restrictions. They establish the floor even with full history, so reducing information preserves it. This is a valid restricted-subclass proof, not the invalid deduction of a first-order lower from an arbitrary second-order lower.
+
+## Width and supplemental-message corollaries
+
+If liminf rM/M>0, the logarithm is uniformly bounded eventually; the finite earlier horizons have finite factors (bounded loss and gM>=M^-1/2). The same explicitly constructed k-blind map at each horizon gives uniform adaptation. If the liminf vanishes, a subsequence makes ell diverge and the lower prevents any finite uniform factor. At r=2 this is order log M.
+
+For the message alternative, retain the r=2 endpoint-pair/count baseline. An encoder scanning the already corrupted full word can discard Z0 and compute the exact FOU half-visit bit for the suffix. The decoder obtains its selected-row J from the reconstructed suffix counts and selected row from the protected last symbol; it does not need the half count itself, only the bit and its own J>0 test. Conditional-X0 transfer applies unchanged to this composite encoder/decoder because it is one fixed full-suffix function. Thus the stated bound 1024/sqrt(M)+2^20 k/M is valid, with scanning/counters uncharged and a fault-free bit. A one-symbol message is constant and leaves precisely the r=2 baseline, for which the lower diverges. Two symbols suffice and one does not in this baseline model. This is not a two-symbol necessity for r=M+2 or other sufficiently large already supplied windows. Parent was notified, applied explicit baseline wording, and the reviewer read and approved the clarified scope and actual second diff.
+
+## Independent finite checks
+
+`checks.py` imports no author checker. It passes 4,080 exact count reconstructions with explicit first-symbol-edit cancellation, 4,080 suffix-bit evaluations, 36,848 suffix-window access cases, 5,440 full-word input/output support pairs validating induced-kernel budgets and terminal protection, 129,761 exact rational horizon/oracle comparisons, 129,761 logarithm-argument comparisons, and 2,658 exact IID retained-set identities. It also verifies both actual unified diffs byte-for-byte, from initial draft to repaired intermediate and then scope-clarified final candidate. These are finite interface corroboration, not a substitute for the analytic conditional-kernel argument or a new proof of FOU's accepted generic lemmas.
+
+No blockers or unresolved recommendations remain. No external writes or accepted-source/manuscript modifications were performed; root made only the disclosed candidate scope clarification.

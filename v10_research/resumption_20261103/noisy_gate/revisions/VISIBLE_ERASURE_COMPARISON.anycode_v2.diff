@@ -1,0 +1,33 @@
+--- v10_research/resumption_20261103/noisy_gate/revisions/VISIBLE_ERASURE_COMPARISON.before_anycode_7c5770e9.md	2026-11-02 17:23:57.225544031 -0800
++++ v10_research/resumption_20261103/noisy_gate/VISIBLE_ERASURE_COMPARISON_v2.md	2026-11-02 17:23:57.235052066 -0800
+@@ -73,3 +73,30 @@
+ The clean lower floor 1/96 is a historical input reported by root and is not reproved here. Consequently the conditional erasure result is Theta(1+epsilon^R log M), with sharp order Theta(log log M) repetition complexity for fixed interior epsilon and feasible constant-ratio targets.
+ 
+ This sharp result does **not** close the silent-BSC gap. The erasure flag lets the estimator select an exact-gate estimator on success and a baseline estimator on known failure. A silent corrupted bit does not reveal this branch, so the same switching proof is unavailable. No claim of a sharp BSC threshold follows from this contrast.
++
++## Fixed-length arbitrary encodings: conditional concrete strengthening
++
++This section concerns **fixed-length R-bit, parameter/law-independent path encoders**, followed by coordinatewise independent visible erasures of probability epsilon. The encoder may use the corrupted full word, Z, and independent private randomness, but is not supplied the unknown parameter or a law-dependent oracle. Encoding and corruption finish before the fresh erasure mask is sampled. The receiver retains the noiseless base observation Z. Variable-length messages, adaptive transmissions, feedback-driven encoding, noise-aware corruption, and correlated erasure masks are outside this statement.
++
++Write Gamma_any,R for the infimum over all admissible such encoders and joint estimators, with a single procedure uniform over the same budgets and instances. For every fixed encoder, the event that all R positions are erased has probability epsilon^R independent of the complete pre-channel experiment. Conditional on that event the supplemental output is the constant all-erased string. Thus the common-component proof, applied to each procedure before the infimum, gives
++
++Gamma_any,R >= epsilon^R Gamma_0,
++
++with the usual R=0 convention epsilon^0=1. This is the general nonnegative-loss conclusion. **It does not assert Gamma_any,R>=Gamma_exact for the historical single-bit gate:** an arbitrary R-bit clean message can be more informative than that gate.
++
++For the concrete v10 experiment there is instead a separate clean floor from the full-history IID lower-bound subfamily. At k=0 the encoder's message, independent erasure noise, receiver's base observation, and receiver's private randomness together form a randomized function of the full history. A law-independent composite encoder/receiver can therefore be simulated by a full-history estimator. Under the same target, normalizers, and admissible IID subfamily used in the historical lower bound, this gives Gamma_any,R>=1/96. This is conditional on the historical full-history lower bound, not on any claimed ordering with the single-bit Gamma_exact.
++
++Combining these lower bounds with the concrete baseline gives
++
++Gamma_any,R >= max{1/96, 2^(-33)epsilon^R ell_M}.
++
++For R>=1, repeating the already-established exact bit R times is one admissible fixed-length encoding. The switching construction proved above therefore gives
++
++Gamma_any,R <= (1-epsilon^R)(1024+2^20)+epsilon^R 2^17 ell_M
++             <= (1024+2^20)+2^17 epsilon^R ell_M.
++
++For R=0, no supplemental message exists and Gamma_any,0=Gamma_0; the same final relaxed upper bound is valid. It follows, with numerical constants uniform in M>=64, R>=0, and epsilon in [0,1], that
++
++                     Gamma_any,R = Theta(1+epsilon^R ell_M).
++
++Consequently for each fixed 0<epsilon<1 the optimal length among **all** admissible fixed-length encodings needed for a feasible constant-ratio target (for example 1024+2^20+a, with a>0 fixed) is Theta(log log M). Necessity uses only the all-erased component and baseline lower bound; sufficiency uses repetition of the historical exact gate. This sharp order is stronger than a repetition-only necessity claim, but is specific to visible erasures and the concrete full-history floor. It neither closes the silent-BSC gap nor imports a false general Gamma_any,R>=Gamma_exact comparison.

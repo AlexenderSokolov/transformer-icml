@@ -1,0 +1,10 @@
+{
+  "unit": "CB005",
+  "status": "ROOT_ACCEPTED_AFTER_INDEPENDENT_LLM_REVIEW",
+  "proof": "critical_beta_adaptation/CB005_all_start_critical_adaptation.md",
+  "sha256": "5e514451e88672533b5a376e43265b8a382ac0b59e816e3ef06212ea5be6db52",
+  "review": "critical_beta_adaptation/CB005_independent_full_review.md",
+  "review_sha256": "b8976cae54be86f6b9c110f207256c38ec5c81913cc1156af0bd913cba47c57a",
+  "time_utc": "2026-11-02T14:25:29.077559+00:00",
+  "scope": "Root read complete frozen proof and full fresh independent review. ALL-START binary protected-terminal corruption, including unsupported singleton starts. SAME unknown-k/unknown-beta gate estimator has min(1,2^16/sqrtM+2^16/(M sqrtbeta)+2^23 k/M). All-budget oracle order on beta>=c/M. Uses global triple counts plus four first-half row counts and protected pair. No global sqrtbeta mixing, formal/external review, architecture implementation or novelty certification. First-hit scale has established Norris-Peres-Zhai prior art documented separately. Not yet published."
+}

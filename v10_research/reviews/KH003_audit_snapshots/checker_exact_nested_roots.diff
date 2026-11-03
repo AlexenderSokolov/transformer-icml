@@ -1,0 +1,56 @@
+--- checks_before_exact_nested_roots.py
++++ KH003_independent_exact_checks.py
+@@ -10,10 +10,12 @@
+ import hashlib, json, difflib, datetime
+ R=Path(__file__).resolve().parents[1]
+ D=R/'binary_certificate_adaptation_phase'
+-C=Counter(); examples={}; finite=[]; c=Q(1,4096)
++C=Counter(); examples={}; finite=[]; c=Q(1,4096); NASSERT=0
+ EXPECTED='09adb8433d97011dbe7772ed9b0f1f903ed245d73299db02d7d6bc477fc358a4'
+ def check(v,label):
++    global NASSERT
+     if not v: raise AssertionError(label)
++    NASSERT+=1
+     C[label]+=1
+ def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+ proof=D/'KH003_boundary_window_obstruction.md'
+@@ -151,6 +153,13 @@
+ 
+ # Every finite hypothesis and all-state entries in actual huge valid instances.
+ def ceilq(q): return -(-q.numerator//q.denominator)
++def rootfloor(n,p):
++    lo=0; hi=1 << ((n.bit_length()+p-1)//p)
++    while lo+1<hi:
++        mid=(lo+hi)//2
++        if mid**p<=n: lo=mid
++        else: hi=mid
++    return hi if hi**p<=n else lo
+ def finite_case(M,beta,k,r,label,actual_beta=None):
+     if actual_beta is None: actual_beta=beta
+     dn=isqrt(beta.denominator); nn=isqrt(beta.numerator)
+@@ -198,9 +207,15 @@
+         finite_case(M,beta,k,r,'critical_growing')
+     for b in [t//2+12,2*t//3,t,t+24,2*t-48]:
+         bw=min(t,b); actual=Q(1,2**b); beta=Q(1,2**bw)
+-        U=2**bw; L=max(2**(t//2),2**(5*bw//6),2**(b//2)); k=isqrt(U*L)
+-        check(k*k<=U*L<(k+1)**2,'bounded_window_nested_floor')
++        # k^12=U^6 L^6=max(M^3 beta_w^-6,beta_w^-11,beta^-3 beta_w^-6).
++        # This avoids accidentally rounding the fractional exponent in beta_w^-5/6.
++        radical=max(2**(3*t+6*bw),2**(11*bw),2**(3*b+6*bw)); k=rootfloor(radical,12)
++        check(k**12<=radical<(k+1)**12,'bounded_window_exact_nested_radical_floor')
+         for r in [2,17,257,1000]: finite_case(M,beta,k,r,'bounded_width_nested',actual)
++
++# Nonempty harmonic range can have just one j; no unspoken J0<T assumption.
++finite_case(2**240,Q(1,2**240),2**210,2**35,'single_suffix_J0_equals_T')
++check(finite[-1]['J0']==finite[-1]['T'],'single_suffix_range_endpoint')
+ 
+ # Finite null masses, retain BOTH exponents and true target beta_w.
+ for M in [64,96,144,256]:
+@@ -229,6 +244,6 @@
+             check(mass*(P0-D0)>=Q(1,8)*P0-Q(1,2)*D0,'signed_bracket_separate_weights')
+ for name,h in start.items(): check(sha(R/name)==h,'all_inputs_unchanged_end')
+ check(sha(proof)==EXPECTED,'candidate_still_frozen_end')
+-out={'unit':'KH003','status':'PASS_EXACT_TESTED_INSTANCES_ONLY','generated_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'candidate_sha256':EXPECTED,'assertion_total':sum(C.values()),'counts':dict(C),'structural_examples':examples,'complete_finite_parameter_cases':finite,'input_sha256':start,'independence':'Fresh reviewer implementation; author diagnostics were inspected but are not imported or executed.','limitations':'Exact finite corroboration, not formal verification. Small-word/DP/kernel examples test structural identities outside the huge theorem domain. Asymptotic and universal-map claims are addressed analytically in the separate full review.'}
++out={'unit':'KH003','status':'PASS_EXACT_TESTED_INSTANCES_ONLY','generated_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'candidate_sha256':EXPECTED,'assertion_total':NASSERT,'counts':dict(C),'structural_examples':examples,'complete_finite_parameter_cases':finite,'input_sha256':start,'independence':'Fresh reviewer implementation; author diagnostics were inspected but are not imported or executed.','limitations':'Exact finite corroboration, not formal verification. Small-word/DP/kernel examples test structural identities outside the huge theorem domain. Asymptotic and universal-map claims are addressed analytically in the separate full review.'}
+ (R/'reviews/KH003_independent_exact_checks.json').write_text(json.dumps(out,indent=2)+'\n')
+ print(json.dumps({'status':out['status'],'assertion_total':out['assertion_total'],'counts':dict(C),'examples':examples},indent=2))

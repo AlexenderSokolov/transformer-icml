@@ -1,0 +1,181 @@
+{
+  "generated_utc": "2026-11-02T14:28:39.369938+00:00",
+  "unit": "KH004",
+  "status": "ROOT_ACCEPTED_EXACT_BINDINGS_VERIFIED",
+  "scope": "Exact triples plus genuine boundary windows; critical r=o(M^(1/3)); not sharp/full-history/local-encoder classification.",
+  "root_receipt": {
+    "path": "intake/KH004_root_acceptance.json",
+    "sha256": "99e006c273ed1e93f820d3be3df77f37d430790bc03a723712214d61527c4be3",
+    "bytes": 942,
+    "role": "root acceptance authority"
+  },
+  "artifacts": [
+    {
+      "path": "binary_certificate_adaptation_phase/KH004_constant_crossing_window_obstruction.md",
+      "sha256": "ec332fdd75eed3401f389804f4f1ed21a46b1bc1d8a8c09f68088676e47da814",
+      "bytes": 12985,
+      "role": "accepted proof/review/check/snapshot"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH004_author_diagnostics.json",
+      "sha256": "26924d29f6797c3a2f21905793182e39dfc5e6c3912f82b6dc60e9bf7f07cda3",
+      "bytes": 11142,
+      "role": "accepted proof/review/check/snapshot"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/check_kh004.py",
+      "sha256": "74e7348e8a8dd1b0924bd6bb5aa3efcf4b52db210c9b2c855fcf6b8d5e7e0603",
+      "bytes": 6084,
+      "role": "accepted proof/review/check/snapshot"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH004_HANDOFF.md",
+      "sha256": "fc6e4cde41bc2deab06a3709dc82468143c182ec7bf9a8cf12239d2bdf6f5272",
+      "bytes": 3584,
+      "role": "accepted proof/review/check/snapshot"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/build_kh004_bindings.py",
+      "sha256": "25dae5b2fdcd65b3e2829cbe7927738247c731710e684877f2c5e0b4a8f6251e",
+      "bytes": 2729,
+      "role": "accepted proof/review/check/snapshot"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/revisions/KH004_initial_candidate.md",
+      "sha256": "ec332fdd75eed3401f389804f4f1ed21a46b1bc1d8a8c09f68088676e47da814",
+      "bytes": 12985,
+      "role": "accepted proof/review/check/snapshot"
+    },
+    {
+      "path": "reviews/KH004_independent_full_review.md",
+      "sha256": "91a9b91e5131706b03c852b79f14f78dbda03c2faf3610698cf89861efd0ece8",
+      "bytes": 14659,
+      "role": "accepted proof/review/check/snapshot"
+    },
+    {
+      "path": "reviews/KH004_independent_exact_checks.py",
+      "sha256": "cb7c160490713a3906de7bfa76f6619b6d92fec54f72dda4228641699cda81f3",
+      "bytes": 9163,
+      "role": "accepted proof/review/check/snapshot"
+    },
+    {
+      "path": "reviews/KH004_independent_exact_checks.json",
+      "sha256": "8854ca4d42ea13cb29603162cef1c5a206b5ddaf74c6a674298e6249e1190e45",
+      "bytes": 12509,
+      "role": "accepted proof/review/check/snapshot"
+    },
+    {
+      "path": "reviews/KH004_independent_review_bindings.json",
+      "sha256": "375df311c5590931f274a9d91c0bf6ff61aae0c511156018fc3669d12f38d7a2",
+      "bytes": 11124,
+      "role": "accepted proof/review/check/snapshot"
+    },
+    {
+      "path": "reviews/KH004_audit_snapshots/KH004_received.md",
+      "sha256": "ec332fdd75eed3401f389804f4f1ed21a46b1bc1d8a8c09f68088676e47da814",
+      "bytes": 12985,
+      "role": "accepted proof/review/check/snapshot"
+    },
+    {
+      "path": "reviews/KH004_audit_snapshots/received_to_reviewed.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "accepted proof/review/check/snapshot"
+    }
+  ],
+  "sources": [
+    {
+      "path": "intake/KH001_acceptance.json",
+      "sha256": "2fa945234c1eb9cbc9ddfe2acef3d852a15ea03eb29895c04962d8003effd881",
+      "bytes": 1074,
+      "role": "accepted receipt"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH001_histogram_strong_side_obstruction.md",
+      "sha256": "311adf683a22370fe765f61045a96af4a201e611ceeb9136f53a2b1f8cc7fd27",
+      "bytes": 14506,
+      "role": "accepted inherited interface or unchanged baseline"
+    },
+    {
+      "path": "intake/KH002_acceptance.json",
+      "sha256": "3bbc8a59d94724bed2352067fe0fa287d1d8476190a01c9a30dbb5b43f3b51aa",
+      "bytes": 965,
+      "role": "accepted receipt"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH002_histogram_domain_classification.md",
+      "sha256": "970bfefb6041cdb989148819eb526c789d86591992375b84b05de2dd72bf9702",
+      "bytes": 8404,
+      "role": "accepted inherited interface or unchanged baseline"
+    },
+    {
+      "path": "intake/KH003_root_acceptance.json",
+      "sha256": "2e235bca197c131dc82fd3a0893fc38e0d50576b1c49ca3912f8e2a25f782db2",
+      "bytes": 882,
+      "role": "accepted receipt"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/KH003_boundary_window_obstruction.md",
+      "sha256": "09adb8433d97011dbe7772ed9b0f1f903ed245d73299db02d7d6bc477fc358a4",
+      "bytes": 11850,
+      "role": "accepted inherited interface or unchanged baseline"
+    },
+    {
+      "path": "intake/BK001_acceptance.json",
+      "sha256": "5bc61da0716e6645abdd9d538ea69b15dece11a0be00fb7f05b255e114cf6226",
+      "bytes": 1121,
+      "role": "accepted receipt"
+    },
+    {
+      "path": "binary_beta_known_adaptation/BK001_histogram_adaptation_obstruction.md",
+      "sha256": "edbfc9cd372df7497ff7462eded0e6c85a3ee4f99f21bd7310f460bd1f0fcb5a",
+      "bytes": 12706,
+      "role": "accepted inherited interface or unchanged baseline"
+    },
+    {
+      "path": "intake/SC003_acceptance.json",
+      "sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+      "bytes": 864,
+      "role": "accepted receipt"
+    },
+    {
+      "path": "binary_source_corruption/SC003_theorem.md",
+      "sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "bytes": 12757,
+      "role": "accepted inherited interface or unchanged baseline"
+    },
+    {
+      "path": "intake/BT002_acceptance.json",
+      "sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+      "bytes": 1307,
+      "role": "accepted receipt"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_entropy_bridge_lower.md",
+      "sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "bytes": 13700,
+      "role": "accepted inherited interface or unchanged baseline"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_scalar_completion.md",
+      "sha256": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+      "bytes": 4963,
+      "role": "accepted comparison scalar completion"
+    }
+  ],
+  "unreviewed_history_not_dependencies": [
+    {
+      "path": "binary_certificate_adaptation_phase/KH004_constant_crossing_exploration_unreviewed.md",
+      "sha256": "ab5701d3aadff3c715144371ee890573f4d444f9fed7ed1eecdb40b1aff83e5a",
+      "bytes": 3966,
+      "role": "actual exploratory history; not accepted premise"
+    },
+    {
+      "path": "binary_certificate_adaptation_phase/NEXT_conditioned_occupation_route_unreviewed.md",
+      "sha256": "32ad99b3c90df48ee01db732f7b8190f66cf22cbd9b2e00bf93d8bc60121b0a7",
+      "bytes": 3847,
+      "role": "actual exploratory history; not accepted premise"
+    }
+  ],
+  "revision_history": "No proof revision; both actual original and reviewer snapshots match accepted bytes, actual review diff empty."
+}

@@ -1,0 +1,244 @@
+{
+  "generated_utc": "2026-11-02T14:34:14.435399+00:00",
+  "status": "ROOT_ACCEPTED_EXACT_BYTES_VERIFIED_ALL_START",
+  "unit": "CB005",
+  "receipt": {
+    "path": "intake/CB005_root_acceptance.json",
+    "sha256": "fcb7152503d8bae6ced2224b5d527ca8b6c8efe2094abc6f4a983eee88daa5ad",
+    "bytes": 1033,
+    "role": "root acceptance authority"
+  },
+  "proof": {
+    "path": "critical_beta_adaptation/CB005_all_start_critical_adaptation.md",
+    "sha256": "5e514451e88672533b5a376e43265b8a382ac0b59e816e3ef06212ea5be6db52",
+    "bytes": 13357,
+    "role": "accepted frozen all-start proof"
+  },
+  "review": {
+    "path": "critical_beta_adaptation/CB005_independent_full_review.md",
+    "sha256": "b8976cae54be86f6b9c110f207256c38ec5c81913cc1156af0bd913cba47c57a",
+    "bytes": 17290,
+    "role": "fresh complete independent review"
+  },
+  "bound": "Root read complete frozen proof and full fresh independent review. ALL-START binary protected-terminal corruption, including unsupported singleton starts. SAME unknown-k/unknown-beta gate estimator has min(1,2^16/sqrtM+2^16/(M sqrtbeta)+2^23 k/M). All-budget oracle order on beta>=c/M. Uses global triple counts plus four first-half row counts and protected pair. No global sqrtbeta mixing, formal/external review, architecture implementation or novelty certification. First-hit scale has established Norris-Peres-Zhai prior art documented separately. Not yet published.",
+  "artifacts": [
+    {
+      "path": "critical_beta_adaptation/CB005_HANDOFF.md",
+      "sha256": "120ba16395790db8e1bb9b9313d123a89a3f0a5f6754b8060942fb42ed7ea5a1",
+      "bytes": 3264,
+      "role": "stable handoff or provenance or inherited binding"
+    },
+    {
+      "path": "critical_beta_adaptation/CB005_first_hit_prior_art_note.md",
+      "sha256": "f31ca9fd7c2958c9fe247f22b1355522d0e9f276a0f9e794162e0fe47c59898c",
+      "bytes": 1502,
+      "role": "stable handoff or provenance or inherited binding"
+    },
+    {
+      "path": "critical_beta_adaptation/CB005_independent_review_bindings.json",
+      "sha256": "5dd5140da1000d2f74411f78861a3b298a66f3ece2a4f072d7dbd85239f4f87c",
+      "bytes": 4770,
+      "role": "stable handoff or provenance or inherited binding"
+    },
+    {
+      "path": "critical_beta_adaptation/CB004_BP001_ACCEPTED_BINDINGS.json",
+      "sha256": "235a5867ad9aba274e938bf3e32302bc87c7c860d46fe9b78f0f268a5f3cbd64",
+      "bytes": 9064,
+      "role": "stable handoff or provenance or inherited binding"
+    },
+    {
+      "path": "critical_beta_adaptation/revisions/CB004_BP001_handoff_snapshot_claim_correction.json",
+      "sha256": "bc8b6a33b3ba7570642bcc148f9212541c42fe88ed41a444952cca24a908cb80",
+      "bytes": 2015,
+      "role": "actual inherited handoff provenance correction record"
+    },
+    {
+      "path": "critical_beta_adaptation/revisions/CB005_ACCEPTED_BINDINGS_before_snapshot_claim_correction.json",
+      "sha256": "25f4f4d4ff8522cddc5d5b7363582384d95ee93501b9ab08d3d15eec0da87919",
+      "bytes": 10220,
+      "role": "historical pre-correction manifest; not a current binding"
+    }
+  ],
+  "frozen_review_dependencies": [
+    {
+      "path": "critical_beta_adaptation/CB004_stationary_critical_adaptation.md",
+      "sha256": "a322c2fe08b76cf84f587b91e4ab504e2e02468e8c1a617fd7b868e14f643155",
+      "bytes": 10088,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "critical_beta_adaptation/balance_probe/BP001_stationary_weighted_balance.md",
+      "sha256": "22b60eedf31f1e990e990a8b64ad733a1a3acc9723a421fdc6d677866c771271",
+      "bytes": 8525,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "critical_beta_adaptation/CB004_BP001_independent_checks.py",
+      "sha256": "9f971e0c9985de62020421f92de0702bc967fadfca7fc29fd69c278e03cf0b49",
+      "bytes": 11409,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "critical_beta_adaptation/CB004_BP001_independent_checks.json",
+      "sha256": "dff761265a8c347c91c6c70376b01af7a8236f8b9e5fa0ee46ec3b73dd7fc710",
+      "bytes": 2656,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "critical_beta_adaptation/CB004_BP001_independent_full_review.md",
+      "sha256": "8f43dadd17dc0736678faf1f7200516e8db4db4bb39c8882f48d09370bfb60f3",
+      "bytes": 17073,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "binary_upper/BU001_weighted_return_upper_v2.md",
+      "sha256": "2dc9cf9d13faa6cfa15fffd5ec83a67326ccc95eb6a63291c7b2349136b166f5",
+      "bytes": 10705,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "reviews/BU001_review_v1.md",
+      "sha256": "84ee2e6b0eeac445976bffe0bf2763b27715696a24d05c3100e0c28169020e80",
+      "bytes": 10292,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "reviews/BU001_review_v2.md",
+      "sha256": "c8438343ca5a1d2b1c7090eabdae96eff910dfca18cbc307ee990ced86c4d118",
+      "bytes": 4592,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "reviews/BU001_review_bindings_v2.json",
+      "sha256": "a0070d9a5190f5f53a819c019c5e4b579a2f02b1f7cfa3037d5a91275a238d89",
+      "bytes": 1958,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "intake/BU001_acceptance.json",
+      "sha256": "914fd8d84fe31b5c2ea5fb34cfef7a3117a2169ab50738ae209f16ff5bce6e91",
+      "bytes": 654,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "intermediate_upper/IU001_beta_sensitive_precision_upper_v1.md",
+      "sha256": "4c0adb15aadfb574e156c5ce5f4f4da1ec8447ed515417a71d400c5a52c7b317",
+      "bytes": 23036,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "intake/IU001_acceptance.json",
+      "sha256": "a8649f9294d51083c893d67aa5bfa4f83ce6f5cc7d0117be2df92ee7d40697c8",
+      "bytes": 446,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "binary_source_corruption/SC003_theorem.md",
+      "sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+      "bytes": 12757,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "binary_source_corruption/SC003_independent_full_review.md",
+      "sha256": "2d5a735602717ca020d5cd463b75cc28cab25cec0cb5d809f0d14b4770e7d153",
+      "bytes": 17136,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "intake/SC003_acceptance.json",
+      "sha256": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+      "bytes": 864,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_entropy_bridge_lower.md",
+      "sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+      "bytes": 13700,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_scalar_completion.md",
+      "sha256": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+      "bytes": 4963,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "binary_erasure_transport/BT002_independent_review.md",
+      "sha256": "9171f4e18f4a238965644f67baf0fb81e73efba3c373bf27109c058327312595",
+      "bytes": 7551,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "intake/BT002_acceptance.json",
+      "sha256": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50",
+      "bytes": 1307,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "critical_beta_adaptation/CB004_BP001_independent_review_bindings.json",
+      "sha256": "f879249fb02170ab4757653c2996c216de849a3b528f5504c2dc372906c0df15",
+      "bytes": 2891,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "intake/CB004_root_acceptance.json",
+      "sha256": "de78d50ac35f4f07f3f043a3f105deb2a0e783f9410ffee6dfd77cc873fe560d",
+      "bytes": 884,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "intake/BP001_root_acceptance.json",
+      "sha256": "18e837f16311816a8ca44ac77fd722dc05e3f8436a56eb1e3edc8754c5961d80",
+      "bytes": 764,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "critical_beta_adaptation/CB005_all_start_critical_adaptation.md",
+      "sha256": "5e514451e88672533b5a376e43265b8a382ac0b59e816e3ef06212ea5be6db52",
+      "bytes": 13357,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "critical_beta_adaptation/CB005_independent_full_review.md",
+      "sha256": "b8976cae54be86f6b9c110f207256c38ec5c81913cc1156af0bd913cba47c57a",
+      "bytes": 17290,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "critical_beta_adaptation/CB005_independent_exact_checks.py",
+      "sha256": "ffc8d50e9b06102ae3d28aa703e6fb52c4ce28f2a78c0d466e1cb5d3a7b203ae",
+      "bytes": 6094,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "critical_beta_adaptation/CB005_independent_exact_checks.json",
+      "sha256": "d9a844aaad53ce1082e407e285e78a843636df5a8bee82b05562b7aa26ce66e1",
+      "bytes": 1096,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "critical_beta_adaptation/CB005_frozen_dependency_rerun.json",
+      "sha256": "26dda232dfa214df490a3a11e727a837fb8711402c53fcc1d008043c9503db8f",
+      "bytes": 2656,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "critical_beta_adaptation/check_cb005.py",
+      "sha256": "30637f60549e4576441e977b25192a1c0066efd969720833aabd00e112749af3",
+      "bytes": 5876,
+      "role": "hash-verified independent review dependency or diagnostic"
+    },
+    {
+      "path": "critical_beta_adaptation/CB005_author_diagnostics.json",
+      "sha256": "c296a6d9dfabfdb77a70f01506521db6463c5d7018743aa274d05466f55e91e9",
+      "bytes": 927,
+      "role": "hash-verified independent review dependency or diagnostic"
+    }
+  ],
+  "excluded_pending_units": [
+    "AF001",
+    "BCJ001"
+  ],
+  "evidence_limit": "Independent LLM review and finite exact diagnostics, not formal verification, external peer review, or novelty certification.",
+  "handoff_provenance_correction": "critical_beta_adaptation/revisions/CB004_BP001_handoff_snapshot_claim_correction.json"
+}

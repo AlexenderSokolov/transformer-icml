@@ -1,0 +1,39 @@
+{
+  "time_utc": "2026-11-02T14:34:14.435399+00:00",
+  "kind": "Actual handoff provenance correction, not a proof revision",
+  "finding": "No separate received snapshots for CB004 or BP001 exist. Earlier CB001\u2013CB003 snapshots do exist; those do not substantiate the CB004/BP001 handoff claim.",
+  "action": "Preserved actual pre-correction handoff and binding bytes; corrected only the inaccurate snapshot sentence; refreshed affected handoff-level bindings. No retrospective received snapshot was fabricated.",
+  "proof_review_receipt_bytes": "Unchanged",
+  "before_handoff": {
+    "path": "critical_beta_adaptation/revisions/CB004_BP001_HANDOFF_before_snapshot_claim_correction.md",
+    "sha256": "b18da5d2f053539e3557cf37235554938e69d67a20365f3a9fdf6a3261b0b48a",
+    "bytes": 1844,
+    "role": "genuine actual pre-correction handoff, not a review-received snapshot"
+  },
+  "after_handoff": {
+    "path": "critical_beta_adaptation/CB004_BP001_HANDOFF.md",
+    "sha256": "c34d2b65edeb1142b43cba0462728c56c3062a4099e2dcbeb587c635fce38966",
+    "bytes": 1931,
+    "role": "corrected current handoff"
+  },
+  "diff": {
+    "path": "critical_beta_adaptation/revisions/CB004_BP001_handoff_snapshot_claim_correction.diff",
+    "sha256": "153701169e5bc702151e3a45984c17487250d39803583e8ce676a77c1f39af37",
+    "bytes": 1316,
+    "role": "actual handoff-only diff"
+  },
+  "preserved_prior_bindings": [
+    {
+      "path": "critical_beta_adaptation/revisions/CB004_BP001_ACCEPTED_BINDINGS_before_snapshot_claim_correction.json",
+      "sha256": "cca33480f7fe3b4354b8bbb245f80a2038e397998cd6b30d58d59706f228f01f",
+      "bytes": 7811,
+      "role": "actual historical binding bytes; not asserted current"
+    },
+    {
+      "path": "critical_beta_adaptation/revisions/CB005_ACCEPTED_BINDINGS_before_snapshot_claim_correction.json",
+      "sha256": "25f4f4d4ff8522cddc5d5b7363582384d95ee93501b9ab08d3d15eec0da87919",
+      "bytes": 10220,
+      "role": "actual historical binding bytes; not asserted current"
+    }
+  ]
+}

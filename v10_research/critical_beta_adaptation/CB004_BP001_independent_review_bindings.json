@@ -1,0 +1,28 @@
+{
+  "unit": "CB004 + BP001",
+  "reviewer": "independent LLM reviewer",
+  "recommendation": "PASS for exact two-component stationary theorem; not root acceptance",
+  "scope": "Same full-history deterministic estimator simultaneously unknown k and beta; risk min(1,2^16/sqrt(M)+4096/(M sqrt(beta))+2^23 k/M), M>=64; arbitrary-start adaptation NOT proved.",
+  "files": {
+    "critical_beta_adaptation/CB004_stationary_critical_adaptation.md": "a322c2fe08b76cf84f587b91e4ab504e2e02468e8c1a617fd7b868e14f643155",
+    "critical_beta_adaptation/balance_probe/BP001_stationary_weighted_balance.md": "22b60eedf31f1e990e990a8b64ad733a1a3acc9723a421fdc6d677866c771271",
+    "critical_beta_adaptation/CB004_BP001_independent_checks.py": "9f971e0c9985de62020421f92de0702bc967fadfca7fc29fd69c278e03cf0b49",
+    "critical_beta_adaptation/CB004_BP001_independent_checks.json": "dff761265a8c347c91c6c70376b01af7a8236f8b9e5fa0ee46ec3b73dd7fc710",
+    "critical_beta_adaptation/CB004_BP001_independent_full_review.md": "8f43dadd17dc0736678faf1f7200516e8db4db4bb39c8882f48d09370bfb60f3",
+    "binary_upper/BU001_weighted_return_upper_v2.md": "2dc9cf9d13faa6cfa15fffd5ec83a67326ccc95eb6a63291c7b2349136b166f5",
+    "reviews/BU001_review_v1.md": "84ee2e6b0eeac445976bffe0bf2763b27715696a24d05c3100e0c28169020e80",
+    "reviews/BU001_review_v2.md": "c8438343ca5a1d2b1c7090eabdae96eff910dfca18cbc307ee990ced86c4d118",
+    "reviews/BU001_review_bindings_v2.json": "a0070d9a5190f5f53a819c019c5e4b579a2f02b1f7cfa3037d5a91275a238d89",
+    "intake/BU001_acceptance.json": "914fd8d84fe31b5c2ea5fb34cfef7a3117a2169ab50738ae209f16ff5bce6e91",
+    "intermediate_upper/IU001_beta_sensitive_precision_upper_v1.md": "4c0adb15aadfb574e156c5ce5f4f4da1ec8447ed515417a71d400c5a52c7b317",
+    "intake/IU001_acceptance.json": "a8649f9294d51083c893d67aa5bfa4f83ce6f5cc7d0117be2df92ee7d40697c8",
+    "binary_source_corruption/SC003_theorem.md": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837",
+    "binary_source_corruption/SC003_independent_full_review.md": "2d5a735602717ca020d5cd463b75cc28cab25cec0cb5d809f0d14b4770e7d153",
+    "intake/SC003_acceptance.json": "d2bad20afa2ba886753a282fb3d6dce2c161b743f73ae239f9f324ec540e60f3",
+    "binary_erasure_transport/BT002_entropy_bridge_lower.md": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562",
+    "binary_erasure_transport/BT002_scalar_completion.md": "4be9d338e0d3e6b840441f4356e77b71db4da9f1208d74bd85f4790539ba9026",
+    "binary_erasure_transport/BT002_independent_review.md": "9171f4e18f4a238965644f67baf0fb81e73efba3c373bf27109c058327312595",
+    "intake/BT002_acceptance.json": "665307f49a9953b99989d2af04748f4f32cd4897a777d56ff756e7fd47103f50"
+  },
+  "evidence_limits": "Independent LLM review and finite exact diagnostics, not formal verification or external peer review. No candidate edits; project acceptance is a separate decision."
+}

@@ -1,0 +1,49 @@
+{
+  "status": "ROOT_ACCEPTED_AFTER_INTERFACE_REPAIR_AND_INDEPENDENT_REVIEW",
+  "utc": "2026-11-02T19:24:25.625778+00:00",
+  "unit": "FOT002",
+  "scope": "OriginalM+2/triplecounts/protectedpair/rawr>=2 model restrictedtofirstorderTABLEwitharbitraryinitialPAIR; matchedgM factors2^-33ell..2^17ell,ell1+ln((M+2)/r); alltableupper,certificatebeta1/Mlower; oracle gM/96..2^16gM",
+  "root_read": "Fullcandidate/fullreview/actualtwostagerepairdiffs;13bindingsverified",
+  "repairs": "DiscardX0withconditionalfixedb suffixkernel; reconstructsuffixcounts=sumH+corruptedlastpair\u2212corruptedfirstpair, applyFOU N=M. Messagealphabet2 claimexplicitlyoverr2baselineonly, notsupplementingfullwindows.",
+  "tests": "Independentexactinterfacechecksreportedandhashbound,notrootrerun",
+  "limits": "Noformalverification/externalpeerreview/noveltycertification; noacceptedmanuscriptedit orpublicationauthorization",
+  "publication": "LOCAL_UNPUBLISHED",
+  "artifacts": {
+    "FOT002_matched_original_experiment.md": {
+      "sha256": "55948f2f3516a9bffa09aa05d01dd81154d962dea847a796362a7206b861120a",
+      "bytes": 6903
+    },
+    "interface_review/REVIEW.md": {
+      "sha256": "db3ee500db89425a5d3391b4d2a8b267923cd7c593a940610e2d373a8275d6f5",
+      "bytes": 9502
+    },
+    "interface_review/bindings.json": {
+      "sha256": "c866d87bf67cecd14bf54ba8d48f38a331f8626dad7edd0e3531e3a53532098d",
+      "bytes": 2242
+    },
+    "interface_review/checks.py": {
+      "sha256": "de54e3c961e23bd7f30bf0c4760a0af1e1ff4d69275210df8af7bf38abbfd5a4",
+      "bytes": 3640
+    },
+    "interface_review/checks.json": {
+      "sha256": "2ab11a332422e404f9d82804cc94c2822b746ba6245c59612303201787a09dd4",
+      "bytes": 622
+    },
+    "FOT002_before_initial_pair_repair.md": {
+      "sha256": "826261fc9f9b2db09d5713700b3d151cf5ecdbcf1f9c45688a1b2c3666b835b2",
+      "bytes": 5268
+    },
+    "FOT002_initial_pair_repair.diff": {
+      "sha256": "9d90f3e3c5a003d28cc3eb99e1fffaa2e65a8e5bf02c5427be512071405af220",
+      "bytes": 7615
+    },
+    "FOT002_before_message_scope_clarification.md": {
+      "sha256": "36adb103ec0e8cbd96fcb07fc595ed01b8c510916612edf68b204ec39b211c9d",
+      "bytes": 6680
+    },
+    "FOT002_message_scope_clarification.diff": {
+      "sha256": "7b317938abc0a846eedbd6adbe6529d563e8fa872bb3d39bb5580ed3e4a58940",
+      "bytes": 2026
+    }
+  }
+}

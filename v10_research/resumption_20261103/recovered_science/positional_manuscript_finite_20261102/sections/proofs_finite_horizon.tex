@@ -1,0 +1,135 @@
+\section{Simultaneous finite-horizon competitive factors}
+\label{sec:finite-window-proof}
+
+We prove Theorem~\ref{thm:finite-window} using the finite estimates proved
+in the preceding two sections. No limit in $M$ or $r$ is taken. Throughout
+this section $\ell=1+\log((M+2)/r)\ge1$, the certificate is $1/M$, and
+$\Gamma$ denotes the finite-horizon quantities of
+\eqref{eq:finite-factor}, not the sequence factors $C$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:finite-window}]
+\noindent\textbf{Upper bound, including overlapping windows.}
+Set $m=\min\{r-2,\lfloor M/2\rfloor\}$ and
+$L=1+\log(M/(m+1))$. Since $r-1\ge r/2$ and
+$\lfloor M/2\rfloor+1\ge M/2$,
+\[
+ \frac{M}{m+1}
+ \le\max\left\{\frac{2M}{r},2\right\}
+ \le\frac{2(M+2)}r.
+\]
+The last step uses $r\le M+2$ and covers full or overlapping windows.
+Hence $L\le\ell+\log2\le2\ell$. Proposition~\ref{prop:finite-upper}
+gives one counts-and-suffix map, independent of $k$, with all-start risk
+at most $2^{19}Lg_M(k)\le2^{20}\ell g_M(k)$ for every $k$.
+Stationary experiments are a subclass of arbitrary-start experiments,
+so taking the infima over the same maps also gives
+$\Gamma_{\rm stat}(M,r)\le\Gamma_{\rm all}(M,r)$.
+
+\noindent\textbf{Lower bound and the small-logarithm case.}
+Fix any allowable map $A$ and write
+$G=\Gamma_{\rm stat}(A;M,r)\le\sqrt M$.
+Lemma~\ref{lem:oracle-floor}, at $k=0$, implies $G\ge1/96$ even if
+full history were available. If $\ell<64$, then
+$1/96\ge2^{-30}\ell$, proving the desired bound. For $\ell\ge64$,
+there is nothing to prove when $G\ge2^{-30}\ell$. Suppose instead
+\begin{equation}\label{eq:fh-contradiction}
+ G<2^{-30}\ell.
+\end{equation}
+As $r\ge2$ and $M\ge2$, $(M+2)/r\le M$. Thus
+$\log M\ge\ell-1\ge63$, and $M>2^{80}$ because $80\log2<56<63$.
+Choose the integer budget
+\begin{equation}\label{eq:fh-budget}
+ k=\left\lceil\max\{128r,M^{3/4}\}\right\rceil.
+\end{equation}
+This budget depends only on $(M,r)$; the same map $A$ is used at this
+budget and at zero.
+
+\noindent\textbf{Every finite lower-domain condition.}
+Use the constants from Proposition~\ref{prop:finite-lower}, writing
+$A_0=2^{12}$ for its numerical constant to distinguish it from the map:
+\[
+ c=2^{-16},\qquad t=ck/M,\qquad
+ u_0=\lfloor ck/4\rfloor,\qquad
+ L_-=\log\frac1{4A_0t}.
+\]
+The choice of $k$ gives $r\le k/128$, $k\ge M^{3/4}$, and
+\[
+ \frac M{k^2}\le M^{-1/2}<2^{-40}
+   =\frac{A_0c^2}{2^{20}},\qquad
+ ck\ge2^{-16}M^{3/4}>2^{44}\ge1024.
+\]
+Moreover
+\[
+ \frac rM=(1+2/M)e^{1-\ell}\le2e^{-63}<2^{-79}.
+\]
+Since $k\le128r+M^{3/4}+1$, this implies
+\[
+ \frac kM<2^{-72}+2^{-20}+2^{-80}<2^{-19}<\frac18.
+\]
+In particular $k$ is a legal budget, $k\le M/8$, and
+$A_0t=k/(16M)<1/128<1/4$. Together with the original integer
+$M\ge64,r\ge2$, these verify every condition in
+\eqref{eq:finite-lower-domain}. The windows needed in that proof are
+nonoverlapping since $r\le k/128\le M/1024$.
+Also $ck\ge1024$ implies $u_0\ge ck/8$, so
+\begin{equation}\label{eq:fh-prefactor}
+ \rho:=\frac{u_0}{8Mt}\ge\frac1{64}.
+\end{equation}
+
+\noindent\textbf{The same map's clean risk.}
+Let $S$ be the supremum of the clean risks on the stationary alternatives
+in Proposition~\ref{prop:finite-lower}. All qualify at the same supplied
+certificate, so $S\le G/\sqrt M$. For $x\ge0$, differentiation shows
+that $(1+x)e^{-x/4}$ is maximized at $x=3$, with value
+$4e^{-3/4}<4$. Thus $\ell\le1+\log M\le4M^{1/4}$ and
+\eqref{eq:fh-contradiction} gives the finite inequalities
+\begin{equation}\label{eq:fh-clean}
+ S<2^{-28}M^{-1/4}\le2^{-21}M^{-1/4}\le t/32.
+\end{equation}
+The last step uses $k\ge M^{3/4}$ and $c/32=2^{-21}$.
+No asymptotic small-order estimate or distinct clean estimator is used.
+
+\noindent\textbf{A logarithm uniform in both parameters.}
+Since $4A_0c=1/4$, $L_-=\log(4M/k)$. Put
+$x=\max\{128r,M^{3/4}\}\ge1$; then $k=\lceil x\rceil\le2x$, and
+\[
+ L_-\ge\min\left\{\log\frac M{64r},\ \log(2M^{1/4})\right\}.
+\]
+The first term equals
+$\ell-1-\log(1+2/M)-\log64$ and is at least
+$\ell-2-\log64\ge\ell-8\ge\ell/8$, using
+$\log(1+2/M)\le1$, $\log64<6$, and $\ell\ge64$.
+The second term is at least $(\ell-1)/4\ge\ell/8$.
+Consequently $L_-\ge\ell/8$.
+
+\noindent\textbf{Common-kernel comparison and infimum.}
+Proposition~\ref{prop:finite-lower} supplies a qualifying stationary null
+and one strict source-independent kernel, preserving the actual final pair,
+with
+\[
+ R_{\rm null}\ge\rho\left[\left(t/16-S\right)L_-\right]_+.
+\]
+Its full proof above includes source legality, mixture normalization,
+window matching, and pointwise budget checks. Here the bracket is positive
+by \eqref{eq:fh-clean}. Since $k\ge M^{3/4}\ge\sqrt M$, one has
+$g_M(k)=k/M$. Therefore
+\[
+ G\ge\frac{R_{\rm null}}{g_M(k)}
+ \ge\frac{(1/64)(t/32)(\ell/8)}{k/M}
+ =2^{-30}\ell,
+\]
+contradicting \eqref{eq:fh-contradiction}. The lower bound thus holds for
+every map and passes to its infimum without requiring attainment.
+The witnesses are stationary and hence are also available in the all-start
+class. This completes the finite-horizon proof.
+\end{proof}
+
+For clarity about the sequence consequences, if $r_M/M$ has positive
+liminf, then $\ell_M$ is bounded eventually, and finitely many earlier
+horizons have finite factor; the explicit suffix maps give a single
+uniform family. If that liminf is zero, $\ell_M$ diverges on a subsequence,
+so the finite lower forbids a uniform factor for any family. For fixed
+$\alpha$, the finite bounds give the logarithmic order, while the original
+fixed-$\alpha$ proof in Proposition~\ref{prop:lower-consequences} retains
+its stronger $2^{-26}\log(1/(32\alpha))$ lower constant. Neither argument
+claims a logarithmic risk lower at every individual budget.

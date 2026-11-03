@@ -1,5 +1,11 @@
 # 公开版本的来源、校验与复现
 
+## 2026-11-03 恢复与公开校验边界
+
+本次恢复了可读的科学文本和完整集成证明，但并未恢复全部旧历史闭包。31 页稿和 6 页稿是新构建 PDF，不是原 PDF 字节恢复。新审计位于 [RECOVERY_AND_SOURCE_RESOLUTION.json](../provenance/resumption_20261103/RECOVERY_AND_SOURCE_RESOLUTION.json)，不冒充未恢复的旧来源审计。
+
+数学正文、LaTeX、诊断代码及其已有输出保持原字节；少量审查和元数据去除了内部路由称谓、临时目录及私有操作细节，确切原始/导出哈希对应见 [PUBLIC_EXPORT_RECONCILIATION.json](../provenance/resumption_20261103/PUBLIC_EXPORT_RECONCILIATION.json)。要求原审查哈希的历史校验器，不被宣称能对改写后的公开副本原样通过。新的 active inventory 校验公开字节和成员身份，不是数学重证明。历史有限重跑按各自 receipt 的实际记录理解。
+
 ## 本次发布的边界
 
 本仓库不是原始运行环境的镜像。原阶段包的科学闭包已展开为普通文件，原始用户委托、私人运行记录、路由标识、凭据、递归压缩包和可再生成的排版缓存不公开。必要的科学证明、完整审查、诊断、真实数学失败及留存修订继续可读。
@@ -39,8 +45,14 @@ python v10_research/binary_budget_adaptation/check_ab001.py
 
 ## 历史证据与本次实际检查
 
-第八阶段历史记录中的 91 个当前脚本、1 个预期历史失败、913,221 个精确／认证有理案例和 36 页重建一致性，只归属于那些记录的实际运行。本次发布的新检查及其准确范围见 `provenance/PUBLICATION_RECEIPT.json`。不把继承的历史结果冒充一次新运行。独立 LLM 审查不等于形式验证、外部同行评审或新颖性认证。
+第八阶段历史记录中的 91 个当前脚本、1 个预期历史失败、913,221 个精确／认证有理案例和 36 页重建一致性，只归属于那些记录的实际运行。初次发布的检查范围见 `provenance/PUBLICATION_RECEIPT.json`；2026-11-03 的当前检查边界见[新审计](../provenance/resumption_20261103/PRIVACY_AND_CHECKS.json)。不把继承的历史结果冒充一次新运行。独立 LLM 审查不等于形式验证、外部同行评审或新颖性认证。
 
 ## 第二次增量的精确边界
 
 第二次增量有独立[来源映射](../provenance/increment2/SOURCE_MAP.json)、[来源闭合审计](../provenance/increment2/SOURCE_CLOSURE_AUDIT.json)与[严格哈希协调表](../provenance/increment2/BINDING_RECONCILIATION.json)。原始期望哈希没有被全局改写；只有在准确路径的当前公开字节先通过其公开哈希后，才可承认表内原始身份。未列出的差异必须失败。历史脚本可能写诊断或绑定记录，应在一次性副本中运行。本次增量没有重跑这些科学程序；当前 CI 仅核验文件字节、集合和校验器回归测试。
+
+## 第三次增量与历史路径恢复
+
+第三次增量的[精确来源映射](../provenance/increment3/SOURCE_MAP.json)和[严格协调表](../provenance/increment3/BINDING_RECONCILIATION.json)已恢复。原闭合审计文件未恢复，当前边界与可读来源见[新的恢复审计](../provenance/resumption_20261103/RECOVERY_AND_SOURCE_RESOLUTION.json)；不能把新审计称作旧文件的逐字节恢复。三个旧绑定只在精确的记录所有者、原路径与原哈希同时匹配时，解析到真实保留的旧文件；不是跳过哈希或任意寻找近似内容。公开字节必须先匹配其声明哈希，才能识别相应原始身份。
+
+历史 SyntaxError 文件和失败诊断必须保留，但不属于当前通过的程序清单。只读 CI 仍然仅执行 `tools/public_verify.py` 与七个回归测试；它不执行历史科学脚本、不形式化证明定理，也不声称重建文稿。

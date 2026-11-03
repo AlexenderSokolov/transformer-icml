@@ -1,0 +1,20 @@
+{
+  "utc": "2026-11-03T01:28:46.934374+00:00",
+  "status": "ROOT_ACCEPTED_ABSTRACT_CHANNEL_THEOREMS_AND_VERIFIED_FIRST_ORDER_APPLICATION",
+  "scope": "Post-corruption independent channel; noiseless exact counts and protected terminal pair; first-order TABLE with arbitrary initial pair, strict law-independent k-edit kernels; same procedure for all k. Fixed positive BSC noise/fixed message length restores logarithmic factor. Visible independent erasures permit sharp Theta(log log M) fixed-length message complexity, including arbitrary law-independent encoders.",
+  "root_read": "Complete four source notes, complete independent review and two addenda, recovered FOU/FOT001/FOT002/FOT003 proofs and full reviews, original manuscript relocation and full-history IID oracle-floor proofs. Historical accepted generic probability lemmas remain dependencies, not claimed freshly re-proved.",
+  "historical_verification": "116 restored scientific files independently verified against exact recovery manifest. FOT and FOU accepted texts/receipts recovered; original WPC proof and full review recovered by hash. Historical candidate headers unchanged.",
+  "revision": "Actual model-index correction M-1 to M+1 and explicit encoder/noise scope retained with before/diff; independently reread after correction.",
+  "root_replay": "65 exact rational channel configurations independently rerun in isolated root_replay; stdout JSON byte-identical to review output. Initial cmp assumed an output file but script prints stdout; first comparison failed; corrected stdout redirection rerun exited 0.",
+  "limitations": "No sharp silent-BSC length yet accepted in this receipt; then-current Omega(log log M) versus O(log M) gap remains historical. New likelihood-ratio candidate is separate. LLM review is not formal verification or external peer review. No publication.",
+  "artifacts": {
+    "NOISY_MESSAGE_REDUCTION.md": "b94a940fb5a83c93057c19ac8b2b661c0a42105c410f679c6d4bc27ec34c4db7",
+    "VISIBLE_ERASURE_COMPARISON_v2.md": "103b7060910c0bb93f11873b1c2bb686d50666fa649ff843e650ac2580d417ee",
+    "CONDITIONAL_V10_INSTANTIATION.md": "7b1b826f26377fb4e5f45dfd9ab0a39ec97b8ab2674dcc7c8544fe992f68fed4",
+    "review/INDEPENDENT_FULL_REVIEW.md": "2db231f19c28d2002dbd52bab8da962a93c173857432f629cc04cd469edd5ee7",
+    "review/ERASURE_AND_CONDITIONAL_ADDENDUM.md": "917bdf917bc0cb308eaa977d3c82d43ceb89ec963aae1dec1b8f09c00949f31b",
+    "review/ARBITRARY_ERASURE_ENCODING_V2_ADDENDUM.md": "43417ca197d0087825b804f97d4a6fd4098cf4c43d0c57c22df9999bc9185e92",
+    "review/exact_channel_check.py": "145e3a3a4787807100fe092841fb3daabb9249ae215a2216ea6ca647cc28fc0e",
+    "review/exact_channel_check_results.json": "4a5f0bb159733947039bb3ec3c5c8f50595cd4836ecd3ebff40c9102dd84ea4b"
+  }
+}

@@ -1,0 +1,769 @@
+% MANUSCRIPT DRAFT: pending complete independent consolidated review.
+% This file contains no external proof dependencies on project-private units.
+\section{Finite-state estimates and upper bounds}
+\label{sec:positive-proofs}
+
+Throughout, a departure count excludes the terminal state.  For a chain
+$(Y_i)_{i=0}^M$, write
+\[
+ J_u=\sum_{i=0}^{M-1}\mathbf1\{Y_i=u\},\qquad J=J_{Y_M}.
+\]
+For the binary order-two experiment, $Y_i=(X_i,X_{i+1})$,
+$X_0,\ldots,X_{M+1}$ contains $M$ departures, and
+$q_u=\theta_u(d(u))$ with $d(a,b)=1-a$.  Let $C_u$ count the
+corresponding designated successors and put $C=C_{Y_M}$ and $q=q_{Y_M}$.
+Primed counts are computed on the corrupted word.  Every bound below permits
+an arbitrary initial law.  The all-state certificate, when invoked, is
+$P^2(u,v)\ge\beta\Pi(v)$ for every pair of states, with $\beta>0$.
+The final pair is protected, so clean and corrupted counts always select the
+same actual query row.
+
+\subsection{Universal occupation and clean prediction}
+
+\begin{lemma}[Actual-terminal occupation]\label{lem:occupation}
+For any homogeneous chain on $d$ states, any initial law, any $M\ge0$, and
+any integer $w\ge1$,
+\[
+ \Pr(J_{Y_M}<w)\le\min\left\{1,\frac{d^2w}{M+1}\right\}.
+\]
+No irreducibility or stationary-start assumption is needed.
+\end{lemma}
+\begin{proof}
+For each $t$ set $J(t)=\sum_{i<t}\mathbf1\{Y_i=Y_t\}$,
+$b_t(v)=\Pr_v(J(t)<w)$, and $B_t=\max_v b_t(v)$.  If $t\ge\ell$,
+the full count dominates the count in the final $\ell$-step suffix.
+Conditioning on the suffix's initial state and using homogeneity gives
+$B_t\le B_\ell$.  On every path, each state can occur at most $w$ times
+with fewer than $w$ earlier occurrences.  Hence
+$\sum_{t=0}^M\mathbf1\{J(t)<w\}\le dw$.  Consequently
+\[
+ (M+1)B_M\le\sum_{t=0}^M B_t
+ \le\sum_v\sum_{t=0}^M b_t(v)\le d^2w.
+\]
+Average over the initial law and use the probability cap.
+\end{proof}
+
+\begin{lemma}[Binary clean empirical comparison]\label{lem:empirical}
+For every homogeneous binary order-two source, every initial law, and
+$M\ge64$,
+\[
+ \E\left[\mathbf1\{J>0\}\left|\frac CJ-q\right|\right]
+ \le\frac{512}{\sqrt{M+1}}.
+\]
+The expression inside the indicator is evaluated only when $J>0$.
+\end{lemma}
+\begin{proof}
+For each of the four rows $u$, generate an independent stack of $2M$
+Bernoulli$(q_u)$ variables $\xi_{u,j}$, independently of the initial pair.
+At the $j$th departure from $u$, use $\xi_{u,j}$ to choose whether the
+successor is $d(u)$.  For every fixed finite path, the used stack prefixes
+have exactly the product of its transition probabilities; thus this realizes
+the original law, including boundary probabilities.  Write
+$S_{u,j}=\sum_{i=1}^j(\xi_{u,i}-q_u)$.  Pathwise,
+$C-Jq=S_{Y_M,J}$ on $J>0$.  The stacks are not asserted independent after
+conditioning on $J$, $Y_M$, or any selection event.
+
+For a centered variable in an interval of length one, its log moment
+generating function has second derivative equal to a tilted variance,
+which is at most $1/4$.  Integrating twice gives
+$\E e^{\lambda V}\le e^{\lambda^2/8}$.  Thus
+$e^{\lambda S_{u,j}-j\lambda^2/8}$ is a nonnegative supermartingale.
+Stopping at its first level crossing before the deterministic time $2v$
+gives, for $x>0$,
+\[
+ \Pr\left(\max_{j\le2v}S_{u,j}\ge x\right)
+ \le e^{-\lambda x+2v\lambda^2/8}
+ \le e^{-x^2/v},\qquad \lambda=2x/v.
+\]
+The stopping inequality here is finite: the expectation of the stopped
+process is at most its initial value by summing conditional expected
+increments through time $2v$.  Apply the same argument to $-S$ and take
+a union over rows.  For $Z_v=\max_u\max_{j\le2v}|S_{u,j}|$,
+\begin{equation}\label{eq:p-stack-tail}
+ \Pr(Z_v\ge x)\le8e^{-x^2/v}.
+\end{equation}
+For dyadic integers $v\le M$, let $E_v=\{v\le J<2v\}$ and
+$p_v=\min\{1,32v/(M+1)\}$.  Lemma~\ref{lem:occupation} gives
+$\Pr(E_v)\le p_v$.  Without any independence assumption, tail integration
+and $a=\sqrt{v\log(8/p_v)}$ yield
+\[
+ \E[Z_v\mathbf1_{E_v}]
+ \le\int_0^\infty\min\{p_v,8e^{-x^2/v}\}\,dx
+ \le p_va+\frac{p_vv}{2a}
+ \le2p_v\sqrt{v\log(8/p_v)}.
+\]
+For the middle inequality, bound the Gaussian tail above $a$ by inserting
+$x/a\ge1$ and integrating.  This layer contributes at most
+$2p_v\sqrt{\log(8/p_v)}/\sqrt v$ to the desired risk.
+Put $N=M+1$.  Summing layers with $v\ge N/32$ costs at most
+\[
+ \frac{2\sqrt{32\log8}}{1-2^{-1/2}}N^{-1/2}<56N^{-1/2}.
+\]
+If $v_0$ is the largest dyadic integer below $N/32$, then
+$N/64\le v_0<N/32$ and
+$\log(N/(4v_02^{-j}))\le3(j+1)$.  The remaining layers cost at most
+\[
+ \frac{64\sqrt3}{\sqrt{32N}}
+ \sum_{j\ge0}2^{-j/2}\sqrt{j+1}
+ \le\frac{64\sqrt3}{\sqrt{32N}}(1-2^{-1/2})^{-2}
+ <236N^{-1/2}.
+\]
+Only a numerical series was extended; all stack maxima use at most $2M$
+variables.  The layers partition $1\le J\le M$, including the last layer
+when $M$ is dyadic.  The safe constant $512$ follows.
+\end{proof}
+
+\subsection{Return cycles and binary hitting scales}
+
+\begin{lemma}[Finite-state return identity]\label{lem:kac}
+In a finite irreducible chain with stationary law $p$, the first positive
+return $T$ to $u$ has mean $\E_uT=1/p_u$.  If
+$H_u=\max_v\E_vD_u$, where $D_u$ is the ordinary hitting time, zero at
+$u$, then $1/p_u\le1+H_u$.
+\end{lemma}
+\begin{proof}
+Irreducibility and finiteness give a fixed block length and a positive
+minimum probability of hitting $u$ within a block, uniformly over starting
+states.  Repeated conditioning gives geometric tails for hitting and return
+times, so the following expectations are finite.  Let
+$\nu(v)=\E_u\sum_{j=0}^{T-1}\mathbf1\{Y_j=v\}$.  First-step conditioning
+inside this sum gives
+\[
+ (\nu P)(v)=\E_u\sum_{j=1}^{T}\mathbf1\{Y_j=v\}=\nu(v),
+\]
+since $Y_0=Y_T=u$.  A finite irreducible chain has a unique stationary
+probability: for completeness, if $\eta$ is another one, the ratios
+$\eta(v)/p_v$ are harmonic for the reversed transition matrix; a maximal
+ratio propagates along every positive reversed edge and hence is constant.
+Thus $\nu=(\E_uT)p$.  Exactly one visit to $u$ occurs before $T$, so
+$\nu(u)=1$, proving the identity.  A positive return is one step followed
+by an ordinary hit, proving $\E_uT\le1+H_u$.
+\end{proof}
+
+\begin{lemma}[Support and weighted hitting scale]\label{lem:hitting-scale}
+A binary order-two source with a positive all-state certificate has either
+full stationary support or a singleton absorbing diagonal support.  In the
+full-support case, with $q=(a,b,e,\tau)$ and
+$\overline H_u=\max\{H_u,1/\Pi(u)\}$,
+\begin{equation}\label{eq:p-weighted-hitting}
+ \sum_u\Pi(u)q_u\overline H_u\le\frac{40}{\sqrt\beta}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Stationarity of consecutive pair marginals gives
+$\Pi=(y,x,x,w)$, and stationary flow into each diagonal gives
+\begin{equation}\label{eq:p-flow}
+ ya=xe,\qquad w\tau=xb.
+\end{equation}
+If $x>0$, the certificate entries
+$P^2(10,01)=ea\ge\beta x$ and
+$P^2(01,10)=b\tau\ge\beta x$ force $a,b,e,\tau>0$.
+The flow identities then imply $y,w>0$.  If $x=0$, the stationary law
+is on diagonals; each supported diagonal is absorbing by stationarity.
+Two absorbing supported diagonals contradict the positive certificate.
+This proves the classification.  Summing a certificate row gives
+$\beta\le1$.  Full support and the certificate imply irreducibility.
+
+Assume full support and put $\gamma=(a,1,1,\tau)\ge q$.
+The two certificate entries just used, together with
+\eqref{eq:p-flow}, also give
+\begin{equation}\label{eq:p-square-entry}
+ e^2\ge\beta y,\qquad b^2\ge\beta w.
+\end{equation}
+Here, for example, $ea\ge\beta x=\beta ya/e$ and $a,e>0$.
+For target $00$, write $h_{01},h_{10},h_{11}$ for the mean hit times.
+The first-step equations are
+\[
+ h_{01}=1+(1-b)h_{10}+bh_{11},\quad
+ h_{10}=1+(1-e)h_{01},\quad h_{11}=\tau^{-1}+h_{10}.
+\]
+They give
+\[
+ h_{01}=\frac{b+2\tau}{e\tau},\quad
+ h_{10}=h_{01}-\frac b\tau-1,\quad
+ h_{11}=h_{01}+\frac{1-b}{\tau}-1,
+\]
+and therefore $H_{00}\le b/(e\tau)+2/e+1/\tau+1$.
+For target $01$, the three hit times from $00,10,11$ are
+$1/a$, $1+e/a$, and $1/\tau+1+e/a$, so
+$H_{01}\le2/a+1/\tau+2$.
+Exchanging symbols gives the other two bounds:
+\[
+ H_{10}\le1/a+2/\tau+2,\qquad
+ H_{11}\le e/(ba)+2/b+1/a+1.
+\]
+The substitution exchanges $00$ with $11$, $01$ with $10$, and
+$(a,b,e,\tau)$ with $(\tau,e,b,a)$; it does not assume $b=e$.
+Using \eqref{eq:p-flow} and \eqref{eq:p-square-entry},
+\begin{align*}
+ \sqrt\beta\,yaH_{00}
+ &\le\sqrt\beta\,(w+2x+ew/b+xe)
+ \le\sqrt\beta\,(w+3x)+\sqrt w\le5,\\
+ \sqrt\beta\,xH_{01}
+ &\le2\sqrt\beta\,y/e+\sqrt\beta\,w/b+2\sqrt\beta\,x
+ \le2\sqrt y+\sqrt w+2x\le5.
+\end{align*}
+The symbol-exchanged inequalities give the same bound for $10,11$.
+Lemma~\ref{lem:kac} implies $\overline H_u\le H_u+1$; hence
+$\Pi(u)\gamma_u\overline H_u\le6/\sqrt\beta\le10/\sqrt\beta$.
+Sum over four states and use $q\le\gamma$.
+\end{proof}
+
+\subsection{First hits, endpoint probabilities, and joint tails}
+
+\begin{lemma}[Target endpoint and occupation bounds]\label{lem:endpoint-tail}
+For any $d$-state chain, possibly reducible, and $v\ne u$,
+\begin{equation}\label{eq:p-first-hit}
+ \Pr_v(D_u=t)\le\frac d{t+1},\qquad t\ge1.
+\end{equation}
+For an irreducible chain, fix a target with stationary mass $p>0$,
+maximum ordinary hitting mean $H$, and $h=\max\{H,1/p\}$.
+For every initial state $i$ and every integer $\ell\ge1$, with
+$J_u(\ell)=\sum_{j=0}^{\ell-1}\mathbf1\{Y_j=u\}$,
+\begin{align}
+ \Pr_i(Y_\ell=u)&\le4dp(1+h/\ell),\label{eq:p-endpoint}\\
+ \Pr_i(J_u(\ell)<\ell p/16)&\le2e^{-\ell/(8h)},\label{eq:p-lower-tail}\\
+ \Pr_i(Y_\ell=u,J_u(\ell)>4\ell p+1)
+ &\le16dp(1+h/\ell)e^{-\ell/(2h)}.\label{eq:p-joint-tail}
+\end{align}
+\end{lemma}
+\begin{proof}
+\emph{Reciprocal return coefficients and first hits.}
+For any finite stochastic matrix $P$, let $T_j$ be the $j$th positive
+return to $u$, allowing defective returns, and let
+$F(z)=\E_u[z^{T_1};T_1<\infty]$.  Strong Markov at returns gives
+$\Pr_u(T_j=s)=[z^s]F(z)^j$.  All strong-Markov uses here can be obtained
+by conditioning on each possible stopping time and state and multiplying
+the subsequent transition probabilities; no conditional independent-sample
+claim is involved.  Let $P_{-u}$ delete row and column $u$.  Writing $P$
+in target/rest block form, direct summation over the excursion before the
+first return gives
+$F(z)=zP_{uu}+z^2P_{u,-u}(I-zP_{-u})^{-1}P_{-u,u}$.
+The block determinant identity therefore yields
+\[
+ 1-F(z)=\frac{\det(I-zP)}{\det(I-zP_{-u})}.
+\]
+These are formal series, so no convergence issue arises.  The identity
+$-\log\det(I-zA)=\sum_{s\ge1}\operatorname{tr}(A^s)z^s/s$
+follows by differentiating the determinant, expanding $(I-zA)^{-1}$,
+and integrating from zero.  Consequently
+\begin{equation}\label{eq:p-return-trace}
+ \sum_{j\ge1}\frac{\Pr_u(T_j=s)}j
+ =\frac{\operatorname{tr}(P^s)-\operatorname{tr}(P_{-u}^s)}s
+ \le\frac ds,\qquad s\ge1.
+\end{equation}
+Its left side is nonnegative; the upper bound uses nonnegative entries
+of $P_{-u}^s$ and diagonal entries of $P^s$ at most one.
+Now change only row $u$ to send $u$ deterministically to $v\ne u$.
+In this auxiliary stochastic chain, the first positive return has law
+$1+D_u$ under the original start $v$.  Retain only the first-return
+term of \eqref{eq:p-return-trace} to prove \eqref{eq:p-first-hit}.
+The auxiliary chain need not be an order-two source.
+
+\emph{A target-specific endpoint bound.}
+Return now to the irreducible chain.  Let $g(v)=\E_vD_u$.
+First-step equations and Lemma~\ref{lem:kac} give
+$(Pg-g)(v)=-1+\mathbf1\{v=u\}/p$.  Telescoping expectations shows
+\begin{equation}\label{eq:p-expected-count}
+ \E_vJ_u(s)=p\{s+\E_vg(Y_s)-g(v)\}\le p(s+H).
+\end{equation}
+A loop-rotation identity is
+\[
+ sP^s(u,u)=\sum_v\E_v[J_u(s)\mathbf1\{Y_s=v\}]
+ \le dp(s+H).
+\]
+Indeed, for each $j<s$, the corresponding sum is
+$\sum_vP^j(v,u)P^{s-j}(u,v)=P^s(u,u)$.
+For $v\ne u$, split the first-hit convolution at $t=\lfloor s/2\rfloor$.
+For early hits the return factor is at most $dp(1+2H/s)$.
+For late hits \eqref{eq:p-first-hit} is at most $2d/s$, and
+\eqref{eq:p-expected-count} from $u$ bounds the sum of return factors
+by $p(\lceil s/2\rceil+H)$.  The resulting bound is at most
+$dp(2+2/s+4H/s)\le4dp(1+H/s)$.  It also holds for $v=u$;
+the early sum may be empty at $s=1$.  This proves the slightly stronger
+version of \eqref{eq:p-endpoint} with $H$ instead of $h$.
+
+\emph{Return moments and positive transforms.}
+The family consisting of ordinary hitting times from nontarget states and
+the positive return from $u$ is closed under conditioning on survival and
+the current state.  Its means are at most $h$.  For each member $V$ and
+integer $r\ge1$,
+\begin{equation}\label{eq:p-return-moment}
+ \E V^r\le r!h^{r-1}\E V.
+\end{equation}
+To prove this by induction, use
+$V^r\le r\sum_{j=0}^{V-1}(V-j)^{r-1}$, condition each summand on
+survival through time $j$, and apply the induction hypothesis and the
+uniform mean bound $h$ to the residual law.  The sum of the survival
+probabilities is $\E V$.
+With $\lambda=1/(4h)$, expansion in nonnegative powers gives
+\begin{equation}\label{eq:p-return-transforms}
+ \E_i e^{\lambda D_u}\le\frac43,\qquad
+ \E_u e^{\lambda T_1}\le e^{2\lambda/p},\qquad
+ f:=\E_u e^{-\lambda T_1}\le e^{-3\lambda/(4p)}.
+\end{equation}
+For the last inequality use $e^{-x}\le1-x+x^2/2$ and
+$\E T_1^2\le2h/p$; the first two follow from the geometric-series
+bound on the moments.  If $K=\lceil\ell p/16\rceil$, fewer than $K$
+visits in $0,\ldots,\ell-1$ means
+$D_u+T_1+\cdots+T_{K-1}\ge\ell$.
+These are fresh independent return cycles after the first hit, before any
+horizon restriction.  Exponential Markov and \eqref{eq:p-return-transforms}
+bound this probability by
+$(4/3)e^{-\lambda\ell+2\lambda(K-1)/p}
+\le(4/3)e^{-7\lambda\ell/8}\le2e^{-\ell/(8h)}$.
+This includes $K=1$ and proves \eqref{eq:p-lower-tail}.
+
+\emph{A joint tail by an exact change of path measure.}
+Let $h_i=\E_i e^{-\lambda D_u}$, with $h_u=1$.
+The inequality $e^{-x}\ge1-x$ gives $h_i\ge3/4$ and $f\ge3/4$.
+Define
+\[
+ Q_{ij}=e^{-\lambda}P_{ij}h_j/h_i\quad(i\ne u),
+ \qquad Q_{uj}=e^{-\lambda}P_{uj}h_j/f.
+\]
+The hitting and return equations show that every row sums to one.
+This auxiliary matrix preserves directed support, so is irreducible.
+Its ordinary hitting law is the original law tilted by
+$e^{-\lambda D_u}/h_i$, whence $H_Q\le2H$.
+Its positive return law is tilted by $e^{-\lambda T_1}/f$, and
+\[
+ \frac1{2p}\le\E_QT_1\le\frac2p.
+\]
+For the lower bound, use
+$\E[T_1e^{-\lambda T_1}]\ge1/p-\lambda(2h/p)=1/(2p)$
+and $f\le1$; the upper bound uses $f\ge3/4$.
+Kac for $Q$ gives $p_Q\le2p$ and
+$\max(H_Q,1/p_Q)\le2h$.  The endpoint bound already proved yields
+$Q^\ell(i,u)\le16dp(1+h/\ell)$.
+For every length-$\ell$ path from $i$ to $u$, telescoping the factors gives
+\[
+ Q(\text{path})=P(\text{path})e^{-\lambda\ell}
+                  f^{-J_u(\ell)}/h_i.
+\]
+The count is exactly the number of target departures.  Thus on
+$J_u(\ell)>4\ell p+1$, summing the reverse likelihood relation gives
+\[
+ \Pr_i(Y_\ell=u,J_u(\ell)>4\ell p+1)
+ \le h_ie^{\lambda\ell}f^{4\ell p}Q^\ell(i,u)
+ \le16dp(1+h/\ell)e^{-\ell/(2h)}.
+\]
+This proves the joint bound with its stationary-mass factor; no product
+of an unconditional upper tail and an endpoint probability was taken.
+\end{proof}
+
+\subsection{Weighted imbalance, including unsupported starts}
+
+\begin{lemma}[Half-window imbalance]\label{lem:imbalance}
+For $M\ge64$, put $n=\lfloor M/2\rfloor$ and
+$J_{1,u}=\sum_{i=0}^{n-1}\mathbf1\{Y_i=u\}$.
+Every binary source with a positive all-state certificate, under every
+initial law, satisfies
+\[
+ \E\left[q_{Y_M}\mathbf1\{J>0,J_{1,Y_M}<J/256\}\right]
+ \le\frac{65536}{M\sqrt\beta}.
+\]
+\end{lemma}
+\begin{proof}
+We first prove a general irreducible-chain statement.  Let $m=M-n$,
+$J_{2,u}=\sum_{i=n}^{M-1}\mathbf1\{Y_i=u\}$, and assign arbitrary
+weights $0\le q_u\le1$.  Write
+$W_u=p_uq_u\overline H_u$, where $p_u$ is stationary mass.
+For every $0<c\le1/256$ we claim
+\begin{equation}\label{eq:p-generic-imbalance}
+ \E\left[q_{Y_M}\mathbf1\{J_{1,Y_M}<cJ\}\right]
+ \le\frac{288d}{M}\sum_uW_u.
+\end{equation}
+The strict imbalance event is empty at $J=0$.
+Fix $u$ with $np_u\ge1$.  If
+$J_{1,u}\ge np_u/16$ and $J_{2,u}\le4mp_u+1$, then $m\le2n$ gives
+$J_{1,u}/(J_{1,u}+J_{2,u})\ge1/145>1/256$.
+Thus imbalance requires a first-window lower tail or a second-window
+upper tail.  For the first event, condition on the whole history through
+$Y_n$, use the uniform future endpoint bound
+\eqref{eq:p-endpoint}, and then the first-window lower tail
+\eqref{eq:p-lower-tail}.  For the second event condition only on $Y_n$
+and use the joint bound \eqref{eq:p-joint-tail}.  Since $m\ge n$,
+\[
+ \Pr_i(Y_M=u,\ J_{1,u}<cJ_u)
+ \le24dp_u(1+\overline H_u/n)e^{-n/(8\overline H_u)}.
+\]
+After multiplication by $q_u$, this is
+$(24dW_u/n)(x+1)e^{-x/8}$, where $x=n/\overline H_u$.
+Since the maximum of $(x+1)e^{-x/8}$ is
+$8e^{-7/8}<4$, it is at most $96dW_u/n$.
+If $np_u<1$, use only the endpoint bound at time $M$.
+As $W_u\ge q_u$ and $p_uq_u<q_u/n$,
+\[
+ q_u\Pr_i(Y_M=u)\le4d(p_uq_u+W_u/M)\le8dW_u/n.
+\]
+Sum over $u$, average over initial states, and use $n\ge M/3$ to prove
+\eqref{eq:p-generic-imbalance}.
+For full-support binary sources, Lemma~\ref{lem:hitting-scale} now gives
+$288\cdot4\cdot40/(M\sqrt\beta)=46080/(M\sqrt\beta)$.
+
+It remains to treat singleton stationary support, without discarding
+unsupported actual initial states.  Suppose $00$ is absorbing, so $a=0$,
+and denote the other states by $A=01$, $B=10$, $C=11$.
+An original path ending in this active set has never hit $00$.
+Reflect the killing edge $B\to00$ to $B\to A$, producing the auxiliary
+three-state chain
+\[
+ R(A,B)=1-b,\quad R(A,C)=b,\quad R(B,A)=1,
+ \quad R(C,B)=\tau,\quad R(C,C)=1-\tau.
+\]
+Every original active path has probability at most its reflected-path
+probability: the only changed factor is $1-e\le1$ on $B\to A$.
+The endpoint and all active-state counts are unchanged.  Thus any
+nonnegative functional of these paths is dominated without conditioning
+on survival.
+For $b,\tau>0$ this chain is irreducible, with
+\begin{equation}\label{eq:p-reflected-weights}
+ Z=2\tau+b,\quad p_A=p_B=\tau/Z,\quad p_C=b/Z,
+ \qquad p_Ab\overline H_A\le1,\quad
+ p_C\tau\overline H_C\le1.
+\end{equation}
+Indeed $H_A=1+1/\tau$ and $H_C=2/b$ by first-step equations;
+$\overline H_A\le2+1/\tau$ and
+$\overline H_C\le1+2/b$ give the last inequalities since $b,\tau\le1$.
+Apply \eqref{eq:p-generic-imbalance} with weights $(b,0,\tau)$:
+the $A,C$ contribution is at most $288\cdot3\cdot2/M=1728/M$.
+If $b=0$ or $\tau=0$, approximate these two parameters by positive
+ones in the reflected chain.  At fixed finite horizon, path probabilities
+and the weights are continuous, and the bound is uniform, so the same
+conclusion follows by taking a limit.  No minorization-preserving
+approximation of the original source is being asserted.
+The remaining target $B$ has weight $e$, and for an active start
+\begin{equation}\label{eq:p-next-absorption}
+ e\Pr(Y_M=B)=\Pr(D_{00}=M+1)\le\frac4{M+2},
+\end{equation}
+by \eqref{eq:p-first-hit}: the sole entry edge to $00$ is $B\to00$.
+Drop its imbalance event.  An initial $00$ contributes zero; mixtures
+follow by linearity.  The total is at most $1732/M$, below the stated
+bound because $\beta\le1$.  Exchanging symbols handles absorbing $11$
+with the same fixed designated-successor rule.
+\end{proof}
+
+\subsection{Reciprocal occupation with an old visit}
+
+\begin{lemma}[Old-visit reciprocal count]\label{lem:old-inverse}
+For any homogeneous $d$-state chain and initial law, let $M\ge2$,
+$0\le m\le\lfloor M/2\rfloor$, and
+\[
+ O_u=\sum_{i=0}^{M-m-1}\mathbf1\{Y_i=u\},\qquad O=O_{Y_M}.
+\]
+For every $c>0$,
+\begin{align*}
+ \E\frac{\mathbf1\{O\ge cJ\}}{J+1}
+ &\le\frac1M\left(3d^2+2d^3
+     \sum_{s=m+1}^{\lfloor(M-1)/2\rfloor}\frac1s\right)\\
+ &\le\frac{3d^2+2d^3}{M}
+       \left(1+\log\frac M{m+1}\right),
+\end{align*}
+where an empty sum is zero.  In particular, the last numerator constant
+is $176$ for the pair chain.  The statement includes $J=0$ and $m=0$.
+\end{lemma}
+\begin{proof}
+Starting at $u$, the event
+$\{Y_s=u,J_u(s)=j\}$ is exactly $\{T_j=s\}$ for $j\ge1$:
+the initial visit is a departure, while the terminal visit is not.
+Equation~\eqref{eq:p-return-trace}, which allowed defective returns, gives
+\[
+ K_u(s):=\E_u\frac{\mathbf1\{Y_s=u\}}{J_u(s)+1}
+ =\sum_{j\ge1}\frac{\Pr_u(T_j=s)}{j+1}\le\frac ds.
+\]
+Fix an initial state $v\ne u$, and put
+$a_v(t)=\Pr_v(D_u=t)$.  The event $Y_M=u,J_u=0$ means $D_u=M$,
+so its contribution is at most $d/(M+1)\le d/M$ by
+\eqref{eq:p-first-hit}; it is impossible if $v=u$.
+On $J_u>0,O_u\ge cJ_u$, integrality forces $O_u\ge1$, hence the first
+hit is at most $M-m-1$.  Discarding the rest of the gate and using
+strong Markov gives the exact identity
+\[
+ \E_v\frac{\mathbf1\{Y_M=u,O_u\ge1\}}{J_u+1}
+ =\sum_{t=1}^{M-m-1}a_v(t)K_u(M-t).
+\]
+There is no target departure before $t$, so the full count is exactly
+the post-hit departure count, with no additional unit shift.
+For $t\le M/2$, use $K_u(M-t)\le2d/M$ and
+$\sum_ta_v(t)\le1$; the contribution is at most $2d/M$.
+This also covers $v=u$, whose expression is just $K_u(M)$.
+For $t>M/2$, use $a_v(t)\le2d/M$ and write $s=M-t$;
+the contribution is at most
+\[
+ \frac{2d^2}{M}\sum_{s=m+1}^{\lfloor(M-1)/2\rfloor}\frac1s.
+\]
+Together with the zero-count term this is a per-target bound.
+Average over the start and sum over $d$ terminal targets to obtain the
+first inequality.  Finally,
+$\sum_{s=a}^b1/s\le1/a+\log(b/a)\le1+\log(M/a)$ for $b\le M$,
+with the empty case automatic, gives the stated logarithmic bound.
+\end{proof}
+
+\subsection{Protected edits and the two positional gates}
+
+\begin{lemma}[Pathwise gate reduction]\label{lem:gate}
+Let $D_u$ be a count of row $u$ over a fixed set of departure indices,
+and at the protected row put $D=D_{Y_M}$.  On the corrupted word use
+\[
+ \widehat q=\begin{cases}
+ C'/J',&J'>0\ \hbox{and }512D'\ge J',\\
+ 0,&\hbox{otherwise}.
+ \end{cases}
+\]
+For every allowed corruption kernel and every initial law,
+\begin{align}\label{eq:p-gate-reduction}
+ R\le{}&\E\left[\mathbf1\{J>0\}|C/J-q|\right]
+ +48k\E\frac{\mathbf1\{D\ge J/1024\}}{J+1}
+ +\E[q\mathbf1\{J>0,D<J/256\}]\notag\\
+ &+\Pr(J<6156k+1)+\Pr(J<3078k+1).
+\end{align}
+In particular this applies to a first-half count or to the old-prefix
+count reconstructed by subtracting a suffix count from the total.
+\end{lemma}
+\begin{proof}
+One edited symbol affects at most three departure triples; each changed
+triple changes the histogram's $\ell^1$ norm by at most two.  Pair-count
+windows affect at most two departures.  Taking a union over the edits,
+including adjacent edits and indices straddling a split, gives the safe
+bounds
+\[
+ |J'-J|,\ |C'-C|,\ |D'-D|\le\delta:=6k.
+\]
+When the old count is computed by subtraction, it is still exactly a
+direct count on each word, so the same bound applies without adding
+two separate perturbation bounds.  Endpoint protection keeps the selected
+row fixed.
+Let $G'=\{J'>0,512D'\ge J'\}$,
+$H=\{D\ge J/1024\}$, and
+$B=\{J>0,D<J/256\}$.  On $G'\cap H$ with $J>0$,
+\[
+ |C'/J'-q|\le|C/J-q|+\frac{8\delta}{J+1}.
+\]
+For $\delta=0$ the ratios coincide.  For $\delta>0$ and $J\ge2\delta$,
+$J'\ge J/2$ and ratio subtraction gives a difference at most
+$4\delta/J\le8\delta/(J+1)$.  For $J<2\delta$, use the unit bound on
+the difference of two probabilities.
+On $G'\cap H^c$,
+$D+\delta\ge D'\ge(J-\delta)/512$ whereas $D<J/1024$,
+so $J<1026\delta=6156k$.
+On $(G')^c\cap B^c$ with $J>0$, if $J'=0$ then $J\le\delta$;
+otherwise $D'<J'/512$ and $D\ge J/256$ give
+$J/256-\delta<(J+\delta)/512$, hence $J<513\delta=3078k$.
+If the gate rejects on $B$, its loss is exactly $q$.
+The two displayed integer-threshold tails also cover $J=0$.
+These cases give \eqref{eq:p-gate-reduction} pathwise and then in
+expectation, with $8\delta=48k$.  At $k=0$ the false-status cases for
+$J>0$ are impossible.  Equality in the gate is accepted throughout.
+Since the comparison is pathwise, arbitrary permitted attack randomization
+does not change it.
+\end{proof}
+
+\begin{proposition}[Finite suffix and half-gate upper bounds]
+\label{prop:finite-upper}
+Let $M\ge64$, $2\le r\le M+2$, and set
+\[
+ m=\min\{r-2,\lfloor M/2\rfloor\},\quad
+ N=M-m,\quad L=1+\log\frac M{m+1}.
+\]
+From the histogram obtain $J'_u,C'_u$, and from the last $m+2$ symbols
+obtain $T'_u=\sum_{i=M-m}^{M-1}\mathbf1\{Y'_i=u\}$.
+Use the gate in Lemma~\ref{lem:gate} with $D'_u=O'_u=J'_u-T'_u$.
+This $k,\beta$-blind estimator has all-start risk
+\begin{equation}\label{eq:p-suffix-upper}
+ R\le\min\left\{1,\frac{65536}{\sqrt M}
+       +\frac{65536}{M\sqrt\beta}
+       +(8448L+147744)\frac kM\right\}.
+\end{equation}
+Alternatively, use $D'_u=J'_{1,u}$, the count over the first
+$\lfloor M/2\rfloor$ departures.  Its all-start risk is
+\begin{equation}\label{eq:p-half-upper}
+ R\le\min\left\{1,\frac{65536}{\sqrt M}
+       +\frac{65536}{M\sqrt\beta}+2^{23}\frac kM\right\}.
+\end{equation}
+The latter estimator factors exactly through the histogram, protected
+pair, and the one bit $\mathbf1\{512J'_{1,Y_M}\ge J'_{Y_M}\}$.
+\end{proposition}
+\begin{proof}
+The last $m+2$ raw symbols reveal exactly $m$ departure pairs and the
+terminal pair.  Thus $O'_u$ is precisely the count over indices
+$0,\ldots,N-1$, even though their raw order is not observed.
+In particular $r=2$ means $m=0$ and $O'=J'$; counting $r-1$ suffix
+departures would incorrectly include the terminal pair.
+Since $N\ge\lceil M/2\rceil$, the clean $O$ is at least $J_1$.
+Lemma~\ref{lem:imbalance} therefore bounds the bias in
+\eqref{eq:p-gate-reduction} by $65536/(M\sqrt\beta)$.
+Lemma~\ref{lem:old-inverse}, with $d=4,c=1/1024$, bounds its reciprocal
+term by $48k\cdot176L/M=8448Lk/M$.
+Lemma~\ref{lem:occupation} bounds the two tails together by
+\[
+ \frac{16(6156+3078)k+32}{M+1}
+ =\frac{147744k+32}{M+1}.
+\]
+Lemma~\ref{lem:empirical} and the remaining $32/(M+1)$ are bounded by
+$65536/\sqrt M$.  The unit loss cap proves \eqref{eq:p-suffix-upper}.
+
+For the half gate we require a different reciprocal estimate, valid for
+any four-state chain and start:
+\begin{equation}\label{eq:p-half-inverse}
+ \E\frac{\mathbf1\{J_1\ge J/1024\}}{J+1}\le\frac{130944}{M}.
+\end{equation}
+To prove it, fix $u$ and condition on the entire first-half history,
+whose terminal state is $v$ and whose count of $u$ is $j$.
+Let $m_2=M-\lfloor M/2\rfloor$ be the remaining length.  Balance implies
+$J_{2,u}\le1023j$.  In the suffix, the fixed-terminal event
+$Y_M=u,J_{2,u}\le1023j$ is a subset of the actual-terminal low-occupation
+event.  Lemma~\ref{lem:occupation} gives conditional probability at most
+$16(1023j+1)/(m_2+1)$.  Since $(J_u+1)^{-1}\le(j+1)^{-1}$,
+the conditional contribution is at most $16368/(m_2+1)$, including $j=0$.
+Sum over four targets and use $m_2+1\ge M/2$ to prove
+\eqref{eq:p-half-inverse}.  This argument uses a deterministic prefix,
+not endpoint-conditioned independent samples; Lemma~\ref{lem:occupation}
+is valid at every suffix length.
+Apply Lemmas~\ref{lem:gate}, \ref{lem:imbalance}, and
+\ref{lem:empirical} again.  The total corruption coefficient is
+\[
+ 48\cdot130944+16(6156+3078)=6433056<2^{23},
+\]
+proving \eqref{eq:p-half-upper}.
+The stated bit is exactly the gate decision on every corrupted word.
+If $J'=0$ its value is one, but the decoder's separate $J'>0$ test still
+returns zero.  Thus neither this boundary case nor threshold equality
+requires another message.  All edits occur before the exact message is
+formed; the bit channel itself is not being corrupted.
+
+At $\beta=1/M$, \eqref{eq:p-suffix-upper} gives directly, for
+$g_M(k)=\max\{M^{-1/2},k/M\}$,
+\[
+ R\le(131072+156192L)g_M(k)
+ \le287264L g_M(k)<2^{19}L g_M(k).
+\]
+For $r=\max\{2,\lceil\alpha M\rceil\}$ with $0<\alpha\le1$,
+$m+1=\min\{r-1,\lfloor M/2\rfloor+1\}\ge\alpha M/2$.
+Indeed $r-1\ge\alpha M/2$ follows by separating $\alpha M\le2$
+from $\alpha M>2$.  Hence $L\le1+\log(2/\alpha)$.
+Likewise \eqref{eq:p-half-upper} becomes
+$\min\{1,2^{17}/\sqrt M+2^{23}k/M\}$ at the critical certificate.
+\end{proof}
+
+\subsection{A count-only oracle when the budget is supplied}
+
+\begin{proposition}[Critical known-budget upper]\label{prop:count-oracle}
+At supplied certificate $\beta=1/M$, a predictor using only the exact
+triple histogram, the protected pair, and the public budget $k$ satisfies,
+for every source and initial law,
+\[
+ R\le191488\max\{M^{-1/2},k/M\},\qquad M\ge64.
+\]
+For $k\ge1$ its designated probability is
+\[
+ \widehat q_k=\frac{(C'-6k)_+}{J'+6k+2};
+\]
+for $k=0$ use $(C'+1)/(J'+2)$.  This budget-dependent estimator is used
+only for the oracle comparison, not for the unknown-budget results.
+\end{proposition}
+\begin{proof}
+\emph{A weighted occupation estimate.}
+For an irreducible $d$-state chain with target masses $p_u$, let
+$h_u=\max\{H_u,1/p_u\}$, $0\le q_u\le1$, and $W_u=p_uq_uh_u$.
+For every $A>0$ and every initial law we first prove
+\begin{equation}\label{eq:p-oracle-weighted-general}
+ \E\min\left\{q_{Y_M},\frac A{J+2}\right\}
+ \le384d^2\frac AM+\frac{192d}{M}\sum_uW_u.
+\end{equation}
+Fix a target $u$.  If $h_u>M$, the endpoint bound gives
+$q_u\Pr(Y_M=u)\le4dp_uq_u(1+h_u/M)\le8dW_u/M$.
+If $h_u\le M$, on $J_u\ge Mp_u/48$ the minimum is at most
+$48A/(Mp_u)$, and $\Pr(Y_M=u)\le8dp_u$; this costs at most
+$384dA/M$.  For the complementary event, put $n=\lfloor M/2\rfloor$
+and $m_2=M-n$.  Since $n\ge M/3$,
+$J_u<Mp_u/48$ implies $J_{1,u}<np_u/16$.
+Conditioning on the complete prefix through $Y_n$, use the uniform
+endpoint bound on the remaining $m_2$ transitions, and then the
+unconditional lower tail on the prefix.  The weighted contribution is
+at most
+\[
+ 8dp_uq_u(1+2h_u/M)e^{-M/(24h_u)}
+ =\frac{8dW_u}{M}(x+2)e^{-x/24}
+ \le\frac{192dW_u}{M},\qquad x=M/h_u.
+\]
+The last step uses
+$\sup_{x\ge0}(x+2)e^{-x/24}=24e^{-11/12}<24$.
+Summing these two cases over targets proves
+\eqref{eq:p-oracle-weighted-general}.
+For full-support binary sources, Lemma~\ref{lem:hitting-scale} yields
+\begin{equation}\label{eq:p-oracle-weighted-binary}
+ \E\min\left\{q_{Y_M},\frac A{J+2}\right\}
+ \le6144\frac AM+\frac{30720}{M\sqrt\beta}.
+\end{equation}
+
+For singleton support $00$, the $00$ contribution vanishes.  Use the
+reflected chain from the proof of Lemma~\ref{lem:imbalance}.  On paths
+ending active, original path weights are bounded above by reflected
+path weights, with exactly the same terminal state and departure counts.
+Thus the nonnegative minimum functional for targets $A,C$, with weights
+$(b,0,\tau)$, is dominated pathwise in the same sum over paths.
+Equation~\eqref{eq:p-reflected-weights} and
+\eqref{eq:p-oracle-weighted-general}, with $d=3$, bound this part by
+$3456A/M+1152/M$.  The original target $B$ contributes at most
+$e\Pr(Y_M=B)\le4/(M+2)$ by \eqref{eq:p-next-absorption}.
+An initial $00$ contributes zero.  For boundary $b$ or $\tau$, approximate
+only the reflected chain by positive parameters: there are finitely many
+length-$M$ paths, and each summand is continuous in probabilities and
+weights, including its minimum.  The uniform bound therefore passes to
+the limit.  Symbol exchange handles singleton $11$.
+Since $\beta\le1$, the larger bound
+\eqref{eq:p-oracle-weighted-binary} covers both singleton cases and
+arbitrary initial mixtures as well.
+
+\emph{A pathwise lower envelope.}
+For $k\ge1$ put $B_k=6k$, $D=J+2$, $D'=J'+B_k+2$, and
+$c'=(C'-B_k)_+$.  The protected-edit perturbation bounds give
+\[
+ D'\ge D,\quad0\le c'\le C,\quad
+ 0\le C-c'\le2B_k,\quad0\le D'-D\le2B_k.
+\]
+Thus $0\le\widehat q_k\le C/(J+2)$, and
+\[
+ \frac CD-\frac{c'}{D'}
+ =\frac{C-c'}D+\frac{c'}{D'}\frac{D'-D}D
+ \le\frac{4B_k}D.
+\]
+For $J>0$, putting $p=C/J$ gives
+\[
+ 0\le p-\widehat q_k
+ \le\min\left\{p,\frac{4B_k+2}{J+2}\right\}.
+\]
+Since $x\mapsto\min\{x,c\}$ is $1$-Lipschitz on nonnegative reals,
+with $A=24k+2$ the triangle inequality implies
+\begin{equation}\label{eq:p-oracle-pathwise}
+ |\widehat q_k-q|
+ \le2\mathbf1\{J>0\}|C/J-q|
+       +\min\left\{q,\frac A{J+2}\right\}.
+\end{equation}
+When $J=0$, $C=0$ and $\widehat q_k=0$; since $A\ge2$, the last
+term equals $q$, so the inequality still holds without defining $C/J$.
+This is valid for every permitted edit realization.
+Using Lemma~\ref{lem:empirical},
+\eqref{eq:p-oracle-weighted-binary}, $\beta=1/M$, and $A\le26k$ gives
+\[
+ R\le\frac{31744}{\sqrt M}+159744\frac kM
+ \le191488\max\{M^{-1/2},k/M\},\qquad k\ge1.
+\]
+
+For $k=0$ the word is unedited.  On $J>0$, the add-one probability
+is within $1/(J+2)$ of $C/J$; on $J=0$ pay unit loss.
+Lemma~\ref{lem:occupation} gives $\Pr(J=0)\le16/(M+1)$.
+For completeness, integer-threshold layer cake gives
+\[
+ \E\frac1{J+2}
+ \le\int_0^1\min\left\{1,\frac{16}{(M+1)t}\right\}\,dt
+ \le\frac8{\sqrt{M+1}}.
+\]
+Indeed a nonempty event $J<t^{-1}-2$ uses threshold
+$\lceil t^{-1}-2\rceil\le t^{-1}$; for the last inequality use
+$\min\{1,z\}\le\sqrt z$ and integrate $t^{-1/2}$.
+Together with Lemma~\ref{lem:empirical} this is at most
+$536/\sqrt M$, below the asserted constant.  No positional message or
+raw-window input is used in either budget branch.
+\end{proof}

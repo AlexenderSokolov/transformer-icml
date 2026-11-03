@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact integers and fractions",
+  "word_lengths": [
+    2,
+    14
+  ],
+  "M_range": [
+    0,
+    12
+  ],
+  "counts": {
+    "word_flow_reconstruction_suffix_and_first_edit_checks": 32764,
+    "scan_bit_decoder_checks": 32764,
+    "raw_suffix_gate_checks": 393220,
+    "distinct_valid_observation_classes": 5542,
+    "acceptance_receipt_artifact_bindings": 9,
+    "prior_interface_review_bindings": 13
+  },
+  "same_baseline_different_scan_bit_witness": {
+    "first": [
+      0,
+      1,
+      0,
+      1,
+      1,
+      0
+    ],
+    "second": [
+      0,
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "first_bit": 1,
+    "second_bit": 0
+  },
+  "limits": "Finite checks corroborate universal telescoping; accepted stochastic bounds are not re-proved."
+}

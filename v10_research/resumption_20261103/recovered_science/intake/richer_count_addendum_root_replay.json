@@ -1,0 +1,18 @@
+{
+  "status": "ROOT_ISOLATED_DIAGNOSTICS_AND_FORCED_BUILD_PASS",
+  "utc": "2026-11-02T19:36:20.529556+00:00",
+  "core": "Unchangedchecks.py isolatedrerun matched everygeneratedcorefield; itdoesnotemit2annotations",
+  "supplemental": "Newnonmutatingsupplemental_replay.py ranexit0, independentlyverified4receiptmatches+actualpatchreconstruction",
+  "combined": "Mergingcore+twoextras reproducesacceptedchecks_results.json byte-for-byte",
+  "build": "Isolatedlatexmk -g/pdfTeX forcedrebuild andpdftoppm completedexit0; all6renderedPNGbytesidentical toacceptedPDF renders; rootpreviouslyvisuallyinspectedall6",
+  "initial_run_limit": "Initialprocesshandlewasunavailableaftercompletion; didnotinferexitcode. Forcedrerunobtainedexplicitexit0. Acceptedfilesunchanged.",
+  "artifacts": {
+    "v10_research/richer_count_consolidation_20261102/replays/root_core_results.json": "5147501cd0f3cd0ac805d4696d8d9ab83a31583eb6cd54bb03dea7da93af0205",
+    "v10_research/richer_count_consolidation_20261102/replays/root_supplemental_results.json": "28679caf2a682aa1ccfe6ad7605f5c30b2ed8967a02282c87cb052bd2c1946a0",
+    "v10_research/richer_count_consolidation_20261102/replays/root_combined_results.json": "87b09fc3448a76c3561bd02892537a88beec6815298a156ebf410cb46d304ec2",
+    "v10_research/richer_count_consolidation_20261102/replays/root_forced_build_transcript.txt": "c446d520e20790501f10610863d598b48be4013fec94aaf642f7cb5af4c3ade9",
+    "v10_research/richer_count_consolidation_20261102/reviews/integration/REPLAY_NOTE.md": "1731882727906267df15d9b2142d6bb06cc7a96ea03b1dde71719b5f5301f09f",
+    "v10_research/richer_count_consolidation_20261102/reviews/integration/supplemental_replay.py": "8cc75af494b38503feaf57b502a4bf63c30672648444b9ad82c8830b9ce3ad73"
+  },
+  "scope": "Reproducibilityandfinitecorroboration,notformalproof/novelty/publicationapproval"
+}

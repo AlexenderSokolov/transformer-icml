@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "arithmetic": "Exact sympy rationals/integers; no floating tolerances",
+  "checks": {
+    "first_hit_density": 2592,
+    "reset_reciprocal_trace": 2808,
+    "hitting_poisson": 70,
+    "doob_rows": 274,
+    "occupation_potential": 1918,
+    "target_heat_bound": 1918,
+    "doob_joint_likelihood": 4817,
+    "loop_rotation": 490,
+    "singleton_absorption_density": 648,
+    "singleton_joint_domination": 822,
+    "singleton_HA": 12,
+    "singleton_HC": 12,
+    "singleton_weighted_A": 12,
+    "singleton_weighted_C": 12,
+    "joint_upper_tail_exact_exp_enclosure": 150,
+    "lower_tail_exact_exp_enclosure": 150,
+    "receipt_proof_hash": 5,
+    "receipt_component_hash": 2,
+    "receipt_review_hash": 2,
+    "frozen_dependency_binding": 19,
+    "fullsupport_constant": 1,
+    "singleton_constant": 1,
+    "corruption_constant": 1
+  },
+  "total": 16736,
+  "limits": "Finite structural checks, not formal verification. Doob likelihood checked at rational discount 3/4; tail comparisons use exact rational exp upper enclosures. Universal claims rest on the written proof."
+}

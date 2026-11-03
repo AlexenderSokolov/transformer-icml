@@ -1,0 +1,60 @@
+{
+  "status": "PASS_AFTER_ACTUAL_CANDIDATE_AND_INPUT_STORAGE_DIFF_REVIEW",
+  "utc": "2026-11-03T01:41:17.154445+00:00",
+  "reviewer": "independent LLM reviewer",
+  "publication": "LOCAL_UNPUBLISHED",
+  "artifacts": {
+    "v10_research/resumption_20261103/whole_message_cost/CANDIDATE.md": {
+      "sha256": "502b3a7e37c8adda33722ca324bade02efeab1c9d140c59abb3d812bba3eca62",
+      "bytes": 16579
+    },
+    "v10_research/resumption_20261103/whole_message_cost/CANDIDATE_before_input_storage_clarification.md": {
+      "sha256": "46a7f1c805c4112b742433390e2a0a7439eb71e0097454c14775c731a0d01679",
+      "bytes": 16278
+    },
+    "v10_research/resumption_20261103/whole_message_cost/input_storage_clarification.diff": {
+      "sha256": "7a9587217688f4da2d475221991cd3b1be37233dac352e074b790b7bce3ca2c8",
+      "bytes": 2059
+    },
+    "v10_research/resumption_20261103/whole_message_cost/review/REVIEW.md": {
+      "sha256": "0738a4c25e3d06f91c0199bb866a0531a65d2e9aa33bc81b30ba4b5ffdc7e990",
+      "bytes": 9341
+    },
+    "v10_research/resumption_20261103/whole_message_cost/review/checks.py": {
+      "sha256": "d6ab24c05bd21455fa498843c63aa5a2c1c2bb39df407f8cc239653eea4b4b04",
+      "bytes": 3169
+    },
+    "v10_research/resumption_20261103/whole_message_cost/review/checks.json": {
+      "sha256": "9d55cc4fdfc112a55877bf40d69284cf0a0da46007a4abb8b444400281963e36",
+      "bytes": 796
+    },
+    "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/UPPER_CANDIDATE.md": {
+      "sha256": "5d8f7eadb212dd129a124553170cd75633f9b648307acc5e852848291168b2db",
+      "bytes": 8065
+    },
+    "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/upper_review/REVIEW.md": {
+      "sha256": "6c444e9228f173151b4fdf88c07e99bf2c704ca315d7f5d2a83c79332791209c",
+      "bytes": 14119
+    },
+    "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/triple_access/FOT002_matched_original_experiment.md": {
+      "sha256": "55948f2f3516a9bffa09aa05d01dd81154d962dea847a796362a7206b861120a",
+      "bytes": 6903
+    },
+    "v10_research/resumption_20261103/recovered_science/first_order_positional_probe/triple_access/BOUNDARY_RECONSTRUCTION_NOTE.md": {
+      "sha256": "5a70a06534dfd2a6e23b0f8967770bb2b34d5518bfc27212b32fd773683f1659",
+      "bytes": 4031
+    },
+    "v10_research/resumption_20261103/recovered_science/intake/FOU001_root_acceptance.json": {
+      "sha256": "8b3a71913f91df6f124bd78def8b6b964a83201e796bdd93668707ff9095c67a",
+      "bytes": 1763
+    },
+    "v10_research/resumption_20261103/recovered_science/intake/FOT002_root_acceptance.json": {
+      "sha256": "7602468b6f4c4f4757d80576c1ccf875b277175d1460d7e3008c8d4f2b068b1f",
+      "bytes": 2344
+    },
+    "v10_research/resumption_20261103/recovered_science/intake/FOT003_root_acceptance.json": {
+      "sha256": "301c9522f4e1b28f06f3114e9950641cbc345fef7c104bb78b356d6a9ab1b994",
+      "bytes": 1718
+    }
+  }
+}

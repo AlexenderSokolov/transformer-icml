@@ -1,0 +1,11 @@
+--- v10_research/resumption_20261103/whole_message_cost/CANDIDATE_before_input_storage_clarification.md	2026-11-02 17:40:47.584611266 -0800
++++ v10_research/resumption_20261103/whole_message_cost/CANDIDATE.md	2026-11-02 17:40:47.602821607 -0800
+@@ -37,7 +37,7 @@
+ 
+ No initial-pair assumption was silently changed: condition on clean X_0=b only in the proof, prepend b to each candidate suffix to induce the original fixed legal kernel, and apply the same suffix predictor conditionally; average over b. Neither encoder nor receiver knows clean b or the source. This is precisely FOT002's repair. Alternatively, FOT003 shows these suffix edge counts equal triple in-degrees, but here the encoder directly computes them, and the receiver receives neither triples nor endpoints for free.
+ 
+-A single left-to-right scan suffices: keep four pair counters and two half-departure counters, adjacent bits, and position; ignore the first edge. After reaching the final symbol select its row. Thus payload formation takes O(M log M) elementary bit operations, O(log M) working bits, and no stored copy of the word. With O(log M)-bit counters as RAM words it takes O(M) word operations. These costs are separate from communication and channel coding.
++A single left-to-right scan suffices: keep four pair counters and two half-departure counters, adjacent bits, and position; ignore the first edge. After reaching the final symbol select its row. Thus payload formation takes O(M log M) elementary bit operations and O(log M) auxiliary working bits, excluding its read-only or streaming input; it does not create a stored copy of the word. Reading all M+2 input symbols once is included in this scanning-operation bound. If the original word is resident in memory and its storage is charged to total live storage, add M+2 input bits to the auxiliary-space figure. With O(log M)-bit counters as RAM words the scan takes O(M) word operations. These costs are separate from communication and channel coding.
+ 
+ ## 3. Elementary fixed-block code, including maximal error
+ 

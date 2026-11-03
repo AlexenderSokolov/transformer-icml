@@ -1,0 +1,293 @@
+{
+  "unit": "AF001",
+  "status": "PASS_FINITE_CHECKS_CANDIDATE_NOT_YET_ACCEPTED",
+  "proof_sha256": "17860bb034c34c388d12ccb83b942dc88fb4bf88ee15c2d7d63df099a230ebd4",
+  "generated_utc": "2026-11-02T14:27:47.920446+00:00",
+  "arithmetic": "Exact integers/Fractions and certified integer square-root floors; no approximate pass/fail tests.",
+  "counts": {
+    "candidate_hash": 1,
+    "actual_preacceptance_snapshot": 1,
+    "accepted_source_hash": 8,
+    "accepted_review_hash": 6,
+    "finite_horizon_G_bound": 63,
+    "exact_union_equivalence": 378,
+    "zero_beta_weak_branch": 42,
+    "public_selector_strong_branch": 121,
+    "strong_statistical_absorption_squared": 121,
+    "two_label_joint_blindness_domain": 7,
+    "same_public_selector_different_beta_branches": 7,
+    "exact_inverse_sqrt_floor": 35,
+    "KA001_finite_domain": 35,
+    "legal_attack_integer_budget": 35,
+    "rounded_actual_beta_scale": 35,
+    "clean_penalty_ratio_scale_squared": 35,
+    "harmonic_range_scale_squared": 35,
+    "positive_logarithm_domain": 35,
+    "actual_cutoff_is_sqrt_beta_squared": 35,
+    "unbounded_sparse_selection": 4,
+    "selected_sequence_exact_implications": 4,
+    "oscillating_fixed_union": 19,
+    "accepted_CB005_snapshot": 1,
+    "unchanged_candidate": 1
+  },
+  "accepted_sources": [
+    {
+      "unit": "KA001",
+      "receipt": "intake/KA001_acceptance.json",
+      "proof_sha256": "5cf1f9ba5dca0e5cb7dd2a703bca163f87e46f5eb16ddf5563837d873e9072e7"
+    },
+    {
+      "unit": "CB004",
+      "receipt": "intake/CB004_root_acceptance.json",
+      "proof_sha256": "a322c2fe08b76cf84f587b91e4ab504e2e02468e8c1a617fd7b868e14f643155"
+    },
+    {
+      "unit": "CB005",
+      "receipt": "intake/CB005_root_acceptance.json",
+      "proof_sha256": "5e514451e88672533b5a376e43265b8a382ac0b59e816e3ef06212ea5be6db52"
+    },
+    {
+      "unit": "BK002",
+      "receipt": "intake/BK002_acceptance.json",
+      "proof_sha256": "e50381632af4825923138c086c34e7b3b082af381d4b9ec8f641825455c50e12"
+    },
+    {
+      "unit": "AB001",
+      "receipt": "intake/AB001_acceptance.json",
+      "proof_sha256": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d"
+    },
+    {
+      "unit": "SC003",
+      "receipt": "intake/SC003_acceptance.json",
+      "proof_sha256": "4235fc6b9de9d04368354d22f15774d66965ca572f21f197e456537e9bcba837"
+    },
+    {
+      "unit": "BT002",
+      "receipt": "intake/BT002_acceptance.json",
+      "proof_sha256": "40d5345657b8f255cd1cef496fb84090aae18a6cd6bc7c083daa09c2ce913562"
+    },
+    {
+      "unit": "KH002",
+      "receipt": "intake/KH002_acceptance.json",
+      "proof_sha256": "970bfefb6041cdb989148819eb526c789d86591992375b84b05de2dd72bf9702"
+    }
+  ],
+  "accepted_CB005_dependency": {
+    "path": "critical_beta_adaptation/CB005_all_start_critical_adaptation.md",
+    "sha256": "5e514451e88672533b5a376e43265b8a382ac0b59e816e3ef06212ea5be6db52",
+    "receipt": "intake/CB005_root_acceptance.json"
+  },
+  "finite_lower_records": [
+    {
+      "M": "4096",
+      "beta": "1/65536",
+      "k": "256",
+      "G_full": "16"
+    },
+    {
+      "M": "4096",
+      "beta": "1/65536",
+      "k": "256",
+      "G_full": "16"
+    },
+    {
+      "M": "4096",
+      "beta": "1/65536",
+      "k": "256",
+      "G_full": "16"
+    },
+    {
+      "M": "4096",
+      "beta": "1/65536",
+      "k": "256",
+      "G_full": "16"
+    },
+    {
+      "M": "4096",
+      "beta": "1/65536",
+      "k": "256",
+      "G_full": "16"
+    },
+    {
+      "M": "4097",
+      "beta": "256/16785409",
+      "k": "256",
+      "G_full": "4097/256"
+    },
+    {
+      "M": "4097",
+      "beta": "28673/1879965808",
+      "k": "256",
+      "G_full": "458864/28673"
+    },
+    {
+      "M": "4097",
+      "beta": "8193/537133088",
+      "k": "256",
+      "G_full": "131104/8193"
+    },
+    {
+      "M": "4097",
+      "beta": "14339/939982904",
+      "k": "256",
+      "G_full": "229432/14339"
+    },
+    {
+      "M": "4097",
+      "beta": "1/65552",
+      "k": "256",
+      "G_full": "16"
+    },
+    {
+      "M": "8192",
+      "beta": "1/262144",
+      "k": "512",
+      "G_full": "32"
+    },
+    {
+      "M": "8192",
+      "beta": "1/229376",
+      "k": "478",
+      "G_full": "28"
+    },
+    {
+      "M": "8192",
+      "beta": "3/524288",
+      "k": "418",
+      "G_full": "64/3"
+    },
+    {
+      "M": "8192",
+      "beta": "13/1835008",
+      "k": "375",
+      "G_full": "224/13"
+    },
+    {
+      "M": "8192",
+      "beta": "1/131072",
+      "k": "362",
+      "G_full": "16"
+    },
+    {
+      "M": "12345",
+      "beta": "256/152399025",
+      "k": "771",
+      "G_full": "12345/256"
+    },
+    {
+      "M": "12345",
+      "beta": "12307/5689563600",
+      "k": "679",
+      "G_full": "460880/12307"
+    },
+    {
+      "M": "12345",
+      "beta": "16441/4876768800",
+      "k": "544",
+      "G_full": "395040/16441"
+    },
+    {
+      "M": "12345",
+      "beta": "39083/8534345400",
+      "k": "467",
+      "G_full": "691320/39083"
+    },
+    {
+      "M": "12345",
+      "beta": "1/197520",
+      "k": "444",
+      "G_full": "16"
+    },
+    {
+      "M": "65536",
+      "beta": "1/16777216",
+      "k": "4096",
+      "G_full": "256"
+    },
+    {
+      "M": "65536",
+      "beta": "11/58720256",
+      "k": "2310",
+      "G_full": "896/11"
+    },
+    {
+      "M": "65536",
+      "beta": "17/33554432",
+      "k": "1404",
+      "G_full": "512/17"
+    },
+    {
+      "M": "65536",
+      "beta": "97/117440512",
+      "k": "1100",
+      "G_full": "1792/97"
+    },
+    {
+      "M": "65536",
+      "beta": "1/1048576",
+      "k": "1024",
+      "G_full": "16"
+    },
+    {
+      "M": "100000000",
+      "beta": "1/39062500000000",
+      "k": "6250000",
+      "G_full": "256"
+    },
+    {
+      "M": "100000000",
+      "beta": "390721/4375000000000000",
+      "k": "105817",
+      "G_full": "43750000/390721"
+    },
+    {
+      "M": "100000000",
+      "beta": "390641/1250000000000000",
+      "k": "56567",
+      "G_full": "12500000/390641"
+    },
+    {
+      "M": "100000000",
+      "beta": "1171883/2187500000000000",
+      "k": "43204",
+      "G_full": "21875000/1171883"
+    },
+    {
+      "M": "100000000",
+      "beta": "1/1600000000",
+      "k": "40000",
+      "G_full": "16"
+    },
+    {
+      "M": "10000000000000000",
+      "beta": "1/390625000000000000000000000000",
+      "k": "625000000000000",
+      "G_full": "256"
+    },
+    {
+      "M": "10000000000000000",
+      "beta": "1220703125003/1367187500000000000000000000000",
+      "k": "1058300524",
+      "G_full": "136718750000000/1220703125003"
+    },
+    {
+      "M": "10000000000000000",
+      "beta": "2441406250001/781250000000000000000000000000",
+      "k": "565685424",
+      "G_full": "78125000000000/2441406250001"
+    },
+    {
+      "M": "10000000000000000",
+      "beta": "14648437500001/2734375000000000000000000000000",
+      "k": "432049379",
+      "G_full": "273437500000000/14648437500001"
+    },
+    {
+      "M": "10000000000000000",
+      "beta": "1/160000000000000000",
+      "k": "400000000",
+      "G_full": "16"
+    }
+  ],
+  "limitations": "Checks do not reprove accepted CB005 generic occupation bounds or certify universal-map/domain quantifiers and logarithmic/asymptotic limits. AF001 still requires fresh full review and root acceptance."
+}

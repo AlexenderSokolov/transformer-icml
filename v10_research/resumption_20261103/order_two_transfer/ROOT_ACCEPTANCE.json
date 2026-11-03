@@ -1,0 +1,29 @@
+{
+  "utc": "2026-11-03T01:52:59.213704+00:00",
+  "unit": "O2T001",
+  "status": "ROOT_ACCEPTED_DUAL_REVIEWED_TRANSFER_WITH_PMC_INTERFACE",
+  "scope": "General binary order-two tables with supplied all-state P^2(u,v)>=Pi(v)/M, every initial pair law including unsupported starts, strict at-most-k edits before protected terminal pair, same procedure for all k, actual-terminal NEXT-SYMBOL unsquared TV.",
+  "upper": "Original order-two half-gate, not first-order FOU: min(1,2^17/sqrt(M)+2^23*k/M), hence C2=8519680. Certificate-dependent imbalance and reflected unsupported-start argument retained.",
+  "results": "Supplemental finite-output binary-input channel four classes transfer with changed constants. Whole-message no-free-side-information total length Theta_W(log M) for distinct rows; identical rows impossible.",
+  "paid_payload": "J,C,d,G, d=1-first coordinate of actual terminal pair, B=2ceil(log2(M+1))+2. Sender uses both query coordinates to select row; receiver needs only orientation. Rejection predicts complement d. Not a next-pair output result.",
+  "pmc_corollary": "Accepted PMC001 universal maximal-error code applies to this arbitrary B-bit payload. Fixed known rational W gives risk<=(C2+1)g, O_W(log M) physical uses, poly_W(log M) coding preprocessing/online/design/auxiliary space, plus O(M log M) one-pass statistics. Resident input adds M+2 bits.",
+  "root_read": "Entire actual candidate, two complete independent reviews, original prop:finite-upper and proof, complete separate PMC interface addendum, exact source bindings. Two independent checkers root-rerun in isolated copied tree with byte-identical reports. Existing earlier lemmas remain explicit accepted dependencies.",
+  "checks": "Root replay: 32760-word first checker; second 33260 payload/133040 flow/19683 reflection paths/192 certificate entries. These are finite corroboration, not universal proof.",
+  "limits": "No unrestricted no-mixing binary order-two or all-beta claim; no general-order, unknownchannel, variable/adaptive length, neural/learnability or novelty claim. Local unpublished; LLM reviews not formal or external peer review. Original source headers remain historical.",
+  "artifacts": {
+    "CANDIDATE.md": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+    "TRANSFER.md": "3327caec49a423a59b42c06bf8141ff03b591f2b3c19f07cdecfd3e0ce77116a",
+    "AUTHOR_SOURCE_BINDINGS.json": "5e3fe48f7bd031b9cd7bb396b39dec8d277dc0b7b0b08cb5fc75f4cd836c102b",
+    "review_root/REVIEW.md": "dc5d05bd1060bac1c5d31c615066a16b5917b342305413350578372de81179f3",
+    "review_root/bindings.json": "da59b76de6dfb242ed717774fc79e670d28c766cfc6ee9c0a0c466ff971c977f",
+    "review_root/check.py": "e691dc50c80d28ee6055919050d296862b0221c07ae47a5b90bf687604fe0347",
+    "review_root/checks.json": "db94d6ef82c0b64ad7c30feeaf27f88d1bc423749cbad1c64305367659a6a7d9",
+    "review/REVIEW.md": "73525ee16328b4edb3b094edacf85247fea4e20b8a387a6c678f46365dac6f17",
+    "review/bindings.json": "1d2e5516b004e700498a10ae1381608ae52b093c75cb4fc65c17e6a55d7662f1",
+    "review/checks.py": "1011b50c635ca1a7cdc7b9842ee1471b18d81648a1b1850dc797bfa7d2f250e7",
+    "review/checks.json": "d84bd9c0fad5c98a2c14fcb24518e473df89d5ba7c188247ac8a39efdf2d30e2",
+    "review_root/PMC_INTERFACE_ADDENDUM.md": "cc6e2d447a5fd09fd36dacac5184753ed24f65cb63f5859f2e11af0dac7539ef",
+    "review_root/PMC_INTERFACE_BINDINGS.json": "bd78aafdba209df9c6a32f96b0c1516cf4607282fd1a493c22c428faa5c1bd98",
+    "ROOT_REPLAY.json": "62aebcc6370531d87c6332fddf4b8f37b5c6b70eac4069263e06e6aee2a7815c"
+  }
+}

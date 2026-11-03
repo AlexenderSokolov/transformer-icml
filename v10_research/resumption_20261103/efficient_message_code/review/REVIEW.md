@@ -1,0 +1,36 @@
+# Independent adversarial review: polylog-resource whole-message code
+
+Reviewer: `independent LLM reviewer`; 2026-11-03 UTC.
+
+**Verdict: PASS for the explicit mathematical construction and charged asymptotic resource claims.** No claim of an executed full channel implementation, practical runtime, new coding method, or neural realization is accepted. The reviewed bytes and dependencies are bound by `bindings.json`. This reviewer read the actual complete candidate, not merely the root's proposal. No candidate edits were required.
+
+## General proof audit
+
+1. **Uniform parameter edges:** For every integer B>=1, k=ceil(log2(8B))>=3, q in [8B,16B), K=ceil(B/k)<=B, and n=4K<=q. The conservative k<=4B and Kk<=B+k give R<=20CB without small-B exceptions. All logarithmic quantities can be computed by integer bit lengths. The exact-gate B formula supplies ample slack but is not needed for the standalone lemma.
+2. **Fixed channel certificates:** Rational rows have a common integer denominator. Distinct probability rows imply h<1, including rows with zeros. Detect h=0 by support intersection and handle it directly. Rational square-root upper intervals eventually certify h_bar<1, and the finite search for C terminates. Fixed-W setup and its potentially enormous costs are properly charged. Nothing asserts uniform polynomial complexity as W approaches identical rows.
+3. **Finite field:** Trial division through degree floor(k/2) detects every reducible monic polynomial. Enumeration and arithmetic are polynomial in q and k, hence in B. Existence argument using roots of X^(2^k)-X and the union bound over smaller-degree subfields is valid, including k=2 and degree-one fallback. Primitive elements are unnecessary, and the first n field labels give distinct points including zero.
+4. **Inner code cardinality and resources:** Removing radius d-1 balls, not radius d balls, supports minimum distance d=ell/4. The displayed binomial weighting proves the required volume bound. H_2(1/4)<7/8 follows from 9>8, and ell>=8k yields enough codewords. The enumeration has 2^ell=q^C candidates, not 2^B or 2^(Theta(M)) candidates. Since C depends only on fixed W this is poly_W(B); retained design is q*ell bits. A streamed enumeration counter and retained table do not require a deletion bitmap.
+5. **Maximal ML error:** Common-denominator integer products give exact comparisons, including zero likelihoods and deterministic ties. A wrong selected word implies a competitor likelihood at least the true one. The square-root likelihood bound applies termwise even at zeros, giving maximal, not average, error at most q h^(ell/4)<=2^(-8k).
+6. **Outer decoder:** The homogeneous system has 3K+1 unknowns. Outside the correction radius it need not have a nonzero kernel, and the specified fallback handles this. Every nonzero kernel vector has E!=0 because otherwise Q has 4K roots and degree <2K. With e<=K errors, the genuine error locator of degree e and Q=fE is a nonzero witness. Any solution obeys Q-fE=0 because its degree is <2K and it has at least 3K good roots. This works when f=0, e=0, or an erroneous position evaluates at zero. No monic normalization or exact degree K is needed. Exact division, degree, distance and padding checks define output on every input and all pass within the guaranteed radius.
+7. **Message error:** Conditional on fixed payload, disjoint physical blocks see independent fresh memoryless noise, though their errors can have distinct probabilities. Subset union bound for K+1 errors gives exponent 4K-8k(K+1). The simplification uses 4K<=2kK, then kK>=B. Averaging over arbitrary source/attack payload laws is therefore valid. No false unconditional independence is invoked.
+8. **No side channels:** Fixed n, ell and evaluation order preclude timing or variable-length information. Padding is fixed and validated. No counts, terminal bit, source, attack budget, law-dependent seed or input buffer are transferred for free. The deterministic field/code is reproducible at both endpoints and its description, preprocessing and design storage are charged.
+
+## Resource and integration audit
+
+- Integer ML products need O_W(ell) score bits; the conservative O_W(n q ell^3) bound is sufficient. Outer elimination uses O(n^2 k) matrix bits and O(n^3 k^3) bit time; quotient/validation and serialization remain polynomial. Any ordinary sequential-access overhead remains polynomial and cannot revive an exponential message table.
+- Explicit design length O_W(B log(B+1)) includes the inner table and field polynomial. Auxiliary memory additionally includes the BW matrix, channel block, hard decisions, payload, arithmetic scratch and output. The theorem does not conflate description length with execution space.
+- Computing both transition rows before learning the terminal symbol permits one forward pass over all M+2 symbols. Discarding the first edge leaves precisely departure indices 1,...,M. J, C_flip and the half-gate match the prior accepted payload. Last-symbol-to-next-distribution conversion in both t branches is correct.
+- The existing exact-gate source-risk theorem is an explicit dependency; it is not independently re-proved by this coding note. The coupling incurs at most message error since every returned prediction is a distribution with TV loss <=1. For the stated B, 2^(-6B)<=M^(-1/2). The prior communication lower and identical-row impossibility are not changed.
+- O(M log M) scan time and one complete M+2-symbol read remain. Polylog design plus auxiliary space does **not** include a resident raw input; if resident, M+2 bits are added. No O(log M) total-space or sublinear-input-processing assertion is warranted.
+
+## Independent diagnostics
+
+`checks.py` is persisted source and `checks.json` is its executed output. It checks all parameter/error-exponent inequalities for B=1,...,100000. Its independent binary-polynomial finite-field arithmetic and homogeneous-nullspace BW decoder pass 720 deterministic seeded decoding cases across six (k,K) pairs, including K=1, zero messages, zero errors, and errors at evaluation point zero. These checks diagnose off-by-one, sign, normalization and root-edge mistakes; they are **not** the general mathematical proof, a simulation of channel reliability, a full inner-code implementation, or a runtime benchmark.
+
+## Attribution verification
+
+The candidate properly labels standard ingredients as standard. Independently opened and verified the cited primary lecture notes on 2026-11-03: [Anup Rao, Lecture 2](https://homes.cs.washington.edu/~anuprao/pubs/codingtheory/lecture2.pdf) explicitly discusses greedy Gilbert–Varshamov construction; [Lecture 4](https://homes.cs.washington.edu/~anuprao/pubs/codingtheory/lecture4.pdf) covers Reed–Solomon evaluation and decoding. These are orientation references; all needed bounds and root arguments are supplied in the candidate itself. No priority or novelty conclusion is inferred.
+
+## Limits
+
+Fixed known rational W only for the computation claim. Constants/exponents may be impractical. No arbitrary-real exact ML, unknown/M-dependent channel, feedback, adversarial noise, free receiver statistics, or neural architecture conclusion. Review is local; no repository publication or accepted-manuscript modification occurred.

@@ -1,0 +1,703 @@
+\section{Observation separation and lower bounds}
+\label{sec:negative-proofs}
+
+Throughout this section a word has symbols $X_0,\ldots,X_{M+1}$,
+pair states $Y_i=(X_i,X_{i+1})$, and departures $0\le i<M$.
+Write $J_{ab}=\sum_{i<M}\ind\{Y_i=ab\}$,
+$J_{\rm cross}=J_{01}+J_{10}$, and $N_{abc}=H_{abc}(X)$.
+Thus $Y_M$ is a terminal pair, not a departure. All risks below include
+independent predictor randomness. The observation $\mathcal T_r$ consists
+of the eight triple counts and the actual first and last $r$ symbols.
+
+\subsection{An exact occupation mixture}
+
+For $0<a,t<1$, let $Q_a$ be the stationary law with pair transition matrix,
+in the order $00,01,10,11$,
+\[
+ P_a=\begin{pmatrix}
+ 1-a&a&0&0\\
+ 0&0&1/2&1/2\\
+ 1/2&1/2&0&0\\
+ 0&0&t&1-t
+ \end{pmatrix},\qquad
+ \Pi_a=\frac{(t/a,2t,2t,1)}{1+t/a+4t}.
+\]
+In particular the stationary initial factor is
+$\Pi_a(11)=a/[t+(1+4t)a]$.
+
+\begin{lemma}[Occupation-mixture domination]
+\label{lem:mixture}
+Put $F=\{Y_0=11,Y_M=00\}$ and $U=N_{001}$. For every integer $j$,
+every integer $u_0\ge1$, every interval $I\subset(0,1)$, and every
+additional event $G$ (possibly depending on $a$),
+\[
+ \int_I Q_a(F,J_{00}=j,U\ge u_0,G)\,\frac{da}{a}
+ \le \frac{t}{u_0}.
+\]
+\end{lemma}
+\begin{proof}
+Delete every transition departing from $00$, both loops and exits.
+For $J_{00}=j$, exactly $L=M-j$ transitions remain. Their last transition
+is $10\to00$. Before that transition the retained path is on
+$B=01,C=10,D=11$. A retained $C\to00$ followed by an erased exit
+$00\to B$ is represented by a marked $C\to B$ of weight $1/2$;
+a direct $C\to B$ is unmarked and also has weight $1/2$. The erased
+exit's factor $a$ is restored separately. All other retained transitions
+keep their probabilities. The marked transition matrix is therefore
+\[
+ K(z)=\begin{pmatrix}
+ 0&1/2&1/2\\ (1+z)/2&0&0\\ 0&t&1-t
+ \end{pmatrix}.
+\]
+For $L\ge1$, define
+\[
+ h_{L,u}=\tfrac12[z^u](K(z)^{L-1})_{D,C},
+\]
+and set $h_{L,u}=0$ for $L\le0$ or $u<0$. The final transition
+$C\to00$ has weight $1/2$ and is not marked. A skeleton with $u$ marks
+has $u$ completed visits to $00$ and one terminal visit. Distributing
+its $j-u$ loops among these $u+1$ holding slots gives exactly
+$\binom ju$ weak compositions. Each composition and marked skeleton
+recover one word, and deletion recovers both uniquely. Consequently,
+for $0\le u\le j$,
+\begin{equation}
+ Q_a(F,J_{00}=j,U=u)
+ =\Pi_a(11)\binom ju a^u(1-a)^{j-u}h_{M-j,u}.
+ \label{eq:marked-word-identity}
+\end{equation}
+Infeasible cases have zero mass. The terminal holding slot is present
+even though $Y_M$ is not a departure; there is no initial $00$ slot.
+
+For $u\ge1$, the beta integral gives
+$\binom ju\mathrm B(u,j-u+1)=1/u$. Thus, if
+$A_{j,u}$ has the $\operatorname{Beta}(u,j-u+1)$ law,
+\begin{align}
+ \int_0^1 Q_a(F,J_{00}=j,U=u)\,\frac{da}{a}
+ &=\frac{h_{M-j,u}}{u}\E\Pi_{A_{j,u}}(11)
+ \le\frac{h_{M-j,u}}{u}. \label{eq:stationary-beta-factor}
+\end{align}
+The expectation is part of the equality: stationarity has not been
+cancelled. For $u=0$ the corresponding factor is instead
+$h_{M-j,0}\int_0^1(1-a)^j/[t+(1+4t)a]\,da$, and no $1/u$ formula
+is used. This is why $u_0>0$ is required.
+
+To sum over marks at the exact outside horizon, put $R=K(1)$.
+This matrix is stochastic. Started at $D$, let $b_n,c_n,d_n$ be its
+probabilities of $B,C,D$. Then
+\[
+ c_0=0,\quad c_1=t,\quad b_n=c_{n-1}\ (n\ge1),\qquad
+ c_n=\tfrac12 c_{n-2}+td_{n-1}\ (n\ge2).
+\]
+Induction gives $c_n\le2t$. Hence, for each $L\ge1$,
+\[
+ \sum_{u\ge0}h_{L,u}=\tfrac12 c_{L-1}\le t.
+\]
+First drop $G$ and enlarge $I$ to $(0,1)$ in the nonnegative integral.
+Then sum \eqref{eq:stationary-beta-factor} over $u\ge u_0$ to obtain
+\[
+ \int_I Q_a(F,J_{00}=j,U\ge u_0,G)\,\frac{da}{a}
+ \le\sum_{u\ge u_0}\frac{h_{M-j,u}}u
+ \le\frac1{u_0}\sum_{u\ge0}h_{M-j,u}\le\frac t{u_0}.
+\]
+No conditioning on a prescribed number of outside marks or replacement
+of the horizon $M-j$ is involved.
+\end{proof}
+
+\subsection{Relocating loops while preserving sampled windows}
+
+\begin{lemma}[Interior loop relocation]
+\label{lem:relocation}
+Suppose $Y_0=11,Y_M=00$, $2\le r$, and $2r\le M+2$.
+Put $l=r-2$, $h=M-r+2$. If the interior vertices
+$Y_l,\ldots,Y_h$ contain a visit to $11$ strictly before a visit to $00$,
+there is a deterministic transformation $C_r$ preserving the complete
+triple histogram and the actual first and last $r$ symbols, such that,
+with $j=J_{00}$,
+\begin{equation}
+ d_H\bigl(C_r(X),1^{M+2-j}0^j\bigr)
+ \le3J_{\rm cross}+4r-5.
+ \label{eq:relocation-distance}
+\end{equation}
+If at least one of the two movable diagonal-loop types is absent, the
+same conclusion holds without the ordered-visit condition.
+\end{lemma}
+\begin{proof}
+Freeze departures $i<l$ and $i\ge h$. These are $2r-4$ edges and
+spell exactly the sampled boundary symbols. From the interior path
+remove only the $111$ and $000$ loops, in numbers $A_1$ and $A_0$,
+retaining every other edge in order. Let $S_0,\ldots,S_L$ be its vertices.
+Deleting self-loops neither removes a distinct-state visit nor reverses
+its order. Choose the first retained $11$ and the first subsequent
+retained $00$; insert all $A_1$ loops at the former and all $A_0$ at
+the latter. The choice is deterministic. Deleting or inserting a loop
+preserves its attachment pair. Reinserting exactly the removed number
+of edges preserves the absolute suffix attachment index $h$, so the
+frozen edge labels and all sampled boundary symbols are unchanged.
+Every triple label is retained or reinserted once, proving histogram
+preservation. Unfrozen boundary-crossing triples need not keep their
+individual positions.
+
+Here is the required positional count argument. A binary word of length
+$N$ with a distinguished block of $A_1$ ones before a distinguished
+block of $A_0$ zeros has $o$ other ones and $z$ other zeros. If
+$j=A_0+q$, $q\ge0$, then
+\begin{equation}
+ d_H(\text{word},1^{N-j}0^j)
+ \le\max\{z+q,\,2o+z-q\}. \label{eq:two-block-distance}
+\end{equation}
+Indeed, write $z_-$ for zeros before the target cut. The exact mismatch
+count is $2z_-+j-(A_0+z)$. If a distinguished one lies after the cut,
+all distinguished zeros lie after the cut and $z_-\le z$, giving
+$z+q$. Otherwise every one after the cut is among the $o$ other ones;
+writing $o_+$ for their number, the other exact identity is
+$2o_++(A_0+z)-j$, at most $2o+z-q$. This proof does not presume any
+order among the remaining symbols.
+
+Put $u=N_{001}$, $v=N_{011}$, $p=N_{010}$, $w=N_{101}$, and
+$d=J_{\rm cross}$. Endpoint flow gives
+\[
+ N_{100}=u+1,\qquad N_{110}=v+1,\qquad
+ d=p+v+u+1+w.
+\]
+Let $f_1,f_0$ be the frozen $111,000$ loop counts, so
+$f_1+f_0\le2r-4$. The initial pair contributes two other ones.
+Counting the appended symbol of every remaining edge gives exactly
+\begin{align*}
+ o&=2+u+v+w+f_1=d+1-p+f_1,\\
+ z&=p+u+v+2+f_0=d+1-w+f_0,\\
+ q&=j-A_0=u+f_0\ge0.
+\end{align*}
+Since $u\le d-1$ and $d\ge1$,
+\begin{align*}
+ z+q&=d+1-w+u+2f_0\le2d+2f_0,\\
+ 2o+z-q&=3d+3-2p-w-u+2f_1\le3d+3+2f_1.
+\end{align*}
+Each is at most $3d+4r-5$, proving \eqref{eq:relocation-distance}.
+If only one movable loop type occurs, put its block at any retained
+visit to its state, which exists because the loops were deleted there.
+The same two-block argument treats the absent block as empty; if both
+are absent use the identity transformation.
+
+Finally, $j$ is the sampled word's actual departure count. The comparison
+word has instead
+\begin{equation}
+ J_{00}(1^{M+2-j}0^j)=j-2\quad(2\le j\le M).
+ \label{eq:null-suffix-shift}
+\end{equation}
+For this range its final pair and the transformed word's final pair are
+both $00$, so all their Hamming differences are in the editable first
+$M$ coordinates.
+\end{proof}
+
+\subsection{A finite matched-observation lower bound}
+
+\begin{proposition}[Finite critical lower bound]
+\label{prop:finite-lower}
+Let
+\[
+ c=2^{-16},\quad A=2^{12},\quad t=\frac{ck}{M},\quad
+ u_0=\lfloor ck/4\rfloor,\quad T=\lfloor M/8\rfloor,\quad
+ L_-=\log\frac1{4At}.
+\]
+Assume integer $M,k,r$ satisfy
+\begin{equation}
+ \begin{gathered}
+ M\ge64,\quad 2\le r\le k/128,\quad k\le M/8,\quad ck\ge1024,\\
+ At<1/4,\qquad \frac M{k^2}\le\frac{Ac^2}{2^{20}}.
+ \end{gathered}\label{eq:finite-lower-domain}
+\end{equation}
+For any fixed predictor based on $\mathcal T_r$, let $S$ be its supremum
+clean risk over the stationary laws $Q_a$, $At\le a\le1/4$.
+Every such source satisfies the all-state certificate with supplied
+$\beta=1/M$. There is a stationary source with the same supplied
+certificate and one source-independent strict-$k$ corruption kernel
+for which
+\begin{equation}
+ R_{\rm null}\ge\frac{u_0}{8Mt}
+       \left[\left(\frac t{16}-S\right)L_-\right]_+.
+ \label{eq:finite-lower}
+\end{equation}
+The kernel protects the final pair on every input and every output.
+\end{proposition}
+\begin{proof}
+We give the source, probability, and kernel calculations separately.
+
+\paragraph{Source legality and all sixteen certificate entries.}
+Throughout $t\le c/8$, $a\ge At\ge t$, and $a\le1/4$. Set
+$D=1+t/a+4t$. Then
+$1\le D\le1+1/A+c/2<4/3<2$.
+The flow equalities
+$\Pi_a(00)a=\Pi_a(10)/2$ and
+$\Pi_a(11)t=\Pi_a(01)/2$, together with
+$\Pi_a(01)=\Pi_a(10)$, verify stationarity directly. Multiplication gives
+\begin{equation}
+ P_a^2=\begin{pmatrix}
+ (1-a)^2&(1-a)a&a/2&a/2\\
+ 1/4&1/4&t/2&(1-t)/2\\
+ (1-a)/2&a/2&1/4&1/4\\
+ t/2&t/2&(1-t)t&(1-t)^2
+ \end{pmatrix}.
+ \label{eq:all-sixteen}
+\end{equation}
+Every displayed entry is at least $t/2$: use $a\ge t$ and
+$a,t\le1/4$ for the products and all other entries are immediate.
+Since $t/2=ck/(2M)\ge1/M$, every starting and destination state obeys
+$P_a^2(u,v)\ge M^{-1}\Pi_a(v)$. Also $a\ge At\ge2/M$, so
+$a-\beta\ge a/2$.
+
+\paragraph{Common-atom covariance and coupling bounds.}
+The four paths to $11$ of length three, from the states in order, have
+probabilities
+\[
+ (1-a)a/2,\qquad (1-t)^2/2,\qquad a/4,\qquad(1-t)^3.
+\]
+These arise respectively from paths $00,00,01,11$;
+$01,11,11,11$; $10,00,01,11$; and $11,11,11,11$.
+Each is at least $\lambda=a/4$, so
+$P_a^3(x,\cdot)\ge\lambda\delta_{11}$ for every $x$.
+Split each three-step transition into this common atom and a residual
+probability law. Shared independent Bernoulli trials of probability
+$\lambda$ couple any two chains at the first common atom. Fill in each
+three-step block by its conditional bridge; this preserves the full
+one-step path law. After meeting, use identical transitions. Thus the
+contraction coefficient at lag $h$ is bounded by
+\[
+ \alpha_h=(1-\lambda)^{\lfloor h/3\rfloor}.
+\]
+
+For a stationary chain $W$, a departure-state-set count with stationary
+mass $p$, or a count of a specified directed edge with stationary
+probability $p$, satisfies
+\begin{equation}
+ \operatorname{Var}(V)\le\frac{7Mp}{\lambda}.
+ \label{eq:common-atom-variance}
+\end{equation}
+For an edge indicator $I_i$ and $h\ge1$, condition on the state after
+edge $i$. The conditional probability of edge $i+h$ is a $[0,1]$-valued
+function after $h-1$ transitions, whose deviation from its stationary
+value is at most $\alpha_{h-1}$. Therefore
+$|\operatorname{Cov}(I_i,I_{i+h})|\le p\alpha_{h-1}$.
+For a state-set indicator use $\alpha_h\le\alpha_{h-1}$ instead.
+Since $\sum_{h\ge1}\alpha_{h-1}=3/\lambda$, expansion of the variance
+gives $Mp(1+6/\lambda)\le7Mp/\lambda$, as claimed.
+
+Couple a chain $Z$ started at $00$ to stationary $W$ by the same block
+construction. Its meeting boundary $\sigma$ has
+\[
+ \E\sigma\le3/\lambda=12/a.
+\]
+Every departure-state or edge count in the two paths differs by at most
+$\sigma$ pathwise: after boundary $\sigma$ the paths agree, and there
+are at most $\sigma$ earlier departures. No independence of $\sigma$
+and the stationary counts is needed.
+
+\paragraph{Stationary reversal and count corrections.}
+Let $\mathcal R(ab)=ba$. The stationary triple identity
+\[
+ \Pi_a(ab)P_a(ab,bc)=\Pi_a(cb)P_a(cb,ba)
+\]
+holds for every triple: the only nonpalindromic cases are $001,100$
+and $011,110$, given by the two flow identities above. It implies
+$\mathcal R P_a^*\mathcal R=P_a$, where $P_a^*$ is the stationary
+reverse pair kernel. Reversing the symbols of a stationary word thus
+preserves its law. In particular, with
+$F=\{Y_0=11,Y_M=00\}$ and $E=\{Z_M=11\}$,
+\[
+ Q_a(F)=\Pi_a(00)P_{00}(E),
+\]
+and conditional on $F$, the reversed pair path
+$Z_i=\mathcal RY_{M-i}$ has law $P_{00}(\cdot\mid E)$.
+For $M\ge64$, $\lfloor M/3\rfloor\ge M/4$, and therefore
+\[
+ \alpha_M\le e^{-aM/16}\le\frac{16}{aM}
+ \le\frac{16}{Ack}\le\frac14.
+\]
+Since $\Pi_a(11)=1/D\ge3/4$, we have $P_{00}(E)\ge1/2$.
+
+Put $V(W)=N_{001}(W)$ and $x=ck$. Its stationary mean is
+$Mt/D\in[x/2,x]$. Consider the four conditions
+\begin{equation}
+ \sigma\le x/16,\quad |V(W)-Mt/D|\le x/8,\quad
+ J_{\rm cross}(W)\le k/32,\quad J_{00}(W)\le M/16.
+ \label{eq:preliminary-good}
+\end{equation}
+Their failure probabilities, respectively, are at most
+\begin{equation}
+ \frac{192M}{Ac^2k^2},\quad
+ \frac{1792M}{Ac^2k^2},\quad
+ \frac{458752M}{Ak^2},\quad \frac{16}{A}.
+ \label{eq:four-failures}
+\end{equation}
+The first follows from $\E\sigma\le12/a$ and $a\ge Ack/M$.
+For the second, \eqref{eq:common-atom-variance} with $p=t/D$ gives
+$\operatorname{Var}V\le28Mt/a$; divide by $(ck/8)^2$.
+For the third, the mean is $4Mt/D\le4ck\le k/64$, and
+$\operatorname{Var}J_{\rm cross}\le112Mt/a\le112M/A$;
+divide by $(k/64)^2$. For the last use
+$\Pi_a(00)=t/(aD)\le1/A$ and Markov's inequality.
+Conditioning the joint coupling on $E$ costs at most two. Under
+\eqref{eq:finite-lower-domain}, twice the sum in
+\eqref{eq:four-failures} is bounded by
+\[
+ 2\left(\frac{1984}{2^{20}}
+       +\frac{458752c^2}{2^{20}}+\frac{16}{A}\right)<\frac1{16}.
+\]
+
+On $F$, the exact reversal identities are
+\begin{equation}
+ \begin{split}
+ J_{00}(Z)&=J_{00}(Y)+1,\\
+ J_{\rm cross}(Z)&=J_{\rm cross}(Y),\\
+ N_{001}(Z)&=N_{100}(Y)=N_{001}(Y)+1.
+ \end{split}\label{eq:reverse-count-shifts}
+\end{equation}
+The first compares arrival indices $1,\ldots,M$ with departure indices
+$0,\ldots,M-1$; the second loses no mixed endpoint; the third combines
+triple reversal with entry-minus-exit flow at $00$.
+Thus \eqref{eq:preliminary-good}, the pathwise coupling bound, and
+$x\ge1024$ imply for the original path
+\begin{align*}
+ U&\ge x/2-x/8-x/16-1\ge x/4\ge u_0,\\
+ J_{\rm cross}&\le k/32+ck/16\le k/16,\\
+ 2\le u_0&\le J_{00}\le M/16+ck/16\le M/8.
+\end{align*}
+The integer upper count bound is $J_{00}\le T$.
+
+\paragraph{Ordered visits in the interior.}
+Let $l=r-2$ and $h=M-r+2$. Since $r\le M/1024$,
+$h-l=M-2r+4\ge M/2$. Write $B$ for a visit to $11$ before a later
+visit to $00$ within $Y_l,\ldots,Y_h$. Because $M-h=l$ and $M-l=h$,
+reversal sends this event precisely to a visit to $00$ before a later
+visit to $11$ within $Z_l,\ldots,Z_h$.
+
+The ordinary expected hitting times of $00$ and $11$, zero at their
+targets and listed in state order, are
+\begin{align*}
+ h_{00}&=(0,\,4+1/t,\,3+1/(2t),\,3+3/(2t)),\\
+ h_{11}&=(3+3/(2a),\,3+1/(2a),\,4+1/a,\,0).
+\end{align*}
+For completeness, the first vector follows by solving
+$h_{01}=1+(h_{10}+h_{11})/2$,
+$h_{10}=1+h_{01}/2$, and
+$h_{11}=1+th_{10}+(1-t)h_{11}$, with $h_{00}=0$.
+For the second solve
+$h_{00}=1+(1-a)h_{00}+ah_{01}$,
+$h_{01}=1+h_{10}/2$, and
+$h_{10}=1+(h_{00}+h_{01})/2$, with $h_{11}=0$.
+On $a,t\le1/4$ the two maxima are
+$3+3/(2t)$ and $3+3/(2a)$. From any state at time $l$, hitting $00$
+and then $11$ therefore has expected additional time at most
+\[
+ 6+\frac{3}{2t}+\frac{3}{2a}\le\frac6t.
+\]
+This uses the strong Markov property at the first hit: partition by its
+finite time and state, apply the usual Markov property on each event,
+and sum. Distinct targets make the ordering strict. Markov's inequality
+over $h-l\ge M/2$ bounds the unconditioned failure probability by
+$12/(tM)$. Dividing by $P_{00}(E)\ge1/2$ gives
+\[
+ Q_a(B^c\mid F)\le\frac{24}{ck}\le\frac3{128}.
+\]
+This estimate is uniform in the time-$l$ state; it assumes no
+independence from the final state or the counts.
+
+Let $G$ be the intersection of $B$ with
+$U\ge u_0$, $J_{\rm cross}\le k/16$, and $2\le J_{00}\le T$.
+The preceding count and hitting bounds give
+$Q_a(G\mid F)\ge1-1/16-3/128>1/2$. Retaining the rare endpoint mass,
+\begin{equation}
+ Q_a(F\cap G)\ge\Pi_a(00)/4,\qquad
+ (a-\beta)Q_a(F\cap G)\ge t/16.
+ \label{eq:good-event-mass}
+\end{equation}
+Indeed $P_{00}(E)\ge1/2$, $a-\beta\ge a/2$, and
+$a\Pi_a(00)=t/D\ge t/2$.
+
+\paragraph{The null and its full word masses.}
+Take a stationary first-order binary source with
+$T_*(1,0)=q_*=1/(2M)$ and $T_*(0,1)=\beta=1/M$.
+Its symbol masses are $\pi_*(0)=1/3$, $\pi_*(1)=2/3$.
+Its stationary pair law is $\Pi_*(s,z)=\pi_*(s)T_*(s,z)$, and
+for all starting and destination pair states,
+\[
+ \frac{P_*^2((u,v),(s,z))}{\Pi_*(s,z)}
+ =\frac{T_*(v,s)}{\pi_*(s)}.
+\]
+For $(v,s)=(0,0),(0,1),(1,0),(1,1)$ these four ratios are
+$3(1-\beta),\,3\beta/2,\,3q_*,\,3(1-q_*)/2$, respectively.
+They are all at least $\beta+q_*\ge\beta$, checking every pair-state
+certificate entry. The target at terminal $00$ is Bernoulli$(\beta)$,
+not Bernoulli$(q_*)$.
+For $2\le j\le T$ put $x^{(j)}=1^{M+2-j}0^j$.
+These disjoint words have full stationary masses
+\begin{equation}
+ v_j=\frac23(1-q_*)^{M+1-j}q_*(1-\beta)^{j-1}
+ \ge\frac1{8M}. \label{eq:null-word-masses}
+\end{equation}
+Bernoulli's inequality gives the prefix factor at least $1/2$ and
+the suffix factor at least $7/8$, so in fact the product is at least
+$7/(48M)>1/(8M)$. These masses include the initial symbol and every
+one of the $M+1$ transitions.
+
+\paragraph{A predeclared strict kernel with identity rejection.}
+For $2\le j\le T$, define a finite measure on words by
+\[
+ \nu_j(dy)=\int_{At}^{1/4}
+       Q_a(dy;F,U\ge u_0,J_{00}=j)\,\frac{da}{a},
+ \qquad \mu_j=\nu_j(\text{all words}).
+\]
+Lemma~\ref{lem:mixture} gives $\mu_j\le t/u_0$.
+For $\mu_j>0$, normalization $\nu_j/\mu_j$ is a probability law.
+These laws depend only on declared $M,k,r$ and the auxiliary family,
+not the true source, its parameters, its initial law, or a predictor seed.
+
+On input $x^{(j)}$ with $\mu_j>0$, draw $Y$ once from
+$\nu_j/\mu_j$. If $B$ holds, form the deterministic $C_r(Y)$ of
+Lemma~\ref{lem:relocation}. Accept it only if its actual Hamming
+distance from $x^{(j)}$ is at most $k$ and its final pair equals that
+of $x^{(j)}$. Otherwise output the unchanged input. On zero-mass labels
+and all other input words, also output the unchanged input. This defines
+one source-independent kernel on all words, with a strict pointwise
+budget and protected final pair, not merely an average budget.
+It uses one draw, not repeated sampling until acceptance.
+
+On $G$, Lemma~\ref{lem:relocation} bounds the distance by
+$3k/16+4r\le3k/16+k/32<k$, so every check succeeds, and
+\[
+ \mathcal T_r(C_r(Y))=\mathcal T_r(Y).
+\]
+The same statistic identity holds on every transformed acceptance;
+it is not asserted on identity rejections. These are the sampled
+alternative's boundary windows, not necessarily the null input's
+windows. Input-window edits are allowed and included in the Hamming
+check. The suffix label obeys exactly
+$J_{00}(x^{(j)})=j-2$ and $J_{00}(Y)=j$.
+
+\paragraph{Nonnegative-loss ordering.}
+For a sampled word $y$, let $\ell_a(y)$ be the predictor's expected
+absolute error against $a$ on $\mathcal T_r(y)$, and let $\ell_*(y)$
+be its corresponding error against $\beta$. On $F$ the clean actual
+terminal target is $a$; the triangle inequality, also after averaging
+independent decoder randomness, gives
+$\ell_*(y)\ge a-\beta-\ell_a(y)$.
+For $\mu_j>0$, \eqref{eq:null-word-masses} gives
+\[
+ \frac{v_j}{\mu_j}\ge\rho:=\frac{u_0}{8Mt}.
+\]
+First discard nonnegative losses from other null inputs and rejected
+proposals. On the remaining nonnegative accepted losses, replace
+$v_j/\mu_j$ by $\rho$. Next restrict to $G$, where acceptance and
+statistic matching hold. Only then use the signed triangle bound:
+\begin{align*}
+ R_{\rm null}
+ &\ge\rho\int_{At}^{1/4}
+          \E_{Q_a}[\ind_{F\cap G}\ell_*(Y)]\,\frac{da}{a}\\
+ &\ge\rho\int_{At}^{1/4}
+    \left((a-\beta)Q_a(F\cap G)
+          -\E_{Q_a}[\ind_{F\cap G}\ell_a(Y)]\right)\frac{da}{a}\\
+ &\ge\rho\left(\frac t{16}-S\right)L_-.
+\end{align*}
+The restricted alternative loss is bounded by its unconditional clean
+risk, hence by $S$. Risk is nonnegative, giving \eqref{eq:finite-lower}.
+In particular, no lower mass multiplier has been placed in front of a
+possibly negative quantity, and no endpoint-conditioned loss has been
+substituted for the unconditional target risk.
+\end{proof}
+
+\subsection{Consequences for widths and supplemental messages}
+
+\begin{proposition}[Width and fixed-fraction consequences]
+\label{prop:lower-consequences}
+For a prescribed sequence $2\le r_M\le M+2$, a finite uniform factor
+relative to $g_M(k)=\max\{M^{-1/2},k/M\}$ exists if and only if
+$\liminf_{M\to\infty}r_M/M>0$, for stationary or arbitrary starts.
+For each fixed $0<\alpha\le1/4096$ and
+$r_M=\max\{2,\lceil\alpha M\rceil\}$,
+\[
+ 2^{-26}\log\frac1{32\alpha}
+ \le C_{\rm stat}(\alpha)
+ \le C_{\rm all}(\alpha)
+ \le2^{19}\left(1+\log\frac2\alpha\right).
+\]
+With exact counts and protected terminal pair, optionally also the
+initial pair, a post-corruption full-word encoder needs at least two
+supplemental symbols to attain a finite uniform factor; two suffice
+when its message is exact and fault-free.
+\end{proposition}
+\begin{proof}
+Suppose first that the liminf is zero. Select an increasing subsequence
+on which $r_M/M\to0$, and on that subsequence put
+\[
+ b_M=\max\{r_M,\sqrt M\},\qquad
+ k_M=\lfloor\sqrt{Mb_M}\rfloor.
+\]
+Then $b_M=o(M)$, $k_M/M\to0$, $k_M/b_M\to\infty$,
+$r_M/k_M\to0$, and $k_M/\sqrt M\to\infty$. Moreover
+$M/k_M^2\to0$, so every condition in
+\eqref{eq:finite-lower-domain} holds eventually. Here
+$t_M=ck_M/M$, $\rho=u_0/(8Mt_M)$, $L_-\to\infty$, and
+$\rho\to1/32$.
+If one $k$-blind family had a finite admissible factor $C$, its clean
+risk on every alternative at this same $M$ and supplied certificate
+would satisfy $S_M\le C/\sqrt M=o(t_M)$. For example, eventually
+$\rho\ge1/64$ and $t_M/16-S_M\ge t_M/32$, so
+\[
+ \frac{R_{\rm null}}{g_M(k_M)}
+ \ge\frac{c}{2048}L_-\longrightarrow\infty,
+\]
+since $g_M(k_M)=k_M/M$ eventually. This contradicts $C$.
+The alternatives may depend on the tested budget, but the predictor
+and its clean guarantee are the same map at the same horizon. These
+stationary witnesses also rule out an all-start guarantee.
+
+Conversely, if the liminf is positive, choose $\delta>0$ and $M_0$
+so $r_M\ge\delta M$ for $M\ge M_0$. Put
+$m_M=\min\{r_M-2,\lfloor M/2\rfloor\}$.
+Then $(m_M+1)/M$ is bounded away from zero for all sufficiently large
+$M$. The suffix estimate of Proposition~\ref{prop:finite-upper} is at
+most $2^{19}[1+\log(M/(m_M+1))]g_M(k)$ at $\beta=1/M$, so gives
+one uniform all-start factor eventually. A finite initial set of
+horizons is harmless: any prediction has risk at most one and
+$g_M(k)\ge M^{-1/2}$. This proves the exact criterion without
+monotonicity of the widths.
+
+Now fix $\alpha>0$ in the stated interval before sending $M$ to
+infinity. For any family with finite admissible stationary factor $C$,
+put $k=128r_M$ at sufficiently large horizons. Then
+\[
+ \frac kM\to128\alpha\le\frac1{32},\quad
+ t\to128c\alpha>0,\quad At\to8\alpha<\frac14,
+\]
+all finite-domain conditions eventually hold, and
+\[
+ L_-\to\log\frac1{32\alpha},\qquad
+ \frac{u_0}{8Mt}\to\frac1{32},\qquad
+ S/t\le\frac{C}{t\sqrt M}\to0.
+\]
+For these budgets $k\ge\sqrt M$ eventually. Using the deliberately
+loose $g_M(k)\le2k/M$ in \eqref{eq:finite-lower}, the positive limiting
+bracket gives
+\[
+ C\ge\liminf_{M\to\infty}\frac{R_{\rm null}}{g_M(k)}
+ \ge\frac1{32}\frac{c}{32}\log\frac1{32\alpha}
+ =2^{-26}\log\frac1{32\alpha}.
+\]
+This holds for every admissible finite factor, so taking the infimum
+does not require an attained optimum. The upper follows from
+Proposition~\ref{prop:finite-upper}: $m_M+1\ge\alpha M/2$, including
+$r_M=2$, hence $1+\log(M/(m_M+1))\le1+\log(2/\alpha)$.
+The stationary class is a subclass of the arbitrary-start class.
+These arguments take the horizon limit for each fixed fraction and
+factor; they neither exchange limits nor give an every-budget
+logarithmic risk lower bound.
+
+Finally, a one-symbol supplemental alphabet is constant, so leaves
+only counts and the supplied endpoint pair or pairs. At $r_M=2$ even
+both endpoint pairs are insufficient by the necessity just proved.
+The exact one-bit factorization in
+Proposition~\ref{prop:finite-upper} supplies two symbols and has
+all-start risk at most $(2^{17}+2^{23})g_M(k)$. This concerns a
+fault-free message computed by scanning the whole already corrupted
+word, not one raw coordinate or a message subject to further corruption.
+\end{proof}
+
+\subsection{Elementary same-information oracle lower floors}
+
+\begin{lemma}[Critical oracle lower floors]
+\label{lem:oracle-floor}
+For every $M\ge64$ and $0\le k\le M$, the stationary minimax risk
+with supplied $\beta=1/M$ is at least $g_M(k)/96$, even if the predictor
+knows $k$ and observes the entire corrupted word. Consequently this
+lower bound holds for each restricted observation considered here and
+for the arbitrary-start minimax risk.
+\end{lemma}
+\begin{proof}
+We give separate clean and edit witnesses; taking their maximum is
+permitted in a minimax lower bound.
+
+\paragraph{Clean floor.}
+Put $N=M+2$ and use stationary IID Bernoulli sources
+\[
+ p_\pm=\tfrac12\pm\frac1{16\sqrt N}.
+\]
+Their pair chains satisfy $P^2(u,v)=\Pi(v)$ for every row, hence the
+supplied certificate. The target is $p_\pm$ at every terminal pair.
+The elementary Bernoulli divergence bound
+\[
+ d(p\Vert q)\le\frac{(p-q)^2}{q(1-q)}
+\]
+follows by applying $\log x\le x-1$ to its two summands.
+With $\Delta=p_+-p_-=1/(8\sqrt N)$, it gives one-letter divergence
+at most $1/(8N)$. Independence makes the full-word divergence at most
+$1/8$, and their total variation distance is at most $1/4$.
+For clarity, this last inequality follows without a statistical
+independence assertion about a selected row: for finite probability
+laws $P,Q$, group their masses on
+$A=\{x:P(x)\ge Q(x)\}$ and its complement. The log-sum inequality
+(Jensen's inequality for $x\log x$) gives
+$D(P\Vert Q)\ge d(P(A)\Vert Q(A))$.
+For fixed $q$, the second derivative in $p$ of $d(p\Vert q)$ is
+$1/[p(1-p)]\ge4$; its value and first derivative vanish at $p=q$.
+Thus $D(P\Vert Q)\ge2(P(A)-Q(A))^2=2\TV(P,Q)^2$.
+
+Testing by the nearer target makes each error incur prediction loss
+at least $\Delta/2$. Every possibly randomized test has average error
+at least $(1-\TV(P,Q))/2$, since the difference of its acceptance
+probabilities is at most total variation. Thus the average prediction
+risk is at least
+\[
+ \frac\Delta4(1-\TV(P,Q))
+ \ge\frac3{128\sqrt N}\ge\frac1{64\sqrt M}.
+\]
+Identity corruption is allowed at every $k$, including for a
+known-budget predictor.
+
+\paragraph{Edit floor.}
+For $k\ge1$, use the uniform prior on IID Bernoulli parameters
+$p\in[1/4,3/4]$. Put $b=k+1$. If the first $M$ symbols contain $n$
+ones, retain a uniformly chosen set of
+$r=b\lfloor n/b\rfloor$ of those ones, turning the others to zero.
+Leave the final two symbols $U$ unchanged. This single kernel is
+source-independent and changes $n-r\le b-1=k$ editable bits on every
+outcome.
+For a specified retained set $T$ of size $r$, conditional on $n$,
+\[
+ \Pr(T\text{ retained}\mid n)
+ =\frac{\binom{M-r}{n-r}}
+        {\binom Mn\binom nr}
+ =\frac1{\binom Mr}.
+\]
+Hence conditional on $r,U$ the output arrangement is uniform and
+independent of $p$, even after mixing the possible $n$ in a bucket.
+The full observation factors through at most
+\[
+ D=4\bigl(\lfloor M/b\rfloor+1\bigr)
+\]
+labels $(r,U)$ followed by a $p$-independent channel. The four protected
+pair possibilities are counted, not conditioned away.
+
+Realize that channel using a seed independent of $p$ and of the label,
+and likewise use an independent decoder seed. Freeze both seeds.
+There are at most $D$ possible prediction values. For the uniform
+prior on an interval of length $\ell=1/2$, the union of radius-$v$
+neighborhoods of those values has prior mass at most $2Dv/\ell$,
+regardless of how a label is randomly selected conditional on $p$.
+Outside that union every possible prediction has error greater than
+$v$. Integrating this probability bound gives Bayes absolute-error
+risk at least
+\[
+ \int_0^{\ell/(2D)}\left(1-\frac{2Dv}{\ell}\right)dv
+ =\frac\ell{4D}.
+\]
+Averaging the independent seeds preserves it. Consequently some
+parameter in the prior support has risk at least
+\[
+ \frac1{32(\lfloor M/(k+1)\rfloor+1)}
+ \ge\frac{k+1}{32(M+k+1)}\ge\frac{k}{96M}.
+\]
+IID stationarity and $P^2(u,v)=\Pi(v)$ again give the same source
+class and supplied certificate, with target $p$ at every row. Combining
+the clean floor and edit floor yields $g_M(k)/96$, also at $k=0$.
+A predictor with less information can only have a larger minimax risk,
+and allowing arbitrary starts contains the stationary experiment.
+\end{proof}
