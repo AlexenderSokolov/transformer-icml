@@ -1,0 +1,5 @@
+Evidence limit addendum, 2026-11-03 16:41 UTC
+
+This note supplements, without modifying, version_correction_20261103_1641.txt (SHA-256 84808de8f8b807c9127e3feaf33b1edcf99cefbdf1967584ba14465aa1e839cd).
+
+The original invocation generated aggregate lines only. It did not save 508 individual case inputs and results, the Python version, optimization/exception settings, environment snapshot, or an exit code in the visible tool record. Whether assertions were enabled was not recorded. The recorded output reached the N=8 summary with no visible assertion failure, but does not constitute a fully auditable per-case pass record. The previously reported statement that all 508 cases passed is therefore withdrawn as an evidence claim. The original command and aggregate output have been transcribed in run_record_from_tool_transcript.txt (SHA-256 1714c5adb457011e610c53f0ee371755e96bc180d6850294458e3bc3e37ec30a). No subsequent execution can substitute for missing original observations. No further tests or reruns were performed after the work was halted.

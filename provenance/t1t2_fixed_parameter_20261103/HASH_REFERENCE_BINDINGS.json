@@ -1,0 +1,2707 @@
+{
+  "base_commit": "4a0732d7e1dd34ba242b633e2397dd263563d0f6",
+  "sha256_reference_occurrences": 91,
+  "unique_referenced_sha256": 34,
+  "sha1_reference_occurrences": 0,
+  "all_identified": true,
+  "all_publicly_accessible_after_export": false,
+  "all_current_scientific_companions_accessible_after_export": true,
+  "census_scope": "Every full 64-hex SHA-256 and standalone 40-hex SHA-1 literal in the frozen sources and exports, with distinct original/export coordinates. Original manifest digests identify originals, not normalized exports.",
+  "unshipped_references": [],
+  "unavailable_original_references": [
+    {
+      "status": "OVERWRITTEN_ORIGINAL_BYTES_UNAVAILABLE",
+      "referenced_original_sha256": "69c60c139b59e572ea0c0fb300d53741d24e1a8157a5a54fd16d9dfdda6d3316",
+      "historical_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+      "public_path": null,
+      "public_identity": null,
+      "original_byte_count": null,
+      "original_git_blob_sha1": null,
+      "current_distinct_version_source_id": "FPC019",
+      "current_distinct_version_original_identity": {
+        "bytes": 8685,
+        "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+        "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc"
+      },
+      "mandatory_correction_sources": [
+        "FPC021",
+        "FPC018",
+        "FPC020",
+        "FPC017"
+      ],
+      "evidence": "Only the historical digest survives in the aggregate transcript and version correction. No verified original bytes were found in the reported bounded search scope. The current version is not a recovery or byte match of the overwritten original."
+    }
+  ],
+  "references": [
+    {
+      "source_record_id": "FPC001",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/SHA256SUMS_v1.txt",
+      "referenced_sha256": "0f6e3ce292953f3a2552e1eae702a6e66027e3066c270fcbb6267568d8474488",
+      "original_utf8_byte_range_zero_based_half_open": [
+        0,
+        64
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        0,
+        64
+      ],
+      "resolution": {
+        "status": "original_source_of_selected_metadata_normalized_export",
+        "source_record_id": "FPC004",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11129,
+          "sha256": "0f6e3ce292953f3a2552e1eae702a6e66027e3066c270fcbb6267568d8474488",
+          "git_blob_sha1": "d0cfdbe01fa67265c0bb7de33c93ab7bdcbcb0c3"
+        },
+        "proposed_public_identity": {
+          "bytes": 11145,
+          "sha256": "64957a3bfc0f4cbf7304f762ea2b24fea376e8537966c29347f7386bf6b1ea62",
+          "git_blob_sha1": "5e4ae3601af8ce0e2e73a205deeed3a429298c4a"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": false
+      }
+    },
+    {
+      "source_record_id": "FPC001",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/SHA256SUMS_v1.txt",
+      "referenced_sha256": "0976b559badd3d63fe51d7aa5e2399a0f59a1b6ce3fb649d264f412c37749003",
+      "original_utf8_byte_range_zero_based_half_open": [
+        112,
+        176
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        112,
+        176
+      ],
+      "resolution": {
+        "status": "original_source_of_selected_metadata_normalized_export",
+        "source_record_id": "FPC005",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+        "original_identity": {
+          "bytes": 11700,
+          "sha256": "0976b559badd3d63fe51d7aa5e2399a0f59a1b6ce3fb649d264f412c37749003",
+          "git_blob_sha1": "293291d06784029c431314b2c63117f355683c2a"
+        },
+        "proposed_public_identity": {
+          "bytes": 11716,
+          "sha256": "d055ca16a76fdef418f53289b1a03603de24678fed4ecba3149d1893c111edbf",
+          "git_blob_sha1": "a2003a4af24879e0d9118548b615d3e3688973bd"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": false
+      }
+    },
+    {
+      "source_record_id": "FPC001",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/SHA256SUMS_v1.txt",
+      "referenced_sha256": "61696e5d49c65ed3e47e40601740b2a5b0f53fcd3c70635dd2ed9bd397cf8246",
+      "original_utf8_byte_range_zero_based_half_open": [
+        224,
+        288
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        224,
+        288
+      ],
+      "resolution": {
+        "status": "original_source_of_selected_metadata_normalized_export",
+        "source_record_id": "FPC006",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+        "original_identity": {
+          "bytes": 12772,
+          "sha256": "61696e5d49c65ed3e47e40601740b2a5b0f53fcd3c70635dd2ed9bd397cf8246",
+          "git_blob_sha1": "8d938e136dc605f9f729c805d7b8cc02c1b68b1b"
+        },
+        "proposed_public_identity": {
+          "bytes": 12788,
+          "sha256": "02cab5fac2a337187962c4cbe33abb9bd1102e64043656e1e55dc4c9d8f215c7",
+          "git_blob_sha1": "ef1af99611f734f19e16351da880e47b93da7147"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": false
+      }
+    },
+    {
+      "source_record_id": "FPC001",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/SHA256SUMS_v1.txt",
+      "referenced_sha256": "da6329c359c046a6fc902b8bfb230d994114ba4b45209c662b71bd6c76ce3948",
+      "original_utf8_byte_range_zero_based_half_open": [
+        336,
+        400
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        336,
+        400
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC002",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/han_jana_wu_prior_art_addendum_v1.html",
+        "original_identity": {
+          "bytes": 4816,
+          "sha256": "da6329c359c046a6fc902b8bfb230d994114ba4b45209c662b71bd6c76ce3948",
+          "git_blob_sha1": "4494ec654fd9afb1fa1c59a0050a1730fdbf6386"
+        },
+        "proposed_public_identity": {
+          "bytes": 4816,
+          "sha256": "da6329c359c046a6fc902b8bfb230d994114ba4b45209c662b71bd6c76ce3948",
+          "git_blob_sha1": "4494ec654fd9afb1fa1c59a0050a1730fdbf6386"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC001",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/SHA256SUMS_v1.txt",
+      "referenced_sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+      "original_utf8_byte_range_zero_based_half_open": [
+        441,
+        505
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        441,
+        505
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC003",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/han_jana_wu_prior_art_addendum_v2.html",
+        "original_identity": {
+          "bytes": 5335,
+          "sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+          "git_blob_sha1": "26a8f7df7eb288d73c7a44e4e55969ad1c5a6656"
+        },
+        "proposed_public_identity": {
+          "bytes": 5335,
+          "sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+          "git_blob_sha1": "26a8f7df7eb288d73c7a44e4e55969ad1c5a6656"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC001",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/SHA256SUMS_v1.txt",
+      "referenced_sha256": "96f9eb0e6ab5f178c755b425694a65a860cecdb16cc60192a1911c12d3d80ee1",
+      "original_utf8_byte_range_zero_based_half_open": [
+        546,
+        610
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        546,
+        610
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC007",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/v3_changes_from_v2.html",
+        "original_identity": {
+          "bytes": 898,
+          "sha256": "96f9eb0e6ab5f178c755b425694a65a860cecdb16cc60192a1911c12d3d80ee1",
+          "git_blob_sha1": "3f623a512ea19be21f254dad7092d9061c06d49d"
+        },
+        "proposed_public_identity": {
+          "bytes": 898,
+          "sha256": "96f9eb0e6ab5f178c755b425694a65a860cecdb16cc60192a1911c12d3d80ee1",
+          "git_blob_sha1": "3f623a512ea19be21f254dad7092d9061c06d49d"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC001",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/SHA256SUMS_v1.txt",
+      "referenced_sha256": "3dfeb9a20d430cabfaf5fd1aa9d65bb236890e63191a0a1b61f68c1f403c0cc1",
+      "original_utf8_byte_range_zero_based_half_open": [
+        636,
+        700
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        636,
+        700
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC008",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/v3_editorial_clarification_v1.html",
+        "original_identity": {
+          "bytes": 1888,
+          "sha256": "3dfeb9a20d430cabfaf5fd1aa9d65bb236890e63191a0a1b61f68c1f403c0cc1",
+          "git_blob_sha1": "a095b8e2c0e7eb40defe81e128ccaa0682732c16"
+        },
+        "proposed_public_identity": {
+          "bytes": 1888,
+          "sha256": "3dfeb9a20d430cabfaf5fd1aa9d65bb236890e63191a0a1b61f68c1f403c0cc1",
+          "git_blob_sha1": "a095b8e2c0e7eb40defe81e128ccaa0682732c16"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC002",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/han_jana_wu_prior_art_addendum_v1.html",
+      "referenced_sha256": "0976b559badd3d63fe51d7aa5e2399a0f59a1b6ce3fb649d264f412c37749003",
+      "original_utf8_byte_range_zero_based_half_open": [
+        557,
+        621
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        557,
+        621
+      ],
+      "resolution": {
+        "status": "original_source_of_selected_metadata_normalized_export",
+        "source_record_id": "FPC005",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+        "original_identity": {
+          "bytes": 11700,
+          "sha256": "0976b559badd3d63fe51d7aa5e2399a0f59a1b6ce3fb649d264f412c37749003",
+          "git_blob_sha1": "293291d06784029c431314b2c63117f355683c2a"
+        },
+        "proposed_public_identity": {
+          "bytes": 11716,
+          "sha256": "d055ca16a76fdef418f53289b1a03603de24678fed4ecba3149d1893c111edbf",
+          "git_blob_sha1": "a2003a4af24879e0d9118548b615d3e3688973bd"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": false
+      }
+    },
+    {
+      "source_record_id": "FPC003",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/han_jana_wu_prior_art_addendum_v2.html",
+      "referenced_sha256": "0976b559badd3d63fe51d7aa5e2399a0f59a1b6ce3fb649d264f412c37749003",
+      "original_utf8_byte_range_zero_based_half_open": [
+        557,
+        621
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        557,
+        621
+      ],
+      "resolution": {
+        "status": "original_source_of_selected_metadata_normalized_export",
+        "source_record_id": "FPC005",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+        "original_identity": {
+          "bytes": 11700,
+          "sha256": "0976b559badd3d63fe51d7aa5e2399a0f59a1b6ce3fb649d264f412c37749003",
+          "git_blob_sha1": "293291d06784029c431314b2c63117f355683c2a"
+        },
+        "proposed_public_identity": {
+          "bytes": 11716,
+          "sha256": "d055ca16a76fdef418f53289b1a03603de24678fed4ecba3149d1893c111edbf",
+          "git_blob_sha1": "a2003a4af24879e0d9118548b615d3e3688973bd"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": false
+      }
+    },
+    {
+      "source_record_id": "FPC003",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/han_jana_wu_prior_art_addendum_v2.html",
+      "referenced_sha256": "d6683e4deee1ed201e7ba66801509d88d34130a07c4a1539f3e36144e0b0e83f",
+      "original_utf8_byte_range_zero_based_half_open": [
+        4833,
+        4897
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        4833,
+        4897
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC030",
+        "public_path": "v10_research/unknown_u_compact_prior_audit_20261103_1515/han_version_correction_v1.html",
+        "original_identity": {
+          "bytes": 1860,
+          "sha256": "d6683e4deee1ed201e7ba66801509d88d34130a07c4a1539f3e36144e0b0e83f",
+          "git_blob_sha1": "b5a6f46b6220803782af75b846b6060f8e808cd8"
+        },
+        "proposed_public_identity": {
+          "bytes": 1860,
+          "sha256": "d6683e4deee1ed201e7ba66801509d88d34130a07c4a1539f3e36144e0b0e83f",
+          "git_blob_sha1": "b5a6f46b6220803782af75b846b6060f8e808cd8"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC004",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v1.html",
+      "referenced_sha256": "37a1b01e27f315097c5c910005605b877ba9b6d0de160940c7acc375b6af849b",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9681,
+        9745
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9681,
+        9745
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/rare_unknown_u_addone_20261103_1502/unknown_u_addone_matched_rate_v1.html",
+        "public_identity": {
+          "bytes": 11563,
+          "sha256": "37a1b01e27f315097c5c910005605b877ba9b6d0de160940c7acc375b6af849b",
+          "git_blob_sha1": "70a4d2af2c5b1487b15f032765707f5dec338424"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_unknown_u_addone_20261103_1502/unknown_u_addone_matched_rate_v1.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC004",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v1.html",
+      "referenced_sha256": "97ebbf5d680f5d0e8dfcd30b86924bdfcaa751082ca6f5cd6723f5b43c09c384",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9850,
+        9914
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9850,
+        9914
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/rare_unknown_u_addone_20261103_1502/fractional_grid_precision_correction_v1.html",
+        "public_identity": {
+          "bytes": 1422,
+          "sha256": "97ebbf5d680f5d0e8dfcd30b86924bdfcaa751082ca6f5cd6723f5b43c09c384",
+          "git_blob_sha1": "0733e1d45a095bc2eeab7c68903db649dad9f508"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_unknown_u_addone_20261103_1502/fractional_grid_precision_correction_v1.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC004",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v1.html",
+      "referenced_sha256": "99cea3beeea5380119a38d496b7b0a4bbefbe3a77e585fc8eb109af2817c304c",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9990,
+        10054
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9990,
+        10054
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 6980,
+          "sha256": "99cea3beeea5380119a38d496b7b0a4bbefbe3a77e585fc8eb109af2817c304c",
+          "git_blob_sha1": "aa0aa8fe3c6fdde574cb3c79ce47fab1a820b2fc"
+        },
+        "public_path": "v10_research/independent_unknown_u_addone_review_20261103_1504/independent_review.html",
+        "public_identity": {
+          "bytes": 6977,
+          "sha256": "399a6e92ca1e25246712886631a506a9a09e2335870cae311f59f94f17a1943b",
+          "git_blob_sha1": "ec9623913a9d6bc5c94f80652bee12a8b5063663"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/independent_unknown_u_addone_review_20261103_1504/independent_review.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC004",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v1.html",
+      "referenced_sha256": "257113d6104ca08d87ec414b4583dd4d35106fe2a8092f34b5c4215d9b6f64e3",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10104,
+        10168
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10104,
+        10168
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/independent_unknown_u_addone_review_20261103_1504/fractional_precision_addendum.html",
+        "public_identity": {
+          "bytes": 1573,
+          "sha256": "257113d6104ca08d87ec414b4583dd4d35106fe2a8092f34b5c4215d9b6f64e3",
+          "git_blob_sha1": "89b4563165d469da2ce61341c41f5ecb7f30abd7"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/independent_unknown_u_addone_review_20261103_1504/fractional_precision_addendum.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC004",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v1.html",
+      "referenced_sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10278,
+        10342
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10278,
+        10342
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 8347,
+          "sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+          "git_blob_sha1": "a6e000ba6e273ce4b41c09015bedc701c0261692"
+        },
+        "public_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html",
+        "public_identity": {
+          "bytes": 8203,
+          "sha256": "518f8cf22bb040b43fd8c98a869d585abc03a2f82a4b6dcf2aed2555ba882e5c",
+          "git_blob_sha1": "94460e8634eca5da2d410b7a489951343fc6d8c6"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC004",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v1.html",
+      "referenced_sha256": "a9fe2765a7972eb02a95df7af0cec35cc6eeea0f420c6cc1fe929b9989e02bdd",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10381,
+        10445
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10381,
+        10445
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 3466,
+          "sha256": "a9fe2765a7972eb02a95df7af0cec35cc6eeea0f420c6cc1fe929b9989e02bdd",
+          "git_blob_sha1": "415aaf64402c895412e9d3e24916d1f81ec36771"
+        },
+        "public_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_scope_clarification_v1.html",
+        "public_identity": {
+          "bytes": 3458,
+          "sha256": "d1f69aa59aa624f7cd57782011820f73de2713679ea02a50131995eca885c0c4",
+          "git_blob_sha1": "bf0f4cab823273dd2afa76cc8b757a6384b1a3d3"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_fast_mixing_family_audit_20261103_1211/family_scope_clarification_v1.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC004",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v1.html",
+      "referenced_sha256": "f844ffde90e836e7fd345a6bf4a1076bbe0e562d832d51413477d1a0bc921d8d",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10541,
+        10605
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10541,
+        10605
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 12507,
+          "sha256": "f844ffde90e836e7fd345a6bf4a1076bbe0e562d832d51413477d1a0bc921d8d",
+          "git_blob_sha1": "cd5c42a9b6e6ed344c13774961f63d889245540b"
+        },
+        "public_path": "v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v3.html",
+        "public_identity": {
+          "bytes": 12516,
+          "sha256": "5798952fa5db0c31c8eecf72e260f1eaeb8071838882c0a8d7ab107576d87819",
+          "git_blob_sha1": "445bdeaad36b20ad3fcb5047244a902eac5d39b4"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v3.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC004",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v1.html",
+      "referenced_sha256": "f71a331f20e1c5b616df81a90e77fd658ad1a3654d5448808885881dd2eb9cc0",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10680,
+        10744
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10680,
+        10744
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/independent_compact_causal_review_20261103_1425/review_v3.html",
+        "public_identity": {
+          "bytes": 8893,
+          "sha256": "f71a331f20e1c5b616df81a90e77fd658ad1a3654d5448808885881dd2eb9cc0",
+          "git_blob_sha1": "469477e31fbd4347a2af985e4f8e265a33e0e944"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/independent_compact_causal_review_20261103_1425/review_v3.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC005",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+      "referenced_sha256": "37a1b01e27f315097c5c910005605b877ba9b6d0de160940c7acc375b6af849b",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10113,
+        10177
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10113,
+        10177
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/rare_unknown_u_addone_20261103_1502/unknown_u_addone_matched_rate_v1.html",
+        "public_identity": {
+          "bytes": 11563,
+          "sha256": "37a1b01e27f315097c5c910005605b877ba9b6d0de160940c7acc375b6af849b",
+          "git_blob_sha1": "70a4d2af2c5b1487b15f032765707f5dec338424"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_unknown_u_addone_20261103_1502/unknown_u_addone_matched_rate_v1.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC005",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+      "referenced_sha256": "97ebbf5d680f5d0e8dfcd30b86924bdfcaa751082ca6f5cd6723f5b43c09c384",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10282,
+        10346
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10282,
+        10346
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/rare_unknown_u_addone_20261103_1502/fractional_grid_precision_correction_v1.html",
+        "public_identity": {
+          "bytes": 1422,
+          "sha256": "97ebbf5d680f5d0e8dfcd30b86924bdfcaa751082ca6f5cd6723f5b43c09c384",
+          "git_blob_sha1": "0733e1d45a095bc2eeab7c68903db649dad9f508"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_unknown_u_addone_20261103_1502/fractional_grid_precision_correction_v1.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC005",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+      "referenced_sha256": "99cea3beeea5380119a38d496b7b0a4bbefbe3a77e585fc8eb109af2817c304c",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10422,
+        10486
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10422,
+        10486
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 6980,
+          "sha256": "99cea3beeea5380119a38d496b7b0a4bbefbe3a77e585fc8eb109af2817c304c",
+          "git_blob_sha1": "aa0aa8fe3c6fdde574cb3c79ce47fab1a820b2fc"
+        },
+        "public_path": "v10_research/independent_unknown_u_addone_review_20261103_1504/independent_review.html",
+        "public_identity": {
+          "bytes": 6977,
+          "sha256": "399a6e92ca1e25246712886631a506a9a09e2335870cae311f59f94f17a1943b",
+          "git_blob_sha1": "ec9623913a9d6bc5c94f80652bee12a8b5063663"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/independent_unknown_u_addone_review_20261103_1504/independent_review.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC005",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+      "referenced_sha256": "257113d6104ca08d87ec414b4583dd4d35106fe2a8092f34b5c4215d9b6f64e3",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10536,
+        10600
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10536,
+        10600
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/independent_unknown_u_addone_review_20261103_1504/fractional_precision_addendum.html",
+        "public_identity": {
+          "bytes": 1573,
+          "sha256": "257113d6104ca08d87ec414b4583dd4d35106fe2a8092f34b5c4215d9b6f64e3",
+          "git_blob_sha1": "89b4563165d469da2ce61341c41f5ecb7f30abd7"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/independent_unknown_u_addone_review_20261103_1504/fractional_precision_addendum.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC005",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+      "referenced_sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10710,
+        10774
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10710,
+        10774
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 8347,
+          "sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+          "git_blob_sha1": "a6e000ba6e273ce4b41c09015bedc701c0261692"
+        },
+        "public_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html",
+        "public_identity": {
+          "bytes": 8203,
+          "sha256": "518f8cf22bb040b43fd8c98a869d585abc03a2f82a4b6dcf2aed2555ba882e5c",
+          "git_blob_sha1": "94460e8634eca5da2d410b7a489951343fc6d8c6"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC005",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+      "referenced_sha256": "a9fe2765a7972eb02a95df7af0cec35cc6eeea0f420c6cc1fe929b9989e02bdd",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10813,
+        10877
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10813,
+        10877
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 3466,
+          "sha256": "a9fe2765a7972eb02a95df7af0cec35cc6eeea0f420c6cc1fe929b9989e02bdd",
+          "git_blob_sha1": "415aaf64402c895412e9d3e24916d1f81ec36771"
+        },
+        "public_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_scope_clarification_v1.html",
+        "public_identity": {
+          "bytes": 3458,
+          "sha256": "d1f69aa59aa624f7cd57782011820f73de2713679ea02a50131995eca885c0c4",
+          "git_blob_sha1": "bf0f4cab823273dd2afa76cc8b757a6384b1a3d3"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_fast_mixing_family_audit_20261103_1211/family_scope_clarification_v1.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC005",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+      "referenced_sha256": "f844ffde90e836e7fd345a6bf4a1076bbe0e562d832d51413477d1a0bc921d8d",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10973,
+        11037
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10973,
+        11037
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 12507,
+          "sha256": "f844ffde90e836e7fd345a6bf4a1076bbe0e562d832d51413477d1a0bc921d8d",
+          "git_blob_sha1": "cd5c42a9b6e6ed344c13774961f63d889245540b"
+        },
+        "public_path": "v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v3.html",
+        "public_identity": {
+          "bytes": 12516,
+          "sha256": "5798952fa5db0c31c8eecf72e260f1eaeb8071838882c0a8d7ab107576d87819",
+          "git_blob_sha1": "445bdeaad36b20ad3fcb5047244a902eac5d39b4"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v3.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC005",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+      "referenced_sha256": "f71a331f20e1c5b616df81a90e77fd658ad1a3654d5448808885881dd2eb9cc0",
+      "original_utf8_byte_range_zero_based_half_open": [
+        11112,
+        11176
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        11112,
+        11176
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/independent_compact_causal_review_20261103_1425/review_v3.html",
+        "public_identity": {
+          "bytes": 8893,
+          "sha256": "f71a331f20e1c5b616df81a90e77fd658ad1a3654d5448808885881dd2eb9cc0",
+          "git_blob_sha1": "469477e31fbd4347a2af985e4f8e265a33e0e944"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/independent_compact_causal_review_20261103_1425/review_v3.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC006",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+      "referenced_sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10398,
+        10462
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10398,
+        10462
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC003",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/han_jana_wu_prior_art_addendum_v2.html",
+        "original_identity": {
+          "bytes": 5335,
+          "sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+          "git_blob_sha1": "26a8f7df7eb288d73c7a44e4e55969ad1c5a6656"
+        },
+        "proposed_public_identity": {
+          "bytes": 5335,
+          "sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+          "git_blob_sha1": "26a8f7df7eb288d73c7a44e4e55969ad1c5a6656"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC006",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+      "referenced_sha256": "37a1b01e27f315097c5c910005605b877ba9b6d0de160940c7acc375b6af849b",
+      "original_utf8_byte_range_zero_based_half_open": [
+        11078,
+        11142
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        11078,
+        11142
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/rare_unknown_u_addone_20261103_1502/unknown_u_addone_matched_rate_v1.html",
+        "public_identity": {
+          "bytes": 11563,
+          "sha256": "37a1b01e27f315097c5c910005605b877ba9b6d0de160940c7acc375b6af849b",
+          "git_blob_sha1": "70a4d2af2c5b1487b15f032765707f5dec338424"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_unknown_u_addone_20261103_1502/unknown_u_addone_matched_rate_v1.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC006",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+      "referenced_sha256": "97ebbf5d680f5d0e8dfcd30b86924bdfcaa751082ca6f5cd6723f5b43c09c384",
+      "original_utf8_byte_range_zero_based_half_open": [
+        11247,
+        11311
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        11247,
+        11311
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/rare_unknown_u_addone_20261103_1502/fractional_grid_precision_correction_v1.html",
+        "public_identity": {
+          "bytes": 1422,
+          "sha256": "97ebbf5d680f5d0e8dfcd30b86924bdfcaa751082ca6f5cd6723f5b43c09c384",
+          "git_blob_sha1": "0733e1d45a095bc2eeab7c68903db649dad9f508"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_unknown_u_addone_20261103_1502/fractional_grid_precision_correction_v1.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC006",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+      "referenced_sha256": "99cea3beeea5380119a38d496b7b0a4bbefbe3a77e585fc8eb109af2817c304c",
+      "original_utf8_byte_range_zero_based_half_open": [
+        11387,
+        11451
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        11387,
+        11451
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 6980,
+          "sha256": "99cea3beeea5380119a38d496b7b0a4bbefbe3a77e585fc8eb109af2817c304c",
+          "git_blob_sha1": "aa0aa8fe3c6fdde574cb3c79ce47fab1a820b2fc"
+        },
+        "public_path": "v10_research/independent_unknown_u_addone_review_20261103_1504/independent_review.html",
+        "public_identity": {
+          "bytes": 6977,
+          "sha256": "399a6e92ca1e25246712886631a506a9a09e2335870cae311f59f94f17a1943b",
+          "git_blob_sha1": "ec9623913a9d6bc5c94f80652bee12a8b5063663"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/independent_unknown_u_addone_review_20261103_1504/independent_review.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC006",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+      "referenced_sha256": "257113d6104ca08d87ec414b4583dd4d35106fe2a8092f34b5c4215d9b6f64e3",
+      "original_utf8_byte_range_zero_based_half_open": [
+        11501,
+        11565
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        11501,
+        11565
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/independent_unknown_u_addone_review_20261103_1504/fractional_precision_addendum.html",
+        "public_identity": {
+          "bytes": 1573,
+          "sha256": "257113d6104ca08d87ec414b4583dd4d35106fe2a8092f34b5c4215d9b6f64e3",
+          "git_blob_sha1": "89b4563165d469da2ce61341c41f5ecb7f30abd7"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/independent_unknown_u_addone_review_20261103_1504/fractional_precision_addendum.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC006",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+      "referenced_sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+      "original_utf8_byte_range_zero_based_half_open": [
+        11675,
+        11739
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        11675,
+        11739
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 8347,
+          "sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+          "git_blob_sha1": "a6e000ba6e273ce4b41c09015bedc701c0261692"
+        },
+        "public_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html",
+        "public_identity": {
+          "bytes": 8203,
+          "sha256": "518f8cf22bb040b43fd8c98a869d585abc03a2f82a4b6dcf2aed2555ba882e5c",
+          "git_blob_sha1": "94460e8634eca5da2d410b7a489951343fc6d8c6"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC006",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+      "referenced_sha256": "a9fe2765a7972eb02a95df7af0cec35cc6eeea0f420c6cc1fe929b9989e02bdd",
+      "original_utf8_byte_range_zero_based_half_open": [
+        11778,
+        11842
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        11778,
+        11842
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 3466,
+          "sha256": "a9fe2765a7972eb02a95df7af0cec35cc6eeea0f420c6cc1fe929b9989e02bdd",
+          "git_blob_sha1": "415aaf64402c895412e9d3e24916d1f81ec36771"
+        },
+        "public_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_scope_clarification_v1.html",
+        "public_identity": {
+          "bytes": 3458,
+          "sha256": "d1f69aa59aa624f7cd57782011820f73de2713679ea02a50131995eca885c0c4",
+          "git_blob_sha1": "bf0f4cab823273dd2afa76cc8b757a6384b1a3d3"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_fast_mixing_family_audit_20261103_1211/family_scope_clarification_v1.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC006",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+      "referenced_sha256": "f844ffde90e836e7fd345a6bf4a1076bbe0e562d832d51413477d1a0bc921d8d",
+      "original_utf8_byte_range_zero_based_half_open": [
+        11938,
+        12002
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        11938,
+        12002
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 12507,
+          "sha256": "f844ffde90e836e7fd345a6bf4a1076bbe0e562d832d51413477d1a0bc921d8d",
+          "git_blob_sha1": "cd5c42a9b6e6ed344c13774961f63d889245540b"
+        },
+        "public_path": "v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v3.html",
+        "public_identity": {
+          "bytes": 12516,
+          "sha256": "5798952fa5db0c31c8eecf72e260f1eaeb8071838882c0a8d7ab107576d87819",
+          "git_blob_sha1": "445bdeaad36b20ad3fcb5047244a902eac5d39b4"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v3.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC006",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+      "referenced_sha256": "f71a331f20e1c5b616df81a90e77fd658ad1a3654d5448808885881dd2eb9cc0",
+      "original_utf8_byte_range_zero_based_half_open": [
+        12077,
+        12141
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        12077,
+        12141
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/independent_compact_causal_review_20261103_1425/review_v3.html",
+        "public_identity": {
+          "bytes": 8893,
+          "sha256": "f71a331f20e1c5b616df81a90e77fd658ad1a3654d5448808885881dd2eb9cc0",
+          "git_blob_sha1": "469477e31fbd4347a2af985e4f8e265a33e0e944"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/independent_compact_causal_review_20261103_1425/review_v3.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC008",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/v3_editorial_clarification_v1.html",
+      "referenced_sha256": "61696e5d49c65ed3e47e40601740b2a5b0f53fcd3c70635dd2ed9bd397cf8246",
+      "original_utf8_byte_range_zero_based_half_open": [
+        377,
+        441
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        377,
+        441
+      ],
+      "resolution": {
+        "status": "original_source_of_selected_metadata_normalized_export",
+        "source_record_id": "FPC006",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+        "original_identity": {
+          "bytes": 12772,
+          "sha256": "61696e5d49c65ed3e47e40601740b2a5b0f53fcd3c70635dd2ed9bd397cf8246",
+          "git_blob_sha1": "8d938e136dc605f9f729c805d7b8cc02c1b68b1b"
+        },
+        "proposed_public_identity": {
+          "bytes": 12788,
+          "sha256": "02cab5fac2a337187962c4cbe33abb9bd1102e64043656e1e55dc4c9d8f215c7",
+          "git_blob_sha1": "ef1af99611f734f19e16351da880e47b93da7147"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": false
+      }
+    },
+    {
+      "source_record_id": "FPC008",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/v3_editorial_clarification_v1.html",
+      "referenced_sha256": "920f765a6ea6cc77c1e13ed4ce416d1ac1541e4c6394692cfbdcb397107eb331",
+      "original_utf8_byte_range_zero_based_half_open": [
+        583,
+        647
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        583,
+        647
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC009",
+        "public_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+        "original_identity": {
+          "bytes": 10221,
+          "sha256": "920f765a6ea6cc77c1e13ed4ce416d1ac1541e4c6394692cfbdcb397107eb331",
+          "git_blob_sha1": "20167731bd434e4fcfe00af1da1a2b74ea492c8c"
+        },
+        "proposed_public_identity": {
+          "bytes": 10221,
+          "sha256": "920f765a6ea6cc77c1e13ed4ce416d1ac1541e4c6394692cfbdcb397107eb331",
+          "git_blob_sha1": "20167731bd434e4fcfe00af1da1a2b74ea492c8c"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC008",
+      "referencing_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/v3_editorial_clarification_v1.html",
+      "referenced_sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1280,
+        1344
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1280,
+        1344
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC003",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/han_jana_wu_prior_art_addendum_v2.html",
+        "original_identity": {
+          "bytes": 5335,
+          "sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+          "git_blob_sha1": "26a8f7df7eb288d73c7a44e4e55969ad1c5a6656"
+        },
+        "proposed_public_identity": {
+          "bytes": 5335,
+          "sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+          "git_blob_sha1": "26a8f7df7eb288d73c7a44e4e55969ad1c5a6656"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "61696e5d49c65ed3e47e40601740b2a5b0f53fcd3c70635dd2ed9bd397cf8246",
+      "original_utf8_byte_range_zero_based_half_open": [
+        585,
+        649
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        585,
+        649
+      ],
+      "resolution": {
+        "status": "original_source_of_selected_metadata_normalized_export",
+        "source_record_id": "FPC006",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+        "original_identity": {
+          "bytes": 12772,
+          "sha256": "61696e5d49c65ed3e47e40601740b2a5b0f53fcd3c70635dd2ed9bd397cf8246",
+          "git_blob_sha1": "8d938e136dc605f9f729c805d7b8cc02c1b68b1b"
+        },
+        "proposed_public_identity": {
+          "bytes": 12788,
+          "sha256": "02cab5fac2a337187962c4cbe33abb9bd1102e64043656e1e55dc4c9d8f215c7",
+          "git_blob_sha1": "ef1af99611f734f19e16351da880e47b93da7147"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": false
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "0976b559badd3d63fe51d7aa5e2399a0f59a1b6ce3fb649d264f412c37749003",
+      "original_utf8_byte_range_zero_based_half_open": [
+        8889,
+        8953
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        8889,
+        8953
+      ],
+      "resolution": {
+        "status": "original_source_of_selected_metadata_normalized_export",
+        "source_record_id": "FPC005",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+        "original_identity": {
+          "bytes": 11700,
+          "sha256": "0976b559badd3d63fe51d7aa5e2399a0f59a1b6ce3fb649d264f412c37749003",
+          "git_blob_sha1": "293291d06784029c431314b2c63117f355683c2a"
+        },
+        "proposed_public_identity": {
+          "bytes": 11716,
+          "sha256": "d055ca16a76fdef418f53289b1a03603de24678fed4ecba3149d1893c111edbf",
+          "git_blob_sha1": "a2003a4af24879e0d9118548b615d3e3688973bd"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": false
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "96f9eb0e6ab5f178c755b425694a65a860cecdb16cc60192a1911c12d3d80ee1",
+      "original_utf8_byte_range_zero_based_half_open": [
+        8983,
+        9047
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        8983,
+        9047
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC007",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/v3_changes_from_v2.html",
+        "original_identity": {
+          "bytes": 898,
+          "sha256": "96f9eb0e6ab5f178c755b425694a65a860cecdb16cc60192a1911c12d3d80ee1",
+          "git_blob_sha1": "3f623a512ea19be21f254dad7092d9061c06d49d"
+        },
+        "proposed_public_identity": {
+          "bytes": 898,
+          "sha256": "96f9eb0e6ab5f178c755b425694a65a860cecdb16cc60192a1911c12d3d80ee1",
+          "git_blob_sha1": "3f623a512ea19be21f254dad7092d9061c06d49d"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9078,
+        9142
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9078,
+        9142
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC003",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/han_jana_wu_prior_art_addendum_v2.html",
+        "original_identity": {
+          "bytes": 5335,
+          "sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+          "git_blob_sha1": "26a8f7df7eb288d73c7a44e4e55969ad1c5a6656"
+        },
+        "proposed_public_identity": {
+          "bytes": 5335,
+          "sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+          "git_blob_sha1": "26a8f7df7eb288d73c7a44e4e55969ad1c5a6656"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "37a1b01e27f315097c5c910005605b877ba9b6d0de160940c7acc375b6af849b",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9183,
+        9247
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9183,
+        9247
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/rare_unknown_u_addone_20261103_1502/unknown_u_addone_matched_rate_v1.html",
+        "public_identity": {
+          "bytes": 11563,
+          "sha256": "37a1b01e27f315097c5c910005605b877ba9b6d0de160940c7acc375b6af849b",
+          "git_blob_sha1": "70a4d2af2c5b1487b15f032765707f5dec338424"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_unknown_u_addone_20261103_1502/unknown_u_addone_matched_rate_v1.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "97ebbf5d680f5d0e8dfcd30b86924bdfcaa751082ca6f5cd6723f5b43c09c384",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9283,
+        9347
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9283,
+        9347
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/rare_unknown_u_addone_20261103_1502/fractional_grid_precision_correction_v1.html",
+        "public_identity": {
+          "bytes": 1422,
+          "sha256": "97ebbf5d680f5d0e8dfcd30b86924bdfcaa751082ca6f5cd6723f5b43c09c384",
+          "git_blob_sha1": "0733e1d45a095bc2eeab7c68903db649dad9f508"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_unknown_u_addone_20261103_1502/fractional_grid_precision_correction_v1.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "6bd9e59f88df5b608f447af747b60184d5beaede9fb808bcbf0d8e71d104f68a",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9409,
+        9473
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9409,
+        9473
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/rare_unknown_u_addone_20261103_1502_review_independent_20261103_1504/REVIEW.md",
+        "public_identity": {
+          "bytes": 5786,
+          "sha256": "6bd9e59f88df5b608f447af747b60184d5beaede9fb808bcbf0d8e71d104f68a",
+          "git_blob_sha1": "1efbb676a2343b84b8bcaad7c78f4a7d330090f1"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_unknown_u_addone_20261103_1502_review_independent_20261103_1504/REVIEW.md",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "8fc90ea38080630f86a690626e31941648c276912e90df88188fa6184b5753d7",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9488,
+        9552
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9488,
+        9552
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/rare_unknown_u_addone_20261103_1502_review_independent_20261103_1504/CORRECTION_REVIEW.md",
+        "public_identity": {
+          "bytes": 1711,
+          "sha256": "8fc90ea38080630f86a690626e31941648c276912e90df88188fa6184b5753d7",
+          "git_blob_sha1": "795df15a1333912b8b9d0bc68e2d610cfca6039e"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_unknown_u_addone_20261103_1502_review_independent_20261103_1504/CORRECTION_REVIEW.md",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "99cea3beeea5380119a38d496b7b0a4bbefbe3a77e585fc8eb109af2817c304c",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9612,
+        9676
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9612,
+        9676
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 6980,
+          "sha256": "99cea3beeea5380119a38d496b7b0a4bbefbe3a77e585fc8eb109af2817c304c",
+          "git_blob_sha1": "aa0aa8fe3c6fdde574cb3c79ce47fab1a820b2fc"
+        },
+        "public_path": "v10_research/independent_unknown_u_addone_review_20261103_1504/independent_review.html",
+        "public_identity": {
+          "bytes": 6977,
+          "sha256": "399a6e92ca1e25246712886631a506a9a09e2335870cae311f59f94f17a1943b",
+          "git_blob_sha1": "ec9623913a9d6bc5c94f80652bee12a8b5063663"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/independent_unknown_u_addone_review_20261103_1504/independent_review.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "257113d6104ca08d87ec414b4583dd4d35106fe2a8092f34b5c4215d9b6f64e3",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9691,
+        9755
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9691,
+        9755
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/independent_unknown_u_addone_review_20261103_1504/fractional_precision_addendum.html",
+        "public_identity": {
+          "bytes": 1573,
+          "sha256": "257113d6104ca08d87ec414b4583dd4d35106fe2a8092f34b5c4215d9b6f64e3",
+          "git_blob_sha1": "89b4563165d469da2ce61341c41f5ecb7f30abd7"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/independent_unknown_u_addone_review_20261103_1504/fractional_precision_addendum.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9803,
+        9867
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9803,
+        9867
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 8347,
+          "sha256": "cef48fecdcc0bef0192fce041db791fbb0bd91cae40e5847408a38e975409e52",
+          "git_blob_sha1": "a6e000ba6e273ce4b41c09015bedc701c0261692"
+        },
+        "public_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html",
+        "public_identity": {
+          "bytes": 8203,
+          "sha256": "518f8cf22bb040b43fd8c98a869d585abc03a2f82a4b6dcf2aed2555ba882e5c",
+          "git_blob_sha1": "94460e8634eca5da2d410b7a489951343fc6d8c6"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_fast_mixing_family_audit_20261103_1211/family_audit_report_v3.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "a9fe2765a7972eb02a95df7af0cec35cc6eeea0f420c6cc1fe929b9989e02bdd",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9908,
+        9972
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9908,
+        9972
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 3466,
+          "sha256": "a9fe2765a7972eb02a95df7af0cec35cc6eeea0f420c6cc1fe929b9989e02bdd",
+          "git_blob_sha1": "415aaf64402c895412e9d3e24916d1f81ec36771"
+        },
+        "public_path": "v10_research/rare_fast_mixing_family_audit_20261103_1211/family_scope_clarification_v1.html",
+        "public_identity": {
+          "bytes": 3458,
+          "sha256": "d1f69aa59aa624f7cd57782011820f73de2713679ea02a50131995eca885c0c4",
+          "git_blob_sha1": "bf0f4cab823273dd2afa76cc8b757a6384b1a3d3"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_fast_mixing_family_audit_20261103_1211/family_scope_clarification_v1.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_stage1_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "f844ffde90e836e7fd345a6bf4a1076bbe0e562d832d51413477d1a0bc921d8d",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10018,
+        10082
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10018,
+        10082
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 12507,
+          "sha256": "f844ffde90e836e7fd345a6bf4a1076bbe0e562d832d51413477d1a0bc921d8d",
+          "git_blob_sha1": "cd5c42a9b6e6ed344c13774961f63d889245540b"
+        },
+        "public_path": "v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v3.html",
+        "public_identity": {
+          "bytes": 12516,
+          "sha256": "5798952fa5db0c31c8eecf72e260f1eaeb8071838882c0a8d7ab107576d87819",
+          "git_blob_sha1": "445bdeaad36b20ad3fcb5047244a902eac5d39b4"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v3.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC009",
+      "referencing_path": "v10_research/independent_synthesis_v3_review_20261103_1520/review.html",
+      "referenced_sha256": "f71a331f20e1c5b616df81a90e77fd658ad1a3654d5448808885881dd2eb9cc0",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10124,
+        10188
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10124,
+        10188
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/independent_compact_causal_review_20261103_1425/review_v3.html",
+        "public_identity": {
+          "bytes": 8893,
+          "sha256": "f71a331f20e1c5b616df81a90e77fd658ad1a3654d5448808885881dd2eb9cc0",
+          "git_blob_sha1": "469477e31fbd4347a2af985e4f8e265a33e0e944"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/independent_compact_causal_review_20261103_1425/review_v3.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC010",
+      "referencing_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v1.html",
+      "referenced_sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        309,
+        373
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        309,
+        373
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC012",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "proposed_public_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC011",
+      "referencing_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html",
+      "referenced_sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        448,
+        512
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        448,
+        512
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC012",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "proposed_public_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC012",
+      "referencing_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "referenced_sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        8248,
+        8312
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        8248,
+        8312
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md",
+        "public_identity": {
+          "bytes": 10352,
+          "sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+          "git_blob_sha1": "8977fce82c0d716e6170b1aa5b980ec6ca07aca8"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC012",
+      "referencing_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "referenced_sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+      "original_utf8_byte_range_zero_based_half_open": [
+        8349,
+        8413
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        8349,
+        8413
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 14746,
+          "sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+          "git_blob_sha1": "5aa3f546594f5bb5209565c7e7b8153f6fca20fb"
+        },
+        "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+        "public_identity": {
+          "bytes": 14732,
+          "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+          "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_precision_interfaces_20261103/HASH_REFERENCE_BINDINGS.json",
+        "mapping_kind": "published byte-coordinate original/export mapping evidence",
+        "mapping_evidence": {
+          "original": {
+            "bytes": 14746,
+            "sha256": "5afb4c07939f861db02a6aafdd25bf51e94f8ad799848119e37aba67aefd539a",
+            "git_blob_sha1": "5aa3f546594f5bb5209565c7e7b8153f6fca20fb"
+          },
+          "public": {
+            "bytes": 14732,
+            "sha256": "e6d40433e1ad3b18166a1a95621c79893d89bbfdd199931d7b9a7129b3e11693",
+            "git_blob_sha1": "dbeb1f625a407c323188e3bf71836fa5ae249027"
+          },
+          "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_independent_review_v1.md",
+          "original_byte_range_zero_based_half_open": [
+            11082,
+            11144
+          ],
+          "removed_span_sha256": "2e2b8488e00c6b6b3b4c92f1a6df559d99e57d3affbcf6633f63b51b20cd2c3c",
+          "replacement": "Paths below are relative to the repository root.",
+          "reason": "single nonmathematical host-root sentence replacement; verified by full byte comparison"
+        }
+      }
+    },
+    {
+      "source_record_id": "FPC013",
+      "referencing_path": "v10_research/independent_fixed_parameter_review_20261103_1634/independent_review.html",
+      "referenced_sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        640,
+        704
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        640,
+        704
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC012",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "proposed_public_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC013",
+      "referencing_path": "v10_research/independent_fixed_parameter_review_20261103_1634/independent_review.html",
+      "referenced_sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+      "original_utf8_byte_range_zero_based_half_open": [
+        791,
+        855
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        791,
+        855
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC011",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html",
+        "original_identity": {
+          "bytes": 2065,
+          "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+          "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f"
+        },
+        "proposed_public_identity": {
+          "bytes": 2065,
+          "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+          "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC013",
+      "referencing_path": "v10_research/independent_fixed_parameter_review_20261103_1634/independent_review.html",
+      "referenced_sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        3675,
+        3739
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        3675,
+        3739
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md",
+        "public_identity": {
+          "bytes": 10352,
+          "sha256": "aaafd3823ab11e20ffdeff2164115c6c91db5efea6e2dffd9c3c78da0b7fbbbf",
+          "git_blob_sha1": "8977fce82c0d716e6170b1aa5b980ec6ca07aca8"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/cloud_work/conditions-20261028/research/resume_20261030/R011_global_rates_and_constant_adaptation_v1.md",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC015",
+      "referencing_path": "v10_research/fixed_parameter_integer_backend_20261103_1637/deterministic_integer_backend_v1.html",
+      "referenced_sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9924,
+        9988
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9924,
+        9988
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC012",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "proposed_public_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC015",
+      "referencing_path": "v10_research/fixed_parameter_integer_backend_20261103_1637/deterministic_integer_backend_v1.html",
+      "referenced_sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10032,
+        10096
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10032,
+        10096
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC011",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html",
+        "original_identity": {
+          "bytes": 2065,
+          "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+          "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f"
+        },
+        "proposed_public_identity": {
+          "bytes": 2065,
+          "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+          "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC017",
+      "referencing_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/dense_visit_clarification.html",
+      "referenced_sha256": "962ca335827e4366855a4229798b92ae910c0b3a1996a7b990193757befa98cc",
+      "original_utf8_byte_range_zero_based_half_open": [
+        446,
+        510
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        446,
+        510
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC015",
+        "public_path": "v10_research/fixed_parameter_integer_backend_20261103_1637/deterministic_integer_backend_v1.html",
+        "original_identity": {
+          "bytes": 10585,
+          "sha256": "962ca335827e4366855a4229798b92ae910c0b3a1996a7b990193757befa98cc",
+          "git_blob_sha1": "cb579d10a344acc8aa43f35c82eb9c50343dc4f5"
+        },
+        "proposed_public_identity": {
+          "bytes": 10585,
+          "sha256": "962ca335827e4366855a4229798b92ae910c0b3a1996a7b990193757befa98cc",
+          "git_blob_sha1": "cb579d10a344acc8aa43f35c82eb9c50343dc4f5"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC018",
+      "referencing_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/evidence_limit_addendum_20261103_1641.txt",
+      "referenced_sha256": "84808de8f8b807c9127e3feaf33b1edcf99cefbdf1967584ba14465aa1e839cd",
+      "original_utf8_byte_range_zero_based_half_open": [
+        135,
+        199
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        135,
+        199
+      ],
+      "resolution": {
+        "status": "original_source_of_selected_metadata_normalized_export",
+        "source_record_id": "FPC021",
+        "public_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+        "original_identity": {
+          "bytes": 1550,
+          "sha256": "84808de8f8b807c9127e3feaf33b1edcf99cefbdf1967584ba14465aa1e839cd",
+          "git_blob_sha1": "35697ceccf7128ebc05f9f9bcfb388b7f8433c2a"
+        },
+        "proposed_public_identity": {
+          "bytes": 1578,
+          "sha256": "e20984ffd88995ef023ce2cb695d3e25c3f4f7dcb3e85d31319b664b814ebd24",
+          "git_blob_sha1": "e082274a57c13ed95c5e1e98212f0392c90c3f27"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": false
+      }
+    },
+    {
+      "source_record_id": "FPC018",
+      "referencing_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/evidence_limit_addendum_20261103_1641.txt",
+      "referenced_sha256": "1714c5adb457011e610c53f0ee371755e96bc180d6850294458e3bc3e37ec30a",
+      "original_utf8_byte_range_zero_based_half_open": [
+        844,
+        908
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        844,
+        908
+      ],
+      "resolution": {
+        "status": "original_source_of_selected_metadata_normalized_export",
+        "source_record_id": "FPC020",
+        "public_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+        "original_identity": {
+          "bytes": 2040,
+          "sha256": "1714c5adb457011e610c53f0ee371755e96bc180d6850294458e3bc3e37ec30a",
+          "git_blob_sha1": "6a780b6a961afd97a7812dbe14d6e3ef2a306953"
+        },
+        "proposed_public_identity": {
+          "bytes": 2046,
+          "sha256": "0c33928792830d80af45b820971d28a1e83a39b473e3c3e74a8f1dd9e55fd2be",
+          "git_blob_sha1": "7d7a0b43b5a5fc7fc7ad8c5c1478adbd1e30d0f3"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": false
+      }
+    },
+    {
+      "source_record_id": "FPC019",
+      "referencing_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+      "referenced_sha256": "962ca335827e4366855a4229798b92ae910c0b3a1996a7b990193757befa98cc",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1356,
+        1420
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1356,
+        1420
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC015",
+        "public_path": "v10_research/fixed_parameter_integer_backend_20261103_1637/deterministic_integer_backend_v1.html",
+        "original_identity": {
+          "bytes": 10585,
+          "sha256": "962ca335827e4366855a4229798b92ae910c0b3a1996a7b990193757befa98cc",
+          "git_blob_sha1": "cb579d10a344acc8aa43f35c82eb9c50343dc4f5"
+        },
+        "proposed_public_identity": {
+          "bytes": 10585,
+          "sha256": "962ca335827e4366855a4229798b92ae910c0b3a1996a7b990193757befa98cc",
+          "git_blob_sha1": "cb579d10a344acc8aa43f35c82eb9c50343dc4f5"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC019",
+      "referencing_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+      "referenced_sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1594,
+        1658
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1594,
+        1658
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC012",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "proposed_public_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC019",
+      "referencing_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+      "referenced_sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1812,
+        1876
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1812,
+        1876
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC011",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html",
+        "original_identity": {
+          "bytes": 2065,
+          "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+          "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f"
+        },
+        "proposed_public_identity": {
+          "bytes": 2065,
+          "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+          "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC019",
+      "referencing_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+      "referenced_sha256": "c5e2639e746d6e0647d7d09ae81acc36fe2b179e1bc6fa6f239841ddaedae40d",
+      "original_utf8_byte_range_zero_based_half_open": [
+        7390,
+        7454
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        7390,
+        7454
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC016",
+        "public_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/check_small_words.py",
+        "original_identity": {
+          "bytes": 1243,
+          "sha256": "c5e2639e746d6e0647d7d09ae81acc36fe2b179e1bc6fa6f239841ddaedae40d",
+          "git_blob_sha1": "dc9fd520abe46a7cb926454a1213283eb17161d4"
+        },
+        "proposed_public_identity": {
+          "bytes": 1243,
+          "sha256": "c5e2639e746d6e0647d7d09ae81acc36fe2b179e1bc6fa6f239841ddaedae40d",
+          "git_blob_sha1": "dc9fd520abe46a7cb926454a1213283eb17161d4"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC020",
+      "referencing_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+      "referenced_sha256": "69c60c139b59e572ea0c0fb300d53741d24e1a8157a5a54fd16d9dfdda6d3316",
+      "original_utf8_byte_range_zero_based_half_open": [
+        411,
+        475
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        406,
+        470
+      ],
+      "resolution": {
+        "status": "OVERWRITTEN_ORIGINAL_BYTES_UNAVAILABLE",
+        "referenced_original_sha256": "69c60c139b59e572ea0c0fb300d53741d24e1a8157a5a54fd16d9dfdda6d3316",
+        "historical_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+        "public_path": null,
+        "public_identity": null,
+        "original_byte_count": null,
+        "original_git_blob_sha1": null,
+        "current_distinct_version_source_id": "FPC019",
+        "current_distinct_version_original_identity": {
+          "bytes": 8685,
+          "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+          "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc"
+        },
+        "mandatory_correction_sources": [
+          "FPC021",
+          "FPC018",
+          "FPC020",
+          "FPC017"
+        ],
+        "evidence": "Only the historical digest survives in the aggregate transcript and version correction. No verified original bytes were found in the reported bounded search scope. The current version is not a recovery or byte match of the overwritten original."
+      }
+    },
+    {
+      "source_record_id": "FPC021",
+      "referencing_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+      "referenced_sha256": "69c60c139b59e572ea0c0fb300d53741d24e1a8157a5a54fd16d9dfdda6d3316",
+      "original_utf8_byte_range_zero_based_half_open": [
+        129,
+        193
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        129,
+        193
+      ],
+      "resolution": {
+        "status": "OVERWRITTEN_ORIGINAL_BYTES_UNAVAILABLE",
+        "referenced_original_sha256": "69c60c139b59e572ea0c0fb300d53741d24e1a8157a5a54fd16d9dfdda6d3316",
+        "historical_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+        "public_path": null,
+        "public_identity": null,
+        "original_byte_count": null,
+        "original_git_blob_sha1": null,
+        "current_distinct_version_source_id": "FPC019",
+        "current_distinct_version_original_identity": {
+          "bytes": 8685,
+          "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+          "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc"
+        },
+        "mandatory_correction_sources": [
+          "FPC021",
+          "FPC018",
+          "FPC020",
+          "FPC017"
+        ],
+        "evidence": "Only the historical digest survives in the aggregate transcript and version correction. No verified original bytes were found in the reported bounded search scope. The current version is not a recovery or byte match of the overwritten original."
+      }
+    },
+    {
+      "source_record_id": "FPC021",
+      "referencing_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+      "referenced_sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+      "original_utf8_byte_range_zero_based_half_open": [
+        393,
+        457
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        393,
+        457
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC019",
+        "public_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+        "original_identity": {
+          "bytes": 8685,
+          "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+          "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc"
+        },
+        "proposed_public_identity": {
+          "bytes": 8685,
+          "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+          "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC023",
+      "referencing_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+      "referenced_sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        503,
+        567
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        503,
+        567
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC022",
+        "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11260,
+          "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+          "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+        },
+        "proposed_public_identity": {
+          "bytes": 11260,
+          "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+          "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC024",
+      "referencing_path": "v10_research/independent_vocab_softmax_review_20261103_1640/independent_review.html",
+      "referenced_sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1187,
+        1251
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1187,
+        1251
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC022",
+        "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11260,
+          "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+          "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+        },
+        "proposed_public_identity": {
+          "bytes": 11260,
+          "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+          "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC024",
+      "referencing_path": "v10_research/independent_vocab_softmax_review_20261103_1640/independent_review.html",
+      "referenced_sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1398,
+        1462
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1398,
+        1462
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC012",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "proposed_public_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC024",
+      "referencing_path": "v10_research/independent_vocab_softmax_review_20261103_1640/independent_review.html",
+      "referenced_sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1606,
+        1670
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1606,
+        1670
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC011",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html",
+        "original_identity": {
+          "bytes": 2065,
+          "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+          "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f"
+        },
+        "proposed_public_identity": {
+          "bytes": 2065,
+          "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+          "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC025",
+      "referencing_path": "v10_research/independent_vocab_rate_review_20261103_1641/independent_review.html",
+      "referenced_sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+      "original_utf8_byte_range_zero_based_half_open": [
+        995,
+        1059
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        995,
+        1059
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC023",
+        "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+        "original_identity": {
+          "bytes": 3436,
+          "sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+          "git_blob_sha1": "8fea7b3466fa914393d3bd9447937e9084ee6ab1"
+        },
+        "proposed_public_identity": {
+          "bytes": 3436,
+          "sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+          "git_blob_sha1": "8fea7b3466fa914393d3bd9447937e9084ee6ab1"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC025",
+      "referencing_path": "v10_research/independent_vocab_rate_review_20261103_1641/independent_review.html",
+      "referenced_sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1202,
+        1266
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1202,
+        1266
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC022",
+        "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11260,
+          "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+          "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+        },
+        "proposed_public_identity": {
+          "bytes": 11260,
+          "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+          "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC027",
+      "referencing_path": "v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+      "referenced_sha256": "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b",
+      "original_utf8_byte_range_zero_based_half_open": [
+        481,
+        545
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        481,
+        545
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC026",
+        "public_path": "v10_research/four_block_integer_backend_20261103_1645/deterministic_vocab_backend_v1.html",
+        "original_identity": {
+          "bytes": 11698,
+          "sha256": "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b",
+          "git_blob_sha1": "09524dcaf17c95bf142ba058ef915c82e31bc116"
+        },
+        "proposed_public_identity": {
+          "bytes": 11698,
+          "sha256": "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b",
+          "git_blob_sha1": "09524dcaf17c95bf142ba058ef915c82e31bc116"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC027",
+      "referencing_path": "v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+      "referenced_sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        682,
+        746
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        682,
+        746
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC022",
+        "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11260,
+          "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+          "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+        },
+        "proposed_public_identity": {
+          "bytes": 11260,
+          "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+          "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC027",
+      "referencing_path": "v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+      "referenced_sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+      "original_utf8_byte_range_zero_based_half_open": [
+        868,
+        932
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        868,
+        932
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC023",
+        "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+        "original_identity": {
+          "bytes": 3436,
+          "sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+          "git_blob_sha1": "8fea7b3466fa914393d3bd9447937e9084ee6ab1"
+        },
+        "proposed_public_identity": {
+          "bytes": 3436,
+          "sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+          "git_blob_sha1": "8fea7b3466fa914393d3bd9447937e9084ee6ab1"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC027",
+      "referencing_path": "v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+      "referenced_sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1059,
+        1123
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1059,
+        1123
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC012",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "proposed_public_identity": {
+          "bytes": 11346,
+          "sha256": "4141725b160d74288570dd2d02181cb7d14c22d691ac7cf53b38c93f6bb409b8",
+          "git_blob_sha1": "c863a2a96817298c17704b51d7ca1893873a6365"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC027",
+      "referencing_path": "v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+      "referenced_sha256": "962ca335827e4366855a4229798b92ae910c0b3a1996a7b990193757befa98cc",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1264,
+        1328
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1264,
+        1328
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC015",
+        "public_path": "v10_research/fixed_parameter_integer_backend_20261103_1637/deterministic_integer_backend_v1.html",
+        "original_identity": {
+          "bytes": 10585,
+          "sha256": "962ca335827e4366855a4229798b92ae910c0b3a1996a7b990193757befa98cc",
+          "git_blob_sha1": "cb579d10a344acc8aa43f35c82eb9c50343dc4f5"
+        },
+        "proposed_public_identity": {
+          "bytes": 10585,
+          "sha256": "962ca335827e4366855a4229798b92ae910c0b3a1996a7b990193757befa98cc",
+          "git_blob_sha1": "cb579d10a344acc8aa43f35c82eb9c50343dc4f5"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC027",
+      "referencing_path": "v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+      "referenced_sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1459,
+        1523
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1459,
+        1523
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC011",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html",
+        "original_identity": {
+          "bytes": 2065,
+          "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+          "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f"
+        },
+        "proposed_public_identity": {
+          "bytes": 2065,
+          "sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+          "git_blob_sha1": "35b9af53b3bd6290f2f47fe749dc7e4b123d179f"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC028",
+      "referencing_path": "v10_research/four_block_vocab_prior_art_20261103_1649/prior_art_audit.html",
+      "referenced_sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1872,
+        1936
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1872,
+        1936
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC022",
+        "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+        "original_identity": {
+          "bytes": 11260,
+          "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+          "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+        },
+        "proposed_public_identity": {
+          "bytes": 11260,
+          "sha256": "bf7f6c3ab19472d83658a3dc5cf24b90514df96e145b578706504526045c14c8",
+          "git_blob_sha1": "e58712e75d16af762f507ee3fd3891750c2fc30c"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC028",
+      "referencing_path": "v10_research/four_block_vocab_prior_art_20261103_1649/prior_art_audit.html",
+      "referenced_sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+      "original_utf8_byte_range_zero_based_half_open": [
+        2077,
+        2141
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2077,
+        2141
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC023",
+        "public_path": "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+        "original_identity": {
+          "bytes": 3436,
+          "sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+          "git_blob_sha1": "8fea7b3466fa914393d3bd9447937e9084ee6ab1"
+        },
+        "proposed_public_identity": {
+          "bytes": 3436,
+          "sha256": "d21062d3d1bf660a955bba10df9c466cf0eabaa61e57251236b8a870e15f9ad7",
+          "git_blob_sha1": "8fea7b3466fa914393d3bd9447937e9084ee6ab1"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC028",
+      "referencing_path": "v10_research/four_block_vocab_prior_art_20261103_1649/prior_art_audit.html",
+      "referenced_sha256": "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b",
+      "original_utf8_byte_range_zero_based_half_open": [
+        2927,
+        2991
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2927,
+        2991
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC026",
+        "public_path": "v10_research/four_block_integer_backend_20261103_1645/deterministic_vocab_backend_v1.html",
+        "original_identity": {
+          "bytes": 11698,
+          "sha256": "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b",
+          "git_blob_sha1": "09524dcaf17c95bf142ba058ef915c82e31bc116"
+        },
+        "proposed_public_identity": {
+          "bytes": 11698,
+          "sha256": "e532e78809c4edf7d4e47ec39ad548c06ad339c55e9f56b8d75a85ea86a7143b",
+          "git_blob_sha1": "09524dcaf17c95bf142ba058ef915c82e31bc116"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC028",
+      "referencing_path": "v10_research/four_block_vocab_prior_art_20261103_1649/prior_art_audit.html",
+      "referenced_sha256": "3edee0b42c69903da41faa7f2434dcca9568595726fabb95d72d3548abf0245a",
+      "original_utf8_byte_range_zero_based_half_open": [
+        3152,
+        3216
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        3152,
+        3216
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC027",
+        "public_path": "v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+        "original_identity": {
+          "bytes": 7337,
+          "sha256": "3edee0b42c69903da41faa7f2434dcca9568595726fabb95d72d3548abf0245a",
+          "git_blob_sha1": "803dfbf7088c6f2daf098eef77da15e540a89769"
+        },
+        "proposed_public_identity": {
+          "bytes": 7337,
+          "sha256": "3edee0b42c69903da41faa7f2434dcca9568595726fabb95d72d3548abf0245a",
+          "git_blob_sha1": "803dfbf7088c6f2daf098eef77da15e540a89769"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC029",
+      "referencing_path": "v10_research/unknown_u_compact_prior_audit_20261103_1515/independent_source_comparison_v1.html",
+      "referenced_sha256": "0976b559badd3d63fe51d7aa5e2399a0f59a1b6ce3fb649d264f412c37749003",
+      "original_utf8_byte_range_zero_based_half_open": [
+        2015,
+        2079
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2015,
+        2079
+      ],
+      "resolution": {
+        "status": "original_source_of_selected_metadata_normalized_export",
+        "source_record_id": "FPC005",
+        "public_path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+        "original_identity": {
+          "bytes": 11700,
+          "sha256": "0976b559badd3d63fe51d7aa5e2399a0f59a1b6ce3fb649d264f412c37749003",
+          "git_blob_sha1": "293291d06784029c431314b2c63117f355683c2a"
+        },
+        "proposed_public_identity": {
+          "bytes": 11716,
+          "sha256": "d055ca16a76fdef418f53289b1a03603de24678fed4ecba3149d1893c111edbf",
+          "git_blob_sha1": "a2003a4af24879e0d9118548b615d3e3688973bd"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": false
+      }
+    },
+    {
+      "source_record_id": "FPC029",
+      "referencing_path": "v10_research/unknown_u_compact_prior_audit_20261103_1515/independent_source_comparison_v1.html",
+      "referenced_sha256": "37a1b01e27f315097c5c910005605b877ba9b6d0de160940c7acc375b6af849b",
+      "original_utf8_byte_range_zero_based_half_open": [
+        2164,
+        2228
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2164,
+        2228
+      ],
+      "resolution": {
+        "status": "exact_already_public_bytes",
+        "public_path": "v10_research/rare_unknown_u_addone_20261103_1502/unknown_u_addone_matched_rate_v1.html",
+        "public_identity": {
+          "bytes": 11563,
+          "sha256": "37a1b01e27f315097c5c910005605b877ba9b6d0de160940c7acc375b6af849b",
+          "git_blob_sha1": "70a4d2af2c5b1487b15f032765707f5dec338424"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/rare_unknown_u_addone_20261103_1502/unknown_u_addone_matched_rate_v1.html",
+        "digest_matches_public_bytes": true
+      }
+    },
+    {
+      "source_record_id": "FPC029",
+      "referencing_path": "v10_research/unknown_u_compact_prior_audit_20261103_1515/independent_source_comparison_v1.html",
+      "referenced_sha256": "f844ffde90e836e7fd345a6bf4a1076bbe0e562d832d51413477d1a0bc921d8d",
+      "original_utf8_byte_range_zero_based_half_open": [
+        2497,
+        2561
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2497,
+        2561
+      ],
+      "resolution": {
+        "status": "original_source_of_already_public_sanitized_export",
+        "referenced_original_identity": {
+          "bytes": 12507,
+          "sha256": "f844ffde90e836e7fd345a6bf4a1076bbe0e562d832d51413477d1a0bc921d8d",
+          "git_blob_sha1": "cd5c42a9b6e6ed344c13774961f63d889245540b"
+        },
+        "public_path": "v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v3.html",
+        "public_identity": {
+          "bytes": 12516,
+          "sha256": "5798952fa5db0c31c8eecf72e260f1eaeb8071838882c0a8d7ab107576d87819",
+          "git_blob_sha1": "445bdeaad36b20ad3fcb5047244a902eac5d39b4"
+        },
+        "pinned_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v3.html",
+        "digest_matches_public_bytes": false,
+        "mapping_path": "provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_url": "https://github.com/AlexenderSokolov/transformer-icml/blob/4a0732d7e1dd34ba242b633e2397dd263563d0f6/provenance/t1t2_unknown_u_20261103/SOURCE_EXPORT_MAP.json",
+        "mapping_kind": "published original/export source map"
+      }
+    },
+    {
+      "source_record_id": "FPC030",
+      "referencing_path": "v10_research/unknown_u_compact_prior_audit_20261103_1515/han_version_correction_v1.html",
+      "referenced_sha256": "35f24af50182796096b703d51371632386bdd5ba6f59175f1cfd7d63bc0ffefb",
+      "original_utf8_byte_range_zero_based_half_open": [
+        373,
+        437
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        373,
+        437
+      ],
+      "resolution": {
+        "status": "exact_selected_source",
+        "source_record_id": "FPC029",
+        "public_path": "v10_research/unknown_u_compact_prior_audit_20261103_1515/independent_source_comparison_v1.html",
+        "original_identity": {
+          "bytes": 11116,
+          "sha256": "35f24af50182796096b703d51371632386bdd5ba6f59175f1cfd7d63bc0ffefb",
+          "git_blob_sha1": "c00870e0467edf1a28399d7bf44e10c0154aa401"
+        },
+        "proposed_public_identity": {
+          "bytes": 11116,
+          "sha256": "35f24af50182796096b703d51371632386bdd5ba6f59175f1cfd7d63bc0ffefb",
+          "git_blob_sha1": "c00870e0467edf1a28399d7bf44e10c0154aa401"
+        },
+        "source_export_map": "provenance/t1t2_fixed_parameter_20261103/SOURCE_EXPORT_MAP.json",
+        "digest_matches_proposed_public_bytes": true
+      }
+    }
+  ]
+}

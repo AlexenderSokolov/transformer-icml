@@ -1,0 +1,20 @@
+Record transcribed from the existing execution transcript; this is not a new run.
+
+Recorded command (executed 2026-11-03; exact original start and end times were not retained):
+sha256sum v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html && python v10_research/review_fixed_parameter_integer_backend_20261103_1638/check_small_words.py
+
+Recorded output, verbatim:
+69c60c139b59e572ea0c0fb300d53741d24e1a8157a5a54fd16d9dfdda6d3316  v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html
+2 4 max_diff 0.0596015 bound 0.135518
+3 8 max_diff 0.0115818 bound 0.0747190
+4 16 max_diff 0.00883421 bound 0.0366420
+5 32 max_diff 0.00593596 bound 0.0168485
+6 64 max_diff 0.00246046 bound 0.00743769
+7 128 max_diff 0.00113623 bound 0.00319221
+8 256 max_diff 0.000502520 bound 0.00134215
+
+The exit code was not printed in the saved execution transcript; the visible output includes all seven aggregate lines through N=8. The previous command also ran the same script from a temporary copy of the same script and printed the same aggregate lines; the file was copied to check_small_words.py before the command above. The script is separately SHA-256-bound by the HTML review.
+
+Recorded parameters: N in range(2,9), all bit tuples in itertools.product((0,1), repeat=N), Decimal precision 80; other numerical parameters are specified in the saved script.
+
+Missing at original execution: individual inputs and per-case results were not logged or preserved. No Python version, assertion-optimization settings, operating-system version, exact environment snapshot, dependency manifest, platform details, or exact start/end timestamps were captured. Thus it was not recorded whether assertions were enabled. The command used the 'python' executable, without an explicit version. Current versions, if observed later, cannot establish the original environment. Aggregate outputs are the only preserved numerical results. Do not substitute a later rerun for these missing original records.

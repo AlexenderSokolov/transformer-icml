@@ -1,0 +1,367 @@
+{
+  "base_commit": "4a0732d7e1dd34ba242b633e2397dd263563d0f6",
+  "transitions": [
+    {
+      "from_source_id": "FPC004",
+      "to_source_id": "FPC005",
+      "from_original_sha256": "0f6e3ce292953f3a2552e1eae702a6e66027e3066c270fcbb6267568d8474488",
+      "to_original_sha256": "0976b559badd3d63fe51d7aa5e2399a0f59a1b6ce3fb649d264f412c37749003",
+      "summary": "v2 separates the N=2 constant branch and source-independent randomization assumption.",
+      "actual_retained_versions": true,
+      "difference_spans": [
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            843,
+            844
+          ],
+          "new_utf8_byte_range": [
+            843,
+            844
+          ],
+          "old_span_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+          "new_span_sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            1481,
+            1481
+          ],
+          "new_utf8_byte_range": [
+            1481,
+            1491
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "cff333b5c7aaec6ac6ffc36e8756bf4b557a362b40e6ebca5a7bb0ad352aa754"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            1561,
+            1561
+          ],
+          "new_utf8_byte_range": [
+            1571,
+            1611
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "dc194391de71692622eaca5dd8be5294194cf6fb2e76fecc3a48e2ae530e80ad"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            2415,
+            2415
+          ],
+          "new_utf8_byte_range": [
+            2465,
+            2716
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "4eb35d9952179e6aef6d858eb1f46a5d17e085c802c1fd11c2b654c3f098f0ca"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            4125,
+            4126
+          ],
+          "new_utf8_byte_range": [
+            4426,
+            4548
+          ],
+          "old_span_sha256": "e632b7095b0bf32c260fa4c539e9fd7b852d0de454e9be26f24d0d6f91d069d3",
+          "new_span_sha256": "28caeedfad9c2d3ed48f254c94c6076db17256f5fe84ff404e38e871c222ac44"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            5207,
+            5208
+          ],
+          "new_utf8_byte_range": [
+            5629,
+            5630
+          ],
+          "old_span_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+          "new_span_sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            5407,
+            5408
+          ],
+          "new_utf8_byte_range": [
+            5829,
+            5840
+          ],
+          "old_span_sha256": "e632b7095b0bf32c260fa4c539e9fd7b852d0de454e9be26f24d0d6f91d069d3",
+          "new_span_sha256": "75f3513939f41e9b6973533aeee285642d0a521918ad618857fe672ee8edadf1"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            10767,
+            10767
+          ],
+          "new_utf8_byte_range": [
+            11199,
+            11338
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "120a556082f92485cccb6b96d8d6a8621449ac2103d8e3a577d92cdd919d7086"
+        }
+      ]
+    },
+    {
+      "from_source_id": "FPC005",
+      "to_source_id": "FPC006",
+      "from_original_sha256": "0976b559badd3d63fe51d7aa5e2399a0f59a1b6ce3fb649d264f412c37749003",
+      "to_original_sha256": "61696e5d49c65ed3e47e40601740b2a5b0f53fcd3c70635dd2ed9bd397cf8246",
+      "summary": "v3 adds close Han–Jana–Wu prior art, the journal-version companion and an explicitly unpassed novelty gate.",
+      "actual_retained_versions": true,
+      "difference_spans": [
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            9723,
+            9723
+          ],
+          "new_utf8_byte_range": [
+            9723,
+            10616
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "9b0de8e5b87c05b00e5cd6377446d1ac1ceb41972cab143a46d07496a9c4c465"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            9831,
+            9832
+          ],
+          "new_utf8_byte_range": [
+            10724,
+            10737
+          ],
+          "old_span_sha256": "8ce86a6ae65d3692e7305e2c58ac62eebd97d3d943e093f577da25c36988246b",
+          "new_span_sha256": "7fd07ec0edc705e8173fe6815a51febd4b7a29ad9836f04de8e1a7414c61f61d"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            9833,
+            9833
+          ],
+          "new_utf8_byte_range": [
+            10738,
+            10798
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "c4b302cc39aee460bad4d96f2defc6a6451c47bd02adc25a811dd3af5f6848a4"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            11203,
+            11204
+          ],
+          "new_utf8_byte_range": [
+            12168,
+            12169
+          ],
+          "old_span_sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "new_span_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            11216,
+            11217
+          ],
+          "new_utf8_byte_range": [
+            12181,
+            12182
+          ],
+          "old_span_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "new_span_sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            11233,
+            11233
+          ],
+          "new_utf8_byte_range": [
+            12198,
+            12305
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "e9150ebf369a1ed0511d1b85cdd828af27d1bfb7e443b010bc8b94634b6ed295"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            11241,
+            11242
+          ],
+          "new_utf8_byte_range": [
+            12313,
+            12314
+          ],
+          "old_span_sha256": "043a718774c572bd8a25adbeb1bfcd5c0256ae11cecf9f9c3f925d0e52beaf89",
+          "new_span_sha256": "18ac3e7343f016890c510e93f935261169d9e3f565436429830faf0934f4f8e4"
+        }
+      ]
+    },
+    {
+      "from_source_id": "FPC002",
+      "to_source_id": "FPC003",
+      "from_original_sha256": "da6329c359c046a6fc902b8bfb230d994114ba4b45209c662b71bd6c76ce3948",
+      "to_original_sha256": "5971aa3cac01236806519fcf39db91e2b89b094e9b592f7384007c7e397d2710",
+      "summary": "HJW v2 adds journal-versus-arXiv version and large-alphabet qualifications.",
+      "actual_retained_versions": true,
+      "difference_spans": [
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            2558,
+            2558
+          ],
+          "new_utf8_byte_range": [
+            2558,
+            2665
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "c6f9320262ee54301dee933e8d86cb9aac5178023aabc594bef6bccfaa12fc21"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            4461,
+            4461
+          ],
+          "new_utf8_byte_range": [
+            4568,
+            4980
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "012e9a7dafe1688d031e30b860e1f23401c43b6316ca000d18acb55fce64e1b4"
+        }
+      ]
+    },
+    {
+      "from_source_id": "FPC010",
+      "to_source_id": "FPC011",
+      "from_original_sha256": "1554e2be7fd89a8f4f385e7def328282db4c7a18c95b5ddaf8a1413f274f1333",
+      "to_original_sha256": "25dd4ff06226867aa79578766ac7eeaf41cd4a5fef59dd9c77d896120d908ee4",
+      "summary": "Boundary v2 fixes the wrong He et al. link while retaining the N=2 statistical boundary.",
+      "actual_retained_versions": true,
+      "difference_spans": [
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            253,
+            253
+          ],
+          "new_utf8_byte_range": [
+            253,
+            269
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "10fe1115417833e6a983a7a5b19fc9a8a38551d4f26b4122cb2db2b3fa489e1a"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range": [
+            257,
+            257
+          ],
+          "new_utf8_byte_range": [
+            273,
+            396
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "aa01771e187b2787313b555619c7d0e092917d6b31ce4ab43a77a145ac313bb7"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range": [
+            1241,
+            1242
+          ],
+          "new_utf8_byte_range": [
+            1380,
+            1381
+          ],
+          "old_span_sha256": "acac86c0e609ca906f632b0e2dacccb2b77d22b0621f20ebece1a4835b93f6f0",
+          "new_span_sha256": "2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6"
+        }
+      ]
+    }
+  ],
+  "review_bindings": [
+    {
+      "review_source_id": "FPC009",
+      "reviewed_source_id": "FPC006"
+    },
+    {
+      "review_source_id": "FPC013",
+      "reviewed_source_id": "FPC012",
+      "required_addendum": "FPC011"
+    },
+    {
+      "review_source_id": "FPC019",
+      "reviewed_source_id": "FPC015"
+    },
+    {
+      "review_source_id": "FPC024",
+      "reviewed_source_id": "FPC022"
+    },
+    {
+      "review_source_id": "FPC025",
+      "reviewed_source_id": "FPC023"
+    },
+    {
+      "review_source_id": "FPC027",
+      "reviewed_source_id": "FPC026"
+    }
+  ],
+  "overwritten_original": {
+    "status": "OVERWRITTEN_ORIGINAL_BYTES_UNAVAILABLE",
+    "referenced_original_sha256": "69c60c139b59e572ea0c0fb300d53741d24e1a8157a5a54fd16d9dfdda6d3316",
+    "historical_path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/review_integer_backend.html",
+    "public_path": null,
+    "public_identity": null,
+    "original_byte_count": null,
+    "original_git_blob_sha1": null,
+    "current_distinct_version_source_id": "FPC019",
+    "current_distinct_version_original_identity": {
+      "bytes": 8685,
+      "sha256": "7ebe2725e60906bd3c2cab5d36f13cb95efa01615bda9ab5e572b36f3c6210bd",
+      "git_blob_sha1": "0f7106a3a9d9d505530a5cc17a1bf6b5aa3331dc"
+    },
+    "mandatory_correction_sources": [
+      "FPC021",
+      "FPC018",
+      "FPC020",
+      "FPC017"
+    ],
+    "evidence": "Only the historical digest survives in the aggregate transcript and version correction. No verified original bytes were found in the reported bounded search scope. The current version is not a recovery or byte match of the overwritten original."
+  },
+  "historical_pending_review_statements": "The frozen candidates retain their original pending/required-review wording. Later separate reviews do not retroactively alter those statements.",
+  "chronology": {
+    "source_record_id": "FPC027",
+    "filename_suffix": "1655",
+    "snapshot_utc": "2026-11-03T16:52:00Z",
+    "status": "The review bytes were already present in the frozen 16:52 UTC snapshot. The filename suffix is not a trusted event time and does not establish actual creation or review-completion time. No event timestamp is inferred or fabricated."
+  },
+  "journal_version_correction": {
+    "original_source_id": "FPC029",
+    "correction_source_id": "FPC030",
+    "requirement": "Preserve the original erroneous arXiv Remark 2 attribution alongside the journal-version correction. The corrected theorem retains a large-alphabet assumption and is not automatically a fixed-four-state implication."
+  },
+  "original_manifest": "FPC001 contains historical original SHA-256 values. Use SOURCE_EXPORT_MAP.json for export digests; do not run it as an export-byte checksum manifest."
+}

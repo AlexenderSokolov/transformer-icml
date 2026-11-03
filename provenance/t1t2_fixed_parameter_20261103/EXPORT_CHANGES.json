@@ -1,0 +1,207 @@
+{
+  "schema": "safe-metadata-export-diff-v1",
+  "base_commit": "4a0732d7e1dd34ba242b633e2397dd263563d0f6",
+  "coordinates": "UTF-8 byte offsets, zero-based half-open; original and export coordinates both supplied.",
+  "removed_text": "Never reproduced. Only removed-span hashes, coordinates and byte lengths are public.",
+  "change_count": 11,
+  "changes": [
+    {
+      "source_record_id": "FPC004",
+      "path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        11018,
+        11117
+      ],
+      "removed_span_sha256": "5fd9b699745f263a5b13fbcc46aef18cde30178986f60f2b9c9bb4e70c54d939",
+      "removed_span_bytes": 99,
+      "replacement": "Proof-diagnostic snapshots were used as checklists; completion of the full proof-diagnostic process is not claimed.",
+      "replacement_sha256": "d515a4d548c343f2e4c45599fff0141533ba77a0ac5befe159c5994560bd75a6",
+      "replacement_bytes": 115,
+      "reason": "Normalize an internal process identifier while preserving the explicitly incomplete diagnostic status.",
+      "export_utf8_byte_range_zero_based_half_open": [
+        11018,
+        11133
+      ]
+    },
+    {
+      "source_record_id": "FPC005",
+      "path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v2.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        11589,
+        11688
+      ],
+      "removed_span_sha256": "5fd9b699745f263a5b13fbcc46aef18cde30178986f60f2b9c9bb4e70c54d939",
+      "removed_span_bytes": 99,
+      "replacement": "Proof-diagnostic snapshots were used as checklists; completion of the full proof-diagnostic process is not claimed.",
+      "replacement_sha256": "d515a4d548c343f2e4c45599fff0141533ba77a0ac5befe159c5994560bd75a6",
+      "replacement_bytes": 115,
+      "reason": "Normalize an internal process identifier while preserving the explicitly incomplete diagnostic status.",
+      "export_utf8_byte_range_zero_based_half_open": [
+        11589,
+        11704
+      ]
+    },
+    {
+      "source_record_id": "FPC006",
+      "path": "v10_research/route_a_unknown_u_compact_synthesis_20261103_1511/unknown_u_compact_synthesis_candidate_v3.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        12661,
+        12760
+      ],
+      "removed_span_sha256": "5fd9b699745f263a5b13fbcc46aef18cde30178986f60f2b9c9bb4e70c54d939",
+      "removed_span_bytes": 99,
+      "replacement": "Proof-diagnostic snapshots were used as checklists; completion of the full proof-diagnostic process is not claimed.",
+      "replacement_sha256": "d515a4d548c343f2e4c45599fff0141533ba77a0ac5befe159c5994560bd75a6",
+      "replacement_bytes": 115,
+      "reason": "Normalize an internal process identifier while preserving the explicitly incomplete diagnostic status.",
+      "export_utf8_byte_range_zero_based_half_open": [
+        12661,
+        12776
+      ]
+    },
+    {
+      "source_record_id": "FPC018",
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/evidence_limit_addendum_20261103_1641.txt",
+      "original_utf8_byte_range_zero_based_half_open": [
+        985,
+        1053
+      ],
+      "removed_span_sha256": "cb86b43a726bb274b223924b2fb6cfeee5318f0469fa38e2440b93a704584c4d",
+      "removed_span_bytes": 68,
+      "replacement": "No further tests or reruns were performed after the work was halted.",
+      "replacement_sha256": "8f47c9d265f3f679ff0ed6cfadf0fe4ce2a6ab0e00c450d0ed89dea196ce6705",
+      "replacement_bytes": 68,
+      "reason": "Remove a private instruction reference while retaining the temporal halt boundary and the no-rerun fact.",
+      "export_utf8_byte_range_zero_based_half_open": [
+        985,
+        1053
+      ]
+    },
+    {
+      "source_record_id": "FPC020",
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+      "original_utf8_byte_range_zero_based_half_open": [
+        0,
+        81
+      ],
+      "removed_span_sha256": "40196772b1f18d5e2a03b3c9827e5980f55a92715435592d48eb2db61069be4a",
+      "removed_span_bytes": 81,
+      "replacement": "Record transcribed from the existing execution transcript; this is not a new run.",
+      "replacement_sha256": "fe1b6fbec10d7b4441d9b3b9b0a6b14204431b8c60d57f339f1dee67e793ecef",
+      "replacement_bytes": 81,
+      "reason": "Normalize internal transcript terminology without changing the retained-evidence status.",
+      "export_utf8_byte_range_zero_based_half_open": [
+        0,
+        81
+      ]
+    },
+    {
+      "source_record_id": "FPC020",
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+      "original_utf8_byte_range_zero_based_half_open": [
+        83,
+        176
+      ],
+      "removed_span_sha256": "ff99cce900827bef793c0711b7dd67a397030da9e52ed01b9b9ab940eb9daa85",
+      "removed_span_bytes": 93,
+      "replacement": "Recorded command (executed 2026-11-03; exact original start and end times were not retained):",
+      "replacement_sha256": "2bec11211b143eb77346dec51347211cd8dc07ef6c344a534156756491444abd",
+      "replacement_bytes": 93,
+      "reason": "Remove an internal timing marker; it does not establish a trusted execution timestamp.",
+      "export_utf8_byte_range_zero_based_half_open": [
+        83,
+        176
+      ]
+    },
+    {
+      "source_record_id": "FPC020",
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+      "original_utf8_byte_range_zero_based_half_open": [
+        379,
+        410
+      ],
+      "removed_span_sha256": "90b79f5d1cd1ee7ce164154995c1ae5f1063c6625594bb5958ac7893a6c64737",
+      "removed_span_bytes": 31,
+      "replacement": "Recorded output, verbatim:",
+      "replacement_sha256": "693b55278e3be3fdf274f99d3b0b1176a1cac57566c7c0f49f9c636ddad5f04d",
+      "replacement_bytes": 26,
+      "reason": "Normalize internal tool terminology; the complete historical output remains verbatim.",
+      "export_utf8_byte_range_zero_based_half_open": [
+        379,
+        405
+      ]
+    },
+    {
+      "source_record_id": "FPC020",
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+      "original_utf8_byte_range_zero_based_half_open": [
+        897,
+        918
+      ],
+      "removed_span_sha256": "ce34b041afa9272d8436d1dfee6fa1e77f2b3e5318a86bd75cab4dac5821915e",
+      "removed_span_bytes": 21,
+      "replacement": "saved execution transcript",
+      "replacement_sha256": "db5464cc00376e78718b61c724ab5dfc26b6231493325b7f0f76e9c9d0b413bb",
+      "replacement_bytes": 26,
+      "reason": "Normalize internal transcript terminology while preserving the missing exit-code limitation.",
+      "export_utf8_byte_range_zero_based_half_open": [
+        892,
+        918
+      ]
+    },
+    {
+      "source_record_id": "FPC020",
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/run_record_from_tool_transcript.txt",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1038,
+        1067
+      ],
+      "removed_span_sha256": "efbe077c5d2fd01f32fa14590c1b6f61ec0d3778b05b49f343eef5e68fb2a04b",
+      "removed_span_bytes": 29,
+      "replacement": "a temporary copy of the same script",
+      "replacement_sha256": "c5fc7926a1cbd8ae8326221d3f8df2fe759f2da3535c79f843575bf690374cdd",
+      "replacement_bytes": 35,
+      "reason": "Remove a private temporary host path while preserving the earlier-run and copy provenance.",
+      "export_utf8_byte_range_zero_based_half_open": [
+        1038,
+        1073
+      ]
+    },
+    {
+      "source_record_id": "FPC021",
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+      "original_utf8_byte_range_zero_based_half_open": [
+        601,
+        641
+      ],
+      "removed_span_sha256": "196617c02cb6bf2df448d40b7e3d19bcdf3104b79888114724d5f6dedb3a641d",
+      "removed_span_bytes": 40,
+      "replacement": "the project directory and the temporary directory",
+      "replacement_sha256": "4845dace4ee76a8e8d794e752941b7b41b759cba98d3d73434ffe17b9cd722ba",
+      "replacement_bytes": 49,
+      "reason": "Remove private host roots while preserving the bounded search locations.",
+      "export_utf8_byte_range_zero_based_half_open": [
+        601,
+        650
+      ]
+    },
+    {
+      "source_record_id": "FPC021",
+      "path": "v10_research/review_fixed_parameter_integer_backend_20261103_1638/version_correction_20261103_1641.txt",
+      "original_utf8_byte_range_zero_based_half_open": [
+        758,
+        782
+      ],
+      "removed_span_sha256": "cdb79ffc64bce70c932429054a2eedd0b6163b9bad888bf3224eb2b0b7ecaefe",
+      "removed_span_bytes": 24,
+      "replacement": "in v10_research and the temporary directory",
+      "replacement_sha256": "83838c87dc3a168d75f95c058ea27603f865aed7b137d0c9ca0ba8c5125a419f",
+      "replacement_bytes": 43,
+      "reason": "Remove a private host root while retaining the exact project subtree and search-scope limitation.",
+      "export_utf8_byte_range_zero_based_half_open": [
+        767,
+        810
+      ]
+    }
+  ]
+}
