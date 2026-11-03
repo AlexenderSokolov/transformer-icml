@@ -1,5 +1,11 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 固定半程特征与稀有大误差（2026-11-03）
+
+[完整分析](v10_research/fixed_half_tail_geometry_20261103/ANALYSIS.md)证明：在 M=64，已提供的半程计数特征足以确定 Q；有限集合上也存在极大宽度、精确实数的 tanh 插值构造。这不是宽度 32 的容量结论、有限精度方案或学习保证。
+
+对已有数据和检查点的[尾部诊断](v10_research/fixed_half_tail_geometry_20261103/RESULTS.json)同时发现未覆盖的验证特征，以及被反复抽到仍明显欠拟合的训练例。平均目标允许稀有大误差，但这些事后观察没有隔离因果机制，也未展示学得鲁棒性。完整失败记录、脚本、原始输出和[独立 LLM 审阅](v10_research/fixed_half_tail_geometry_20261103/review_independent/REVIEW.md)均保留。[安全复现与身份说明](provenance/fixed_half_tail_geometry_20261103/PUBLIC_REPLAY.md)。
+
 ## 有限学习实验：失败的冒烟测试与受监督读出校准（2026-11-03）
 
 [位置池化冒烟报告](v10_research/learned_position_pilot_20261103/REPORT.md)与[独立审阅后的解释修正](v10_research/learned_position_pilot_20261103/REPORT_REVIEW_AMENDMENT.md)：一个初始化、每种条件 200 次更新没有显示有用的位置保护。有限 CE 攻击合法但不是整个编辑球的最坏攻击；不同模型可能选择不同污染词，近均匀随机对照和消融也不能支持孤立因果结论。

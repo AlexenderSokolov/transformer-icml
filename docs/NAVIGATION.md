@@ -1,5 +1,12 @@
 # 资料导航
 
+## 固定半程尾部与特征几何
+
+- [完整分析与有限集合证明](../v10_research/fixed_half_tail_geometry_20261103/ANALYSIS.md) · [完整原始结果](../v10_research/fixed_half_tail_geometry_20261103/RESULTS.json)
+- [分析程序](../v10_research/fixed_half_tail_geometry_20261103/analyze.py) · [独立字面计数核验](../v10_research/fixed_half_tail_geometry_20261103/verify.py) · [真实失败探针](../v10_research/fixed_half_tail_geometry_20261103/interactive_probe_error.log)
+- [独立 LLM 审阅](../v10_research/fixed_half_tail_geometry_20261103/review_independent/REVIEW.md) · [历史来源绑定](../v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json)
+- [安全公共复现](../provenance/fixed_half_tail_geometry_20261103/PUBLIC_REPLAY.md) · [原始/公开身份映射](../provenance/fixed_half_tail_geometry_20261103/SOURCE_EXPORT_MAP.json) · [范围与依赖](../provenance/fixed_half_tail_geometry_20261103/PUBLICATION_SCOPE_AND_CHECKS.json)
+
 ## 学习位置与读出校准的经验阶段
 
 - [最初研究方向](../v10_research/learned_position_direction_20261103/RECOMMENDATION.md) · [实际冒烟协议](../v10_research/learned_position_pilot_20261103/protocol.json)

@@ -1,0 +1,431 @@
+{
+  "rule": "Only five nonmathematical filesystem-location lines differ in two public files. Original math/proof, author computation, diagnostic failure, numerical outputs, source bindings and review conclusions are unchanged. The reviewer replay computation has identical AST after abstracting its four declared location expressions. No removed private paths are disclosed.",
+  "changes": [
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/interactive_probe_error.log",
+      "original_lines": [
+        4,
+        4
+      ],
+      "public_lines": [
+        4,
+        4
+      ],
+      "category": "Filesystem-location-only portability/privacy normalization; computation and observed failure unchanged",
+      "original_file_sha256": "c59bea9d0b6f77f34d6833cdec80b070c6d69d1bcbb0c96fa72b0c874455f847",
+      "export_file_sha256": "dc700021ad122efa8c07d95fa72679917f8a6c4f19688c7099639d423efcc9f9",
+      "original_region_sha256": "eded833d67b5c23cebb2235f5a705c7e7e90cbe72ead149f8c37bd6bf0dba82b",
+      "export_region_sha256": "6368c283b611bd110c12e01505202ca5e43061cc94e0124da64e42c7ed6ac686",
+      "public_region": [
+        "  File \"v10_research/fixed_half_tail_geometry_20261103/interactive_probe_error.py\", line 9, in <module>"
+      ]
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/review_independent/replay_analysis.py",
+      "original_lines": [
+        7,
+        7
+      ],
+      "public_lines": [
+        7,
+        7
+      ],
+      "category": "Filesystem-location-only portability/privacy normalization; computation and observed failure unchanged",
+      "original_file_sha256": "b0ef437dfb65e8df8afa4d45d36259b84c98a573eab409d389436951585db6ae",
+      "export_file_sha256": "3bdb3b5cfadc592b147a257db5a58287aca28459f8a2989f9ab618656f620775",
+      "original_region_sha256": "90c1f478f91cf08d42e8c47f6a0a38c6e7317dfd28bbc253144ec322be07f10e",
+      "export_region_sha256": "d654b027feb943316a7db89b81da7fe09f85ad74977d8d617175c7cd6c298bec",
+      "public_region": [
+        "P=Path(__file__).resolve().parent.parent"
+      ]
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/review_independent/replay_analysis.py",
+      "original_lines": [
+        42,
+        42
+      ],
+      "public_lines": [
+        42,
+        42
+      ],
+      "category": "Filesystem-location-only portability/privacy normalization; computation and observed failure unchanged",
+      "original_file_sha256": "b0ef437dfb65e8df8afa4d45d36259b84c98a573eab409d389436951585db6ae",
+      "export_file_sha256": "3bdb3b5cfadc592b147a257db5a58287aca28459f8a2989f9ab618656f620775",
+      "original_region_sha256": "65b9b7cd6163f057bb0b3b0b38356b1d9930d4ff660ada6068c05ff8e6007646",
+      "export_region_sha256": "fd32167cd9fa2028fb1beacbea07b7f7ada5e0de1d13ef740d87dbc09c75ce7e",
+      "public_region": [
+        "(Path(__file__).resolve().parent/'REPLAY_RESULTS.json').write_text(json.dumps(res,indent=2,sort_keys=True)+'\\n')"
+      ]
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/review_independent/replay_analysis.py",
+      "original_lines": [
+        49,
+        49
+      ],
+      "public_lines": [
+        49,
+        49
+      ],
+      "category": "Filesystem-location-only portability/privacy normalization; computation and observed failure unchanged",
+      "original_file_sha256": "b0ef437dfb65e8df8afa4d45d36259b84c98a573eab409d389436951585db6ae",
+      "export_file_sha256": "3bdb3b5cfadc592b147a257db5a58287aca28459f8a2989f9ab618656f620775",
+      "original_region_sha256": "65b9b7cd6163f057bb0b3b0b38356b1d9930d4ff660ada6068c05ff8e6007646",
+      "export_region_sha256": "fd32167cd9fa2028fb1beacbea07b7f7ada5e0de1d13ef740d87dbc09c75ce7e",
+      "public_region": [
+        "(Path(__file__).resolve().parent/'REPLAY_RESULTS.json').write_text(json.dumps(res,indent=2,sort_keys=True)+'\\n')"
+      ]
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/review_independent/replay_analysis.py",
+      "original_lines": [
+        65,
+        65
+      ],
+      "public_lines": [
+        65,
+        65
+      ],
+      "category": "Filesystem-location-only portability/privacy normalization; computation and observed failure unchanged",
+      "original_file_sha256": "b0ef437dfb65e8df8afa4d45d36259b84c98a573eab409d389436951585db6ae",
+      "export_file_sha256": "3bdb3b5cfadc592b147a257db5a58287aca28459f8a2989f9ab618656f620775",
+      "original_region_sha256": "65b9b7cd6163f057bb0b3b0b38356b1d9930d4ff660ada6068c05ff8e6007646",
+      "export_region_sha256": "fd32167cd9fa2028fb1beacbea07b7f7ada5e0de1d13ef740d87dbc09c75ce7e",
+      "public_region": [
+        "(Path(__file__).resolve().parent/'REPLAY_RESULTS.json').write_text(json.dumps(res,indent=2,sort_keys=True)+'\\n')"
+      ]
+    }
+  ],
+  "historical_binding_limit": "SOURCE_BINDINGS.json remains exact and binds the original failed-probe traceback. Its public replacement has a distinct declared SHA256; do not claim a naive original-hash check passes. REPLAY_BINDINGS.json and all 23 external dependencies remain exact.",
+  "source_binding_resolutions": [
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "resolved_path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "expected_original_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "public_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/fixed_half_tail_geometry_20261103/ANALYSIS.md",
+      "resolved_path": "v10_research/fixed_half_tail_geometry_20261103/ANALYSIS.md",
+      "expected_original_sha256": "c4b12a9887d05aa805166dafcec27ee7074ae448c15343d053b7e361e4055bc2",
+      "public_sha256": "c4b12a9887d05aa805166dafcec27ee7074ae448c15343d053b7e361e4055bc2",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/fixed_half_tail_geometry_20261103/RESULTS.json",
+      "resolved_path": "v10_research/fixed_half_tail_geometry_20261103/RESULTS.json",
+      "expected_original_sha256": "11ecfc6a7d51e90f8104c29d46a8a50635ae08e2bcd7ab6ae27faa20947e63a6",
+      "public_sha256": "11ecfc6a7d51e90f8104c29d46a8a50635ae08e2bcd7ab6ae27faa20947e63a6",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/fixed_half_tail_geometry_20261103/analyze.py",
+      "resolved_path": "v10_research/fixed_half_tail_geometry_20261103/analyze.py",
+      "expected_original_sha256": "d2e35b666bdb82f6f15315c947b3183deafc576512289922778bebb277692ef7",
+      "public_sha256": "d2e35b666bdb82f6f15315c947b3183deafc576512289922778bebb277692ef7",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/fixed_half_tail_geometry_20261103/interactive_probe_error.log",
+      "resolved_path": "v10_research/fixed_half_tail_geometry_20261103/interactive_probe_error.log",
+      "expected_original_sha256": "c59bea9d0b6f77f34d6833cdec80b070c6d69d1bcbb0c96fa72b0c874455f847",
+      "public_sha256": "dc700021ad122efa8c07d95fa72679917f8a6c4f19688c7099639d423efcc9f9",
+      "status": "DECLARED_EXACT_EXPORT_PAIR"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/fixed_half_tail_geometry_20261103/interactive_probe_error.py",
+      "resolved_path": "v10_research/fixed_half_tail_geometry_20261103/interactive_probe_error.py",
+      "expected_original_sha256": "d7d8c69eb3ac3c915c1c9da21aef7a6dc30da8956cccc43e303d1fc7a0e677a5",
+      "public_sha256": "d7d8c69eb3ac3c915c1c9da21aef7a6dc30da8956cccc43e303d1fc7a0e677a5",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/fixed_half_tail_geometry_20261103/run.log",
+      "resolved_path": "v10_research/fixed_half_tail_geometry_20261103/run.log",
+      "expected_original_sha256": "f43212a2c2c12415add4755f195cf03afa112656a754156ebb8b4a8b38797606",
+      "public_sha256": "f43212a2c2c12415add4755f195cf03afa112656a754156ebb8b4a8b38797606",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/fixed_half_tail_geometry_20261103/verify.log",
+      "resolved_path": "v10_research/fixed_half_tail_geometry_20261103/verify.log",
+      "expected_original_sha256": "60b9cbf39889f987eb6e3373710368bb7b73f925bc4aea9a0c8d11e336d854ed",
+      "public_sha256": "60b9cbf39889f987eb6e3373710368bb7b73f925bc4aea9a0c8d11e336d854ed",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/fixed_half_tail_geometry_20261103/verify.py",
+      "resolved_path": "v10_research/fixed_half_tail_geometry_20261103/verify.py",
+      "expected_original_sha256": "aa3964b529e67b97b8648ce707d69bbae78324e585b270b5c95549505f14bd4b",
+      "public_sha256": "aa3964b529e67b97b8648ce707d69bbae78324e585b270b5c95549505f14bd4b",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/learned_position_pilot_20261103/pilot.py",
+      "resolved_path": "v10_research/learned_position_pilot_20261103/pilot.py",
+      "expected_original_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+      "public_sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "resolved_path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "expected_original_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+      "public_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/positional_gate_training_20261103/CANDIDATE.md",
+      "resolved_path": "v10_research/positional_gate_training_20261103/CANDIDATE.md",
+      "expected_original_sha256": "91dcb755e6544fa04e728ab92bf48a7cb864e1e28fc9e4cbdbe0fc38257cb0be",
+      "public_sha256": "91dcb755e6544fa04e728ab92bf48a7cb864e1e28fc9e4cbdbe0fc38257cb0be",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/REPORT.md",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/REPORT.md",
+      "expected_original_sha256": "b4eb8b8497c13112b4d3377dbe1558e0b387f60170e4cb839355fd16f392ec1b",
+      "public_sha256": "b4eb8b8497c13112b4d3377dbe1558e0b387f60170e4cb839355fd16f392ec1b",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/REPORT_AUDIT_ADDENDUM.md",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/REPORT_AUDIT_ADDENDUM.md",
+      "expected_original_sha256": "3686e8548077085e96e71cd2659cbe79d4a001411370d2c12a1b837dab803719",
+      "public_sha256": "3686e8548077085e96e71cd2659cbe79d4a001411370d2c12a1b837dab803719",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration.py",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration.py",
+      "expected_original_sha256": "68c4b91287ec3ea791d54a2a4f279ea8d96e613d8509b006aaede06c96fef09f",
+      "public_sha256": "68c4b91287ec3ea791d54a2a4f279ea8d96e613d8509b006aaede06c96fef09f",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step0.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step0.npz",
+      "expected_original_sha256": "1e9c5614c8f524bb323dff6e2450bec41e0c7155b75c445fe774b0e5b246c274",
+      "public_sha256": "1e9c5614c8f524bb323dff6e2450bec41e0c7155b75c445fe774b0e5b246c274",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step1000.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step1000.npz",
+      "expected_original_sha256": "e74e83c57707e729cd3ba955f256569bfe264f710a91b5b341a8de005a4aa719",
+      "public_sha256": "e74e83c57707e729cd3ba955f256569bfe264f710a91b5b341a8de005a4aa719",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step200.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step200.npz",
+      "expected_original_sha256": "cea5e2e23f521f65a92e2066c07721729b615458f290f67af5cceabbcbf00210",
+      "public_sha256": "cea5e2e23f521f65a92e2066c07721729b615458f290f67af5cceabbcbf00210",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step2000.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step2000.npz",
+      "expected_original_sha256": "c787c9b27e0d28a64c58dfb261c85205ca60d8fbc38c2f94db68a9dc71cc9af7",
+      "public_sha256": "c787c9b27e0d28a64c58dfb261c85205ca60d8fbc38c2f94db68a9dc71cc9af7",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step0.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step0.npz",
+      "expected_original_sha256": "351b8d89b3f116167872764cdb69b432ef862283e556bf2bcc6fb5c335e3c0ba",
+      "public_sha256": "351b8d89b3f116167872764cdb69b432ef862283e556bf2bcc6fb5c335e3c0ba",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step1000.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step1000.npz",
+      "expected_original_sha256": "d75c9e0a1530c235a25a5f22ae43be259a1440b9f3eba9c6ad833b3f4580d7d7",
+      "public_sha256": "d75c9e0a1530c235a25a5f22ae43be259a1440b9f3eba9c6ad833b3f4580d7d7",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step200.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step200.npz",
+      "expected_original_sha256": "80b0b6a20364a990dd9dca87bef2f21ad24cb590d45f81c013cfd2a815d35f2a",
+      "public_sha256": "80b0b6a20364a990dd9dca87bef2f21ad24cb590d45f81c013cfd2a815d35f2a",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step2000.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step2000.npz",
+      "expected_original_sha256": "c7272790937137782db4075f0e22d88796e4521f5a83ec0f220c973dea1b3cb3",
+      "public_sha256": "c7272790937137782db4075f0e22d88796e4521f5a83ec0f220c973dea1b3cb3",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step0.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step0.npz",
+      "expected_original_sha256": "b5097430714dd629562c64328b71768f3cc3042985a04e885c6f467a22a7b886",
+      "public_sha256": "b5097430714dd629562c64328b71768f3cc3042985a04e885c6f467a22a7b886",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step1000.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step1000.npz",
+      "expected_original_sha256": "f7fd4ad23437acd504b5f81a88dc9c2a0cabbf3a6c3625da9158d2563adb6ee5",
+      "public_sha256": "f7fd4ad23437acd504b5f81a88dc9c2a0cabbf3a6c3625da9158d2563adb6ee5",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step200.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step200.npz",
+      "expected_original_sha256": "a7b78b2c05d5cc3e3e5506deadf7a02e3917ff2eaa63b931b70dfc8322668287",
+      "public_sha256": "a7b78b2c05d5cc3e3e5506deadf7a02e3917ff2eaa63b931b70dfc8322668287",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step2000.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step2000.npz",
+      "expected_original_sha256": "194080a39090d0136e6daa25bc911f107589d122a898eddcd1b007d583ea95c7",
+      "public_sha256": "194080a39090d0136e6daa25bc911f107589d122a898eddcd1b007d583ea95c7",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/final_predictions.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/final_predictions.npz",
+      "expected_original_sha256": "d09335b07b17affc0cb2c645f86d8a6f108e44f57fbf525fbf1983e8385db799",
+      "public_sha256": "d09335b07b17affc0cb2c645f86d8a6f108e44f57fbf525fbf1983e8385db799",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/frozen_data.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/frozen_data.npz",
+      "expected_original_sha256": "6d8936a8442ec86ad0163ec83d59088746db1d4236f5b59e3e430a2e70350bf5",
+      "public_sha256": "6d8936a8442ec86ad0163ec83d59088746db1d4236f5b59e3e430a2e70350bf5",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/protocol.json",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/protocol.json",
+      "expected_original_sha256": "48ce82d7ec2b9d159d4bded3c471b925e957f1569871c675a3ea3ea69463d65a",
+      "public_sha256": "48ce82d7ec2b9d159d4bded3c471b925e957f1569871c675a3ea3ea69463d65a",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/review_independent/REVIEW.md",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/review_independent/REVIEW.md",
+      "expected_original_sha256": "3ef98dfc627234cdc35ce3c2018fb97a2ebbaef1d56df9b7d711a129f36a3a9c",
+      "public_sha256": "3ef98dfc627234cdc35ce3c2018fb97a2ebbaef1d56df9b7d711a129f36a3a9c",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/REPLAY_BINDINGS.json",
+      "declared_path": "README_REPLAY.md",
+      "resolved_path": "v10_research/fixed_half_tail_geometry_20261103/README_REPLAY.md",
+      "expected_original_sha256": "f22d59c8352217d467f22c4b344cbb3487bc12b5f5f22a68efdc94c115e457d0",
+      "public_sha256": "f22d59c8352217d467f22c4b344cbb3487bc12b5f5f22a68efdc94c115e457d0",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/REPLAY_BINDINGS.json",
+      "declared_path": "SOURCE_BINDINGS.json",
+      "resolved_path": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "23490d6393717e293b6b963b1dde1f1b05c9c0803291acecda548c51b8e2e050",
+      "public_sha256": "23490d6393717e293b6b963b1dde1f1b05c9c0803291acecda548c51b8e2e050",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/REPLAY_BINDINGS.json",
+      "declared_path": "replay_verification.log",
+      "resolved_path": "v10_research/fixed_half_tail_geometry_20261103/replay_verification.log",
+      "expected_original_sha256": "4740f64570673382a004ec844023a6cef9346d9bf8f0068478a96eff2c2ade4b",
+      "public_sha256": "4740f64570673382a004ec844023a6cef9346d9bf8f0068478a96eff2c2ade4b",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/REPLAY_BINDINGS.json",
+      "declared_path": "replay_verify.sh",
+      "resolved_path": "v10_research/fixed_half_tail_geometry_20261103/replay_verify.sh",
+      "expected_original_sha256": "4651032ec7623013538c94c2be17ae3bee5180dfda60c2fbbd7abf47b93b9b8d",
+      "public_sha256": "4651032ec7623013538c94c2be17ae3bee5180dfda60c2fbbd7abf47b93b9b8d",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/RESULTS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration.py",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration.py",
+      "expected_original_sha256": "68c4b91287ec3ea791d54a2a4f279ea8d96e613d8509b006aaede06c96fef09f",
+      "public_sha256": "68c4b91287ec3ea791d54a2a4f279ea8d96e613d8509b006aaede06c96fef09f",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/RESULTS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/final_predictions.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/final_predictions.npz",
+      "expected_original_sha256": "d09335b07b17affc0cb2c645f86d8a6f108e44f57fbf525fbf1983e8385db799",
+      "public_sha256": "d09335b07b17affc0cb2c645f86d8a6f108e44f57fbf525fbf1983e8385db799",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/RESULTS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/frozen_data.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/frozen_data.npz",
+      "expected_original_sha256": "6d8936a8442ec86ad0163ec83d59088746db1d4236f5b59e3e430a2e70350bf5",
+      "public_sha256": "6d8936a8442ec86ad0163ec83d59088746db1d4236f5b59e3e430a2e70350bf5",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/review_independent/REPLAY_RESULTS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration.py",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration.py",
+      "expected_original_sha256": "68c4b91287ec3ea791d54a2a4f279ea8d96e613d8509b006aaede06c96fef09f",
+      "public_sha256": "68c4b91287ec3ea791d54a2a4f279ea8d96e613d8509b006aaede06c96fef09f",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/review_independent/REPLAY_RESULTS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/final_predictions.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/final_predictions.npz",
+      "expected_original_sha256": "d09335b07b17affc0cb2c645f86d8a6f108e44f57fbf525fbf1983e8385db799",
+      "public_sha256": "d09335b07b17affc0cb2c645f86d8a6f108e44f57fbf525fbf1983e8385db799",
+      "status": "EXACT_PUBLIC_BYTES"
+    },
+    {
+      "owner": "v10_research/fixed_half_tail_geometry_20261103/review_independent/REPLAY_RESULTS.json",
+      "declared_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/frozen_data.npz",
+      "resolved_path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/frozen_data.npz",
+      "expected_original_sha256": "6d8936a8442ec86ad0163ec83d59088746db1d4236f5b59e3e430a2e70350bf5",
+      "public_sha256": "6d8936a8442ec86ad0163ec83d59088746db1d4236f5b59e3e430a2e70350bf5",
+      "status": "EXACT_PUBLIC_BYTES"
+    }
+  ]
+}

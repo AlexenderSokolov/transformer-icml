@@ -1,5 +1,11 @@
 # 当前状态：位置计数与未知预算适应
 
+## 2026-11-03：固定半程信息充分，但有限拟合仍有尾部失败
+
+新增[固定半程几何分析](../v10_research/fixed_half_tail_geometry_20261103/ANALYSIS.md)。M=64 时，已有计数特征可精确确定目标；至多 1,258,883 个隐单元的有限集合实数插值仅是存在性说明，不是当前宽度 32 的可学性、不可表达性或可行精度保证。
+
+同一冻结数据上既有验证覆盖不足，也有重复抽样训练点的欠拟合。没有新训练、选种子或新确认样本；不能从平均误差、饱和或近邻关系推出唯一原因或成功的干预方法。此前 55 页稿件、实验原始档案与历史失败不变。
+
 ## 2026-11-03：两项有限经验研究
 
 新增阶段包含[学习位置池化冒烟测试](../v10_research/learned_position_pilot_20261103/REPORT.md)及[解释修正](../v10_research/learned_position_pilot_20261103/REPORT_REVIEW_AMENDMENT.md)，然后是[固定半程读出校准](../v10_research/readout_conditioning_calibration_20261103/REPORT.md)及[审计补充](../v10_research/readout_conditioning_calibration_20261103/REPORT_AUDIT_ADDENDUM.md)。前者没有展示有用的学习位置保护；后者只支持特定 Q 监督、碰撞词加权和固定优化预算下的参数化差别。

@@ -1,0 +1,184 @@
+{
+  "base_commit": "8ba584a6716e9b23d298c13f399710fb3d9ad6a6",
+  "source_files": 20,
+  "selected_original_bytes": 189366,
+  "scientific_omissions": [],
+  "cache_only_exclusion": true,
+  "source_proof_or_computation_changes": false,
+  "path_location_edits": {
+    "files": 2,
+    "lines": 5
+  },
+  "python_sources_parsed": 5,
+  "privacy_unresolved_hits": [],
+  "structured_binding_counts": {
+    "EXACT_PUBLIC_BYTES": 40,
+    "DECLARED_EXACT_EXPORT_PAIR": 1
+  },
+  "exact_inherited_dependencies": [
+    {
+      "path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "bytes": 9394,
+      "git_blob_sha1": "75a7117ea70bc4c563d992129e82b38bbd689485"
+    },
+    {
+      "path": "v10_research/learned_position_pilot_20261103/pilot.py",
+      "sha256": "b297c441d6a54c21dd15d8dcd6b69edc8b561adbeb28dd697f2067f50ea2529c",
+      "bytes": 6921,
+      "git_blob_sha1": "e962a91a259648d87a725b8d2e935ac83e75d16a"
+    },
+    {
+      "path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+      "bytes": 12545,
+      "git_blob_sha1": "bf718bf514f24158ff482a0b665908d9a8c59d2f"
+    },
+    {
+      "path": "v10_research/positional_gate_training_20261103/CANDIDATE.md",
+      "sha256": "91dcb755e6544fa04e728ab92bf48a7cb864e1e28fc9e4cbdbe0fc38257cb0be",
+      "bytes": 12550,
+      "git_blob_sha1": "e3f5e0867e619d03af7fa9e72289c718a934a3de"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/REPORT.md",
+      "sha256": "b4eb8b8497c13112b4d3377dbe1558e0b387f60170e4cb839355fd16f392ec1b",
+      "bytes": 8584,
+      "git_blob_sha1": "2404db423f5ad70df9effa303a90613df56b7d15"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/REPORT_AUDIT_ADDENDUM.md",
+      "sha256": "3686e8548077085e96e71cd2659cbe79d4a001411370d2c12a1b837dab803719",
+      "bytes": 2692,
+      "git_blob_sha1": "0e178372cd0275df83564f7d6d04841454aed109"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration.py",
+      "sha256": "68c4b91287ec3ea791d54a2a4f279ea8d96e613d8509b006aaede06c96fef09f",
+      "bytes": 3900,
+      "git_blob_sha1": "a6ae7862de67d34a6680b0c1ab5e2f9c035ffcc5"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step0.npz",
+      "sha256": "1e9c5614c8f524bb323dff6e2450bec41e0c7155b75c445fe774b0e5b246c274",
+      "bytes": 6972,
+      "git_blob_sha1": "cbb46f4d386bd5bd785fa0928fe55107a8bf5821"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step1000.npz",
+      "sha256": "e74e83c57707e729cd3ba955f256569bfe264f710a91b5b341a8de005a4aa719",
+      "bytes": 6972,
+      "git_blob_sha1": "11301683a9918eea439986f28da202518300c2be"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step200.npz",
+      "sha256": "cea5e2e23f521f65a92e2066c07721729b615458f290f67af5cceabbcbf00210",
+      "bytes": 6972,
+      "git_blob_sha1": "9c6e6267f83380b894692e36a1c5c97e7221c55d"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103201_step2000.npz",
+      "sha256": "c787c9b27e0d28a64c58dfb261c85205ca60d8fbc38c2f94db68a9dc71cc9af7",
+      "bytes": 6972,
+      "git_blob_sha1": "c55b2c5217ea8d28af82f218f47128175c22a624"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step0.npz",
+      "sha256": "351b8d89b3f116167872764cdb69b432ef862283e556bf2bcc6fb5c335e3c0ba",
+      "bytes": 6972,
+      "git_blob_sha1": "31e4ecfa1a39fbfd34e0e7ff17650d18c5a6dc8e"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step1000.npz",
+      "sha256": "d75c9e0a1530c235a25a5f22ae43be259a1440b9f3eba9c6ad833b3f4580d7d7",
+      "bytes": 6972,
+      "git_blob_sha1": "7a4c48e73ae18a81129186357ea1c44cfac3ec9d"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step200.npz",
+      "sha256": "80b0b6a20364a990dd9dca87bef2f21ad24cb590d45f81c013cfd2a815d35f2a",
+      "bytes": 6972,
+      "git_blob_sha1": "e0b76702551c9c585791c3be2ebfdf56ce0af7c6"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103202_step2000.npz",
+      "sha256": "c7272790937137782db4075f0e22d88796e4521f5a83ec0f220c973dea1b3cb3",
+      "bytes": 6972,
+      "git_blob_sha1": "6ed13eb53f1663d74224ce94224dd76aef7b42e0"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step0.npz",
+      "sha256": "b5097430714dd629562c64328b71768f3cc3042985a04e885c6f467a22a7b886",
+      "bytes": 6972,
+      "git_blob_sha1": "ec4acfd243d196ebe6eb5d0ddab32e7ab8e1e441"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step1000.npz",
+      "sha256": "f7fd4ad23437acd504b5f81a88dc9c2a0cabbf3a6c3625da9158d2563adb6ee5",
+      "bytes": 6972,
+      "git_blob_sha1": "546cb4c58b67c77febda64a53088f7948fc2d71f"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step200.npz",
+      "sha256": "a7b78b2c05d5cc3e3e5506deadf7a02e3917ff2eaa63b931b70dfc8322668287",
+      "bytes": 6972,
+      "git_blob_sha1": "de97ad8f33f60a682e2be0dbf9bdcb29bd023ce5"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/checkpoints/half_count_scaled_20261103203_step2000.npz",
+      "sha256": "194080a39090d0136e6daa25bc911f107589d122a898eddcd1b007d583ea95c7",
+      "bytes": 6972,
+      "git_blob_sha1": "4cf420383962a90dda1533080039d7ecd0c5d961"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/final_predictions.npz",
+      "sha256": "d09335b07b17affc0cb2c645f86d8a6f108e44f57fbf525fbf1983e8385db799",
+      "bytes": 251414,
+      "git_blob_sha1": "e95ef634980a223ec479c15e25bc90547da80884"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/calibration_v1/frozen_data.npz",
+      "sha256": "6d8936a8442ec86ad0163ec83d59088746db1d4236f5b59e3e430a2e70350bf5",
+      "bytes": 384825,
+      "git_blob_sha1": "f1a2b39ad3417183ee9d92bbad3d93424cf55ed8"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/protocol.json",
+      "sha256": "48ce82d7ec2b9d159d4bded3c471b925e957f1569871c675a3ea3ea69463d65a",
+      "bytes": 2861,
+      "git_blob_sha1": "6c1f50bd8d0dea74e04f9d72e58e7e0158312753"
+    },
+    {
+      "path": "v10_research/readout_conditioning_calibration_20261103/review_independent/REVIEW.md",
+      "sha256": "3ef98dfc627234cdc35ce3c2018fb97a2ebbaef1d56df9b7d711a129f36a3a9c",
+      "bytes": 8006,
+      "git_blob_sha1": "bb79819024d7ed638aae10ec4bbf10fb962ac550"
+    }
+  ],
+  "scientific_scope": [
+    "At M=64 the supplied fixed-half count features determine Q for every valid binary word. This feature sufficiency is not learned positional protection.",
+    "A finite-set tanh construction interpolates Q in exact real arithmetic with at most 1,258,883 hidden units. There is no useful width, precision, stability, weight or learning guarantee and no width-32 impossibility claim.",
+    "Frozen data and checkpoints show both uncovered validation features and repeatedly sampled training examples with large residual errors. These post-hoc observations and weighted-average contributions do not identify a unique cause or a successful counterfactual intervention.",
+    "All finite numerical checks reuse 4,104 frozen words and three initialization seeds on shared data. They do not prove population-tail risk, general SGD, minimax performance or a new independent confirmation sample.",
+    "U=10 and U=11 in the prose are binary endpoint strings; integer encodings in JSON/review are 2F+G=2 and 3. No case identity differs.",
+    "The independent review is an LLM scientific audit, not external peer review, formal proof or novelty certification. No new model was trained.",
+    "All 20 stage files are retained, including the failed probe and duplicate reviewer outputs specifically bound to this stage. Earlier archive and missing-history limits remain unchanged."
+  ],
+  "publisher_checks": "Public-input identity verification, source closure, path-only AST comparison and isolated author/reviewer diagnostic replay are recorded separately; these are not new training or a mathematical proof check.",
+  "publisher_public_replay": {
+    "status": "PASS",
+    "verified_public_inputs": 43,
+    "author_RESULTS_run_log_verify_log": "BYTE_IDENTICAL",
+    "independent_output_and_replay_results": "BYTE_IDENTICAL",
+    "retained_failed_probe": "EXPECTED_UNBOUNDLOCALERROR_REPRODUCED",
+    "optimized_python": "REFUSED",
+    "tampered_input": "REFUSED",
+    "tampered_source_map": "REFUSED",
+    "original_and_public_sources_unchanged": true,
+    "training_performed": false,
+    "environment": {
+      "python": "3.12.14",
+      "numpy": "2.3.5"
+    }
+  }
+}

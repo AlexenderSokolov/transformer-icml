@@ -1,0 +1,286 @@
+{
+  "scope": "Complete fixed-half frozen-data geometry, post-hoc tail analysis, actual failed probe and source-bound independent LLM numerical review/replay. No new training or data selection.",
+  "base_commit": "8ba584a6716e9b23d298c13f399710fb3d9ad6a6",
+  "files": [
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/ANALYSIS.md",
+      "original": {
+        "bytes": 7715,
+        "sha256": "c4b12a9887d05aa805166dafcec27ee7074ae448c15343d053b7e361e4055bc2",
+        "git_blob_sha1": "767dade79c7cb117ae048127d8a5b61bff854044"
+      },
+      "public": {
+        "bytes": 7715,
+        "sha256": "c4b12a9887d05aa805166dafcec27ee7074ae448c15343d053b7e361e4055bc2",
+        "git_blob_sha1": "767dade79c7cb117ae048127d8a5b61bff854044"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/README_REPLAY.md",
+      "original": {
+        "bytes": 1607,
+        "sha256": "f22d59c8352217d467f22c4b344cbb3487bc12b5f5f22a68efdc94c115e457d0",
+        "git_blob_sha1": "838313a12a210717cf50f1f89ee2a25e6714662e"
+      },
+      "public": {
+        "bytes": 1607,
+        "sha256": "f22d59c8352217d467f22c4b344cbb3487bc12b5f5f22a68efdc94c115e457d0",
+        "git_blob_sha1": "838313a12a210717cf50f1f89ee2a25e6714662e"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/REPLAY_BINDINGS.json",
+      "original": {
+        "bytes": 460,
+        "sha256": "639d821a18cb550ccfec11ea6263c6903a43858355bcddd0ff7e742650d850a3",
+        "git_blob_sha1": "93ad4d52b8710fed9c64625759350152c46a0862"
+      },
+      "public": {
+        "bytes": 460,
+        "sha256": "639d821a18cb550ccfec11ea6263c6903a43858355bcddd0ff7e742650d850a3",
+        "git_blob_sha1": "93ad4d52b8710fed9c64625759350152c46a0862"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/RESULTS.json",
+      "original": {
+        "bytes": 52420,
+        "sha256": "11ecfc6a7d51e90f8104c29d46a8a50635ae08e2bcd7ab6ae27faa20947e63a6",
+        "git_blob_sha1": "57486534dab914bc52a9c719d10e76dbeb939db3"
+      },
+      "public": {
+        "bytes": 52420,
+        "sha256": "11ecfc6a7d51e90f8104c29d46a8a50635ae08e2bcd7ab6ae27faa20947e63a6",
+        "git_blob_sha1": "57486534dab914bc52a9c719d10e76dbeb939db3"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/SOURCE_BINDINGS.json",
+      "original": {
+        "bytes": 5322,
+        "sha256": "23490d6393717e293b6b963b1dde1f1b05c9c0803291acecda548c51b8e2e050",
+        "git_blob_sha1": "f7e99d0b69ab10413a6721f03f94aa2e0defc817"
+      },
+      "public": {
+        "bytes": 5322,
+        "sha256": "23490d6393717e293b6b963b1dde1f1b05c9c0803291acecda548c51b8e2e050",
+        "git_blob_sha1": "f7e99d0b69ab10413a6721f03f94aa2e0defc817"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/analyze.py",
+      "original": {
+        "bytes": 7363,
+        "sha256": "d2e35b666bdb82f6f15315c947b3183deafc576512289922778bebb277692ef7",
+        "git_blob_sha1": "bb8f25ad1f6ad8ad81ce3214be91e02befd98c7b"
+      },
+      "public": {
+        "bytes": 7363,
+        "sha256": "d2e35b666bdb82f6f15315c947b3183deafc576512289922778bebb277692ef7",
+        "git_blob_sha1": "bb8f25ad1f6ad8ad81ce3214be91e02befd98c7b"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/interactive_probe_error.log",
+      "original": {
+        "bytes": 972,
+        "sha256": "c59bea9d0b6f77f34d6833cdec80b070c6d69d1bcbb0c96fa72b0c874455f847",
+        "git_blob_sha1": "809c74ab005fa83cfee47f3eeaf75d7a7438760b"
+      },
+      "public": {
+        "bytes": 940,
+        "sha256": "dc700021ad122efa8c07d95fa72679917f8a6c4f19688c7099639d423efcc9f9",
+        "git_blob_sha1": "e327d40f437488ac4b85027b4efba87f328423e6"
+      },
+      "changed": true
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/interactive_probe_error.py",
+      "original": {
+        "bytes": 1059,
+        "sha256": "d7d8c69eb3ac3c915c1c9da21aef7a6dc30da8956cccc43e303d1fc7a0e677a5",
+        "git_blob_sha1": "444004ed7ef2686ce1654271bfb776239e803530"
+      },
+      "public": {
+        "bytes": 1059,
+        "sha256": "d7d8c69eb3ac3c915c1c9da21aef7a6dc30da8956cccc43e303d1fc7a0e677a5",
+        "git_blob_sha1": "444004ed7ef2686ce1654271bfb776239e803530"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/replay_verification.log",
+      "original": {
+        "bytes": 405,
+        "sha256": "4740f64570673382a004ec844023a6cef9346d9bf8f0068478a96eff2c2ade4b",
+        "git_blob_sha1": "8eeeeee3a5e3e6d1f9c70b888ea60028e8cd472e"
+      },
+      "public": {
+        "bytes": 405,
+        "sha256": "4740f64570673382a004ec844023a6cef9346d9bf8f0068478a96eff2c2ade4b",
+        "git_blob_sha1": "8eeeeee3a5e3e6d1f9c70b888ea60028e8cd472e"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/replay_verify.sh",
+      "original": {
+        "bytes": 1231,
+        "sha256": "4651032ec7623013538c94c2be17ae3bee5180dfda60c2fbbd7abf47b93b9b8d",
+        "git_blob_sha1": "50b2ccb5041122357745cb781d5b0f643d2c3584"
+      },
+      "public": {
+        "bytes": 1231,
+        "sha256": "4651032ec7623013538c94c2be17ae3bee5180dfda60c2fbbd7abf47b93b9b8d",
+        "git_blob_sha1": "50b2ccb5041122357745cb781d5b0f643d2c3584"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/review_independent/REPLAY_RESULTS.json",
+      "original": {
+        "bytes": 52420,
+        "sha256": "11ecfc6a7d51e90f8104c29d46a8a50635ae08e2bcd7ab6ae27faa20947e63a6",
+        "git_blob_sha1": "57486534dab914bc52a9c719d10e76dbeb939db3"
+      },
+      "public": {
+        "bytes": 52420,
+        "sha256": "11ecfc6a7d51e90f8104c29d46a8a50635ae08e2bcd7ab6ae27faa20947e63a6",
+        "git_blob_sha1": "57486534dab914bc52a9c719d10e76dbeb939db3"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/review_independent/REVIEW.md",
+      "original": {
+        "bytes": 5267,
+        "sha256": "ecb89764d470d9df09b8102a5d568196bbcfd124b48146e7a96dfb93e2b2db42",
+        "git_blob_sha1": "809ba0dcff65719ba391b7f38589447316732ea6"
+      },
+      "public": {
+        "bytes": 5267,
+        "sha256": "ecb89764d470d9df09b8102a5d568196bbcfd124b48146e7a96dfb93e2b2db42",
+        "git_blob_sha1": "809ba0dcff65719ba391b7f38589447316732ea6"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/review_independent/analysis_output.txt",
+      "original": {
+        "bytes": 19183,
+        "sha256": "f43212a2c2c12415add4755f195cf03afa112656a754156ebb8b4a8b38797606",
+        "git_blob_sha1": "f18c9eb05f0095ef3a4b7e1fc6a383997ee32f98"
+      },
+      "public": {
+        "bytes": 19183,
+        "sha256": "f43212a2c2c12415add4755f195cf03afa112656a754156ebb8b4a8b38797606",
+        "git_blob_sha1": "f18c9eb05f0095ef3a4b7e1fc6a383997ee32f98"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/review_independent/independent_check.py",
+      "original": {
+        "bytes": 2697,
+        "sha256": "efc1937f9289f023eb23de432b01993dd3690e4e56ed56072ab55a845c3f8b06",
+        "git_blob_sha1": "5a49a613e831e50723c8bdfcc0baadd7b1f88fea"
+      },
+      "public": {
+        "bytes": 2697,
+        "sha256": "efc1937f9289f023eb23de432b01993dd3690e4e56ed56072ab55a845c3f8b06",
+        "git_blob_sha1": "5a49a613e831e50723c8bdfcc0baadd7b1f88fea"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/review_independent/independent_output.txt",
+      "original": {
+        "bytes": 1475,
+        "sha256": "34c3d8905b0cd73ec48cbdf31497319758ce753c8e0d0b40056c0a517022ecc8",
+        "git_blob_sha1": "aa80bc68218e140f64025ba3f395df1cc9130f7a"
+      },
+      "public": {
+        "bytes": 1475,
+        "sha256": "34c3d8905b0cd73ec48cbdf31497319758ce753c8e0d0b40056c0a517022ecc8",
+        "git_blob_sha1": "aa80bc68218e140f64025ba3f395df1cc9130f7a"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/review_independent/replay_analysis.py",
+      "original": {
+        "bytes": 7739,
+        "sha256": "b0ef437dfb65e8df8afa4d45d36259b84c98a573eab409d389436951585db6ae",
+        "git_blob_sha1": "583c207ffe5a741b601c70c0fea32c6054aa53e8"
+      },
+      "public": {
+        "bytes": 7481,
+        "sha256": "3bdb3b5cfadc592b147a257db5a58287aca28459f8a2989f9ab618656f620775",
+        "git_blob_sha1": "82a9090ea8e198147d35aadefb62caf2692eb511"
+      },
+      "changed": true
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/review_independent/verify_output.txt",
+      "original": {
+        "bytes": 414,
+        "sha256": "60b9cbf39889f987eb6e3373710368bb7b73f925bc4aea9a0c8d11e336d854ed",
+        "git_blob_sha1": "6b8a271e1052c21cc385cd0d255e1b00a358388a"
+      },
+      "public": {
+        "bytes": 414,
+        "sha256": "60b9cbf39889f987eb6e3373710368bb7b73f925bc4aea9a0c8d11e336d854ed",
+        "git_blob_sha1": "6b8a271e1052c21cc385cd0d255e1b00a358388a"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/run.log",
+      "original": {
+        "bytes": 19183,
+        "sha256": "f43212a2c2c12415add4755f195cf03afa112656a754156ebb8b4a8b38797606",
+        "git_blob_sha1": "f18c9eb05f0095ef3a4b7e1fc6a383997ee32f98"
+      },
+      "public": {
+        "bytes": 19183,
+        "sha256": "f43212a2c2c12415add4755f195cf03afa112656a754156ebb8b4a8b38797606",
+        "git_blob_sha1": "f18c9eb05f0095ef3a4b7e1fc6a383997ee32f98"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/verify.log",
+      "original": {
+        "bytes": 414,
+        "sha256": "60b9cbf39889f987eb6e3373710368bb7b73f925bc4aea9a0c8d11e336d854ed",
+        "git_blob_sha1": "6b8a271e1052c21cc385cd0d255e1b00a358388a"
+      },
+      "public": {
+        "bytes": 414,
+        "sha256": "60b9cbf39889f987eb6e3373710368bb7b73f925bc4aea9a0c8d11e336d854ed",
+        "git_blob_sha1": "6b8a271e1052c21cc385cd0d255e1b00a358388a"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/fixed_half_tail_geometry_20261103/verify.py",
+      "original": {
+        "bytes": 2020,
+        "sha256": "aa3964b529e67b97b8648ce707d69bbae78324e585b270b5c95549505f14bd4b",
+        "git_blob_sha1": "29b34a5ea66b8c7cb351c916cfa05a2778038f8c"
+      },
+      "public": {
+        "bytes": 2020,
+        "sha256": "aa3964b529e67b97b8648ce707d69bbae78324e585b270b5c95549505f14bd4b",
+        "git_blob_sha1": "29b34a5ea66b8c7cb351c916cfa05a2778038f8c"
+      },
+      "changed": false
+    }
+  ]
+}

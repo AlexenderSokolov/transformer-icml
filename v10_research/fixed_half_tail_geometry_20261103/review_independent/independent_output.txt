@@ -1,0 +1,10 @@
+literal Q max discrepancy 0.0
+unique features 3530 contradictions 0
+worst validation 1242 (np.int64(2), np.int64(1), np.int64(1), np.int8(2)) [1, 1, 0, 1, 1, 0, 1, 0] 0.5 train stat hits 0 train feat hits 0
+minimum L1 2 nearest train [797, 1885]
+word 1699 (np.int64(6), np.int64(1), np.int64(0), np.int8(3)) 0.875 draws 52 797 (np.int64(3), np.int64(1), np.int64(1), np.int8(2)) 0.375 draws 63
+20261103201 tail 14 absent train+collision stat 10 tail matching training full 3 worst index 1242 worst q 0.9339221265978155 worst kl 0.6994945959003 tail KL fraction 0.6682380373893773 train >.1 15 train max 0.6158959495331562 train worst idx 1699 train worst q 0.25910405046684376 near q 0.6389925998703064
+20261103202 tail 13 absent train+collision stat 10 tail matching training full 3 worst index 1242 worst q 0.9012887588555762 worst kl 0.5165958357549749 tail KL fraction 0.729565819687476 train >.1 12 train max 0.5789853243208851 train worst idx 1699 train worst q 0.2960146756791149 near q 0.6398200462243084
+20261103203 tail 14 absent train+collision stat 10 tail matching training full 4 worst index 1242 worst q 0.9231805814411226 worst kl 0.6299669406335637 tail KL fraction 0.721341592694813 train >.1 15 train max 0.6135271283937082 train worst idx 1699 train worst q 0.26147287160629185 near q 0.667379490662881
+gate integer equivalence exhaustive True
+feature upper bound 1258884 epsilon 0.0002295684113865932 logit extrema -1.9474859865449081 1.9474859865449077

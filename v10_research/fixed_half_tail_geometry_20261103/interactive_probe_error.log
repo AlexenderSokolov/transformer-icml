@@ -1,0 +1,7 @@
+20261103201 tail prior kl sum 1.927859892595049 all 2.8849897562351887 single 0.6994945959003002 tail mean 0.0009413378381811763 train failures 15 train max 0.6158959495331562
+target nearby [(797, 0.375, 0.63899), (1885, 0.875, 0.87588), (177, 0.125, 0.21104), (376, 0.125, 0.21104), (464, 0.3125, 0.37366), (1764, 0.5, 0.60991)]
+Traceback (most recent call last):
+  File "v10_research/fixed_half_tail_geometry_20261103/interactive_probe_error.py", line 9, in <module>
+    print('shared feature tail',[(int(j),int(v['J'][j]),int(v['C'][j]),int(v['D'][j])) for j in np.where(tail)[0] if any(np.all(c.features(f['train_words'],'half_normalized')==x,axis=1)) for x in []])
+                                                                                                                                                                                ^
+UnboundLocalError: cannot access local variable 'x' where it is not associated with a value
