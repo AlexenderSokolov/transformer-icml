@@ -1,5 +1,12 @@
 # 资料导航
 
+## 精确计数攻击动态规划
+
+- [完整递推、证明与成本](../v10_research/exact_attacker_dp_20261103/RESEARCH_NOTE.md) · [真实两次修正历史](../v10_research/exact_attacker_dp_20261103)
+- [选定/全行 J,C,D 检查](../v10_research/exact_attacker_dp_20261103/verify.py) · [紧凑双段直方图检查](../v10_research/exact_attacker_dp_20261103/verify_histogram.py)
+- [独立 LLM 审阅](../v10_research/exact_attacker_dp_20261103/review_independent/REVIEW.md) · [独立直方图与最优见证](../v10_research/exact_attacker_dp_20261103/review_independent/check_independent.py) · [独立字面计数](../v10_research/exact_attacker_dp_20261103/review_independent/check_bank_semantics.py)
+- [公共隔离复现](../provenance/exact_attacker_dp_20261103/PUBLIC_REPLAY.md) · [全部来源身份](../provenance/exact_attacker_dp_20261103/SOURCE_EXPORT_MAP.json) · [绑定与既有接口](../provenance/exact_attacker_dp_20261103/PUBLIC_EXPORT_RECONCILIATION.json)
+
 ## 合法条件目标与有限类离线学习
 
 - [完整正文与证明](../v10_research/legal_conditional_training_20261103/RESEARCH_NOTE.md) · [限定阅读范围的文献对照](../v10_research/legal_conditional_training_20261103/LITERATURE_NOTE.md)

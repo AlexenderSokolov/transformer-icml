@@ -1,0 +1,32 @@
+# Independent audit: fixed-bank exact attack DP
+
+3 November 2026. Reviewed `RESEARCH_NOTE.md` SHA-256 `db00245284a9391ed1d995693a837b7fdb855c697847df42b220878fd7b4a14c` and its verifiers. This concerns exact offline maximization over the declared finite count-bank interface, not arbitrary Transformer readouts, efficient training, or a novelty claim. I found no substantive error in the stated recurrence or polynomial upper bounds under those assumptions.
+
+## Legal timeline and dominance
+
+The word has indices 0 through M+1. Only indices below M are editable; M and M+1 remain fixed. Initialization picks z0,z1 under that same rule, so for M=1, z1 is already protected. When z_t is appended for t≥2, exactly departure i=t−2 becomes known. Its triple is counted in the first segment exactly when i<L=floor(M/2); otherwise it is counted in the second. The split pair is (z_L,z_(L+1)) and must be recorded when the first L triples have been completed. When L=0 it is the initial pair. This correctly accounts for overlap at both the half boundary and editable/protected boundary.
+
+For a fixed prefix length, initial pair, current pair, split pair where applicable and the maintained bank, all legal future choices and future count increments are identical. Therefore a lower-cost prefix weakly dominates a higher-cost prefix with the same state for a budget of **at most** k. Pruning over-budget prefixes is safe because edit costs never decrease. This argument does not automatically extend to a requirement of exactly k edits; that variant needs extra cost information or another proof. Saving predecessor choices yields an actual attaining legal word, not merely a value.
+
+## State and resource bounds
+
+A length-s consecutive triple segment is a path in the four-state pair graph. Given its initial and terminal pair, total length and free counts (N000,N001,N010,N011), pair flow determines N100,N101,N110 and the fixed total determines N111. The expressions in the note match the independent reconstruction. The first and second segments therefore need at most eight count coordinates plus initial, split and current pairs, yielding at most 4³(M+1)^8 states per prefix. Before the split the second segment is empty; after it the split pair is fixed. At most two next bits per state for O(M) layers gives the stated O(M^9) transitions and O(M^8) rolling states, with at most that many final readout evaluations.
+
+For a protected selected terminal row, J, designated-successor C and first-half D are three bounded counters; the current pair gives O(M^3) states and O(M^4) transitions. The endpoint determines whether designated-symbol probability is the probability of one or its complement. FPA's nominal fixed rounded count-bank readout selects this row and is a deterministic function of those exact counts, M and the endpoint. This does not cover a separately adversarially replaced bank or an arbitrary readout with extra word access without extending the state and analysis.
+
+The four-row direct 12-counter bank has two fixed-sum constraints at a given scan layer, leaving an O(M^10) state upper bound and O(M^11) transitions. All these are loose asymptotic upper bounds, not practical timings or lower bounds. State values and predecessor addresses require logarithmic bits in M (write log(M+1) for a convention that also covers M=1). Retaining all layers costs O(M^9 log(M+1)) bits for the full bank; rerunning prefixes during traceback gives O(M^10) transition work and rolling O(M^8 log(M+1)) bits, plus an O(M)-bit witness. The analogous three-counter exponents follow. Utility evaluation, exact comparison, encoding, indexing/addressing and output costs are correctly separate; arbitrary real readouts require an exact comparison oracle or a separate approximation analysis.
+
+## Objective and scope
+
+A utility constructed from the fixed clean history and the population predictive value p(h), or the first-sample group estimate used in the grouped-learning note, is history-only if those quantities are available without the current hidden source or next label. The DP optimizes the bank-dependent objective exactly but does not estimate p(h). With the grouped theorem's identical p-hat and exactly the same eligible bank/endpoint-dependent predictor, substitution for its exhaustive edit maximum changes neither its empirical objective nor its statistical bound. The earlier theorem allows an arbitrary finite predictor class; this DP does not automatically apply to members using features outside the retained state. Exact comparisons and an attainable legal witness remain required. A current-label or current-source oracle is a different, stronger threat model.
+
+Minimum-cost state merging, count-flow compression and finite-state dynamic programming are standard generic ingredients. The note explicitly makes no novelty claim. No lower bound, robustness guarantee, learned feature result, or practicality at the large displayed exponents follows from this upper bound.
+
+## Independent checks
+
+- Both author scripts rerun with byte-identical saved outputs. `verify.py` checks all-row and terminal-selected J,C,D banks for all histories and budgets through M=6 (6,144 bank-map comparisons). Its brute force enumerates masks independently of the DP but shares bank-update helpers. `verify_histogram.py` separately implements the compact four-free-counts-per-segment encoding and compares complete full-histogram/minimum-cost maps through M=6 (3,072 comparisons).
+- A separately written compact DP and a literal, independently counted brute-force oracle in `check_independent.py` match all 3,072 full-histogram minimum-cost maps through M=6. It also constructs and verifies an attaining legal maximum-utility witness in every case, including M=1, zero budget, full budget, odd M and protected endpoints. These are finite diagnostics, not the proof of the general bound.
+- An independent literal recount in `check_bank_semantics.py` matches the author's all-four-row bank and selected-row bank on every word for M=1 through 8, 2,040 words in all. This also checks the designated successor and half convention without relying on the author's shared update helper.
+- The saved author hash list matches all five listed files. Local hashes and replayed scripts provide consistency evidence, not an external timestamp or scientific novelty determination.
+
+Review scripts, output and input bindings are in this directory. No author source was modified or published.

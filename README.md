@@ -1,5 +1,11 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 固定计数读出的精确离线攻击（2026-11-03）
+
+[完整证明与诊断](v10_research/exact_attacker_dp_20261103/RESEARCH_NOTE.md)给出严格保护末尾二元组、至多 k 次编辑的最小代价动态规划。对选定 J,C,D 三计数读出，扫描 O(M^4)、滚动状态 O(M^3)；完整前后半段转移直方图为 O(M^9)/O(M^8)。位运算、精确读出/比较和见证重建成本另计，不能据此宣称实际高效。
+
+它只适用于声明的计数与端点接口，不是任意 Transformer 攻击算法或学习保证。对同一条件估计和相同合法读出，它可原样替换上一阶段的内层枚举；不会自己估计 p(h)。[全部代码、真实修正与原始输出](v10_research/exact_attacker_dp_20261103)、[独立 LLM 审阅](v10_research/exact_attacker_dp_20261103/review_independent/REVIEW.md)及[公共隔离复现](provenance/exact_attacker_dp_20261103/PUBLIC_REPLAY.md)均保留。
+
 ## 合法对抗监督目标与离线有限类界（2026-11-03）
 
 [完整分析](v10_research/legal_conditional_training_20261103/RESEARCH_NOTE.md)区分只看历史的合法攻击与看见未来标签的训练攻击：平方损失下，前者与真实来源风险的预测器排序一致；一个精确反例显示后者可以反转排序。对固定二阶 Markov 混合总体，初末状态与转移计数给出至多 16(M+1)^4 个条件预测组，继而得到保守的有限类离线学习界。

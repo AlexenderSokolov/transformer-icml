@@ -1,0 +1,96 @@
+{
+  "base_commit": "9d280afbd2085b0d420474e3164e141a20d9812d",
+  "source_files": 18,
+  "selected_original_bytes": 52120,
+  "scientific_omissions": [],
+  "privacy_changes": [],
+  "source_math_program_or_history_changed": false,
+  "python_sources_parsed": 4,
+  "privacy_unresolved_hits": [],
+  "structured_binding_counts": {
+    "EXACT_PUBLIC_BYTES": 14
+  },
+  "scientific_scope": [
+    "Exact offline minimum-edit dynamic programming for at most k edits at positions below M with the last pair strictly protected, including M=1. It does not automatically handle exactly k edits.",
+    "Selected J,C,D and protected row: O(M^4) transitions, O(M^3) rolling states and final readout evaluations. Full first/second-segment histograms: O(M^9) transitions and O(M^8) rolling states.",
+    "Exact utility evaluation/comparison, readout encoding, integer/bit costs, indexing and witness reconstruction are additional. The loose polynomial upper bounds are not practical-efficiency claims.",
+    "Minimum-cost dominance uses only the state interface; arbitrary whole-word or general Transformer readouts are outside scope unless the state is expanded and its bounds reproved.",
+    "Substitution into the prior empirical objective is exact only for the same eligible count-bank/endpoint predictor, same conditional estimate and exact comparison. The DP does not learn or estimate the predictor or p(h).",
+    "No new generic DP novelty, learned robustness, SGD convergence, unknown-budget adaptation or worst-source statistical guarantee is claimed.",
+    "The two real correction edges preserve first the exact-estimator substitution and then the necessary predictor-class restriction. Earlier candidate headers are retained; later independent LLM review binds the exact final note."
+  ],
+  "finite_checks": {
+    "author_selected_and_all_row_bank_comparisons": 6144,
+    "author_full_histogram_comparisons": 3072,
+    "independent_histogram_maps_and_attaining_witnesses": 3072,
+    "histogram_range": "M=1 through 6, all histories and every budget 0 through M",
+    "independent_literal_bank_words": 2040,
+    "literal_bank_range": "M=1 through 8",
+    "limitations": "Finite evidence supports but does not replace the general proof. The author selected-bank brute force shares bank-update code; the separate independent recount checks its semantics."
+  },
+  "publisher_public_replay": {
+    "status": "PASS",
+    "selected_sources": 18,
+    "scientific_context_dependencies": 6,
+    "binding_occurrences": 14,
+    "mapped_hash_occurrences": 0,
+    "verified_public_files": 27,
+    "diagnostics": [
+      {
+        "script": "verify.py",
+        "arguments": [
+          "--max-m",
+          "6"
+        ],
+        "matched_logs": [
+          "VERIFICATION.txt",
+          "review_independent/author_verify_replay.txt"
+        ],
+        "stdout_sha256": "f2e5a127567cae1e60c406ebf373d15844441d578b417ab37ea27878fb50eb13"
+      },
+      {
+        "script": "verify_histogram.py",
+        "arguments": [
+          "6"
+        ],
+        "matched_logs": [
+          "VERIFICATION_HISTOGRAM.txt",
+          "review_independent/author_histogram_replay.txt"
+        ],
+        "stdout_sha256": "1858e30802d611dcca5d5298868c5a28c25d46aa77acb61db29020b271d052d2"
+      },
+      {
+        "script": "review_independent/check_independent.py",
+        "arguments": [],
+        "matched_logs": [
+          "review_independent/check_independent.log"
+        ],
+        "stdout_sha256": "59d9a60eaa8f807e3df7a072518d2504e2dc95479e802748fbdec01aadc90d43"
+      },
+      {
+        "script": "review_independent/check_bank_semantics.py",
+        "arguments": [],
+        "matched_logs": [
+          "review_independent/check_bank_semantics.log"
+        ],
+        "stdout_sha256": "71e990da46a2763022bd6d36273ea25a1bcc8f21ad8207d440b28c506d7044b2"
+      }
+    ],
+    "scientific_sources_changed": false,
+    "training_performed": false,
+    "optimized_python": "REFUSED",
+    "tampered_source": "REFUSED",
+    "tampered_reconciliation": "REFUSED",
+    "symlink_input": "REFUSED",
+    "symlink_inventory": "REFUSED",
+    "originals_unchanged": true,
+    "public_copy_unchanged": true,
+    "environment": {
+      "python": "3.12.14",
+      "dependencies": "Python standard library only"
+    },
+    "local_scope": "Exact public-only stage and direct dependencies; no full historical research replay or new training."
+  },
+  "review_identity": "Source-bound independent LLM audit, not external peer review, formal proof or novelty certification.",
+  "earlier_material": "No existing manuscript, training archive, source map, historical failure or workflow is modified."
+}
