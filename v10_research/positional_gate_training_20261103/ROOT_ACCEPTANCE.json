@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-03T04:43:43.375074+00:00",
+  "unit": "PGT001",
+  "status": "ROOT_ACCEPTED_EXACT_SPECIFIED_SCALAR_POPULATION_MODEL",
+  "candidate_sha256": "91dcb755e6544fa04e728ab92bf48a7cb864e1e28fc9e4cbdbe0fc38257cb0be",
+  "result": "Fixed robust positional gate feature and Bayes baseline with one sigmoid bias: b0=0 has constant critical unknown-budget factor; exact clean population GD with any finite positive constant step sendsb\u2192infinity, decreasescleanloss toBayes and predictions uniformly tocounts-onlyB atfixedM. Limiting factorsTheta(logM) acrosshorizons.",
+  "root_read": "Complete candidate and full independent review. Root supplied route; verified14 artifact hashes/lengths and isolated independent checker byte-identical. Checked derivative sign/boundedness, integer occupation tail, initialization constants, uniform-risk Lipschitz bound and optional prior-average excess.",
+  "limits": "Only this manually supplied-feature one-bias exact population oracle model. No learnedattention, generalSGD, finiteprecision, priced training cost, monotone robustness, practical degradation threshold or horizon-uniform iteration bound. Limits firstiterations atfixedM thenhorizon. Notnovelty certification, formal proof or external peer review. Separate from55page manuscript; localunpublished.",
+  "artifacts": {
+    "CANDIDATE.md": "91dcb755e6544fa04e728ab92bf48a7cb864e1e28fc9e4cbdbe0fc38257cb0be",
+    "README.md": "805b3a9f7e7dad052f6f5d319ec11e14c974dfb4b649382a15560ed33dfcc199",
+    "ROOT_REPLAY.json": "9f5aab9a5534dd84e4934650e5d7f35d4bbf7148712213317e6582cd23a066c8",
+    "SOURCE_BINDINGS.json": "f73a783a452d32ad87cf50c9d0e84c0df3ae6efebaa36dd9ccb68af1144cc4dc",
+    "check.py": "d5a76863c869e3040a1b27d302b457670bd8309a1f9ee2181ae2b5ebda0395f9",
+    "checks.json": "00174b2f493e262e6f68fb7d3f9c50fc41edb93adf078a5c05d28457b002650c",
+    "review_independent/REVIEW.md": "502bbcecb30fb0da67302352f05bf8d8747e32d3ee345f1eab73d166fb3b24f3",
+    "review_independent/bindings.json": "b8fd54baad73e8bb2758e7d5c22d1572555c5929af93af83d3a3d629043a8cd5",
+    "review_independent/check.py": "475cfe91dacf729f35cafb3bceb8de21c18aa3f40917a245277e27139329b20d",
+    "review_independent/checks.json": "3b8dfb7becee560dc0b8c98db52bdf6be4a504c8e903cbce09a0923a3a48852d"
+  }
+}

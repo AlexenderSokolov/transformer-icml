@@ -1,0 +1,36 @@
+{
+  "protocol": "CTO001 clean population synthetic diagnostic v1",
+  "horizons": [
+    64,
+    128,
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "trajectories_per_horizon": 20000,
+  "seeds": [
+    202611030064,
+    202611030128,
+    202611030256,
+    202611030512,
+    202611031024,
+    202611032048,
+    202611034096
+  ],
+  "rng": "numpy.random.Generator(PCG64(seed))",
+  "draw_order": "For each M: row probabilities shape (N,4); initial pair integers in [0,4); then M consecutive random(N) transition arrays.",
+  "prior": "four independent Uniform[0,1) row probabilities and independent uniform initial pair; float64 implementation of continuous uniform prior",
+  "batches": 100,
+  "batch_size": 200,
+  "batch_partition": "consecutive trajectory indices, fixed before simulation",
+  "MC_SE": "sample standard deviation of 100 batch means (ddof=1) divided by sqrt(100)",
+  "interval": "mean +/- 1.96 estimated MC SE, approximate, pointwise, not a theorem or simultaneous interval",
+  "observed_transitions": "exactly M; no prediction label drawn",
+  "gate": "d=1-first(terminal pair); accept iff J>0 and 512D>=J; designated C/J if accepted else 0; convert to probability of 1",
+  "smoothing": "Q=(1-2/sqrt(M))*A+1/sqrt(M)",
+  "logarithms": "natural; log1p(-p) for complementary log",
+  "no_A_logloss": "A may equal 0 or 1 while B is strictly interior; its population logloss can be infinite. No epsilon clipping.",
+  "created_utc": "2026-11-03T04:25:28.749731+00:00"
+}

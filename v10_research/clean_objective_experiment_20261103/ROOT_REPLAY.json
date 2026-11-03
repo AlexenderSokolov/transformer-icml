@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-03T04:34:49.675236+00:00",
+  "status": "ROOT_COMPLETE_SEALED_REPLAY_AND_INDEPENDENT_AGGREGATION_PASS",
+  "isolated": true,
+  "bound_author_artifacts_verified": 20,
+  "full_run_horizons": 7,
+  "trajectories_per_horizon": 20000,
+  "CSV_and_PNG_byte_identical": true,
+  "independent_checks_semantically_identical": true,
+  "runs": [
+    {
+      "command": "python test_experiment.py",
+      "exit_code": 0,
+      "stderr": "test_all_small_words (__main__.Tests.test_all_small_words) ... ok\ntest_gate_boundaries_orientation (__main__.Tests.test_gate_boundaries_orientation) ... ok\ntest_identical_uniforms (__main__.Tests.test_identical_uniforms) ... ok\ntest_metrics (__main__.Tests.test_metrics) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.648s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "python experiment.py run",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"M\": 64, \"seconds\": 0.09969742700195638, \"excess\": 0.017668351707697167, \"TV_B\": 0.06919653850856171, \"TV_Q\": 0.09210038064921439}\n{\"M\": 128, \"seconds\": 0.1170776510007272, \"excess\": 0.010778657836162515, \"TV_B\": 0.04993801754465932, \"TV_Q\": 0.06754919293582548}\n{\"M\": 256, \"seconds\": 0.2352484029979678, \"excess\": 0.006345143165432745, \"TV_B\": 0.03579094679209266, \"TV_Q\": 0.04874751598411768}\n{\"M\": 512, \"seconds\": 0.4390041580008983, \"excess\": 0.00422236348314773, \"TV_B\": 0.025494391330741665, \"TV_Q\": 0.03527271841395918}\n{\"M\": 1024, \"seconds\": 0.8205077889979293, \"excess\": 0.00247211665132235, \"TV_B\": 0.018162364909549412, \"TV_Q\": 0.02556006444458006}\n{\"M\": 2048, \"seconds\": 1.7417942389984091, \"excess\": 0.0014313032451741079, \"TV_B\": 0.012803131609553327, \"TV_Q\": 0.018039413807138294}\n{\"M\": 4096, \"seconds\": 3.2908179910009494, \"excess\": 0.0008204688809272006, \"TV_B\": 0.009060913655949717, \"TV_Q\": 0.012883150948814216}\n"
+    },
+    {
+      "command": "python report.py",
+      "exit_code": 0,
+      "stderr": "Fontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\nFontconfig error: No writable cache directories\n",
+      "stdout": "Rendered report and plot; aggregate identities and weak-tail checks passed.\n"
+    }
+  ],
+  "independent_stdout": "{\n  \"all_original_manifest_bindings_match\": true,\n  \"recomputed_70_aggregates_from_7000_batches_max_error\": 1.1102230246251565e-16,\n  \"full_replay_CSVs_and_PNG_byte_identical\": true,\n  \"independent_scalar_cases\": 285,\n  \"independent_exact_rational_words\": 2044,\n  \"weak_tail_z_scores\": [\n    -0.7937322182457179,\n    0.6208107825821951,\n    -0.08502828704820095,\n    0.03346538045935991,\n    1.3304187666895968,\n    -1.6353767127819365,\n    -0.6390046124924679\n  ]\n}\n",
+  "limits": "Float64 PRNG Monte Carlo of explicit maps, not neural training or worst-case robustness. Approximate pointwise intervals; no rate fit or external preregistration claim. Runtime differs on replay."
+}

@@ -1,5 +1,12 @@
 # 资料导航
 
+## 干净训练目标阶段入口
+
+- [中文总结](../v10_research/learning_objective_stage_20261103/RESEARCH_SUMMARY.zh.md) · [阶段冻结清单](../v10_research/learning_objective_stage_20261103/STAGE_SCIENCE_FREEZE.json)
+- [CTO001 完整证明](../v10_research/clean_training_objective_20261103/CANDIDATE.md) · [PGT001 完整证明](../v10_research/positional_gate_training_20261103/CANDIDATE.md) · [PBF001 完整证明](../v10_research/positional_bias_frontier_20261103/CANDIDATE.md)
+- [有限实验报告](../v10_research/clean_objective_experiment_20261103/REPORT.md) · [科学 PNG](../v10_research/clean_objective_experiment_20261103/synthetic_clean_objective.png) · [汇总 CSV](../v10_research/clean_objective_experiment_20261103/aggregates.csv) · [批次均值 CSV](../v10_research/clean_objective_experiment_20261103/batch_means.csv)
+- [公开范围与复现边界](../provenance/learning_objective_20261103/PUBLICATION_SCOPE_AND_CHECKS.json)
+
 ## 55 页整合稿入口
 
 - [完整 PDF](../v10_research/positional_manuscript_consolidated_20261103/main.pdf) · [TeX/Bib 与编译说明](../v10_research/positional_manuscript_consolidated_20261103/README.md)

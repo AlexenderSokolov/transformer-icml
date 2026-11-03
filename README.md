@@ -1,5 +1,11 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 后续研究：干净目标与位置鲁棒性（2026-11-03）
+
+[中文阶段总结](v10_research/learning_objective_stage_20261103/RESEARCH_SUMMARY.zh.md)：CTO001 区分精确干净总体最优与近似最优的鲁棒行为；PGT001 分析给定位置特征后的单偏置精确总体下降；PBF001 给出保留鲁棒性的偏置窗口与投影更新。另有 [14 万条轨迹的固定先验诊断](v10_research/clean_objective_experiment_20261103/REPORT.md)及[科学图](v10_research/clean_objective_experiment_20261103/synthetic_clean_objective.png)。
+
+这不是学习注意力、一般 SGD、有限精度训练或最坏情形实验验证，也不是新的一般统计原理。它是独立于下方固定 55 页稿件的后续研究，未改动该 PDF。完整证明、审阅、代码、CSV、真实修订与失败记录均按[精确来源清单](provenance/learning_objective_20261103/SOURCE_EXPORT_MAP.json)公开。
+
 ## 完整整合稿：55 页正文、证明与文献（2026-11-03）
 
 [阅读完整英文 PDF](v10_research/positional_manuscript_consolidated_20261103/main.pdf)：12 页主文、41 页完整证明附录和 2 页参考文献。它把位置观察的未知预算适应代价、近似门控、有限注意力实现及固定统计库精度界整合为一篇匿名研究草稿，不是投稿或新颖性认证。此前 BCJ 的有限统计库结果明确署明来源；同信息流式计数器仍是更强的计算基线。

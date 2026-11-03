@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-03T04:54:36.741148+00:00",
+  "unit": "PBF001",
+  "status": "ROOT_ACCEPTED_AFTER_SEPARATE_FULL_REVIEW_AND_ISOLATED_REPLAY",
+  "candidate_sha256": "437d945df88004758d4153385fd00699dd33ea5bee378a4e2aebbf797a9fc642",
+  "authorship": "Root-authored corollary with separate source-bound review, not new adversary or statistical principle.",
+  "result": "For b>=0 in fixed PGT family, both robustness factorsTheta(1+ell sigmoid(b-.5logM)) uniformly. Constant-factor schedules iff b_M<=.5logM-logell+O(1) eventually. Exact projected population updates onto[0,.5logM-logell] preserve uniform robustness at every iterate and improve cleanloss to constrained optimum; fixed-M finite hitting only.",
+  "root_verification": "Full independent review read; all binding hashes/lengths verified. Isolated rational/highprecision checker byte-identical. Mixture remainder, same-supremum lower and oracle floor, cap positivity, gradient projection and limit order checked.",
+  "limits": "Supplied fixed features and exact unpriced population-gradient/real arithmetic model only. No general SGD, learnedattention, finiteprecision or computational-efficiency claim; no monotone robustness of unconstrained path, practical threshold or common iteration across horizons. Local unpublished, separate from55page manuscript.",
+  "artifacts": {
+    "CANDIDATE.md": "437d945df88004758d4153385fd00699dd33ea5bee378a4e2aebbf797a9fc642",
+    "ROOT_REPLAY.json": "48c2adb4683b29331c7b9b649dc4588f3e46e9b953174e1601ff97de4167d9e8",
+    "SOURCE_BINDINGS.json": "4a20beb08e9624136c68672ba431c2354b9a361860448968db3e372bdb0d33e0",
+    "review_independent/REVIEW.md": "0c429cf0ec62830e74a531bb61ebfcd0f6d8c963d1d85385d0a78c5cc2f7551c",
+    "review_independent/bindings.json": "91d0d894a052d5c79c0b916d35d1b2302f07444b01f9e67fc6166f6ad14e6c76",
+    "review_independent/check.py": "49e27bce1ec3125c154bb86aee88e756632b73916542a7a52024ccc67b43e444",
+    "review_independent/checks.json": "4d3b57572722dde9fc8668fe83a246dd83653ddb68915590f3e01833a4524f3f"
+  }
+}

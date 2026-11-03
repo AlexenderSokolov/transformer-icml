@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-03T04:21:12.464452+00:00",
+  "unit": "CTO001",
+  "status": "ROOT_ACCEPTED_WITH_EXPLICIT_IMPORTED_STATISTICAL_INTERFACES",
+  "candidate_sha256": "1405c661827773bba64c8d8ae91f8eb8a9b2bf17ffc6a66e3be69525f1674bb2",
+  "result": "Under uniform independent Beta row prior and independent uniform initial pair, exact clean population logloss optimum is add-one counts/endpoint map. It has universal cleanO(M^-1/2) TV but critical-class worst unknown-budget factorTheta(logM). A smoothed half-gate has constant robust factor and O(logM/sqrtM) clean excess under same prior.",
+  "root_read": "Complete candidate and actual two-point wording diff; full independent review. Source and artifact hashes/lengths verified; isolated independent checker report byte-identical. Root supplied synthesis route; reviewer derived before full source audit, not a priority claim.",
+  "proof_points": "Adaptive-row posterior factorization, finite-word full support and proper-loss uniqueness; augmented ratios/occupation; weak-certificate prior tail explicitly paid; entropy coupling/KL decomposition; Jensen monotonicity only in stated large-M range.",
+  "limits": "Unrestricted statistical comparator uses real s=M^-1/2, no finite exact arithmetic claim. No SGD dynamics, model parameter uniqueness, universal finite-architecture representation, robustness guarantee for every near-minimizer, necessity of corrupted training or fixed-horizon discontinuity. Separate from already frozen55-page manuscript; local unpublished.",
+  "artifacts": {
+    "CANDIDATE.before_scope_wording.md": "0b299a4dd649f11d955641967dd990636f963f768f53f3b2b596d62f2b9bb3f9",
+    "CANDIDATE.md": "1405c661827773bba64c8d8ae91f8eb8a9b2bf17ffc6a66e3be69525f1674bb2",
+    "ROOT_REPLAY.json": "6d8bbb344ca2c863ece3be3e7df077d326196d5c74c47925bbde50cba529880a",
+    "SCOPE_WORDING.diff": "3659f8d06ffb364dccaf75dfcdb01006f7053c3dca85bb8e591ac5be9f18e598",
+    "SOURCE_BINDINGS.json": "5b265289c0de2cad9a5e37551fcfb8110ebdb172e84935835157cd5164eb7c5c",
+    "check.py": "ee5b489da0cf955ca6f1f55de25a0e02b9a035060801e758b492f9b475da6bb6",
+    "checks.json": "76722d1e0cbbbfec8993023072658d95d2416330de59b6c8a0963bdd8f050189",
+    "review_independent/INDEPENDENT_DERIVATION.md": "b7024e9f0729f589d6da86180d91cf87a4ae2b6a9216535bd3bf6a4e38605b1f",
+    "review_independent/REVIEW.md": "1180eb61ba2f49456a2aa1de09edcecdd0d1783e81d7528622d69a8ed29c89c4",
+    "review_independent/bindings.json": "419c1ce47ba0cf1fe6f32cc983d9fd32f2d6a6d16ffa834e514904b749509781",
+    "review_independent/check.py": "da88f9c1d36635bd25abefcc181383d888634e1ba1e07096345403b4d1996f53",
+    "review_independent/checks.json": "d4f549e70370aec014071c52318953505011e3c7bee273e3805482a70230578e"
+  }
+}

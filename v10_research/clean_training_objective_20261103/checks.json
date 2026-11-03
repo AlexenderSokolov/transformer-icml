@@ -1,0 +1,43 @@
+{
+  "purpose": "Exact finite diagnostics and numerical sanity checks, not formal proof or independent review.",
+  "exact_word_posterior_and_normalization": {
+    "M_range": [
+      0,
+      10
+    ],
+    "words": 8188,
+    "pass": true
+  },
+  "exact_add_one_edit_bound": {
+    "single_edit_pairs": 14344,
+    "pass": true
+  },
+  "exact_ratio_perturbation": {
+    "count_pairs": 53361,
+    "pass": true
+  },
+  "symbolic_pair_and_prior_identities": {
+    "entries": 16,
+    "pass": true
+  },
+  "numerical_entropy_inequality": {
+    "cases": 15606,
+    "minimum_slack": "-8.2860666664159996145475867317378971393638184288666e-44",
+    "pass": true
+  },
+  "constants": {
+    "D": 131081,
+    "large_M_threshold": 68728914244,
+    "robust_factor": 8519681
+  },
+  "source_receipt_hash_checks": {
+    "manuscript": [
+      "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+      "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+      "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex"
+    ],
+    "ACG": true,
+    "pass": true
+  }
+}

@@ -1,0 +1,53 @@
+test_all_small_words (__main__.Tests.test_all_small_words) ... ERROR
+test_gate_boundaries_orientation (__main__.Tests.test_gate_boundaries_orientation) ... ERROR
+test_identical_uniforms (__main__.Tests.test_identical_uniforms) ... ERROR
+test_metrics (__main__.Tests.test_metrics) ... ERROR
+
+======================================================================
+ERROR: test_all_small_words (__main__.Tests.test_all_small_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "v10_research/clean_objective_experiment_20261103/test_experiment.py", line 26, in test_all_small_words
+    z=e.from_words(w)
+      ^^^^^^^^^^^^^^^
+  File "v10_research/clean_objective_experiment_20261103/experiment.py", line 2, in from_words
+    raise NotImplementedError('vectorized counts not implemented')
+NotImplementedError: vectorized counts not implemented
+
+======================================================================
+ERROR: test_gate_boundaries_orientation (__main__.Tests.test_gate_boundaries_orientation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "v10_research/clean_objective_experiment_20261103/test_experiment.py", line 49, in test_gate_boundaries_orientation
+    a,accepted=e.gate(J,C,D,u)
+               ^^^^^^^^^^^^^^^
+  File "v10_research/clean_objective_experiment_20261103/experiment.py", line 6, in gate
+    raise NotImplementedError('gate not implemented')
+NotImplementedError: gate not implemented
+
+======================================================================
+ERROR: test_identical_uniforms (__main__.Tests.test_identical_uniforms)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "v10_research/clean_objective_experiment_20261103/test_experiment.py", line 44, in test_identical_uniforms
+    z=e.simulate(p,initial,M,uniforms=v); ref=e.from_words(np.array(words))
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "v10_research/clean_objective_experiment_20261103/experiment.py", line 4, in simulate
+    raise NotImplementedError('simulator not implemented')
+NotImplementedError: simulator not implemented
+
+======================================================================
+ERROR: test_metrics (__main__.Tests.test_metrics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "v10_research/clean_objective_experiment_20261103/test_experiment.py", line 53, in test_metrics
+    z=e.from_words(np.array([[0,0,0,0],[1,1,1,1],[0,1,0,1]]));z['p']=np.array([.1,.9,.4])
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "v10_research/clean_objective_experiment_20261103/experiment.py", line 2, in from_words
+    raise NotImplementedError('vectorized counts not implemented')
+NotImplementedError: vectorized counts not implemented
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.028s
+
+FAILED (errors=4)

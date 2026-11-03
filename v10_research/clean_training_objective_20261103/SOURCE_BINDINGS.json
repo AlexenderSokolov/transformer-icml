@@ -1,0 +1,96 @@
+{
+  "unit": "CTO001",
+  "status": "CANDIDATE_PENDING_SEPARATE_REVIEW_AND_ROOT_ACCEPTANCE",
+  "scope": "Local mathematical objective analysis only; no external writes, manuscript integration, novelty claim or finite-resource implementation.",
+  "sources": [
+    {
+      "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+      "sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+      "bytes": 27555,
+      "role": "Direct dependency: experiment, finite-window theorem and all-start gate interfaces."
+    },
+    {
+      "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "bytes": 32814,
+      "role": "Direct dependency: occupation lemma, empirical lemma, general-beta half-gate bound, clean add-one bound. Imported stochastic proofs, not certified by finite diagnostics."
+    },
+    {
+      "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+      "sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "bytes": 28723,
+      "role": "Direct dependency: source legality, legal matched-observation attack and clean-risk same-map lower mechanism."
+    },
+    {
+      "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+      "sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "bytes": 5620,
+      "role": "Direct dependency: finite M,r lower including small-log and all-domain checks."
+    },
+    {
+      "path": "v10_research/resumption_20261103/recovered_science/intake/positional_finite_manuscript_root_acceptance.json",
+      "sha256": "1b79729ec9686c9f0e69c73adf02d4d6e7cf24091515af19a0752fbca3ad67f8",
+      "bytes": 3554,
+      "role": "Acceptance gate for exact four manuscript source hashes; replayed by check.py."
+    },
+    {
+      "path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "bytes": 9394,
+      "role": "Inspected accepted approximate gate interface; ancillary, not needed for exact comparator."
+    },
+    {
+      "path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+      "sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+      "bytes": 2007,
+      "role": "Acceptance gate; exact candidate hash checked by check.py."
+    },
+    {
+      "path": "v10_research/resumption_20261103/recovered_science/intake/FOT003_root_acceptance.json",
+      "sha256": "301c9522f4e1b28f06f3114e9950641cbc345fef7c104bb78b356d6a9ab1b994",
+      "bytes": 1718,
+      "role": "Ancillary exact-flow information gate; not needed because B ignores initial pair."
+    },
+    {
+      "path": "v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+      "sha256": "764c7364a5b7e03cae6afa6898a68c75e84eb9603fdabe0d1bde8904f7341a9f",
+      "bytes": 11871,
+      "role": "Antecedent framing: BCJ already established approximate gate and finite-bank mechanism."
+    },
+    {
+      "path": "resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_theorem.md",
+      "sha256": "95d5aac1ee2504955e55c1e82241c8a07d219661e2620c6e083acf5c8701554d",
+      "bytes": 19465,
+      "role": "Inspected antecedent scope and gate interface; not a direct proof dependency."
+    },
+    {
+      "path": "resumption_20261103/remote_recovery/files/v10_research/intake/BCJ001_root_acceptance.json",
+      "sha256": "27c1aa7efdc86752c63fd0b1f41b9c303a2aedff965ce81721f3abca7c54699f",
+      "bytes": 1122,
+      "role": "Historical acceptance gate for BCJ; not a direct proof dependency."
+    }
+  ],
+  "artifacts": {
+    "CANDIDATE.md": {
+      "sha256": "1405c661827773bba64c8d8ae91f8eb8a9b2bf17ffc6a66e3be69525f1674bb2",
+      "bytes": 13917
+    },
+    "check.py": {
+      "sha256": "ee5b489da0cf955ca6f1f55de25a0e02b9a035060801e758b492f9b475da6bb6",
+      "bytes": 4595
+    },
+    "checks.json": {
+      "sha256": "76722d1e0cbbbfec8993023072658d95d2416330de59b6c8a0963bdd8f050189",
+      "bytes": 1349
+    },
+    "CANDIDATE.before_scope_wording.md": {
+      "sha256": "0b299a4dd649f11d955641967dd990636f963f768f53f3b2b596d62f2b9bb3f9",
+      "bytes": 13734
+    },
+    "SCOPE_WORDING.diff": {
+      "sha256": "3659f8d06ffb364dccaf75dfcdb01006f7053c3dca85bb8e591ac5be9f18e598",
+      "bytes": 3314
+    }
+  },
+  "diagnostic_caveat": "Entropy numerical check uses 50-digit arithmetic and tolerance 1e-40. A preliminary binary-float version hit endpoint drift around eta=1e-8; exact analytic proof unchanged. All reported final diagnostics pass."
+}

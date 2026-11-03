@@ -1,0 +1,61 @@
+{
+  "unit": "PGT001",
+  "status": "CANDIDATE_PENDING_INDEPENDENT_REVIEW_AND_ROOT_ACCEPTANCE",
+  "scope": "Local exact one-bias population model only; root supplied synthesis. No publication, novelty, neural learnability, finite-resource guarantee or manuscript integration.",
+  "sources": [
+    {
+      "path": "v10_research/clean_training_objective_20261103/CANDIDATE.md",
+      "sha256": "1405c661827773bba64c8d8ae91f8eb8a9b2bf17ffc6a66e3be69525f1674bb2",
+      "bytes": 13917,
+      "role": "Direct accepted posterior, full support, factor bounds, prior averaging, entropy argument."
+    },
+    {
+      "path": "v10_research/clean_training_objective_20261103/ROOT_ACCEPTANCE.json",
+      "sha256": "3860866b7635a794e47da72c16c537c0a1950076cde59e98356a1cd391b9c279",
+      "bytes": 2736,
+      "role": "CTO001 acceptance and candidate-hash gate."
+    },
+    {
+      "path": "v10_research/clean_training_objective_20261103/SOURCE_BINDINGS.json",
+      "sha256": "5b265289c0de2cad9a5e37551fcfb8110ebdb172e84935835157cd5164eb7c5c",
+      "bytes": 4914,
+      "role": "Transitive exact finite manuscript source bindings."
+    },
+    {
+      "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "bytes": 32814,
+      "role": "Direct imported occupation, edit, and half-gate interfaces."
+    },
+    {
+      "path": "v10_research/clean_objective_experiment_20261103/REPORT.md",
+      "sha256": "65949fa58ac71b0be83b10e7c931c086bd619e4301bba2b48240ea0b27f42f55",
+      "bytes": 5397,
+      "role": "Inspected antecedent; Monte Carlo map comparison, not scalar training."
+    },
+    {
+      "path": "v10_research/prior_art/comparison.md",
+      "sha256": "3fc5fd4552f37a65c225227e2ba2660d77349f59b1f9429a33ec8c3fed46a66c",
+      "bytes": 17712,
+      "role": "Inspected population-flow antecedent scope; not proof dependency."
+    }
+  ],
+  "artifacts": {
+    "CANDIDATE.md": {
+      "sha256": "91dcb755e6544fa04e728ab92bf48a7cb864e1e28fc9e4cbdbe0fc38257cb0be",
+      "bytes": 12550
+    },
+    "README.md": {
+      "sha256": "805b3a9f7e7dad052f6f5d319ec11e14c974dfb4b649382a15560ed33dfcc199",
+      "bytes": 1138
+    },
+    "check.py": {
+      "sha256": "d5a76863c869e3040a1b27d302b457670bd8309a1f9ee2181ae2b5ebda0395f9",
+      "bytes": 6168
+    },
+    "checks.json": {
+      "sha256": "00174b2f493e262e6f68fb7d3f9c50fc41edb93adf078a5c05d28457b002650c",
+      "bytes": 3112
+    }
+  }
+}

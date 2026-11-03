@@ -1,0 +1,19 @@
+--- v10_research/clean_training_objective_20261103/CANDIDATE.before_scope_wording.md	2026-11-02 20:18:14.154613766 -0800
++++ v10_research/clean_training_objective_20261103/CANDIDATE.md	2026-11-02 20:18:14.203701993 -0800
+@@ -1,6 +1,6 @@
+ # CTO001: clean population logloss identifies a non-adaptive rule, while robust rules have vanishing excess
+ 
+-3 November 2026. Candidate for separate review; not accepted or merged into the consolidated manuscript. All logarithms are natural. This is an objective/identifiability corollary of accepted statistical results, not a novelty, architecture-wide, optimization, or learning theorem. The comparator uses the real number s=M^-1/2 in unrestricted statistical maps; no exact finite-arithmetic implementation or resource bound is claimed. The comparator is guaranteed to belong to the unrestricted class, not to every restricted class containing B.
++3 November 2026. Candidate for separate review; not accepted or merged into the consolidated manuscript. All logarithms are natural. This is an objective/identifiability corollary of accepted statistical results, not a novelty claim or a theorem about optimization dynamics or learnability of a specified architecture. The comparator uses the real number s=M^-1/2 in unrestricted statistical maps; no exact finite-arithmetic implementation or resource bound is claimed. The comparator is guaranteed to belong to the unrestricted class, not to every restricted class containing B.
+ 
+ ## 1. Precisely separate the training and testing experiments
+ 
+@@ -128,7 +128,7 @@
+ 
+ ## 7. Interpretation, scope, and antecedents
+ 
+-This shows a discontinuity between exact optimality and asymptotic near-optimality as criteria for selecting robust behavior. Exact clean population logloss singles out a rule whose worst unknown-budget TV factor grows logarithmically; a different full-history rule has a uniform factor and vanishing clean population excess. The average training objective and worst-case test supremum are different quantifiers. The source-wise clean accuracy of B rules out an explanation based merely on bad clean TV prediction.
++This shows a separation between exact optimality and a vanishing-excess criterion along growing horizons. At each fixed M, finite-word full support means that excess tending to zero controls the prediction kernel on every word; no fixed-horizon discontinuity is asserted. Exact clean population logloss singles out a rule whose worst unknown-budget TV factor grows logarithmically; a different full-history rule has a uniform factor and vanishing clean population excess. The average training objective and worst-case test supremum are different quantifiers. The source-wise clean accuracy of B rules out an explanation based merely on bad clean TV prediction.
+ 
+ It does NOT show that SGD finds or fails to find either rule, that arbitrary finite architectures represent B or Q, that an approximately optimal learned network is robust, or that corruption during training is mathematically necessary. It does not certify empirical nearoptimality from data, nor give a quantitative robustness conclusion for all near-minimizers. Internal randomness must not carry hidden theta or attack information. No neural statistical advantage is claimed; a classical counter can compute the gate.
+ 
