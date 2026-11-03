@@ -1,5 +1,11 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 合法对抗监督目标与离线有限类界（2026-11-03）
+
+[完整分析](v10_research/legal_conditional_training_20261103/RESEARCH_NOTE.md)区分只看历史的合法攻击与看见未来标签的训练攻击：平方损失下，前者与真实来源风险的预测器排序一致；一个精确反例显示后者可以反转排序。对固定二阶 Markov 混合总体，初末状态与转移计数给出至多 16(M+1)^4 个条件预测组，继而得到保守的有限类离线学习界。
+
+这是已知充分性和集中工具的具体组合，不是新的通用统计原理、SGD 收敛、学得注意力、最坏来源或未知预算保证。枚举攻击的成本可能指数增长，界也可能无效。[独立 LLM 审阅](v10_research/legal_conditional_training_20261103/review_independent/REVIEW.md)、全部修正历史、精确有理检查与[公共隔离复现](provenance/legal_conditional_training_20261103/PUBLIC_REPLAY.md)均保留；原 55 页稿件和训练档案不变。
+
 ## 稀有样本加权：均值收益、尾部代价与完整记录（2026-11-03）
 
 [初次加权实验](v10_research/rare_weight_ablation_20261103/COMPLETED_RUN_REPORT.md)与[保留缺口更正](v10_research/rare_weight_ablation_20261103/COMPLETED_RUN_REPORT_CORRECTION.md)、[新数据后续实验](v10_research/rare_weight_confirmation_20261103/RESULTS_REPORT.md)及[完整轨迹独立审计](v10_research/rare_weight_confirmation_20261103/independent_completion_audit/REVIEW.md)均已整理。两次有限筛选均通过，但自然先验平均绝对误差变差，条件尾部最大误差仍很大；三个初始化共享数据/批次，后续不是盲确认，也不是学得鲁棒性或一致逼近保证。

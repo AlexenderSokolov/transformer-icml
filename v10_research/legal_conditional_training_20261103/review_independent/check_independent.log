@@ -1,0 +1,15 @@
+zero-transition/source-dependent-initial exact test positive words 128 groups 106 colliding groups 20
+mass 1 true risk 17858578769/37324800000 source variance 163754969659797613683489889109/61985994569151803796483760104000 regret 15289856181895079050648957661577333733/32133539584648295088097181237913600000 supervised 42071461/69120000 supervised additive noise 4268953966072035323126680716038605847/32133539584648295088097181237913600000 label-aware 17432908139/22394880000
+flow M 1 words 8 groups 8
+flow M 2 words 16 groups 16
+flow M 3 words 32 groups 32
+flow M 4 words 64 groups 60
+flow M 5 words 128 groups 106
+flow M 6 words 256 groups 176
+flow M 7 words 512 groups 280
+flow M 8 words 1024 groups 426
+flow M 9 words 2048 groups 626
+flow M 10 words 4096 groups 892
+flow M 11 words 8192 groups 1238
+counterexample 17/100 1/5 117/500 source squared 1/100 1/25
+exact binomial occupancy identity verified for 20 (n,pi) cases

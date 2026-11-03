@@ -1,0 +1,29 @@
+--- v10_research/legal_conditional_training_20261103/RESEARCH_NOTE.before_final_precision.md	2026-11-02 23:37:43.371497222 -0800
++++ v10_research/legal_conditional_training_20261103/RESEARCH_NOTE.md	2026-11-02 23:37:43.386556926 -0800
+@@ -8,7 +8,7 @@
+ 
+ ## 1. Experiment and quantifiers
+ 
+-M>=1 is fixed. An episode first draws an arbitrary latent pair (theta, mu) from a fixed but otherwise unknown distribution P. Here theta is a homogeneous binary order-two transition table and mu is an arbitrary initial pair distribution, possibly dependent on theta. It then draws H=(X_0,...,X_{M+1}) from that chain and Y=X_{M+2}. Write q=theta_{X_M X_{M+1}}(1). Episodes are iid from this joint law; a fixed source and initial distribution is a special case. At evaluation, an attack map a transforms H into z=a(H), editing at most k positions in {0,...,M-1} and leaving the final pair fixed. The map receives neither theta nor Y; it may be chosen after the fixed learned predictor and the population law are specified, but takes only H as episode-specific input. Any randomized attack must be a kernel of H and any fixed training data and predictor only; its fresh randomness is conditionally independent of the current (theta, mu, Y) given H and the fixed training data. Deterministic maps suffice for the supremum. For every word h, write A_k(h) for the permitted variants and B=sum_{j=0}^{min(k,M)} binom(M,j).
++Fix integers M>=1 and k>=0. An episode first draws an arbitrary latent pair (theta, mu) from a fixed but otherwise unknown distribution P. Here theta is a homogeneous binary order-two transition table and mu is an arbitrary initial pair distribution, possibly dependent on theta. It then draws H=(X_0,...,X_{M+1}) from that chain and Y=X_{M+2}. Write q=theta_{X_M X_{M+1}}(1). Episodes are iid from this joint law; a fixed source and initial distribution is a special case. At evaluation, an attack map a transforms H into z=a(H), editing at most k positions in {0,...,M-1} and leaving the final pair fixed. The map receives neither theta nor Y; it may be chosen after the fixed learned predictor and the population law are specified, but takes only H as episode-specific input. Any randomized attack must be a kernel of H and any fixed training data and predictor only; its fresh randomness is conditionally independent of the current (theta, mu, Y) given H and the fixed training data. Deterministic maps suffice for the supremum. For every word h, write A_k(h) for the permitted variants and B=sum_{j=0}^{min(k,M)} binom(M,j).
+ 
+ A deterministic predictor f maps edited words to [0,1]. Let
+ 
+@@ -41,7 +41,7 @@
+ 
+ ## 4. Finite-class candidate theorem
+ 
+-Let F be any specified finite set of [0,1]-valued prediction maps, with cardinality N, fixed independently of the training samples. It can include finite-precision Transformer maps and a classical gate; no result below says gradient descent finds the minimizer or even that any chosen network contains that gate. Draw n1>=1 independent labeled clean episodes and estimate each p_t from the mean of Y over episodes whose T=t; use zero when the group is unobserved. Draw n2>=1 further independent clean episodes, and define
++Let F be any specified finite set of [0,1]-valued prediction maps, with cardinality N>=1, fixed independently of the training samples. It can include finite-precision Transformer maps and a classical gate; no result below says gradient descent finds the minimizer or even that any chosen network contains that gate. Draw an integer n1>=1 independent labeled clean episodes and estimate each p_t from the mean of Y over episodes whose T=t; use zero when the group is unobserved. Draw an integer n2>=1 further independent clean episodes, and define
+ 
+  Vhat(f) = (1/n2) sum_i max_{z in A_k(H_i)} ( f(z)-phat_{T(H_i)} )^2.
+ 
+@@ -52,7 +52,7 @@
+ 
+ The bound holds for every fixed meta-distribution P of the type above and the same algorithm; confidence is over its training draw, not simultaneous worst-case control of fhat over every source in P's support. It uses k in offline attack enumeration; no simultaneous unknown-budget guarantee is claimed.
+ 
+-Proof. Let pi_t=P(T=t), pt=P(Y=1|T=t), Ct the first-sample count, and A=sum_t pi_t |phat_t-pt|. Conditional on Ct>0, the group labels are iid Bernoulli(pt), so E|phat_t-pt| <= 1/(2 sqrt(Ct)); when Ct=0 the error is <=1. For Ct~Bin(n1,pi_t), E[1/(Ct+1)] <= 1/((n1+1)pi_t), and 1/(Ct or 1) <=2/(Ct+1). Cauchy-Schwarz gives E|phat_t-pt| <=sqrt(2/((n1+1)pi_t)). Summing and using sum sqrt(pi_t)<=sqrt(S) yields E A <=sqrt(2S/(n1+1)); Markov gives A at most this expression divided by delta1.
++Proof. Let pi_t=P(T=t), pt=P(Y=1|T=t), Ct the first-sample count, and A=sum_t pi_t |phat_t-pt|. For each integer m>=1, conditional on Ct=m, the m group labels are iid Bernoulli(pt), so E[|phat_t-pt| | Ct=m] <= 1/(2 sqrt(m)); conditional on Ct=0 the error is <=1. For Ct~Bin(n1,pi_t), E[1/(Ct+1)] <= 1/((n1+1)pi_t), and 1/(Ct or 1) <=2/(Ct+1). Cauchy-Schwarz gives E|phat_t-pt| <=sqrt(2/((n1+1)pi_t)). Summing and using sum sqrt(pi_t)<=sqrt(S) yields E A <=sqrt(2S/(n1+1)); Markov gives A at most this expression divided by delta1.
+ 
+ For any f and h, the max of (f(z)-phat_t)^2 differs from the max of (f(z)-pt)^2 by at most 2|phat_t-pt|. Therefore, conditional on the first sample, their population means differ by at most 2A uniformly over f, with no union bound over attack maps. The bounded second-sample functions lie in [0,1]; Hoeffding and a union bound over N predictors give uniform sampling error sqrt(log(2N/delta2)/(2n2)). The empirical minimizing inequality contributes twice these deviations, plus xi_ERM. Add the common C from Section 1. QED.
+ 

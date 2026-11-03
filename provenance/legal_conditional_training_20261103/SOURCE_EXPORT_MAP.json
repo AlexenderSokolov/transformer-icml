@@ -1,0 +1,398 @@
+{
+  "scope": "Complete legal history-only adversarial square-loss analysis, finite-class offline bound, original correction history, rational diagnostic scripts/outputs, scoped antecedents and source-bound independent LLM review. No training run.",
+  "base_commit": "aace11433ca09612d035d5996425e409071e9fab",
+  "files": [
+    {
+      "path": "v10_research/legal_conditional_training_20261103/ACCOUNTING_CORRECTION.diff",
+      "original": {
+        "bytes": 6512,
+        "sha256": "47ec7aad0e89a0356e89acfbeb93252811355e4a0040bbded04fc73077642ad0",
+        "git_blob_sha1": "ac9eea8ae0b472e21da2e468a31e1e6f326b0884"
+      },
+      "public": {
+        "bytes": 6512,
+        "sha256": "47ec7aad0e89a0356e89acfbeb93252811355e4a0040bbded04fc73077642ad0",
+        "git_blob_sha1": "ac9eea8ae0b472e21da2e468a31e1e6f326b0884"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/COMPARATOR_CORRECTION.diff",
+      "original": {
+        "bytes": 3218,
+        "sha256": "4692a1705d79c60b02716c09d162817097a9cc8cd4efbb0de3fd8f5c0f506fc7",
+        "git_blob_sha1": "dca184d24c803c827bed1c6557728b9477f01b12"
+      },
+      "public": {
+        "bytes": 3218,
+        "sha256": "4692a1705d79c60b02716c09d162817097a9cc8cd4efbb0de3fd8f5c0f506fc7",
+        "git_blob_sha1": "dca184d24c803c827bed1c6557728b9477f01b12"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/FINAL_PRECISION.diff",
+      "original": {
+        "bytes": 5686,
+        "sha256": "71da2c84584f1a71d8be9487035b4ddde7416c37a6daa3563d37916ef0ef7a32",
+        "git_blob_sha1": "c9168a65fa78fab18d1634a0db0ee62c43bb9369"
+      },
+      "public": {
+        "bytes": 5686,
+        "sha256": "71da2c84584f1a71d8be9487035b4ddde7416c37a6daa3563d37916ef0ef7a32",
+        "git_blob_sha1": "c9168a65fa78fab18d1634a0db0ee62c43bb9369"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/LITERATURE_CORRECTION.diff",
+      "original": {
+        "bytes": 3843,
+        "sha256": "3046401400fe6d91947eacf206e47a567632d50472617982cdbad8d745e6403b",
+        "git_blob_sha1": "1e91ddec31ac794507c020adc47fbe6b2e6379a2"
+      },
+      "public": {
+        "bytes": 3843,
+        "sha256": "3046401400fe6d91947eacf206e47a567632d50472617982cdbad8d745e6403b",
+        "git_blob_sha1": "1e91ddec31ac794507c020adc47fbe6b2e6379a2"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/LITERATURE_NOTE.before_reference_correction.md",
+      "original": {
+        "bytes": 2273,
+        "sha256": "e6dcd3822f99d3c35bd5d3db848a93b765ba261309fec3ed61cb66b95996936d",
+        "git_blob_sha1": "6f05e87cd3375c386e98086bb419843c63f6ec9a"
+      },
+      "public": {
+        "bytes": 2273,
+        "sha256": "e6dcd3822f99d3c35bd5d3db848a93b765ba261309fec3ed61cb66b95996936d",
+        "git_blob_sha1": "6f05e87cd3375c386e98086bb419843c63f6ec9a"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/LITERATURE_NOTE.md",
+      "original": {
+        "bytes": 2284,
+        "sha256": "a94e90a06ee8d4ddd9108964461abec6fd0503ea99288383145fe85ad1cb9ad0",
+        "git_blob_sha1": "0c6609bb7fcc599801bb73b324f125cc0a34a9f1"
+      },
+      "public": {
+        "bytes": 2284,
+        "sha256": "a94e90a06ee8d4ddd9108964461abec6fd0503ea99288383145fe85ad1cb9ad0",
+        "git_blob_sha1": "0c6609bb7fcc599801bb73b324f125cc0a34a9f1"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/NOTATION_CORRECTION.diff",
+      "original": {
+        "bytes": 10327,
+        "sha256": "45fc074a3e8993efef26f147662ba9c9c2dfbf7d8d690ad0e7f581429ff7a0fd",
+        "git_blob_sha1": "b04eacb54b7fba9b85c2f64f6ee90f037f593256"
+      },
+      "public": {
+        "bytes": 10327,
+        "sha256": "45fc074a3e8993efef26f147662ba9c9c2dfbf7d8d690ad0e7f581429ff7a0fd",
+        "git_blob_sha1": "b04eacb54b7fba9b85c2f64f6ee90f037f593256"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/REFERENCE_CORRECTION.diff",
+      "original": {
+        "bytes": 2971,
+        "sha256": "f3810648dca9cbb40568756336ee546f0bae40d9d62e72eb5da7493b3b63b89a",
+        "git_blob_sha1": "40402e4c030aaf189186c1512ea9e87dde4c2463"
+      },
+      "public": {
+        "bytes": 2971,
+        "sha256": "f3810648dca9cbb40568756336ee546f0bae40d9d62e72eb5da7493b3b63b89a",
+        "git_blob_sha1": "40402e4c030aaf189186c1512ea9e87dde4c2463"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/RESEARCH_NOTE.before_accounting_correction.md",
+      "original": {
+        "bytes": 12915,
+        "sha256": "922eb78e9d9a5bf1854674a80c201b432ebd5c354352ddb3c82e94ab64f22f65",
+        "git_blob_sha1": "03269c8b1c01a2e619c4b86e5a88d1a1c8918ae5"
+      },
+      "public": {
+        "bytes": 12915,
+        "sha256": "922eb78e9d9a5bf1854674a80c201b432ebd5c354352ddb3c82e94ab64f22f65",
+        "git_blob_sha1": "03269c8b1c01a2e619c4b86e5a88d1a1c8918ae5"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/RESEARCH_NOTE.before_comparator_correction.md",
+      "original": {
+        "bytes": 12137,
+        "sha256": "8272095e71c973fe4902986305d168b86d58b8b3e3e1279bbbcac5e56ab3ebe6",
+        "git_blob_sha1": "36cf12e462175b28933fea20fe65a5771e6beea2"
+      },
+      "public": {
+        "bytes": 12137,
+        "sha256": "8272095e71c973fe4902986305d168b86d58b8b3e3e1279bbbcac5e56ab3ebe6",
+        "git_blob_sha1": "36cf12e462175b28933fea20fe65a5771e6beea2"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/RESEARCH_NOTE.before_final_precision.md",
+      "original": {
+        "bytes": 14461,
+        "sha256": "a42372b491f53c0fc91e967fa62f34b33f7d8495e6bc6872e168a7b9c6108988",
+        "git_blob_sha1": "a6bbd5a85c7143c6d472664e0c27ddee579b435e"
+      },
+      "public": {
+        "bytes": 14461,
+        "sha256": "a42372b491f53c0fc91e967fa62f34b33f7d8495e6bc6872e168a7b9c6108988",
+        "git_blob_sha1": "a6bbd5a85c7143c6d472664e0c27ddee579b435e"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/RESEARCH_NOTE.before_notation_correction.md",
+      "original": {
+        "bytes": 14317,
+        "sha256": "69f6fb68d14d5a3db38463a5d93253f64afbf73a941db997679bd1e81bd46fed",
+        "git_blob_sha1": "f391cbd36c5ad1e1828152b4db522f5ff57976d2"
+      },
+      "public": {
+        "bytes": 14317,
+        "sha256": "69f6fb68d14d5a3db38463a5d93253f64afbf73a941db997679bd1e81bd46fed",
+        "git_blob_sha1": "f391cbd36c5ad1e1828152b4db522f5ff57976d2"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/RESEARCH_NOTE.before_reference_correction.md",
+      "original": {
+        "bytes": 14305,
+        "sha256": "4475f37749b156ca7d583b16248eff3e861460211173a736e8c13b4159d34ce9",
+        "git_blob_sha1": "9391f3ad8f851277fd99e99753c9dd2d3f6b5e69"
+      },
+      "public": {
+        "bytes": 14305,
+        "sha256": "4475f37749b156ca7d583b16248eff3e861460211173a736e8c13b4159d34ce9",
+        "git_blob_sha1": "9391f3ad8f851277fd99e99753c9dd2d3f6b5e69"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/RESEARCH_NOTE.md",
+      "original": {
+        "bytes": 14542,
+        "sha256": "350aa7c60c3a054ebebed51a78f459748825e280344ca71f872e3e1515810483",
+        "git_blob_sha1": "8a87c1eab58b1af069e84e9a0ae879dec2959195"
+      },
+      "public": {
+        "bytes": 14542,
+        "sha256": "350aa7c60c3a054ebebed51a78f459748825e280344ca71f872e3e1515810483",
+        "git_blob_sha1": "8a87c1eab58b1af069e84e9a0ae879dec2959195"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/SOURCE_HASHES.txt",
+      "original": {
+        "bytes": 3569,
+        "sha256": "d5ed024255d14d1025f318f84ed1d8f52ad0f8f7b229214dd6aac910b090b02d",
+        "git_blob_sha1": "08aea0a41d80560e79587e423c74b9a32cc3c208"
+      },
+      "public": {
+        "bytes": 3569,
+        "sha256": "d5ed024255d14d1025f318f84ed1d8f52ad0f8f7b229214dd6aac910b090b02d",
+        "git_blob_sha1": "08aea0a41d80560e79587e423c74b9a32cc3c208"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/check_flow.log",
+      "original": {
+        "bytes": 64,
+        "sha256": "e6417a030cca56c795c2fb09b4f4d6d3531d34644e66b2b47babc566c2e8f021",
+        "git_blob_sha1": "8cd2242103fd244378e106b1bf469ba65d8731a7"
+      },
+      "public": {
+        "bytes": 64,
+        "sha256": "e6417a030cca56c795c2fb09b4f4d6d3531d34644e66b2b47babc566c2e8f021",
+        "git_blob_sha1": "8cd2242103fd244378e106b1bf469ba65d8731a7"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/check_flow.py",
+      "original": {
+        "bytes": 479,
+        "sha256": "a07f34b794238adffef2586ce9b80e7a638ae94cba35ff50213196a20edd50ec",
+        "git_blob_sha1": "d0dbdf31b325e0a7bf8b4fb65c9c7810de3cfac7"
+      },
+      "public": {
+        "bytes": 479,
+        "sha256": "a07f34b794238adffef2586ce9b80e7a638ae94cba35ff50213196a20edd50ec",
+        "git_blob_sha1": "d0dbdf31b325e0a7bf8b4fb65c9c7810de3cfac7"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/check_fraction.log",
+      "original": {
+        "bytes": 97,
+        "sha256": "e4c4990563229837117102ff923022f297f52971c42bd7a82a396bea63b28b30",
+        "git_blob_sha1": "9d3866e6ab9706b1fa0ba16c75eff1358d7379a2"
+      },
+      "public": {
+        "bytes": 97,
+        "sha256": "e4c4990563229837117102ff923022f297f52971c42bd7a82a396bea63b28b30",
+        "git_blob_sha1": "9d3866e6ab9706b1fa0ba16c75eff1358d7379a2"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/check_fraction.py",
+      "original": {
+        "bytes": 455,
+        "sha256": "7a4db082a90a51bbdfff692b2bb9406c2961b8fb2a8f673106807f5cc8c2a085",
+        "git_blob_sha1": "720d800d886f8b6bbf003e7e87900c959ebd0d26"
+      },
+      "public": {
+        "bytes": 455,
+        "sha256": "7a4db082a90a51bbdfff692b2bb9406c2961b8fb2a8f673106807f5cc8c2a085",
+        "git_blob_sha1": "720d800d886f8b6bbf003e7e87900c959ebd0d26"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/check_game_exact.log",
+      "original": {
+        "bytes": 195,
+        "sha256": "f5ed60394d28a6c8661e237cb018c5fd02b492ee7232d4a7d55546a124bdc20f",
+        "git_blob_sha1": "a7c0d9b3dd844b219cb483b653e02b536a1439bf"
+      },
+      "public": {
+        "bytes": 195,
+        "sha256": "f5ed60394d28a6c8661e237cb018c5fd02b492ee7232d4a7d55546a124bdc20f",
+        "git_blob_sha1": "a7c0d9b3dd844b219cb483b653e02b536a1439bf"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/check_game_exact.py",
+      "original": {
+        "bytes": 2022,
+        "sha256": "8e6071786dfad9c5b7626467a57c56723feb614026715e9b6ddf5de1a1fac2e3",
+        "git_blob_sha1": "a7a3908d4b6904a063bca99ef11653bc8eaa32ec"
+      },
+      "public": {
+        "bytes": 2022,
+        "sha256": "8e6071786dfad9c5b7626467a57c56723feb614026715e9b6ddf5de1a1fac2e3",
+        "git_blob_sha1": "a7a3908d4b6904a063bca99ef11653bc8eaa32ec"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/review_independent/INPUT_BINDINGS.json",
+      "original": {
+        "bytes": 1739,
+        "sha256": "d590e38f7edae61e4ab026906a7af15672aabbc59676f6c4b5c400ec3502f200",
+        "git_blob_sha1": "671c192ccf79d4b8cdf9b53d93dca79107a6c04f"
+      },
+      "public": {
+        "bytes": 1739,
+        "sha256": "d590e38f7edae61e4ab026906a7af15672aabbc59676f6c4b5c400ec3502f200",
+        "git_blob_sha1": "671c192ccf79d4b8cdf9b53d93dca79107a6c04f"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/review_independent/REVIEW.md",
+      "original": {
+        "bytes": 8023,
+        "sha256": "1769d7776f92d3b6723f17d1c6a8f73c4c8c275c8e599ba4748359883a968b4d",
+        "git_blob_sha1": "00f13adfa401486b84e1b12047afccd951a8ef3a"
+      },
+      "public": {
+        "bytes": 8023,
+        "sha256": "1769d7776f92d3b6723f17d1c6a8f73c4c8c275c8e599ba4748359883a968b4d",
+        "git_blob_sha1": "00f13adfa401486b84e1b12047afccd951a8ef3a"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/review_independent/author_flow_replay.log",
+      "original": {
+        "bytes": 64,
+        "sha256": "e6417a030cca56c795c2fb09b4f4d6d3531d34644e66b2b47babc566c2e8f021",
+        "git_blob_sha1": "8cd2242103fd244378e106b1bf469ba65d8731a7"
+      },
+      "public": {
+        "bytes": 64,
+        "sha256": "e6417a030cca56c795c2fb09b4f4d6d3531d34644e66b2b47babc566c2e8f021",
+        "git_blob_sha1": "8cd2242103fd244378e106b1bf469ba65d8731a7"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/review_independent/author_fraction_replay.log",
+      "original": {
+        "bytes": 97,
+        "sha256": "e4c4990563229837117102ff923022f297f52971c42bd7a82a396bea63b28b30",
+        "git_blob_sha1": "9d3866e6ab9706b1fa0ba16c75eff1358d7379a2"
+      },
+      "public": {
+        "bytes": 97,
+        "sha256": "e4c4990563229837117102ff923022f297f52971c42bd7a82a396bea63b28b30",
+        "git_blob_sha1": "9d3866e6ab9706b1fa0ba16c75eff1358d7379a2"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/review_independent/author_game_replay.log",
+      "original": {
+        "bytes": 195,
+        "sha256": "f5ed60394d28a6c8661e237cb018c5fd02b492ee7232d4a7d55546a124bdc20f",
+        "git_blob_sha1": "a7c0d9b3dd844b219cb483b653e02b536a1439bf"
+      },
+      "public": {
+        "bytes": 195,
+        "sha256": "f5ed60394d28a6c8661e237cb018c5fd02b492ee7232d4a7d55546a124bdc20f",
+        "git_blob_sha1": "a7c0d9b3dd844b219cb483b653e02b536a1439bf"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/review_independent/check_independent.log",
+      "original": {
+        "bytes": 926,
+        "sha256": "bedc37a405a2dd6b7b3c71804b7f0e80a9c6597c693e63a21b77b19b8e45c04b",
+        "git_blob_sha1": "be94b2156fbac70ef7e9691d059227007f8582eb"
+      },
+      "public": {
+        "bytes": 926,
+        "sha256": "bedc37a405a2dd6b7b3c71804b7f0e80a9c6597c693e63a21b77b19b8e45c04b",
+        "git_blob_sha1": "be94b2156fbac70ef7e9691d059227007f8582eb"
+      },
+      "changed": false
+    },
+    {
+      "path": "v10_research/legal_conditional_training_20261103/review_independent/check_independent.py",
+      "original": {
+        "bytes": 3401,
+        "sha256": "c17d1f44fe6788f205d2764debf8953fa9b7e71f51f0731f432cb2840facb6b5",
+        "git_blob_sha1": "f862b20e7a5b64d46f0ba6a3ac347705da454c44"
+      },
+      "public": {
+        "bytes": 3401,
+        "sha256": "c17d1f44fe6788f205d2764debf8953fa9b7e71f51f0731f432cb2840facb6b5",
+        "git_blob_sha1": "f862b20e7a5b64d46f0ba6a3ac347705da454c44"
+      },
+      "changed": false
+    }
+  ]
+}

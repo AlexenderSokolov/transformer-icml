@@ -1,0 +1,81 @@
+{
+  "base_commit": "aace11433ca09612d035d5996425e409071e9fab",
+  "source_files": 28,
+  "selected_original_bytes": 141117,
+  "scientific_omissions": [],
+  "privacy_changes": [],
+  "source_math_program_or_history_changed": false,
+  "python_sources_parsed": 4,
+  "privacy_unresolved_hits": [],
+  "structured_binding_counts": {
+    "EXACT_PUBLIC_BYTES": 35,
+    "DECLARED_PREVIOUS_PUBLIC_PAIR": 2
+  },
+  "scientific_scope": [
+    "A fixed homogeneous binary order-two Markov-mixture law with arbitrary source-dependent initial distribution and independent full labeled training episodes.",
+    "A legal attack sees the history but not the current latent source or future label; its fresh randomness is conditionally independent of them given history and fixed training information. Conditional expectation precedes the history-wise maximum.",
+    "For square loss, legal supervised risk and true-source risk have the same predictor ranking up to distinct additive constants. An exact Bernoulli(1/5) example reverses the ranking under label-visible edits.",
+    "Initial pair, final pair and transition counts determine the conditional predictive mean. Flow reconstruction gives at most 16(M+1)^4 groups. This is a direct specialization of classical Markov sufficiency.",
+    "A fixed finite predictor class and two independent samples yield a conservative offline excess-risk bound via elementary occupancy, Markov, Hoeffding and union bounds. It may be vacuous and is not a novel generic statistical principle.",
+    "Known k is used in enumerating legal edits. B can be exponential; predictor cost, exact arithmetic and storage are charged separately. No SGD, learned attention, finite-precision training, worst-source or unknown-budget guarantee is established.",
+    "Optional ACG comparator transfer requires its full all-state certificate, M>=64, beta>=1/M, exact statistics/output and inclusion in the finite class. The absolute-loss transfer loses a square root and may be vacuous.",
+    "Scoped literature checks are abstracts/metadata, not theorem-by-theorem coverage or novelty certification. The review is an independent LLM scientific audit, not external peer review or formal proof."
+  ],
+  "finite_checks": "Three author and one independent standard-library rational scripts; all seven archived logs retained. They do not replace the general proof. Six genuine before/diff/successor edges retained.",
+  "publisher_public_replay": {
+    "status": "PASS",
+    "selected_sources": 28,
+    "inherited_dependencies": 5,
+    "binding_occurrences": 37,
+    "declared_inherited_pairs": 2,
+    "verified_public_files": 38,
+    "diagnostics": [
+      {
+        "script": "check_fraction.py",
+        "matched_logs": [
+          "check_fraction.log",
+          "review_independent/author_fraction_replay.log"
+        ],
+        "stdout_sha256": "e4c4990563229837117102ff923022f297f52971c42bd7a82a396bea63b28b30"
+      },
+      {
+        "script": "check_game_exact.py",
+        "matched_logs": [
+          "check_game_exact.log",
+          "review_independent/author_game_replay.log"
+        ],
+        "stdout_sha256": "f5ed60394d28a6c8661e237cb018c5fd02b492ee7232d4a7d55546a124bdc20f"
+      },
+      {
+        "script": "check_flow.py",
+        "matched_logs": [
+          "check_flow.log",
+          "review_independent/author_flow_replay.log"
+        ],
+        "stdout_sha256": "e6417a030cca56c795c2fb09b4f4d6d3531d34644e66b2b47babc566c2e8f021"
+      },
+      {
+        "script": "review_independent/check_independent.py",
+        "matched_logs": [
+          "review_independent/check_independent.log"
+        ],
+        "stdout_sha256": "bedc37a405a2dd6b7b3c71804b7f0e80a9c6597c693e63a21b77b19b8e45c04b"
+      }
+    ],
+    "scientific_sources_changed": false,
+    "training_performed": false,
+    "optimized_python": "REFUSED",
+    "tampered_source": "REFUSED",
+    "tampered_reconciliation": "REFUSED",
+    "symlink_input": "REFUSED",
+    "symlink_inventory": "REFUSED",
+    "originals_unchanged": true,
+    "public_copy_unchanged": true,
+    "environment": {
+      "python": "3.12.14",
+      "dependencies": "Python standard library only"
+    },
+    "local_scope": "Exact public-only stage and direct dependencies; no full historical research replay or new training."
+  },
+  "earlier_material": "No existing manuscript, training archive, source map, historical failure or workflow is modified."
+}

@@ -1,5 +1,12 @@
 # 资料导航
 
+## 合法条件目标与有限类离线学习
+
+- [完整正文与证明](../v10_research/legal_conditional_training_20261103/RESEARCH_NOTE.md) · [限定阅读范围的文献对照](../v10_research/legal_conditional_training_20261103/LITERATURE_NOTE.md)
+- [标签可见排序反例](../v10_research/legal_conditional_training_20261103/check_fraction.py) · [精确混合检查](../v10_research/legal_conditional_training_20261103/check_game_exact.py) · [计数流重建](../v10_research/legal_conditional_training_20261103/check_flow.py)
+- [独立 LLM 审阅](../v10_research/legal_conditional_training_20261103/review_independent/REVIEW.md) · [独立有理检查](../v10_research/legal_conditional_training_20261103/review_independent/check_independent.py) · [全部原始修正历史与日志](../v10_research/legal_conditional_training_20261103)
+- [公共隔离复现](../provenance/legal_conditional_training_20261103/PUBLIC_REPLAY.md) · [28 项原始/公开身份](../provenance/legal_conditional_training_20261103/SOURCE_EXPORT_MAP.json) · [继承来源身份解释](../provenance/legal_conditional_training_20261103/PUBLIC_EXPORT_RECONCILIATION.json)
+
 ## 稀有加权实验与完整训练档案
 
 - [低计数精确枚举与分组](../v10_research/rare_state_enumeration_20261103/REPORT.md) · [128 个可行特征与见证](../v10_research/rare_state_enumeration_20261103/rare_states.json)
