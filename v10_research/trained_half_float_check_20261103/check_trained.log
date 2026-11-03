@@ -1,0 +1,115 @@
+NUMPY CONFIGURATION
+Build Dependencies:
+  blas:
+    detection method: pkgconfig
+    found: true
+    include directory: <build-python-prefix>/lib/python3.12/site-packages/scipy_openblas64/include
+    lib directory: <build-python-prefix>/lib/python3.12/site-packages/scipy_openblas64/lib
+    name: scipy-openblas
+    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY
+      Haswell MAX_THREADS=64
+    pc file directory: <openblas-build-prefix>
+    version: 0.3.30
+  lapack:
+    detection method: pkgconfig
+    found: true
+    include directory: <build-python-prefix>/lib/python3.12/site-packages/scipy_openblas64/include
+    lib directory: <build-python-prefix>/lib/python3.12/site-packages/scipy_openblas64/lib
+    name: scipy-openblas
+    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY
+      Haswell MAX_THREADS=64
+    pc file directory: <openblas-build-prefix>
+    version: 0.3.30
+Compilers:
+  c:
+    commands: cc
+    linker: ld.bfd
+    name: gcc
+    version: 14.2.1
+  c++:
+    commands: c++
+    linker: ld.bfd
+    name: gcc
+    version: 14.2.1
+  cython:
+    commands: cython
+    linker: cython
+    name: cython
+    version: 3.2.1
+Machine Information:
+  build:
+    cpu: x86_64
+    endian: little
+    family: x86_64
+    system: linux
+  host:
+    cpu: x86_64
+    endian: little
+    family: x86_64
+    system: linux
+Python Information:
+  path: <temporary-build-python>
+  version: '3.12'
+SIMD Extensions:
+  baseline:
+  - SSE
+  - SSE2
+  - SSE3
+  found:
+  - SSSE3
+  - SSE41
+  - POPCNT
+  - SSE42
+  - AVX
+  - F16C
+  - FMA3
+  - AVX2
+  - AVX512F
+  - AVX512CD
+  - AVX512_SKX
+  - AVX512_CLX
+  - AVX512_CNL
+  - AVX512_ICL
+  - AVX512_SPR
+  not found:
+  - AVX512_KNL
+  - AVX512_KNM
+
+NUMPY RUNTIME
+[{'numpy_version': '2.3.5',
+  'python': '3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]',
+  'uname': uname_result(system='Linux', node='<host removed>', release='6.18.57', version='#1 SMP Tue Oct 20 21:56:04 UTC 2026', machine='x86_64')},
+ {'simd_extensions': {'baseline': ['SSE', 'SSE2', 'SSE3'],
+                      'found': ['SSSE3',
+                                'SSE41',
+                                'POPCNT',
+                                'SSE42',
+                                'AVX',
+                                'F16C',
+                                'FMA3',
+                                'AVX2',
+                                'AVX512F',
+                                'AVX512CD',
+                                'AVX512_SKX',
+                                'AVX512_CLX',
+                                'AVX512_CNL',
+                                'AVX512_ICL',
+                                'AVX512_SPR'],
+                      'not_found': ['AVX512_KNL', 'AVX512_KNM']}},
+ {'ignore_floating_point_errors_in_matmul': False},
+ {'architecture': 'SkylakeX',
+  'filepath': '<runtime-python-prefix>/lib/python3.12/site-packages/numpy.libs/libscipy_openblas64_-fdde5778.so',
+  'internal_api': 'openblas',
+  'num_threads': 1,
+  'prefix': 'libscipy_openblas',
+  'threading_layer': 'pthreads',
+  'user_api': 'blas',
+  'version': '0.3.30'}]
+AB features1 ['0x1.fd00bfd00bfd6p-1', '0x1.fd00bfd00bfd7p-1'] logit ['0x1.3a0db665792cbp+2', '0x1.3a0db665792cbp+2'] q ['0x1.fc3dd84f48330p-1', '0x1.fc3dd84f48330p-1'] CE ['0x1.647a2c4900137p-6', '0x1.647a2c4900137p-6'] abs_logit_error ['1.0550920286225339563089250601706151e-15', '1.0550920286225339563089250601706151e-15']
+BA features1 ['0x1.fd00bfd00bfd7p-1', '0x1.fd00bfd00bfd6p-1'] logit ['0x1.3a0db665792cbp+2', '0x1.3a0db665792cbp+2'] q ['0x1.fc3dd84f48330p-1', '0x1.fc3dd84f48330p-1'] CE ['0x1.647a2c4900137p-6', '0x1.647a2c4900137p-6'] abs_logit_error ['1.0550920286225339563089250601706151e-15', '1.0550920286225339563089250601706151e-15']
+AA features1 ['0x1.fd00bfd00bfd6p-1', '0x1.fd00bfd00bfd6p-1'] logit ['0x1.3a0db665792cbp+2', '0x1.3a0db665792cbp+2'] q ['0x1.fc3dd84f48330p-1', '0x1.fc3dd84f48330p-1'] CE ['0x1.647a2c4900137p-6', '0x1.647a2c4900137p-6'] abs_logit_error ['1.0550920286225339563089250601706151e-15', '1.0550920286225339563089250601706151e-15']
+BB features1 ['0x1.fd00bfd00bfd7p-1', '0x1.fd00bfd00bfd7p-1'] logit ['0x1.3a0db665792cbp+2', '0x1.3a0db665792cbp+2'] q ['0x1.fc3dd84f48330p-1', '0x1.fc3dd84f48330p-1'] CE ['0x1.647a2c4900137p-6', '0x1.647a2c4900137p-6'] abs_logit_error ['1.0550920286225339563089250601706151e-15', '1.0550920286225339563089250601706151e-15']
+A features1 ['0x1.fd00bfd00bfd7p-1'] logit ['0x1.3a0db665792ddp+2'] q ['0x1.fc3dd84f48330p-1'] CE ['0x1.647a2c4900137p-6'] abs_logit_error ['1.7042303583224788138409221080678428e-14']
+B features1 ['0x1.fd00bfd00bfd7p-1'] logit ['0x1.3a0db665792ddp+2'] q ['0x1.fc3dd84f48330p-1'] CE ['0x1.647a2c4900137p-6'] abs_logit_error ['1.7042303583224788138409221080678428e-14']
+target 0x1.fe7f9fe7f9fe8p-1 ideal logit 4.9070869437170559486744843122830449 conditional R at tau_h=0 1.1746381927788E-12
+INDEPENDENT FORWARD MATCH: bitwise x, tanh hidden, sigmoid and q for all batches; bounds comparisons are diagnostic only

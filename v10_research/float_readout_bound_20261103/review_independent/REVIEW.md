@@ -1,0 +1,31 @@
+# Independent review: conditional float-readout bound
+
+3 November 2026. Reviewed author `REPORT.md` SHA-256 `c48eeaf7592e3bfa9671e209962f6877990791da75be2f33fb567f68488030f1`, `ADDITIVE_BATCH_CONTEXT.md` SHA-256 `a2e05c57228cd0a6d4bc4231de0cec0e5571e4a22b80ebb7998b93910fd4a5b1`, scripts, rational outputs and existing half-edit checkpoints. No RNG, random model initialization, training or stochastic test was used; source artifacts were not edited. I found no substantive algebraic or arithmetic error under the expressly conditional numerical premises.
+
+## CE, endpoint domains and propagation
+
+Let e∈[0,1/2], a=1−2e, s=sigmoid(r), g=e+as. For finite r, s∈(0,1), and
+
+g−g'=e+a s²≥0; 1−g−g'=e+a(1−s)²≥0.
+
+Thus 0≤g'≤min(g,1−g). The CE derivative with target t∈[0,1] is the convex combination of endpoint derivatives g'/(1−g) and −g'/g, so its absolute value is at most one. For e=0 the boundary cases s=0 or 1 correspond to infinite logits, where CE/derivative may be undefined; the finite-logit statement remains valid. For the actual horizons M≥2, e=(M+2)^−2 is strictly positive. CE is not generally 1-Lipschitz in its probability argument; 1/e is a safe bound on [e,1−e]. An independent exact-rational grid check validates the identities, including e=0 and e=1/2 boundary algebra; it is not a replacement for the proof.
+
+Under the assumed correctly rounded positive pooling coefficient, exact 0/1 products, and stated n-term round-to-nearest addition tree, the nonnegative-sum bound (k/n)[u+(1+u)gamma_(n−1)] follows directly; zero counts give exact zero in this abstract graph. M, floor(M/2), and the remaining half length must be treated separately. The proposed dot-product gamma_9 and gamma_32 bounds, one rounded bias addition each, and an absolute tanh error tau_h lead to the stated R. In particular the factor (1+gamma_32)(1+u)·sum|v| properly includes the direct activation discrepancy plus its effect on output-dot and bias rounding. Stored binary64 weights are treated as exact real inputs to that comparison; the calculation does not certify their origin or any other model.
+
+If |q_float−g(r_float)|≤tau_q<e, both values are strictly inside [e−tau_q,1−e+tau_q]. The score perturbation from probability is bounded by tau_q/(e−tau_q); target perturbation |t_float−t|≤beta contributes beta·log((1−e+tau_q)/(e−tau_q)); and tau_CE accounts for actual CE/log/arithmetic discrepancy. This yields equation (2). For t=(C1+1)/(J+2), beta≤u follows from the explicitly required exact-representability and correctly-rounded-division premises, since 0≤t≤1. It is not automatically a proven property of the current NumPy path.
+
+The result is **conditional**: the observed source and checkpoint files do not establish the pooling reduction graph, no-underflow/FTZ assumptions, BLAS dot error, tanh accuracy, sigmoid/output error, target-division behavior or CE/log error. NaNs, infinities, endpoint probabilities and nondeterministic behavior must be ruled out or bounded as stated. The tau_h=0 rational numbers are a component of R, not a complete platform certificate. A one-ULP real feature collision remains valid, and no numerical magnitude here proves the actual argmax is unchanged.
+
+## Witness and batch-context transfer
+
+For a finite candidate set, a common fixed float scoring context and uniform |U_float−U_ideal|≤epsilon imply U_float(z*)−U_float(z_hat)≤2epsilon+eta for an ideal eta-optimal bank witness. Ties can reverse or be broken differently inside that interval; the result is approximate regret, not exact float argmax. The witness's floating score must mean its original candidate/slot/full-batch context; singleton evaluation cannot silently replace it. The author's additive clarification states this and correctly charges full all-candidate batch reconstruction or a fixed-filler B-row protocol when numerical witness evaluation is desired.
+
+With separate proven uniform bounds epsilon_all and epsilon_single against the same ideal objective, max U_all−U_single(z_hat)≤epsilon_all+epsilon_single+eta. This compares two different scoring protocols; it does not show their values coincide or establish singleton-protocol regret. In both cases, all comparison errors must be included in eta or in the error premises. The factor 2 is sharp for abstract uniformly perturbed scalar objectives even under nonnegativity, e.g. ideal (0.5,0.5), actual (0.4,0.6) at epsilon=0.1. The author's original diagnostic uses a negative actual score, so it is not a CE instance. The additive clarification correctly limits the sharpness claim to the abstract scalar setting rather than asserting attainability by the pilot's shared-target CE.
+
+## Checkpoint and artifact verification
+
+Independently recomputed each norm and error component using exact `Fraction.from_float` arithmetic, separate from the author's calculator. All 10 checkpoint hashes, all 40 horizon rows and 440 upward-rounded decimal fields match exactly; all four additional input hashes match. Corresponding smoke and independent-replay checkpoint parameter arrays and reported bounds match at each of the five steps. For step 200, the conditional tau_h=0 logit bounds at M=64,128,256,1025 are respectively 1.2692987090343e-13, 1.9670358768025e-13, 3.3625329805200e-13 and 1.1746381927788e-12; the independently recomputed sum|v| and tau_h coefficient both round upward to 9.7440180599953. These are not total CE error bounds until every remaining conditional term is supplied.
+
+The author's deterministic `test_bounds.py` replays byte-identically, with 11,199 checks plus its abstract sharpness example. The independent `check_math.py` performs 20,604 exact rational derivative/endpoint cases and a nonnegative abstract sharpness example. These finite tests do not validate arbitrary backend execution. I did not rerun `bounds.py` because it overwrites author `bounds.json`; my separate calculator verifies its numbers without touching it.
+
+All six original source-manifest entries and all five additive-context bindings pass; additive manifest SHA-256 is `3b66cfb46561e8dcf9c71fe1c33328e59373025f9f5a2e9d47e6d076aad59ea9`. No separate failed/transient output was visible among the retained files; absence of such a file does not prove none occurred. Review scripts, outputs and input hash bindings are retained separately. No new random operation was performed.

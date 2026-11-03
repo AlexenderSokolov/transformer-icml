@@ -1,0 +1,473 @@
+{
+  "default": "Only verify_public_archive.py and verify_retained_records.py; retained identities and deterministic arithmetic, not execution of archived programs.",
+  "historical_scripts": [
+    {
+      "path": "v10_research/float_bank_deterministic_20261103/check_reconstruction.py",
+      "sha256": "1e7187be7d25b128412d7768467cb440aea99d4932bdc5cc5151c108b40e8c87",
+      "imports": [
+        "four_counter",
+        "json",
+        "numpy",
+        "os",
+        "pilot",
+        "platform",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/float_bank_deterministic_20261103/find_collision.py",
+      "sha256": "600c65d6330a2a504f776a769af6bfa1788a3d003373ac003008c90604e85aba",
+      "imports": [
+        "hashlib",
+        "json",
+        "numpy",
+        "os",
+        "pilot",
+        "platform",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/float_bank_deterministic_20261103/fixed_batch_search.py",
+      "sha256": "725b7dc083a1ae9727f020db215cce5a31f90dd65b75317c1045dcbe6923142f",
+      "imports": [
+        "four_counter",
+        "json",
+        "numpy",
+        "os",
+        "pilot",
+        "platform",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/float_bank_deterministic_20261103/fixed_shape_verify.py",
+      "sha256": "ce9a37bcea5206c3f98dcdfed21adc63d64eacb6b056fcff214bcdf0b735f455",
+      "imports": [
+        "four_counter",
+        "json",
+        "numpy",
+        "os",
+        "pilot",
+        "platform",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/float_bank_deterministic_20261103/reproduce_collision.py",
+      "sha256": "e1cada11d559b1a7e3f3958b8b00a92d45cd83b1d2f5d4e65d7370b3ad3d5787",
+      "imports": [
+        "four_counter",
+        "json",
+        "numpy",
+        "os",
+        "pilot",
+        "platform",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/float_bank_deterministic_20261103/review_independent/check_fixed.py",
+      "sha256": "268f0ffb2564f6465a57cee4f5082b93220e91b92aea498f7c4b7e661d463260",
+      "imports": [
+        "fractions",
+        "hashlib",
+        "json",
+        "numpy",
+        "os",
+        "pathlib",
+        "pilot",
+        "platform",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/float_bank_deterministic_20261103/structured_search.py",
+      "sha256": "f847670b35149b8738666fe150d5f378fb1e5b7335ec3ca8e36ee2a447466eab",
+      "imports": [
+        "itertools",
+        "json",
+        "numpy",
+        "os",
+        "pilot",
+        "platform",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/float_readout_bound_20261103/bounds.py",
+      "sha256": "e60cd91d45b523b36d590899bcdb1c25d988f0c5135622abd871f00c54507481",
+      "imports": [
+        "decimal",
+        "fractions",
+        "hashlib",
+        "json",
+        "numpy",
+        "os",
+        "pathlib",
+        "platform",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/float_readout_bound_20261103/review_independent/check_exact.py",
+      "sha256": "9968c0e7997e26ec9c34e26895e7d7a1041857ad9976ebc127fcf6b8ed15fe5f",
+      "imports": [
+        "decimal",
+        "fractions",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/float_readout_bound_20261103/review_independent/check_math.py",
+      "sha256": "2a99b7ffa5b881613faf2e543719a2a91a7993c9c318ab971e33937c3c1998b6",
+      "imports": [
+        "fractions"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/float_readout_bound_20261103/test_bounds.py",
+      "sha256": "ef75a2ef945465e1a43e408495b67412145507a75d3c587aa866276bb6774601",
+      "imports": [
+        "fractions",
+        "itertools"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/trained_half_float_check_20261103/check_trained.py",
+      "sha256": "03e0d03e36d6fa827e2dcebe2c09c57f81bfd1f14c1464d6e719d62ab7518030",
+      "imports": [
+        "fractions",
+        "hashlib",
+        "json",
+        "mpmath",
+        "numpy",
+        "os",
+        "pathlib",
+        "pilot",
+        "platform",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/trained_half_float_check_20261103/review_independent/check_saved.py",
+      "sha256": "1868f430f8331df55851aef529e18d68aa318fd9f771fd5b5a90b06ada8c1d2d",
+      "imports": [
+        "hashlib",
+        "json",
+        "mpmath",
+        "numpy",
+        "os",
+        "pathlib",
+        "pilot",
+        "platform",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/conditional_bank_interval_certificate_20261103_0854/certificate_demo.py",
+      "sha256": "9a21239759ca06984b205693526cbb109efc975a76169b176fa2dca702080408",
+      "imports": [
+        "fractions",
+        "itertools",
+        "math"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/conditional_bank_interval_certificate_20261103_0854/certificate_demo_v2.py",
+      "sha256": "f59f30125edbb9bbee2a6e3deef076ce0e257d2c9046431dec796fb5e87bc48f",
+      "imports": [
+        "fractions",
+        "itertools",
+        "math"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/conditional_bank_interval_certificate_20261103_0854/review_independent/check_intervals.py",
+      "sha256": "d747a1735ef88998115c187fe9137928950540ee1c3d63cdd84c6ba2b6e23a21",
+      "imports": [
+        "contextlib",
+        "decimal",
+        "fractions",
+        "io",
+        "json",
+        "math",
+        "pathlib",
+        "runpy"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/bank_certificate_posthoc_endpoints_20261103_0857/reconstruct_endpoints.py",
+      "sha256": "f59f30125edbb9bbee2a6e3deef076ce0e257d2c9046431dec796fb5e87bc48f",
+      "imports": [
+        "fractions",
+        "itertools",
+        "math"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/bank_certificate_posthoc_endpoints_20261103_0857/reconstruct_endpoints_v2.py",
+      "sha256": "4972ebc12cb6ccf94bfb23b92fd474589a1a573abe4d5b6bce7a435a0c106e53",
+      "imports": [
+        "fractions",
+        "itertools",
+        "math"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/position_weighted_attack_hardness_20261103_0903/check_reduction.py",
+      "sha256": "e6a4d58965fbca1f67b35881c86ab90e38f200658b16070c15ad60e36d5bc658",
+      "imports": [
+        "fractions",
+        "itertools"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/position_weighted_attack_hardness_20261103_0903/review_independent_20261103_0906/check_reduction_independent.py",
+      "sha256": "8a55597939e39fefef3430b69ac82e9b614524a18bf5ae40d50437b7bef08502",
+      "imports": [
+        "fractions",
+        "gzip",
+        "hashlib",
+        "itertools",
+        "json",
+        "pathlib",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/dyadic_feature_dp_20261103_0915/check_dp.py",
+      "sha256": "a055ac00a0e4dc79aac949ddcb683ce8726bc736205dc8a395921e0096f00809",
+      "imports": [
+        "fractions",
+        "itertools"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/dyadic_feature_dp_20261103_0915/check_sparse.py",
+      "sha256": "092190fd03f894a4cfd5f1fa3da9b2d91d8daaf111f1cfa2167b510837c2a961",
+      "imports": [
+        "itertools",
+        "math",
+        "runpy"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/dyadic_feature_dp_20261103_0915/review_independent_20261103_0917/independent_check.py",
+      "sha256": "5b53d682ed8a70a8563a2316ff1579406a550b10f3d6c8e3e54f62e3798aabb5",
+      "imports": [
+        "collections",
+        "fractions",
+        "gzip",
+        "itertools",
+        "json",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/growing_features_hardness_20261103_0922/check_gap.py",
+      "sha256": "d4330ab74fc5a12c25f963c2d80f3c20bb839b0d3dd1b66ce8e227d0c20ca926",
+      "imports": [
+        "fractions",
+        "math"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/growing_features_hardness_20261103_0922/check_reduction.py",
+      "sha256": "63aa6ee24283ee9e252c282a69f39a1f1e5fff8d9bea662a1db056a7d1d96b5d",
+      "imports": [
+        "fractions",
+        "itertools"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/growing_features_hardness_20261103_0922/review_independent_20261103_0924/independent_check.py",
+      "sha256": "4d5bd14dab8979e36801b809b9b6c8aadf1f9d2216a0bd4e840606dd306d7b71",
+      "imports": [
+        "fractions",
+        "gzip",
+        "itertools",
+        "json",
+        "math",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/fixed_source_pointwise_tv_hardness_20261103_0934/check_pointwise.py",
+      "sha256": "26b4976a800cd7e94502c88b0e104801e5f955acda243c28d0f15595eb2f0799",
+      "imports": [
+        "fractions",
+        "gzip",
+        "itertools",
+        "json",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/fixed_source_pointwise_tv_hardness_20261103_0934/review_independent_20261103_0935/check_independent.py",
+      "sha256": "7e0698c13c2565c4fb74aab64f055b156e91f5ad75bfbaf588128529f36c9d84",
+      "imports": [
+        "fractions",
+        "gzip",
+        "itertools",
+        "json",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/fixed_source_expected_tv_hardness_20261103_0939/check_expected.py",
+      "sha256": "e8a973152a9fe4f33ad1b4a7ed477d1c6c05dc2a629268a9916dbdafe786a9d6",
+      "imports": [
+        "fractions",
+        "gzip",
+        "itertools",
+        "json",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/fixed_source_expected_tv_hardness_20261103_0939/review_independent_20261103_0940/check_independent.py",
+      "sha256": "e7f855bf20071e5f763d46b594f40e889e997dd219e586463b74b4d5fcdc73ae",
+      "imports": [
+        "fractions",
+        "gzip",
+        "itertools",
+        "json",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/constant_factor_expected_tv_hardness_20261103_0945/check_gap_model.py",
+      "sha256": "debd9f01fd755f2f17dc69fd4f3bf9630adc301ccc56d76886a5697bea7922aa",
+      "imports": [
+        "fractions",
+        "gzip",
+        "itertools",
+        "json",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/constant_factor_expected_tv_hardness_20261103_0945/review_independent_20261103_0947/check_independent.py",
+      "sha256": "bafef7f343c0db5c2858822f9bde1024b6e177fc3ceb49752a2fd1acbcaed1c8",
+      "imports": [
+        "fractions",
+        "gzip",
+        "itertools",
+        "json",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/constant_additive_expected_tv_hardness_20261103_0954/check_additive.py",
+      "sha256": "268eaac417d028927b8be011688541a75ed34c7d46a2ae5522ccaeae143f93e1",
+      "imports": [
+        "fractions",
+        "gzip",
+        "itertools",
+        "json",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/constant_additive_expected_tv_hardness_20261103_0954/review_independent_20261103_0955/check_independent.py",
+      "sha256": "cdeb1a76c88531e87737b60ee672359d58ef41b390e3401098d0fcd1de04f9ca",
+      "imports": [
+        "fractions",
+        "gzip",
+        "itertools",
+        "json",
+        "sys"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    },
+    {
+      "path": "v10_research/expected_risk_prior_art_audit_20261103_0957/check_conditional.py",
+      "sha256": "44c168b19505d40609486ae154fec06a7c87092509234b8ba6b2ba730879e2f1",
+      "imports": [
+        "fractions",
+        "itertools",
+        "json",
+        "pathlib"
+      ],
+      "publication_execution": "NOT_EXECUTED",
+      "rule": "Archive only. A separate complete call/output audit and exclusive output workspace are required before running."
+    }
+  ],
+  "random_sampling_calls_in_preparation": 0,
+  "model_initializations": 0,
+  "native_executable_or_BLAS_replays": 0,
+  "original_outputs_overwritten": 0,
+  "missing_records": "Initial deterministic per-case data, transient failure outputs, trained-check first script/log/full JSON, original interval endpoints and growing-feature author/replay intermediate records remain missing. See explicit original disclosures and the Chinese summary."
+}

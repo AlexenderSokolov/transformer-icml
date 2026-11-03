@@ -1,0 +1,16 @@
+--- v10_research/dyadic_feature_dp_20261103_0915/SPARSE_BUDGET_ADDENDUM.md	2026-11-03 01:18:32.183078571 -0800
++++ v10_research/dyadic_feature_dp_20261103_0915/SPARSE_BUDGET_ADDENDUM.restrictions_corrected.md	2026-11-03 01:19:21.422442683 -0800
+@@ -2,11 +2,11 @@
+ 
+ 2026-11-03. This note supplements `RESEARCH_NOTE.dominance_corrected.md` without changing it. It derives a dependence on the edit budget that the dense O(TS) bound conceals. The argument is deterministic and uses no new samples, model runs, or claims about floating backends. Independent review remains necessary.
+ 
+-At layer t, after processing t of T=M+2 symbols, the number of distinct raw legal prefixes is exactly
++At layer t, after processing t of T=M+2 symbols, the number of distinct raw prefixes satisfying the Hamming budget and protected positions, before any optional illegal-transition or terminal-state restrictions, is exactly
+ 
+   K_t = sum_{j=0}^{min(k,min(t,M))} binom(min(t,M),j).
+ 
+-The final two protected bits, once reached, are fixed by h and do not increase this count. Every retained key is a deterministic function of at least one such prefix, so the number of retained keys S_t satisfies
++The final two protected bits, once reached, are fixed by h and do not increase this count. Optional transition restrictions or terminal-state restrictions can only reduce the relevant prefixes. Every retained key is a deterministic function of at least one budget-and-protection-admissible prefix, so the number of retained keys S_t satisfies
+ 
+   S_t <= min(S,K_t),   S=2^r Q product_j R_j.
+ 

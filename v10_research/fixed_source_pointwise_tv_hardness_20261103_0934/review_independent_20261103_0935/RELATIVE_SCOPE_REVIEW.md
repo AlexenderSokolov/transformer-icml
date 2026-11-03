@@ -1,0 +1,5 @@
+# Relative/coarse approximation clarification
+
+`RELATIVE_SCOPE.md` SHA-256 `8d421c2e6e328aa7908c14475ec62e3317434fb42f187ef56d46a3ca2c99ff00` is correct for the specific fixed-source predictor family. As p=1/M² and q∈[1/M,3/(2M)], the nonnegative TV/p interval is [M−1, 3M/2−1]. The legal identity attack has TV at least (M−1)/M², while any possible optimum is at most (3M−2)/(2M²); their ratio is at least (2M−2)/(3M−2)≥3/5 for M≥4. The proof's final algebra is correct, with equality at M=4. Absolute regret is at most the q-range width 1/(2M), because p cancels. Thus the fixed family has an immediate 3/5 multiplicative witness approximation, notwithstanding exact and finer inverse-polynomial additive hardness; it does not establish this ratio for other predictors, sources or risk definitions. This inference also appears independently in the main review.
+
+The relative-scope source bindings verify in `relative_scope_verification.log`. No new experiment, random operation, source edit or publication occurred for this check.

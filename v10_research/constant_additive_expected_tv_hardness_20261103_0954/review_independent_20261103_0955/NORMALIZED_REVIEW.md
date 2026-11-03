@@ -1,0 +1,5 @@
+# Normalized vanishing-risk addendum
+
+Reviewed `NORMALIZED_VANISHING_RISK.md` SHA-256 `c191c3ba45f6f9db89ee8c72172efb205e5e398ea8a63bf2e1cdb1476df03032`; its source bindings pass. In the earlier constant-factor model (not the newly rescaled constant-raw-gap model), q=p+S/(MP) and q−p≤1/M, while R*=S*/(MP) for every initial law. Scaling by M gives MR*=S*/P. On the satisfiable vs at-most-15/16 PCP promise, normalized yes is m/P and no is at most (15/16)m/P; because m≤P<2m, m/P>1/2, so the gap is strictly >1/32 and midpoint margin strictly >1/64, including m=1. An estimate of MR* with absolute error ≤1/64, equivalently an estimate of raw R* with error ≤1/(64M), therefore distinguishes the promise. This is not constant additive hardness of the earlier unnormalized TV, which is uniformly ≤1/M. The known-source constant-p predictor remains zero-risk. The existing result that all multiplicative approximation ratios strictly above 7/8 are hard has its own metric and is not contradicted.
+
+No new tests, RNG, model initialization, author-source edits or publication were performed for this arithmetic/source check.

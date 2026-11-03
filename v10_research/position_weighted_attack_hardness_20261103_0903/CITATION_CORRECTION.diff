@@ -1,0 +1,11 @@
+--- v10_research/position_weighted_attack_hardness_20261103_0903/RESEARCH_NOTE.md	2026-11-03 01:05:02.896290672 -0800
++++ v10_research/position_weighted_attack_hardness_20261103_0903/RESEARCH_NOTE.citation_corrected.md	2026-11-03 01:08:49.331060713 -0800
+@@ -46,7 +46,7 @@
+ 
+ ## Prior-art check and candid framing
+ 
+-Shi et al., *Robustness Verification for Transformers*, ICLR 2020, https://openreview.net/pdf?id=BJxwPJHFwS, already study Transformer verification with self-attention and nonconvex input sets. Sälzer and Lange, *Reachability Is NP-Complete Even for the Simplest Neural Networks* (2021), https://arxiv.org/abs/2108.13179, already treat formal verification hardness for ReLU networks. These prior research areas make generic neural verification NP-hardness and adversarial optimization hardness unsuitable novelty claims. The present construction is an elementary task-specific reduction to a clean Markov add-one target, protected endpoints, and k<=sqrt(M) under exact hybrid semantics; a full prior-art search and independent proof review are needed before any claim that this particular combination is new. Exact prefix loss and network semantics, not a broad novelty headline, are the useful output.
++Shi et al., *Robustness Verification for Transformers*, ICLR 2020, https://openreview.net/pdf?id=BJxwPJHFwS, already study Transformer verification with self-attention and nonconvex verification optimization, including norm-ball input sets. Sälzer and Lange, *Reachability Is NP-Complete Even for the Simplest Neural Networks* (2021), https://arxiv.org/abs/2108.13179, already treat formal verification hardness for ReLU networks. These prior research areas make generic neural verification NP-hardness and adversarial optimization hardness unsuitable novelty claims. The present construction is an elementary task-specific reduction to a clean Markov add-one target, protected endpoints, and k<=sqrt(M) under exact hybrid semantics; a full prior-art search and independent proof review are needed before any claim that this particular combination is new. Exact prefix loss and network semantics, not a broad novelty headline, are the useful output.
+ 
+ ## Deterministic diagnostics and preservation
+ 

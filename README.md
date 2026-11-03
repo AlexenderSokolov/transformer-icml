@@ -1,5 +1,13 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 浮点、攻击 DP 与期望风险：边界和完整现存证据（2026-11-03）
+
+[本阶段中文总览](provenance/float_and_attack_boundaries_20261103/RESEARCH_SUMMARY.zh.md)串联 15 个完成目录：特定后端下的浮点同计数差异、条件误差/区间证书、固定维 dyadic DP、增长维度与位置权重困难性，以及逐点、期望 TV、常数因子和常数加性逼近。
+
+**这些不是训练成功、通用 Transformer 或未知源预测困难性的证明。** 期望风险构造允许重写所有公式位，主要嵌入经典 Max3SAT；常数加性 TV 结果放弃消失误差。文献审计的宽泛 7/8 匹配基线已[纠正](v10_research/expected_risk_prior_art_audit_20261103_0957/CORRECTION_CONDITIONAL_EXPECTATION.md)：一般情形为 1/2，7/8 需额外条件。
+
+258 项现存文件、全部原脚本和数值档案一并保存。初次浮点失败输出、被覆盖的训练检查首版、部分原确定性逐项记录和原区间端点并未恢复。请读[无采样公共核验及缺口](provenance/float_and_attack_boundaries_20261103/PUBLIC_REPLAY.md)，不要把后补独立记录或历史综合稿当作原始证据/最新全局结论。
+
 ## 四计数 DP 与固定门函数试验：完整现存记录及缺失说明（2026-11-03）
 
 [四计数证明](v10_research/four_counter_dp_20261103/RESEARCH_NOTE.md)给出固定半程输入的 O(M^5) 扫描、O(M^4) 滚动状态；但[补充纠正](v10_research/four_counter_dp_20261103/ADDITIVE_CORRECTION.md)明确，现有程序先转浮点，并非通用精确有理或逐位等同神经输入的优化器。[45 次固定门函数评估](v10_research/exact_dp_pilot_20261103/REPORT.md)不是神经训练，CE 最大值采用浮点比较，时间口径另有[纠正](v10_research/exact_dp_pilot_20261103/TIMING_AND_NUMERIC_CORRECTION.md)。

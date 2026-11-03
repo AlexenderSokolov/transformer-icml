@@ -1,5 +1,14 @@
 # 资料导航
 
+## 浮点与攻击/风险计算边界
+
+- [完整中文导读](../provenance/float_and_attack_boundaries_20261103/RESEARCH_SUMMARY.zh.md) · [安全核验与来源限制](../provenance/float_and_attack_boundaries_20261103/PUBLIC_REPLAY.md)
+- [浮点调查](../v10_research/float_bank_deterministic_20261103/REPORT.md) · [训练检查及覆盖披露](../v10_research/trained_half_float_check_20261103/PRESERVATION_CORRECTION.md) · [条件读出误差](../v10_research/float_readout_bound_20261103/REPORT.md) · [条件区间证书](../v10_research/conditional_bank_interval_certificate_20261103_0854/RESEARCH_NOTE.md)
+- [位置权重困难性：引用纠正版](../v10_research/position_weighted_attack_hardness_20261103_0903/RESEARCH_NOTE.citation_corrected.md) · [dyadic DP：支配纠正版](../v10_research/dyadic_feature_dp_20261103_0915/RESEARCH_NOTE.dominance_corrected.md) · [增长维度](../v10_research/growing_features_hardness_20261103_0922/RESEARCH_NOTE.md)
+- [逐点 TV](../v10_research/fixed_source_pointwise_tv_hardness_20261103_0934/RESEARCH_NOTE.md) · [期望 TV/MaxSAT](../v10_research/fixed_source_expected_tv_hardness_20261103_0939/EXACT_MAXSAT_REDUCTION.md) · [常数因子：范围纠正版](../v10_research/constant_factor_expected_tv_hardness_20261103_0945/RESEARCH_NOTE.scope_corrected.md) · [常数加性 TV](../v10_research/constant_additive_expected_tv_hardness_20261103_0954/RESEARCH_NOTE.md)
+- [文献审计：须同时读纠正](../v10_research/expected_risk_prior_art_audit_20261103_0957/READ_FIRST_CORRECTION.txt) · [条件期望基线纠正](../v10_research/expected_risk_prior_art_audit_20261103_0957/CORRECTION_CONDITIONAL_EXPECTATION.md)
+- [历史综合稿](../v10_research/integrated_boundary_20261103_EQRJKR/SYNTHESIS.readout_corrected.md) · [历史经验范围补充](../v10_research/integrated_boundary_20261103_EQRJKR/EMPIRICAL_SCOPE_ADDENDUM.md)
+
 ## 四计数与固定门试验档案
 
 - [四计数正文](../v10_research/four_counter_dp_20261103/RESEARCH_NOTE.md) · [浮点/有理纠正](../v10_research/four_counter_dp_20261103/ADDITIVE_CORRECTION.md) · [独立审阅](../v10_research/four_counter_dp_20261103/review_independent/REVIEW.md)

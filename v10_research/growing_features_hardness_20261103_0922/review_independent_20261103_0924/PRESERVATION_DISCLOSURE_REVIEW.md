@@ -1,0 +1,5 @@
+# Preservation disclosure review
+
+Reviewed `PRESERVATION_DISCLOSURE.md` SHA-256 `a23b1ceacec1229833493987923e4845a96c583e788afb59a4e644e52aa9f063`. Its description accurately distinguishes the original deterministic author scripts and aggregate-only logs from missing original per-case records, and describes this review's separately generated, nonidentical case records without suggesting they recover original data. Its observation that the independent archive preserves selected per-case inputs and values, not every transient calculation, is accurate. The author disclosure does not describe the independent reviewer's separate unmodified replay, whose own per-case intermediate omission is disclosed explicitly in `REVIEW.md`; neither the author's silence about that replay nor its new independent records erase that omission.
+
+The supplied disclosure binding manifest verifies. No tests, experiments, random operations, author-source changes, or regeneration of results were performed for this final check.

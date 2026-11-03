@@ -1,0 +1,86 @@
+checkpoint sha256 bc95b1e2f5dc4361224a4b52b740263bdda74242a81eaa52e49584020a22b848 M 1025 protected endpoint 11; bank (1021,1019,512,512); Hamming 4
+environment 3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ] NumPy 2.3.5 mpmath 1.3.0 mp.dps 120 platform Linux-6.18.57-x86_64-with-glibc2.41 thread env {'OPENBLAS_NUM_THREADS': '1', 'OMP_NUM_THREADS': '1', 'MKL_NUM_THREADS': None}
+Build Dependencies:
+  blas:
+    detection method: pkgconfig
+    found: true
+    include directory: <build-python-prefix>/lib/python3.12/site-packages/scipy_openblas64/include
+    lib directory: <build-python-prefix>/lib/python3.12/site-packages/scipy_openblas64/lib
+    name: scipy-openblas
+    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY
+      Haswell MAX_THREADS=64
+    pc file directory: <openblas-build-prefix>
+    version: 0.3.30
+  lapack:
+    detection method: pkgconfig
+    found: true
+    include directory: <build-python-prefix>/lib/python3.12/site-packages/scipy_openblas64/include
+    lib directory: <build-python-prefix>/lib/python3.12/site-packages/scipy_openblas64/lib
+    name: scipy-openblas
+    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY
+      Haswell MAX_THREADS=64
+    pc file directory: <openblas-build-prefix>
+    version: 0.3.30
+Compilers:
+  c:
+    commands: cc
+    linker: ld.bfd
+    name: gcc
+    version: 14.2.1
+  c++:
+    commands: c++
+    linker: ld.bfd
+    name: gcc
+    version: 14.2.1
+  cython:
+    commands: cython
+    linker: cython
+    name: cython
+    version: 3.2.1
+Machine Information:
+  build:
+    cpu: x86_64
+    endian: little
+    family: x86_64
+    system: linux
+  host:
+    cpu: x86_64
+    endian: little
+    family: x86_64
+    system: linux
+Python Information:
+  path: <temporary-build-python>
+  version: '3.12'
+SIMD Extensions:
+  baseline:
+  - SSE
+  - SSE2
+  - SSE3
+  found:
+  - SSSE3
+  - SSE41
+  - POPCNT
+  - SSE42
+  - AVX
+  - F16C
+  - FMA3
+  - AVX2
+  - AVX512F
+  - AVX512CD
+  - AVX512_SKX
+  - AVX512_CLX
+  - AVX512_CNL
+  - AVX512_ICL
+  - AVX512_SPR
+  not found:
+  - AVX512_KNL
+  - AVX512_KNM
+
+AB input rail hex ['0x1.fd00bfd00bfd6p-1', '0x1.fd00bfd00bfd7p-1'] logit hex ['0x1.3a0db665792cbp+2', '0x1.3a0db665792cbp+2'] prediction hex ['0x1.fc3dd84f48330p-1', '0x1.fc3dd84f48330p-1'] CE hex ['0x1.647a2c4900137p-6', '0x1.647a2c4900137p-6'] absolute logit errors ['1.05509202862253396e-15', '1.05509202862253396e-15']
+BA input rail hex ['0x1.fd00bfd00bfd7p-1', '0x1.fd00bfd00bfd6p-1'] logit hex ['0x1.3a0db665792cbp+2', '0x1.3a0db665792cbp+2'] prediction hex ['0x1.fc3dd84f48330p-1', '0x1.fc3dd84f48330p-1'] CE hex ['0x1.647a2c4900137p-6', '0x1.647a2c4900137p-6'] absolute logit errors ['1.05509202862253396e-15', '1.05509202862253396e-15']
+AA input rail hex ['0x1.fd00bfd00bfd6p-1', '0x1.fd00bfd00bfd6p-1'] logit hex ['0x1.3a0db665792cbp+2', '0x1.3a0db665792cbp+2'] prediction hex ['0x1.fc3dd84f48330p-1', '0x1.fc3dd84f48330p-1'] CE hex ['0x1.647a2c4900137p-6', '0x1.647a2c4900137p-6'] absolute logit errors ['1.05509202862253396e-15', '1.05509202862253396e-15']
+BB input rail hex ['0x1.fd00bfd00bfd7p-1', '0x1.fd00bfd00bfd7p-1'] logit hex ['0x1.3a0db665792cbp+2', '0x1.3a0db665792cbp+2'] prediction hex ['0x1.fc3dd84f48330p-1', '0x1.fc3dd84f48330p-1'] CE hex ['0x1.647a2c4900137p-6', '0x1.647a2c4900137p-6'] absolute logit errors ['1.05509202862253396e-15', '1.05509202862253396e-15']
+A input rail hex ['0x1.fd00bfd00bfd7p-1'] logit hex ['0x1.3a0db665792ddp+2'] prediction hex ['0x1.fc3dd84f48330p-1'] CE hex ['0x1.647a2c4900137p-6'] absolute logit errors ['1.70423035832247881e-14']
+B input rail hex ['0x1.fd00bfd00bfd7p-1'] logit hex ['0x1.3a0db665792ddp+2'] prediction hex ['0x1.fc3dd84f48330p-1'] CE hex ['0x1.647a2c4900137p-6'] absolute logit errors ['1.70423035832247881e-14']
+ideal 120-digit logit 4.9070869437170559486744843122830449146390877786036 q 0.99265933959768472996510994387794430302037247645146 CE 0.02175764393541727339626151343172302103508292682575 q output same for all tested batches; no generalization implied
+independent pipeline shares NumPy einsum and matrix kernels, so bitwise cross-check is not an independent backend implementation; mpmath comparison is high precision, not interval certification

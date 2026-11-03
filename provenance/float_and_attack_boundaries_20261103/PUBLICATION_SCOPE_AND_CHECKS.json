@@ -1,0 +1,120 @@
+{
+  "scope": "258 existing research artifacts in 15 directories, including full original and independent records and genuine correction history; no new scientific data or unit.",
+  "base_commit": "da9f35df5e6b96d88e875c3d71f21194d36ff8d4",
+  "sources": 258,
+  "source_original_bytes": 2029122,
+  "public_changed_files": 15,
+  "public_changed_line_regions": 49,
+  "mathematical_program_numeric_array_gzip_or_correction_body_edits": false,
+  "all_extant_noncache_source_paths_retained": true,
+  "excluded_caches": [],
+  "historical_bindings": 486,
+  "binding_status_counts": {
+    "EXACT_SELECTED_SOURCE": 394,
+    "DECLARED_CURRENT_EXPORT_PAIR": 21,
+    "EXACT_INHERITED_PUBLIC_SOURCE": 51,
+    "EXACT_PUBLIC_PATH_ALIAS": 11,
+    "NONPUBLIC_HISTORICAL_METADATA": 8,
+    "DECLARED_INHERITED_EXPORT_PAIR": 1
+  },
+  "nonpublic_historical_metadata": 8,
+  "record_files": 12,
+  "jsonl_rows": 235482,
+  "numeric_scalars_in_jsonl": 9405324,
+  "all_records_decoded_before_export": true,
+  "retained_arithmetic_report": {
+    "status": "PASS",
+    "files_checked": 11,
+    "assertions_checked": 3612479,
+    "record_counts": {
+      "weighted": {
+        "record": 155152,
+        "case": 246
+      },
+      "dyadic": {
+        "record": 5120
+      },
+      "growing": {
+        "normalization": 28900,
+        "assignment": 29898,
+        "full_mask": 1410,
+        "gap": 4376
+      },
+      "pointwise": {
+        "formula": 47,
+        "mask": 1323,
+        "summary": 47
+      },
+      "expected": {
+        "formula": 3,
+        "candidate": 1728,
+        "history_summary": 192,
+        "formula_summary": 3
+      },
+      "factor": {
+        "normalization": 1728,
+        "formula": 3,
+        "case": 180,
+        "history_summary": 12,
+        "formula_summary": 3
+      },
+      "additive": {
+        "normalization": 1728,
+        "formula": 3,
+        "case": 180,
+        "history_summary": 12,
+        "formula_summary": 3
+      },
+      "conditional": {
+        "record": 5
+      },
+      "intervals": {
+        "record": 3
+      },
+      "bounds": {
+        "checkpoint": 10,
+        "horizon": 40
+      },
+      "trained": {
+        "batch": 6,
+        "row": 10
+      }
+    },
+    "files": [
+      "position_weighted_attack_hardness_20261103_0903/review_independent_20261103_0906/candidate_records.jsonl.gz",
+      "dyadic_feature_dp_20261103_0915/review_independent_20261103_0917/full_records.jsonl.gz",
+      "growing_features_hardness_20261103_0922/review_independent_20261103_0924/full_records.jsonl.gz",
+      "fixed_source_pointwise_tv_hardness_20261103_0934/review_independent_20261103_0935/full_case_records.jsonl.gz",
+      "fixed_source_expected_tv_hardness_20261103_0939/review_independent_20261103_0940/full_case_records.jsonl.gz",
+      "constant_factor_expected_tv_hardness_20261103_0945/review_independent_20261103_0947/full_case_records.jsonl.gz",
+      "constant_additive_expected_tv_hardness_20261103_0954/review_independent_20261103_0955/full_case_records.jsonl.gz",
+      "expected_risk_prior_art_audit_20261103_0957/conditional_cases.jsonl",
+      "conditional_bank_interval_certificate_20261103_0854/review_independent/reconstructed_intervals.json",
+      "float_readout_bound_20261103/bounds.json",
+      "trained_half_float_check_20261103/trained_results.json"
+    ],
+    "checked_scope": [
+      "All 155152 retained weighted masks: legality, coverage, subset sums, exact readouts, threshold decisions.",
+      "All 5120 retained dyadic cases: saved-word scans, terminal reachable maps, minimum costs, normalized heads, utility optima.",
+      "Growing-feature normalization, stored assignments/full masks, clause banks, exact rational gaps and derivatives.",
+      "Pointwise complete stored legal-mask sets, all retained ReLU rows, bank pooling, SAT threshold and witness checks.",
+      "Expected-TV complete stored histories and masks, three initial laws, exact transition squares, running probability mass and risks.",
+      "Factor/additive retained clause normalizations, ReLU rows, policy words, clause scores, retained history maxima, scalar gaps.",
+      "Conditional expectation from original clause sets including duplicates and tautologies, deterministic choices, finite optimum and policy edits.",
+      "Saved float JSON only: exact integer word banks, rational endpoint ordering/overlap/gaps, gamma bounds, rounded sum consistency, hex/decimal scalar agreement and printed-error consistency."
+    ],
+    "unchecked_scope": [
+      "No archived executable or script was run; author diagnostic output duplicates and prose/log claims are not independently re-executed.",
+      "No RNG, model initialization/training, NumPy/BLAS, native executable, checkpoint loading, or network access occurs in this module.",
+      "Float forward values, transcendental ideal values, backend rounding, checkpoint-derived norms and interval endpoint derivations are not reproduced.",
+      "Four retained histories in each factor/additive family are not a numerical enumeration of every possible history; any-initial-law extension rests on the documented assignment-overwrite argument.",
+      "Finite retained checks are not proofs of general hardness, asymptotics, novelty, or bibliographic accuracy; source identity/provenance is delegated to the outer wrapper."
+    ]
+  },
+  "review_scope": "Source-bound independent LLM reviews for the mathematical and empirical units. The targeted prior-art screen has no separate complete source-bound proof review; its correction and access limits govern. No external peer review or novelty certification.",
+  "cost_and_novelty_limits": "Expected TV reductions explicitly package classical Max3SAT; k=n rewrites every formula-bearing bit. Not learned-model, generic architecture, fixed-width, SGD, unknown-source or minimax prediction hardness. Constant additive raw TV sacrifices vanishing risk; normalized risk is a different accuracy scale.",
+  "historical_status": "The integrated synthesis predates the later pointwise/expected-TV results. Original pending-review headers, missing-data disclosures and corrected predecessor files remain historical evidence.",
+  "source_validation": "All original source identities and historical bindings checked before export; normalized public files are checked through explicit maps rather than falsified original hashes.",
+  "workflow_changed": false,
+  "existing_manuscript_or_archive_changed": false
+}

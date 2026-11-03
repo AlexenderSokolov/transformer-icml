@@ -1,0 +1,86 @@
+python 3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ] numpy 2.3.5 platform Linux-6.18.57-x86_64-with-glibc2.41
+env {'OPENBLAS_NUM_THREADS': '1', 'OMP_NUM_THREADS': '1', 'MKL_NUM_THREADS': None}
+Build Dependencies:
+  blas:
+    detection method: pkgconfig
+    found: true
+    include directory: <build-python-prefix>/lib/python3.12/site-packages/scipy_openblas64/include
+    lib directory: <build-python-prefix>/lib/python3.12/site-packages/scipy_openblas64/lib
+    name: scipy-openblas
+    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY
+      Haswell MAX_THREADS=64
+    pc file directory: <openblas-build-prefix>
+    version: 0.3.30
+  lapack:
+    detection method: pkgconfig
+    found: true
+    include directory: <build-python-prefix>/lib/python3.12/site-packages/scipy_openblas64/include
+    lib directory: <build-python-prefix>/lib/python3.12/site-packages/scipy_openblas64/lib
+    name: scipy-openblas
+    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY
+      Haswell MAX_THREADS=64
+    pc file directory: <openblas-build-prefix>
+    version: 0.3.30
+Compilers:
+  c:
+    commands: cc
+    linker: ld.bfd
+    name: gcc
+    version: 14.2.1
+  c++:
+    commands: c++
+    linker: ld.bfd
+    name: gcc
+    version: 14.2.1
+  cython:
+    commands: cython
+    linker: cython
+    name: cython
+    version: 3.2.1
+Machine Information:
+  build:
+    cpu: x86_64
+    endian: little
+    family: x86_64
+    system: linux
+  host:
+    cpu: x86_64
+    endian: little
+    family: x86_64
+    system: linux
+Python Information:
+  path: <temporary-build-python>
+  version: '3.12'
+SIMD Extensions:
+  baseline:
+  - SSE
+  - SSE2
+  - SSE3
+  found:
+  - SSSE3
+  - SSE41
+  - POPCNT
+  - SSE42
+  - AVX
+  - F16C
+  - FMA3
+  - AVX2
+  - AVX512F
+  - AVX512CD
+  - AVX512_SKX
+  - AVX512_CLX
+  - AVX512_CNL
+  - AVX512_ICL
+  - AVX512_SPR
+  not found:
+  - AVX512_KNL
+  - AVX512_KNM
+
+zeros [[130, 133], [250, 256]] hamming 4
+banks [(253, 251, 128, 128), (253, 251, 128, 128)]
+n 1 different_same_slot_count 0 first_different_indices [] first_word_positions_signatures {'0': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40a4p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82faep-1']} second_word_positions_signatures {'0': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40a4p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82faep-1']}
+n 2 different_same_slot_count 0 first_different_indices [] first_word_positions_signatures {'0': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1'], '1': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1']} second_word_positions_signatures {'0': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1'], '1': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1']}
+n 4 different_same_slot_count 0 first_different_indices [] first_word_positions_signatures {'0': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1'], '3': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1']} second_word_positions_signatures {'0': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1'], '3': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1']}
+n 16 different_same_slot_count 0 first_different_indices [] first_word_positions_signatures {'0': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1'], '15': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1']} second_word_positions_signatures {'0': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1'], '15': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1']}
+n 128 different_same_slot_count 0 first_different_indices [] first_word_positions_signatures {'0': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1'], '127': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1']} second_word_positions_signatures {'0': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1'], '127': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40c0p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82fa0p-1']}
+n 1024 different_same_slot_count 0 first_different_indices [] first_word_positions_signatures {'0': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40a4p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82faep-1'], '1023': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40a4p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82faep-1']} second_word_positions_signatures {'0': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40a4p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82faep-1'], '1023': ['0x1.fe01fe01fe020p-8', '0x1.f40bf40bf40a4p-1', '0x0.0p+0', '0x1.0000000000000p+0', '0x1.fc07f01fc07f0p-7', '0x1.e82fa0be82faep-1']}

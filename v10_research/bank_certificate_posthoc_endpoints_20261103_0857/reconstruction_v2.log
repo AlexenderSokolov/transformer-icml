@@ -1,0 +1,33 @@
+word= 0000 bank= (2, 0, 1, 0) x= 1 ideal_CE_approx= 0.9111393767608025 rational_interval_width_less_than=1e-20
+word= 1000 bank= (1, 0, 0, 0) x= 1/2 ideal_CE_approx= 0.8139438743148349 rational_interval_width_less_than=1e-20
+word= 0100 bank= (0, 0, 0, 0) x= 0 ideal_CE_approx= 0.6931471805599453 rational_interval_width_less_than=1e-20
+PASS: exact rational endpoint comparisons imply every competitor gap > 189/6400
+PASS: under the hypothetical uniform actual-error premise 1/1000, actual gap > 881/32000
+POST-HOC RECONSTRUCTION: exact rational endpoints follow; these were not retained in the earlier run
+word=0000
+lower_numerator=455569688380401236558259439521
+lower_denominator=500000000000000000000000000000
+upper_numerator=1822278753521604946233037758089
+upper_denominator=2000000000000000000000000000000
+width_numerator=1
+width_denominator=400000000000000000000000000000
+word=1000
+lower_numerator=651155099451867915119959524709
+lower_denominator=800000000000000000000000000000
+upper_numerator=813943874314834893899949405889
+upper_denominator=1000000000000000000000000000000
+width_numerator=11
+width_denominator=4000000000000000000000000000000
+word=0100
+lower_numerator=346573590279972654708616060729
+lower_denominator=500000000000000000000000000000
+upper_numerator=693147180559945309417232121459
+upper_denominator=1000000000000000000000000000000
+width_numerator=1
+width_denominator=1000000000000000000000000000000
+conservative_gap_vs_0000_word=1000
+gap_numerator=97195502445967579216569473153
+gap_denominator=1000000000000000000000000000000
+conservative_gap_vs_0000_word=0100
+gap_numerator=217992196200857163699286757583
+gap_denominator=1000000000000000000000000000000

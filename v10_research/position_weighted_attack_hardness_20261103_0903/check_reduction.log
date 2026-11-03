@@ -1,0 +1,8 @@
+full_masks (1, 2) 0 (4, 4, True)
+full_masks (1, 2) 2 (4, 4, True)
+full_masks (1, 2) 3 (4, 4, True)
+full_masks (1, 2, 4) 0 (16, 8, True)
+full_masks (1, 2, 4) 6 (16, 8, True)
+full_masks (2, 4, 6) 5 (16, 7, False)
+full_masks (2, 4, 6) 12 (16, 7, True)
+instances 17287 PASS; deterministic exact rational checks only
