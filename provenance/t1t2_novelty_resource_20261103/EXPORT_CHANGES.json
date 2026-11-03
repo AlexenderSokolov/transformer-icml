@@ -1,0 +1,28 @@
+{
+  "schema": "novelty-resource-public-change-coordinates-v1",
+  "changed_files": 1,
+  "edit_count": 1,
+  "removed_wording_included": false,
+  "files": [
+    {
+      "source_record_id": "NRC006",
+      "path": "v10_research/independent_generic_excursion_review_20261103_1533/independent_review.html",
+      "original_sha256": "fc8d421ad9f85dc861527d65ef8fe7a8e6ab5ed4d9f70a8dd7827770a908f2a6",
+      "public_sha256": "6acfcc330657a334966d31f8e825042c5537cbb9a18cb2b6ebd883ec96430c32",
+      "edits": [
+        {
+          "change_id": "NRC006-C001",
+          "type": "remove_nonmathematical_internal_validation_label",
+          "original_utf8_byte_start": 618,
+          "original_utf8_byte_end_exclusive": 624,
+          "removed_byte_count": 6,
+          "removed_bytes_sha256": "6bc261f82fe28df98536b2dcbd1b0311fcfc7557fc98291162211c4229ca400a",
+          "replacement_utf8": "",
+          "replacement_byte_count": 0,
+          "public_change_description": "Remove one internal validation label from the introductory review-method sentence. All mathematical expressions, assumptions, verdict limits, references and remaining bytes are unchanged.",
+          "source_byte_values_disclosed": false
+        }
+      ]
+    }
+  ]
+}
