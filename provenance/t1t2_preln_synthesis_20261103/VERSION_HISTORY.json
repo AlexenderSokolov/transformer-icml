@@ -1,0 +1,450 @@
+{
+  "base_commit": "fc383d6ab494c985f94f20479bd07891c88e4240",
+  "preferred_reader_entry_source_id": "PLN015",
+  "transitions": [
+    {
+      "from_source_id": "PLN012",
+      "to_source_id": "PLN015",
+      "from_original_identity": {
+        "bytes": 13719,
+        "sha256": "b7f4a68d1282bf7d7e7acb7e15617a8eec679ea4e7aab78007d002d923c7e3b8",
+        "git_blob_sha1": "662e5b914e90841e7012fd2753c10f861bbe9d0a"
+      },
+      "to_original_identity": {
+        "bytes": 14054,
+        "sha256": "f65db2fed6d691fd8f7bfd785e58f03c8e6e5e2711be6128e470e7e7e617c0eb",
+        "git_blob_sha1": "651c6a7259dacbd29eaa0a325930c5973fe75a3c"
+      },
+      "actual_retained_versions": true,
+      "summary": "Actual v2 changes the version marker, states incorporation of the two real corrections, limits the A^3 lower to classes containing the hard family, and requires deterministic source/token-independent bounded score bias. No source has been reconstructed or silently repaired.",
+      "difference_spans": [
+        {
+          "kind": "replace",
+          "old_utf8_byte_range_zero_based_half_open": [
+            915,
+            916
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            915,
+            916
+          ],
+          "old_span_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "new_span_sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range_zero_based_half_open": [
+            1774,
+            1774
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            1774,
+            1867
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "42a722b0ee25f577658415cd739274a6d53ba859e6a26c9e7c3827170e23bc6c"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range_zero_based_half_open": [
+            6154,
+            6157
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            6247,
+            6325
+          ],
+          "old_span_sha256": "de1d5dd076fb7a704745fca1d49d20599e9bbf5c7e859408d38d6be1260be00d",
+          "new_span_sha256": "2f35273c4b41d2c95b980d58a0bd73673c39f5434a81903823d9187f78f964ed"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range_zero_based_half_open": [
+            6163,
+            6163
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            6331,
+            6358
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "42344e8f22686f86886d86bd7c11da9fbeb764207765267c020b27cfe3355a43"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range_zero_based_half_open": [
+            6233,
+            6233
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            6428,
+            6452
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "0c79ca36c9bd91345ed2123bec9db9ee505f8507091db837f3f93d434a0432a1"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range_zero_based_half_open": [
+            6236,
+            6251
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            6455,
+            6485
+          ],
+          "old_span_sha256": "ce026b3071eba7e60c79145a2c034480bc3fe0bb8f51d6bc355447c03311c81f",
+          "new_span_sha256": "212f31b57cdd5e41c2434e0066c74ef439a8f359367efdd09387035006b12270"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range_zero_based_half_open": [
+            7750,
+            7750
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            7984,
+            8085
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "933916f290b6a92e4c6a9b2d3796bbe2485e621eef9784cd30f8adc635c990f2"
+        }
+      ]
+    },
+    {
+      "from_source_id": "PLN017",
+      "to_source_id": "PLN018",
+      "from_original_identity": {
+        "bytes": 5451,
+        "sha256": "d719740729d3c61d438473b4c3e4b7ffce8d92d6166628ef24171835543bbd44",
+        "git_blob_sha1": "dd15f2d1c909c3a2556189f0b719701ab6a933d9"
+      },
+      "to_original_identity": {
+        "bytes": 5708,
+        "sha256": "ec7264e6ad8148f41c05bb215a529804c083555093281a1bcba00fca885fcac4",
+        "git_blob_sha1": "ff23f344fa870c355707e350233117d5696178d3"
+      },
+      "actual_retained_versions": true,
+      "summary": "Actual v2 states inf_Q sup_(theta,mu) explicitly and keeps the same Q across the source supremum, correcting v1 prose that could be read in the opposite order. The only other change is the version explanation.",
+      "difference_spans": [
+        {
+          "kind": "insert",
+          "old_utf8_byte_range_zero_based_half_open": [
+            738,
+            738
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            738,
+            797
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "da1b18c7555150b6eeae1845a0f247830c47a7262140dc8c4b9eb2861b55872e"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range_zero_based_half_open": [
+            741,
+            741
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            800,
+            824
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "cffdc68946137ccfba6feae312cecc744e0a979b9ce2f9b7a67da4e8f5e617c7"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range_zero_based_half_open": [
+            744,
+            747
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            827,
+            830
+          ],
+          "old_span_sha256": "acdaf6361c8415da170ca7e7f11111755b11de4440ec21dbef057653107f84c0",
+          "new_span_sha256": "acaaba4b3c9402431f0dd2c253592209ec6be24d7c4eb33770ccdb87b82bf277"
+        },
+        {
+          "kind": "delete",
+          "old_utf8_byte_range_zero_based_half_open": [
+            1623,
+            1647
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            1706,
+            1706
+          ],
+          "old_span_sha256": "bdcb8d1bbd36ebdee36b75d7da7c3d3884fb93639d421167cc4e255bc5865b3e",
+          "new_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range_zero_based_half_open": [
+            1722,
+            1734
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            1781,
+            1783
+          ],
+          "old_span_sha256": "9bd8df437d458b1de80f5f7c5acbeb636d4eb16304bacbee8e8ecee70e326fa7",
+          "new_span_sha256": "102338cae9e82092bb218d154a97d6612c4dabafe0d21d01cc2644752a6a4080"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range_zero_based_half_open": [
+            1737,
+            1743
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            1786,
+            1918
+          ],
+          "old_span_sha256": "142024aa81f8a01836445a7dca7c378080cca0c2cefc534f61d1bbf803f00434",
+          "new_span_sha256": "2d818e11ca8ab324cd102cee678eb6da0a6fec5b16ecc2aac9ec3b408d02858d"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range_zero_based_half_open": [
+            1776,
+            1776
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            1951,
+            1956
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "ff7936f3058d4c48616805f9cb9c6f5cc2ec6a248c9497f65eca714e226925af"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range_zero_based_half_open": [
+            1777,
+            1783
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            1957,
+            1963
+          ],
+          "old_span_sha256": "d2ae01f5567e487bab98835e3de09165359dca42971acd9bbbe816d898db0bba",
+          "new_span_sha256": "2a893ecaaab70fdf49822a2d750cdd0485a6fe4d5d71766bef65cbc897ca7676"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range_zero_based_half_open": [
+            1804,
+            1804
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            1984,
+            1999
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "cca93702c4a7b419bcf99f8737cdf435b478c998967ae1647ebb9016c8f05a18"
+        },
+        {
+          "kind": "replace",
+          "old_utf8_byte_range_zero_based_half_open": [
+            1805,
+            1807
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            2000,
+            2001
+          ],
+          "old_span_sha256": "deec86264668c4f17635c4f9346342fa3467c9448530eb0a84a1b7c3eb47d886",
+          "new_span_sha256": "4ae81572f06e1b88fd5ced7a1a000945432e83e1551e6f721ee9c00b8cc33260"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range_zero_based_half_open": [
+            1808,
+            1808
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            2002,
+            2011
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "62f471345aaa7a178d6f2c29a81b3f625f6121711586107f6aec440ab40a5c85"
+        },
+        {
+          "kind": "insert",
+          "old_utf8_byte_range_zero_based_half_open": [
+            1820,
+            1820
+          ],
+          "new_utf8_byte_range_zero_based_half_open": [
+            2023,
+            2077
+          ],
+          "old_span_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "new_span_sha256": "77f66320ec535c4f5ce62e7055ead5f0be0549d13bc7b07c9f11e0a420009fb3"
+        }
+      ]
+    }
+  ],
+  "review_bindings": [
+    {
+      "review_source_id": "PLN005",
+      "reviewed_source_ids": [
+        "PLN001",
+        "PLN002"
+      ],
+      "mandatory_clarification_source_ids": [
+        "PLN003",
+        "PLN004"
+      ]
+    },
+    {
+      "review_source_id": "PLN006",
+      "reviewed_source_ids": [
+        "PLN003",
+        "PLN004"
+      ],
+      "context_source_ids": [
+        "PLN001",
+        "PLN005"
+      ]
+    },
+    {
+      "review_source_id": "PLN011",
+      "reviewed_source_ids": [
+        "PLN010"
+      ],
+      "mandatory_context_source_ids": [
+        "PLN001",
+        "PLN003",
+        "PLN004"
+      ]
+    },
+    {
+      "review_source_id": "PLN016",
+      "reviewed_source_ids": [
+        "PLN015"
+      ],
+      "compared_retained_source_ids": [
+        "PLN012",
+        "PLN013",
+        "PLN014"
+      ],
+      "scope_warning": "The construction alone proves A^5/N sufficiency. Its wording that this is not necessary or optimal must not negate the separate arbitrary-initial minimax lower under its own source class and quantifiers. The actual separate PLN017/PLN018 clarification and PLN019 review correct this wording and must be read together. PLN019 is by the same reviewer as PLN016, not a blind new review."
+    },
+    {
+      "review_source_id": "PLN019",
+      "reviewed_source_ids": [
+        "PLN018"
+      ],
+      "compared_retained_source_ids": [
+        "PLN017",
+        "PLN015",
+        "PLN016"
+      ],
+      "same_reviewer_as_source_id": "PLN016",
+      "not_a_blind_new_review": true,
+      "conditional_inherited_proofs": [
+        "MM5",
+        "R011"
+      ],
+      "scope": "Corrects its own earlier broad necessity denial. Verifies the displayed minimax quantifiers and threshold consequences conditional on the cited inherited bounds, without re-reviewing that entire chain."
+    }
+  ],
+  "separate_corrections": [
+    {
+      "original_source_id": "PLN016",
+      "correction_source_id": "PLN018",
+      "retained_earlier_clarification_source_id": "PLN017",
+      "correction_review_source_id": "PLN019",
+      "same_reviewer_for_original_and_correction_review": true,
+      "summary": "The original review incorrectly dismissed necessity broadly. The separate clarification and same-reviewer review distinguish construction-only sufficiency from the inherited full-class arbitrary-initial minimax necessity. They do not claim a blind new review, optimal network resources or a fresh complete proof of the inherited chain."
+    },
+    {
+      "original_source_id": "PLN007",
+      "correction_source_id": "PLN008",
+      "summary": "Actual separate correction of two wrong external article links. The original addendum remains byte-exact."
+    },
+    {
+      "original_source_id": "PLN012",
+      "correction_source_id": "PLN013",
+      "incorporated_in_source_id": "PLN015",
+      "summary": "The stationary mixing upper applies to its declared class; the A^3 lower requires that the class contain the exhibited hard family, not every narrowed fast-mixing subclass."
+    },
+    {
+      "original_source_id": "PLN012",
+      "correction_source_id": "PLN014",
+      "incorporated_in_source_id": "PLN015",
+      "summary": "Optional bounded score biases must also be deterministic and source- and token-independent; boundedness alone does not prohibit hidden token side channels."
+    }
+  ],
+  "historical_review_wording": "Candidate pending-review, open-endpoint, internal and awaiting-publication wording is retained as source history. Separate review bindings do not infer exact creation or completion times from filenames or prose. Publication-status wording does not override the current map or prove a release.",
+  "prior_art_author_reading_scope": {
+    "source_record_id": "PLN009",
+    "author_independently_reviewed_frozen_target_proof": false,
+    "target_was_developing": true,
+    "not_proof_review_or_novelty_clearance": true
+  },
+  "historical_record_gaps": [
+    {
+      "record": "Earliest D’Angelo AUDIT version",
+      "status": "Original complete bytes were not retained. The current AUDIT and later clarification do not reconstruct or certify those bytes.",
+      "original_name": "AUDIT.md (earliest overwritten version)",
+      "original_sha256": null,
+      "existing_public_evidence_paths": [
+        "v10_research/prior_art_dangelo_full_20261103/AUDIT.md",
+        "v10_research/dangelo_addone_public_clarification_20261103_1537/addone_overlap_and_limits_v1.html"
+      ]
+    },
+    {
+      "record": "Two early Route B searches",
+      "status": "Complete contemporaneous per-path originals are absent. Later deterministic replay is a different operation, and the first comparison was invalidated.",
+      "original_name": "Complete contemporaneous per-path records; no exact recoverable filename is established.",
+      "original_sha256": null,
+      "existing_public_evidence_paths": [
+        "v10_research/independent_route_b_review_20261103_1226/PROVENANCE_ADDENDUM.md",
+        "v10_research/route_b_finite_prefix_20261103_1223/PROVENANCE_CORRECTION_20261103.html"
+      ]
+    },
+    {
+      "record": "BT002 initial scalar draft and old diagnostic",
+      "status": "Original snapshots and true before/after diffs were not retained; later checks do not restore the original evidence.",
+      "original_name": "BT002 initial scalar draft and associated old diagnostic; original byte identities are not established.",
+      "original_sha256": null,
+      "existing_public_evidence_paths": [
+        "v10_research/binary_erasure_transport/BT_STAGE8_PROVENANCE.md"
+      ]
+    }
+  ],
+  "inherited_identity_limit": {
+    "status": "CURRENT_BODY_HAS_A_PUBLIC_SCIENTIFIC_COPY_AND_SCOPED_REVIEW_BUT_OLD_REVIEW_MISMATCH_REMAINS",
+    "current_original_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+    "current_public_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_statistical_proof.md",
+    "current_public_identity": {
+      "bytes": 21262,
+      "sha256": "4d5e865ebe00846662cef1830be02bf52cc2b839eca8a0600f8baa501ada6078",
+      "git_blob_sha1": "d8aef0a80a3dd33a01dba631a454d4fccf4ffda1"
+    },
+    "current_original_to_public_map": "inherited_statistics/DOT_conditions_stage02/COPY_MAP.json",
+    "old_report_requested_proof_sha256": "5fef432092c4d7394021f1651dbcd086b660028b2a62c1297342340892dd6d24",
+    "old_report_does_not_bind_current_original": true,
+    "mismatch_cause": "Unresolved. No equality or wrapper-only explanation is established.",
+    "current_body_review_path": "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_trace_independent_review_20261103_1721.md",
+    "mandatory_review_count_correction_path": "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_odd_alphabet_correction_20261103_1732.html",
+    "published_prior_binding_path": "provenance/t1t2_alphabet_limits_20261103/HASH_REFERENCE_BINDINGS.json"
+  },
+  "threshold_clarification": {
+    "status": "ACTUAL_THRESHOLD_CLARIFICATION_GROUP_SELECTED_AND_BOUND",
+    "affected_source_record_id": "PLN016",
+    "clarification_source_ids": [
+      "PLN017",
+      "PLN018"
+    ],
+    "preferred_clarification_source_id": "PLN018",
+    "correction_review_source_id": "PLN019",
+    "same_reviewer_as_original_review": true,
+    "interpretation": "The construction proves sufficiency. The separately inherited arbitrary-initial minimax lower supplies necessity for full-class vanishing worst-source TV under its own quantifiers. The actual correction is retained without silently rewriting PLN016.",
+    "later_adversarial_theory_assessment_in_scope": false,
+    "not_a_publication_receipt": true
+  }
+}

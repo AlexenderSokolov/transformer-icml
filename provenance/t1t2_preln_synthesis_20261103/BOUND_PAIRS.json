@@ -1,0 +1,202 @@
+{
+  "base_commit": "fc383d6ab494c985f94f20479bd07891c88e4240",
+  "required_read_together": [
+    {
+      "role": "Six-file pre-LN core, mandatory to read together",
+      "source_ids": [
+        "PLN001",
+        "PLN002",
+        "PLN003",
+        "PLN004",
+        "PLN005",
+        "PLN006"
+      ],
+      "requirement": "Keep the copy-path and post-LN local obstructions distinct from the actual-risk theorem. The theorem uses fixed pure pre-LN branches reading only positive-epsilon LayerNorm, bounded fixed token embeddings, source- and token-independent positions, standard full-causal scores and optional uniformly bounded deterministic source- and token-independent bias, controlled residual/readout paths and deterministic inference. It gives the same fixed source and liminf at least 1/32 for every fixed network. It does not give an unrestricted finite-N infimum or a general Transformer impossibility."
+    },
+    {
+      "role": "Prior-art alignment and actual link correction",
+      "source_ids": [
+        "PLN007",
+        "PLN008",
+        "PLN009"
+      ],
+      "requirement": "Retain the two wrong URLs in the original addendum and read the separate actual correction. The bounded causal audit did not independently read a frozen target proof. The classic influence mechanism is prior work; no exhaustive novelty certification is made."
+    },
+    {
+      "role": "Finite-resource bound and scoped independent review",
+      "source_ids": [
+        "PLN010",
+        "PLN011"
+      ],
+      "mandatory_context_source_ids": [
+        "PLN001",
+        "PLN002",
+        "PLN003",
+        "PLN004",
+        "PLN005",
+        "PLN006"
+      ],
+      "requirement": "At each N, the necessary condition holds only for the specified restricted pre-LN budget with constants recomputed for N-dependent models. The constants are loose, not optimal and not sufficient. The score-cap growth corollary fixes all other stated resource budgets and risk level. It does not impose that growth on every realized logit, nor compare equal-budget architectures or certify hardware."
+    },
+    {
+      "role": "Chinese synthesis and actual retained correction history",
+      "source_ids": [
+        "PLN012",
+        "PLN013",
+        "PLN014",
+        "PLN015",
+        "PLN016"
+      ],
+      "preferred_reader_entry_source_id": "PLN015",
+      "requirement": "v2 is the reader entry. Retain actual v1 and both separate corrections. The fast-mixing A^3 lower requires a class containing the exhibited hard family; bounded score bias also requires deterministic source/token independence. Preserve historical publication status and all evidence gaps. Read the separate threshold clarification PLN018 with retained PLN017 and same-reviewer correction PLN019; they correct PLN016 without changing its original bytes."
+    },
+    {
+      "role": "Growing-alphabet threshold clarification and honest same-reviewer correction history",
+      "source_ids": [
+        "PLN015",
+        "PLN016",
+        "PLN017",
+        "PLN018",
+        "PLN019"
+      ],
+      "preferred_clarification_source_id": "PLN018",
+      "requirement": "The construction alone proves sufficiency; the separately inherited arbitrary-initial minimax lower gives necessity for worst-source vanishing risk on the full class. Use inf_Q sup_source with Q fixed within the source supremum. A_N^5/N tends to zero if and only if minimax risk tends to zero in that class, conditional on the cited bounds. Do not transfer this to every fixed source, narrowed stationary/mixing subclasses, or optimal network resources. At fixed target r, the displayed necessary constant is only derived for 0<r<2^-16. PLN017 and PLN016 remain retained, while PLN018/PLN019 correct the ambiguity and error respectively."
+    }
+  ],
+  "review_bindings": [
+    {
+      "review_source_id": "PLN005",
+      "reviewed_source_ids": [
+        "PLN001",
+        "PLN002"
+      ],
+      "mandatory_clarification_source_ids": [
+        "PLN003",
+        "PLN004"
+      ]
+    },
+    {
+      "review_source_id": "PLN006",
+      "reviewed_source_ids": [
+        "PLN003",
+        "PLN004"
+      ],
+      "context_source_ids": [
+        "PLN001",
+        "PLN005"
+      ]
+    },
+    {
+      "review_source_id": "PLN011",
+      "reviewed_source_ids": [
+        "PLN010"
+      ],
+      "mandatory_context_source_ids": [
+        "PLN001",
+        "PLN003",
+        "PLN004"
+      ]
+    },
+    {
+      "review_source_id": "PLN016",
+      "reviewed_source_ids": [
+        "PLN015"
+      ],
+      "compared_retained_source_ids": [
+        "PLN012",
+        "PLN013",
+        "PLN014"
+      ],
+      "scope_warning": "The construction alone proves A^5/N sufficiency. Its wording that this is not necessary or optimal must not negate the separate arbitrary-initial minimax lower under its own source class and quantifiers. The actual separate PLN017/PLN018 clarification and PLN019 review correct this wording and must be read together. PLN019 is by the same reviewer as PLN016, not a blind new review."
+    },
+    {
+      "review_source_id": "PLN019",
+      "reviewed_source_ids": [
+        "PLN018"
+      ],
+      "compared_retained_source_ids": [
+        "PLN017",
+        "PLN015",
+        "PLN016"
+      ],
+      "same_reviewer_as_source_id": "PLN016",
+      "not_a_blind_new_review": true,
+      "conditional_inherited_proofs": [
+        "MM5",
+        "R011"
+      ],
+      "scope": "Corrects its own earlier broad necessity denial. Verifies the displayed minimax quantifiers and threshold consequences conditional on the cited inherited bounds, without re-reviewing that entire chain."
+    }
+  ],
+  "inherited_required_pairings": [
+    {
+      "stage": "t1t2_fixed_parameter",
+      "paths": [
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v1.html",
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/boundary_and_prior_addendum_v2.html",
+        "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+        "v10_research/independent_fixed_parameter_review_20261103_1634/independent_review.html",
+        "v10_research/fixed_parameter_markov_prior_20261103_1632/prior_art_table.html",
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/gaussian_log_position_candidate_v1.html",
+        "v10_research/fixed_parameter_vocab_softmax_20261103_1639/rate_improvement_addendum_v1.html",
+        "v10_research/independent_vocab_softmax_review_20261103_1640/independent_review.html",
+        "v10_research/independent_vocab_rate_review_20261103_1641/independent_review.html",
+        "v10_research/four_block_integer_backend_20261103_1645/deterministic_vocab_backend_v1.html",
+        "v10_research/four_block_integer_backend_20261103_1645/independent_analytic_review_20261103_1655.md",
+        "v10_research/four_block_vocab_prior_art_20261103_1649/prior_art_audit.html"
+      ]
+    },
+    {
+      "stage": "t1t2_alphabet_limits",
+      "paths": [
+        "v10_research/fixed_alphabet_causal_extension_20261103_1653/alphabet_extension_candidate_v1.html",
+        "v10_research/fixed_alphabet_causal_extension_20261103_1653/independent_analytic_review_20261103_1655.md",
+        "v10_research/fixed_parameter_perturbation_20261103_1658/perturbation_bounds_v1.html",
+        "v10_research/fixed_parameter_perturbation_20261103_1658/independent_analytic_review_20261103_1700.md",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/statistical_alphabet_bounds_v1.html",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/independent_analytic_review_20261103_1708.md",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/history_length_corollary_v1.html",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/history_length_corollary_v2.html",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/history_length_corollary_v2_review_20261103_1709.md",
+        "v10_research/alphabet_terminal_tv_prior_art_20261103_1711/prior_art_audit.html",
+        "v10_research/independent_r011_common_k5_20261103_1721/read_only_audit.html",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_trace_independent_review_20261103_1721.md",
+        "v10_research/nonstationary_a5_obstruction_20261103_1721/periodic_clock_obstruction_v1.html",
+        "v10_research/nonstationary_a5_obstruction_20261103_1721/independent_analytic_review_20261103_1723.md",
+        "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_odd_alphabet_correction_20261103_1732.html"
+      ]
+    }
+  ],
+  "prior_art_scope": "Bounded summaries and paper links, not third-party full texts or exhaustive priority clearance.",
+  "inherited_identity_limit": {
+    "status": "CURRENT_BODY_HAS_A_PUBLIC_SCIENTIFIC_COPY_AND_SCOPED_REVIEW_BUT_OLD_REVIEW_MISMATCH_REMAINS",
+    "current_original_sha256": "19d2b5e4d5a5c7c5f152f14b287bd42a5f130de4428c82f82e1a5916fe9400f3",
+    "current_public_path": "inherited_statistics/DOT_conditions_stage02/inherited/MM5_statistical_proof.md",
+    "current_public_identity": {
+      "bytes": 21262,
+      "sha256": "4d5e865ebe00846662cef1830be02bf52cc2b839eca8a0600f8baa501ada6078",
+      "git_blob_sha1": "d8aef0a80a3dd33a01dba631a454d4fccf4ffda1"
+    },
+    "current_original_to_public_map": "inherited_statistics/DOT_conditions_stage02/COPY_MAP.json",
+    "old_report_requested_proof_sha256": "5fef432092c4d7394021f1651dbcd086b660028b2a62c1297342340892dd6d24",
+    "old_report_does_not_bind_current_original": true,
+    "mismatch_cause": "Unresolved. No equality or wrapper-only explanation is established.",
+    "current_body_review_path": "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_trace_independent_review_20261103_1721.md",
+    "mandatory_review_count_correction_path": "v10_research/minimax_alphabet_bounds_20261103_1706/r011_mm5_odd_alphabet_correction_20261103_1732.html",
+    "published_prior_binding_path": "provenance/t1t2_alphabet_limits_20261103/HASH_REFERENCE_BINDINGS.json"
+  },
+  "threshold_clarification": {
+    "status": "ACTUAL_THRESHOLD_CLARIFICATION_GROUP_SELECTED_AND_BOUND",
+    "affected_source_record_id": "PLN016",
+    "clarification_source_ids": [
+      "PLN017",
+      "PLN018"
+    ],
+    "preferred_clarification_source_id": "PLN018",
+    "correction_review_source_id": "PLN019",
+    "same_reviewer_as_original_review": true,
+    "interpretation": "The construction proves sufficiency. The separately inherited arbitrary-initial minimax lower supplies necessity for full-class vanishing worst-source TV under its own quantifiers. The actual correction is retained without silently rewriting PLN016.",
+    "later_adversarial_theory_assessment_in_scope": false,
+    "not_a_publication_receipt": true
+  }
+}

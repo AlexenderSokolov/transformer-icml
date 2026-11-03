@@ -1,0 +1,2689 @@
+{
+  "base_commit": "fc383d6ab494c985f94f20479bd07891c88e4240",
+  "all_html_attributes": 61,
+  "all_markdown_links": 3,
+  "local_href_count": 19,
+  "local_unique_target_paths": 10,
+  "external_html_href_count": 42,
+  "external_markdown_link_count": 3,
+  "external_https_occurrences_all_text": 45,
+  "unique_external_urls_all_text": 22,
+  "active_html_count": 0,
+  "unresolved_local_links": 0,
+  "verification_scope": "All local HTML attributes/fragments, Markdown links and separate textual filenames/paths are checked. External URLs are inventoried without fresh fetching or a reachability claim. Two known wrong article URLs are explicitly paired with their actual separate correction.",
+  "links": [
+    {
+      "source_record_id": "PLN001",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "layernorm_copy_scope_v1.html",
+      "original_target_sha256": "2b8aa22dae1d44c6fc9fda648034260f53242b6d1e4bf5b342e0c132703909f2",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        465,
+        493
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        465,
+        493
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/layernorm_position_interface_20261103_1726/layernorm_copy_scope_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN002"
+      }
+    },
+    {
+      "source_record_id": "PLN001",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://nlp.stanford.edu/pubs/hahn2020theoretical.pdf",
+      "original_target_sha256": "c3ae40e1043743900a1a38b53ae61e337b1c822a4934942fd7ebe1b980f7db92",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        6604,
+        6657
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        6604,
+        6657
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN001",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/pdf/2202.12172",
+      "original_target_sha256": "d55a2b5cd2daf3d697b63e4063ec052fab6133b02acfaabd6f4240f58cfef66c",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        7044,
+        7076
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        7044,
+        7076
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN002",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "../fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "original_target_sha256": "4b8bf5b68fc198db186ce12e4a29a08193b8ed4b3082274768d7d59ffe38ffda",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        430,
+        520
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        430,
+        520
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "already_public_pinned_dependency",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html"
+      }
+    },
+    {
+      "source_record_id": "PLN002",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://nlp.stanford.edu/pubs/hahn2020theoretical.pdf",
+      "original_target_sha256": "c3ae40e1043743900a1a38b53ae61e337b1c822a4934942fd7ebe1b980f7db92",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        6850,
+        6903
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        6850,
+        6903
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN002",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/pdf/2202.12172",
+      "original_target_sha256": "d55a2b5cd2daf3d697b63e4063ec052fab6133b02acfaabd6f4240f58cfef66c",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        7199,
+        7231
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        7199,
+        7231
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN002",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2410.01104",
+      "original_target_sha256": "38c3872834a4a3eb7a98f85289dae62940b977bb45d4f109cf4b4e741d15fb6f",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        7562,
+        7595
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        7562,
+        7595
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN003",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "preln_actual_risk_obstruction_v1.html",
+      "original_target_sha256": "c5d4da9d32ffe373508510684a0b0cf6a116768170cc2612d9d0c4cf2c0c28dd",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        204,
+        241
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        204,
+        241
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN001"
+      }
+    },
+    {
+      "source_record_id": "PLN004",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "preln_actual_risk_obstruction_v1.html",
+      "original_target_sha256": "c5d4da9d32ffe373508510684a0b0cf6a116768170cc2612d9d0c4cf2c0c28dd",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        201,
+        238
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        201,
+        238
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN001"
+      }
+    },
+    {
+      "source_record_id": "PLN004",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "input_and_quantifiers_clarification_v1.html",
+      "original_target_sha256": "47a65073e82c232593c11597113b2fc830f852d8443bbc5faef831f46a6d4e4d",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        370,
+        413
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        370,
+        413
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/layernorm_position_interface_20261103_1726/input_and_quantifiers_clarification_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN003"
+      }
+    },
+    {
+      "source_record_id": "PLN005",
+      "attribute": "markdown_link",
+      "syntax": "Markdown link",
+      "target": "https://aclanthology.org/2020.tacl-1.11.pdf",
+      "original_target_sha256": "5d56a60701adb3b61b00ae6b422bd0e3b5b574dac8bd48069471c48c6329a782",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        5054,
+        5097
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5054,
+        5097
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN005",
+      "attribute": "markdown_link",
+      "syntax": "Markdown link",
+      "target": "https://arxiv.org/pdf/2202.12172",
+      "original_target_sha256": "d55a2b5cd2daf3d697b63e4063ec052fab6133b02acfaabd6f4240f58cfef66c",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        5446,
+        5478
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5446,
+        5478
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN005",
+      "attribute": "markdown_link",
+      "syntax": "Markdown link",
+      "target": "https://arxiv.org/html/2410.01104",
+      "original_target_sha256": "38c3872834a4a3eb7a98f85289dae62940b977bb45d4f109cf4b4e741d15fb6f",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        5689,
+        5722
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5689,
+        5722
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN007",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "preln_actual_risk_obstruction_v1.html",
+      "original_target_sha256": "c5d4da9d32ffe373508510684a0b0cf6a116768170cc2612d9d0c4cf2c0c28dd",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        229,
+        266
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        229,
+        266
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN001"
+      }
+    },
+    {
+      "source_record_id": "PLN007",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "../bounded_causal_sensitivity_prior_art_20261103_1728/prior_art_audit.html",
+      "original_target_sha256": "78e815622a2a4ccca5b9b6820fcd7bba22f2c6a1986105d5e445dee671d0cde7",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        422,
+        496
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        422,
+        496
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/bounded_causal_sensitivity_prior_art_20261103_1728/prior_art_audit.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN009"
+      }
+    },
+    {
+      "source_record_id": "PLN007",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/abs/2406.06560",
+      "original_target_sha256": "081788fd28249b5490ca8d2ce240a1fac195dd5717a70329ed1a83e34ef60dd5",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        1134,
+        1166
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1134,
+        1166
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable.",
+      "known_source_error": {
+        "status": "Retained incorrect article URL.",
+        "mandatory_correction_source_id": "PLN008",
+        "corrected_url": "https://arxiv.org/abs/2406.04267"
+      }
+    },
+    {
+      "source_record_id": "PLN007",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://aclanthology.org/2026.tacl-1.32/",
+      "original_target_sha256": "ac2a006a072f9dc334d2d45fba69139ca263e9ee681766f33b78550d38e0f37c",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        1459,
+        1499
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1459,
+        1499
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable.",
+      "known_source_error": {
+        "status": "Retained incorrect article URL.",
+        "mandatory_correction_source_id": "PLN008",
+        "corrected_url": "https://aclanthology.org/2026.tacl-1.8/"
+      }
+    },
+    {
+      "source_record_id": "PLN007",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/abs/2402.04161",
+      "original_target_sha256": "e9aac25dfa0c81914d528a066d9b7d8ff4670cf17c97afb4cb9969e17af0a88b",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        1760,
+        1792
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1760,
+        1792
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN008",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "prior_art_alignment_addendum_v1.html",
+      "original_target_sha256": "f744aaaa33fd1e9cac1ab8fc1d6cb0aadb3e86d1da615af483fe79c059339480",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        167,
+        203
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        167,
+        203
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/layernorm_position_interface_20261103_1726/prior_art_alignment_addendum_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN007"
+      }
+    },
+    {
+      "source_record_id": "PLN008",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/abs/2406.04267",
+      "original_target_sha256": "6176ea16f027237f8f082a9607f6b4bcd3ef5a77d51d34cc036abbe4f646d16f",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        561,
+        593
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        561,
+        593
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN008",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://aclanthology.org/2026.tacl-1.8/",
+      "original_target_sha256": "896abde056af9a58b0e33e7ecfc7f811af9e2e340a39d0e5edf72daff91d78a6",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        701,
+        740
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        701,
+        740
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN009",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://aclanthology.org/2020.tacl-1.11.pdf",
+      "original_target_sha256": "5d56a60701adb3b61b00ae6b422bd0e3b5b574dac8bd48069471c48c6329a782",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        1670,
+        1713
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1670,
+        1713
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN009",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://proceedings.neurips.cc/paper_files/paper/2024/file/b1d35561c4a4a0e0b6012b2af531e149-Paper-Conference.pdf",
+      "original_target_sha256": "13388fc1df75007447a4087c4bb45ada2ba057b108ee50e8a37bbb67543d5614",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        2938,
+        3050
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2938,
+        3050
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN009",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2202.12172",
+      "original_target_sha256": "10f9907cb769ede86049ece63f41049b5856526f8840c51fecc8e06c68bcfd8f",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        4051,
+        4084
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        4051,
+        4084
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN009",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://aclanthology.org/2026.tacl-1.8.pdf",
+      "original_target_sha256": "c793880e5731d0fe35fd86f37e2dd3c8220339da94c3e8e59bfab0394af3b43c",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        4838,
+        4880
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        4838,
+        4880
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN009",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2607.17696v1#S2",
+      "original_target_sha256": "ae5cf58eb35303e22713427a1b1198803cc301b38d25f634e9faccf41603a091",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        5701,
+        5739
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5701,
+        5739
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN009",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://proceedings.mlr.press/v235/castin24a.html",
+      "original_target_sha256": "d1ccd2106b74840b3fdec5aec444996972037957c7abc1d1ba54a645e602d764",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        6704,
+        6753
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        6704,
+        6753
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN009",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2402.04161v2",
+      "original_target_sha256": "2c3a465f2b339b7f714fa56917007cc3923bdf8289ceb6ddab73ba09257b1a2b",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        7400,
+        7435
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        7400,
+        7435
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN009",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://aclanthology.org/2024.naacl-long.381/",
+      "original_target_sha256": "57db347be951ad10638fc01ae609fd713bed8f9f98378ed388a770dc308ed5c9",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        8135,
+        8180
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        8135,
+        8180
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN009",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2407.17686v1#S5",
+      "original_target_sha256": "e13fb615d20d1d082aee5a4aafd7e1f7bcce734f624a8510eda810a483c0f783",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        8286,
+        8324
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        8286,
+        8324
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN010",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "../layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html",
+      "original_target_sha256": "c8b8a23e8e6a36650752b49171867f41eba665ffa8fef5789e2c8b69ff507aaa",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        429,
+        512
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        429,
+        512
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN001"
+      }
+    },
+    {
+      "source_record_id": "PLN010",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "../layernorm_position_interface_20261103_1726/input_and_quantifiers_clarification_v1.html",
+      "original_target_sha256": "9f697e99a33ca2d4efd73257a054c9033b5b232c2c062351b7cf64a2a5b8a3c4",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        582,
+        671
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        582,
+        671
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/layernorm_position_interface_20261103_1726/input_and_quantifiers_clarification_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN003"
+      }
+    },
+    {
+      "source_record_id": "PLN010",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "../layernorm_position_interface_20261103_1726/score_interface_clarification_v1.html",
+      "original_target_sha256": "fd7cab44cddaed74f43e3294f17092ce7f21a49f36f13a4b61b8c8442a22fa9a",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        707,
+        790
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        707,
+        790
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/layernorm_position_interface_20261103_1726/score_interface_clarification_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN004"
+      }
+    },
+    {
+      "source_record_id": "PLN010",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://nlp.stanford.edu/pubs/hahn2020theoretical.pdf",
+      "original_target_sha256": "c3ae40e1043743900a1a38b53ae61e337b1c822a4934942fd7ebe1b980f7db92",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        5774,
+        5827
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5774,
+        5827
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN010",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "../bounded_causal_sensitivity_prior_art_20261103_1728/prior_art_audit.html",
+      "original_target_sha256": "78e815622a2a4ccca5b9b6820fcd7bba22f2c6a1986105d5e445dee671d0cde7",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        5865,
+        5939
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5865,
+        5939
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/bounded_causal_sensitivity_prior_art_20261103_1728/prior_art_audit.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN009"
+      }
+    },
+    {
+      "source_record_id": "PLN010",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "../fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "original_target_sha256": "4b8bf5b68fc198db186ce12e4a29a08193b8ed4b3082274768d7d59ffe38ffda",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        9060,
+        9150
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9060,
+        9150
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "already_public_pinned_dependency",
+        "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html"
+      }
+    },
+    {
+      "source_record_id": "PLN012",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2607.02800v1#S4.SS1",
+      "original_target_sha256": "e23a24e51e8fada7c47c699b05c7a6ca9885701edaae69ab74fe1b5613923466",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        8992,
+        9034
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        8992,
+        9034
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN012",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2508.07208v2#S4",
+      "original_target_sha256": "6343a599949c8ce3927e3e9a8e7af9a735bd61db0d0353e807afabb7f2f2d5f4",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        9262,
+        9300
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9262,
+        9300
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN012",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2407.17686v1#S5",
+      "original_target_sha256": "e13fb615d20d1d082aee5a4aafd7e1f7bcce734f624a8510eda810a483c0f783",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        9356,
+        9394
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9356,
+        9394
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN012",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://proceedings.mlr.press/v235/he24c.html",
+      "original_target_sha256": "771c6ccf140924677be1148cf1c4054ae7fee782765176d5a373a92034c6a54a",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        9426,
+        9471
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9426,
+        9471
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN012",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2106.13947v2#S5",
+      "original_target_sha256": "69ff1718b8d5d3c5ceeb77111dcd81432e8c15c10e3e46fe8102de2d2b599b6d",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        9740,
+        9778
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9740,
+        9778
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN012",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/1411.1467",
+      "original_target_sha256": "a81ad0183a9c2122f10d07c5e548678d08fe830412c4b4aea31c8b017eb9c7f0",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        9988,
+        10020
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9988,
+        10020
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN012",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://aclanthology.org/2020.tacl-1.11.pdf",
+      "original_target_sha256": "5d56a60701adb3b61b00ae6b422bd0e3b5b574dac8bd48069471c48c6329a782",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        10128,
+        10171
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10128,
+        10171
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN012",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/abs/2406.04267",
+      "original_target_sha256": "6176ea16f027237f8f082a9607f6b4bcd3ef5a77d51d34cc036abbe4f646d16f",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        10261,
+        10293
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10261,
+        10293
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN012",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2202.12172",
+      "original_target_sha256": "10f9907cb769ede86049ece63f41049b5856526f8840c51fecc8e06c68bcfd8f",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        10366,
+        10399
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10366,
+        10399
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN012",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2402.04161v2",
+      "original_target_sha256": "2c3a465f2b339b7f714fa56917007cc3923bdf8289ceb6ddab73ba09257b1a2b",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        10589,
+        10624
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10589,
+        10624
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN013",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "research_memo_v1.html",
+      "original_target_sha256": "43a7a620a8d0a0adcb95fdbffb4d0d700967d89b34d154fa6d81707330b1372e",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        225,
+        246
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        225,
+        246
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN012"
+      }
+    },
+    {
+      "source_record_id": "PLN014",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "research_memo_v1.html",
+      "original_target_sha256": "43a7a620a8d0a0adcb95fdbffb4d0d700967d89b34d154fa6d81707330b1372e",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        221,
+        242
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        221,
+        242
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v1.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN012"
+      }
+    },
+    {
+      "source_record_id": "PLN015",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2607.02800v1#S4.SS1",
+      "original_target_sha256": "e23a24e51e8fada7c47c699b05c7a6ca9885701edaae69ab74fe1b5613923466",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        9327,
+        9369
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9327,
+        9369
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN015",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2508.07208v2#S4",
+      "original_target_sha256": "6343a599949c8ce3927e3e9a8e7af9a735bd61db0d0353e807afabb7f2f2d5f4",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        9597,
+        9635
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9597,
+        9635
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN015",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2407.17686v1#S5",
+      "original_target_sha256": "e13fb615d20d1d082aee5a4aafd7e1f7bcce734f624a8510eda810a483c0f783",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        9691,
+        9729
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9691,
+        9729
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN015",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://proceedings.mlr.press/v235/he24c.html",
+      "original_target_sha256": "771c6ccf140924677be1148cf1c4054ae7fee782765176d5a373a92034c6a54a",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        9761,
+        9806
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9761,
+        9806
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN015",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2106.13947v2#S5",
+      "original_target_sha256": "69ff1718b8d5d3c5ceeb77111dcd81432e8c15c10e3e46fe8102de2d2b599b6d",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        10075,
+        10113
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10075,
+        10113
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN015",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/1411.1467",
+      "original_target_sha256": "a81ad0183a9c2122f10d07c5e548678d08fe830412c4b4aea31c8b017eb9c7f0",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        10323,
+        10355
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10323,
+        10355
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN015",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://aclanthology.org/2020.tacl-1.11.pdf",
+      "original_target_sha256": "5d56a60701adb3b61b00ae6b422bd0e3b5b574dac8bd48069471c48c6329a782",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        10463,
+        10506
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10463,
+        10506
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN015",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/abs/2406.04267",
+      "original_target_sha256": "6176ea16f027237f8f082a9607f6b4bcd3ef5a77d51d34cc036abbe4f646d16f",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        10596,
+        10628
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10596,
+        10628
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN015",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2202.12172",
+      "original_target_sha256": "10f9907cb769ede86049ece63f41049b5856526f8840c51fecc8e06c68bcfd8f",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        10701,
+        10734
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10701,
+        10734
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN015",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2402.04161v2",
+      "original_target_sha256": "2c3a465f2b339b7f714fa56917007cc3923bdf8289ceb6ddab73ba09257b1a2b",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        10924,
+        10959
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10924,
+        10959
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN017",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "research_memo_v2.html",
+      "original_target_sha256": "f3be5cea3d598be3dabcf3797a21bd9e8113c986a81fbf2f629f1dbd652fd018",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        466,
+        487
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        466,
+        487
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN015"
+      }
+    },
+    {
+      "source_record_id": "PLN017",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "research_memo_v2_independent_review_20261103_1740.md",
+      "original_target_sha256": "2cbf54e3316212c7beb952ec63f798def273e2c3bec03c6cc5127bb2a44636fa",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        602,
+        654
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        602,
+        654
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2_independent_review_20261103_1740.md",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN016"
+      }
+    },
+    {
+      "source_record_id": "PLN017",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2106.13947v2#S5",
+      "original_target_sha256": "69ff1718b8d5d3c5ceeb77111dcd81432e8c15c10e3e46fe8102de2d2b599b6d",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        5133,
+        5171
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5133,
+        5171
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    },
+    {
+      "source_record_id": "PLN018",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "research_memo_v2.html",
+      "original_target_sha256": "f3be5cea3d598be3dabcf3797a21bd9e8113c986a81fbf2f629f1dbd652fd018",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        466,
+        487
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        466,
+        487
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2.html",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN015"
+      }
+    },
+    {
+      "source_record_id": "PLN018",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "research_memo_v2_independent_review_20261103_1740.md",
+      "original_target_sha256": "2cbf54e3316212c7beb952ec63f798def273e2c3bec03c6cc5127bb2a44636fa",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        602,
+        654
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        602,
+        654
+      ],
+      "kind": "relative_repository_link",
+      "resolved_repository_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2_independent_review_20261103_1740.md",
+      "fragment": null,
+      "resolution": {
+        "status": "selected_proposed_export",
+        "source_record_id": "PLN016"
+      }
+    },
+    {
+      "source_record_id": "PLN018",
+      "attribute": "href",
+      "syntax": "HTML attribute",
+      "target": "https://arxiv.org/html/2106.13947v2#S5",
+      "original_target_sha256": "69ff1718b8d5d3c5ceeb77111dcd81432e8c15c10e3e46fe8102de2d2b599b6d",
+      "target_changed": false,
+      "original_utf8_byte_range_zero_based_half_open": [
+        5390,
+        5428
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5390,
+        5428
+      ],
+      "kind": "external_https",
+      "availability": "Inventoried locally, not freshly fetched or asserted reachable."
+    }
+  ],
+  "textual_local_references": [
+    {
+      "source_record_id": "PLN001",
+      "mentioned_path_or_basename": "layernorm_copy_scope_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        465,
+        493
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        465,
+        493
+      ],
+      "original_span_sha256": "2b8aa22dae1d44c6fc9fda648034260f53242b6d1e4bf5b342e0c132703909f2",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/layernorm_copy_scope_v1.html"
+    },
+    {
+      "source_record_id": "PLN002",
+      "mentioned_path_or_basename": "../fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        430,
+        520
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        430,
+        520
+      ],
+      "original_span_sha256": "4b8bf5b68fc198db186ce12e4a29a08193b8ed4b3082274768d7d59ffe38ffda",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "already_public_pinned_dependency",
+      "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html"
+    },
+    {
+      "source_record_id": "PLN003",
+      "mentioned_path_or_basename": "preln_actual_risk_obstruction_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        204,
+        241
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        204,
+        241
+      ],
+      "original_span_sha256": "c5d4da9d32ffe373508510684a0b0cf6a116768170cc2612d9d0c4cf2c0c28dd",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html"
+    },
+    {
+      "source_record_id": "PLN003",
+      "mentioned_path_or_basename": "preln_actual_risk_obstruction_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        243,
+        280
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        243,
+        280
+      ],
+      "original_span_sha256": "c5d4da9d32ffe373508510684a0b0cf6a116768170cc2612d9d0c4cf2c0c28dd",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html"
+    },
+    {
+      "source_record_id": "PLN004",
+      "mentioned_path_or_basename": "preln_actual_risk_obstruction_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        201,
+        238
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        201,
+        238
+      ],
+      "original_span_sha256": "c5d4da9d32ffe373508510684a0b0cf6a116768170cc2612d9d0c4cf2c0c28dd",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html"
+    },
+    {
+      "source_record_id": "PLN004",
+      "mentioned_path_or_basename": "preln_actual_risk_obstruction_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        240,
+        277
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        240,
+        277
+      ],
+      "original_span_sha256": "c5d4da9d32ffe373508510684a0b0cf6a116768170cc2612d9d0c4cf2c0c28dd",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html"
+    },
+    {
+      "source_record_id": "PLN004",
+      "mentioned_path_or_basename": "input_and_quantifiers_clarification_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        370,
+        413
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        370,
+        413
+      ],
+      "original_span_sha256": "47a65073e82c232593c11597113b2fc830f852d8443bbc5faef831f46a6d4e4d",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/input_and_quantifiers_clarification_v1.html"
+    },
+    {
+      "source_record_id": "PLN004",
+      "mentioned_path_or_basename": "input_and_quantifiers_clarification_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        415,
+        458
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        415,
+        458
+      ],
+      "original_span_sha256": "47a65073e82c232593c11597113b2fc830f852d8443bbc5faef831f46a6d4e4d",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/input_and_quantifiers_clarification_v1.html"
+    },
+    {
+      "source_record_id": "PLN005",
+      "mentioned_path_or_basename": "preln_actual_risk_obstruction_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        718,
+        755
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        718,
+        755
+      ],
+      "original_span_sha256": "c5d4da9d32ffe373508510684a0b0cf6a116768170cc2612d9d0c4cf2c0c28dd",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html"
+    },
+    {
+      "source_record_id": "PLN005",
+      "mentioned_path_or_basename": "layernorm_copy_scope_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        838,
+        866
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        838,
+        866
+      ],
+      "original_span_sha256": "2b8aa22dae1d44c6fc9fda648034260f53242b6d1e4bf5b342e0c132703909f2",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/layernorm_copy_scope_v1.html"
+    },
+    {
+      "source_record_id": "PLN006",
+      "mentioned_path_or_basename": "input_and_quantifiers_clarification_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        265,
+        308
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        265,
+        308
+      ],
+      "original_span_sha256": "47a65073e82c232593c11597113b2fc830f852d8443bbc5faef831f46a6d4e4d",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/input_and_quantifiers_clarification_v1.html"
+    },
+    {
+      "source_record_id": "PLN006",
+      "mentioned_path_or_basename": "score_interface_clarification_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        393,
+        430
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        393,
+        430
+      ],
+      "original_span_sha256": "026ca7e174678701f9abec181aa327aa8e7920b2b9d401d54beba35ff748e2ad",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/score_interface_clarification_v1.html"
+    },
+    {
+      "source_record_id": "PLN006",
+      "mentioned_path_or_basename": "preln_actual_risk_obstruction_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        531,
+        568
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        531,
+        568
+      ],
+      "original_span_sha256": "c5d4da9d32ffe373508510684a0b0cf6a116768170cc2612d9d0c4cf2c0c28dd",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html"
+    },
+    {
+      "source_record_id": "PLN006",
+      "mentioned_path_or_basename": "independent_analytic_review_20261103_1728.md",
+      "original_utf8_byte_range_zero_based_half_open": [
+        687,
+        731
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        687,
+        731
+      ],
+      "original_span_sha256": "a30a3ed248d4b95df0338ca6532bc674902af3a7200f2f941bcd9b0dd2e83770",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/independent_analytic_review_20261103_1728.md"
+    },
+    {
+      "source_record_id": "PLN007",
+      "mentioned_path_or_basename": "preln_actual_risk_obstruction_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        229,
+        266
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        229,
+        266
+      ],
+      "original_span_sha256": "c5d4da9d32ffe373508510684a0b0cf6a116768170cc2612d9d0c4cf2c0c28dd",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html"
+    },
+    {
+      "source_record_id": "PLN007",
+      "mentioned_path_or_basename": "../bounded_causal_sensitivity_prior_art_20261103_1728/prior_art_audit.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        422,
+        496
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        422,
+        496
+      ],
+      "original_span_sha256": "78e815622a2a4ccca5b9b6820fcd7bba22f2c6a1986105d5e445dee671d0cde7",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/bounded_causal_sensitivity_prior_art_20261103_1728/prior_art_audit.html"
+    },
+    {
+      "source_record_id": "PLN008",
+      "mentioned_path_or_basename": "prior_art_alignment_addendum_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        167,
+        203
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        167,
+        203
+      ],
+      "original_span_sha256": "f744aaaa33fd1e9cac1ab8fc1d6cb0aadb3e86d1da615af483fe79c059339480",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/prior_art_alignment_addendum_v1.html"
+    },
+    {
+      "source_record_id": "PLN008",
+      "mentioned_path_or_basename": "prior_art_alignment_addendum_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        205,
+        241
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        205,
+        241
+      ],
+      "original_span_sha256": "f744aaaa33fd1e9cac1ab8fc1d6cb0aadb3e86d1da615af483fe79c059339480",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/prior_art_alignment_addendum_v1.html"
+    },
+    {
+      "source_record_id": "PLN010",
+      "mentioned_path_or_basename": "../layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        429,
+        512
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        429,
+        512
+      ],
+      "original_span_sha256": "c8b8a23e8e6a36650752b49171867f41eba665ffa8fef5789e2c8b69ff507aaa",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html"
+    },
+    {
+      "source_record_id": "PLN010",
+      "mentioned_path_or_basename": "../layernorm_position_interface_20261103_1726/input_and_quantifiers_clarification_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        582,
+        671
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        582,
+        671
+      ],
+      "original_span_sha256": "9f697e99a33ca2d4efd73257a054c9033b5b232c2c062351b7cf64a2a5b8a3c4",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/input_and_quantifiers_clarification_v1.html"
+    },
+    {
+      "source_record_id": "PLN010",
+      "mentioned_path_or_basename": "../layernorm_position_interface_20261103_1726/score_interface_clarification_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        707,
+        790
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        707,
+        790
+      ],
+      "original_span_sha256": "fd7cab44cddaed74f43e3294f17092ce7f21a49f36f13a4b61b8c8442a22fa9a",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/score_interface_clarification_v1.html"
+    },
+    {
+      "source_record_id": "PLN010",
+      "mentioned_path_or_basename": "../bounded_causal_sensitivity_prior_art_20261103_1728/prior_art_audit.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        5865,
+        5939
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5865,
+        5939
+      ],
+      "original_span_sha256": "78e815622a2a4ccca5b9b6820fcd7bba22f2c6a1986105d5e445dee671d0cde7",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/bounded_causal_sensitivity_prior_art_20261103_1728/prior_art_audit.html"
+    },
+    {
+      "source_record_id": "PLN010",
+      "mentioned_path_or_basename": "../fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9060,
+        9150
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9060,
+        9150
+      ],
+      "original_span_sha256": "4b8bf5b68fc198db186ce12e4a29a08193b8ed4b3082274768d7d59ffe38ffda",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "already_public_pinned_dependency",
+      "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html"
+    },
+    {
+      "source_record_id": "PLN011",
+      "mentioned_path_or_basename": "finite_resource_risk_bound_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        448,
+        482
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        448,
+        482
+      ],
+      "original_span_sha256": "489e121ddc32a161bd8165ffb7f0e7ef27025870f75a1c46c3139250d82eec4e",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/preln_finite_resource_tradeoff_20261103_1731/finite_resource_risk_bound_v1.html"
+    },
+    {
+      "source_record_id": "PLN011",
+      "mentioned_path_or_basename": "../layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        581,
+        664
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        581,
+        664
+      ],
+      "original_span_sha256": "c8b8a23e8e6a36650752b49171867f41eba665ffa8fef5789e2c8b69ff507aaa",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/preln_actual_risk_obstruction_v1.html"
+    },
+    {
+      "source_record_id": "PLN011",
+      "mentioned_path_or_basename": "../layernorm_position_interface_20261103_1726/input_and_quantifiers_clarification_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        760,
+        849
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        760,
+        849
+      ],
+      "original_span_sha256": "9f697e99a33ca2d4efd73257a054c9033b5b232c2c062351b7cf64a2a5b8a3c4",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/input_and_quantifiers_clarification_v1.html"
+    },
+    {
+      "source_record_id": "PLN011",
+      "mentioned_path_or_basename": "../layernorm_position_interface_20261103_1726/score_interface_clarification_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        945,
+        1028
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        945,
+        1028
+      ],
+      "original_span_sha256": "fd7cab44cddaed74f43e3294f17092ce7f21a49f36f13a4b61b8c8442a22fa9a",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/layernorm_position_interface_20261103_1726/score_interface_clarification_v1.html"
+    },
+    {
+      "source_record_id": "PLN011",
+      "mentioned_path_or_basename": "../fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1125,
+        1215
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1125,
+        1215
+      ],
+      "original_span_sha256": "4b8bf5b68fc198db186ce12e4a29a08193b8ed4b3082274768d7d59ffe38ffda",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "already_public_pinned_dependency",
+      "public_path": "v10_research/fixed_parameter_position_decoder_20261103_1632/fixed_parameter_causal_candidate_v1.html"
+    },
+    {
+      "source_record_id": "PLN013",
+      "mentioned_path_or_basename": "research_memo_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        225,
+        246
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        225,
+        246
+      ],
+      "original_span_sha256": "43a7a620a8d0a0adcb95fdbffb4d0d700967d89b34d154fa6d81707330b1372e",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v1.html"
+    },
+    {
+      "source_record_id": "PLN013",
+      "mentioned_path_or_basename": "research_memo_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        248,
+        269
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        248,
+        269
+      ],
+      "original_span_sha256": "43a7a620a8d0a0adcb95fdbffb4d0d700967d89b34d154fa6d81707330b1372e",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v1.html"
+    },
+    {
+      "source_record_id": "PLN014",
+      "mentioned_path_or_basename": "research_memo_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        221,
+        242
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        221,
+        242
+      ],
+      "original_span_sha256": "43a7a620a8d0a0adcb95fdbffb4d0d700967d89b34d154fa6d81707330b1372e",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v1.html"
+    },
+    {
+      "source_record_id": "PLN014",
+      "mentioned_path_or_basename": "research_memo_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        244,
+        265
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        244,
+        265
+      ],
+      "original_span_sha256": "43a7a620a8d0a0adcb95fdbffb4d0d700967d89b34d154fa6d81707330b1372e",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v1.html"
+    },
+    {
+      "source_record_id": "PLN016",
+      "mentioned_path_or_basename": "research_memo_v2.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        519,
+        540
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        519,
+        540
+      ],
+      "original_span_sha256": "f3be5cea3d598be3dabcf3797a21bd9e8113c986a81fbf2f629f1dbd652fd018",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2.html"
+    },
+    {
+      "source_record_id": "PLN016",
+      "mentioned_path_or_basename": "research_memo_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        625,
+        646
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        625,
+        646
+      ],
+      "original_span_sha256": "43a7a620a8d0a0adcb95fdbffb4d0d700967d89b34d154fa6d81707330b1372e",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v1.html"
+    },
+    {
+      "source_record_id": "PLN016",
+      "mentioned_path_or_basename": "fast_mixing_scope_correction_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        723,
+        759
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        723,
+        759
+      ],
+      "original_span_sha256": "a52e4a85438b771eaa78cc23dfa3c18834ac46b2cc6fefc62142b1a6ca58ee7e",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/fast_mixing_scope_correction_v1.html"
+    },
+    {
+      "source_record_id": "PLN016",
+      "mentioned_path_or_basename": "preln_bias_scope_correction_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        836,
+        871
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        836,
+        871
+      ],
+      "original_span_sha256": "393614c4c11c46e9796d808538a34bee145548ae91f9b772aa464a6062dd1d52",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/preln_bias_scope_correction_v1.html"
+    },
+    {
+      "source_record_id": "PLN016",
+      "mentioned_path_or_basename": "rare_unknown_u_addone_20261103_1502/unknown_u_addone_matched_rate_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        2492,
+        2565
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2492,
+        2565
+      ],
+      "original_span_sha256": "bcd6e4075b2b9192e3b1f5fbbca680b941c69c910ddc922692889542b68e68e8",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "already_public_pinned_dependency",
+      "public_path": "v10_research/rare_unknown_u_addone_20261103_1502/unknown_u_addone_matched_rate_v1.html"
+    },
+    {
+      "source_record_id": "PLN016",
+      "mentioned_path_or_basename": "binary_erasure_transport/BT_STAGE8_PROVENANCE.md",
+      "original_utf8_byte_range_zero_based_half_open": [
+        4237,
+        4285
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        4237,
+        4285
+      ],
+      "original_span_sha256": "c80e70404c60d7578e065b6670b306366dda388f8ca99b9bf3b07480ab248e5c",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "already_public_pinned_dependency",
+      "public_path": "v10_research/binary_erasure_transport/BT_STAGE8_PROVENANCE.md"
+    },
+    {
+      "source_record_id": "PLN017",
+      "mentioned_path_or_basename": "research_memo_v2.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        466,
+        487
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        466,
+        487
+      ],
+      "original_span_sha256": "f3be5cea3d598be3dabcf3797a21bd9e8113c986a81fbf2f629f1dbd652fd018",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2.html"
+    },
+    {
+      "source_record_id": "PLN017",
+      "mentioned_path_or_basename": "research_memo_v2_independent_review_20261103_1740.md",
+      "original_utf8_byte_range_zero_based_half_open": [
+        602,
+        654
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        602,
+        654
+      ],
+      "original_span_sha256": "2cbf54e3316212c7beb952ec63f798def273e2c3bec03c6cc5127bb2a44636fa",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2_independent_review_20261103_1740.md"
+    },
+    {
+      "source_record_id": "PLN018",
+      "mentioned_path_or_basename": "research_memo_v2.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        466,
+        487
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        466,
+        487
+      ],
+      "original_span_sha256": "f3be5cea3d598be3dabcf3797a21bd9e8113c986a81fbf2f629f1dbd652fd018",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2.html"
+    },
+    {
+      "source_record_id": "PLN018",
+      "mentioned_path_or_basename": "research_memo_v2_independent_review_20261103_1740.md",
+      "original_utf8_byte_range_zero_based_half_open": [
+        602,
+        654
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        602,
+        654
+      ],
+      "original_span_sha256": "2cbf54e3316212c7beb952ec63f798def273e2c3bec03c6cc5127bb2a44636fa",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": true,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2_independent_review_20261103_1740.md"
+    },
+    {
+      "source_record_id": "PLN019",
+      "mentioned_path_or_basename": "growing_alphabet_threshold_clarification_v2.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        76,
+        124
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        76,
+        124
+      ],
+      "original_span_sha256": "c1a9c33d17ed96382afcd4fb89a8e719df9275f5d9ff187d9807e0e5ed945c10",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v2.html"
+    },
+    {
+      "source_record_id": "PLN019",
+      "mentioned_path_or_basename": "growing_alphabet_threshold_clarification_v1.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        560,
+        608
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        560,
+        608
+      ],
+      "original_span_sha256": "f8f96eda9b19c5958a6fd336080887bc760a9a90e1a89a73223558d81edcbe7e",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/growing_alphabet_threshold_clarification_v1.html"
+    },
+    {
+      "source_record_id": "PLN019",
+      "mentioned_path_or_basename": "research_memo_v2.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        701,
+        722
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        701,
+        722
+      ],
+      "original_span_sha256": "f3be5cea3d598be3dabcf3797a21bd9e8113c986a81fbf2f629f1dbd652fd018",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2.html"
+    },
+    {
+      "source_record_id": "PLN019",
+      "mentioned_path_or_basename": "research_memo_v2_independent_review_20261103_1740.md",
+      "original_utf8_byte_range_zero_based_half_open": [
+        807,
+        859
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        807,
+        859
+      ],
+      "original_span_sha256": "2cbf54e3316212c7beb952ec63f798def273e2c3bec03c6cc5127bb2a44636fa",
+      "original_text_omitted_for_privacy": false,
+      "is_hyperlink": false,
+      "status": "selected_proposed_export",
+      "public_path": "v10_research/researcher_zh_synthesis_20261103_1737/research_memo_v2_independent_review_20261103_1740.md"
+    }
+  ],
+  "external_https_mentions": [
+    {
+      "source_record_id": "PLN001",
+      "url": "https://nlp.stanford.edu/pubs/hahn2020theoretical.pdf",
+      "literal": "https://nlp.stanford.edu/pubs/hahn2020theoretical.pdf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        6604,
+        6657
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        6604,
+        6657
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN001",
+      "url": "https://arxiv.org/pdf/2202.12172",
+      "literal": "https://arxiv.org/pdf/2202.12172",
+      "original_utf8_byte_range_zero_based_half_open": [
+        7044,
+        7076
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        7044,
+        7076
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN002",
+      "url": "https://nlp.stanford.edu/pubs/hahn2020theoretical.pdf",
+      "literal": "https://nlp.stanford.edu/pubs/hahn2020theoretical.pdf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        6850,
+        6903
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        6850,
+        6903
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN002",
+      "url": "https://arxiv.org/pdf/2202.12172",
+      "literal": "https://arxiv.org/pdf/2202.12172",
+      "original_utf8_byte_range_zero_based_half_open": [
+        7199,
+        7231
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        7199,
+        7231
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN002",
+      "url": "https://arxiv.org/html/2410.01104",
+      "literal": "https://arxiv.org/html/2410.01104",
+      "original_utf8_byte_range_zero_based_half_open": [
+        7562,
+        7595
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        7562,
+        7595
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN005",
+      "url": "https://aclanthology.org/2020.tacl-1.11.pdf",
+      "literal": "https://aclanthology.org/2020.tacl-1.11.pdf)",
+      "original_utf8_byte_range_zero_based_half_open": [
+        5054,
+        5098
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5054,
+        5098
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN005",
+      "url": "https://arxiv.org/pdf/2202.12172",
+      "literal": "https://arxiv.org/pdf/2202.12172)",
+      "original_utf8_byte_range_zero_based_half_open": [
+        5446,
+        5479
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5446,
+        5479
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN005",
+      "url": "https://arxiv.org/html/2410.01104",
+      "literal": "https://arxiv.org/html/2410.01104)",
+      "original_utf8_byte_range_zero_based_half_open": [
+        5689,
+        5723
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5689,
+        5723
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN007",
+      "url": "https://arxiv.org/abs/2406.06560",
+      "literal": "https://arxiv.org/abs/2406.06560",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1134,
+        1166
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1134,
+        1166
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN007",
+      "url": "https://aclanthology.org/2026.tacl-1.32/",
+      "literal": "https://aclanthology.org/2026.tacl-1.32/",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1459,
+        1499
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1459,
+        1499
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN007",
+      "url": "https://arxiv.org/abs/2402.04161",
+      "literal": "https://arxiv.org/abs/2402.04161",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1760,
+        1792
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1760,
+        1792
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN008",
+      "url": "https://arxiv.org/abs/2406.04267",
+      "literal": "https://arxiv.org/abs/2406.04267",
+      "original_utf8_byte_range_zero_based_half_open": [
+        561,
+        593
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        561,
+        593
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN008",
+      "url": "https://aclanthology.org/2026.tacl-1.8/",
+      "literal": "https://aclanthology.org/2026.tacl-1.8/",
+      "original_utf8_byte_range_zero_based_half_open": [
+        701,
+        740
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        701,
+        740
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN009",
+      "url": "https://aclanthology.org/2020.tacl-1.11.pdf",
+      "literal": "https://aclanthology.org/2020.tacl-1.11.pdf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        1670,
+        1713
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        1670,
+        1713
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN009",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/b1d35561c4a4a0e0b6012b2af531e149-Paper-Conference.pdf",
+      "literal": "https://proceedings.neurips.cc/paper_files/paper/2024/file/b1d35561c4a4a0e0b6012b2af531e149-Paper-Conference.pdf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        2938,
+        3050
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        2938,
+        3050
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN009",
+      "url": "https://arxiv.org/html/2202.12172",
+      "literal": "https://arxiv.org/html/2202.12172",
+      "original_utf8_byte_range_zero_based_half_open": [
+        4051,
+        4084
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        4051,
+        4084
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN009",
+      "url": "https://aclanthology.org/2026.tacl-1.8.pdf",
+      "literal": "https://aclanthology.org/2026.tacl-1.8.pdf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        4838,
+        4880
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        4838,
+        4880
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN009",
+      "url": "https://arxiv.org/html/2607.17696v1#S2",
+      "literal": "https://arxiv.org/html/2607.17696v1#S2",
+      "original_utf8_byte_range_zero_based_half_open": [
+        5701,
+        5739
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5701,
+        5739
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN009",
+      "url": "https://proceedings.mlr.press/v235/castin24a.html",
+      "literal": "https://proceedings.mlr.press/v235/castin24a.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        6704,
+        6753
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        6704,
+        6753
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN009",
+      "url": "https://arxiv.org/html/2402.04161v2",
+      "literal": "https://arxiv.org/html/2402.04161v2",
+      "original_utf8_byte_range_zero_based_half_open": [
+        7400,
+        7435
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        7400,
+        7435
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN009",
+      "url": "https://aclanthology.org/2024.naacl-long.381/",
+      "literal": "https://aclanthology.org/2024.naacl-long.381/",
+      "original_utf8_byte_range_zero_based_half_open": [
+        8135,
+        8180
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        8135,
+        8180
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN009",
+      "url": "https://arxiv.org/html/2407.17686v1#S5",
+      "literal": "https://arxiv.org/html/2407.17686v1#S5",
+      "original_utf8_byte_range_zero_based_half_open": [
+        8286,
+        8324
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        8286,
+        8324
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN010",
+      "url": "https://nlp.stanford.edu/pubs/hahn2020theoretical.pdf",
+      "literal": "https://nlp.stanford.edu/pubs/hahn2020theoretical.pdf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        5774,
+        5827
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5774,
+        5827
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN012",
+      "url": "https://arxiv.org/html/2607.02800v1#S4.SS1",
+      "literal": "https://arxiv.org/html/2607.02800v1#S4.SS1",
+      "original_utf8_byte_range_zero_based_half_open": [
+        8992,
+        9034
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        8992,
+        9034
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN012",
+      "url": "https://arxiv.org/html/2508.07208v2#S4",
+      "literal": "https://arxiv.org/html/2508.07208v2#S4",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9262,
+        9300
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9262,
+        9300
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN012",
+      "url": "https://arxiv.org/html/2407.17686v1#S5",
+      "literal": "https://arxiv.org/html/2407.17686v1#S5",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9356,
+        9394
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9356,
+        9394
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN012",
+      "url": "https://proceedings.mlr.press/v235/he24c.html",
+      "literal": "https://proceedings.mlr.press/v235/he24c.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9426,
+        9471
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9426,
+        9471
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN012",
+      "url": "https://arxiv.org/html/2106.13947v2#S5",
+      "literal": "https://arxiv.org/html/2106.13947v2#S5",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9740,
+        9778
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9740,
+        9778
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN012",
+      "url": "https://arxiv.org/html/1411.1467",
+      "literal": "https://arxiv.org/html/1411.1467",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9988,
+        10020
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9988,
+        10020
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN012",
+      "url": "https://aclanthology.org/2020.tacl-1.11.pdf",
+      "literal": "https://aclanthology.org/2020.tacl-1.11.pdf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10128,
+        10171
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10128,
+        10171
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN012",
+      "url": "https://arxiv.org/abs/2406.04267",
+      "literal": "https://arxiv.org/abs/2406.04267",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10261,
+        10293
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10261,
+        10293
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN012",
+      "url": "https://arxiv.org/html/2202.12172",
+      "literal": "https://arxiv.org/html/2202.12172",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10366,
+        10399
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10366,
+        10399
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN012",
+      "url": "https://arxiv.org/html/2402.04161v2",
+      "literal": "https://arxiv.org/html/2402.04161v2",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10589,
+        10624
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10589,
+        10624
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN015",
+      "url": "https://arxiv.org/html/2607.02800v1#S4.SS1",
+      "literal": "https://arxiv.org/html/2607.02800v1#S4.SS1",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9327,
+        9369
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9327,
+        9369
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN015",
+      "url": "https://arxiv.org/html/2508.07208v2#S4",
+      "literal": "https://arxiv.org/html/2508.07208v2#S4",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9597,
+        9635
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9597,
+        9635
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN015",
+      "url": "https://arxiv.org/html/2407.17686v1#S5",
+      "literal": "https://arxiv.org/html/2407.17686v1#S5",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9691,
+        9729
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9691,
+        9729
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN015",
+      "url": "https://proceedings.mlr.press/v235/he24c.html",
+      "literal": "https://proceedings.mlr.press/v235/he24c.html",
+      "original_utf8_byte_range_zero_based_half_open": [
+        9761,
+        9806
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        9761,
+        9806
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN015",
+      "url": "https://arxiv.org/html/2106.13947v2#S5",
+      "literal": "https://arxiv.org/html/2106.13947v2#S5",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10075,
+        10113
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10075,
+        10113
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN015",
+      "url": "https://arxiv.org/html/1411.1467",
+      "literal": "https://arxiv.org/html/1411.1467",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10323,
+        10355
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10323,
+        10355
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN015",
+      "url": "https://aclanthology.org/2020.tacl-1.11.pdf",
+      "literal": "https://aclanthology.org/2020.tacl-1.11.pdf",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10463,
+        10506
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10463,
+        10506
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN015",
+      "url": "https://arxiv.org/abs/2406.04267",
+      "literal": "https://arxiv.org/abs/2406.04267",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10596,
+        10628
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10596,
+        10628
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN015",
+      "url": "https://arxiv.org/html/2202.12172",
+      "literal": "https://arxiv.org/html/2202.12172",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10701,
+        10734
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10701,
+        10734
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN015",
+      "url": "https://arxiv.org/html/2402.04161v2",
+      "literal": "https://arxiv.org/html/2402.04161v2",
+      "original_utf8_byte_range_zero_based_half_open": [
+        10924,
+        10959
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        10924,
+        10959
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN017",
+      "url": "https://arxiv.org/html/2106.13947v2#S5",
+      "literal": "https://arxiv.org/html/2106.13947v2#S5",
+      "original_utf8_byte_range_zero_based_half_open": [
+        5133,
+        5171
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5133,
+        5171
+      ],
+      "is_link": true
+    },
+    {
+      "source_record_id": "PLN018",
+      "url": "https://arxiv.org/html/2106.13947v2#S5",
+      "literal": "https://arxiv.org/html/2106.13947v2#S5",
+      "original_utf8_byte_range_zero_based_half_open": [
+        5390,
+        5428
+      ],
+      "export_utf8_byte_range_zero_based_half_open": [
+        5390,
+        5428
+      ],
+      "is_link": true
+    }
+  ]
+}
