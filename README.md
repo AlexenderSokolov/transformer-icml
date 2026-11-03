@@ -1,5 +1,11 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 完整同源训练轨迹：经典计数比较基线（2026-11-03）
+
+[新阶段导读](provenance/full_shared_source_training_20261103/RESEARCH_SUMMARY.zh.md)：N 条独立平稳干净轨迹共享同一个未知二阶源，汇集 NM 次转移，测试仅使用受保护末尾对。在 β≥1/M、N≥M 时可达到 Θ((NM)^−1/2)，包括允许比较者读取完整测试词的未知源下界。
+
+这不是注意力优势、新学习原理或换源训练保证。训练输入需 N(M+2) 字符，N=Θ(M) 时为 Θ(M²)。三份完整现存原件与实际措辞纠正均保留，当前没有训练/数值实验；[默认检查](provenance/full_shared_source_training_20261103/PUBLIC_REPLAY.md)只核验来源与依赖身份。
+
 ## 同源训练、换源先验与固定门：适用边界（2026-11-03）
 
 [本阶段中文总览](provenance/source_matched_learning_20261103/RESEARCH_SUMMARY.zh.md)保留三项完成研究及真实纠正：iid 子类的固定门拒绝上界、跨源下界推理的撤回、同一个未知源的训练基线和每个 episode 重新抽源的条件推论。

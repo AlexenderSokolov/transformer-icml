@@ -1,0 +1,7 @@
+# Independent review and clarifications
+
+A separate reviewer checked the two-step minorization, lag-covariance sum, pooled occupancy variance, martingale filtration across independent restarts, Chebyshev and risk constants, zero-mass rows, identical-input endpoint branch, full-test-history iid lower, source reuse/resampling distinction, rate, accounting, and cited primary paper. No substantive mathematical error was found. The earlier source-blind lower-bound wording correction is in REVIEW_CORRECTION.md. This is independent model review, not formal verification or external peer review.
+
+For finite output accuracy η with 0<η≤1, the eight exact pooled counters use O(log(NM+1)) bits and the position index uses O(log M) bits. Final arithmetic uses p=O(log(NM+1)+log(1/η)) working bits; stream output bits or add an O(p)-bit output buffer. The quoted O(p²) long-division bound assumes conventional binary arithmetic. The output rounding η is added to the displayed risk bounds.
+
+The formula labeled (5) in the martingale proof and the separate minimax lower labeled (5) are distinct; regard the latter as “minimax (5)” rather than an equation cross-reference. The two project source paths in the original note are relative to `v10_research`, not to this note's own directory. The prior-art paper's Theorems 3.1 and 3.5 and pooled-count definitions were checked; its fully corrupted rows are whole trajectories, not transition rows.

@@ -1,5 +1,10 @@
 # 资料导航
 
+## 完整同源轨迹训练
+
+- [中文总览](../provenance/full_shared_source_training_20261103/RESEARCH_SUMMARY.zh.md) · [只读公共核验](../provenance/full_shared_source_training_20261103/PUBLIC_REPLAY.md)
+- [完整正式说明](../v10_research/full_shared_source_training_20261103_1054/FULL_TRAJECTORY_BASELINE.md) · [未知来源下界措辞纠正](../v10_research/full_shared_source_training_20261103_1054/REVIEW_CORRECTION.md) · [简短独立审阅与精度/引用澄清](../v10_research/full_shared_source_training_20261103_1054/INDEPENDENT_REVIEW.md)
+
 ## 来源匹配与 episode 训练
 
 - [中文总览](../provenance/source_matched_learning_20261103/RESEARCH_SUMMARY.zh.md) · [公开核验和缺口](../provenance/source_matched_learning_20261103/PUBLIC_REPLAY.md)
