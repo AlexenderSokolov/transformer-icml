@@ -1,0 +1,23 @@
+# Independent proof review: iid half-gate rejection
+
+## Verdict and scope
+
+The probability and risk inequalities are correct for integer M≥8, k≤floor(M/1024), iid Bernoulli(theta) histories with theta∈[1/4,3/4], and protected final two bits. The result applies uniformly over the stated legal attack kernels, including adaptive randomized attacks, and is an iid-subclass observation, not a lower bound or constructive learning theorem for arbitrary order-two sources. This is a proof audit; no test, RNG, sample, model initialization, author-file modification or public write was performed. Source hashes, including exact `NOTE.md` bytes, are bound in `source_binding.sha256`.
+
+## Proof
+
+Let n=floor(M/4). The pairs at indices (0,1),(2,3),...,(2n−2,2n−1) are disjoint, wholly before the protected pair (M,M+1), and their starting indices are all strictly below floor(M/2). Conditioning on the terminal pair u does not change their iid distribution. Each pair equals u with probability theta^(number of ones)(1−theta)^(number of zeros)≥1/16. Hence S|u is Bin(n,p_u), μ=n p_u≥n/16≥M/128. For M≥8, floor(M/4)≥M/8; integrality and off-by-one boundaries hold for odd and even M.
+
+Each edited symbol changes at most two first-half adjacent-pair indicators; as the terminal u is protected, it does not change the row being counted. Thus edited D≥S−2k. If the gate rejects and J=0 then D=0; if J>0, 512D<J≤M, so in both cases D<M/512. Thus S<D+2k<M/512+2k≤M/256≤μ/2. The event inclusion is pathwise for each clean history and every allowed edit, so it remains true for fully adaptive or randomized kernels. Standard binomial lower-tail Chernoff gives P(S<μ/2|u)≤exp(−μ/8)≤exp(−M/1024); averaging over u yields the claimed bound. This does not rely on the attack being independent of the test history or on a fixed selected edit.
+
+On acceptance H=G B+(1−G)F equals B; on rejection |H−B|≤1. The Bernoulli TV triangle inequality implies ||H−theta|−|B−theta||≤1{G=0}, hence each attack's expected loss difference is at most exp(−M/1024). If both suprema are over the *same* attack class, |sup_a L_H(a)−sup_a L_B(a)|≤sup_a|L_H(a)−L_B(a)|, giving the asserted separate-suprema result even if their maximizing attacks differ. This makes no claim that learned models agree on accepted inputs or that approximate gates have no extra error.
+
+For T=clip_[1/4,3/4](M^−1 sum_{i<M}Z_i), clipping is nonexpansive relative to theta in the interval, so |T−theta|≤|M^−1 sum X_i−theta|+k/M pathwise. Jensen and iid Bernoulli variance at most 1/4 yield expected error ≤1/(2sqrt M)+k/M under any legal adaptive attack. This is a test-word iid estimator, not a general order-two learner, and its O(M) scan/accumulator and output precision must be paid. Pair-chain P²=Pi for iid transitions verifies the all-state certificate at beta=1 and hence at critical 1/M.
+
+The introductory wording “includes all statistical-scale budgets” should be read *asymptotically*: for any fixed C, k≤C sqrt M is included in k≤M/1024 only once M≥(1024 C)² (up to integer rounding). It need not include a statistical-scale budget at a particular small M. Likewise “exponentially unlikely” describes the M→∞ regime; exp(−M/1024) is a very loose bound at moderate M.
+
+## Original diagnostic and citations
+
+The retained diagnostic log has all 60 parameter combinations, exact rational parameters and means/thresholds, and float-rendered binomial tail and exponential-bound outputs; its reported final PASS is supported by the retained text. It does **not** retain the exact rational binomial tails or individual summands, which were computed transiently. Some float conversions underflow to 0.0, as `DIAGNOSTIC_NOTES.md` explicitly warns. The first shell-wrapper error was also not separately logged; the note says the Python diagnostic never started during that failed wrapper. Thus the diagnostic's original raw intermediate records are incomplete, and a deterministic replay cannot be described as original contemporaneous exact-tail records. No replay was performed in this audit. Finite numerical checks do not replace the analytic proof.
+
+The cited [Schmidt et al. 2018 paper](https://proceedings.neurips.cc/paper_files/paper/2018/file/f708f064faaf32a43e4d3c784e6af9ea-Paper.pdf) abstract describes an information-theoretic sample-complexity gap in a different model; [Attias, Kontorovich and Mansour 2022](https://jmlr.org/papers/v23/20-1353.html) describes robust-learning generalization including regression. Those cited primary abstracts support the limited prior-art characterization, not a general theorem about this gate. Historical internal CTO/BCJ findings and chronology are referenced from the author's sources rather than re-proven in this audit.

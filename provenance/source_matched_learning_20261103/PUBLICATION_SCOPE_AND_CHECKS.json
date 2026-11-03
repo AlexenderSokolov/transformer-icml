@@ -1,0 +1,104 @@
+{
+  "scope": "All 25 unique extant artifacts in three completed units, including scripts, original logs, later full records, independent LLM reviews, actual cross-source retraction and corrections.",
+  "base_commit": "6e449b50d5b5f1f147475983bef5315a0f50ac2a",
+  "sources": 25,
+  "source_original_bytes": 8788452,
+  "public_changed_files": 0,
+  "public_changed_line_regions": 0,
+  "mathematical_program_numeric_array_gzip_or_correction_body_edits": false,
+  "all_extant_noncache_source_paths_retained": true,
+  "excluded_source_paths": [],
+  "historical_bindings": 26,
+  "binding_status_counts": {
+    "EXACT_SELECTED_SOURCE": 17,
+    "EXACT_INHERITED_PUBLIC_SOURCE": 9
+  },
+  "inherited_scientific_context_files": 9,
+  "retained_arithmetic_report": {
+    "checks": [
+      "Strict UTF-8 JSONL with unique keys, exact schemas, finite integer values, and canonical decimal strings.",
+      "Declared 60-case Cartesian grid, legal parameters, protected disjoint-pair indices, saved mean and threshold constants.",
+      "All retained binomial numerators checked by an exact recurrence independent of the original comb implementation.",
+      "Tail denominator, term sum, rational bound numerator/denominator, and saved cross-products checked using integers.",
+      "All later review embedded sources matched by exact types and values; all independent values and PASS flags checked."
+    ],
+    "completeness": {
+      "declared_later_review_grid_complete": true,
+      "declared_later_source_grid_complete": true,
+      "original_exact_tail_intermediates_recovered": false,
+      "original_failed_wrapper_transcript_recovered": false,
+      "retained_term_arrays_complete_for_strict_cutoff": true
+    },
+    "coverage": {
+      "M_values": [
+        8,
+        64,
+        1024,
+        4096,
+        16384
+      ],
+      "declared_cases": 60,
+      "duplicate_cases": [],
+      "embedded_source_term_values_matched": 1032,
+      "exact_rational_comparisons_checked": 60,
+      "later_review_bound_values_checked": 120,
+      "later_review_cross_products_checked": 120,
+      "later_review_records": 60,
+      "later_review_term_values_checked": 1032,
+      "missing_cases": [],
+      "parameter_legality_and_constant_cases_checked": 60,
+      "rows": [
+        "00",
+        "01",
+        "10",
+        "11"
+      ],
+      "source_records": 60,
+      "source_tail_denominators_checked": 60,
+      "source_tail_sums_checked": 60,
+      "source_term_values_checked": 1032,
+      "theta_numerators_over_4": [
+        1,
+        2,
+        3
+      ]
+    },
+    "inputs": [
+      {
+        "expanded_bytes": 3807328,
+        "expanded_sha256": "d339b7546de48371690fbf7ee20a7db2bbefae7b59f439c0a71820efd7ac7466",
+        "path": "half_gate_iid_identifiability_20261103_1009/comprehensive_records.jsonl",
+        "sha256": "d339b7546de48371690fbf7ee20a7db2bbefae7b59f439c0a71820efd7ac7466",
+        "stored_bytes": 3807328
+      },
+      {
+        "expanded_bytes": 10873542,
+        "expanded_sha256": "0961b13c401b6dff2f769c6c1519527839e6ce9b5d610e713f59b8ee99cb84b6",
+        "path": "half_gate_iid_identifiability_20261103_1009/review_independent_20261103_1010/comprehensive_recheck_records.jsonl.gz",
+        "sha256": "91efdb794a1efd8dc3b2df14e9d842c0bd625271905847818fed4ffba4b47601",
+        "stored_bytes": 4919489
+      }
+    ],
+    "schema": "iid-retained-record-verification-v1",
+    "scope_limits": [
+      "Finite retained-record verification, not a proof over all M, theta, corruption budgets, words, or attacks.",
+      "No samples, original diagnostic reruns, model initializations, original scripts, or new experimental records.",
+      "Later comprehensive and review archives do not recover the original diagnostic missing exact tails or failed-wrapper log.",
+      "No general order-two learning lower bound, novelty, asymptotic theorem, or citation validation is established here.",
+      "This module reads only the two numeric archives; the outer inventory must bind other source, note, review, and log files."
+    ],
+    "status": "PASS"
+  },
+  "review_scope": "Source-bound independent LLM reviews, not external peer review or formal proof. RESOURCE_DETAIL.md is author-only comparator bit-cost accounting outside its independent review.",
+  "missing_records": "Original iid exact tails and term numerators were not retained. Failed wrapper output was not separately archived and Python did not start. Later complete archives are separate computations, not recovery.",
+  "scientific_boundaries": "The iid gate result has explicit parameter/budget bounds. Actual cross-source lower-bound reasoning is retracted. Same unknown-source four-row training baseline and fresh-source prior experiment are distinct; prior depends on k, and its per-N inequality is conditional on clean risk epsilon, not sample impossibility or optimization success.",
+  "cost_and_novelty_limits": "Full training trajectory acquisition costs N(M+3) symbols. The fresh-source result directly integrates accepted Appendix B.3; no new general statistical principle, learning algorithm or novelty certification is claimed.",
+  "historical_status": "Original candidate headers and wording remain alongside later reviews/corrections. All current selected and nine inherited source identities match exactly, without rewrite of expected hashes. Older project recovery limits remain unchanged.",
+  "random_sampling_calls_in_preparation": 0,
+  "model_initializations": 0,
+  "archived_research_program_executions": 0,
+  "native_research_executions": 0,
+  "original_outputs_overwritten": 0,
+  "workflow_changed": false,
+  "existing_manuscript_or_archive_changed": false
+}

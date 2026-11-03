@@ -1,5 +1,12 @@
 # 资料导航
 
+## 来源匹配与 episode 训练
+
+- [中文总览](../provenance/source_matched_learning_20261103/RESEARCH_SUMMARY.zh.md) · [公开核验和缺口](../provenance/source_matched_learning_20261103/PUBLIC_REPLAY.md)
+- [iid 门证明](../v10_research/half_gate_iid_identifiability_20261103_1009/NOTE.md) · [渐近/保存澄清](../v10_research/half_gate_iid_identifiability_20261103_1009/CLARIFICATION.md) · [完整独立审阅](../v10_research/half_gate_iid_identifiability_20261103_1009/review_independent_20261103_1010/REVIEW.md) · [澄清审阅](../v10_research/half_gate_iid_identifiability_20261103_1009/review_independent_20261103_1010/CLARIFICATION_REVIEW.md)
+- [真实跨源撤回及配对审计](../v10_research/matched_slow_source_audit_20261103_1016/PAIRED_SOURCE_SCOPE_AUDIT.md) · [独立审阅](../v10_research/matched_slow_source_audit_20261103_1016/INDEPENDENT_REVIEW.md) · [经验门/add-one 桥梁](../v10_research/matched_slow_source_audit_20261103_1016/REVIEW_CLARIFICATION.md) · [实际证明来源绑定](../v10_research/matched_slow_source_audit_20261103_1016/SOURCE_BINDINGS.md) · [作者资源补充，未独审](../v10_research/matched_slow_source_audit_20261103_1016/RESOURCE_DETAIL.md)
+- [同源基线与换源先验推论](../v10_research/shared_source_vs_fresh_prior_20261103_1031/BASELINE_AND_COROLLARY.md) · [独立审阅及措辞纠正](../v10_research/shared_source_vs_fresh_prior_20261103_1031/INDEPENDENT_REVIEW_AND_CORRECTIONS.md)
+
 ## 浮点与攻击/风险计算边界
 
 - [完整中文导读](../provenance/float_and_attack_boundaries_20261103/RESEARCH_SUMMARY.zh.md) · [安全核验与来源限制](../provenance/float_and_attack_boundaries_20261103/PUBLIC_REPLAY.md)

@@ -1,0 +1,3 @@
+# Source binding clarification
+
+The main.tex hash in the original note binds only the manuscript entry point. The actual Appendix B.3 proof source is `positional_manuscript_consolidated_20261103/sections/proofs_negative.tex`, SHA-256 `c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7`. The positive-gate proof section is `sections/proofs_positive.tex`, SHA-256 `a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88`. The exact B_G versus empirical-gate bridge is directly in PGT001 as cited in REVIEW_CLARIFICATION.md. This additive file does not alter historical source files or the frozen audit.
