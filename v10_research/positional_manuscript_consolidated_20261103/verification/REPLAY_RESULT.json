@@ -1,0 +1,36 @@
+{
+  "status": "PASS_FINITE_DIAGNOSTICS_NOT_PROOF_VERIFICATION",
+  "cases": [
+    {
+      "unit": "ACG001",
+      "exit_code": 0,
+      "sources_sha256": {
+        "check.py": "dee08439d5ba22aef7c02e481ecc0882eea8577e3c2bff68e72676cc7856c861"
+      },
+      "source_files_unchanged": true,
+      "expected_report_semantically_equal": true,
+      "expected_report_sha256": "062e00522a310fc4f70275cbbeb3bf391d6fbe97edaacd18da2974a1ddb17dd0",
+      "replayed_report_sha256": "062e00522a310fc4f70275cbbeb3bf391d6fbe97edaacd18da2974a1ddb17dd0"
+    },
+    {
+      "unit": "PBP001",
+      "exit_code": 0,
+      "sources_sha256": {
+        "check.py": "217286d12b0465e10544ca8c72e367aeb8366708ec0e7694d8d236eab0142fd6"
+      },
+      "source_files_unchanged": true,
+      "expected_report_semantically_equal": true,
+      "expected_report_sha256": "fd8f10b0cbca303800c6eeba306c9c531385735667f117507aae386e64899bf6",
+      "replayed_report_sha256": "fd8f10b0cbca303800c6eeba306c9c531385735667f117507aae386e64899bf6"
+    },
+    {
+      "unit": "FPA001",
+      "exit_code": 0,
+      "sources_sha256": {
+        "program.py": "9892df19071f4c8573f59ad9ca9bdc6f681632f7b37b335df2f906e29d0e51eb",
+        "test_program.py": "275866d62ca40eca16b8b48fcf39d569751c0a54aa3f6f2e6991e991d85cda77"
+      },
+      "source_files_unchanged": true
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "utc": "2026-11-03T04:19:59.685551+00:00",
+  "status": "ROOT_CLEAN_REBUILD_AND_INDEPENDENT_INTEGRATION_REPLAY_PASS",
+  "sources": {
+    "main.tex": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+    "references.bib": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+    "sections/implementation_main.tex": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+    "sections/proofs_approximate.tex": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+    "sections/proofs_finite_horizon.tex": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+    "sections/proofs_implementation.tex": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+    "sections/proofs_negative.tex": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+    "sections/proofs_positive.tex": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+    "sections/proofs_precision.tex": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b"
+  },
+  "source_files_unchanged": true,
+  "core_three_appendices_byte_identical": true,
+  "independent_diagnostics": {
+    "source_bindings_verified": 33,
+    "claim_bindings_verified": 11,
+    "companion_source_bindings_verified": 4,
+    "byte_identical:proofs_positive.tex": {
+      "sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "bytes": 32814
+    },
+    "byte_identical:proofs_negative.tex": {
+      "sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "bytes": 28723
+    },
+    "byte_identical:proofs_finite_horizon.tex": {
+      "sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "bytes": 5620
+    },
+    "latex_reference_checks": {
+      "unique_labels": 164,
+      "references": 189,
+      "cited_keys": 20
+    },
+    "verified_original_export_pairs": [
+      {
+        "path": "v10_research/balanced_joint_finite_cut/BCJ001_HANDOFF.md",
+        "original_sha256": "8b3d2724fcb1cbc93c2833d3de8c222ff3dbec82cde218df26a3a8facde855e0",
+        "public_export_sha256": "863ee4947f74bcbdb7dc725cd8fddab7c3e3643f992dace21d1d565b7daed2d1"
+      },
+      {
+        "path": "v10_research/balanced_joint_finite_cut/BCJ001_accepted_bindings.json",
+        "original_sha256": "034a36cd1d9895bcf411fc7036493546d1eec469970c586f4d56871e6b81bbe9",
+        "public_export_sha256": "7cb57c460d7398364c5c85152e2ae5dda199db18c0d3a0a45c871eaed76ecf6b"
+      },
+      {
+        "path": "v10_research/balanced_joint_finite_cut/BCJ001_independent_full_review.md",
+        "original_sha256": "9cce8092070916078baa9b1cb82dcc9a9d6872b0013568996e4310a9f4c413ef",
+        "public_export_sha256": "1e74c502da8fcda31603fc7fc2fa1229747521c3774da55aaf21c8a29a14f64b"
+      },
+      {
+        "path": "v10_research/binary_full_history_domain/AF001_full_history_domain_classification.md",
+        "original_sha256": "17860bb034c34c388d12ccb83b942dc88fb4bf88ee15c2d7d63df099a230ebd4",
+        "public_export_sha256": "3e15bf53b0de1767c3d53d0ecd3da01af1ffec6a3699dbc562441436a4668ab3"
+      }
+    ],
+    "exact_antecedent:BCJ001": "95d5aac1ee2504955e55c1e82241c8a07d219661e2620c6e083acf5c8701554d",
+    "exact_antecedent:AB001": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d",
+    "finite_upper_pairs": 31073,
+    "finite_lower_large_cases": 39,
+    "direct_bank_cases": 816,
+    "exact_output_cases": 2448,
+    "canonical_fault_readouts": 2460,
+    "scalar_grid_extractions": 2058,
+    "all_token_suffix_cases": 5,
+    "real_radius_pathwise_cases": 13635,
+    "exact_constants": true,
+    "word_collision": true,
+    "status": "PASS",
+    "scope": "Finite diagnostics and exact integration checks, not formal verification or a substitute for full proofs.",
+    "program": {
+      "sha256": "9892df19071f4c8573f59ad9ca9bdc6f681632f7b37b335df2f906e29d0e51eb",
+      "bytes": 5774
+    },
+    "checked_content": {
+      "v10_research/positional_manuscript_consolidated_20261103/main.tex": {
+        "sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+        "bytes": 33339
+      },
+      "v10_research/positional_manuscript_consolidated_20261103/references.bib": {
+        "sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+        "bytes": 7504
+      },
+      "v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex": {
+        "sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+        "bytes": 8871
+      },
+      "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex": {
+        "sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+        "bytes": 11632
+      },
+      "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex": {
+        "sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+        "bytes": 5620
+      },
+      "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex": {
+        "sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+        "bytes": 39142
+      },
+      "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex": {
+        "sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+        "bytes": 28723
+      },
+      "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex": {
+        "sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+        "bytes": 32814
+      },
+      "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex": {
+        "sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+        "bytes": 16103
+      }
+    }
+  },
+  "build_exit_code": 0,
+  "compiler_warnings": [],
+  "pages": 55,
+  "author_pdf_sha256": "6e3a3f2d836fd8e3a3fda0e4305f3dd290f3b3f23fe4113891f787e2c9576764",
+  "rebuilt_pdf_sha256": "73724fde8ca98129f4f308af00ad3c07e1e29db88b80761eef7d3ffffc7d4e98",
+  "pdf_text_per_page_equal": true,
+  "all55_pages_72dpi_rgb_pixels_identical": true,
+  "page_pixel_sha256": [
+    "6d6b0b0533ba44062b91d55e3c368e9c3bd7b3e04aa1456ba8da8c4298c99831",
+    "f2383853d11ca851f7fd857abbbc69e7545b828c223245347718ccd90593273d",
+    "d7d7f31e5681af1b180b6f748fae51e1f759908047d766d52741697641935019",
+    "28a8aaa3dcbcd6fd27f0d83788c12ee1758492639d312ca25338b7dca34ba1e5",
+    "64f48c3cb31fdf032711a5287d695d31e49bb5dc92750dc8106298e651d71bde",
+    "e09b4411f6214dd2e114518487876ead88f867253af8d73b73aa1016c174f38e",
+    "22b009f40c812b5e7baa6f76e5f4549ac8d00d2edbbf1243cb2fa35811998d49",
+    "8e484f112a81031fe7fb423b4800c7c48c5d4f8959600fd57977061e6a44119e",
+    "912bdcaff67f08073578c1582eb80589ab6648c90fd2aae226381b9dea72a151",
+    "e0b44fb22b7cd3e6d3f16c1f7c30e77f95be180f9d4ec862233ee03da2aefbdb",
+    "3e83e41ecfdce0eed9b9dfec6b1bbbbdecc370fff4818e681e1ff0191ab57704",
+    "f162664e56571f41cf36d3641a1a583a69e36e3efb0595f3ca44b5958fe951cd",
+    "70a57bbb696a1123f4dd3dd24b1e85d578db5c6c91b3e26fca962652b9870a2b",
+    "234b5a607cb61f76711e5505e789b08d420557c5cd2394c7d24c97277f212200",
+    "18cdfd051468651272b4cb7632ea650ba93338986b8462083187db311cf0608a",
+    "74e7692b91b4f868de56aea51f1fecf92c7d4410ce478e6fa23412cc38611123",
+    "d425eb8ba91e1d79c4beb8de39376e5b622a6c4bb224a7233cc4b85c876f660c",
+    "11971973739d798ae308ae62ecd54ebf12f04d25291841e615109d2d85e787a3",
+    "eadc5ffbe20a8022e3ab0fc95080abb11e9acb341c01279e5e8a7ed8bb34727b",
+    "0f7090d90eb5d94090c62fe13f4d1438a3e0261bc4b9d5ae956cd157488d5c24",
+    "e44d7a7f7ad5e7ae5d763f0df004210b8983bb4b1fca62e3f0fe96fa6349d820",
+    "ff2e10fe9573a2236cb50d4eec1aaa70521409d8e60242e3d28c805e5210a845",
+    "775640dd3905c18c996867c1e428917a81d3e1dd13a4133b8da49c0a98268394",
+    "81631d3fd97d49088de85cbadc23da205f13b7da3deefe5472d2d5690bb7ed7a",
+    "007665f96d6dce79e23a23ac37e98450b38c2a05c11e6f2d6ee942750433ce6c",
+    "95fe1f658382758fbfe116d57ac19de191df4c9a7d864e77eacf836198b3f384",
+    "832d8727b338efaf00331fac9c29c60a4026d9a2a1428e7a621a3025b0bc9bf2",
+    "5b6c312f9f90dd4078ef6c95ba8f31b14258116d706e0f1678df24cf48d337ce",
+    "2fd3e45f053a06881c2014703040660b85f07b58f10dce417ad07a9af8520acd",
+    "ddd590b0dfa05dcf84988a372216449dffd36d40f32019a1bf7d49c8cfc740b8",
+    "07190996903ff34bdd660e954ec6c1f162de983781b7fde8e0aa3dd97b7fe7d5",
+    "5953fb7c05d117543ba4b73990a92d3f39f3524efc90b2246e232fde6ddae75f",
+    "4bd322a8a5d50d96bc1c88ab2279c38204680f085e3644a26f09e891b2a5d7bf",
+    "5961462f0d732f82eeb194d4468e2c8088005dc20d2f91d242584c26da7a4133",
+    "68d805dfe31383dd1d284c3360856f776896bca0b2da615def671ba5d420bda4",
+    "c5c9b93d0ba28db9d80b8f77de23e22a651cfc4c6529a579cb4c04906a2e9391",
+    "1359b881ef3d7f69e2cbc61cc1bb74611907c9bc9c108176462c0aaa7b903fa9",
+    "452f7a98dd7898d390c9f9aae603461a5f2c0437705b87dd00ee96fa7e53f4e5",
+    "a9e2997734ab2d252a49b313b410fbc5066caa6ffbd9ce52b71d7d19a8731fb0",
+    "37de628e72d0917d9fbdbaac79cfb07d3d59ea4c0dad5d8f2364e5d008e7d305",
+    "e5cccaecc9ea244347fdfbb87f5d5e6252743dde05f6cc3afdf4c520303c1cc2",
+    "d1ec525eca0ddf238509c7100c26b8b5bdb01365e8c41c2bf8fee8f12f710ee5",
+    "311f902d25d55a362f0d5a9693c49271a6f954e8ac1f873833c489b28db3c338",
+    "50d4145d42613061c2c38eda50d1e4b119990bcdc3a8c680118484a6514ce0e4",
+    "0ace60b0f5c90fb8260c94067bf744fbeb9d6ae9a706a80c2417f8598bc197af",
+    "5e6fce1651abc6973e5a98107b5b332139c6e0aebd6541ced06758800284bdef",
+    "e207cb3e75d0abd4b2d360db911938f880660fa722087e298bb5af14dbc2aad5",
+    "27a07e4c901cc56ae68d3a2ba309bee1ffa625b7a009832bd583e687d9c533c4",
+    "532d62c5993c7ea3fca0d03e0488403d53783164fe7c16f3ded8c006b224a493",
+    "fd54b570e828ab267e27d0af1690f2492f0b6de1007a028dde4d7005b57cf0ad",
+    "5d8dd5bbf86746b3504c95662d9cba9e8c38f49f1deb267a3f0ba41a7943f22a",
+    "6f07af87fd13885619ee07b18bf23883752949ffb7ad309c8b9476f02ee0bae8",
+    "05cee19146387c82ebcf0d4bbbfd9e6272bb986f7c6471eb956e63c4510eeb8d",
+    "82f3acc1a37d66d696e0719973a1aca1a5796e947d68f63bbe454e7d242a9550",
+    "3ac58f0de7609f7bb71acf660b61ddbca5aca8e38a398b6775c223c12330659a"
+  ],
+  "limits": "PDF raw bytes may differ through build metadata; all55 page text and rendered pixels independently identical. Universal mathematical proofs reviewed separately; diagnostics do not certify them."
+}

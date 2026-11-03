@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-03",
+  "status": "Consolidation source ledger; independent integration review separate",
+  "claims": [
+    {
+      "claim_labels": [
+        "eq:certificate",
+        "eq:attack",
+        "eq:risk",
+        "eq:finite-factor"
+      ],
+      "manuscript_location": "main.tex, Sections 2-3",
+      "source": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+      "source_sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+      "scope": "Binary order-two, all-state supplied 1/M, arbitrary starts for uppers, stationary lowers; pointwise protected edits, actual-terminal unsquared TV, same map across budgets.",
+      "change": "Retained model and quantifiers; narrative roadmap updated."
+    },
+    {
+      "claim_labels": [
+        "thm:finite-window"
+      ],
+      "manuscript_location": "main.tex; sections/proofs_finite_horizon.tex",
+      "source": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+      "source_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "scope": "All M>=64 and 2<=r<=M+2; exact finite competitive constants 2^-30 and 2^20.",
+      "change": "Complete proof copied byte-for-byte; no theorem extension."
+    },
+    {
+      "claim_labels": [
+        "thm:width",
+        "thm:fraction",
+        "cor:onebit",
+        "prop:lower-consequences"
+      ],
+      "manuscript_location": "main.tex; sections/proofs_negative.tex",
+      "source": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+      "source_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "scope": "Positive lower fraction criterion, fixed-alpha constants, alphabet-size-two minimality at fault-free scan-and-message cut.",
+      "change": "Proof preserved; implementation follow-through added separately."
+    },
+    {
+      "claim_labels": [
+        "lem:occupation",
+        "lem:empirical",
+        "lem:kac",
+        "lem:hitting-scale",
+        "lem:endpoint-tail",
+        "lem:imbalance",
+        "lem:old-inverse",
+        "lem:gate",
+        "prop:finite-upper",
+        "prop:count-oracle"
+      ],
+      "manuscript_location": "sections/proofs_positive.tex",
+      "source": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "source_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "scope": "Complete upper-bearing stochastic and deterministic lemmas including unsupported starts and gated reciprocal occupation.",
+      "change": "Verbatim source copy; imported by new direct-count interface through exact references."
+    },
+    {
+      "claim_labels": [
+        "lem:mixture",
+        "lem:relocation",
+        "prop:finite-lower",
+        "lem:oracle-floor"
+      ],
+      "manuscript_location": "sections/proofs_negative.tex",
+      "source": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+      "source_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "scope": "Occupation-mixture domination, exact histogram/windows, legal source-independent word kernel on every input, same-map transfer, oracle floors.",
+      "change": "Verbatim source copy."
+    },
+    {
+      "claim_labels": [
+        "thm:approximate-gate"
+      ],
+      "manuscript_location": "sections/proofs_approximate.tex",
+      "source": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "source_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "scope": "Sequential clipping, real perturbation radius, integer ceilings, 1072176 coefficient, error xi, all starts.",
+      "change": "Full LaTeX translation, not discovery of approximate-gate phenomenon; four inherited stochastic proofs cross-referenced."
+    },
+    {
+      "claim_labels": [
+        "thm:bank-precision"
+      ],
+      "manuscript_location": "sections/proofs_precision.tex",
+      "source": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "source_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+      "scope": "Fixed twelve nearest-rounded J/C/D coordinates plus exact endpoint; arbitrary randomized decoder; clean Theta(max(M^-1/2,2^-h)), all h>=0.",
+      "change": "Full translated proof including concentration/Pinsker derivations and exact endpoint coupling; no all-encoder or total-network lower."
+    },
+    {
+      "claim_labels": [
+        "thm:finite-realization"
+      ],
+      "manuscript_location": "sections/proofs_implementation.tex",
+      "source": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+      "source_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+      "scope": "Paid singleton masks, direct local features, exact accumulation and nearest rounding, canonical replacement cut, exact finite readout, scalar-grid extraction, complete hybrid/sparse/dense/PURE ledgers.",
+      "change": "Full constructive translation; output precision renamed b to reserve r for window width."
+    },
+    {
+      "claim_labels": [
+        "antecedent-lineage"
+      ],
+      "manuscript_location": "main.tex related work; appendix openings",
+      "source": "resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_theorem.md",
+      "source_sha256": "95d5aac1ee2504955e55c1e82241c8a07d219661e2620c6e083acf5c8701554d",
+      "scope": "Earlier accepted 2-Nov real-error gate and twelve floored triple/half bank precision/noise/edit theorem and finite evaluator.",
+      "change": "Explicit prior chronology; changed coordinates/rounding/fault lifecycle cannot be silently equated."
+    },
+    {
+      "claim_labels": [
+        "external-comparisons-statistics"
+      ],
+      "manuscript_location": "main.tex related work",
+      "source": "v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md",
+      "source_sha256": "e8f264d46c43f914a321eddfb736369de7563a775a6035c95a1187065236e933",
+      "scope": "Known generic robust selectors, constrained risk, dependent robustness, clean Markov prediction, stack/hitting antecedents; scope recorded in READ_SCOPE.",
+      "change": "Model-distinction comparisons only; Bhatt proof-reading caveat excluded; no novelty certification."
+    },
+    {
+      "claim_labels": [
+        "external-comparisons-implementation"
+      ],
+      "manuscript_location": "main.tex related work",
+      "source": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md",
+      "source_sha256": "84c1a5d4fcf9958331c257c0cf23a13c73c5627bb6fb4f1866bc10bf1ecb6bd9",
+      "scope": "Standard selected averaging, shallow Markov representation, attention-probability versus aggregate rounding, empirical learning context.",
+      "change": "No first shallow estimator, neural advantage, training or all-network half-log precision claim."
+    }
+  ]
+}

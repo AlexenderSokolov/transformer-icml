@@ -1,5 +1,13 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 完整整合稿：55 页正文、证明与文献（2026-11-03）
+
+[阅读完整英文 PDF](v10_research/positional_manuscript_consolidated_20261103/main.pdf)：12 页主文、41 页完整证明附录和 2 页参考文献。它把位置观察的未知预算适应代价、近似门控、有限注意力实现及固定统计库精度界整合为一篇匿名研究草稿，不是投稿或新颖性认证。此前 BCJ 的有限统计库结果明确署明来源；同信息流式计数器仍是更强的计算基线。
+
+- [可编辑 TeX、Bib 与复现说明](v10_research/positional_manuscript_consolidated_20261103/README.md) · [逐项结论来源](v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.md)
+- [已有结果的时间顺序与接口协调](v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md) · [中心文献核查及边界](v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md)
+- [本次公开文件与核验范围](provenance/consolidated_manuscript_20261103/PUBLICATION_SCOPE_AND_CHECKS.json)
+
 ## 新阶段：有限位置注意力与统计库精度（2026-11-03）
 
 已接纳 CCH001、ACG001、FPA001 和 PBP001：近似位置统计不必精确恢复门控位；明确计费的有限注意力程序实现该接口；固定十二坐标舍入统计库的干净风险为 Θ(max{M⁻¹ᐟ²,2⁻ʰ})。这不是所有编码器、整网精度或训练性能的下界，也不宣称优于拥有同样信息的流式计数器。

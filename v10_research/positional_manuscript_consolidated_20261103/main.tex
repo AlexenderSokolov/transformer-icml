@@ -1,0 +1,331 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,tabularx}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={Positional Information for Budget-Adaptive Markov Prediction},pdfauthor={},pdfsubject={Budget-adaptive Markov prediction and finite positional statistics}}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\R}{\mathbb R}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\KL}{KL}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
+\title{Positional Information for Budget-Adaptive Markov Prediction}
+\author{}
+\date{3 November 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We study next-symbol prediction from one binary order-two Markov trajectory after an unknown number of symbol edits, with the terminal pair protected. Loss is expected total variation at that actual pair. At a supplied all-state two-step minorization certificate $1/M$, the known-budget risk scale is $g_M(k)=\max\{M^{-1/2},k/M\}$. For every $M\ge64$ and $2\le r\le M+2$, we prove that the optimal competitive factor of one budget-blind map observing exact triple counts and the first and last $r$ symbols has order $1+\log((M+2)/r)$, with explicit universal constants. The upper uses only counts and the suffix; the lower grants both windows and compares the same map across budgets. A whole-word scan can instead supply one exact positional gate bit beyond counts and the protected pair. We then give a perturbation bound for approximate full and half-prefix counts, a fully accounted finite masked-attention/Boolean-ReLU realization, and a matching clean precision bound for its twelve prescribed rounded coordinates. These latter results calibrate a specific observation interface: they do not establish neural superiority over same-information counters, a learning result, or a precision law for an entire network. Complete proofs and the distinctions among the observation models are included.
+\end{abstract}
+
+\section{The observation question}
+A transition histogram records which local patterns occurred but not when they occurred. For a clean homogeneous Markov trajectory, this is consistent with the usual likelihood factorization into transition counts and the initial state. With position-sensitive corruption, however, the observation channel changes. A predictor may need to distinguish an empirical row supported by older visits from one populated almost entirely near the prediction time. The question here is how much positional information is needed when the number of edits is not supplied.
+
+We study one concrete experiment: a binary order-two source, $M$ observed departures, and an unmodified terminal pair. The source obeys an all-state two-step minorization with supplied coefficient $1/M$. An offline kernel may change at most $k$ earlier symbols on every realization. The predictor sees exact triple counts and prescribed boundary windows, but not $k$. Its risk is expected unsquared total variation to the next-symbol distribution at the actual terminal pair. In this experiment, giving $k$ to the predictor makes counts and the protected pair sufficient for the optimal \emph{rate}; no claim of statistical sufficiency is needed.
+
+Our main result characterizes the competitive factor simultaneously for every finite horizon and boundary width: its order is $1+\log((M+2)/r)$ with universal constants. One map at each fixed horizon must serve every budget. The positive lower limiting fraction criterion and logarithmic fixed-fraction price follow at the order level; a separate fixed-fraction proof supplies a stronger explicit lower constant. A separate corollary shows why raw access and computed messages must not be identified: a whole-word scan can produce a single exact gate bit that suffices beyond counts. The scan, exact counters, and protected query are part of that corollary's information model.
+
+The finite implementation is subordinate to this information question. A discontinuous accept/reject gate need not be recovered exactly: uniform approximation of its full and half-prefix statistics controls expected prediction error. An explicit masked-attention program realizes these statistics, while a classical one-pass counter realizes the same information more simply. We keep these computational comparisons separate from the restricted-observation lower bound.
+
+The proof mechanisms are complementary. For the upper bound, a gate retains evidence of visits before a suffix, removing the shortest-return terms from a harmonic convolution. For the lower bound, clean alternatives with small prediction risk are transformed into legally edited null words whose restricted observations match those alternatives. The clean guarantee is used at the same horizon and supplied certificate as the attacked guarantee. Complete arguments appear in the appendices. Sections~\ref{sec:experiment}--\ref{sec:bit} give the statistical comparison, Section~\ref{sec:finite-implementation} calibrates one finite implementation, and Section~\ref{sec:related} states the relationship to prior work.
+
+\section{Experiment and benchmark}\label{sec:experiment}
+All logarithms are natural. Let $M\ge64$ be an integer and
+\[
+ X=(X_0,\ldots,X_{M+1}),\qquad Y_i=(X_i,X_{i+1}),\quad 0\le i\le M.
+\]
+Thus there are $M+2$ raw symbols, $M$ departures, and the terminal pair $Y_M$. A homogeneous order-two transition table $\theta_{ab}(c)$ induces the four-state pair kernel
+$P((a,b),(b,c))=\theta_{ab}(c)$. There is a qualifying stationary law $\Pi$ such that
+\begin{equation}\label{eq:certificate}
+ \Pi P=\Pi,\qquad P^2(u,v)\ge\beta\Pi(v)\quad\text{for all }u,v\in\{00,01,10,11\}.
+\end{equation}
+The condition includes rows outside stationary support. Throughout the main results the supplied certificate is \emph{exactly} $\beta=1/M$; it need not be the source's largest possible coefficient. Neither $\theta$ nor $\Pi$ is revealed. Stationary initialization means $Y_0\sim\Pi$; arbitrary initialization means any hidden law $\mu$, including laws supported outside the stationary support.
+
+\paragraph{Strict edits and actual-terminal loss.}
+For $0\le k\le M$, a legal randomized kernel $K_{M,k}$ maps full binary words to full binary words. On every input $x$, every output $z$ in its support satisfies
+\begin{equation}\label{eq:attack}
+ z_M=x_M,\qquad z_{M+1}=x_{M+1},\qquad
+ \sum_{i=0}^{M-1}\ind\{z_i\ne x_i\}\le k.
+\end{equation}
+The kernel is one fixed map on words, not supplied the true source table, stationary or initial law, or predictor's random seed. It may inspect the whole input and use public parameters and $k$; lower-bound kernels may hardcode a predeclared auxiliary family. No causal or computational restriction is imposed. Its randomness is independent of the predictor's. This formulation specifies the common kernels used in the proofs; source independence alone is not asserted to distinguish all standard contamination models.
+
+For $Z\sim K_{M,k}(X,\cdot)$ and an estimator $A$ based on observation $\cT(Z)$, define
+\begin{equation}\label{eq:risk}
+ R(A;\theta,\mu,K_{M,k})
+ =\E\,\TV\bigl(A(\cT(Z)),\theta_{Y_M}\bigr).
+\end{equation}
+The expectation includes the path and both independent randomizations. The target is the source's next-symbol law at the \emph{actual protected pair}, not an independent query. For binary distributions, TV is absolute error in either coordinate. Risk is unconditional.
+
+\paragraph{Observed information.}
+For $a,b,c\in\{0,1\}$ let
+\[
+ H_{abc}(z)=\sum_{i=0}^{M-1}\ind\{(z_i,z_{i+1},z_{i+2})=(a,b,c)\}.
+\]
+For prescribed $2\le r\le M+2$, the observation is
+\begin{equation}\label{eq:observation}
+ \cT_r(z)=\bigl((H_{abc}(z))_{a,b,c},\ z_0,\ldots,z_{r-1},\
+ z_{M+2-r},\ldots,z_{M+1}\bigr).
+\end{equation}
+The windows may overlap. Counts and raw symbols are exact; neither edit locations nor the clean interior are supplied. In row $u=(a,b)$ use the designated successor $d(u)=1-a$, and define
+\[
+ J'_u=H_{ab0}(Z)+H_{ab1}(Z),\qquad C'_u=H_{ab,d(u)}(Z),\qquad
+ q_u=\theta_{ab}(d(u)).
+\]
+Primes indicate corrupted counts. Unprimed counts are clean analysis variables. At the selected row $u=Y_M$, subscripts are omitted. A ratio $C/J$ is evaluated only when $J>0$.
+
+\paragraph{One family for all budgets.}
+Use the explicitly normalized rate profile
+\begin{equation}\label{eq:benchmark}
+ g_M(k)=\max\{M^{-1/2},k/M\},\qquad 0\le k\le M.
+\end{equation}
+For a prescribed sequence $r_\bullet=(r_M)_{M\ge64}$, let $C_{\rm stat}(r_\bullet)$ be the infimum of constants $C\ge0$ for which one estimator family $(A_M)$, based on $\cT_{r_M}$, satisfies
+\begin{equation}\label{eq:factor}
+ R(A_M;\theta,\Pi,K_{M,k})\le Cg_M(k)
+\end{equation}
+for every $M\ge64$, every $0\le k\le M$, every qualifying source and every legal kernel. Define $C_{\rm all}$ by additionally quantifying over every $\mu$. The family may depend on the prescribed sequence, $M$, $r_M$, and supplied $1/M$, but not on $k$ or hidden source quantities. The infimum need not be attained; an empty admissible set has value $+\infty$.
+
+\paragraph{Finite-horizon competitive factors.}
+Separately from the sequence factors $C$, fix $(M,r)$ and a single
+$k$-blind map $A$ based on $\cT_r$. Define
+\begin{equation}\label{eq:finite-factor}
+ \Gamma_{\rm stat}(A;M,r)
+ =\sup_{\substack{0\le k\le M,\ \theta,\Pi,K_{M,k}\\
+                  \text{qualifying stationary experiments}}}
+ \frac{R(A;\theta,\Pi,K_{M,k})}{g_M(k)},\qquad
+ \Gamma_{\rm stat}(M,r)=\inf_A\Gamma_{\rm stat}(A;M,r).
+\end{equation}
+Define $\Gamma_{\rm all}(A;M,r)$ and $\Gamma_{\rm all}(M,r)$ by also
+allowing every initial law $\mu$. The map may depend on $M,r$ and the
+supplied $1/M$, but the very same map serves all $k$ at that horizon.
+These are finite-horizon infima, not the sequence quantities $C$ above;
+no infimum is assumed attained. Every map has factor at most $\sqrt M$
+because TV is at most one.
+
+The comparison is to a genuine same-information known-budget scale, rather than to an arbitrary denominator. Write $R^{\cT}_{\rm stat}(M,k)$ and $R^{\cT}_{\rm all}(M,k)$ for the respective minimax risks when $k$ is also supplied.
+\begin{proposition}[Known-budget scale]\label{prop:oracle}
+For the full corrupted history, for $\cT_r$, and for counts plus the protected pair,
+\begin{equation}\label{eq:oracle}
+ \frac{g_M(k)}{96}\le R^{\cT}_{\rm stat}(M,k)
+ \le R^{\cT}_{\rm all}(M,k)\le191488g_M(k).
+\end{equation}
+\end{proposition}
+The upper is count-only and allows arbitrary starts; the lower holds even for full histories. Thus a factor $C$ relative to $g$ gives a factor at most $96C$ relative to the corresponding minimax oracle. Conversely, a factor $D$ relative to that oracle gives a factor at most $191488D$ relative to $g$. Proofs are in Lemma~\ref{lem:oracle-floor} and Proposition~\ref{prop:count-oracle}.
+
+For comparison with a more general certificate-dependent profile, define $F_2(M,0,\beta)=0$ and, for $k\ge1$,
+\[
+ F_2(M,k,\beta)=\frac{k}{M}\left[1+\log\left(1+
+ \frac1{k\max\{\sqrt\beta,1/M\}}\right)\right],\qquad
+ H_2=\min\{1,\max\{M^{-1/2},F_2\}\}.
+\]
+At the certificate used here, $\log(1+x)\le x$ gives $g_M(k)\le H_2(M,k,1/M)\le2g_M(k)$. Hence the two normalizations change optimal factors by at most two; all constants below are stated directly for $g$.
+
+\section{Finite-horizon characterization and its consequences}\label{sec:results}
+\begin{theorem}[Simultaneous finite-horizon window price]\label{thm:finite-window}
+For every integer $M\ge64$ and $2\le r\le M+2$, put
+$\ell=1+\log((M+2)/r)$. Then
+\begin{equation}\label{eq:finite-window}
+ 2^{-30}\ell\le\Gamma_{\rm stat}(M,r)
+ \le\Gamma_{\rm all}(M,r)\le2^{20}\ell.
+\end{equation}
+The upper uses only exact counts and the suffix. The lower grants both
+boundary windows. All experiments use the supplied certificate $1/M$.
+\end{theorem}
+The proof in Section~\ref{sec:finite-window-proof} checks the complete finite
+domain of the matched-observation bound. It tests the clean risk of the same
+map before selecting an attacked budget; it is not a logarithmic risk lower
+at each budget. Linear widths have constant factor; for fixed $0<\gamma<1$,
+$r=\max\{2,\lceil M^\gamma\rceil\}$ has order $\log M$, as does $r=2$.
+The constants are conservative, not a claim of sharp practical thresholds.
+
+The next sequence statements are consequences at the order level. Their
+original separate proofs are retained in
+Proposition~\ref{prop:lower-consequences}, including the stronger
+fixed-fraction lower constant.
+
+\begin{theorem}[Exact raw-window criterion]\label{thm:width}
+For every prescribed sequence of integers $2\le r_M\le M+2$,
+\[
+ C_{\rm stat}(r_\bullet)<\infty
+ \quad\Longleftrightarrow\quad C_{\rm all}(r_\bullet)<\infty
+ \quad\Longleftrightarrow\quad
+ \liminf_{M\to\infty}\frac{r_M}{M}>0.
+\]
+No monotonicity of $r_M$ is required. The factor may depend on the prescribed sequence.
+\end{theorem}
+Necessity already uses stationary witnesses. Sufficiency includes unsupported starts. A finite initial set of horizons is harmless because $g_M(k)\ge M^{-1/2}$. The conclusion is about one budget-blind family, not a separate minimax estimator chosen for each $k$.
+
+\begin{theorem}[Price of a fixed fraction]\label{thm:fraction}
+Fix $0<\alpha\le1/4096$ and $r_M=\max\{2,\lceil\alpha M\rceil\}$. Abbreviating the corresponding factors by $C_{\rm stat}(\alpha)$ and $C_{\rm all}(\alpha)$,
+\begin{equation}\label{eq:fraction}
+ 2^{-26}\log\frac1{32\alpha}
+ \le C_{\rm stat}(\alpha)\le C_{\rm all}(\alpha)
+ \le2^{19}\left(1+\log\frac2\alpha\right).
+\end{equation}
+The upper requires only the histogram and suffix; the lower permits both boundary windows.
+\end{theorem}
+Thus the optimal uniform factor has order $\log(1/\alpha)$ as $\alpha\downarrow0$. The upper is uniform in every $M,k$ for each fixed $\alpha$. The lower first sends $M\to\infty$ with $\alpha$ fixed and with a proposed finite factor fixed. This fixed-fraction proof takes limits in the stated order. The finite characterization above requires no limit in either parameter; neither result is a logarithmic risk lower bound at every budget. The constants are explicit but not optimized. Proposition~\ref{prop:lower-consequences} proves Theorems~\ref{thm:width} and~\ref{thm:fraction} from a finite upper bound and a finite matched-observation lower bound.
+
+\subsection{An explicit estimator}
+Set
+\begin{equation}\label{eq:suffix-length}
+ m=\min\{r-2,\lfloor M/2\rfloor\},\qquad N=M-m,\qquad
+ L=1+\log\frac{M}{m+1}.
+\end{equation}
+The last $m+2$ symbols reveal exactly the $m$ departures indexed $M-m,\ldots,M-1$ and the terminal pair. Let $T'_u$ count visits to $u$ at those departures and put $O'_u=J'_u-T'_u$. Then $O'_u$ is the count on indices $0,\ldots,N-1$; it is a direct old-prefix count even though it is computed by subtraction. At the selected row, predict designated probability
+\begin{equation}\label{eq:gate}
+ \widehat q=
+ \begin{cases}
+ C'/J',& J'>0\ \text{and}\ 512O'\ge J',\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+The complementary symbol receives probability $1-\widehat q$. This map does not use $k$ or $\beta$. When $r=2$, $m=0$ and $O'=J'$; the terminal pair is not a departure. Using $r-1$ in place of $r-2$ would overcount the available information.
+
+The finite upper bound at the main certificate, proved in Proposition~\ref{prop:finite-upper}, is
+\begin{equation}\label{eq:finite-upper}
+ R\le\min\left\{1,\frac{131072}{\sqrt M}
+ +(8448L+147744)\frac{k}{M}\right\}
+ \le287264L g_M(k).
+\end{equation}
+If $r_M/M$ is eventually bounded below, then $L$ is eventually bounded. For fixed $\alpha$ as in Theorem~\ref{thm:fraction}, $m+1\ge\alpha M/2$, including the horizons at which $r_M=2$. This proves the two stated upper conclusions without a normalization loss.
+
+\section{Why positions enter the proof}\label{sec:mechanisms}
+\paragraph{Older visits and a truncated harmonic sum.}
+The gate is not an estimate of the budget. It requires a positive fraction of the selected row's visits to precede the observed suffix, not merely one old occurrence. This proportional balance makes gate-switch errors chargeable to the edit budget; one forged old occurrence alone must not unlock a large corrupted suffix count. For a clean $d$-state homogeneous chain and any start, the relevant occupation inequality is
+\begin{equation}\label{eq:reciprocal-main}
+ \E\frac{\ind\{O\ge cJ\}}{J+1}
+ \le(3d^2+2d^3)\frac{1+\log(M/(m+1))}{M},\qquad c>0.
+\end{equation}
+Here $J$ is the number of departures from the actual terminal state and $O$ counts those before time $M-m$. Lemma~\ref{lem:old-inverse} proves this by an exact first-hit convolution and a reciprocal-return identity. In this analytic bound the event can be enlarged to the existence of an old visit. That enlargement removes short backward-time terms; the surviving harmonic range produces the logarithm. The implemented gate still requires proportional balance. Generic finite-state first-hit pointmass estimates have precedents in \citet{NorrisPeresZhai2014}; the required gated convolution is proved explicitly.
+
+A strict $k$-edit outcome changes each relevant count by at most $6k$. A deterministic true-gate/false-gate split therefore reduces the error to a clean empirical comparator, the reciprocal count in \eqref{eq:reciprocal-main}, a weighted imbalance term, and two small-occupation events. The all-state certificate controls the imbalance even from unsupported starts. No conditional independence of departures given the random terminal row or its occupation is assumed. The supplement's row-stack argument instead starts from independent row-wise randomness and then bounds the selected empirical deviation.
+
+\paragraph{Mixture domination and legal observation matching.}
+The lower bound uses stationary alternatives whose designated exit probabilities are
+\[
+ (q_{00},q_{01},q_{10},q_{11})=(a,1/2,1/2,t),\qquad
+ \Pi_a=\frac{(t/a,2t,2t,1)}{1+t/a+4t}.
+\]
+An integral over $a$ creates the logarithmic term. Conditioning on a fixed departure count, one counts marked excursions and holding slots; the resulting occupation-mixture bound controls each proposed output mass. An interior loop relocation preserves the alternative's triple histogram and both of its observed windows, while making it close to a simple two-run null word. These are the alternative's windows, not windows of the unedited null input: changing an observed input-window symbol is legal but must be charged to the budget.
+
+The attack normalizes only nonzero proposal masses, samples once, performs the relocation, and checks the actual Hamming cost and terminal pair. If any check fails, it returns its input unchanged. It is therefore a common source-independent kernel satisfying the budget on every outcome, not only on a high-probability event. In the risk comparison, nonnegative loss is discarded before proposal-mass domination; a signed triangle inequality is used only afterwards. Lemmas~\ref{lem:mixture} and~\ref{lem:relocation} and Proposition~\ref{prop:finite-lower} supply these steps.
+
+For sublinear widths along any subsequence, a budget between the window and horizon scales makes the clean risk negligible relative to the alternative's exit scale while the mixture logarithm diverges. For fixed $\alpha$, a budget proportional to the window yields $\log(1/\alpha)$. The alternatives may depend on this tested budget, but their clean risk is bounded using the same estimator at the same $M$ and supplied $1/M$. This constrained-risk logic is related to general risk-transfer arguments such as \citet{DuchiRuan2021}; the dependent-word construction and legal observation matching are additional obligations.
+
+\section{One computed positional bit}\label{sec:bit}
+Now change the access model. The decoder receives exact triple counts and the protected pair, optionally also the initial pair. An encoder may scan the entire already corrupted word and send one symbol in a fixed finite alphabet $\mathcal A$. It knows $M$ but not $k$, $\beta$, or the source. The message is exact and fault-free after construction. There are no timing, framing, variable-length, or other side channels, and no shared source-dependent information.
+
+\begin{corollary}[Minimum supplemental alphabet]\label{cor:onebit}
+In this scan-and-message model, the minimum $|\mathcal A|$ for a finite uniform factor relative to $g_M(k)$ at supplied $1/M$ is two. This holds for stationary or arbitrary initialization, with or without the initial pair supplied.
+\end{corollary}
+For the upper, put $n=\lfloor M/2\rfloor$, select $u=Y_M$, and send
+\begin{equation}\label{eq:bit}
+ B=\ind\{512J'_1\ge J'\},\qquad
+ J'_1=\sum_{i=0}^{n-1}\ind\{(Z_i,Z_{i+1})=u\}.
+\end{equation}
+The decoder outputs $C'/J'$ if $J'>0$ and $B=1$, and zero otherwise. Equality is accepted. If $J'=0$, the bit equals one, but the explicit positive-denominator test enforces the fallback. Proposition~\ref{prop:finite-upper} gives all-start risk at most
+$\min\{1,2^{17}M^{-1/2}+2^{23}k/M\}$.
+A one-symbol alphabet supplies no information. Theorem~\ref{thm:width} with $r_M=2$ rules it out even when both endpoint pairs are present. This proves minimality without another lower-bound construction.
+
+\paragraph{A finite word illustration, not a risk experiment.}
+For $M=65$, the two words in Table~\ref{tab:words} have the same initial pair $01$, terminal pair $10$, and triple counts, in lexicographic order,
+\[
+ (H_{000},H_{001},H_{010},H_{011},H_{100},H_{101},H_{110},H_{111})
+ =(0,1,1,1,1,0,1,60).
+\]
+At row $10$, $J'=C'=1$. The single departure from that row lies in different halves, so the computed gate differs although $\cT_2$ is identical. The example verifies a combinatorial collision only: it gives no source probabilities, statistical risk comparison, or lower-bound proof.
+\begin{table}[ht]
+\centering
+\caption{An exact $67$-symbol collision. The notation $1^{62}$ means $62$ consecutive ones; the first half contains departures $0$ through $31$.}\label{tab:words}
+\begin{tabular}{lccc}
+\toprule
+Word & $J'_1$ & $B$ & Designated prediction\\
+\midrule
+$0100\,1^{62}\,0$ & $1$ & $1$ & $1$\\
+$0\,1^{62}\,0010$ & $0$ & $0$ & $0$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This is a worst-case supplemental alphabet result, not an entropy or mutual-information statement. The baseline exact counts are uncharged inputs. One computed bit is not one observed raw coordinate and does not remove the whole-word scan. A counter-based implementation is a natural baseline: maintain the eight triple counts and four first-half row counts, retain the endpoint, and select its row after the scan. This uses $O(\log M)$ counter workspace, $O(M)$ counter updates, and at most $O(M\log M)$ naive bit operations. No neural mechanism is needed for this statistical rate guarantee.
+
+\input{sections/implementation_main}
+
+\section{Relation to prior work and scope}\label{sec:related}
+\paragraph{Clean positional prediction.}
+\citet[model (1), Theorem 24, and Section VI.A]{HanJanaWu2023} study stationary prediction at the actual terminal state, including suffix-based estimators and higher-order KL analysis. Theorem 24 gives the binary order-two KL result; the squared-TV result in Section VI.A concerns first-order chains with fixed state count at least three. These are direct antecedents, not independent-query results. Their clean full-trajectory experiment differs from the strict-edit and restricted-observation comparison here. Losses must also be distinguished: a squared-TV upper bound implies an unsquared-TV upper bound by Jensen, but a squared-TV lower bound does not yield its square root as an unsquared-TV lower bound. The spectral-gap-restricted results in that work use an assumption different from the supplied all-state minorization \eqref{eq:certificate}.
+
+\paragraph{Unknown contamination.}
+Budget adaptation is not new in itself. \citet{JainOrlitskyRavindrakumar2022} select among candidate estimates with monotone radii under a simultaneous-validity premise: every valid-index ball must contain the target. Separate expected-risk bounds do not establish that premise. Their selection lemma is pointwise, however, so the random terminal target is not by itself an obstruction: it could be applied realization by realization if all candidate predictions share the protected query and simultaneous accuracy is proved. \citet{BhattEtAl2022} explicitly construct confidence-based adaptation for a mean under strict retrospective replacements of IID observations. \citet{ChenGaoRen2016} give robust testing and estimation under IID Huber mixtures, while \citet{LiuGao2019} exhibit an adaptation obstruction involving both smoothness and contamination. None of these comparisons licenses a general claim that unknown contamination alone prevents adaptation.
+
+\paragraph{Dependence and count-based inference.}
+\citet[Theorem 2]{MaityMitra2025} analyze robust mean estimation for a stationary finite ergodic Markov chain as a tool for temporal-difference learning. Their procedure takes a corruption fraction and mixing time; Bernoulli corruption indicators replace rewards rather than edit the state trajectory. Its invariant-mean target and mixing-dependent confidence bound differ from the actual-terminal word experiment here. Robustness under dependence is therefore an established subject, not itself the proposed contribution.
+
+
+\citet{Lecestre2023} estimate marginal or invariant distributions under dependence; their contamination corollary imposes independence conditions on the replacement channel. \citet{LeskelaDreveton2026} estimate transition matrices from independent parallel trajectories with arbitrarily corrupted whole trajectories. These are not the one-word terminal-target experiment. They also show why the present result should not be summarized as a universal failure of counts under corruption.
+
+Clean transition-count factorization and Markov exchangeability remain valid. The report of \citet{DiaconisFreedman1978} and the finite-stack discussion of \citet{HalberstamHutchcroft2024} provide relevant background on count-compatible paths. For a clean order-two word, likelihood is its initial-pair mass times transition probabilities raised to triple counts. After a position-sensitive kernel $K$, an observed word's probability instead sums these clean probabilities weighted by $K(z\mid x)$. Clean factorization alone does not establish sufficiency in this altered experiment. The specific observation map, not an unrestricted claim about all compact summaries, is essential.
+
+\paragraph{Limits of the conclusions.}
+The lower bounds concern uniform unknown-budget comparison at the critical supplied certificate, with exact counts and fixed boundary windows. They are not full-history impossibility results, every-budget logarithmic minimax penalties, claims about arbitrary interior statistics, or noisy-bit guarantees. The positive results include arbitrary starts; the lower witnesses are stationary. The constants are deliberately conservative. The word example is not empirical validation, and no learned-predictor experiment is asserted.
+
+\paragraph{Attention, counting, and Markov representation.}
+Uniform selected averaging and positional routing are standard operations in RASP \citep{WeissGoldbergYahav2021}. Histogram constructions using uniform mixing also appear in \citet{BehrensEtAl2024}. \citet[Proposition 2.1]{EdelmanEtAl2024} give a two-layer bigram mechanism with previous-token copying; \citet{RajaramanEtAl2024} and \citet{EkboteEtAl2025} give shallow conditional $k$-gram representations under their respective positional and normalization models. These works preclude presenting shallow empirical Markov prediction as a new representation principle. The structural singleton masks used here are an explicitly paid different interface, not a bound for dense-causal-only attention. Their learning results and empirical studies address specified training settings; none is imported to claim that the present gate is learned. \citet{LepageMaryPicard2025} provide further empirical Markov-prediction context, comparing trained models with smoothed count estimates under different transition-matrix distributions.
+
+\paragraph{Precision models.}
+\citet[Proposition 1]{MerrillSabharwal2023} analyze rounding individual attention probabilities. Our finite evaluator instead sums integer indicators exactly and rounds the aggregate once. These operations have different precision requirements: $h$ describes the exported normalized bank, while addresses, accumulators, comparisons, and division use wider exact words. Balancing a statistical error with quantization error is standard estimation methodology; the assertion here is the matched upper and lower for this fixed bank. It is not an optimized-encoder or whole-network precision lower bound.
+
+\paragraph{Earlier project results and scope of this consolidation.}
+The prior finite-bank analysis \citep{BCJ001}, dated 2 November 2026, already proves real-error gate robustness and matching precision, numeric-noise, and source-edit rates for eight floored triple frequencies and four floored half-prefix frequencies, with a finite sequential evaluator. The present direct $J/C/D$ interface adds sequential clipping; its nearest-rounded bank has a different lower proof and a different canonical post-rounding fault port. The implementation makes local copying, Boolean/ReLU features, scalar-grid extraction, and hybrid shape explicit. These are interface and realization refinements of that earlier phenomenon. Separately rounded representations are not automatically equivalent after taking sums or differences, even when their unrounded counts determine each other.
+
+\section{Discussion}\label{sec:discussion}
+The main theorem identifies the price of a specified restriction on positional observations. Exact transition counts with short boundary windows cannot retain the known-budget scale for one map across all budgets at a fixed horizon. A proportional old-visit gate recovers the scale with a fixed positive fraction of the raw trajectory, or with a single computed bit after a whole-word scan. Its stability under approximate statistics makes a finite realization possible without exact recovery of the gate bit.
+
+The complete argument relies on both sides of the information comparison: a gated reciprocal-occupation bound for the upper, and a legal histogram- and boundary-preserving transport for the lower. Neither a generic robust selector nor a generic constrained-risk inequality removes those experiment-specific obligations. The external comparisons given here are not an exhaustive novelty certification.
+
+A same-information classical counter already achieves the statistical guarantee with logarithmic auxiliary storage. The attention construction therefore supplies a transparent realization, not a speed, memory, or statistical advantage over that counter. Learning the positional decision in a specified trainable architecture, or imposing dense causal masks and bounded logits throughout, would require separate assumptions and evidence. No such result is asserted here.
+
+The exact supplemental bit in Section~\ref{sec:bit} is fault-free after construction. Transmission through noisy channels is a separate problem, treated in the project's companion analyses of
+\href{https://github.com/AlexenderSokolov/transformer-icml/blob/670b7fc34ed864716124e9a56876d1baaaed6503/v10_research/resumption_20261103/RESEARCH_SUMMARY.zh.md}{known channels},
+\href{https://github.com/AlexenderSokolov/transformer-icml/blob/670b7fc34ed864716124e9a56876d1baaaed6503/v10_research/channel_uncertainty_stage_20261103/RESEARCH_SUMMARY.zh.md}{uncertain channels}, and
+\href{https://github.com/AlexenderSokolov/transformer-icml/blob/670b7fc34ed864716124e9a56876d1baaaed6503/v10_research/conditional_channel_20261103/CANDIDATE.md}{conditionally bounded noise}; it is not covered by the numeric-bank replacement model of Section~\ref{sec:finite-implementation}. In particular, a numeric coordinate perturbation, a bit error in an encoded message, and a corrupted arithmetic register are different experiments. The companion-work links and the claim-to-source ledger accompany this manuscript rather than adding unrelated coding theorems to its proof sequence.
+
+\clearpage
+\appendix
+\input{sections/proofs_positive}
+\input{sections/proofs_negative}
+\input{sections/proofs_finite_horizon}
+\input{sections/proofs_approximate}
+\input{sections/proofs_precision}
+\input{sections/proofs_implementation}
+\clearpage
+\begingroup
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,0 +1,164 @@
+{
+  "date_utc": "2026-11-03T03:43:13.486209+00:00",
+  "purpose": "Targeted central theorem subsumption audit; not exhaustive novelty certification",
+  "local_inputs": [
+    {
+      "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+      "sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+      "scope": "Model, abstract, central theorem/benchmark and related work; selected prose, not full proof audit"
+    },
+    {
+      "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "scope": "Occupation and clean stack proof opening; full old-visit and pathwise-gate/half-gate sections; imported interfaces"
+    },
+    {
+      "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+      "sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "scope": "Occupation-mixture and relocation proof; matched-observation statement and certificate calculation; not complete negative proof re-audit"
+    },
+    {
+      "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+      "sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "scope": "Bound as central theorem dependency; not read in full in this pass"
+    },
+    {
+      "path": "v10_research/resumption_20261103/prior_art/PRIOR_ART_AUDIT.md",
+      "sha256": "e2b0b88e85d370f5eecf05ca64bf31816bee9609906c164c7ab715ddf8890e3e",
+      "scope": "Read complete existing audit"
+    },
+    {
+      "path": "v10_research/resumption_20261103/reliability_prior_art/AUDIT.md",
+      "sha256": "d25b21f937b592cae4cd2d0a79fbd3caf1ab75e1cc8cb95247e4c3bc5d5d738e",
+      "scope": "Read complete existing audit"
+    },
+    {
+      "path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "scope": "Perturbation gate, imported interfaces and claimed scope; candidate read"
+    },
+    {
+      "path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+      "sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+      "scope": "Complete receipt"
+    },
+    {
+      "path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+      "scope": "Complete candidate including elementary inequalities"
+    },
+    {
+      "path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+      "sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+      "scope": "Complete receipt"
+    },
+    {
+      "path": "v10_research/prior_art/source_corruption_screen.md",
+      "sha256": "31a3a0c741e8018b96aa8859145f74337d7ec6841f39c4b825d35fc4081c3b0f",
+      "scope": "Complete earlier bounded corruption screen"
+    },
+    {
+      "path": "v10_research/prior_art/comparison.md",
+      "sha256": "3fc5fd4552f37a65c225227e2ba2660d77349f59b1f9429a33ec8c3fed46a66c",
+      "scope": "Central bridge target and relevant HJW/resource-boundary entries; tool output truncated, not claimed full read"
+    }
+  ],
+  "primary_sources": [
+    {
+      "id": "jor",
+      "url": "https://arxiv.org/html/2202.05453v1",
+      "read_scope": "Section 2 Lemmas 1–3 and proofs, Section 3"
+    },
+    {
+      "id": "bhatt",
+      "url": "https://proceedings.mlr.press/v162/bhatt22a/bhatt22a.pdf",
+      "read_scope": "Section 2 eq1, Section 6 eq14–20/Theorem6.1; Appendix A.7 eq58–62; bounded verification caveat, not full validation"
+    },
+    {
+      "id": "maity",
+      "url": "https://raw.githubusercontent.com/mlresearch/v258/main/assets/maity25a/maity25a.pdf",
+      "read_scope": "Section4 model and Theorem2, AppendixD opening coupling and corruption-count step; not complete TD proof"
+    },
+    {
+      "id": "lecestre",
+      "url": "https://arxiv.org/html/2307.03666v1",
+      "read_scope": "Section2.4 independence assumptions, Lemma2/Corollary1, related HMM targets and contamination statements"
+    },
+    {
+      "id": "leskela",
+      "url": "https://arxiv.org/html/2506.20325v2",
+      "read_scope": "Sections2–3 Theorems3.1/3.5, Section6.2 proof framework; not all proof"
+    },
+    {
+      "id": "duchi",
+      "url": "https://proceedings.mlr.press/v130/duchi21a/duchi21a.pdf",
+      "read_scope": "Theorem2 and complete Section5.4 proof"
+    },
+    {
+      "id": "hjw",
+      "url": "https://arxiv.org/html/2106.13947v2",
+      "read_scope": "Actual-terminal model, higher-order setup, Theorem24 and proof opening, stationarity discussion; journal-version distinctions inherited"
+    },
+    {
+      "id": "chen_gao_ren",
+      "url": "https://arxiv.org/html/1511.04144v2",
+      "read_scope": "Model and Theorems3.1–3.3; proof3.1 setup"
+    },
+    {
+      "id": "liu_gao",
+      "url": "https://arxiv.org/html/1712.07801v3",
+      "read_scope": "Theorems4.2–4.3, Lemma4.1 construction in6.7; not complete proof audit"
+    },
+    {
+      "id": "halberstam_hutchcroft",
+      "url": "https://arxiv.org/html/2405.20276v1",
+      "read_scope": "Section2.1 stacks and BEST theorem2.2, no full theorem1.3 proof audit"
+    },
+    {
+      "id": "norris_peres_zhai",
+      "url": "https://arxiv.org/pdf/1408.0822",
+      "read_scope": "Proposition1.1 and Lemma2.1, including full elementary proof"
+    }
+  ],
+  "search_queries": [
+    "robust Markov prediction adversarial contamination unknown corruption level terminal state transition counts",
+    "Robust estimation algorithms corruption level theorem",
+    "Minimax M-estimation under Adversarial Contamination adaptation",
+    "Markov prediction contamination minimax robust terminal",
+    "Markov unknown corruption prediction estimation histogram",
+    "adversarial Markov mean estimation dependent robust 2025 2026",
+    "Markov counts robust prediction adversarial",
+    "transition counts contamination Markov",
+    "Markov budget adaptation prediction corruption"
+  ],
+  "access_failures": [
+    {
+      "target": "https://proceedings.mlr.press/v258/maity25a/maity25a.pdf",
+      "result": "web tool inaccessible; retrieved official proceedings GitHub mirror via read-only download"
+    },
+    {
+      "target": "https://raw.githubusercontent.com/mlresearch/v258/main/assets/maity25a/maity25a.pdf",
+      "result": "web unsupported application/octet-stream; direct download and local text extraction succeeded"
+    },
+    {
+      "target": "https://arxiv.org/html/1408.0822v1",
+      "result": "zero readable lines; arXiv PDF succeeded"
+    },
+    {
+      "target": "local HTML conversion",
+      "result": "bs4 unavailable; standard-library tag removal used instead; no package installed"
+    }
+  ],
+  "prior_unclosed_dependencies": [
+    "FOPS original full text not newly obtained; earlier audit remains source for that limitation",
+    "Pradeep2019 and XuRaginsky2016 not re-audited this pass"
+  ],
+  "safety": {
+    "external_writes": false,
+    "contacts": false,
+    "public_uploads": false,
+    "copyright_pdfs_in_deliverable_directory": false
+  },
+  "private_paper_cache": "Outside deliverable directory; do not publish paper downloads or extracted source text",
+  "deliverable_sha256": "e8f264d46c43f914a321eddfb736369de7563a775a6035c95a1187065236e933"
+}

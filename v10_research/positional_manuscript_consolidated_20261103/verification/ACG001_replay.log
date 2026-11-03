@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "arithmetic": "fractions.Fraction exact rational; integer comparisons only",
+  "counts": {
+    "clipping_cases": 18900,
+    "pathwise_cases": 61380,
+    "loss_checks": 273501,
+    "zero_J": 135,
+    "zero_delta": 8187,
+    "fractional_delta": 36996,
+    "gate_equalities": 2511,
+    "accepted": 37398,
+    "rejected": 23982,
+    "false_accept_status": 2622,
+    "false_reject_status": 2010,
+    "ceiling_cases": 3520,
+    "quantization_cases": 76626,
+    "word_edit_pairs": 14344
+  },
+  "limits": "Finite diagnostics only. No source-law probability theorem or all-real proof inferred from enumeration."
+}

@@ -1,0 +1,759 @@
+\section{A finite positional attention realization}\label{sec:implementation-proof}
+
+This section realizes the approximate-statistic interface by an explicitly
+specified finite causal attention/Boolean--ReLU program. Its purpose is to
+verify the observation cut and its costs. A sequential counter on the same
+input is a stronger computational baseline, described in
+Section~\ref{sec:impl-comparisons}. Uniform aggregation of indicators and
+positional copying are established operations
+\citep{WeissGoldbergYahav2021,EdelmanEtAl2024}. Moreover, the earlier
+finite-bank construction \citep{BCJ001} already contains a paid uniform
+positional bank, a real-error half-gate analysis, and a finite sequential
+evaluator. The construction here specifies singleton-copy heads, direct
+$J/C/D$ rails, nearest rounding, a canonical post-rounding replacement cut,
+and an explicit Boolean--ReLU suffix with a separately stated hybrid shape.
+It does not establish a new statistical precision phenomenon or a learned
+mechanism.
+
+\subsection{The finite model and its guarantee}\label{sec:impl-statement}
+
+For this section only, let $M\ge1$ and $h,b\ge0$ be integers. The parameter
+$b$ denotes \emph{output} precision; $r$ remains the raw-window width used
+elsewhere. Set
+\begin{equation}\label{eq:impl-scales}
+ n=M+3,\qquad q=M+2,\qquad Q=2^h,\qquad
+ \ell_a=\left\lceil\log_2(n+1)\right\rceil,\qquad
+ p=\ell_a+b+h+32.
+\end{equation}
+The address width $\ell_a$ is distinct from the logarithmic competitive
+factor $\ell$ in Theorem~\ref{thm:finite-window}. The input consists of the
+$M+2$ binary symbols $Z_0,\ldots,Z_{M+1}$ and one synthetic zero token at
+position $q$. No one-hot representation, endpoint label, local pattern
+feature, or count is supplied without construction.
+
+For $u=(a,c)\in\{0,1\}^2$, define on an arbitrary binary word
+\begin{align}
+ J'_u&=\sum_{i=0}^{M-1}\ind\{(Z_i,Z_{i+1})=u\},\notag\\
+ C'_u&=\sum_{i=0}^{M-1}\ind\{(Z_i,Z_{i+1})=u,\ Z_{i+2}=1-a\},\label{eq:impl-counts}\\
+ D'_u&=\sum_{i=0}^{\lfloor M/2\rfloor-1}
+                \ind\{(Z_i,Z_{i+1})=u\}.\notag
+\end{align}
+An empty sum is zero. A \emph{finite attention head} in the present model
+has explicit public structural masks and exact bounded-word evaluation of
+its allowed-key sum, followed by a specified rounding operation. The
+integer work of that evaluator is charged separately from the number of
+attention layers. Pointwise maps consist of affine maps and ReLUs, with
+exact finitely represented coefficients and explicit live-wire holds. This
+is a hybrid computational model, not unit-cost real arithmetic or a
+finite-precision hardware softmax claim.
+
+\begin{theorem}[Finite realization of the positional bank]\label{thm:finite-realization}
+For each $M,h,b$ above there is a fixed causal finite program, depending
+only on these public parameters, with the following properties.
+\begin{enumerate}
+\item It has two attention layers and three heads in total, with at most
+ two heads in one layer, query/key dimension one, maximum value dimension
+ twelve, and score cap zero. Shared pointwise Boolean--ReLU maps have
+ depth $O(p^2)$ and width $O(p)$ per token. The integer attention-evaluator
+ work is additional and is charged below.
+\item On every binary input word, it acquires the exact pair
+ $(Z_M,Z_{M+1})$ and produces twelve master numerators
+ $B_{u,A}\in\{0,\ldots,Q\}$, $A\in\{J,C,D\}$, satisfying
+ \begin{equation}\label{eq:impl-bank-error}
+ \left|\frac{B_{u,J}}Q-\frac{J'_u}M\right|,
+ \quad\left|\frac{B_{u,C}}Q-\frac{C'_u}M\right|,
+ \quad\left|\frac{B_{u,D}}Q-\frac{D'_u}M\right|
+ \ \le\ 2^{-h-1}.
+ \end{equation}
+ The inequalities are simultaneous and deterministic.
+\item At the specified cut, the only data-dependent downstream inputs
+ are those twelve numerators and the exact endpoint pair. Replace all
+ twelve masters jointly by arbitrary canonical integers
+ $B^*_{u,A}\in\{0,\ldots,Q\}$ satisfying
+ \begin{equation}\label{eq:impl-port}
+ \max_{u,A}\frac{|B^*_{u,A}-B_{u,A}|}{Q}\le\delta.
+ \end{equation}
+ The resulting normalized coordinates have error at most
+ $\eta=2^{-h-1}+\delta$ from \eqref{eq:impl-counts} divided by $M$.
+ Replacements may be correlated and may depend on the observed word.
+ Endpoint bits, metadata, comparators, and subsequent arithmetic remain
+ exact; this is the entire numeric fault port.
+\item The readout selects the actual endpoint row, clips its $C,D$
+ coordinates to $[0,J]$, and applies the gate $J>0$, $512D\ge J$.
+ Its output is a binary probability distribution with denominator $2^b$,
+ within $2^{-b}$ total variation of the corresponding exact rational gate
+ output, including empty rows, gate equality, $h=0$, and $b=0$.
+\item In the experiment of Theorem~\ref{thm:approximate-gate}, with
+ $M\ge64$ and supplied certificate $1/M$, its actual-terminal risk obeys
+ \begin{equation}\label{eq:impl-risk}
+ R\le\min\left\{1,\frac{131072}{\sqrt M}
+       +6433056\frac{k}{M}
+       +1072176\bigl(2^{-h-1}+\delta\bigr)+2^{-b}\right\}.
+ \end{equation}
+ The program is not supplied $k$ or $\delta$.
+\end{enumerate}
+A complete sparse-list/sparse-circuit hybrid realization has conservative
+online bitwork $O(np^4)$ and total online peak storage
+$O(p^4+n\ell_a+np^2)$ bits. A complete dense-mask/dense-circuit alternative
+has online bitwork $O(n^2p^2+np^6)$ and total peak storage
+$O(p^5+n^2+n\ell_a+np^2)$ bits. These are alternative full
+representations, not interchangeable entries in one cost calculation.
+Section~\ref{sec:impl-ledgers} gives construction, input, addressing,
+mask, hold, cleanup, and output costs and a separately charged all-ReLU
+unrolling.
+\end{theorem}
+
+The endpoint in this theorem is computed from the input, not appended as
+an additional observation. The fault restriction in
+\eqref{eq:impl-port} is substantive: off-grid analog errors, corrupted
+endpoint bits, accumulator errors, and comparator faults are not covered.
+The construction and the following proof do not assume that the rounded
+or replaced bank is the count table of any binary word.
+
+\subsection{Causal masks and the twelve direct rails}\label{sec:impl-prefix}
+
+Write $\rho(x)=\max\{x,0\}$. Initially
+\[
+ \operatorname{raw}_t=Z_t\quad(0\le t\le M+1),\qquad
+ \operatorname{raw}_q=0.
+\]
+Public position information provides the query-type flag
+$U_t=\ind\{t=q\}$ and the half flag
+\begin{equation}\label{eq:impl-half-flag}
+ F_t=\ind\{2\le t<2+\lfloor M/2\rfloor\}.
+\end{equation}
+These flags are generated by public integer comparisons. Positions and
+flags cost $O(n\ell_a)$ stored bits and their generation is charged below.
+
+\paragraph{First layer: two singleton copies.}
+Both heads have $Q_t=K_t=0$ and the one-dimensional value
+$\operatorname{raw}_t$. Their permitted-key sets are
+\begin{equation}\label{eq:impl-copy-masks}
+ \mathcal M^{(1)}_t=\begin{cases}\{t-1\},&t\ge1,\\\{t\},&t=0,
+                       \end{cases}
+ \qquad
+ \mathcal M^{(2)}_t=\begin{cases}\{t-2\},&t\ge2,\\\{t\},&t<2.
+                       \end{cases}
+\end{equation}
+Each row is nonempty and causal. Its only normalized attention weight is
+exactly one, so the returned bits, denoted $l_{1,t}$ and $l_{2,t}$,
+are exact copies. Raw bits and both copied bits are retained through paid
+identity holds. In particular,
+\begin{equation}\label{eq:impl-copy-identities}
+ (l_{2,i+2},l_{1,i+2},\operatorname{raw}_{i+2})
+       =(Z_i,Z_{i+1},Z_{i+2})\quad(0\le i<M),\qquad
+ (l_{2,q},l_{1,q})=(Z_M,Z_{M+1}).
+\end{equation}
+The fallback copies at positions zero and one never enter the query's
+statistic. These masks are exact structural exclusions. They are not
+approximations obtained by assigning large scores in a dense causal row.
+
+\paragraph{Local pointwise features.}
+For each $u=(a,c)$ in lexicographic order, form
+\begin{align}
+ R_{t,u}&=\bigl(1-(l_{2,t}\mathbin{\mathrm{XOR}}a)\bigr)
+              \mathbin{\mathrm{AND}}
+              \bigl(1-(l_{1,t}\mathbin{\mathrm{XOR}}c)\bigr),\notag\\
+ V_{t,u,J}&=R_{t,u},\qquad
+ V_{t,u,C}=R_{t,u}\mathbin{\mathrm{AND}}
+                    (\operatorname{raw}_t\mathbin{\mathrm{XOR}}a),
+ \qquad
+ V_{t,u,D}=R_{t,u}\mathbin{\mathrm{AND}}F_t.
+ \label{eq:impl-features}
+\end{align}
+These are twelve binary rails, not an eight-successor histogram with an
+additional reconstructed row sum. On the legal key $t=i+2$, substitution
+in \eqref{eq:impl-copy-identities} gives respectively
+\begin{equation}\label{eq:impl-feature-identities}
+ \ind\{(Z_i,Z_{i+1})=u\},\qquad
+ \ind\{(Z_i,Z_{i+1})=u,\ Z_{i+2}=1-a\},\qquad
+ \ind\{(Z_i,Z_{i+1})=u,\ i<\lfloor M/2\rfloor\}.
+\end{equation}
+Thus the $C$ rail uses precisely the designated successor. Each feature
+uses only its own token's local copies and the public half flag. In
+particular, no endpoint-conditioned query is broadcast to historical
+tokens.
+
+\paragraph{Second layer: one uniform head.}
+This head again has one-dimensional $Q=K=0$, and its value is the
+twelve-dimensional vector in \eqref{eq:impl-features}. Its mask is
+\begin{equation}\label{eq:impl-uniform-mask}
+ \mathcal M^{(3)}_q=\{2,3,\ldots,M+1\},\qquad
+ \mathcal M^{(3)}_t=\{t\}\quad(t\ne q).
+\end{equation}
+The query has exactly $M$ allowed keys. The key $M+1$ includes the last
+legal departure triple, whereas the synthetic query $q$ is excluded.
+The terminal pair is not an additional departure. Every other row uses a
+causal singleton self mask; all those rows are evaluated and their
+outputs are subsequently cleared. This choice is part of the construction
+and is not a dense causal-prefix restriction.
+
+All allowed scores equal zero, so $\exp(0)=1$ and the ideal normalized
+head is a uniform average. There is no approximation of a logarithm,
+exponential, anchor inversion, or content match. For each row with $L$
+allowed keys, sum each binary rail into an \emph{exact} integer
+$S\in\{0,\ldots,L\}$ and return its nearest grid numerator
+\begin{equation}\label{eq:impl-round}
+ \mathcal R_{h,L}(S)
+ =\left\lfloor\frac{2QS+L}{2L}\right\rfloor.
+\end{equation}
+The denominator $L$ is public, obtained from the enumerated mask, and is
+never zero. The floor in this formula will be implemented by the finite
+division circuit below; it is not a primitive real-number operation.
+At $q$, summing \eqref{eq:impl-feature-identities} proves the all-word
+identity
+\begin{equation}\label{eq:impl-exact-sums}
+ (S_{q,u,J},S_{q,u,C},S_{q,u,D})=(J'_u,C'_u,D'_u).
+\end{equation}
+Equation~\eqref{eq:impl-round} rounds $QS/L$ to its nearest integer, with
+ties upward. It maps $0$ to $0$ and $L$ to $Q$, and
+\[
+ \left|\frac{\mathcal R_{h,L}(S)}Q-\frac SL\right|
+ \le\frac1{2Q}.
+\]
+Together with \eqref{eq:impl-exact-sums}, this proves
+\eqref{eq:impl-bank-error} for every binary word, including $M=1$ and
+$h=0$. Counts are accumulated before this single rounding. Repeated
+$h$-grid rounding during accumulation would be a different algorithm.
+
+\subsection{Exact Boolean and ReLU arithmetic}\label{sec:impl-arithmetic}
+
+All words use little-endian bit rails, with enough leading zeros for the
+stated operation. For bits $x,y$, the identities
+\begin{align}
+ x\mathbin{\mathrm{AND}}y&=\rho(x+y-1),&
+ \mathrm{NOT}(x)&=\rho(1-x),\notag\\
+ x\mathbin{\mathrm{XOR}}y&=\rho(x-y)+\rho(y-x),&
+ x\mathbin{\mathrm{OR}}y&=x+y-\rho(x+y-1)
+ \label{eq:impl-boolean}
+\end{align}
+are exact. Each expression is a constant-size affine/ReLU circuit. A
+coordinatewise multiplexer is
+\begin{equation}\label{eq:impl-mux}
+ \operatorname{mux}(s,x,y)
+ = (s\mathbin{\mathrm{AND}}x)
+      \mathbin{\mathrm{OR}}
+   ((\mathrm{NOT}(s))\mathbin{\mathrm{AND}}y).
+\end{equation}
+It equals $x$ when $s=1$ and $y$ when $s=0$. Thus no data-dependent
+selection below is free dynamic addressing.
+
+\paragraph{Addition, subtraction, and comparison.}
+For input bits $x_i,y_i$ and carry $c_i$, a full adder has
+\[
+ v_i=x_i\mathbin{\mathrm{XOR}}y_i,\qquad
+ s_i=v_i\mathbin{\mathrm{XOR}}c_i,\qquad
+ c_{i+1}=(x_i\mathbin{\mathrm{AND}}y_i)
+             \mathbin{\mathrm{OR}}
+            (v_i\mathbin{\mathrm{AND}}c_i).
+\]
+Induction on $i$ gives ordinary binary addition. A ripple chain on
+$w$-bit words uses $O(w)$ depth and active gates, with $O(w)$ live rails.
+Retain the final carry separately. Subtract $y$ from $x$ by adding
+$x+\mathrm{NOT}(y)+1$. Since this integer is $x-y+2^w$, its final carry
+is one exactly when $x\ge y$, and its low $w$ bits are $x-y$ modulo
+$2^w$. Hence the same chain implements unsigned comparison and
+subtraction. Public shifts are explicit fixed wires with zero padding;
+their storage and holds are charged.
+
+\begin{lemma}[Finite restoring division]\label{lem:impl-division}
+For a positive $w$-bit denominator and a $w$-bit dividend, exact quotient
+and remainder can be computed with $w$ fixed public iterations, $O(w^2)$
+active Boolean/ReLU gates and depth, and $O(w)$ live rails. A layered
+representation that holds all live rails at every step has at most
+$O(w^3)$ gates and identity holds.
+\end{lemma}
+\begin{proof}
+Initialize remainder $R=0$. Scan the dividend's bits from most significant
+to least. Given the next bit $x_i$, first form $\widetilde R=2R+x_i$.
+Subtract the denominator $d$ using the preceding circuit. Its final carry
+$c$ says whether $\widetilde R\ge d$. Emit $c$ as the next quotient bit,
+and replace the remainder by
+$\operatorname{mux}(c,\widetilde R-d,\widetilde R)$.
+
+After scanning any prefix $P$ of the dividend, the invariant is
+$P=Q_Pd+R$ with $0\le R<d$, where $Q_P$ is the emitted quotient prefix.
+For the next bit, $2R+x_i<2d$, so one subtraction suffices, proving the
+invariant inductively. Also $R\le P$, and therefore
+$\widetilde R\le2P+x_i$, the next scanned dividend prefix. That prefix
+fits in the original $w$ bits. Thus the shifted remainder fits without an
+uncharged extra magnitude bit. The subtraction's carry is one explicit
+additional rail. At the final iteration the invariant is the desired
+Euclidean division identity. Each of $w$ iterations costs $O(w)$ active
+gates and depth. Holding $O(w)$ live rails through $O(w^2)$ layers gives
+the stated conservative $O(w^3)$ bound.
+\end{proof}
+
+The same sequence is a total Boolean circuit even on denominator zero;
+its arbitrary zero-denominator result will never be used. The readout
+below instead selects a strictly positive denominator before invoking
+this circuit.
+
+\paragraph{Word bounds for the attention evaluator.}
+A feature sum needs $\lceil\log_2(M+1)\rceil$ bits; $h$ bits alone do not
+suffice. The rounding dividend and divisor satisfy
+\begin{equation}\label{eq:impl-prefix-wordbounds}
+ 2QS+L\le 2^{h+1}M+M<2^{h+\ell_a+2},\qquad
+ 2L\le2M<2^{\ell_a+1}.
+\end{equation}
+The same bounds cover singleton rows because $M\ge1$. Use
+$w_{\rm att}=\ell_a+h+16$ bits, together with explicitly retained carries.
+The accumulation, the $(h+1)$-place shift, addition of $L$, and restoring
+division all fit. In particular, the accumulation is exact, and the
+rounding numerator is computed without overflow. This implements
+\eqref{eq:impl-round} entirely by the preceding finite gadgets.
+
+\subsection{Packed and scalar versions of the bank}\label{sec:impl-extraction}
+
+The bank has two possible physical representations, with the same declared
+observation. In a packed version, each master is stored as its $h+1$
+numerator bits. Reading these existing bits and padding them with zeros
+is paid fixed wiring. The high bit is necessary to represent $B=Q$, that
+is, the normalized value one.
+
+In a scalar version, the head returns one exact grid scalar
+$H=B/Q$ per rail. The head's conversion from numerator bits to this
+scalar is the paid dyadic sum
+\[
+ H=\sum_{j=0}^{h}2^{j-h}B_j.
+\]
+It uses $O(h+1)$ terms with $O(h+1)$-bit coefficients. A scalar is
+\emph{not} treated as exposing its bits at no cost.
+
+\begin{lemma}[Paid extraction from a canonical scalar grid]
+\label{lem:impl-extraction}
+For $H\in\{0,1/Q,\ldots,1\}$, the numerator bits of $QH$ are extracted
+exactly by a ReLU circuit of depth and active-gate count $O(h+1)$, with
+$O((h+1)^2)$ conservative holds and $O(h+1)$-bit coefficients and scalar
+words. No floor on arbitrary real inputs is used.
+\end{lemma}
+\begin{proof}
+Initialize $A=QH$ and, in the fixed order $j=h,h-1,\ldots,0$, set
+\begin{equation}\label{eq:impl-extraction}
+ B_j=\rho\bigl(A-(2^j-1)\bigr)-\rho(A-2^j),\qquad
+ A\leftarrow A-2^jB_j.
+\end{equation}
+Initially $A$ is an integer in $[0,Q]$. At the beginning of step $j$ it
+is an integer in $[0,2^{j+1}-1]$. If $A<2^j$, both ReLUs in
+\eqref{eq:impl-extraction} vanish. If $A\ge2^j$, their difference is
+exactly one. The update leaves an integer in $[0,2^j-1]$. Induction gives
+all the bits and final remainder zero. At $H=1$, the top bit $B_h$ is
+one and all remaining bits are zero. At $h=0$, the single step extracts
+either zero or one. Each step has constant active cost; retaining all
+emitted bits through later steps costs $O((h+1)^2)$ identity holds.
+Thresholds, scaling coefficients, and exact scalar values have
+$O(h+1)$-bit descriptions.
+\end{proof}
+
+For the scalar realization the replacement supplies a canonical scalar
+$H^*=B^*/Q$, and extraction occurs \emph{after} replacement. Consequently
+it reveals only the replaced master, not its earlier value. On off-grid
+inputs the recurrence need not produce bits; such inputs are outside the
+fault model. Twelve parallel extractions, their scaling, their scalar
+head decodes, and their holds fit the $p$-based resource bounds below.
+Both representations therefore reach the same padded numerator rails
+by paid operations.
+
+\subsection{Endpoint selection and a total finite readout}
+\label{sec:impl-readout}
+
+Let $(e_0,e_1)=(Z_M,Z_{M+1})$ be the two copied endpoint bits. For each
+$u=(a,c)$ form the selector
+\[
+ s_u=\bigl(1-(e_0\mathbin{\mathrm{XOR}}a)\bigr)
+          \mathbin{\mathrm{AND}}
+       \bigl(1-(e_1\mathbin{\mathrm{XOR}}c)\bigr).
+\]
+Exactly one selector equals one. For each of the three coordinate types,
+start a zero word and traverse the four rows in fixed order, replacing
+it by $\operatorname{mux}(s_u,B^*_{u,A},\text{current word})$.
+The resulting words are the selected canonical numerators. This is a
+constant number of word muxes; it does not use an uncharged lookup indexed
+by the endpoint.
+
+Denote the selected words by $J,C_0,D_0$, and set
+\begin{equation}\label{eq:impl-clip-gate}
+ C=\min\{C_0,J\},\qquad D=\min\{D_0,J\},\qquad
+ G=\ind\{J\ge1\}\mathbin{\mathrm{AND}}\ind\{512D\ge J\}.
+\end{equation}
+Each minimum is implemented by comparison and a mux. Lower clipping is
+automatic from unsigned canonical inputs. Multiply $D$ by $512$ with a
+nine-place shift and compare exactly. Gate equality therefore accepts,
+whereas $J=0$ rejects, irrespective of the second comparison.
+
+Choose the safe denominator and quotient by
+\begin{equation}\label{eq:impl-output}
+ J_{\rm safe}=\operatorname{mux}(G,J,1),\qquad
+ v=\left\lfloor\frac{2^bC}{J_{\rm safe}}\right\rfloor,\qquad
+ m=\operatorname{mux}(G,v,0).
+\end{equation}
+The divisor is always positive. The shift and restoring division implement
+the displayed floor. Even on a rejected row the pre-mux quotient is at
+most $2^{h+b}$. On acceptance, $0\le C\le J$ gives $0\le m\le2^b$.
+On rejection $m=0$. Compute the complement numerator $2^b-m$ by exact
+subtraction and route the designated probability using the endpoint bit:
+\begin{equation}\label{eq:impl-symbol-route}
+ (P_0,P_1)=
+ \begin{cases}
+ (2^b-m,m),&e_0=0,\\
+ (m,2^b-m),&e_0=1.
+ \end{cases}
+\end{equation}
+Again this is a pair of bitwise muxes. The actual output is
+$(P_0/2^b,P_1/2^b)$, always in the binary simplex. A dyadic decoder
+$\sum_{i=0}^b 2^{i-b}(P_a)_i$ uses paid coefficients of $O(b+1)$ bits.
+
+On acceptance, flooring gives
+$0\le C/J-m/2^b<2^{-b}$; on rejection the rational and finite outputs
+both put zero on the designated symbol. Binary total variation is the
+absolute difference of that probability. This proves the output error
+bound, including $b=0$, without a gate-margin assumption.
+
+All readout arithmetic can use $w_{\rm out}=h+b+16$ bits. Indeed,
+$512D\le2^{h+9}$, $2^bC\le2^{h+b}$, the pre-mux quotient is no larger
+than this dividend, and the final probability numerators are at most
+$2^b$. Constants, intermediate carries, and padded words are bounded by
+$2p$ rails. Together with \eqref{eq:impl-prefix-wordbounds}, these bounds
+prove the absence of overflow throughout the construction.
+
+The pointwise feature and suffix maps are shared and executed at
+\emph{all} $n$ tokens. The public flag $U_t$ clears packed bank and endpoint
+inputs at nonquery tokens using muxes. For a scalar bank rail
+$H_t\in[0,1]$, the paid gate $\rho(H_t+U_t-1)$ retains $H_t$ at the
+query and is zero elsewhere. Thus nonquery banks are cleared before the
+cut without extracting the query's bits early. Scalar extraction after
+replacement is executed at all tokens, with zero inputs away from the
+query. The shared suffix still computes on those zero inputs; its work
+is not charged only at $q$. Only the query's output is retained.
+
+\subsection{Isolation of the replacement cut and statistical composition}
+\label{sec:impl-cut}
+
+The master cut is after the twelve query coordinates have been rounded
+and before endpoint-conditioned selection, comparison, division, or any
+readout fanout. Every downstream bank copy originates from the replaced
+master. In the scalar realization it also precedes the extraction in
+Lemma~\ref{lem:impl-extraction}. The endpoint bits and public
+$h,b$, type flags, and layout remain exact. Nonquery banks and endpoint
+rails are cleared by the public query flag.
+
+Before the cut is made available to the suffix, raw-input arrays, lag-copy
+arrays, local-feature arrays, attention accumulators, rounding dividends
+and divisors, intermediate quotients and remainders, and any clean-master
+duplicates are released or overwritten. The suffix has no later attention
+layer and no raw-memory read. Registers retaining $M$ or layout contain
+only public, data-independent values; they do not encode any discarded
+count. An equivalent interface signature is simply
+\[
+ \bigl((B^*_{u,A})_{u,A},\ (e_0,e_1),\ h,b\bigr)
+       \longmapsto (P_0,P_1).
+\]
+There is no original-bank handle in this signature. All initialization,
+clearing, and identity holds are included in the resource accounts.
+
+This is a logical access restriction on the program, not a claim of
+secure physical erasure against a hostile host retaining its own copies.
+The external fault injector is not counted as free neural hardware: its
+construction and runtime are outside the nominal program. The theorem
+charges the program on either side of the stated replacement port, not
+an implementation of the adversary.
+
+\begin{proof}[Completion of the proof of Theorem~\ref{thm:finite-realization}]
+The copied-bit identity \eqref{eq:impl-copy-identities}, the feature
+identity \eqref{eq:impl-feature-identities}, and the exact mask
+\eqref{eq:impl-uniform-mask} prove the twelve all-word sums
+\eqref{eq:impl-exact-sums}. Exact finite division implements their nearest
+rounding, proving \eqref{eq:impl-bank-error}. The replacement triangle
+inequality yields
+\[
+ \left|\frac{B^*_{u,A}}Q-\frac{A'_u}M\right|
+ \le\frac1{2Q}+\delta=\eta
+ \qquad(A\in\{J,C,D\}).
+\]
+For analysis only, multiply the normalized replacement coordinates by
+$M$, obtaining approximate counts with simultaneous error at most
+$e=M\eta$. No such multiplication by $M$ is needed or supplied to the
+actual readout. The canonical $J$ already lies in $[0,Q]$, and
+\eqref{eq:impl-clip-gate}, after the common positive scaling $M/Q$,
+is exactly the sequential clipping and gate of
+Theorem~\ref{thm:approximate-gate}. Both the ratio and the comparison are
+unchanged by this scaling. Inconsistent replacement coordinates are
+permitted because that theorem does not require count realizability.
+
+The protected endpoint equals the actual terminal pair and has been
+acquired by the first layer. Equations~\eqref{eq:impl-output}--
+\eqref{eq:impl-symbol-route} give output error at most $\xi=2^{-b}$.
+Applying Theorem~\ref{thm:approximate-gate} with $e=M\eta$ and that $\xi$
+proves \eqref{eq:impl-risk}. This is the only stochastic step. The
+all-word interface identities need neither a source law nor an attack
+independence assumption. The statistical composition retains the source,
+strict-edit, and observation-measurability assumptions of the approximate
+gate theorem. The finite circuits above give the claimed shape; the next
+subsection verifies their full cost bounds.
+\end{proof}
+
+In particular, if $h,b\ge\lceil\tfrac12\log_2M\rceil$ and
+$\delta=O(M^{-1/2})$, \eqref{eq:impl-risk} is
+$O(M^{-1/2}+k/M)$. Theorem~\ref{thm:bank-precision} calibrates the clean,
+fault-free \emph{fixed bank} obtained at this cut. It does not make the
+present word widths or total program precision necessary. The phrase
+``half-log precision'' can refer only to the fractional precision $h$ of
+these normalized coordinates, not to all arithmetic, weights, addresses,
+input storage, or total memory.
+
+\subsection{Complete resource accounts}\label{sec:impl-ledgers}
+
+All following bounds are constructive asymptotic upper bounds from the
+gate recipes and fixed public schedules, with absolute constants. They
+are not timing measurements or assertions that a conventional softmax
+kernel executes the integer evaluator at unit cost. We count a bit
+operation at the elementary Boolean/arithmetic level and charge the
+selected program representation, addresses, and all holds. Only one
+representation is selected at a time.
+
+\paragraph{Hybrid shape and coefficient descriptions.}
+There are two attention layers: two one-bit copying heads followed by one
+twelve-value uniform head. All scores are zero; query/key dimensions are
+one. A constant number of $O(p)$-word selections, comparisons, and
+restoring divisions gives shared pointwise depth $O(p^2)$ and width
+$O(p)$. The twelve scalar extractions, when present, add only $O(h+1)$
+depth and fit that width. Attention's exact integer evaluator is charged
+as work below and is not hidden in this small hybrid depth.
+
+Individual coefficients use $O(p)$ bits. Boolean coefficients are bounded
+constants, scalar-extraction coefficients use $O(h+1)$ bits, and output
+dyadics use $O(b+1)$ bits. The shared pointwise circuit has $O(p^2)$ active
+gates. Explicitly holding $O(p)$ live rails through all layers gives
+$O(p^3)$ sparse gate/hold records. Their addresses and coefficients cost
+at most $O(p)$ bits each, hence $O(p^4)$ stored sparse parameter bits.
+The dense alternative has $O(p^2)$ layers, $O(p)$ width, and therefore
+$O(p^4)$ coefficient slots including zeros and biases. Storing all
+coefficients costs $O(p^5)$ bits. Constantly many head-projection matrices
+fit these bounds. Finite evaluator code and bounded-word templates cost
+at most $O(p^4)$ bits and are included, not left as an external oracle.
+
+\paragraph{Masks, public positions, and input.}
+Binary input acquisition costs $M+2$ bits. The synthetic zero is public.
+For positions, query type, half flags, row boundaries, and masks, the two
+complete choices are:
+\begin{enumerate}
+\item \emph{Active-key lists.} The first two heads each contain $n$
+ stored keys. The third contains $n-1+M$ keys. Thus the exact number of
+ stored key occurrences is $3n-1+M$. Each key and row boundary uses
+ $O(\ell_a)$ bits, giving $O(n\ell_a)$ mask/list storage, including
+ positions and flags. Enumerating indices, comparisons, routes, and row
+ boundaries costs at most $O(n\ell_a^2)$ bitwork. Each stored route is
+ read and charged during execution. This is explicitly paid sparse
+ structural masking, not free addressing.
+\item \emph{Literal dense masks.} Three $n$-by-$n$ masks cost exactly
+ $3n^2$ mask bits, in addition to $O(n\ell_a)$ metadata. Generating and
+ writing them costs at most $O(n^2\ell_a)$ bitwork. A dense online scan
+ costs at most $O(n^2p)$ even though many permitted-key sets are
+ singletons. Converting active lists to this representation pays these
+ dense generation and storage costs.
+\end{enumerate}
+
+\paragraph{Finite attention arithmetic.}
+There are $O(n)$ allowed key occurrences in the active-list version.
+Each copied value is a bit. For the uniform head, each of twelve rails
+per key uses an $O(p)$-bit addition, and every token performs twelve
+$O(p^2)$ rounding divisions. Thus the fixed-mask finite attention
+evaluation costs $O(np^2)$ elementary bitwork, including copies,
+projections, and clearing. No logarithm, exponential, or source-specific
+cache is generated. Dense-mask scanning adds the cost just stated.
+Controllers and word addresses occupy $O(p)$ bits; the larger complete
+runtime bounds below also allow a full $O(p)$ overhead per addressed
+record lookup.
+
+\paragraph{Two complete online implementations.}
+Sparse execution of all pointwise maps, including every live hold, costs
+$O(np^3)$ elementary bitwork. Combining this with active-list attention,
+then charging up to $O(p)$ per sparse record access, gives the conservative
+unconditional sparse/sparse online bound
+\begin{equation}\label{eq:impl-sparse-work}
+ T_{\rm sparse}=O(np^4).
+\end{equation}
+Its stored parameters and code are $O(p^4)$ bits, its masks and public
+metadata are $O(n\ell_a)$ bits, and its observed input costs $M+2$ bits.
+Dense coefficient counts are not substituted into this runtime.
+
+For the dense-mask/dense-circuit alternative, coefficient-bit operations
+are charged even for zero terms. Dense QKV projections, all-token shared
+maps, mask scans, and word operations give the conservative bound
+\begin{equation}\label{eq:impl-dense-work}
+ T_{\rm dense}=O(n^2p^2+np^6).
+\end{equation}
+Its parameters and code cost $O(p^5)$ bits, with masks and metadata
+$O(n^2+n\ell_a)$ bits. The quadratic term is a safe allowance for this
+dense implementation, not a lower bound or an assertion that the sparse
+implementation performs quadratic work.
+
+\paragraph{Activations, cleanup, and total online peak.}
+With bit rails and packed words, the working activation arrays require
+$O(np)$ bits. A conservative scalar-channel implementation allocates
+$O(p)$ physical bits to each of $O(p)$ live channels per token, hence
+$O(np^2)$ bits. These allowances include Q/K/V arrays, feature residuals,
+lag holds, twelve pre-clearing bank words per token, endpoint holds,
+controller, and arithmetic scratch. Input costs $O(n)$ additional bits;
+output costs $O(b+1)$ packed bits, or $O((b+1)p)$ in the conservative
+scalar allocation. The explicit +1 covers $b=0$ and the numerator $2^b$.
+Initializing, overwriting, and releasing these arrays is charged in the
+online bounds. Only the latest live layer is retained: a training tape or
+all-layer retention would be an additional cost.
+
+Total online peak is the sum of simultaneously resident program and
+parameters, masks and metadata, observed input, QKV and residual arrays,
+banks, controller and scratch, and output. With conservative scalar
+allocation it is bounded by
+\begin{align}
+ S_{\rm sparse}&=O(p^4+n\ell_a+np^2),
+                  \label{eq:impl-sparse-memory}\\
+ S_{\rm dense}&=O(p^5+n^2+n\ell_a+np^2).
+                  \label{eq:impl-dense-memory}
+\end{align}
+The $12(h+1)$ bank bits and two endpoint bits are only the cut payload,
+not these total-memory quantities. At $h$ of order $\tfrac12\log_2M$,
+exact accumulators, addresses, and public horizon words still require
+order $\log M$ bits, and the resident input and paid mask storage remain.
+
+\paragraph{Offline construction and peak storage.}
+Generate the ripple circuits, fixed division schedules, muxes, scalar
+extractions, and all identity holds in $O(p^5)$ conservative bitwork with
+$O(p^4)$ sparse scratch/record storage, and write the $O(p^4)$ sparse
+program bits. Sorting, if used, involves $O(p^3)$ records of $O(p)$ bits
+and $O(\log p)$ comparison overhead, which fits the same work allowance.
+The dense representation additionally writes $O(p^5)$ coefficient bits,
+including zero slots, within $O(p^5)$ bitwork. Add
+$O(n\ell_a^2)$ work for sparse lists or $O(n^2\ell_a)$ work for dense
+masks and their public metadata. Accordingly, safe full construction
+work bounds are
+\begin{equation}\label{eq:impl-offline-work}
+ O(p^5+n\ell_a^2)\quad\text{(sparse)},\qquad
+ O(p^5+n^2\ell_a)\quad\text{(dense)}.
+\end{equation}
+Offline peak includes partially generated stored program and masks plus
+live generation scratch. It is bounded by the corresponding total in
+\eqref{eq:impl-sparse-memory} or \eqref{eq:impl-dense-memory}; retaining
+both construction and execution workspaces adds their sum, of the same
+order. There is no hidden training phase, source-specific compilation,
+or external arithmetic oracle.
+
+\paragraph{A separate all-Boolean/ReLU unrolling.}
+To remove the finite-attention primitive, select one complete
+representation and unroll its fixed public bit-operation schedule. Let
+$T$ be that representation's conservative online bitwork and $S$ its total
+live bit storage, including input, program/constants, masks, and scratch.
+Every conditional data operation is already a Boolean mux; loop lengths
+and permitted routes are public. Replace each elementary bit operation by
+\eqref{eq:impl-boolean}--\eqref{eq:impl-mux}, and at every instruction
+explicitly hold every other live rail. Induction on instructions proves
+that the resulting network state equals the original finite evaluator's
+state. The final dyadic decode is also retained and charged.
+
+This produces a \emph{PURE} Boolean/ReLU network, with no finite-attention
+arithmetic primitive, having the valid bounds
+\begin{align}
+ \text{depth}&=O(T+p),&
+ \text{width}&=O(S+p),\notag\\
+ \text{sparse gates and holds}&=O((T+p)(S+p)),&&\label{eq:impl-pure}\\
+ \text{dense parameter bits}&=O\bigl(p(T+p)(S+p)^2\bigr),&&\notag\\
+ \text{dense bitwork}&=O\bigl(p^2(T+p)(S+p)^2\bigr).&&\notag
+\end{align}
+For example, one may use
+$T=O(np^4)$ and $S=O(p^4+n\ell_a+np^2)$ from the sparse hybrid.
+The sparse-record description can conservatively be written with
+$O(p(T+p)(S+p))$ bits: all relevant indices have $O(p)$ bits, since
+$\log n\le p$ and $\log p\le p$.
+Writing and evaluating the PURE representation incurs its own displayed
+storage and work costs. These large unrolling bounds do not inherit the
+hybrid depth $O(p^2)$ or per-token width $O(p)$. The small hybrid shape
+therefore must never be presented as the shape of the fully expanded
+finite evaluator.
+
+\subsection{Observation comparisons and the classical baseline}
+\label{sec:impl-comparisons}
+
+\paragraph{The count-only obstruction has an information scope.}
+Theorem~\ref{thm:finite-window}, specialized to $r=2$, gives an optimal
+budget-blind competitive factor between
+\[
+ 2^{-30}\left(1+\log\frac{M+2}{2}\right)
+ \quad\text{and}\quad
+ 2^{20}\left(1+\log\frac{M+2}{2}\right)
+\]
+for exact triple counts plus both endpoint pairs, at supplied $1/M$.
+The lower tests the same map across budgets; it is not a logarithmic
+penalty at every individual budget. Counts plus only the protected pair,
+and any rounded versions of those observations, are weaker and inherit
+the obstruction. The present half-position statistics change the
+observation, so that comparison supplies neither an architecture-wide
+lower bound nor a neural depth separation.
+
+\paragraph{A one-pass counter on equal positional information.}
+On the same attacked word, a classical program keeps four exact triples
+of counters $(J_u,C_u,D_u)$ and a two-bit sliding window. When symbol
+$Z_{i+2}$ arrives, the window identifies $u=(Z_i,Z_{i+1})$: increment
+$J_u$, increment $C_u$ if $Z_{i+2}=1-Z_i$, and increment $D_u$ if
+$i<\lfloor M/2\rfloor$. Then shift the two-bit window. After the last
+symbol it contains the protected endpoint. Thus the program computes
+exactly \eqref{eq:impl-counts} in one pass, without knowing $k$.
+
+Its counters, loop index, and sliding window use $O(\log M)$ auxiliary
+bits, with $O(M\log M)$ conservative bitwork for the scan. On the exact
+counters, the same positive-denominator check, gate, and finite output
+division give the risk in \eqref{eq:impl-risk} with $\eta=0$.
+If output precision is charged, the division uses
+$O((\log M+b+1)^2)$ active bitwork and
+$O(\log M+b+1)$ live bits, with additional holds if fully layered.
+Alternatively, round the exact counters once at the end using
+\eqref{eq:impl-round}. This reproduces the attention bank coordinate for
+coordinate, so it is also an equal-bank baseline, not merely an
+asymptotically comparable estimator.
+
+The input models must be matched. If the word is resident, charge the
+same $M+2$ input bits to the counter and the attention program. If a
+read-once input stream is allowed, state that permission explicitly; do
+not compare the counter's auxiliary workspace with the attention
+program's batch total memory. The counter has no attention mask-storage
+cost. Consequently no neural statistical or computational advantage over
+equal positional information is asserted. Sparse masks make the proposed
+realization cheaper than generic dense attention evaluation, but do not
+surpass this sequential baseline.
+
+\paragraph{What changes relative to the earlier finite bank.}
+The construction of \citet{BCJ001} already supplies eight full-triple and
+four half-row normalized coordinates, public half-position flags,
+uniform attention, endpoint acquisition, an isolated finite observation,
+and a paid finite sequential evaluator with optional full unrolling. It
+also already distinguishes fractional bank precision from arithmetic word
+width and allows a final rounded probability. Its approximate-gate,
+quantization, noise, and source-edit results establish the central
+finite-bank precision phenomenon in that earlier interface.
+
+The present implementation makes a different, explicit choice at several
+points. Two singleton heads acquire the lagged bits and endpoint. The
+local Boolean circuit emits four direct $J/C/D$ triples. A zero-score
+head uses exact accumulation followed by one nearest rounding, rather
+than the earlier evaluator's nested floors. The numeric fault is a
+canonical replacement \emph{after} that rounding, rather than an additive
+analog change before a final floor. Bit circuits, scalar-grid extraction,
+restoring division, and dyadic output give the specified two-layer,
+three-head hybrid with growing pointwise depth. Before rounding, the
+full-triple and direct-row representations are linearly interconvertible;
+after separately applied rounding they need not define the same
+statistical experiment. Neither port theorem, especially a port-noise
+lower bound, transfers merely because both banks have twelve labels.
+
+Uniform indicator aggregation, positional copying, and finite arithmetic
+compilation are standard ingredients
+\citep{WeissGoldbergYahav2021,MerrillSabharwal2023,EdelmanEtAl2024,
+RajaramanEtAl2024}. The construction here uses exactly accumulated
+indicators followed by rounding of their aggregate, not rounding each
+attention weight $1/M$ onto the $h$-grid. Results about rounding attention
+probability vectors therefore concern a different numerical operation.
+The explicit singleton structural masks likewise must not be confused
+with dense-causal-only attention or finite-temperature approximations to
+copying. No conclusion is asserted about training, learnability, minimal
+head count, total-precision optimality, architecture-wide lower bounds,
+pure-network depth advantages, empirical performance, or priority for
+these standard mechanisms.

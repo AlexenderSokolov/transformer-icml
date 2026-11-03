@@ -1,0 +1,81 @@
+\section{Approximate statistics and a finite realization}\label{sec:finite-implementation}
+The positional gain is a property of information, not of an attention architecture. We now fix one finite representation of that information and distinguish three questions: stability of the statistical decoder, implementation of the representation, and the precision required by an arbitrary decoder of that fixed representation. Throughout this section $h$ is bank precision and $b$ is output precision; $r$ retains its meaning as raw-window width.
+
+\subsection{A direct full and half-prefix bank}
+For every row $u$, retain the full counts $J'_u,C'_u$ already defined, and let
+\[
+ D'_u=\sum_{i=0}^{\lfloor M/2\rfloor-1}
+       \ind\{(Z_i,Z_{i+1})=u\}.
+\]
+Thus $D'_u/M$ is a subfrequency normalized by $M$, not by the half length. The twelve direct coordinates are
+\begin{equation}\label{eq:direct-bank}
+ (J'_u/M,C'_u/M,D'_u/M)_{u\in\{00,01,10,11\}}.
+\end{equation}
+The decoder additionally receives the exact protected terminal pair. No other historical information is implicit in this bank.
+
+Suppose a computation approximates each unnormalized coordinate within $e\ge0$ on every allowed outcome. The errors may be correlated, real-valued, and inconsistent with any word. Clip the total to $[0,M]$, then the successor and half count to the resulting interval $[0,\bar J_u]$. At the selected row, use
+\begin{equation}\label{eq:approx-gate-main}
+ \widehat q=\begin{cases}
+ \bar C/\bar J,&\bar J>0\text{ and }512\bar D\ge\bar J,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+Sequential clipping preserves coordinate error, including when the total rounds to zero. Theorem~\ref{thm:approximate-gate} proves that any further probability approximation within $\xi$ yields, at the critical certificate,
+\begin{equation}\label{eq:approx-risk-main}
+ R\le\min\left\{1,\frac{131072}{\sqrt M}
+       +6433056\frac{k}{M}+1072176\frac eM+\xi\right\}.
+\end{equation}
+The single decoder is independent of $k,e$, and $\xi$. The appendix also states the general positive-certificate bound.
+
+This stability statement does not require a margin separating the gate from equality. On clean rows of large occupation, an approximate false acceptance or rejection is incompatible with the gap between the analytic balance thresholds $1/1024$ and $1/256$. The remaining gate changes occur on small clean rows and are paid by the actual-terminal occupation tail. The proof handles real error radii with integer ceilings; it does not condition the row departures into independent samples.
+
+\subsection{A paid masked-attention implementation}
+Set $Q=2^h$ with $h\ge0$. Round each coordinate of \eqref{eq:direct-bank} separately to the nearest point of $\{0,1/Q,\ldots,1\}$, with ties upward. Let its integer numerator be $B_i\in\{0,\ldots,Q\}$. The represented endpoint is exact. The allowed numeric fault replaces the twelve master numerators jointly by canonical integers $B_i^*$ in the same range, satisfying
+\[
+ \max_i |B_i^*/Q-B_i/Q|\le\delta.
+\]
+Only those replaced values, the endpoint, and public source-independent format metadata are available downstream. Endpoints, masks, addresses, and the subsequent arithmetic remain exact. This is a post-rounding coordinate replacement model, not arbitrary analog noise or register bit flips.
+
+Theorem~\ref{thm:finite-realization} constructs the bank for every binary word. Two zero-score singleton-mask heads copy the preceding one and two bits. At departure key $i+2$, tokenwise Boolean/ReLU circuits form row, designated-successor, and first-half indicators. A third zero-score head at a synthetic final query averages exactly the $M$ departure keys. Its finite evaluator accumulates integers without intermediate rounding, then rounds once. The same copy layer acquires the terminal pair. All structural masks, positions, local features, storage, and copying are charged.
+
+A finite comparator implements equality acceptance in \eqref{eq:approx-gate-main}; restoring division produces an output with error at most $2^{-b}$. The construction covers empty rows, $h=0$, $b=0$, and numerator $B_i=Q$, whose binary representation requires $h+1$ bits. If the bank is presented as scalars rather than packed bits, explicit finite-grid ReLU extraction is included rather than treating scalar-to-bit conversion as free wiring. The resulting risk is
+\begin{equation}\label{eq:finite-realization-main}
+ R\le\min\left\{1,\frac{131072}{\sqrt M}+6433056\frac{k}{M}
+      +1072176\bigl(2^{-h-1}+\delta\bigr)+2^{-b}\right\}.
+\end{equation}
+The predictor does not receive $k$ or $\delta$. This is a composition of a deterministic all-word construction with \eqref{eq:approx-risk-main}; it is not a training result.
+
+\paragraph{What the small hybrid shape counts.}
+Put $n=M+3$, $\ell_a=\lceil\log_2(n+1)\rceil$, and $p=\ell_a+h+b+32$. The hybrid has two attention layers and three heads in total, value width at most twelve, and shared pointwise Boolean/ReLU depth $O(p^2)$ and width $O(p)$. Its attention primitive is evaluated by paid finite integer arithmetic. Table~\ref{tab:costs} summarizes two complete, alternative implementations; their costs cannot be mixed to select the smallest entry in each row. All-token pointwise execution, holds, zero coefficients in the dense version, input, endpoint acquisition, and clearing are included. Appendix~\ref{sec:implementation-proof} supplies offline construction and the full ledgers.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Conservative finite implementation bounds. Each column is one complete representation. Peak storage uses the conservative scalar allocation and includes simultaneously live code, masks, input, and work arrays.}\label{tab:costs}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Resource & Sparse lists and circuits & Dense masks and circuits\\
+\midrule
+Online bit operations & $O(np^4)$ & $O(n^2p^2+np^6)$\\
+Program and code bits & $O(p^4)$ & $O(p^5)$\\
+Mask and position bits & $O(n\ell_a)$ & $O(n^2+n\ell_a)$\\
+Total peak bits & $O(p^4+n\ell_a+np^2)$ & $O(p^5+n^2+n\ell_a+np^2)$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A pure Boolean/ReLU network can instead unroll the entire bit-operation schedule. With its paid time $T$ and total live storage $S$, the resulting depth is $O(T+p)$, width $O(S+p)$, and sparse gates and holds $O((T+p)(S+p))$. These are not the smaller hybrid depth and width. The bank's $12(h+1)+2$ transmitted bits are likewise not the program's total memory.
+
+\paragraph{The same-information counter comparison.}
+A classical one-pass algorithm maintains four triples of exact $J,C,D$ counters and a two-bit sliding window, updating the half count only before $\lfloor M/2\rfloor$. It retains the final pair and can round once at the end to produce exactly the same bank. Its auxiliary storage is $O(\log M)$ bits and conservative counting work is $O(M\log M)$ bit operations, plus separately paid finite output division. Resident input costs $M+2$ additional bits; a read-once input assumption must be stated if that storage is omitted. This baseline achieves the exact-statistic rate and is computationally simpler than the attention realization. The comparison to count-only prediction isolates the added positional information, not an advantage of neural computation.
+
+\subsection{Precision of the fixed bank}
+Let $R^*(M,h)$ be the clean minimax actual-terminal TV risk when the only observation is the twelve separately nearest-rounded coordinates in \eqref{eq:direct-bank}, the exact endpoint, and source-independent public metadata. The decoder may have arbitrary computation, real-valued probability outputs, and independent randomization. The source class is the same critical-certificate class with arbitrary starts, but no source edits or numeric faults. Theorem~\ref{thm:bank-precision} proves
+\begin{equation}\label{eq:bank-precision-main}
+ \frac{1}{1600000}\max\{M^{-1/2},2^{-h}\}
+ \le R^*(M,h)
+ \le\min\{1,667160\max\{M^{-1/2},2^{-h}\}\}.
+\end{equation}
+Both lower terms hold on the stationary IID Bernoulli subclass. The precision proof constructs two separated parameters whose twelve mean curves share a rounding cell, proves concentration of the actual random bank in that cell, and couples the retained endpoint without asserting independence from the bank. A full-history two-point bound covers the complementary sample-size regime.
+
+Consequently $h=\tfrac12\log_2 M+O(1)$ is the scale needed to retain a fixed multiple of the clean statistical rate for this particular bank. This is not a bound on all encoders with the same total number of bits. It is not a lower bound on the arithmetic precision, addresses, accumulator width, parameters, scores, or total storage of a Transformer. The clean lower also does not assert matching $\delta$ or $k/M$ terms for this new fault port. Equation~\eqref{eq:finite-realization-main} is the proved robust upper.

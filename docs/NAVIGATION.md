@@ -1,5 +1,13 @@
 # 资料导航
 
+## 55 页整合稿入口
+
+- [完整 PDF](../v10_research/positional_manuscript_consolidated_20261103/main.pdf) · [TeX/Bib 与编译说明](../v10_research/positional_manuscript_consolidated_20261103/README.md)
+- [结论到来源](../v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.md) · [实现整合说明](../v10_research/positional_manuscript_consolidated_20261103/IMPLEMENTATION_INTEGRATION_NOTES.md)
+- [历史结果协调](../v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md) · [鲁棒预测文献核查](../v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md) · [注意力与精度文献核查](../v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md)
+- [证书自由推论与半程门控反例](../v10_research/certificate_free_order_two_20261103/RESULT.md) · [研究方向再评估](../v10_research/research_direction_review_20261103/REASSESSMENT.md)
+- [精确公开来源映射](../provenance/consolidated_manuscript_20261103/SOURCE_EXPORT_MAP.json)
+
 ## 有限位置注意力阶段入口
 
 - [中文综述](../v10_research/positional_attention_stage_20261103/RESEARCH_SUMMARY.zh.md) · [研究方向与强基线比较](../v10_research/research_direction_review_20261103/ASSESSMENT.md)

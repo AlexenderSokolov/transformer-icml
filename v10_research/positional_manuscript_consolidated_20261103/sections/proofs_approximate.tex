@@ -1,0 +1,275 @@
+\section{A direct-count approximation interface}
+\label{sec:approximate-proofs}
+
+This section changes the representation of the half-gate statistics, not
+its statistical mechanism.  An earlier twelve-coordinate construction
+already established the real-error half-gate argument and the finite-bank
+precision, noise, and source-edit phenomenon \citep{BCJ001}.  Here the supplied
+coordinates directly approximate $J,C,D$, rather than reconstructing $J$
+from two nonnegative successor coordinates.  Sequential clipping makes
+this changed interface legal.  In particular, the result is not a claim
+that exact recovery of a discontinuous gate bit is necessary, nor a new
+precision principle.
+
+\subsection{Statement and clipping}
+
+For every row $u=(a,b)$, retain $d(u)=1-a$, and define the clean counts
+\begin{align}
+ J_u&=\sum_{i=0}^{M-1}\ind\{Y_i=u\},&
+ C_u&=\sum_{i=0}^{M-1}\ind\{Y_i=u,\ X_{i+2}=d(u)\},
+ \label{eq:a-full-counts}\\
+ D_u&=\sum_{i=0}^{\lfloor M/2\rfloor-1}\ind\{Y_i=u\}.
+ \label{eq:a-half-count}
+\end{align}
+Thus $D$ denotes a first-half departure count, always normalized by $M$
+when used as a frequency.  Primed counts are evaluated on the corrupted
+word $Z$.  At the actual protected row $u=Y_M$, omit the subscript and
+write $q=\theta_u(d(u))$.  The protected pair makes the selected row the
+same for the clean and corrupted words.
+
+For real $x$ and $a\le b$, write
+$\operatorname{clip}(x;a,b)=\min\{b,\max\{a,x\}\}$.
+Suppose an observation-measurable computation supplies, for every row,
+real values $\widetilde J_u,\widetilde C_u,\widetilde D_u$.  Its only
+accuracy premise is the simultaneous pathwise bound
+\begin{equation}\label{eq:a-stat-error}
+ \max_u\max\{
+ |\widetilde J_u-J'_u|,
+ |\widetilde C_u-C'_u|,
+ |\widetilde D_u-D'_u|\}\le e,
+ \qquad e\ge0.
+\end{equation}
+This must hold on every allowed word and for every outcome of the
+computation's independent random coins.  The computation has no access
+to the clean word or hidden source parameters.  Its errors may be
+dependent across coordinates and may depend on the observed word.
+The number $e$ is a proved error bound, not an input required by the
+decoder.  Clip sequentially, using the already clipped first coordinate:
+\begin{equation}\label{eq:a-sequential-clip}
+ \overline J_u=\operatorname{clip}(\widetilde J_u;0,M),\qquad
+ \overline C_u=\operatorname{clip}(\widetilde C_u;0,\overline J_u),\qquad
+ \overline D_u=\operatorname{clip}(\widetilde D_u;0,\overline J_u).
+\end{equation}
+The approximate half-gate returns designated probability
+\begin{equation}\label{eq:a-gate}
+ \widehat q=
+ \begin{cases}
+ \overline C/\overline J,
+       &\overline J>0\ \text{and}\ 512\overline D\ge\overline J,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+Equality accepts.  A final observation-measurable probability
+$\widehat q_{\rm out}\in[0,1]$ with
+$|\widehat q_{\rm out}-\widehat q|\le\xi$, $\xi\ge0$, is also allowed.
+The complementary symbol receives probability $1-\widehat q_{\rm out}$.
+
+\begin{theorem}[Approximate direct half-gate statistics]
+\label{thm:approximate-gate}
+For every integer $M\ge64$, every integer $0\le k\le M$, every homogeneous
+binary order-two source with an all-state certificate
+$P^2(u,v)\ge\beta\Pi(v)$, $\beta>0$, every initial law, and every legal
+source-independent edit kernel in \eqref{eq:attack}, the decoder
+\eqref{eq:a-sequential-clip}--\eqref{eq:a-gate}, with the pathwise premise
+\eqref{eq:a-stat-error}, has unsquared total-variation risk
+\begin{equation}\label{eq:a-risk-general}
+ R\le\min\left\{1,
+ \frac{65536}{\sqrt M}+\frac{65536}{M\sqrt\beta}
+ +1072176\frac{6k+e}{M}+\xi\right\}.
+\end{equation}
+The same decoder works simultaneously for all these parameters without
+knowing $k,\beta$, or $e$.  At the supplied certificate $\beta=1/M$,
+\begin{equation}\label{eq:a-risk-critical}
+ R\le\min\left\{1,
+ \frac{131072}{\sqrt M}+6433056\frac{k}{M}
+ +1072176\frac eM+\xi\right\}.
+\end{equation}
+The edit kernel does not observe the predictor's random seed, and the
+result permits arbitrary independent randomization satisfying the
+pathwise accuracy premise.
+\end{theorem}
+
+\begin{lemma}[Clipping with a perturbed upper endpoint]
+\label{lem:a-clipping}
+Let $0\le c\le j\le M$ and
+$|\widetilde j-j|,|\widetilde c-c|\le e$.
+Set $\overline j=\operatorname{clip}(\widetilde j;0,M)$ and
+$\overline c=\operatorname{clip}(\widetilde c;0,\overline j)$.
+Then $|\overline j-j|\le e$ and $|\overline c-c|\le e$.
+The same statement holds with $c$ replaced by any $d\in[0,j]$.
+\end{lemma}
+\begin{proof}
+Projection onto $[0,M]$ does not increase distance to $j$.
+For the second coordinate,
+$\overline c\le\max\{\widetilde c,0\}\le c+e$.
+For its lower bound, if $\widetilde c<0$, then $c\le e$, so
+$\overline c=0\ge c-e$.  If
+$0\le\widetilde c\le\overline j$, clipping retains
+$\widetilde c\ge c-e$.  If $\widetilde c>\overline j$, then
+$\overline c=\overline j\ge j-e\ge c-e$.
+These cases exhaust the possibilities, including $\overline j=0$;
+no clipped coordinate is required to be integer.
+\end{proof}
+
+\subsection{Complete pathwise perturbation argument}
+
+One symbol edit affects at most three departure triples.  Changing a
+triple has histogram $\ell_1$ cost at most two, so each full-count
+coordinate changes by at most $6k$.  Restricting to the first half does
+not increase this bound.  Adjacent edits and triples crossing the split
+are covered by the union bound; their affected triples are not assumed
+disjoint.  Lemma~\ref{lem:a-clipping} therefore gives, on every edit and
+computation outcome,
+\begin{equation}\label{eq:a-clean-errors}
+ |\overline J-J|,
+ |\overline C-C|,
+ |\overline D-D|\le\Delta:=6k+e.
+\end{equation}
+The perturbation radius $\Delta$ may be an arbitrarily small noninteger.
+Define the events
+\[
+ G=\{\overline J>0,\ 512\overline D\ge\overline J\},\qquad
+ H=\{D\ge J/1024\},\qquad
+ B=\{J>0,\ D<J/256\}.
+\]
+Both $C/J$, where defined, and the accepted clipped ratio belong to
+$[0,1]$.
+
+On $G\cap H\cap\{J>0\}$, we claim
+\begin{equation}\label{eq:a-ratio}
+ \left|\frac{\overline C}{\overline J}-q\right|
+ \le\left|\frac CJ-q\right|+\frac{8\Delta}{J+1}.
+\end{equation}
+If $\Delta=0$, the ratios coincide.  If $\Delta>0$ and $J\ge2\Delta$,
+then $\overline J\ge J/2$, and subtracting ratios gives
+\[
+ \left|\frac{\overline C}{\overline J}-\frac CJ\right|
+ \le\frac{|\overline C-C|}{\overline J}
+       +\frac{C|J-\overline J|}{J\overline J}
+ \le\frac{4\Delta}{J}
+ \le\frac{8\Delta}{J+1},
+\]
+where the last step uses the integer inequality $J\ge1$.
+If $0<J<2\Delta$, then $\Delta>J/2$ and
+$8\Delta/(J+1)\ge1$, so the unit bound on the ratio difference suffices.
+This proves \eqref{eq:a-ratio} for all real $\Delta\ge0$.
+
+On $G\cap H^c$, acceptance and \eqref{eq:a-clean-errors} imply
+\[
+ D+\Delta\ge\overline D
+ \ge\frac{\overline J}{512}\ge\frac{J-\Delta}{512},
+ \qquad D<\frac J{1024}.
+\]
+Combining them yields $J<1026\Delta$.
+On $G^c\cap B^c\cap\{J>0\}$, if $\overline J=0$ then
+$J\le\Delta$.  Otherwise the strict rejection inequality and
+$D\ge J/256$ give
+\[
+ \frac J{256}-\Delta
+ \le\overline D<\frac{\overline J}{512}
+ \le\frac{J+\Delta}{512},
+\]
+and hence $J<513\Delta$.  For $\Delta=0$, neither false-status case
+with $J>0$ is possible.  Rejection on $B$ has loss exactly $q$.
+
+The occupation lemma has an integer threshold, so introduce
+\begin{equation}\label{eq:a-ceilings}
+ w_1=\max\{1,\lceil1026\Delta\rceil\},\qquad
+ w_2=\max\{1,\lceil513\Delta\rceil\}.
+\end{equation}
+They cover the strict false-status inequalities and $J=0$.
+In the separate $\overline J=0$, $J>0$ case, $J\le\Delta$ forces
+$\Delta>0$, and then $J<513\Delta$ as required.
+For every $\Delta\ge0$,
+$w_1+w_2\le1539\Delta+2$, including $\Delta=0$.
+The preceding cases, bounding any remaining loss by one, prove the
+pointwise reduction
+\begin{equation}\label{eq:a-pathwise}
+ \begin{split}
+ |\widehat q-q|\le{}&
+ \ind\{J>0\}\left|\frac CJ-q\right|
+ +8\Delta\frac{\ind_H}{J+1}+q\ind_B\\
+ &+\ind\{J<w_1\}+\ind\{J<w_2\}.
+ \end{split}
+\end{equation}
+The ratio $C/J$ is evaluated only when $J>0$.  At $J=0$ the tail
+indicators cover the loss without defining that ratio.  All right-hand
+terms are nonnegative.  In particular, no consistency assumption that
+the approximate coordinates are counts of a word is used, and no exact
+agreement with the corrupted word's gate bit is asserted.
+
+\subsection{Averaging and normalized precision}
+
+\begin{proof}[Proof of Theorem~\ref{thm:approximate-gate}]
+The four stochastic inputs have complete proofs in
+Section~\ref{sec:positive-proofs}.  With $D=J_{1,Y_M}$, they are precisely
+\begin{align*}
+ \Prb(J<w)&\le\min\{1,16w/(M+1)\}
+          &&\text{for integer }w\ge1
+          &&\text{(Lemma~\ref{lem:occupation})},\\
+ \E\!\left[\ind\{J>0\}\left|C/J-q\right|\right]
+      &\le512/\sqrt{M+1}
+          &&&&\text{(Lemma~\ref{lem:empirical})},\\
+ \E[q\ind_B]&\le65536/(M\sqrt\beta)
+          &&&&\text{(Lemma~\ref{lem:imbalance})},\\
+ \E[\ind_H/(J+1)]&\le130944/M
+          &&&&\text{(\eqref{eq:p-half-inverse} in
+                    Proposition~\ref{prop:finite-upper})}.
+\end{align*}
+In particular these inputs hold for arbitrary starts, including starts
+outside stationary support.  They require neither endpoint-conditioned
+independent departures nor independence of the perturbation errors.
+Apply them to \eqref{eq:a-pathwise}, then use \eqref{eq:a-ceilings}:
+\[
+ \begin{split}
+ \E|\widehat q-q|\le{}&
+ \frac{512}{\sqrt{M+1}}+\frac{65536}{M\sqrt\beta}
+ +\frac{8\cdot130944\Delta}{M}
+ +\frac{16(1539\Delta+2)}{M+1}\\
+ \le{}&\frac{65536}{\sqrt M}+\frac{65536}{M\sqrt\beta}
+       +\frac{1072176\Delta}{M}.
+ \end{split}
+\]
+Here
+\[
+ 8\cdot130944+16(1026+513)=1072176,\qquad
+ \frac{512}{\sqrt{M+1}}+\frac{32}{M+1}
+ \le\frac{65536}{\sqrt M}.
+\]
+The final output error contributes at most $\xi$ by the triangle
+inequality.  A legal binary probability has loss at most one.
+Substitute $\Delta=6k+e$ to prove \eqref{eq:a-risk-general};
+then $\beta=1/M$ proves \eqref{eq:a-risk-critical}.
+The proof is pointwise before averaging over all permissible
+randomizations, which proves the stated simultaneous quantifiers.
+\end{proof}
+
+For a nonnegative integer $h$, let $Q=2^h$ and separately round each
+of the twelve normalized primed statistics
+$J'_u/M,C'_u/M,D'_u/M$ to its nearest point of
+$\{0,1/Q,\ldots,1\}$, with any fixed tie rule.  Multiplication by $M$
+gives approximations satisfying $e\le M/(2Q)$.  Thus
+\eqref{eq:a-risk-critical} gives the explicit rounded-bank upper bound
+\begin{equation}\label{eq:a-rounded-risk}
+ R\le\min\left\{1,
+ \frac{131072}{\sqrt M}+6433056\frac kM+\frac{536088}{Q}+\xi
+ \right\}.
+\end{equation}
+Consequently $h\ge\lceil\tfrac12\log_2 M\rceil$ and
+$\xi\le M^{-1/2}$ suffice for a constant multiple of $g_M(k)$,
+uniformly in the unknown budget.  If a separate output stage has error
+at most $2^{-b}$, its contribution is simply $\xi=2^{-b}$; the output
+precision $b$ is distinct from the bank precision $h$ and the raw-window
+width $r$.
+
+For known $M$, a straightforward integer-numerator representation of
+this bank uses at most $12(h+1)$ bits, plus the two exact protected
+endpoint bits.  The extra numerator bit permits the grid value one.
+This is a representation statement, not a streaming algorithm with
+that workspace: rounding after each update can accumulate error.
+Nor does it prove that all twelve coordinates are necessary.
+Raw input storage, exact prefix selection, addressing, accumulation,
+pair/triple feature construction, division, output precision, weights,
+depth, attention work, and training are separate costs.  In particular,
+a classical counter has the same statistical interface; there is no
+neural statistical advantage in \eqref{eq:a-rounded-risk}.

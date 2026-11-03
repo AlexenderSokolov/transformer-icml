@@ -1,0 +1,57 @@
+{
+  "utc": "2026-11-03T04:21:55.316606+00:00",
+  "status": "ROOT_ACCEPTED_CONSOLIDATED_MANUSCRIPT_AND_COMPLETE_PROOF_INTEGRATION",
+  "pdf_sha256": "6e3a3f2d836fd8e3a3fda0e4305f3dd290f3b3f23fe4113891f787e2c9576764",
+  "pages": 55,
+  "scientific_source_bindings": {
+    "main.tex": {
+      "sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+      "bytes": 33339
+    },
+    "references.bib": {
+      "sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+      "bytes": 7504
+    },
+    "sections/implementation_main.tex": {
+      "sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+      "bytes": 8871
+    },
+    "sections/proofs_approximate.tex": {
+      "sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+      "bytes": 11632
+    },
+    "sections/proofs_finite_horizon.tex": {
+      "sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "bytes": 5620
+    },
+    "sections/proofs_implementation.tex": {
+      "sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+      "bytes": 39142
+    },
+    "sections/proofs_negative.tex": {
+      "sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "bytes": 28723
+    },
+    "sections/proofs_positive.tex": {
+      "sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "bytes": 32814
+    },
+    "sections/proofs_precision.tex": {
+      "sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+      "bytes": 16103
+    }
+  },
+  "review_binding_sha256": "36098843a79e9dcee6b258fb21ed0534277f2c43fbe1152ef967a28b0360106e",
+  "author_public_manifest_sha256": "f22de0fbb366a9f0bad07871b1a225282fdf8770b3fa5448b9ff6a3eac798c84",
+  "verified_binding_counts": {
+    "scientific_files": 9,
+    "author_support_artifacts": 9,
+    "historical_inputs_verified": 33,
+    "additional_inputs_read": 5,
+    "review_artifacts": 7
+  },
+  "root_scope": "Read full new approximate, precision, implementation proofs and main related-work/implementation narrative; full independent source-bound review and citation audit. Three inherited core proofs unchanged. Exact source/review/history hashes and lengths verified. Independent integration checker and clean build rerun, zero warnings; all55 pages text and72dpi RGB pixels equal final author PDF. Root personally viewed final pages1,9,10,35,43,47,54,55; separate full-size visual review covers every page.",
+  "chronology": "Consolidation of accepted work, not a new statistical phenomenon. BCJ precedence explicit; ACG/PBP changed-interface rederivations, FPA explicit hybrid realization, strong counter baseline retained.",
+  "public_exclusions": "Raw compiler logs marked local-only, caches, QA PNGs and build intermediates excluded. No third-party source PDFs. Author manifest47files plus this receipt/ROOT_REPLAY may form bounded export.",
+  "limits": "Not formal verification, external peer review, priority certification, empirical training result or submission. Current clean-training-objective research not incorporated in this PDF. Local accepted, publication pending."
+}

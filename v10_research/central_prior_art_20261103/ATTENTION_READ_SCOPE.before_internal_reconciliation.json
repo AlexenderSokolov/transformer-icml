@@ -1,0 +1,208 @@
+{
+  "audit_date_utc": "2026-11-03",
+  "scope": "Targeted primary-source antecedent audit of FPA001/ACG001/PBP001. No novelty certification, proof replay, or exhaustive literature claim.",
+  "local_documents": [
+    {
+      "path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+      "sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9"
+    },
+    {
+      "path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed"
+    },
+    {
+      "path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+      "sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8"
+    },
+    {
+      "path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde"
+    },
+    {
+      "path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+      "sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1"
+    },
+    {
+      "path": "v10_research/research_direction_review_20261103/ASSESSMENT.md",
+      "sha256": "a4d884b8e07323bd565d3bac631b3153f6d74e54bbe2b3fd3397e8767676245a"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Thinking Like Transformers",
+      "url": "https://proceedings.mlr.press/v139/weiss21a/weiss21a.pdf",
+      "read_scope": [
+        "Sections 2-3 selected aggregation and index selection",
+        "Figure 3 frac_prevs indicator-average program",
+        "Section 5 compilation discussion and Figure 4"
+      ],
+      "status": "Original PDF text retrieved; targeted passages, not complete paper proof audit",
+      "verbatim_words_exported": 0
+    },
+    {
+      "id": "S2",
+      "title": "A Logic for Expressing Log-Precision Transformers",
+      "url": "https://papers.neurips.cc/paper_files/paper/2023/file/a48e5877c7bf86a513950ab23b360498-Paper-Conference.pdf",
+      "read_scope": [
+        "Definitions 1-2",
+        "Section 3 Proposition 1 and its proof",
+        "Theorem 2 and one-sided caveat"
+      ],
+      "status": "Original proceedings PDF text retrieved; exact bearing proposition read",
+      "verbatim_words_exported": 0
+    },
+    {
+      "id": "S3",
+      "title": "The Evolution of Statistical Induction Heads: In-Context Learning Markov Chains",
+      "url": "https://papers.neurips.cc/paper_files/paper/2024/file/75b0edb869e2cd509d64d0e8ff446bc1-Paper-Conference.pdf",
+      "read_scope": [
+        "Sections 2.1-2.2 prior/task and Proposition 2.1",
+        "Proposition 3.1 setup",
+        "Beginning of Appendix B.1"
+      ],
+      "status": "Original PDF text retrieved; not full Appendix B.1 or learning-proof audit",
+      "verbatim_words_exported": 0
+    },
+    {
+      "id": "S4",
+      "title": "Transformers on Markov Data: Constant Depth Suffices",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/f8a2070082ad05b4deeff4ffb4312a6f-Paper-Conference.pdf",
+      "read_scope": [
+        "Sections 4-5 theorem/remark passages",
+        "Theorem 1 and Remark 1",
+        "Theorem 4 and Remark 2",
+        "Appendix C construction pointers"
+      ],
+      "status": "Original proceedings PDF text retrieved; no complete proof verification",
+      "verbatim_words_exported": 0
+    },
+    {
+      "id": "S5",
+      "title": "What One Cannot, Two Can",
+      "url": "https://arxiv.org/pdf/2508.07208",
+      "read_scope": [
+        "Theorems 2-3 and Remark 2",
+        "Theorem 3 proof sketch and temperature limit",
+        "Appendix D setup, Algorithm 2, Assumptions 2-3, Theorems 9-10",
+        "Appendix H.3-H.4"
+      ],
+      "status": "Original PDF text retrieved; version as served, not full 74-page proof audit",
+      "verbatim_words_exported": 0
+    },
+    {
+      "id": "S6",
+      "title": "Counting in Small Transformers: The Delicate Interplay between Attention and Feed-Forward Layers",
+      "url": "https://arxiv.org/html/2407.11542v2",
+      "read_scope": [
+        "Section 4.1.2 Proposition 4.3 and uniform mixing formula",
+        "Appendix A.3.1-A.3.2 constructions"
+      ],
+      "status": "Original HTML targeted statements and construction passages retrieved",
+      "verbatim_words_exported": 0
+    },
+    {
+      "id": "S7",
+      "title": "Quantized Minimax Estimation over Sobolev Ellipsoids",
+      "url": "https://arxiv.org/pdf/1503.07368",
+      "read_scope": [
+        "Original preprint abstract",
+        "Indexed original journal Example 2.2 Gaussian sequences",
+        "Indexed original journal Section 4 estimate-then-quantize comparison"
+      ],
+      "status": "Partial access only: PDF opening succeeded; attempted PDF find for Example 2.1/Theorem 2.1 returned irrelevant fragments, not counted as reading those results; journal direct open failed",
+      "verbatim_words_exported": 0
+    },
+    {
+      "id": "S8",
+      "title": "Handover of In-Context Learning State Across Session Boundaries",
+      "url": "https://arxiv.org/html/2608.14528v1",
+      "read_scope": [
+        "Section 5.2 Quantized sufficient statistics",
+        "Theorem 5.3",
+        "Corollary 5.4 heading/setup"
+      ],
+      "status": "Original HTML targeted result read; full corollary and proofs not audited",
+      "verbatim_words_exported": 0
+    },
+    {
+      "id": "S9",
+      "title": "Markov Chain Estimation with In-Context Learning",
+      "authors": [
+        "Simon Lepage",
+        "Jeremie Mary",
+        "David Picard"
+      ],
+      "url": "https://arxiv.org/html/2508.03934v1",
+      "additional_primary_url": "https://gretsi.fr/data/colloque/pdf/2025_lepage1593.pdf",
+      "identity_version": "arXiv:2508.03934v1, submitted 2025-08-05 21:55:17 UTC; primary abstract lists accepted at GRETSI 2025",
+      "read_scope": [
+        "Primary abstract and submission history",
+        "Sections 3.1-3.2.2, equations 1 and 7-9",
+        "Sections 4.1-4.2 and 5",
+        "Theorem and precision text searches in primary four-page paper/HTML"
+      ],
+      "status": "Original conference PDF and v1 HTML accessible. No bearing minimax/quantization theorem present in inspected text; empirical prediction study.",
+      "verbatim_words_exported": 0
+    }
+  ],
+  "access_failures": [
+    {
+      "url": "https://arxiv.org/html/2407.17686v2",
+      "result": "404; proceedings PDF used"
+    },
+    {
+      "url": "https://arxiv.org/html/2508.07208v1",
+      "result": "Timeout; original PDF used"
+    },
+    {
+      "url": "https://openreview.net/pdf?id=uR8TtWCIsr",
+      "result": "Verification page; no CAPTCHA attempted; original proceedings PDF used"
+    },
+    {
+      "url": "https://openreview.net/pdf?id=nYg6Qzm5xS",
+      "result": "Verification page; no CAPTCHA attempted; original arXiv PDF used"
+    },
+    {
+      "url": "https://academic.oup.com/imaiai/article/7/1/31/3865490",
+      "result": "Inaccessible redirect; indexed original sections and preprint opening only"
+    },
+    {
+      "url": "https://arxiv.org/html/2210.02671v3",
+      "result": "Displayed different fixed-precision title; not used as intended S2; original proceedings PDF resolved identity"
+    },
+    {
+      "url": "https://arxiv.org/abs/2508.03934v1",
+      "result": "Cache miss; unversioned primary metadata confirmed v1, and versioned HTML/conference PDF readable"
+    }
+  ],
+  "discovery_only_not_substantively_audited": [
+    "When Can Transformers Count to n? (2026)",
+    "The Expressive Power of Low Precision Softmax Transformers with (Summarized) Chain-of-Thought (2026)",
+    "Distinct mechanisms underlying in-context learning in transformers (2026)",
+    "Transformers in Uniform TC0 (2025)",
+    "Estimation with Quantized Parameter Side-Information (2026)"
+  ],
+  "search_topics": [
+    "finite precision Transformer uniform attention counting",
+    "Markov in-context learning conditional empirical distribution",
+    "quantized sufficient statistic and Bernoulli minimax precision",
+    "fixed bank versus optimized encoder quantization risk"
+  ],
+  "paper_files_exported": false,
+  "external_writes_or_contacts": false,
+  "artifact": "ATTENTION_PRECISION_AUDIT.md",
+  "audit_artifact_sha256": "77938cca8c91175182fe6d5255e1d52254d30055c41ae665586678bb65da07bd",
+  "final_check": "JSON parsed; internal SHA256 bindings checked; no PDFs or external writes; source summaries under 200 words each.",
+  "preserved_before_bounded_extension": [
+    {
+      "path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.before_markov_estimation.md",
+      "sha256": "9377281b2cbf4167059b466dfa7b77de15a1700064498e487ba1c0d8eb1e2490"
+    },
+    {
+      "path": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_markov_estimation.json",
+      "sha256": "76c884c5d062d42b9ec9be356487f71ca6ef0fcef3712ffe575d30d93a0b36a6"
+    }
+  ],
+  "bounded_extension": "Bounded S9 extension completed 2026-11-03; no unrelated survey expansion."
+}

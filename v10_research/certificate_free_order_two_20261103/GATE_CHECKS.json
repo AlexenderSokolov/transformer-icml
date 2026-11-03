@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "M": 64,
+      "qualifying_exits": 20,
+      "gate_risk_lower": 0.15284146564230505,
+      "empirical_risk": 0.017381747542590024,
+      "closed_form_checked": false
+    },
+    {
+      "M": 65,
+      "qualifying_exits": 21,
+      "gate_risk_lower": 0.15931980267713475,
+      "empirical_risk": 0.01711221411811037,
+      "closed_form_checked": false
+    },
+    {
+      "M": 66,
+      "qualifying_exits": 21,
+      "gate_risk_lower": 0.15618233069022766,
+      "empirical_risk": 0.016850912913639833,
+      "closed_form_checked": true
+    },
+    {
+      "M": 72,
+      "qualifying_exits": 23,
+      "gate_risk_lower": 0.15643187287301485,
+      "empirical_risk": 0.015436633331659514,
+      "closed_form_checked": true
+    },
+    {
+      "M": 96,
+      "qualifying_exits": 31,
+      "gate_risk_lower": 0.15711209658246442,
+      "empirical_risk": 0.011556897418624692,
+      "closed_form_checked": true
+    },
+    {
+      "M": 120,
+      "qualifying_exits": 39,
+      "gate_risk_lower": 0.15751603086130345,
+      "empirical_risk": 0.009235709670741101,
+      "closed_form_checked": true
+    },
+    {
+      "M": 192,
+      "qualifying_exits": 63,
+      "gate_risk_lower": 0.15811609023078552,
+      "empirical_risk": 0.005763183337279597,
+      "closed_form_checked": true
+    }
+  ],
+  "limiting_gate_risk": 0.15910081236079404
+}

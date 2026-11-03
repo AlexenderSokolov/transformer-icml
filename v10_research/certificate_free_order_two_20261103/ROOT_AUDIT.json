@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-03T04:00:30.963359+00:00",
+  "status": "ROOT_VERIFIED_INHERITED_COROLLARY_AND_SEPARATE_GATE_DIAGNOSIS",
+  "not_new_discovery": true,
+  "source_proof_sha256": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d",
+  "root_read": "Complete accepted AB001 proof; finite factor rearrangement and layer-cake upper in RESULT.md; independent interface note and full sticky-cycle calculation. Original/public review mapping read directly.",
+  "diagnostic_replay": "Unchanged exact-rational gate checker output matches saved JSON; reported float summaries are not exact exponential certificates.",
+  "scope": "Certificate-free full-history factor relative to g=max(M^-1/2,k/M) is Theta(logM), inherited from AB001 plus empirical upper. This is NOT a claim of adaptation loss relative to unrestricted known-budget minimax. Half-gate counterexample alone is not an all-estimator lower.",
+  "artifacts": {
+    "GATE_CHECKS.json": "c8f8944909d9dba1b01d2d065e7c313bacfb743d1c7f897cb1edd2d2fa755a83",
+    "HALF_GATE_COUNTEREXAMPLE.md": "c8c807ee0bb33ac3a30c5dfc11839a14cea78e93aab0ae0596768678cc012cd3",
+    "INDEPENDENT_INTERFACE_CHECK.md": "308ac911193f7725186191b7622bf7086ea861ab3b4eae4706b2e8bbd221fc8e",
+    "RESULT.md": "a2b4f55334416fb8d0104e3af28086c4e5579319a1feae34681af6b66204f6a8",
+    "check_gate.py": "e18f03a55fe71a05de68c541c7a06b8e790b579a09848e6ee394142bdcfdd8d5"
+  }
+}

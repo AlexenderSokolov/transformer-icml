@@ -1,0 +1,65 @@
+--- finite_manuscript/references.bib
++++ consolidated_manuscript/references.bib
+@@ -79,3 +79,62 @@
+   year = {2014}, howpublished = {arXiv:1408.0822v1},
+   url = {https://arxiv.org/abs/1408.0822v1}
+ }
++
++% Additions checked against primary venue/arXiv metadata on 3 November 2026.
++@inproceedings{MaityMitra2025,
++ author={Maity, Sreejeet and Mitra, Aritra},
++ title={Adversarially-Robust {TD} Learning with {Markovian} Data: Finite-Time Rates and Fundamental Limits},
++ booktitle={Proceedings of the 28th International Conference on Artificial Intelligence and Statistics},
++ series={Proceedings of Machine Learning Research}, volume={258}, pages={2431--2439}, year={2025},
++ url={https://proceedings.mlr.press/v258/maity25a.html}
++}
++@inproceedings{WeissGoldbergYahav2021,
++ author={Weiss, Gail and Goldberg, Yoav and Yahav, Eran},
++ title={Thinking Like Transformers},
++ booktitle={Proceedings of the 38th International Conference on Machine Learning},
++ series={Proceedings of Machine Learning Research}, volume={139}, pages={11080--11090}, year={2021},
++ url={https://proceedings.mlr.press/v139/weiss21a.html}
++}
++@inproceedings{MerrillSabharwal2023,
++ author={Merrill, William and Sabharwal, Ashish},
++ title={A Logic for Expressing Log-Precision Transformers},
++ booktitle={Advances in Neural Information Processing Systems}, volume={36}, year={2023},
++ url={https://papers.neurips.cc/paper_files/paper/2023/hash/a48e5877c7bf86a513950ab23b360498-Abstract-Conference.html}
++}
++@inproceedings{EdelmanEtAl2024,
++ author={Edelman, Ezra and Tsilivis, Nikolaos and Edelman, Benjamin L. and Malach, Eran and Goel, Surbhi},
++ title={The Evolution of Statistical Induction Heads: In-Context Learning {Markov} Chains},
++ booktitle={Advances in Neural Information Processing Systems}, volume={37}, year={2024},
++ url={https://papers.neurips.cc/paper_files/paper/2024/hash/75b0edb869e2cd509d64d0e8ff446bc1-Abstract-Conference.html}
++}
++@inproceedings{RajaramanEtAl2024,
++ author={Rajaraman, Nived and Bondaschi, Marco and Ramchandran, Kannan and Gastpar, Michael and Makkuva, Ashok Vardhan},
++ title={Transformers on {Markov} Data: Constant Depth Suffices},
++ booktitle={Advances in Neural Information Processing Systems}, volume={37}, year={2024},
++ url={https://proceedings.neurips.cc/paper_files/paper/2024/hash/f8a2070082ad05b4deeff4ffb4312a6f-Abstract-Conference.html}
++}
++@misc{EkboteEtAl2025,
++ author={Ekbote, Chanakya and Bondaschi, Marco and Rajaraman, Nived and Lee, Jason D. and Gastpar, Michael and Makkuva, Ashok Vardhan and Liang, Paul Pu},
++ title={What One Cannot, Two Can: Two-Layer Transformers Provably Represent Induction Heads on Any-Order {Markov} Chains},
++ year={2025}, howpublished={arXiv:2508.07208v2},
++ note={Accepted at NeurIPS 2025}, url={https://arxiv.org/abs/2508.07208v2}
++}
++@misc{BehrensEtAl2024,
++ author={Behrens, Freya and Biggio, Luca and Zdeborov{\'a}, Lenka},
++ title={Counting in Small Transformers: The Delicate Interplay between Attention and Feed-Forward Layers},
++ year={2024}, howpublished={arXiv:2407.11542v2},
++ note={Inspected preprint version; later published at ICML 2025}, url={https://arxiv.org/abs/2407.11542v2}
++}
++@misc{LepageMaryPicard2025,
++ author={Lepage, Simon and Mary, Jeremie and Picard, David},
++ title={{Markov} Chain Estimation with In-Context Learning},
++ year={2025}, howpublished={arXiv:2508.03934v1},
++ note={Accepted at GRETSI 2025}, url={https://arxiv.org/abs/2508.03934v1}
++}
++@misc{BCJ001,
++ key={BCJ001},
++ title={Budget-Blind Balanced Decoding of a Twelve-Coordinate Finite Noisy Cut},
++ year={2026}, month={November}, howpublished={v10 project technical note BCJ001},
++ note={Earlier finite-bank analysis; fixed public source revision},
++ url={https://github.com/AlexenderSokolov/transformer-icml/blob/670b7fc34ed864716124e9a56876d1baaaed6503/v10_research/balanced_joint_finite_cut/BCJ001_theorem.md}
++}

@@ -1,0 +1,24 @@
+{
+  "rule": "Original expected hashes are retained. Different public-export hashes are verified only by exact declared path/hash pairs; original byte identity is not claimed.",
+  "pairs_verified": [
+    {
+      "path": "v10_research/balanced_joint_finite_cut/BCJ001_HANDOFF.md",
+      "original_sha256": "8b3d2724fcb1cbc93c2833d3de8c222ff3dbec82cde218df26a3a8facde855e0",
+      "public_export_sha256": "863ee4947f74bcbdb7dc725cd8fddab7c3e3643f992dace21d1d565b7daed2d1"
+    },
+    {
+      "path": "v10_research/balanced_joint_finite_cut/BCJ001_accepted_bindings.json",
+      "original_sha256": "034a36cd1d9895bcf411fc7036493546d1eec469970c586f4d56871e6b81bbe9",
+      "public_export_sha256": "7cb57c460d7398364c5c85152e2ae5dda199db18c0d3a0a45c871eaed76ecf6b"
+    },
+    {
+      "path": "v10_research/balanced_joint_finite_cut/BCJ001_independent_full_review.md",
+      "original_sha256": "9cce8092070916078baa9b1cb82dcc9a9d6872b0013568996e4310a9f4c413ef",
+      "public_export_sha256": "1e74c502da8fcda31603fc7fc2fa1229747521c3774da55aaf21c8a29a14f64b"
+    }
+  ],
+  "source_theorem_sha256": "95d5aac1ee2504955e55c1e82241c8a07d219661e2620c6e083acf5c8701554d",
+  "theorem_matches_original_receipt": true,
+  "receipt_sha256": "27c1aa7efdc86752c63fd0b1f41b9c303a2aedff965ce81721f3abca7c54699f",
+  "original_review_bytes_restored": false
+}

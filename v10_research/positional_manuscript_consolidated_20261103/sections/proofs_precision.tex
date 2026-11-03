@@ -1,0 +1,374 @@
+\section{Precision of the fixed nearest-rounded positional bank}
+\label{sec:precision-proofs}
+
+The lower bound in this section concerns a particular observation, not
+an arbitrary encoder with the same number of bits.  The earlier
+finite-bank result already established a twelve-coordinate precision
+floor together with noise and source-edit bounds \citep{BCJ001}.  Its floored
+triple/half-count coordinates differ from the nearest-rounded direct
+$J/C/D$ coordinates below.  Before quantization the two representations
+are linearly interconvertible, but separate coordinatewise quantization
+does not preserve that equivalence.  We therefore give a complete
+lower proof for this changed cut.  Its common-cell and two-point
+argument also includes $h=0$; it does not assert a new
+statistical/quantization transition.
+
+\subsection{The exact observation and result}
+
+Fix integers $M\ge64$ and $h\ge0$, and set $Q=2^h$.
+Let $\mathcal N_Q$ round to the nearest point of
+$\{0,1/Q,\ldots,1\}$ using a fixed tie rule.
+Use the counts in \eqref{eq:a-full-counts}--\eqref{eq:a-half-count},
+and form the twelve-coordinate bank
+\begin{equation}\label{eq:p-bank}
+ \mathcal B_{M,h}(X)=
+ \bigl(\mathcal N_Q(J_u/M),\mathcal N_Q(C_u/M),
+       \mathcal N_Q(D_u/M)\bigr)_{u\in\{00,01,10,11\}}.
+\end{equation}
+The decoder observes exactly
+\begin{equation}\label{eq:p-bank-cut}
+ \mathcal O=(\mathcal B_{M,h}(X),E),\qquad
+ E=(X_M,X_{M+1}),
+\end{equation}
+and source-independent public format metadata.  The endpoint is exact.
+No raw history, scratch counts, other token banks, rounding residuals,
+or additional feature port crosses this cut.
+
+Let $\mathcal C_M$ be the clean class of homogeneous binary order-two
+sources with arbitrary initial law admitting a stationary pair law
+$\Pi$ with $P^2(u,v)\ge\Pi(v)/M$ for every $u,v$.  Define
+\begin{equation}\label{eq:p-bank-minimax}
+ R^*(M,h)=\inf_A\sup_{(\theta,\mu)\in\mathcal C_M}
+ \E\,\TV\bigl(A(\mathcal O),\theta_{Y_M}\bigr).
+\end{equation}
+The infimum permits arbitrary computation, any binary probability
+output, and arbitrary independent decoder seeds.  It is not restricted
+to the gate decoder or to a finite output grid.  Public randomization
+independent of the source and sample may be included in these seeds;
+source-dependent advice or randomization correlated with hidden history
+is not part of \eqref{eq:p-bank-cut}.
+
+\begin{theorem}[Fixed-bank precision]
+\label{thm:bank-precision}
+For every integer $M\ge64$ and every integer $h\ge0$,
+\begin{equation}\label{eq:p-bank-rate}
+ \frac1{1600000}\max\{M^{-1/2},2^{-h}\}
+ \le R^*(M,h)
+ \le\min\bigl\{1,667160\max\{M^{-1/2},2^{-h}\}\bigr\}.
+\end{equation}
+Both lower components already hold on the stationary IID Bernoulli
+subclass with parameter $p\in[1/8,1/4]$.  Consequently the same lower
+bounds hold for an adversarial experiment that allows zero edits,
+provided its decoder has no more information than the fixed cut
+\eqref{eq:p-bank-cut}.
+\end{theorem}
+
+\subsection{Two elementary probability inequalities}
+
+For completeness, we give the general concentration and testing
+inequalities needed below.  They apply to finite input laws; randomized
+decoder seeds will be handled separately without restricting their
+support.
+
+\begin{lemma}[Bounded differences]
+\label{lem:p-bounded-differences}
+Let $F$ be a real function of independent finite-valued coordinates,
+and suppose changing coordinate $i$ alone changes $F$ by at most
+$c_i\ge0$.  With $V=\sum_i c_i^2>0$, for every $t>0$,
+\[
+ \Prb(|F-\E F|\ge t)\le2\exp(-2t^2/V).
+\]
+If $V=0$, $F$ is constant on the input support.
+\end{lemma}
+\begin{proof}
+Reveal the independent coordinates in order and let $Z_i$ be the
+increments of the Doob martingale of $F$.  Conditional on any revealed
+prefix, $Z_i$ has mean zero and lies in an interval of length at most
+$c_i$.  Indeed, compare two values of coordinate $i$ by integrating
+over the same independent remaining coordinates; the resulting
+conditional expectations differ by at most $c_i$.
+
+For a centered random variable $Z$ in an interval $[a,b]$ of length
+$c$, put $g(\lambda)=\log\E e^{\lambda Z}$.  Its second derivative
+is the variance under the exponentially tilted law.  For any law on
+$[a,b]$, the pointwise inequality $(Z-a)(b-Z)\ge0$ implies
+\[
+ \Var(Z)\le(\E Z-a)(b-\E Z)\le(b-a)^2/4.
+\]
+The same bound therefore holds under every tilt.  Since
+$g(0)=g'(0)=0$, integrating twice gives
+$g(\lambda)\le\lambda^2c^2/8$ for either sign of $\lambda$.
+Apply this bound conditionally to each $Z_i$ and iterate conditional
+expectations to obtain
+\[
+ \E e^{\lambda(F-\E F)}\le
+ \exp\!\left(\lambda^2\sum_i c_i^2/8\right).
+\]
+Markov's inequality, optimized at $\lambda=4t/V$, gives
+$\Prb(F-\E F\ge t)\le e^{-2t^2/V}$.
+Apply the same argument to $-F$ and add the two tails.
+The zero-sensitivity case is immediate.
+\end{proof}
+
+\begin{lemma}[Pinsker's inequality for finite laws]
+\label{lem:p-pinsker}
+For finite probability laws $P,Q$,
+\[
+ \TV(P,Q)\le\sqrt{\KL(P\Vert Q)/2}.
+\]
+Moreover, relative entropy adds across independent product factors.
+\end{lemma}
+\begin{proof}
+If $P$ has positive mass where $Q$ has zero mass, the divergence is
+infinite and the bound is immediate.  Otherwise set
+$A=\{x:P(x)>Q(x)\}$, so
+$\TV(P,Q)=P(A)-Q(A)$.
+For a subset with $P$-mass $a>0$ and $Q$-mass $b$, its contribution to
+relative entropy is $a$ times an expectation of
+$\log(P(x)/Q(x))$ under normalized $P$ weights.  Jensen's inequality
+for the convex function $-\log$ bounds this below by
+$a\log(a/b)$: indeed the normalized expectation of $Q(x)/P(x)$
+is at most $b/a$, with equality if $Q$ places no mass on zeros of $P$
+inside the subset.  Zero masses follow by continuity or infinite
+divergence.  Apply this log-sum inequality to $A$ and its complement:
+\[
+ \KL(P\Vert Q)\ge\operatorname{kl}(P(A)\Vert Q(A)).
+\]
+For fixed $q\in(0,1)$, the binary divergence
+$f(p)=\operatorname{kl}(p\Vert q)$ satisfies
+$f(q)=f'(q)=0$ and $f''(p)=1/[p(1-p)]\ge4$.
+Integrating twice from $q$ to $p$, in either direction, gives
+$f(p)\ge2(p-q)^2$.  Boundary cases follow by continuity or infinite
+divergence.  Thus $\KL(P\Vert Q)\ge2\TV(P,Q)^2$.
+Finally, a product-density ratio is a product of the factor ratios;
+expanding its logarithm into a sum and taking expectations proves
+additivity for independent products.
+\end{proof}
+
+\subsection{A common rounding cell for the complete mean vector}
+
+Consider stationary IID Bernoulli$(p)$ input symbols, with
+$p\in I=[1/8,1/4]$, and put $t=\lfloor M/2\rfloor/M$.
+The means of the unrounded normalized coordinates, in row order
+$00,01,10,11$, are
+\begin{align}
+ \E_p(J_u/M)_u
+   &=((1-p)^2,p(1-p),p(1-p),p^2),\label{eq:p-bank-J-means}\\
+ \E_p(C_u/M)_u
+   &=(p(1-p)^2,p^2(1-p),p(1-p)^2,p^2(1-p)),
+     \label{eq:p-bank-C-means}\\
+ \E_p(D_u/M)_u
+   &=t((1-p)^2,p(1-p),p(1-p),p^2).
+     \label{eq:p-bank-D-means}
+\end{align}
+Every summand has the displayed law, including the final triple ending
+at $X_{M+1}$.  Overlapping pairs and triples need not be independent
+for these identities, which use only linearity of expectation.
+The half bank has $\lfloor M/2\rfloor$ summands and denominator $M$.
+For $M\ge64$, $t\ge1/3$.
+
+On $I$, the four $J$-coordinate derivative magnitudes are bounded below
+by $3/2,1/2,1/2,1/4$, respectively.  The derivatives of the two
+distinct $C$ polynomials are
+\[
+ (1-p)(1-3p)\ge3/16,\qquad
+ p(2-3p)\ge13/64.
+\]
+The $D$ derivatives are $t$ times the corresponding $J$ derivatives.
+Thus all twelve mean functions are strictly monotone on $I$, and every
+derivative has magnitude at least $d=1/12$.  Duplicated mean functions
+do not cause a problem, and none of the coordinates is constant.
+
+The rounding thresholds are
+\[
+ \mathcal T_Q=\{(j+1/2)/Q:0\le j\le Q-1\}.
+\]
+Each monotone coordinate mean crosses at most $Q$ thresholds.
+Take the distinct crossing points in the interior of $I$ and include
+the two endpoints.  These partition $I$ into at most $12Q+1$ open
+intervals.  One such interval $(a_*,b_*)$ has length
+\begin{equation}\label{eq:p-cell-length}
+ L=b_*-a_*\ge\frac{1/8}{12Q+1}\ge\frac1{104Q}.
+\end{equation}
+Choose $p_0=a_*+L/3$ and $p_1=a_*+2L/3$.  Then
+\begin{equation}\label{eq:p-cell-separation}
+ \delta_p:=p_1-p_0=L/3\ge\frac1{312Q},\qquad
+ \delta_p\le\frac1{24}.
+\end{equation}
+The mean vectors at both parameters round to one common bank
+$\mathbf b_*$.  More precisely, for each coordinate mean $f$ and
+$j\in\{0,1\}$,
+\begin{equation}\label{eq:p-cell-margin}
+ \operatorname{dist}(f(p_j),\mathcal T_Q)
+ \ge dL/3\ge\frac1{3744Q}=:\rho.
+\end{equation}
+To justify this at the first and last partition intervals as well,
+no threshold lies strictly between the values $f(a_*)$ and $f(b_*)$.
+A threshold outside this value interval is separated from $f(p_j)$
+by at least its distance to the corresponding endpoint value; integrating
+the derivative lower bound over the relevant subinterval gives at
+least $dL/3$.  This also handles thresholds outside $f(I)$, without
+extending the derivative bound beyond $I$.  Endpoint ties are harmless
+because $p_0,p_1$ are interior.  The argument includes $h=0$, when
+the sole threshold is $1/2$.
+
+\subsection{Concentration of the actual bank and its joint endpoint law}
+
+Let $F$ be any one of the twelve unrounded normalized coordinates.
+Changing one raw bit affects at most three relevant departure triples,
+so changes the count by at most three.  Pair and half-pair coordinates
+in fact require at most two.  There are $N=M+2$ independent raw bits,
+so the bounded-difference constants satisfy
+\[
+ \sum_i c_i^2\le(M+2)(3/M)^2\le10/M,\qquad M\ge64.
+\]
+Lemma~\ref{lem:p-bounded-differences} yields
+\[
+ \Prb_p(|F-\E_pF|\ge\rho)\le2\exp(-M\rho^2/5).
+\]
+If every coordinate is strictly within $\rho$ of its mean, the actual rounded
+bank equals $\mathbf b_*$.  The union bound and
+\eqref{eq:p-cell-margin} give, separately at $p_0$ and $p_1$,
+\begin{equation}\label{eq:p-bank-concentration}
+ \Prb_{p_j}(\mathcal B_{M,h}\ne\mathbf b_*)
+ \le\epsilon:=24\exp\!\left(-\frac{M}{5\cdot3744^2Q^2}\right).
+\end{equation}
+This is concentration of the random bank, not a substitution of the
+rounded expectation for the expectation of a rounded variable.
+No independence between bank coordinates or count summands is needed.
+
+Set $C_0=500000000$.  If $M\ge C_0Q^2$, then
+$\epsilon\le1/16$.  For an elementary numerical verification,
+$C_0>30\cdot3744^2$, and the nonnegative Taylor terms for $e^6$
+through degree ten already exceed $384$.  Hence
+$24e^{-C_0/(5\cdot3744^2)}<24/384=1/16$.
+
+Let $P_j$ be the joint law of $(\mathcal B_{M,h},E)$ at $p_j$, and
+let $\widetilde P_j$ be the law of $(\mathbf b_*,E)$ with the same
+endpoint marginal.  Couple them by retaining exactly the same endpoint
+$E$ and replacing only the bank.  Equation~\eqref{eq:p-bank-concentration}
+implies
+\[
+ \TV(P_j,\widetilde P_j)\le\epsilon.
+\]
+Under IID sampling, the endpoint marginal is
+$\operatorname{Bern}(p_j)^{\otimes2}$.  Couple the two endpoint bits
+using common independent uniforms at the two parameters.  A union
+bound gives $\TV(\widetilde P_0,\widetilde P_1)\le2\delta_p$.
+Therefore, when $M\ge C_0Q^2$,
+\begin{equation}\label{eq:p-bank-TV}
+ \TV(P_0,P_1)\le2\epsilon+2\delta_p
+ \le\frac18+\frac1{12}=\frac5{24}<\frac12.
+\end{equation}
+The bank is not asserted independent of its endpoint: the final
+departures explicitly use the protected bits.  Keeping the same
+endpoint in the first coupling is what validates this argument.
+
+\subsection{Randomized two-point loss and the full-history floor}
+
+For any decoder let $A$ denote its probability assigned to symbol one.
+In the IID submodel the true probability is $p$ at every actual
+endpoint, so total variation loss is exactly $|A-p|$.
+For two finite observation laws $P_0,P_1$, their common
+subprobability measure has mass $1-\TV(P_0,P_1)$.
+Append the same independent seed law to both observations, allowing
+arbitrary seed spaces.  This preserves total variation and gives a
+common subprobability product measure of the same mass.  On every
+observation and seed,
+$|A-p_0|+|A-p_1|\ge|p_1-p_0|$.
+Integrating this inequality against that common measure, and using
+nonnegativity to bound the two risks below, proves
+\begin{equation}\label{eq:p-two-point}
+ \max_{j=0,1}\E_j|A-p_j|
+ \ge\frac{|p_1-p_0|}{2}\bigl(1-\TV(P_0,P_1)\bigr).
+\end{equation}
+This covers arbitrary independent randomized decoders and public
+source-independent randomization.  Apply \eqref{eq:p-bank-TV} and
+\eqref{eq:p-cell-separation} to obtain
+\begin{equation}\label{eq:p-large-regime}
+ R^*(M,h)\ge\frac{\delta_p}{4}\ge\frac1{1248Q},
+ \qquad M\ge C_0Q^2.
+\end{equation}
+
+For the complementary regime, we prove a floor even when the decoder
+sees all $N=M+2$ raw bits.  Take
+$p_0=1/8$ and $p_1=p_0+\delta$ with
+$\delta=1/(16\sqrt N)$, so both belong to $I$.
+The inequality $\log x\le x-1$ gives the Bernoulli divergence bound
+\[
+ \begin{split}
+ \KL(\operatorname{Bern}(p_0)\Vert\operatorname{Bern}(p_1))
+ &\le p_0\left(\frac{p_0}{p_1}-1\right)
+ +(1-p_0)\left(\frac{1-p_0}{1-p_1}-1\right)\\
+ &=\frac{\delta^2}{p_1(1-p_1)}
+ \le\frac{64}{7}\delta^2.
+ \end{split}
+\]
+The last bound uses $p_1\in I$, where $p_1(1-p_1)\ge7/64$.
+Product additivity in Lemma~\ref{lem:p-pinsker} bounds the full-history
+divergence by $N(64/7)\delta^2=1/28$, and therefore its total variation
+by $\sqrt{1/56}<1/4$.  Passing to any function of the history cannot
+increase total variation: each event in the output space has a
+preimage event in the history space.  Independent randomization also
+cannot increase it, by integration over the common seed law.
+Consequently \eqref{eq:p-two-point} proves
+\begin{equation}\label{eq:p-history-floor}
+ R^*(M,h)\ge\frac{3\delta}{8}
+ =\frac3{128\sqrt{M+2}}\ge\frac1{64\sqrt M}.
+\end{equation}
+The last inequality is equivalent to $9M\ge4(M+2)$, valid here.
+These IID tables are legitimate all-state witnesses: put
+$\theta_u(1)=p$ for every row and initialize the pair with
+$\Pi=\operatorname{Bern}(p)^{\otimes2}$.  After two transitions,
+$P^2(u,v)=\Pi(v)$ for every initial pair $u$, so the required
+certificate $1/M$ holds on every row.
+
+\subsection{Combining the regimes and interpreting precision}
+
+\begin{proof}[Proof of Theorem~\ref{thm:bank-precision}]
+For $M<C_0Q^2$, \eqref{eq:p-history-floor} gives
+\[
+ R^*(M,h)>\frac1{64\sqrt{C_0}\,Q}
+ \ge\frac1{1600000Q},
+\]
+since $\sqrt{C_0}<25000$.
+For $M\ge C_0Q^2$, \eqref{eq:p-large-regime} gives this same weaker
+lower bound.  Together with \eqref{eq:p-history-floor}, both of
+which hold for every decoder, this proves
+\[
+ R^*(M,h)\ge\frac1{1600000}
+              \max\{M^{-1/2},Q^{-1}\}.
+\]
+The parameter pair used for the statistical floor need not equal the
+pair used for the precision floor.  Each is a lower bound for every
+decoder's source supremum, so their maximum is a lower bound for the
+same minimax risk.
+
+For the upper bound, apply \eqref{eq:a-rounded-risk} with $k=0$ and
+$\xi=0$ to exactly the bank in \eqref{eq:p-bank}.  Its sequential
+clipping and ratio gate are permitted arbitrary decoders, and
+\[
+ R^*(M,h)\le\min\left\{1,
+ \frac{131072}{\sqrt M}+\frac{536088}{Q}\right\}
+ \le\min\left\{1,667160\max\{M^{-1/2},Q^{-1}\}\right\}.
+\]
+This proves the complete finite-domain statement.
+\end{proof}
+
+For any fixed $K>0$, attaining $R^*(M,h)\le K/\sqrt M$ requires
+\[
+ Q\ge\frac{\sqrt M}{1600000K},\qquad
+ h\ge\tfrac12\log_2 M-\log_2(1600000K).
+\]
+Conversely, $h\ge\lceil\tfrac12\log_2 M\rceil$ suffices by
+\eqref{eq:a-rounded-risk}; a separate finite output stage with error
+at most $2^{-b}$ adds just that error.  The necessity statement is
+about fractional precision of this deterministic nearest-rounded
+$J/C/D$ bank.  It is not a lower bound for arbitrary encoders using
+$12(h+1)$ bits, arbitrary positional summaries, neural architectures,
+or total arithmetic precision.  It gives neither a noise lower bound
+nor a $k/M$ lower bound for this changed bank.  Accumulation precision,
+addresses, raw input storage, score precision, parameters, masks, and
+other program resources are not lower bounded here.  Additional hidden
+history or counts would change the premise.  The deliberately loose
+crossover $C_0$ is a proof device, not a practical sample-size threshold.

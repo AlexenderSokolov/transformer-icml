@@ -1,0 +1,3797 @@
+{
+  "base_commit": "670b7fc34ed864716124e9a56876d1baaaed6503",
+  "kind": "Consolidation of accepted results, not a new theorem or novelty certificate",
+  "source_files": 66,
+  "selected_original_bytes": 1174083,
+  "manuscript_pdf": {
+    "path": "v10_research/positional_manuscript_consolidated_20261103/main.pdf",
+    "bytes": 644513,
+    "sha256": "6e3a3f2d836fd8e3a3fda0e4305f3dd290f3b3f23fe4113891f787e2c9576764",
+    "git_blob_sha1": "91eb921ebc9a80c64cc36c5b5d28193a1815af51",
+    "pages": 55,
+    "structure": {
+      "narrative_pages": 12,
+      "proof_appendix_pages": 41,
+      "bibliography_pages": 2
+    }
+  },
+  "source_math_program_and_pdf_changes": 0,
+  "python_sources_parsed_not_executed": 5,
+  "nonmathematical_export_changes": {
+    "files": 5,
+    "lines": 9
+  },
+  "privacy_unresolved_pattern_hits": [],
+  "structured_bindings": 269,
+  "structured_binding_counts": {
+    "RESOLVED": 266,
+    "RECORDED_LOCAL_ONLY_BUILD_EVIDENCE_EXCLUDED": 2,
+    "RECORDED_HISTORICAL_LITERATURE_INPUT_OUTSIDE_RELEASE": 1
+  },
+  "source_binding_resolutions": [
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+      "location": "$.claims[0].source",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+      "expected_original_sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+          "public_sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+      "location": "$.claims[1].source",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+      "location": "$.claims[2].source",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+      "location": "$.claims[3].source",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+      "location": "$.claims[4].source",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+      "location": "$.claims[5].source",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "expected_original_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+          "public_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+      "location": "$.claims[6].source",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "expected_original_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+          "public_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+      "location": "$.claims[7].source",
+      "declared_path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+      "expected_original_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+          "public_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+      "location": "$.claims[8].source",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_theorem.md",
+      "expected_original_sha256": "95d5aac1ee2504955e55c1e82241c8a07d219661e2620c6e083acf5c8701554d",
+      "resolutions": [
+        {
+          "path": "v10_research/balanced_joint_finite_cut/BCJ001_theorem.md",
+          "public_sha256": "95d5aac1ee2504955e55c1e82241c8a07d219661e2620c6e083acf5c8701554d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+      "location": "$.claims[9].source",
+      "declared_path": "v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md",
+      "expected_original_sha256": "e8f264d46c43f914a321eddfb736369de7563a775a6035c95a1187065236e933",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md",
+          "public_sha256": "e8f264d46c43f914a321eddfb736369de7563a775a6035c95a1187065236e933",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+      "location": "$.claims[10].source",
+      "declared_path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md",
+      "expected_original_sha256": "84c1a5d4fcf9958331c257c0cf23a13c73c5627bb6fb4f1866bc10bf1ecb6bd9",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md",
+          "public_sha256": "84c1a5d4fcf9958331c257c0cf23a13c73c5627bb6fb4f1866bc10bf1ecb6bd9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/COMPANION_CONTEXT.json",
+      "location": "$.source_sha256.v10_research/binary_budget_adaptation/AB001_joint_blindness_obstruction.md",
+      "declared_path": "v10_research/binary_budget_adaptation/AB001_joint_blindness_obstruction.md",
+      "expected_original_sha256": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d",
+      "resolutions": [
+        {
+          "path": "v10_research/binary_budget_adaptation/AB001_joint_blindness_obstruction.md",
+          "public_sha256": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/COMPANION_CONTEXT.json",
+      "location": "$.source_sha256.v10_research/intake/AB001_acceptance.json",
+      "declared_path": "v10_research/intake/AB001_acceptance.json",
+      "expected_original_sha256": "86a80911ba8735b7108598dcad99bb041f733d3fd065151eff6649cdefde7701",
+      "resolutions": [
+        {
+          "path": "v10_research/intake/AB001_acceptance.json",
+          "public_sha256": "86a80911ba8735b7108598dcad99bb041f733d3fd065151eff6649cdefde7701",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/COMPANION_CONTEXT.json",
+      "location": "$.source_sha256.v10_research/binary_full_history_domain/AF001_full_history_domain_classification.md",
+      "declared_path": "v10_research/binary_full_history_domain/AF001_full_history_domain_classification.md",
+      "expected_original_sha256": "3e15bf53b0de1767c3d53d0ecd3da01af1ffec6a3699dbc562441436a4668ab3",
+      "resolutions": [
+        {
+          "path": "v10_research/binary_full_history_domain/AF001_full_history_domain_classification.md",
+          "public_sha256": "3e15bf53b0de1767c3d53d0ecd3da01af1ffec6a3699dbc562441436a4668ab3",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/COMPANION_CONTEXT.json",
+      "location": "$.source_sha256.v10_research/intake/AF001_root_acceptance.json",
+      "declared_path": "v10_research/intake/AF001_root_acceptance.json",
+      "expected_original_sha256": "a02c48ceca42df35f0a60c2c85473085dd03c46cf22337bd88568a0eaee8bd1e",
+      "resolutions": [
+        {
+          "path": "v10_research/intake/AF001_root_acceptance.json",
+          "public_sha256": "a02c48ceca42df35f0a60c2c85473085dd03c46cf22337bd88568a0eaee8bd1e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+      "expected_original_sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+          "public_sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/references.bib",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/references.bib",
+      "expected_original_sha256": "048b7410ef67d989febc1fa5dee881fc48df624377e8ad330cdc71986cbb486b",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/references.bib",
+          "public_sha256": "048b7410ef67d989febc1fa5dee881fc48df624377e8ad330cdc71986cbb486b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/HANDOFF_DEPENDENCIES.json",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/HANDOFF_DEPENDENCIES.json",
+      "expected_original_sha256": "31a6d6f1ef2f19747d9b3312fb1010103db1409f43f99dd4fe30f5c225b88d27",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/HANDOFF_DEPENDENCIES.json",
+          "public_sha256": "31a6d6f1ef2f19747d9b3312fb1010103db1409f43f99dd4fe30f5c225b88d27",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "f22c74785ba32a96086234e1e7d11d4f5d9b25bc9be78f26d253e8ea18166cfc",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/SOURCE_BINDINGS.json",
+          "public_sha256": "f22c74785ba32a96086234e1e7d11d4f5d9b25bc9be78f26d253e8ea18166cfc",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/reviews/integration/REVIEW.md",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/reviews/integration/REVIEW.md",
+      "expected_original_sha256": "a39575f4e56a9eaa800781fabe760996c872cc1c3b0b2256fbd56d99561d0fdf",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/reviews/integration/REVIEW.md",
+          "public_sha256": "a39575f4e56a9eaa800781fabe760996c872cc1c3b0b2256fbd56d99561d0fdf",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "expected_original_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+          "public_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/approximate_gate_statistics_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "0da8966dca1f66eeb471f963009fd2c94a5e41a8c278c61c18a83e290fce797c",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "0da8966dca1f66eeb471f963009fd2c94a5e41a8c278c61c18a83e290fce797c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/approximate_gate_statistics_20261103/ROOT_REPLAY.json",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/ROOT_REPLAY.json",
+      "expected_original_sha256": "27514f8441d0a514166934053a092610bc277092b6dd9a0d0dffb2f1d88d2ed2",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/ROOT_REPLAY.json",
+          "public_sha256": "27514f8441d0a514166934053a092610bc277092b6dd9a0d0dffb2f1d88d2ed2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "expected_original_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+          "public_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/positional_bank_precision_lower_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "092a27a6b9f3069f5d396de893d40884079245e4d7a6583f9c0cf5948983f347",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "092a27a6b9f3069f5d396de893d40884079245e4d7a6583f9c0cf5948983f347",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/positional_bank_precision_lower_20261103/ROOT_REPLAY.json",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/ROOT_REPLAY.json",
+      "expected_original_sha256": "086a93e6ac42a1560454ee6c19bf65124e50321289c082f54abc10125df8686d",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/ROOT_REPLAY.json",
+          "public_sha256": "086a93e6ac42a1560454ee6c19bf65124e50321289c082f54abc10125df8686d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+      "declared_path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+      "expected_original_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+          "public_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/finite_positional_attention_20261103/ROOT_ACCEPTANCE.json",
+      "declared_path": "v10_research/finite_positional_attention_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "0d228c3fed6f2cd23c59270ba52731033467313ea03ea337785f395a01ae6773",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "0d228c3fed6f2cd23c59270ba52731033467313ea03ea337785f395a01ae6773",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/finite_positional_attention_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/finite_positional_attention_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "bf94894a7f0838eba37c0a23c6909f033fb049b13f2b761022da4db7f086e480",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "bf94894a7f0838eba37c0a23c6909f033fb049b13f2b761022da4db7f086e480",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/finite_positional_attention_20261103/ROOT_REPLAY.json",
+      "declared_path": "v10_research/finite_positional_attention_20261103/ROOT_REPLAY.json",
+      "expected_original_sha256": "043b3c3eb38dd2c4ac9e4275e33c93eb9562acd6701b5f5eeb852d19526cd3b7",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/ROOT_REPLAY.json",
+          "public_sha256": "043b3c3eb38dd2c4ac9e4275e33c93eb9562acd6701b5f5eeb852d19526cd3b7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_theorem.md",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_theorem.md",
+      "expected_original_sha256": "95d5aac1ee2504955e55c1e82241c8a07d219661e2620c6e083acf5c8701554d",
+      "resolutions": [
+        {
+          "path": "v10_research/balanced_joint_finite_cut/BCJ001_theorem.md",
+          "public_sha256": "95d5aac1ee2504955e55c1e82241c8a07d219661e2620c6e083acf5c8701554d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_independent_full_review.md",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_independent_full_review.md",
+      "expected_original_sha256": "1e74c502da8fcda31603fc7fc2fa1229747521c3774da55aaf21c8a29a14f64b",
+      "resolutions": [
+        {
+          "path": "v10_research/balanced_joint_finite_cut/BCJ001_independent_full_review.md",
+          "public_sha256": "1e74c502da8fcda31603fc7fc2fa1229747521c3774da55aaf21c8a29a14f64b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_accepted_bindings.json",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_accepted_bindings.json",
+      "expected_original_sha256": "7cb57c460d7398364c5c85152e2ae5dda199db18c0d3a0a45c871eaed76ecf6b",
+      "resolutions": [
+        {
+          "path": "v10_research/balanced_joint_finite_cut/BCJ001_accepted_bindings.json",
+          "public_sha256": "7cb57c460d7398364c5c85152e2ae5dda199db18c0d3a0a45c871eaed76ecf6b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.resumption_20261103/remote_recovery/files/v10_research/intake/BCJ001_root_acceptance.json",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/intake/BCJ001_root_acceptance.json",
+      "expected_original_sha256": "27c1aa7efdc86752c63fd0b1f41b9c303a2aedff965ce81721f3abca7c54699f",
+      "resolutions": [
+        {
+          "path": "v10_research/intake/BCJ001_root_acceptance.json",
+          "public_sha256": "27c1aa7efdc86752c63fd0b1f41b9c303a2aedff965ce81721f3abca7c54699f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.resumption_20261103/remote_recovery/files/provenance/increment3/BINDING_RECONCILIATION.json",
+      "declared_path": "resumption_20261103/remote_recovery/files/provenance/increment3/BINDING_RECONCILIATION.json",
+      "expected_original_sha256": "2b8556353c52bfe82697aeeb4b636f79bb103406b54d9dc95ced91dea90918c4",
+      "resolutions": [
+        {
+          "path": "provenance/increment3/BINDING_RECONCILIATION.json",
+          "public_sha256": "2b8556353c52bfe82697aeeb4b636f79bb103406b54d9dc95ced91dea90918c4",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.resumption_20261103/remote_recovery/files/provenance/increment3/SOURCE_MAP.json",
+      "declared_path": "resumption_20261103/remote_recovery/files/provenance/increment3/SOURCE_MAP.json",
+      "expected_original_sha256": "2a4c4ab88fc0a4bde28b85b3e947a722f1d288dea8d8f2d1a5737f32b1943082",
+      "resolutions": [
+        {
+          "path": "provenance/increment3/SOURCE_MAP.json",
+          "public_sha256": "2a4c4ab88fc0a4bde28b85b3e947a722f1d288dea8d8f2d1a5737f32b1943082",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+      "declared_path": "v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+      "expected_original_sha256": "764c7364a5b7e03cae6afa6898a68c75e84eb9603fdabe0d1bde8904f7341a9f",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+          "public_sha256": "5e65d2646bca23c975a6273fcedc4bdd1aadd8bd68b8390d4ed02b58d90c7c28",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md",
+      "declared_path": "v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md",
+      "expected_original_sha256": "e8f264d46c43f914a321eddfb736369de7563a775a6035c95a1187065236e933",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md",
+          "public_sha256": "e8f264d46c43f914a321eddfb736369de7563a775a6035c95a1187065236e933",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md",
+      "declared_path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md",
+      "expected_original_sha256": "84c1a5d4fcf9958331c257c0cf23a13c73c5627bb6fb4f1866bc10bf1ecb6bd9",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md",
+          "public_sha256": "84c1a5d4fcf9958331c257c0cf23a13c73c5627bb6fb4f1866bc10bf1ecb6bd9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "declared_path": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "expected_original_sha256": "be197e2414d753d23a25e88cdc1ad1735016ccd78ed93f40ae83da85f2cbf68f",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+          "public_sha256": "be197e2414d753d23a25e88cdc1ad1735016ccd78ed93f40ae83da85f2cbf68f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "declared_path": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "expected_original_sha256": "73b63c121a75f6518a89baa77f80072d8c4a79cafd0a7ccec9af40c5591df8b8",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+          "public_sha256": "654dfa998ff2798ade73c9f49a074ead77179f2ce6dc55e1b0fa531d5ac46d3a",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/finite_positional_attention_20261103/program.py",
+      "declared_path": "v10_research/finite_positional_attention_20261103/program.py",
+      "expected_original_sha256": "9892df19071f4c8573f59ad9ca9bdc6f681632f7b37b335df2f906e29d0e51eb",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/program.py",
+          "public_sha256": "9892df19071f4c8573f59ad9ca9bdc6f681632f7b37b335df2f906e29d0e51eb",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+      "location": "$.files.v10_research/finite_positional_attention_20261103/test_program.py",
+      "declared_path": "v10_research/finite_positional_attention_20261103/test_program.py",
+      "expected_original_sha256": "275866d62ca40eca16b8b48fcf39d569751c0a54aa3f6f2e6991e991d85cda77",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/test_program.py",
+          "public_sha256": "275866d62ca40eca16b8b48fcf39d569751c0a54aa3f6f2e6991e991d85cda77",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.scientific_files.main.tex",
+      "declared_path": "main.tex",
+      "expected_original_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+          "public_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.scientific_files.references.bib",
+      "declared_path": "references.bib",
+      "expected_original_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/references.bib",
+          "public_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.scientific_files.sections/implementation_main.tex",
+      "declared_path": "sections/implementation_main.tex",
+      "expected_original_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex",
+          "public_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.scientific_files.sections/proofs_approximate.tex",
+      "declared_path": "sections/proofs_approximate.tex",
+      "expected_original_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex",
+          "public_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.scientific_files.sections/proofs_finite_horizon.tex",
+      "declared_path": "sections/proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.scientific_files.sections/proofs_implementation.tex",
+      "declared_path": "sections/proofs_implementation.tex",
+      "expected_original_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex",
+          "public_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.scientific_files.sections/proofs_negative.tex",
+      "declared_path": "sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.scientific_files.sections/proofs_positive.tex",
+      "declared_path": "sections/proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.scientific_files.sections/proofs_precision.tex",
+      "declared_path": "sections/proofs_precision.tex",
+      "expected_original_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex",
+          "public_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.three_core_proofs.proofs_positive.tex",
+      "declared_path": "proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PRESERVED_HISTORICAL_COPY"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.three_core_proofs.proofs_negative.tex",
+      "declared_path": "proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PRESERVED_HISTORICAL_COPY"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.three_core_proofs.proofs_finite_horizon.tex",
+      "declared_path": "proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PRESERVED_HISTORICAL_COPY"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.pdf.path",
+      "declared_path": "build/main.pdf",
+      "expected_original_sha256": "6e3a3f2d836fd8e3a3fda0e4305f3dd290f3b3f23fe4113891f787e2c9576764",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/main.pdf",
+          "public_sha256": "6e3a3f2d836fd8e3a3fda0e4305f3dd290f3b3f23fe4113891f787e2c9576764",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.author_support_artifacts.SOURCE_BINDINGS.json",
+      "declared_path": "SOURCE_BINDINGS.json",
+      "expected_original_sha256": "0df11326566508689fb43d2f1233a5cfef36dda95aaf6b96ca1aee8ee22d7916",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "0df11326566508689fb43d2f1233a5cfef36dda95aaf6b96ca1aee8ee22d7916",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.author_support_artifacts.CLAIM_TO_SOURCE.md",
+      "declared_path": "CLAIM_TO_SOURCE.md",
+      "expected_original_sha256": "4e5c513f7164eea40ad87dc5041c7393623e4a9ad9186c135a56aa7981c19493",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.md",
+          "public_sha256": "4e5c513f7164eea40ad87dc5041c7393623e4a9ad9186c135a56aa7981c19493",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.author_support_artifacts.CLAIM_TO_SOURCE.json",
+      "declared_path": "CLAIM_TO_SOURCE.json",
+      "expected_original_sha256": "f09eb157db7bbed24471068a0de6bfa17e00f6cc72ce373ecfc7b73c274cb6a4",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+          "public_sha256": "f09eb157db7bbed24471068a0de6bfa17e00f6cc72ce373ecfc7b73c274cb6a4",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.author_support_artifacts.PROVENANCE_RECONCILIATION.json",
+      "declared_path": "PROVENANCE_RECONCILIATION.json",
+      "expected_original_sha256": "3aa32c8d1a41992b982bee759a14aefa60c463c87a096589394d238e5c38932d",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/PROVENANCE_RECONCILIATION.json",
+          "public_sha256": "3aa32c8d1a41992b982bee759a14aefa60c463c87a096589394d238e5c38932d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.author_support_artifacts.COMPANION_CONTEXT.md",
+      "declared_path": "COMPANION_CONTEXT.md",
+      "expected_original_sha256": "7577aa6d23e1e4fa0308f7e4b2b8279c4ae3a70c08389fa9e6a5074d07728a04",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/COMPANION_CONTEXT.md",
+          "public_sha256": "7577aa6d23e1e4fa0308f7e4b2b8279c4ae3a70c08389fa9e6a5074d07728a04",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.author_support_artifacts.COMPANION_CONTEXT.json",
+      "declared_path": "COMPANION_CONTEXT.json",
+      "expected_original_sha256": "d6908a60bce91c5ef6189724fb92394bbccab8453c8bdd392eb2caf1b8bdef20",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/COMPANION_CONTEXT.json",
+          "public_sha256": "d6908a60bce91c5ef6189724fb92394bbccab8453c8bdd392eb2caf1b8bdef20",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.author_support_artifacts.VALIDATION.json",
+      "declared_path": "VALIDATION.json",
+      "expected_original_sha256": "7db4fb42652aee628ebc50846f3cb33e458f11e3bd2040d79ca36acbcef60e2c",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/VALIDATION.json",
+          "public_sha256": "7db4fb42652aee628ebc50846f3cb33e458f11e3bd2040d79ca36acbcef60e2c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.author_support_artifacts.verification/SCIENTIFIC_SOURCE_FREEZE.json",
+      "declared_path": "verification/SCIENTIFIC_SOURCE_FREEZE.json",
+      "expected_original_sha256": "b3ace2095af23de6f56076c2a7386fb13da95d5b166ea6336cfd67c980317d77",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/SCIENTIFIC_SOURCE_FREEZE.json",
+          "public_sha256": "b3ace2095af23de6f56076c2a7386fb13da95d5b166ea6336cfd67c980317d77",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.author_support_artifacts.verification/FINAL_EDITORIAL_REBIND.json",
+      "declared_path": "verification/FINAL_EDITORIAL_REBIND.json",
+      "expected_original_sha256": "60cc6d5d754cd1df7d9f9c8c173b25916417265dc3268b832bf03d8f0c1313ac",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/FINAL_EDITORIAL_REBIND.json",
+          "public_sha256": "60cc6d5d754cd1df7d9f9c8c173b25916417265dc3268b832bf03d8f0c1313ac",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+      "expected_original_sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+          "public_sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/references.bib",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/references.bib",
+      "expected_original_sha256": "048b7410ef67d989febc1fa5dee881fc48df624377e8ad330cdc71986cbb486b",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/references.bib",
+          "public_sha256": "048b7410ef67d989febc1fa5dee881fc48df624377e8ad330cdc71986cbb486b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/HANDOFF_DEPENDENCIES.json",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/HANDOFF_DEPENDENCIES.json",
+      "expected_original_sha256": "31a6d6f1ef2f19747d9b3312fb1010103db1409f43f99dd4fe30f5c225b88d27",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/HANDOFF_DEPENDENCIES.json",
+          "public_sha256": "31a6d6f1ef2f19747d9b3312fb1010103db1409f43f99dd4fe30f5c225b88d27",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "f22c74785ba32a96086234e1e7d11d4f5d9b25bc9be78f26d253e8ea18166cfc",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/SOURCE_BINDINGS.json",
+          "public_sha256": "f22c74785ba32a96086234e1e7d11d4f5d9b25bc9be78f26d253e8ea18166cfc",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/reviews/integration/REVIEW.md",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/reviews/integration/REVIEW.md",
+      "expected_original_sha256": "a39575f4e56a9eaa800781fabe760996c872cc1c3b0b2256fbd56d99561d0fdf",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/reviews/integration/REVIEW.md",
+          "public_sha256": "a39575f4e56a9eaa800781fabe760996c872cc1c3b0b2256fbd56d99561d0fdf",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "expected_original_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+          "public_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/approximate_gate_statistics_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "0da8966dca1f66eeb471f963009fd2c94a5e41a8c278c61c18a83e290fce797c",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "0da8966dca1f66eeb471f963009fd2c94a5e41a8c278c61c18a83e290fce797c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/approximate_gate_statistics_20261103/ROOT_REPLAY.json",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/ROOT_REPLAY.json",
+      "expected_original_sha256": "27514f8441d0a514166934053a092610bc277092b6dd9a0d0dffb2f1d88d2ed2",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/ROOT_REPLAY.json",
+          "public_sha256": "27514f8441d0a514166934053a092610bc277092b6dd9a0d0dffb2f1d88d2ed2",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "expected_original_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+          "public_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/positional_bank_precision_lower_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "092a27a6b9f3069f5d396de893d40884079245e4d7a6583f9c0cf5948983f347",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "092a27a6b9f3069f5d396de893d40884079245e4d7a6583f9c0cf5948983f347",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/positional_bank_precision_lower_20261103/ROOT_REPLAY.json",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/ROOT_REPLAY.json",
+      "expected_original_sha256": "086a93e6ac42a1560454ee6c19bf65124e50321289c082f54abc10125df8686d",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/ROOT_REPLAY.json",
+          "public_sha256": "086a93e6ac42a1560454ee6c19bf65124e50321289c082f54abc10125df8686d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+      "declared_path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+      "expected_original_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+          "public_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/finite_positional_attention_20261103/ROOT_ACCEPTANCE.json",
+      "declared_path": "v10_research/finite_positional_attention_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "0d228c3fed6f2cd23c59270ba52731033467313ea03ea337785f395a01ae6773",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "0d228c3fed6f2cd23c59270ba52731033467313ea03ea337785f395a01ae6773",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/finite_positional_attention_20261103/SOURCE_BINDINGS.json",
+      "declared_path": "v10_research/finite_positional_attention_20261103/SOURCE_BINDINGS.json",
+      "expected_original_sha256": "bf94894a7f0838eba37c0a23c6909f033fb049b13f2b761022da4db7f086e480",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "bf94894a7f0838eba37c0a23c6909f033fb049b13f2b761022da4db7f086e480",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/finite_positional_attention_20261103/ROOT_REPLAY.json",
+      "declared_path": "v10_research/finite_positional_attention_20261103/ROOT_REPLAY.json",
+      "expected_original_sha256": "043b3c3eb38dd2c4ac9e4275e33c93eb9562acd6701b5f5eeb852d19526cd3b7",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/ROOT_REPLAY.json",
+          "public_sha256": "043b3c3eb38dd2c4ac9e4275e33c93eb9562acd6701b5f5eeb852d19526cd3b7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_theorem.md",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_theorem.md",
+      "expected_original_sha256": "95d5aac1ee2504955e55c1e82241c8a07d219661e2620c6e083acf5c8701554d",
+      "resolutions": [
+        {
+          "path": "v10_research/balanced_joint_finite_cut/BCJ001_theorem.md",
+          "public_sha256": "95d5aac1ee2504955e55c1e82241c8a07d219661e2620c6e083acf5c8701554d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_independent_full_review.md",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_independent_full_review.md",
+      "expected_original_sha256": "1e74c502da8fcda31603fc7fc2fa1229747521c3774da55aaf21c8a29a14f64b",
+      "resolutions": [
+        {
+          "path": "v10_research/balanced_joint_finite_cut/BCJ001_independent_full_review.md",
+          "public_sha256": "1e74c502da8fcda31603fc7fc2fa1229747521c3774da55aaf21c8a29a14f64b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_accepted_bindings.json",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/balanced_joint_finite_cut/BCJ001_accepted_bindings.json",
+      "expected_original_sha256": "7cb57c460d7398364c5c85152e2ae5dda199db18c0d3a0a45c871eaed76ecf6b",
+      "resolutions": [
+        {
+          "path": "v10_research/balanced_joint_finite_cut/BCJ001_accepted_bindings.json",
+          "public_sha256": "7cb57c460d7398364c5c85152e2ae5dda199db18c0d3a0a45c871eaed76ecf6b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.resumption_20261103/remote_recovery/files/v10_research/intake/BCJ001_root_acceptance.json",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/intake/BCJ001_root_acceptance.json",
+      "expected_original_sha256": "27c1aa7efdc86752c63fd0b1f41b9c303a2aedff965ce81721f3abca7c54699f",
+      "resolutions": [
+        {
+          "path": "v10_research/intake/BCJ001_root_acceptance.json",
+          "public_sha256": "27c1aa7efdc86752c63fd0b1f41b9c303a2aedff965ce81721f3abca7c54699f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.resumption_20261103/remote_recovery/files/provenance/increment3/BINDING_RECONCILIATION.json",
+      "declared_path": "resumption_20261103/remote_recovery/files/provenance/increment3/BINDING_RECONCILIATION.json",
+      "expected_original_sha256": "2b8556353c52bfe82697aeeb4b636f79bb103406b54d9dc95ced91dea90918c4",
+      "resolutions": [
+        {
+          "path": "provenance/increment3/BINDING_RECONCILIATION.json",
+          "public_sha256": "2b8556353c52bfe82697aeeb4b636f79bb103406b54d9dc95ced91dea90918c4",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.resumption_20261103/remote_recovery/files/provenance/increment3/SOURCE_MAP.json",
+      "declared_path": "resumption_20261103/remote_recovery/files/provenance/increment3/SOURCE_MAP.json",
+      "expected_original_sha256": "2a4c4ab88fc0a4bde28b85b3e947a722f1d288dea8d8f2d1a5737f32b1943082",
+      "resolutions": [
+        {
+          "path": "provenance/increment3/SOURCE_MAP.json",
+          "public_sha256": "2a4c4ab88fc0a4bde28b85b3e947a722f1d288dea8d8f2d1a5737f32b1943082",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+      "declared_path": "v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+      "expected_original_sha256": "764c7364a5b7e03cae6afa6898a68c75e84eb9603fdabe0d1bde8904f7341a9f",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/INTERNAL_ANTECEDENT_RECONCILIATION.md",
+          "public_sha256": "5e65d2646bca23c975a6273fcedc4bdd1aadd8bd68b8390d4ed02b58d90c7c28",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md",
+      "declared_path": "v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md",
+      "expected_original_sha256": "e8f264d46c43f914a321eddfb736369de7563a775a6035c95a1187065236e933",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ROBUST_PREDICTION_AUDIT.md",
+          "public_sha256": "e8f264d46c43f914a321eddfb736369de7563a775a6035c95a1187065236e933",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md",
+      "declared_path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md",
+      "expected_original_sha256": "84c1a5d4fcf9958331c257c0cf23a13c73c5627bb6fb4f1866bc10bf1ecb6bd9",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.md",
+          "public_sha256": "84c1a5d4fcf9958331c257c0cf23a13c73c5627bb6fb4f1866bc10bf1ecb6bd9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "declared_path": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "expected_original_sha256": "be197e2414d753d23a25e88cdc1ad1735016ccd78ed93f40ae83da85f2cbf68f",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+          "public_sha256": "be197e2414d753d23a25e88cdc1ad1735016ccd78ed93f40ae83da85f2cbf68f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "declared_path": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "expected_original_sha256": "73b63c121a75f6518a89baa77f80072d8c4a79cafd0a7ccec9af40c5591df8b8",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+          "public_sha256": "654dfa998ff2798ade73c9f49a074ead77179f2ce6dc55e1b0fa531d5ac46d3a",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/finite_positional_attention_20261103/program.py",
+      "declared_path": "v10_research/finite_positional_attention_20261103/program.py",
+      "expected_original_sha256": "9892df19071f4c8573f59ad9ca9bdc6f681632f7b37b335df2f906e29d0e51eb",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/program.py",
+          "public_sha256": "9892df19071f4c8573f59ad9ca9bdc6f681632f7b37b335df2f906e29d0e51eb",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.historical_inputs_verified.v10_research/finite_positional_attention_20261103/test_program.py",
+      "declared_path": "v10_research/finite_positional_attention_20261103/test_program.py",
+      "expected_original_sha256": "275866d62ca40eca16b8b48fcf39d569751c0a54aa3f6f2e6991e991d85cda77",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/test_program.py",
+          "public_sha256": "275866d62ca40eca16b8b48fcf39d569751c0a54aa3f6f2e6991e991d85cda77",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.additional_inputs_read.v10_research/research_direction_review_20261103/REASSESSMENT.md",
+      "declared_path": "v10_research/research_direction_review_20261103/REASSESSMENT.md",
+      "expected_original_sha256": "05167473c100a8053a2e67ac06c100c086936f35d2e605d4b9fdf6b4b915db52",
+      "resolutions": [
+        {
+          "path": "v10_research/research_direction_review_20261103/REASSESSMENT.md",
+          "public_sha256": "74d3084857d54acb8d14decbeb610c784e2f18fe47341b5a9da23a931c4d2216",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.additional_inputs_read.resumption_20261103/remote_recovery/files/v10_research/binary_budget_adaptation/AB001_joint_blindness_obstruction.md",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/binary_budget_adaptation/AB001_joint_blindness_obstruction.md",
+      "expected_original_sha256": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d",
+      "resolutions": [
+        {
+          "path": "v10_research/binary_budget_adaptation/AB001_joint_blindness_obstruction.md",
+          "public_sha256": "865b65e296c39c632aa619c1d2588ad8b9d221efd6e8d799c8b15814b40a1e3d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.additional_inputs_read.resumption_20261103/remote_recovery/files/v10_research/intake/AB001_acceptance.json",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/intake/AB001_acceptance.json",
+      "expected_original_sha256": "86a80911ba8735b7108598dcad99bb041f733d3fd065151eff6649cdefde7701",
+      "resolutions": [
+        {
+          "path": "v10_research/intake/AB001_acceptance.json",
+          "public_sha256": "86a80911ba8735b7108598dcad99bb041f733d3fd065151eff6649cdefde7701",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.additional_inputs_read.resumption_20261103/remote_recovery/files/v10_research/binary_full_history_domain/AF001_full_history_domain_classification.md",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/binary_full_history_domain/AF001_full_history_domain_classification.md",
+      "expected_original_sha256": "3e15bf53b0de1767c3d53d0ecd3da01af1ffec6a3699dbc562441436a4668ab3",
+      "resolutions": [
+        {
+          "path": "v10_research/binary_full_history_domain/AF001_full_history_domain_classification.md",
+          "public_sha256": "3e15bf53b0de1767c3d53d0ecd3da01af1ffec6a3699dbc562441436a4668ab3",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.additional_inputs_read.resumption_20261103/remote_recovery/files/v10_research/intake/AF001_root_acceptance.json",
+      "declared_path": "resumption_20261103/remote_recovery/files/v10_research/intake/AF001_root_acceptance.json",
+      "expected_original_sha256": "a02c48ceca42df35f0a60c2c85473085dd03c46cf22337bd88568a0eaee8bd1e",
+      "resolutions": [
+        {
+          "path": "v10_research/intake/AF001_root_acceptance.json",
+          "public_sha256": "a02c48ceca42df35f0a60c2c85473085dd03c46cf22337bd88568a0eaee8bd1e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.review_artifacts.CITATION_AUDIT.md",
+      "declared_path": "CITATION_AUDIT.md",
+      "expected_original_sha256": "dff46ea4fda69ed80cf5d95d5c554cead27573b0f1d1d8286f300202da73f748",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/CITATION_AUDIT.md",
+          "public_sha256": "dff46ea4fda69ed80cf5d95d5c554cead27573b0f1d1d8286f300202da73f748",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.review_artifacts.REVIEW.md",
+      "declared_path": "REVIEW.md",
+      "expected_original_sha256": "aebffe47c0abf38caa5c7f7301e1771913fe0a7cdfbab97f755412519a61090c",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/REVIEW.md",
+          "public_sha256": "aebffe47c0abf38caa5c7f7301e1771913fe0a7cdfbab97f755412519a61090c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.review_artifacts.build_check.json",
+      "declared_path": "build_check.json",
+      "expected_original_sha256": "ec22456ad7191623f9bc04dc6f12ee7dcc88f38169b366bcdb2e9e1da7172e6c",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.json",
+          "public_sha256": "ec22456ad7191623f9bc04dc6f12ee7dcc88f38169b366bcdb2e9e1da7172e6c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.review_artifacts.build_check.sh",
+      "declared_path": "build_check.sh",
+      "expected_original_sha256": "6f602e9453e3ba6e5cdc09fce11ff02703fbf594cb89809ecdc57e333a16c0cc",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.sh",
+          "public_sha256": "6f602e9453e3ba6e5cdc09fce11ff02703fbf594cb89809ecdc57e333a16c0cc",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.review_artifacts.check.py",
+      "declared_path": "check.py",
+      "expected_original_sha256": "4c8404b42f27059e3a2aaa676f93e93600550e731287b3b68e7d506cfe64248e",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/check.py",
+          "public_sha256": "4c8404b42f27059e3a2aaa676f93e93600550e731287b3b68e7d506cfe64248e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.review_artifacts.checks.json",
+      "declared_path": "checks.json",
+      "expected_original_sha256": "246bf4fbd926bd29c713a70ce6116bc721a2ebca9754f6b1bad450a3a274bbff",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+          "public_sha256": "246bf4fbd926bd29c713a70ce6116bc721a2ebca9754f6b1bad450a3a274bbff",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.review_artifacts.finalize_bindings.py",
+      "declared_path": "finalize_bindings.py",
+      "expected_original_sha256": "9e7b5c96b4f35a10b0d76c391f90ca8f37a4bc45878949057e8c716d39423e0a",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/finalize_bindings.py",
+          "public_sha256": "9e7b5c96b4f35a10b0d76c391f90ca8f37a4bc45878949057e8c716d39423e0a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.local_only_evidence.build_check_final.log",
+      "declared_path": "build_check_final.log",
+      "expected_original_sha256": "f60033a087478cb3b50266246307b876bf9f2643f26c12803ef15570217987d7",
+      "resolutions": [],
+      "status": "RECORDED_LOCAL_ONLY_BUILD_EVIDENCE_EXCLUDED",
+      "boundary": "This exact historical compiler evidence is expressly local-only in its review receipt and excluded by the source selection. It is not a missing mathematical proof."
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+      "location": "$.local_only_evidence.build_check_transcript.txt",
+      "declared_path": "build_check_transcript.txt",
+      "expected_original_sha256": "2a79fb4e0a6aec46b8bf0beadfbd2a295950b6d559f41ace01e55bdb196fafdd",
+      "resolutions": [],
+      "status": "RECORDED_LOCAL_ONLY_BUILD_EVIDENCE_EXCLUDED",
+      "boundary": "This exact historical compiler evidence is expressly local-only in its review receipt and excluded by the source selection. It is not a missing mathematical proof."
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.json",
+      "location": "$.sources.main.tex",
+      "declared_path": "main.tex",
+      "expected_original_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+          "public_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.json",
+      "location": "$.sources.references.bib",
+      "declared_path": "references.bib",
+      "expected_original_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/references.bib",
+          "public_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.json",
+      "location": "$.sources.sections/implementation_main.tex",
+      "declared_path": "sections/implementation_main.tex",
+      "expected_original_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex",
+          "public_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.json",
+      "location": "$.sources.sections/proofs_approximate.tex",
+      "declared_path": "sections/proofs_approximate.tex",
+      "expected_original_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex",
+          "public_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.json",
+      "location": "$.sources.sections/proofs_finite_horizon.tex",
+      "declared_path": "sections/proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.json",
+      "location": "$.sources.sections/proofs_implementation.tex",
+      "declared_path": "sections/proofs_implementation.tex",
+      "expected_original_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex",
+          "public_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.json",
+      "location": "$.sources.sections/proofs_negative.tex",
+      "declared_path": "sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.json",
+      "location": "$.sources.sections/proofs_positive.tex",
+      "declared_path": "sections/proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.json",
+      "location": "$.sources.sections/proofs_precision.tex",
+      "declared_path": "sections/proofs_precision.tex",
+      "expected_original_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex",
+          "public_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+      "location": "$.byte_identical:proofs_positive.tex",
+      "declared_path": "byte_identical:proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+      "location": "$.byte_identical:proofs_negative.tex",
+      "declared_path": "byte_identical:proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+      "location": "$.byte_identical:proofs_finite_horizon.tex",
+      "declared_path": "byte_identical:proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+      "location": "$.checked_content.v10_research/positional_manuscript_consolidated_20261103/main.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+      "expected_original_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+          "public_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+      "location": "$.checked_content.v10_research/positional_manuscript_consolidated_20261103/references.bib",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/references.bib",
+      "expected_original_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/references.bib",
+          "public_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+      "location": "$.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex",
+      "expected_original_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex",
+          "public_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+      "location": "$.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex",
+      "expected_original_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex",
+          "public_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+      "location": "$.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+      "location": "$.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex",
+      "expected_original_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex",
+          "public_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+      "location": "$.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+      "location": "$.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+      "location": "$.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex",
+      "expected_original_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex",
+          "public_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/REPLAY_RESULT.json",
+      "location": "$.cases[0].sources_sha256.check.py",
+      "declared_path": "check.py",
+      "expected_original_sha256": "dee08439d5ba22aef7c02e481ecc0882eea8577e3c2bff68e72676cc7856c861",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/review_independent/check.py",
+          "public_sha256": "dee08439d5ba22aef7c02e481ecc0882eea8577e3c2bff68e72676cc7856c861",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/REPLAY_RESULT.json",
+      "location": "$.cases[1].sources_sha256.check.py",
+      "declared_path": "check.py",
+      "expected_original_sha256": "217286d12b0465e10544ca8c72e367aeb8366708ec0e7694d8d236eab0142fd6",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/check.py",
+          "public_sha256": "217286d12b0465e10544ca8c72e367aeb8366708ec0e7694d8d236eab0142fd6",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/REPLAY_RESULT.json",
+      "location": "$.cases[2].sources_sha256.program.py",
+      "declared_path": "program.py",
+      "expected_original_sha256": "9892df19071f4c8573f59ad9ca9bdc6f681632f7b37b335df2f906e29d0e51eb",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/program.py",
+          "public_sha256": "9892df19071f4c8573f59ad9ca9bdc6f681632f7b37b335df2f906e29d0e51eb",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/REPLAY_RESULT.json",
+      "location": "$.cases[2].sources_sha256.test_program.py",
+      "declared_path": "test_program.py",
+      "expected_original_sha256": "275866d62ca40eca16b8b48fcf39d569751c0a54aa3f6f2e6991e991d85cda77",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/test_program.py",
+          "public_sha256": "275866d62ca40eca16b8b48fcf39d569751c0a54aa3f6f2e6991e991d85cda77",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/SCIENTIFIC_SOURCE_FREEZE.json",
+      "location": "$.files.main.tex",
+      "declared_path": "main.tex",
+      "expected_original_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+          "public_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/SCIENTIFIC_SOURCE_FREEZE.json",
+      "location": "$.files.references.bib",
+      "declared_path": "references.bib",
+      "expected_original_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/references.bib",
+          "public_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/SCIENTIFIC_SOURCE_FREEZE.json",
+      "location": "$.files.sections/implementation_main.tex",
+      "declared_path": "sections/implementation_main.tex",
+      "expected_original_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex",
+          "public_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/SCIENTIFIC_SOURCE_FREEZE.json",
+      "location": "$.files.sections/proofs_approximate.tex",
+      "declared_path": "sections/proofs_approximate.tex",
+      "expected_original_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex",
+          "public_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/SCIENTIFIC_SOURCE_FREEZE.json",
+      "location": "$.files.sections/proofs_finite_horizon.tex",
+      "declared_path": "sections/proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/SCIENTIFIC_SOURCE_FREEZE.json",
+      "location": "$.files.sections/proofs_implementation.tex",
+      "declared_path": "sections/proofs_implementation.tex",
+      "expected_original_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex",
+          "public_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/SCIENTIFIC_SOURCE_FREEZE.json",
+      "location": "$.files.sections/proofs_negative.tex",
+      "declared_path": "sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/SCIENTIFIC_SOURCE_FREEZE.json",
+      "location": "$.files.sections/proofs_positive.tex",
+      "declared_path": "sections/proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/verification/SCIENTIFIC_SOURCE_FREEZE.json",
+      "location": "$.files.sections/proofs_precision.tex",
+      "declared_path": "sections/proofs_precision.tex",
+      "expected_original_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex",
+          "public_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[0].path",
+      "declared_path": "APPROXIMATION_PRECISION_INTEGRATION.md",
+      "expected_original_sha256": "46db7fa25a37a73e108dddcf2aa78c7edcd79444b38909bbbdfe8dd497be80b3",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/APPROXIMATION_PRECISION_INTEGRATION.md",
+          "public_sha256": "46db7fa25a37a73e108dddcf2aa78c7edcd79444b38909bbbdfe8dd497be80b3",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[1].path",
+      "declared_path": "CLAIM_TO_SOURCE.json",
+      "expected_original_sha256": "f09eb157db7bbed24471068a0de6bfa17e00f6cc72ce373ecfc7b73c274cb6a4",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.json",
+          "public_sha256": "f09eb157db7bbed24471068a0de6bfa17e00f6cc72ce373ecfc7b73c274cb6a4",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[2].path",
+      "declared_path": "CLAIM_TO_SOURCE.md",
+      "expected_original_sha256": "4e5c513f7164eea40ad87dc5041c7393623e4a9ad9186c135a56aa7981c19493",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/CLAIM_TO_SOURCE.md",
+          "public_sha256": "4e5c513f7164eea40ad87dc5041c7393623e4a9ad9186c135a56aa7981c19493",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[3].path",
+      "declared_path": "COMPANION_CONTEXT.json",
+      "expected_original_sha256": "d6908a60bce91c5ef6189724fb92394bbccab8453c8bdd392eb2caf1b8bdef20",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/COMPANION_CONTEXT.json",
+          "public_sha256": "d6908a60bce91c5ef6189724fb92394bbccab8453c8bdd392eb2caf1b8bdef20",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[4].path",
+      "declared_path": "COMPANION_CONTEXT.md",
+      "expected_original_sha256": "7577aa6d23e1e4fa0308f7e4b2b8279c4ae3a70c08389fa9e6a5074d07728a04",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/COMPANION_CONTEXT.md",
+          "public_sha256": "7577aa6d23e1e4fa0308f7e4b2b8279c4ae3a70c08389fa9e6a5074d07728a04",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[5].path",
+      "declared_path": "CONSOLIDATION_LOG.md",
+      "expected_original_sha256": "3c042c728e955f0d677fa966b88c3726146d2d24476c20f78b6717e55bce1667",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/CONSOLIDATION_LOG.md",
+          "public_sha256": "3c042c728e955f0d677fa966b88c3726146d2d24476c20f78b6717e55bce1667",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[6].path",
+      "declared_path": "IMPLEMENTATION_INTEGRATION_NOTES.md",
+      "expected_original_sha256": "32128bcb208b224db238ad2381a824e85d47da10246ebed808193f97a7a975ab",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/IMPLEMENTATION_INTEGRATION_NOTES.md",
+          "public_sha256": "32128bcb208b224db238ad2381a824e85d47da10246ebed808193f97a7a975ab",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[7].path",
+      "declared_path": "PROVENANCE_RECONCILIATION.json",
+      "expected_original_sha256": "3aa32c8d1a41992b982bee759a14aefa60c463c87a096589394d238e5c38932d",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/PROVENANCE_RECONCILIATION.json",
+          "public_sha256": "3aa32c8d1a41992b982bee759a14aefa60c463c87a096589394d238e5c38932d",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[8].path",
+      "declared_path": "README.md",
+      "expected_original_sha256": "74cc4499c504dd0ee8d82249c07a395e4bde8d39927f06bc870085201fc9d392",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/README.md",
+          "public_sha256": "74cc4499c504dd0ee8d82249c07a395e4bde8d39927f06bc870085201fc9d392",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[9].path",
+      "declared_path": "SOURCE_BINDINGS.json",
+      "expected_original_sha256": "0df11326566508689fb43d2f1233a5cfef36dda95aaf6b96ca1aee8ee22d7916",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/SOURCE_BINDINGS.json",
+          "public_sha256": "0df11326566508689fb43d2f1233a5cfef36dda95aaf6b96ca1aee8ee22d7916",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[10].path",
+      "declared_path": "VALIDATION.json",
+      "expected_original_sha256": "7db4fb42652aee628ebc50846f3cb33e458f11e3bd2040d79ca36acbcef60e2c",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/VALIDATION.json",
+          "public_sha256": "7db4fb42652aee628ebc50846f3cb33e458f11e3bd2040d79ca36acbcef60e2c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[11].path",
+      "declared_path": "build_local.sh",
+      "expected_original_sha256": "70ef1c54cfbc4fbd4f5a0b19d489fef6295b38557c78f1c63c0074c602a60fb0",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/build_local.sh",
+          "public_sha256": "70ef1c54cfbc4fbd4f5a0b19d489fef6295b38557c78f1c63c0074c602a60fb0",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[12].path",
+      "declared_path": "main.pdf",
+      "expected_original_sha256": "6e3a3f2d836fd8e3a3fda0e4305f3dd290f3b3f23fe4113891f787e2c9576764",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/main.pdf",
+          "public_sha256": "6e3a3f2d836fd8e3a3fda0e4305f3dd290f3b3f23fe4113891f787e2c9576764",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[13].path",
+      "declared_path": "main.tex",
+      "expected_original_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+          "public_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[14].path",
+      "declared_path": "references.bib",
+      "expected_original_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/references.bib",
+          "public_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[15].path",
+      "declared_path": "replay_sources.py",
+      "expected_original_sha256": "599ba961f8e43c673f6b8394100e239d20f32710ad55caafe8d742055210e068",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/replay_sources.py",
+          "public_sha256": "599ba961f8e43c673f6b8394100e239d20f32710ad55caafe8d742055210e068",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[16].path",
+      "declared_path": "review_independent/CITATION_AUDIT.md",
+      "expected_original_sha256": "dff46ea4fda69ed80cf5d95d5c554cead27573b0f1d1d8286f300202da73f748",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/CITATION_AUDIT.md",
+          "public_sha256": "dff46ea4fda69ed80cf5d95d5c554cead27573b0f1d1d8286f300202da73f748",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[17].path",
+      "declared_path": "review_independent/FINAL_BINDINGS.json",
+      "expected_original_sha256": "36098843a79e9dcee6b258fb21ed0534277f2c43fbe1152ef967a28b0360106e",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/FINAL_BINDINGS.json",
+          "public_sha256": "36098843a79e9dcee6b258fb21ed0534277f2c43fbe1152ef967a28b0360106e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[18].path",
+      "declared_path": "review_independent/REVIEW.md",
+      "expected_original_sha256": "aebffe47c0abf38caa5c7f7301e1771913fe0a7cdfbab97f755412519a61090c",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/REVIEW.md",
+          "public_sha256": "aebffe47c0abf38caa5c7f7301e1771913fe0a7cdfbab97f755412519a61090c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[19].path",
+      "declared_path": "review_independent/build_check.json",
+      "expected_original_sha256": "ec22456ad7191623f9bc04dc6f12ee7dcc88f38169b366bcdb2e9e1da7172e6c",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.json",
+          "public_sha256": "ec22456ad7191623f9bc04dc6f12ee7dcc88f38169b366bcdb2e9e1da7172e6c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[20].path",
+      "declared_path": "review_independent/build_check.sh",
+      "expected_original_sha256": "6f602e9453e3ba6e5cdc09fce11ff02703fbf594cb89809ecdc57e333a16c0cc",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/build_check.sh",
+          "public_sha256": "6f602e9453e3ba6e5cdc09fce11ff02703fbf594cb89809ecdc57e333a16c0cc",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[21].path",
+      "declared_path": "review_independent/check.py",
+      "expected_original_sha256": "4c8404b42f27059e3a2aaa676f93e93600550e731287b3b68e7d506cfe64248e",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/check.py",
+          "public_sha256": "4c8404b42f27059e3a2aaa676f93e93600550e731287b3b68e7d506cfe64248e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[22].path",
+      "declared_path": "review_independent/checks.json",
+      "expected_original_sha256": "246bf4fbd926bd29c713a70ce6116bc721a2ebca9754f6b1bad450a3a274bbff",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/checks.json",
+          "public_sha256": "246bf4fbd926bd29c713a70ce6116bc721a2ebca9754f6b1bad450a3a274bbff",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[23].path",
+      "declared_path": "review_independent/finalize_bindings.py",
+      "expected_original_sha256": "9e7b5c96b4f35a10b0d76c391f90ca8f37a4bc45878949057e8c716d39423e0a",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/review_independent/finalize_bindings.py",
+          "public_sha256": "9e7b5c96b4f35a10b0d76c391f90ca8f37a4bc45878949057e8c716d39423e0a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[24].path",
+      "declared_path": "sections/implementation_main.tex",
+      "expected_original_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex",
+          "public_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[25].path",
+      "declared_path": "sections/proofs_approximate.tex",
+      "expected_original_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex",
+          "public_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[26].path",
+      "declared_path": "sections/proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[27].path",
+      "declared_path": "sections/proofs_implementation.tex",
+      "expected_original_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex",
+          "public_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[28].path",
+      "declared_path": "sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[29].path",
+      "declared_path": "sections/proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[30].path",
+      "declared_path": "sections/proofs_precision.tex",
+      "expected_original_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex",
+          "public_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[31].path",
+      "declared_path": "verification/ACG001_replay.log",
+      "expected_original_sha256": "062e00522a310fc4f70275cbbeb3bf391d6fbe97edaacd18da2974a1ddb17dd0",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/ACG001_replay.log",
+          "public_sha256": "062e00522a310fc4f70275cbbeb3bf391d6fbe97edaacd18da2974a1ddb17dd0",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[32].path",
+      "declared_path": "verification/BUILD_TRANSCRIPT.log",
+      "expected_original_sha256": "842afdd60c4ba02b1a42a7d17e00fff4f42564bfa4bd930301a8427b1902c4ed",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/BUILD_TRANSCRIPT.log",
+          "public_sha256": "842afdd60c4ba02b1a42a7d17e00fff4f42564bfa4bd930301a8427b1902c4ed",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[33].path",
+      "declared_path": "verification/FINAL_EDITORIAL_REBIND.json",
+      "expected_original_sha256": "60cc6d5d754cd1df7d9f9c8c173b25916417265dc3268b832bf03d8f0c1313ac",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/FINAL_EDITORIAL_REBIND.json",
+          "public_sha256": "60cc6d5d754cd1df7d9f9c8c173b25916417265dc3268b832bf03d8f0c1313ac",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[34].path",
+      "declared_path": "verification/FPA001_replay.log",
+      "expected_original_sha256": "a019ea452c09fd479be1d32a2536fc44ef25552831298e47933a7f6093edbc95",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/FPA001_replay.log",
+          "public_sha256": "a019ea452c09fd479be1d32a2536fc44ef25552831298e47933a7f6093edbc95",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[35].path",
+      "declared_path": "verification/PBP001_replay.log",
+      "expected_original_sha256": "fd8f10b0cbca303800c6eeba306c9c531385735667f117507aae386e64899bf6",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/PBP001_replay.log",
+          "public_sha256": "fd8f10b0cbca303800c6eeba306c9c531385735667f117507aae386e64899bf6",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[36].path",
+      "declared_path": "verification/PDF_INFO.txt",
+      "expected_original_sha256": "8c56f6921927d8fa80c2188a5496d589f9e3692089afb5afbb72ee7d016be657",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/PDF_INFO.txt",
+          "public_sha256": "8c56f6921927d8fa80c2188a5496d589f9e3692089afb5afbb72ee7d016be657",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[37].path",
+      "declared_path": "verification/REPLAY_NOTES.md",
+      "expected_original_sha256": "215cf6b6299e635c1c5abd92b76261e3a579f2dba8f4d1adb5445bd799ea8c5c",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/REPLAY_NOTES.md",
+          "public_sha256": "215cf6b6299e635c1c5abd92b76261e3a579f2dba8f4d1adb5445bd799ea8c5c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[38].path",
+      "declared_path": "verification/REPLAY_RESULT.json",
+      "expected_original_sha256": "fd81c2336bc456f512769d0289052affa891394941fa1654cdb3fce87b101fca",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/REPLAY_RESULT.json",
+          "public_sha256": "fd81c2336bc456f512769d0289052affa891394941fa1654cdb3fce87b101fca",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[39].path",
+      "declared_path": "verification/REVISION_main.tex.diff",
+      "expected_original_sha256": "b177958a6b8fefc45744d5862c2e09a6409e6a92e22708b683e7ce4af196cfa5",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/REVISION_main.tex.diff",
+          "public_sha256": "b177958a6b8fefc45744d5862c2e09a6409e6a92e22708b683e7ce4af196cfa5",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[40].path",
+      "declared_path": "verification/REVISION_references.bib.diff",
+      "expected_original_sha256": "4274a79040337683ade0b669cffe9620550e63053d1caf1ecc9234b4a5b0356e",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/REVISION_references.bib.diff",
+          "public_sha256": "4274a79040337683ade0b669cffe9620550e63053d1caf1ecc9234b4a5b0356e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[41].path",
+      "declared_path": "verification/SCIENTIFIC_SOURCE_FREEZE.json",
+      "expected_original_sha256": "b3ace2095af23de6f56076c2a7386fb13da95d5b166ea6336cfd67c980317d77",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/SCIENTIFIC_SOURCE_FREEZE.json",
+          "public_sha256": "b3ace2095af23de6f56076c2a7386fb13da95d5b166ea6336cfd67c980317d77",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[42].path",
+      "declared_path": "verification/STRUCTURAL_CHECK.json",
+      "expected_original_sha256": "a9cdd2dec17be3ea0025ed2539764f69c1a2ceafb2181acfeb0a1ad6b5f1f177",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/STRUCTURAL_CHECK.json",
+          "public_sha256": "a9cdd2dec17be3ea0025ed2539764f69c1a2ceafb2181acfeb0a1ad6b5f1f177",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[43].path",
+      "declared_path": "verification/VISUAL_IDENTITY_29_53.json",
+      "expected_original_sha256": "7b8e746fc62bfe1cc58004552416a0327ac5472872a1026da97f4296d3a5e5f6",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/VISUAL_IDENTITY_29_53.json",
+          "public_sha256": "7b8e746fc62bfe1cc58004552416a0327ac5472872a1026da97f4296d3a5e5f6",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[44].path",
+      "declared_path": "verification/VISUAL_PAGES_01_28.md",
+      "expected_original_sha256": "1f2be05124c98efcf26a3f5862d22fdbd50da7597b2fd9b686bae0a45531bf1f",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/VISUAL_PAGES_01_28.md",
+          "public_sha256": "1f2be05124c98efcf26a3f5862d22fdbd50da7597b2fd9b686bae0a45531bf1f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[45].path",
+      "declared_path": "verification/VISUAL_PAGES_29_55.md",
+      "expected_original_sha256": "ecf8f23d9b6574b700827e11d4ef22390de8e369e0bf407b3e3829ff3adfbb32",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verification/VISUAL_PAGES_29_55.md",
+          "public_sha256": "ecf8f23d9b6574b700827e11d4ef22390de8e369e0bf407b3e3829ff3adfbb32",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/PUBLICATION_MANIFEST.json",
+      "location": "$.files[46].path",
+      "declared_path": "verify_manuscript.py",
+      "expected_original_sha256": "f590f7cc643a919bd7186fae0dd1dafdac46a1e641c740596aa8cd1a88cd2c4e",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/verify_manuscript.py",
+          "public_sha256": "f590f7cc643a919bd7186fae0dd1dafdac46a1e641c740596aa8cd1a88cd2c4e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.sources.main.tex",
+      "declared_path": "main.tex",
+      "expected_original_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+          "public_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.sources.references.bib",
+      "declared_path": "references.bib",
+      "expected_original_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/references.bib",
+          "public_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.sources.sections/implementation_main.tex",
+      "declared_path": "sections/implementation_main.tex",
+      "expected_original_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex",
+          "public_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.sources.sections/proofs_approximate.tex",
+      "declared_path": "sections/proofs_approximate.tex",
+      "expected_original_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex",
+          "public_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.sources.sections/proofs_finite_horizon.tex",
+      "declared_path": "sections/proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.sources.sections/proofs_implementation.tex",
+      "declared_path": "sections/proofs_implementation.tex",
+      "expected_original_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex",
+          "public_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.sources.sections/proofs_negative.tex",
+      "declared_path": "sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.sources.sections/proofs_positive.tex",
+      "declared_path": "sections/proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.sources.sections/proofs_precision.tex",
+      "declared_path": "sections/proofs_precision.tex",
+      "expected_original_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex",
+          "public_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.independent_diagnostics.byte_identical:proofs_positive.tex",
+      "declared_path": "byte_identical:proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.independent_diagnostics.byte_identical:proofs_negative.tex",
+      "declared_path": "byte_identical:proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.independent_diagnostics.byte_identical:proofs_finite_horizon.tex",
+      "declared_path": "byte_identical:proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.independent_diagnostics.checked_content.v10_research/positional_manuscript_consolidated_20261103/main.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+      "expected_original_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+          "public_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.independent_diagnostics.checked_content.v10_research/positional_manuscript_consolidated_20261103/references.bib",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/references.bib",
+      "expected_original_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/references.bib",
+          "public_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.independent_diagnostics.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex",
+      "expected_original_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex",
+          "public_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.independent_diagnostics.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex",
+      "expected_original_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex",
+          "public_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.independent_diagnostics.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.independent_diagnostics.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex",
+      "expected_original_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex",
+          "public_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.independent_diagnostics.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.independent_diagnostics.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_REPLAY.json",
+      "location": "$.independent_diagnostics.checked_content.v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex",
+      "declared_path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex",
+      "expected_original_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex",
+          "public_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.scientific_source_bindings.main.tex",
+      "declared_path": "main.tex",
+      "expected_original_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/main.tex",
+          "public_sha256": "5c4a5a91e08a4ba0eaf40eff7b19010b88f3e6f3d616f80bdfa58ad1756f8fa1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.scientific_source_bindings.references.bib",
+      "declared_path": "references.bib",
+      "expected_original_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/references.bib",
+          "public_sha256": "04e507cee82db2b2fc63f747ecfcf07a8186c2c94f5b05a505353896aec0579f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.scientific_source_bindings.sections/implementation_main.tex",
+      "declared_path": "sections/implementation_main.tex",
+      "expected_original_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/implementation_main.tex",
+          "public_sha256": "4d7b8dc404c4da39ae5cadbf110b632bfc76e6859b2501acc6f21bae063c886b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.scientific_source_bindings.sections/proofs_approximate.tex",
+      "declared_path": "sections/proofs_approximate.tex",
+      "expected_original_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_approximate.tex",
+          "public_sha256": "20f22d9257acfbaa8298f549abb15fc46bb10f0a7497800009337352c3e1f860",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.scientific_source_bindings.sections/proofs_finite_horizon.tex",
+      "declared_path": "sections/proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.scientific_source_bindings.sections/proofs_implementation.tex",
+      "declared_path": "sections/proofs_implementation.tex",
+      "expected_original_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_implementation.tex",
+          "public_sha256": "3e02a7f8b4f0169dff523b9f571701132a081e5bee453d64abffcfa3b603ee7a",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.scientific_source_bindings.sections/proofs_negative.tex",
+      "declared_path": "sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.scientific_source_bindings.sections/proofs_positive.tex",
+      "declared_path": "sections/proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/positional_manuscript_consolidated_20261103/ROOT_ACCEPTANCE.json",
+      "location": "$.scientific_source_bindings.sections/proofs_precision.tex",
+      "declared_path": "sections/proofs_precision.tex",
+      "expected_original_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_precision.tex",
+          "public_sha256": "8a92a6595e178dba09fa88801afc395b8cd3c5ee461487c26ed286685e93f95b",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_internal_reconciliation.json",
+      "location": "$.local_documents[0].path",
+      "declared_path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+      "expected_original_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+          "public_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_internal_reconciliation.json",
+      "location": "$.local_documents[1].path",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "expected_original_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+          "public_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_internal_reconciliation.json",
+      "location": "$.local_documents[2].path",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_internal_reconciliation.json",
+      "location": "$.local_documents[3].path",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "expected_original_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+          "public_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_internal_reconciliation.json",
+      "location": "$.local_documents[4].path",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_internal_reconciliation.json",
+      "location": "$.local_documents[5].path",
+      "declared_path": "v10_research/research_direction_review_20261103/ASSESSMENT.md",
+      "expected_original_sha256": "a4d884b8e07323bd565d3bac631b3153f6d74e54bbe2b3fd3397e8767676245a",
+      "resolutions": [
+        {
+          "path": "v10_research/research_direction_review_20261103/ASSESSMENT.md",
+          "public_sha256": "94ae32b30df67f21cee653b63c9f20b93fcad78bc6e07472f982d447e35f0e55",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_internal_reconciliation.json",
+      "location": "$.preserved_before_bounded_extension[0].path",
+      "declared_path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.before_markov_estimation.md",
+      "expected_original_sha256": "9377281b2cbf4167059b466dfa7b77de15a1700064498e487ba1c0d8eb1e2490",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.before_markov_estimation.md",
+          "public_sha256": "9377281b2cbf4167059b466dfa7b77de15a1700064498e487ba1c0d8eb1e2490",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_internal_reconciliation.json",
+      "location": "$.preserved_before_bounded_extension[1].path",
+      "declared_path": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_markov_estimation.json",
+      "expected_original_sha256": "76c884c5d062d42b9ec9be356487f71ca6ef0fcef3712ffe575d30d93a0b36a6",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_markov_estimation.json",
+          "public_sha256": "76c884c5d062d42b9ec9be356487f71ca6ef0fcef3712ffe575d30d93a0b36a6",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_markov_estimation.json",
+      "location": "$.local_documents[0].path",
+      "declared_path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+      "expected_original_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+          "public_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_markov_estimation.json",
+      "location": "$.local_documents[1].path",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "expected_original_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+          "public_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_markov_estimation.json",
+      "location": "$.local_documents[2].path",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_markov_estimation.json",
+      "location": "$.local_documents[3].path",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "expected_original_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+          "public_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_markov_estimation.json",
+      "location": "$.local_documents[4].path",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_markov_estimation.json",
+      "location": "$.local_documents[5].path",
+      "declared_path": "v10_research/research_direction_review_20261103/ASSESSMENT.md",
+      "expected_original_sha256": "a4d884b8e07323bd565d3bac631b3153f6d74e54bbe2b3fd3397e8767676245a",
+      "resolutions": [
+        {
+          "path": "v10_research/research_direction_review_20261103/ASSESSMENT.md",
+          "public_sha256": "94ae32b30df67f21cee653b63c9f20b93fcad78bc6e07472f982d447e35f0e55",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "location": "$.local_documents[0].path",
+      "declared_path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+      "expected_original_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+      "resolutions": [
+        {
+          "path": "v10_research/finite_positional_attention_20261103/CANDIDATE.md",
+          "public_sha256": "a4194b8e44eff0302d0678df0ed4cc9650a683164950f9fd87acf7e62bf1c6f9",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "location": "$.local_documents[1].path",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "expected_original_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+          "public_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "location": "$.local_documents[2].path",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "location": "$.local_documents[3].path",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "expected_original_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+          "public_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "location": "$.local_documents[4].path",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "location": "$.local_documents[5].path",
+      "declared_path": "v10_research/research_direction_review_20261103/ASSESSMENT.md",
+      "expected_original_sha256": "a4d884b8e07323bd565d3bac631b3153f6d74e54bbe2b3fd3397e8767676245a",
+      "resolutions": [
+        {
+          "path": "v10_research/research_direction_review_20261103/ASSESSMENT.md",
+          "public_sha256": "94ae32b30df67f21cee653b63c9f20b93fcad78bc6e07472f982d447e35f0e55",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "location": "$.preserved_before_bounded_extension[0].path",
+      "declared_path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.before_markov_estimation.md",
+      "expected_original_sha256": "9377281b2cbf4167059b466dfa7b77de15a1700064498e487ba1c0d8eb1e2490",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.before_markov_estimation.md",
+          "public_sha256": "9377281b2cbf4167059b466dfa7b77de15a1700064498e487ba1c0d8eb1e2490",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "location": "$.preserved_before_bounded_extension[1].path",
+      "declared_path": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_markov_estimation.json",
+      "expected_original_sha256": "76c884c5d062d42b9ec9be356487f71ca6ef0fcef3712ffe575d30d93a0b36a6",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_markov_estimation.json",
+          "public_sha256": "76c884c5d062d42b9ec9be356487f71ca6ef0fcef3712ffe575d30d93a0b36a6",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "location": "$.preserved_before_internal_reconciliation[0].path",
+      "declared_path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.before_internal_reconciliation.md",
+      "expected_original_sha256": "77938cca8c91175182fe6d5255e1d52254d30055c41ae665586678bb65da07bd",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ATTENTION_PRECISION_AUDIT.before_internal_reconciliation.md",
+          "public_sha256": "77938cca8c91175182fe6d5255e1d52254d30055c41ae665586678bb65da07bd",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.json",
+      "location": "$.preserved_before_internal_reconciliation[1].path",
+      "declared_path": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_internal_reconciliation.json",
+      "expected_original_sha256": "08608c49c021207cc2086ed4f1cc32909dd77376cb81c07dab238ae390d4af94",
+      "resolutions": [
+        {
+          "path": "v10_research/central_prior_art_20261103/ATTENTION_READ_SCOPE.before_internal_reconciliation.json",
+          "public_sha256": "0957e8792236725b50418b6a55b77937ad0daa3d8f2c629cf734300e46f1a685",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "location": "$.local_inputs[0].path",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+      "expected_original_sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/main.tex",
+          "public_sha256": "e53c4a93a09fb9629157072b77d87d373f8f3aba8929c9fce81c9d8f0f974b06",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "location": "$.local_inputs[1].path",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+      "expected_original_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_positive.tex",
+          "public_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "location": "$.local_inputs[2].path",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+      "expected_original_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_negative.tex",
+          "public_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "location": "$.local_inputs[3].path",
+      "declared_path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+      "expected_original_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/recovered_science/positional_manuscript_finite_20261102/sections/proofs_finite_horizon.tex",
+          "public_sha256": "5ce65ec56017f2581e06681bb90848afc0a8987c44022663b4866667f84e3639",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "location": "$.local_inputs[4].path",
+      "declared_path": "v10_research/resumption_20261103/prior_art/PRIOR_ART_AUDIT.md",
+      "expected_original_sha256": "e2b0b88e85d370f5eecf05ca64bf31816bee9609906c164c7ab715ddf8890e3e",
+      "resolutions": [],
+      "status": "RECORDED_HISTORICAL_LITERATURE_INPUT_OUTSIDE_RELEASE",
+      "boundary": "The exact existing local literature note was read in the historical audit, but is not in this bounded release or prior public inventory. No public availability or replay is claimed for it; current mathematical proofs are included separately."
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "location": "$.local_inputs[5].path",
+      "declared_path": "v10_research/resumption_20261103/reliability_prior_art/AUDIT.md",
+      "expected_original_sha256": "d25b21f937b592cae4cd2d0a79fbd3caf1ab75e1cc8cb95247e4c3bc5d5d738e",
+      "resolutions": [
+        {
+          "path": "v10_research/resumption_20261103/reliability_prior_art/AUDIT.md",
+          "public_sha256": "d25b21f937b592cae4cd2d0a79fbd3caf1ab75e1cc8cb95247e4c3bc5d5d738e",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "location": "$.local_inputs[6].path",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+      "expected_original_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/CANDIDATE.md",
+          "public_sha256": "66ca3f2c092eeceb78cdafab97854580df329b28dd5b4d3bb34c28bb5a44d4ed",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "location": "$.local_inputs[7].path",
+      "declared_path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+      "resolutions": [
+        {
+          "path": "v10_research/approximate_gate_statistics_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "b6a2e5bb2438987a0d3b47f59cde37e8870254d27d74cc052c010a9f130c34c8",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "location": "$.local_inputs[8].path",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+      "expected_original_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/CANDIDATE.md",
+          "public_sha256": "0a74d5e9eab9b276bc3cebe656815483d1dc22d49f138c48f310456003bcdbde",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "location": "$.local_inputs[9].path",
+      "declared_path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+      "expected_original_sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+      "resolutions": [
+        {
+          "path": "v10_research/positional_bank_precision_lower_20261103/ROOT_ACCEPTANCE.json",
+          "public_sha256": "7af436918247872a8e26372503005fd873b2e50171557002e8a0dde8fa3de4a1",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "location": "$.local_inputs[10].path",
+      "declared_path": "v10_research/prior_art/source_corruption_screen.md",
+      "expected_original_sha256": "31a3a0c741e8018b96aa8859145f74337d7ec6841f39c4b825d35fc4081c3b0f",
+      "resolutions": [
+        {
+          "path": "v10_research/prior_art/source_corruption_screen.md",
+          "public_sha256": "31a3a0c741e8018b96aa8859145f74337d7ec6841f39c4b825d35fc4081c3b0f",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/central_prior_art_20261103/READ_SCOPE.json",
+      "location": "$.local_inputs[11].path",
+      "declared_path": "v10_research/prior_art/comparison.md",
+      "expected_original_sha256": "3fc5fd4552f37a65c225227e2ba2660d77349f59b1f9429a33ec8c3fed46a66c",
+      "resolutions": [
+        {
+          "path": "v10_research/prior_art/comparison.md",
+          "public_sha256": "3fc5fd4552f37a65c225227e2ba2660d77349f59b1f9429a33ec8c3fed46a66c",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/certificate_free_order_two_20261103/ROOT_AUDIT.json",
+      "location": "$.artifacts.GATE_CHECKS.json",
+      "declared_path": "GATE_CHECKS.json",
+      "expected_original_sha256": "c8f8944909d9dba1b01d2d065e7c313bacfb743d1c7f897cb1edd2d2fa755a83",
+      "resolutions": [
+        {
+          "path": "v10_research/certificate_free_order_two_20261103/GATE_CHECKS.json",
+          "public_sha256": "c8f8944909d9dba1b01d2d065e7c313bacfb743d1c7f897cb1edd2d2fa755a83",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/certificate_free_order_two_20261103/ROOT_AUDIT.json",
+      "location": "$.artifacts.HALF_GATE_COUNTEREXAMPLE.md",
+      "declared_path": "HALF_GATE_COUNTEREXAMPLE.md",
+      "expected_original_sha256": "c8c807ee0bb33ac3a30c5dfc11839a14cea78e93aab0ae0596768678cc012cd3",
+      "resolutions": [
+        {
+          "path": "v10_research/certificate_free_order_two_20261103/HALF_GATE_COUNTEREXAMPLE.md",
+          "public_sha256": "c8c807ee0bb33ac3a30c5dfc11839a14cea78e93aab0ae0596768678cc012cd3",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/certificate_free_order_two_20261103/ROOT_AUDIT.json",
+      "location": "$.artifacts.INDEPENDENT_INTERFACE_CHECK.md",
+      "declared_path": "INDEPENDENT_INTERFACE_CHECK.md",
+      "expected_original_sha256": "308ac911193f7725186191b7622bf7086ea861ab3b4eae4706b2e8bbd221fc8e",
+      "resolutions": [
+        {
+          "path": "v10_research/certificate_free_order_two_20261103/INDEPENDENT_INTERFACE_CHECK.md",
+          "public_sha256": "c602bc2572806f3b92e4ef4a08bd31e085c6e8738eeb33394a8a6619f535622b",
+          "status": "DECLARED_EXACT_EXPORT_PAIR"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/certificate_free_order_two_20261103/ROOT_AUDIT.json",
+      "location": "$.artifacts.RESULT.md",
+      "declared_path": "RESULT.md",
+      "expected_original_sha256": "a2b4f55334416fb8d0104e3af28086c4e5579319a1feae34681af6b66204f6a8",
+      "resolutions": [
+        {
+          "path": "v10_research/certificate_free_order_two_20261103/RESULT.md",
+          "public_sha256": "a2b4f55334416fb8d0104e3af28086c4e5579319a1feae34681af6b66204f6a8",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    {
+      "owner": "v10_research/certificate_free_order_two_20261103/ROOT_AUDIT.json",
+      "location": "$.artifacts.check_gate.py",
+      "declared_path": "check_gate.py",
+      "expected_original_sha256": "e18f03a55fe71a05de68c541c7a06b8e790b579a09848e6ee394142bdcfdd8d5",
+      "resolutions": [
+        {
+          "path": "v10_research/certificate_free_order_two_20261103/check_gate.py",
+          "public_sha256": "e18f03a55fe71a05de68c541c7a06b8e790b579a09848e6ee394142bdcfdd8d5",
+          "status": "EXACT_PUBLIC_BYTES"
+        }
+      ],
+      "status": "RESOLVED"
+    }
+  ],
+  "scope_limits": [
+    "Anonymous research draft; no conference or journal submission, authorship affiliation, license or new reuse rights were added.",
+    "BCJ precedence for the earlier finite-bank phenomenon is explicit. Changed-interface calibration and explicit finite realization are not claimed to discover that phenomenon anew.",
+    "The manuscript is not evidence of trained-network performance, superiority to same-information counters, or a whole-network precision law.",
+    "The public PDF is the exact accepted 55-page artifact. Rebuilds can have different timestamp and identifier bytes; source receipts document the actual independent 55-page text/pixel comparison. Publication preparation did not rebuild or rerun the scientific checks.",
+    "The publisher checked PDF metadata/text for privacy and visually inspected its first page. Full-page visual QA and independent rebuild are separately documented by source receipts.",
+    "Public literature notes state their actual reading scope and uncertainty; they are neither novelty certifications nor allegations of error in external papers. No third-party paper PDFs are included.",
+    "The original integration-check and final-binding scripts require historical administrative hashes, recovery aliases and unselected local build logs. They are retained as source-bound pre-export verification evidence, not claimed to replay unchanged against sanitized public administrative files. Portable manuscript compilation and the separate scientific replay_sources.py workflow are described in the manuscript README.",
+    "Original/export bindings remain exact declared pairs. Historic missing-source and earlier rebuilt-PDF limits remain unchanged; this release does not claim all old research has been recovered.",
+    "One recorded historical literature-input note, v10_research/resumption_20261103/prior_art/PRIOR_ART_AUDIT.md, is outside this release and has no claimed public copy. Its identity remains honestly recorded; it is not a missing mathematical proof.",
+    "Only selected public verification evidence is included. Build caches, raw host-specific logs, rendered page PNGs, unselected temporary artifacts and unfinished clean-training-objective research are excluded.",
+    "CI checks public byte inventory and integrity regression cases, not proof correctness or literature priority. No workflow, credentials or permissions change."
+  ]
+}
