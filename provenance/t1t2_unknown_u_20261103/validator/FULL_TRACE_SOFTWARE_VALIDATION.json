@@ -1,0 +1,152 @@
+{
+  "schema": "t1t2-full-trace-helper-software-validation-v1",
+  "status": "PASS_SOFTWARE_AND_ARCHIVED_DATA_CHECKS_ONLY",
+  "date_utc": "2026-11-03",
+  "artifacts": [
+    {
+      "path": "verify_full_trace.py",
+      "bytes": 31405,
+      "sha256": "a841acbc14134b9f2682ab5aaabe7b993e02ac3e06a11b8f548ee4eadae6d096"
+    },
+    {
+      "path": "test_verify_full_trace.py",
+      "bytes": 14436,
+      "sha256": "cfafacff50ef859dc35aeef2b9254d1552dbd23434edc191d00d6e15c35a0835"
+    },
+    {
+      "path": "README_FULL_TRACE.md",
+      "bytes": 7077,
+      "sha256": "b40eeb7388dc6dec5d8889994bcf2b5f63d4782fdffef9a86d95ac0c342f601b"
+    }
+  ],
+  "manifest_sha256": "9f37ee25f1ecb0371528d801b13aa28ef17f94d954d575855fa42d5d2dc6879b",
+  "unit_tests": {
+    "fixture_kind": "small deterministic synthetic data; no RNG or model evaluation",
+    "normal": {
+      "tests": 19,
+      "passed": 19,
+      "failed": 0,
+      "options": [
+        "-I",
+        "-B"
+      ]
+    },
+    "optimized": {
+      "tests": 19,
+      "passed": 19,
+      "failed": 0,
+      "options": [
+        "-I",
+        "-B",
+        "-O"
+      ]
+    },
+    "tests": [
+      "test_bindings_resolve_original_and_public_bytes",
+      "test_command_requires_isolation_and_no_bytecode",
+      "test_corrupt_chunk_and_wrong_order",
+      "test_coverage_rejects_missing_duplicate_and_wrong_order",
+      "test_exclusive_reconstruction",
+      "test_fifo_rejected_without_blocking",
+      "test_missing_newline_rejected",
+      "test_no_follow_file_and_ancestor",
+      "test_rationals_are_canonical_and_typed",
+      "test_reconstruction_rejects_symlink_parent_and_cleans_partial_file",
+      "test_safe_paths",
+      "test_sparse_shapes",
+      "test_strict_json_corruption",
+      "test_strict_json_rejects_surrogate_keys",
+      "test_strict_json_valid",
+      "test_synthetic_row_shape_and_recorded_status",
+      "test_transport_detects_midread_change",
+      "test_transport_rejects_byte_and_record_bound_errors",
+      "test_transport_streams_exact_bytes"
+    ]
+  },
+  "full_export_integration": {
+    "normal_read_only": {
+      "N3_records": 16,
+      "bytes": 79712544,
+      "chunks": 20,
+      "coverage": {
+        "3:1/32": 8,
+        "3:1/4": 8,
+        "4:1/32": 16,
+        "4:1/4": 16,
+        "5:1/32": 32,
+        "5:1/4": 32,
+        "6:1/32": 64,
+        "6:1/4": 64,
+        "7:1/32": 128,
+        "7:1/4": 128,
+        "8:1/32": 256,
+        "8:1/4": 256
+      },
+      "historical_source_bindings": "four original hashes resolved through pinned source-map files",
+      "reconstructed": false,
+      "recorded_J_zero": 236,
+      "recorded_failed": 0,
+      "recorded_passed": 1008,
+      "recorded_true_assertions": 157248,
+      "rows": 1008,
+      "scientific_replay": false,
+      "sha256": "b2559d1d28cf43d54a42f12adff27b65d1fbdb113a2fc1ed13b347b9cc0f34cf",
+      "source_path": "v10_research/route_a_bos_causal_compile_20261103_1411/full_trace_cases_v1.jsonl",
+      "status": "PASS_ARCHIVED_BYTES_AND_SAVED_SCHEMA_ONLY"
+    },
+    "optimized_exclusive_reconstruction": {
+      "N3_records": 16,
+      "bytes": 79712544,
+      "chunks": 20,
+      "coverage": {
+        "3:1/32": 8,
+        "3:1/4": 8,
+        "4:1/32": 16,
+        "4:1/4": 16,
+        "5:1/32": 32,
+        "5:1/4": 32,
+        "6:1/32": 64,
+        "6:1/4": 64,
+        "7:1/32": 128,
+        "7:1/4": 128,
+        "8:1/32": 256,
+        "8:1/4": 256
+      },
+      "historical_source_bindings": "four original hashes resolved through pinned source-map files",
+      "reconstructed": true,
+      "reconstructed_path": "v10_research/route_a_bos_causal_compile_20261103_1411/full_trace_cases_v1.jsonl",
+      "recorded_J_zero": 236,
+      "recorded_failed": 0,
+      "recorded_passed": 1008,
+      "recorded_true_assertions": 157248,
+      "rows": 1008,
+      "scientific_replay": false,
+      "sha256": "b2559d1d28cf43d54a42f12adff27b65d1fbdb113a2fc1ed13b347b9cc0f34cf",
+      "source_path": "v10_research/route_a_bos_causal_compile_20261103_1411/full_trace_cases_v1.jsonl",
+      "status": "PASS_ARCHIVED_BYTES_AND_SAVED_SCHEMA_ONLY"
+    },
+    "input_stability_and_independent_output_hash": {
+      "status": "PASS",
+      "fixture_files_unchanged": 27,
+      "optimized_helper_exit": 0,
+      "reconstructed_file": {
+        "v10_research/route_a_bos_causal_compile_20261103_1411/full_trace_cases_v1.jsonl": {
+          "bytes": 79712544,
+          "sha256": "b2559d1d28cf43d54a42f12adff27b65d1fbdb113a2fc1ed13b347b9cc0f34cf"
+        }
+      },
+      "scope": "Exact byte reconstruction and saved-schema validation only; no historical program or scientific evaluation."
+    }
+  },
+  "safety_review": {
+    "open_findings": 0,
+    "malformed_json_key_regression": "Unpaired-surrogate object keys are explicitly rejected; regression test failed before the fix and passed afterward."
+  },
+  "scope": [
+    "Only newly authored helper and synthetic software tests were executed.",
+    "Original sources and all 27 integration input files remained unchanged.",
+    "No archived checker or launcher was imported or executed; no RNG, model, scientific evaluation, network or remote write occurred.",
+    "All 1008 retained rows were checked for exact schema, canonical rational values, saved status and ordered coverage. Recorded assertions are not independently proved.",
+    "The outer archive verifier still owns full inventory and inherited provenance verification."
+  ]
+}

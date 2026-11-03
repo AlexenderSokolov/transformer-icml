@@ -1,0 +1,331 @@
+{
+  "schema": "unknown-u-compact-public-change-coordinates-v1",
+  "changed_files": 7,
+  "edit_count": 10,
+  "removed_private_wording_included": false,
+  "files": [
+    {
+      "path": "v10_research/independent_reverse_rate_review_20261103_1453/finite_softmax_independent_review.html",
+      "source_record_id": "UAR006",
+      "original_sha256": "9f43c8b849641ff2900bd3d015d9008402a702b4adb1ea46d4452029524017da",
+      "public_sha256": "05494f653842967584ef5820a051a5b733e82a8cf4139683da0ae2be1187fa8f",
+      "coordinate_units": "Zero-based UTF-8 byte offsets, half-open ranges",
+      "edits": [
+        {
+          "original_start_byte": 870,
+          "original_end_byte": 909,
+          "public_start_byte": 870,
+          "public_end_byte": 909,
+          "removed_bytes": 39,
+          "removed_text_sha256": "5eb3e7ac27db07a4aa0196f7f380cd4c056fefc58a1895ffe51e87417e9cfb29",
+          "replacement_text": "应用严谨性和对抗性核查规则",
+          "replacement_bytes": 39,
+          "replacement_sha256": "6bbfa912555921eebc2b608e5851b542c65f335328f1497d17033de1a7844240",
+          "reason": "Generic validation terminology; all scientific statements and negative certification qualifications preserved."
+        }
+      ],
+      "unchanged_spans": [
+        {
+          "original_start_byte": 0,
+          "original_end_byte": 870,
+          "public_start_byte": 0,
+          "public_end_byte": 870,
+          "sha256": "cad2be620b3e034e37a7ba4c5afb02489538086e9c18ed4ab7abf7af4777de2a"
+        },
+        {
+          "original_start_byte": 909,
+          "original_end_byte": 5840,
+          "public_start_byte": 909,
+          "public_end_byte": 5840,
+          "sha256": "564c91472455288bf8092843795d9fba18bd3069ab1082be4f63248203faf036"
+        }
+      ],
+      "reconstruction_check": "PASS: exact replacements reconstruct the proposed exported bytes, with all remaining bytes unchanged."
+    },
+    {
+      "path": "v10_research/independent_reverse_rate_review_20261103_1453/independent_review.html",
+      "source_record_id": "UAR007",
+      "original_sha256": "9af20eb8106f5ec90e2ac2916b2837d50b2e8e663d5c01509e91cd192335112d",
+      "public_sha256": "afca9993134d5ee0514ee3ea6932fe5e8aa908f9c4ca771d11b4347bd8f0542f",
+      "coordinate_units": "Zero-based UTF-8 byte offsets, half-open ranges",
+      "edits": [
+        {
+          "original_start_byte": 620,
+          "original_end_byte": 734,
+          "public_start_byte": 620,
+          "public_end_byte": 728,
+          "removed_bytes": 114,
+          "removed_text_sha256": "f3bfd61d2e18a991361c306b65c926c9f8a398a9e621f9d9f96ae756bbefe518",
+          "replacement_text": "此报告独立进行严谨性及对抗性检查，非形式证明、完整验证流程或人类同行评审",
+          "replacement_bytes": 108,
+          "replacement_sha256": "aed39feec38102af0a772a4940dff487708778b39d1d97de3b267170a2ccc0bd",
+          "reason": "Generic validation terminology; all scientific statements and negative certification qualifications preserved."
+        }
+      ],
+      "unchanged_spans": [
+        {
+          "original_start_byte": 0,
+          "original_end_byte": 620,
+          "public_start_byte": 0,
+          "public_end_byte": 620,
+          "sha256": "706b6b2ca760b63eb2c100541adb4bb09a9c981b3da5204c3b02efe00d068a5f"
+        },
+        {
+          "original_start_byte": 734,
+          "original_end_byte": 6046,
+          "public_start_byte": 728,
+          "public_end_byte": 6040,
+          "sha256": "7c6f53e88e22a753c0dafdac4a4357dc665bbff8f73dc17d487d317beb7a79bb"
+        }
+      ],
+      "reconstruction_check": "PASS: exact replacements reconstruct the proposed exported bytes, with all remaining bytes unchanged."
+    },
+    {
+      "path": "v10_research/independent_unknown_u_addone_review_20261103_1504/independent_review.html",
+      "source_record_id": "UAR009",
+      "original_sha256": "99cea3beeea5380119a38d496b7b0a4bbefbe3a77e585fc8eb109af2817c304c",
+      "public_sha256": "399a6e92ca1e25246712886631a506a9a09e2335870cae311f59f94f17a1943b",
+      "coordinate_units": "Zero-based UTF-8 byte offsets, half-open ranges",
+      "edits": [
+        {
+          "original_start_byte": 634,
+          "original_end_byte": 715,
+          "public_start_byte": 634,
+          "public_end_byte": 712,
+          "removed_bytes": 81,
+          "removed_text_sha256": "f048924c524ddfef15b9c4caa7990c6ecd974a27aaf5214c6ccc6a1729c5ca8b",
+          "replacement_text": "本次独立进行严谨性及对抗性核查，不是完整验证流程验收",
+          "replacement_bytes": 78,
+          "replacement_sha256": "0677c15ac22af027c47c8c308cb2b42a08cf7cfbe1180fd4121807ef46e162fe",
+          "reason": "Generic validation terminology; all scientific statements and negative certification qualifications preserved."
+        }
+      ],
+      "unchanged_spans": [
+        {
+          "original_start_byte": 0,
+          "original_end_byte": 634,
+          "public_start_byte": 0,
+          "public_end_byte": 634,
+          "sha256": "bb90154e6e93a83a737f1fbd2d9c9b46f65e89161cbe27d7a8f7002db316f7e3"
+        },
+        {
+          "original_start_byte": 715,
+          "original_end_byte": 6980,
+          "public_start_byte": 712,
+          "public_end_byte": 6977,
+          "sha256": "2cab278b1704d68785a1179d9ddd0ce3906f7448791c77cd855f9f8e1c3fc0fa"
+        }
+      ],
+      "reconstruction_check": "PASS: exact replacements reconstruct the proposed exported bytes, with all remaining bytes unchanged."
+    },
+    {
+      "path": "v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v1.html",
+      "source_record_id": "UAR038",
+      "original_sha256": "d0ce338c181a0b53795e3bc0e350b9095d1eb27c5e7a8b29f536d725a62db063",
+      "public_sha256": "f84cfa9b1829fe903164fb3650028801665401fd298f17e17127dca1df62d890",
+      "coordinate_units": "Zero-based UTF-8 byte offsets, half-open ranges",
+      "edits": [
+        {
+          "original_start_byte": 11815,
+          "original_end_byte": 11881,
+          "public_start_byte": 11815,
+          "public_end_byte": 11876,
+          "removed_bytes": 66,
+          "removed_text_sha256": "3af08f2ad5b86412a6f103fc5aeb116e714f7f57b8024f44da9da692a6f52ee1",
+          "replacement_text": "Proof-sketch, step-review, adversarial and citation snapshots",
+          "replacement_bytes": 61,
+          "replacement_sha256": "3aaf66836d1b71e1bc0982d90d8e36f7626cf5b4fb9cffd31176512e825968a2",
+          "reason": "Generic validation terminology; all scientific statements and negative certification qualifications preserved."
+        },
+        {
+          "original_start_byte": 11923,
+          "original_end_byte": 11964,
+          "public_start_byte": 11918,
+          "public_end_byte": 11973,
+          "removed_bytes": 41,
+          "removed_text_sha256": "74a60496d8062ed10d96880f9bf13140ad0b9fbbad4a4b69437f647aac16e661",
+          "replacement_text": "completion of a full validation workflow is not claimed",
+          "replacement_bytes": 55,
+          "replacement_sha256": "5318073154b8226e4c0ceba1fa41cfd272a6688d53f83a5e9808f25ef9603bfc",
+          "reason": "Generic validation terminology; all scientific statements and negative certification qualifications preserved."
+        }
+      ],
+      "unchanged_spans": [
+        {
+          "original_start_byte": 0,
+          "original_end_byte": 11815,
+          "public_start_byte": 0,
+          "public_end_byte": 11815,
+          "sha256": "beff473f0f5f263c5185d33430d92305d289a9c349b2a386173f3ee0af1b0480"
+        },
+        {
+          "original_start_byte": 11881,
+          "original_end_byte": 11923,
+          "public_start_byte": 11876,
+          "public_end_byte": 11918,
+          "sha256": "d2e1f0055732a6fa82b44ce70325ee34c8a825e388785377849fc3b7fb5caf71"
+        },
+        {
+          "original_start_byte": 11964,
+          "original_end_byte": 11977,
+          "public_start_byte": 11973,
+          "public_end_byte": 11986,
+          "sha256": "b4d0dbb5153188a4ec2504d2be517f1c116dcd8a9798d62d2a9435235a37723a"
+        }
+      ],
+      "reconstruction_check": "PASS: exact replacements reconstruct the proposed exported bytes, with all remaining bytes unchanged."
+    },
+    {
+      "path": "v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v2.html",
+      "source_record_id": "UAR039",
+      "original_sha256": "1ebf948a53cd31345761e5530608e2aa530a0003399ae4b2d5f0c78873171355",
+      "public_sha256": "e10588fea35d97c553ec749a3d0ed7dec149e41695470ce6c92173ef90e08ba0",
+      "coordinate_units": "Zero-based UTF-8 byte offsets, half-open ranges",
+      "edits": [
+        {
+          "original_start_byte": 11935,
+          "original_end_byte": 12001,
+          "public_start_byte": 11935,
+          "public_end_byte": 11996,
+          "removed_bytes": 66,
+          "removed_text_sha256": "3af08f2ad5b86412a6f103fc5aeb116e714f7f57b8024f44da9da692a6f52ee1",
+          "replacement_text": "Proof-sketch, step-review, adversarial and citation snapshots",
+          "replacement_bytes": 61,
+          "replacement_sha256": "3aaf66836d1b71e1bc0982d90d8e36f7626cf5b4fb9cffd31176512e825968a2",
+          "reason": "Generic validation terminology; all scientific statements and negative certification qualifications preserved."
+        },
+        {
+          "original_start_byte": 12043,
+          "original_end_byte": 12084,
+          "public_start_byte": 12038,
+          "public_end_byte": 12093,
+          "removed_bytes": 41,
+          "removed_text_sha256": "74a60496d8062ed10d96880f9bf13140ad0b9fbbad4a4b69437f647aac16e661",
+          "replacement_text": "completion of a full validation workflow is not claimed",
+          "replacement_bytes": 55,
+          "replacement_sha256": "5318073154b8226e4c0ceba1fa41cfd272a6688d53f83a5e9808f25ef9603bfc",
+          "reason": "Generic validation terminology; all scientific statements and negative certification qualifications preserved."
+        }
+      ],
+      "unchanged_spans": [
+        {
+          "original_start_byte": 0,
+          "original_end_byte": 11935,
+          "public_start_byte": 0,
+          "public_end_byte": 11935,
+          "sha256": "18b001227f559f29a6fe72ad8604a7116838024d6fb1951cce458c6a54626d37"
+        },
+        {
+          "original_start_byte": 12001,
+          "original_end_byte": 12043,
+          "public_start_byte": 11996,
+          "public_end_byte": 12038,
+          "sha256": "d2e1f0055732a6fa82b44ce70325ee34c8a825e388785377849fc3b7fb5caf71"
+        },
+        {
+          "original_start_byte": 12084,
+          "original_end_byte": 12097,
+          "public_start_byte": 12093,
+          "public_end_byte": 12106,
+          "sha256": "b4d0dbb5153188a4ec2504d2be517f1c116dcd8a9798d62d2a9435235a37723a"
+        }
+      ],
+      "reconstruction_check": "PASS: exact replacements reconstruct the proposed exported bytes, with all remaining bytes unchanged."
+    },
+    {
+      "path": "v10_research/route_a_compact_causal_20261103_1423/compact_causal_candidate_v3.html",
+      "source_record_id": "UAR040",
+      "original_sha256": "f844ffde90e836e7fd345a6bf4a1076bbe0e562d832d51413477d1a0bc921d8d",
+      "public_sha256": "5798952fa5db0c31c8eecf72e260f1eaeb8071838882c0a8d7ab107576d87819",
+      "coordinate_units": "Zero-based UTF-8 byte offsets, half-open ranges",
+      "edits": [
+        {
+          "original_start_byte": 12345,
+          "original_end_byte": 12411,
+          "public_start_byte": 12345,
+          "public_end_byte": 12406,
+          "removed_bytes": 66,
+          "removed_text_sha256": "3af08f2ad5b86412a6f103fc5aeb116e714f7f57b8024f44da9da692a6f52ee1",
+          "replacement_text": "Proof-sketch, step-review, adversarial and citation snapshots",
+          "replacement_bytes": 61,
+          "replacement_sha256": "3aaf66836d1b71e1bc0982d90d8e36f7626cf5b4fb9cffd31176512e825968a2",
+          "reason": "Generic validation terminology; all scientific statements and negative certification qualifications preserved."
+        },
+        {
+          "original_start_byte": 12453,
+          "original_end_byte": 12494,
+          "public_start_byte": 12448,
+          "public_end_byte": 12503,
+          "removed_bytes": 41,
+          "removed_text_sha256": "74a60496d8062ed10d96880f9bf13140ad0b9fbbad4a4b69437f647aac16e661",
+          "replacement_text": "completion of a full validation workflow is not claimed",
+          "replacement_bytes": 55,
+          "replacement_sha256": "5318073154b8226e4c0ceba1fa41cfd272a6688d53f83a5e9808f25ef9603bfc",
+          "reason": "Generic validation terminology; all scientific statements and negative certification qualifications preserved."
+        }
+      ],
+      "unchanged_spans": [
+        {
+          "original_start_byte": 0,
+          "original_end_byte": 12345,
+          "public_start_byte": 0,
+          "public_end_byte": 12345,
+          "sha256": "799bb7789a864cdf2da54b18d4489ec065e9768690e9f1dc5146b7e1bdad5259"
+        },
+        {
+          "original_start_byte": 12411,
+          "original_end_byte": 12453,
+          "public_start_byte": 12406,
+          "public_end_byte": 12448,
+          "sha256": "d2e1f0055732a6fa82b44ce70325ee34c8a825e388785377849fc3b7fb5caf71"
+        },
+        {
+          "original_start_byte": 12494,
+          "original_end_byte": 12507,
+          "public_start_byte": 12503,
+          "public_end_byte": 12516,
+          "sha256": "b4d0dbb5153188a4ec2504d2be517f1c116dcd8a9798d62d2a9435235a37723a"
+        }
+      ],
+      "reconstruction_check": "PASS: exact replacements reconstruct the proposed exported bytes, with all remaining bytes unchanged."
+    },
+    {
+      "path": "v10_research/route_a_compact_causal_20261103_1423/verification_and_boundaries_v1.html",
+      "source_record_id": "UAR041",
+      "original_sha256": "f769dc4b63526d01a67e8f8373a4ba18f2a9b1562c323e3cabec8f01fe2caaf8",
+      "public_sha256": "6a63a88b3e7c9f4e4f7915da7d824084cb6aaeee4fa8aa0eab06869555a99573",
+      "coordinate_units": "Zero-based UTF-8 byte offsets, half-open ranges",
+      "edits": [
+        {
+          "original_start_byte": 774,
+          "original_end_byte": 804,
+          "public_start_byte": 774,
+          "public_end_byte": 804,
+          "removed_bytes": 30,
+          "removed_text_sha256": "3244ef4fbdacb992124c33e0f1e9c84392ec3047d1e5e9547615a2be0c721c3b",
+          "replacement_text": "a complete validation workflow",
+          "replacement_bytes": 30,
+          "replacement_sha256": "26e44b6922c62ced3c957b0872f11df0ef21810d6e6807ad680f8d19b20ade3a",
+          "reason": "Generic validation terminology; all scientific statements and negative certification qualifications preserved."
+        }
+      ],
+      "unchanged_spans": [
+        {
+          "original_start_byte": 0,
+          "original_end_byte": 774,
+          "public_start_byte": 0,
+          "public_end_byte": 774,
+          "sha256": "e613ff03ab501d24e3c551188a90f46176d3d49320bfe46c7aa6e359df3ea024"
+        },
+        {
+          "original_start_byte": 804,
+          "original_end_byte": 1304,
+          "public_start_byte": 804,
+          "public_end_byte": 1304,
+          "sha256": "32e8d0965880a942f8e121cac4fae5e29701ada95af12f2c8ada8f627652daab"
+        }
+      ],
+      "reconstruction_check": "PASS: exact replacements reconstruct the proposed exported bytes, with all remaining bytes unchanged."
+    }
+  ]
+}

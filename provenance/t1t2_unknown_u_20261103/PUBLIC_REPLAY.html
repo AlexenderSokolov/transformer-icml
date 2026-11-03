@@ -1,0 +1,21 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>未知 u 与 full trace：公开核验说明</title><style>body{font:16px/1.7 system-ui,sans-serif;max-width:960px;margin:36px auto;padding:0 24px;color:#172b3a}a{color:#075f91}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f7;padding:14px}.note{padding:14px;background:#fff7e8;border-left:5px solid #a96516}</style></head><body>
+<h1>保存字节、只读核验与独立重建</h1><p><a href="INDEX.html">研究导读</a> · <a href="STAGE_FILE_MANIFEST.json">实际发布文件</a> · <a href="FULL_TRACE_CHUNKS.json">全部20个 trace 分片</a></p>
+<div class="note">默认入口只读取现有文件，不导入历史 checker/launcher、不运行模型、不抽样、不产生新的科学轨迹。它检查实际字节、原始/公开身份与保存字段一致性，不证明普遍数学结论。</div>
+<h2>1. 从可信完整检出核验</h2><p>需要 POSIX Python 3.10+。先在可信 Git 提交的仓库根目录运行原有库存检查，再由已核验库存取得阶段清单哈希；不能把待核验任意清单自己算出的哈希当成独立可信来源。</p><pre>python -I -B tools/public_verify.py
+STAGE_SHA=$(python -I -B -c 'import json; d=json.load(open("provenance/PUBLIC_INVENTORY.json")); print(next(r["sha256"] for r in d["files"] if r["path"]=="provenance/t1t2_unknown_u_20261103/STAGE_FILE_MANIFEST.json"))')
+python -I -B provenance/t1t2_unknown_u_20261103/verify_public_archive.py "$PWD" --manifest-sha256 "$STAGE_SHA"
+python -I -B -O provenance/t1t2_unknown_u_20261103/verify_public_archive.py "$PWD" --manifest-sha256 "$STAGE_SHA"</pre>
+<p>阶段清单不包含自身或全局库存；自身身份由库存与 Git 提交绑定。外层核验所有本阶段物理文件、来源映射和88份明确列出的既有依赖，然后仅执行固定哈希的新 trace 检查器。不会运行任何旧科学程序。</p>
+<h2>2. 79,712,544字节完整原件如何保存</h2><p>逻辑来源 <code>v10_research/route_a_bos_causal_compile_20261103_1411/full_trace_cases_v1.jsonl</code> 按原始 UTF-8 字节和完整换行边界拆成20份，每份≤4 MiB。分片连续、无重排、无压缩、无重序列化、无删行或去重；顺序拼接恢复唯一原件 SHA-256 <code>b2559d1d28cf43d54a42f12adff27b65d1fbdb113a2fc1ed13b347b9cc0f34cf</code>。实际仓库只保存分片，不再上传同一份79.7 MB整文件副本。</p>
+<p>分片清单逐项提供路径、序号、原字节偏移、长度、首末记录和哈希，并绑定四个历史原件的身份。<a href="SOURCE_EXPORT_MAP.json">来源表</a>中的 full-trace 条目是可重建逻辑来源，storage 明确标为 lossless_chunks；其 public 身份仍是原字节，绝不冒充仓库已有一个物理整文件。</p>
+<h2>3. 可选：只向全新目录重建原路径</h2><p>先完成上面的可信核验，再取得分片清单的已验证哈希。用一个尚不存在的目标根目录替换下例路径。这个显式命令会创建新目录和原相对路径，只重建保存数据，不执行模型；如果目标已存在或含不安全路径则拒绝，不覆盖已有原件或日志。</p><pre>CHUNKS_SHA=$(python -I -B -c 'import json; d=json.load(open("provenance/PUBLIC_INVENTORY.json")); print(next(r["sha256"] for r in d["files"] if r["path"]=="provenance/t1t2_unknown_u_20261103/FULL_TRACE_CHUNKS.json"))')
+python -I -B provenance/t1t2_unknown_u_20261103/validator/verify_full_trace.py "$PWD" --manifest-sha256 "$CHUNKS_SHA" --reconstruct-to ./new-trace-reconstruction</pre>
+<p>重建器验证每份分片和拼接原件，输出恢复的字节数与哈希。去掉 <code>--reconstruct-to</code> 则只读核验。重建的数据属于后来那次单独运行，不会把较早缺失的中间记录变成已恢复。</p>
+<h2>4. 检查保存值，不重新计算科学</h2><p>完整 trace 有1,008个原始记录，覆盖 N=3,…,8 的全部二进制词与 η∈{1/4,1/32}。每行包含原参数/身份、稀疏矩阵、输入/残差、分数、weights、contributions、gate/hinge、终端和 oracle 字段。新的流式检查器限制文件和行大小、严格 JSON 与字段、规范有理数、稀疏坐标、保存状态和案例顺序/覆盖，并验证记录的身份绑定。</p>
+<p>发布前另作只读记录审计，数出保存的1,008个 pass、157,248个 true assertions、16个 N=3 和236个 J=0。对冗余保存值的算术关系检查不等于重新推导或执行 Q/K/V、softmax、gates、oracle 或普遍证明。原完成审阅只做少量记录 spot-check 的历史范围仍照实保留，不把后来更广的字段检查追溯归给它。</p>
+<p>新软件的测试只在全新临时副本上作确定性损坏和安全测试，不改变发布源。没有运行旧实验、随机发生器或新模型。既有 CI 仅验证库存完整性和拒绝损坏案例，不承诺重新证明数学或运行79.7 MB的科学程序。</p>
+<h2>5. 为什么不直接执行旧 checker</h2><p>所有五个 checker 和五个 launcher 版本、原始开始/结束/stdout/stderr日志、运行总结及先前版本说明都在档案里，包括空 stderr。它们是历史证据，不是默认运行入口。v2 checker 的总结命令仍写 v1，这是实际保留的候选历史，未静默修复。</p>
+<p>完整 trace 和 v5 checker 绑定原始 one-hot v4 报告哈希 <code>79e81b718fbb89990d4a679fbd6fd5f1aec30a65e29ac8ddb9fb43cca5afec3a</code>；既有公开报告是已声明非数学规范化后的副本。旧程序会按原来的完整性 guard 拒绝这个公开副本。新 helper 通过固定哈希的既有映射核对原始与公开身份，而不是改写旧 guard、修改记录或声称原脚本在公开副本上直接重放通过。</p>
+<p>如要再次执行那些算法，必须另建隔离运行、显式处理身份映射并保留全部必要新值。任何新输出都应单独标注，不能覆盖旧日志或称为原始运行恢复。本交付只提供完整保存数据的可检验重建，以及研究方法/代码历史。</p>
+<h2>6. 科学与公开范围</h2><p>未知-u 条件风险结论仅在指定平稳来源族及实际末事件00下成立。有限-softmax上界使用结构 masks、精确实数和明确误差接口；含端点的 fractional-grid 修正只绑定未知-u 稿件。compact d32 是单独的解析构造，没有执行数据。one-hot trace 是专用近似指数的有理数后端，不是 compact、通用浮点或所有序列长度的验证。</p>
+<p>41份原始来源共79,916,758字节，七份非数学文本规范化后逻辑公开来源共79,916,776字节；所有数学、代码及 trace 字节保持原样。<a href="EXPORT_CHANGES.json">变更坐标和哈希</a>不含被删除的内部措辞。<a href="PUBLIC_EXPORT_RECONCILIATION.json">历史依赖说明</a>保留原/公开区分以及先前缺失历史。第三方全文、用户私人计划和内部路由不发布；本阶段不增加许可证、投稿或部署。</p></body></html>

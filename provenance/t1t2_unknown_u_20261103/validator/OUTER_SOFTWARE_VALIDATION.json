@@ -1,0 +1,57 @@
+{
+  "schema": "t1t2-unknown-u-outer-software-validation-v1",
+  "status": "PASS_DETERMINISTIC_UNIT_TESTS_ONLY",
+  "scope": "Independent software safety and schema tests of the newly authored outer archive verifier. No mathematical proof, novelty clearance, original-code replay or compact-construction experiment is established. Release-specific integration and final tree checks are separate.",
+  "verifier": {
+    "path": "provenance/t1t2_unknown_u_20261103/verify_public_archive.py",
+    "sha256": "934b473b39875e143a813b582e243234b1b2317a51160ab65cdda2ffd17519fe"
+  },
+  "test_source": {
+    "path": "provenance/t1t2_unknown_u_20261103/validator/test_verify_public_archive.py",
+    "sha256": "5ee30a2bd387d7d930e8d4a98b7895908372778f46f29032f482a1f9ee70a21a"
+  },
+  "runs": [
+    {
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "tests": 21,
+      "failed": 0,
+      "log_sha256": "ef10d2b4cf03a3aa2258a8b9535b54f6a654070ac398a32ab6bfa1dfca2fc628"
+    },
+    {
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "tests": 21,
+      "failed": 0,
+      "log_sha256": "f4d681742abc39c5195c9cb2b8fd3d2ab8921a540e7ec867dd8981a4c7123adf"
+    }
+  ],
+  "tested_boundaries": [
+    "Boolean versus integer rejection and bounded values",
+    "Path traversal, absolute paths, control characters and backslashes",
+    "Duplicate JSON keys, floats/nonfinite values, invalid UTF-8 and structural limits",
+    "Byte length, SHA-256 and Git-blob identities",
+    "Manifest schema, duplicate/self/global entries and file-size limits",
+    "Original/public source identity mapping and lossless-chunk declaration",
+    "Inherited dependency counts, duplicates and overlap",
+    "Fixed trace-result status, no-scientific-replay and no-reconstruction result contracts",
+    "Exact scoped file-set closure, missing and extra scoped entries",
+    "Symlink files, symlink directories, symlink roots and FIFOs",
+    "Bounded regular-file reads and excessive directory width",
+    "Bad external manifest anchor rejection with input-byte stability",
+    "Required isolated/no-bytecode CLI flags and machine-readable failure results"
+  ],
+  "fixture_policy": "All mutation fixtures are synthetic, deterministic and created exclusively in new local directories. They are not publication inputs or archived records. No random generator, network operation, original checker/launcher, model or science computation is used.",
+  "reviewed_execution_boundary": "The outer helper reads bounded regular files through descriptor-relative POSIX access. It verifies an externally trusted manifest anchor and executes only the hash-pinned new retained-record helper. Archived programs are never imported. It rechecks all selected and inherited bytes after the nested helper; this is not an atomic snapshot against a hostile concurrent filesystem.",
+  "limitations": [
+    "The explicit trusted manifest hash must come from an independently trusted release receipt, commit or inventory.",
+    "Public source maps preserve original identities, not the unavailable private original bytes. Exact normalization and source freeze checks occur separately before release.",
+    "Saved-record schema and pass flags do not independently prove the mathematical construction or rerun numerical operations.",
+    "No package installation, license grant, external communication, remote write or deployment was performed by these tests."
+  ]
+}
