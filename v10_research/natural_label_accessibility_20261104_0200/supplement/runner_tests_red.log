@@ -1,0 +1,41 @@
+test_metrics_and_overlaps (__main__.RunnerTests.test_metrics_and_overlaps) ... FAIL
+test_natural_loader_excludes_teacher_and_latents (__main__.RunnerTests.test_natural_loader_excludes_teacher_and_latents) ... FAIL
+test_source_gate_refuses_before_data_generation (__main__.RunnerTests.test_source_gate_refuses_before_data_generation) ... FAIL
+test_table_pooling_and_unseen_default (__main__.RunnerTests.test_table_pooling_and_unseen_default) ... FAIL
+
+======================================================================
+FAIL: test_metrics_and_overlaps (__main__.RunnerTests.test_metrics_and_overlaps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_experiment.py", line 7, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('experiment'),'runner implementation absent')
+AssertionError: unexpectedly None : runner implementation absent
+
+======================================================================
+FAIL: test_natural_loader_excludes_teacher_and_latents (__main__.RunnerTests.test_natural_loader_excludes_teacher_and_latents)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_experiment.py", line 7, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('experiment'),'runner implementation absent')
+AssertionError: unexpectedly None : runner implementation absent
+
+======================================================================
+FAIL: test_source_gate_refuses_before_data_generation (__main__.RunnerTests.test_source_gate_refuses_before_data_generation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_experiment.py", line 7, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('experiment'),'runner implementation absent')
+AssertionError: unexpectedly None : runner implementation absent
+
+======================================================================
+FAIL: test_table_pooling_and_unseen_default (__main__.RunnerTests.test_table_pooling_and_unseen_default)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_experiment.py", line 7, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('experiment'),'runner implementation absent')
+AssertionError: unexpectedly None : runner implementation absent
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=4)

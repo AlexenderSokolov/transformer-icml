@@ -1,0 +1,41 @@
+{
+  "schema": "v10_independent_scientific_review_v1",
+  "status": "PASS",
+  "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+  "reviewed_utc": "2026-11-04T02:18:56.063493+00:00",
+  "source_entries_verified": 41,
+  "test_runs": [
+    {
+      "command": "python3 -m unittest discover -v",
+      "exit_code": 0,
+      "tests_passed": 15,
+      "output_sha256": "f05001f93d3f31863a3c369f2d0237aee6f656b1ec0aedff42db19072265b0d8"
+    },
+    {
+      "command": "python3 -m unittest review_tests review_pipeline_tests -v",
+      "exit_code": 0,
+      "tests_passed": 15,
+      "output_sha256": "e5698eecc14c4524e6479bc27c4958ca47c8274b290645cc727e742040dce8f7"
+    }
+  ],
+  "scope": "Independent scientific, numerical, protocol and capture-implementation review of the exact frozen source. This is not evidence of empirical model performance.",
+  "verified_findings": [
+    "Independent product quadrature confirms the Beta(1,1) prior posterior B=(C+1)/(J+2), with initial pairs independent of source probabilities.",
+    "Literal count, withheld-label exclusion, token-pooling equivalence, all-query gradient finite differences and conditional natural-label gradient expectation checks pass.",
+    "Fixed 2x2 conditions use matched inputs, initialization and batches within each of four independent replicate bundles; B-target supervision is explicitly diagnostic.",
+    "Primary, rare-row, source-risk and conditional Monte Carlo metrics, per-example paired differences and architecture-specific screening medians follow the frozen design.",
+    "Source-manifest and member hashes, archive allowlists, source/input/output gates, incomplete-run refusal, artifact identities and paired-array identity checks pass.",
+    "Injected deterministic nonfinite candidate states are preserved with prior and candidate parameters, gradients, moments, loss and step before abort.",
+    "Absent-triple score stabilization and corrected training-symbol accounting are included in the frozen source."
+  ],
+  "limits": [
+    "No experimental sampling or actual optimizer fitting was performed during this review. Numerical fixtures and mocked failure paths are not empirical results.",
+    "Actual Space source-upload roundtrip remains a separate required receipt after this review; synthetic local fixture receipts are unit tests only.",
+    "The supplied-triple small readout is not an end-to-end Transformer and gives no learning lower bound, asymptotic-rate theorem, robust-training result or novelty claim.",
+    "Four replicates and descriptive thresholds do not provide strong general training-effect inference.",
+    "Process or machine death cannot guarantee execution of finally handlers; committed JSONL records distinguish completed steps from potentially partial later array writes."
+  ],
+  "unresolved_blockers": [],
+  "experimental_runs_present": false,
+  "external_publication_performed": false
+}

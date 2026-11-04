@@ -1,0 +1,27 @@
+test_all_fixed_cells_and_paired_metrics_are_retained (review_pipeline_tests.IndependentPipelineReviewTests.test_all_fixed_cells_and_paired_metrics_are_retained) ... ok
+test_analysis_rejects_unsealed_local_payload_mutation (review_pipeline_tests.IndependentPipelineReviewTests.test_analysis_rejects_unsealed_local_payload_mutation) ... FAIL
+test_prior_capture_is_not_enough_when_fit_is_incomplete (review_pipeline_tests.IndependentPipelineReviewTests.test_prior_capture_is_not_enough_when_fit_is_incomplete) ... FAIL
+test_screen_boundary_and_se_semantics (review_pipeline_tests.IndependentPipelineReviewTests.test_screen_boundary_and_se_semantics) ... ok
+
+======================================================================
+FAIL: test_analysis_rejects_unsealed_local_payload_mutation (review_pipeline_tests.IndependentPipelineReviewTests.test_analysis_rejects_unsealed_local_payload_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "review_pipeline_tests.py", line 84, in test_analysis_rejects_unsealed_local_payload_mutation
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_prior_capture_is_not_enough_when_fit_is_incomplete (review_pipeline_tests.IndependentPipelineReviewTests.test_prior_capture_is_not_enough_when_fit_is_incomplete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "review_pipeline_tests.py", line 70, in test_prior_capture_is_not_enough_when_fit_is_incomplete
+    with self.assertRaises((ValueError, FileNotFoundError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'FileNotFoundError'>) not raised
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.862s
+
+FAILED (failures=2)

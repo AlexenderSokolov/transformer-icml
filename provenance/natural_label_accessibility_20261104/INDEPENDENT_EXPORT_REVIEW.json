@@ -1,0 +1,21 @@
+{
+  "schema": "v10-public-export-independent-review-v1",
+  "status": "PASS",
+  "reviewed_candidate_plan_sha256": "0773a8a6ae240d28cc8662d08f55f1aa0f7c49224e77e7ee13623864e6c30221",
+  "reviewed_candidate_tree_sha1": "00526a2b7b4032ff4cce3c640150dd01141929df",
+  "reviewed_candidate_files": 475,
+  "reviewed_candidate_bytes": 645931810,
+  "archives_verified": 23,
+  "chunks_verified": 159,
+  "archive_members_verified": 339,
+  "text_source_mappings_verified": 304,
+  "scientific_python_and_numeric_archive_members_byte_identical": true,
+  "final_parameter_vectors_checked_against_terminal_states": 16,
+  "privacy_findings": "No secret, private storage identity, workspace path or home path remains in candidate text or archived text. Numerical arrays contain no object/string data.",
+  "original_audit_rerun": {"episodes": 131072, "saved_updates": 24000, "final_analysis_audit": "PASS"},
+  "public_offline_audit_rerun": {"saved_updates": 24000, "status": "PASS"},
+  "unit_tests_passed": 30,
+  "claims_checked": ["Joint descriptive hypothesis not met", "Learned pooling passes and fixed uniform pooling misses the paired-gap screen", "KT stronger than learned-natural neural model", "Supplied-feature model, not end-to-end Transformer", "Old 20:35 pilot remains unrecovered"],
+  "limits": ["Independent-context computational/analytical review, not external peer review or formal verification", "No fresh training replication", "Public adapter checks per-fit numerical results and primary/screens, not the complete historical final-analysis paired/baseline report audit; that final audit was separately verified on original evidence", "Public hashes do not replace private service receipts"],
+  "recording_note": "This record transcribes the independent review result. The reviewer was read-only and did not edit the candidate. Addition of this record and corresponding global inventory is a separate publication-only delta."
+}

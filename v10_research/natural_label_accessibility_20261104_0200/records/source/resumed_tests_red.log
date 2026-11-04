@@ -1,0 +1,51 @@
+test_archive_roundtrip_and_mutation_refusal (test_capture.CaptureTests.test_archive_roundtrip_and_mutation_refusal) ... ok
+test_no_traversal_no_duplicate_no_missing_file (test_capture.CaptureTests.test_no_traversal_no_duplicate_no_missing_file) ... ok
+test_source_review_binding_required (test_capture.CaptureTests.test_source_review_binding_required) ... ok
+test_adam_first_step_and_kl_edges (test_core.CoreTests.test_adam_first_step_and_kl_edges) ... ok
+test_counts_literal_and_label_exclusion (test_core.CoreTests.test_counts_literal_and_label_exclusion) ... ok
+test_deterministic_simulation_and_heldout_label (test_core.CoreTests.test_deterministic_simulation_and_heldout_label) ... ok
+test_full_gradient_finite_difference (test_core.CoreTests.test_full_gradient_finite_difference) ... ok
+test_pool_token_equivalence_and_matched_initialization (test_core.CoreTests.test_pool_token_equivalence_and_matched_initialization) ... ok
+test_prior_word_mass_and_next_label_identity (test_core.CoreTests.test_prior_word_mass_and_next_label_identity) ... ok
+test_rao_blackwell_gradient_identity_at_fixed_input (test_core.CoreTests.test_rao_blackwell_gradient_identity_at_fixed_input) ... ok
+test_metrics_and_overlaps (test_experiment.RunnerTests.test_metrics_and_overlaps) ... FAIL
+test_natural_loader_excludes_teacher_and_latents (test_experiment.RunnerTests.test_natural_loader_excludes_teacher_and_latents) ... FAIL
+test_source_gate_refuses_before_data_generation (test_experiment.RunnerTests.test_source_gate_refuses_before_data_generation) ... FAIL
+test_table_pooling_and_unseen_default (test_experiment.RunnerTests.test_table_pooling_and_unseen_default) ... FAIL
+
+======================================================================
+FAIL: test_metrics_and_overlaps (test_experiment.RunnerTests.test_metrics_and_overlaps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_experiment.py", line 7, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('experiment'),'runner implementation absent')
+AssertionError: unexpectedly None : runner implementation absent
+
+======================================================================
+FAIL: test_natural_loader_excludes_teacher_and_latents (test_experiment.RunnerTests.test_natural_loader_excludes_teacher_and_latents)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_experiment.py", line 7, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('experiment'),'runner implementation absent')
+AssertionError: unexpectedly None : runner implementation absent
+
+======================================================================
+FAIL: test_source_gate_refuses_before_data_generation (test_experiment.RunnerTests.test_source_gate_refuses_before_data_generation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_experiment.py", line 7, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('experiment'),'runner implementation absent')
+AssertionError: unexpectedly None : runner implementation absent
+
+======================================================================
+FAIL: test_table_pooling_and_unseen_default (test_experiment.RunnerTests.test_table_pooling_and_unseen_default)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_experiment.py", line 7, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('experiment'),'runner implementation absent')
+AssertionError: unexpectedly None : runner implementation absent
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.231s
+
+FAILED (failures=4)

@@ -1,0 +1,15 @@
+# Interpretation supplement
+
+This is a completed 4-replicate, 4-condition exploratory probe with no hyperparameter or checkpoint selection. All sixteen 1,500-step fits completed; there were no experimental failures. Historical red unit-test logs in the source archive are validation-development evidence, not failed statistical experiments.
+
+The learned-pooling natural-label model meets both predeclared descriptive criteria: four of four independent replicate primary KL(B||q) values are below 0.02 nats, and its median paired natural-minus-B-supervision gap is 0.00553699 nats. The fixed-uniform natural-label model reaches the first criterion in three of four replicates but misses the second: median gap 0.01054882 versus the 0.01 cutoff. Because the stated descriptive hypothesis requires both architectures to satisfy the criteria, the combined predeclared hypothesis is **not satisfied**. The outcome is mixed: the learned-pooling arm passes, and the fixed-uniform arm does not. These cutoffs are screening conventions, not powered tests or sharp mathematical boundaries.
+
+Averaging the four replicate primary means gives 0.00919210 nats for learned pooling with natural labels and 0.01889022 for fixed uniform pooling with natural labels. Learned-minus-uniform natural-label differences are negative in all four pairs. This is finite evidence that query-conditioned pooling helps this supplied-feature model under this optimizer and budget, even though uniform pooling already supplies sufficient statistics. The learned model has 64 additional trainable parameters, so this is not an equal-parameter superiority claim.
+
+**The explicit classical baseline remains stronger.** The KT predictor has mean primary KL(B||KT)=0.00307995, compared with learned-natural 0.00919210. Exact add-one Bayes has KL(B||B)=0 by definition. The neural result does not beat classical counting or establish that a neural model is needed. Other primary comparator means are add-one whole-word unigram 0.11342585, constant one-half 0.18927716, and the training-label empirical (J,C) table 0.04083747.
+
+At the heldout out-of-training length M=128, learned-natural mean KL is 0.01320127. On terminal rows with J<=3, its mean of the eight training-length/replicate conditional KL means is 0.03146868. This rare-row macro average is not a pooled per-example risk; the complete per-cell counts and errors remain in all_results.json. These results do not establish robustness, uniform risk, or an asymptotic rate.
+
+The study supplies local triple indicators, the terminal pair, and inverse length. It is not an end-to-end raw-token Transformer. The B-supervised conditions explicitly use clean Bayes targets; only y conditions test ordinary next-token labels. Markov in-context learning and statistical induction heads are prior art, notably Edelman et al. (2024) and Lepage et al. (2025). No novelty or full-Transformer training theorem is claimed.
+
+This new experiment does not recover or authenticate the missing original 20:35 tiny-pilot files. Its provenance starts with the separately frozen and independently reviewed source package dated 2026-11-04.

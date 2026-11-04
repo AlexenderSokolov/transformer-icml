@@ -1,0 +1,43 @@
+{
+  "schema": "v10_natural_label_accessibility_v1",
+  "status": "DESIGN_ONLY_PENDING_INDEPENDENT_CAPTURE_CHECK",
+  "replicates": 4,
+  "conditions": [
+    "uniform_y",
+    "uniform_B",
+    "learned_y",
+    "learned_B"
+  ],
+  "train_horizons": [
+    32,
+    64
+  ],
+  "test_horizons": [
+    32,
+    64,
+    128
+  ],
+  "train_per_horizon": 4096,
+  "test_per_horizon": 8192,
+  "steps": 1500,
+  "batch_size": 128,
+  "hidden_width": 32,
+  "seed_base": 202611040200,
+  "seed_rule": "replicate r uses base+1000*r+10 for train32, +11 train64, +20 test32, +21 test64, +22 test128, +30 initialization, +40 batches",
+  "initialization": "scores zeros; W normal sd sqrt(2/(21+32)); v normal sd sqrt(2/(32+1)); b/c zeros; W then v draw order",
+  "optimizer": {
+    "lr": 0.003,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "epsilon": 1e-08
+  },
+  "dtype": "float64",
+  "rng": "numpy.random.Generator(PCG64)",
+  "threads": 1,
+  "min_free_disk_bytes": 1073741824,
+  "primary_threshold_nats": 0.02,
+  "natural_minus_teacher_median_threshold_nats": 0.01,
+  "rare_J_max": 3,
+  "no_training_until": "source independent scientific review and verified Space roundtrip; data roundtrip verified before each fit",
+  "median_scope": "separately for uniform and learned, four paired replicate differences each"
+}

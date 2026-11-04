@@ -1,0 +1,32 @@
+test_archive_roundtrip_and_mutation_refusal (__main__.CaptureTests.test_archive_roundtrip_and_mutation_refusal) ... FAIL
+test_no_traversal_no_duplicate_no_missing_file (__main__.CaptureTests.test_no_traversal_no_duplicate_no_missing_file) ... FAIL
+test_source_review_binding_required (__main__.CaptureTests.test_source_review_binding_required) ... FAIL
+
+======================================================================
+FAIL: test_archive_roundtrip_and_mutation_refusal (__main__.CaptureTests.test_archive_roundtrip_and_mutation_refusal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_capture.py", line 6, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('capture'),'capture implementation absent')
+AssertionError: unexpectedly None : capture implementation absent
+
+======================================================================
+FAIL: test_no_traversal_no_duplicate_no_missing_file (__main__.CaptureTests.test_no_traversal_no_duplicate_no_missing_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_capture.py", line 6, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('capture'),'capture implementation absent')
+AssertionError: unexpectedly None : capture implementation absent
+
+======================================================================
+FAIL: test_source_review_binding_required (__main__.CaptureTests.test_source_review_binding_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_capture.py", line 6, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('capture'),'capture implementation absent')
+AssertionError: unexpectedly None : capture implementation absent
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

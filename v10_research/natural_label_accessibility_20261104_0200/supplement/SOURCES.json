@@ -1,0 +1,10 @@
+{
+  "primary_sources": [
+    {"title":"The Evolution of Statistical Induction Heads: In-Context Learning Markov Chains", "authors":"Edelman et al.", "year":2024, "url":"https://arxiv.org/abs/2402.11004", "scope":"Primary abstract reviewed; broad fresh-source Markov ICL and statistical induction heads are prior art."},
+    {"title":"Markov Chain Estimation with In-Context Learning", "authors":"Lepage, Mary and Picard", "year":2025, "url":"https://arxiv.org/abs/2508.03934", "scope":"Primary abstract reviewed; unseen transition matrices and next-token training are prior art."},
+    {"title":"What Can Transformers Learn In-Context?", "authors":"Garg et al.", "year":2022, "url":"https://arxiv.org/abs/2208.01066", "scope":"Methodological context only."},
+    {"title":"Transformers Learn In-Context by Gradient Descent", "authors":"von Oswald et al.", "year":2023, "url":"https://proceedings.mlr.press/v202/von-oswald23a.html", "scope":"Regression mechanism context only; not evidence for these dynamics."}
+  ],
+  "prior_v10_snapshot": {"repository":"https://github.com/AlexenderSokolov/transformer-icml", "commit":"109ac29309af3fe508dafef493fd891421dfb0fa", "url":"https://github.com/AlexenderSokolov/transformer-icml/tree/109ac29309af3fe508dafef493fd891421dfb0fa", "scope":"Historical motivating snapshot cited in inherited design; no raw missing-pilot reconstruction claimed."},
+  "novelty_claim":false
+}

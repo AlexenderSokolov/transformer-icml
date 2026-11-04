@@ -1,0 +1,39 @@
+test_source_declared_hash_must_hash_source_manifest_bytes (__main__.IndependentCaptureReviewTests.test_source_declared_hash_must_hash_source_manifest_bytes) ... FAIL
+test_extreme_absent_score_keeps_pool_defined (__main__.IndependentScientificReviewTests.test_extreme_absent_score_keeps_pool_defined) ... FAIL
+test_gradient_all_queries_and_score_gauges (__main__.IndependentScientificReviewTests.test_gradient_all_queries_and_score_gauges) ... ok
+test_input_labels_cannot_change_visible_words (__main__.IndependentScientificReviewTests.test_input_labels_cannot_change_visible_words) ... ok
+test_posterior_by_independent_product_integrals (__main__.IndependentScientificReviewTests.test_posterior_by_independent_product_integrals) ... ok
+
+======================================================================
+FAIL: test_source_declared_hash_must_hash_source_manifest_bytes (__main__.IndependentCaptureReviewTests.test_source_declared_hash_must_hash_source_manifest_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "review_tests.py", line 105, in test_source_declared_hash_must_hash_source_manifest_bytes
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_extreme_absent_score_keeps_pool_defined (__main__.IndependentScientificReviewTests.test_extreme_absent_score_keeps_pool_defined)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "review_tests.py", line 93, in test_extreme_absent_score_keeps_pool_defined
+    np.testing.assert_allclose(actual[0, 0], H[0] / 8., atol=1e-15)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 1711, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 811, in assert_array_compare
+    flagged = func_assert_same_pos(x, y, func=isnan, hasval='nan')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 780, in func_assert_same_pos
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-07, atol=1e-15
+
+nan location mismatch:
+ ACTUAL: array([nan, nan, nan, nan, nan, nan, nan, nan])
+ DESIRED: array([0.625, 0.125, 0.25 , 0.   , 0.   , 0.   , 0.   , 0.   ])
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.057s
+
+FAILED (failures=2)

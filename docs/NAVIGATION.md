@@ -1,5 +1,12 @@
 # 资料导航
 
+## 自然标签可学习性完整实验（2026-11-04）
+
+- [结果、局限及复现入口](../v10_research/natural_label_accessibility_20261104_0200/README.md)
+- [分块原始包、成员和原始/公开哈希](../v10_research/natural_label_accessibility_20261104_0200/PUBLIC_ARCHIVE_INDEX.json)
+- [设计与全部脚本](../v10_research/natural_label_accessibility_20261104_0200/records/source/DESIGN.md) · [完整分析](../v10_research/natural_label_accessibility_20261104_0200/records/analysis/all_results.json)
+- [公开导出与验证范围](../provenance/natural_label_accessibility_20261104/PUBLIC_EXPORT.md)
+
 ## 任意初始化 A⁵ 下界及阶段纠正（2026-11-04）
 
 - [公开范围与来源身份](../provenance/arbitrary_initial_kl_lower_20261104/PUBLIC_EXPORT.md) · [原始/公开逐行映射](../provenance/arbitrary_initial_kl_lower_20261104/PUBLIC_SOURCE_MAP.json)

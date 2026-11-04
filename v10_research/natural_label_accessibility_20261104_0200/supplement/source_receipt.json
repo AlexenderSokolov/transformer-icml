@@ -1,0 +1,31 @@
+{
+  "schema": "v10_capture_receipt_v1",
+  "kind": "source",
+  "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+  "archive_sha256": "3ecf6f614e2958474d3f66129661b908378792a1f587f5ceb399764317b99d51",
+  "archive_bytes": 53361,
+  "library_file_id": "[private-storage-id-redacted]",
+  "roundtrip_verified": true,
+  "verified_utc": "2026-11-04T02:20:07.426982+00:00",
+  "member_count": 43,
+  "independent_source_check": {
+    "verified_manifest_entries": 41,
+    "exact_archive_members": 44,
+    "scientific_review_sha256": "46904d24a21294e381bc452c3087c38fe2e5185c17a48eb1697460431715fbe8",
+    "tests_from_extracted_roundtrip": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "exit_code": 0,
+        "tests_passed": 15,
+        "output_sha256": "5106f7337b2ba0a0e384aef8ecc1f10e640cdd9b361ba67b8c5ec0cd7f0ade7d"
+      },
+      {
+        "command": "python3 -m unittest review_tests review_pipeline_tests -v",
+        "exit_code": 0,
+        "tests_passed": 15,
+        "output_sha256": "860b44962cd6949c6080c410297d81b0539309986913ddc8eb74cbb954693471"
+      }
+    ],
+    "experimental_sampling_or_training_performed": false
+  }
+}

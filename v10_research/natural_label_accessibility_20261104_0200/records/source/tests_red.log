@@ -1,0 +1,68 @@
+test_adam_first_step_and_kl_edges (__main__.CoreTests.test_adam_first_step_and_kl_edges) ... FAIL
+test_counts_literal_and_label_exclusion (__main__.CoreTests.test_counts_literal_and_label_exclusion) ... FAIL
+test_deterministic_simulation_and_heldout_label (__main__.CoreTests.test_deterministic_simulation_and_heldout_label) ... FAIL
+test_full_gradient_finite_difference (__main__.CoreTests.test_full_gradient_finite_difference) ... FAIL
+test_pool_token_equivalence_and_matched_initialization (__main__.CoreTests.test_pool_token_equivalence_and_matched_initialization) ... FAIL
+test_prior_word_mass_and_next_label_identity (__main__.CoreTests.test_prior_word_mass_and_next_label_identity) ... FAIL
+test_rao_blackwell_gradient_identity_at_fixed_input (__main__.CoreTests.test_rao_blackwell_gradient_identity_at_fixed_input) ... FAIL
+
+======================================================================
+FAIL: test_adam_first_step_and_kl_edges (__main__.CoreTests.test_adam_first_step_and_kl_edges)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_core.py", line 8, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('core'), 'core implementation absent')
+AssertionError: unexpectedly None : core implementation absent
+
+======================================================================
+FAIL: test_counts_literal_and_label_exclusion (__main__.CoreTests.test_counts_literal_and_label_exclusion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_core.py", line 8, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('core'), 'core implementation absent')
+AssertionError: unexpectedly None : core implementation absent
+
+======================================================================
+FAIL: test_deterministic_simulation_and_heldout_label (__main__.CoreTests.test_deterministic_simulation_and_heldout_label)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_core.py", line 8, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('core'), 'core implementation absent')
+AssertionError: unexpectedly None : core implementation absent
+
+======================================================================
+FAIL: test_full_gradient_finite_difference (__main__.CoreTests.test_full_gradient_finite_difference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_core.py", line 8, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('core'), 'core implementation absent')
+AssertionError: unexpectedly None : core implementation absent
+
+======================================================================
+FAIL: test_pool_token_equivalence_and_matched_initialization (__main__.CoreTests.test_pool_token_equivalence_and_matched_initialization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_core.py", line 8, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('core'), 'core implementation absent')
+AssertionError: unexpectedly None : core implementation absent
+
+======================================================================
+FAIL: test_prior_word_mass_and_next_label_identity (__main__.CoreTests.test_prior_word_mass_and_next_label_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_core.py", line 8, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('core'), 'core implementation absent')
+AssertionError: unexpectedly None : core implementation absent
+
+======================================================================
+FAIL: test_rao_blackwell_gradient_identity_at_fixed_input (__main__.CoreTests.test_rao_blackwell_gradient_identity_at_fixed_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_core.py", line 8, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('core'), 'core implementation absent')
+AssertionError: unexpectedly None : core implementation absent
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+FAILED (failures=7)

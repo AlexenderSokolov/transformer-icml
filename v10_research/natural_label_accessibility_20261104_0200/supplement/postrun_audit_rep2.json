@@ -1,0 +1,150 @@
+{
+  "schema": "v10_postrun_audit_v1",
+  "status": "PASS",
+  "replicate": 2,
+  "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+  "audit_script_sha256": "6bde6515c59729e6cddaddf65d2347f20a0e0af3db1e9c94344751e1d9345e73",
+  "purpose": "Validation of retained data and state transitions only; no random draws or new training trajectory.",
+  "source_entries_verified_before": 41,
+  "captures": {
+    "input": {
+      "library_file_id": "[private-storage-id-redacted]",
+      "sha256": "286cf6aecdca86ab31ff3c8fc867096b6b3255dda9fac5b6fdad3a9b2c4d934a",
+      "bytes": 19249440,
+      "members": 12,
+      "readback_path": "runs/rep2/inputs/roundtrip/input(2).zip"
+    },
+    "uniform_y": {
+      "library_file_id": "[private-storage-id-redacted]",
+      "sha256": "5d37915d5e4c83f7ba8c0bf5d91730a9a6d1af0715b701a1193a6012b2eef599",
+      "bytes": 29289569,
+      "members": 13,
+      "readback_path": "runs/rep2/uniform_y/roundtrip/output(8).zip"
+    },
+    "uniform_B": {
+      "library_file_id": "[private-storage-id-redacted]",
+      "sha256": "07fc4897f86f683c4eb7d7081018e790975c707b32207f3e3a66a33ef23994e2",
+      "bytes": 29284545,
+      "members": 13,
+      "readback_path": "runs/rep2/uniform_B/roundtrip/output(9).zip"
+    },
+    "learned_y": {
+      "library_file_id": "[private-storage-id-redacted]",
+      "sha256": "0fb0c2b9196dbd0aef3d03d4d1bfd18cc878c13f27187b4af32fdf2474558d40",
+      "bytes": 40891527,
+      "members": 13,
+      "readback_path": "runs/rep2/learned_y/roundtrip/output(10).zip"
+    },
+    "learned_B": {
+      "library_file_id": "[private-storage-id-redacted]",
+      "sha256": "e27232d12414000a12c47db911ceef9ceaf2dbbd8f0f099e705ddcfba58c0429",
+      "bytes": 40948092,
+      "members": 13,
+      "readback_path": "runs/rep2/learned_B/roundtrip/output(20261104-022538).zip"
+    }
+  },
+  "inputs": {
+    "train_M32": {
+      "episodes": 4096,
+      "horizon": 32,
+      "exact_reconstruction": true,
+      "rare_terminal_rows": 260
+    },
+    "train_M64": {
+      "episodes": 4096,
+      "horizon": 64,
+      "exact_reconstruction": true,
+      "rare_terminal_rows": 56
+    },
+    "test_M32": {
+      "episodes": 8192,
+      "horizon": 32,
+      "exact_reconstruction": true,
+      "rare_terminal_rows": 545
+    },
+    "test_M64": {
+      "episodes": 8192,
+      "horizon": 64,
+      "exact_reconstruction": true,
+      "rare_terminal_rows": 140
+    },
+    "test_M128": {
+      "episodes": 8192,
+      "horizon": 128,
+      "exact_reconstruction": true,
+      "rare_terminal_rows": 33
+    }
+  },
+  "conditions": {
+    "uniform_y": {
+      "status": "PASS",
+      "saved_update_transitions_checked": 1500,
+      "exact_gradient_and_adam_state_match": true,
+      "shared_initialization_and_batch_validation": true,
+      "independent_gradient_max_abs_error": 5.551115123125783e-17,
+      "independent_loss_max_abs_error": 2.220446049250313e-16,
+      "independent_final_prediction_max_abs_error": 1.1102230246251565e-16,
+      "independent_metric_max_abs_error": 0.0,
+      "all_evaluation_horizons_checked": [
+        32,
+        64,
+        128
+      ],
+      "primary_kl_B": 0.015619243083158766
+    },
+    "uniform_B": {
+      "status": "PASS",
+      "saved_update_transitions_checked": 1500,
+      "exact_gradient_and_adam_state_match": true,
+      "shared_initialization_and_batch_validation": true,
+      "independent_gradient_max_abs_error": 2.0816681711721685e-17,
+      "independent_loss_max_abs_error": 1.1102230246251565e-16,
+      "independent_final_prediction_max_abs_error": 1.1102230246251565e-16,
+      "independent_metric_max_abs_error": 0.0,
+      "all_evaluation_horizons_checked": [
+        32,
+        64,
+        128
+      ],
+      "primary_kl_B": 0.008361456170859828
+    },
+    "learned_y": {
+      "status": "PASS",
+      "saved_update_transitions_checked": 1500,
+      "exact_gradient_and_adam_state_match": true,
+      "shared_initialization_and_batch_validation": true,
+      "independent_gradient_max_abs_error": 8.326672684688674e-17,
+      "independent_loss_max_abs_error": 2.220446049250313e-16,
+      "independent_final_prediction_max_abs_error": 4.440892098500626e-16,
+      "independent_metric_max_abs_error": 0.0,
+      "all_evaluation_horizons_checked": [
+        32,
+        64,
+        128
+      ],
+      "primary_kl_B": 0.0067002290505912485
+    },
+    "learned_B": {
+      "status": "PASS",
+      "saved_update_transitions_checked": 1500,
+      "exact_gradient_and_adam_state_match": true,
+      "shared_initialization_and_batch_validation": true,
+      "independent_gradient_max_abs_error": 4.206704429243757e-17,
+      "independent_loss_max_abs_error": 2.220446049250313e-16,
+      "independent_final_prediction_max_abs_error": 4.440892098500626e-16,
+      "independent_metric_max_abs_error": 0.0,
+      "all_evaluation_horizons_checked": [
+        32,
+        64,
+        128
+      ],
+      "primary_kl_B": 0.0031303554519504914
+    }
+  },
+  "completed_utc": "2026-11-04T02:26:07.550206+00:00",
+  "elapsed_seconds": 8.337081599001976,
+  "source_entries_verified_after": 41,
+  "random_draws_generated": 0,
+  "new_training_fits": 0,
+  "unresolved_discrepancies": []
+}

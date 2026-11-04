@@ -1,0 +1,14 @@
+test_nonfinite_candidate_is_saved_before_abort (review_pipeline_tests.IndependentPipelineReviewTests.test_nonfinite_candidate_is_saved_before_abort) ... FAIL
+
+======================================================================
+FAIL: test_nonfinite_candidate_is_saved_before_abort (review_pipeline_tests.IndependentPipelineReviewTests.test_nonfinite_candidate_is_saved_before_abort)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "review_pipeline_tests.py", line 88, in test_nonfinite_candidate_is_saved_before_abort
+    self.assertTrue((output / 'FAILED_STEP.npz').exists())
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 0.010s
+
+FAILED (failures=1)

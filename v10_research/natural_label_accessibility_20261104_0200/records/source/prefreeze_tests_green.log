@@ -1,0 +1,38 @@
+test_paired_independent_replicate_screen (test_analyze.AnalysisTests.test_paired_independent_replicate_screen) ... ok
+test_archive_roundtrip_and_mutation_refusal (test_capture.CaptureTests.test_archive_roundtrip_and_mutation_refusal) ... ok
+test_no_traversal_no_duplicate_no_missing_file (test_capture.CaptureTests.test_no_traversal_no_duplicate_no_missing_file) ... ok
+test_source_review_binding_required (test_capture.CaptureTests.test_source_review_binding_required) ... ok
+test_adam_first_step_and_kl_edges (test_core.CoreTests.test_adam_first_step_and_kl_edges) ... ok
+test_counts_literal_and_label_exclusion (test_core.CoreTests.test_counts_literal_and_label_exclusion) ... ok
+test_deterministic_simulation_and_heldout_label (test_core.CoreTests.test_deterministic_simulation_and_heldout_label) ... ok
+test_full_gradient_finite_difference (test_core.CoreTests.test_full_gradient_finite_difference) ... ok
+test_pool_token_equivalence_and_matched_initialization (test_core.CoreTests.test_pool_token_equivalence_and_matched_initialization) ... ok
+test_prior_word_mass_and_next_label_identity (test_core.CoreTests.test_prior_word_mass_and_next_label_identity) ... ok
+test_rao_blackwell_gradient_identity_at_fixed_input (test_core.CoreTests.test_rao_blackwell_gradient_identity_at_fixed_input) ... ok
+test_metrics_and_overlaps (test_experiment.RunnerTests.test_metrics_and_overlaps) ... ok
+test_natural_loader_excludes_teacher_and_latents (test_experiment.RunnerTests.test_natural_loader_excludes_teacher_and_latents) ... ok
+test_source_gate_refuses_before_data_generation (test_experiment.RunnerTests.test_source_gate_refuses_before_data_generation) ... ok
+test_table_pooling_and_unseen_default (test_experiment.RunnerTests.test_table_pooling_and_unseen_default) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.249s
+
+OK
+test_source_declared_hash_must_hash_source_manifest_bytes (review_tests.IndependentCaptureReviewTests.test_source_declared_hash_must_hash_source_manifest_bytes) ... ok
+test_extreme_absent_score_keeps_pool_defined (review_tests.IndependentScientificReviewTests.test_extreme_absent_score_keeps_pool_defined) ... ok
+test_gradient_all_queries_and_score_gauges (review_tests.IndependentScientificReviewTests.test_gradient_all_queries_and_score_gauges) ... ok
+test_input_labels_cannot_change_visible_words (review_tests.IndependentScientificReviewTests.test_input_labels_cannot_change_visible_words) ... ok
+test_posterior_by_independent_product_integrals (review_tests.IndependentScientificReviewTests.test_posterior_by_independent_product_integrals) ... ok
+test_all_fixed_cells_and_paired_metrics_are_retained (review_pipeline_tests.IndependentPipelineReviewTests.test_all_fixed_cells_and_paired_metrics_are_retained) ... ok
+test_analysis_rejects_different_input_hashes_within_replica (review_pipeline_tests.IndependentPipelineReviewTests.test_analysis_rejects_different_input_hashes_within_replica) ... ok
+test_analysis_rejects_nonmatching_paired_targets (review_pipeline_tests.IndependentPipelineReviewTests.test_analysis_rejects_nonmatching_paired_targets) ... ok
+test_analysis_rejects_unsealed_local_payload_mutation (review_pipeline_tests.IndependentPipelineReviewTests.test_analysis_rejects_unsealed_local_payload_mutation) ... ok
+test_nonfinite_candidate_is_saved_before_abort (review_pipeline_tests.IndependentPipelineReviewTests.test_nonfinite_candidate_is_saved_before_abort) ... ok
+test_prior_capture_is_not_enough_when_fit_is_incomplete (review_pipeline_tests.IndependentPipelineReviewTests.test_prior_capture_is_not_enough_when_fit_is_incomplete) ... ok
+test_screen_boundary_and_se_semantics (review_pipeline_tests.IndependentPipelineReviewTests.test_screen_boundary_and_se_semantics) ... ok
+test_valid_capture_with_wrong_condition_identity_is_rejected (review_pipeline_tests.IndependentPipelineReviewTests.test_valid_capture_with_wrong_condition_identity_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 1.024s
+
+OK

@@ -1,0 +1,22 @@
+test_archive_roundtrip_and_mutation_refusal (__main__.CaptureTests.test_archive_roundtrip_and_mutation_refusal) ... ok
+test_no_traversal_no_duplicate_no_missing_file (__main__.CaptureTests.test_no_traversal_no_duplicate_no_missing_file) ... ok
+test_source_review_binding_required (__main__.CaptureTests.test_source_review_binding_required) ... ERROR
+
+======================================================================
+ERROR: test_source_review_binding_required (__main__.CaptureTests.test_source_review_binding_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_capture.py", line 32, in test_source_review_binding_required
+    a=self.c.make_archive(p,['x'],p/'a.zip','source','a'*64)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "capture.py", line 34, in make_archive
+    verify_archive(destination)
+  File "capture.py", line 50, in verify_archive
+    if 'SCIENTIFIC_REVIEW.json' not in names:raise ValueError('source independent review missing')
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: source independent review missing
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.007s
+
+FAILED (errors=1)

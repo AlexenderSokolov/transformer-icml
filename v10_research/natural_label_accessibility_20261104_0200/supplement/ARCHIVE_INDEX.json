@@ -1,0 +1,292 @@
+{
+  "created_utc": "2026-11-04T02:29:19.517609+00:00",
+  "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+  "capture_count": 22,
+  "all_roundtrips_verified": true,
+  "captures": [
+    {
+      "logical_path": "source_receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "source",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "3ecf6f614e2958474d3f66129661b908378792a1f587f5ceb399764317b99d51",
+      "archive_bytes": 53361,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:20:07.426982+00:00",
+      "member_count": 43,
+      "independent_source_check": {
+        "verified_manifest_entries": 41,
+        "exact_archive_members": 44,
+        "scientific_review_sha256": "46904d24a21294e381bc452c3087c38fe2e5185c17a48eb1697460431715fbe8",
+        "tests_from_extracted_roundtrip": [
+          {
+            "command": "python3 -m unittest discover -v",
+            "exit_code": 0,
+            "tests_passed": 15,
+            "output_sha256": "5106f7337b2ba0a0e384aef8ecc1f10e640cdd9b361ba67b8c5ec0cd7f0ade7d"
+          },
+          {
+            "command": "python3 -m unittest review_tests review_pipeline_tests -v",
+            "exit_code": 0,
+            "tests_passed": 15,
+            "output_sha256": "860b44962cd6949c6080c410297d81b0539309986913ddc8eb74cbb954693471"
+          }
+        ],
+        "experimental_sampling_or_training_performed": false
+      }
+    },
+    {
+      "logical_path": "runs/rep0/inputs/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "input",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "8fe9c9b22f70aa7836b0edf1fd11d58a785a11baafbf23ae2d4bcfd238f7db71",
+      "archive_bytes": 19249433,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:20:40.341597+00:00",
+      "member_count": 12
+    },
+    {
+      "logical_path": "runs/rep0/learned_B/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "3b2218afc5eaa1bcfc4b35b32084d712bed4d0036800cc6150f38a0c9cb030b0",
+      "archive_bytes": 40935572,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:21:59.594323+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep0/learned_y/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "c8febf29493ad8169779971aff5c2ae11ad6ab9d84f16c9fe295cb70a79c9512",
+      "archive_bytes": 40886868,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:21:41.497928+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep0/uniform_B/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "83f5db2d3f6b6990f20d0737bc72403a1710177ecb38d306fd904191d46979d1",
+      "archive_bytes": 29284617,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:21:24.430913+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep0/uniform_y/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "8130757776bbd24084e7c33b8b83e623d70ada7a753b630298cea88a1c315a36",
+      "archive_bytes": 29277283,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:21:11.574807+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep1/inputs/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "input",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "8687a3fc497023fc3eebb375f15614e94b9b7b12906101204d255f6db356b616",
+      "archive_bytes": 19248963,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:22:54.773726+00:00",
+      "member_count": 12
+    },
+    {
+      "logical_path": "runs/rep1/learned_B/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "5cde706697142a56fcd1f9dd1d50ed2ffffd58a94925f35c7b731cc624774be5",
+      "archive_bytes": 40926766,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:24:07.554051+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep1/learned_y/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "0d79be43a80cab8fa4d053d4290407618e7679921dab782833847817c039afe6",
+      "archive_bytes": 40876019,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:23:47.431114+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep1/uniform_B/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "61350b8e671e38cbd939f9b990e44ff8fdad8abbd47361b50524b84f46dda0f0",
+      "archive_bytes": 29269469,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:23:26.621435+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep1/uniform_y/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "167d2dd0ed79b28da917e0a88d814a9298eaa4b9d0603d70412938d274f584ba",
+      "archive_bytes": 29269925,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:23:10.534792+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep2/inputs/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "input",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "286cf6aecdca86ab31ff3c8fc867096b6b3255dda9fac5b6fdad3a9b2c4d934a",
+      "archive_bytes": 19249440,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:24:21.836452+00:00",
+      "member_count": 12
+    },
+    {
+      "logical_path": "runs/rep2/learned_B/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "e27232d12414000a12c47db911ceef9ceaf2dbbd8f0f099e705ddcfba58c0429",
+      "archive_bytes": 40948092,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:25:43.357817+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep2/learned_y/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "0fb0c2b9196dbd0aef3d03d4d1bfd18cc878c13f27187b4af32fdf2474558d40",
+      "archive_bytes": 40891527,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:25:21.600655+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep2/uniform_B/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "07fc4897f86f683c4eb7d7081018e790975c707b32207f3e3a66a33ef23994e2",
+      "archive_bytes": 29284545,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:24:59.744522+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep2/uniform_y/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "5d37915d5e4c83f7ba8c0bf5d91730a9a6d1af0715b701a1193a6012b2eef599",
+      "archive_bytes": 29289569,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:24:39.892652+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep3/inputs/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "input",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "04a3d6f3845603da1172c1ef06b69df2c58691ec8d5944fef01a84780cec2b65",
+      "archive_bytes": 19247293,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:26:01.384665+00:00",
+      "member_count": 12
+    },
+    {
+      "logical_path": "runs/rep3/learned_B/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "4a4262488a515b8ec443d901e87213af3e257c5374ccaaff6a40be7bf1fc2f9e",
+      "archive_bytes": 40923598,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:27:38.119638+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep3/learned_y/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "3a4434e65fa4f4ddc519f4cde8f3d316d7c440ffd14c132a9073c899dd69dd2e",
+      "archive_bytes": 40871529,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:27:12.204309+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep3/uniform_B/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "bd5d9cf40cba273f0e532d16dbd2092096d2022e60e98662da9d064a0e719316",
+      "archive_bytes": 29277739,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:26:46.352667+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "runs/rep3/uniform_y/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "output",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "27600cac185daf493fdee751e31dc766ba704e1c4d3a7daedcc1b5e63e493ef2",
+      "archive_bytes": 29285765,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:26:22.160835+00:00",
+      "member_count": 13
+    },
+    {
+      "logical_path": "analysis/receipt.json",
+      "schema": "v10_capture_receipt_v1",
+      "kind": "analysis",
+      "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+      "archive_sha256": "1d2a105baf9d337a03aa13bc24e5b4bdbfec392a4389fb057425e864858de4e5",
+      "archive_bytes": 59061,
+      "library_file_id": "[private-storage-id-redacted]",
+      "roundtrip_verified": true,
+      "verified_utc": "2026-11-04T02:27:52.860344+00:00",
+      "member_count": 2
+    }
+  ]
+}

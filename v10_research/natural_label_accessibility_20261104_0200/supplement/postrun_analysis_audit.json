@@ -1,0 +1,99 @@
+{
+  "schema": "v10_final_analysis_audit_v1",
+  "status": "PASS",
+  "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+  "audit_script_sha256": "049c7e524a99ca02ed001f7879eccad6804d00a12ebfe3399e7c5d38c0cff3ee",
+  "replicate_audit_script_sha256": "6bde6515c59729e6cddaddf65d2347f20a0e0af3db1e9c94344751e1d9345e73",
+  "replicate_audit_report_sha256": {
+    "0": "4fb1b9d8a281e05e4db7ff1132ed398abce764b667d2db735d75061bfbc60d03",
+    "1": "eeed947c17bb5b16a379c64a7090fd3f30527845f4cbd92be0110cd36361ca72",
+    "2": "6ed03ffc5d3d5bd9f7c0f5848c8caba595ab81de020ddbd960ede4e2b8096818",
+    "3": "2213753433e0cf284cea040017608473a197b4abbdc695a2833b079883bd209d"
+  },
+  "analysis_capture": {
+    "schema": "v10_capture_receipt_v1",
+    "kind": "analysis",
+    "source_manifest_sha256": "79b7c4937ac91d48e5eea9a2f4fe6c1b13d6568a6d8ba4f5ca038bfe07d503b6",
+    "archive_sha256": "1d2a105baf9d337a03aa13bc24e5b4bdbfec392a4389fb057425e864858de4e5",
+    "archive_bytes": 59061,
+    "library_file_id": "[private-storage-id-redacted]",
+    "roundtrip_verified": true,
+    "verified_utc": "2026-11-04T02:27:52.860344+00:00",
+    "member_count": 2
+  },
+  "checked_cells": 16,
+  "checked_paired_cells": 48,
+  "checked_baseline_cells": 12,
+  "total_saved_updates_audited": 24000,
+  "primary_replicate_means": {
+    "uniform_y": [
+      0.023134051563017878,
+      0.0168624053093777,
+      0.015619243083158766,
+      0.019945187743843282
+    ],
+    "uniform_B": [
+      0.009826777059175508,
+      0.008004450142899869,
+      0.008361456170859828,
+      0.007705512218550538
+    ],
+    "learned_y": [
+      0.012971019497862859,
+      0.007229222540726197,
+      0.0067002290505912485,
+      0.009867924608153715
+    ],
+    "learned_B": [
+      0.00337940102295595,
+      0.0026680238288819924,
+      0.0031303554519504914,
+      0.0033551504435382017
+    ]
+  },
+  "primary_paired_differences": {
+    "uniform_y_minus_uniform_B": [
+      0.01330727450384237,
+      0.008857955166477832,
+      0.007257786912298938,
+      0.012239675525292744
+    ],
+    "learned_y_minus_learned_B": [
+      0.009591618474906909,
+      0.004561198711844204,
+      0.003569873598640757,
+      0.006512774164615513
+    ],
+    "learned_y_minus_uniform_y": [
+      -0.01016303206515502,
+      -0.009633182768651504,
+      -0.008919014032567518,
+      -0.010077263135689567
+    ],
+    "learned_B_minus_uniform_B": [
+      -0.006447376036219558,
+      -0.005336426314017876,
+      -0.005231100718909336,
+      -0.004350361775012336
+    ]
+  },
+  "screening": {
+    "uniform": {
+      "replicates_at_or_below_threshold": 3,
+      "median_natural_minus_teacher": 0.010548815345885289,
+      "passes": false
+    },
+    "learned": {
+      "replicates_at_or_below_threshold": 4,
+      "median_natural_minus_teacher": 0.0055369864382298585,
+      "passes": true
+    }
+  },
+  "joint_descriptive_hypothesis_passes": false,
+  "interpretation": "Learned pooling meets its descriptive screen. Uniform pooling meets 3/4 risk criterion but fails the median natural-minus-teacher criterion. The conjunction for both architectures is not satisfied; no significance, full-Transformer or novelty claim follows.",
+  "completed_utc": "2026-11-04T02:29:17.635966+00:00",
+  "elapsed_seconds": 0.8069712489996164,
+  "random_draws_generated": 0,
+  "new_training_fits": 0,
+  "unresolved_discrepancies": []
+}

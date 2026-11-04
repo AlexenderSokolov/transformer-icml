@@ -1,0 +1,40 @@
+test_all_fixed_cells_and_paired_metrics_are_retained (review_pipeline_tests.IndependentPipelineReviewTests.test_all_fixed_cells_and_paired_metrics_are_retained) ... ok
+test_analysis_rejects_different_input_hashes_within_replica (review_pipeline_tests.IndependentPipelineReviewTests.test_analysis_rejects_different_input_hashes_within_replica) ... FAIL
+test_analysis_rejects_nonmatching_paired_targets (review_pipeline_tests.IndependentPipelineReviewTests.test_analysis_rejects_nonmatching_paired_targets) ... FAIL
+test_analysis_rejects_unsealed_local_payload_mutation (review_pipeline_tests.IndependentPipelineReviewTests.test_analysis_rejects_unsealed_local_payload_mutation) ... ok
+test_nonfinite_candidate_is_saved_before_abort (review_pipeline_tests.IndependentPipelineReviewTests.test_nonfinite_candidate_is_saved_before_abort) ... ok
+test_prior_capture_is_not_enough_when_fit_is_incomplete (review_pipeline_tests.IndependentPipelineReviewTests.test_prior_capture_is_not_enough_when_fit_is_incomplete) ... ok
+test_screen_boundary_and_se_semantics (review_pipeline_tests.IndependentPipelineReviewTests.test_screen_boundary_and_se_semantics) ... ok
+test_valid_capture_with_wrong_condition_identity_is_rejected (review_pipeline_tests.IndependentPipelineReviewTests.test_valid_capture_with_wrong_condition_identity_is_rejected) ... FAIL
+
+======================================================================
+FAIL: test_analysis_rejects_different_input_hashes_within_replica (review_pipeline_tests.IndependentPipelineReviewTests.test_analysis_rejects_different_input_hashes_within_replica)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "review_pipeline_tests.py", line 134, in test_analysis_rejects_different_input_hashes_within_replica
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_analysis_rejects_nonmatching_paired_targets (review_pipeline_tests.IndependentPipelineReviewTests.test_analysis_rejects_nonmatching_paired_targets)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "review_pipeline_tests.py", line 144, in test_analysis_rejects_nonmatching_paired_targets
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_valid_capture_with_wrong_condition_identity_is_rejected (review_pipeline_tests.IndependentPipelineReviewTests.test_valid_capture_with_wrong_condition_identity_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "review_pipeline_tests.py", line 120, in test_valid_capture_with_wrong_condition_identity_is_rejected
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.056s
+
+FAILED (failures=3)
