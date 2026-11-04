@@ -1,5 +1,10 @@
 # 资料导航
 
+## 任意初始化 A⁵ 下界及阶段纠正（2026-11-04）
+
+- [公开范围与来源身份](../provenance/arbitrary_initial_kl_lower_20261104/PUBLIC_EXPORT.md) · [原始/公开逐行映射](../provenance/arbitrary_initial_kl_lower_20261104/PUBLIC_SOURCE_MAP.json)
+- [中文更正](../v10_research/arbitrary_initial_kl_lower_20261104/v10_stage_correction_arbitrary_init_20261104_0122.zh.v1.md) · [独立 KL 转移分析](../v10_research/arbitrary_initial_kl_lower_20261104/kl_lower_transfer_audit_20261104.md) · [量词与来源审计](../v10_research/arbitrary_initial_kl_lower_20261104/arbitrary_initial_kl_lower_audit_20261104.md)
+
 ## 末端 KL：任意起点与平稳源（2026-11-04）
 
 - [中文总览](../provenance/terminal_kl_20261104/RESEARCH_SUMMARY.zh.md) · [公开范围及安全核验](../provenance/terminal_kl_20261104/PUBLIC_EXPORT.md) · [原始/公开身份映射](../provenance/terminal_kl_20261104/PUBLIC_SOURCE_MAP.json)

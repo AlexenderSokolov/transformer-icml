@@ -1,5 +1,9 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 2026-11-04：任意初始化 A⁵ 下界的补充纠正
+
+[完整更正与两份独立分析](provenance/arbitrary_initial_kl_lower_20261104/PUBLIC_EXPORT.md)：继承 MM5 的实际末端 TV 下界经 Pinsker 与 Jensen 推出 2⁻³¹ min{1,A⁵/(n+1)} 的 forward-KL minimax 下界。任意初始化的 A⁵ 多项式因子因此是必要的，与已有 add-one 上界至多差对数因子；精细对数、饱和区及完整联合参数速率仍未解决。平稳 A³ 源类须单独区分。旧科学文件不覆盖，哈希差异及原始记录缺口继续保留。
+
 ## 2026-11-04：末端 KL 的两个新上界
 
 [本批中文总览](provenance/terminal_kl_20261104/RESEARCH_SUMMARY.zh.md)公开任意初始二元组的固定 alphabet 对数率，以及平稳源的 A³[1+log₊((n+1)/A³)]/(n+1) 上界，并保留独立 LLM 分析、完整前序证明及 exact-real/指定 finite-bit 输出区别。
