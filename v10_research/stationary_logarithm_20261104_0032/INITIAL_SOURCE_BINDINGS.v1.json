@@ -1,0 +1,29 @@
+{
+  "status": "Analytical candidate pending independent exact-file review",
+  "date_utc": "2026-11-04",
+  "candidate": {
+    "path": "stationary_addone_sharp_log.candidate.v1.md",
+    "sha256": "90e949efc52cd8f3d57108ca334f9083a9858950183dd8e6f60d6664d92c6195"
+  },
+  "prior_stationary_candidate": {
+    "path": "../stationary_row_tilt_20261104_0023/stationary_terminal_kl.candidate.v1.md",
+    "sha256": "1d436719744fd51bda32db723e84932c68507479383154abeb4b9724f2db1337"
+  },
+  "primary_publication": {
+    "title": "Optimal prediction of Markov chains with and without spectral gap",
+    "authors": "Yanjun Han, Soham Jana, Yihong Wu",
+    "year": 2023,
+    "doi": "https://doi.org/10.1109/TIT.2023.3239508",
+    "author_preprint": "https://arxiv.org/abs/2106.13947v2",
+    "published_pdf_provenance_notice": "[preparation path omitted; see the DOI and source identity]",
+    "sha256": "375c730cb4c9f6dd2eaa4439e59800764faeddbebee73f220e22d6d2cf3116a3",
+    "relevant_locations": ["Theorem 22, p. 3942", "Section V-A model and terminal loss", "Remark 1, p. 3921"]
+  },
+  "methods": {
+    "pure_analysis": true,
+    "numerical_experiments": false,
+    "simulation": false,
+    "external_uploads": false,
+    "repository_mutation": false
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "terminal-kl-public-validation-v1",
+  "status": "PASS",
+  "scope": "Read-only original/public byte identities, exact line maps, targeted privacy scan and existing integrity-verifier regression tests. No new mathematical numerical tests, training, model execution or browser visual validation.",
+  "source_file_count": 49,
+  "byte_identical_source_files": 30,
+  "nonmathematically_edited_source_files": 19,
+  "original_stationary_seal_entries_verified": 25,
+  "original_fixed_alphabet_ledger_entries_verified": 22,
+  "original_stationary_source_bindings_verified": 15,
+  "original_fixed_alphabet_source_bindings_verified": 13,
+  "existing_verifier_regression_tests_passed": 7,
+  "baseline_remote_commit": "0d678eefb558d5108dd5ef893b033c6f58077d81",
+  "baseline_inventory_entries_verified_against_git_tree": 3364,
+  "unmodified_existing_paths_policy": "All existing paths not listed in this change plan retain their exact baseline Git identity. No files deleted.",
+  "visual_rendering": "UNVERIFIED",
+  "scientific_status": "Existing independent LLM analytical reviews are preserved. Archive validation is not a mathematical proof or external peer review."
+}

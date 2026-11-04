@@ -1,5 +1,11 @@
 # Transformer 预测：统计、资源、精度与源轨迹扰动
 
+## 2026-11-04：末端 KL 的两个新上界
+
+[本批中文总览](provenance/terminal_kl_20261104/RESEARCH_SUMMARY.zh.md)公开任意初始二元组的固定 alphabet 对数率，以及平稳源的 A³[1+log₊((n+1)/A³)]/(n+1) 上界，并保留独立 LLM 分析、完整前序证明及 exact-real/指定 finite-bit 输出区别。
+
+[公开导出与核验范围](provenance/terminal_kl_20261104/PUBLIC_EXPORT.md)：数学陈述不改，非数学准备信息另作逐行映射。内部分析不是外部同行评议、文献优先权、训练成功或通用 IEEE 证书。旧 build/check 脚本仅作历史准备记录，不构成本次公开副本的独立重建方法。
+
 ## 完整同源训练轨迹：经典计数比较基线（2026-11-03）
 
 [新阶段导读](provenance/full_shared_source_training_20261103/RESEARCH_SUMMARY.zh.md)：N 条独立平稳干净轨迹共享同一个未知二阶源，汇集 NM 次转移，测试仅使用受保护末尾对。在 β≥1/M、N≥M 时可达到 Θ((NM)^−1/2)，包括允许比较者读取完整测试词的未知源下界。

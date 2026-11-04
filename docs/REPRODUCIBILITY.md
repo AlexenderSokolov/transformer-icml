@@ -1,5 +1,11 @@
 # 公开版本的来源、校验与复现
 
+## 末端 KL 科学公开副本（2026-11-04）
+
+[本批范围说明](../provenance/terminal_kl_20261104/PUBLIC_EXPORT.md)和[来源映射](../provenance/terminal_kl_20261104/PUBLIC_SOURCE_MAP.json)区分原始封存、公开科学副本和后来归档核验。原始审查、HTML 表内哈希和旧清单仍绑定原准备字节；公开身份以来源映射和仓库全局清单为准。
+
+完整 Markdown 数学前提与审查已捆绑。旧 build_html.py、check_html.py、write_manifest.py 是历史程序，依赖原始哈希和部分前序准备输入，不宣称能够独立重建本次公开 HTML。安全默认检查仍是仓库 tools/public_verify.py 与既有 tests；它们检查库存与字节，不证明定理。未新增训练、数值数学实验或视觉渲染 PASS。
+
 ## 全轨迹同源阶段：证明档案，不是训练实验
 
 [只读检查](../provenance/full_shared_source_training_20261103/PUBLIC_REPLAY.md)绑定三份原字节 Markdown、一个明确 SHA-256 引用、三份直接既有科学来源，以及此前公开来源映射和九份已声明上下文身份。没有新数字档案、实现、随机程序或经验结果；成功哈希检查不能替代数学证明。

@@ -1,5 +1,11 @@
 # 资料导航
 
+## 末端 KL：任意起点与平稳源（2026-11-04）
+
+- [中文总览](../provenance/terminal_kl_20261104/RESEARCH_SUMMARY.zh.md) · [公开范围及安全核验](../provenance/terminal_kl_20261104/PUBLIC_EXPORT.md) · [原始/公开身份映射](../provenance/terminal_kl_20261104/PUBLIC_SOURCE_MAP.json)
+- [平稳结果与输出推论](../v10_research/stationary_logarithm_20261104_0032/stationary_sharp_output_corollaries.v1.md) · [完整 HTML](../v10_research/stationary_logarithm_20261104_0032/stationary_addone_sharp_log.v1.html)
+- [任意起点结果与输出推论](../v10_research/fixed_alphabet_kl_sharpening_20261103_2346/sharp_kl_output_corollaries.v1.md) · [完整 HTML](../v10_research/fixed_alphabet_kl_sharpening_20261103_2346/fixed_alphabet_sharp_terminal_kl.v1.html)
+
 ## 完整同源轨迹训练
 
 - [中文总览](../provenance/full_shared_source_training_20261103/RESEARCH_SUMMARY.zh.md) · [只读公共核验](../provenance/full_shared_source_training_20261103/PUBLIC_REPLAY.md)

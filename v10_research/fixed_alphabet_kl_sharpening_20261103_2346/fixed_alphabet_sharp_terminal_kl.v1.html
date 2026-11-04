@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Offline source-bound proof package for fixed-alphabet terminal forward KL at logarithmic rate, with distinct exact-real and specialized finite-bit corollaries.">
+<title>Fixed alphabet terminal KL at logarithmic rate</title>
+<style>
+:root{color-scheme:light}*{box-sizing:border-box}html{background:#f4f5f7;scroll-behavior:smooth}body{max-width:1120px;margin:32px auto;padding:44px 64px;background:#fff;color:#19232d;font:16px/1.75 "DejaVu Sans",Arial,sans-serif}h1,h2,h3{color:#111;line-height:1.3;scroll-margin-top:24px}h1{font-size:31px;margin:1.4em 0 .8em}h2{font-size:24px;margin:2.1em 0 .8em}h3{font-size:19px;margin:1.7em 0 .7em}p{margin:1em 0}a{color:#145b91;text-underline-offset:3px;overflow-wrap:anywhere}li{margin:.55em 0}nav{margin:8px 0 36px;font-size:14px}nav ol{columns:2;column-gap:32px;padding-left:24px}nav li{break-inside:avoid;margin:.4em 0}.edition{font-size:13px;color:#526271}.edition p{margin:0}pre{margin:1.4em 0;padding:10px 0;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.65 "DejaVu Sans Mono",monospace}code{font: .87em/1.6 "DejaVu Sans Mono",monospace;overflow-wrap:anywhere}pre code{font:inherit}strong{font-weight:650}table{border-collapse:collapse;width:100%;font-size:12px;margin:1.3em 0}th,td{border:1px solid #d9d9d9;padding:10px 12px;text-align:left;vertical-align:middle}th{background:#e9eef2;color:#111}td:first-child{width:44%;overflow-wrap:anywhere}td code{font-size:11px}details{margin:2em 0}summary{cursor:pointer;font-weight:650;color:#145b91}.review-copy{padding:8px 0}.review-copy h1{font-size:24px}.closing{font-size:13px;color:#526271;margin-top:3em}@media(max-width:720px){body{margin:0;padding:24px 18px;font-size:15px}h1{font-size:26px}h2{font-size:22px}nav ol{columns:1}pre{font-size:12px}td,th{padding:8px 6px}td code{font-size:10px}}@media print{html{background:#fff}body{max-width:none;margin:0;padding:0;font-size:10px;line-height:1.55}nav{font-size:10px}h1{font-size:23px}h2{font-size:17px;break-after:avoid}h3{font-size:14px;break-after:avoid}pre{font-size:8px;break-inside:avoid}a{color:#111}table{font-size:8px}td code{font-size:7px}summary{color:#111}.edition,.closing{font-size:9px}}
+.appendix h1{font-size:25px}.proof-section{margin-top:3em}.integrity{font-size:13px}.review-note{color:#465764}summary{padding:.5em 0}details:target{scroll-margin-top:20px}footer{margin-top:3em;color:#526271;font-size:13px}@media print{details>div{display:block!important}summary{font-size:12px}.proof-section{break-before:page}}
+</style>
+</head><body>
+<aside><strong>Public derivative:</strong> Nonmathematical preparation details were removed. Historical hash tables and reviews below bind the original preparation. See <a href="../../provenance/terminal_kl_20261104/PUBLIC_EXPORT.md">public export scope</a> and its public source map for current file identities. Visual rendering is unverified.</aside>
+<header class="edition"><p>Research proof package · 4 November 2026 · Local offline edition</p></header>
+<p class="review-note"><strong>Reading status.</strong> The new statistical proof has two passing analytical reviews. The complete exact-real construction and specialized integer/dyadic evaluator have separate reviews, and a primary-source audit verifies the matching fixed-alphabet minimax lower bound. This package preserves original candidate-status paragraphs as historical source text and identifies the subsequent reviews. Analytical review is not formal verification, external peer review, or novelty certification. The companion final-file receipt identifies the precise HTML reviewed.</p>
+<nav aria-label="Document contents"><p><strong>Contents</strong></p><ol><li><a href="#synthesis">Main result and two distinct output corollaries</a></li>
+<li><a href="#statistical-proof">Complete row-tilted terminal KL proof</a></li>
+<li><a href="#statistical-review-one">First exact-source analytical review</a></li>
+<li><a href="#statistical-review-two">Second independent analytical review</a></li>
+<li><a href="#exact-real-proof">Complete five-block exact-real construction and proof</a></li>
+<li><a href="#exact-real-review">Independent exact-real prerequisite review</a></li>
+<li><a href="#precision-proof">Complete specialized integer and dyadic evaluator proof</a></li>
+<li><a href="#precision-review-one">First independent specialized-evaluator review</a></li>
+<li><a href="#precision-review-two">Second adversarial specialized-evaluator review</a></li>
+<li><a href="#prior-art">Bounded primary-source prior-art audit</a></li>
+<li><a href="#matching-lower">Primary-source matching minimax lower-bound audit</a></li>
+<li><a href="#previous-statistical-proof">Preserved log-squared predecessor</a></li>
+<li><a href="#previous-statistical-review">Analytical review of the log-squared predecessor</a></li><li><a href="#integrity-ledger">Source integrity ledger</a></li></ol></nav>
+<main>
+<section id="synthesis" class="proof-section"><!-- BEGIN synthesis -->
+<h1 id="synthesis-fixed-alphabet-terminal-kl-at-logarithmic-rate">Fixed alphabet terminal KL at logarithmic rate</h1>
+<p>Composition note, 4 November 2026. This note combines the frozen, analytically reviewed row-tilting theorem with the separately reviewed five-block exact-real construction and its specialized integer/dyadic evaluator. It does not change any of those source files. The proof statements and complete analytical reviews are reproduced in the accompanying offline HTML.</p>
+<h2 id="synthesis-scope-and-main-conclusion">Scope and main conclusion</h2>
+<p>Fix a publicly known alphabet size A&gt;=2. Observe X_1,...,X_{n+2} from an arbitrary homogeneous second-order source on [A]. Its transition rows and initial pair distribution are arbitrary and unknown. Zeros, deterministic rows, reducibility and periodicity are permitted. The target is the true next-symbol row at the actual terminal context Y_n=(X_{n+1},X_{n+2}); there is no fresh independently sampled context. All logarithms in KL and risk bounds are natural.</p>
+<p>Let B be ordinary full-history add-one at that terminal context, let L=n+2+A, and for n&gt;=1 define</p>
+<pre><code>K_n = 1+floor(log_2 n),
+V_{A,n} = min{log(n+A),
+              A^4[log A+1536 A K_n]/(n+1)}.</code></pre>
+<p>The frozen row-tilting proof gives</p>
+<pre><code>E D_KL(p_{Y_n}||B) &lt;= V_{A,n}.</code></pre>
+<p>For every fixed A, this is O_A(log(n+2)/(n+1)), uniformly over the stated kernels and initial pair distributions. Its leading alphabet factor is A^5. It is not a claim of sharp growing-alphabet dependence or of an optimal constant. The proof evaluates the actual full-history estimator; it does not replace it by a minimax-existence or suffix-averaged estimator.</p>
+<h2 id="synthesis-exact-real-five-block-corollary">Exact real five block corollary</h2>
+<p>Use the unchanged five-block causal attention/ReLU model in the complete exact-real prerequisite. For each fixed A, its learned coefficients are fixed independently of history length and source. Inputs and resource assumptions remain exactly those specified there, including the positional features (1,i,i^2,log i), full causal attention, A smoothing BOS tokens, and ordinary final A-way vocabulary softmax. Let R be its exact-real terminal output.</p>
+<p>The prerequisite proves, for every word including n=0,</p>
+<pre><code>TV(R,B) &lt;= min{1,(44A+1)/L},
+R_b &gt;= 1/[1+(A-1)L] &gt;= 1/(AL).</code></pre>
+<p>Hence for n&gt;=1,</p>
+<pre><code>E D_KL(p_{Y_n}||R)
+  &lt;= min{log[1+(A-1)L],
+         2V_{A,n}+2A(44A+1)^2/L}.</code></pre>
+<p>The only substitution in the statistical transfer is the new upper bound for E D_KL(p_{Y_n}||B). Its pathwise approximation and support bounds do not depend on which statistical proof is used. For fixed A, the statistical rate is O_A(log(n+2)/(n+1)), with a separate O_A(1/(n+1)) output-approximation penalty. This is an exact-real theorem, not a finite-bit assertion.</p>
+<h2 id="synthesis-specialized-finite-bit-corollary">Specialized finite bit corollary</h2>
+<p>Separately use the exact integer/dyadic evaluator specified in the complete precision prerequisite. It is an explicit numerical evaluation scheme for the same five-block model, with max-shifted exponential approximation, constructed log positions, exact dyadic gates, and mass-preserving normalization. Let Q be its numerical terminal output, and choose</p>
+<pre><code>s = ceil(log_2(AL)),
+b = 32s,  H = 2^b,  F = H^2.</code></pre>
+<p>The prerequisite proves, for every word including n=0,</p>
+<pre><code>Q is an exact nonnegative H-grid simplex,
+TV(Q,B) &lt;= min{1,(46A+2)/L},
+Q_b &gt;= 1/(4AL),
+D_KL(p_{Y_n}||Q)
+  &lt;= 2D_KL(p_{Y_n}||B)+8A(46A+2)^2/L.</code></pre>
+<p>Consequently, for n&gt;=1,</p>
+<pre><code>E D_KL(p_{Y_n}||Q)
+  &lt;= min{log(4AL),
+         2V_{A,n}+8A(46A+2)^2/L}.</code></pre>
+<p>This follows by substituting the same add-one statistical theorem into a pointwise finite-evaluator inequality. It does not infer forward KL from TV alone; the explicit positive support floor is essential. For fixed A the rate remains O_A(log(n+2)/(n+1)).</p>
+<p>The value b counts fractional bits, not the entire signed word. Integer positions, score magnitude, accumulation and constant-factor wider products are charged separately, with total working integer lengths O(log(AL)). The exact-real model's learned parameters remain fixed; arithmetic precision is a length-dependent resource. The inherited conservative complete causal evaluation cost is</p>
+<pre><code>O(((A^2+2A+3)L^2+L)b^3
+   +(A^3 L^2+A^6 L)b^2) bit operations,</code></pre>
+<p>with row-streamed storage</p>
+<pre><code>O(A^3 L b+b^2+A^6 log(A+2)) bits.</code></pre>
+<p>This corollary is not a guarantee for generic IEEE, fixed word length, fixed exponent range, GPU kernels, or automatic mixed precision. It is not a matching lower bound on all numerical representations, an optimal compute theorem, a training claim, or an executed implementation certificate.</p>
+<h2 id="synthesis-the-zero-transition-case">The zero transition case</h2>
+<p>For n=0, B is uniform and D_KL(p_{Y_0}||B)&lt;=log A pointwise. Do not evaluate K_n or V_{A,n} at zero. The two output bounds above instead use</p>
+<pre><code>E D_KL(p_{Y_0}||R)
+  &lt;= min{log[1+(A-1)L],
+         2log A+2A(44A+1)^2/L},
+E D_KL(p_{Y_0}||Q)
+  &lt;= min{log(4AL),
+         2log A+8A(46A+2)^2/L},
+L=A+2.</code></pre>
+<p>These boundary formulas use the unchanged all-history pathwise guarantees.</p>
+<h2 id="synthesis-what-the-sharpening-does-and-does-not-establish">What the sharpening does and does not establish</h2>
+<p>The decisive joint tail applies a kernel-uniform occupation estimate under an explicitly altered transition law. It is not a multiplication of two unrelated marginal bounds and does not condition selected row counts to be binomial. The initial pair law is retained under the alternative kernel; stationarity under that kernel is neither assumed nor needed.</p>
+<p>The arbitrary-start occupation constant must be used after tilting. This argument therefore does not inherit the better stationary alphabet factor from the older log-squared proof. The older proofs and their rate statements remain preserved as historical source text; this composition note supersedes only the statistical upper bound used in these two corollaries.</p>
+<p>For fixed A and order two, these three upper bounds match a primary-source stationary minimax lower bound in their dependence on sample length. The precise implication is stated separately below. It does not establish sharp A dependence or resolve every parameter regime of the ordinary full-history add-one question. The binary first-order minimax rate is different, so the displayed O(log n/n) rate is not asserted to be optimal there.</p>
+<p>The attached prior-art audit is a bounded search record dated 3 November 2026, not a novelty certificate or exhaustive exclusion of earlier results. Classical occupation, Chernoff, random-count and Markov change-of-measure tools are explicitly distinguished from this particular combination. No new literature search is represented by the act of packaging this document.</p>
+<h2 id="synthesis-matching-fixed-alphabet-minimax-lower-bound">Matching fixed alphabet minimax lower bound</h2>
+<p>The separate primary-source audit checks the actual-terminal forward-KL loss in Han, Jana and Wu's published Section V-A, Eq. (103), and the second-order lower bound in Theorems 22 and 24. Their observed-symbol length is N=n+2, so the terminal pair and next-symbol target coincide exactly with those used here. Theorem 22 gives</p>
+<pre><code>R_A^stat(n)
+  &gt;= A^3/[C_2(n+2)] log[(n+2)/A^3],
+provided n+2 &gt;= (C_2 A)^3,</code></pre>
+<p>where C_2 is an absolute constant supplied by that theorem, not assigned a numerical value here. For every fixed A this is Omega_A(log n/n) as n tends to infinity. Theorem 24 explicitly covers binary second-order sources. Binary first-order behavior is not substituted for that result.</p>
+<p>The stationary source class is a subset of the class allowing arbitrary initial-pair laws. Its minimax lower bound therefore also lower-bounds minimax risk over that larger class. Every history-dependent probability-vector output, including B, R and Q, is covered by the minimax infimum. Combining that lower bound with the corresponding uniform upper bounds above shows that each of B, R and Q is minimax-rate optimal in n for each fixed A&gt;=2, both over the stationary class and over the unrestricted-initial-pair class:</p>
+<pre><code>worst-case expected forward KL = Theta_A(log n/n),
+as n tends to infinity for fixed A.</code></pre>
+<p>This is a worst-case, fixed-alphabet asymptotic result. It is not a lower bound at each individual source, for each prescribed initial distribution, or at every sample length. It does not close the gap between the A^5 upper factor here and the A^3 stationary minimax factor. For Q it still applies only to the specialized evaluator and its paid precision schedule.</p>
+<p>Primary reference: Han, Jana and Wu, "Optimal prediction of Markov chains with and without spectral gap," IEEE Transactions on Information Theory 69(6), 2023, 3920-3959, <a href="https://doi.org/10.1109/TIT.2023.3239508">published DOI</a>, <a href="https://arxiv.org/html/2106.13947v2#S5">author preprint Section 5</a>. The complete source-bound applicability audit is embedded after the bounded prior-art audit.</p>
+<h2 id="synthesis-review-and-source-status">Review and source status</h2>
+<p>The frozen row-tilting source has SHA-256 c42b6f1d86c9c91aa6ba8257a86c613150e6fb477deb549cd70d1e7b79548281. Two analytical reports pass its new statistical proof. The first report discloses its preceding discussion of the candidate and is not blind external peer review. The second report treats the output transfer conditionally on the inherited architecture premises and excludes architecture and literature verification; it also gives a separate stronger-constant derivation. This composition deliberately retains the frozen theorem's constant 1536 rather than silently adopting that derivation.</p>
+<p>The exact-real architecture and the integer/dyadic evaluator have their own source-bound reviews, included in full. The original candidate-status paragraphs are preserved as historical authoring text, with later review status identified separately. Source-level reviews are not formal verification, external peer review, or a review of arbitrary generated files. The accompanying final-file receipt separately identifies the HTML bytes it reviewed.</p>
+<p>No numerical experiment, simulation, training, mathematical sample enumeration, external upload, or public repository mutation is part of this package. Document conversion, hashing, source-equality checks and presentation inspection are integrity work, not numerical evidence for the mathematics.</p>
+<!-- END synthesis --></section>
+<section id="statistical-proof" class="proof-section"><!-- BEGIN statistical-proof -->
+<h1 id="statistical-proof-candidate-terminal-kl-through-row-tilted-occupation-bounds">Candidate: terminal KL through row-tilted occupation bounds</h1>
+<p>Analytical candidate, 3 November 2026. This file must receive independent exact-file review before acceptance. It preserves all previous frozen notes. No numerical experiment, simulation, training, external upload or public repository mutation was performed. No literature-priority claim is made.</p>
+<h2 id="statistical-proof-statement">1. Statement</h2>
+<p>Let A&gt;=2, n&gt;=1, and observe X_1,...,X_{n+2} from a homogeneous second-order source on [A]. All transition rows and the initial pair distribution are arbitrary. Zero probabilities, deterministic rows, reducibility and periodicity are allowed. Define D=A^2, Y_i=(X_{i+1},X_{i+2}) for 0&lt;=i&lt;=n, and</p>
+<pre><code>J_s=sum_{i=0}^{n-1}1{Y_i=s},
+C_{s,b}=sum_{i=0}^{n-1}1{Y_i=s,X_{i+3}=b},
+B_s(b)=(C_{s,b}+1)/(J_s+A),
+J=J_{Y_n}.</code></pre>
+<p>Write p_s(b) for the true row probabilities, use natural logarithms, and evaluate forward KL at the actual terminal context. Let</p>
+<pre><code>K_n=1+floor(log_2 n),
+W_{A,n}=A^4/(n+1) [log A+1536 A K_n],
+V_{A,n}=min{log(n+A), W_{A,n}}.</code></pre>
+<p>The candidate theorem is</p>
+<pre><code>E D_KL(p_{Y_n}||B_{Y_n}) &lt;= V_{A,n}.                 (1)</code></pre>
+<p>Thus the actual full-history add-one predictor has O_A(log(n+2)/(n+1)) risk for each fixed A, uniformly over arbitrary initial pair distributions. The result also applies to stationary initial pairs, but it does not retain the better stationary alphabet factor of the earlier log-squared bound. For n=0 use log A.</p>
+<p>The leading alphabet factor here is A^5, not the A^3 complexity in sharp stationary higher-order minimax results. This candidate does not assert optimal growing-alphabet dependence, a new estimator, or a solution of every parameter regime of the full-history add-one question in prior work.</p>
+<h2 id="statistical-proof-a-kernel-uniform-fixed-target-occupation-bound">2. A kernel-uniform, fixed-target occupation bound</h2>
+<p>For every homogeneous Markov chain on D states, every initial distribution mu, every target state s, and integer w&gt;=1,</p>
+<pre><code>P_mu(Y_n=s,J_s&lt;w) &lt;= D w/(n+1).                       (2)</code></pre>
+<p>For clarity, the bound is uniform over the transition kernel; this is crucial when it is used for an altered kernel below.</p>
+<p>Proof: For a chain started at z define</p>
+<pre><code>b_m^s(z)=P_z(Y_m=s, sum_{i=0}^{m-1}1{Y_i=s}&lt;w),
+B_m^s=max_z b_m^s(z).</code></pre>
+<p>If m&gt;=ell, fewer than w earlier copies in the full path implies fewer than w copies in its last ell departures. Conditioning at time m-ell gives B_m^s&lt;=B_ell^s. On each deterministic path only the first w occurrences of s satisfy the flag, so sum_{m=0}^n b_m^s(z)&lt;=w. Therefore</p>
+<pre><code>(n+1)B_n^s &lt;=sum_{m=0}^n B_m^s
+            &lt;=sum_z sum_{m=0}^n b_m^s(z)&lt;=Dw.</code></pre>
+<p>Mixture over the starting state proves (2). Put r=D/(n+1). In particular, for any integer m&gt;=1,</p>
+<pre><code>P_mu(Y_n=s, m&lt;=J_s&lt;2m)&lt;=2rm.                          (3)</code></pre>
+<p>No stationarity, irreducibility, reversibility or mixing assumption is used.</p>
+<h2 id="statistical-proof-change-one-row-rather-than-conditioning-a-stack">3. Change one row, rather than conditioning a stack</h2>
+<p>Fix s,b and p=p_s(b) in (0,1). For any q in (0,1), define an alternative homogeneous second-order source Q with the same initial pair distribution and all rows unchanged except s. In row s let</p>
+<pre><code>q_s(b)=q,
+q_s(a)=p_s(a)(1-q)/(1-p), a!=b.                       (4)</code></pre>
+<p>Thus the alternative remains in the same D-state pair-chain class. Zero probabilities among the other symbols remain zero. The original law P and Q have the same path support. For any observed path of positive probability, put j=J_s and k=C_{s,b}. The exact path-probability ratio is</p>
+<pre><code>P(path)/Q(path)
+   =(p/q)^k [(1-p)/(1-q)]^(j-k).                     (5)</code></pre>
+<p>The initial factor cancels, all unmodified rows cancel, and each departure from s contributes one of the two displayed factors. There is no extra factor from Y_n: the probability of the observed path already includes the terminal state and all n observed transitions.</p>
+<p>Let d(q||p) denote binary forward KL. If q&gt;p and k/j&gt;=q, or q&lt;p and k/j&lt;=q, then</p>
+<pre><code>log[P(path)/Q(path)]
+   =-j d(q||p)
+     -(k-jq)log[q(1-p)/(p(1-q))]
+   &lt;=-j d(q||p).                                    (6)</code></pre>
+<p>Consequently, for E_m={Y_n=s,m&lt;=J_s&lt;2m},</p>
+<pre><code>P(E_m, C_{s,b}/J_s&gt;=q)
+   &lt;=2rm exp[-m d(q||p)], q&gt;p,
+P(E_m, C_{s,b}/J_s&lt;=q)
+   &lt;=2rm exp[-m d(q||p)], q&lt;p.                       (7)</code></pre>
+<p>To obtain (7), sum (6) over the indicated paths and apply (3) under the altered law Q, not under P. The initial distribution remains the same but is not assumed stationary for Q. This use of the arbitrary-start bound is intentional.</p>
+<h2 id="statistical-proof-a-joint-occupation-times-deviation-tail">4. A joint occupation-times-deviation tail</h2>
+<p>For t&gt;=1 let</p>
+<pre><code>delta=sqrt(2pt/m)+2t/(3m).</code></pre>
+<p>For either q=p+delta or q=p-delta lying in (0,1), the Bernstein binary-KL bound gives</p>
+<pre><code>d(q||p)&gt;=delta^2/[2(p+delta/3)]&gt;=t/m.                 (8)</code></pre>
+<p>Here is a direct justification of the first inequality. For Z a centered Bernoulli(p) variable, |Z|&lt;=1 and E Z^2&lt;=p. Expansion of the exponential gives, for either sign and 0&lt;=lambda&lt;3,</p>
+<pre><code>log E exp(+-lambda Z)
+   &lt;=p lambda^2/[2(1-lambda/3)].</code></pre>
+<p>Use the variational formula for binary KL and take lambda=delta/(p+delta/3)&lt;3. This gives the first inequality in (8). For the second, put v=t/m and expand delta=sqrt(2pv)+2v/3; then delta^2&gt;=2v(p+delta/3).</p>
+<p>On m&lt;=J_s&lt;2m,</p>
+<pre><code>J_s delta &lt;=sqrt(4J_s p t)+4t/3.</code></pre>
+<p>Thus (7)-(8), with a union over the two directions, give</p>
+<pre><code>P(E_m, |C_{s,b}-J_s p|&gt;sqrt(4J_s p t)+4t/3)
+   &lt;=4rm exp(-t).                                   (9)</code></pre>
+<p>If p+delta&gt;=1, the corresponding strict upper-tail event is impossible; similarly if p-delta&lt;=0 for the lower tail. Such directions do not require an endpoint tilt. If p=0 or p=1, the row count is deterministic given J_s, so the deviation event is empty and (9) holds directly.</p>
+<p>Equation (9) does not assert that C_{s,b} is binomial after conditioning on J_s or on the terminal state. It obtains the product factor by a change of the actual transition kernel. A different deterministic alternative kernel may be used for each threshold t; tail integration below requires separate probability bounds, not one common simultaneous alternative law.</p>
+<h2 id="statistical-proof-scalar-forward-kl-control">5. Scalar forward-KL control</h2>
+<p>For x&gt;=0 and a&gt;0 set</p>
+<pre><code>h(x,a)=x log(x/a)-x+a,</code></pre>
+<p>with 0 log 0=0. Suppose j&gt;=0, p in [0,1], 0&lt;=k&lt;=j, u&gt;=1, and</p>
+<pre><code>|k-jp|&lt;=sqrt(2jp u)+2u/3.                             (10)</code></pre>
+<p>Then</p>
+<pre><code>h((j+1)p,k+1)&lt;=48u(1+log u).                         (11)</code></pre>
+<p>Proof: Let z=jp, a=k+1, x=z+p. From sqrt(2zu)&lt;=z/2+u,</p>
+<pre><code>z&lt;=2k+10u/3,
+(k-z)^2&lt;=4zu+8u^2/9&lt;=8ku+128u^2/9.</code></pre>
+<p>Since |p-1|&lt;=1 and u&gt;=1,</p>
+<pre><code>(x-a)^2&lt;=16ku+31u^2,
+x&lt;=2a+10u/3.</code></pre>
+<p>The inequality h(x,a)&lt;=(x-a)^2/a shows h&lt;=47u when a&gt;=u. If a&lt;u then x&lt;6u and a&gt;=1, giving</p>
+<pre><code>h(x,a)&lt;=x log_+x+a&lt;=6u log(6u)+u
+         &lt;=48u(1+log u).</code></pre>
+<p>This proves (11), including p=0, p=1 and j=0.</p>
+<p>For a full A-symbol row with counts summing to j, let q_b=(k_b+1)/(j+A). The exact scaling identity is</p>
+<pre><code>sum_b h((j+1)p_b,k_b+1)
+   =(j+1)D_KL(p||q)+(A-1)
+       -(j+1)log[1+(A-1)/(j+1)]
+   &gt;=(j+1)D_KL(p||q),                                (12)</code></pre>
+<p>where the last step uses log(1+v)&lt;=v. Thus no A-dependent lower bound on u is needed.</p>
+<h2 id="statistical-proof-integrate-one-coordinate-on-one-dyadic-band">6. Integrate one coordinate on one dyadic band</h2>
+<p>Fix s,b,m. Define the nonnegative random variable</p>
+<pre><code>Z=h((J_s+1)p_s(b),C_{s,b}+1)/(J_s+1).</code></pre>
+<p>Take u=2t in (10). The threshold in (10) becomes exactly the one in (9). By (11), for t&gt;=1 and on E_m outside that deviation event,</p>
+<pre><code>Z&lt;=96t[1+log(2t)]/(J_s+1)
+   &lt;=192t(1+log t)/m=:f_m(t).                        (13)</code></pre>
+<p>The second inequality uses 1+log 2&lt;=2 and J_s+1&gt;=m. Therefore</p>
+<pre><code>P(E_m,Z&gt;f_m(t))&lt;=4rm exp(-t), t&gt;=1.                  (14)</code></pre>
+<p>Since f_m is strictly increasing, layer-cake integration and (3) give</p>
+<pre><code>E[1{E_m}Z]
+   &lt;=f_m(1)P(E_m)
+        +integral_1^infty f_m&#39;(t)P(E_m,Z&gt;f_m(t))dt
+   &lt;=384r+768r integral_1^infty(2+log t)exp(-t)dt
+   &lt;=384r+2304r/e
+   &lt;1536r.                                          (15)</code></pre>
+<p>For the penultimate step use log t&lt;=t-1, so the integral is at most integral_1^infty(1+t)e^(-t)dt=3/e. The final inequality uses e&gt;2. No union over coordinates is used in (15); nonnegative scalar expectations are summed only after integration.</p>
+<h2 id="statistical-proof-sum-bands-rows-and-symbols">7. Sum bands, rows and symbols</h2>
+<p>The disjoint dyadic bands m=1,2,4,...,2^floor(log_2 n) cover J_s=1,...,n. For a selected terminal row with positive count, (12) bounds KL by the sum of the A nonnegative scalar Z terms. Summing (15) over K_n bands, D target rows and A symbols yields</p>
+<pre><code>E[1{J&gt;=1}D_KL(p_{Y_n}||B_{Y_n})]
+   &lt;=1536 D A K_n r
+   =1536 D^2 A K_n/(n+1).                           (16)</code></pre>
+<p>On J=0 the add-one estimator is uniform, so its loss is at most log A. Equation (2) with w=1, summed over s, gives P(J=0)&lt;=D^2/(n+1). Thus</p>
+<pre><code>E[1{J=0}D_KL(p_{Y_n}||B_{Y_n})]
+   &lt;=D^2 log A/(n+1).                               (17)</code></pre>
+<p>Combine (16)-(17), substitute D=A^2, and use the deterministic pathwise cap log(n+A). This proves the candidate bound (1).</p>
+<h2 id="statistical-proof-transfer-to-the-existing-five-block-output">8. Transfer to the existing five-block output</h2>
+<p>The independently reviewed five-block exact-real construction is unchanged. Its pathwise approximation and support bounds, for L=n+2+A, are</p>
+<pre><code>TV(R,B)&lt;=min{1,(44A+1)/L},
+R_b&gt;=1/[1+(A-1)L]&gt;=1/(AL).</code></pre>
+<p>The existing entropy-variational transfer consequently gives</p>
+<pre><code>E D_KL(p_{Y_n}||R)
+   &lt;=2V_{A,n}+2A(44A+1)^2/L.                         (18)</code></pre>
+<p>The deterministic cap log[1+(A-1)L] may also be applied. If (1) is accepted after independent review, this is an O_A(log n/n) statistical rate with an O_A(1/n) exact-real output-approximation penalty. No finite-precision theorem or architecture change is asserted.</p>
+<h2 id="statistical-proof-relation-to-the-log-squared-proof-and-prior-work">9. Relation to the log-squared proof and prior work</h2>
+<p>The separate log-squared note correctly shows that a terminal occupation marginal and a self-normalized error marginal alone do not imply log n/n: their adverse correlation can cost a further logarithm. The present argument does not use that invalid inference. It applies the occupation bound under an explicitly altered transition kernel and obtains the joint probability bound (9).</p>
+<p>For a general D-state ordinary chain with A=D possible next states, the proof gives O(D^3 log n/n) for fixed D. This is not the optimal D^2 dependence in the stationary minimax theorem of Han, Jana and Wu. Their Remark 1 asks about optimality of usual full-history add-one in the setting of their stated theorem; the present candidate must not be described as settling the complete growing-state question. In the stationary binary first-order case the optimal minimax rate is different, so this candidate also does not assert minimax optimality there.</p>
+<p>For fixed A and order two, the candidate upper rate matches the order in n of the stationary minimax lower bound quoted in the existing fixed-alphabet research. Matching the rate in n does not imply optimal alphabet dependence, and no priority assertion is made. Literature status after the cited 2023 paper has not been exhaustively established here.</p>
+<h2 id="statistical-proof-source-bindings">Source bindings</h2>
+<ul>
+<li>Prior reviewed fixed-alphabet proof and output construction: ../fixed_alphabet_kl_upgrade_20261103_2300/fixed_alphabet_terminal_kl.v1.md.</li>
+<li>Separately derived log-squared refinement: log_squared_terminal_kl.v1.md in this directory.</li>
+<li>Han, Jana and Wu, "Optimal prediction of Markov chains with and without spectral gap," IEEE Transactions on Information Theory 69(6), 2023, 3920-3959, Remark 1 and higher-order results. DOI: <a href="https://doi.org/10.1109/TIT.2023.3239508" class="uri">https://doi.org/10.1109/TIT.2023.3239508</a> ; author preprint: <a href="https://arxiv.org/abs/2106.13947" class="uri">https://arxiv.org/abs/2106.13947</a> . Relevant published text was inspected in the locally available PDF at [preparation path omitted; see the DOI and source identity] from the workspace root.</li>
+</ul>
+<p>This file is a review candidate, not an accepted theorem until its exact contents pass independent analytical scrutiny. The use of arbitrary-start occupation under the tilted kernel, rather than stationarity under that kernel, is an essential part of the argument.</p>
+<!-- END statistical-proof --></section>
+<details id="statistical-review-one"><summary>First exact-source analytical review</summary><div class="appendix"><!-- BEGIN statistical-review-one -->
+<h1 id="statistical-review-one-exact-file-analytical-review-row-tilted-occupation-and-terminal-kl">Exact-file analytical review: row-tilted occupation and terminal KL</h1>
+<p>3 November 2026. <strong>PASS for the exact candidate identified below.</strong> No numerical experiments, simulations, sample enumeration, training, repository mutation, external uploads, or implementation runs were performed.</p>
+<h2 id="statistical-review-one-exact-source-and-conclusion">Exact source and conclusion</h2>
+<ul>
+<li>Source: <code>tilted_occupation_terminal_kl.candidate.v1.md</code>.</li>
+<li>SHA-256: <code>c42b6f1d86c9c91aa6ba8257a86c613150e6fb477deb549cd70d1e7b79548281</code>.</li>
+</ul>
+<p>The entire frozen file was inspected and its likelihood, concentration, scalar, integration, and summation arguments reconstructed. The stated bound is valid:</p>
+<pre><code>E D_KL(p_{Y_n}||B_{Y_n})
+  &lt;=min{log(n+A),
+      A^4[log A+1536A(1+floor(log_2 n))]/(n+1)}.</code></pre>
+<p>This holds for every finite A&gt;=2 and n&gt;=1 over the stated homogeneous order-two sources and arbitrary initial pair distributions. The separate n=0 bound is log A. For fixed A it gives O_A(log(n+2)/(n+1)). Zero transition probabilities, deterministic rows, reducibility, periodicity, and actual-terminal selection are included.</p>
+<p>This analytical review followed discussion of the candidate and its preceding j+1 rescaling. It is not blind external peer review or a claim of independent invention. A separate checker has also been examining the row-tilting mechanism. No conclusion about literature priority follows from these checks.</p>
+<h2 id="statistical-review-one-kernel-uniform-target-occupation">1. Kernel-uniform target occupation</h2>
+<p>The fixed-target occupation bound is correct for every D-state homogeneous kernel and every initial distribution. For target s, suffix domination makes the maximum over initial states nonincreasing in time. On a deterministic path only its first w occurrences of s can carry the flag. The charging argument, summed separately over all D starting states, gives Dw/(n+1).</p>
+<p>It follows that the probability of E_m={Y_n=s,m&lt;=J_s&lt;2m} is at most 2rm, where r=D/(n+1). The fact that this upper bound may exceed one does not invalidate later uses. Its uniformity in the transition kernel is established, not assumed.</p>
+<h2 id="statistical-review-one-exact-row-tilting-identity">2. Exact row-tilting identity</h2>
+<p>For fixed s,b and p in (0,1), changing the b-coordinate to q in (0,1) and scaling all other coordinates by (1-q)/(1-p) gives a legal homogeneous second-order source. Existing zero coordinates remain zero, and the two path laws have the same support. Keeping the initial pair distribution unchanged cancels its likelihood factor.</p>
+<p>Every observed departure from s contributes exactly one factor. All other rows cancel. Thus on every positive-probability observed path,</p>
+<pre><code>P(path)/Q(path)=(p/q)^k[(1-p)/(1-q)]^(j-k).</code></pre>
+<p>The terminal state introduces no extra factor: the observed likelihood already contains all n transitions, and the departure from the terminal state is not observed or counted.</p>
+<p>The logarithmic identity in (6) has the correct sign. When q&gt;p, the coefficient multiplying -(k-jq) is positive, so k/j&gt;=q makes the correction nonpositive. When q&lt;p, both signs reverse and k/j&lt;=q has the same effect. On the relevant event the likelihood ratio is therefore at most exp[-j d(q||p)]&lt;=exp[-m d(q||p)].</p>
+<p>Applying the occupation bound to Q gives (7). The proof deliberately keeps the original initial law even when that law was stationary for P. It does <strong>not</strong> assume stationarity for Q. Reusing the improved stationary occupation constant at that step would be invalid; the candidate correctly does not do so.</p>
+<h2 id="statistical-review-one-joint-deviation-bound">3. Joint deviation bound</h2>
+<p>For delta=sqrt(2pt/m)+2t/(3m), the binary-KL lower bound in (8) follows from the displayed centered Bernoulli moment bound for either sign. Substitution of lambda=delta/(p+delta/3) is admissible for p&gt;0. Its objective value is delta^2/[2(p+delta/3)]. Expanding delta verifies that this is at least t/m.</p>
+<p>On the band J_s&lt;2m,</p>
+<pre><code>J_s sqrt(2pt/m)&lt;=sqrt(4J_spt),
+J_s(2t/(3m))&lt;=4t/3.</code></pre>
+<p>Hence exceeding the candidate's random-count threshold implies exceeding the fixed empirical-frequency threshold delta. The two row-tilted tail bounds sum to 4rm exp(-t).</p>
+<p>If a proposed q is outside (0,1), the corresponding strict tail is empty. In particular no absolute-continuity assertion at a zero-probability endpoint is silently required. When p=0 or p=1 the observed row count of symbol b is deterministic given J_s, and the deviation event is empty directly.</p>
+<p>Different deterministic thresholds may use different tilted kernels. Tail integration only needs a probability bound at each threshold; it does not require one alternative law to represent all thresholds simultaneously. The concentration result is a joint bound for occupancy and error, not a product of two unrelated marginal estimates.</p>
+<h2 id="statistical-review-one-scalar-forward-kl-bound-and-smoothing">4. Scalar forward-KL bound and smoothing</h2>
+<p>The scalar implication (10)-(11) was checked term by term. The mean/count comparison gives z&lt;=2k+10u/3 and the stated squared error. Since x=(j+1)p, the smoothing displacement p-1 is at most one; no u&gt;=A assumption is necessary.</p>
+<p>For a=k+1&gt;=u, h(x,a)&lt;=(x-a)^2/a gives 47u. For a&lt;u, x&lt;6u and a&gt;=1 give 6u log(6u)+u, which is bounded by 48u(1+log u). The proof includes x=0 and j=0.</p>
+<p>The scaling identity (12) is also exact. Its remainder</p>
+<pre><code>(A-1)-(j+1)log[1+(A-1)/(j+1)]</code></pre>
+<p>is nonnegative, so KL is upper bounded by the sum of the nonnegative scalar h terms divided by j+1. The inequality direction is essential and correct.</p>
+<h2 id="statistical-review-one-tail-integration-and-the-constant-1536">5. Tail integration and the constant 1536</h2>
+<p>Taking u=2t makes the scalar deviation threshold precisely the one in the joint bound. For t&gt;=1,</p>
+<pre><code>48(2t)[1+log(2t)]&lt;=192t(1+log t).</code></pre>
+<p>Dividing by J_s+1&gt;=m therefore gives f_m(t)=192t(1+log t)/m. The event Z&gt;f_m(t) on E_m is contained in the joint deviation event.</p>
+<p>Layer-cake integration at f_m(1) is justified because Z is nonnegative and f_m is strictly increasing to infinity. The initial interval contributes at most</p>
+<pre><code>f_m(1)P(E_m)&lt;=(192/m)(2rm)=384r.</code></pre>
+<p>Since f_m'(t)=192(2+log t)/m, the remaining integral is bounded by</p>
+<pre><code>768r integral_1^infinity (2+log t)e^-t dt
+   &lt;=768r(3/e)=2304r/e.</code></pre>
+<p>Here log t&lt;=t-1 supplies the displayed 3/e integral. Finally e&gt;2 gives 384r+2304r/e&lt;1536r. There is no surviving logarithmic confidence level and no additional union over symbols inside this integral.</p>
+<p>This is precisely where the new proof gains over the log-squared argument: the count-band occupation factor multiplies an exponential error tail under an explicitly changed kernel, so it can be integrated before summing bands.</p>
+<h2 id="statistical-review-one-counts-rows-symbols-and-boundary-event">6. Counts, rows, symbols, and boundary event</h2>
+<p>The dyadic bands m=1,2,4,...,2^floor(log_2 n) are disjoint and cover every positive count up to n. Their number is K_n=1+floor(log_2 n). For a selected terminal row, equation (12) bounds loss by A nonnegative scalar terms. Summing their expectations over D target rows, A symbols, and K_n bands gives exactly</p>
+<pre><code>1536 D A K_n r=1536 D^2 A K_n/(n+1).</code></pre>
+<p>On J=0 the prediction is uniform and loss is at most log A. Summing the fixed-target w=1 occupation bound gives its D^2 log A/(n+1) contribution. Setting D=A^2 yields the stated A^4 and A^5 factors. The deterministic log(n+A) cap is valid because every add-one coordinate is at least 1/(n+A).</p>
+<p>The proof never conditions transition counts to have a binomial law, never resamples the terminal context, and never omits the last observed transition. All likelihood and count calculations use the same observed path.</p>
+<h2 id="statistical-review-one-transfer-alphabet-dependence-and-prior-work-scope">7. Transfer, alphabet dependence, and prior-work scope</h2>
+<p>The existing exact-real five-block pathwise approximation and output floor give the unchanged entropy-variational transfer</p>
+<pre><code>E D_KL(p_{Y_n}||R)
+   &lt;=2V_{A,n}+2A(44A+1)^2/L.</code></pre>
+<p>No new architecture or numerical implementation is proved by this note. The true p and the alternative q are analysis-only quantities, not predictor inputs.</p>
+<p>For an ordinary D-state chain with D possible next states, the same proof gives a D^3 rather than D^2 alphabet factor. Thus the fixed-A improvement in the rate as n grows does not establish the sharp simultaneous growing-alphabet regime asked about in the cited work. The note correctly distinguishes binary first-order minimax behavior and avoids a claim of optimality in that different case.</p>
+<p>For fixed A and order two, the rate in n agrees with the stationary minimax lower order already cited in the preceding research. This says nothing about optimal constants, optimal alphabet dependence, literature priority, or unexamined later publications. Those limitations are expressly retained.</p>
+<h2 id="statistical-review-one-verdict">Verdict</h2>
+<p><strong>PASS</strong> for exact source SHA-256 <code>c42b6f1d86c9c91aa6ba8257a86c613150e6fb477deb549cd70d1e7b79548281</code>. No mathematical correction was found. In particular the change-of-measure step uses a legal kernel with the same initial law, the occupation factor is valid under that altered law, and all zero-probability and terminal-selection issues are accounted for.</p>
+<!-- END statistical-review-one --></div></details>
+<details id="statistical-review-two"><summary>Second independent analytical review</summary><div class="appendix"><!-- BEGIN statistical-review-two -->
+<h1 id="statistical-review-two-independent-exact-file-review-tilted-occupation-terminal-kl">Independent exact-file review: tilted occupation terminal KL</h1>
+<p>Date: 3 November 2026.</p>
+<h2 id="statistical-review-two-verdict-and-exact-scope">Verdict and exact scope</h2>
+<p><strong>PASS for the new statistical proof in Sections 1–7.</strong> No mathematical gap was found in the candidate's arbitrary-start, full-history add-one terminal forward-KL theorem.</p>
+<p>Reviewed source:</p>
+<ul>
+<li><code>tilted_occupation_terminal_kl.candidate.v1.md</code></li>
+<li>SHA256: <code>c42b6f1d86c9c91aa6ba8257a86c613150e6fb477deb549cd70d1e7b79548281</code></li>
+</ul>
+<p>The source file was read in full and its checksum was independently verified. This review does not modify that frozen source. The review was analytical; no simulation, training, numerical experiment, external upload, or public repository write was performed.</p>
+<p>Section 8's statistical transfer inequality is also valid <strong>conditional on its cited pathwise TV and support bounds</strong>. The earlier architecture construction establishing those premises was not independently rechecked here. The literature, attribution, priority, and minimax comparisons in Section 9 were not independently rechecked here. This PASS must not be represented as an independent audit of those older construction or literature facts.</p>
+<p>The proved conclusion is fixed-alphabet O_A(log n/n), with the displayed A^5 dependence. It is not a claim of optimal growing-alphabet dependence or binary first-order minimax optimality.</p>
+<h2 id="statistical-review-two-occupation-lemma-and-indexing">1. Occupation lemma and indexing</h2>
+<p>Let J_s(l)=sum_{i=0}^{l-1}1{Y_i=s}. For integer w&gt;=1 define</p>
+<pre><code>b_l(z)=P_z(Y_l=s,J_s(l)&lt;w),
+M_l=max_z b_l(z).</code></pre>
+<p>Removing initial path steps can only decrease the count of departures from s. The Markov property therefore gives b_{l+1}(z)&lt;=sum_y Q(z,y)b_l(y), so M_l is nonincreasing. On any deterministic infinite path, the flag {Y_l=s,J_s(l)&lt;w} selects only the first w occurrences of s, including time zero when applicable. Thus sum_{l=0}^n b_l(z)&lt;=w, and</p>
+<pre><code>(n+1)M_n &lt;= sum_{l=0}^n M_l
+             &lt;= sum_z sum_{l=0}^n b_l(z) &lt;= Dw.</code></pre>
+<p>Mixtures over starting states preserve this bound. Neither stationarity nor irreducibility is needed. In particular it applies to every tilted kernel used later, with the same arbitrary initial distribution.</p>
+<h2 id="statistical-review-two-likelihood-and-deviation-bounds">2. Likelihood and deviation bounds</h2>
+<p>For p in (0,1), changing a single outgoing symbol probability to q in (0,1), and rescaling all other probabilities in that row by (1-q)/(1-p), preserves both the allowed pair-chain transitions and path support. Keeping the same initial distribution cancels its factor in the path likelihood. The exact ratio is</p>
+<pre><code>(p/q)^K ((1-p)/(1-q))^(J-K).</code></pre>
+<p>On K/J&gt;=q&gt;p, or K/J&lt;=q&lt;p, its logarithm is at most -J d(q||p). The terminal event already belongs to the observed path; no extra terminal-state likelihood is missing. On m&lt;=J&lt;2m the arbitrary-start occupation lemma under the changed kernel gives the joint bound</p>
+<pre><code>P(Y_n=s,m&lt;=J&lt;2m,K/J deviates beyond q)
+    &lt;= [2Dm/(n+1)] exp[-m d(q||p)].</code></pre>
+<p>The candidate's centered-Bernoulli exponential bound is valid: |Z|&lt;=1 and E Z^2&lt;=p imply</p>
+<pre><code>log E exp(+-lambda Z) &lt;= p lambda^2/[2(1-lambda/3)],
+0&lt;=lambda&lt;3.</code></pre>
+<p>Using lambda=delta/(p+delta/3) in the binary-KL variational formula gives the asserted lower bound delta^2/[2(p+delta/3)]. The selected delta=sqrt(2pt/m)+2t/(3m) makes this at least t/m. Also J&lt;2m implies</p>
+<pre><code>J delta &lt;= sqrt(4Jpt)+4t/3.</code></pre>
+<p>Thus the strict random-J deviation event is contained in the appropriate deterministic empirical-frequency tail. Endpoint thresholds outside (0,1) have impossible strict tails and need no endpoint tilt. When p=0 or p=1, K=Jp almost surely, so the deviation event is empty.</p>
+<p>A different deterministic tilted kernel can be used for each threshold. Layer-cake integration requires separate probability bounds, not one simultaneous alternative law and not a union bound over a continuum. It never conditions the row count to be binomial.</p>
+<h2 id="statistical-review-two-scalar-inequality-and-integration-in-the-frozen-candidate">3. Scalar inequality and integration in the frozen candidate</h2>
+<p>For z=jp, a=k+1, x=(j+1)p, the source's inequalities follow from</p>
+<pre><code>sqrt(2zu)&lt;=z/2+u,
+z&lt;=2k+10u/3,
+(k-z)^2&lt;=8ku+128u^2/9,
+(x-a)^2&lt;=16ku+31u^2,
+x&lt;=2a+10u/3.</code></pre>
+<p>The generalized KL inequality h(x,a)&lt;=(x-a)^2/a gives h&lt;=47u when a&gt;=u. When a&lt;u, a&gt;=1 and x&lt;6u give h&lt;=6u log(6u)+u&lt;=48u(1+log u). These cases include the boundary symbol probabilities.</p>
+<p>The rowwise scaling identity in Equation (12) is exact; its nonnegative correction follows from log(1+v)&lt;=v. Taking u=2t gives the source's threshold f_m(t)=192t(1+log t)/m. Its layer-cake calculation is valid and yields</p>
+<pre><code>E[1{E_m}Z] &lt;= 384r + 2304r/e &lt;1536r,
+r=D/(n+1).</code></pre>
+<p>Summing nonnegative expectations over symbols, disjoint dyadic bands, and terminal states is legitimate. With J=0 the row is uniform and its loss is at most log A; the occupation lemma with w=1 gives the stated contribution D^2 log A/(n+1). The deterministic cap log(n+A) is also valid because each add-one probability is at least 1/(n+A).</p>
+<h2 id="statistical-review-two-independent-direct-integral-proof-with-constant-58">4. Independent direct-integral proof with constant 58</h2>
+<p>This is a separate analytical derivation supporting the same rate. It does not replace or modify the frozen candidate's constant 1536.</p>
+<p>Fix a target state s, a symbol b, a dyadic band E={Y_n=s,m&lt;=J_s&lt;2m}, and p=p_s(b). Put</p>
+<pre><code>x=C_{s,b}/J_s on E,
+delta=1/(2m), epsilon=1/J_s,
+H=2Dm/(n+1),
+f(p,y)=p log(p/y)-p+y.</code></pre>
+<p>Here 0 log 0=0. On the band, delta&lt;=epsilon&lt;=1/m and the add-one coordinate is y=(x+epsilon)/(1+A epsilon). Direct algebra gives</p>
+<pre><code>f(p,y)&lt;=f(p,x+epsilon)+Ap epsilon,
+f(p,x+epsilon)-f(p,x+delta)
+    =epsilon-delta-p log[(x+epsilon)/(x+delta)]
+    &lt;=epsilon-delta.</code></pre>
+<p>Define the nonnegative functions</p>
+<pre><code>G_-(x)=integral_x^p (p-t)/(t+delta) dt,  x&lt;=p,
+G_+(x)=integral_p^x (t-p)/t dt,          x&gt;=p.</code></pre>
+<p>For x&lt;=p, integrating the derivative of f(p,x+delta), and using f(p,p+delta)&lt;=delta, shows</p>
+<pre><code>f(p,x+delta)&lt;=delta+G_-(x).</code></pre>
+<p>For x&gt;=p, f(p,x+delta)&lt;=f(p,x)+delta=G_+(x)+delta. The formulas extend to p=0 by continuity where needed. Since epsilon-delta&lt;=1/(2m), altogether</p>
+<pre><code>f(p,y) &lt;= (1+Ap)/m
+          +G_-(x)1{x&lt;p}+G_+(x)1{x&gt;=p}.             (A)</code></pre>
+<p>For 0&lt;p&lt;1, apply the already established tilted-occupation probability bound at each deterministic t, then use Tonelli's theorem. The expectation of the last two terms of (A), multiplied by 1{E}, is at most H(I_-+I_+), where</p>
+<pre><code>I_-=integral_0^p [(p-t)/(t+delta)] exp[-m d(t||p)] dt,
+I_+=integral_p^1 [(t-p)/t] exp[-m d(t||p)] dt.</code></pre>
+<p>For t&gt;=p,</p>
+<pre><code>d&#39;(t||p)=log[t(1-p)/(p(1-t))]&gt;=(t-p)/t,</code></pre>
+<p>so I_+&lt;=1/m. For p/2&lt;=t&lt;=p,</p>
+<pre><code>-d&#39;(t||p)&gt;=log(p/t)&gt;=(p-t)/p,
+(p-t)/(t+delta)&lt;=2(p-t)/p,</code></pre>
+<p>which bounds that part of I_- by 2/m.</p>
+<p>For 0&lt;=t&lt;=p/2, binary KL decreases toward p, and</p>
+<pre><code>d(t||p)&gt;=d(p/2||p)&gt;=c p,
+c=(1-log 2)/2.</code></pre>
+<p>The last inequality follows from</p>
+<pre><code>(1-q)log[(1-q)/(1-p)]&gt;=p-q</code></pre>
+<p>at q=p/2. Hence the remaining integral is bounded by</p>
+<pre><code>p log(1+mp) exp(-cmp).</code></pre>
+<p>Writing z=mp and using log(1+z)&lt;=z gives</p>
+<pre><code>p log(1+mp) exp(-cmp)
+    &lt;=[1/m] z^2 exp(-cz)
+    &lt;=4/(c^2 e^2 m)&lt;24/m.</code></pre>
+<p>Thus I_-&lt;=26/m and I_+&lt;=1/m. Since P(E)&lt;=H, Equation (A) yields</p>
+<pre><code>E[1{E}f(p,y)] &lt;= H(28+Ap)/m.                       (B)</code></pre>
+<p>If p=0 or p=1, x=p almost surely, the two G terms vanish, and the stronger deterministic part of (A) proves (B) without any tilt.</p>
+<p>Summing (B) over the A symbols gives 29AH/m, since sum_b p_b=1. Also sum_b f(p_b,y_b)=D_KL(p||y), because both rows sum to one. One band's loss for a fixed terminal state is therefore at most</p>
+<pre><code>58AD/(n+1).</code></pre>
+<p>There are K_n=1+floor(log_2 n) bands and D possible terminal states. Adding the previously established J=0 term proves the alternate bound</p>
+<pre><code>E D_KL(p_{Y_n}||B_{Y_n})
+  &lt;= [D^2/(n+1)] [log A+58 A K_n], n&gt;=1.           (C)</code></pre>
+<p>This derivation handles the variable, history-dependent sample count through fixed bands and unconditional joint tails. No conditional-binomial or independence assumption is introduced.</p>
+<h2 id="statistical-review-two-conditional-verification-of-the-output-transfer">5. Conditional verification of the output transfer</h2>
+<p>For probability rows B and R with R strictly positive, the entropy variational inequality gives</p>
+<pre><code>D_KL(p||R)&lt;=2D_KL(p||B)+log sum_b B_b^2/R_b
+          &lt;=2D_KL(p||B)+sum_b(B_b-R_b)^2/R_b.</code></pre>
+<p>Since the positive and negative differences each sum to TV(B,R),</p>
+<pre><code>sum_b(B_b-R_b)^2&lt;=2 TV(B,R)^2.</code></pre>
+<p>Consequently the source's premises TV(B,R)&lt;=(44A+1)/L and min_b R_b&gt;=1/(AL) imply its transfer penalty 2A(44A+1)^2/L. This verifies the transfer calculation, not the earlier architecture proof of those two premises.</p>
+<h2 id="statistical-review-two-final-assessment">Final assessment</h2>
+<p>The frozen new proof passes independently. Its critical valid step is applying an arbitrary-start, kernel-uniform occupation bound under each tilted transition law. It does not multiply unrelated marginal probability bounds. The stronger direct-integral bound (C) provides a separate check of the rate. Architecture premises and literature status remain outside this independent review's verified scope.</p>
+<!-- END statistical-review-two --></div></details>
+<details id="exact-real-proof"><summary>Complete five-block exact-real construction and proof</summary><div class="appendix"><!-- BEGIN exact-real-proof -->
+<h1 id="exact-real-proof-fixed-finite-alphabets-full-history-terminal-kl-and-a-five-block-output-upgrade">Fixed finite alphabets: full-history terminal KL and a five-block output upgrade</h1>
+<p>Analytical extension, version 1, 3 November 2026. No numerical experiment, simulation, training, repository mutation or external upload was performed. The proof concerns the actual full-history add-one estimator at the actual terminal context. It is not a minimax-existence substitution. Independent analytical review is a separate obligation, not a claim of formal verification or literature priority.</p>
+<h2 id="exact-real-proof-quantifiers-notation-and-result">1. Quantifiers, notation and result</h2>
+<p>Fix a publicly known integer alphabet size A&gt;=2. Observe X_1,...,X_{n+2} from an arbitrary homogeneous second-order source on [A], with n&gt;=1 observed transitions. Its A^2 transition rows and its initial pair distribution are arbitrary and unknown. Zero probabilities, deterministic rows, reducibility and periodicity are allowed. Put N=n+2, L=N+A, Y_i=(X_{i+1},X_{i+2}) for 0&lt;=i&lt;=n, and</p>
+<pre><code>J_s = sum_{i=0}^{n-1} 1{Y_i=s},
+C_{s,b} = sum_{i=0}^{n-1} 1{Y_i=s, X_{i+3}=b},
+J=J_{Y_n},  theta_b=theta_{Y_n}(b),
+B_b=(C_{Y_n,b}+1)/(J+A),                 b in [A].</code></pre>
+<p>All logarithms are natural, and KL is forward D(P||Q)=sum_b P_b log(P_b/Q_b), with 0 log 0=0. TV is half the L1 distance. Define</p>
+<pre><code>t=t_{A,n}=max{A, log[2 A^3 n(n+1)^2]},
+c=c_{A,n}=A^4/(n+1)                    for arbitrary initial pairs,
+c=c_{A,n}=A^2/(n+1)                    for stationary initial pairs,
+a=a_{A,n}=min{32 A t^2, 48 A t(1+log t)},
+U=U_{A,n}=c a[1+log(n+A)] + log(n+A)/(n+1)^2,
+V=V_{A,n}=min{log(n+A), U}.</code></pre>
+<p>Then the actual full-history add-one estimator satisfies</p>
+<pre><code>E D(theta||B) &lt;= V.                                      (1)</code></pre>
+<p>For each fixed A this is O_A(log^2(n+2) loglog(n+3)/(n+1)), uniformly over the stated arbitrary-initial class. The stationary subclass has the improved A^2 occupation factor. Constants are intentionally loose; this is not an optimal A-dependence or logarithmic rate.</p>
+<p>For each fixed A, one fixed finite parameter set, independent of n and of the source, implements a five-block exact-real causal attention/ReLU model whose final output is an ordinary A-way vocabulary softmax R. With the architecture detailed below,</p>
+<pre><code>TV(R,B) &lt;= min{1,(44A+1)/L},
+R_b &gt;= 1/[1+(A-1)L] &gt;= 1/(AL)  for every b,
+E D(theta||R) &lt;= 2V + 2A(44A+1)^2/L.                    (2)</code></pre>
+<p>Also E D(theta||R)&lt;=log[1+(A-1)L], so this deterministic cap can be taken in (2). The first two claims hold pathwise for every word, including n=0/N=2. For n=0, the statistical logarithmic expression in (1) is replaced by the elementary bound log A.</p>
+<p>The five blocks have H=A^2+1 allocated heads each, head dimension d_h=4 ceil(sqrt(A+10))^2, and model width d_model=H d_h=O(A^3). Active head counts are (2,0,A^2+1,A,A). Inputs explicitly include the source-independent positional features (1,i,i^2,log i), A BOS tokens and symbol onehots. The model has no LayerNorm and uses ordinary full causal masks. There is no externally supplied count division, log of a probability, position-times-state feature, or horizon-dependent learned coefficient.</p>
+<h2 id="exact-real-proof-terminal-occupation-including-arbitrary-starts">2. Terminal occupation, including arbitrary starts</h2>
+<p>The pair process Y is a homogeneous chain on D=A^2 states. The following argument holds for any D-state homogeneous chain. Fix an integer w&gt;=1 and write</p>
+<pre><code>b_m(s)=P_s(number of earlier visits to Y_m before time m &lt; w),
+B_m=max_s b_m(s).</code></pre>
+<p>For m&gt;=ell, earlier full-history visits dominate the visits within the last ell departures. Conditioning on Y_{m-ell} and using homogeneity gives B_m&lt;=B_ell. This is a monotonicity statement for the worst initial state, not for each fixed b_m(s).</p>
+<p>On any deterministic state sequence, at most the first w occurrences of each state have fewer than w earlier visits. Therefore sum_{m=0}^n b_m(s)&lt;=Dw for each initial state s. Since max_s b_m(s)&lt;=sum_s b_m(s),</p>
+<pre><code>(n+1)B_n &lt;= sum_{m=0}^n B_m
+          &lt;= sum_s sum_{m=0}^n b_m(s) &lt;= D^2 w.</code></pre>
+<p>Taking a mixture over the initial state proves</p>
+<pre><code>P(J&lt;w) &lt;= min{1, D^2 w/(n+1)}.                          (3)</code></pre>
+<p>For stationary initialization the improved D factor follows from a finite-window charging argument. Fix s. Among r=n,...,2n, at most w times have Y_r=s and fewer than w copies of s in the preceding n positions: if w+1 times were marked, the last has all w earlier marked times in its preceding n-window. Each marked event has, by stationarity, the probability of {Y_n=s,J_s&lt;w}. Thus that probability is at most w/(n+1); sum over s. This argument only extends the chain for analysis, not the observations given to the estimator.</p>
+<p>In either case, with c defined above, summation by parts gives</p>
+<pre><code>E[1/(J+A)]
+  = 1/(n+A) + sum_{k=0}^{n-1} P(J&lt;=k)/[(k+A)(k+A+1)]
+  &lt;= 1/(n+A) + c sum_{k=0}^{n-1}(k+1)/[(k+A)(k+A+1)]
+  &lt;= c[1+log(n+A)].                                     (4)</code></pre>
+<p>Here c&gt;=1/(n+A), A&gt;=2, and the summand is at most 1/(k+A). In particular zero visits are included. This reproduces the general occupation interface of the binary v2 proof, with D=A^2; no mixing or stationary minimum is introduced.</p>
+<h2 id="exact-real-proof-categorical-row-stacks-and-simultaneous-concentration">3. Categorical row stacks and simultaneous concentration</h2>
+<p>For each context s in [A]^2, generate n independent categorical variables with probabilities theta_s, independently across rows and independently of the initial pair. At each departure from s, consume its next unused stack entry as the next symbol. This generates exactly the prescribed source: each path constrains exactly its consumed row prefixes and has the initial-pair probability multiplied by its usual transition product.</p>
+<p>Let K_{s,b,j} count symbol b in the first j entries of row s. Pathwise C_{s,b}=K_{s,b,J_s}. There is no claim that a stack stays iid after conditioning on J_s, the terminal row or the observed path. Instead, for every deterministic row/symbol/prefix, Bernstein's inequality for its Bernoulli indicator sum yields</p>
+<pre><code>|K_{s,b,j}-j theta_s(b)|
+   &lt;= sqrt(2j theta_s(b) t) + 2t/3                      (5)</code></pre>
+<p>outside probability 2e^(-t). The variance is bounded by j theta_s(b). Union over A^2 rows, A symbols and j=1,...,n yields a single event G_t with</p>
+<pre><code>P(G_t^c)&lt;=2 A^3 n e^(-t) &lt;=(n+1)^(-2).                  (6)</code></pre>
+<p>Every deterministic-prefix inequality then holds on G_t at the random selected row and random selected count, without conditional independence. Dependence between symbol counts within one categorical stack does not affect the union bound. The j=0 inequality is deterministic.</p>
+<p>For completeness the scalar Bernstein bound can be obtained from</p>
+<pre><code>E exp(lambda Z) &lt;= exp[lambda^2 E Z^2/(2(1-lambda/3))],
+                  0&lt;=lambda&lt;3,</code></pre>
+<p>for a centered |Z|&lt;=1 variable, by expanding the exponential, using |E Z^r|&lt;=E Z^2 and r!&gt;=2*3^(r-2), then 1+x&lt;=exp x. Independence, exponential Markov and optimization give tail exp[-u^2/(2(v+u/3))]; setting u=sqrt(2vt)+2t/3 and applying both signs proves (5). No selected random time appears in this calculation.</p>
+<h2 id="exact-real-proof-forward-kl-at-each-simultaneous-good-prefix">4. Forward KL at each simultaneous good prefix</h2>
+<p>Fix any row and deterministic prefix length j&gt;=0, write its true probabilities p_b, counts k_b, and q_b=(k_b+1)/(j+A). On G_t, t&gt;=A&gt;=2 and (5) hold. For each coordinate set z=jp_b, a_b=k_b+1, x_b=(j+A)p_b. The elementary inequality sqrt(2zt)&lt;=z/2+t gives</p>
+<pre><code>z&lt;=2k_b+10t/3,
+(k_b-z)^2&lt;=4zt+8t^2/9&lt;=8k_b t+128t^2/9.</code></pre>
+<p>As |A p_b-1|&lt;=A-1&lt;=t,</p>
+<pre><code>(x_b-a_b)^2
+  &lt;= 2(k_b-z)^2+2(A-1)^2
+  &lt;=16k_b t+31t^2.                                     (7)</code></pre>
+<p>The harmless integer constant 31 exceeds 256/9+2. The same calculation covers j=0 directly.</p>
+<p>First, KL&lt;=chi-square and (7) imply</p>
+<pre><code>D(p||q)
+  &lt;=sum_b (p_b-q_b)^2/q_b
+  =sum_b (x_b-a_b)^2/[(j+A)a_b]
+  &lt;=32 A t^2/(j+A).                                    (8)</code></pre>
+<p>For the sharper bound put h(x,a)=x log(x/a)-x+a. Since h(x,a)&lt;=(x-a)^2/a, if a_b&gt;=t, (7) gives h(x_b,a_b)&lt;=47t. If a_b&lt;t, then</p>
+<pre><code>x_b&lt;=2a_b+10t/3+(A-2)&lt;7t,</code></pre>
+<p>and a_b&gt;=1 yields</p>
+<pre><code>h(x_b,a_b)&lt;=x_b log_+ x_b+a_b
+            &lt;=7t log(7t)+t
+            &lt;=15t+7t log t
+            &lt;=48t(1+log t).                            (9)</code></pre>
+<p>The large-a case obeys the same final bound. Both vectors x and a have total mass j+A, so the exact identity</p>
+<pre><code>(j+A)D(p||q)=sum_b h(x_b,a_b)</code></pre>
+<p>gives</p>
+<pre><code>D(p||q)&lt;=48 A t(1+log t)/(j+A).                         (10)</code></pre>
+<p>On every path, including the complement of G_t, q_b&gt;=1/(j+A), hence D(p||q)&lt;=log(j+A)&lt;=log(n+A). Combine (8) and (10), then use (4) without conditioning and (6):</p>
+<pre><code>E D(theta||B)
+  &lt;=a E[1/(J+A)] + log(n+A)P(G_t^c)
+  &lt;=U.</code></pre>
+<p>The deterministic cap proves (1). The A in max{A,...} is important: blindly replacing the binary numerator by A symbols without controlling the smoothing displacement A p_b-1 would not justify the stated constants.</p>
+<h2 id="exact-real-proof-retain-the-archived-finite-a-first-three-blocks">5. Retain the archived finite-A first three blocks</h2>
+<p>Use the prior finite-alphabet construction at commit 0d678eefb558d5108dd5ef893b033c6f58077d81, path fixed_alphabet_causal_extension_20261103_1653/alphabet_extension_candidate_v1.html under v10_research, Git blob 9cc4a7554fdaffc08bd89d894cb887cbfef73307. The original source is available through the immutable public GitHub link in Section 11. The following statements are also specified here so the scope of the retained blocks is explicit.</p>
+<p>There are A BOS tokens at positions i=1,...,A with values e_1,...,e_A. Data token k is at position A+k with value x_i=e_{X_k}. Write kappa=sqrt(d_h)=2 ceil(sqrt(A+10)), an integer independent of N. Each score is Q dot K divided by kappa; all unused head coordinates are zero.</p>
+<p>Block 1 has two active vector-valued copy heads, h=1,2:</p>
+<pre><code>Q_i=kappa(2i^2-2hi,-i), K_j=(j,j^2), V_j=x_j.</code></pre>
+<p>Scores differ from -i(j-i+h)^2 by a query-only constant. At valid data lags their wrong mass is at most 2e^(-i)/(1-e^(-i))&lt;1/4. Apply the componentwise two-hinge map T(a)=2ReLU(a-1/4)-2ReLU(a-3/4), giving exact onehots t_1,t_2 at valid lags and values in [0,1] otherwise. The FFN also writes</p>
+<pre><code>b(i)=ReLU(A+1-i)-ReLU(A-i),
+v(i)=ReLU(i-A-2)-ReLU(i-A-3),
+f(i)=ReLU(2-i).</code></pre>
+<p>These exactly flag BOS, valid successor positions i&gt;=A+3, and the first BOS. Block 1 requires at most 4A+5 hidden ReLUs.</p>
+<p>Block 2 has zero attention and a 2A^2-unit FFN writing, for each context (r,s),</p>
+<pre><code>g_rs=ReLU(v+t_2[r]+t_1[s]-2),
+q_rs=ReLU(t_1[r]+x_i[s]-1).</code></pre>
+<p>At every valid candidate, g is its predecessor-context onehot; at every invalid candidate g=0. At terminal i=L, q is the exact actual pair onehot, including N=2.</p>
+<p>Block 3 uses one head for each of A^2 contexts h, with query first coordinate kappa(i-A), key first coordinate g_h+b and value vector x_j. At the terminal the score is N for the A BOS and each matching valid successor, and zero for all other data positions. Therefore</p>
+<pre><code>o_{h,b}=[C_{h,b}+1+e^(-N)D_{h,b}]/[J_h+A+e^(-N)K_h],
+K_h=N-J_h, D_{h,b}&gt;=0, sum_b D_{h,b}=K_h.</code></pre>
+<p>This is an exact probability vector. It is a mixture of B_h and a distractor distribution with mass at most Ne^(-N)/A, even at J_h=0. An A^3-unit FFN writes p_b=sum_h ReLU(o_{h,b}+q_h-1); at terminal this selects precisely o_{Y_n}. A uniform zero-score head with value f(j) writes z=1/L. Thus terminal p is an exact simplex and</p>
+<pre><code>TV(p,B)&lt;=Ne^(-N)/A.                                    (11)</code></pre>
+<p>The first three blocks are unchanged. Only the prior broad-Gaussian output block is replaced by the two blocks below. The prior construction's specialized finite-bit backend is not automatically inherited by this replacement.</p>
+<h2 id="exact-real-proof-block-4-a-bounded-error-rescaling-heads">6. Block 4: A bounded-error rescaling heads</h2>
+<p>For each symbol b use one head</p>
+<pre><code>Q_b=kappa(p_b+1/2+z,-z), K_j=(j,j^2), V_j=j.</code></pre>
+<p>At terminal, scores differ by a query-only constant from -(j-mu_b)^2/L, with</p>
+<pre><code>mu_b=1/2+L(1/4+p_b/2).</code></pre>
+<p>The head output y_b is its discrete-Gaussian mean on 1,...,L. The inherited interior mean bound gives |y_b-mu_b|&lt;10. Here is its analytical justification. For f(x)=(x-mu)e^(-(x-mu)^2/L), total variation on the real line equals 4 sqrt(L/(2e)). Unit-cell quadrature therefore has error at most 2 sqrt(L/(2e)). Both cell-boundary distances from mu to the ends of [1/2,L+1/2] are at least L/4, so the integral has absolute value at most (L/2)e^(-L/16). There are at least floor(sqrt L)&gt;=sqrt L/2 supported integers within distance sqrt L of mu, giving normalizer at least sqrt L/(2e). Consequently</p>
+<pre><code>|y_b-mu_b|&lt;=2sqrt(2e)+e sqrt L e^(-L/16)
+             &lt;=2sqrt(2e)+sqrt(8e)&lt;10.</code></pre>
+<p>The last maximum follows analytically at L=8. Here L&gt;=4. A 2A-unit FFN writes</p>
+<pre><code>x_b=ReLU(2y_b-i/2-1)-ReLU(2y_b-3i/2-1).</code></pre>
+<p>At terminal this is projection of 2y_b-L/2-1 onto [0,L]. Projection cannot increase the distance to Lp_b, so</p>
+<pre><code>0&lt;=x_b&lt;=L, |x_b-Lp_b|&lt;=20.                             (12)</code></pre>
+<p>The x_b need not sum to L. The subsequent normalization proof deliberately does not assume that they do.</p>
+<h2 id="exact-real-proof-block-5-a-narrow-gaussian-logits-and-ordinary-softmax">7. Block 5: A narrow-Gaussian logits and ordinary softmax</h2>
+<p>For each b use a head</p>
+<pre><code>Q_b=kappa(2x_b,-1), K_j=(j,j^2), V_j=log j.</code></pre>
+<p>Its scores differ from -(j-x_b)^2 by a query-only constant. The head output ell_b is the expectation of log J under these weights on 1,...,L. Block 5's FFN is zero. The final fixed linear readout supplies logits ell_1,...,ell_A to ordinary vocabulary softmax:</p>
+<pre><code>G_b=exp(ell_b), S=sum_b G_b, R_b=G_b/S.</code></pre>
+<p>For any center 0&lt;=mu&lt;=L, the constant-variance geometric-mean lemma gives</p>
+<pre><code>|exp(E log J)-mu|&lt;=24, 1&lt;=exp(E log J)&lt;=L.              (13)</code></pre>
+<p>For completeness, a supported integer lies within distance one of mu, so the weight normalizer is at least e^(-1). The unimodal lattice bound sum_{j in Z}e^(-(j-mu)^2/2)&lt;=1+sqrt(2pi), together with |s|e^(-s^2)&lt;=e^(-s^2/2), implies E|J-mu|&lt;=e(1+sqrt(2pi))&lt;10. Jensen gives exp(E log J)&lt;=mu+10. For mu&lt;=2 this and the lower bound 1 suffice. For mu&gt;2, the negative log deficit on mu/2&lt;=J&lt;mu is at most 20/mu. The remainder is at most</p>
+<pre><code>e e^(-mu^2/4) sum_{1&lt;=j&lt;mu/2}log(mu/j)
+  &lt;= e mu e^(-mu^2/4)&lt;=4/mu.</code></pre>
+<p>The sum is bounded by its decreasing-function integral from 0 to mu/2, which is less than mu. Hence E log(J/mu)&gt;=-24/mu, giving exp(E log J)&gt;=mu exp(-24/mu)&gt;=mu-24. This proves (13).</p>
+<p>Combining (12)-(13), |G_b-Lp_b|&lt;=44 for every b. Normalization is handled without a large-L condition:</p>
+<pre><code>||R-p||_1
+  &lt;= ||G/S-G/L||_1 + ||G/L-p||_1
+  = |1-S/L| + sum_b |G_b/L-p_b|
+  &lt;= 2 sum_b |G_b/L-p_b| &lt;=88A/L.</code></pre>
+<p>Thus TV(R,p)&lt;=44A/L. Also G_b&gt;=1 and each other G_a&lt;=L give the exact support floor</p>
+<pre><code>R_b&gt;=1/[1+(A-1)L].                                     (14)</code></pre>
+<p>For N&gt;=2, N^2e^(-N)&lt;=4e^(-2) and Ne^(-N)&lt;=2e^(-2), so</p>
+<pre><code>L Ne^(-N)/A
+  = (N^2/A+N)e^(-N)
+  &lt;=(4/A+2)e^(-2)&lt;=4/e^2&lt;1.</code></pre>
+<p>Together with (11), this proves the pathwise approximation in (2). No complement-coordinate trick specific to binary output is used.</p>
+<h2 id="exact-real-proof-multiclass-kl-transfer">8. Multiclass KL transfer</h2>
+<p>For distributions T,P,Q with P,Q strictly positive, the entropy variational inequality gives</p>
+<pre><code>D(T||Q)&lt;=2D(T||P)+log sum_b P_b^2/Q_b
+        &lt;=2D(T||P)+sum_b (P_b-Q_b)^2/Q_b.              (15)</code></pre>
+<p>One proof is to use E_T f&lt;=D(T||P)+log E_P exp f with f=log(P/Q), then sum P^2/Q=1+sum(P-Q)^2/Q and log(1+u)&lt;=u. True probabilities T_b may be zero.</p>
+<p>Apply this pointwise with P=B,Q=R. Their positivity holds at every history, including zero visits. For a zero-sum vector delta=B-R, its positive and negative parts each sum to TV(B,R), hence sum_b delta_b^2&lt;=2TV(B,R)^2. By (14),</p>
+<pre><code>sum_b (B_b-R_b)^2/R_b
+  &lt;=AL sum_b (B_b-R_b)^2
+  &lt;=2AL TV(B,R)^2
+  &lt;=2A(44A+1)^2/L.                                    (16)</code></pre>
+<p>Taking expectation in (15) and using (1) proves (2). An additive probability approximation by itself would not justify this step; the explicit floor (14) is essential. No terminal-state independence or conversion of a TV risk through reverse Pinsker is asserted.</p>
+<h2 id="exact-real-proof-explicit-a-dependent-resource-accounting">9. Explicit A-dependent resource accounting</h2>
+<ul>
+<li>One parameter set is fixed across all N and all sources for each preselected A. It may depend on A. A growing alphabet is a family of different architectures and vocabularies, not one fixed-width network.</li>
+<li>There are exactly five residual attention/ReLU blocks with H=A^2+1 allocated heads per block and d_h=4ceil(sqrt(A+10))^2 per head, as in the prior finite-A model. Active heads by block are (2,0,A^2+1,A,A), totaling A^2+2A+3. Their values have dimension at most A&lt;=d_h.</li>
+<li>Reserve disjoint slots for four position features; A token coordinates; 2A raw copies; 2A snapped copies; three flags; A^2 candidate and A^2 query coordinates; A^3 row-head outputs; A selected probabilities; scalar z; A y coordinates; A x coordinates; A final logits. This uses at most A^3+2A^2+9A+8 slots. The original width H d_h already exceeds this because d_h&gt;=4(A+10). No increase to the existing finite-A head dimension or width is necessary.</li>
+<li>Active FFN hidden widths are at most (4A+5,2A^2,A^3,2A,0). A common width max{4A+5,2A^2,A^3,2A} suffices. In particular, saying the maximum is always A^3 would be inaccurate at A=2. The asymptotic FFN width remains O(A^3).</li>
+<li>All masks permit exactly j&lt;=i. Every key/value is from the observed prefix; the terminal symbol is a legal key, not the unobserved next symbol. BOS smoothing and early invalid candidates are explicitly accounted for.</li>
+<li>Dense parameter storage has O(A^6) entries. With the displayed integer kappa and fixed rational coefficients, coefficient descriptions use O(log(A+2)) bits. This statement concerns fixed weights, not exact-real log positions or evaluated softmax values.</li>
+<li>Positions (1,i,i^2,log i) are paid source-independent inputs. Integer position i and its square require O(log L) bits per exact integer, or paid generation; exact log i is a real-number assumption. Intermediate x and y grow as O(L); positional magnitudes reach O(L^2); raw copy scores reach O(L^3), row matching gaps are N, rescaling scores are O_A(L), and narrow-head scores reach O(L^2). Final logit magnitudes are at most log L.</li>
+<li>Straightforward dense causal evaluation has Theta((A^2+2A+3)L^2) active-head query-key visits. Charging head dimensions/vector aggregation and dense projections/FFNs gives a conservative O(A^3 L^2+A^6 L) exact-real arithmetic-operation bound, in addition to positional generation and the chosen cost of exp/log evaluation. Row-streamed activations and dense weights use O(A^3 L+A^6) real slots; materializing every attention matrix adds O(A^2 L^2) slots.</li>
+<li>No finite-bit bound is proved for the new two-block output. The prior four-block specialized backend does not automatically control rescaling error multiplied by L, narrow-Gaussian score error, or final probability support under output rounding. Generic IEEE arithmetic, constant word length, fixed exponent range, training attainability and optimal compute are not certified.</li>
+</ul>
+<h2 id="exact-real-proof-prior-results-scope-and-remaining-gaps">10. Prior results, scope and remaining gaps</h2>
+<p>Han, Jana and Wu, <em>Optimal prediction of Markov chains with and without spectral gap</em>, IEEE Transactions on Information Theory 69(6), 2023, pp. 3920-3959, DOI 10.1109/TIT.2023.3239508, treat stationary higher-order same-trajectory prediction. Their fixed-order finite-alphabet minimax theorem includes the A^3 complexity for order two in its stated regime. Their Remark 1 distinguishes full-history add-one from suffix-averaged add-one; their higher-order upper proof uses the stationary redundancy-to-prediction reduction. Therefore those optimal stationary minimax guarantees are not silently assigned to the full-history predictor implemented here, or to arbitrary initialization. Sources: <a href="https://par.nsf.gov/servlets/purl/10539616">published article</a>, <a href="https://arxiv.org/html/2106.13947v2#S5">author preprint, Sections 5 and 6</a>. The locally available published PDF was inspected; a fresh fetch of the published URL failed, while the author preprint was accessible.</p>
+<p>For each fixed A, (1)-(2) establish a rigorous estimator-specific O_A(log^2 n loglog n/n) upper and an O_A(1/n) output-approximation penalty. They do not establish the optimal O_A(log n/n) rate for full-history add-one. Uniform O(1/n) over the full stationary second-order class is ruled out already by its binary subfamily, so that is not a target claimed here.</p>
+<p>The displayed inequalities are valid for every finite A,n, but the fixed-A asymptotic notation must not be read uniformly over growing A. In the regime A&lt;=O(log(n+2)), the loose arbitrary-start statistical factor is of order A^5 times logarithmic factors divided by n, and the stationary version has A^3 instead. Outside that regime t&gt;=A explicitly records the larger smoothing cost. No optimal alphabet-growth threshold follows.</p>
+<p>The prior finite-A construction already supplies A^2 row heads, categorical BOS smoothing, exact terminal selection and A-way broad-Gaussian readout. This note keeps its first three blocks and replaces the readout using the binary narrow-Gaussian rescaling mechanism applied independently to A coordinates, followed by a multiclass normalization and support argument. Conditional n-gram, position-copy and smoothed-attention mechanisms have prior literature, including the sources cited in the archived finite-A note. No novelty, exhaustive prior-art clearance, Transformer-wide lower bound or training claim is made.</p>
+<h2 id="exact-real-proof-source-bindings">11. Source bindings</h2>
+<ul>
+<li>Public finite-A source: <a href="https://github.com/AlexenderSokolov/transformer-icml/blob/0d678eefb558d5108dd5ef893b033c6f58077d81/v10_research/fixed_alphabet_causal_extension_20261103_1653/alphabet_extension_candidate_v1.html" class="uri">https://github.com/AlexenderSokolov/transformer-icml/blob/0d678eefb558d5108dd5ef893b033c6f58077d81/v10_research/fixed_alphabet_causal_extension_20261103_1653/alphabet_extension_candidate_v1.html</a> . Git blob 9cc4a7554fdaffc08bd89d894cb887cbfef73307, fetched read-only through the GitHub connector. The linked public Git blob is the provenance reference; no separate local copy is asserted in this export.</li>
+<li>Predecessor binary statistics, version 2, Sections 3-5.1. The complete categorical argument needed here is reproduced in Sections 2-4 above. The statistical proof above is its categorical extension, not an import of its binary rate as a theorem about A symbols.</li>
+<li>Predecessor narrow-Gaussian clipped-bridge output lemmas, version 2, Sections 5-7, with the corresponding independent version-2 review. The required scalar arguments are reproduced in Sections 6-8 above. Only their scalar rescaling/geometric-mean/transfer machinery is used; their special rare-family statistics are not imported.</li>
+<li>The published HJW PDF was inspected during preparation; its SHA-256 is 375c730cb4c9f6dd2eaa4439e59800764faeddbebee73f220e22d6d2cf3116a3. Relevant published locations include Remark 1, Lemma 6, Section V and the stationarity discussion on p. 3952. This local provenance is a research binding, not a public-download promise.</li>
+</ul>
+<p>This artifact preserves the earlier binary and finite-A files. The extension was obtained analytically; no experiment supplies any step of its proof.</p>
+<!-- END exact-real-proof --></div></details>
+<details id="exact-real-review"><summary>Independent exact-real prerequisite review</summary><div class="appendix"><!-- BEGIN exact-real-review -->
+<h1 id="exact-real-review-independent-analytical-review-fixed-finite-alphabets">Independent analytical review: fixed finite alphabets</h1>
+<p>3 November 2026. <strong>PASS within the stated exact-real scope.</strong> No numerical experiment, simulation, sample enumeration, training, publication, external upload, or finite-bit implementation test was performed.</p>
+<h2 id="exact-real-review-exact-reviewed-inputs">Exact reviewed inputs</h2>
+<ul>
+<li>Main artifact: <code>fixed_alphabet_terminal_kl.v1.md</code>.</li>
+<li>SHA-256: <code>ca5e4d0c0ee5d7b20c8dcd5a0a58775d0e570bf3571837c6c2750e4e964c4a58</code>.</li>
+<li>Preserved prior construction: <code>sources/alphabet_extension_candidate_v1.html</code>.</li>
+<li>Its SHA-256: <code>f0a9621a62655aaa41cf4c45fcfcf183580511ed52465be1bf11b988e45e24ff</code>.</li>
+<li>The prior construction identifies its public snapshot at commit <code>0d678eefb558d5108dd5ef893b033c6f58077d81</code>, Git blob <code>9cc4a7554fdaffc08bd89d894cb887cbfef73307</code>.</li>
+</ul>
+<p>The main source and the full preserved finite-alphabet construction were read directly. The prior binary occupation and exact-KL argument and the narrow-Gaussian scalar proofs were independently reconstructed during this and the preceding binary review. Hash calculations are integrity checks, not mathematical numerical evidence.</p>
+<h2 id="exact-real-review-statistical-theorem">1. Statistical theorem</h2>
+<p>The theorem is valid for every finite integer A&gt;=2 and n&gt;=1, with all four quantities t,c,a,U exactly as defined in Section 1. The separate n=0 statement is valid. The finite-parameter inequalities do not require A to be fixed as n varies, but their displayed asymptotic O_A rate is correctly restricted to fixed A.</p>
+<h3 id="exact-real-review-occupation-and-reciprocal-moment">Occupation and reciprocal moment</h3>
+<p>The pair process has D=A^2 states. The suffix argument proves monotonicity of the maximum over starts, not of each initial-state probability. Summing pathwise first-w flags separately over all D initial states gives D^2 w, and therefore the arbitrary-start constant A^4/(n+1). The stationary finite-window argument gives D rather than D^2, hence A^2/(n+1). Both arguments allow zero transition probabilities, reducibility, periodicity, and arbitrary off-support starts when stationarity is not imposed.</p>
+<p>The summation-by-parts identity in Section 2 includes J=0. Its harmonic estimate is valid for A&gt;=2. One can also directly bound its summand by 1/(k+A+1), obtaining a harmonic sum at most log((n+A)/A); the looser displayed c[1+log(n+A)] follows. No unprovided minimum stationary mass, mixing rate, or independent query is used.</p>
+<h3 id="exact-real-review-simultaneous-categorical-stacks">Simultaneous categorical stacks</h3>
+<p>There are A^2 row stacks, A indicator coordinates per stack, and n deterministic positive prefix lengths. A two-sided Bernstein bound costs 2e^-t per coordinate-prefix event, giving precisely 2A^3 n e^-t. The choice t&gt;=log[2A^3 n(n+1)^2] makes the failure probability at most (n+1)^-2.</p>
+<p>The stack construction generates the original source law and permits pathwise evaluation at its actual terminal row and data-dependent count. No assertion is made that counts remain binomial after conditioning on J, on the terminal row, or on a chosen path. Correlation among coordinates of one categorical stack is harmless because the proof uses a union bound, not independence among those coordinates.</p>
+<h3 id="exact-real-review-all-a-smoothing-displacement-and-exact-kl">All-A smoothing displacement and exact KL</h3>
+<p>For a symbol coordinate, z=jp and e=(j+A)p-(k+1) satisfy</p>
+<pre><code>z&lt;=2k+10t/3,
+(k-z)^2&lt;=8kt+128t^2/9,
+e^2&lt;=16kt+31t^2.</code></pre>
+<p>The last step uses |Ap-1|&lt;=A-1&lt;=t. This is why t&gt;=A is substantive, particularly for growing A. The constants 31, 32, and 48 all check algebraically.</p>
+<p>The chi-square route gives 32A t^2/(j+A). For the exact-KL route, the large observed smoothed count case gives at most 47t per Poisson-divergence term. In the small count case the correct all-A bound is x&lt;7t, not the binary x&lt;6t. The artifact correctly uses x&lt;7t and obtains h&lt;=15t+7t log t&lt;=48t(1+log t). Summing the exact identity (j+A)D=sum_b h yields 48A t(1+log t)/(j+A).</p>
+<p>Both bounds hold on the same event, so taking their minimum before expectation is justified. The j=0 inequalities are deterministic. On all outcomes the add-one probabilities are at least 1/(n+A), giving the stated log(n+A) failure cost and deterministic cap. Expectation uses the unconditional reciprocal moment, without conditioning on the confidence event. These facts prove (1), including its all-A finite-parameter form.</p>
+<h2 id="exact-real-review-exact-real-architecture-and-all-boundary-cases">2. Exact-real architecture and all boundary cases</h2>
+<p>The preserved prior finite-A construction supports the retained first three blocks. A BOS token of each alphabet symbol contributes one pseudocount to its corresponding coordinate. At valid successor keys the two previous symbols are copied and snapped exactly; at invalid keys the validity gate makes all candidate indicators zero. The terminal query has an exact previous-symbol copy even at N=2. The A^2 context heads therefore produce the stated add-one/distractor mixture, and the FFN chooses the actual terminal row. A separate uniform head supplies 1/L. No count, reciprocal, or row-selection oracle is added externally.</p>
+<p>Each new rescaling head has the correct score -(j-mu_b)^2/L up to a query-only constant and produces |x_b-Lp_b|&lt;=20 with x_b in [0,L]. The unit-cell quadrature, boundary integral, normalizer lower bound, and analytical maximum used for its constant were checked. The narrow readout head has score -(j-x_b)^2 up to a query-only constant. Its geometric-mean lemma provides |G_b-x_b|&lt;=24 and 1&lt;=G_b&lt;=L. The lattice bound, two log-deficit regions, and boundary cases in that lemma were checked.</p>
+<p>It is important that the x_b need not sum to L. The proof does not assume otherwise. Instead |G_b-Lp_b|&lt;=44 and the exact simplex property of terminal p imply</p>
+<pre><code>||G/S-p||_1 &lt;= |1-S/L|+||G/L-p||_1 &lt;=88A/L.</code></pre>
+<p>This proves TV(R,p)&lt;=44A/L for every L&gt;=4, with no denominator threshold or hidden L&gt;&gt;A assumption. The distractor error obeys Ne^-N/A&lt;=1/L for every A,N&gt;=2, giving the stated (44A+1)/L approximation to B.</p>
+<p>From G_b&gt;=1 and G_a&lt;=L for the other coordinates, R_b&gt;=1/[1+(A-1)L]&gt;=1/(AL). This is the claimed floor, rather than an incorrectly binary floor. It also gives the deterministic log[1+(A-1)L] forward-KL cap. All these statements hold at N=2.</p>
+<h2 id="exact-real-review-multiclass-transfer">3. Multiclass transfer</h2>
+<p>The entropy-variational inequality used in Section 8 is valid for arbitrary truth and positive reference/prediction distributions. Add-one and the implemented output have the needed positivity on every history, including zero visits.</p>
+<p>For delta=B-R, the positive and negative parts each sum to TV(B,R). Thus sum delta_b^2&lt;=2TV(B,R)^2. Combining this with the floor 1/(AL) gives exactly</p>
+<pre><code>chi-square(B,R)&lt;=2A(44A+1)^2/L.</code></pre>
+<p>Consequently the stated 2V plus that penalty follows pointwise and then in expectation. No reverse-Pinsker conversion or independence is being used. The constants remain valid for growing A, although they need not tend to zero in that regime.</p>
+<h2 id="exact-real-review-resources-and-limitations">4. Resources and limitations</h2>
+<p>The head allocation A^2+1 accommodates the A new coordinatewise heads, and d_h&gt;=4(A+10) accommodates all vector values. Multiplying by A^2+1 gives width exceeding the stated A^3+2A^2+9A+8 disjoint residual slots for every A&gt;=2. The slot count, five-block depth, and active head total A^2+2A+3 are consistent. At A=2 this nonminimal general construction uses 11 active heads, unlike the separately optimized binary construction's 10; the artifact does not conflate them.</p>
+<p>The active FFN widths (4A+5,2A^2,A^3,2A,0) are valid. Taking their maximum, rather than calling A^3 the largest for every A, correctly handles A=2. Dense parameter count O(A^6), coefficient bit descriptions O(log(A+2)), conservative exact-real operation bound O(A^3 L^2+A^6 L), and row-streamed real-slot bound O(A^3 L+A^6) are consistent with the displayed architecture. Exponential/logarithm evaluation and positional generation remain separately paid assumptions.</p>
+<p>The source correctly declines to transfer the old specialized backend to the new readout. This review does not establish finite-word accuracy, floating-point positivity, gate margins under numerical error, training attainability, optimal alphabet dependence, or a common fixed-width network for unbounded A. For fixed A the statistical rate and the O_A(1/n) output penalty follow; for growing A only the explicit inequalities and A-dependent resource family are asserted.</p>
+<h2 id="exact-real-review-evidence-boundary-and-verdict">5. Evidence boundary and verdict</h2>
+<p>No mathematical defect requiring a change was found in Sections 1-9 or in their fixed-A/growing-A scope statements. Bibliographic claims about HJW23 and the public snapshot attribution are separately sourced by the author; this review is not a fresh comprehensive prior-art or publication-priority audit.</p>
+<p><strong>Verdict: PASS</strong> for the exact source hash above, with the limitations already stated in the artifact. No numerical or external action is needed to establish this analytical verdict.</p>
+<!-- END exact-real-review --></div></details>
+<details id="precision-proof"><summary>Complete specialized integer and dyadic evaluator proof</summary><div class="appendix"><!-- BEGIN precision-proof -->
+<h1 id="precision-proof-constructive-finite-bit-evaluation-of-the-fixed-a-five-block-readout">Constructive finite-bit evaluation of the fixed-A five-block readout</h1>
+<p>Analytical candidate, 3 November 2026. This note derives explicit sufficient error ports and then constructs a specialized integer/dyadic evaluator that meets them. It is not an IEEE guarantee, a constant-word-length claim, an optimal precision threshold, an independently reviewed result, or an empirical finding. No experiment, training, external upload, or source-file modification was performed.</p>
+<p>Reference: <code>../fixed_alphabet_kl_upgrade_20261103_2300/fixed_alphabet_terminal_kl.v1.md</code>, especially Sections 5–9. Its exact-real Gaussian and statistical lemmas are retained. The present note does not change its fixed learned parameters or its five-block architecture.</p>
+<h2 id="precision-proof-setting-and-conclusion">1. Setting and conclusion</h2>
+<p>Let A&gt;=2, N=n+2&gt;=2, and L=N+A&gt;=4. Let B be the actual terminal full-history add-one distribution and let p be the exact-real block-3 selected simplex. The reference proves</p>
+<pre><code>TV(p,B) &lt;= N exp(-N)/A &lt; 1/L.</code></pre>
+<p>The conditional ports below imply that the numerical output Q is an exact dyadic simplex and, for every word, including n=0,</p>
+<pre><code>TV(Q,B) &lt;= min{1, (46A+2)/L},
+Q_b &gt;= 1/(4AL),                                  (P1)
+D(theta||Q) &lt;= 2D(theta||B) + 8A(46A+2)^2/L.       (P2)</code></pre>
+<p>Consequently, for n&gt;=1 the reference's statistical bound V gives</p>
+<pre><code>E D(theta||Q) &lt;= min{log(4AL), 2V + 8A(46A+2)^2/L}.</code></pre>
+<p>For n=0 use the elementary E D(theta||B)&lt;=log A rather than the n&gt;=1 definition of V. Constants and alphabet dependence are deliberately conservative.</p>
+<p>A complete arithmetic algorithm meeting the ports is given in Sections 4–6. Its common fractional precision is</p>
+<pre><code>s = ceil(log2(AL)),  b = 32s,  H = 2^b,  F = H^2. (P3)</code></pre>
+<p>All working integer lengths are O(b+log A+log L)=O(log(AL)), with constant-factor wider products. This is sufficient, not a claim that the coefficient 32 is necessary.</p>
+<h2 id="precision-proof-softmax-perturbation-and-gate-ports">2. Softmax perturbation and gate ports</h2>
+<p>For any two score vectors u,v on the same finite support,</p>
+<pre><code>TV(softmax(u),softmax(v)) &lt;= ||u-v||_infinity.      (P4)</code></pre>
+<p>The same statement holds after subtracting arbitrary rowwise constants. To prove it, interpolate u+t(v-u). The derivative of coordinate alpha_j is alpha_j(r_j-E_alpha r), whose total absolute sum is at most 2||r||_infinity. Integrate and divide by two. Therefore the expectations of any value in an interval of length R differ by at most R||u-v||_infinity. This bound is independent of key count; numerical approximation of each unnormalized weight must separately pay that count.</p>
+<p>Require exact integer positions and squares, exact full causal supports j&lt;=i, exact token onehots, and exact dyadic ReLU/linear operations. Copy-head outputs must lie in [0,1] coordinatewise and approximate their exact outputs within 1/32 per coordinate. At every valid data lag used for candidate or terminal gates, i&gt;=A+2&gt;=4. The wrong copy mass is less than</p>
+<pre><code>2/(exp(4)-1) &lt; 1/16.</code></pre>
+<p>The inequality exp(4)&gt;33 follows already from the first five terms of its positive series. Thus every incorrect copy coordinate stays below 1/4 and the correct coordinate stays above 3/4. The exact two-hinge map snaps the needed copies to exact onehots. At invalid candidates, v=0 and the snapped coordinates remain in [0,1], so their g gates are exactly zero. Integer flags, all candidate-context indicators, and the terminal query are exact. For N=2 only the first lag is needed by the terminal query; no nonexistent data transition is introduced. The first-BOS marker and all A smoothing tokens remain present.</p>
+<h2 id="precision-proof-conditional-numerical-ports">3. Conditional numerical ports</h2>
+<p>Quantities in this section are terminal quantities unless explicitly stated otherwise. These are sufficient conditions, not automatic properties of an unspecified floating-point implementation.</p>
+<ol type="1">
+<li><p>The block-3 selected output p_tilde is a simplex satisfying</p>
+<pre><code>||p_tilde-p||_infinity &lt;= 1/(64L^2),
+|z_tilde-1/L| &lt;= 1/(64L^3).</code></pre></li>
+<li><p>Block 4 evaluates its displayed scores from p_tilde,z_tilde, with additional absolute score error at most 1/(64L). Its numerical attention mean has additional error at most 1/64 relative to exact softmax of those evaluated scores. Its FFN computes the displayed clipping operation exactly, so 0&lt;=x_tilde_b&lt;=L.</p></li>
+<li><p>Block 5 evaluates its displayed scores from x_tilde_b with additional absolute score error at most 1/[64L(1+log L)]. Its supplied log-position values have error at most 1/(64L). Its numerical weighted mean has additional error at most 1/(64L) relative to exact softmax of those evaluated scores and the supplied log values.</p></li>
+<li><p>Let R_star be exact vocabulary softmax of the numerical block-5 logits ell_tilde. The final evaluated output Q is a simplex with</p>
+<pre><code>|Q_b-R_star_b| &lt;= 1/(8AL)  for every b.</code></pre></li>
+</ol>
+<p>Proof of (P1). Relative to the exact broad-Gaussian head at p,z=1/L, each block-4 score changes by at most</p>
+<pre><code>L/(64L^2) + L^2/(64L^3) + 1/(64L) = 3/(64L).</code></pre>
+<p>By (P4), its exact mean changes by at most 3/64. Adding its mean-evaluation error gives 1/16. The FFN clipping map is 2-Lipschitz in the mean, so the reference's |x-Lp|&lt;=20 becomes</p>
+<pre><code>|x_tilde_b-Lp_b| &lt;= 20+1/8 &lt; 21.                 (P5)</code></pre>
+<p>Now compare block 5 with the exact narrow Gaussian centered at x_tilde_b. That center is in [0,L], so its exact log mean ell_b^0 obeys</p>
+<pre><code>1 &lt;= exp(ell_b^0) &lt;= L,
+|exp(ell_b^0)-x_tilde_b| &lt;= 24.</code></pre>
+<p>Using (P4), the perturbed log-value expectation changes by at most</p>
+<pre><code>(log L)/(64L(1+log L)) + 1/(64L) + 1/(64L)
+  &lt;= eta := 3/(64L).</code></pre>
+<p>One may first compare the score distributions with the exact log values, then add the value perturbation; no enlarged range is required. Since eta&lt;1/2 and exp(eta)-1&lt;=2eta,</p>
+<pre><code>|exp(ell_tilde_b)-exp(ell_b^0)| &lt;= 2L eta &lt; 1.</code></pre>
+<p>It follows that |exp(ell_tilde_b)-Lp_b|&lt;=46. Normalization, using only sum p=1, yields</p>
+<pre><code>TV(R_star,p) &lt;= 46A/L.</code></pre>
+<p>Also exp(ell_tilde_b) lies in [exp(-eta), L exp(eta)], whence</p>
+<pre><code>R_star_b &gt;= exp(-2eta)/[1+(A-1)L] &gt;= 1/(2AL).</code></pre>
+<p>The last elementary bound uses 2eta&lt;1/2 and exp(1/2)&lt;2. Final coordinate rounding costs TV at most 1/(16L), and leaves Q_b&gt;=3/(8AL)&gt;=1/(4AL). Add TV(p,B)&lt;1/L to obtain (P1). The KL transfer from the reference gives</p>
+<pre><code>D(theta||Q) &lt;= 2D(theta||B) + sum_b (B_b-Q_b)^2/Q_b
+             &lt;= 2D(theta||B) + 8AL TV(B,Q)^2,</code></pre>
+<p>which proves (P2). In particular, a TV guarantee without the rounding/support port would not prove a finite forward-KL bound.</p>
+<h2 id="precision-proof-explicit-max-shifted-integer-exponential">4. Explicit max-shifted integer exponential</h2>
+<p>All scores used below are exact H-grid dyadics. For each row, compute its maximum exactly on its actual causal support. A nonnegative shifted gap is d=X/H with integer X&gt;=0. The following deterministic integer routine approximates exp(-d):</p>
+<ul>
+<li>If X&gt;bH, return 0.</li>
+<li>Otherwise set Z_0=F-X. For r=0,...,b-1 set Z_{r+1}=floor(Z_r^2/F).</li>
+<li>Return w_tilde=floor(Z_b/H)/H.</li>
+</ul>
+<p>The zero-gap output is exactly one. All outputs lie in [0,1]. Since H&gt;=2b, the retained case has d/H&lt;=1/2. The elementary inequality</p>
+<pre><code>-u-u^2 &lt;= log(1-u) &lt;= -u,  0&lt;=u&lt;=1/2,</code></pre>
+<p>shows that the difference between exp(-d) and (1-d/H)^H is at most d^2/H&lt;=b^2/H. Each square-and-floor contributes at most 1/F absolute error, and x-&gt;x^2 is 2-Lipschitz on [0,1]. After b steps the total such error is less than 2^b/F=1/H. The final conversion adds less than 1/H. In the truncated case, exp(-d)&lt;exp(-b)&lt;2^(-b)=1/H. Hence uniformly</p>
+<pre><code>|w_tilde-exp(-d)| &lt;= epsilon_w := (b^2+2)/H.      (P6)</code></pre>
+<p>No exponential of a positive O(L^2) or O(L^3) argument is formed. A row always has a retained, exact weight-one maximizer, so its numerical denominator is at least one.</p>
+<p>For m supported keys, let the returned weights be Z_j/H, and S=sum_j Z_j. Compute a_j=floor(H Z_j/S), R=H-sum_j a_j, and add one to any deterministically chosen R distinct coordinates, for example the first R supported keys. Here 0&lt;=R&lt;m. Dividing the resulting integers by H produces an exact nonnegative simplex alpha_tilde, each coordinate within 1/H of the exact normalization of the numerical weights. Largest-remainder sorting is unnecessary for this error bound. Normalization of the weight errors costs TV at most m epsilon_w; this follows from the exact weight sum being at least one and the standard two-term normalization identity. Thus</p>
+<pre><code>TV(alpha_tilde, softmax(scores))
+   &lt;= m epsilon_w + m/(2H)
+   &lt;= m epsilon_g,
+epsilon_g := (b^2+3)/H.                           (P7)</code></pre>
+<p>This explicitly charges m&lt;=i&lt;=L for attention and m=A for the final vocabulary softmax. It does not replace full causal support by a sparse or future-looking set.</p>
+<h2 id="precision-proof-constructed-log-position-routine">5. Constructed log-position routine</h2>
+<p>Exact log i is not supplied to the numerical evaluator. Here is a source-independent integer construction. For j&gt;=1 write j=2^k u, with integer k=floor(log2 j) and 1&lt;=u&lt;2; finding k uses the integer bit length. Put r=(j-2^k)/(j+2^k), so 0&lt;=r&lt;1/3. For log 2 use r=1/3. The identity</p>
+<pre><code>log u = 2 sum_{t&gt;=0} r^(2t+1)/(2t+1)</code></pre>
+<p>follows by integrating the geometric series for 2/(1-r^2). Use T=b terms, F-grid truncation r_tilde=floor(Fr)/F, and q_tilde=floor(F r_tilde^2)/F. Form c_t=floor(F/(2t+1))/F. Evaluate by Horner's rule from h_T=0:</p>
+<pre><code>h_t = c_t + floor(F q_tilde h_{t+1})/F,
+   t=T-1,...,0,
+ell_tilde(r) = 2 floor(F r_tilde h_0)/F.</code></pre>
+<p>All these expressions are integer products and divisions on F-grid representations. The exact finite Horner values are at most 9/8. We have |q_tilde-r^2|&lt;2/F; the Horner error recurrence is bounded by</p>
+<pre><code>e_t &lt;= (17/4)/F + e_{t+1}/9,</code></pre>
+<p>so e_t&lt;5/F. The final multiplication and factor two cost less than 8/F in total. The omitted tail is at most 3^(-2b)&lt;H^(-3). Therefore</p>
+<pre><code>|ell_tilde(r)-log u| &lt; 8/F+H^(-3) &lt; 9/F.</code></pre>
+<p>The same bound holds for log 2. Compute k ell_tilde(1/3)+ell_tilde(r), and round to the nearest H-grid point to obtain lambda_j. Since k&lt;=s and H&gt;=18(s+1),</p>
+<pre><code>|lambda_j-log j| &lt;= 9(s+1)/H^2 + 1/(2H) &lt;= 1/H.  (P8)</code></pre>
+<p>At j=1 the routine returns zero exactly. The table is generated from positions alone and charged in time and memory. It is not a log of a probability or an externally supplied count statistic.</p>
+<h2 id="precision-proof-satisfying-every-port">6. Satisfying every port</h2>
+<p>Use the integer exponential and mass-preserving weight rounding for all attention rows. Use exact integer i,i^2, exact fixed rational weights, and exact dyadic FFNs. The displayed kappa cancels exactly against attention's divisor; this is exact rational algebra, not a rounded approximation to sqrt(d_h). Every score is an H-grid number: the learned formulas only multiply dyadic activations by integer positions and fixed dyadic constants. In particular there are no uncontrolled state-by-state products in these scores.</p>
+<ul>
+<li>Copy heads: their onehot-valued aggregates are exact H-grid numbers in [0,1]. By (P7), each coordinate error is at most L epsilon_g. The margins in Section 2 therefore snap all needed gates exactly.</li>
+<li>Block-3 row heads: the aggregate of onehot values with an exact simplex of numerical weights is an exact H-grid simplex. Exact terminal selection yields p_tilde with coordinate error at most L epsilon_g. There is no independent rounding of A probabilities that loses their total mass.</li>
+<li>Uniform marker head: all numerical exponential weights equal one. The mass-preserving rule gives each attention weight within 1/H of 1/i, hence |z_tilde-1/L|&lt;=1/H.</li>
+<li>Block 4: its numerical-input scores are evaluated exactly, so the additional score port is zero. Its integer-position weighted mean is an exact H-grid sum, with absolute error at most L^2 epsilon_g. The clipping FFN is exact.</li>
+<li>Block 5: its numerical-input scores are exact. Use lambda_j from (P8). Its dyadic weighted sum is initially on the H^2 grid and is rounded to the nearest H grid. Relative to exact attention on the supplied values, the resulting mean error is at most L(log L+2/H)epsilon_g+1/(2H). Its log-position error is at most 1/H.</li>
+<li>Vocabulary softmax: apply the same integer routine and mass-preserving rounding on exactly A logits. Its coordinate error is at most its TV error, hence at most A epsilon_g. The support proof is then quantitative, not an assumption that positive real exponentials remain nonzero after rounding.</li>
+</ul>
+<p>For a simple analytic verification of the chosen budget, s&gt;=3, A,L&lt;=2^s and b=32s. For all integer s&gt;=3,</p>
+<pre><code>b^2+3 &lt;= 2^(5s).</code></pre>
+<p>At s=3, 9219&lt;32768, and the right side grows by 32 while the left side grows by less than (4/3)^2 from one s to the next. Thus</p>
+<pre><code>epsilon_g &lt;= 2^(-27s),   1/H=2^(-32s).</code></pre>
+<p>In particular,</p>
+<pre><code>epsilon_g &lt;= 1/(256L^3),  1/H &lt;= 1/(256L^3).       (P9)</code></pre>
+<p>Indeed 2^(27s)&gt;=256*2^(3s) for s&gt;=3. These imply all Section 3 ports:</p>
+<pre><code>L epsilon_g &lt;= 1/(256L^2) &lt;= 1/(64L^2),
+1/H &lt;= 1/(64L^3),
+L^2 epsilon_g &lt;= 1/(256L) &lt;= 1/64,
+1/H &lt;= 1/(64L),
+L(log L+2/H)epsilon_g+1/(2H) &lt;= 1/(64L),
+A epsilon_g &lt;= 1/(8AL).</code></pre>
+<p>For the penultimate line, use log L+2/H&lt;=L and (P9), giving at most 1/(256L)+1/(512L^3). For the final line use A&lt;=L. The copy bound is much smaller than 1/32. Every condition therefore holds uniformly, including L=A+2 and arbitrary histories.</p>
+<p>The precision schedule is chosen for the prefix being evaluated. It is a numerical resource, not a learned length-dependent parameter or an extra token feature. Earlier rows are still evaluated using only their allowed keys and fixed formulas. This is a finite-precision evaluation of the exact model's ordinary softmax, not a claim that its dyadic result equals a transcendental exact-real softmax.</p>
+<h2 id="precision-proof-bit-complexity-and-limitations">7. Bit complexity and limitations</h2>
+<p>Exact integer positions reach L and L^2. The largest raw copy scores are O(L^3), not merely O(L^2); narrow-head scores are O(L^2), broad-head terminal scores O(L), and final logits O(log L). The implementation does not assume these raw scores are bounded. Fixed coefficients can add O(log A) bits before exact cancellation. Scores and activation numerators, accumulated row sums, and constant-factor wider F-grid products all have O(b+log A+log L) bits. The logarithm construction uses bounded fixed-point Horner arithmetic, avoiding the growing denominators of an exact-rational Taylor sum.</p>
+<p>With schoolbook integer arithmetic, a conservative complete causal evaluation cost is</p>
+<pre><code>O(((A^2+2A+3)L^2+L)b^3
+   +(A^3 L^2+A^6 L)b^2) bit operations.</code></pre>
+<p>The b^3 term pays for b squarings per shifted exponential and b-term log generation; the b^2 term pays for exact score arithmetic, vector aggregation and dense projections/FFNs. Row-streamed storage is conservatively</p>
+<pre><code>O(A^3 L b + b^2 + A^6 log(A+2)) bits.</code></pre>
+<p>The first term includes positional/log tables and working row storage. Dense parameters have O(A^6) entries, with O(log(A+2))-bit fixed descriptions. A growing A changes architecture and vocabulary; this remains a fixed-A family, with A dependence shown. No fixed exponent range, GPU kernel, automatic mixed precision, training algorithm, latency guarantee, or optimal bit complexity is certified.</p>
+<h2 id="precision-proof-exact-failure-modes-that-a-generic-finite-bit-claim-must-exclude">8. Exact failure modes that a generic finite-bit claim must exclude</h2>
+<ol type="1">
+<li><p><strong>Final zero destroys forward KL.</strong> For a constant-symbol word, a different symbol has B_b=1/(n+A), and the reference's exact readout gives R_b=O_A(1/L). Fixed-grid nearest rounding eventually makes that coordinate zero. Choose an iid source giving that symbol strictly positive true probability: the constant-word event still has positive probability, so conditional KL on that event and expected KL are infinite. Small TV error does not repair this.</p></li>
+<li><p><strong>Coarse rounding of z can destroy even TV.</strong> If a fixed fractional grid floors 1/L to zero, block 4 uses score (p_b+1/2)j. Its mean is at least L-1/(exp(1/2)-1)&gt;L-2. For L&gt;=10, the clipping FFN therefore sets every x_b=L, so all block-5 logits are equal and final softmax is uniform. Constant-symbol histories have B approaching a point mass, hence TV tends to 1-1/A rather than O_A(1/L). This failure occurs even with every remaining computation exact.</p></li>
+<li><p><strong>Large raw logits cannot be ignored.</strong> Unshifted exponentiation of raw copy and narrow-head logits encounters respectively O(L^3) and O(L^2) positive magnitudes. An unspecified finite exponent range cannot support an all-length theorem. Max shifting, an exact weight-one anchor, and explicit tail control avoid this; simply saying “softmax is stable” does not.</p></li>
+<li><p><strong>The port exponents are sufficient, not sharp.</strong> In particular p accuracy O(L^-2) and z accuracy O(L^-3) were chosen to make a global sup-score proof short. Local Gaussian sensitivity may permit weaker ports. This note proves an O(log(AL))-bit construction, not a matching necessity theorem for every numerical representation.</p></li>
+</ol>
+<p>Under a common positive dyadic output grid 2^(-b), logarithmically growing fractional precision is necessary for the stated all-history O_A(1/L) approximation plus positive support: the constant-word rare coordinate must be at most C_A/L yet, if positive, is at least 2^(-b), forcing b&gt;=log2 L-O_A(1). This is a statement about that encoding class, not every floating/exponent or symbolic encoding.</p>
+<h2 id="precision-proof-review-status">9. Review status</h2>
+<p>This is a constructed analytic candidate, not a port assumption disguised as a backend. The proof gives integer recurrences, denominator protection, precise rounding, paid log generation and all error bounds. It still requires independent analytic review before incorporation into a reviewed theorem or public research materials. The source note's disclaimer remains accurate for its own unchanged contents until such an upgrade is reviewed and explicitly adopted.</p>
+<!-- END precision-proof --></div></details>
+<details id="precision-review-one"><summary>First independent specialized-evaluator review</summary><div class="appendix"><!-- BEGIN precision-review-one -->
+<h1 id="precision-review-one-independent-analytical-review-of-the-constructive-fixed-point-backend">Independent analytical review of the constructive fixed-point backend</h1>
+<p>3 November 2026. <strong>PASS for the exact source identified below, within its stated specialized arbitrary-precision scope.</strong> No numerical tests, simulations, sample enumeration, fitting, training, repository mutation, external upload, or browser rendering were performed. File hashing is an integrity check, not mathematical numerical evidence.</p>
+<h2 id="precision-review-one-exact-reviewed-source">Exact reviewed source</h2>
+<p>File: <code>precision_budget_constructive_candidate.v1.md</code>.</p>
+<p>SHA-256: <code>e555323ee18b39b0003863e9d41084d6f2222a575c340b0a9bb8c87213d01a16</code>.</p>
+<p>The entire candidate was read. The reference exact-real finite-A theorem and its first-three-block construction were previously independently reviewed; the relevant interfaces, Gaussian constants, resource accounting, and all-zero-count boundary cases were rechecked for compatibility. The earlier three-block integer backend was also inspected as context, not treated as proving the new two-block evaluator.</p>
+<h2 id="precision-review-one-verified-conclusion-and-interpretation">1. Verified conclusion and interpretation</h2>
+<p>For all finite A&gt;=2 and N&gt;=2, L=N+A, the candidate supplies an explicit integer/dyadic evaluation scheme at fractional precision</p>
+<pre><code>s=ceil(log2(AL)), b=32s, H=2^b, F=H^2.</code></pre>
+<p>The output is an exact nonnegative H-grid simplex and satisfies the claimed terminal guarantees</p>
+<pre><code>TV(Q,B)&lt;=min{1,(46A+2)/L},
+Q_b&gt;=1/(4AL),
+D(theta||Q)&lt;=2D(theta||B)+8A(46A+2)^2/L.</code></pre>
+<p>The expected-risk corollary follows from the unchanged exact add-one statistical theorem, with n=0 separately assigned its elementary log A comparator bound. The deterministic log(4AL) risk cap follows directly from the output floor.</p>
+<p>These are guarantees for a specified numerical evaluator, not a claim about generic IEEE inference. The number b is fractional precision, not total signed word width. The statement explicitly adds magnitude, summation, and constant-factor product bits. Learned parameters and architecture remain fixed across length for each chosen A; the arithmetic precision and positional generation are length-dependent numerical resources.</p>
+<h2 id="precision-review-one-conditional-port-proof">2. Conditional-port proof</h2>
+<p>The softmax perturbation inequality is valid: differentiating along a score interpolation gives an L1 derivative at most twice the score sup-norm, and division by two yields the claimed TV bound. Expectations of interval-bounded values then cost that interval's length. Rowwise shift invariance is used only in a way consistent with recomputing the score-difference norm.</p>
+<p>The copy-head gate margin is sufficient. At every required lag, i&gt;=4, the wrong mass is less than 2/(e^4-1)&lt;1/16. Adding the permitted 1/32 numerical coordinate error still leaves the exact two-hinge thresholds safely separated. At invalid candidates the validity gate is zero and copied/snapped coordinates remain in [0,1], so all invalid context indicators remain exactly zero. N=2 requires only the legal terminal previous-symbol copy; the algorithm does not create an unobserved transition.</p>
+<p>The block-4 score difference is correctly bounded by</p>
+<pre><code>j|delta p|+|j-j^2||delta z|+additional score error
+   &lt;=3/(64L).</code></pre>
+<p>The expected position then changes by at most 3/64; adding its evaluation error gives 1/16. The clipping FFN is 2-Lipschitz and projects onto [0,L], so the inherited 20-error becomes at most 20+1/8&lt;21.</p>
+<p>The subsequent comparison is deliberately to the exact narrow Gaussian at the <strong>computed clipped center</strong>. That center is in [0,L], so the uniform geometric-mean lemma applies without propagating its center error through the narrow attention's large scores. This is a valid comparison within the proof, not a change to the implemented architecture. It avoids an unnecessary additional factor of L while preserving the claimed approximation to B.</p>
+<p>The narrow-logit error is at most eta=3/(64L). Comparing score distributions first using the exact log values, and then adding log-value and mean-evaluation errors, correctly avoids assuming an unperturbed value range for the supplied approximate logarithms. Exponentiating the logits costs at most 2L eta&lt;1. Thus every numerical geometric mean is within 46 of Lp_b, and the normalization identity gives TV(R_star,p)&lt;=46A/L without requiring their centers or geometric means to have total L.</p>
+<p>The same logit comparison gives R_star_b&gt;=1/(2AL). Coordinate error at most 1/(8AL) in the final rounded simplex leaves Q_b&gt;=3/(8AL), which is stronger than the claimed 1/(4AL). The final rounding TV cost is at most 1/(16L). Adding the retained matching error below 1/L proves the stated (46A+2)/L envelope. The forward-KL transfer then uses the proven support, not an invalid inference from small TV alone.</p>
+<h2 id="precision-review-one-integer-exponential-and-denominator-protection">3. Integer exponential and denominator protection</h2>
+<p>For an exact shifted H-grid gap d=X/H&lt;=b, Z_0=F-X represents 1-d/H on the F grid. The inequality</p>
+<pre><code>-u-u^2&lt;=log(1-u)&lt;=-u, 0&lt;=u&lt;=1/2,</code></pre>
+<p>is correct, and H&gt;=2b makes it applicable. After b exact squarings the unrounded reference is (1-d/H)^H. Its difference from e^-d is at most d^2/H. Each square-and-floor step adds less than 1/F, with error amplification at most two, so the accumulated floor error is less than 1/H. The last conversion adds less than 1/H. This proves the stated (b^2+2)/H error.</p>
+<p>For d&gt;b, setting the weight to zero has error below e^-b&lt;2^-b=1/H. This is an explicitly controlled truncation, not an assumption about machine underflow. At d=0 every recurrence remains exact and the final weight equals one. Consequently every row retains a weight-one maximizer, its denominator cannot vanish, and no positive exponential of an O(L^2) or O(L^3) raw score is ever formed.</p>
+<p>The mass-preserving normalization rule is valid. The integer residual R=H-sum floor(H Z_j/S) is nonnegative and smaller than the number m of keys. Adding one to any deterministic R distinct coordinates keeps every coordinate within <strong>at most</strong> 1/H of the exact normalization and gives total mass exactly one. It need not be largest-remainder rounding. This includes the possibility of adding a unit to a zero fractional remainder, so a strict less-than assertion would have been inappropriate; the artifact correctly uses a non-strict error bound.</p>
+<p>The normalization error is at most m epsilon_w in TV, and the grid adjustment adds at most m/(2H). Thus epsilon_g=(b^2+3)/H safely bounds the error per supported-key count. Attention pays m&lt;=L; the final vocabulary softmax pays m=A.</p>
+<h2 id="precision-review-one-constructed-logarithms">4. Constructed logarithms</h2>
+<p>The range reduction j=2^k u and r=(j-2^k)/(j+2^k) keeps r in [0,1/3); log 2 uses the endpoint 1/3. The atanh identity and the b-term tail estimate are valid. This construction uses position integers only, not probabilities or counts.</p>
+<p>The F-grid Horner proof checks. The exact finite Horner values are at most 9/8, q_tilde&lt;=r^2&lt;=1/9, and |q_tilde-r^2|&lt;2/F. Coefficient flooring and multiplication flooring give</p>
+<pre><code>e_t&lt;=(17/4)/F+e_{t+1}/9,</code></pre>
+<p>so e_t&lt;5/F. Including r approximation, the final product floor, and the factor two still costs less than 8/F. The omitted tail is smaller than 3^-2b&lt;H^-3, giving the stated 9/F total bound.</p>
+<p>Multiplication by k and addition of the mantissa logarithm cost at most 9(s+1)/H^2. The candidate then uses <strong>nearest</strong> H-grid rounding, costing at most 1/(2H). Therefore H&gt;=18(s+1) genuinely proves the final 1/H error. A floor-only final conversion would not automatically justify this same constant; the candidate explicitly avoids that issue. At j=1 the result is exactly zero.</p>
+<p>All Horner operations use bounded fixed-point integers. No rapidly growing exact-rational series denominator is hidden in the resource claim.</p>
+<h2 id="precision-review-one-constructed-pipeline-and-precision-budget">5. Constructed pipeline and precision budget</h2>
+<p>The displayed attention scaling constant kappa is an integer and cancels exactly. The score formulas therefore remain H-grid dyadics even though the standard attention divisor 1/kappa need not itself be a finite dyadic. Exact integer multiplication and division implement that cancellation; no rounded square root is used.</p>
+<p>After copy gates, all block-3 candidate indicators are exact. Aggregating onehot values against an exact numerical attention simplex gives an exact H-grid categorical simplex. Terminal selection chooses precisely one such row, so the selected p_tilde preserves total mass. Independent coordinate truncations do not silently destroy it. The first-BOS marker attention gives an error at most 1/H in the reciprocal, and all smoothing tokens remain present.</p>
+<p>Integer-position averages in block 4 are exact H-grid sums after attention-weight approximation. The clipping affine/ReLU expressions are exact on the grid because H is divisible by two and four. The narrow head's numerical-input scores are likewise exact. Its weighted approximate-log mean initially has H^2 scale and is explicitly rounded to the nearest H grid, accounting for the extra 1/(2H).</p>
+<p>The elementary budget proof is sound. For s&gt;=3, b^2+3&lt;=2^(5s), so epsilon_g&lt;=2^(-27s). Both epsilon_g and 1/H are at most 1/(256L^3). Substitution proves each conditional port, including the logarithmic mean port and final A epsilon_g&lt;=1/(8AL), using A&lt;=L. These inequalities cover the shortest legal word and every finite A; no asymptotic omission is used.</p>
+<p>The method evaluates all attention supports causally. The global choice of numerical precision depends on the observed length, as disclosed, but no earlier row receives a future key or a source-dependent feature.</p>
+<h2 id="precision-review-one-bit-resources-and-overflowunderflow-claims">6. Bit resources and overflow/underflow claims</h2>
+<p>The raw-score range is not treated as constant: copy scores can grow as O(L^3), and narrow scores as O(L^2). Numerical row maxima and shifted differences are computed with exact signed integer/dyadic arithmetic before the exponential primitive. The broad O(L) score statement is specifically terminal; even crude early-row bounds involving A^2 remain polynomial in A,L and do not violate the asserted bit-length envelope.</p>
+<p>Score numerators, row sums, products, and F-grid scratch require O(b+log A+log L) bits with fixed constant-factor widening. The largest F-grid products can need roughly 4b plus magnitude bits. Hence the theorem is about a growing-word arbitrary-precision evaluator, not a machine with only b total bits or a fixed exponent range.</p>
+<p>The stated conservative work bound covers one b-squaring exponential evaluation per active causal score, log-position generation, normalization divisions, vector-valued aggregation, and dense projections/FFNs. Mass-preserving normalization may store a working row of weights or revisit it; either choice fits the displayed O(A^3Lb+b^2+A^6 log(A+2)) storage envelope. The residual allocation requires no sorting. The O(b^2) scratch term also covers stored Horner coefficients if used. No dense L-by-L attention matrix is necessary.</p>
+<p>The operation and storage bounds are consistent with schoolbook integer multiplication/division. They are conservative mathematical bit-complexity bounds, not measured timings, an optimized implementation, or a practical hardware-performance claim.</p>
+<h2 id="precision-review-one-failure-examples-and-remaining-limitations">7. Failure examples and remaining limitations</h2>
+<p>The failure examples are correctly scoped. Rounding an O_A(1/L) positive rare-coordinate prediction to zero can create infinite forward KL on a positive-probability constant-word event under an iid source with positive rare-symbol probability. Flooring the reciprocal to zero changes the broad heads into increasing exponential tilts, and for L&gt;=10 the subsequent clipping sends all coordinate centers to L, producing uniform output. Unshifted exponentiation cannot supply an all-length fixed-exponent-range guarantee.</p>
+<p>The lower statement b&gt;=log2 L-O_A(1) is limited to a common positive dyadic output grid and the stipulated all-history O_A(1/L) approximation. It is not a lower bound for all floating/exponent, symbolic, or other numerical representations. The chosen precision coefficient and port exponents are only sufficient.</p>
+<p>No defect requiring a mathematical revision was found. This verdict establishes the written constructive algorithm and its analytical guarantees. It does not assert that a software implementation was executed, that every possible implementation follows the specification, or that a generic floating-point backend is certified.</p>
+<p><strong>Final verdict: PASS</strong> for the exact source hash above, with the artifact's explicit arbitrary-precision, fixed-A architecture-family, and nonexperimental limitations retained.</p>
+<!-- END precision-review-one --></div></details>
+<details id="precision-review-two"><summary>Second adversarial specialized-evaluator review</summary><div class="appendix"><!-- BEGIN precision-review-two -->
+<h1 id="precision-review-two-adversarial-analytical-review-of-the-constructive-precision-budget">Adversarial analytical review of the constructive precision budget</h1>
+<p>Date: 2026-11-03 UTC.</p>
+<p>Reviewed source: <code>precision_budget_constructive_candidate.v1.md</code>.</p>
+<p>Exact SHA-256: <code>e555323ee18b39b0003863e9d41084d6f2222a575c340b0a9bb8c87213d01a16</code>.</p>
+<h2 id="precision-review-two-verdict">Verdict</h2>
+<p><strong>PASS within the explicitly specified integer/dyadic, arbitrary-precision evaluation model.</strong> I found no counterexample or mathematical defect requiring a source revision. In particular, the claimed fractional budget <code>b=32 ceil(log2(AL))</code> is sufficient with the signed magnitude, accumulation, and constant-factor product widths already required by the source. It is not sufficient to reinterpret b as the entire signed machine-word width; the source does not make that claim.</p>
+<p>This is a second independent analytical audit of the written algorithm, including adversarial checks of rounding, early positions, zero weights, endpoints, and the narrow-score dependence. No numerical mathematical experiment, simulation, sample enumeration, implementation execution, training, external upload, or repository mutation was performed. Source hashing is only an integrity check. This report binds the Markdown source, not any generated HTML or software implementation.</p>
+<h2 id="precision-review-two-exponential-primitive-scaling-truncation-and-denominator">1. Exponential primitive: scaling, truncation, and denominator</h2>
+<p>The units in the repeated-squaring construction are correct. For d=X/H and F=H^2, <code>Z_0=F-X</code> represents <code>1-d/H</code>, not <code>1-d</code>. Exactly b squarings raise the unrounded value to <code>2^b=H</code>. On the retained interval d&lt;=b, H&gt;=2b gives the needed <code>d/H&lt;=1/2</code>. The logarithmic sandwich then bounds the discrepancy from exp(-d) by d^2/H.</p>
+<p>At each floor step both approximate and reference normalized values remain in [0,1]. The derivative bound for squaring is therefore two, so the accumulated F-grid error is below <code>(2^b-1)/F&lt;1/H</code>. The final conversion costs less than 1/H. Together these give <code>(b^2+2)/H</code>. At d&gt;b, the discarded weight is below exp(-b)&lt;2^(-b). The strict-versus-nonstrict cutoff boundary d=b is handled by the retained branch.</p>
+<p>At d=0, every integer step is exact and the returned weight is exactly one. Thus max shifting protects every attention or vocabulary row from an all-zero denominator, even if other weights are deliberately truncated to zero. This is not an underflow assumption or an unshifted evaluation of a huge positive exponential.</p>
+<h2 id="precision-review-two-mass-preserving-rounding-the-adversarial-residual-case">2. Mass-preserving rounding: the adversarial residual case</h2>
+<p>Let S be the positive integer weight sum and <code>a_j=floor(H Z_j/S)</code>. The residual <code>R=H-sum a_j</code> equals the integer sum of fractional remainders, so <code>0&lt;=R&lt;m</code>. Adding a unit to any R distinct coordinates is legitimate without sorting. Even if a selected coordinate had zero fractional remainder, its error is exactly 1/H, not larger. Hence the source's non-strict coordinate bound is the correct one; a strict bound would fail in that case.</p>
+<p>The resulting entries are nonnegative and sum exactly to H. An entry cannot become larger than H, since that would contradict the nonnegative total-H invariant. Normalization of the approximate unnormalized weights costs at most m epsilon_w in TV, using the exact weight sum of at least one. The residual redistribution adds at most m/(2H), giving the stated epsilon_g bound. The analysis pays m&lt;=L for an attention row and m=A for the final output.</p>
+<p>Onehot-valued aggregation therefore produces an exact grid simplex, rather than separately rounded coordinates whose total mass is uncontrolled. This is essential for the later normalization and KL argument and is explicitly implemented.</p>
+<h2 id="precision-review-two-logarithms-no-hidden-exact-rational-denominator-or-missing-rounding-term">3. Logarithms: no hidden exact-rational denominator or missing rounding term</h2>
+<p>The integer range reduction and atanh series are valid at r=0 and at the log-2 endpoint r=1/3. The finite Horner reference values are at most 9/8. Since the rounded r and q do not exceed their references, <code>q_tilde&lt;=1/9</code> and <code>|q_tilde-r^2|&lt;2/F</code>. The coefficient floor, product floor, and q perturbation give the displayed recurrence</p>
+<pre><code>e_t &lt;= (17/4)/F + e_{t+1}/9,</code></pre>
+<p>whose geometric sum is strictly below 5/F.</p>
+<p>The final product constant was a specific adversarial check. Before multiplication by two, its error is bounded by</p>
+<pre><code>(9/8)/F + (1/3)(5/F) + 1/F.</code></pre>
+<p>After multiplication by two this is less than 8/F. Thus that constant has not silently omitted the approximation to r, the accumulated Horner error, or the final product floor. The series tail is below <code>3^(-2b)&lt;H^(-3)</code>, giving less than 9/F overall.</p>
+<p>Multiplication by k and addition of the mantissa logarithm cost at most <code>9(s+1)/H^2</code>. Nearest H-grid rounding, not floor rounding, contributes at most 1/(2H). The stated <code>H&gt;=18(s+1)</code> therefore proves the 1/H log-position error. The j=1 output is exactly zero. All recurrence denominators are handled by bounded integer division on the F grid; no exact-rational Taylor denominator growth is hidden in the work bound.</p>
+<h2 id="precision-review-two-gate-snapping-zero-counts-and-earlier-rows">4. Gate snapping, zero counts, and earlier rows</h2>
+<p>Every needed data lag is at i&gt;=A+2&gt;=4. The exact copy wrong mass is below 1/16, and the allowed numerical error of 1/32 still leaves a strict gap to both snapping thresholds. Numerical attention is a simplex, so every copy coordinate remains in [0,1] even at early invalid positions. The two-hinge map also remains in that interval. Consequently the validity flag forces invalid context gates to zero exactly, while all valid context gates and the terminal query are exact onehots.</p>
+<p>The candidate does not need an unproved simplex invariant for every earlier selected p vector. A crude all-position bound suffices: each row-head coordinate and query-gate coordinate lies in [0,1], so the selected coordinate is at most A^2. At the actual terminal, exact onehot selection gives the required exact numerical simplex. Later keys and values read their designated raw position/log coordinates, not an earlier selected probability. Thus a nonterminal selected vector cannot contaminate terminal counting or readout through an unmentioned dependency.</p>
+<p>The first-BOS marker and all A smoothing tokens remain present. A uniform row has all returned exponential weights equal to one, and its mass-preserving grid rule approximates each 1/i weight within 1/H. Zero selected-row counts and the shortest N=2 word are included; the statistical V expression is not evaluated at n=0.</p>
+<h2 id="precision-review-two-broad-to-narrow-propagation-and-support">5. Broad-to-narrow propagation and support</h2>
+<p>At the terminal, the broad score is <code>(p_b+1/2+z)j-z j^2</code>. The p and z ports therefore give the stated sup-score cost, including the additional score port, of at most 3/(64L). Its effect on the position mean is at most 3/64. Adding mean evaluation and using the clipping map's two-Lipschitz bound yields the stated <code>20+1/8&lt;21</code> center error.</p>
+<p>The narrow-head proof correctly compares its numerical score distribution with the exact narrow Gaussian at the <strong>computed clipped center</strong>. It does not propagate the center discrepancy from the original exact network through an unnecessary L-sized narrow-score sensitivity. This comparison is legitimate because the inherited geometric-mean lemma holds uniformly at every center in [0,L]. The implemented score itself remains exactly the prescribed narrow-head score for its computed input.</p>
+<p>Score perturbation is first compared using exact logarithmic values; only then are value and mean-evaluation errors added. Thus the unperturbed log L range is not illicitly applied to perturbed values. The resulting eta bound implies the less-than-one geometric-mean perturbation and the coordinate error at most 46 from Lp_b. The normalization argument uses only that terminal p sums to one, not that the clipped centers or geometric means sum to L.</p>
+<p>The explicit logit bounds imply <code>R_star_b&gt;=1/(2AL)</code>. The final coordinate port leaves at least <code>3/(8AL)</code>, which is stronger than the claimed <code>1/(4AL)</code>. The TV rounding contribution is at most 1/(16L). This proves the displayed TV envelope and, through the proven floor and zero-sum squared-error inequality, the forward-KL penalty. True probabilities may be zero. Positivity is not inferred merely from small TV or from exact-real exponentials.</p>
+<h2 id="precision-review-two-the-chosen-budget-and-exact-score-grid">6. The chosen budget and exact score grid</h2>
+<p>For s&gt;=3, the elementary growth argument proves <code>b^2+3&lt;=2^(5s)</code>, hence epsilon_g&lt;=2^(-27s). Since L&lt;=2^s, epsilon_g and 1/H are both at most <code>1/(256L^3)</code>. These bounds imply every stated port, including the extra H-grid rounding of the weighted logarithmic mean and the final A epsilon_g term. The latter also uses A&lt;=L. No small-A, short-word, or zero-count exception was dropped.</p>
+<p>The reference's kappa is an integer. Cancelling the query's factor kappa against the attention divisor is exact rational algebra; it does not require a dyadic representation of 1/kappa or a rounded square root. All remaining score operations use integer positions, dyadic activations, and fixed dyadic coefficients. H is divisible by the denominators in the snapping/clipping formulas. The broad means are exact H-grid sums after weight approximation. Weighted log means initially use the H^2 grid and are explicitly rounded back to H before final vocabulary softmax. These facts justify the claimed exact H-grid score inputs.</p>
+<p>Precision chosen for the observed prefix is a length-dependent evaluation resource, not a changed learned coefficient. Full supports j&lt;=i are retained; the evaluator does not supply an earlier row with future keys or source-specific statistics.</p>
+<h2 id="precision-review-two-signed-range-guard-bits-work-and-storage">7. Signed range, guard bits, work, and storage</h2>
+<p>Raw signed score numerators must be stored before max shifting. Copy scores have O(L^3) magnitude, narrow scores O(L^2), and the quoted broad O(L) range is terminal only. The crude earlier-position p bound above permits larger polynomial broad scores, but still only O(log A+log L) magnitude bits. The clipping formula bounds every computed center in [0,i] independently of the earlier selected p magnitude. Signed differences and exact row maxima therefore fit the source's growing-integer model.</p>
+<p>An F-grid product in repeated squaring may need approximately 4b bits before division. Other exact products, dense linear accumulations, and row sums add only O(log A+log L) magnitude/guard bits to the relevant scale. The common fractional precision b is therefore consistent with the stated <code>O(b+log A+log L)</code> working integer lengths and constant-factor wider temporaries. It would be incorrect to use only b total signed bits or a fixed exponent range; neither is certified by this note.</p>
+<p>Schoolbook multiplication/division at these lengths has O(b^2) cost because b is proportional to log(AL). A shifted exponential uses b squarings, and a generated logarithm uses b Horner terms, giving the stated b^3 charges. The active-head count gives the claimed causal score-pair count. Vector aggregation and dense projection/FFN work fit the displayed <code>A^3 L^2+A^6 L</code> multiplier. Mass-preserving residual allocation is linear in row length and needs no sort. Its normalization divisions are included in the b^2 work allowance.</p>
+<p>Streaming one row's attention weights fits within the <code>A^3 L b</code> activation allowance. Positional/log tables and the stored per-position activations are included. F-grid scratch or cached Horner coefficients fit the conservative b^2 term, and dense fixed parameters fit the stated <code>A^6 log(A+2)</code> term. A full L-by-L attention matrix is not needed. The bounds are conservative analytic bit-complexity statements, not runtime measurements.</p>
+<h2 id="precision-review-two-failure-examples-and-limits">8. Failure examples and limits</h2>
+<p>The final-zero example is a valid warning for coordinatewise nearest rounding on a fixed grid: an O_A(1/L) coordinate eventually rounds to zero while the constant-word event still has positive probability under an IID source with positive true probability for that symbol. The reciprocal-to-zero example also checks: the increasing exponential tilt has mean greater than L-2, and at L&gt;=10 the clipping sends every center to L, producing uniform output. Max shifting is necessary to avoid assuming an unbounded hardware exponent range.</p>
+<p>The dyadic-grid lower statement uses both the positive-support requirement and the all-history O_A(1/L) approximation. On the constant word, the positive output coordinate is simultaneously at least 2^(-b) and at most C_A/L, giving the stated logarithmic lower growth within that encoding class. It is not a lower bound for all representations or a necessity proof for the coefficient 32 or the chosen port exponents.</p>
+<p>The exact source passes. This report does not certify generic IEEE execution, a fixed total word length, automatic mixed precision, every implementation of the algorithm, training attainability, or an optimal precision schedule. The existing exact-real source remains unchanged; incorporation of this separately reviewed upgrade should retain these numerical-model limitations.</p>
+<!-- END precision-review-two --></div></details>
+<details id="prior-art"><summary>Bounded primary-source prior-art audit</summary><div class="appendix"><!-- BEGIN prior-art -->
+<h1 id="prior-art-targeted-prior-art-audit-ordinary-add-one-terminal-kl-at-fixed-alphabet">Targeted prior-art audit: ordinary add-one terminal KL at fixed alphabet</h1>
+<p>Checked through 3 November 2026. Target: the candidate at <code>../fixed_alphabet_kl_sharpening_20261103_2346/tilted_occupation_terminal_kl.candidate.v1.md</code>, an all-kernel, all-initial-pair expected forward-KL bound O_A(log(n+2)/(n+1)) for the actual terminal row of ordinary full-history add-one. Alphabet dependence is loose, of order A^5 in the principal term. This is a literature comparison, not a fresh mathematical review of the candidate.</p>
+<h2 id="prior-art-finding">Finding</h2>
+<p>No inspected primary theorem was verified to establish that exact estimator, arbitrary-initialization, same-path endpoint guarantee. This is a bounded search result, not evidence of novelty or priority. Exact ordinary add-one must be distinguished from a minimax existence bound, and uniformity over kernels from asymptotics for each fixed well-mixing kernel.</p>
+<p>For fixed alphabet and order two, the candidate matches the order in n of the stationary minimax rate. It does not establish the sharp growing-alphabet rate. For first-order binary chains, O(log n/n) would still exceed the known minimax O(log log n/n) rate.</p>
+<h2 id="prior-art-primary-theorem-comparisons">Primary theorem comparisons</h2>
+<ol type="1">
+<li><strong>Han–Jana–Wu, 2023; inspected arXiv v2.</strong> Eq. (1) is already actual same-history terminal forward KL with stationary initialization. Remark 1, Eqs. (5)–(6), separates ordinary add-one from suffix-averaged add-one and leaves ordinary add-one optimality open. Theorem 22 covers fixed order m &gt;= 2, 2 &lt;= A &lt;= n^(1/(m+1))/C_m, with stationary minimax rate of order A^(m+1) log(n/A^(m+1))/n. The candidate matches its fixed-A n-order, not its alphabet dependence. Section 6 says the nonstationary extension is unclear. These are v2 pinpoints, not journal numbering.
+<ul>
+<li><a href="https://arxiv.org/pdf/2106.13947v2" class="uri">https://arxiv.org/pdf/2106.13947v2</a></li>
+<li><a href="https://doi.org/10.1109/TIT.2023.3239508" class="uri">https://doi.org/10.1109/TIT.2023.3239508</a></li>
+</ul></li>
+<li><strong>Han–Wu, invited tutorial listed February 2026 on the author's website.</strong> Section III assumes stationarity. Theorem III.2 restates the general-chain minimax rate. Lemma III.3, Eq. (14), and the ensuing construction in Section III-B still average suffix predictors. Theorem III.9 obtains O(k^2/n) for ordinary add-1 only under explicit spectral-gap and state-size conditions: k at least order log n log log n and gap at least order log^2(n)/k, within the stationary irreducible reversible class. Its cited improvement is an iid KL concentration result, not arbitrary-start terminal occupation.
+<ul>
+<li>Primary tutorial: <a href="https://yanjunhan2021.github.io/paper/BITS.pdf" class="uri">https://yanjunhan2021.github.io/paper/BITS.pdf</a></li>
+<li>Author's date listing: <a href="https://yanjunhan2021.github.io/" class="uri">https://yanjunhan2021.github.io/</a></li>
+</ul></li>
+<li><strong>Mourtada, 2025 preprint, inspected revision dated January 26, 2026.</strong> Theorem 1, Eq. (16), is an iid Laplace-estimator concentration theorem: probability at most 4 delta above 110000[d + log(1/delta) log log(1/delta)]/n, in its stated delta range. Section 1.5 explicitly fixes iid sampling. The proof controls raw moments; this does not by itself justify conditioning a Markov row count or selecting its terminal row.
+<ul>
+<li><a href="https://arxiv.org/pdf/2504.21787v3" class="uri">https://arxiv.org/pdf/2504.21787v3</a></li>
+</ul></li>
+<li><strong>Hao–Orlitsky–Pichapati, 2018.</strong> Theorem 1 advertises O(k^2 log log n/n), but Section 4 uses a hybrid, including add-1/2 on complementary histories. It is not ordinary add-one. HJW's introduction expressly identifies implicit mixing in the advertised prediction upper proof. The inspected arXiv Section 10, Lemma 9, omits the relevant proof; Section 12's concentration is for positive-transition classes. This cannot be used as a verified unrestricted competing theorem.
+<ul>
+<li><a href="https://arxiv.org/pdf/1810.11754" class="uri">https://arxiv.org/pdf/1810.11754</a></li>
+<li>Published proceedings: <a href="https://proceedings.neurips.cc/paper_files/paper/2018/file/d34ab169b70c9dcd35e62896010cd9ff-Paper.pdf" class="uri">https://proceedings.neurips.cc/paper_files/paper/2018/file/d34ab169b70c9dcd35e62896010cd9ff-Paper.pdf</a></li>
+</ul></li>
+<li><strong>Bondaschi et al., From Markov to Laplace, ICLR 2026.</strong> Section 2.1 uses Dirichlet-random rows and uniform initial tokens; Eq. (3) is prior-and-position averaged cross-entropy. Section 2.4's minimax wording cites earlier work rather than proving the target all-start endpoint result. <strong>Bondaschi–Gastpar, October 30, 2026</strong>, Section IX and Theorem 16, concern uniformly positive binary transitions, independent training sequences and a fresh test sequence, with batch regret.
+<ul>
+<li><a href="https://arxiv.org/pdf/2502.10178v2" class="uri">https://arxiv.org/pdf/2502.10178v2</a></li>
+<li><a href="https://arxiv.org/pdf/2610.41859" class="uri">https://arxiv.org/pdf/2610.41859</a></li>
+</ul></li>
+<li><strong>Arnon et al., October 2026.</strong> The newly checked Claim 2.11 in Section 2.2 bounds the Laplace estimate from N independent samples of P against another target Q. It does not analyze a row count selected from a single Markov history. Its sequential-sampling theorems address a different computational problem.
+<ul>
+<li><a href="https://arxiv.org/pdf/2610.14615v2" class="uri">https://arxiv.org/pdf/2610.14615v2</a></li>
+</ul></li>
+</ol>
+<h2 id="prior-art-mechanism-predecessors-and-the-precise-combination">Mechanism predecessors and the precise combination</h2>
+<ul>
+<li><strong>Norris–Peres–Zhai:</strong> Proposition 1.1 and Lemma 2.1 are the kernel-uniform hitting/shift-and-sum predecessor. Their specified-target first-hit bound has D/t, and their new-endpoint-state bound has D^2/t. The candidate's fixed-target first-w occupancy lemma is an explicit extension of that argument, not a new foundational concentration principle.
+<ul>
+<li><a href="https://arxiv.org/pdf/1408.0822" class="uri">https://arxiv.org/pdf/1408.0822</a></li>
+<li><a href="https://doi.org/10.1017/S0963548317000074" class="uri">https://doi.org/10.1017/S0963548317000074</a></li>
+</ul></li>
+<li><strong>Garivier, 2013:</strong> Theorem 1 gives a time-uniform information-deviation bound, and Section II-A proves it by geometric peeling and exponential supermartingales. Section II-C, Eq. (3) and the following bound, handles predictably selected sample counts; context-tree transition estimation is an explicit motivation in Section I-A. The rate function is binary KL for Bernoulli observations. These establish classical predecessors for the Chernoff and random-count components. They do not state the candidate's terminal-event occupation multiplier or its expected forward-KL theorem.
+<ul>
+<li><a href="https://arxiv.org/pdf/1309.3376v1" class="uri">https://arxiv.org/pdf/1309.3376v1</a></li>
+</ul></li>
+<li><strong>Dolgopyat–Sarig:</strong> Example 1.6, "Change of measure," gives positive row reweighting and normalization of a Markov kernel while retaining the initial law. Thus changing transition rows and factoring path likelihoods are standard tools. Their local-limit/large-deviation setting is not the present prediction theorem; the later large-deviation development assumes uniform ellipticity.
+<ul>
+<li><a href="https://www.weizmann.ac.il/math/sarigo/sites/math.sarigo/files/uploads/mc-llt-monograph9.pdf" class="uri">https://www.weizmann.ac.il/math/sarigo/sites/math.sarigo/files/uploads/mc-llt-monograph9.pdf</a></li>
+</ul></li>
+</ul>
+<p>The specific step to describe is the following combination, without a priority assertion. For a deterministic count band and threshold, change the row from p to q, preserving other-symbol proportions and the initial law. Bound the path likelihood ratio on the deviation event, then apply the kernel-uniform fixed-target occupancy bound under Q. This gives the multiplicative occupation-times-Chernoff bound. The changed law need not preserve stationarity, so an arbitrary-start occupancy lemma is essential even when the original source is stationary. Neither the row likelihood ratio nor the occupancy argument should be described as intrinsically new.</p>
+<h2 id="prior-art-search-boundary">Search boundary</h2>
+<p>Targeted searches covered ordinary/add-one/add-1/Laplace Markov prediction, endpoint/nonstationary guarantees, change of measure/tilting, terminal occupation, and self-normalized context counts. The 2026 Han–Wu tutorial and its 2025/2026 iid concentration reference were checked directly, together with the October 2026 smoothing and sequential-sampling papers. Word searches for tilting/change of measure in HJW, HOP and NPZ were supplemented by reading their relevant proof sections; a missing keyword is not a mathematical exclusion proof.</p>
+<p>The Falahatgar–Orlitsky–Pichapati–Suresh 2016 original full text remains unavailable in this check. Its later primary-paper descriptions are not a substitute for independently verifying all of its claims. DOI: <a href="https://doi.org/10.1109/ISIT.2016.7541787" class="uri">https://doi.org/10.1109/ISIT.2016.7541787</a> . Some classical coding results are cumulative-regret bounds and do not automatically control the last prediction. No exhaustive citation-graph or unpublished-work search is claimed.</p>
+<p>No numerical work, simulation, training, external upload or public repository mutation was performed.</p>
+<!-- END prior-art --></div></details>
+<details id="matching-lower"><summary>Primary-source matching minimax lower-bound audit</summary><div class="appendix"><!-- BEGIN matching-lower -->
+<h1 id="matching-lower-primary-source-audit-matching-terminal-kl-minimax-lower-bound">Primary-source audit: matching terminal-KL minimax lower bound</h1>
+<p>Date: 4 November 2026 (UTC).</p>
+<p>Status: The matching-lower-bound implication is verified. This audit checks the primary theorem, model, loss, indexing, parameter regime, and reductions. It does not replace the separate analytical review of the candidate upper bound. No numerical experiment, simulation, training, external upload, or repository mutation was performed.</p>
+<h2 id="matching-lower-finding">1. Finding</h2>
+<p>For every fixed alphabet size A &gt;= 2, Han, Jana and Wu's original higher-order result supplies an Omega_A(log n/n) minimax lower bound for expected forward KL at the actual terminal pair of a stationary homogeneous second-order source. Binary second-order sources are expressly covered by their Theorem 24, not inferred from their first-order theorem.</p>
+<p>Consequently, if the reviewed candidate upper bound is accepted, the usual full-history add-one predictor has worst-case risk Theta_A(log n/n), both over stationary sources and over the larger class with arbitrary initial-pair distributions. This is an asymptotic fixed-A minimax statement. It is not an assertion of optimal alphabet dependence, a lower bound at every individual source, or a lower bound for every prescribed initial distribution.</p>
+<h2 id="matching-lower-materials-and-exact-bindings">2. Materials and exact bindings</h2>
+<p>Candidate examined:</p>
+<p><code>tilted_occupation_terminal_kl.candidate.v1.md</code></p>
+<p>SHA-256:</p>
+<p><code>c42b6f1d86c9c91aa6ba8257a86c613150e6fb477deb549cd70d1e7b79548281</code></p>
+<p>Primary publication:</p>
+<p>Yanjun Han, Soham Jana and Yihong Wu, "Optimal prediction of Markov chains with and without spectral gap," IEEE Transactions on Information Theory 69(6), 2023, pp. 3920-3959.</p>
+<ul>
+<li>Published DOI: <a href="https://doi.org/10.1109/TIT.2023.3239508" class="uri">https://doi.org/10.1109/TIT.2023.3239508</a></li>
+<li>Author preprint: <a href="https://arxiv.org/abs/2106.13947v2" class="uri">https://arxiv.org/abs/2106.13947v2</a></li>
+<li>Author-preprint HTML: <a href="https://arxiv.org/html/2106.13947v2" class="uri">https://arxiv.org/html/2106.13947v2</a></li>
+</ul>
+<p>The published PDF was read locally at:</p>
+<p><code>[preparation path omitted; see the DOI and source identity]</code></p>
+<p>Its SHA-256 is:</p>
+<p><code>375c730cb4c9f6dd2eaa4439e59800764faeddbebee73f220e22d6d2cf3116a3</code></p>
+<p>The online author-preprint theorem statements were cross-checked against the published PDF. Published theorem numbers 22 and 24 agree with the preprint, but some equation numbers differ.</p>
+<h2 id="matching-lower-primary-source-locations-and-hypotheses">3. Primary-source locations and hypotheses</h2>
+<h3 id="matching-lower-model-and-loss">3.1 Model and loss</h3>
+<p>Published Section V-A, pp. 3941-3942, defines a homogeneous order-m process by a fixed stochastic array with A^m rows and A columns. Its initial law is a distribution on the first m symbols. Stationarity is a condition on this initial law and the fixed transition array.</p>
+<p>Published Eq. (103), p. 3942, defines the minimax risk using the forward KL loss at the actual terminal m-symbol context:</p>
+<pre><code>R_{A,N,m}
+  = inf_{Mhat} sup_M
+      E[D_KL(M(. | X_{N-m+1},...,X_N)
+               || Mhat(. | X_{N-m+1},...,X_N))].</code></pre>
+<p>The observed trajectory has N symbols and is started from a stationary distribution. The estimator is a function of the complete observed trajectory, not merely its final context. Writing it as a collection of estimated rows does not restrict that dependence.</p>
+<p>This is the desired terminal expected forward KL. It is neither cumulative prediction loss nor an average over an independently sampled test context. The preprint counterpart is Section 5.1, Eq. (95).</p>
+<h3 id="matching-lower-higher-order-theorem">3.2 Higher-order theorem</h3>
+<p>Published Theorem 22, p. 3942, states: for each m &gt;= 2, there exists C_m &gt; 0 such that, for</p>
+<pre><code>2 &lt;= A &lt;= N^(1/(m+1)) / C_m,
+
+A^(m+1)/(C_m N) * log(N/A^(m+1))
+  &lt;= R_{A,N,m}
+  &lt;= C_m A^(m+1)/N * log(N/A^(m+1)).</code></pre>
+<p>The lower bound continues to hold when the sources are required to be reversible. C_m depends only on m, not on A or N. Thus at m=2 the constant C_2 is absolute.</p>
+<p>No positive lower bound on transition probabilities, stationary masses, or spectral gap is imposed for this theorem. Its domain is a restriction on the alphabet size relative to sample length. The reversibility here is reversibility of the symbol process; it should not be confused with ordinary reversibility of the overlapping-pair chain.</p>
+<h3 id="matching-lower-explicit-binary-theorem">3.3 Explicit binary theorem</h3>
+<p>Published Section V-C1, pp. 3944-3945, Theorem 24 states</p>
+<pre><code>R_{2,N,2} = Theta(log N/N).</code></pre>
+<p>The published proof uses a one-parameter binary second-order family, Eq. (111), with rows ordered 11,21,12,22:</p>
+<pre><code>M_p(. | 11) = (1-1/N, 1/N),
+M_p(. | 21) = (1/N, 1-1/N),
+M_p(. | 12) = (1-p, p),
+M_p(. | 22) = (p, 1-p),
+0 &lt;= p &lt;= 1.</code></pre>
+<p>For each p, the stationary pair law is uniform on {11,12,21,22}. The proof places a uniform prior on p and extracts a harmonic-sum lower bound from selected trajectories; its terminal-risk conclusion is Eq. (117), p. 3945. Thus the binary result is established within the required structured second-order family and with a common stationary initial law.</p>
+<p>The preprint counterpart is Section 5.3.1, Theorem 24. The general-alphabet construction in published Section V-C2 / Theorem 26 is explicitly the A &gt;= 3 case and is not needed to justify A=2.</p>
+<h2 id="matching-lower-exact-indexing-and-fixed-a-threshold">4. Exact indexing and fixed-A threshold</h2>
+<p>The candidate observes X_1,...,X_{n+2}, with n observed transitions and terminal pair</p>
+<pre><code>Y_n = (X_{n+1},X_{n+2}).</code></pre>
+<p>HJW use N for the number of observed symbols. The exact substitution is therefore</p>
+<pre><code>N = n+2,  m = 2,  k = A.</code></pre>
+<p>Then their final context is the candidate's Y_n, and their next symbol is X_{n+3}. Hence, writing R_A^stat(n) for the candidate-indexed stationary minimax risk,</p>
+<pre><code>R_A^stat(n)
+  &gt;= A^3/[C_2(n+2)] * log[(n+2)/A^3]</code></pre>
+<p>whenever</p>
+<pre><code>n+2 &gt;= (C_2 A)^3.</code></pre>
+<p>For every fixed A, this gives Omega_A(log n/n) as n tends to infinity. For an explicit sufficient large-n comparison, additionally require n+2 &gt;= A^6. Then</p>
+<pre><code>log[(n+2)/A^3] &gt;= (1/2) log(n+2).</code></pre>
+<p>The absolute constant C_2 is not numerically specified by the theorem statement. No numerical value or all-n guarantee is invented here. The displayed logarithm and domain must be retained in any finite-sample or growing-alphabet restatement.</p>
+<h2 id="matching-lower-why-a-terminal-predictor-is-covered">5. Why a terminal predictor is covered</h2>
+<p>An arbitrary prediction rule q(X_1,...,X_N) in the A-symbol probability simplex can be represented as a row-valued estimator: put q in the realized terminal row and assign arbitrary probability vectors to the other rows. HJW's infimum over row-valued estimators therefore covers every history-dependent probability-vector predictor used here.</p>
+<p>If a predictor has internal randomness, conditional averaging of its output cannot increase forward KL, by convexity in the predicted distribution. Randomization therefore does not evade the minimax lower bound.</p>
+<p>In particular, the lower bound applies to the full-history add-one output, and also to a normalized architecture output if a separately verified upper bound is available for that output.</p>
+<h2 id="matching-lower-extension-to-arbitrary-initial-pair-distributions">6. Extension to arbitrary initial-pair distributions</h2>
+<p>Let R_A^all(n) be the minimax risk when both the kernel and the initial-pair distribution are arbitrary. The stationary parameter set is a subset of this larger parameter set. Thus</p>
+<pre><code>R_A^all(n) &gt;= R_A^stat(n).</code></pre>
+<p>Let B be the full-history add-one predictor. The candidate upper bound gives</p>
+<pre><code>sup_{all initial laws and kernels} E D_KL(p_{Y_n} || B)
+  &lt;= U_{A,n},</code></pre>
+<p>where U_{A,n} = O_A(log(n+2)/(n+1)). Therefore</p>
+<pre><code>R_A^stat(n)
+  &lt;= R_A^all(n)
+  &lt;= sup_all E D_KL(p_{Y_n} || B)
+  &lt;= U_{A,n}.</code></pre>
+<p>Furthermore,</p>
+<pre><code>R_A^stat(n) &lt;= sup_stationary E D_KL(p_{Y_n} || B).</code></pre>
+<p>Together these inequalities prove the claimed fixed-A minimax-rate match for both classes, conditional on the upper-bound theorem. The stationary lower bound is sufficient because a worst case in a smaller class is still a valid worst case in the larger class.</p>
+<p>This does not imply a lower bound for every prescribed initial distribution, every deterministic starting pair, or every fixed transition kernel. The supremum is taken separately at each sample length, and the hard source may depend on that length, as the displayed binary construction does.</p>
+<h2 id="matching-lower-correct-direction-of-alphabet-embedding">7. Correct direction of alphabet embedding</h2>
+<p>A lower bound over a larger alphabet does not imply a lower bound for the binary subclass. The valid monotonicity goes in the other direction.</p>
+<p>Embed any stationary binary second-order source in [A] by setting probabilities of symbols 3,...,A to zero and supporting the initial pair on {1,2}^2. Define unused rows arbitrarily. This is allowed in the candidate class, which permits zero probabilities and reducibility.</p>
+<p>For any A-symbol prediction q and binary-supported true row p, set</p>
+<pre><code>z = q_1+q_2,
+q&#39; = (q_1/z,q_2/z)  if z&gt;0.</code></pre>
+<p>For z&gt;0,</p>
+<pre><code>D_KL(p || q) = D_KL(p || q&#39;) - log z
+            &gt;= D_KL(p || q&#39;).</code></pre>
+<p>If z=0, the A-symbol loss is infinite, so the inequality is harmless after choosing any binary q'. This pointwise reduction maps every A-symbol estimator to a binary estimator. Taking the supremum over binary sources and then the infimum over estimators yields</p>
+<pre><code>R_{A,N,2} &gt;= R_{2,N,2}.</code></pre>
+<p>Thus Theorem 24 alone gives a matching order in N for every fixed A&gt;=2. This alternative argument does not recover the sharp A^3 factor of Theorem 22, but it is sufficient for fixed-A optimality in n.</p>
+<p>An unrelated shortcut is also invalid: applying a lower bound for arbitrary ordinary A^2-state chains does not automatically lower-bound the structured pair chains coming from an A-symbol second-order source. HJW's actual higher-order theorems avoid that issue.</p>
+<h2 id="matching-lower-exceptions-and-scope-limits">8. Exceptions and scope limits</h2>
+<ol type="1">
+<li>Binary first-order sources have a different stationary minimax rate, Theta(log log N/N), recalled in published Eq. (2), p. 3921. This does not contradict the binary second-order theorem.</li>
+<li>The conclusion is minimax optimality in sample length for fixed A. The candidate's leading upper-bound dependence is A^5, whereas the sharp stationary theorem has A^3. No growing-A optimality follows.</li>
+<li>This audit verifies the lower theorem's applicability and the reductions above. It is not a claim of literature priority, a survey of subsequent work, or a new proof of every step in HJW.</li>
+<li>The candidate's upper-bound acceptance must be determined by its independent exact-file analytical reviews. This audit supplies the matching lower half and does not silently promote an unreviewed upper theorem.</li>
+</ol>
+<h2 id="matching-lower-safe-summary-sentence">9. Safe summary sentence</h2>
+<p>For each fixed A&gt;=2, the verified full-history add-one upper bound matches the stationary second-order minimax lower bound of Han, Jana and Wu in its dependence on sample length; since stationary sources form a subset of sources with arbitrary initial-pair laws, it also establishes minimax-rate optimality over that larger class. The result does not establish sharp alphabet dependence or a pointwise lower bound for every source or initial law.</p>
+<!-- END matching-lower --></div></details>
+<details id="previous-statistical-proof"><summary>Preserved log-squared predecessor</summary><div class="appendix"><!-- BEGIN previous-statistical-proof -->
+<h1 id="previous-statistical-proof-full-history-terminal-kl-removing-the-extra-log-log-factor">Full-history terminal KL: removing the extra log-log factor</h1>
+<p>Analytical note, 3 November 2026. This is a separate refinement of the fixed-alphabet terminal KL proof. It does not modify the previously frozen proof or its deliverable. No numerical experiment, simulation, training, external upload, or public repository mutation was performed. Independent review is separate from this derivation.</p>
+<h2 id="previous-statistical-proof-result-and-scope">Result and scope</h2>
+<p>Let A&gt;=2 and n&gt;=1. Observe a homogeneous second-order source X_1,...,X_{n+2} on [A], with arbitrary transition probabilities and arbitrary initial pair distribution. Deterministic rows, zero probabilities, reducibility and periodicity are allowed. Put D=A^2 and Y_i=(X_{i+1},X_{i+2}), 0&lt;=i&lt;=n. For every context s define</p>
+<pre><code>J_s=sum_{i=0}^{n-1}1{Y_i=s},
+C_{s,b}=sum_{i=0}^{n-1}1{Y_i=s,X_{i+3}=b},
+B_s(b)=(C_{s,b}+1)/(J_s+A),
+J=J_{Y_n}.</code></pre>
+<p>Write p_s(b) for the true row probabilities. The loss is the forward KL divergence D_KL(p_{Y_n}||B_{Y_n}) at the actual terminal context, with natural logarithms. No independent query or suffix-averaged substitute is used.</p>
+<p>Define</p>
+<pre><code>t=max{1, log[2 A^3 n(n+1)^2]},
+c=A^4/(n+1) for arbitrary initial pairs,
+c=A^2/(n+1) for stationary initial pairs,
+U_new=c{(24At+log 2)[1+log(n+1)]
+             + A(16t+1)log(32t)}
+             + log(n+A)/(n+1)^2,
+V_new=min{log(n+A), U_new}.</code></pre>
+<p>Then</p>
+<pre><code>E D_KL(p_{Y_n}||B_{Y_n}) &lt;= V_new.                    (1)</code></pre>
+<p>In particular, for each fixed A the risk is O_A(log^2(n+2)/(n+1)), uniformly over all sources and initial pair distributions stated above. This removes the extra log-log factor from the previously reviewed O_A(log^2 n loglog n/n) bound. It does not establish O_A(log n/n), optimal alphabet dependence, or a matching lower bound for this estimator. At n=0 the elementary bound log A applies.</p>
+<p>The same argument applies to a finite-state homogeneous chain with D contexts and A possible emitted outcomes per context, provided the outcome and next-state mechanism admits the standard independent row-stack representation. For an ordinary D-state chain, take A=D. The present second-order source has D=A^2.</p>
+<h2 id="previous-statistical-proof-fixed-target-terminal-occupation">1. Fixed-target terminal occupation</h2>
+<p>Fix a target state s and integer w&gt;=1. For a chain started at z let</p>
+<pre><code>b_m^s(z)=P_z(Y_m=s, sum_{i=0}^{m-1}1{Y_i=s}&lt;w),
+B_m^s=max_z b_m^s(z).</code></pre>
+<p>For m&gt;=ell, having fewer than w full-history copies of s implies having fewer than w copies in the last ell departures. Conditioning on Y_{m-ell} and using homogeneity yields B_m^s&lt;=B_ell^s. On a deterministic path only the first w occurrences of s can satisfy this flag, so sum_{m=0}^n b_m^s(z)&lt;=w for every z. Consequently</p>
+<pre><code>(n+1)B_n^s &lt;= sum_{m=0}^n B_m^s
+            &lt;= sum_z sum_{m=0}^n b_m^s(z) &lt;= Dw.</code></pre>
+<p>Taking any mixture over the initial state proves</p>
+<pre><code>P(Y_n=s,J_s&lt;w) &lt;= r w,
+r=D/(n+1).                                           (2)</code></pre>
+<p>Under stationary initialization one instead has r=1/(n+1). Indeed, among r'=n,...,2n at most w times can satisfy Y_{r'}=s and have fewer than w copies of s in their preceding n positions: if w+1 were marked, the last marked time has all w earlier marks inside that window. Stationarity makes each marked event have the probability on the left of (2). This proves the improved bound.</p>
+<p>In both cases c=Dr. Summing (2) over target states gives P(J&lt;w)&lt;=cw. Summation by parts then gives</p>
+<pre><code>E[1/(J+1)]
+  =1/(n+1)+sum_{k=0}^{n-1}P(J&lt;=k)/[(k+1)(k+2)]
+  &lt;=1/(n+1)+c sum_{k=0}^{n-1}1/(k+2)
+  &lt;=c[1+log(n+1)].                                    (3)</code></pre>
+<p>The per-target form (2), rather than only its sum, is essential below because the true row probabilities vary with the terminal state.</p>
+<h2 id="previous-statistical-proof-one-simultaneous-deterministic-prefix-event">2. One simultaneous deterministic-prefix event</h2>
+<p>Generate n independent categorical entries for each of the A^2 rows, independently across rows and independently of the initial pair. At a departure from s consume its next unused entry. The resulting source has exactly the required transition law. Let K_{s,b,j} count symbol b in the first j entries of row s. Then C_{s,b}=K_{s,b,J_s} pathwise.</p>
+<p>Bernstein's inequality and a union bound over A^2 rows, A symbols and n deterministic prefix lengths give an event G with</p>
+<pre><code>|K_{s,b,j}-jp_s(b)| &lt;= sqrt(2jp_s(b)t)+2t/3             (4)</code></pre>
+<p>for all those prefixes, and</p>
+<pre><code>P(G^c)&lt;=2A^3 n exp(-t)&lt;=(n+1)^(-2).                    (5)</code></pre>
+<p>At j=0 inequality (4) is deterministic. No binomial or independence assertion is made after conditioning on J_s, on Y_n, or on the observed path. Evaluation at the selected row and selected prefix uses only simultaneous pathwise validity.</p>
+<h2 id="previous-statistical-proof-a-scale-choice-that-removes-smoothing-dependence-from-t">3. A scale choice that removes smoothing dependence from t</h2>
+<p>Fix any row and deterministic prefix, and abbreviate j&gt;=0, p_b=p_s(b), k_b=K_{s,b,j}, q_b=(k_b+1)/(j+A). Set</p>
+<pre><code>h(x,a)=x log(x/a)-x+a,
+x_b=(j+1)p_b, a_b=k_b+1, z_b=jp_b.</code></pre>
+<p>Use 0 log 0=0. Since sum_b x_b=j+1 and sum_b a_b=j+A,</p>
+<pre><code>sum_b h(x_b,a_b)
+   =(j+1)D_KL(p||q)+(A-1)
+                -(j+1)log[1+(A-1)/(j+1)]
+   &gt;=(j+1)D_KL(p||q),                                 (6)</code></pre>
+<p>by log(1+u)&lt;=u. Thus this rescaling, unlike x_b=(j+A)p_b, gives only the displacement p_b-1, whose absolute value is at most one. It needs t&gt;=1, not t&gt;=A.</p>
+<h2 id="previous-statistical-proof-split-by-the-true-coordinate-mean">4. Split by the true coordinate mean</h2>
+<p>For one coordinate suppress b. Under (4), write delta=k-z. Then</p>
+<pre><code>delta^2&lt;=4zt+8t^2/9,
+(x-a)^2&lt;=2delta^2+2&lt;=8zt+(34/9)t^2.                  (7)</code></pre>
+<p>Here x=z+p, a=k+1, and t&gt;=1. The elementary inequality h(x,a)&lt;=(x-a)^2/a holds for x&gt;=0,a&gt;0, including x=0 by continuity.</p>
+<p>If z&gt;=16t, then</p>
+<pre><code>a&gt;=z-sqrt(2zt)-2t/3 &gt;=z/2,</code></pre>
+<p>because sqrt(2t/z)+2t/(3z)&lt;=1/sqrt(8)+1/24&lt;1/2. Hence</p>
+<pre><code>h(x,a)&lt;=2[8+34/144]t&lt;17t.                             (8)</code></pre>
+<p>If z&lt;16t, then</p>
+<pre><code>a&lt;=16t+sqrt(32)t+2t/3+1&lt;=24t.</code></pre>
+<p>Since a&gt;=1, h(x,a)&lt;=x log_+x+a. The binary entropy inequality gives</p>
+<pre><code>(z+p)log_+(z+p)&lt;=z log_+(2z)+p log_+(2p),             (9)</code></pre>
+<p>with zero terms interpreted as zero. For z+p&gt;1 this follows from (z+p)log(z+p)&lt;=z log(2z)+p log(2p), and replacing negative logarithms by zero only increases the right side. For z+p&lt;=1 it is immediate. Thus</p>
+<pre><code>h(x,a)&lt;=24t+z log_+(2z)+p log_+(2p).                  (10)</code></pre>
+<p>Combine (8) and (10), sum the coordinates, and use</p>
+<pre><code>sum_b p_b log_+(2p_b)&lt;=log 2.</code></pre>
+<p>Equations (6)-(10) yield the pointwise inequality</p>
+<pre><code>D_KL(p||q)
+  &lt;=(24At+log 2)/(j+1)
+    +sum_b p_b log_+(2jp_b)1{jp_b&lt;16t}.               (11)</code></pre>
+<p>The factor jp_b/(j+1) from (6) was upper bounded by p_b. The argument also covers j=0, p_b=0 and p_b=1.</p>
+<p>Unlike a uniform bound of order t log t/(j+A), (11) charges the log t factor only where that particular true coordinate mean is small.</p>
+<h2 id="previous-statistical-proof-integrate-the-small-mean-term-before-summing-the-rows">5. Integrate the small-mean term before summing the rows</h2>
+<p>Fix s,b and put p=p_s(b), T=16t. If p=0 the corresponding term is zero. If p&gt;0, the log is bounded above by log(2T) on {J_s p&lt;T}. With w=ceil(T/p), this event implies J_s&lt;w, including the case T/p is an integer. Equation (2) therefore gives</p>
+<pre><code>E[1{Y_n=s}p log_+(2J_s p)1{J_s p&lt;T}]
+  &lt;=p log(2T) P(Y_n=s,J_s&lt;T/p)
+  &lt;=p log(2T) r ceil(T/p)
+  &lt;=r(T+p)log(2T)
+  &lt;=r(T+1)log(2T).                                   (12)</code></pre>
+<p>The use of (2) remains valid when the ceiling exceeds n, because its upper bound need not be below one. Summing (12) over the D rows and A symbols gives at most</p>
+<pre><code>c A(16t+1)log(32t).                                  (13)</code></pre>
+<p>This sum does not extract a random terminal-row probability from an expectation. Each p in (12) is fixed first; only then are rows summed.</p>
+<p>On G, apply (11) to the selected terminal row and count. Use (3), (12)-(13) without conditioning on G. On every path, q_b&gt;=1/(j+A), so D_KL(p||q)&lt;=log(j+A)&lt;=log(n+A). The complement G^c therefore costs at most log(n+A)/(n+1)^2. This proves (1).</p>
+<h2 id="previous-statistical-proof-transfer-to-the-reviewed-five-block-output">6. Transfer to the reviewed five-block output</h2>
+<p>The five-block exact-real output construction in the prior fixed-alphabet note is unchanged. Its proved pathwise bounds, with L=n+2+A, are</p>
+<pre><code>TV(R,B)&lt;=min{1,(44A+1)/L},
+R_b&gt;=1/[1+(A-1)L]&gt;=1/(AL).</code></pre>
+<p>Its entropy-variational KL transfer consequently gives</p>
+<pre><code>E D_KL(p_{Y_n}||R)
+   &lt;=2V_new+2A(44A+1)^2/L.                            (14)</code></pre>
+<p>The deterministic cap log[1+(A-1)L] may also be taken. Thus the same output has O_A(log^2 n/n) statistical risk and an O_A(1/n) implementation penalty. No additional architecture, training, finite-precision, or computational claim is made here.</p>
+<h2 id="previous-statistical-proof-what-this-does-not-establish">7. What this does not establish</h2>
+<p>The remaining harmonic occupation factor and the logarithmic confidence level give log^2 n/n. Merely replacing the confidence event by an exponential-tail self-normalized bound and separately using the occupation envelope does not justify log n/n. A simple abstract counterexample to that inference is J uniform on {1,...,n} and W=log(n/J):</p>
+<pre><code>P(J&lt;w)&lt;=w/n,
+P(W&gt;u)&lt;=exp(-u), u&gt;=0,
+E[W/J]=(1/n)sum_{j=1}^n log(n/j)/j
+       =(log n)^2/(2n)+O(log n/n).</code></pre>
+<p>This is a barrier for arguments using only those two marginal bounds. It is not a Markov-source lower bound and does not show the present log^2 rate is optimal. Achieving O_A(log n/n) would require additional control of how the row-estimation error and terminal occupation depend on each other, or a different argument.</p>
+<p>Han, Jana and Wu, "Optimal prediction of Markov chains with and without spectral gap," IEEE Transactions on Information Theory 69(6), 2023, 3920-3959, Remark 1, explicitly distinguish suffix-averaged add-one from full-history add-one and leave the latter's optimality open in their stated setting. The present O_A(log^2 n/n) result does not resolve that question, and does not transfer their stationary minimax theorem to arbitrary initialization. It also does not claim that their 2023 question remains unresolved in all later literature. Primary publication: <a href="https://doi.org/10.1109/TIT.2023.3239508" class="uri">https://doi.org/10.1109/TIT.2023.3239508</a> ; author preprint: <a href="https://arxiv.org/abs/2106.13947" class="uri">https://arxiv.org/abs/2106.13947</a> . The relevant text was checked in the locally available published PDF.</p>
+<h2 id="previous-statistical-proof-sources-and-provenance">Sources and provenance</h2>
+<ul>
+<li>Prior fixed-alphabet proof: ../fixed_alphabet_kl_upgrade_20261103_2300/fixed_alphabet_terminal_kl.v1.md, particularly Sections 2-4 and 8. The prior frozen files are not overwritten.</li>
+<li>Published HJW PDF inspected locally: [preparation path omitted; see the DOI and source identity] from this note's directory, or [preparation path omitted; see the DOI and source identity] from the workspace root.</li>
+<li>The fixed-target occupation bound is the target-specific version of the prior shift-and-charge argument. The improvement arises by splitting true means before occupation averaging. The j+1 rescaling was suggested during independent analytical discussion and must be included in review of this exact file.</li>
+</ul>
+<p>No numerical work supplies any step of this proof. This note is an estimator-specific upper-bound refinement, not a claim of literature priority or formal verification.</p>
+<!-- END previous-statistical-proof --></div></details>
+<details id="previous-statistical-review"><summary>Analytical review of the log-squared predecessor</summary><div class="appendix"><!-- BEGIN previous-statistical-review -->
+<h1 id="previous-statistical-review-exact-file-analytical-review-logarithm-squared-terminal-kl">Exact-file analytical review: logarithm-squared terminal KL</h1>
+<p>3 November 2026. <strong>PASS for the exact note identified below.</strong> No numerical experiments, simulations, sample enumeration, training, uploads, or public repository changes were performed.</p>
+<h2 id="previous-statistical-review-reviewed-source-and-review-scope">Reviewed source and review scope</h2>
+<ul>
+<li>Source: <code>log_squared_terminal_kl.v1.md</code>.</li>
+<li>SHA-256: <code>5121f41a8cea60692de1ab845d26aeb92155416f2d981ff3dd5da2c433c92488</code>.</li>
+<li>The entire frozen source, including its finite-parameter theorem, proof, readout transfer, marginal-bound example, and scope statements, was inspected.</li>
+</ul>
+<p>This review followed analytical discussion with the author, including a suggestion to use the j+1 rescaling. It independently reconstructs and checks the resulting exact-file algebra and dependence arguments; it is not a claim of blind external peer review or wholly independent invention. The theorem is an upper bound, not a claim of optimality or literature priority.</p>
+<h2 id="previous-statistical-review-main-finding">1. Main finding</h2>
+<p>The stated U_new and V_new are valid for every finite A&gt;=2 and n&gt;=1, with the distinct arbitrary-initial and stationary values of c exactly as written. For each fixed A they imply</p>
+<pre><code>sup E D_KL(p_{Y_n} || B_{Y_n})
+    = O_A(log^2(n+2)/(n+1)).</code></pre>
+<p>The proof includes zero probabilities, deterministic rows, reducibility, periodicity, arbitrary initial pairs, and the actual terminal query. It does not condition transition counts to be binomial. At n=0 the separately stated log A bound is correct.</p>
+<p>The logarithm-squared improvement is substantive: the logarithm attached to a small true coordinate mean is averaged with a target-specific occupation bound before the row probabilities are summed. It does not incur the additional harmonic factor that arose from applying one uniform t log t bound to every count.</p>
+<h2 id="previous-statistical-review-target-specific-occupation-and-reciprocal-moment">2. Target-specific occupation and reciprocal moment</h2>
+<p>For a fixed target s, the suffix argument proves that the maximum over initial states B_m^s is nonincreasing in m. It does not require monotonicity for each individual initial state. The flag Y_m=s with fewer than w earlier copies of s can occur at most w times on a deterministic trajectory. Summing separately over the D starting states and then using max&lt;=sum gives</p>
+<pre><code>P(Y_n=s,J_s&lt;w) &lt;= Dw/(n+1)</code></pre>
+<p>under arbitrary initialization. The stationary n-window flag argument gives w/(n+1). Both proofs were checked, including the integer endpoints of the preceding n-position window.</p>
+<p>Thus r=D/(n+1) or 1/(n+1), while c=Dr. Summing over the target states recovers the corresponding actual-terminal occupation bound. The summation-by-parts identity for 1/(J+1) includes J=0 and gives exactly c[1+log(n+1)]. No minimum stationary mass, mixing assumption, or positive transition lower bound is introduced.</p>
+<h2 id="previous-statistical-review-confidence-event-and-terminal-selection">3. Confidence event and terminal selection</h2>
+<p>There are A^2 categorical row stacks, A symbol indicators per stack, and n positive deterministic prefix lengths. The two-sided Bernstein union bound is therefore 2A^3 n exp(-t). The displayed t makes this at most (n+1)^-2. The j=0 inequality is deterministic.</p>
+<p>Each row stack is unconditionally iid at each deterministic prefix. The original homogeneous source is obtained by consuming the next unused entry at each departure. On the simultaneous event, every row/prefix estimate can be evaluated pathwise at the actual terminal row and its count. Neither count conditioning nor terminal-selection independence is needed. Correlation among categorical indicator coordinates does not invalidate a union bound.</p>
+<h2 id="previous-statistical-review-rescaling-and-scalar-constants">4. Rescaling and scalar constants</h2>
+<p>With x_b=(j+1)p_b and a_b=k_b+1, direct expansion gives</p>
+<pre><code>sum_b h(x_b,a_b)
+  =(j+1)D_KL(p||q)+(A-1)
+    -(j+1)log[1+(A-1)/(j+1)].</code></pre>
+<p>The final remainder is nonnegative by log(1+u)&lt;=u. The inequality direction in (6) is consequently correct. This is the essential reason that the displacement is p_b-1 rather than Ap_b-1, and that t&gt;=1 suffices for every A. No hidden t&gt;=A hypothesis survives.</p>
+<p>On the Bernstein event, delta^2&lt;=4zt+8t^2/9 and |p-1|&lt;=1 give</p>
+<pre><code>(x-a)^2&lt;=8zt+(34/9)t^2.</code></pre>
+<p>For z&gt;=16t the lower bound a&gt;=z/2 holds. The resulting coefficient is 16+17/36, strictly smaller than 17. The large-mean branch therefore has the claimed 17t upper bound.</p>
+<p>For z&lt;16t, the count bound gives a&lt;=24t, including the +1 pseudocount because t&gt;=1. The inequality</p>
+<pre><code>(z+p)log_+(z+p)&lt;=z log_+(2z)+p log_+(2p)</code></pre>
+<p>is valid. It also follows from convexity of f(u)=u log_+u and f(z+p)&lt;=one-half f(2z)+one-half f(2p), with f(0)=0. Since a&gt;=1, dropping the nonpositive terms in h proves the stated small-mean bound.</p>
+<p>Finally, sum_b p_b log_+(2p_b)&lt;=log 2 because each logarithmic factor is at most log 2 and the probabilities sum to one. Combining the branches yields exactly</p>
+<pre><code>D_KL(p||q)
+  &lt;=(24At+log 2)/(j+1)
+    +sum_b p_b log_+(2jp_b) 1{jp_b&lt;16t}.</code></pre>
+<p>This argument remains valid at j=0, p_b=0, and p_b=1. The notation for zero logarithmic terms is explicitly supplied in the source.</p>
+<h2 id="previous-statistical-review-low-mean-expectation-and-row-dependence">5. Low-mean expectation and row dependence</h2>
+<p>For each fixed row s and symbol b, p=p_s(b) is a fixed parameter. If p=0 the term is zero. Otherwise the strict event J_s p&lt;T is exactly represented by J_s&lt;ceil(T/p), including when T/p is an integer. The target-specific occupation bound therefore gives</p>
+<pre><code>E[1{Y_n=s} p log_+(2J_s p) 1{J_s p&lt;T}]
+   &lt;=r(T+p)log(2T)
+   &lt;=r(T+1)log(2T).</code></pre>
+<p>The ceiling need not be at most n: the occupation upper bound may exceed one and still be valid. There is no division by zero, and arbitrarily small positive p causes no failure.</p>
+<p>Only after obtaining this bound for a fixed p does the proof sum over D rows and A symbols. This gives DAr(T+1)log(2T)=cA(T+1)log(2T), with the exact displayed T=16t. In particular it does not pull the probability of the randomly selected terminal row outside an expectation.</p>
+<p>All terms used to dominate the good-event loss are nonnegative, so dropping the good-event indicator before applying the unconditional occupation bounds is legitimate. On its complement the deterministic log(n+A) loss cap gives the stated failure contribution. This proves the entire U_new expression and its cap V_new.</p>
+<p>For fixed A, t=O_A(log(n+2)). The rare term t log(32t) is no larger than a constant times t^2 for t&gt;=1, while the main term is t times a harmonic logarithm. Thus the claimed O_A(log^2 n/n) order follows. The explicit bound, rather than this fixed-A asymptotic notation, must be used when A grows.</p>
+<h2 id="previous-statistical-review-readout-transfer-and-unchanged-computation">6. Readout transfer and unchanged computation</h2>
+<p>The exact-real five-block approximation and output floor are unchanged. Applying its previously reviewed pointwise entropy-variational inequality with the new add-one expectation gives exactly</p>
+<pre><code>E D_KL(p_{Y_n}||R)
+   &lt;=2V_new+2A(44A+1)^2/L.</code></pre>
+<p>The deterministic log[1+(A-1)L] cap is valid. The new proof does not give the estimator a true-probability input: z=jp and the branch split are analysis-only quantities. No architecture, parameter, data port, training, or arithmetic-backend change is required by this statistical refinement.</p>
+<p>The side statement about D contexts and A possible outcomes is a valid adaptation of the proof. For an explicit general-D formula, its confidence union factor is 2DAn rather than 2A^3n, and c is D^2/(n+1) or D/(n+1). The second-order theorem already has D=A^2, so its displayed formulas are correct without modification. This is a clarification of the generalization, not a defect in the stated order-two result.</p>
+<h2 id="previous-statistical-review-marginal-bound-barrier-and-attribution">7. Marginal-bound barrier and attribution</h2>
+<p>The abstract example J uniform on {1,...,n}, W=log(n/J) satisfies both displayed marginal tails. Its expectation is</p>
+<pre><code>E[W/J]=(1/n)sum_{j=1}^n log(n/j)/j.</code></pre>
+<p>The integrand log(n/x)/x is nonnegative and decreasing on [1,n]; comparison with its integral gives one-half log^2 n with discrepancy at most log n before division by n. Hence the claimed asymptotic expansion is correct.</p>
+<p>This example demonstrates a limitation of arguments using only those two marginal inequalities. It is correctly not presented as a Markov-source lower bound or an optimality result for full-history add-one.</p>
+<p>The cited HJW Remark 1 was checked against the locally preserved published text. It distinguishes the usual full-history estimator from its suffix average and states an open optimality question in the paper's setting. The note appropriately avoids claiming that the 2023 question remains open throughout all later literature. The local published-PDF path and the prior-proof relative path resolve as described.</p>
+<h2 id="previous-statistical-review-verdict">Verdict</h2>
+<p><strong>PASS</strong> for source SHA-256 <code>5121f41a8cea60692de1ab845d26aeb92155416f2d981ff3dd5da2c433c92488</code>. No mathematical correction is required for its fixed-alphabet order-two theorem. The explicit initial-law distinctions, growing-alphabet limitations, analysis-only true-mean split, and nonoptimality qualifications must be retained.</p>
+<!-- END previous-statistical-review --></div></details>
+</main>
+<section id="integrity-ledger" class="integrity"><h2>Source integrity ledger</h2>
+<p>Every proof and review listed here is embedded in full. Text uses plain mathematical notation so that no equation service, script, font download or other network resource is required. Expand the appendices to read prerequisite proofs and reviews. External links are citations only. Source filenames retain their original versions; the JSON bindings also record copied-source provenance. The final HTML hash is recorded separately to avoid a circular self-hash.</p>
+<table><thead><tr><th>Exact source file</th><th>SHA-256</th></tr></thead><tbody><tr><td>sharp_kl_output_corollaries.v1.md</td><td><code>9173ba24c276f1fed8b08a3d59963e8fefc1b3b0c9bfea61729bffafadce5481</code></td></tr>
+<tr><td>tilted_occupation_terminal_kl.candidate.v1.md</td><td><code>c42b6f1d86c9c91aa6ba8257a86c613150e6fb477deb549cd70d1e7b79548281</code></td></tr>
+<tr><td>tilted_occupation_analytical_review.v1.md</td><td><code>ff017863649fff8b40a408988b45444b9c44b130a5a31956d1f9eb541f44b396</code></td></tr>
+<tr><td>tilted_occupation_independent_review.v1.md</td><td><code>35f7462b813409fbbd0fbe97f2e87db96d2181caef66e2540758a9414bcaba04</code></td></tr>
+<tr><td>sources/fixed_alphabet_terminal_kl.v1.md</td><td><code>ca5e4d0c0ee5d7b20c8dcd5a0a58775d0e570bf3571837c6c2750e4e964c4a58</code></td></tr>
+<tr><td>reviews/exact_real_analytical_review.v1.md</td><td><code>a0c2e2273ef72693884eeb8df05e63efd80329597f9930ad6b8f93027e2c8787</code></td></tr>
+<tr><td>sources/precision_budget_constructive_candidate.v1.md</td><td><code>e555323ee18b39b0003863e9d41084d6f2222a575c340b0a9bb8c87213d01a16</code></td></tr>
+<tr><td>reviews/precision_analytical_review.v1.md</td><td><code>9535c259b8a6838110e0ac443d9a4375430d26853edfc76f5b5de841fbcc30dd</code></td></tr>
+<tr><td>reviews/precision_adversarial_review.v1.md</td><td><code>637c8464d5eeba6590479be02ee00c743bcdedb0572dd4fe414200cb23976197</code></td></tr>
+<tr><td>sources/targeted_prior_art_audit.v2.md</td><td><code>75cfbcfd44428dc2b3cd72e7865250456353faea52255347788c737822b7cf4f</code></td></tr>
+<tr><td>primary_source_matching_lower_audit.v1.md</td><td><code>23453533ce43a5568a02d93794036c26f1e25e65d31a681646918abcaa15a2bc</code></td></tr>
+<tr><td>log_squared_terminal_kl.v1.md</td><td><code>5121f41a8cea60692de1ab845d26aeb92155416f2d981ff3dd5da2c433c92488</code></td></tr>
+<tr><td>analytical_review.v1.md</td><td><code>9a48899199b91013fdcbd4f3e06b0e82bcd4f2a41f4eaa90be152329b0f2347b</code></td></tr></tbody></table></section>
+<footer>No mathematical numerical work, model training, external upload or public repository mutation was performed for this package. The statistical theorem concerns fixed alphabets with an A^5 upper factor; its finite-bit corollary concerns only the explicitly specified arbitrary-precision evaluator.</footer>
+</body></html>
