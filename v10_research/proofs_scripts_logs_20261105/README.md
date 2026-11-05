@@ -1,0 +1,3 @@
+# Research proofs, scripts, and logs
+
+This archive contains 6,264 research files and two package metadata files, including proofs, source scripts, and short logs. Six numbered parts reconstruct the ZIP by concatenation in order. Verify the ZIP SHA-256: ff13f6e3d03b6d878ee00bc5ac3a087a2f82c7aa50eab6d7668f3120b45bdf0a. The manifest records member identities and scope. This archive does not include all large numerical records; those are being prepared separately. Some public text is a privacy-preserving derivative; missing historical data remains missing. Review of privacy and packaging does not certify all mathematical claims, prior execution, or external peer review.
