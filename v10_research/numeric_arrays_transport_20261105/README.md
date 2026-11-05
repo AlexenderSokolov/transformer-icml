@@ -1,0 +1,3 @@
+# Numerical data and retained failure fixtures
+
+This collection contains 79 NPY files, 284 synthetic numerical traces, and 12 intentionally malformed or path-rejection fixtures. The numbered parts concatenate in order into numeric_arrays_and_traces.zip. Verify SHA-256 7c5a2283429ca63067f0d7ad75fb97c74f4f9244d649b67478e7eb8316e34244. REBUILD_ZIP.py verifies the manifest and reconstructs the ZIP without overwriting an existing destination. Treat the 12 deliberately unsafe archive fixtures as opaque test evidence; do not extract them indiscriminately. The collection is one part of the larger v10 archive, not a new experiment or recovery of historically missing data.
