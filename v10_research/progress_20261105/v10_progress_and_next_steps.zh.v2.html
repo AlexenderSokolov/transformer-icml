@@ -1,0 +1,613 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>v10 研究总进展与下一阶段计划</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:#17202b;background:#f7f8fa;font:17px/1.8 system-ui,-apple-system,"Noto Sans CJK SC","Microsoft YaHei",sans-serif}main{max-width:980px;margin:0 auto;background:white;padding:44px 58px 90px}h1{font-size:32px;line-height:1.35;color:#000;margin:0 0 12px}h2{font-size:25px;color:#000;line-height:1.4;margin:44px 0 15px;scroll-margin-top:20px}h3{font-size:20px;color:#000;line-height:1.5;margin:28px 0 10px;scroll-margin-top:20px}p{margin:12px 0}li{margin:9px 0}a{color:#154f91;text-decoration-thickness:1px;text-underline-offset:3px}.cite{white-space:nowrap}nav{margin:24px 0 36px;padding:10px 0}nav ol{columns:2;column-gap:40px;padding-left:24px}nav li{font-size:15px;break-inside:avoid;line-height:1.5;margin:7px 0}.formula{margin:17px 0;padding:8px 0 8px 20px;white-space:pre-wrap;overflow-wrap:anywhere;font:17px/1.8 "Noto Sans CJK SC",system-ui,sans-serif}.hash{font:12px/1.5 ui-monospace,monospace;color:#525f6b;overflow-wrap:anywhere}strong{font-weight:700}@media(max-width:680px){body{font-size:16px}main{padding:26px 20px 60px}h1{font-size:27px}h2{font-size:22px}h3{font-size:19px}nav ol{columns:1}.formula{font-size:15px;padding-left:10px}}@media print{body{background:white;font-size:11pt}main{max-width:none;padding:0}h2,h3{break-after:avoid}nav{display:none}.formula{font-size:10pt}a{color:#000}p,li{orphans:3;widows:3}}</style></head><body><main><h1 id="sec0">v10 研究总进展与下一阶段计划</h1>
+<p>2026 年 11 月 5 日 · 人工修订版本 2 · 主体已纳入的科学结果截至 13:27:09 UTC（有限候选补充的审查时点）；同期归一化新组合的条件审查状态补充至 13:48 UTC。</p>
+<p><strong>制品状态：</strong>这是候选阅读报告。原版的生成、来源哈希与 HTML 静态检查没有完成事前独立门禁、完整运行前冻结及完整捕获，不能称合规复现或静态验收通过。本版在保留原版后直接人工修订，没有运行生成器、检查器、哈希或渲染；不以本次修订追认旧记录。</p>
+<nav aria-label="目录"><p><strong>目录</strong></p><ol><li><a href="#sec1">1 现在做到什么程度</a></li><li><a href="#sec2">2 共同问题与不能混用的合同</a></li><li><a href="#sec3">3 统计主干已经建立到哪一步</a></li><li><a href="#sec6">4 精度与表示资源已经有多条前沿</a></li><li><a href="#sec9">5 严格架构主线的核心结果</a></li><li><a href="#sec14">6 归一化从待解决问题变成有条件的正结果</a></li><li><a href="#sec15">7 污染研究必须先分清预测的对象</a></li><li><a href="#sec16">8 在线通道的状态成本与最新推进</a></li><li><a href="#sec21">9 已知通道的 Transformer 桥接付了什么代价</a></li><li><a href="#sec22">10 实际算术与执行证据的真实状态</a></li><li><a href="#sec27">11 创新性应怎样定位</a></li><li><a href="#sec28">12 下一阶段按明确验收条件继续</a></li><li><a href="#sec34">13 本次总结的边界</a></li><li><a href="#sec35">14 证据索引</a></li></ol></nav>
+<h2 id="sec1">1 现在做到什么程度</h2>
+<p><strong>已经越过“能否构造一个会预测的网络”的阶段，形成了几条有明确条件、上下界和完整证明材料的理论主线；还没有达到“普通训练能找到这些网络，且标准硬件能可靠执行”的阶段。</strong></p>
+<p>最初目标是：面对未知二阶随机规律，解释 Transformer 何时能够预测正确的下一符号概率，需要多少历史、深度、宽度与精度，以及归一化和误差如何改变这些条件。现在，统计收敛、受限架构的资源前沿、真正 Pre-LN／Post-LN 的存在性、污染后的目标识别和部分状态预算前沿，都已取得可单独陈述的结果。更困难的训练可达性、一般重复注意力前沿、统一机器误差合同及未知阶／隐藏状态／时变源，仍没有闭合。</p>
+<p>因此不适合报告一个“完成百分比”。更准确的研究成熟度是：<strong>已有可组织成论文的理论材料及有限实现证据，但论文主线仍需收束，实际运行与外部确认仍有明确缺口。</strong></p>
+<p>本报告的“已复核”仅表示有相应版本的内部数学审读或明确的有限执行检查。它不等于形式化证明、外部同行评审、新颖性认证、训练成功或普通浮点保证。以下“统计界”“构造界”“实测结果”分别标注，不相互替代。</p>
+<h2 id="sec2">2 共同问题与不能混用的合同</h2>
+<p>观察 N=M+2 个真实符号，共 M 次转移；未知源是有限字母表上的齐次至多二阶 Markov 核，因此允许一阶与 iid 子族。要预测的是这同一历史实际末端对 S=(X_{N−1},X_N) 对应的下一符号分布。合成查询行不是额外观测。</p>
+<p>对状态链记 P((a,b),(b,c))=θ_ab(c)。后文 D₂(β) 的精确定义是：存在平稳对分布 Π，使 P²(s,t)≥βΠ(t)，对全部对状态 s,t 成立，0≤β≤1。它包括平稳支撑之外的起点，不能只在已访问状态上检查；Π 是隐藏源律而非估计器输入。β 是公开的小化证书，不是注意力温度。平稳实验从 Π 初始化，任意初始化实验另允许未知初始分布。</p>
+<p>主要损失是期望总变差 TV（半 L₁ 距离）和真分布到预测分布的 forward KL。统一于未知源的期望风险，不等于每条历史都准确，也不等于条件于每个罕见末端状态都准确。平稳初始化、任意未知初始化、独立训练与测试轨迹是不同实验。</p>
+<p>在严格架构主线中，输入是原始 one-hot 和公开位置，注意力为包含自身的全前缀因果 softmax；没有免费滞后符号、计数、硬复制掩码或外部解码。完整隐藏／值向量、矩阵算子、整偏置及逐原语 Lipschitz 预算同时固定。常数可依固定字母表 K，但不能随 N 或精度偷偷增长。允许随 N 构造、层间不共享的参数。</p>
+<p><strong>一个物理头不等于一次有用调用；常宽不等于常数总内存；可描述的精确参数不等于机器能够可靠计算；统计估计器存在不等于后验计算免费。</strong></p>
+<h2 id="sec3">3 统计主干已经建立到哪一步</h2>
+<h3 id="sec4">3.1 同历史实际末端的全历史 add-one</h3>
+<p>对行 u、后继 c，用 Bᵤ(c)=(Cᵤ,c+1)/(Jᵤ+K)。任意齐次二阶源、任意初始化已有已复核上界 <a class="cite" href="#A1">[A1]</a>：</p>
+<div class="formula">E TV(B_S, p_S) ≤ min{1, 13√(K⁵/(N−1))}。</div>
+<p>令 h=K⁵/(N−1)，Ψ(h)=log(1+h)+h log(1+1/h)，还保留 forward-KL 包络 min{log(N−2+K),1000Ψ(h)}。固定 K 时分别给 O(N⁻¹ᐟ²) 和 O(log N/N)。证明处理末端与计数的依赖，没有把随机访问次数条件下的后继当作 iid。</p>
+<p>平稳初始化的更细统计支线给出 <a class="cite" href="#A2">[A2]</a>：</p>
+<div class="formula">E KL(p_S ∥ B_S)
+≤ min{log(M+K), 14000 K³/(M+1) · [1+log₊((M+1)/K³)]}。</div>
+<p>它允许零转移、可约性、周期性和多个闭类，无需混合速率或统一正转移下限。在 HJW 已有高阶 minimax 定理的适用区间内，对应 K³/N·log(N/K³) 阶；已知最优速率本身来自前人，本项目候选增量是普通全历史 add-one 达到该阶，而不是发明这一 minimax 速率。</p>
+<p>普通一阶 k 状态链有相应 k²/N·[1+log₊(N/k²)] 上界，涉及 HJW 2023 所列 full-history add-one 问题。它值得单独组织完整证明与外部审阅，不能据有限文献检索宣布“首次解决至今开放问题”。二元一阶是例外：普通 add-one 最坏 KL 为 Θ(log N/N)，而已知 minimax 是 Θ(log log N/N)，因此不能统一宣传 add-one 在全部阶数和字母表上最优。</p>
+<p>任意初始化的增长 K 问题还涉及历史 MM5 下界来源绑定差异 <a class="cite" href="#A3">[A3]</a>。新审读曾直接分析当前原件，但旧报告引用另一哈希这一历史事实尚未解释。本报告保留此限制，不把依赖 MM5 的联合最优性宣传为无条件关闭；上述独立上界并不依赖修复这条旧记录。</p>
+<h3 id="sec5">3.2 原机制与罕见上下文</h3>
+<p>原固定温度软匹配的“经验条件分布与背景混合”及利用背景／行质量作代数恢复，已形成明确接口。Route B 的两乘积头加流量与边界信息可恢复一般表，纯交互族有较简单校准。但这些具体恢复结果和后来零分数 packing 路线不是同一个机制。</p>
+<p>对原 Route B 删除第二个乘积头后的完整 15 维保留接口，已有平稳、统一快速混合、转移坐标在 [1/4,3/4] 的两源稳定解码障碍：若统一读出 Lipschitz 增益 L_M=o(√M)，渐近最坏 TV 至少 1/16 <a class="cite" href="#A4">[A4]</a>。它没有证明有限样本接口完全相同，也不排除任意高增益、其他编码器、额外头或历史重读。</p>
+<p>原 rare-u 族已把“情境稀少”与“全局慢混合”分离：平稳同历史平均 TV 的 minimax 阶为 u/√(1+Mu)，而条件于稀有行的量级不含前面的 u。它是特定已知结构族的 TV 结果，不能直接转成任意初始化、KL 或一般架构下界。</p>
+<h2 id="sec6">4 精度与表示资源已经有多条前沿</h2>
+<h3 id="sec7">4.1 冻结统计接口与单块稠密汇总</h3>
+<p>原固定 master 接口在 K≥3、M≥64、二进网格 Q≥16 的范围内得到完整风险轮廓 <a class="cite" href="#A5">[A5]</a>：</p>
+<div class="formula">Θ_K max{M⁻¹ᐟ²,
+  [1+log(1+Q/(M·max(β,1/M)))]/Q}。</div>
+<p>β 是全状态两步小化证书，不是注意力温度。弱混合产生额外对数，强混合时回到根 M 网格。该下界允许实值解码，却限制解码可见的完整 master 端口。直接读全历史再数数不属于同一接口，不能据此声称所有 Transformer 都需要该额外对数。</p>
+<p>更广的单块局部正权重汇总族，在 K≥3、M≥64、固定坐标数至少 K³、固定局部窗口至少 3、整数 κ≥1 和二进 Q≥16 下，把权重范围 [1,κ] 与量化合成为 <a class="cite" href="#A6">[A6]</a>：</p>
+<div class="formula">Θ max{M⁻¹ᐟ², Q⁻¹,
+  [1+log(1+κQ/(M e_K))]/(κQ)}，
+e_K=max(β,1/M)（K≥3）。</div>
+<p>该 K≥3 轮廓覆盖平稳与任意初始化；二元平稳分支有相应 √β 截断，须另引用它的精确合同。</p>
+<p>即使 κ 很大，仍有独立 Q⁻¹ 障碍。下界只针对冻结的局部比值汇总／量化族，不是无条件架构下界。二元的 √β 来自加权回返结构，不表示所有二元链的全局混合都自动变快。</p>
+<h3 id="sec8">4.2 改编码器可以突破旧接口，但必须付费</h3>
+<p>已研究多坐标折叠、鲁棒蛇形编码和非线性频率压扩 <a class="cite" href="#A7">[A7]</a>。IID 特例可获得 Θ(max{M⁻¹ᐟ²,Q⁻ᴶ}) 的 J 坐标容量前沿。一般二阶源则先压扩全部 K³ 三元组频率，再为每个标量支付固定 R≥2 个坐标；在一次量化前、每坐标幅度 c/Q、固定 c≥0 的扰动下，Qᴿ≥C√M 足以达到 O(M⁻¹ᐟ²)。常数依赖固定 K,R,c，不是对增长 K 或 R 的统一定理。</p>
+<p>一般构造实际截面是 D=RK³ 个坐标；已知必要容量涉及 (Q+1)ᴰ，充分性涉及 Qᴿ，指数并未闭合。工作细网格、粗传输网格、输出有理数精度、量化前扰动和每层舍入也没有合并成一个“位数”。这些结果支持表示可改进，不支持不计解码和全部行状态成本的免费容量结论。</p>
+<h2 id="sec9">5 严格架构主线的核心结果</h2>
+<h3 id="sec10">5.1 固定风险的最小深度</h3>
+<p>在容纳构造的共同冻结预算下，固定 K≥2、固定 0&lt;r&lt;1/8、充分大 N，达到最坏源期望末端 TV≤r 的最小计数深度为 Θ(log N) <a class="cite" href="#A8">[A8]</a>。下界允许一头多次通信和任意宽度；上界现可用常宽。结论不覆盖任意更紧预算、零风险或随 N 变化的所有风险目标。</p>
+<h3 id="sec11">5.2 一次有用调用的准确度前沿</h3>
+<p>常宽后缀构造内部选最后 b 个符号，以一次均匀注意力编码，再逐位置解码、计数和形成正概率；这里 b、G 为二的幂，4≤b≤N，G≥K <a class="cite" href="#A9">[A9]</a>：</p>
+<div class="formula">W=O_K(1)，A_useful=1，
+D=O_K(log N+b+log²b+log(b+K)log G)，
+R≤min{1,13√(K⁵/(b−1))+(K−1)/G}。</div>
+<p>取 b≈log N、G≈b，得到 O(log N) 深度和 O((log N)⁻¹ᐟ²) 风险。上界及一次调用通信下界在固定 K≥2、足够固定宽度、D≥C_K log(N+1) 的精确实数合同中匹配为 Θ(1/√min(D,N))。因此这个子类若要达到全历史根 N 风险，需要且足够线性深度 <a class="cite" href="#A10">[A10]</a>。</p>
+<p>旧二元 lag-two 文件以固定初始 (+,+) 证明了该缺口，其自身不是平稳初始化定理。<strong>后续独立审查通过的平稳版本已经补上平稳实验</strong> <a class="cite" href="#A33">[A33]</a>：在 K≥2、N≥3、原始符号、合成末行输出、源无关精确实数、至多一次有用全前缀头和付费全局读出敏感性合同中，零分数与有界分数均有 r²min{B_stat(r),N}≥1/(65536 ln 2)，0&lt;r≤1/256。</p>
+<p>固定宽度、冻结完整预算给出 c/√min(D+1,N) 下界；与后缀上界合成，在足够固定宽度、包含该上界的共同预算、充分大 N 及 D≥C_K log(N+1) 时，平稳 minimax 前沿同为 Θ(1/√min(D,N))。每个固定 0≤β&lt;1 的 D₂(β) 类可通过缩小 lag-two 振幅保留这一阶，常数可依 β。β=1 则强制 iid，一次均匀头的经验直方图可用常深达到根 N 风险，不能套用这个深度障碍。</p>
+<p>平稳二元见证的初始对均匀且参数无关；K=2 时转移均为正，K&gt;2 的嵌入只用两个活跃符号，不声称全部 K 符号正转移。二元路线继续显式导入 Caputo–Menz–Tetali 近似熵张量化；另有 K≥3 的平稳三元转移证明不依赖该外部定理。两条依赖链不能混写。</p>
+<h3 id="sec12">5.3 重复调用的困难已定位，但主前沿仍开放</h3>
+<p>已经有两种新的方法边界 <a class="cite" href="#A11">[A11]</a>。第一，在定理指定的长度子序列上，存在常宽、两次有用均匀注意力、O(log N) 深度网络，使对每条历史都达到规定固定小误差的终端交互模拟需要 Ω(N) 通信。确定性版本要求 TV 误差 ε&lt;1/2；随机版本采用某个固定 ε&lt;1/2，并要求对每条历史成功概率至少 2/3，也有逐历史期望 TV 误差≤1/6 的版本。这否定便宜的通用终端模拟路线，不是统计预测下界，也不排除误差≥1/2 的平凡近似。第二，先靠一次头在所有行恢复前一符号，再汇总 triples 的自然方案也受限：零分数常宽需 Ω(N) 深度，固定维 bounded-QK 有相应多项式深度下界。</p>
+<p>所以不能再直接把“一次调用”的通信证明重复几遍来解决多次调用，也不能把 all-row 复制困难当作真实末端统计预测困难。仍需末端风险专用的源平均归约，或不经过全行精确 lag 表示的新构造。</p>
+<h3 id="sec13">5.4 其他构造不能与这条前沿混成一个模型</h3>
+<p>已有五块网络支线：固定 K 时参数不依赖历史长度，使用 (1,i,i²,log i) 位置特征、K 个平滑 BOS、每块 K²+1 头和 O(K³) 宽度；<strong>没有 LN，但最后接普通末端词表 softmax</strong>。指定精确实数网络及专门整数／二进有理求值器可通过正支持和路径误差接口继承 add-one 风险。位置幅度、分数和精度合同与本节完整冻结范数类不同，所以“五块足够”与“固定风险需对数深度”不矛盾 <a class="cite" href="#A31">[A31]</a>。</p>
+<p>串行 packing、并行 lanes、宽读出和显式有理算术还给出不同宽深选项。另一个已匹配端点是：在仅全前缀均匀通信、常数次有用调用、O(log N) 付费深度和固定完整预算下，每行精确恢复前一符号需且足够宽度 Θ_K(N/log N)。这比末端概率预测强，不能据它否定常宽预测；当调用数增长时全宽深前沿仍有缺口 <a class="cite" href="#A32">[A32]</a>。</p>
+<h2 id="sec14">6 归一化从待解决问题变成有条件的正结果</h2>
+<p>已有真正普通 Pre-LN 和每个残差子层后都执行全特征 LN 的 Post-LN 构造 <a class="cite" href="#A12">[A12]</a>。不是只在少数位置插入 LN，也不隐藏不归一化尾部。它们在精确实数、长度依赖非共享参数和已计费输出下，都保留常宽、一次有用注意力、O(log N) 深度及 O((log N)⁻¹ᐟ²) 的同历史末端一致性。</p>
+<p>Pre-LN 用微幅配对表示和逐层付费放大；Post-LN 用锚点比例坐标、注意力前校准、范数补齐和逐级精度 Newton 微程序。精确概率寄存器、全特征归一化、零分支的 LN、scratch 范数和全行成本均须保留。理论上 O(log N) 不意味着常数小。</p>
+<p><strong>注意力 softmax 和最终词表 softmax 是两个问题。</strong> 固定最终 logit 跨度 L，对完整单纯形的精确最坏逼近半径为 (K−1)/(eᴸ+K−1)；因此完整源类含确定性源时，固定跨度不可能统一一致。增加尾数位不能解除范围障碍 <a class="cite" href="#A13">[A13]</a>。</p>
+<p>若改为所有真转移坐标都有已知共同下界 c&gt;0 的源类，可在真正 Pre-LN／Post-LN 内支付 clamp、串行 log 样条和输出头，接真实词表 softmax，继续得到上述一致性阶 <a class="cite" href="#A14">[A14]</a>。资源常数依赖 K,c；这不是对原完整源类的反例，也没有给出训练结论。上述较早已验收的正面构造本身没有给该缩小类的匹配前沿。</p>
+<p><strong>同期新增的是条件组合结论，不是所有依赖重新证明后的最终认证：</strong>NORMALIZED_STATIONARY_FRONTIER.candidate.v2.md 把固定已知 0&lt;c&lt;1/2 的二元内点源、平稳初始化、至多一次有用注意力、真正 Pre-LN／Post-LN 与普通词表 softmax 放进同一精确实数合同。在足够固定宽度、同时容纳两种构造的固定 c 依赖预算和 D≥A_c log(N+1) 时，组合给 Θ(1/√min(D,N)) 前沿。独立审阅为有条件 PASS，新组合未发现数学阻断；其最新报告已核对全部 9 个直接来源版本及既有审阅绑定，不再把直接依赖哈希列为未完成 <a class="cite" href="#A34">[A34]</a>。</p>
+<p>条件仍需显式保留：末端统计上界、CMT 外部定理及部分传递构造没有在这次审阅中从零重证，也没有完成所有递归历史来源的闭包认证。它不是完全自包含证明、全架构前沿或有限精度证书；不覆盖重复有用调用、源依赖权重、共享参数训练网络、c 随 N 缩小或增长字母表。本报告不把这个条件 PASS 写成全部研究与执行均已最终验收。</p>
+<h2 id="sec15">7 污染研究必须先分清预测的对象</h2>
+<p>同一污染观察 Z 下，有三个不同目标：干净实际末端行 θ_S(X)、被改写末端行 θ_S(Z)，以及真实下一符号的后验 Law(Y|Z)。污染不改变源的物理状态；通道未来盲性不可省略。真实后验是每个固定真源与通道下的条件分布，不是把未知源按人为先验混合 <a class="cite" href="#A15">[A15]</a>。</p>
+<p>若原始符号最多被替换 k 次，一个编辑最多影响三个重叠 triples，不能当作三个独立污染样本。端点保护时，固定 K、全状态小化 β 的风险阶是统计项与保护污染项的最大值。令</p>
+<div class="formula">s=M⁻¹ᐟ²，δ=1−β，
+e_K=max(β,1/M)（K≥3），e₂=max(√β,1/M)，
+F=(k/M)[1+log(1+1/(e_K k))]（k≥1），k=0 时 F=0。</div>
+<p>未知通道、每词端点变动概率≤ρ 的宽源类，三种目标各有 Θ_K(min{1,max{s,F,ρδ·1{k≥1}}}) 阶，但端点下界机制不同，不能互相直接继承 <a class="cite" href="#A15">[A15]</a>。</p>
+<p><strong>已知通道会真正改变答案。</strong> 平稳三元源在一次严格编辑下仍可有常数级真实后验风险；困难源可随 M 变化，不能称固定正源点态不可学习。平稳二元、固定 0&lt;β&lt;1 则有更细的完整轮廓 <a class="cite" href="#A16">[A16]</a>：</p>
+<div class="formula">Θ_β min{1, M⁻¹ᐟ²+k/M+min{ρ,(k²/M)¹ᐟ³}}，
+k=0 时端点项为 0。</div>
+<p>这是对最坏公开通道的统计 minimax 结论。它不意味着每个已知通道都困难，也不是 β 变化时的统一常数定理。</p>
+<h2 id="sec16">8 在线通道的状态成本与最新推进</h2>
+<h3 id="sec17">8.1 两个基础状态已足以实现一般二元下界</h3>
+<p>上述无共同正下界的 sharp-ρ 轮廓，已有严格在线、有理时变表、两个基础状态的匹配下界 <a class="cite" href="#A17">[A17]</a>。在线匹配率按充分大 M、整数 0≤k≤M 和付费有理通道表及 ρ 描述理解；不附加另一个会排除所用见证的总描述长度上限。真实 k+1 值编辑计数器和完整表描述另外收费，不能把“两个基础状态”宣传成两个总状态或常数总内存。初期真实擦除付一次编辑，其计数器值携带模式，没有免费模式位。</p>
+<h3 id="sec18">8.2 一个基础状态下，固定正下界的完整率已经闭合</h3>
+<p>对固定 0&lt;η≤1/4 的平稳二元源，所有转移坐标≥η，一个基础状态及真实付费计数器已有 <a class="cite" href="#A18">[A18]</a>：</p>
+<div class="formula">Θ_η min{1,M⁻¹ᐟ²+k/M+ρ min{1,k/√M}}。</div>
+<p>与固定 0&lt;β&lt;1 的 D₂(β) 相交时常数可依 β,η。η=0 不适用；η&gt;1/4 的完整下界尚未由现有见证覆盖；η=1/2 是完全已知公平 iid，风险为 0。β=1 时源为 iid，端点放大项消失，匹配阶退回 min{1,M⁻¹ᐟ²+k/M}。</p>
+<h3 id="sec19">8.3 没有共同正下界的一状态问题仍有真实缺口</h3>
+<p>令 b=min{1,k/√M}，已有一状态下界包含 min{ρ√b,b√ρ}，而一般上界的端点项仍为 min{ρ,(k²/M)¹ᐟ³} <a class="cite" href="#A19">[A19]</a>。这不能证明两状态必要，也不能把固定正下界的率推广过去。</p>
+<p>研究已排除了几条过强路线：整个隐藏历史后验可能不稳定，但真实下一步预测稳定；干净链混合不能自动删除计数器保留的远端信息；完整预测分数也不允许免费乘上线性 ρ。必须保留整个观察分母、平稳初始分数、目标直接导数和相互抵消。</p>
+<h3 id="sec20">8.4 固定后缀与有限候选给出可用的局部正结果</h3>
+<p>若所有改动限定在最后 L 位，干净前缀有 m=M−L 次转移，已有 <a class="cite" href="#A20">[A20]</a>：</p>
+<div class="formula">R≤C_β min{1,m⁻¹ᐟ²+min{ρ,√(ρL/m)}}。</div>
+<p>固定 L 且 m≈M 时为根 M 率。关键是只用可观察的干净前缀拟合，再条件化比较尾段；不能把每个完整输出重新拟合的随机源直接代入固定两法则积分不等式。这个结果没有证明一般位置可把 L 换成 k 或 k²。</p>
+<p>最新已复核的一侧少数符号擦除结果，先得到两个固定正源的观察重叠加权后验差界。适用于一基础状态、严格一次编辑、非末端只擦除少数符号、逐转移 log 比有共同界 B 的合同。它不是单侧全观察风险界，也不能直接代入 θ̂(Z) <a class="cite" href="#A21">[A21]</a>。</p>
+<p><strong>本次新增的有限候选预测补充已独立解析 PASS</strong>：候选集在观察数据之前公开给定，真实源在列表，每个候选都是正的平稳二元二阶源并满足 D₂(β) 和共同少数方向 π_j(1)≤1/2。所有候选共用同一个源无关、公开的一基础状态严格一次编辑通道，非末端只允许 1→0 擦除，实际计数器单独计费。逐转移 log 比由同一个 B 控制。最大似然选源后输出该源的真实后验，风险由固定候选间的重叠比较之和控制 <a class="cite" href="#A22">[A22]</a>。</p>
+<p>其中加权 Hellinger 距离按第一个源的平稳对权重计算，是有向的，必须控制所有有序候选对。若 β、B、候选数 L 均随 M 固定，而且这些距离的直径为 O(M⁻¹ᐟ²)，得到实际预测器的根 M 率。它处理了固定有限选择的合法性，但增长网格仍付竞争候选数，不解决连续全类、错设、边界源或一般一状态 minimax 问题。</p>
+<h2 id="sec21">9 已知通道的 Transformer 桥接付了什么代价</h2>
+<p>任意核黑盒不能免费提供隐藏历史后验。已有桥接要求公开展开的时变有理有限状态通道表、基础状态 S、真实计数器 k+1 和规范化证书 <a class="cite" href="#A23">[A23]</a>。动态规划规模 R=O(NS²(k+1))，有理位长、展开表长 ℓ、公开 β／ρ 描述、除法和输出误差均计费。</p>
+<p>存在增长线路库和常宽双栈两条<strong>精确有理算术执行、后验输出误差至多 2<sup>−r_out</sup></strong> 的构造，不是免费精确后验。前者宽度、深度随布尔线路规模 G 增长；后者宽度可固定为 64、FFN 为 128，但深度为 O(N log(N+1)+G²)，逐标量位长为 O(G+r_out+log(N+1))，r_out 是所付输出精度。它们用零分数因果注意力和 ReLU，没有 LayerNorm，也没有末端词表 softmax。</p>
+<p>这些是统计算法到资源明确的网络存在性桥接，不是可用规模的高效实现。新固定后缀或有限候选统计上界也没有自动获得同率的专门网络编译。不能把这里的有限状态网络与第 6 节的归一化构造不计成本地拼成一个新定理。</p>
+<h2 id="sec22">10 实际算术与执行证据的真实状态</h2>
+<h3 id="sec23">已经留下有效但有限的证据</h3>
+<ul>
+<li>指定精确整数／定点后缀流程已有 44 条固定历史、435 个物理行、17,962 项检查及 203,634 个事件的冻结记录，覆盖 K=2,3,5 和 b=4,8,16,32。它支持该目录内指定流程符合性，不是所有输入、普通浮点或完整展开网络的认证 <a class="cite" href="#A24">[A24]</a>。
+</li>
+<li>旧 N=256 packing 的 float64 失败真实保留：all1 输出 (1/2,1/2)，精确 add-one 目标为 (255/256,1/256)。b8 修改八条历史末端吻合，但三个有逐层 Fraction 对照的例子仍超旧 10⁻⁸ 标准，不能用末端通过覆盖逐层失败。
+</li>
+<li>并行 dense float64 的 N=5,8,16 共九例在声明容限内，但原输出不是精确归一化概率。随后对旧输出作坐标证书及 18 次概率修复，没有重跑前向；三个 N=16 的原传播容限仍不确定 <a class="cite" href="#A25">[A25]</a>。
+</li>
+</ul>
+<h3 id="sec24">Pre-LN 的有限精度目前仍是条件充分性</h3>
+<p>明确求值语义下，内部有效位／分数位与负指数幅度有 O_K(log N) 充分界；指数域位数只需 O(log log N)。相对舍入与绝对下溢必须分开。精确输出质量另需声明并计费的格点转换。尚未给定一套已实例化、通过机器执行认证的布局、常数和后端，不能推荐某个 IEEE dtype 已足够 <a class="cite" href="#A26">[A26]</a>。</p>
+<h3 id="sec25">Post-LN 编译物存在但没有网络运行</h3>
+<p>两个 N=4、K=2 编译物分别为 150,652 和 33,300 个完整块；优化版每历史的原始块记录约 5.17 GB，16 条历史约 82.66 GB，尚未计全部 framing 与日志。它有 90,736 个静态系数条目在 binary64 最小次正规数一半或以下。以上是静态账目，不是已生成轨迹或实测运行时间 <a class="cite" href="#A27">[A27]</a>。</p>
+<p>旧可执行静态检查捕获不完整，事后保存的汇总 PASS 不能替代预运行冻结和逐案例输出。唯一获准的严格 replay v4 在隔离建立时失败，保存错误为 “bwrap: loopback: Failed to create NETLINK_ROUTE socket: Operation not permitted”，退出码 1；没有 replay run 目录或案例事件。33,300 块、413 项活跃性、514 项 Frobenius、68,486 条事件都是计划数，不是完成数 <a class="cite" href="#A28">[A28]</a>。</p>
+<p>状态仍是严格重放未执行、数值前向 NO-GO。新的数学审读、哈希或摘要不能补造缺失记录；环境不足也不能通过绕过隔离或减弱捕获来消除。</p>
+<h3 id="sec26">训练尚未正式准入</h3>
+<p>42 项局部合成单测通过不等于正式训练获准。已记录的实施审查仍因证据归档身份、输入数组绑定、step-zero Adam 状态、恢复与预算退出等问题阻断。正式数据生成和正式训练均为 NOT RUN <a class="cite" href="#A29">[A29]</a>。解析编译权重、单元测试、优化收敛、统计泛化和跨长度泛化应分别汇报。</p>
+<h2 id="sec27">11 创新性应怎样定位</h2>
+<p>合理候选贡献是：在同历史真实末端风险下，把统计精度、完整资源收费、归一化／最终输出以及污染识别连接到可核查合同；部分受限实验还有匹配上下界。不能称首次 n-gram 预测、首次常宽、首次对数深度、首次 log-softmax、首次归一化模拟或首次后验导数。</p>
+<p>最接近的已有工作应明确保留 <a class="cite" href="#A30">[A30]</a>：</p>
+<ul>
+<li>HJW 的 Markov 预测 minimax、末端风险与后缀平滑，是统计直接基线。
+</li>
+<li>Rajaraman 等及 D’Angelo 等已有同历史经验 n-gram 预测、常宽／常深或插值机制；比较必须落在有效分数、调用次数、局部信息取得、完整预算和输出实验。
+</li>
+<li>Akman 等的 <a href="https://arxiv.org/html/2610.41038v1">When can Optimally Trained Transformers Achieve Near-Lossless Token Prediction for non-Markovian Data?</a> 不能省略。Theorem 26 在其 Assumptions 3/6 下有平稳遍历、无需几何速率的分支：一条平稳遍历训练轨迹与独立测试轨迹，按训练样本、模型／锐化资源、量化和上下文的指定顺序取极限。Theorem 25 的权重可逐源选择，训练得到的权重也带有来自该源额外样本的信息；训练平均／独立测试期望不等于一个源无关网络仅用待预测的同一历史所承担的末端风险。其多次 gatherer、插值隐层与增长增益应计入比较；不能笼统说前人没有训练理论、没有平稳遍历结果，或都依赖几何混合 <a class="cite" href="#A35">[A35]</a>。
+</li>
+<li>Hahn 的有界注意力敏感性、Hadar 等相关估计通信下界、Sanford 等并行计算、Merrill–Sabharwal 的共享块对数深度均是直接方法前身。
+</li>
+<li>Chiang–Cholak–Pillay 及 Ahvonen 等已有归一化兼容／模拟机制；镜像、锚点与配对本身不能单独作为贡献。
+</li>
+<li>Yan–Yang–Zhong、Bos–Schmidt-Hieber 等已有正性下 log 逼近接 softmax。本文需证明的是特定完整冻结资源和真实归一化组合。
+</li>
+<li>Hellinger 的方差敏感比较、后验协方差导数、污染重叠、有限状态通道及严格预算截停均有前身。最新一状态／固定后缀结果需按具体实验逐项比较，不能只凭没搜到同一句定理宣称新颖。
+</li>
+</ul>
+<p>现有文献核查有原文范围与未取得全文的记录；本综合没有新增穷尽搜索。“未确认直接包含”只是一项有限核查结果，不是优先权证明。</p>
+<h2 id="sec28">12 下一阶段按明确验收条件继续</h2>
+<h3 id="sec29">优先级一 收束论文主线和完整证据包</h3>
+<p>将长期项目组织为三条相互引用而不混写的线：①同历史统计预测；②完整资源下的架构与归一化；③严格污染与公开通道的后验预测。每条先给模型、主定理、依赖、反例及未解决处，不按发现时间堆砌所有支线。</p>
+<p>验收：每个主张都能定位到确切证明版本、对应审读、导入定理及执行状态；数学源与脱敏发布副本的哈希不能混用；旧错误、失败与拒绝记录保持不变。公开仓库以本次实际提交和回读证据为准，本报告不把本地文件存在当作上传完成。</p>
+<h3 id="sec30">优先级二 继续一般一状态理论 先做局部化</h3>
+<p>刚通过的有限候选补充是一个可用起点。下一目标应是：在一侧一次编辑的受限合同下，去掉简单并合带来的候选数损失，建立局部测试／聚合或覆盖复杂度控制；同时保留真源在类内、相对概率比和边界源处理。</p>
+<p>验收不是多写一个分数恒等式，而是给出一个使用允许观测的估计器及全积分风险证明，或者构造说明所求率不成立的合法共同通道反例。随后才尝试双向编辑、k 增长和一般位置的一状态问题。一般两状态是否必要仍不预设答案。</p>
+<h3 id="sec31">优先级三 攻克重复注意力的统计任务</h3>
+<p>已有反例排除了便宜的逐历史通用模拟和“一次恢复全部 lag”的自然路线。下一步应明确源平均／小风险的可模拟内容，或直接构造能跳过全行恢复的统计程序。</p>
+<p>验收：新增真正末端风险的上界或下界，量词覆盖同一源类、同一初始化及付费资源；不能只证明更强中间表示难。</p>
+<h3 id="sec32">优先级四 修复可执行合同 再讨论运行</h3>
+<p>先完成一个具体有限算术合同：参数转换、内部格式、运算顺序、输出格式、误差常数、资源上限、逐案例捕获与失败保存。在支持已审查隔离条件的环境中重新冻结并复核。严格静态重放通过仅关闭静态记录链，不自动授权或证明浮点前向。</p>
+<p>验收：正确性标准事前冻结，真实网络状态进入输出，不用参考计数替代；完整输入、环境、stdout/stderr、退出状态与每案例事件可回读。必要的资源或平台审批到位前，保持未运行，不用低标准“小例子”宣布修复。</p>
+<h3 id="sec33">优先级五 训练先修准入 再设最小科学实验</h3>
+<p>先把错绑归档、数组不一致、来源不明恢复、step-zero 状态和预算退出变成必须失败的回归控制。实现重新审查通过后，才冻结正式数据与训练计划；用相同输入和预算分别比较表示、优化、统计误差及长度外推。</p>
+<p>未知阶、隐藏状态、非平稳、共享参数与更多归一化扩展暂不全面铺开，直到至少一条主线在证明、比较、实现和发布说明上足够集中。</p>
+<h2 id="sec34">13 本次总结的边界</h2>
+<p>本报告是新增综合，v2 保留 v1、旧证明及历史失败。文中的公式是对列明来源的转述，不构成本报告独立证明；主体科学纳入截点为 2026 年 11 月 5 日 13:27:09 UTC。同期归一化组合截至 13:48 UTC 的较晚状态按第 6 节所列“有条件 PASS、直接来源绑定已核对、导入引理未在本次从零重证”另行记录。</p>
+<p><strong>本文自身也有必须披露的执行来源缺口：</strong>v1 的文档生成、源文件哈希和 HTML 静态检查实际执行过，却没有先完成独立预审、完整的代码／环境／输入冻结和逐案例持久捕获。两次生成成功，一次因引用文件不存在失败；早期文本提取与静态检查亦无完整准入记录。现存 STATIC_ARTIFACT_CHECK 只记未准入、捕获不完整的观察，不能称静态 PASS、合规复现或渲染验收。相关生成器、失败及披露继续保留。</p>
+<p>v2 只做原样文件复制、来源阅读与直接人工文本修订，没有运行生成器、科学程序、校验脚本、哈希或浏览器渲染。本文没有重跑模型、训练或严格 replay。但“不做科学实验”不能豁免原版文档执行的门禁缺口。将来即使新目录中的预审重放通过，也只能生成新证据，不能恢复当时未保存的旧记录、追认旧审批或倒填旧执行结果。</p>
+<p>结论可以简要说成：<strong>理论主干已经相当丰富，主要任务已从“再找一个局部结果”转为“把最强结果收束成可审查主张，同时关闭一状态统计与真实执行两处关键缺口”。</strong></p>
+<h2 id="sec35">14 证据索引</h2>
+<p>以下制品名不表示全部文件已经公开。A1–A32 原有哈希保留自 v1 未准入的计算观察，不能被称为合规哈希验证；本版没有重新计算。新增的历史审查绑定另明确标记为从审查原文引用，不冒充本次独立校验。完整版本、审读与历史记录应随仓库发布清单定位。来源身份、数学审读和执行捕获是不同证据，任何新运行都不能补齐未保存的旧证据。</p>
+<h3 id="A1">A1 任意初始化统计上界</h3>
+<ul>
+<li>terminal_tv_direct_bound.candidate.v1.md
+<br><span class="hash">SHA-256 483c68261576aba3ecd3ea4a1ca197eb69159a77ae146bd82b6d8514060ac574</span>
+</li>
+</ul>
+<ul>
+<li>INDEPENDENT_SAME_HISTORY_TV_AUDIT.v1.md
+<br><span class="hash">SHA-256 782d8cd1dcbbe72048000e9736386a6c3e07902625ae732f87b3432bebe20629</span>
+</li>
+</ul>
+<ul>
+<li>allrange_constant_corollary.v1.md
+<br><span class="hash">SHA-256 064218980d1ebc5f86780aa3f84f581cd25b99a324d2c2c6940ab1b699eec4e2</span>
+</li>
+</ul>
+<h3 id="A2">A2 平稳 add-one 与一阶边界</h3>
+<ul>
+<li>stationary_addone_sharp_log.candidate.v1.md
+<br><span class="hash">SHA-256 90e949efc52cd8f3d57108ca334f9083a9858950183dd8e6f60d6664d92c6195</span>
+</li>
+</ul>
+<ul>
+<li>stationary_addone_sharp_log.independent_review.v1.md
+<br><span class="hash">SHA-256 02ef46cd71c27d218f72942e80484f36fc23253e16779ae49cb989d670335d23</span>
+</li>
+</ul>
+<ul>
+<li>binary_first_order_addone_boundary.v1.html
+<br><span class="hash">SHA-256 b326d355b9ba78a4f1140043eb6c4acd6dfd58fbfaec84720483e49509a518aa</span>
+</li>
+</ul>
+<h3 id="A3">A3 MM5 来源差异与当前审读</h3>
+<ul>
+<li>v10_status_report.v4.reviewed.readable.md
+<br><span class="hash">SHA-256 eba9abfbe0a30a8fa64defea16f8f490992badef07c20c9f0ec1ba9ca248e47a</span>
+</li>
+</ul>
+<h3 id="A4">A4 原单乘积头稳定解码障碍</h3>
+<ul>
+<li>SINGLE_PRODUCT_STABLE_DECODER.candidate.v3.md
+<br><span class="hash">SHA-256 110f3d5d730f097eb6dc11190868273626b74f2869c9b056a52d06fe9b099e54</span>
+</li>
+</ul>
+<ul>
+<li>SINGLE_PRODUCT_STABLE_DECODER.independent_audit.v1.md
+<br><span class="hash">SHA-256 247a29a32060a7d9a860e5716f2ca855c43a4b8ad643e0fb631825b8ac6980bf</span>
+</li>
+</ul>
+<ul>
+<li>RECONCILIATION.v2.md
+<br><span class="hash">SHA-256 f0520c7d26ac793ffcc044f9e08a256ea12b3e9f5e70142fc7001d56f1cdd4dd</span>
+</li>
+</ul>
+<h3 id="A5">A5 原完整 master 接口前沿</h3>
+<ul>
+<li>FR001_full_risk_frontier_v1.md
+<br><span class="hash">SHA-256 7c1305193d61115b0f95f3ed28a0321beeaf9a82dac7172c49fde4e8620f4d1f</span>
+</li>
+</ul>
+<h3 id="A6">A6 单块权重与网格前沿</h3>
+<ul>
+<li>TR001_two_resource_frontier_v1.md
+<br><span class="hash">SHA-256 7dca0c09637164c2a632e1e493c7af281109bb52116400c94ee507fe18c493c6</span>
+</li>
+</ul>
+<ul>
+<li>TR001_independent_review_v1.md
+<br><span class="hash">SHA-256 f077b8da23d4126b9f59b1ba270d82731c8d3383f6474d787e2057b3b3b380e4</span>
+</li>
+</ul>
+<ul>
+<li>guide_final_math_zh.md
+<br><span class="hash">SHA-256 86dcaad0355fba2412f0fe79ce6ef1ebaa2c468adf534d4fbf8482d76da291f3</span>
+</li>
+</ul>
+<h3 id="A7">A7 鲁棒多坐标压扩与容量</h3>
+<ul>
+<li>guide_final_math_zh.md
+<br><span class="hash">SHA-256 2305105433b0477da09bb5f1ae9a57903234cd0f34a569c947d3fa7c9caae934</span>
+</li>
+</ul>
+<h3 id="A8">A8 固定风险深度匹配</h3>
+<ul>
+<li>MATCHING_ORDER.v2.md
+<br><span class="hash">SHA-256 518cb4544ed227bfdb1e808c5d685a669a0d7ba6fe81632e847175af024eb82a</span>
+</li>
+</ul>
+<ul>
+<li>INDEPENDENT_MATCHING_ORDER_AUDIT.md
+<br><span class="hash">SHA-256 b291a92dede0c5ed585f66242e4898d1a751ca68fc2c41c86d988aa451d646a0</span>
+</li>
+</ul>
+<h3 id="A9">A9 常宽后缀构造</h3>
+<ul>
+<li>CONSTANT_WIDTH_CONSISTENCY.candidate.v3.md
+<br><span class="hash">SHA-256 ea1c3788f4eed06ccba9e19db3ee0d9a3e792bda7d3d620c0326cc4a07cecbb6</span>
+</li>
+</ul>
+<ul>
+<li>INDEPENDENT_CONSTANT_WIDTH_AUDIT.v2.md
+<br><span class="hash">SHA-256 a2e2cde83de80f166f8fbd0002ad226a10a11c5219eaf90e0932ef533256be55</span>
+</li>
+</ul>
+<h3 id="A10">A10 一次调用前沿和二元下界</h3>
+<ul>
+<li>FIXED_WIDTH_FRONTIER.candidate.v2.md
+<br><span class="hash">SHA-256 e7c1ee3bc43e7164b9737edea7b94c42971fd88696c96f28c94d46d1fe9efa71</span>
+</li>
+</ul>
+<ul>
+<li>BINARY_LAG_TWO_RATE_LOWER.candidate.v1.md
+<br><span class="hash">SHA-256 dfe17f90881498bb5aa9ba338223a310ede72e65a42cca2a6203fb942fa8b248</span>
+</li>
+</ul>
+<ul>
+<li>BINARY_LAG_TWO_RATE_LOWER.independent_audit.v1.md
+<br><span class="hash">SHA-256 5b5b0de1e56a39d0302c2c267834b4c375a41756d5476fb47c8e574845c69acc</span>
+</li>
+</ul>
+<h3 id="A11">A11 重复调用及全行恢复的证明边界</h3>
+<ul>
+<li>TERMINAL_SIMULATION_OBSTRUCTION.candidate.v2.md
+<br><span class="hash">SHA-256 703ba671e0a469ad74a122f093c1935e10c185645d73708c6baa1e2258411c14</span>
+</li>
+</ul>
+<ul>
+<li>INDEPENDENT_TERMINAL_AUDIT.v2.md
+<br><span class="hash">SHA-256 941bae245c859c6eb75437bb791ec54376fa3b17e64d99e91ac7ece18d029fb1</span>
+</li>
+</ul>
+<ul>
+<li>ALLROW_SINGLE_INVOCATION_OBSTRUCTION.candidate.v1.md
+<br><span class="hash">SHA-256 da963f532403a2123668ed57c8d30840687e791f03f61bfaf4caea9195f4ae66</span>
+</li>
+</ul>
+<ul>
+<li>ALLROW_SINGLE_INVOCATION_OBSTRUCTION.independent_audit.v1.md
+<br><span class="hash">SHA-256 9942af3cfd73753c403ef9ade362ff96cbb597e8ab101a347b8553d7b55dcdea</span>
+</li>
+</ul>
+<h3 id="A12">A12 普通 Pre-LN 与强制 Post-LN</h3>
+<ul>
+<li>STANDARD_PRELN.candidate.v2.md
+<br><span class="hash">SHA-256 b71f919d6ad1f9c5038270090a3ca724b4e7cb7f9074ecf060433a1961b737e5</span>
+</li>
+</ul>
+<ul>
+<li>STANDARD_PRELN.third_review.v1.md
+<br><span class="hash">SHA-256 2cf147c8d83a45e166efef84e73d1dd312d91d13250c6d7653a2fc37f3afdf7f</span>
+</li>
+</ul>
+<ul>
+<li>MANDATORY_POST_LN.candidate.v4.md
+<br><span class="hash">SHA-256 2a9a322d685c1b1056dea56e957e6985d559f088f8a5e4fc0d9a98d9f725b5d4</span>
+</li>
+</ul>
+<ul>
+<li>MANDATORY_POST_LN.third_review.v1.md
+<br><span class="hash">SHA-256 1158d8e58e1ecc2afaa3d636bbefc9a3cc962002a2def3ab1a6a667a12186815</span>
+</li>
+</ul>
+<h3 id="A13">A13 最终 softmax 范围边界</h3>
+<ul>
+<li>SOFTMAX_READOUT.candidate.v2.md
+<br><span class="hash">SHA-256 b9b5b6a63bf461490e3473cc0bec58cd4056f5eca3be6d5c10cf1167e5db60da</span>
+</li>
+</ul>
+<h3 id="A14">A14 已知正下界源真实 softmax</h3>
+<ul>
+<li>INTERIOR_SOFTMAX.candidate.v2.md
+<br><span class="hash">SHA-256 6d61e56d8e9ecea7c1a4a76c6e839f3cdc91576161e99f133febedfe03b5faa5</span>
+</li>
+</ul>
+<ul>
+<li>INTERIOR_SOFTMAX.candidate.v2.architecture.review.v1.md
+<br><span class="hash">SHA-256 32106ffe6ad40862fbd7240b8ff5cac44511f1a31aaad0ac435c82442b79e7a3</span>
+</li>
+</ul>
+<h3 id="A15">A15 未知通道与目标区分</h3>
+<ul>
+<li>EPR001_endpoint_probability_interpolation.md
+<br><span class="hash">SHA-256 b8f3ae8107482f54043503ad5cc4993d8cc24566882d47ebab6c2eb34705eebe</span>
+</li>
+</ul>
+<ul>
+<li>POSTERIOR_PREDICTION_channel_identifiability.md
+<br><span class="hash">SHA-256 ae34d4c79371995cce91e328989a078b874741dd8976b8602f19b0d500db3675</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_stationary_ternary_one_edit_lower.md
+<br><span class="hash">SHA-256 2620f9d7e434ac86f4d8ca0a6194a0e9a766bb086debb9e13f03c98d37bdf271</span>
+</li>
+</ul>
+<ul>
+<li>corrupted_trajectories.tex
+<br><span class="hash">SHA-256 13345044d06449bb79255d0341e1e2349e061c631584b6c14bdefb6b72451392</span>
+</li>
+</ul>
+<h3 id="A16">A16 平稳二元已知通道 sharp rho</h3>
+<ul>
+<li>KNOWN_CHANNEL_stationary_binary_rho_interpolation.v1.md
+<br><span class="hash">SHA-256 70b210c5ee6c9f410fe31a4d06aff2c82eef328d80165a5f257c2f8dee40e744</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_stationary_binary_rho_interpolation_independent_review.v1.md
+<br><span class="hash">SHA-256 f375dd09428fd3ee1270a8366afa05c00f5145facf8cd1e2691fbb2a34aefd60</span>
+</li>
+</ul>
+<h3 id="A17">A17 两基础状态匹配</h3>
+<ul>
+<li>KNOWN_CHANNEL_two_state_counter_mode_matching_lower.candidate.v1.md
+<br><span class="hash">SHA-256 104b2193954650b160dd41dacd08107276098d5f109bd6b35bcc9157a4525094</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_two_state_counter_mode_matching_lower.independent_review.v1.md
+<br><span class="hash">SHA-256 89cc240de6340f81427df61f771aa79a3e5be2bb35f14e827f7b0f3874ae7ca1</span>
+</li>
+</ul>
+<h3 id="A18">A18 一状态固定正下界完整率</h3>
+<p>完整组合还直接使用 KNOWN_CHANNEL_one_state_counter_lower.candidate.v2.md 与其 independent_review.v1.md，以及 KNOWN_CHANNEL_positive_floor_rho_upper.independent_audit.v1.md 和 present_time_attestation.v1.md。下列绑定引用既有固定正下界审读 §5，不是本版新验哈希：counter lower v2 为 <span class="hash">81ec5725846233595bfdb803ab92640dc20d419488b68ece2460e99d43a546ce</span>，其审读为 <span class="hash">aea209b923c3c8cb0f0f60c783eaf1c20a5851597a52dfa1bc25fac22276cd2e</span>；正下界 upper 审读为 <span class="hash">fdce59e69f7d84d755fc3224c60243d522cf2110c508258e06bba945b83b2e82</span>，绑定附记为 <span class="hash">40ba9749c9f7bdcd80554ecd8becb1000a37cf36ce170514c6f4c3916a72c337</span>。</p>
+<ul>
+<li>KNOWN_CHANNEL_positive_floor_rho_upper.candidate.v1.md
+<br><span class="hash">SHA-256 4f472df0857c73d4a09dfb380136a3f4f3558c994ba75ea5c3cb6579bcf5f13f</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_one_state_positive_floor_protected_lower.candidate.v1.md
+<br><span class="hash">SHA-256 7107da3ab4b928047801bd3cf2798c9156f0e74331995945948a204c69f32333</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_one_state_positive_floor_protected_lower.independent_review.v1.md
+<br><span class="hash">SHA-256 111247b9e44d3aac0c9c6771b8715a48b19f9baf5e0a28c1c42a463dbea708e6</span>
+</li>
+</ul>
+<h3 id="A19">A19 无正下界一状态缺口与方法障碍</h3>
+<ul>
+<li>KNOWN_CHANNEL_one_state_rare_rho_lower.candidate.v1.md
+<br><span class="hash">SHA-256 d784c6abdc1eaaae97dc5dcdd8fab478f05ea387b40c8e634b452345749503cb</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_one_state_rare_rho_lower.independent_review.v1.md
+<br><span class="hash">SHA-256 bff649fd9911b2b179b2eb445a7f4a3ecea78016897aad07aff3d1356c6e3216</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_one_state_full_score_rho_barrier.candidate.v2.md
+<br><span class="hash">SHA-256 18477855bd28f5a7fbfb0684801caee8bf19f75ca449296a32e4064b17cf7c06</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_one_state_centered_likelihood_flow.research.v1.md
+<br><span class="hash">SHA-256 44d7b71bdf913e510ddb7e5115f1226aaa33d8b37f5cf5f907bae34a32624e47</span>
+</li>
+</ul>
+<h3 id="A20">A20 固定后缀有限比较与风险</h3>
+<ul>
+<li>KNOWN_CHANNEL_fixed_suffix_finite_predictive_upper.candidate.v1.md
+<br><span class="hash">SHA-256 62efe80b0b7daea4c451526db3dc3706eaf5382d4c23bc57fe8f098418e86e65</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_fixed_suffix_finite_predictive_upper.independent_review.v1.md
+<br><span class="hash">SHA-256 8b1586193de324ce3518f5cf6080fad3ed639bdef264a3a00eff03c0cb3c1909</span>
+</li>
+</ul>
+<h3 id="A21">A21 一侧一次编辑有限重叠比较</h3>
+<ul>
+<li>KNOWN_CHANNEL_minority_erasure_finite_overlap.candidate.v1.md
+<br><span class="hash">SHA-256 6e3665f563a7fb0f0f1c7033d9024fae4a240621875c805e348a5aed90e0004d</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_minority_erasure_finite_overlap.independent_review.v1.md
+<br><span class="hash">SHA-256 8ca84808546998646e1638f77a1f0a92c3946eb6473e25803a8569b95d07d0ba</span>
+</li>
+</ul>
+<h3 id="A22">A22 本次有限候选预测补充</h3>
+<ul>
+<li>KNOWN_CHANNEL_minority_erasure_finite_testing.addendum.v1.md
+<br><span class="hash">SHA-256 b99dea7f32b788bab94cc6ebf546c734ccf640b99aff39e01f3f9f46572a18b0</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_minority_erasure_finite_testing.independent_review.v1.md
+<br><span class="hash">SHA-256 66841898ef79b90d27459cc4b3abc336c92a3bb2ceb69e97bdbbeb4d65bfe32e</span>
+</li>
+</ul>
+<h3 id="A23">A23 公开有限状态通道网络桥接</h3>
+<ul>
+<li>KNOWN_CHANNEL_finite_state_transformer_bridge.candidate.v1.md
+<br><span class="hash">SHA-256 ce04cc928c88ca3edb2849d69c5207126edda5841140517636f2a17338a7b15a</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_finite_state_constant_width_bridge.addendum.v1.md
+<br><span class="hash">SHA-256 8ba86c1d06255f7858640483b4078a9e0856f4adf317c1f6a24607d404eeb7d0</span>
+</li>
+</ul>
+<ul>
+<li>KNOWN_CHANNEL_sharp_rho_transformer_composition.candidate.v1.md
+<br><span class="hash">SHA-256 572f4a4d36f3afe4f23d8b4f1830031e8aa1a58ef80e9b2661c6586f20492c0a</span>
+</li>
+</ul>
+<h3 id="A24">A24 44 历史指定流程证据</h3>
+<ul>
+<li>RESULTS.v1.md
+<br><span class="hash">SHA-256 c3e626a544caa3e5c6a4412e38ddbf4a5f61d10141f8575ba981dba13de639c8</span>
+</li>
+</ul>
+<ul>
+<li>POST_RUN_EVIDENCE_REVIEW.v1.md
+<br><span class="hash">SHA-256 7f468a395fa419cfef24bff2a71ac704f8a0e32b394310cb3672394a6cf151f7</span>
+</li>
+</ul>
+<h3 id="A25">A25 浮点失败与条件输出修复</h3>
+<ul>
+<li>b8_multihistory_N256_20261104_report.md
+<br><span class="hash">SHA-256 ec155a495d811ad72503fac934ef0cec13cf472b847c1893459f69e37a48fa2b</span>
+</li>
+</ul>
+<ul>
+<li>REPORT.md
+<br><span class="hash">SHA-256 f89a4e976b2bc4bd79a51d999220b1e937e952b27057ba3d17105778546ec403</span>
+</li>
+</ul>
+<ul>
+<li>REPORT.md
+<br><span class="hash">SHA-256 0997cbb2be1d2dabf44e3fb9e462571fefc5f174b3a24a8b5166c826473dbf35</span>
+</li>
+</ul>
+<ul>
+<li>RESULT_REPORT.v1.md
+<br><span class="hash">SHA-256 811500eb56c76871c44f4919246fe1cf31dc2ccd479a0cdd1cad8cddab8dd258</span>
+</li>
+</ul>
+<h3 id="A26">A26 Pre-LN 条件算术与输出格点</h3>
+<ul>
+<li>ANALYTICAL_PRECISION.v1.md
+<br><span class="hash">SHA-256 2a955a2d0fb72220c3d6a6b5ab9ac7a379dfa2ff987df4bab6d4a352e17b6c92</span>
+</li>
+</ul>
+<ul>
+<li>LATTICE_OUTPUT_CAST.candidate.v1.md
+<br><span class="hash">SHA-256 b12de96d4dced06e25a5d28dbd595ccea1b917e2feece02040ae90af427c2307</span>
+</li>
+</ul>
+<ul>
+<li>ANALYTICAL_PRECISION.independent_review.v1.md
+<br><span class="hash">SHA-256 31526bceb0705505b30818f94b1283bb650671f89c0a03fbc23b17af1a8cc100</span>
+</li>
+</ul>
+<h3 id="A27">A27 Post-LN 静态编译资源</h3>
+<ul>
+<li>COMPILATION_REPORT.optimized.candidate.v1.json
+<br><span class="hash">SHA-256 cbbdf5226af5b3861b018d496575684bbd20d5e3201bc4abbfddbbf19d30705f</span>
+</li>
+</ul>
+<ul>
+<li>v10_status_update.v2.readable.md
+<br><span class="hash">SHA-256 34924e27b254da784bf339abed2c151d1744b984c138620f483b9103b99bbda8</span>
+</li>
+</ul>
+<h3 id="A28">A28 严格 replay 与旧捕获缺口</h3>
+<ul>
+<li>EXECUTABLE_CHECK_PROVENANCE.v2.md
+<br><span class="hash">SHA-256 1c3b597adddd06d2aab058a6c4a5b278ff645fd0d6bc74ce1e0915c936d85608</span>
+</li>
+</ul>
+<ul>
+<li>STRICT_REPLAY_RECOVERY_STATUS.20261104T2340Z.md
+<br><span class="hash">SHA-256 8bbc520327a2dfed14b9f530390b1a93b307190243eadca46fb0ca48105c461b</span>
+</li>
+</ul>
+<h3 id="A29">A29 训练未准入</h3>
+<ul>
+<li>AUDIT_STATUS.json
+<br><span class="hash">SHA-256 136a898a86a2cdf08b0d8cfa4c9d9744b26afcfd74adf56c88f2e7bce72a54ae</span>
+</li>
+</ul>
+<ul>
+<li>IMPLEMENTATION_AUDIT.v1.md
+<br><span class="hash">SHA-256 d4128b4526a04d54b8534fd8fe2a8c4bda887d8f72196bdf16f5fc75d88dd46e</span>
+</li>
+</ul>
+<h3 id="A30">A30 最近原始文献契约比较</h3>
+<ul>
+<li>AUDIT_SUMMARY.md
+<br><span class="hash">SHA-256 52ea96b27dc29b2b6f2ec9461aac85d77ee7512e280aab27be3035aa2cf33866</span>
+</li>
+</ul>
+<ul>
+<li>v10_status_update.v2.readable.md
+<br><span class="hash">SHA-256 34924e27b254da784bf339abed2c151d1744b984c138620f483b9103b99bbda8</span>
+</li>
+</ul>
+<ul>
+<li>FIXED_SUFFIX_HELLINGER_primary_source_audit.v1.md
+<br><span class="hash">SHA-256 2ef830e95c9058b239d6a6b80c5cc4e471dca838bf4f1b9cbe8fc0863919e545</span>
+</li>
+</ul>
+<ul>
+<li>RARE_RHO_SCORE_primary_source_audit.v1.md
+<br><span class="hash">SHA-256 71ae3d77825675a601a6d1c6c8dfe4903ef70df3687f781bc33afd561e379432</span>
+</li>
+</ul>
+<h3 id="A31">A31 五块网络合同与确定性统计接口</h3>
+<ul>
+<li>five_block_T1_T2_scope_audit.v1.html
+<br><span class="hash">SHA-256 af057f387f3e7337ac3b58145c52251f47f0e74b230d6c5d826b7284f9342031</span>
+</li>
+</ul>
+<h3 id="A32">A32 所有行恢复的宽度端点</h3>
+<ul>
+<li>INDEPENDENT_ALLROW_FRONTIER_AUDIT.md
+<br><span class="hash">SHA-256 5f5e91b2c6d2aa4287583e1a822ff20a0b24b275d497eaff24d25ceb69dcbf51</span>
+</li>
+</ul>
+<h3 id="A33">A33 后续平稳一次调用前沿</h3>
+<p>STATIONARY_ONE_INVOCATION_LOWER.candidate.v2.md；STATIONARY_ONE_INVOCATION_LOWER.independent_audit.v1.md。两份原件在人工修订时直接阅读。独立审查 §1 记录的 v2 源 SHA-256 为 <span class="hash">7461c242d61c36cba95ca56ccb21a00b0dc5510435657c1eacc20015339f18b0</span>；这里逐字引用已有审查绑定，没有新运行校验。其 PASS 只适用于审查列明的解析合同，保留二元 CMT 外部依赖、K&gt;2 的支撑限制和 β=1 例外。</p>
+<h3 id="A34">A34 同期归一化平稳前沿候选</h3>
+<p>NORMALIZED_STATIONARY_FRONTIER.candidate.v2.md；NORMALIZED_STATIONARY_FRONTIER.candidate.v2.independent_audit.v1.md；NORMALIZED_STATIONARY_FRONTIER.candidate.v2.audit_bindings.v1.sha256。人工修订时直接读取候选定理、共同合同及新增审查原件。审查记录的候选 SHA-256 为 <span class="hash">624219c736392dc9fc755f9d6e32e33b40cf13005436589b85df0a6e4ac90770</span>；这里引用记录，不是本报告新验哈希。审查已核对 9 个直接来源与相关绑定，并列出共 27 个候选／来源／审阅文件的完整性清单。结论仍条件于显式导入的解析引理；全递归历史闭包、外部 CMT 原文重新验证与完整有限算术认证不在其范围。本报告没有据此认证该清单之外的旧执行记录。</p>
+<h3 id="A35">A35 Akman 等原文合同核对</h3>
+<p>akman_audit.md，原始论文为 <a href="https://arxiv.org/html/2610.41038v1">arXiv 2610.41038v1</a>。本次直接阅读已有专项核对，未新做论文证明复核、穷尽文献检索或哈希检查。旧审计关于当时未有平稳本地版本的状态已由 A33 更新；其训练、独立测试、逐源权重及架构资源比较继续按原文量词保留。</p>
+<h3 id="sec68">主要外部来源</h3>
+<ul>
+<li><a href="https://doi.org/10.1109/TIT.2023.3239508">HJW 2023 正式发表 DOI</a>
+</li>
+<li><a href="https://arxiv.org/html/2407.17686v1">Rajaraman 等 Markov 表示</a>
+</li>
+<li><a href="https://arxiv.org/html/2607.02800v1">D’Angelo 等 n-gram 插值</a>
+</li>
+<li><a href="https://arxiv.org/html/2610.41038v1">Akman 等非 Markov 数据概率预测</a>
+</li>
+<li><a href="https://aclanthology.org/2020.tacl-1.11/">Hahn 2020 有界注意力</a>
+</li>
+<li><a href="https://proceedings.mlr.press/v202/chiang23a/chiang23a.pdf">Chiang 等 2023 归一化计算</a>
+</li>
+<li><a href="https://arxiv.org/html/2605.07705v2">Ahvonen 等 v2 归一化模拟</a>
+</li>
+<li><a href="https://arxiv.org/html/2503.03961v3">Merrill 与 Sabharwal v3</a>
+</li>
+<li><a href="https://arxiv.org/html/2605.03780v1">Yan 等 2026 正性与词表 softmax</a>
+</li>
+</ul></main></body></html>
