@@ -1,0 +1,975 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>逐层更新记忆的条件模拟与源平均残差界</title><style>body{font-family:system-ui,-apple-system,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;color:#171717;max-width:980px;margin:0 auto;padding:40px 24px;line-height:1.8;background:#fff}h1{font-size:2rem;line-height:1.4}h2{font-size:1.5rem;margin-top:2.6rem}h3{font-size:1.15rem;margin-top:1.8rem}p,li{font-size:1rem}.meta,footer{color:#555}.eq{padding:12px 0;font-family:Cambria,Georgia,serif;overflow-wrap:anywhere;line-height:1.9}nav{margin:28px 0}a{color:#145a88}table{border-collapse:collapse;width:100%;margin:20px 0}td,th{border:1px solid #d9d9d9;padding:12px;text-align:left;vertical-align:top}th{background:#e8edf1}tr:nth-child(even){background:#f8f9fa}details{margin:20px 0}summary{cursor:pointer;font-weight:600;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.65 ui-monospace,monospace}.hash{overflow-wrap:anywhere;font-size:.85rem}section{scroll-margin-top:20px}@media(max-width:600px){body{padding:20px 16px}h1{font-size:1.6rem}td,th{padding:8px}}@media print{body{max-width:none;padding:0}nav{display:none}h2,h3{break-after:avoid}tr{break-inside:avoid}details{display:block}summary{list-style:none}a{color:inherit}}</style></head><body>
+<header><p class="meta">v10 研究报告 · 2026 年 11 月 6 日 · 中文 v5</p><h1>逐层更新记忆的条件模拟与源平均残差界</h1>
+<p>本报告研究未知二阶过程下，多次注意力读取逐层变化的非终端键和值时，哪些可验证结构仍允许以有限通信模拟预测器。首先得到三个相互衔接的条件性结果：闭合共享控制模拟、源平均残差转移，以及因果前缀均值的非空实例。后续进一步给出残差可忽略的充分条件、两类型计数改进，以及两个精确残差边界。</p>
+<p><strong>主要边界：</strong>尚未解决任意因果全行自注意力的多次读取主资源界。没有证明新的最优预测率、完整规范化网络实现或训练收敛。独立审阅为分析性文本审阅，不是形式化验证或外部同行评议。</p></header>
+<nav aria-label="报告目录"><a href="#contract">问题契约</a> · <a href="#result1">结果一</a> · <a href="#result2">结果二</a> · <a href="#result3">结果三</a> · <a href="#resources">资源账本</a> · <a href="#prior">先行工作</a> · <a href="#revisions">错误修订</a> · <a href="#limits">局限与下一步</a> · <a href="#followon">残差条件与反例</a> · <a href="#appendices">完整证明与审阅</a></nav>
+<section id="contract"><h2>一 问题契约与已有基础</h2>
+<p>统计目标是同一条已观测历史上的预测：输入为 N 个原始二元符号，附加一个合成终端行；未知源属于平稳、齐次二阶 Markov 类 P<sub>c</sub>，所有下一符号条件概率位于 [c,1−c]，其中已知 c∈(0,1/2)，N≥3。损失为真实末端上下文的期望总变差，再对源取上确界。模型参数可以依赖 N，但不能编码未知转移核，也不获得独立训练样本或真实核作为输入。</p>
+<p>通信模拟采用固定公开输入划分。统计下界使用既有 AA/BB 模四划分。Alice 只发送一次由自己符号决定的消息；Bob 拥有自己的符号并完成模拟。本报告先证明最坏历史的模拟保证，再通过源平均测试定理推出统计下界；二者不是同一种评价标准。</p>
+<p>前期已完成 token-local 记忆的自适应终端读取、固定锚点依赖的可分离提升、阶乘尾部带来的对数改进，以及稳定性预算 W 的误差传播。本次没有把这些已有结果重新作为新方法。新增条件允许公共系数依赖整个先前读取轨迹，只要该轨迹形成可由接收方重建的闭合状态。</p>
+<p>所有终端读取均是对 N 个非终端行及合成自项的全前缀含自身 softmax，得分为 q·k。任意额外的不可分离位置得分、更改掩码或隐藏输入通道不自动满足本报告的定理。实际非终端更新仍须遵守架构的因果可达性；数学上的共享控制不是免费广播原语。</p></section>
+<section id="result1"><h2>二 闭合共享控制下的模拟定理</h2>
+<h3>结构条件</h3><p>有 D 个付费阶段、H≤D 次读取、J 种静态提升记忆。第 j 种记忆中的 K<sub>j,i</sub>(X<sub>i</sub>)∈R<sup>p</sup>、V<sub>j,i</sub>(X<sub>i</sub>)∈R<sup>v</sup>只依赖本行原始符号和公开位置。真实读入的键和值可以在每次读取改变：</p>
+<div class="eq">k<sub>s,i</sub>(y) = A<sub>s</sub>(y) K<sub>j(s),i</sub>(X<sub>i</sub>)<br>v<sub>s,i</sub>(y) = B<sub>s</sub>(y) V<sub>j(s),i</sub>(X<sub>i</sub>)</div>
+<p>状态 y 从公共值开始，只通过这些读出与公开函数更新，不允许另有未传输的数据输入。A、B 的算子范数以及提升键、值和查询的全向量范数均有冻结上界。此条件须对所有原始历史及模拟器投影域成立，不能只测量一条轨迹的矩阵秩。自项由 Bob 在其模拟状态直接计算。</p>
+<p>完整阶段在投影域上的 Lipschitz 上界记为 a<sub>s</sub>；同一状态的注意力答案扰动对阶段输出的增益记为 b<sub>s</sub>。必须计入全部数据坐标、系数变化、输出投影与后续同阶段计算。定义</p>
+<div class="eq">W = Σ<sub>s 为读取</sub> b<sub>s</sub> ∏<sub>ℓ&gt;s</sub> a<sub>ℓ</sub><br>U = 2 + log(1+W) &nbsp;&nbsp; F<sub>p</sub>(t) = t [t / log(e+t)]<sup>p</sup></div>
+<h3>结论与证明</h3><p>对 0&lt;ε≤1，存在源无关、确定性、单向协议，使最坏历史输出总变差误差不超过 ε，通信满足</p>
+<div class="eq">C ≤ min{N, K J(v+1) F<sub>p</sub>(U+log(1/ε))}。</div>
+<p>K 只依赖所声明的固定维数和范数预算，不隐含 N、D、H、J 或 W 的增长。H=0 或 W=0 时零通信足够。</p>
+<ol><li>Alice 对每种静态记忆发送阶乘归一化多项式矩的量化索引。矩以 1/(N+1) 归一化，其半径与 N 无关。Bob 加上自己那部分的精确矩。</li><li>在当前模拟状态 y，Bob 取提升查询 u=A(y)<sup>T</sup>q(y)，再用 B(y) 收缩值矩。统一查询球上的确定性逼近同时覆盖所有反馈选择，无须提前知道真实 y、无需独立性、无需交互通信。</li><li>把真实自项单独加入分子和分母。全前缀含自身的掩码与有界得分保证平均分母至少为 exp(−β)。比值稳定性把增广矩误差转成注意力答案误差。</li><li>先比较同一模拟状态上的精确阶段与近似阶段，再比较精确阶段的两个输入。由 e<sub>s</sub>≤a<sub>s</sub>e<sub>s−1</sub>+b<sub>s</sub>δ 得最终误差≤Wδ。取 δ=ε/(1+W)，阶乘尾部给多项式次数 O(t/log(e+t))，量化位数贡献 O(t)。</li></ol>
+<p>这属于精确实数通信语义：没有断言有限浮点误差已经验证。系数对先前读出的依赖是本次超出固定锚点的部分，但不包含所有锚点模型，原始锚点初始化仍须另外计费；多项式矩方法本身已有先行工作。</p>
+<h3>未知源上的条件资源下界</h3><div class="eq">z = 2+log(1+W)+log(J+1)<br>S = min{(J+1)F<sub>p</sub>(z), N}<br>R(Q) ≥ a<sub>c</sub>/√S。</div>
+<p>常数 a<sub>c</sub>也依赖固定提升维数和范数。证明先指定风险包络 r=a/√S，选择 ε=r，调用既有单向源平均测试不等式，再取足够小的固定 a；不是把未知实际风险塞入模拟资源假设。W=0 用零消息的常数风险论证。增加次数未必有效：若 J 与 W 一直有界，则这类模型不能获得源类一致性。</p>
+<p><strong>证明状态：</strong>COMMON_CONTROL_SIMULATION v2 已获条件性分析审阅 PASS，依赖完整结构证书及既有源平均测试定理。</p></section>
+<section id="result2"><h2>三 真实逐层记忆的源平均残差转移</h2>
+<p>实际网络可以具有任意演化的非终端记忆。选取一个源无关的闭合共享控制替代计算，使二者初始终端状态相同、终端更新函数与自项相同，差异只通过规定的非终端读取进入。替代计算不必是已编译的神经网络，只需满足上述单向模拟证书。</p>
+<p>在实际终端轨迹上，定义实际键和值与替代计算键和值的平均行距离 d<sup>k</sup><sub>s</sub>、d<sup>v</sup><sub>s</sub>，每个均以 N+1 归一化。查询范数上界 Q、值半径 V<sub>0</sub>及双侧得分界 β 必须覆盖两者及线性插值。</p>
+<div class="eq">ρ<sub>s</sub>(X) = exp(2β)[d<sup>v</sup><sub>s</sub>(X)+2V<sub>0</sub>Q d<sup>k</sup><sub>s</sub>(X)]<br>B(X) = Σ<sub>s 为读取</sub> b<sub>s</sub>ρ<sub>s</sub>(X) ∏<sub>ℓ&gt;s</sub>a<sub>ℓ</sub><br>Δ = sup<sub>P∈P<sub>c</sub></sub> E<sub>P</sub>B(X)</div>
+<p>在固定查询下对键和值做线性插值，softmax 权重不超过 exp(2β)/(N+1)。注意力答案的导数是值增量的加权平均，加上 (v<sub>i</sub>−o) 与键扰动的加权项；积分得到单次答案误差≤ρ<sub>s</sub>。再按替代计算的阶段增益传播，得到逐历史输出差≤B(X)，从而模拟实际网络的源平均误差≤ε+Δ。</p>
+<div class="eq">R(实际网络) ≥ max{0, a<sub>c</sub>/√S − Δ}。</div>
+<p>这里不用交换上确界与差：三角不等式直接给 R(替代计算)≤R(实际网络)+Δ。实际轨迹上的残差足够，因为递推先在实际状态比较两个阶段，再用替代阶段的统一 Lipschitz 界比较状态。</p>
+<p>显式数值测试式为 (r+ε+Δ)<sup>2</sup>min(C+1,N)≥1/(16384 ln 2)，但必须同时满足 0&lt;r+ε+Δ≤1/128 和 <strong>8(r+ε+Δ)≤1−2c</strong>，以保证测试源仍在 P<sub>c</sub> 中。后一个条件是独立审阅发现并修复的遗漏。</p>
+<p>Δ 是需要单独证明的结构残差，不是免费假设，更不能从期望得到的预测风险反推。要使转移有实质效力，须证明 Δ 小于 a<sub>c</sub>/√S。罕见历史可容许较大残差，但罕见性必须对未知源类统一成立；仅有混合性、常数状态维度或小的未加权误差都不够。</p>
+<p><strong>证明状态：</strong>AVERAGE_DEFECT_TRANSFER v3 已获条件性分析审阅 PASS。</p></section>
+<section id="result3"><h2>四 因果前缀均值的可核查实例</h2>
+<p>令 X<sub>i</sub>∈{−1,1}。第一次零得分因果注意力让第 i 行保存 m<sub>i</sub>=i<sup>−1</sup>Σ<sub>t≤i</sub>X<sub>t</sub>。合成终端自项为零，它得到 N/(N+1) 倍的全样本均值；再用不超过 2 的付费缩放恢复 y=M<sub>N</sub>。</p>
+<p>第二次终端读取仍为零得分，非终端值是各自的 m<sub>i</sub>，自项为 y。替代计算把所有非终端值改为 y。后者是常数静态基底乘以公共系数 y，满足闭合结构；前者有真正因果、逐行不同的非局部记忆。</p>
+<div class="eq">B(X) ≤ L/(N+1) Σ<sub>i=1</sub><sup>N</sup>|m<sub>i</sub>−M<sub>N</sub>|。</div>
+<p>如果平稳源满足 Var(Σ<sub>t=1</sub><sup>i</sup>X<sub>t</sub>)≤Ki，则利用公共均值 μ 作纯分析比较，E|m<sub>i</sub>−M<sub>N</sub>|≤√(K/i)+√(K/N)。模拟器不需要知道 μ。由 Σi<sup>−1/2</sup>≤2√N，得</p>
+<div class="eq">Δ ≤ 3L√(K/N)。</div>
+<p>对 P<sub>c</sub>，四状态 pair chain 的每个两步转移至少为 c²，因此具有权重 α=4c² 的统一 minorization。两步收缩给协方差界 2(1−α)<sup>⌊h/2⌋</sup>，可取</p>
+<div class="eq">K<sub>c</sub> = 1+4Σ<sub>h≥1</sub>(1−4c²)<sup>⌊h/2⌋</sup> = 2/c²−3。</div>
+<p>长正号块后接长负号块可以让最坏历史残差保持常数量级。因此这个例子具体展示了源平均路线比统一历史逼近更宽的适用范围。</p>
+<p><strong>证明状态：</strong>CAUSAL_PREFIX_AVERAGE_EXAMPLE v1 作为注意力程序实例获 PASS。它没有估计全部四个二阶转移行，不是有效二阶预测器，也没有完成正 ε PreLN/PostLN 的严格编译。L 是共同后续计算的答案到输出增益；若它随资源增长，必须保留其增长。</p></section>
+<section id="resources"><h2>五 资源账本与依赖关系</h2>
+<table><thead><tr><th>资源或条件</th><th>本报告的计费与限制</th></tr></thead><tbody>
+<tr><td>N 与数据</td><td>N 个原始符号；完整历史传输给 N 位上限；不提供未知核。</td></tr>
+<tr><td>D、H、J</td><td>D 是付费阶段，H≤D 是读取数，J 是不同完整静态提升记忆数。共用权重并不自动代表同一种完整记忆。</td></tr>
+<tr><td>p、v 与范数</td><td>提升键和值维数显式出现；常数对固定维数成立，不声称维数统一。低秩但系数范数爆炸不合格。</td></tr>
+<tr><td>a、b、W</td><td>全部输入依赖坐标、残差与归一化增益均须计入；要求投影域上统一而非只沿精确轨迹。</td></tr>
+<tr><td>ε 与通信</td><td>局部精度 ε/(1+W)；一般定理使用现有阶乘 Taylor 尾部、球网量化与分母稳定性；第九节的位置一致两类型子类改用单标量计数，无须 Taylor 展开。</td></tr>
+<tr><td>Δ 与源类</td><td>对所有 P∈P_c 的加权平均残差上界；固定 c 的常数可随 c→0 恶化。</td></tr>
+<tr><td>算术与实现</td><td>协议为精确实数、无局部计算限制；不是有限精度运行或神经元实现保证。</td></tr>
+<tr><td>训练与实验</td><td>未训练、未采样源、未执行数值复现、未测模型；只进行了证明文本审阅与文档检查。</td></tr>
+</tbody></table>
+<p>证明依赖链：既有 token-local 模拟与锚点可分离提升 → 阶乘度数改进及稳定性预算 → 本次反馈闭合模拟 → 平均行扰动转移。统计部分独立依赖已审阅的二元单向源平均测试定理；例子另用有限状态链的两步 minorization 和方差恒等式。没有把一般交互式 Markov 信息不等式当成已知结果。</p></section>
+<section id="prior"><h2>六 最接近先行工作与非新颖部分</h2>
+<p>以下对照沿用已核查的 CURRENT_FRONTIER_PRIMARY_COMPARISON v2；本次不是新的全网查重或优先权认证。</p>
+<ul><li><a href="https://arxiv.org/html/2302.13214v1">Alman 与 Song，Fast Attention Requires Bounded Entries</a>：多项式核分解与有界注意力逼近是直接技术前身。本报告不声称新的特征代数或运行时间最优界。</li>
+<li><a href="https://arxiv.org/html/2606.07205v1">Chen 等，Towards Tight Bounds for Streaming Attention</a>：确定性 Taylor 矩摘要与有界查询球逼近已有基础。反馈查询由统一逼近覆盖，不构成首次“自适应注意力压缩”。</li>
+<li><a href="https://arxiv.org/html/2610.41038v1">Akman 等的研究</a>：重复静态记忆 gatherers 已有先例。不能把重复静态读取本身作为本次贡献。</li>
+<li><a href="https://arxiv.org/html/2407.17686v1">Rajaraman 等，Transformers on Markov Data Constant Depth Suffices</a>，以及 <a href="https://arxiv.org/pdf/2508.07208v2">Ekbote 等，What One Cannot Two Can</a>：已有少层 Markov 计数表达结果。表达性、最低层数与一般优化收敛是不同问题；这些构造不能未经资源审查直接代入本报告的冻结范数条件。</li></ul>
+<p>本次有限增量在于：把固定锚点的公共系数换成可由先前读出重建的反馈系数，并把一般真实记忆与这一结构之间的差距写成显式加权源平均残差。残差传播、Taylor 特征和有限状态链混合均不是新的通用工具。</p></section>
+<section id="revisions"><h2>七 失败路线与独立审阅修订</h2>
+<ol><li><strong>COMMON_CONTROL v1：</strong>漏写全前缀含自身掩码及 Bob 添加自己精确矩的步骤。v2 明确补齐，v1 与对应修订要求审阅保留。</li>
+<li><strong>AVERAGE_DEFECT v1 与 v2：</strong>显式测试式少写 P_c 内部性的幅度约束；c 接近 1/2 时原表述不成立。v3 补上 8(r+ε+Δ)≤1−2c，同时明确共同公共初态与覆盖两种答案域的增益。</li>
+<li>不能让 Alice 直接摘要实际演化 K/V，因为其依赖跨方先前读出。修正后的协议只摘要静态提升基底。</li>
+<li>不能从零得分因果注意力推断全局共享摘要，每行读取的前缀不同。前缀实例采用源平均残差，而非虚构精确公共广播。</li>
+<li>不能从低状态维度推出少量信息，也不能以待证明的预测风险假定小残差。实际可达性、稳定性及残差都须另外核查。</li></ol>
+<p>全部数学候选旧版本和对应独立审阅仍保留。本报告前三项结果采用通过审阅的 common-control v2、average-defect v3 和 prefix-example v1；后续成果采用第九节对应的最终候选与审阅，并在文末一并附录。完整原文与审阅附在文末，可离线核对；审阅并不等于正式机器证明或发表认可。</p></section>
+<section id="limits"><h2>八 尚未解决的问题与后续研究判据</h2>
+<ol><li>对一般全行因果自注意力，构造固定维数、固定范数的闭合控制证书，或证明其不存在。</li><li>对于真实有用的二阶预测网络，独立证明 Δ=o(1/√S)，而不是只给均值程序实例。</li><li>验证原始符号、付费层、正 ε 归一化与有限精度的完整实现。未经此步，不把抽象程序宣称为规范化 Transformer 构造。</li><li>寻找匹配上界与必要条件。目前只有充分条件和条件下界，指数与常数不主张最优。</li><li>训练问题另行建立：表达构造不证明梯度算法会找到它，先验未知源不等于源特定训练成功。</li></ol>
+<p>研究流程未进行模型训练、科学数值实验、对外投稿、购买或公开仓库写入。本 HTML 为静态离线报告，无脚本、表单、追踪或外部字体；只有明确列出的文献超链接。生成与解析报告不属于科学复现。</p></section>
+<section id="followon"><h2>九 因果行更新的可忽略残差条件与反例</h2>
+<p>后续研究针对一个具体问题：何时 Δ 不会吞掉资源下界？以下把充分条件、较紧计费及失败边界配对给出，仍不推广为任意全行自注意力的主定理。</p>
+<h3>位置一致的前缀 Lipschitz 行更新</h3>
+<p>让每行保留自身符号 X<sub>i</sub>及因果前缀均值 m<sub>i</sub>。后续允许付费的非线性本地行更新，只要求每次读到的键和值最终可写成 κ<sub>s</sub>(X<sub>i</sub>,m<sub>i</sub>)、ν<sub>s</sub>(X<sub>i</sub>,m<sub>i</sub>)。函数在各位置相同，对第二个变量分别有统一 Lipschitz 常数 L<sup>k</sup><sub>s</sub>、L<sup>v</sup><sub>s</sub>，范数与查询满足原有预算。不能因此容许任意新一轮跨行混合。</p>
+<p>以终端保存的 M<sub>N</sub>替换 m<sub>i</sub>后，二元 onehot e(X<sub>i</sub>) 就给出固定的两列分解：A(z)=[κ(−1,z),κ(+1,z)]，B 同理。非线性复杂度不增加静态基底维数，但其增益与付费深度仍须计费。该替代计算只依赖两类符号计数，因此不能凭多次自适应读取恢复末端有序符号对或全部二阶转移行。</p>
+<div class="eq">Γ = Σ<sub>s 为共同首读后的读取</sub> b<sub>s</sub> exp(2β) (L<sup>v</sup><sub>s</sub>+2V<sub>0</sub>Q L<sup>k</sup><sub>s</sub>) ∏<sub>ℓ&gt;s</sub>a<sub>ℓ</sub><br>Δ ≤ 3Γ√(K<sub>c</sub>/N)。</div>
+<p>这里 Γ 不等于 W：若本地行函数对前缀均值变得尖锐，L<sup>k</sup>、L<sup>v</sup>必须另计。共同首读无残差，不进入 Γ。首读的值范数也要包含原始 ±1，统一预算应取 max(1,V<sub>0</sub>)。</p>
+<h3>两类计数比多项式矩更紧</h3>
+<p>独立审阅进一步发现，此位置一致子类不必使用 Taylor 特征。Alice 只发送自己正号数量除以 N+1 后的一个量化标量；自己拥有的总行数公开，负号质量由差得到。Bob 加上自己的计数，在每个模拟状态精确计算两个类型的指数权重，并单独加自项。</p>
+<p>计数量化误差 η 对增广分子分母造成至多 2η exp(β)√(V<sub>0</sub>²+1) 的统一误差。取 η 为 ε/(1+W) 的固定常数倍，即得</p>
+<div class="eq">C ≤ min{N, K[2+log(1+W)+log(1/ε)]}<br>S<sub>0</sub> = min{2+log(1+W),N}<br>R(实际网络) ≥ max{0,a<sub>c</sub>/√S<sub>0</sub>−3Γ√(K<sub>c</sub>/N)}。</div>
+<p>因此固定 c 下，<strong>Γ²S<sub>0</sub>=o(N)</strong> 是残差可忽略的明确充分条件；最终可保留至少一半常数的资源下界。早先使用 F<sub>2</sub> 的界仍正确，但对只有两种本地类型的子类计费偏松。位置依赖或跨符号对特征不能免费纳入这个单计数协议。</p>
+<p>如果启动阶段数量固定且每个 a、b 统一有界，其后所有阶段非扩张，b 和本地行敏感度也有固定界，则 W=O(1+H)、Γ=O(H)，条件化为 H²[2+log(1+H)]=o(N)。允许固定启动增益是必要的，因为均值恢复步骤的缩放 (N+1)/N 略大于一。只界定所有启动增益的总乘积不够：前面的小增益可能掩盖后面的放大，而误差会在中途注入。</p>
+<h3>未放大实例的残差阶是精确的</h3>
+<p>本节两个例子均使用二元仿射输出 Q(t)=((1+t)/2,(1−t)/2)。记 H<sub>n</sub>=Σ<sub>k=1</sub><sup>n</sup>1/k、H<sub>0</sub>=0。在公平 IID 源下，对原始两读前缀均值实例，令 w<sub>N,j</sub>=H<sub>N</sub>−H<sub>j−1</sub>−1。输出答案差为 (N+1)<sup>−1</sup>Σw<sub>N,j</sub>X<sub>j</sub>，精确恒等式 Σw²=N−H<sub>N</sub>。最大权重仅 O(log N)，相对总标准差趋零，特征函数展开给加权 Rademacher 中心极限定理。二阶矩有界保证绝对值的一致可积性，最终</p>
+<div class="eq">√N E TV(Q<sub>实际</sub>,Q<sub>替代</sub>) → 1/√(2π)。</div>
+<p>所以此前 O(N<sup>−1/2</sup>) 的残差界确实不能普遍改成 o(N<sup>−1/2</sup>)。当 S=o(N) 它仍相对主下界可忽略；若只拿 S≈N 的目标尺度比较，这个特定替代计算的残差不再可忽略。这不是所有模拟器的下界。</p>
+<h3>有界值与零得分仍可产生常数残差</h3>
+<p>另一个明确反例对每行前缀均值连续执行 d=⌈log<sub>2</sub>N⌉ 次 z←clip(2z,−1,1)。每步增益最多 2、值一直位于 [−1,1]，最终得分始终为零，但值已变为 sgn(S<sub>i</sub>)，其中 S<sub>i</sub>=Σ<sub>t≤i</sub>X<sub>t</sub>、sgn(0)=0。自然替代计算把它们换为 sgn(S<sub>N</sub>)。</p>
+<p>在公平 IID 源下，固定 i/N→t 时，两个归一化随机游走和趋于相关系数 √t 的二维正态。异号概率趋于 arccos(√t)/π。对 t∈[0,1] 积分，结合二元 TV 的 1/2 因子，得到</p>
+<div class="eq">E TV(Q<sub>实际</sub>,Q<sub>自然替代</sub>) → 1/4。</div>
+<p>该反例只否定“有界分数、值和单步增益加混合性就能自动保证此残差很小”。它没有排除别的高效模拟器，也不是低风险预测器。组成后的行敏感度约为 N，正好违反 Γ²S<sub>0</sub>=o(N) 的充分条件。所有极限均为解析推导，未运行模拟或训练。</p>
+<p><strong>共同二阶模型中的含义：</strong>这是一组真实因果、有序前缀依赖的表达限制与残差边界。它既给出了不会被残差吞没的下界子类，也明确显示为何边缘均值例子不能冒充完整二阶转移估计。要加入滞后二元组或三元组，必须重新处理 AA/BB 输入所有权，而非把它们当作免费本地原始特征。</p><p><strong>最终证明状态：</strong>CAUSAL_PREFIX_LIPSCHITZ_CLOSURE v3、TWO_TYPE_COUNT_SIMULATION v1、PREFIX_DEFECT_SHARPNESS v1、AMPLIFIED_PREFIX_DEFECT v1 均已通过各自明确范围下的独立分析审阅。完整候选与对应审阅附于文末；这不改变训练、规范化编译及一般因果主定理仍未解决的状态。</p></section>
+<section id="appendices"><h2>十 完整证明与独立审阅原文</h2><p>为避免翻译掩盖技术限定，以下附录保留通过审阅的英文技术原文及审阅文本。哈希用于精确版本核对。候选原文中 pending 等状态是冻结该版本时的历史状态，最终结论以后附独立审阅为准。</p><details><summary>完整证明一 · COMMON_CONTROL_SIMULATION.candidate.v2.md</summary><p class="hash">SHA-256 fd8024b004920fceaa91147cffed4216bbb13e29aba26d3ba9d54deb882c9c15</p><pre># Evolving memory with closed common control: a one-way simulation certificate
+
+6 November 2026 UTC. Analytical candidate v2. Version 1 is preserved; v2 explicitly adds full-prefix inclusive masks and Bob-owned moments after independent review. No training, numerical experiment, public upload, or claim of an unrestricted causal-transformer theorem. Exact-file independent review pending.
+
+## 1. Increment over the existing results
+
+The token-local theorem forbids dependence of nonterminal K/V on previous terminal answers. The anchored separable extension permits common coefficients depending on a fixed raw anchor tuple, sent to the decoder. Here the coefficients may depend continuously on the ENTIRE previous read transcript, and thus need not be known to either party before communication. The one-way message nevertheless remains independent of that transcript. The new assumption is a closed, reconstructible control state, not merely low dimensionality of hidden vectors.
+
+All conclusions are representation/resource necessities for source-independent predictors on the same observed history. They do not analyze fitting, gradient descent, independently trained parameters, or source-specific weights.
+
+## 2. Checkable structural contract
+
+There are N raw binary tokens and a synthetic terminal. A public computation has D paid stages and H&lt;=D reads. Its dynamic control/terminal state y starts at a public value. Every data-carrying terminal input is either the result of these reads or a public function of current y. There is no uncommunicated initial aggregate or side channel. Each stage updates y from y and its own attention answer by a public map. Parameters may depend on N but not the unknown transition kernel.
+
+There are J distinct static lifted banks. Bank j has public token-local maps
+
+    K_{j,i}(X_i) in R^p,  V_{j,i}(X_i) in R^v,
+    ||K_{j,i}||&lt;=R, ||V_{j,i}||&lt;=V.
+
+Every read is full-prefix inclusive softmax over all N nonterminal rows and the synthetic self row, with score q dot k and no additional nonseparable pairwise positional bias. The ownership split is any fixed public split (AA/BB for the binary statistical consequence). A read s using j=j(s) has a common-control factorization
+
+    k_{s,i}(y)=A_s(y) K_{j,i}(X_i),
+    v_{s,i}(y)=B_s(y) V_{j,i}(X_i),   i&lt;=N.
+
+The matrices may change at every stage and depend on all earlier answers. Their operator norms are uniformly bounded by A_*,B_* on a declared projected state domain. The original query obeys ||q_s(y)||&lt;=Q. Terminal self K/V are arbitrary bounded public functions of y and handled separately. Biases are permitted by adding a fixed 1 coordinate to the relevant lifted bank, with its norm charged. An affine key bias common only to nonterminal rows must NOT be canceled against the terminal self score: the lifted representation handles it correctly.
+
+The full exact extended stage map F_s^X on y has a public history-uniform Lipschitz bound a_s on this domain, including dependence of A_s,B_s,q_s and self K/V on y. Replacing an attention answer at a fixed y by an error delta changes that stage&#x27;s output by at most b_s delta. All data-carrying state coordinates must be included. Proof-side projections may enforce domains provided they fix exact trajectories. Set
+
+    W=sum_{s read} b_s product_{l&gt;s} a_l,
+    U=2+log(1+W), F_p(t)=t[t/log(e+t)]^p.
+
+The required certificate is a dataflow/factorization certificate for ALL raw histories and simulated states, not rank measured on one realized matrix. All network work computing rows and controls remains charged. Actual attention masks/availability must be verified separately; this theorem neither permits backward broadcasts in a causal architecture nor adds a global controller as a free network primitive.
+
+## 3. Worst-history one-way theorem
+
+For fixed p,v,R,V,A_*,B_*,Q and bounded original self K/V, there is a deterministic source-independent one-way simulator, for 0&lt;epsilon&lt;=1, with
+
+    C &lt;= min{N, K J(v+1) F_p(U+log(1/epsilon))},             (1)
+
+and worst-history output TV error &lt;=epsilon for normalized binary outputs. K depends only on the displayed fixed dimensions/norm budgets, not D,H,J,W,N or the unknown source. The supplied a_s,b_s appear through W. If H=0 or W=0, zero communication suffices. Formula (1) is only asserted with J&gt;=1 in the nonzero case.
+
+Proof. Alice sends one quantized averaged factorial-feature moment per static bank,
+
+    Z_j=(1/(N+1)) sum_{i owned by Alice} phi_m(K_{j,i}) tensor (V_{j,i},1).
+
+Its radius is exp(R^2/2)sqrt(V^2+1), independent of N,m. The feature dimension is (v+1) binom(m+p,p). Bob computes his own exact token-local partial moment for each bank with the same 1/(N+1) normalization and adds it to the decoded Alice moment. Thus the combined moment represents ALL nonterminal rows, with quantization error only from Alice. At a simulated state y, Bob forms the adaptive lifted query
+
+    u_s(y)=A_s(y)^T q_s(y),   ||u_s(y)||&lt;=A_*Q,
+
+and contracts the static moments with phi_m(u_s). This approximates the lifted nonterminal numerator and scalar denominator uniformly over EVERY permitted y; no distributional independence, union bound, or advance knowledge of y is needed. Bob transforms the approximate lifted numerator by B_s(y), and adds the exact original self numerator/denominator, each divided by N+1.
+
+For beta=max(A_*QR, sup |q dot k_self|), the exact averaged denominator is &gt;=exp(-beta). If augmented lifted approximation error is e, the transformed augmented error is &lt;=max(1,B_*)e. The exact value average norm is bounded by max(B_*V,V_self). Hence the same ratio identity as the accepted local theorem gives answer error &lt;=K_0 e once e is small enough to preserve half the denominator floor. Project approximate answers to the declared value ball.
+
+The uniform error before transformation is at most
+
+    sqrt(V^2+1) exp(A_*QR) (A_*QR)^(m+1)/(m+1)!
+       + exp((A_*Q)^2/2) eta.
+
+For delta=epsilon/(1+W), take e&lt;=c delta. The accepted factorial lemma gives m+1=O(t/log(e+t)), eta=c&#x27; delta, t=U+log(1/epsilon). Net indices require O((v+1)F_p(t)) bits per bank. Their one-way preparation uses only X_i and static bank maps, even though the ORIGINAL K/V depend on previous answers. Bob reconstructs coefficients at his own simulated state, not at an unavailable exact state.
+
+Compare the simulated stage at simulated y with the exact F_s^X at that same y, then with F_s^X at exact y. This gives e_s&lt;=a_s e_{s-1}+b_s delta for reads and e_s&lt;=a_s e_{s-1} otherwise. Thus final state error &lt;=W delta&lt;=epsilon. Projection to the binary simplex fixes the exact output, is nonexpansive, and TV is bounded by Euclidean error. Sending Alice&#x27;s raw bits instead gives the N cap. All protocol local computation is unrestricted exact-real computation, not a floating-point implementation claim.
+
+## 4. Unknown second-order source consequence
+
+For N&gt;=3 and stationary interior binary order-two class P_c, c in (0,1/2), import the independently reviewed AA/BB one-way source-average testing inequality. Set
+
+    z=2+log(1+W)+log(J+1),
+    S=min{(J+1)F_p(z),N}.
+
+Then uniformly over this certified predictor subclass,
+
+    sup_{P in P_c} E_P TV(Q_N,P(.|X_{N-1},X_N)) &gt;= a_c/sqrt(S).  (2)
+
+The constant includes fixed lifted dimensions and norm budgets. For W=0 use the zero-message constant-risk result. Proof is exactly the accepted stability-budget inversion with k replaced by p: advertise r=a/sqrt(S), use epsilon=r, and apply (2r)^2 min(C+1,N)&gt;=1/(16384 ln 2). On S&lt;N, log S&lt;=O_p(z) and F_p(U+log(1/r))&lt;=O_p((1+log(1/a))^(p+1)F_p(z)); one fixed sufficiently small a contradicts the testing bound. The S=N branch follows directly from 4a^2. No actual unknown risk is inserted into a simulation resource hypothesis.
+
+This is a worst-history simulator implying a SOURCE-AVERAGE statistical lower. The statistical task is not worst-history prediction and the proof does not replace the stationary interior source class by arbitrary strings. For general bounded stage gains W&lt;=bHA^D, (2) gives the previous factorial depth expression with lifted dimension p. Stable dynamics can give a smaller W. Repeated updates do not automatically yield smaller risk.
+
+## 5. Concrete inclusion and concrete failure of the certificate
+
+Inclusion at the computation level: choose static scalar keys x_i and values (x_i,1), bounded y in [-1,1], A_s(y)=y, and B_s(y)=(y,1-y). Then k_i=y x_i and v_i=y x_i+1-y truly vary with earlier reads whenever y does. A public Lipschitz clipped update of y from each answer gives the required closed control and finite gains. This is an abstract common-control attention program, not a newly constructed standard causal transformer. Realizing its broadcast/multiplication with the allowed raw-token primitives is a separate obligation.
+
+Failure: even zero-score causal self-attention with values x_i has row-i output m_i=(1/i)sum_{t&lt;=i}x_t. With k_i or v_i set to m_i, distinct rows carry different prefix summaries. It does not follow that a fixed-dimensional reconstructible COMMON state can generate these rows from x_i. Indeed for a fixed y independent of those raw prefixes, positions with identical own token can have different m_i under histories agreeing on x_i. This refutes token locality and the naive &#x27;uniform attention means a single common summary&#x27; argument. It does NOT prove that no alternative clever finite certificate exists, nor a source-average lower for this network.
+
+## 6. Scope and closest precedents
+
+This is a closure extension of the local anchored finite-separable lift, not a new polynomial attention feature method. Fixed-anchor coefficients become feedback coefficients because the decoder can reconstruct the closed state. A missing raw-input side channel invalidates that step.
+
+Closest sources already checked in CURRENT_FRONTIER_PRIMARY_COMPARISON.v2.md:
+- Alman–Song, polynomial kernel factorization and bounded attention: https://arxiv.org/html/2302.13214v1 .
+- Chen et al., deterministic Taylor moment summaries and streaming attention: https://arxiv.org/html/2606.07205v1 .
+- Akman et al., repeated static-bank gatherers: https://arxiv.org/html/2610.41038v1 .
+- Rajaraman et al., Markov representation in constant depth: https://arxiv.org/html/2407.17686v1 .
+- Ekbote et al., two-layer Markov representation with separate reduced training result: https://arxiv.org/pdf/2508.07208v2 .
+These are inherited primary-source comparisons, not a fresh literature-priority certification. The first two supply existing approximation ingredients. The latter representation constructions do not verify this closed-control factorization with frozen constants; absence from the checked local comparison is not a universal impossibility claim.
+
+Still open: prove a small fixed-lift closed-state certificate for general evolving full-row CAUSAL self-attention, or replace it by a direct source-average argument; build a nontrivial strictly compliant causal implementation improving statistical rates; prove sharpness; analyze training. No unconditional multiple-attention main frontier has been established here.
+</pre></details><details><summary>完整证明二 · AVERAGE_DEFECT_TRANSFER.candidate.v3.md</summary><p class="hash">SHA-256 b5635587be993ddb209c5f0ea54c72ca7d362c13a57cc0b35b25dd654e92cd29</p><pre># Source-average residual certificate for evolving all-row memory
+
+6 November 2026 UTC. Version 3 additionally imposes the interior-witness amplitude range and common initial state/answer domain after independent review. Version 2 explicitly aligns the mask contract with the independently corrected common-control theorem; v1 is preserved. Companion to COMMON_CONTROL_SIMULATION.candidate.v2.md. Analytical result awaiting independent review. No numerical or training evidence.
+
+## 1. Actual network versus closed surrogate
+
+Let an actual network have arbitrary evolving nonterminal K/V. Every declared terminal read in BOTH networks is full-prefix inclusive softmax over all N nonterminal rows and the synthetic self row, with scores q dot k and no extra nonseparable positional score. Isolate its terminal/control coordinates y_s. Assume each terminal update is G_s(y,attention_answer), with the same read-stage schedule and self K/V as a certified closed common-control surrogate from the companion. Both computations start at the SAME public initial terminal/control state. The gains b_s must hold for answer perturbations covering BOTH actual and surrogate answer balls. Nonread terminal updates must be identical; no extra history-dependent channel is allowed. Nonterminal memory can be arbitrary, but its only influence on y is through the declared reads. The surrogate need not be an implementable network: a publicly specified source-independent one-way simulable computation is enough for this argument.
+
+Require uniform key/query/value bounds for the ACTUAL banks and surrogate banks, including the straight-line interpolations between their K/V at fixed y. Euclidean balls automatically satisfy this. Use common query q_s(y), ||q||&lt;=Q, value radius V_0, and score absolute bound beta. Terminal self terms coincide at fixed y. At the actual trajectory y_{s-1}(X), define
+
+    d^k_s(X)=(1/(N+1))sum_{i&lt;=N} ||k_actual,s,i(X)-k_surrogate,s,i(X_i,y_{s-1}(X))||,
+    d^v_s(X)=(1/(N+1))sum_{i&lt;=N} ||v_actual,s,i(X)-v_surrogate,s,i(X_i,y_{s-1}(X))||,
+    rho_s(X)=exp(2 beta)[d^v_s(X)+2 V_0 Q d^k_s(X)].
+
+These are mathematical certificate quantities, not free features supplied to the predictor or simulator. They may be bounded by symbolic analysis, or checked on a finite set for that finite set only. A finite numerical check alone does not certify a uniform source-class assertion.
+
+## 2. Attention perturbation lemma
+
+For a fixed query and T=N+1 rows, interpolate keys and values linearly. At interpolation parameter t, attention weights obey alpha_i(t)&lt;=exp(2 beta)/T. Differentiating the answer o(t) yields
+
+    o&#x27;(t)=sum_i alpha_i(t) Delta v_i
+          +sum_i alpha_i(t)(v_i(t)-o(t)) (q dot Delta k_i).
+
+Since ||v_i(t)-o(t)||&lt;=2V_0, integration gives ||o_actual-o_surrogate||&lt;=rho_s. The self perturbation is zero, so summing only i&lt;=N is valid. No independence assumption or hidden sqrt(N) term appears.
+
+## 3. Pathwise and average transfer theorem
+
+Let a_s be the surrogate exact stage Lipschitz constants and b_s the same-state continuation gains. These constants must hold on the projected domain containing both exact actual and surrogate terminal states. Define
+
+    B(X)=sum_{s read} b_s rho_s(X) product_{l&gt;s} a_l.
+
+Then output TV(actual,surrogate)&lt;=B(X). Proof: compare the actual stage on its actual y to the surrogate stage on THAT y using b_s rho_s; then use the surrogate stage&#x27;s a_s-Lipschitz bound to compare actual y with surrogate y. The recurrence is e_s&lt;=b_s rho_s(X)+a_s e_{s-1}. Only actual-path residuals are required because the recurrence is oriented this way. Final simplex projection fixes actual and surrogate probability outputs and gives the TV bound. Require both exact outputs to be normalized, or explicitly include their identical normalizing map in the paid terminal continuation and gain accounting.
+
+Consequently, if
+
+    Delta=sup_{P in P_c} E_P B(X),
+
+then the companion&#x27;s one-way simulator has source-average error &lt;=epsilon+Delta against the ACTUAL network, with communication still given by (1) there. If actual worst-source prediction risk is r, testing yields
+
+    (r+epsilon+Delta)^2 min(C+1,N)&gt;=1/(16384 ln 2)
+
+whenever 0&lt;r+epsilon+Delta&lt;=1/128 AND 8(r+epsilon+Delta)&lt;=1-2c, so the lag-two testing witnesses remain within P_c. The latter condition cannot be omitted when c approaches 1/2. Alternatively, with S and a_c as in the companion, applying the resource lower to the surrogate and the triangle inequality gives the clean transfer
+
+    R(actual) &gt;= max{0, a_c/sqrt(S)-Delta}.                 (3)
+
+The surrogate is source-independent and its structural simulation proof, not physical realizability, suffices for the testing lower. The inequality on sup risks follows from R(surrogate)&lt;=R(actual)+Delta; no exchange of sup and difference is used.
+
+## 4. What this resolves and does not resolve
+
+Exact closed common-control factorization corresponds to Delta=0. A source-average defect certificate can tolerate large errors on rare histories, unlike uniform approximation, but the rarity must be proved uniformly over the unknown source class. Bounded norm, mixing, constant hidden dimension or small average UNWEIGHTED row perturbation alone does not control Delta after amplification: all later a_l are charged. A proposed useful transfer must establish Delta=o(1/sqrt(S)), or at least a smaller constant at that scale, without presupposing the desired prediction lower bound.
+
+This gives an explicit sufficient target for actual evolving causal memory: produce a public closed surrogate and bound the weighted mean row defects. It neither asserts that every such network admits one nor establishes a favorable defect bound for general causal self-attention. The perturbation lemma and hybrid argument are standard stability tools, not a new technique claim. Closest approximation precedents and common-control novelty limits are in the companion; no additional external theorem is imported.
+</pre></details><details><summary>完整例子 · CAUSAL_PREFIX_AVERAGE_EXAMPLE.candidate.v1.md</summary><p class="hash">SHA-256 12337b6ee7cd6321deec32a518f948e0c4886785b2814346769495941a390446</p><pre># A nonzero all-row update with a source-average closure defect
+
+6 November 2026 UTC. Conditional attention-program example, not a complete positive-epsilon normalized Transformer compiler or a good order-two predictor. Exact-file review pending.
+
+Use signed raw tokens X_i in {-1,1}. A first zero-score causal attention layer produces m_i=i^(-1)sum_{t&lt;=i}X_t at each nonterminal row, so the bank has genuine prefix-dependent evolving values. At the synthetic terminal, raw self value zero gives (N/(N+1)) M_N, M_N=N^(-1)sum_i X_i. A bounded paid rescaling by (N+1)/N&lt;=2 recovers terminal control y=M_N. This rescaling is a program operation; no uncharged neural compilation is asserted.
+
+A second full-prefix zero-score terminal read has nonterminal values m_i and terminal self value y. Its answer is (sum_i m_i+y)/(N+1). The surrogate instead gives every nonterminal row value y, with the same self y. This is a closed common-control bank: static value basis 1, coefficient B(y)=y, and key zero. Both stages can reuse the finite family of static bases X_i and 1. The first read and its control match exactly; only the second bank differs. Any shared bounded Lipschitz continuation with answer-to-output gain L gives a TV defect bound
+
+    B(X)&lt;=L/(N+1) sum_i |m_i-M_N|.
+
+There is no attention-key perturbation and beta=0. A worst-history bound need not tend to zero (for example a string consisting of a long +1 block followed by a long -1 block).
+
+For a stationary source with mean mu and a uniform covariance-sum certificate
+
+    Var(sum_{t=1}^i X_t)&lt;=K i for all i,
+
+Cauchy-Schwarz gives E|m_i-M_N|&lt;=sqrt(K/i)+sqrt(K/N). Since sum_{i=1}^N i^(-1/2)&lt;=2sqrt(N),
+
+    Delta&lt;=3L sqrt(K/N).
+
+The simulator never knows or uses mu; it computes y from the first read. mu appears only in the analysis of the residual.
+
+For the stationary interior binary order-two class P_c, a K depending only on c exists directly: the pair chain has four states, and every two-step transition to any target pair has probability &gt;=c^2. Hence its two-step transition dominates weight alpha=4c^2 times the uniform law. Coupling (or iteration of the minorization) gives pair-chain TV contraction at most (1-alpha)^floor(h/2). For bounded spins, |Cov(X_t,X_{t+h})|&lt;=2(1-alpha)^floor(h/2) is a loose valid bound. Therefore
+
+    K=1+4 sum_{h&gt;=1}(1-alpha)^floor(h/2)&lt;infinity
+
+is sufficient after expanding the variance of the partial sum. No independent-sample assumption is used; stationary mean is constant. Constants deteriorate as c decreases, as expected.
+
+Thus an actual all-row causal prefix-mean update can fail exact token locality yet satisfy the source-average closure certificate at O(N^(-1/2)). This demonstrates a nonempty scope of the residual theorem beyond exact common broadcast. It does not show that this network estimates all four transition rows, improves the main depth-risk frontier, or supplies a complete standard PreLN/PostLN realization. It is a checkable attention-program witness and an analytical certificate, not trained-model evidence.
+</pre></details><details><summary>独立审阅一 · INDEPENDENT_COMMON_CONTROL_AUDIT.v2.md</summary><p class="hash">SHA-256 6411fcf766003a08f90de16baf48c5bc4ccd47a39bf860fb7307a998e67eca48</p><pre># Independent exact-file audit: closed common control v2
+
+6 November 2026 UTC.
+
+Reviewed candidate: `COMMON_CONTROL_SIMULATION.candidate.v2.md`.
+
+SHA-256: `fd8024b004920fceaa91147cffed4216bbb13e29aba26d3ba9d54deb882c9c15`.
+
+**Verdict: PASS, conditional on the complete stated structural and uniform off-trajectory certificates, and on the imported reviewed source-average testing theorem. The two v1 omissions are explicitly repaired. No further mathematical correction is required.**
+
+This is an independent analytical audit, not formal verification, an empirical validation, external peer review, or a literature-priority certification. The candidate was not edited.
+
+## 1. One-way legitimacy under feedback
+
+For fixed public architecture parameters, N and ownership split, Alice&#x27;s message is a function only of her owned raw symbols and the token-local lifted maps. In particular it contains neither exact feedback coefficients nor a response to Bob&#x27;s observations. Bob adds his own exact local moments before performing any read. Both partial sums use T=N+1 as their denominator, so their sum represents every nonterminal row.
+
+At any simulated control state y, the equality q_s(y) dot A_s(y)K_i = [A_s(y)^T q_s(y)] dot K_i is exact. The lifted query norm is at most A_*Q. The feature approximation is simultaneous over that entire norm ball, rather than conditioned on one realized query. Bob can therefore choose queries and coefficients using all earlier simulated answers, without a union bound, independence hypothesis, or Bob-to-Alice message. Comparing with the exact stage at this same simulated y is essential. Comparing directly with coefficients at an unavailable exact state would not prove the claim.
+
+The public initial state, closed updates and prohibition of other data channels ensure that Bob can execute every remaining operation. A low-dimensional hidden vector by itself does not provide this property. All data-bearing state coordinates must be included in the metric, and the factorization and gain bounds must hold off the exact trajectory on the declared simulator domain.
+
+## 2. Augmented approximation, denominator and self term
+
+Let T=N+1 and L=max(1,B_*). The exact augmented nonterminal average before applying B_s has Taylor-plus-net error at most
+
+    e &lt;= sqrt(V^2+1) exp(A_*QR) (A_*QR)^(m+1)/(m+1)!
+         + exp((A_*Q)^2/2) eta.
+
+The radius of Alice&#x27;s moment is bounded by exp(R^2/2)sqrt(V^2+1), independently of T and degree. Bob&#x27;s exact partial moment adds no quantization error. Multiplying the lifted numerator by B_s(y), while leaving the denominator coordinate unchanged, increases the joint error by at most L. Bob then adds the original self numerator and denominator, each divided by T. That term has zero approximation error at the fixed state being compared.
+
+The repaired full-prefix inclusive contract supplies T scores, each at least -beta, so the true averaged denominator b is at least exp(-beta). Set Vbar=max(B_*V,V_self), so the exact answer a/b has norm at most Vbar. If Le&lt;=exp(-beta)/2, then bhat&gt;=exp(-beta)/2 and the ratio identity gives
+
+    ||ahat/bhat-a/b|| &lt;= 2 exp(beta) (1+Vbar) L e.
+
+Thus a fixed choice e&lt;=c delta preserves the denominator and gives answer error at most delta. Approximate weights need not be positive. Projection into the declared value ball fixes exact answers and cannot increase their error.
+
+The key-bias warning is correct. A bias shared only by nonterminal scores cannot be canceled against the synthetic self score. A fixed coordinate in the lifted bank preserves the exact relative normalization, provided its norm and coefficient budget are charged. Arbitrary unrepresented positional scores or masks are outside this proof.
+
+## 3. Precision, message length and W
+
+Write t=2+log(1+W)+log(1/epsilon)&gt;=2 and delta=epsilon/(1+W). Then log(1/delta)=t-2. The reviewed factorial degree estimate gives m+1=O(t/log(e+t)); the zero effective score endpoint permits degree zero. The full Euclidean feature-ball net has index length
+
+    O((v+1) binom(m+p,p) log(1/eta))
+      &lt;= K(v+1) t[t/log(e+t)]^p
+
+for eta a fixed multiple of delta. Its radius is degree independent, so no hidden log(m) precision loss is introduced. All fixed-dimension and norm constants may enter K, while J,D,H,W,N do not.
+
+The same bank index can be reused at every bounded adaptive query into that bank. Multiplying by J and choosing raw Alice-bit transmission if cheaper gives the stated minimum with N. The cost is a mathematical exact-real communication bound, not a finite-word implementation bound.
+
+For a fixed raw history, split each stage comparison through the exact map evaluated at the simulated input. The local discrepancy is at most b_s delta at a read and zero otherwise; the state discrepancy is at most a_s times the previous error. Starting at the shared public state yields
+
+    e_D &lt;= delta sum_(s read) b_s product_(l&gt;s) a_l = delta W.
+
+This argument uses exact-stage Lipschitz constants, not Lipschitz continuity of the quantized simulator. It permits zero gains without division. If W=0, replace all reads by any fixed bounded answers. Every finite local discrepancy has zero propagated coefficient, giving an exact zero-message final output. If H=0, the computation is public. Final Euclidean simplex projection fixes exact probability outputs and gives the claimed binary TV bound.
+
+## 4. Source-average inversion
+
+The worst-history simulator is source independent, so its guarantee holds in expectation under every tested stationary source. For
+
+    z=2+log(1+W)+log(J+1),
+    S=min{(J+1)F_p(z),N},
+    r=a/sqrt(S),
+
+take one constant a small enough that 2r&lt;=1/128 and h=16r is a permitted stationary lag-two witness in P_c. This is possible uniformly because S&gt;=1. The interior restriction belongs in the c-dependent constant, as the candidate intends.
+
+When S=N, the imported testing left side is at most 4a^2, irrespective of the sketch cost. Otherwise log S&lt;=log(J+1)+(p+1)log z&lt;=C_p z. Hence the precision argument is bounded by C_p[1+log(1/a)]z. If that argument is below z, use monotonicity of F_p. If above z, use
+
+    F_p(t)/F_p(z)
+      =(t/z)^(p+1)[log(e+z)/log(e+t)]^p
+      &lt;=(t/z)^(p+1).
+
+Consequently C+1&lt;=K[1+log(1/a)]^(p+1)S. The testing left side is at most a fixed multiple of a^2[1+log(1/a)]^(p+1), tending to zero with a. A fixed sufficiently small a contradicts the testing inequality in both branches. The inversion keeps variable J and W explicit and never substitutes an unknown realized risk into the simulator&#x27;s structural hypotheses.
+
+## 5. Relation to the two earlier local results
+
+Relative to the anchored finite-separable note, the algebraic lift and its bounded-query moment method are reused. The additional observation is closure: Bob can compute feedback coefficients from the simulated transcript even though neither party knew them before communication. No raw anchor tuple must be communicated when the public-initialization and read-only data-entry conditions hold.
+
+This should not be read as a literal superset of every anchored model. The anchored theorem permits coefficients depending on designated raw anchors after paying Alice&#x27;s anchor-bit cost. The present theorem requires a public initial control state and only the declared reads as data channels. An anchored model with a free raw-data initialization is not covered until that initialization is charged or produced through permitted reads. Conversely, genuinely transcript-dependent common control can fall outside dependence on a small fixed anchor tuple.
+
+Relative to the stability-budget note, the W recurrence and F_p inversion are the same argument, now applied after the static lifted-bank reduction. The increment is a conditional structural extension, not a new feature method or stronger universal statistical testing theorem.
+
+The scalar inclusion example is valid as an abstract attention computation. It does not implement backward causal broadcasts or multiplication in the frozen neural primitive set. The causal-prefix example correctly exposes the insufficiency of token locality: at a fixed position i, two histories can agree on X_i but have different prefix mean. Position-dependent local maps do not remove that discrepancy. The example does not rule out every possible alternative common-control certificate, which the candidate expressly acknowledges.
+
+No certificate for arbitrary evolving full-row causal self-attention, matching constructive rate, sharpness result, training result, or unrestricted v10 main theorem follows. The local result is useful as a sufficient target whose dimensions, complete-bank count, norm bounds and stability gains must be independently proved for a proposed architecture.
+
+## 6. Evidence boundary and actions
+
+Read the exact common-control v1 and v2 texts; the anchored extension v1; stability-budget v1 and its independent audit; local-memory adaptive v3; source-average simulation v2; and the factorial-refinement independent audit. The one-way source-testing theorem, including its entropy-tensorization dependency, remains imported as previously reviewed, not freshly certified from external primary literature.
+
+The cited literature URLs and priority comparisons were not independently refreshed. This audit verifies the local analytical derivation and scope, not the novelty of Taylor features, net arguments, separable lifting or perturbation recurrences.
+
+Actions were local text reads, listing, diff and SHA-256 inspection, paper reasoning and writing audit files. No scientific experiment, training, simulation, upload, public write, or candidate edit occurred.
+</pre></details><details><summary>独立审阅二 · INDEPENDENT_AVERAGE_DEFECT_AUDIT.v3.md</summary><p class="hash">SHA-256 0efa3bd881ce7388651650e9559426a508180a464a426aeed129c7d1eeeb303e</p><pre># Independent exact-file audit: average defect v3
+
+6 November 2026 UTC.
+
+Reviewed candidate: `AVERAGE_DEFECT_TRANSFER.candidate.v3.md`.
+
+SHA-256: `b5635587be993ddb209c5f0ea54c72ca7d362c13a57cc0b35b25dd654e92cd29`.
+
+Companion: `COMMON_CONTROL_SIMULATION.candidate.v2.md`, SHA-256 `fd8024b004920fceaa91147cffed4216bbb13e29aba26d3ba9d54deb882c9c15`, accepted conditionally in its independent v2 audit.
+
+**Verdict: PASS, conditional on the stated common-control, common-initialization, full-prefix, common-query/self, uniform norm and gain certificates. All issues identified in the v1/v2 reviews are repaired.**
+
+This is an analytical review, not formal verification, empirical evidence, external peer review or novelty certification. The candidate was not edited.
+
+## 1. Interpolated attention perturbation
+
+Fix a raw history, a stage and its actual control state y. Set T=N+1 and interpolate actual and surrogate row keys and values, leaving q_s(y) and the coinciding self terms fixed. The uniform score bound gives
+
+    alpha_i(t) = exp(score_i(t))/sum_j exp(score_j(t))
+                 &lt;= exp(2 beta)/T.
+
+The full-prefix mask is necessary for this particular T-based estimate and is now explicit in both computations. Differentiating o(t)=sum_i alpha_i(t)v_i(t) gives exactly
+
+    o&#x27;(t)=sum_i alpha_i(t) Delta v_i
+           +sum_i alpha_i(t)(v_i(t)-o(t))(q dot Delta k_i).
+
+Uniform value-ball membership implies ||v_i(t)-o(t)||&lt;=2V_0, since o(t) is a convex combination. Apply the triangle and Cauchy-Schwarz inequalities to each summand, then integrate over t in [0,1]. The resulting bound is
+
+    ||o_actual-o_surrogate||
+      &lt;=exp(2 beta)[d_s^v+2V_0 Q d_s^k]=rho_s.
+
+The self differences vanish, so their omission from the defect sum is correct even though their weight remains in the denominator. No independence, average-zero residual, or hidden square-root-of-N estimate is used. Convex norm balls ensure the interpolation bounds from endpoint bounds; more general domains must separately establish them as stipulated.
+
+## 2. Oriented pathwise comparison
+
+At the actual y, the actual and surrogate terminal continuations use the same G_s and query/self functions. Their read answers differ by at most rho_s. The now explicit b_s domain covers both answer balls, so replacing the answer changes the local state by at most b_s rho_s.
+
+Compare next with the surrogate stage evaluated at its own control state. The surrogate exact-stage Lipschitz certificate bounds that discrepancy by a_s e_(s-1). The recurrence is therefore
+
+    e_s&lt;=a_s e_(s-1)+1_(read s)b_s rho_s(X).
+
+Both computations now explicitly start at the identical public state, so e_0=0. Iterating gives the candidate&#x27;s B(X). Actual nonterminal memory need not be a function of the terminal state: at this comparison step it is evaluated only on its actual history, while the surrogate is evaluated on that same actual terminal state. This orientation explains why no off-actual-path residual is required. The surrogate gain certificate must still cover the actual terminal states used in the hybrid comparison.
+
+All data entry outside the declared reads remains excluded. A sample-dependent initial terminal state, different nonread update, or hidden actual-memory input to G_s would introduce another error/source term and is not licensed. Both normalized outputs and all normalization continuation gains are explicitly charged. Final simplex projection is nonexpansive and converts the Euclidean bound into the stated binary TV bound.
+
+## 3. Source-average simulation and testing
+
+For every source P, pathwise triangle inequality followed by expectation gives
+
+    E_P TV(Qhat_surrogate,Q_actual)&lt;=epsilon+E_P B(X)
+                                        &lt;=epsilon+Delta.
+
+The protocol is precisely the source-independent common-control simulator, so no cost is added for evaluating a residual, learning a source or communicating actual evolving memory. The defects are analysis quantities, not data supplied to the decoder. The communication remains that of the surrogate.
+
+Let delta=r+epsilon+Delta. The lag-two testing witnesses have amplitude h=8 delta. The corrected conditions delta&lt;=1/128 and 8 delta&lt;=1-2c ensure both h&lt;=1/16 and membership in P_c. This repairs the v1/v2 erroneous unqualified interior-class testing display. The universal numerical constant is then the one in the imported reviewed testing theorem.
+
+The clean transfer requires only the accepted surrogate resource lower and the source-wise inequality
+
+    E_P risk_surrogate&lt;=E_P risk_actual+E_P B(X).
+
+Taking supremums gives R(surrogate)&lt;=R(actual)+Delta. Combining with R(surrogate)&gt;=a_c/sqrt(S) and nonnegativity yields the displayed max{0,a_c/sqrt(S)-Delta}. There is no invalid exchange of supremum and difference and no missing restriction on delta for this separate c-dependent transfer formulation.
+
+## 4. Scope
+
+This is a standard attention perturbation plus hybrid-stability transfer applied to the locally certified common-control surrogate. It provides a concrete sufficient analytical target for a source-average compression proof of an actual evolving-memory architecture. It does not establish that the target is achieved for all such architectures.
+
+An unweighted row-defect average is insufficient if the b_s or later a_l products grow. Useful asymptotic preservation of the lower requires Delta to be smaller than its resource-risk scale, as the candidate states. Rare histories can be tolerated only through a source-uniform expectation bound. Finite experimental checks cannot establish that quantifier.
+
+The surrogate need not be a physically realizable causal network because the statistical testing theorem concerns source-independent output functions admitting one-way simulation. This analytical use does not grant free noncausal operations to the actual network or claim a normalized Transformer construction. No training, matching upper rate, general architecture theorem or literature novelty follows.
+
+## 5. Inspected evidence and actions
+
+Read average-defect v1, v2 and v3, common-control v1/v2 and the local source-average testing theorem. The latter&#x27;s information-theoretic external dependency remains imported as previously reviewed. No new primary-literature search or novelty certification was performed.
+
+Actions were local text/diff/hash inspection, paper derivation and writing audit files. No scientific experiment, model run, training, upload, public mutation or candidate modification occurred.
+</pre></details><details><summary>独立审阅三 · INDEPENDENT_CAUSAL_PREFIX_EXAMPLE_AUDIT.v1.md</summary><p class="hash">SHA-256 cf4dfd68108d5703f847bbb5a51efd26ca0599bcb220e2e2d889dd5135fccfd7</p><pre># Independent exact-file audit: causal prefix-average example v1
+
+6 November 2026 UTC.
+
+Reviewed candidate: `CAUSAL_PREFIX_AVERAGE_EXAMPLE.candidate.v1.md`.
+
+SHA-256: `12337b6ee7cd6321deec32a518f948e0c4886785b2814346769495941a390446`.
+
+**Verdict: PASS as an attention-program witness for the reviewed average-defect transfer. No claim of a complete normalized Transformer implementation, low-risk order-two predictor, or general evolving-memory theorem is accepted or made.**
+
+The candidate was not edited. This audit is analytical, not experimental, formal or external peer review.
+
+## 1. Actual and surrogate computations
+
+In a simultaneous first causal zero-score attention operation, each nonterminal row i averages raw values X_1,...,X_i and therefore outputs m_i. The synthetic terminal averages the N raw values and its zero self value, giving N M_N/(N+1). The paid scalar multiplication (N+1)/N recovers y=M_N with a uniform gain at most 2 for N&gt;=1.
+
+The second actual terminal read averages m_1,...,m_N and its self value y. The surrogate&#x27;s second read averages N copies of y and its same self value y, so its answer is exactly y. The first terminal read and y agree exactly in both computations.
+
+The surrogate has a finite collection of fixed token-local bases, X_i and 1, with zero keys. Its second value bank is B(y) times the static scalar 1 with B(y)=y, uniformly bounded on [-1,1]. Its common state begins publicly and receives raw data only through the first read. Thus it has the closed common-control certificate. One can use two fixed banks, or stack both value bases in a fixed-dimensional bank; no growing dimension, bank count or coefficient norm is required.
+
+There is no key defect and beta=0. At the second read the exact answer difference is
+
+    abs((sum_i m_i+y)/(N+1)-y)
+      =abs(sum_i(m_i-M_N))/(N+1)
+      &lt;=sum_i abs(m_i-M_N)/(N+1).
+
+A common bounded continuation with the stated answer-to-output gain L therefore gives the candidate&#x27;s pathwise TV estimate. Any shared y-dependence in that continuation contributes no additional initial discrepancy because the first-stage y values are equal. Its output normalization and full gain must be included, as in the companion theorem.
+
+## 2. Expected defect from the variance certificate
+
+For a stationary source with mean mu, the stated partial-sum variance bound implies
+
+    E abs(m_i-mu)&lt;=sqrt(K/i),
+    E abs(M_N-mu)&lt;=sqrt(K/N).
+
+Triangle inequality gives E abs(m_i-M_N)&lt;=sqrt(K/i)+sqrt(K/N), without any independence between m_i and M_N. Summing and using sum_(i=1)^N i^(-1/2)&lt;=2sqrt(N) gives
+
+    E B(X)&lt;=L sqrt(K)[2sqrt(N)+sqrt(N)]/(N+1)
+            &lt;=3L sqrt(K/N).
+
+The unknown mean is an analysis-only centering device and is not used by the public surrogate or its simulator. Uniformity over a source class follows whenever K and L are uniform over that class.
+
+## 3. Uniform stationary P_c covariance bound
+
+Let Z_t=(X_(t-1),X_t) denote the four-state pair chain. Each two-step transition from (a,b) to a target pair (u,v) equals
+
+    p(u|a,b) p(v|b,u)&gt;=c^2.
+
+Thus the two-step kernel minorizes alpha times the uniform four-state law with alpha=4c^2. The minorizing uniform law need not be the stationary law. Doeblin contraction still gives
+
+    TV(Law(Z_(t+h)|Z_t=z),pi)&lt;=(1-alpha)^floor(h/2)
+
+for the stationary law pi, because total variation contracts by at most 1-alpha per two steps and by at most one on an additional step.
+
+The spin observable has sup norm one, so the conditional expectation differs from its stationary mean by at most twice that TV distance. Since X_t is measurable with respect to Z_t,
+
+    abs(Cov(X_t,X_(t+h)))
+      =abs(E[X_t(E[X_(t+h)|Z_t]-mu)])
+      &lt;=2(1-alpha)^floor(h/2).
+
+Expanding the variance and bounding Var(X_t)&lt;=1 yields
+
+    Var(sum_(t=1)^i X_t)
+      &lt;=i+4 sum_(h=1)^(i-1)(i-h)(1-alpha)^floor(h/2)
+      &lt;=i[1+4 sum_(h&gt;=1)(1-alpha)^floor(h/2)].
+
+The proposed K is therefore valid. Writing rho=1-alpha, the series is 1+2rho/(1-rho), so the displayed valid choice simplifies to K=8/alpha-3=2/c^2-3. This is a loose finite uniform bound for each fixed c in (0,1/2), not an optimal variance constant. Stationarity supplies the common mean and removes an initialization-bias term; no IID assumption was used.
+
+## 4. Genuine but limited scope
+
+The actual prefix means depend on previous raw tokens and violate exact token locality. They need not coincide with the common global sample mean even at a fixed position with a fixed own token. The example therefore supplies a nonempty source-average residual extension beyond an exactly common broadcast bank.
+
+The absence of a vanishing worst-history bound is also real. For even N, take the first N/2 spins to be +1 and the rest -1. Then M_N=0, all m_i are nonnegative, and their average tends to log 2. Thus the row-average defect does not vanish uniformly over histories, while its source-uniform expected bound over fixed stationary P_c decays at N^(-1/2).
+
+This does not establish a useful prediction algorithm for all four order-two transition contexts. With fixed L and fixed surrogate resources, the transferred lower is a constant resource obstruction minus O_c(N^(-1/2)), consistent with that limitation. The program includes explicit causal attention and a bounded rescaling, but its compilation into the full positive-epsilon PreLN/PostLN primitive contract remains a separate obligation. The candidate labels this correctly.
+
+## 5. Evidence boundary
+
+Read the exact example, average-defect v3, common-control v2 and the already inspected local statistical/stability dependencies. The minorization, covariance estimate and series were checked by paper derivation. No new external theorem beyond elementary finite-state Doeblin contraction was imported for the example.
+
+Actions were local text/hash reads and writing this audit. No scientific execution, simulation, training, public mutation, upload or candidate modification occurred.
+</pre></details><details><summary>因果行更新条件 · CAUSAL_PREFIX_LIPSCHITZ_CLOSURE.candidate.v3.md</summary><p class="hash">SHA-256 274a6b4d0456ebb2f97725e61596cbd4b0f85e248484a3668918020c4fec5e85</p><pre># Causal row-update conditions giving a negligible source-average defect
+
+6 November 2026 UTC. Follow-on analytical candidate v3; v1 and v2 are preserved. Independent review requested after clarifying startup gain and first-read value budgets. This extends the prefix-mean witness, not the unrestricted multiple-attention theorem. It does not assert a standard normalized Transformer compiler or training result.
+
+## 1. Explicit sufficient causal condition
+
+Let X_i in {-1,1} have a stationary interior binary order-two law P_c. A first causal uniform-attention computation produces m_i=i^(-1)sum_{t&lt;=i}X_t at row i. The synthetic terminal recovers M_N=N^(-1)sum_i X_i by the paid bounded rescaling already specified in the reviewed prefix example.
+
+At every subsequent useful terminal read s, suppose the actual nonterminal banks have the form
+
+    k_{s,i}=kappa_s(X_i,m_i),  v_{s,i}=nu_s(X_i,m_i).
+
+The maps are PUBLIC, SOURCE-INDEPENDENT and IDENTICAL ACROSS POSITIONS. They may differ across s and arise from many paid nonlinear tokenwise updates retaining (X_i,m_i) as registers. No terminal-to-past broadcast is needed in this actual computation. In particular local row dynamics u_i^{s+1}=G_s(X_i,m_i,u_i^s) are allowed if the resulting kappa_s,nu_s have the certificates below. The actual query may depend on the entire prior terminal read transcript.
+
+For x in {-1,1} and z,z&#x27; in [-1,1], require
+
+    ||kappa_s(x,z)-kappa_s(x,z&#x27;)||&lt;=L^k_s |z-z&#x27;|,
+    ||nu_s(x,z)-nu_s(x,z&#x27;)||&lt;=L^v_s |z-z&#x27;|.
+
+Require frozen full norm bounds ||kappa||&lt;=R_k, ||nu||&lt;=V_0, ||q||&lt;=Q, fixed original key/value dimensions and full-prefix inclusive terminal masks. Bounds must hold on the complete projected domains. All original network computation remains paid; representability of arbitrary nonlinear maps by allowed primitives is not asserted. Composition of displayed local Lipschitz maps gives a syntactically checkable (possibly loose) L certificate. Constants may grow only if that growth is kept in the resource ledger.
+
+This is a nontrivial causal all-row-update condition: each row depends on its whole own prefix through m_i, different rows carry different summaries, and the key/value functions can change nonlinearly at each paid stage. It excludes arbitrary new full-row mixing at every stage unless such mixing is separately proved to preserve this representation.
+
+## 2. Fixed-rank closed surrogate for any such nonlinear maps
+
+Replace every m_i in the read bank by the terminal&#x27;s preserved M_N, leaving terminal initial state, update schedule, query and self maps unchanged. The surrogate is closed: M_N came from its identical first read, and all later data inputs enter through declared reads.
+
+Use the STATIC two-dimensional onehot basis e(X_i), with e(-1)=(1,0), e(+1)=(0,1). Define
+
+    A_s(z)=[kappa_s(-1,z), kappa_s(+1,z)],
+    B_s(z)=[nu_s(-1,z), nu_s(+1,z)].
+
+Then surrogate k=A_s(M_N)e(X_i), v=B_s(M_N)e(X_i), with ||A_s||op&lt;=sqrt(2)R_k, ||B_s||op&lt;=sqrt(2)V_0. These bounds do not grow with the nonlinear complexity of kappa_s or nu_s. The same basis handles the first read (signed value is [-1,+1]e(X_i)); therefore one static bank with p=v=2 and J=1 suffices. The common first-and-later-read value bound must be max(1,V_0); using this larger fixed bound in beta/perturbation constants is harmless. All coefficient dependence is reconstructed at the decoder, and original self contributions remain separate. Increasing local nonlinear depth may still increase the full-stage gains a_s, b_s and W; it does not disappear from accounting.
+
+An arbitrary position dependence would break this fixed two-column certificate. It can be accommodated only by an explicitly bounded additional position basis or by keeping its cost; it is not included here.
+
+## 3. Defect estimate and the exact negligible-defect criterion
+
+Take a common absolute score bound beta and the same continuation gains b_s, surrogate stage gains a_s as in the reviewed transfer theorem. The first read has zero defect. For subsequent reads,
+
+    d^k_s &lt;= L^k_s/(N+1) sum_i |m_i-M_N|,
+    d^v_s &lt;= L^v_s/(N+1) sum_i |m_i-M_N|.
+
+Define the weighted local-to-terminal influence
+
+    Gamma=sum_{s after first read} b_s exp(2 beta)
+                (L^v_s+2V_0 Q L^k_s) product_{l&gt;s} a_l.
+
+This is not automatically equal to W; the row-bank Lipschitz constants must be charged. The reviewed covariance argument gives, uniformly over P_c,
+
+    Delta &lt;= 3 Gamma sqrt(K_c/N),   K_c=2/c^2-3.
+
+Let S=min{2F_2(2+log(1+W)+log 2),N}, where F_2(t)=t[t/log(e+t)]^2, for the J=1 surrogate. Any harmless fixed constants can instead be retained using the general companion formula. Then
+
+    R(actual)&gt;=max{0, a_c/sqrt(S)-3 Gamma sqrt(K_c/N)}.      (1)
+
+For a family indexed by N and fixed c, the concrete sufficient criterion
+
+    Gamma_N^2 S_N / N -&gt; 0                                (2)
+
+implies Delta_N=o(1/sqrt(S_N)). Thus eventually the defect costs less than half the surrogate lower: R(actual)&gt;=a_c/(2sqrt(S_N)). This is a sufficient, not necessary, condition. If c changes, K_c must remain visible and (2) becomes K_c Gamma_N^2 S_N/N -&gt;0; the statistical lower constant a_c also changes, so a relative-to-a_c condition is needed for the half-constant conclusion.
+
+For the earlier two-read prefix witness, Gamma=L and the precise condition is L^2 S=o(N), not simply N-&gt;infinity. Fixed W,L makes S bounded and the condition automatic. At S comparable to N and fixed nonzero L, this estimate gives only a residual at the same N^(-1/2) scale, not little-o; it neither proves nor disproves a sharper residual estimate.
+
+## 4. Interpretable depth and gain regimes
+
+Allow a fixed number of startup stages whose individual a_s and b_s gains are uniformly bounded (equivalently, bound all required suffix products, not just the product of all startup a_s), including the necessary first-read rescaling by (N+1)/N&lt;=2. If all subsequent a_s&lt;=1 and the products b_s(L^v_s+2V_0 QL^k_s) are uniformly bounded, then Gamma=O(H) and W=O(1+H), provided b_s is also uniformly bounded. Therefore the sufficient criterion is
+
+    H^2 F_2(2+log(1+H))/N -&gt;0.
+
+For example H=N^eta with any fixed 0&lt;eta&lt;1/2 satisfies this bound, because F_2(log H) grows only polylogarithmically. This is a conditional nonexpansive resource regime, not a claim that residual/LN Transformer blocks are nonexpansive. All paid stages AFTER that fixed startup, including nonread stages, must satisfy a_s&lt;=1 for this particular conclusion; every startup gain is still included in the actual W. Gamma sums only reads after the identical first read, so the startup itself contributes no defect.
+
+If a_s&lt;=A&gt;1, b_s and row Lipschitz constants are uniformly bounded, and H&lt;=D, then Gamma=O(H A^D), W=O(H A^D), and S=O(F_2(D+log(H+1)+1)) away from its N cap. One sufficient condition is H^2 A^(2D) F_2(D+log(H+1)+1)=o(N). For H&lt;=D and D=eta log N with eta&lt;1/(2 log A), the polynomial-logarithmic factors are dominated and the condition holds. These are conservative gain-based sufficient regimes, not sharp frontiers.
+
+## 5. Why this does not construct a useful order-two predictor
+
+For the exact surrogate, all static moments depend only on the total counts of -1 and +1, while terminal self/control are recursively determined by those moments. Thus the surrogate is permutation invariant in the raw history. It cannot recover a specified last pair or all four transition rows just by repeatedly changing kappa,nu or the adaptive query.
+
+The actual causal rows encode ordered prefix information; the small-defect condition says that this order-dependent contribution remains too weak at the final output to overcome the lower bound. This supplies an impossibility subclass inside the common unknown second-order prediction model, NOT a statistically competitive estimator for that model. Adding an uncharged terminal pair feature would change the contract; adding a paid route to it must be included and its simulation justified anew.
+
+A fixed finite raw alphabet admits the same onehot factorization with dimension equal to alphabet size. Extending to local tuple features such as (X_{i-2},X_{i-1},X_i) is not free: those features cross AA/BB ownership boundaries and are not token-local under the binary one-way reduction. A true second-order-count construction therefore needs a new simulation argument or explicitly paid communication for those dependencies.
+
+## 6. Preserved unsuccessful generalizations
+
+- Counting one scalar prefix register as a cheap common state is invalid: m_i differs with i. Only the SOURCE-AVERAGE residual comparison justifies its replacement by M_N.
+- Declaring arbitrary position-dependent maps rank two is invalid. The identical-across-position assumption is essential to the displayed static bank.
+- Using only W without Gamma omits amplification within local row transformations.
+- Writing Delta=o(N^(-1/2)) for the prefix example is unsupported; the proved bound is O(N^(-1/2)). Negligibility is relative to 1/sqrt(S), via (2).
+- Importing lagged triples as local raw features would change the original input/ownership contract.
+
+Proof dependencies: COMMON_CONTROL_SIMULATION v2, AVERAGE_DEFECT_TRANSFER v3, CAUSAL_PREFIX_AVERAGE_EXAMPLE v1 and their independent exact-file audits. No new external theorem, training run, numerical simulation or public mutation is used. Factorization by a finite onehot alphabet and Lipschitz composition are elementary, not new general techniques.
+</pre></details><details><summary>两类计数改进 · TWO_TYPE_COUNT_SIMULATION.candidate.v1.md</summary><p class="hash">SHA-256 b1a595e6018d8bd45a5d99e7d792c22686bff6f45b02fd88d5ccb2bd7b177979</p><pre># Two-type count compression sharpens the homogeneous prefix closure bound
+
+6 November 2026 UTC. Analytical candidate v1; independent review pending. This refinement was identified during independent review of the Lipschitz closure. It does not alter the more general common-control theorem.
+
+## 1. Strict additional condition
+
+In the CAUSAL_PREFIX_LIPSCHITZ_CLOSURE family, the surrogate banks are kappa_s(X_i,M_N),nu_s(X_i,M_N), IDENTICAL across positions conditional on X_i and reconstructed control. More generally, allow any closed control y with banks kappa_s(X_i,y),nu_s(X_i,y) and fixed uniform norms. Thus there are only TWO nonterminal K/V types at any state, even if their values change with the entire transcript. Public initial state, full-prefix inclusive masking, self handling, stage gains a_s,b_s, normalized outputs and all off-trajectory requirements remain unchanged.
+
+## 2. Single-scalar one-way simulation
+
+Let T=N+1 and let n_A be Alice&#x27;s public number of positions. Alice sends an eta-quantization of u_A=(number of her +1 symbols)/T, a scalar in [0,n_A/T]. A public grid clipped to this interval preserves nonnegative reconstructed type masses. Bob adds his exact positive count/T; negative mass is N/T minus positive mass. Their two mass errors are equal and opposite, each at most eta.
+
+At simulated y, the exact averaged nonterminal augmented contribution is
+
+    u exp(q dot kappa_s(+1,y)) (nu_s(+1,y),1)
+      +(N/T-u) exp(q dot kappa_s(-1,y)) (nu_s(-1,y),1).
+
+Using the quantized u changes this vector by at most 2 eta exp(beta) sqrt(V_0^2+1), uniformly over the full state domain. Bob then adds the exact terminal self term/T. The denominator floor exp(-beta), ratio estimate and the accepted W recurrence apply. Choosing eta=c epsilon/(1+W) therefore gives worst-history output TV error &lt;=epsilon using
+
+    C&lt;=min{N, K[2+log(1+W)+log(1/epsilon)]}.               (1)
+
+K depends only on fixed norm budgets and dimensions. Local computation remains exact-real. No Taylor feature approximation is necessary because the type sums can be evaluated exactly after the count is known. The two masses can be quantized to arbitrary precision, and one count index has logarithmic bit length. If W=0, use zero communication separately.
+
+## 3. Statistical and residual consequence
+
+Let S_0=min{2+log(1+W),N}. The same advertised-envelope inversion of the binary one-way source-average testing theorem gives a positive constant a_c, depending on the fixed resource budgets, such that
+
+    R(surrogate)&gt;=a_c/sqrt(S_0).
+
+Indeed advertise r=a/sqrt(S_0), choose epsilon=r, and bound U+log(1/r)&lt;=O((1+log(1/a))U) on the S_0&lt;N branch, U=2+log(1+W). The N branch follows from the finite-sample cap. Shrink a for witness interiority as in the reviewed companion.
+
+For the actual causal prefix-Lipschitz family, the previously proved residual estimate yields
+
+    R(actual)&gt;=max{0, a_c/sqrt(S_0)-3 Gamma sqrt(K_c/N)}.    (2)
+
+Hence for fixed c, Gamma^2 S_0=o(N) suffices for negligible residual and eventual half-constant lower. This improves the valid but conservative F_2 formula in the Lipschitz-closure candidate; it does not invalidate it.
+
+With individually bounded fixed startup gains and subsequent nonexpansive stages, uniformly bounded b_s and row sensitivities give W=O(1+H), Gamma=O(H). A sufficient condition becomes H^2[2+log(1+H)]=o(N). With a_s&lt;=A&gt;1 and H&lt;=D, bounded b_s and row sensitivities give the conservative condition H^2 A^(2D)(D+log(H+1)+1)=o(N).
+
+## 4. Limitations
+
+Position-dependent bank functions can have N different types, so this two-count message does not simulate them. Local pair/triple types are not free under the AA/BB split. Even in this two-type subclass, the count bound is an upper on simulation cost and its statistical consequence need not be sharp: a stronger direct information argument might exist. No optimality, learned-parameter recovery, normalized neural compiler or trained predictor claim is made.
+</pre></details><details><summary>残差精确阶 · PREFIX_DEFECT_SHARPNESS.candidate.v1.md</summary><p class="hash">SHA-256 2f7fed96f5f6717f73e055d505661a8c897ed0144e9568796272b178807f355e</p><pre># The unamplified prefix replacement has a sharp square-root residual scale
+
+6 November 2026 UTC. Analytical candidate v1, independent review pending. This quantifies the earlier prefix example&#x27;s exact limitation at the statistical N^(-1/2) scale; no experiment is used.
+
+Under fair IID X_j in {-1,1}, let the actual terminal answer be a=(sum_{i=1}^N m_i+M_N)/(N+1), and the canonical surrogate answer b=M_N. Normalize both by Q(t)=((1+t)/2,(1-t)/2). Let H_n=sum_{i=1}^n 1/i and H_0=0. Then
+
+    a-b=(1/(N+1)) sum_{j=1}^N w_{N,j} X_j,
+    w_{N,j}=H_N-H_{j-1}-1.
+
+Indeed each X_j appears in m_i with coefficient 1/i for i&gt;=j, and subtracting N M_N removes coefficient 1 from every X_j inside the numerator.
+
+Set a_j=H_N-H_{j-1}. Summing in the opposite order gives sum_j a_j=N. Furthermore
+
+    sum_j a_j^2
+      =sum_{i,k=1}^N min(i,k)/(ik)
+      =sum_i 1/i + 2 sum_{k=1}^N (k-1)/k
+      =2N-H_N.
+
+Consequently sum_j w_{N,j}^2=N-H_N and
+
+    Var(a-b)=(N-H_N)/(N+1)^2 ~ 1/N.
+
+The maximum absolute weight is O(log N), so its ratio to sqrt(sum_j w_{N,j}^2) tends to zero. The normalized weighted Rademacher sum converges to a standard normal by the elementary triangular-array CLT. One can verify this directly from its characteristic function: expand log cos(u w_j/sqrt(sum w^2))=-u^2 w_j^2/(2 sum w^2)+O(u^4 w_j^4/(sum w^2)^2); the sum of fourth-order remainders is bounded by a constant times max_j w_j^2/sum w^2 and vanishes. Hence sqrt(N)(a-b) converges in distribution to a standard normal.
+
+Its second moments are uniformly bounded, so its absolute values are uniformly integrable. Therefore
+
+    sqrt(N) E TV(Q(a),Q(b)) -&gt; (1/2) E|Normal(0,1)|
+                              =1/sqrt(2 pi).             (1)
+
+Thus this canonical source-average replacement has exact Theta(N^(-1/2)) discrepancy even on fair IID data. The previous O(N^(-1/2)) bound cannot generally be improved to little-o at fixed nonzero output gain merely by invoking mixing. It IS negligible relative to 1/sqrt(S) when S=o(N); at S comparable to N, (1) shows that particular surrogate discrepancy is not negligible.
+
+This is a residual-sharpness statement for this explicit program/surrogate pair, not optimality of any architecture risk bound, not a lower bound against every communication simulator, and not a construction of a useful unknown-order-two predictor. The final value-to-probability gain here is exactly 1/2 in TV, not an unspecified growing L.
+</pre></details><details><summary>放大反例 · AMPLIFIED_PREFIX_DEFECT.candidate.v1.md</summary><p class="hash">SHA-256 b9a2648c8e71743defbf69bb5b7296a3d14ee07abf548ccf17ae978f8141506f</p><pre># Bounded-value causal amplification can keep the closure defect nonvanishing
+
+6 November 2026 UTC. Analytical candidate v1, independent review pending. This is a counterexample to an automatic SMALL-RESIDUAL inference, not a lower bound against every source-average simulator.
+
+## 1. Attention program
+
+Under the fair IID signed binary source, which belongs to every P_c with fixed 0&lt;c&lt;1/2, form causal prefix means m_i=S_i/i and terminal mean M_N=S_N/N as in the reviewed prefix witness. Let d=ceil(log_2 N), L_N=2^d and
+
+    f_N(z)=clip(L_N z,-1,1).
+
+Each row replaces its prefix register by f_N(m_i) through d repetitions of the bounded-gain local operation z &lt;- clip(2z,-1,1). Each intermediate register remains in [-1,1]. The terminal preserves M_N in a register and can run the same operation for its self value. The zero-query, zero-key final terminal attention reads the transformed values, with transformed terminal self value f_N(M_N). All scores are zero and all values have norm at most one.
+
+The canonical closed surrogate replaces each transformed prefix value f_N(m_i) by f_N(M_N). The static basis is constant; the only coefficient is f_N of the terminal&#x27;s first-read mean. Local stages have gain at most 2, but the composed row sensitivity is L_N in [N,2N). The paid local depth is O(log N). This is an attention-program construction, not a proof of a full positive-epsilon normalized Transformer realization.
+
+Since |S_i| is either zero or at least one and L_N&gt;=N&gt;=i,
+
+    f_N(m_i)=sgn(S_i),   f_N(M_N)=sgn(S_N),
+
+where sgn(0)=0. Map the final attention answer a in [-1,1] to the binary distribution ((1+a)/2,(1-a)/2) by a paid bounded affine map. The canonical surrogate uses answer b=sgn(S_N).
+
+## 2. Exact expected discrepancy formula
+
+Write a=(sum_{i=1}^N sgn(S_i)+sgn(S_N))/(N+1). When S_N is nonzero, all numbers sgn(S_i)-sgn(S_N) have the same weak sign. Therefore
+
+    |a-b|=(1/(N+1))sum_{i=1}^N |sgn(S_i)-sgn(S_N)|.
+
+When S_N=0 this equality may fail, but both sides lie in [0,2], so the error in their EXPECTATIONS is at most 2 P(S_N=0)=O(N^(-1/2)). The latter follows from the central binomial coefficient bound (and is zero for odd N). Thus
+
+    E TV(Q_actual,Q_surrogate)
+      = [1/(2(N+1))]sum_i E|sgn(S_i)-sgn(S_N)|+o(1).      (1)
+
+For each fixed t in (0,1), set i=floor(Nt). The independent sums S_i and S_N-S_i, normalized by their own square-root lengths, converge to independent standard normals. This is the elementary Rademacher central limit theorem: characteristic functions cos(u/sqrt(n))^n converge to exp(-u^2/2). Consequently (S_i/sqrt(i),S_N/sqrt(N)) converges to a standard bivariate normal pair of correlation sqrt(t). The limiting Gaussian has no mass on either zero axis, so bounded sign disagreement expectations converge.
+
+Rotational symmetry of two independent standard Gaussians gives probability of opposite signs equal to arccos(sqrt(t))/pi. Zero-sign events vanish. Hence
+
+    E|sgn(S_floor(Nt))-sgn(S_N)| -&gt; 2 arccos(sqrt(t))/pi.
+
+Interpret the normalized sum as the integral of its step function on [0,1]; the single endpoint term is negligible. Dominated convergence applies because integrands lie in [0,2]. Since
+
+    integral_0^1 arccos(sqrt(t)) dt = pi/4,
+
+(1) converges to 1/4. Thus the source-average output discrepancy of this natural closed surrogate is bounded away from zero, despite uniformly bounded scores, row values and per-primitive gains and a strongly mixing IID source.
+
+## 3. Correct interpretation
+
+The condition Gamma^2 S/N -&gt;0 in the Lipschitz-closure result is not implied by bounded values or scores. Here composed row sensitivity grows like N, so that condition fails; paid amplification destroys the earlier O(N^(-1/2)) unamplified residual guarantee. Depth O(log N) is enough for this example. Local per-primitive stability does not imply a fixed full-network stability budget.
+
+This does NOT show that the actual program has no other accurate low-communication source-average simulator. It disproves only the assertion that replacing every causal prefix mean by the global mean always has vanishing output discrepancy under mixing and bounded ranges. It also is NOT a low-risk predictor: the source is fair IID and the program retains random sign-driven output; no useful second-order learning claim is made.
+
+Analytical dependencies are the elementary Rademacher CLT, Gaussian rotational geometry, dominated convergence, the central binomial coefficient estimate, and the already-reviewed prefix attention program. No model run, Monte Carlo estimate or numeric validation was used; the value 1/4 is an exact asymptotic analytical limit.
+</pre></details><details><summary>因果行更新审阅 · INDEPENDENT_PREFIX_LIPSCHITZ_AUDIT.v3.md</summary><p class="hash">SHA-256 7ab2bde0fc323bbf390e6d358c45d2a747521cbb675c3563b3df41bdaae60892</p><pre># Independent exact-file audit: prefix Lipschitz closure v3
+
+6 November 2026 UTC.
+
+Candidate: `CAUSAL_PREFIX_LIPSCHITZ_CLOSURE.candidate.v3.md`.
+
+SHA-256: `274a6b4d0456ebb2f97725e61596cbd4b0f85e248484a3668918020c4fec5e85`.
+
+**Verdict: PASS, conditional on the stated position-homogeneous prefix representation and the inherited common-control/average-defect certificates. The startup, first-read budget and summation clarifications requested for v1/v2 are sufficient.**
+
+This audit does not accept a general causal-memory theorem, a normalized Transformer compiler, a training theorem or a novelty claim. The candidate was not edited.
+
+## 1. Structural condition and the fixed lift
+
+The representation kappa_s(X_i,m_i), nu_s(X_i,m_i) is a real causal restriction, not token locality: m_i carries the whole prefix ending at i. The first causal uniform layer supplies that prefix statistic, and later tokenwise updates may transform it nonlinearly provided the resulting composed maps have the stated uniform Lipschitz and norm certificates. Arbitrary subsequent full-row mixing does not preserve this representation automatically.
+
+After replacing m_i by the terminal&#x27;s preserved M_N, every position with the same raw sign uses the same K/V pair. The two columns of A_s(z) and B_s(z) therefore recover those pairs exactly from e(X_i). Their operator norms are at most their Frobenius norms, giving sqrt(2)R_k and sqrt(2)V_0. The static basis vectors have norm one. These estimates do not depend on nonlinear formula complexity or depth.
+
+The same basis also represents the first raw signed value through [-1,+1]e(X_i), with operator norm sqrt(2). The corrected overall value budget max(1,V_0) covers that read. Thus p=v=2 and J=1 are valid for the entire surrogate, with original self terms separately handled. Off-trajectory coefficient/gain certificates, public initialization and exclusion of other terminal data channels remain necessary, as inherited from the companion results.
+
+Position identity is essential: an arbitrary position-specific map need not be captured by the same two columns. A small raw alphabet alone does not make position-specific or lagged-neighbor banks a two-type bank. The onehot factorization is elementary finite-type algebra, not a new general technique.
+
+## 2. Defect and negligible-scale criterion
+
+At the actual control state, the global mean stored after the identical first read is the same M_N used by the surrogate comparison. Each row difference is bounded by L_s^k|m_i-M_N| or L_s^v|m_i-M_N|. Applying the reviewed attention perturbation estimate and the oriented surrogate-stage recurrence gives
+
+    B(X)&lt;=Gamma/(N+1) sum_i |m_i-M_N|.
+
+Gamma includes only later read stages. The first read and its identical mean-recovery startup have zero defect. The factors L_s^k and L_s^v are composed row sensitivities, not merely the per-primitive gains, and must remain in Gamma even when all row values are bounded.
+
+The reviewed stationary covariance calculation supplies E[(N+1)^(-1)sum_i|m_i-M_N|]&lt;=3sqrt(K_c/N), uniformly over P_c, with K_c=2/c²-3. Hence Delta&lt;=3Gamma sqrt(K_c/N). Combining with the valid general p=2,J=1 surrogate lower gives the candidate&#x27;s inequality (1).
+
+For fixed c and fixed norm/dimension budgets,
+
+    [3Gamma sqrt(K_c/N)] sqrt(S)
+      =3sqrt(K_c Gamma²S/N).
+
+Thus Gamma²S/N→0 makes the displayed defect o(1/sqrt(S)), and eventually less than a_c/(2sqrt(S)). The condition is sufficient, not necessary; cancellation can make actual output discrepancy smaller than the rowwise upper. For variable c, both K_c and the c-dependent lower constant must be retained. In particular, the half-constant conclusion requires control relative to a_c, not merely absolute little-o against 1/sqrt(S).
+
+The earlier two-read witness has Gamma=L, so L²S=o(N) is the correctly stated sufficient criterion. A uniform O(N^(-1/2)) bound is not a little-o guarantee at a comparison scale S comparable to N.
+
+## 3. Startup and growth regimes
+
+Version 3 explicitly bounds every individual a_s and b_s in a fixed-size startup, so every relevant error-propagation suffix product is uniformly bounded. This repairs v2: a bounded full startup product could hide a large later gain behind an earlier zero or small factor. The actual mean-extraction startup, including its rescaling by at most two, satisfies the corrected requirement. The described startup is identical in actual and surrogate computations and introduces no row-defect term.
+
+If all later a_s≤1, later b_s are bounded and the displayed products b_s(L_s^v+2V_0 QL_s^k) are bounded, then each later read contributes O(1) to W and Gamma. The startup contributes O(1) to W, so W=O(1+H) and Gamma=O(H). The candidate&#x27;s sufficient H²F_2(2+log(1+H))=o(N) condition follows by monotonicity and fixed-factor scaling of F_2. H=N^eta for fixed eta&lt;1/2 satisfies it because the remaining factor is polylogarithmic.
+
+If every stage gain is at most fixed A&gt;1, every suffix product is at most A^D. Bounded b_s and row sensitivities give W,Gamma=O(H A^D), hence U=O(D+log(H+1)+1) and the displayed sufficient exponential-gain condition. For D=eta log N with eta&lt;1/(2log A) and H≤D, N^(2eta log A) is sublinear by a fixed power, so the additional logarithmic factors do not prevent the condition. Natural logarithms are used in this depth statement.
+
+These are conditional certificates, not claims that generic residual or positive-epsilon normalization blocks are nonexpansive. All paid nonread stages after startup remain part of the gain hypothesis. The general formula with actual W and Gamma is valid even when these simplified regimes fail.
+
+## 4. Permutation invariance and limits
+
+All surrogate static moments are functions of the total counts of the two raw signs. Its public initial state and recursive read/self/control updates consequently depend only on those counts and public architecture data. Permuting a raw history cannot change its output. Therefore this surrogate cannot recover a specified terminal pair or exact order-sensitive transition counts from repeated homogeneous single-symbol reads.
+
+The actual prefix registers contain order information. The theorem concerns the subclass where its final effect is small in the quantified Gamma-weighted mean comparison. It does not construct an order-two estimator or show that all useful order-two networks satisfy that condition. Supplied terminal pairs, position-specific banks or raw pair/triple features would change the stated dataflow and communication contract.
+
+The F_2 expression is conservative but valid. The separately written two-type count candidate can improve its resource accounting; that does not invalidate this frozen candidate or make the stronger statement part of this audit&#x27;s bound.
+
+## 5. Actions and dependencies
+
+Read all three versions, the exact common-control v2, average-defect v3 and prefix-example v1, and their reviewed reasoning. The derivation is analytical. No new external theorem, scientific execution, model run, simulation, candidate modification, upload or public mutation occurred.
+</pre></details><details><summary>两类计数审阅 · INDEPENDENT_TWO_TYPE_COUNT_AUDIT.v1.md</summary><p class="hash">SHA-256 b4be80e22d814b645834eb6e14e0bfc81bfee8b7c030f3ee57eaa0f05c9bf7fe</p><pre># Independent exact-file audit: two-type count simulation v1
+
+6 November 2026 UTC.
+
+Candidate: `TWO_TYPE_COUNT_SIMULATION.candidate.v1.md`.
+
+SHA-256: `b1a595e6018d8bd45a5d99e7d792c22686bff6f45b02fd88d5ccb2bd7b177979`.
+
+**Verdict: PASS, conditional on exactly two position-homogeneous single-symbol types, closed public control and the inherited uniform attention/stability contract.**
+
+This is a specialized count-summary refinement, not an improvement to the unrestricted common-control theorem or a claim of optimality. The candidate was not edited.
+
+## 1. Message and positivity
+
+The ownership split fixes Alice&#x27;s number n_A of raw positions publicly. Her positive count divided by T=N+1 lies in [0,n_A/T]. A public grid with spacing at most eta, including or clipped to the endpoints, has O(1+1/eta) centers and can approximate this scalar within eta. Sending its index needs O(1+log(1/eta)) bits.
+
+Bob&#x27;s own positive count is known exactly. Adding it to Alice&#x27;s decoded mass produces a total positive mass between zero and N/T. Defining the negative mass by subtraction from N/T preserves both nonnegativity and their exact total. Their errors are opposite scalars of magnitude at most eta. Alice&#x27;s message is independent of all queries, feedback and the source; no interaction or transcript-dependent message is introduced.
+
+## 2. Uniform read approximation
+
+At fixed simulated y, let h_+(y) and h_-(y) denote the two augmented vectors exp(q dot kappa)(nu,1). Their norms are at most exp(beta)sqrt(V_0²+1). The count perturbation changes the combined nonterminal contribution by
+
+    (uhat-u)[h_+(y)-h_-(y)],
+
+whose norm is at most 2eta exp(beta)sqrt(V_0²+1). This estimate holds simultaneously over every permitted state, even if type values and queries change with the complete simulated transcript. The static count remains sufficient across every read and every nonlinear type map.
+
+Bob adds the original self term exactly at the simulated state. The true averaged denominator is at least exp(-beta). In fact the reconstructed nonnegative type masses together with the self mass 1/T also sum to one, so their denominator has the same floor; the inherited small-error ratio argument is already sufficient. The resulting answer error is at most a fixed multiple of eta. Projecting to the declared value ball and using the accepted exact-map recurrence gives final error at most W times this local error.
+
+Choose eta=c epsilon/(1+W) with fixed c small enough. The index cost is then at most K[2+log(1+W)+log(1/epsilon)]. Raw Alice-bit transmission supplies the alternative N cap. When W=0, the inherited zero-message argument applies exactly. Source independence, off-trajectory gains, normalized output and exact-real local computation are preserved.
+
+No Taylor degree or p-dependent feature count is needed: all rows belong to two known types, so their sums are evaluated directly. This is why F_0 rather than F_2 suffices here, without altering the general common-control theorem.
+
+## 3. Risk inversion and residual
+
+Put U=2+log(1+W) and S_0=min(U,N). For fixed small a, advertise r=a/sqrt(S_0) and epsilon=r. Shrink a to meet both the testing small-error range and the interior witness condition for P_c.
+
+If S_0=N, the testing left side is at most 4a². If S_0=U&lt;N, then
+
+    U+log(1/r)=U+log(1/a)+(1/2)log U
+                &lt;=K&#x27;[1+log(1/a)]U.
+
+The reserved bit is absorbed because U≥2. Thus the testing left side is at most a fixed multiple of a²[1+log(1/a)], which tends to zero as a decreases. This proves the stated c-dependent lower uniformly in W and N. It is an advertised-envelope contradiction, not insertion of unknown risk into the structural assumptions.
+
+Combining with the already accepted prefix residual gives inequality (2). For fixed c and fixed norm budgets, Gamma²S_0=o(N) makes the residual smaller than half the lower eventually. The nonexpansive and exponential-gain conditions follow from the previously reviewed bounds on W and Gamma, with the fixed startup&#x27;s individual gains included.
+
+## 4. Scope
+
+The method depends on homogeneous maps of the single owned raw symbol. N different position-dependent types generally cannot be simulated by this one count; no claim is made for them. Local pairs and triples can cross the AA/BB ownership split and cannot be treated as free owned symbols.
+
+The count-based communication upper and resulting source-risk lower need not be sharp. Neither statistical optimality nor a useful trained estimator follows. Finite-alphabet count compression is elementary; the result is a local refinement of the restricted source-independent simulation route.
+
+## 5. Evidence and actions
+
+Read the exact candidate and accepted common-control, average-defect and prefix-Lipschitz dependencies. This was paper verification of the grid, perturbation, recurrence and inversion. No scientific program, numerical experiment, model run, upload, public mutation or candidate edit occurred.
+</pre></details><details><summary>残差精确阶审阅 · INDEPENDENT_PREFIX_SHARPNESS_AUDIT.v1.md</summary><p class="hash">SHA-256 3281554324c563786015f3a495d9b9364d6cb20500704d4c35c27b15560fcd31</p><pre># Independent exact-file audit: prefix defect sharpness v1
+
+6 November 2026 UTC.
+
+Candidate: `PREFIX_DEFECT_SHARPNESS.candidate.v1.md`.
+
+SHA-256: `2f7fed96f5f6717f73e055d505661a8c897ed0144e9568796272b178807f355e`.
+
+**Verdict: PASS. For the stated unamplified program and canonical surrogate under fair IID signs, sqrt(N) times expected TV discrepancy converges to 1/sqrt(2pi).**
+
+This is an exact residual-scale statement for that pair, not an optimal architecture-risk or communication lower. No experiment or candidate edit occurred.
+
+## 1. Weights and variance identity
+
+The answer difference is
+
+    a-b=[sum_i m_i-NM_N]/(N+1).
+
+Each X_j appears in the prefix-mean sum with coefficient a_j=sum_(i=j)^N 1/i=H_N-H_(j-1); subtracting NM_N removes one. Thus the displayed w_(N,j)=a_j-1 is exact.
+
+Reversing summations gives sum_j a_j=N. For the squared sum, the number of j lying below both i and k is min(i,k), so
+
+    sum_j a_j²=sum_(i,k) min(i,k)/(ik)
+                =H_N+2sum_(k=1)^N(k-1)/k
+                =2N-H_N.
+
+Therefore sum_j w_(N,j)²=(2N-H_N)-2N+N=N-H_N. Independence and zero means of the fair signs give the claimed exact variance (N-H_N)/(N+1)². The degenerate N=1 case is irrelevant to the asymptotic statement; for N≥2 the normalizing variance is positive.
+
+## 2. Triangular weighted CLT
+
+The largest absolute weight is O(log N), while sigma_N²=N-H_N is asymptotic to N. Hence max_j|w_(N,j)|/sigma_N→0. For each fixed characteristic-function argument u, all individual arguments u w_(N,j)/sigma_N are eventually in a fixed neighborhood of zero where the real logarithm of cos is well defined and has the stated uniform expansion.
+
+The quadratic terms sum to -u²/2. The absolute total fourth-order remainder is bounded by a constant depending on u times
+
+    sum_j w_(N,j)^4/sigma_N^4
+      &lt;=max_j w_(N,j)^2/sigma_N²→0.
+
+Thus the normalized weighted sign sum converges to a standard Gaussian. The prefactor sqrt(N)sigma_N/(N+1) tends to one, proving sqrt(N)(a-b) converges to the same Gaussian. No relation between different triangular-array rows is required for convergence in distribution; within each row the raw signs are independent.
+
+## 3. Expected absolute value and TV factor
+
+The second moment of Y_N=sqrt(N)(a-b) is N(N-H_N)/(N+1)²≤1. This supplies uniform integrability of |Y_N|, for example through E[|Y_N|1_(|Y_N|&gt;M)]≤E[Y_N²]/M. Consequently convergence in distribution upgrades to E|Y_N|→sqrt(2/pi).
+
+The map Q(t)=((1+t)/2,(1-t)/2) yields TV(Q(a),Q(b))=|a-b|/2 exactly. The candidate&#x27;s constant is therefore (1/2)sqrt(2/pi)=1/sqrt(2pi), with no missing factor of two.
+
+## 4. Meaning of the sharpness claim
+
+Because the limit is strictly positive, the source-average discrepancy for this particular canonical replacement is Theta(N^(-1/2)) even on a maximally mixing fair IID source. Thus mixing alone cannot upgrade the earlier O(N^(-1/2)) bound to little-o for all such examples with the fixed specified affine output.
+
+For any comparison resource scale S=o(N), this discrepancy is o(1/sqrt(S)); for S comparable to N, its ratio to that scale stays nonzero. This is a comparison of scales, not a claim that the fixed two-read program&#x27;s own minimal W or S grows like N. Its natural fixed-resource certificate has bounded S, consistently with the earlier negligible-defect result.
+
+The result does not exclude another better surrogate or simulator. Nor does it establish optimal statistical risk, optimal communication, a useful order-two estimator, training behavior or a full normalized Transformer realization. Those limitations are accurately stated in the candidate.
+
+## 5. Evidence and actions
+
+Read the exact candidate and the accepted prefix/transfer context. The summation identity, characteristic-function limit and uniform-integrability step were checked analytically. No numeric integration, random sampling, model execution, scientific experiment, upload, public mutation or candidate modification occurred.
+</pre></details><details><summary>放大反例审阅 · INDEPENDENT_AMPLIFIED_PREFIX_AUDIT.v1.md</summary><p class="hash">SHA-256 1c30c6df86304d6bdfd43ad263146b4d81b631462b59953612c7bd1def32383b</p><pre># Independent exact-file audit: amplified prefix defect v1
+
+6 November 2026 UTC.
+
+Candidate: `AMPLIFIED_PREFIX_DEFECT.candidate.v1.md`.
+
+SHA-256: `b9a2648c8e71743defbf69bb5b7296a3d14ee07abf548ccf17ae978f8141506f`.
+
+**Verdict: PASS as an analytical counterexample to automatic vanishing discrepancy for the specified global-mean surrogate. The exact asymptotic expected TV discrepancy is 1/4.**
+
+This is not a lower bound against every simulator, a useful predictor, a complete normalized Transformer construction, a numerical validation, or a novelty certification. The candidate was not edited.
+
+## 1. Bounded primitive amplification
+
+Let d=ceil(log_2 N) and L_N=2^d, so N≤L_N&lt;2N. Repeatedly applying z→clip(2z,-1,1) d times is exactly clip(L_N z,-1,1): clipping cannot reverse the sign, and once saturated, later applications remain saturated. Every intermediate value lies in [-1,1], and every scalar primitive has Lipschitz gain at most two.
+
+For integer S_i, a nonzero prefix mean has magnitude at least 1/i. Since L_N≥N≥i, the transformed value equals sgn(S_i), including the declared zero convention. The terminal transformed mean similarly equals sgn(S_N). First-read scaling and final affine normalization are paid bounded operations. All final scores are zero, and all final values have norm at most one. The depth claim is O(log N), while composed sensitivity is L_N, not a fixed constant.
+
+The final surrogate bank uses a constant static value basis with public coefficient f_N(M_N). The entire computation also includes the identical first raw-value read, so its full bank family includes that initial basis or the equivalent binary onehot representation. The candidate&#x27;s phrase about a constant basis describes the final substituted bank; it does not need or justify treating the first read as data free.
+
+## 2. Exact discrepancy and tie contribution
+
+Write sigma_i=sgn(S_i), b=sigma_N and a=(sum_i sigma_i+sigma_N)/(N+1). Then
+
+    a-b=sum_i(sigma_i-sigma_N)/(N+1).
+
+If S_N≠0, every summand has the same weak sign, so the absolute value equals the sum of absolute values. If S_N=0, equality may fail; both candidate expressions are bounded by two. Hence the absolute difference of their expectations is at most 2P(S_N=0).
+
+For even N=2n, P(S_N=0)=binom(2n,n)/4^n=O(n^(-1/2)); for odd N it is zero. The final map a→((1+a)/2,(1-a)/2) has binary TV difference exactly |a-b|/2. Therefore equation (1), including its factor 1/[2(N+1)] and o(1) tie correction, is correct.
+
+## 3. Pairwise Gaussian limit
+
+For fixed t∈(0,1), put i=floor(Nt). Both i and N-i tend to infinity. The sums S_i and S_N-S_i are independent. Their normalized characteristic functions converge to independent standard Gaussian characteristic functions by the elementary cosine expansion, so
+
+    (S_i/sqrt(i), S_N/sqrt(N))
+
+converges to a standard bivariate Gaussian pair with correlation sqrt(t). The discontinuity set of the bounded absolute-sign-difference function is the union of the coordinate axes, which has limiting Gaussian measure zero. Its expectations therefore converge; no unjustified continuous mapping at a positive-probability atom is involved.
+
+For a bivariate centered Gaussian with correlation rho, represent its two coordinates as projections of an isotropic two-dimensional standard Gaussian onto unit vectors meeting at angle arccos(rho). Uniform angular direction gives opposite-sign probability arccos(rho)/pi. Thus the limit of the absolute sign difference is 2 arccos(sqrt(t))/pi. Discrete zero-sign events are absorbed by the same almost-everywhere continuity argument.
+
+## 4. Sum limit and the constant
+
+Define the bounded step function using floor(Nt), with S_0=0 if needed. Its integral differs from the candidate&#x27;s normalized finite sum by only endpoint and N-versus-(N+1) terms of order 1/N. The pointwise limit holds for every t∈(0,1), and the functions are bounded by two, so dominated convergence applies without any uniform CLT estimate.
+
+The integral is checked directly by u=sqrt(t):
+
+    integral_0^1 arccos(sqrt(t)) dt
+      =integral_0^1 2u arccos(u) du
+      =integral_0^1 u²/sqrt(1-u²) du
+      =integral_0^(pi/2) sin²(theta) dtheta
+      =pi/4.
+
+Consequently the normalized expected absolute sign difference tends to (2/pi)(pi/4)=1/2. Multiplication by the final binary-TV factor 1/2 gives precisely 1/4. The candidate&#x27;s stated constant is correct.
+
+## 5. Scope and risk interpretation
+
+The fair IID signed source belongs to every fixed P_c with 0&lt;c&lt;1/2, so a discrepancy bounded away from zero for this single source also prevents a vanishing uniform source-class discrepancy for this particular surrogate. This refutes the inference that bounded values, bounded scores, fixed primitive gains and mixing alone force replacement of each prefix mean by the global mean to be accurate after paid amplification.
+
+It does not refute the existence of a different accurate source-average simulator or a different surrogate. The proof gives no communication lower for the actual attention program. It also does not bypass the full positive-epsilon normalization/primitive contract: the candidate explicitly remains an attention program.
+
+The assertion that the program is not low risk on the fair source can be made rigorous using only the proved discrepancy. The surrogate output is an extreme binary distribution whenever S_N≠0, so its expected TV risk against the fair next-symbol law tends to 1/2. By triangle inequality, the actual risk has liminf at least 1/2-1/4=1/4. No further random-walk occupation theorem is needed for that conclusion.
+
+The local row Lipschitz constant L_N grows at order N, so the earlier Gamma-based negligible-defect condition is not satisfied. All constants in the row norm and score bounds may remain fixed while the composed stability resource grows. This is exactly the distinction the counterexample illustrates.
+
+## 6. Evidence and actions
+
+Read the exact candidate and the previously reviewed causal prefix, average-defect and common-control documents. The limit was checked by analytical characteristic-function, Gaussian-angle, integral and expectation arguments. No stochastic process simulation, Monte Carlo estimate, numeric integration, model run, scientific execution, upload or public mutation occurred.
+</pre></details></section><footer><p>报告版本 v5 · 2026 年 11 月 6 日 UTC · 所有结论以明确条件和原始证明为准。</p></footer></body></html>
