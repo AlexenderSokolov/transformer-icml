@@ -1,0 +1,483 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>非线性因果行更新的通信边界与可核验闭合条件</title><style>body{font-family:system-ui,-apple-system,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;color:#171717;max-width:980px;margin:auto;padding:40px 24px;line-height:1.8}h1{font-size:2rem;line-height:1.4}h2{font-size:1.5rem;margin-top:2.6rem}h3{font-size:1.15rem;margin-top:1.8rem}nav{margin:24px 0}a{color:#145a88}.eq{font-family:Cambria,Georgia,serif;padding:12px 0;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d9d9d9;padding:12px;text-align:left;vertical-align:top}th{background:#e8edf1}tr:nth-child(even){background:#f8f9fa}details{margin:22px 0}summary{cursor:pointer;font-weight:600;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.65 ui-monospace,monospace}.hash{overflow-wrap:anywhere;font-size:.85rem}footer{color:#555;margin-top:40px}@media(max-width:600px){body{padding:20px 16px}h1{font-size:1.6rem}td,th{padding:8px}}@media print{body{max-width:none;padding:0}nav{display:none}h2{break-after:avoid}tr{break-inside:avoid}a{color:inherit}}</style></head><body><header><p>v10 研究报告 · 2026 年 11 月 6 日</p><h1>非线性因果行更新的通信边界与可核验闭合条件</h1>
+<p>本轮固定刚审阅过的共同模型：原始二元符号、合成终端、全前缀含自身因果注意力、两个有效标量头、固定宽度和完整范数预算、正 ε PreLN，以及普通词表 softmax。问题是非线性逐行更新是否必然破坏终端通信折叠。</p>
+<p><strong>答案需要分开三种主张。</strong>平滑平方已经能破坏指定终端切口的精确加性折叠，但仍可获得误差 O<sub>c</sub>(log N/N) 的廉价源平均模拟；另一种带放大的非线性前缀能量，则把已有最坏历史通信硬例带入同一规范化模型。精确可加性也获得了一个必要且充分的混合差分证书，但它不是所有廉价模拟的必要条件。</p>
+<p>没有获得新的二阶预测率、一般非线性多读主定理或训练结果。两个具体程序的统计风险均明确核算，不能把小模拟误差误当成低预测风险。</p></header>
+<nav><a href="#contract">共同契约</a> · <a href="#taylor">温和非线性闭合</a> · <a href="#certificate">精确证书</a> · <a href="#hard">规范化硬例</a> · <a href="#resources">资源与风险</a> · <a href="#prior">先行工作</a> · <a href="#failures">失败与局限</a> · <a href="#appendix">完整证明与审阅</a></nav>
+<section id="contract"><h2>一 固定模型与评价对象</h2>
+<p>输入 N 个符号 X<sub>i</sub>∈{−1,1}，附加 T=N+1 的零符号合成行；参数只依赖公开 N，不编码未知核。每次注意力都包含自己的行，Q/K 为零，有效值维数为一。所有位置运算、非线性、放大、输出准备、清空及恢复步骤全部付费。每层 LN 使用 ε=1、gain=2、shift=0，最后是常规仿射 logits 和 softmax。</p>
+<p>共同包络是一个预先固定、足够大的完整状态/矩阵/偏置/原语增益界，覆盖此前有序双读程序与本轮两个程序；不把它等同于未经核验的旧数字 M<sub>K</sub>。数学语义为精确实数。小振幅编译必须先纳入全部 logit 复制、范数填充和清空微步骤，再定完整参考长度 m 和精度 M。</p>
+<p>源平均分析使用固定 c∈(0,1/2) 的平稳内部二元二阶类 P<sub>c</sub>。最坏历史模拟则要求每条输入都准确。这两种保证不能互换，某个困难词在源下有正概率也不等于它构成源平均困难分布。</p></section>
+<section id="taylor"><h2>二 保留一阶项后的非线性源平均闭合</h2>
+<h3>两个公开线性统计量</h3><p>第一次均匀注意力产生 m<sub>i</sub>=S<sub>i</sub>/i，其中 S<sub>i</sub>是前缀符号和，S<sub>T</sub>=S<sub>N</sub>。各行应用非线性 f，第二次读取 A<sub>f</sub>=T<sup>−1</sup>Σf(m<sub>i</sub>)。保留全样本均值 M=S<sub>N</sub>/N 和谐和位置加权统计</p>
+<div class="eq">R=(1/T)Σ<sub>i=1</sub><sup>T</sup>m<sub>i</sub>=(1/T)Σ<sub>j=1</sub><sup>N</sup>a<sub>j</sub>X<sub>j</sub>，a<sub>j</sub>=Σ<sub>i=j</sub><sup>T</sup>1/i。</div>
+<p>M、R 都是公开加权的本地符号和。Alice 只需量化两个部分和，Bob 加入自己部分；不需要重建每个跨方前缀。定义 Taylor 替代值 B<sub>f</sub>=f(M)+f′(M)(R−M)。若 |f″|≤L<sub>2</sub>，则逐历史</p>
+<div class="eq">|A<sub>f</sub>−B<sub>f</sub>|≤(L<sub>2</sub>/2)V<sub>N</sub>，V<sub>N</sub>=(1/T)Σ<sub>i=1</sub><sup>T</sup>(m<sub>i</sub>−M)²。</div>
+<p>后续输出增益 G 必须再乘入。量化时也须控制 |f′|≤L<sub>1</sub>，因为替代值对 M、R 的敏感度分别不超过 2L<sub>2</sub>和 L<sub>1</sub>。这些常数若随层数增长，不能吸收掉。替代值可能离开实际值范围，解码器误差域必须同时覆盖两者。</p>
+<h3>源平均余项与精确阶</h3><p>沿用已经审阅的协方差界 Var(S<sub>i</sub>)≤K<sub>c</sub>i，其中 K<sub>c</sub>=2/c²−3。对实际行，E(m<sub>i</sub>−M)²≤2K<sub>c</sub>/i+2K<sub>c</sub>/N；合成行 m<sub>T</sub>−M=−M/T。因此</p>
+<div class="eq">sup<sub>P∈P<sub>c</sub></sub>EV<sub>N</sub>≤[2K<sub>c</sub>(H<sub>N</sub>+1)+T<sup>−2</sup>]/T，H<sub>N</sub>=Σ<sub>i=1</sub><sup>N</sup>1/i。</div>
+<p>固定曲率与输出增益给 O<sub>c</sub>(log N/N) 误差，严格小于 N<sup>−1/2</sup>尺度。此前只用全局均值替换各前缀，会丢掉一阶项并只得到 O(N<sup>−1/2</sup>)；这里保留 R 后才获得二阶余项。公平 IID 下更有精确公式 EV<sub>N</sub>=(H<sub>N</sub>−1+1/(NT²))/T，故这个余项的 log N/N 阶是尖锐的。</p>
+<h3>平方与同一 PreLN 模型</h3><p>取 f(z)=z²，A<sub>2</sub>=2MR−M²+V<sub>N</sub>。以普通 logits (A<sub>2</sub>,0) 输出 sigmoid。替代 logits 使用 B<sub>2</sub>=2MR−M²∈[−3,1]，不能假设其仍在 [0,1]。在这个完整区间上 sigmoid 导数有固定正下界 κ<sub>σ</sub>=exp(3)/(1+exp(3))²，因此</p>
+<div class="eq">κ<sub>σ</sub>V<sub>N</sub>≤TV(Q<sub>2</sub>,Q<sub>Taylor</sub>)≤V<sub>N</sub>/4。</div>
+<p>这给出<strong>该指定程序与替代计算之间</strong>的必要且充分余项判据：输出误差为 o(r<sub>N</sub>) 当且仅当 EV<sub>N</sub>=o(r<sub>N</sub>)。它不是所有架构的最弱闭合定理。</p>
+<p>具体网络用已有 dyadic tent-square 电路，以 O(log N) 个有界 ReLU 步骤把平方误差控制到 ν≤T<sup>−2</sup>，再按已审双读 PreLN 编译，将普通 logits 的物理误差控制到 ζ=min{1/1000,T<sup>−2</sup>}。无需额外对数近似。两个标量头均有实质作用，单头消融在全正号历史上留下固定输出差。</p>
+<p>通信 O(1+log(1/ε)) 位、上限 N，可以获得源平均误差 ε+O<sub>c</sub>(log N/N)+ζ+ν/4。例如 ε≈N<sup>−1/2</sup>时只需 O(log N) 位，额外余项为 little-o。但该网络在固定 θ∈(0,1−2c] 的平稳 lag-two 源上预测风险趋于 θ/2，而不是趋零。因此没有与预测测试下界冲突。</p></section>
+<section id="certificate"><h2>三 指定终端切口的精确加性证书</h2>
+<p>固定分布式行更新结束后、付费本地解码器之前的完整终端向量 z:{0,1}<sup>N</sup>→R<sup>v</sup>，要求所有数据通道都包含其中，且 ||z(x)||≤V。想要核验的是这一特定切口能否写成 z(x)=z(0)+Σa<sub>i</sub>x<sub>i</sub>。</p>
+<p>对任意不同 i、j 和其余符号背景 w，定义混合差分 D<sub>ij</sub>z(w)=z<sub>11</sub>−z<sub>10</sub>−z<sub>01</sub>+z<sub>00</sub>。所有这些差分恒为零，<strong>当且仅当</strong>上述精确加性表示成立。证明是：零混合差分让每个单符号增量独立于其他符号，再从全零历史逐位求和。</p>
+<p>该证书在逻辑上必要且充分，但穷举背景需指数级检查，不是高效通用算法。固定公开 ReLU/裁剪活动区域只在其余映射也全是仿射或公开线性时才足够；数据相关 softmax 与全特征 LN 不能因 ReLU mask 固定就被忽略。</p>
+<p>Alice 的部分和半径不必粗暴累计所有系数：它等于 z(x<sub>A</sub>,0<sub>B</sub>)−z(0)，故不超过 2V。对完整半径 V 的投影域有增益 G 的解码器，可用有界向量量化得到对数精度通信。若混合差分只满足 ||D<sub>ij</sub>z||≤γ<sub>ij</sub>，逐位展开给余项≤Σ<sub>i&lt;j</sub>γ<sub>ij</sub>x<sub>i</sub>x<sub>j</sub>；增长的总余项与解码器更大定义域必须计费。</p>
+<p>平方前缀统计在 j&lt;k 时具有 D<sub>jk</sub>A<sub>2</sub>=(8/T)Σ<sub>i=k</sub><sup>T</sup>i<sup>−2</sup>&gt;0。使用有限描述 dyadic 系数的逻辑参考实现（规范化编译前）仍有 D<sub>12</sub>&gt;0。物理 PreLN 通过统一输出误差与参考比较，并不声称保留内部混合差分恒等式。因此温和非线性也能破坏精确加性切口，却不妨碍上一节的廉价源平均模拟。<strong>不能从非零混合差分直接推断通信困难。</strong></p></section>
+<section id="hard"><h2>四 同一规范化模型中的非线性通信硬例</h2>
+<p>已有 v10 结果用第一次均匀读取 S<sub>t</sub>/t、付费恢复及裁剪整数平台得到 v<sub>t</sub>=clip(S<sub>t</sub>,−4,4)²/16，再由第二读得到 E<sub>N</sub>。最后用 O(log N) 个有界步骤放大 E<sub>N</sub>减去公开基线，产生 F<sub>N</sub>∈[0,1]。在旧的输入编码上，它精确区分集合不相交或 Gap-Hamming 的两种承诺。</p>
+<p>本轮没有重新声称发现这套硬函数或编码，只把它移入同一正 ε PreLN/普通 softmax 契约。选择有界普通 logits (4F<sub>N</sub>−2,0)，编码输出由旧的0/1变成 σ(−2)、σ(2)。两者距离1/2均超过3/8；完整准备后的编译误差≤T<sup>−2</sup>仍留下超过1/3的间隔。</p>
+<p>所以在相应 N 的子序列上，确定性交互式协议若逐历史 TV 误差≤1/4，仍须 Ω(N) 位。随机协议若每条历史以至少2/3概率达到该误差，也须 Ω(N) 位；每条历史上对随机性的期望误差≤1/16同样足够推出该下界。随机结论继续调用既有 Chakrabarti–Regev Gap-Hamming 定理，没有新的通信下界技术。</p>
+<p>硬例不是低风险估计器。在公平 IID 源下，E<sub>N</sub>趋于1，F<sub>N</sub>趋于1，最终预测风险趋于 σ(2)−1/2&gt;1/3。困难词在内部 Markov 源下有正概率，也不能把这一最坏历史下界改写成源平均下界。此前已有的低风险 rare-marker 构造是另一结果，不在此处偷换为标量头规范化版本。</p></section>
+<section id="resources"><h2>五 统一资源账本与不可混淆的风险</h2>
+<table><thead><tr><th>项目</th><th>Taylor 平方程序</th><th>规范化能量硬例</th></tr></thead><tbody>
+<tr><td>有效头与宽度</td><td>两个标量零得分全因果头，固定宽度</td><td>相同；包络选为共同固定上界</td></tr>
+<tr><td>付费深度</td><td>O(log N)，包括平方近似与完整编译准备</td><td>O(log N)，包括两次放大、平台与完整准备</td></tr>
+<tr><td>参数描述</td><td>每系数 O(log N)，总无共享参数 O(log²N)</td><td>相同量级</td></tr>
+<tr><td>模拟保证</td><td>源平均；两公开统计量，O(log(1/ε))位，加显式余项</td><td>最坏历史；固定误差下Ω(N)位，允许交互与随机</td></tr>
+<tr><td>预测风险</td><td>lag-two 固定源上趋θ/2</td><td>公平 IID 上趋σ(2)−1/2</td></tr>
+<tr><td>工作量</td><td colspan="2">跳过恒零头时 O(N²+N log N)；若每个无效注意力槽也密集执行，为 O(N²log N)。总行状态O(N)。</td></tr>
+<tr><td>数值与训练</td><td colspan="2">精确实数解析模型；没有有限浮点运行认证、模型执行或训练保证。</td></tr>
+</tbody></table>
+<p>数据范围有界、每步增益固定，并不约束多层组成后的总放大或曲率。温和平方直接作用于前缀均值；硬例把均值恢复到裁剪前缀和并作后续放大。这是为什么两个相同外层资源阶的程序有不同模拟行为，不能只按“是否非线性”分类。</p></section>
+<section id="prior"><h2>六 与既有成果及文献的逐项对照</h2>
+<p>最接近的本地先例是已审的 prefix-energy 通信障碍、rare-marker 低风险最坏历史障碍、前缀 Lipschitz 残差、公开线性折叠和双读 PreLN 编译。本轮分别增加规范化契约对齐、保留一阶项后的余项证书、以及指定切口的精确可加性判据；不把原有统计率、硬编码或归一化方法重新命名为创新。</p>
+<ul><li><a href="https://arxiv.org/pdf/1009.3460">Chakrabarti 与 Regev</a>：随机硬例继续导入其 Gap-Hamming 定理，网络 softmax 只改变可用输出间隔。</li><li><a href="https://aclanthology.org/2020.tacl-1.11.pdf">Hahn</a>：有界深度敏感性是相近背景，单步有界不等于总增益有界，不能替代本报告的源平均方差或通信证明。</li><li><a href="https://arxiv.org/html/2302.13214v1">Alman–Song</a>与<a href="https://arxiv.org/html/2606.07205v1">Chen 等</a>：既有 Taylor 注意力核摘要不等于本轮对非线性行值 f(prefix mean) 的 Taylor 校正；不能混用各自维数与空间结论。</li><li><a href="https://arxiv.org/html/2407.17686v1">Rajaraman 等</a>、<a href="https://arxiv.org/pdf/2508.07208v2">Ekbote 等</a>与<a href="https://arxiv.org/html/2607.02800v1">D’Angelo 等</a>：有序 Markov/ngram 表达已有先例，本轮两个具体程序都不是竞争性统计估计器，不能借这些工作声称训练成功。</li></ul>
+<p>本次比较沿用同日上一轮对有序 Markov 文献的主文核查及此前已核对的 Gap-Hamming 来源；Alman–Song 与 Chen 的对照沿用11月5日记录，Hahn 修正补充在本轮及上一轮均未重新获取。没有假称又进行了一次实时全文检索。Taylor 定理、Boolean 混合差分、协方差求和和向量量化均为已有数学工具，不主张优先权。</p></section>
+<section id="failures"><h2>七 失败路线与后续边界</h2>
+<ul><li>有限普通 logits 不会精确输出0/1，不能照搬旧的误差阈值 ε&lt;1/2；现用真实间隔和1/4阈值。</li><li>Taylor 替代值可能超出实际激活范围，必须扩展并核验解码器域。</li><li>f(X<sub>i</sub>,m<sub>i</sub>)可能在一阶项引入跨方乘积 ΣX<sub>i</sub>m<sub>i</sub>，不免费继承双统计量闭合。</li><li>固定 ReLU 活动模式不消除依输入 softmax 和 LN 的非线性；全部路径条件及数据通道要检查。</li><li>零混合差分判据只针对指定终端切口；非零不等于通信困难，必要充分也不等于高效检验。</li><li>对低风险、真实未知二阶预测器的一般非线性源平均模拟或下界仍未解决。</li></ul>
+<p>所有候选旧版及修订记录保留。最终采用 Taylor v2、normalized obstruction v2、additive certificate v3 及对应独立审阅。原文 pending 是冻结时状态，最终判断以匹配版本审阅为准。文档检查不是科学复现；未建立视觉渲染验收。本 HTML 无脚本、表单或外部字体。</p></section>
+<section id="appendix"><h2>八 完整证明与独立审阅原文</h2><p>候选创建时的待审状态以对应精确版本审阅为准。下列原文可离线核对，哈希仅用于版本绑定，不是科学执行或机器证明。</p><details><summary>Taylor闭合证明 · TAYLOR_PREFIX_CLOSURE.candidate.v2.md</summary><p class="hash">SHA-256 2e88291ded1da043796783ccb1200f806a72b17d0c9d1727d7615d68b4e6e005</p><pre># Taylor-corrected source-average closure for smooth nonlinear prefix rows
+
+6 November 2026 UTC. Analytical candidate v2; v1 is preserved. Independent review requested after adding the horizon, witness-interiority, ablation and exact IID remainder checks. The new target is a nonlinear row-update simulation certificate, not a new estimator or statistical rate.
+
+## 1. Frozen nonlinear two-read program
+
+Assume N&gt;=6 to match the current two-read normalized construction. N signed binary raw tokens, T=N+1 synthetic zero-symbol row, full-prefix inclusive causal attention, fixed width, paid local operations and source-independent parameters. Let S_i=sum_{j&lt;=i}X_j for i&lt;=N, and S_T=S_N. The first zero-score scalar head produces m_i=S_i/i for all i&lt;=T. A nonlinear row map f is applied, and the second zero-score scalar head returns
+
+    A_f=(1/T)sum_{i=1}^T f(m_i).
+
+For the main concrete example f(z)=z^2. Its ideal terminal output is Q_f=(sigma(A_f),1-sigma(A_f)), sigma(u)=1/(1+exp(-u)); these are ordinary logits (A_f,0), not an uncharged probability projection. Section 6 gives a fixed-width positive-epsilon PreLN realization approximating this ideal with O(log N) depth. The ideal square is an analytical comparator, not an exact multiplication primitive.
+
+The statistical class is stationary interior binary order-two P_c, fixed c in (0,1/2). Error of SIMULATION is averaged under this class. No unknown source parameter is supplied to the network or simulator.
+
+## 2. Two public linear sufficient statistics for the approximation
+
+Set M=S_N/N and
+
+    R=(1/T)sum_{i=1}^T m_i
+      =(1/T)sum_{j=1}^N a_j X_j,
+    a_j=sum_{i=j}^T 1/i.
+
+Both are public weighted token-local sums, even though A_f is nonlinear in distributed prefix states. Their absolute ranges are at most one. In particular sum_{j&lt;=N}a_j/T=N/T+N/T^2&lt;1. Alice can send quantized partial M and R; Bob adds his own partial sums. Neither party needs to know the individual cross-party m_i.
+
+Define the Taylor surrogate
+
+    B_f=f(M)+f&#x27;(M)(R-M).
+
+If |f&#x27;&#x27;(z)|&lt;=L_2 on [-1,1], Taylor&#x27;s integral remainder gives the PATHWISE bound
+
+    |A_f-B_f| &lt;= (L_2/2) V_N,
+    V_N=(1/T)sum_{i=1}^T (m_i-M)^2.                     (1)
+
+If a subsequent public output map has Lipschitz constant G on the required domain containing A_f and B_f, its output error is &lt;=G L_2 V_N/2. Any implementation approximation to f and output must be added separately. The surrogate may be outside f([-1,1]), so its decoder domain may not be silently restricted to the actual range.
+
+For quantized M,R, require fixed |f&#x27;|&lt;=L_1 and |f&#x27;&#x27;|&lt;=L_2. On the square [-1,1]^2, partial_M B_f=f&#x27;&#x27;(M)(R-M), partial_R B_f=f&#x27;(M), hence |partial_M|&lt;=2L_2 and |partial_R|&lt;=L_1. Project the combined quantized statistics into [-1,1]^2, fixing the exact pair. This yields O((2L_2+L_1)eta) pre-output error for coordinate accuracy eta, uniformly over histories. The precise bit cost is O(log(1/eta)) at fixed derivative/value budgets, or the raw-bit cap N. Curvature/decoder gains that grow with depth remain explicit resources.
+
+## 3. Uniform second-order source-average remainder
+
+The reviewed pair-chain minorization gives, for stationary P_c,
+
+    Var(sum_{j=1}^i X_j)&lt;=K_c i,   K_c=2/c^2-3.
+
+For i&lt;=N, both m_i and M have mean mu and
+
+    E(m_i-M)^2&lt;=2K_c/i+2K_c/N.
+
+At the synthetic row m_T-M=-M/T, so its squared difference is at most T^-2. Therefore
+
+    sup_{P in P_c} E V_N &lt;= [2K_c(H_N+1)+T^-2]/T,        (2)
+
+where H_N=sum_{i=1}^N 1/i. Under fair IID signs the exact identity is E V_N=(H_N-1+1/(N T^2))/T: for i&lt;=N, Cov(m_i,M)=1/N, so E(m_i-M)^2=1/i-1/N; the synthetic contribution is 1/(N T^2) before division by T. Therefore the order log(N)/N of this canonical remainder is sharp, including its induced sigmoid discrepancy by (3). Combining (1)-(2) gives an O_c(G L_2 log(N)/N) source-average closure defect. It is o(N^-1/2) for fixed derivative/decoder budgets. More generally the displayed sufficient comparison condition at any desired scale r_N is G_N L_(2,N) log(N)/N=o(r_N), with K_c and implementation errors retained.
+
+This is a condition, not an assertion about all nonlinear row maps. Intermediate amplification can make L_2 grow. A shared dependence on the row&#x27;s own symbol f(X_i,m_i) generally creates the cross-party quadratic statistic sum_i X_i m_i in the first-order term; it does not inherit the two-scalar closure for free.
+
+## 4. Quadratic example and a necessary-and-sufficient residual test for this surrogate
+
+For f(z)=z^2 the Taylor identity is exact:
+
+    A_2=2MR-M^2+V_N.
+
+Thus B_2=2MR-M^2 lies in [-3,1], while A_2 is in [0,1]. The sigmoid derivative on [-3,1] lies between
+
+    kappa_sigma=exp(3)/(1+exp(3))^2 &gt;0
+
+and 1/4. Hence on EVERY history,
+
+    kappa_sigma V_N &lt;= TV(Q_2,Q_Taylor) &lt;= V_N/4.        (3)
+
+For this PARTICULAR quadratic-program/Taylor-surrogate pair, the source-average output discrepancy is o(r_N) if and only if E V_N=o(r_N), with sup over the same source class if required. This is the strongest necessity statement made here. It is not the weakest possible closure assumption over all architectures or all simulators.
+
+Quantizing M,R with each error at most eta gives |Bhat_2-B_2|&lt;=6eta and output error &lt;=3eta/2. Choosing eta&lt;=2epsilon/3 gives a deterministic one-way protocol using
+
+    C&lt;=min{N,K[1+log(1/epsilon)]}
+
+with source-average error &lt;=epsilon+[2K_c(H_N+1)+T^-2]/(4T) against the ideal quadratic network. This is not a worst-history guarantee: a long +1 block followed by a long -1 block has V_N bounded below by a positive constant.
+
+## 5. This is not a useful second-order estimator
+
+On the stationary symmetric lag-two source with a fixed theta in (0,1-2c], for example theta=min{1/16,(1-2c)/2}, mu=0 and E A_2&lt;=K_c(H_N+1)/T up to an inessential bounded synthetic-row term. Thus sigma(A_2)-&gt;1/2 in L1, while the actual next law is (1+theta X_(N-1))/2. Consequently
+
+    E TV(Q_2,p_actual) -&gt; theta/2.
+
+The same holds for an o(1)-accurate physical implementation. The source-average closure is a positive result for a genuinely nonlinear distributed memory statistic, but it is not a statistical consistency or learning result. No earlier suffix-estimation rate is repackaged as a new theorem.
+
+## 6. Concrete positive-epsilon PreLN realization and full resources
+
+Approximate z^2 on [-1,1] via b=(z+1)/2 and the already-reviewed dyadic tent-square interpolant s_L(b). Since |s_L(b)-b^2|&lt;=4^-L/4, the clipped value
+
+    f_L(z)=clip(4s_L((z+1)/2)-4((z+1)/2)+1,0,1)
+
+has |f_L(z)-z^2|&lt;=nu=4^-L. Take L=ceil(log_2 T), so nu&lt;=T^-2. This is a fixed-width O(log N)-depth bounded affine/ReLU program with fixed per-primitive gain and complete-state norms. Its two useful heads remain scalar and zero-score. The second answer a is in [0,1] and the reference logits are simply ell=(a,0); no logarithm approximation or probability-floor circuit is needed.
+
+Compile this EXACT bounded reference program by the reviewed TWO_READ_PRELN_COMPILATION v4 mechanism. Explicitly append fixed scaled-logit copies, norm-padding at accuracy kappa, and ALL scratch clears BEFORE defining total m and choosing eta_small=2^-M. Choose output tolerance zeta=min{1/1000,T^-2} and xi,kappa,tau_restore as the largest permitted dyadic constant multiples of zeta. Use a common bounded tube and unchanged physical preparation/restoration parameters for the original and both single-read-ablated reference programs. The full padded program has m=O(log N); both attention steps have max-row local error O(eta_small^2); the uniform recurrence is e_l&lt;=L_0 e_(l-1)+C eta_small^2. Choosing M=O(m+log(1/zeta))=O(log N) controls the FULL prepared vector. The existing stable amplitude restoration and ordinary affine vocabulary head then give physical logits within zeta of ell. The identical gain-two reparameterization gives every LN epsilon=1, gain=2, shift=0.
+
+The resulting actual network has width O(1), exactly two useful full-prefix scalar heads, depth O(log N), a fixed finite full-state/matrix/full-bias/primitive-gain envelope, per-coefficient description O(log N), and total untied parameter description O(log^2 N). Both heads are useful, not just scheduled: on all-+ histories the unablated reference second answer is at least N/T, whereas ablating either read gives zero (the dyadic square interpolant is exact at z=0). Their sigmoid outputs differ by more than 1/6 for N&gt;=6; the two compiler errors of at most zeta leave a fixed positive separation. The network parameters are source independent; no c-dependent information is needed for construction. Fixed constants in the source-average bound do depend on c.
+
+The physical output differs from ideal Q_2 by at most zeta+nu/4 (a conservative bound). Therefore its one-way SOURCE-AVERAGE simulator has error
+
+    epsilon + [2K_c(H_N+1)+T^-2]/(4T) + zeta+nu/4.        (4)
+
+Taking epsilon of order N^-1/2 uses O(log N) bits and the extra residual is o(N^-1/2). This does not violate the prediction testing theorem, since Section 5 shows constant prediction risk on its lag-two witness.
+
+Useful-head/local work is O(N^2+N log N) if zero attention slots are skipped. Dense evaluation of every dummy attention slot costs O(N^2 log N). There are O(N) distributed row scalars at fixed width. Layer arithmetic is exact-real, not a finite floating-point execution guarantee. No numerical generation, experiment, model run or training was performed. The finite normative envelope is sufficient, not identified with an unchecked preassigned numerical M_K.
+
+## 7. Provenance and scope
+
+Taylor&#x27;s theorem, variance bounds, linear weighted summaries, tent-square approximation and the compiler are standard or previously reviewed ingredients. The local increment is their explicit source-average composition with a second-order remainder and the exact canonical-surrogate criterion (3). The prior prefix-Lipschitz comparison discarded the first-order harmonic statistic and therefore gave only O(N^-1/2); retaining R removes that term. No priority claim is made.
+
+Dependencies: ordered_causal_memory_20261106 public-linear collapse v2 and PreLN compilation v4; evolving_common_control_20261106 prefix example and its K_c covariance proof; the tent-square circuit in the existing repeated terminal obstruction. General nonlinear memory, data-dependent attention weights, growing curvature and actual transition-count features require separate accounting.
+</pre></details><details><summary>规范化硬例证明 · NORMALIZED_NONLINEAR_OBSTRUCTION.candidate.v2.md</summary><p class="hash">SHA-256 628009aef0e5d1333e23913bb34c2d04d3b67d792e7ea5ad76d498d729f331ac</p><pre># Nonlinear prefix-energy hardness survives the fixed positive-epsilon PreLN contract
+
+6 November 2026 UTC. Analytical candidate v2; v1 is preserved. Independent review requested after explicitly fixing the common fully prepared original/ablation domains before precision selection. The communication-hard logical function and its encoding are existing v10 results. This file only transfers that known obstruction into the current normalized common model, with the changed output margins explicitly charged.
+
+## 1. Frozen common model and conclusion
+
+Use N binary raw onehot rows, public normalized positions, one synthetic zero-symbol terminal, full-prefix inclusive causal softmax, fixed width and fixed finite complete-state/matrix/full-bias/primitive-gain budgets, paid sequential local depth, all-feature PreLN with epsilon=1, gain=2 and shift=0, and final ordinary affine vocabulary logits plus softmax. Exactly TWO useful scalar-value attention invocations have Q=K=0. No pair/triple feature, crop, exact last-pair channel or source kernel is supplied. Parameters are source independent.
+
+On the same horizon sequences as the existing terminal obstruction, there is such a network with D=O(log N), per-coefficient description O(log N) and untied total description O(log^2 N), for which:
+
+- deterministic interactive terminal simulation with uniform TV error &lt;=1/4 requires Omega(N) worst-case bits;
+- randomized interactive simulation with TV error &lt;=1/4 and success probability &gt;=2/3 on every history requires Omega(N) bits on the Gap-Hamming subsequence;
+- the randomized conclusion also holds under expected TV error &lt;=1/16 over coins on every fixed history.
+
+The normative envelope is one sufficiently large fixed constant envelope containing both this construction and the already-reviewed ordered two-read PreLN construction. It is not an unchecked identification with a particular old numerical M_K. The result does not say that every network with these resources is hard, or that source-average simulation is hard.
+
+## 2. Existing logical hard program, not a new reduction
+
+Import TERMINAL_SIMULATION_OBSTRUCTION.candidate.v2.md and its accepted audit. Its scalar first read supplies S_t/t, where S_t=sum_{i&lt;=t}x_i and x_T=0. A paid O(log N) bounded tent-product circuit, clipped doubling and integer plateau circuit produce
+
+    v_t=clip(S_t,-4,4)^2/16 in [0,1]
+
+exactly on every raw history. The second scalar uniform head gives
+
+    E_N=(1/(16T))sum_{t=1}^T clip(S_t,-4,4)^2.
+
+After a public baseline b_tau, paid clipped doublings give
+
+    F_N=clip(P(E_N-b_tau),0,1),
+    P=2^ceil(log2 T), T=N+1.
+
+The logical program has bounded complete states and per-primitive norms, fixed width, two useful heads and O(log N) counted stages. It is valid on every row/history, not only the communication encodings. Its crucial intervening nonlinear row transformation prevents using the public-linear collapse identity.
+
+For N=8(m+1), the old AA/BB-aligned eight-sign block encoding of private a,b in {0,1}^m gives
+
+    E_N=(12+8m+24J(a,b))/(16T), J=sum_j a_j b_j,
+    b_tau=(12+8m+24tau)/(16T).
+
+At tau=0, F_N is exactly 0 for disjoint and 1 for intersecting inputs. At m=2n, N=16n+8, tau=n/2 and duplicated/complemented n-bit inputs, J=n-d_H and F_N is exactly 0 or 1 on the two Gap-Hamming promises. The exact encoding and all-row proof are inherited, not rederived as a new hardness technique. The deterministic fooling-set proof yields m bits; randomized hardness imports Chakrabarti–Regev Theorem 2.6, https://arxiv.org/pdf/1009.3460, as already primary-checked in the old audit.
+
+## 3. Paid bounded logits and correct softmax separation
+
+Do NOT carry over the old probability endpoints 0 and 1 after an ordinary finite-logit softmax. Instead use reference logits
+
+    ell=(4F_N-2,0),  Q_ref=softmax(ell).
+
+They lie in [-2,2] times the fixed coordinate basis and are obtained by one bounded paid affine stage. On the communication promise,
+
+    Q_ref(+)=sigma(-2) if F_N=0,
+    Q_ref(+)=sigma(2)  if F_N=1.
+
+Both are separated from threshold 1/2 by more than 3/8, since exp(2)&gt;7. Constant softmax separation, not exact binary endpoints, is the required fact.
+
+## 4. Exact-program PreLN compilation
+
+Apply the already-reviewed TWO_READ_PRELN_COMPILATION v4 method to THIS bounded prefix-energy reference program and its new bounded logits. No logarithm approximation is required here. Explicitly append fixed scaled-logit paired copies, norm-padding to the standard prepared norm, and every copy/clear microstep. Let zeta=T^-2 and choose padding/complete-vector/restoration tolerances as the largest permitted dyadic constant multiples of zeta, using constants for this fixed enlarged width.
+
+The common tube radius and stage/local-error gain bounds are chosen for the ORIGINAL and BOTH single-read-ablated FULLY PREPARED reference programs, using one unchanged physical preparation/restoration schedule for all three. Only AFTER all these microsteps and common fixed tube bounds are set, define m=O(log N) and choose eta=2^-M so C eta^2 L^m&lt;=xi for the FULL prepared-vector error. The two uniform-head error formulas and local homogeneous overwrite recurrence apply separately exactly as in the accepted compiler. All reference maps (including plateau and terminal amplification) are continuous fixed-gain affine/ReLU primitives. Physical rows are not required to remain on the exact logical integer plateaus; the entire continuous circuit&#x27;s error is propagated. With M=O(log N), the existing bounded-gain amplitude restoration and affine vocabulary head give
+
+    sup_x TV(Q_phys(x),Q_ref(x))&lt;=zeta.
+
+Finally the exact consuming-matrix rescaling makes every LN gain two without changing physical trajectories. Thus this construction has the SAME positive-epsilon ordinary-softmax conventions as the ordered causal example. The new source program supplies the compiler premises; no new normalization theorem is assumed.
+
+For these horizons N&gt;=16, zeta&lt;=1/289. Every encoded physical output therefore remains at distance more than 1/3 from 1/2, on its correct side. Both reads remain useful by comparison with their ablated bounded logical reference programs, using the same full preparation and approximation constants. A first-read ablation makes v_t=0 and thus F_N=0; second-read ablation likewise makes F_N=0, while some encoded inputs have F_N=1.
+
+## 5. Communication lower with its changed constants
+
+A deterministic simulator of Q_phys with TV error &lt;=1/4 on every history must preserve the correct threshold side on all encoded inputs, because physical margin exceeds 1/3. It therefore computes the old non-disjointness function, and the inherited deterministic lower gives C&gt;=m=Omega(N).
+
+A randomized simulator with per-history success probability &gt;=2/3 at TV error &lt;=1/4 similarly solves Gap-Hamming with error &lt;=1/3, so the same randomized Omega(N) lower applies even with arbitrary interaction. If only expected per-history TV error &lt;=1/16 is given, then threshold failure requires approximation error at least 1/3; Markov&#x27;s inequality gives failure probability &lt;=3/16&lt;1/3. The old epsilon&lt;1/2 output threshold is deliberately NOT retained.
+
+The output is a normalized binary vector. If a protocol is allowed an unnormalized half-l1 approximant, the old scalar conversion (1+qhat_+-qhat_-)/2 bounds scalar error by the same half-l1 tolerance and gives the same threshold reduction.
+
+## 6. Risk and averaging distinctions
+
+This is WORST-HISTORY terminal simulation hardness, not a source-average lower. All hard words have positive probability under interior Markov sources, but that support fact does not make the hard communication law a Markov source. No such transfer is asserted.
+
+The program is also not a useful low-risk predictor. On fair IID signs, P(|S_t|&lt;4)=O(t^-1/2) by the elementary binomial point-mass bound. Hence E(1-E_N)=O(N^-1/2). The baselines for tau=0 or tau=m/4 stay below a fixed number less than 1/2. Thus F_N-&gt;1 in probability; boundedness gives Q_ref(+)-&gt;sigma(2) in L1, and the vanishing compiler error gives
+
+    E_IID TV(Q_phys,(1/2,1/2)) -&gt; sigma(2)-1/2 &gt;1/3.
+
+This explicit constant risk prevents misreading the communication counterexample as a negative answer about statistically good source-average prediction. The existing rare-marker low-risk counterexample is a DIFFERENT prior construction. Extending its entire mixed-coordinate first head and output under the same scalar-value restriction would require separate accounting; it is not silently included here.
+
+## 7. Full accounting and interpretation
+
+Two useful scalar full-prefix heads, zero scores; fixed per-row width and sufficiently large fixed full norm budgets; paid D=O(log N) including product recovery, clipping/plateaus, final amplification, logits, full padding/clears and restoration. Coefficients use O(log N) bits each, O(log^2 N) total untied description; all row state uses O(N) scalars. Skipping identically zero attention slots gives O(N^2+N log N) work, while dense execution of every dummy slot costs O(N^2 log N). No specialized prefix-sum execution is substituted.
+
+No training, numeric compilation, model run, finite-arithmetic certificate or public mutation occurred. The local advance is exact alignment of an EXISTING nonlinear hard example with the currently audited normalized common model and output margin. It does not add a new communication lower technique, improve the statistical rate, or identify a minimal nonlinear mechanism. Smooth low-curvature nonlinear rows can still have source-average summaries, as the separate Taylor-corrected candidate demonstrates.
+</pre></details><details><summary>加性切口证书 · ADDITIVE_CUT_CERTIFICATE.candidate.v3.md</summary><p class="hash">SHA-256 665cd759daf6af78276d377580119ba25f6e1047165bdc454e58833d9262651a</p><pre># Exact additive terminal cuts: a necessary-and-sufficient certificate with limited scope
+
+6 November 2026 UTC. Analytical candidate v3; v1 and v2 are preserved. Independent review requested after clarifying the affine-path premise and full decoder domains. This is a finite-domain algebraic characterization, not a computationally efficient universal test or a characterization of all cheap communication.
+
+## 1. Freeze the object being certified
+
+Choose a fixed terminal cut AFTER all distributed row updates and BEFORE a charged local terminal decoder. Let z:{0,1}^N -&gt; R^v be the complete data-carrying vector at that cut, with fixed v and ||z(x)||&lt;=V for every raw binary history. All other retained decoder coordinates must be public or included in z. Source-independent parameters are fixed. Downstream decoder gain and all actual neural work are separately charged, as in the public-linear collapse theorem.
+
+The desired property is an EXACT additive representation of THIS cut:
+
+    z(x)=z(0)+sum_i a_i x_i.                             (A)
+
+Changing the cut or adding another summary changes the question. A nonlinear downstream decoder is allowed and need not satisfy (A).
+
+## 2. Exact certificate
+
+For i!=j and every assignment w of the other N-2 bits, define
+
+    D_ij z(w)=z(w;i=1,j=1)-z(w;i=1,j=0)
+               -z(w;i=0,j=1)+z(w;i=0,j=0).
+
+Then (A) holds if and only if D_ij z(w)=0 for every i,j,w. In that case a_i=z(e_i)-z(0).
+
+Proof. Necessity follows by canceling each affine term. For sufficiency, D_ij=0 says that the effect of turning bit i from 0 to 1 is unchanged when any other bit j is changed. Moving between any two contexts one bit at a time therefore makes that effect independent of every other coordinate, equal to a_i. Telescoping from the all-zero history to x gives (A).
+
+This is the weakest exact condition for the narrowly specified additive representation, in the logical sense of necessity and sufficiency. Exhaustively checking it uses exponentially many histories; no efficient certification algorithm is claimed. Public input-independent ReLU activation/clipping patterns give a sufficient syntactic route ONLY when all other maps on the certified path are affine or public-linear; input-dependent softmax weights and full-feature LN remain nonlinear despite fixed ReLU masks. Under that full premise, the resulting coefficient/norm behavior and all input channels still need checking. Algebraic cancellation can also make (A) hold even when internal masks vary, so public masks are not necessary.
+
+## 3. Bounded message radius without a hidden sum-of-coefficients cost
+
+Alice sends her partial z_A=sum_{i in A}a_i x_i, Bob adds z(0) and his own partial sum. Even if individual coefficients were not separately bounded, the all-history cut bound implies
+
+    ||z_A||=||z(x_A,0_B)-z(0)||&lt;=2V.
+
+Thus one eta-net index in a radius-2V ball costs O(v log(1+V/eta)) bits. The decoder can project the combined estimate to the radius-V ball, which fixes the true cut. Require the decoder to be G-Lipschitz on the FULL projected radius-V ball, not merely exact reachable cut points. A G-Lipschitz decoder on that domain then gives error &lt;=epsilon with eta=epsilon/max(1,G). This proves the same one-way logarithmic-gain communication bound with the binary N-bit fallback. It does not require nonnegative intermediate matrices or linear internal computation; it requires the terminal identity (A).
+
+## 4. Approximate mixed-difference certificate
+
+Suppose instead ||D_ij z(w)||&lt;=gamma_ij uniformly over w, with gamma_ij=gamma_ji. Using a_i=z(e_i)-z(0), the same telescoping argument gives
+
+    ||z(x)-z(0)-sum_i a_i x_i||
+       &lt;= sum_{i&lt;j} gamma_ij x_i x_j.                   (B)
+
+Indeed when bit i is added after earlier active bits, its effect differs from its all-zero-context effect by at most the sum of gamma_ij over those earlier active bits; each active unordered pair is counted once.
+
+Let E0=sum_{i&lt;j}gamma_ij. The affine surrogate cut has norm &lt;=V+E0 on every history. Its Alice partial message radius is at most 2V+E0 by comparison with z(x_A,0_B)-z(0) and (B). If E0 is a declared fixed bounded resource, the same net simulation applies; growing E0 remains in the radius cost. Use the full radius-(V+E0) ball as a proof-side projected decoder domain containing both actual and surrogate cuts, with a uniform gain G on that ENTIRE domain, not just reachable points. Source-average output error before quantization is at most
+
+    G sup_{P in P_c} E_P sum_{i&lt;j}gamma_ij X_i X_j,
+
+using binary 0/1 notation here. This is a sufficient certificate; replacing gamma by empirical sampled differences would not certify all histories. A naive uniform gamma only gives O(N^2 gamma), which may be useless.
+
+## 5. Smooth nonlinearity already breaks exact additive collapse
+
+For the ideal quadratic prefix statistic A_2 in TAYLOR_PREFIX_CLOSURE, use signed raw X_j=2x_j-1. For j&lt;k&lt;=N,
+
+    D_jk A_2 = (8/T)sum_{i=k}^T 1/i^2 &gt;0.               (C)
+
+This follows by expanding each prefix square; its X_j X_k coefficient is (2/T)sum_{i&gt;=k}i^-2 and a +/- mixed difference multiplies it by four. Thus even a bounded smooth square breaks exact additive representation at this final scalar cut.
+
+For the concrete dyadic square interpolant with uniform statistic error &lt;=nu&lt;=T^-2, its D_12 differs from the ideal by at most 4nu. The ideal D_12&gt;=2/T, so it remains positive for T&gt;2. Hence the actual bounded affine/ReLU logical implementation also fails the exact certificate, not merely an ideal multiplication oracle.
+
+Nevertheless the Taylor-corrected source-average simulator is cheap. This is why failure of (A) is NOT a communication lower: a different low-dimensional nonlinear decoding of public linear summaries, or a source-average approximation, can still work. Conversely, the normalized prefix-energy hard example supplies a real worst-history communication lower for a different nonlinear map, rather than inferring hardness just from a nonzero mixed difference.
+
+## 6. Source of the argument and boundary
+
+Vanishing mixed differences characterize degree-one functions on a binary cube; net quantization and telescoping are elementary existing tools. The local use is to state exactly what can be checked when claiming a nonlinear body still has an additive terminal cut, and to separate that claim from universal communication hardness or a minimal architecture condition. No novelty, training, numerical verification or source-estimation-rate claim is made.
+</pre></details><details><summary>先行工作对照 · PRIOR_WORK_AND_SCOPE_COMPARISON.v2.md</summary><p class="hash">SHA-256 adc7184b3f6229f620844c582717a3f7794ad8a3b2a300c244f2556863b47c40</p><pre># Nonlinear closure: exact overlap and scope comparison
+
+6 November 2026 UTC. This comparison uses the fresh primary-paper checks recorded earlier today in ordered_causal_memory_20261106/PRIMARY_COMPARISON.v1.md and the exact local sources below. It does not claim another live paper retrieval or an independent re-proof of imported communication results. No priority certification is made.
+
+## 1. What was already established locally
+
+- REPEATED_ATTENTION_SIMULATION_BARRIER v4: scalar prefix banks can contain linearly many recoverable bits; full-bank reconstruction is a stronger task than simulating a terminal output. Reused distinction, not a new barrier.
+- TERMINAL_SIMULATION_OBSTRUCTION v2: the nonlinear clipped-prefix-energy program with two scalar zero-score reads already gives constant-error deterministic and randomized interactive terminal communication lower bounds. Its original output is projection to probability registers. The present NORMALIZED_NONLINEAR_OBSTRUCTION adds the same positive-epsilon PreLN and ordinary-softmax contract as the currently accepted model, with explicit endpoint-gap adjustment. It does not invent the reduction or prove a new Gap-Hamming theorem.
+- LOW_RISK_TERMINAL_OBSTRUCTION: a rare-marker mixture already proves that low prediction risk does not rescue worst-history simulation, while its source-average simulator remains cheap. The present scalar normalized hardness example is NOT a new low-risk obstruction, and the earlier mixed-value-channel construction is not silently treated as a scalar-head result.
+- Evolving common-control and prefix-Lipschitz results: global-mean replacement gave O_c(N^-1/2) residual after Lipschitz propagation. TAYLOR_PREFIX_CLOSURE instead retains the public harmonic-weighted first-order statistic R along with M; a second-order remainder improves approximation of this specific nonlinear statistic to O_c(log N/N). This is a simulation-error rate, not a source-estimation risk rate.
+- Ordered causal public-linear collapse and two-read PreLN compilation: public linear mixtures collapse exactly and their bounded reference programs can be compiled with a full prepared-vector error guarantee. The present programs retain that compiler, including the correction that all padding/copies/clears precede choosing small amplitude. The physical normalized nonlinear row bank is not asserted to satisfy the reference&#x27;s algebraic identities.
+
+## 2. Primary external antecedents and exact boundaries
+
+### Chakrabarti and Regev
+
+Source: https://arxiv.org/pdf/1009.3460 . The old terminal-obstruction audit inspected Theorem 2.6 and the worst-case randomized communication convention. Its Omega(n) Gap-Hamming lower is imported unchanged. Ordinary softmax changes the network output margin, not this external theorem. The present comparison does not represent the externally hard input distribution as a stationary order-two source.
+
+### Hahn
+
+Source: https://aclanthology.org/2020.tacl-1.11.pdf , with corrected proof supplement https://www.mhahn.info/files/transformers-proof.pdf . The supplement was NOT re-fetched in this pass or in the immediately preceding ordered-causal pass; its locator and role are inherited from the older record. The prior comparison checked bounded-depth sensitivity and its dependence on architectural constants. It is a close source for stability/influence thinking, not a direct proof of the present conditional variance or communication bound. Frozen per-primitive gain is compatible with growing total gain at logarithmic depth; that distinction is already established and is not new here.
+
+### Alman–Song and Chen et al.
+
+Sources: https://arxiv.org/html/2302.13214v1 and https://arxiv.org/html/2606.07205v1 . These two sources rely on CURRENT_FRONTIER_PRIMARY_COMPARISON.v2.md from 5 November, not today&#x27;s fresh ordered-paper retrievals. The current-frontier primary comparison records polynomial exponential-kernel features and deterministic Taylor-moment summaries. The new Taylor correction here is a Taylor expansion of a NONLINEAR ROW VALUE f(prefix mean), not a new approximation of the exponential attention kernel. It should not be conflated with those attention-feature complexity theorems or called a new streaming-space optimum.
+
+### Markov and n-gram representation papers
+
+Sources: https://arxiv.org/html/2407.17686v1 (Rajaraman et al.), https://arxiv.org/pdf/2508.07208v2 (Ekbote et al.), https://arxiv.org/html/2607.02800v1 (D&#x27;Angelo et al.). Fresh relevant primary sections were checked in the immediately preceding ordered-causal comparison, not re-fetched for this note. They already establish ordered context reconstruction, few-layer empirical conditional models and, in separate restricted settings, training analyses. The present quadratic and hard programs have explicitly NONVANISHING second-order prediction risk; they neither compete with those estimators nor establish learning behavior.
+
+## 3. Elementary mathematics not claimed new
+
+Taylor&#x27;s theorem with a bounded second derivative, stationary covariance summation, sigmoid derivative bounds, vanishing mixed differences characterizing affine functions on a Boolean cube, net quantization, and error propagation through a bounded-gain circuit are existing elementary tools. The local contribution is a contract-audited composition and explicit boundary:
+
+- exact additive folding can fail under even smooth square updates;
+- source-average approximation can nevertheless be much cheaper than worst-history reconstruction;
+- high effective curvature/amplification can support the known hard terminal functions;
+- the same frozen positive-epsilon normalized model contains both cases.
+
+The exact mixed-difference certificate is necessary/sufficient for one specified additive terminal cut, not a minimal architecture theorem, efficient verification algorithm or characterization of every low-communication simulator. The curvature condition is sufficient and source-class dependent. Canonical-surrogate sharpness does not imply universal simulation optimality.
+
+## 4. What remains open
+
+No source-average communication lower is established for low-risk normalized nonlinear predictors on the unknown second-order class. No arbitrary nonlinear full-row compression, better statistical prediction rate, minimum layer count, trained realization or executed finite-precision behavior is proved. These distinctions must accompany any user-facing summary or paper positioning.
+</pre></details><details><summary>独立审阅 · INDEPENDENT_ADDITIVE_CUT_AUDIT.v1.md</summary><p class="hash">SHA-256 06cd5c68302572c60034d31678ef12ea015e824f87929b073d97232499987647</p><pre># Independent exact-file audit: additive terminal-cut certificate
+
+6 November 2026 UTC. Verdict: PASS for the specified complete cut and the stated full-domain decoder bounds.
+
+Reviewed source: `ADDITIVE_CUT_CERTIFICATE.candidate.v3.md`.
+SHA-256: `665cd759daf6af78276d377580119ba25f6e1047165bdc454e58833d9262651a`.
+
+Direct comparison sources: `TAYLOR_PREFIX_CLOSURE.candidate.v2.md` and `../ordered_causal_memory_20261106/PUBLIC_LINEAR_CASCADE_COLLAPSE.candidate.v2.md`. This is an algebraic audit, not an efficient certification procedure.
+
+## Exact representation and communication
+
+Vanishing mixed differences are necessary for an additive Boolean-cube representation by termwise cancellation. Conversely, each zero mixed difference makes a coordinate increment invariant to changing one other bit. Connecting any two backgrounds one bit at a time makes that increment globally constant. Telescoping from zero then gives the exact representation with a_i=z(e_i)-z(0). The proof is valid for vector-valued z, not only a scalar.
+
+The complete-cut requirement is essential and present: all data used by the later decoder must be in z. The all-history norm bound also does real work. Alice&#x27;s additive partial sum equals z(x_A,0_B)-z(0), and therefore has radius at most 2V regardless of any crude sum of coefficient norms. A fixed-dimensional ball net gives the claimed logarithmic-precision message cost. Projecting the recombined estimate to the radius-V ball fixes the true point and does not enlarge its error. Version 3 explicitly requires the decoder gain on that full ball, not merely on exact reachable cut values.
+
+Public fixed ReLU/clipping patterns are stated as a sufficient route only when the other certified operations are affine/public-linear. The candidate correctly excludes treating data-dependent attention weights or full-feature LN as affine merely because ReLU masks are fixed. Exact algebraic cancellation can make the terminal cut additive without making every internal mask public; no false converse is asserted.
+
+## Approximate certificate
+
+Add active bits in a fixed order. Before bit i is added, compare its increment with the all-zero-background increment by successively removing earlier active bits. Each comparison costs at most its corresponding gamma_ij; every active unordered pair is counted exactly once. Triangle inequality gives the stated pair-sum residual for vector-valued z.
+
+The affine surrogate has norm at most V+E0, while Alice&#x27;s partial affine sum has radius at most 2V+E0 by comparison with the actual cut on (x_A,0_B). The source explicitly retains growing E0 in message-radius accounting and requires a G bound on the entire radius-(V+E0) projected domain. Thus the displayed source-average decoder error follows directly without an independence assumption. This is a sufficient approximate certificate, not a claim that small sampled mixed differences certify unseen histories.
+
+## Square-prefix example and boundary
+
+For signed inputs X_j=2x_j-1, the X_j X_k coefficient in the averaged prefix square is (2/T) sum_{i&gt;=k} i^(-2). Switching each binary coordinate changes the corresponding signed coordinate by two, so the mixed difference is (8/T) sum_{i&gt;=k} i^(-2), strictly positive.
+
+The bounded affine/ReLU logical square implementation differs uniformly in its scalar statistic by at most nu&lt;=T^(-2). Its mixed difference changes by at most 4nu. Since the ideal D_12&gt;=2/T, the implemented logical difference is positive for T&gt;2. This proof is about the logical reference cut, not a claim that its exact internal identity survives physical PreLN normalization. The physical model is related by its separate uniform output approximation.
+
+The candidate correctly states the key limit: failure of this specific additive representation is not a communication lower. A different nonlinear decoding of public summaries, source-average approximation, or a different terminal cut can behave differently. The theorem is necessary and sufficient only for the displayed additive identity at the frozen complete cut; it is neither a universal weakest architectural condition nor a polynomial-time test.
+
+Review method: exact-source reading, comparison and analytic derivation. No candidate source edit, scientific executable, numerical diagnostic, model run, experiment, training or upload was performed. This audit binds only v3 above and does not retroactively certify the earlier versions.
+</pre></details><details><summary>独立审阅 · INDEPENDENT_NORMALIZED_NONLINEAR_OBSTRUCTION_AUDIT.v1.md</summary><p class="hash">SHA-256 888d2a82d9a4629878fd4bdc3914666af81a384ce541819bc87b2ef521eda4fe</p><pre># Independent exact-file audit: normalized nonlinear prefix-energy obstruction
+
+6 November 2026 UTC. Verdict: PASS for the specified sufficiently large fixed resource envelope and exact-real semantics.
+
+Reviewed source: `NORMALIZED_NONLINEAR_OBSTRUCTION.candidate.v2.md`.
+SHA-256: `628009aef0e5d1333e23913bb34c2d04d3b67d792e7ea5ad76d498d729f331ac`.
+
+Dependencies directly read: `../repeated_terminal_obstruction_20261105/TERMINAL_SIMULATION_OBSTRUCTION.candidate.v2.md`; `../ordered_causal_memory_20261106/TWO_READ_PRELN_COMPILATION.candidate.v4.md`, its accepted final audit and its early-failure audit; the corresponding public-linear collapse and ordered suffix candidates; and the final-output routine in `../softmax_interior_20261105_0031/INTERIOR_SOFTMAX.candidate.v2.md`. The external Gap-Hamming lower is imported unchanged from the prior obstruction and its recorded primary-source check, not independently reproved here.
+
+## Communication and output checks
+
+The original prefix-energy program is an all-row bounded continuous affine/ReLU program with two scalar uniform heads, paid clipped amplification and depth O(log N). The clipped prefix sums, their squares, the synthetic-row contribution, the eight-sign ownership-compatible encoding and its 12+8m+24J energy identity are inherited correctly. This is the existing hard logical function, not a new communication reduction.
+
+The new affine logits (4F_N-2,0) are bounded and paid. Their sigmoid output has midpoint margin greater than 3/8 on the encoded endpoints, since exp(2)&gt;7. With N&gt;=16, the physical TV error T^(-2)&lt;=1/289 leaves margin greater than 1/3. Therefore uniform TV error at most 1/4 preserves the required Boolean decision. Deterministic m-bit and randomized Omega(N) lower bounds follow from precisely the imported reductions, with arbitrary interaction still allowed.
+
+For randomized expected per-history TV error at most 1/16, a wrong threshold decision requires error exceeding 1/3. Markov&#x27;s inequality bounds failure by 3/16, below 1/3. The same reduction works for an unnormalized half-l1 approximant using (1+qhat_+-qhat_-)/2, whose scalar error is at most the half-l1 error. The candidate correctly does not reuse the old epsilon&lt;1/2 endpoint threshold after bounded softmax.
+
+## Normalization and full resources
+
+The candidate fixes one tube and gain/local-error envelope for the original and both single-read-ablated fully prepared reference programs. Scaled logit copies, norm-padding and all scratch clears are included before defining the complete length m and choosing M. The imported recurrence therefore controls the complete prepared vector required by radial restoration, not only the earlier logit bank.
+
+All intermediate nonlinear row operations are continuous fixed-gain primitives; physical errors are propagated through them without assuming exact physical plateau membership. The two zero-score attention steps have the same length-independent max-row local error as in the accepted compiler. With target T^(-2), m=O(log N) and M=O(log N). The common full preparation/restoration schedule makes the ablation comparison legitimate. Either ablation gives F_N=0 in the reference, while some encoded histories give F_N=1. The constant output gap survives the same uniform physical error.
+
+The gain-two consuming-matrix reparameterization preserves trajectories. Every LN has epsilon=1, gain=2 and zero shift, and the output is an ordinary affine vocabulary head followed by softmax. Constant width, two useful scalar-value invocations, O(log N) paid depth and per-coefficient precision, O(log^2 N) total untied description and O(N) row state are consistent. The envelope is one sufficiently large fixed full-vector/matrix/bias/gain envelope, not a silently reused numerical bound. Useful-head/local work and fully dense dummy-slot work are separately charged.
+
+## Source-risk distinction
+
+For fair IID signs, 1-clip(S_t,-4,4)^2/16 vanishes outside |S_t|&lt;4 and is bounded by one. The binomial point-mass bound gives E(1-E_N)=O(N^(-1/2)), including the synthetic term. Both stated baseline sequences stay below a fixed number less than 1/2. Consequently the probability that E_N is below b_tau+1/P tends to zero, so F_N tends to one in probability. Boundedness and the vanishing compiler error give the claimed limiting prediction risk sigma(2)-1/2&gt;1/3.
+
+Thus the construction is explicitly not a low-risk predictor, and positive Markov-source probability of the encoded histories is not confused with a source-average communication lower. The result excludes universal cheap worst-history terminal simulation in the same normalized model, while leaving the source-average and low-risk-specific questions open.
+
+## Scope
+
+No improved estimation rate, new communication lower technique, trained realization, mandatory PostLN result, finite-arithmetic reliability or minimal nonlinear-mechanism theorem is certified. The relevant increment is the normalized-model alignment and its correctly changed constant margins.
+
+Review method: direct source reading, exact-version comparison and analytic derivation only. No candidate source edit, scientific execution, numerical parameter generation, model run, experiment, training or upload was performed. This audit binds the exact v2 source above; it does not retroactively certify v1.
+</pre></details><details><summary>独立审阅 · INDEPENDENT_PRIOR_WORK_SCOPE_AUDIT.v1.md</summary><p class="hash">SHA-256 1427b602a792900e4bf880a160471f820d51a51dacb7d698a653070cfac3188b</p><pre># Independent exact-file audit: nonlinear closure provenance and scope
+
+6 November 2026 UTC. Verdict: PASS as a source-faithful comparison and scope statement, not a priority or external-proof certification.
+
+Reviewed source: `PRIOR_WORK_AND_SCOPE_COMPARISON.v2.md`.
+SHA-256: `adc7184b3f6229f620844c582717a3f7794ad8a3b2a300c244f2556863b47c40`.
+
+Directly read comparison records: `../ordered_causal_memory_20261106/PRIMARY_COMPARISON.v1.md` and `../current_frontier_prior_art_20261105/CURRENT_FRONTIER_PRIMARY_COMPARISON.v2.md`. Directly checked local mathematical sources include the old terminal obstruction v2, the rare-marker low-risk terminal obstruction v2, the common-control/prefix-Lipschitz examples, the ordered public-linear collapse and PreLN compilation, and the three current final candidates.
+
+The overlap statements are supported by those sources:
+
+- The nonlinear prefix-energy hard function, deterministic reduction and imported randomized Gap-Hamming lower already existed. The new file changes the normalized architecture and the usable softmax margin, not the communication theorem.
+- The rare-marker construction already separates low prediction risk from worst-history simulation hardness and admits exponentially accurate cheap source-average simulation. Its first invocation has a three-dimensional value vector. The current scalar-head normalized program is correctly not described as a replacement or new proof of that low-risk result.
+- The earlier global-mean replacement discards the first-order harmonic statistic. The current square/Taylor analysis retains it and improves this specified simulation residual. It does not improve the prediction risk of a source estimator.
+- Taylor expansion of a nonlinear row value is explicitly separated from polynomial/Taylor approximation of the exponential attention kernel. No streaming-space optimum or new attention-feature representation is claimed.
+- The current mixed-difference theorem is kept at the scope of one exact additive cut. Elementary ingredients, full-domain gain accounting and the prior compiler are not represented as new general methods.
+- The Markov/n-gram papers are correctly treated as prior representation mechanisms, with separate training results in restricted settings. The two current concrete programs have explicitly nonvanishing prediction risk and do not compete as estimators.
+
+Version 2 correctly distinguishes source-access provenance. The ordered-paper primary passages were checked in the immediately preceding recorded pass. Alman–Song and Chen depend on the 5 November current-frontier record, not those fresh ordered-paper retrievals. Hahn&#x27;s correction supplement was not fetched again in either this pass or that immediately preceding ordered pass. The inherited Gap-Hamming primary check is not relabeled as a new retrieval or re-proof.
+
+No new external search or paper fetch was performed for this audit. The verdict is based on faithful comparison with the exact recorded sources and on the independently audited local statements. It neither certifies novelty nor excludes unexamined subsuming results. No numerical model execution, training, experiment or upload was performed.
+</pre></details><details><summary>独立审阅 · INDEPENDENT_TAYLOR_PREFIX_CLOSURE_AUDIT.v1.md</summary><p class="hash">SHA-256 95f68d05ef3d1bafab85a049fa4bf9188ae39204c7454ea436f075a91d4567ef</p><pre># Independent exact-file audit: Taylor-corrected nonlinear prefix closure
+
+6 November 2026 UTC. Verdict: PASS for the stated stationary source class, fixed finite resource envelope and exact-real semantics.
+
+Reviewed source: `TAYLOR_PREFIX_CLOSURE.candidate.v2.md`.
+SHA-256: `2e88291ded1da043796783ccb1200f806a72b17d0c9d1727d7615d68b4e6e005`.
+
+Dependencies directly read: `../evolving_common_control_20261106/CAUSAL_PREFIX_AVERAGE_EXAMPLE.candidate.v1.md`, `CAUSAL_PREFIX_LIPSCHITZ_CLOSURE.candidate.v3.md` and `AMPLIFIED_PREFIX_DEFECT.candidate.v1.md`; `../ordered_causal_memory_20261106/PUBLIC_LINEAR_CASCADE_COLLAPSE.candidate.v2.md`, `TWO_READ_PRELN_COMPILATION.candidate.v4.md` and its final/early-failure audits; `../repeated_terminal_obstruction_20261105/TERMINAL_SIMULATION_OBSTRUCTION.candidate.v2.md`; and Section 5 of `../softmax_interior_20261105_0031/INTERIOR_SOFTMAX.candidate.v2.md`.
+
+## Checked mathematical statements
+
+- The synthetic row is included consistently. With T=N+1, m_T=S_N/T, M=S_N/N and R=T^(-1) sum_{i=1}^T m_i, exchanging sums gives the stated public harmonic weights. Their total mass is N/T+N/T^2=1-T^(-2), less than one. The two party partial sums therefore have fixed ranges independently of N.
+- Taylor expansion around the sample mean M gives |A_f-B_f|&lt;=L_2 V_N/2 pathwise. The derivatives of B_f with respect to its two scalar inputs are f&#x27;&#x27;(M)(R-M) and f&#x27;(M). Projection to the square does not enlarge either coordinate error. These are terminal-function arguments, not reconstruction of the nonlinear row bank.
+- The inherited stationary covariance bound supplies E(m_i-M)^2&lt;=2K_c/i+2K_c/N for real rows. The synthetic term is exactly M^2/T^2 before the outer average. Summing gives [2K_c(H_N+1)+T^(-2)]/T as claimed.
+- Under fair IID signs, Cov(m_i,M)=1/N and E M^2=1/N. Thus the exact remainder is (H_N-1+1/(N T^2))/T. The logarithmic factor is real for this canonical remainder, not only an artifact of the upper bound.
+- For the square, A_2=2MR-M^2+V_N exactly. A_2 lies in [0,1] and B_2 in [-3,1]. Sigmoid has derivative at least exp(3)/(1+exp(3))^2 on their connecting interval and at most 1/4, proving both sides of the displayed TV comparison. The resulting necessary-and-sufficient little-o statement concerns this specified program/surrogate pair only.
+- The 6 eta statistic-quantization error and 3 eta/2 output error follow from the same derivative bounds. Alice can send two quantized public-weight partial sums, with no cross-party prefix reconstruction. The bit cap N is valid by sending the raw owned bits. This proves a source-average simulator, not a uniform small-error simulator.
+- The lag-two witness is explicitly chosen inside P_c. Its zero stationary mean implies E A_2=O_c(log N/N), and reverse triangle inequality transfers convergence to the fair output into the claimed limiting prediction risk theta/2. The physical approximation tends to zero and does not alter this limit.
+
+## Normalized compilation and usefulness
+
+The tent-square implementation is a bounded, fixed-width continuous affine/ReLU program, with uniform square error at most 4^(-L)&lt;=T^(-2). No exact multiplication primitive is inserted. The two useful heads are genuinely scalar, zero-score, inclusive prefix heads.
+
+The full output preparation, including padding and every scratch clear, is placed before choosing the small amplitude. The candidate explicitly chooses one tube and common preparation/restoration parameters for the original and both ablated references. Thus its recurrence controls the entire prepared vector needed by the imported final-output routine, repairing the precise issue identified in the old early compiler drafts.
+
+On all-positive histories, the reference answer is at least N/T. Either single-read ablation gives zero, since the tent interpolant is exact at zero and the second read has a fresh destination. For N&gt;=6, sigma(N/T)-1/2&gt;1/6. The two output errors, each at most zeta&lt;=1/1000, preserve a fixed gap. The statement that both reads are useful is therefore justified for the physical network.
+
+The uniform physical-to-ideal error zeta+nu/4 is conservative and sufficient. With fixed width, the charged preparation, small-amplitude restoration and square computation have depth and per-coefficient description O(log N); total untied description is O(log^2 N). Full vectors, biases, matrices and primitive gains fit a sufficiently large fixed envelope. The separate O(N^2+N log N) and fully dense dummy-slot O(N^2 log N) work ledgers are correct.
+
+## Scope and provenance
+
+This is a source-average nonlinear closure certificate with an explicit second-order residual. It does not prove a statistically good order-two estimator, a general nonlinear-memory simulation theorem, a stronger existing estimation rate, a mandatory PostLN implementation, or reliable finite-word execution. Its elementary ingredients and imported compiler are identified as prior work. Growing downstream gain/curvature and symbol-dependent row maps require the separate accounting stated in the source.
+
+Review method: direct source reading and analytic derivation. No candidate source edit, scientific execution, parameter generation, numerical model run, training, experiment or upload was performed. This review binds only the exact v2 source above and does not retroactively certify v1.
+</pre></details></section><footer><p>中文报告 v1 · 2026 年 11 月 6 日 UTC。无模型训练、科学数值运行或视觉渲染验收。</p></footer></body></html>
