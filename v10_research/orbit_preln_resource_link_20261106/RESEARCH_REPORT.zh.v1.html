@@ -1,0 +1,768 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>轨道重心与真实 PreLN：资源桥接和后缀路线反例</title><style>body{font-family:system-ui,-apple-system,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;color:#171717;max-width:980px;margin:auto;padding:40px 24px;line-height:1.8}h1{font-size:2rem;line-height:1.4}h2{font-size:1.5rem;margin-top:2.6rem}h3{font-size:1.15rem;margin-top:1.8rem}nav{margin:24px 0}a{color:#145a88}.eq{font-family:Cambria,Georgia,serif;padding:12px 0;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d9d9d9;padding:12px;text-align:left;vertical-align:top}th{background:#e8edf1}tr:nth-child(even){background:#f8f9fa}details{margin:22px 0}summary{cursor:pointer;font-weight:600;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.65 ui-monospace,monospace}.hash{overflow-wrap:anywhere;font-size:.85rem}footer{color:#555;margin-top:40px}@media(max-width:600px){body{padding:20px 16px}h1{font-size:1.6rem}td,th{padding:8px}}@media print{body{max-width:none;padding:0}nav{display:none}h2{break-after:avoid}tr{break-inside:avoid}a{color:inherit}}</style></head><body><header><h1>轨道重心与真实 PreLN：资源桥接和后缀路线反例</h1><p>v10 研究增量 · 2026 年 11 月 6 日 UTC</p><p><strong>本轮完成的桥接：</strong>为双区域相位参考函数给出真实 PreLN 构造，并把后缀轨道重心付费转换为普通最终 softmax。另一方面，已有增长宽度真实网络足以排除所有次线性原始后缀的统一逐源风险支配。这不是一般固定宽度 T1/T2 定理。</p></header>
+<section id="contract"><h2>一 共同任务和模型合同</h2><p>固定 0&lt;c&lt;1/2，来源为未知齐次二元二阶过程，各转移概率位于 [c,1−c]，目标为实际末端上下文的下一符号分布；风险是期望终端 TV。所有结论覆盖平稳主类，所用统计和轨道证明还允许任意初始二元分布。</p><p>输入仅为 N 个原始符号、公开位置与一个合成终端行。模型使用完整特征 PreLN，所有 LN 的 ε=1、增益=2、偏移=0，普通因果 softmax 注意力，最终为普通仿射词表 logits 加 softmax。完整状态、矩阵算子范数、完整偏置和逐步增益置于一次选定且足够大的有限包络内。没有声称适配任意预给的小数值范数上限。</p><p>主要正面构造宽度固定；反例另行购买 O(N) 宽度。全历史统一输出误差与来源平均预测风险分别记账。有限系数描述不是浮点执行保证。</p></section>
+<section id="two"><h2>二 双区域相位真正落到 PreLN</h2><p>令 b 为二次幂、4≤b≤N/2，N 是四的倍数。取 m=⌊(N−b−2)/16⌋≥1，在初始对之后设置两个各含 8m 位的连续区域。每区相位按区域内计数重新定义，不能直接丢弃旧全局二次相位的跨区项。</p><p>第一次均匀注意力读取两个公开区域掩码后的前缀计数和原有后缀打包值，值维数为 3。第二次读取两个二次计数值，值维数为 2。对区域 (sⱼ,eⱼ]，第二读的掩码必须延长到 eⱼ+1；所得 Uⱼ 中每对位置 ℓ&lt;k 的重数是 eⱼ−k+2，其奇偶恰好给出所需区域相位。</p><p>公开位置选择采用付费裁剪倍增，而不是一个斜率 N 的矩阵；平方、乘积、折叠与平台判别复用已有有界原语。所有准备、复制、范数填充和清零先固定，再选择小幅度 η。两读的误差递推均保留完整特征 LN 因子，不能将其看成分银行归一化。</p><p><strong>结果：</strong>两个向量值注意力调用，值维数 (3,2)，不是两个标量读。对所有布尔历史，真实输出与双相位参考输出的 TV≤δ；宽度 O_c(1)，深度和每系数位宽 O_c(log N+b+log(1/δ))，未共享总描述为该量的平方。串行标量调度需五读。结论依赖已审后缀与规范化输出模块，不含完整数值矩阵展开或有限算术复现。</p></section>
+<section id="fold"><h2>三 概率轨道重心的付费 softmax 实现</h2><p>对公共振幅 ∑ρⱼ≤R，令 M(t)=2^(−r)∑_ν sigmoid(t+∑ρⱼνⱼ)，这里 ν 遍历所有 ±1 符号向量；实际后缀自变量是原有付费程序 d(z)。M 的一、二阶导数有与 r 无关的统一上界，且在有界 d 区间内远离 0 和 1。</p><p>直接在一维 d 区间上构造 M 的分段线性表，使用 O_(c,R)(ε^(−1/2)) 个节点。串行 ReLU 铰链求值保持固定宽度；对总斜率变差和系数舍入逐项控制，保证所有中间累加器有界。再付费近似 log M 与 log(1−M)，然后进行完整准备与 PreLN 恢复。不能把概率平均直接当成平均 logits。</p><p><strong>结果：</strong>一个非零均匀标量读、固定宽度，D=O_(c,R)(log N+b+ε^(−1/2))，对每条历史 TV(Q_fold,M(d(z)))≤ε。足够小 ε 时原注意力头的消融差仍为正。未共享总参数描述 O_(c,R)(D²)。</p><p>这个线上网络界甚至可以不随 r 增长，但只是非一致的参数化表达界：朴素离线表生成仍需 O(2^r ε^(−1/2)) 次 sigmoid 求值，振幅输入描述也需支付。没有证明有限位参数生成器，也没有训练保证。另一种逐分支构造不预先形成 M 表，但线上深度会乘 2^r。群大小本身不能推出该一维特例的线上网络大小下界。</p></section>
+<section id="risk"><h2>四 两端真实网络的逐源风险联系</h2><p>对上述双区域构造取 ρ₁=ρ、ρ₂=ρ/2，ρ 为指定的量级 b^(−1/2) 的正二进制振幅。此前已证局部类型保持对换在每区首个匹配八位块上翻转该区相位。令 γ=1−2c⁸，两个区域未匹配事件各自概率≤γ^m。</p><p>结合经典轨道凸风险平均和本轮两端物理误差，逐来源、任意初始分布都有</p><p><strong>R_P(Q_fold)≤R_P(Q_two-phase)+δ+ε+(ρ₁+ρ₂)γ^m/4。</strong></p><p>若 b≈log N，选择 δ、ε≈b^(−2)，两端都可保持固定宽度和 O_c(log N) 深度，风险增量为 O_c(b^(−2)) 加明确异常项。这里不再需要用旧单 sigmoid 基线替代重心所付的 (ρ₁²+ρ₂²)/8 项。</p><p>这是指定可核验结构的任务风险折叠，不是统计估计率改进。双相位网络本身仍可用旧基线风险加振幅作一致性上界。没有证明训练能找到参数、双相位计算必要或任意低风险网络满足此结构。</p></section>
+<section id="counter"><h2>五 真实网络排除普遍后缀支配</h2><p>精确复用已审的增长宽度完整历史网络，不偷换成上轮的 clipped MLE。其参考函数是终端上下文的 add-one 转移估计，再做固定下限与归一化。真实网络对该参考的全历史 TV 误差≤N^(−1/2)/64，预测风险≤min{1,13√(32/(N−1))+N^(−1/2)/64}。</p><p>凡完整三元计数和终端上下文相同，两条历史的物理输出距离≤N^(−1/2)/32。因此网络在全部这些轨道上近似不变；并不声称物理输出严格不变。</p><p>固定 IID Bernoulli(c) 与 Bernoulli(1−c) 两源已能排除足够短的对数后缀。进一步，取随 b 变化的邻近 IID 参数，直接 KL/Pinsker 两点计算给出：每个仅看 b 个原始后缀符号的预测器，即使允许任意计算与随机输出，也有来源使其风险至少 k_c/√b。于是对每个 b=o(N)，最终都不可能在所有来源上风险不大于上述完整历史真实网络。</p><p>后一个结论的来源可以随 N、b 变化，不是一个固定来源击败整个预测器序列。这是直接观察信息下界，不是循环套用深度下界。它也不排除从全历史提取任意短消息，更不是固定宽度反例。</p></section>
+<section id="ledger"><h2>六 宽度、工作量与先行工作</h2><ul><li>双相位与折叠网络：固定宽度，N+1 行，共 O(N) 实数状态；跳过零注意力槽时稠密有用读加局部工作 O(N²+ND)，所有虚设槽都稠密执行则 O(N²D)。</li><li>物理后缀反例：宽度及 FFN 宽度 O_c(N)，深度 O_c(log N)，两个有用读，其中第一读是宽值。稠密参数描述 O_c(N²log²N)，滚动状态 O(N²)，稠密工作 O(N³log N)。不能只展示深度而删除这些成本。</li><li>稀疏参数、均匀前缀和优化与稠密执行是不同成本约定；完整论文附录分别列明。所有模型仍是精确实数语义，不是机器字长执行证书。</li></ul><p>群平均/Rao–Blackwell 工具已由 <a href="https://jmlr.org/papers/v21/20-163.html">Chen–Dobriban–Lee（2020）</a>等先行工作明确建立；本轮不声称它新颖。<a href="https://arxiv.org/abs/1610.01145">Yarotsky（2017）</a>是光滑函数 ReLU 逼近的近邻工作，插值与铰链表达不是新原理。</p><p>定向核对的 <a href="https://proceedings.mlr.press/v306/brosamle26a.html">2026 低精度 softmax／CoT 研究</a>和 <a href="https://proceedings.mlr.press/v306/svete26a.html">2026 padded Transformer 研究</a>采用不同精度、填充或计算资源合同；不能以其摘要替代本轮规范化或统计证明。详细对照明确标为摘要级核对，并非全文定理审计或穷尽优先权调查。</p></section>
+<section id="remaining"><h2>七 失败记录与剩余问题</h2><p>已排除的捷径包括：将概率均值当成 logit 均值、把离线参数表视为免费学习、先选 η 后补清零、将向量读计为标量读、由逻辑不变推断物理精确不变、把增长宽度反例用于固定宽度定理、以及把后缀观察限制换成一般通信限制。全部失败记录与修订版本保留。</p><p><strong>仍未解决：</strong>任意固定宽度非线性逐层记忆何时自动满足可检验的输出代数闭合，是否存在更一般的廉价任务摘要，以及尖锐 T1/T2 主资源下界。本轮仅关闭具体双相位例子和光滑标量重心的模型实现缺口。</p><p>没有数学枚举、数值诊断、模型执行、参数生成或训练。文档构建及静态检查不是科学实验；未进行视觉渲染验收，没有上传或投稿。继承模块保持明确依赖，未在此报告中传递重证。</p></section>
+<section id="appendix"><h2>八 完整证明与独立审阅原文</h2><p>候选创建时的待审状态以对应精确版本审阅为准。下列原文可离线核对，哈希仅用于版本绑定，不是科学执行或机器证明。</p><details><summary>双区域相位的真实 PreLN · TWO_RESET_PHASE_PRELN.candidate.v1.md</summary><p class="hash">SHA-256 d7b96c268272ffc3405550241a5ff5c89fdf45e7e98a78d511c729c728412b76</p><pre># Two reset-zone phases: direct bounded PreLN reference and physical comparison
+
+6 November 2026 UTC. Analytical candidate v1. No training, scientific execution, upload, or external mutation. Existing candidates are preserved. This is a direct adaptation of the specified IID quadratic circuit and prepared-state compiler, not a new rate or a universal compilation theorem. Independent exact-file audit is required. Numerical matrix-by-matrix envelope certification is not supplied; the inherited finite-envelope dependencies are identified below.
+
+## 1. Frozen family and scope
+
+Fix c in (0,1/2), N divisible by four, power-of-two 4&lt;=b&lt;=N/2, and m=floor((N-b-2)/16)&gt;=1. Write T=N+1, P=2^p with p=ceil(log2 T), and K=P^3. Put (s_1,e_1)=(2,2+8m) and (s_2,e_2)=(2+8m,2+16m). Both endpoints are even. Zones are I_j=(s_j,e_j]. Their lengths are multiples of eight; both lie before the final b symbols.
+
+Use the SAME suffix baseline as IID_QUADRATIC_NUISANCE_HARDNESS v3: q_b is the inherited binary suffix estimator; ell_a is its fixed-floor serial-log approximation at epsilon_log, and d(z)=ell_1(z)-ell_2(z). Set a to the largest negative power of two &lt;=c and epsilon_log to the largest dyadic &lt;=min(1/1000,1/(100b^2)). The reference logs are bounded by log(1/a)+1. Define
+
+ F_j=sum_(k in I_j, k odd) x_k sum_(l in I_j,l&lt;k) x_l mod 2,
+ L=(ell_1+rho_1(2F_1-1)+rho_2(2F_2-1),ell_2),
+ Q_ref=softmax(L).
+
+For a completely specified nontrivial family choose rho=2^(-max(2,ceil((log2 b)/2))), rho_1=rho, rho_2=rho/2. Then distinct positive amplitudes have sum &lt;=3/8 and O(log b)-bit descriptions. More generally bounded, publicly described dyadic amplitudes are allowed, with description cost charged.
+
+The two INVOCATIONS below have value dimensions (3,2). This is not two scalar heads. An alternative serial schedule has five scalar invocations. In both schedules width is fixed and no suffix, reset-state, phase or source parameter is supplied as an input feature. Inputs remain raw onehots, public i/P, and the inherited synthetic zero-symbol terminal.
+
+## 2. Exact bounded zone selectors
+
+For integer h in [0,P], define at raw row i the paid function
+
+ A_h(i)=clip(2^p(i/P-h/P),0,1).
+
+Implement it by clipping the signed initial difference to [0,1], then p clipped doublings. This equals 1{i&gt;=h+1} on the public position grid. Every intermediate lies in [0,1], each coefficient is at most two, and the threshold h/P has O(log N) bits. Do NOT implement this as a single slope-P matrix.
+
+Compute and preserve
+
+ u_j=A_(s_j)-A_(e_j)=1{s_j&lt;i&lt;=e_j},
+ w_j=A_(s_j)-A_(e_j+1)=1{s_j&lt;i&lt;=e_j+1}.
+
+Use independently paid selector scratch and reuse it serially; at most four retained masks are needed. The one-row extension in w_j is essential. At a shared boundary e_1+1=s_2+1, the first zone&#x27;s retained count excludes that row&#x27;s raw bit, whereas the second zone includes it. The masks therefore do not confuse the two resets. On exact raw bits, ReLU(x_i+u_j-1)=u_j x_i. At the synthetic row x_T=0. Protected shadows retain x_i, i/P, marker, and masks.
+
+## 3. Two bounded prefix sums with genuine reset semantics
+
+The first Q=K=0 uniform causal invocation reads the three-dimensional vector
+
+ (u_1 x_i,u_2 x_i,v_suffix(i)).
+
+Here v_suffix is precisely the inherited one-head packed-suffix local value, prepared BEFORE this invocation using its paid selector and packing stages. Each component has its own fresh zero destination. At row i the first two answers are
+
+ r_(j,i)=S_(j,i)/i,  S_(j,i)=sum_(l&lt;=i)u_j(l)x_l.
+
+The third answer is exactly the old suffix broadcast; the other components do not change its logical circuit. Preserve both r banks while running suffix decoding/counts/division and ell. All-row suffix validity is inherited from that exact same circuit, not inferred merely from terminal correctness.
+
+Choose L_sq minimal with nu=4^(-L_sq)/4&lt;=1/(128K). Use the explicit bounded square interpolant and product M from IID quadratic v3, Sections 3.1-3.2. At every row set
+
+ zhat_(j,i)=M_(L_sq)(i/P,r_(j,i)),
+ fhat_(j,i)=clip((s_(L_sq)(zhat_(j,i))-zhat_(j,i)/P)/2,0,1),
+ v_(j,i)=ReLU(fhat_(j,i)+w_j(i)-1).
+
+The last line exactly masks on the logical trajectory. Since all fhat lie in [0,1], the complete second-read values lie in [0,1]. Comparing with z=S_(j,i)/P gives |fhat-binomial(S_(j,i),2)/P^2|&lt;4nu. Thus the second Q=K=0 invocation, with TWO value coordinates and two fresh destinations, has terminal outputs within 4nu of
+
+ U_j/(P^2 T),  U_j=sum_(i=s_j+1)^(e_j+1) binomial(S_(j,i),2).
+
+Multiply by public dyadic T/P. The exact normalized target U_j/K lies in [0,1/2], since there are at most T contributing rows and S&lt;=N&lt;P. No integer U_j is stored. Nonterminal second-read outputs are in [0,1], so multiplying by T/P and applying the inherited synthetic gate ReLU(y+marker-1) leaves terminal values unchanged and sets all other decoder inputs to zero.
+
+Each pair l&lt;k in I_j occurs in U_j exactly e_j-k+2 times. Because e_j is even, this multiplicity has parity k. Consequently
+
+ U_j mod 2=F_j.
+
+This proves the reset-zone statistic directly; it is NOT obtained by discarding cross terms from the original global quadratic phase. Apply 3p tent folds and the fixed plateau to each gated scalar. Their error before plateau is &lt;=4Knu&lt;=1/32, so each exact logical final phase is F_j on EVERY raw Boolean history. Every nonterminal logical phase is zero. All stages are continuous bounded affine/ReLU maps, and no exact lattice assumption is made for their physical perturbed counterparts.
+
+## 4. Physical full-feature PreLN error, including all preparation
+
+Combine all preceding operations into ONE paired logical register machine. References are: the original plus each of the TWO actual single-invocation ablations. Ablating the first invocation zeros both prefix averages AND the suffix average; ablating the second zeros both phases but preserves the suffix. Product identity M(a,0)=0 guarantees the former&#x27;s zero quadratic values. The inherited zero-code suffix decoder remains legal. Preserve the same shadows and schedule in each run.
+
+Append ALL logit copies, norm padding, products, square-root microsteps and scratch clears before choosing eta. Select a fixed power-of-two C_out large enough that v=L/C_out has Euclidean norm &lt;=1 throughout the three references; e.g. C_out&gt;=4(log(1/a)+3) suffices. The final prepared reference state is
+
+ z_ref=(v,-v,1,-1,r,-r,0,...,0),
+ |r-sqrt(3d_phys/2-1-||v||^2)|&lt;=kappa.
+
+Use the specified paid square-root padding routine from STANDARD_PRELN v2 / INTERIOR_SOFTMAX v2. Its complete primitives are a dependency, not a free square-root operation. Let R be the fixed padding bound, Z_ref a fixed complete-reference state bound including this routine, Z=Z_ref+1, C_pad=4R/d_phys, and C_norm=(2Z_ref+1)/d_phys. Freeze one common Euclidean one-unit tube and one per-stage max-row Lipschitz bound L_0&gt;=2 for original and both ablations.
+
+For desired physical comparison delta&lt;=1/1000, choose xi,kappa,tau as largest dyadic values &lt;=delta/[100C_out(1+C_pad+C_norm)] and the inherited restoration small-domain bounds. FIRST fix these tolerances, then append the complete preparation, then define m_pre. For the chosen baseline,
+
+ m_pre=O_c(log N+b+log(1/delta)).
+
+Represent every coordinate with its negative partner; logical affine biases are homogenized against paired preserved anchors. At physical h=eta z, eta=2^(-M), gain-one epsilon-one LN is eta s(z)z, s(z)=(1+eta^2||z||^2/d_phys)^(-1/2). Each primitive&#x27;s homogeneous residual FFN yields exactly z_new=z+s(z)(F(z)-z). On the tube its error from F(z) is at most C eta^2.
+
+For either vector-valued useful invocation with its fixed selector A and injection B, the exact normalized step is
+
+ z&#x27;_t=z_t+B(1/t)sum_(i&lt;=t)A s(z_i)z_i.
+
+Against its logical uniform-read map, local error is at most ||A||||B|| Z^3 eta^2/(2d_phys). Dimensions three and two only change this constant. Critically, s(z_i) depends on ALL coordinates, including masks, suffix banks, the other phase and stale scratch. None are omitted or normalized separately. Choose C as the maximum of this bound and the local FFN error constants over the fixed primitive types. Then
+
+ e_j&lt;=L_0 e_(j-1)+C eta^2,
+ e_(m_pre)&lt;=C eta^2 L_0^(m_pre).
+
+Choose the smallest M&gt;=1 satisfying C4^(-M)L_0^(m_pre)&lt;=xi and the tube constraints. This controls the COMPLETE prepared vector, not just incoming logits; approximate clears are included. In particular M=O_c(m_pre+log(1/delta)).
+
+For completeness the inherited paid restoration uses a_j=2^(j-M), dyadic k_j approximating sqrt(1+3a_j^2) to &lt;=tau a_j^2, and M zero-attention blocks h_new=h+k_j LN_(1,1,0)(h). Their full-state direction is preserved and final radial factor obeys |r_M-1|&lt;=3(C_pad kappa+C_norm xi)+tau. Every k_j&lt;=2; no inverse-eta matrix is used. The conventional final full-feature LN_(epsilon=1,gain=2,shift=0), then affine head C_out times positive-logit-bank projection and ordinary vocabulary softmax, yields
+
+ ||L_phys-L||_infinity&lt;=C_out[2xi+7(C_pad kappa+C_norm xi)+2tau]&lt;=delta,
+ sup_(all Boolean histories) TV(Q_phys,Q_ref)&lt;=delta.
+
+Finally change EVERY interior LN gain to two and halve its consuming FFN first matrix or attention value matrix. Q/K are identically zero. Trajectories are unchanged. Every block has both ordinary PreLN sublayers, including dummy zero branches. This is a direct two-read recurrence, not physical concatenation or an assumed generic nonlinear compiler.
+
+## 5. Frozen resources and explicit limits of certification
+
+- Normalization: epsilon=1, gain=2, shift=0 everywhere, full-feature statistics; conventional affine vocabulary head plus ordinary final softmax.
+- Useful invocation count: exactly two, value dimensions (3,2). One attention head per useful invocation with those value dimensions; no hidden scalar-only interpretation. Serial alternative: five scalar reads, not used in the main schedule.
+- Width: choose once enough paired registers for the inherited binary suffix/log/padding machine, four retained masks, two prefix averages, two second-read destinations, two phases, and fixed reused product/tent scratch. This is a fixed c-dependent integer, independent of N,b,delta. FFN hidden width is bounded by twice the paired register count plus the maximum fixed number of selective ReLU forms. The inherited files do NOT specify a universal numerical register count; this note consequently does not certify e.g. width 64 or any other invented numerical width.
+- Full states/matrices/biases: freeze the maximum of the inherited fixed-envelope primitive bounds, the selector/product/tent constants, the paired embedding/FFN overhead, C_out, gain two, and the restoration bound (3/2)(Z_ref+1). This is one c-dependent finite envelope before N,b vary. No equality with an externally preassigned numerical norm cap is claimed. A matrix-level numerical envelope requires expanding and auditing the inherited suffix and padding primitive schedule.
+- Counted depth: D=O_c(log N+b+log(1/delta)), including full preparation, all dummy blocks and restoration. No square root or log is a free local operation. If delta is inverse polynomial in N and b=Theta(log N), D=O_c(log N).
+- Per-coefficient description O_c(log N+b+log(1/delta)), including all zone thresholds, square coefficients, suffix packing, baseline log rounding, eta and restoration coefficients. Untied total description O_c((log N+b+log(1/delta))^2) at fixed width. Public positions i/P are the existing input convention, not an arbitrary N-row embedding table.
+- Distributed state O(N); dense useful-head plus local work O(N^2+ND) if dummy zero heads are skipped. Evaluating every dummy head densely costs O(N^2D).
+- Semantics: exact-real arithmetic with finitely described coefficients. Finite-word execution and per-operation rounding robustness are NOT certified. This distinction matters because tent folds amplify errors and small amplitudes may underflow in a fixed machine format.
+
+The two invocations really affect output. For the second, choose histories realizing F=(1,0), available using one nonzero phase pattern in zone one and zeros in zone two. Its ablation changes the first logit by 2rho_1. On the common bounded interval the resulting probability difference is at least 2kappa_c rho_1. For the first, use an all-symbol-2 suffix: the inherited true-vs-zero-code baseline logit differences separate by at least 2log 3-4epsilon_log. The two nuisances can reduce that gap by at most 2(rho_1+rho_2)&lt;=3/4. Thus a positive constant gap remains. Take delta also &lt;=kappa_c rho_2/100, with kappa_c the minimum sigmoid derivative on the complete bounded logit interval; the COMMON physical error for the actual ablations preserves both margins. The same eta and restoration parameters are used in every run. This establishes usefulness, not minimality or necessity.
+
+## 6. Consequence for the already-proved orbit comparison
+
+With gamma=1-2c^8, the finite-group v2 result applies to this exact reset reference and SAME d. It gives, for each homogeneous order-two source and arbitrary initial pair law,
+
+ R_P(M)&lt;=R_P(Q_phys)+delta+(rho_1+rho_2)gamma^m/4,
+ R_P(Q_base)&lt;=R_P(Q_phys)+delta+delta_base
+             +(rho_1+rho_2)gamma^m/4+(rho_1^2+rho_2^2)/8.
+
+Here Q_base must be a separately compiled baseline for precisely the SAME ell and d. M is the four-probability average, not softmax of averaged logits, and is only a suffix evaluator in this statement. No physical architecture for M is silently inferred. These are inherited sourcewise additive comparisons; there is no new estimation rate, minimax lower, or generic resource frontier.
+
+## 7. Read dependencies and audit status
+
+Read: FINITE_GROUP_LOCAL_TASK_FOLDING.candidate.v2 (zone algebra and orbit result); IID_QUADRATIC_NUISANCE_HARDNESS.candidate.v3 (square/product/tent circuit and merged suffix read); TWO_READ_PRELN_COMPILATION.candidate.v4 (full-preparation ordering); STANDARD_PRELN.candidate.v2 Sections 3-5 and INTERIOR_SOFTMAX.candidate.v2 Sections 4-5 (homogeneous FFNs, padding contract, restoration and final logits); CONSTANT_WIDTH_CONSISTENCY.candidate.v3 (existing suffix machine).
+
+New exact obligation supplied here: masked-prefix implementation of both reset zones, the indispensable endpoint extension, bounded position selector realization, the (3,2) merged-read schedule, and its two-read full-feature error recurrence. Inherited obligations remain the previously audited suffix and padding modules. A fully numerical frozen-width/full-matrix certificate would require their complete instruction expansion; it is not replaced by the finite-envelope existence argument above. No unconditional claim under a particular numerical norm/width cap or finite arithmetic is made.
+</pre></details><details><summary>后缀轨道重心的真实 PreLN · SUFFIX_ORBIT_BARYCENTER_PRELN.candidate.v1.md</summary><p class="hash">SHA-256 ed69fb1d16fc7f6fb3de55995a1f6ab3701deca92e18a0f6fb8e863e8bf7509f</p><pre># Compile the suffix orbit barycenter into ordinary-softmax PreLN
+
+6 November 2026 UTC. Analytical candidate v1. No training, scientific execution, numerical check, public upload, or repository mutation. Existing versions and dependencies are unchanged. This is a concrete extension of the inherited one-uniform-head bounded suffix program, not a theorem for arbitrary attention programs. Independent review is required.
+
+## 1. Contract and conclusion
+
+Use the SAME paid logical suffix logit difference d(z)=ell_1(z)-ell_2(z) from IID_QUADRATIC_NUISANCE_HARDNESS v3, Section 5, and SYMMETRIC_QUADRATIC_NUISANCE_REMOVAL v1, Section 9.2. Its raw-input bounded affine/ReLU program has constant width, one scalar zero-score causal full-prefix read, D_d=O_c(log(N+1)+b) stages, and coefficient descriptions B_d=O_c(log(N+1)+b). The inherited all-row legality and its head-ablated default-word program give |d|&lt;=B on both reference trajectories, for a fixed dyadic B&gt;=1 depending only on c. We do not replace its existing finite log approximation by an exact logarithm.
+
+Let rho_j&gt;=0 be public, sum_j rho_j&lt;=R, with R fixed. For H=2^r and u_sigma=sum_j rho_j sigma_j, define
+
+    M(t)=H^(-1) sum_sigma sigmoid(t+u_sigma),
+    Q_M(z)=(M(d(z)),1-M(d(z))).
+
+For 0&lt;epsilon&lt;=1/16 there is, conditional only on the precisely cited inherited logical suffix and norm-padding/restoration routines, a fully specified bounded-primitive extension with an actual ordinary final vocabulary softmax satisfying
+
+    sup_raw_histories TV(Q_fold_phys(x),Q_M(suffix(x)))&lt;=epsilon.
+
+All LNs have positive epsilon_LN=1, scalar gain 2 and zero shift. Input remains raw binary symbols plus the original public position coordinates, inclusive causal mask and synthetic terminal. There is one nonzero uniform attention invocation; all added computation is local. Width and full-state/full-matrix/full-bias/primitive-gain bounds are fixed in c,R. Depth is
+
+    D=O_(c,R)(log(N+1)+b+epsilon^(-1/2)).                 (1)
+
+This bound is valid even for growing r as a NONUNIFORM existence/online-network bound through the direct scalar spline below. It does not bound coefficient-construction work independently of r. For fixed r an alternative explicit branchwise circuit has the same order with an r-dependent constant; its growing-r depth is O_(c,R)(D_d+2^r epsilon^(-1/2)). Both costs are paid, and neither circuit treats a mixture of softmaxes as one softmax.
+
+## 2. Explicit direct scalar barycenter spline
+
+On [-B,B], differentiation of the finite sum gives
+
+    0&lt;M&#x27;(t)&lt;=1/4, |M&#x27;&#x27;(t)|&lt;=1/4,
+    alpha&lt;=M(t)&lt;=1-alpha, alpha=sigmoid(-(B+R)).
+
+These bounds are uniform in r and the particular amplitudes. Choose a fixed dyadic a&gt;0 with a&lt;=alpha/2. The positive lower bound depends on c,R, not epsilon,r,N,b.
+
+Here is a dyadic-coefficient affine/ReLU circuit for M to error delta, for any 0&lt;delta&lt;=1/16. Let J be the smallest power of two with J&gt;=max(1,2B/sqrt(delta)), let h=2B/J and t_j=-B+jh. Let f interpolate the real node values M(t_j). The interpolation error is at most h^2/32&lt;=delta/32. For interval slopes s_j=(M(t_(j+1))-M(t_j))/h,
+
+    f(t)=beta+s_0 t+sum_(j=1)^(J-1) a_j ReLU(t-t_j),
+    beta=M(-B)+B s_0, a_j=s_j-s_(j-1).
+
+Bounds: |beta|&lt;=1+B/4, |s_0|&lt;=1/4, and sum_j|a_j|&lt;=B/2. The last inequality follows by comparing adjacent h-interval averages of M&#x27;, whose Lipschitz constant is 1/4: |a_j|&lt;=h/4. This bounded total variation, not merely bounded individual coefficients, controls every serial partial accumulator.
+
+Round beta,s_0,a_j independently to nearest dyadics on the coarsest power-of-two mesh Delta satisfying
+
+    Delta&lt;=delta/[8(1+B+2BJ)].
+
+For t in [-B,B], the rounding contribution is &lt;=Delta(1+B+2B(J-1))/2&lt;=delta/16. Thus the rounded spline differs from M by less than delta. All knots are dyadic, with O_B(log J) bits. Rounded coefficient descriptions have O_B(log(J/delta)) bits.
+
+Evaluate serially: retain t, initialize the affine accumulator, compute one hinge scratch, add its coefficient times the scratch, and clear/reuse scratch. Each hinge, affine addition, copy and clear is a counted constant-width bounded primitive. The absolute partial sums are bounded by 1+B/2+B^2 plus a fixed rounding allowance. All scratch and preactivations are bounded in B. Consequently complete state norms, full matrices/biases and per-primitive gains are bounded independently of J,r. Finish by the explicit clip
+
+    mhat=a+ReLU(fhat-a)-ReLU(fhat-(1-a)).
+
+This equals projection onto [a,1-a], hence |mhat-M|&lt;=delta. It is not an external probability repair: it is a paid local logical operation inside the stack. The actual physical state may differ from its logical reference, which is handled only by the subsequent full-program error recurrence.
+
+No sigmoid is a network primitive here. Values M(t_j) are used solely in the public offline coefficient definition. Section 7 prices their construction and distinguishes real-parameter existence from certified numerical generation.
+
+## 3. Alternative explicit sigmoid-per-branch program
+
+For fixed r, an alternative avoids invoking a barycenter table as the description of a scalar function. Apply the same uniform-grid, serial-hinge construction to sigmoid on [-C,C], with a fixed dyadic C&gt;=B+R+1. Its derivative and second derivative have the same bounds, so approximation at error delta costs O_C(delta^(-1/2)) stages and fixed width. For each public sign vector sigma in a fixed unrolled order, form d+u_sigma, evaluate the sigmoid spline, clip to [a,1-a], then add H^(-1) times that value to a running accumulator. Each branch error at most delta gives average error at most delta, NOT H delta. Reuse all branch scratch. Partial running averages are in [0,1], so full-state norms remain bounded independently of H; no H-wide fanout is used.
+
+A coefficient H^(-1)=2^(-r) needs r+1 bits. If amplitudes are not finitely representable, replacing each shift u_sigma by a dyadic within delta changes that branch&#x27;s probability by at most delta/4, by the sigmoid derivative bound. Allocate this error separately, e.g. run every branch spline with delta/2 and use shifts accurate to delta, to obtain average error &lt;delta. More generally an amplitude approximation with sum_j|rhohat_j-rho_j|&lt;=delta suffices for all branches. Exact irrational shifts are not asserted to have finite binary descriptions.
+
+This explicit alternative costs O_(c,R)(H delta^(-1/2)) local stages after computing d once. It uses fixed width and an envelope independent of r, but exponential depth. Amplitudes/branch shifts can be compiled into the unrolled layer coefficients rather than stored as an r-wide runtime state. Offline sign-sum construction costs O(rH) naive real arithmetic, or a separately justified Gray-code alternative. No phase enumeration is communicated between parties.
+
+## 4. Paid log-probability conversion and error budget
+
+For either route, obtain mhat in [a,1-a] with |mhat-M(d)|&lt;=delta. Compute x_1=mhat, x_2=1-mhat. Apply the fixed-floor serial log spline from INTERIOR_SOFTMAX v2, Section 4, on [a,1], to both coordinates, with accuracy lambda:
+
+    |L_i-log x_i|&lt;=lambda.
+
+For clarity the imported circuit uses dyadic knots v_j=a+(1-a)j/K, K the least power of two &gt;=max(1,(1-a)/(2a sqrt(lambda))); interpolation error &lt;=lambda/2, independently rounded hinge coefficients on mesh &lt;=lambda/[2(K+1)], error &lt;=lambda/2, and serial bounded accumulators. It costs O_a(lambda^(-1/2)) primitives, fixed width, full bounds depending only on a. It introduces no executed log primitive. Every L_i is bounded in a fixed a-dependent interval.
+
+Since (x_1,x_2) already sums to one, softmax(log x)=x exactly. For the mathematical comparator Q_ref=softmax(L), the max-logit perturbation bound gives
+
+    TV(Q_ref,Q_M)&lt;=delta+tanh(lambda/2)&lt;=delta+lambda.
+
+Choose delta=lambda=epsilon/4, using largest admissible dyadic tolerances if needed. Compile the whole program with final max-logit error &lt;=nu=epsilon/4 as below. Then
+
+    TV(Q_fold_phys,Q_M)&lt;=delta+lambda+nu&lt;=3epsilon/4&lt;epsilon. (2)
+
+Any branch-shift rounding is included in delta, never added silently. This is the required paid conversion of averaged probabilities back to one ordinary vocabulary softmax. Averaging original logits instead would give sigmoid(d), a different rule.
+
+## 5. Full-state preparation before small amplitude
+
+This paragraph specifies the physical compilation rather than invoking an arbitrary-program compiler. Start from the one-head logical suffix program and append precisely the scalar spline, clip and two log splines above. Include the original head-ablated default-word reference if usefulness is desired. Choose a fixed dyadic C_out large enough for v=L/C_out to satisfy ||v||_2&lt;=1. Reserve paired copies, anchors, and all reused scratch. Width d_phys is a fixed sufficiently large constant.
+
+Choose xi,kappa,tau as the largest dyadics below nu/[100 C_out(1+C_pad+C_norm)] and the fixed small-domain bounds from STANDARD_PRELN v2. Append EVERY scaled-logit copy, norm-padding product/square-root microstep and scratch clear. The reference preparation leaves
+
+    z_ref=(v,-v,1,-1,rpad,-rpad,0,...,0),
+    |rpad-sqrt(3d_phys/2-1-||v||^2)|&lt;=kappa.
+
+The imported bounded affine/ReLU padding routine costs O_(c,R)(1+log(1/kappa)) stages. Its complete-state envelope is fixed before tolerance selection; C_pad and C_norm are chosen from that fixed envelope, so there is no circular dependence on eta or a subsequently growing tube. Define m only AFTER this entire preparation is appended. Fix a common tube radius Z and gain L_0&gt;=2 covering every stage of the full reference and its selected ablation.
+
+Represent logical registers by pairs with an unchanged paired anchor, h=eta z, eta=2^(-M). All biases are homogenized through that anchor. In gain-one epsilon-one full-feature LN,
+
+    LN(h)=eta s(z)z, s(z)=(1+eta^2||z||^2/d_phys)^(-1/2).
+
+A local overwrite F is implemented by the ordinary shallow FFN residual F-I, using signed ReLU for affine maps and the usual single-layer selective ReLU overwrite. It gives exactly z_new=z+s(z)(F(z)-z), whose defect is &lt;=C eta^2 on the fixed tube. Every such local stage is a complete block with zero attention. At the SOLE original uniform read, with fresh reference destination,
+
+    z&#x27;_t=z_t+B_0 t^(-1)sum_(i&lt;=t) A_0 z_i,
+    z&#x27;_(t,phys)=z_t+B_0 t^(-1)sum_(i&lt;=t) A_0 s(z_i)z_i.
+
+The local defect is &lt;=||B_0||||A_0|| Z^3 eta^2/(2d_phys), independent of prefix length. This read uses a complete block with zero FFN. Full-feature normalization is accounted for, not assumed bankwise.
+
+Thus max-row error satisfies e_j&lt;=L_0 e_(j-1)+C eta^2. Select the SMALLEST M&gt;=1 meeting C&#x27;4^(-M)L_0^m&lt;=xi and the tube constraints. Then the actual FULL prepared vector obeys ||ztilde-z_ref||&lt;=xi, uniformly in all raw histories and the selected ablation, and
+
+    M=O_(c,R)(m+log(1/epsilon)).
+
+Nothing asserts physical decoded digits, clips, or cleared registers are exact. Residual scratch error enters the full-vector norm estimate.
+
+Use the bounded radial restoration from STANDARD_PRELN v2 Section 5: M complete blocks with scalar branch gains k_j approximating sqrt(1+3*2^(2(j-M))) within tau*2^(2(j-M)), with O(M+log(1/tau))-bit dyadic coefficients bounded by 2. It restores h=r_M ztilde with |r_M-1|&lt;=3delta_norm+tau, delta_norm=C_pad kappa+C_norm xi. Final LN_(1,2,0) and affine head C_out times positive output-bank projection yield
+
+    ||logits_phys-L||_infinity
+      &lt;=C_out[2xi+7(C_pad kappa+C_norm xi)+2tau]&lt;=nu.
+
+The final operation is actual vocabulary softmax. Make every interior LN gain 2 by halving its consuming FFN first matrix and useful attention value matrix; Q=K=0, so trajectories are unchanged. No inverse-eta matrix, external logarithm, or extra output MLP is hidden.
+
+## 6. Sourcewise risk and useful-head statement
+
+For the reset-zone finite-group family of FINITE_GROUP_LOCAL_TASK_FOLDING v2, let E_j be its first-hit events, m_j its eight-bit trial counts, and gamma=1-2c^8. That exact source-preserving algebra gives, separately for each homogeneous interior order-two source and each arbitrary initial law,
+
+    R_P(Q_M)&lt;=R_P(Q_nuisance_ref)+sum_j (rho_j/4) gamma^(m_j).
+
+If an independently established hard-family physical comparison satisfies sup_x TV(Q_nuisance_phys,Q_nuisance_ref)&lt;=zeta_h, (2) yields
+
+    R_P(Q_fold_phys)&lt;=R_P(Q_nuisance_phys)+zeta_h+epsilon
+                         +sum_j (rho_j/4) gamma^(m_j).   (3)
+
+This note supplies the previously missing folded-side physical approximation. It does NOT itself supply the r-phase hard-side physical realization, which remains a separate obligation. No multiplicative/sourcewise ratio, statistical minimax improvement, or new rate follows.
+
+The logical folded map is strictly increasing in d: M&#x27;(d)&gt;=k_(B,R)&gt;0, where k_(B,R)=sigmoid&#x27;(B+R). The inherited all-symbol-2 suffix versus suffix-head ablation has a q_0=sigmoid(d) gap at least 1/2 minus its already paid log errors. Since sigmoid is 1/4-Lipschitz, this gives a positive fixed d-gap and hence a positive fixed folded gap. With epsilon below a sufficiently small c,R-dependent threshold, the SAME common preparation/eta/restoration/head approximates both references closely enough to preserve a nonzero physical gap. Then the one invocation is genuinely useful. Without imposing this smallness threshold, claim only one nonzero attention invocation, not an unproved ablation margin. No necessity of any read is inferred.
+
+## 7. Full computation and description ledger
+
+Direct scalar route: J=O_(c,R)(epsilon^(-1/2)) barycenter knots and the same order of paid log stages. Full reference length and physical depth obey (1). Per-coefficient bits are O_(c,R)(B_d+D+log(1/epsilon))=O_(c,R)(log(N+1)+b+epsilon^(-1/2)); the small-amplitude exponent/restoration, not only spline rounding, dominates this conservative bound. Untied total parameter bits are O_(c,R)(D(B_d+D+log(1/epsilon))), hence O_(c,R)(D^2). Rounded scalar-spline coefficients themselves cost only O_(c,R)(log(1/epsilon)) bits each.
+
+The direct table is public preprocessing tied to the supplied amplitude list, not an oracle or learned population statistic. Its naive exact-real construction evaluates H=2^r sigmoids at each of J+1 nodes: O(HJ) sigmoid evaluations, plus O(rH) sign-sum arithmetic and O(HJ) summation arithmetic. Streaming construction need not retain all branch values. The amplitude description/read cost is additional. Offline coefficients can mathematically be defined from exact real constants and rounded; this proves finite network descriptions but does not certify a finite numerical generator. If node values are computed approximately, errors amplified by division by h when forming slopes and hinge differences must be budgeted (sufficient node error O(delta*h/J), conservatively O(delta/J^2) for fixed B), or node values may first be rounded with a separate proof. Arbitrary real amplitudes require an input oracle or a finite approximation guarantee; sum_j|rhohat_j-rho_j|&lt;=e changes M uniformly by &lt;=e/4. No bit-time bound follows without specifying such input and transcendental-evaluation algorithms.
+
+Branchwise route: online depth O_(c,R)(D_d+H epsilon^(-1/2)); per-coefficient descriptions additionally include r for H^(-1), and finite branch/amplitude-approximation precision. General formula is B_param=O_(c,R)(B_d+D+log(1/epsilon)+r), total O(D B_param). Neither exponential route proves that exponential preprocessing or online cost is necessary. The direct scalar route shows why group cardinality alone cannot justify an online architecture lower bound for this one-dimensional special family.
+
+Both routes have N+1 physical rows, O_(c,R)(N) rolling real registers, useful-dense-head plus local work O_(c,R)(N^2+ND), and O(N^2D) if all dummy attention slots are evaluated densely. A materialized attention matrix costs O(N^2) additional storage. All arithmetic guarantees here use exact-real architecture semantics. Tiny eta and length-dependent coefficient descriptions are not certified finite-execution reliability.
+
+For the aligned AA/BB comparison, Alice sends exactly b/2 suffix bits and Bob reconstructs z; arbitrary alignment costs at most b bits. The direct logical spline/log evaluator has local work O_(c,R)(b+epsilon^(-1/2)), after any original O_c(b) logical d evaluator, with fixed real workspace plus the supplied coefficient stream; use the original exact d evaluator to preserve its intended identity. Parameter/input descriptions and public preprocessing are not communication. No assertion is made that the PHYSICAL normalized network is exactly suffix-only: its uniform approximation is what transfers risk.
+
+If r grows with balanced zones m_j approximately (N-b)/(8r), the exceptional term deteriorates at that scale; bounded R alone does not imply exp(-a_c N) uniformly in r. The online folded compiler can remain efficient while the hard-side construction, source exceptional probability, and table-generation costs change.
+
+## 8. Read provenance and remaining boundaries
+
+Directly read relevant sections of: FINITE_GROUP_LOCAL_TASK_FOLDING.candidate.v2.md; TWO_READ_PRELN_COMPILATION.candidate.v4.md; SYMMETRIC_QUADRATIC_NUISANCE_REMOVAL.candidate.v1.md Sections 9 and 12; INTERIOR_SOFTMAX.candidate.v2.md Sections 4-5; STANDARD_PRELN.candidate.v2.md Sections 3-8; LOW_RISK_WEAK_ANCHOR_COMPOSITION.candidate.v4.md; CONSTANT_WIDTH_CONSISTENCY.candidate.v3.md; IID_QUADRATIC_NUISANCE_HARDNESS.candidate.v3.md Sections 5 and 8. These live in their dated sibling directories. The suffix count/readout and logical padding arithmetic remain inherited reviewed dependencies rather than new proofs here.
+
+New work here is the explicit bounded serial barycenter/sigmoid spline, paid log conversion, one-head full-program compilation application with ordered precision choice, uniform-history folded bound, sourcewise transfer, and separate online/offline growing-r ledger. No arbitrary attention compiler, mandatory PostLN theorem, optimality, finite-word execution, or physical r-phase hard family is asserted.
+</pre></details><details><summary>真实宽网络的后缀路线反例 · PHYSICAL_TYPE_SUFFIX_OBSTRUCTION.candidate.v2.md</summary><p class="hash">SHA-256 ca075a815144da5a8911703687ec696e8151d8143af78ecc12c084489025fb80</p><pre># Physical growing-width type-invariant approximation forbids suffix-only domination
+
+6 November 2026 UTC. Private analytical candidate v2. Version 1 is preserved; this revision corrects an out-of-domain b=N remark in Section 7.4. No upload, experiment, parameter generation, numerical model execution, training, or finite-arithmetic certificate. This is a theorem composition and a scope clarification, not a new estimator or statistical rate. Independent review is required before treating this exact file as accepted.
+
+## 1. Architectural and statistical scope
+
+Fix c in (0,1/2). Let P_c be all homogeneous binary order-two kernels with every transition probability in [c,1-c], with arbitrary initial-pair law. The prediction target is the kernel at the actual final context (X_(N-1),X_N); risk is expected total variation of the reported binary distribution from that target.
+
+Use EXACTLY the network family Q_N of the reviewed WIDE_PRELN_STATISTICAL_WITNESS.candidate.v2.md, not a purported compilation of the different clipped-MLE predictor in CONSISTENT_TYPE_ESTIMATOR_SUFFIX_OBSTRUCTION.candidate.v1.md. Q_N is source-independent and length-dependent. It receives N raw symbols, public positions and one synthetic terminal, not supplied counts, pairs, suffix statistics or source parameters.
+
+The family obeys the same positive-epsilon ordered-causal PreLN/ordinary-output/full-norm conventions as the reviewed two-read ordered-suffix model: self-inclusive causal softmax attention; actual complete PreLN residual blocks; epsilon one, gain two, shift zero at every LN; bounded affine/ReLU FFNs; final actual LN, bounded affine vocabulary head and ordinary vocabulary softmax. It buys d=O_c(N) width, rather than remaining inside the ordered-suffix theorem&#x27;s fixed-width subclass. A sufficiently large c-dependent envelope is fixed once for every N; it is not an unchecked prescribed numerical norm budget. Gain is bounded as an operator, not as the Euclidean norm of its d stored diagonal entries.
+
+All statements below use exact-real execution semantics. Approximate invariance is an all-history output assertion, not exact invariance of physical row states or attention values.
+
+## 2. The precise reference estimator already compiled
+
+For each context v and j in {0,1}, let
+
+ C_(v,j)(x) = sum_(i=3)^N 1{(x_(i-2),x_(i-1),x_i)=(v,j)}.
+
+For v=(x_(N-1),x_N), set J=C_(v,0)+C_(v,1), and
+
+ B_j(x)=(C_(v,j)+1)/(J+2).
+
+Choose the fixed dyadic a used in the wide theorem, with 0&lt;a&lt;=min(c,1/4). Define the mathematical reference
+
+ F_N(x)_j=max(B_j(x),a) / [max(B_0(x),a)+max(B_1(x),a)].
+
+This is the actual wide theorem&#x27;s ideal floored reference, not clipped MLE and not the intermediate rounded piecewise-linear-log output. Sections 3–5 of that theorem prove, uniformly over ALL binary histories,
+
+ TV(Q_N(x),F_N(x)) &lt;= epsilon_N := N^(-1/2)/64.          (1)
+
+Indeed its log interpolation contributes at most N^(-1/2)/128 and its physical final-logit error contributes at most N^(-1/2)/128. The ordinary binary-softmax TV Lipschitz bound gives (1). No expectation, typical-history qualification, or physical exact decoding is inserted here.
+
+The inherited full-history add-one theorem and binary flooring contraction give
+
+ sup_(P,mu in P_c) R_(P,mu)(Q_N)
+ &lt;= U_N := min{1, 13 sqrt(32/(N-1)) + epsilon_N}
+ = O_c(N^(-1/2)).                                      (2)
+
+This risk controls the actual terminal context, including its dependence on the observed counts. The constant displayed in (2) is conservative and inherited. For N&gt;=4, U_N&lt;=K/sqrt(N), for example K=100 suffices. Constants in architecture and the fixed envelope still depend on c.
+
+## 3. All-history approximate type invariance
+
+Write x~y if their eight triple counts agree and their final ordered pair agrees. Then B(x)=B(y), hence F_N(x)=F_N(y) exactly. By (1),
+
+ sup_(x~y) TV(Q_N(x),Q_N(y)) &lt;= 2 epsilon_N
+                                        = N^(-1/2)/32. (3)
+
+Thus Q_N is an actual physical network with vanishing diameter on every such type class. This includes every orbit of the reviewed endpoint-preserving local type moves. The bound is for ANY two members of an orbit and does not accumulate with the number of moves, because each output is compared to the same exact F_N.
+
+Triple counts alone without terminal-context preservation are insufficient for this inference. No claim is made that all universal source-preserving maps necessarily preserve that terminal context. Nor does this approximation create exact invariance of the physical network.
+
+## 4. Fixed-source logarithmic-suffix obstruction
+
+A suffix-b predictor means any source-independent measurable rule S_(N,b)(X_(N-b+1):N,U) reporting a probability vector, where U is independent private randomness. It may depend on public c,N,b, use unlimited computation, and use the final context when b&gt;=2, but receives no earlier data, source parameter, or correlated advice. A program that looks at the full history and merely rewrites it into a short string is NOT covered by this information restriction.
+
+Take the two fixed sources P_-=IID Bernoulli(c) and P_+=IID Bernoulli(1-c), including their IID initial laws. Both belong to P_c. Let Delta=1-2c. For the two suffix laws with masses f_-,f_+, the pointwise triangle inequality gives
+
+ [R_-(S)+R_+(S)]/2
+ &gt;= (Delta/2) sum_z min(f_-(z),f_+(z))
+ = Delta e_b,                                         (4)
+
+where e_b is the equal-prior optimal binary testing error. Randomization does not help: apply the inequality for each U, then integrate. The all-zero and all-one suffixes together contribute 2c^b to the overlap, so e_b&gt;=c^b. This avoids any tie-handling assumption in majority testing.
+
+For every integer 1&lt;=b&lt;=log N/[4 log(1/c)],
+
+ [R_-(S)+R_+(S)]/2 &gt;= Delta N^(-1/4).                  (5)
+
+Combining (2) and (5), some one of these same two sources satisfies
+
+ R_sigma(S)-R_sigma(Q_N) &gt;= Delta N^(-1/4)-U_N.         (6)
+
+The right side is positive for all sufficiently large N. Therefore no suffix-b predictor sourcewise dominates Q_N, even on this fixed two-source subclass. The assertion quantifies over every suffix predictor, not merely another network with comparable resources. Arbitrary randomized output replacements are included.
+
+If an additive domination slack tau_N is permitted, (6) still rules it out whenever tau_N&lt;Delta N^(-1/4)-U_N. The lower is on task risk, not on reproducing Q_N&#x27;s outputs.
+
+## 5. Stronger classical source-varying corollary: every sublinear suffix
+
+The restriction b=O(log N) above comes from insisting on the SAME separated pair c and 1-c. It is not a fundamental limit of suffix information. Here is a separate, elementary minimax calculation; it adds no new statistical-rate claim.
+
+For 1&lt;=b&lt;=N put
+
+ delta_b=min{(1/2-c)/2, 1/(8sqrt(b))},
+ theta_-=1/2-delta_b, theta_+=1/2+delta_b.
+
+These IID kernels lie in P_c and delta_b&lt;=1/8. The Bernoulli KL upper bound KL(p||q)&lt;=(p-q)^2/[q(1-q)] gives
+
+ KL(Ber(theta_+) || Ber(theta_-)) &lt;=32 delta_b^2.
+
+Consequently the product suffix laws satisfy KL&lt;=32b delta_b^2&lt;=1/2. Pinsker gives TV&lt;=1/2 and hence overlap &gt;=1/2. The same integrated triangle inequality, now with target separation 2delta_b, yields
+
+ [R_(theta_-)(S)+R_(theta_+)(S)]/2 &gt;=delta_b/2
+ &gt;= k_c/sqrt(b),
+ k_c := (1/2) min{(1/2-c)/2,1/8}&gt;0.                   (7)
+
+Thus, for every suffix rule, one admissible IID source satisfies
+
+ R_theta(S)-R_theta(Q_N) &gt;= k_c/sqrt(b)-U_N.            (8)
+
+If b=b_N=o(N), then sqrt(b)U_N -&gt;0, so eventually this is strictly positive, and in fact the excess is at least k_c/(2sqrt(b)). This applies to any integer sequence b_N&gt;=1. For b=0 there is already a constant two-source lower with no observations. For b sufficiently large that delta_b=1/(8sqrt(b)), the explicit lower in (7) improves to 1/(16sqrt(b)).
+
+Unlike Section 4, the two witness parameters here can depend on b. The source-selection quantifier is minimax: for each N,b and predictor there is an offending source. It does NOT exhibit a single fixed IID source that defeats every member of an arbitrary b_N-growing predictor sequence. It DOES rule out uniform sourcewise domination over P_c by any sublinear-suffix sequence.
+
+This is a direct observation-information lower, not circular use of an old architecture depth-risk theorem. Combining a full-history risk with a suffix sample lower establishes the restriction on suffix replacements, but cannot establish an arbitrary-message communication lower or an optimal architectural resource frontier.
+
+## 6. Full resource ledger imported without alteration
+
+For fixed c, the actual Q_N uses the following resources.
+
+- Complete model width d=O_c(N), with inert coordinates charged; FFN intermediate width O_c(N).
+- Actual paid complete-block depth D=O_c(log N), including all positional selection, predecessor extraction, count decoding, parallel logarithm, scratch clearing and amplitude restoration.
+- One head per block, exactly TWO pathwise useful uniform-attention invocations. The first has a wide value bank; the second aggregates triple histograms. Zero dummy-attention blocks remain part of D. Two useful reads are not a necessity lower.
+- Uniformly bounded complete per-token state/value norms, full matrix operator norms, full bias-vector norms and primitive Lipschitz constants. Full all-token Frobenius norm and total distributed memory are NOT bounded independently of N.
+- O_c(log N) bits per coefficient description, exact rationals/dyadics as specified by the wide theorem. An optional all-dyadic approximation exists with the same orders, but is not needed here. The displayed constant in (1) refers to the theorem&#x27;s stated parameter choice, not an arbitrary additional rounding.
+- Conservative dense untied parameter storage O(N^2 log N) coefficients and O_c(N^2 log^2 N) description bits. Explicit LN gain/shift storage O(N log N) is included and dominated.
+- Rolling all-row real activation storage O(N^2); materialized attention scores O(N^2) extra slots. These are real-number slots, not a finite-bit memory theorem.
+- Dense local projection/FFN work O(N^3 log N). Two useful full-width attention products cost O(N^3). Evaluating every dummy attention slot densely instead yields O(N^3 log N) attention work.
+- An explicitly sparse representation stores O(N log N) nonzero coefficients, or O_c(N log^2 N) bits including O(log N)-bit indices and coefficients. Sparse local work is O(N^2 log N). Naive wide attention remains O(N^3); exploiting the exactly uniform prefix weights permits O(N^2) prefix-sum arithmetic for the useful reads. These are separate execution conventions.
+- Public-position descriptions cost O(N log N) bits. An explicitly materialized full causal mask costs O(N^2) bits.
+- Neither coefficient generation nor the LN square roots/ordinary softmax evaluation has an executed finite-word stability certificate. No training or learned-parameter assertion is made.
+
+The lower comparator in Sections 4–5 has unlimited computational resources after receiving the suffix; its limitation is access to samples. The resource ledger prevents presenting this growing-width witness as cheap under fixed-width, scalar-value, total-work, parameter-bit, or distributed-memory budgets.
+
+## 7. Failed shortcuts and unresolved gap
+
+1. Compiling the clipped empirical MLE from the symbolic consistent-obstruction note by citing the wide add-one compiler would substitute a different estimator without proof. This file uses the exact add-one/floor reference already compiled. The two estimators need not agree.
+2. Exact type invariance of the add-one reference does not imply exact physical invariance after nonlinear PreLN approximation. Only the uniform O(N^(-1/2)) orbit diameter (3) is proved.
+3. The network is in the same broad architectural/norm contract, but NOT the same fixed-width resource class. Calling this a fixed-width counterexample would be false.
+4. The fixed-width ordered-suffix theorem permits powers of two 4&lt;=b&lt;=N-2. Choosing an admissible b=Theta(N) provides inherited O(N^(-1/2)) risk at separately paid O(N) depth. That is not the logarithmic-depth wide witness, and its suffix statistic does not by itself prove the all-history full-type invariance in (3). Version 1 incorrectly suggested b=N, outside that theorem&#x27;s domain; the mistake is preserved there and corrected here.
+5. A fixed-separated-source lower decays exponentially with b; it cannot alone prove all b=o(N). Section 5 explicitly changes to local alternatives and labels its minimax quantifiers.
+6. No suffix-only lower forbids an arbitrary short message summarizing the whole history. Such a message can contain empirical counts or another useful statistic, and the acquisition/communication/precision costs require their own analysis.
+7. A canonical orbit representative computed from all of x need not be suffix-computable. Thus (3) does not settle a general finite-group task-folding theorem; it rules out the additional conclusion that a risk-preserving replacement can discard all but a sublinear raw suffix.
+8. The O(N^(-1/2)) rate and classical two-point inequalities are inherited standard ingredients. The useful closure here is an explicit physically normalized, all-history approximately invariant, resource-honest counterexample to an overbroad suffix-domination assertion.
+9. No fixed-width, O(log N)-depth analogue is proved. No lower for arbitrary nonlinear evolving-memory networks or arbitrary interactive protocols is proved. These gaps remain open.
+
+## 8. Exact source bindings
+
+- ../nonlinear_statistical_frontier_20261106/WIDE_PRELN_STATISTICAL_WITNESS.candidate.v2.md; SHA256 28d7230b9b6b131daa05f6d5a58b3a26d562ca54845e09db13ff9785f5d39e0e. Core physical family, uniform reference approximation, risk and resources.
+- ../nonlinear_statistical_frontier_20261106/INDEPENDENT_WIDE_PRELN_AUDIT.v1.md; SHA256 e1d63353f82226ff15de75372c4e428a41780411e5d7b6a62ee5d439c4390d7b. Exact-file review accepting the growing-width physical construction under its stated assumptions.
+- ../local_orbit_task_folding_20261106/CONSISTENT_TYPE_ESTIMATOR_SUFFIX_OBSTRUCTION.candidate.v1.md; SHA256 83b42f71263b46a22e462b808bde2344dbd68c3938e970847074175653e857d9. Symbolic clipped-MLE precedent and fixed-source suffix obstruction; NOT the estimator being compiled here.
+- ../ordered_causal_memory_20261106/TWO_READ_PRELN_COMPILATION.candidate.v4.md; SHA256 a7bde2d8f93b043f1fa8764add8098b4f3d8030963e106cf2e95de069b1e2cb2. Reviewed fixed-width architectural comparison; not a width-equivalence claim.
+
+Historical dependencies of the wide theorem remain dependencies; this note is not an independent reproof or a closed reproduction bundle.
+</pre></details><details><summary>双相位失败记录 · TWO_RESET_PHASE_FAILED_ROUTES.v1.md</summary><p class="hash">SHA-256 807895841b6d90e9f240e42bd1a540bd2d24a18d5441e6d3ee4c4275bd8f4b45</p><pre># Failed shortcuts and exact remaining certificate gap
+
+6 November 2026 UTC. Companion to TWO_RESET_PHASE_PRELN.candidate.v1.md.
+
+1. Summing binomial zone-prefix counts only through even endpoint e gives pair multiplicity e-k+1, hence the EVEN-k quadratic phase. That is not the requested reset phase. The selected second-read interval must extend to e+1 while first-read bit inclusion stops at e.
+2. A global prefix count restricted only at the second read retains pre-zone bits and creates cross-zone quadratic terms. Each first-read value must itself mask the raw bit to its own zone.
+3. A selector with a direct slope P violates the fixed matrix envelope. Paid clipped doublings implement public-grid comparisons with all intermediate states bounded.
+4. Two invocations here carry (3,2) values. Calling them two scalar reads is false. Scalar serialization consumes five useful invocations. Fixed value dimension still enters full matrix norms.
+5. Direct concatenation of existing physical normalized parity and suffix networks does not establish correctness: every LN sees all banks. Build one combined logical program and use the actual two-head scalar-normalization recurrence on its enlarged full-state tube.
+6. Choosing eta before appending norm padding, scaled-logit copies and clears does not control the final normalized output. All these operations enter m_pre before amplitude precision is selected.
+7. Exact logical phase plateaus do not license treating physical phases as exact bits. Their errors must propagate through the paid continuous program and be measured at the final vocabulary probabilities.
+8. Serial log accuracy and physical comparison accuracy are different costs. For arbitrarily tiny delta, keep the baseline serial log tolerance at O(b^-2); shrinking that log tolerance to delta could introduce delta^-1/2 depth. Only preparation/restoration and amplitude precision need log(1/delta).
+9. The four-branch orbit mean is an average of probabilities, not the softmax of mean logits. The separate baseline comparison pays the quadratic Taylor remainder; no internal network averaging theorem is claimed.
+10. Exact-real coefficient precision is not a finite-word execution guarantee. LN arithmetic, exponential softmax, rounding accumulation and underflow require an additional concrete arithmetic model and error proof.
+11. Existing dependency documents provide fixed finite envelopes and fixed register-machine constructions but not a complete numerical expanded matrix certificate. The new candidate therefore certifies the direct algebraic adaptation under those stated module contracts, not membership in a particular numerical width/head-dimension/matrix-norm cap. To remove that last gap, expand the inherited binary suffix decoder/count/division and norm-padding square-root programs into an instruction inventory, allocate registers once, and calculate every full matrix, bias, state and Lipschitz bound. Do not fill this gap with an arbitrary claimed number.
+</pre></details><details><summary>重心编译失败记录 · SUFFIX_ORBIT_BARYCENTER_FAILED_ROUTES.v1.md</summary><p class="hash">SHA-256 7277876555605313f718c087111c60cdbbabd3385a11d34317d84bec87216c61</p><pre># Suffix barycenter compiler: failed shortcuts and exact obligations
+
+6 November 2026 UTC. Companion to SUFFIX_ORBIT_BARYCENTER_PRELN.candidate.v1.md. Analytical record only; no scientific execution, training or upload.
+
+1. Averaging logits is not averaging probabilities. The symmetric sign sum has mean zero, so averaged logits produce sigmoid(d), not M(d). Replacing M by sigmoid(d) requires the separate variance penalty (1/8)sum_j rho_j^2. The candidate instead pays for approximating M and log(M),log(1-M).
+
+2. An external average of ordinary-softmax networks is not an ordinary-softmax network in the frozen model. Concatenating normalized branches also changes full-feature LN. The candidate builds one logical circuit and compiles the entire enlarged state once.
+
+3. An arbitrary-MLP compiler claim would hide the actual attention and output obligations. The candidate only uses the existing one-uniform-head suffix program, rederives its sole-read local defect, and gives the exact local homogeneous update. Padding/restoration are identified inherited routines, not a new general-attention theorem.
+
+4. Precision chosen at the pre-padding logit bank is insufficient. Later approximate arithmetic/clears change the full norm seen by LN. All output copies, padding and clears must precede the definition of m and the choice of eta. Original and head-ablated references need common parameters if usefulness is asserted.
+
+5. A wide hinge layer is not free under bounded full-state and matrix norms. The compiler serializes hinges. A bound on individual coefficients alone would not bound serial partial sums; bounded total slope variation supplies that missing bound.
+
+6. Counting 2^r branches does not establish an exponential online lower bound. This family depends on the suffix only through one bounded scalar d. Its average has uniform first/second derivative bounds, so a precomputed scalar spline has O(epsilon^-1/2) online stages independent of r. What remains expensive in the naive method is coefficient preprocessing, not the compiled online network. This does not prove optimal preprocessing or a general finite-group compiler.
+
+7. Public coefficients are not costless certified computation. The table&#x27;s naive generation uses O(2^r epsilon^-1/2) sigmoid evaluations. Defining rounded constants proves an existence/description statement, not finite-time generation or numerical correctness. Arbitrary real amplitudes need a representation or approximation oracle. Rounding table nodes and then dividing by a shrinking mesh can amplify error; the candidate records a sufficient conservative error budget rather than ignoring it.
+
+8. Exact lattice decoding and exact scratch clearing do not hold physically merely because the reference has them. The uniform continuous-stage error recurrence covers actual perturbed states and all residual scratch. The candidate does not use a physical exact-support or exact suffix-only assertion.
+
+9. The folded-side compiler does not compile the hard r-phase family. Sourcewise comparison with a physical nuisance model remains conditional on its separate uniform error zeta_h. The finite-group measure-preserving theorem itself is exact and does not need a physical implementation of the proof-device group average.
+
+10. Constant width is not constant total work. There are N+1 rows, O(N) rolling storage, one dense useful read costing O(N^2), and ND local work. Tiny eta also entails growing coefficient precision; bounded coefficients do not imply stable finite-word execution.
+
+11. Bounded total amplitude does not remove the source exceptional-event dependence on r. Balanced banks shorten as r grows, giving decay on the (N-b)/r scale. The direct scalar approximation cannot repair that separate probabilistic loss.
+
+12. Fixed c alone does not control an unbounded total-amplitude R. The interior floor for log conversion is sigmoid(-(B+R)); constants are fixed only when R is bounded in advance. Claim O_c rather than O_(c,R) only if R is a prescribed c-dependent constant.
+
+13. An arbitrary tolerance does not automatically preserve useful-head ablation separation. The monotone barycenter derivative has a positive c,R-dependent lower bound, but the physical error must be smaller than the inherited reference margin. The candidate states that threshold and otherwise claims only one nonzero attention invocation.
+
+14. The direct spline does not create a better estimator or a risk lower bound. It removes the implementation gap on the folded side of an existing task-risk inequality. It neither improves the old suffix statistical rate nor establishes optimal depth, novelty, trained realization, or a general evolving-memory frontier.
+</pre></details><details><summary>证明义务与范围 · PROOF_OBLIGATIONS_AND_FAILED_ROUTES.v1.md</summary><p class="hash">SHA-256 299f0371937b091e170d9773212d0bd1a076b0264bd67648668f00075404455d</p><pre># Architecture bridge: proof obligations and retained failed routes
+
+6 November 2026 UTC. Work-in-progress scope record. This round seeks explicit physical examples and conditional resource links, not a general T1/T2 theorem.
+
+1. Averaging probabilities is not averaging logits. A usual final softmax needs a paid conversion from the desired orbit barycenter to bounded logits. A symbolic mixture alone is not a physical realization.
+2. Exponentially many branches need not force exponentially large ONLINE neural depth: a one-dimensional smooth barycenter may be tabulated and interpolated. However offline node construction, public coefficients, description length and approximation error remain paid. This is a standard approximation mechanism, not proof of efficient learning.
+3. All-row boundedness, fresh attention destinations, scratch registers, norm-padding and clears must be included BEFORE choosing the small physical amplitude. Normalization changes every nonterminal value; exact logical phase identities need not hold in the physical intermediate states.
+4. A new multi-zone parity formula must count prefix-pair multiplicities with the actual region boundaries. Simply copying the old full-history parity identity can leave cross-zone terms or the wrong parity. Any fixed region mask is a public position-dependent constant, not an input-dependent oracle.
+5. Full matrix norms and value dimensions matter. Two vector-valued attention invocations are not two scalar reads when the value dimensions exceed one. Head count, summed value dimensions, width and total per-layer work must all be recorded.
+6. The existing full-history growing-width PreLN estimator can obstruct suffix-only replacement. This does not contradict a fixed-width theorem and cannot be called a general communication lower. Width O(N), distributed state O(N^2), and coefficient storage are part of the witness.
+7. Exact reference type invariance transfers only to an approximate physical rewrite modulus through the uniform end-to-end error. It does not yield exact physical invariance.
+8. Classical empirical transition rates, IID two-point testing, smooth interpolation, invariant convex-risk averaging and inherited PreLN output routines are prior tools. A composition must not be presented as a new estimation rate or priority-certified general principle.
+9. A generic O(risk^-2) suffix estimator does not become O(depth) without a separate model argument. The earlier equivalence remains in force.
+
+No training, numerical model validation, finite-operation arithmetic guarantee, repository upload, publication or purchase is authorized or performed in this round. Scientific claims are analytical; document construction is not a scientific experiment. Any incomplete physical obligation must remain explicitly open rather than being filled by a generic compiler assertion.
+</pre></details><details><summary>先行工作与模型合同对照 · PRIOR_AND_MODEL_COMPARISON.v1.md</summary><p class="hash">SHA-256 54979f0dac88c2493bef90b48c677f31d625febace2fce641c221b639b1d6d41</p><pre># Targeted approximation and model comparison
+
+6 November 2026 UTC. Primary-source abstract pages checked during this round; this is not a full-text theorem audit or exhaustive priority search. The candidate compiler proofs are self-contained adaptations of the explicitly listed local dependencies, not imported from these abstracts.
+
+## Smooth scalar approximation is established machinery
+
+Dmitry Yarotsky, Error bounds for approximations with deep ReLU networks, 2017 (preprint submitted 2016): https://arxiv.org/abs/1610.01145 . The primary abstract studies upper and lower network-complexity bounds for Sobolev approximation, including deep smooth-function approximation and adaptive one-dimensional Lipschitz architectures. This is a close conceptual neighbor to implementing a bounded smooth orbit barycenter by piecewise-linear ReLU evaluation. No novelty is claimed for interpolation or its ReLU hinge representation. The present resource obligations additionally involve raw-token causal attention, full-state positive-epsilon normalization, ordinary final softmax, and paid parameter construction. None of these requirements is asserted to follow from the abstract.
+
+## Recent expressivity work uses different resource axes
+
+Moritz Brösamle and Stephan Eckstein, The Expressive Power of Low Precision Softmax Transformers with (Summarized) Chain-of-Thought, ICML 2026: https://proceedings.mlr.press/v306/brosamle26a.html . The primary abstract explicitly considers rounded activations and attention weights, logarithmically growing depth and width, and Turing-machine simulation using CoT or summarized CoT. The current v10 task instead uses a fixed raw-history prediction horizon plus one synthetic terminal, exact-real execution, full-state norm bounds and statistical terminal TV risk. This paper is relevant to distinguishing coefficient description from actual rounded execution. Its abstract does not certify the present PreLN compiler or Markov prediction resource bound. No statement about its precise normalization implementation is made without full-text verification.
+
+Anej Svete, William Merrill, Ryan Cotterell and Ashish Sabharwal, Revisiting Padded Transformer Expressivity: Which Architectural Choices Matter and Which Don&#x27;t, ICML 2026: https://proceedings.mlr.press/v306/svete26a.html . The primary abstract studies polynomially padded, uniform circuit-class characterizations, precision and looping, with both softmax and average hard attention. Polynomial filler rows and circuit expressivity differ from the frozen N raw rows plus one terminal and source-average prediction risk here. Its width-robust expressivity conclusions must not be substituted for a width-free finite-sample statistical lower bound. Exact theorem hypotheses were not independently audited this round.
+
+## Closest local dependencies already reviewed
+
+- `../local_orbit_task_folding_20261106/PRIOR_COMPARISON.v1.md`: Chen–Dobriban–Lee 2020 explicitly establishes classical invariant convex-risk/group averaging. The new round does not rebrand this as a new theorem.
+- `../ordered_causal_memory_20261106/TWO_READ_PRELN_COMPILATION.candidate.v4.md`: complete preparation before small-amplitude precision, explicit uniform-head normalization-error recurrence, fixed positive-epsilon and final ordinary-softmax output obligations.
+- `../nonlinear_statistical_frontier_20261106/IID_QUADRATIC_NUISANCE_HARDNESS.candidate.v3.md`: bounded prefix-count/product/square/parity primitive construction and the distinction between useful vector-valued invocations and scalar head dimensions.
+- `../nonlinear_statistical_frontier_20261106/WIDE_PRELN_STATISTICAL_WITNESS.candidate.v2.md`: already provides a growing-width actual PreLN full-history estimator. Its statistical rate is inherited, and its width/state/storage costs cannot be discarded when used against a suffix-only route.
+- `../local_orbit_task_folding_20261106/CONSISTENT_TYPE_ESTIMATOR_SUFFIX_OBSTRUCTION.candidate.v1.md`: logical consistent-type suffix obstruction. The current bridge must use the exact already-compiled wide add-one estimator rather than silently equating it with this different empirical estimator.
+
+The potentially useful increment is the checked composition between explicit orbit algebra, a paid scalar evaluator, and the actual normalization/resource contract, together with a clearly scoped physical obstruction to suffix-only replacement. Neither a new universal approximation theorem, new estimation rate, nor a general T1/T2 result is claimed. No upload, purchase or model execution was performed for this comparison.
+</pre></details><details><summary>精确版本独立审阅 · INDEPENDENT_PHYSICAL_TYPE_SUFFIX_AUDIT.v1.md</summary><p class="hash">SHA-256 067cd247228171125cdecfd1944b9f9095f290dc768ab0b876fb43ccefe023ea</p><pre># Audit: physical type approximation versus suffix-only replacement
+
+6 November 2026 UTC. Symbolic composition and scope review; no model execution.
+
+## Exact bindings and verdict
+
+PASS for `PHYSICAL_TYPE_SUFFIX_OBSTRUCTION.candidate.v2.md`, SHA-256 `ca075a815144da5a8911703687ec696e8151d8143af78ecc12c084489025fb80`, as a composition with its explicitly inherited physical theorem.
+
+Read the full `WIDE_PRELN_STATISTICAL_WITNESS.candidate.v2.md` (SHA-256 `28d7230b9b6b131daa05f6d5a58b3a26d562ca54845e09db13ff9785f5d39e0e`) and its exact-file `INDEPENDENT_WIDE_PRELN_AUDIT.v1.md` (SHA-256 `e1d63353f82226ff15de75372c4e428a41780411e5d7b6a62ee5d439c4390d7b`). Their historical dependencies remain dependencies, not independently re-proved by this review.
+
+The accepted conclusion is an actual growing-width physical family with all-history approximate endpoint-preserving type invariance and uniform full-history risk, not exactly physically invariant or fixed-width. It rules out uniform sourcewise domination by sublinear raw-suffix observation rules, not arbitrary short-message or interactive task simulation.
+
+## Reference, risk and constants
+
+The reference is precisely the wide theorem&#x27;s add-one transition estimator followed by lower flooring and binary renormalization. It is not the different clipped empirical estimator from the preceding symbolic round. At terminal inputs the add-one output is a probability vector; upper clipping used by the compiler at other rows therefore does not change this reference.
+
+The wide source gives interpolation-logit infinity error at most N^(-1/2)/128 and physical final-logit error at most N^(-1/2)/128. Binary softmax TV is at most the logit infinity error, so their sum gives epsilon_N=N^(-1/2)/64 uniformly over all histories. The binary flooring contraction is valid because the true probability coordinates exceed the chosen floor. Combining the actual-terminal add-one risk with this uniform approximation proves the displayed U_N. In particular 13 sqrt(32N/(N−1))+1/64&lt;100 for N≥4, so U_N≤100/sqrt(N). Dependence between empirical counts and final context is already covered by the inherited statistical bound, not replaced by an independent query.
+
+Equal eight triple counts and equal terminal context imply equal reference output. Two applications of the uniform epsilon bound give the diameter 2epsilon_N for any pair in such a class, independently of orbit path length. This does not establish exact physical invariance or intermediate-state invariance.
+
+## Observation lower bounds
+
+For two source laws with suffix masses f_-,f_+ and target separation Delta, pointwise triangle inequality weighted by their minimum mass gives mixture risk at least (Delta/2) times their overlap. The same bound holds after integrating independent predictor randomness. Under fixed IID parameters c and 1−c, the two constant suffixes contribute 2c^b overlap for b≥1, establishing the logarithmic-suffix result with its stated quantifiers.
+
+For the source-varying result, delta_b≤1/8 implies theta_-(1−theta_-)≥15/64. The Bernoulli KL bound is therefore at most (256/15)delta_b², and the stated looser 32delta_b² is valid. Product KL is at most 1/2, Pinsker gives TV≤1/2, overlap is at least 1/2, and mixture risk is at least delta_b/2. The inequality delta_b/2≥k_c/sqrt(b) holds for all integers b≥1. Combining with U_N=O(N^(-1/2)) makes the excess positive eventually for every b_N=o(N), including bounded sequences. No fixed-source witness for the entire varying sequence is inferred; the alternatives may vary with b.
+
+No desired depth lower bound is used in either observation argument. Unlimited suffix-local computation and arbitrary output distributions are permitted, so this is actual task risk rather than output reconstruction.
+
+## Resource fidelity and revision
+
+The width, depth, invocation counts, value-width caution, full per-row norms, dense and sparse storage/work, and exact-real coefficient-description ledger match the cited wide theorem. Explicit LN gain storage is charged. Bounded gain operator does not mean bounded Euclidean gain-parameter vector when width grows. All-row storage and total work are not confused with per-token norms.
+
+Version 1 (SHA-256 `67bf9e61193db15e3d6915c2165fe012ee3f33c6fa1b289990a249266faa646d`) had an out-of-domain b=N aside about the separate ordered-suffix theorem. Version 2 corrects it to admissible b=Theta(N), pays linear depth, and no longer infers full-history type invariance from that suffix route. The main wide-family proof is unchanged. Only version 2 is accepted here.
+
+## Companion scope review
+
+`PRIOR_AND_MODEL_COMPARISON.v1.md`, SHA-256 `54979f0dac88c2493bef90b48c677f31d625febace2fce641c221b639b1d6d41`, correctly labels its external checks as primary-abstract comparisons rather than full-theorem audits. Its comparisons distinguish smooth approximation, low-precision/CoT expressivity, padded circuit characterizations, and the frozen exact-real statistical task. No external novelty or theorem-level validation is certified by this review; the cited external abstracts were not independently re-fetched here.
+
+`PROOF_OBLIGATIONS_AND_FAILED_ROUTES.v1.md`, SHA-256 `299f0371937b091e170d9773212d0bd1a076b0264bd67648668f00075404455d`, correctly retains obligations for probability-to-logit conversion, offline interpolation costs, full-state normalization, reset-zone multiplicities, value dimensions, width purchase, and approximate invariance. It neither turns an unfinished compiler into an accepted theorem nor claims a general frontier.
+</pre></details><details><summary>精确版本独立审阅 · INDEPENDENT_SUFFIX_BARYCENTER_AUDIT.v1.md</summary><p class="hash">SHA-256 9b8277d0df93cc732a267495b67bc48696f4bd0316946b0df5fa9ec2c6ffbd7e</p><pre># Audit: ordinary-softmax physical suffix barycenter
+
+6 November 2026 UTC.
+
+PASS for `SUFFIX_ORBIT_BARYCENTER_PRELN.candidate.v1.md`, SHA-256 `ed69fb1d16fc7f6fb3de55995a1f6ab3701deca92e18a0f6fb8e863e8bf7509f`, under its explicit inherited suffix and norm-padding/restoration dependencies and exact-real, sufficiently large fixed-envelope contract.
+
+## Scalar spline and bounded states
+
+For bounded total amplitude R, all arguments lie in [−B−R,B+R]. Uniform derivative bounds M&#x27;≤1/4 and |M&#x27;&#x27;|≤1/4 follow termwise. The common output floor is independent of the number of phases. Grid spacing h≤sqrt(delta) gives interpolation error at most delta/32.
+
+Each secant slope is an interval average of M&#x27;. Adjacent intervals differ by a shift h; their averages differ by at most h/4. Thus the absolute slope-jump sum is at most B/2. Together with |beta|≤1+B/4 and |s_0|≤1/4, this bounds every serial accumulator by 1+B/2+B² before rounding. This total-variation argument is sufficient for a full-state bound independent of grid size; bounding individual coefficients alone would not suffice.
+
+Independent nearest-dyadic coefficient errors contribute at most Delta[1+B+2B(J−1)]/2, below delta/16 under the stated mesh. Rounded coefficient total error is also bounded uniformly, preserving partial-state and primitive bounds. Dyadic knots have logarithmic descriptions. Serial hinges use fixed scratch and pay O(J) stages, rather than hiding a J-wide matrix or uncharged output layer. Clipping to [a,1−a] is a paid projection and cannot increase error to the true M.
+
+## Log conversion and error budget
+
+The two log splines use coordinates already in [a,1−a]. Their interpolation-grid and rounding bounds match the inspected INTERIOR_SOFTMAX v2 serial log construction. The resulting normalized exponential of the exact log probabilities equals the desired probability vector. For two logits, an infinity perturbation lambda gives probability error at most tanh(lambda/2); the coarser lambda bound used in the budget is valid. Adding delta, lambda and physical final-logit nu, each at most epsilon/4, proves the claimed uniform error below epsilon. A mixture of softmaxes is never equated with softmax of averaged logits.
+
+## Physical program and useful read
+
+The sole read remains the inherited scalar packed-suffix invocation. All appended computation is an explicit bounded serial affine/ReLU program. The reference includes all copied logits, paid padding/root stages and cleared scratch before its length and amplitude exponent are fixed. The whole-vector tube and normalized-read defect include all feature coordinates. The inherited restoration and final gain-two LN plus bounded affine vocabulary head then yield the displayed final-logit bound. Actual intermediate decoded symbols and cleared registers need not be exact.
+
+The gain-two interior conversion is exact after halving its consuming matrices. The specified fixed envelope may depend on c and R but not N,b,r or epsilon. This is a model-contained extension of the particular inherited suffix machine, not an arbitrary-attention compiler. Historical count/readout and padding modules remain explicit dependencies.
+
+Strict positivity of M&#x27; on the bounded interval transfers the inherited head-ablation d-gap to a positive folded-output gap. The candidate correctly requires sufficiently small epsilon and a common original/ablated physical schedule before calling the one nonzero invocation useful. No necessity lower is claimed.
+
+## Resource and construction quantifiers
+
+Online direct-spline depth O_(c,R)(log(N+1)+b+epsilon^(−1/2)) is justified, including final amplitude restoration. Its independence of r is a nonuniform network-existence result: the scalar coefficients encode the amplitude-specific barycenter. Offline table definition costs 2^r sigmoid evaluations per node, and the candidate charges sign sums, summations, amplitude descriptions and their precision. It provides no finite transcendental-evaluation or parameter-generation algorithm.
+
+For approximate node computations, forming slopes divides by h and summing hinge errors can cost another J. The stated sufficient node tolerance O(delta h/J) therefore controls this amplification. Arbitrary real amplitudes require an oracle or an explicit approximation promise; summed amplitude error e changes M by at most e/4. Neither such data nor the true source parameter is free runtime input.
+
+The branchwise alternative has exponential online depth, and its averaging errors do not accumulate by 2^r because branch weights sum to one. Runtime storage can remain fixed by unrolling the coefficient stream. The network depth, coefficient bits, dense row work and real-state storage are separately charged. No finite-word stability follows from their finite descriptions.
+
+## Sourcewise composition
+
+The orbit argument supplies the expected excess sum_j rho_j gamma^(m_j)/4. Uniform hard-side approximation zeta_h and folded-side approximation epsilon add by triangle inequality, giving exactly the displayed sourcewise risk comparison. For the separately certified two-reset physical family, its delta may serve as zeta_h because the reference and d agree. For arbitrary growing r, the hard-side physical realization remains a separate obligation. Exceptional probabilities degrade as zones shorten; bounded total amplitude alone does not restore an r-independent exponential-in-N failure rate.
+
+No new statistical rate, universal task-folding theorem, interactive lower, trained realization, or finite-precision execution is certified. No scientific computation, rendering, or upload was performed.
+</pre></details><details><summary>精确版本独立审阅 · INDEPENDENT_TWO_RESET_PHASE_AUDIT.v1.md</summary><p class="hash">SHA-256 9d6a33a16742f78ff6cd45990adfd502febc6c08406f75d5afb665dca867dcae</p><pre># Audit: two reset-zone physical PreLN phases
+
+6 November 2026 UTC.
+
+PASS for `TWO_RESET_PHASE_PRELN.candidate.v1.md`, SHA-256 `d7b96c268272ffc3405550241a5ff5c89fdf45e7e98a78d511c729c728412b76`, as an explicit new reference program composed with its stated inherited suffix and padding routines under the sufficiently large fixed-envelope contract. No numerical width cap, arbitrary prescribed small norm budget, finite-word reliability, or statistical optimality is certified.
+
+## Reset identities and local stages
+
+The paid position selector clips the signed grid difference before repeated doubling. Negative differences remain zero and the smallest positive grid difference reaches one after p doublings. This exactly realizes A_h without an unbounded slope-P matrix. The differences defining u_j and w_j are the stated Boolean masks on raw positions. The latter includes the indispensable extra row e_j+1.
+
+Masked prefix sums count only bits in their own zones. At a shared boundary, the first prefix remains frozen while the second starts, so no cross-zone pair is introduced. For a pair l&lt;k in one zone, the summation over i=s_j+1,...,e_j+1 counts it e_j−k+2 times. Since e_j is even, this multiplicity has parity k, giving precisely the reset quadratic phase. Without the endpoint extension it would have the opposite parity.
+
+The product/square/tent construction matches Sections 3.1–3.2 of the inspected IID quadratic v3 source. Inputs i/P and r are in [0,1]; product clipping keeps the square input in that interval. The second-read values are clipped to [0,1], and exact Boolean masking cannot enlarge error against the masked target. The terminal average and multiplication by T/P preserve the less-than-4nu error. U_j/P^3 lies in [0,1/2]. The terminal gate clears other rows before folding, and 3p folds amplify by at most P^3. The plateau recovers the exact logical parity on every Boolean history. No physical trajectory is assumed to retain those exact lattice values.
+
+## Invocation and state accounting
+
+The first invocation has three values: two masked prefix averages and the unchanged packed-suffix value. The second has two values, one per zone. Fresh destinations, protected raw shadows, retained masks, and serially reused scratch are explicit. This is two vector-valued invocations with dimensions (3,2), not two scalar reads. The stated five-scalar-read alternative is a different schedule.
+
+The first ablation zeros both prefix and suffix averages. The exact identity M(a,0)=0 keeps quadratic values zero, and the inherited zero-code suffix path stays legal. The second ablation zeros phase inputs only. Both are included in the common reference envelope and tube before amplitude selection.
+
+## Physical compilation and output
+
+Reviewed the cited square/product/tent source, the fixed-floor ordinary-softmax source, and the relevant padding/restoration formulas in STANDARD_PRELN v2. The new candidate applies those routines to one combined paired program rather than concatenating separately normalized networks.
+
+Logit copies, padding arithmetic, square-root approximation and all scratch clears precede m_pre and eta selection. The two uniform-read defects include the source normalization factor s(z_i) on the entire vector. Fixed value dimensions change only constants. The max-row full-vector recurrence propagates these and local FFN errors, so approximate clears and off-grid selectors are not silently treated as exact.
+
+The restored norm deviation and final ordinary-LN/affine/softmax error formula match the inherited output routine. The displayed dyadic tolerance allocation bounds the error by delta; selecting the smallest adequate amplitude exponent gives the stated depth and coefficient orders. Gain-two reparameterization halves the appropriate consuming matrix and preserves trajectories. Full per-token states and operator/bias norms have an existential fixed c-dependent envelope; no matrix-by-matrix numerical envelope is claimed.
+
+The two usefulness witnesses are valid for the specified positive unequal amplitudes and the additional small-delta condition. A zone-one parity-one history exists with zone two zero, and second-read ablation changes its nuisance by 2rho_1. The first-read ablation has the inherited baseline gap on an all-symbol-2 suffix; the maximum nuisance loss is bounded by 2(rho_1+rho_2). Common physical approximation preserves these gaps. If general amplitudes include zeros, or delta is not sufficiently small, an unqualified two-useful-invocation claim should not be inferred; the candidate supplies the needed nontrivial family and smallness condition.
+
+## Task comparison and limits
+
+The exact finite-group result applies to this same reset-phase reference and same d. Triangle inequality adds the hard-side delta and independently compiled baseline error. The four-probability barycenter is not identified with softmax of mean logits. This file does not compile that barycenter; the separate folded-side candidate does so. No sourcewise multiplicative risk ratio, output-simulation lower, or generic frontier follows.
+
+The fixed-width result is conditional on the explicit inherited finite-envelope suffix/padding modules, not on a desired resource lower bound. Those historical modules are not re-proved in full here. Administrative reads and hashes are not scientific execution; no experiment, training, rendering or upload was performed.
+</pre></details><details><summary>保留旧版：后缀定理定义域措辞 · PHYSICAL_TYPE_SUFFIX_OBSTRUCTION.candidate.v1.md</summary><p class="hash">SHA-256 67bf9e61193db15e3d6915c2165fe012ee3f33c6fa1b289990a249266faa646d</p><pre># Physical growing-width type-invariant approximation forbids suffix-only domination
+
+6 November 2026 UTC. Private analytical candidate v1. No upload, experiment, parameter generation, numerical model execution, training, or finite-arithmetic certificate. This is a theorem composition and a scope clarification, not a new estimator or statistical rate. Independent review is required before treating this exact file as accepted.
+
+## 1. Architectural and statistical scope
+
+Fix c in (0,1/2). Let P_c be all homogeneous binary order-two kernels with every transition probability in [c,1-c], with arbitrary initial-pair law. The prediction target is the kernel at the actual final context (X_(N-1),X_N); risk is expected total variation of the reported binary distribution from that target.
+
+Use EXACTLY the network family Q_N of the reviewed WIDE_PRELN_STATISTICAL_WITNESS.candidate.v2.md, not a purported compilation of the different clipped-MLE predictor in CONSISTENT_TYPE_ESTIMATOR_SUFFIX_OBSTRUCTION.candidate.v1.md. Q_N is source-independent and length-dependent. It receives N raw symbols, public positions and one synthetic terminal, not supplied counts, pairs, suffix statistics or source parameters.
+
+The family obeys the same positive-epsilon ordered-causal PreLN/ordinary-output/full-norm conventions as the reviewed two-read ordered-suffix model: self-inclusive causal softmax attention; actual complete PreLN residual blocks; epsilon one, gain two, shift zero at every LN; bounded affine/ReLU FFNs; final actual LN, bounded affine vocabulary head and ordinary vocabulary softmax. It buys d=O_c(N) width, rather than remaining inside the ordered-suffix theorem&#x27;s fixed-width subclass. A sufficiently large c-dependent envelope is fixed once for every N; it is not an unchecked prescribed numerical norm budget. Gain is bounded as an operator, not as the Euclidean norm of its d stored diagonal entries.
+
+All statements below use exact-real execution semantics. Approximate invariance is an all-history output assertion, not exact invariance of physical row states or attention values.
+
+## 2. The precise reference estimator already compiled
+
+For each context v and j in {0,1}, let
+
+ C_(v,j)(x) = sum_(i=3)^N 1{(x_(i-2),x_(i-1),x_i)=(v,j)}.
+
+For v=(x_(N-1),x_N), set J=C_(v,0)+C_(v,1), and
+
+ B_j(x)=(C_(v,j)+1)/(J+2).
+
+Choose the fixed dyadic a used in the wide theorem, with 0&lt;a&lt;=min(c,1/4). Define the mathematical reference
+
+ F_N(x)_j=max(B_j(x),a) / [max(B_0(x),a)+max(B_1(x),a)].
+
+This is the actual wide theorem&#x27;s ideal floored reference, not clipped MLE and not the intermediate rounded piecewise-linear-log output. Sections 3–5 of that theorem prove, uniformly over ALL binary histories,
+
+ TV(Q_N(x),F_N(x)) &lt;= epsilon_N := N^(-1/2)/64.          (1)
+
+Indeed its log interpolation contributes at most N^(-1/2)/128 and its physical final-logit error contributes at most N^(-1/2)/128. The ordinary binary-softmax TV Lipschitz bound gives (1). No expectation, typical-history qualification, or physical exact decoding is inserted here.
+
+The inherited full-history add-one theorem and binary flooring contraction give
+
+ sup_(P,mu in P_c) R_(P,mu)(Q_N)
+ &lt;= U_N := min{1, 13 sqrt(32/(N-1)) + epsilon_N}
+ = O_c(N^(-1/2)).                                      (2)
+
+This risk controls the actual terminal context, including its dependence on the observed counts. The constant displayed in (2) is conservative and inherited. For N&gt;=4, U_N&lt;=K/sqrt(N), for example K=100 suffices. Constants in architecture and the fixed envelope still depend on c.
+
+## 3. All-history approximate type invariance
+
+Write x~y if their eight triple counts agree and their final ordered pair agrees. Then B(x)=B(y), hence F_N(x)=F_N(y) exactly. By (1),
+
+ sup_(x~y) TV(Q_N(x),Q_N(y)) &lt;= 2 epsilon_N
+                                        = N^(-1/2)/32. (3)
+
+Thus Q_N is an actual physical network with vanishing diameter on every such type class. This includes every orbit of the reviewed endpoint-preserving local type moves. The bound is for ANY two members of an orbit and does not accumulate with the number of moves, because each output is compared to the same exact F_N.
+
+Triple counts alone without terminal-context preservation are insufficient for this inference. No claim is made that all universal source-preserving maps necessarily preserve that terminal context. Nor does this approximation create exact invariance of the physical network.
+
+## 4. Fixed-source logarithmic-suffix obstruction
+
+A suffix-b predictor means any source-independent measurable rule S_(N,b)(X_(N-b+1):N,U) reporting a probability vector, where U is independent private randomness. It may depend on public c,N,b, use unlimited computation, and use the final context when b&gt;=2, but receives no earlier data, source parameter, or correlated advice. A program that looks at the full history and merely rewrites it into a short string is NOT covered by this information restriction.
+
+Take the two fixed sources P_-=IID Bernoulli(c) and P_+=IID Bernoulli(1-c), including their IID initial laws. Both belong to P_c. Let Delta=1-2c. For the two suffix laws with masses f_-,f_+, the pointwise triangle inequality gives
+
+ [R_-(S)+R_+(S)]/2
+ &gt;= (Delta/2) sum_z min(f_-(z),f_+(z))
+ = Delta e_b,                                         (4)
+
+where e_b is the equal-prior optimal binary testing error. Randomization does not help: apply the inequality for each U, then integrate. The all-zero and all-one suffixes together contribute 2c^b to the overlap, so e_b&gt;=c^b. This avoids any tie-handling assumption in majority testing.
+
+For every integer 1&lt;=b&lt;=log N/[4 log(1/c)],
+
+ [R_-(S)+R_+(S)]/2 &gt;= Delta N^(-1/4).                  (5)
+
+Combining (2) and (5), some one of these same two sources satisfies
+
+ R_sigma(S)-R_sigma(Q_N) &gt;= Delta N^(-1/4)-U_N.         (6)
+
+The right side is positive for all sufficiently large N. Therefore no suffix-b predictor sourcewise dominates Q_N, even on this fixed two-source subclass. The assertion quantifies over every suffix predictor, not merely another network with comparable resources. Arbitrary randomized output replacements are included.
+
+If an additive domination slack tau_N is permitted, (6) still rules it out whenever tau_N&lt;Delta N^(-1/4)-U_N. The lower is on task risk, not on reproducing Q_N&#x27;s outputs.
+
+## 5. Stronger classical source-varying corollary: every sublinear suffix
+
+The restriction b=O(log N) above comes from insisting on the SAME separated pair c and 1-c. It is not a fundamental limit of suffix information. Here is a separate, elementary minimax calculation; it adds no new statistical-rate claim.
+
+For 1&lt;=b&lt;=N put
+
+ delta_b=min{(1/2-c)/2, 1/(8sqrt(b))},
+ theta_-=1/2-delta_b, theta_+=1/2+delta_b.
+
+These IID kernels lie in P_c and delta_b&lt;=1/8. The Bernoulli KL upper bound KL(p||q)&lt;=(p-q)^2/[q(1-q)] gives
+
+ KL(Ber(theta_+) || Ber(theta_-)) &lt;=32 delta_b^2.
+
+Consequently the product suffix laws satisfy KL&lt;=32b delta_b^2&lt;=1/2. Pinsker gives TV&lt;=1/2 and hence overlap &gt;=1/2. The same integrated triangle inequality, now with target separation 2delta_b, yields
+
+ [R_(theta_-)(S)+R_(theta_+)(S)]/2 &gt;=delta_b/2
+ &gt;= k_c/sqrt(b),
+ k_c := (1/2) min{(1/2-c)/2,1/8}&gt;0.                   (7)
+
+Thus, for every suffix rule, one admissible IID source satisfies
+
+ R_theta(S)-R_theta(Q_N) &gt;= k_c/sqrt(b)-U_N.            (8)
+
+If b=b_N=o(N), then sqrt(b)U_N -&gt;0, so eventually this is strictly positive, and in fact the excess is at least k_c/(2sqrt(b)). This applies to any integer sequence b_N&gt;=1. For b=0 there is already a constant two-source lower with no observations. For b sufficiently large that delta_b=1/(8sqrt(b)), the explicit lower in (7) improves to 1/(16sqrt(b)).
+
+Unlike Section 4, the two witness parameters here can depend on b. The source-selection quantifier is minimax: for each N,b and predictor there is an offending source. It does NOT exhibit a single fixed IID source that defeats every member of an arbitrary b_N-growing predictor sequence. It DOES rule out uniform sourcewise domination over P_c by any sublinear-suffix sequence.
+
+This is a direct observation-information lower, not circular use of an old architecture depth-risk theorem. Combining a full-history risk with a suffix sample lower establishes the restriction on suffix replacements, but cannot establish an arbitrary-message communication lower or an optimal architectural resource frontier.
+
+## 6. Full resource ledger imported without alteration
+
+For fixed c, the actual Q_N uses the following resources.
+
+- Complete model width d=O_c(N), with inert coordinates charged; FFN intermediate width O_c(N).
+- Actual paid complete-block depth D=O_c(log N), including all positional selection, predecessor extraction, count decoding, parallel logarithm, scratch clearing and amplitude restoration.
+- One head per block, exactly TWO pathwise useful uniform-attention invocations. The first has a wide value bank; the second aggregates triple histograms. Zero dummy-attention blocks remain part of D. Two useful reads are not a necessity lower.
+- Uniformly bounded complete per-token state/value norms, full matrix operator norms, full bias-vector norms and primitive Lipschitz constants. Full all-token Frobenius norm and total distributed memory are NOT bounded independently of N.
+- O_c(log N) bits per coefficient description, exact rationals/dyadics as specified by the wide theorem. An optional all-dyadic approximation exists with the same orders, but is not needed here. The displayed constant in (1) refers to the theorem&#x27;s stated parameter choice, not an arbitrary additional rounding.
+- Conservative dense untied parameter storage O(N^2 log N) coefficients and O_c(N^2 log^2 N) description bits. Explicit LN gain/shift storage O(N log N) is included and dominated.
+- Rolling all-row real activation storage O(N^2); materialized attention scores O(N^2) extra slots. These are real-number slots, not a finite-bit memory theorem.
+- Dense local projection/FFN work O(N^3 log N). Two useful full-width attention products cost O(N^3). Evaluating every dummy attention slot densely instead yields O(N^3 log N) attention work.
+- An explicitly sparse representation stores O(N log N) nonzero coefficients, or O_c(N log^2 N) bits including O(log N)-bit indices and coefficients. Sparse local work is O(N^2 log N). Naive wide attention remains O(N^3); exploiting the exactly uniform prefix weights permits O(N^2) prefix-sum arithmetic for the useful reads. These are separate execution conventions.
+- Public-position descriptions cost O(N log N) bits. An explicitly materialized full causal mask costs O(N^2) bits.
+- Neither coefficient generation nor the LN square roots/ordinary softmax evaluation has an executed finite-word stability certificate. No training or learned-parameter assertion is made.
+
+The lower comparator in Sections 4–5 has unlimited computational resources after receiving the suffix; its limitation is access to samples. The resource ledger prevents presenting this growing-width witness as cheap under fixed-width, scalar-value, total-work, parameter-bit, or distributed-memory budgets.
+
+## 7. Failed shortcuts and unresolved gap
+
+1. Compiling the clipped empirical MLE from the symbolic consistent-obstruction note by citing the wide add-one compiler would substitute a different estimator without proof. This file uses the exact add-one/floor reference already compiled. The two estimators need not agree.
+2. Exact type invariance of the add-one reference does not imply exact physical invariance after nonlinear PreLN approximation. Only the uniform O(N^(-1/2)) orbit diameter (3) is proved.
+3. The network is in the same broad architectural/norm contract, but NOT the same fixed-width resource class. Calling this a fixed-width counterexample would be false.
+4. The fixed-width ordered-suffix network with b=N can provide a separately paid O(N)-depth route, but that is not the logarithmic-depth wide witness and is not used to hide the present width purchase.
+5. A fixed-separated-source lower decays exponentially with b; it cannot alone prove all b=o(N). Section 5 explicitly changes to local alternatives and labels its minimax quantifiers.
+6. No suffix-only lower forbids an arbitrary short message summarizing the whole history. Such a message can contain empirical counts or another useful statistic, and the acquisition/communication/precision costs require their own analysis.
+7. A canonical orbit representative computed from all of x need not be suffix-computable. Thus (3) does not settle a general finite-group task-folding theorem; it rules out the additional conclusion that a risk-preserving replacement can discard all but a sublinear raw suffix.
+8. The O(N^(-1/2)) rate and classical two-point inequalities are inherited standard ingredients. The useful closure here is an explicit physically normalized, all-history approximately invariant, resource-honest counterexample to an overbroad suffix-domination assertion.
+9. No fixed-width, O(log N)-depth analogue is proved. No lower for arbitrary nonlinear evolving-memory networks or arbitrary interactive protocols is proved. These gaps remain open.
+
+## 8. Exact source bindings
+
+- ../nonlinear_statistical_frontier_20261106/WIDE_PRELN_STATISTICAL_WITNESS.candidate.v2.md; SHA256 28d7230b9b6b131daa05f6d5a58b3a26d562ca54845e09db13ff9785f5d39e0e. Core physical family, uniform reference approximation, risk and resources.
+- ../nonlinear_statistical_frontier_20261106/INDEPENDENT_WIDE_PRELN_AUDIT.v1.md; SHA256 e1d63353f82226ff15de75372c4e428a41780411e5d7b6a62ee5d439c4390d7b. Exact-file review accepting the growing-width physical construction under its stated assumptions.
+- ../local_orbit_task_folding_20261106/CONSISTENT_TYPE_ESTIMATOR_SUFFIX_OBSTRUCTION.candidate.v1.md; SHA256 83b42f71263b46a22e462b808bde2344dbd68c3938e970847074175653e857d9. Symbolic clipped-MLE precedent and fixed-source suffix obstruction; NOT the estimator being compiled here.
+- ../ordered_causal_memory_20261106/TWO_READ_PRELN_COMPILATION.candidate.v4.md; SHA256 a7bde2d8f93b043f1fa8764add8098b4f3d8030963e106cf2e95de069b1e2cb2. Reviewed fixed-width architectural comparison; not a width-equivalence claim.
+
+Historical dependencies of the wide theorem remain dependencies; this note is not an independent reproof or a closed reproduction bundle.
+</pre></details></section><footer><p>中文报告 v1 · 2026 年 11 月 6 日 UTC。本增量无数学枚举、模型执行或训练；未完成视觉渲染验收。</p></footer></body></html>
