@@ -1,0 +1,440 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>执行误差合同的逐定理先行审计</title><style>body{font-family:system-ui,-apple-system,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;color:#171717;max-width:980px;margin:auto;padding:40px 24px;line-height:1.8}h1{font-size:2rem;line-height:1.4}h2{font-size:1.5rem;margin-top:2.6rem}h3{font-size:1.15rem;margin-top:1.8rem}nav{margin:24px 0}a{color:#145a88}.eq{font-family:Cambria,Georgia,serif;padding:12px 0;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d9d9d9;padding:12px;text-align:left;vertical-align:top}th{background:#e8edf1}tr:nth-child(even){background:#f8f9fa}details{margin:22px 0}summary{cursor:pointer;font-weight:600;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.65 ui-monospace,monospace}.hash{overflow-wrap:anywhere;font-size:.85rem}footer{color:#555;margin-top:40px}@media(max-width:600px){body{padding:20px 16px}h1{font-size:1.6rem}td,th{padding:8px}}@media print{body{max-width:none;padding:0}nav{display:none}h2{break-after:avoid}tr{break-inside:avoid}a{color:inherit}}</style></head><body><header><h1>执行误差合同的逐定理先行审计</h1><p>v10 研究审计 · 2026 年 11 月 6 日 UTC</p><p><strong>结论：</strong>已查原文没有直接给出完全相同的“固定宽度、有界范数、正 ε PreLN、逐子层自适应误差、Markov 终端 TV”组合。但关键机制已有广泛先行工作，当前联合界更适合定位为上下文访问鲁棒性的短技术组合，不能由“未找到同句定理”推断创新。</p></header>
+<section id="contract"><h2>一 比较对象不能再含糊</h2><p>候选 p 是允许误差半径 2^(−p) 的指数。每个注意力残差与 FFN 残差后，每行都可被一个输入相关、自适应的向量扰动，欧氏范数不超过该半径；没有独立、无偏或随机噪声假设。输入、参数、子层内部运算和最终输出头均理想精确。</p><p>固定 c 与小的目标风险 r，未知来源为内点齐次二阶过程，允许任意初始对，损失是同一历史实际末端上下文上的期望 TV，再对来源和误差策略取最坏情况。架构为固定宽度、完整有界范数、正 ε 全特征 PreLN、全前缀因果 softmax、合成终端。p 不是已证明的存储位宽、系数位宽或浮点尾数位数。</p><p>逐项核对扰动位置、量词、范数、概率、初始化、LN、softmax、宽度／深度和精度定义。下表是摘要；附录保留精确版本、页码、定义与定理定位。</p></section>
+<section id="precision"><h2>二 有限精度：全文改变了哪些判断</h2><table><thead><tr><th>原始来源与定位</th><th>实际合同</th><th>覆盖判断</th></tr></thead><tbody><tr><td><a href="https://arxiv.org/pdf/2210.02671v7">Merrill–Sabharwal v7</a>，§2.1、Prop.1、Thm.2、App.C/D</td><td>尾数与指数共同占 p 位；最近浮点舍入。均匀注意力的 Prop.1 下溢门槛是 log log N；O(log N) 是所研究的逻辑精度类。显示的 LN 公式没有固定正 ε。</td><td><strong>纠正：</strong>不能据其 Prop.1 声称 log N 总浮点位数必要。其精度与候选绝对误差半径不同，逻辑表达定理也不是 Markov 风险联合界。</td></tr><tr><td><a href="https://arxiv.org/pdf/2602.02707v1">Every Bit Counts</a>，Thm.2.4、App.A/B/C</td><td>单层单头、标量值、特制 equality 编码；固定操作顺序下逐运算舍入。定点 Thm.2.4 给 p 与 p−1 阈值。</td><td>是重要精度—表达先行工作，不覆盖任意深度的残差扰动 TV 合同。浮点附录 C.2、C.7 的陈述与证明存在核实过的不一致，不能无保留引用其印刷版“一比特”结论。</td></tr><tr><td><a href="https://proceedings.mlr.press/v306/brosamle26a.html">Brösamle–Eckstein</a>，§2.2、D.4–D.5、D.15–D.18</td><td>明确省略 LN/RMSNorm；最近舍入激活及注意力权重；log 增长宽度／深度与 Q/K 尺度；argmax、CoT 任务。D.16 已有逐层误差递推，D.17–18 还有纠错去噪。</td><td>通用稳定性上界并非新机制。其缩放、范围、归一化和任务合同无法直接替换成候选，但也不能将其视作与鲁棒性无关。</td></tr></tbody></table></section>
+<section id="robustness"><h2>三 敏感度与鲁棒性：区别在哪里</h2><p><a href="https://nlp.stanford.edu/pubs/hahn2020theoretical.pdf">Hahn（2020）</a>的单符号 O(1/N) 影响是核心先行机制。2021 补充证明 §S2 修复了注意力权重变化项；不能只分析 value 差。候选深度下界继承这一机制，不是新深度定理。</p><p><a href="https://aclanthology.org/2022.acl-long.527/">Chiang–Cholak（2022）</a>的 §4 Proposition 2 使用 ε=0 的归一化放大小信号；紧随其后的讨论明确指出正 ε 恢复 Lipschitz 条件与 Hahn 引理。不能把它当成候选 ε=1 合同的反例。</p><p><a href="https://arxiv.org/pdf/1910.04284v5">Wei–Ma 的 all-layer margin</a> 已研究层内激活扰动，附录允许任意范数空间，因而“我们用最大行范数”不是充分区分。关键差别是按前层隐藏范数缩放的扰动和分类／泛化 margin，而非统一绝对残差误差与 Markov TV 精度下界。<a href="https://arxiv.org/pdf/2312.14820v2">Castin 等的注意力光滑性结果</a>同时有欧氏／Frobenius √N 界和与 N 无关的 mean-field 界，不能只引用前者。</p><p>针对这些原文，完整审计逐项记录了对象、范数、层间预算和目标。<a href="https://arxiv.org/pdf/2602.08287">随机相关输入的 noise stability</a> 也不能未经转换变成任意输入相关逐层误差策略。</p></section>
+<section id="markov"><h2>四 Markov／n-gram：不能再当作新问题设置</h2><p><a href="https://arxiv.org/html/2407.17686v1">Rajaraman 等 Thm.5.1</a>、<a href="https://arxiv.org/pdf/2508.07208v2">Ekbote 等 Thm.3</a>与 <a href="https://arxiv.org/html/2607.02800v1">D’Angelo 等 Prop.3.1</a>已涉及同一输入实际末端上下文的 n-gram 表达；常数宽度、归一化、加性平滑和参数精度说明都有先行内容。实验中均匀初始化不限制一个对每条输入路径成立的表达定理。</p><p>仍须区分它们的无限锐化、投影 Q/K 归一化、ReLU 输出或坐标读出，与固定分数包络的真实正 ε PreLN／最终 softmax。仅说“表达不是风险”也不足以确立差异，因为路径级表达可以再组合统计风险定理。</p><p><a href="https://arxiv.org/html/2510.27015v1">Izzo–Nichani–Lee</a> §3.2 舍入的是经最大值平移、带长度缩放的小指数，最终趋向 hardmax；不是候选残差误差。Thm.4.2 的平均结论使用 Dirichlet 混合的 IID token，紧随讨论把 Markov 扩展列为后续问题；Thm.5.2 是限制两层模型的最坏字符串模拟，附录 k-gram 复杂度论证标为 heuristic。</p><p><a href="https://arxiv.org/html/2610.41038v1">Akman 等 Thm.26–27</a>真正包含逐层状态／测度量化与 TV 误差，不能称所有预测先行工作都只是精确实数。其训练后独立测试、窗口式不掩码架构和指定量化器，与共同未知源同历史预测器及对抗子层误差仍不同。</p></section>
+<section id="implication"><h2>五 是否已有覆盖或直接推论</h2><p><strong>可确认的已有机制：</strong>单行注意力影响、归一化的 ε 边界、逐层稳定性、舍入精度—表达限制、同历史 n-gram 表达及量化预测误差。候选匹配上界在已有无噪声编译器成立后，基本就是标准 Lipschitz 扰动传播推论。</p><p><strong>需要额外短论证的部分：</strong>利用因果性，让输入相关误差在每次读取后抵消最后原始符号的 O(1/N) 影响，维持统一终端轨迹；再用两个目标分布的三角不等式转成 TV 风险底。这不是所查定理可直接换参数得到的文字结论，但证明距离也不大。</p><p>尤其下界使用固定复制—翻转核，即使把核提前告诉设计者也成立。难点是读取最后上下文位，而非估计未知转移参数。因此当前结果仍未触及母问题的趋零风险统计资源曲线。</p><p><strong>不成立的迁移：</strong>任意小对抗误差存在，不代表指定四舍五入会产生它。比如 0.49δ 与 0.51δ 最近网格舍入后分别为 0、δ，尽管允许的小误差可以把两者移到同一点。浮点指数还能以 O(log log N) 位表示某些 1/N，而固定小数网格要 O(log N) 位。这些是合同反例，不是措辞差异。</p></section>
+<section id="verdict"><h2>六 研究结论与审计边界</h2><p>建议保留联合鲁棒性界为精确定义的技术命题，不将其升级为原系数精度 T2 主定理或已确认可发表创新。继续推进应以规范执行模型下的非平凡风险依赖界，或超过末端上下文访问的新统计收缩为门槛。</p><p>这是定向原文／定理／构造审计，不是每篇证明的逐行复核，也不是穷尽文献搜索或普遍非包含证明。遇到不同量词不等于证明新颖；原文未提供目标结论也不等于不存在其他直接推论。</p><p>引用、定位、修订及合同反例完整保留；重点结论另经独立核对。未上传、购买、投稿或运行科学实验。文档构建与静态检查不算实验，未进行视觉渲染验收。</p></section>
+<section id="appendix"><h2>七 完整审计与独立审阅原文</h2><p>候选创建时的待审状态以对应精确版本审阅为准。下列原文可离线核对，哈希仅用于版本绑定，不是科学执行或机器证明。</p><details><summary>冻结的逐项比较合同 · FROZEN_COMPARISON_CONTRACT.v1.md</summary><p class="hash">SHA-256 f43a535767380607be4be632554ceea8d34dc46314326b9d923609d41048b068</p><pre># Frozen comparison contract for the literature audit
+
+6 November 2026 UTC. This document freezes the exact candidate being compared; it is not a novelty claim or a new theorem.
+
+Target source: `../mother_theorem_reset_20261106/JOINT_PRECISION_BARRIER_AND_ROBUSTNESS.v3.md`, especially Sections 3 and 5. Its independently accepted result is conditional on the previously reviewed actual-network suffix compiler.
+
+## Statistical object
+
+- One raw binary history X_1,...,X_N from an unknown homogeneous second-order kernel with every transition in [c,1-c], fixed 0&lt;c&lt;1/2; arbitrary initial-pair law. The stationary subclass is included.
+- Target: next-symbol law at the actual random terminal pair of this same history. Loss: TV of a probability vector, averaged over the source history.
+- Fixed target risk 0&lt;r&lt;c(1-2c)/2. No vanishing-risk sharpness theorem. Weights are source-independent, may depend on N,c,r, and are not learned in the theorem.
+- Robust risk: supremum over source AND admissible adaptive input-aware error policies of expected loss. Lower witness is a fixed positive first-order copy/flip chain, which is a member of the order-two class. Under arbitrary initial pairs require N&gt;=3.
+
+## Architecture
+
+- N raw rows plus one source-independent synthetic terminal. No supplied suffix, counts or external raw-history readout.
+- Full self-inclusive causal softmax attention; bounded head count and full value dimensions; positive-epsilon full-feature PreLN, epsilon=1, gain=2, zero shift; ordinary terminal affine-softmax readout.
+- Width and sufficiently large complete state/matrix/bias/Lipschitz envelope fixed after c,r and the upper construction are chosen, before N varies. Not an assertion for arbitrary prescribed tiny norm budgets.
+- Depth counts actual paid blocks. No polynomial padding, CoT tokens, sparse free suffix mask or discontinuous decoder.
+
+## Error/precision contract
+
+- Additive Euclidean perturbation of norm at most u=2^(-p) in each row after EACH attention residual sublayer and EACH FFN residual sublayer.
+- Error can be adaptive, correlated across layers/rows, and input-aware. No zero-mean, independence, noise distribution or unbiasedness assumption.
+- Raw inputs/positions and coefficients are exact. LN/softmax/affine operations inside the ideal sublayer are exact before the prescribed additive perturbation. Final output head is ideal.
+- p is minus the log of an allowed error radius. It is NOT established as machine word length, mantissa bits, coefficient bits, quantized-state entropy, or a complete finite arithmetic implementation.
+- Upper theorem proves a bounded-tube induction for every admissible error policy at its chosen p. Lower uses only terminal post-attention errors, leaving every other error zero; its hybrid trajectories stay bounded by clean executions.
+
+## Exact conclusions to compare
+
+1. Old exact execution sensitivity implies D&gt;=Omega(log N) for the stated nontrivial fixed risk; no new sensitivity theorem claimed.
+2. Repeated terminal erasure: when u&gt;=C/(N+1), an admissible policy makes terminal prediction insensitive to the final raw token at every layer, giving robust risk at least c(1-2c), independent of depth.
+3. Existing suffix compiler at fixed suffix length plus standard Lipschitz perturbation propagation gives D,p=O_(c,r)(log N), with B_coefficient=O_(c,r)(log N) only as an upper-construction cost.
+4. Therefore matching logarithmic orders of D and p under this contract. No depth–precision exchange curve, coefficient-precision lower, deterministic rounding theorem, training theorem or universal novel frontier.
+
+## Audit classification
+
+For every primary theorem, record: exact source version/date; definition/theorem locator; perturbation object and injection point; adversarial/random/rounding quantifiers; norm and bounded-domain assumptions; precision exponent/range/accumulator semantics; architecture including LN epsilon, readout, masking, width and depth; probability/source and risk; relation to each conclusion above.
+
+Use four distinct labels: exact coverage; direct mathematical consequence with explicit extra assumptions; related mechanism but materially different contract; unresolved because full text or hypothesis check is missing. A failed search or absent phrase is never evidence of novelty.
+</pre></details><details><summary>三篇有限精度原文审计 · FINITE_PRECISION_PRIMARY_FULLTEXT_AUDIT.v1.md</summary><p class="hash">SHA-256 79bbf0c4f29434ccdcecdbe9da9f175293ebde0dccd330eb0145d94cd325249f</p><pre># Primary full-text audit: three finite-precision transformer papers
+
+6 November 2026 UTC. Scope: comparison to JOINT_PRECISION_BARRIER_AND_ROBUSTNESS.v3, especially its Section 5. This is a theorem/model comparison, not a novelty or priority certification. No external upload was performed.
+
+## Executive finding
+
+None of the three inspected results supplies the target theorem by direct substitution of its parameters. The obstruction is a mismatch of quantified execution models, architecture envelopes, or tasks, not merely a different theorem title. The broad ideas that finite precision limits attention, logarithmic precision can suffice, and errors propagate through layers are already present. In particular, Brösamle–Eckstein contains explicit layerwise perturbation recurrences and a stronger corrective-denoising strategy. The proposed generic Lipschitz upper is not a new numerical-analysis mechanism.
+
+A necessary correction to any earlier comparison: Merrill–Sabharwal v7 Proposition 1 gives a **log log n total-floating-bit** threshold for representing uniform attention, not a log n threshold. The target&#x27;s p is the negative logarithm of an **absolute adversarial error radius**, not their total floating-point storage bits.
+
+## Target being compared
+
+Frozen sufficiently large constant width/head and complete parameter/state norm envelope; actual causal PreLN with positive epsilon 1 and gain 2; N raw observations and a synthetic terminal. Inputs, coefficients, all internal computations, and final head are ideal. After every attention residual and every FFN residual, independently at every row, an input-aware adaptive adversary may add any Euclidean vector of norm at most 2^(-p). Risk is a supremum over source laws and these policies of expected terminal TV error for positive finite-state Markov prediction. At fixed sufficiently small risk, target claims necessary D=Omega(log N), p=Omega(log N) and a joint D,p=O(log N) construction conditional on the separate suffix compiler.
+
+This is a continuous disturbance-ball contract. It does not by itself specify a finite state alphabet, floating-point implementation, rounding schedule inside matrix arithmetic, or storage-bit budget.
+
+## 1. Merrill and Sabharwal, arXiv:2210.02671v7
+
+Primary version: [A Logic for Expressing Log-Precision Transformers, v7](https://arxiv.org/pdf/2210.02671v7), dated 10 September 2025. Local complete PDF and text: sources/merrill.pdf and sources/merrill.txt. HTML corroboration: https://arxiv.org/html/2210.02671v7 .
+
+### Exact loci and arithmetic
+
+- Section 2.1, Definitions 1–2 (PDF pp.3–4): p-precision floats are pairs of signed integers (mantissa, exponent), together taking p bits. Their value uses a normalized binary mantissa convention. p may depend on n; the main log-precision class uses a simple O(log n)-time-computable p(n)=O(log n). Weights are fixed across lengths, with a log-uniform-weight extension in footnote 13.
+- All embeddings, hidden states, head similarity/value outputs, activation outputs, and classifier input inhabit the p-float datatype. Truncated addition, iterated sum, multiplication and division are imported from the cited 2023 paper Appendix A. This audit did not independently re-audit that external appendix&#x27;s implementation details; do not infer ordinary sequential IEEE accumulation from the word truncated.
+- Appendix C.2–C.4 (pp.15–16) explicitly places normalization before attention and FFN, supplies residual connections, exponentiated scaled-dot-product similarity and a final normalized affine-sign classifier.
+- Appendix D.2 (p.16) uses a(x−mean)/||x−mean||+b, with no positive epsilon in the displayed formula. It is not the target&#x27;s epsilon-one LN. No frozen full-state/operator norm hypothesis matching the target is imposed.
+
+### Exact statements and quantifiers
+
+Section 3, Proposition 1 (p.5): for a normalized attention vector, its nearest p-float approximation has at most 2^(2^p) nonzero coordinates. If it is uniform and p&lt;log2 log2 n, every coordinate rounds to zero. The proof uses the minimum positive representable float and nearest-rounding threshold. Attention&#x27;s nonnegativity is necessary for the counting argument (the printed proposition only explicitly displays the sum condition, but its intended domain is attention probabilities).
+
+This is a coordinatewise nearest-rounding statement about the normalized weights themselves. It is neither a result quantifying over arbitrary bounded additive disturbances nor a Markov-risk theorem. Its mechanism is float underflow, with a doubly exponential representable range in total bit count. Bfloat16 and float16 examples on that page explicitly emphasize their enormous uniform-attention context range.
+
+Section 4, Theorem 2 (p.6): a log-precision transformer with parameters fixed across context lengths can be expressed by an FO(M) sentence computing exactly the same Boolean function. This is a logical expressivity upper bound for a fixed transformer architecture, not a matching depth/precision accuracy theorem with depth growing as log n. Footnote 5 allows causal attention and larger fixed output arity but explicitly excludes autoregressively generated tokens appended to the input.
+
+### Comparison verdict
+
+Direct coverage: **No**. Proposition 1 does not imply target p=Omega(log N), and Theorem 2 does not supply the target&#x27;s statistical risk or log-depth construction. The target&#x27;s exact-real uniform attention remains representable internally even at small p because only residual-output errors are permitted. Conversely, an arbitrary cancelling residual disturbance need not be realizable by nearest rounding of attention weights. The conceptual finite-precision/attention limitation is definitely prior art; the numerical thresholds must not be conflated.
+
+## 2. Chakrabarti, Pitassi and Alman, Every Bit Counts
+
+Primary version: [arXiv:2602.02707v1](https://arxiv.org/pdf/2602.02707v1), 2 February 2026. Complete local PDF/text: sources/bits.pdf and sources/bits.txt. HTML: https://arxiv.org/html/2602.02707v1 . PDF numbering is used below; HTML has inconsistent appendix numbering for the floating-point definition.
+
+### Exact loci and model
+
+- Appendix A.1, Definitions A.1–A.4 (pp.14–15): embeddings, attention followed by an MLP, and final output; one-layer theorem has one head and value dimension d_v=1. This is not an actual fixed-epsilon PreLN residual architecture. No frozen full operator/state norm envelope is imposed.
+- Definition A.7 (p.15) defines signed fixed-point values with total p=1+|a|+|b|. Crucially the integral and fractional lengths need not be fixed separately. Discussion gives a scaled representable interval ±lambda(2^(p−1)−1). This p is not simply the number of fractional bits of a fixed bounded-range uniform grid.
+- Appendix A.3 (pp.15–16): binary operations are computed exactly then rounded to a nearest permitted value, with ties allowed to truncate. Iterated sums/products are left-associated and rounded at intermediate steps. Definition A.10 (p.16) defines floating point with total budget 2+mantissa-length+exponent-length.
+- Appendix A.4 (p.16) fixes arithmetic order: finite-precision Q,K, then QK^T, then exponentiation A, normalizer D, and numerator (AX)W^V followed by normalization. It is not equivalent in finite precision to arbitrary reassociation or to first rounding every normalized softmax coefficient. Exact overflow and exponential conventions should not be silently replaced by an IEEE implementation.
+
+### Theorem and task
+
+Theorem 2.4 (pp.6–7), backed by Lemmas 2.5–2.6 and Appendix B.2 (pp.20–22): for each p and n&gt;4p, m=2p−1, a special encoding of an equality problem cannot be computed with p−1 bits by a one-layer, one-head, d_v=1 transformer, but can be with p bits of their fixed-point precision. Encoding T_m^1 includes special padding and complements; the underlying comparison has promises described in Section 2 and Appendix B. Lower bounds communicate numerator/denominator information; the construction intentionally uses their overflow/rounding behavior. This is exact Boolean computation on specially represented inputs, not expected TV risk over positive Markov sources.
+
+The text itself says a corresponding multilayer tradeoff remains elusive (Conclusion, PDF p.9 / HTML Section 4). One cannot carry its one-shot communication bound unchanged through repeated access to evolved raw rows.
+
+### Material internal inconsistencies in floating-point appendix
+
+Printed Theorem C.2 (p.23), titled softmax, says m=p, calls both models linear, and claims an exact p versus p−1 threshold. Its proof (p.30) instead sets m=2p−1 and obtains an upper of p+log p+2. Lemma C.7 (p.27) states p&gt;=m, while its proof gives ceil(m/2). Lemma C.8 supports the latter near-matching, logarithmic-gap construction. These are actual text inconsistencies, not a corrected theorem established by this audit. Cite the fixed-point Theorem 2.4 cleanly; qualify any claim about the floating softmax result and do not report its printed one-bit version as verified.
+
+### Comparison verdict
+
+Direct coverage: **No**. Precision-dependent expressivity and one-bit equality separations are prior. The theorem lacks the target&#x27;s multilayer adaptive error quantifier, fixed positive-epsilon PreLN/full-norm envelope and Markov-TV objective. Neither its lower nor upper is a direct corollary route to the target.
+
+## 3. Brösamle and Eckstein, ICML 2026 / PMLR 306
+
+Primary landing page: https://proceedings.mlr.press/v306/brosamle26a.html . Audited proceedings PDF: https://raw.githubusercontent.com/mlresearch/v306/main/assets/brosamle26a/brosamle26a.pdf . Complete local files: sources/brosamle.pdf and sources/brosamle.txt. PDF page numbers below are internal 1–68, not proceedings pagination 9933–10000.
+
+### Architecture and quantized objects
+
+Section 2.2 (p.3) explicitly omits LayerNorm and RMSNorm; it remarks constructions could be modified to ignore normalization, but does not establish the target&#x27;s epsilon-one/gain-two/full-norm theorem. Decoder layers have causal softmax, residual attention and ReLU MLP residuals. Output is an argmax token, not TV-calibrated softmax prediction. Proposition 3.1 recognizes regular languages; Theorems 3.2–3.3 simulate multitape Turing machines using ordinary/summarized CoT. Width and depth grow logarithmically in an input/time/space bound. Summarized CoT discards previous context in favor of a generated summary, unlike the target&#x27;s single forward computation over all raw observations.
+
+Definition B.18 (p.24) specifies normal floats and subnormals. With b_m mantissa and b_e exponent bits, E_min=2−2^(b_e−1), E_max=2^(b_e−1)−1, minimum positive subnormal is 2^(E_min−b_m), and maximum is (2−2^(−b_m))2^E_max. Rounding is nearest in that finite set. Lemma B.19 gives relative error &lt;=2^(−b_m−1) on the normal range.
+
+Definition D.4 and Remark D.5 (pp.48–49) are the key execution contract. Round q,k,v, individual attention-head outputs, multihead outputs, residuals, MLP hidden activations and MLP outputs to F_act; round normalized attention weights to F_att. Between these locations arithmetic is ideal. Scores and softmax computation are not rounded; high-precision accumulation errors are explicitly excluded. Errors are measured using maximum-over-rows coordinate infinity norms and attention-weight l1 differences. These are nearest-rounding errors, not arbitrary adversarial choices at every residual.
+
+### Exact robust-conversion theorems
+
+Lemma D.15 (pp.52–53) requires specialized hardmax constructions: sparse projection rows, disjoint output writes, tie-invariant values, ternary activations (raw MLP outputs may be ±2), and a unique output argmax margin &gt;=1. Its MLP infinity norms are bounded by d and d_ff, not constant full Euclidean norm independent of growing width.
+
+Theorem D.16 (p.53) converts such hardmax models to softmax, scaling Q/K by c sufficiently large in terms of width, depth and N, rounding activations but keeping attention weights exact. Its proof explicitly uses a recurrence epsilon_l&lt;=A epsilon_(l−1)+B. Theorem 4.1 (p.7) specializes c_0=O_M((log ell)^(3/4)(log log ell)^(1/2)), requiring representability of c; activation exponent bits can be O(log log log ell).
+
+Theorem D.17 (p.56) adds denoising: for c&gt;=d_k^(1/4)*sqrt(log(96N)), activation format containing c with b_m&gt;=1,b_e&gt;=3, and attention format with b_m&gt;=4 and 1/N&gt;=2^E_min, a depth-2L softmax model with FF width max(d_ff,6d) exactly matches the hardmax output on the prescribed input set. Weight entries belong to {0,±1,±2,±c}. Lemma D.18 (pp.57–58) constructs a residual ReLU correction returning coordinate errors within 1/4 of ternary values to those values. Thus there is an explicit local error-correction mechanism, not only accumulated Lipschitz stability.
+
+Theorem 4.2 (p.7) gives c_0=O((log ell)^(3/4)), same asymptotic model-size bounds, constant mantissa requirements, attention exponent bits O(log log ell), and activation exponent bits O(log log log ell). This low bit count relies on growing range, growing width, and growing Q/K scale. Complete state Euclidean norms and parameter norms are not frozen constants as in the target.
+
+### Comparison verdict
+
+Direct coverage: **No**. The conversion theorem is substantial robustness prior art, but its hardmax/ternary invariant, nonconstant width/score scale, absent mandatory positive-epsilon normalization, nearest-rounding execution, argmax task and optional CoT all matter. In particular the target cannot invoke D.17 without proving an admissible bounded-norm fixed-width PreLN compiler satisfying its hypotheses, which the current theorem does not supply.
+
+## Consequences for the proposed research claim
+
+1. Use p as an error-radius index, not a total arithmetic/storage-bit budget. An implementation theorem would need explicit range, overflow, rounded primitives and accumulated-error accounting.
+2. The target erasure argument is a minimax disturbance argument; the papers&#x27; deterministic rounding results neither prove nor refute it.
+3. Logarithmic-order matching at fixed risk is a possible narrower theorem statement only conditional on a verified suffix compiler. It is not a new general depth–precision frontier or a new roundoff law.
+4. Existing prior already contains layerwise error recurrences and denoising. Strong novelty language needs more than the fact that these three sources do not state the exact target contract.
+5. No search-negative inference is made. This audit is restricted to the three primary fulltexts and does not rule out other direct or indirect prior results.
+</pre></details><details><summary>敏感度与逐层鲁棒性原文审计 · ATTENTION_ACTIVATION_PRIMARY_AUDIT.md</summary><p class="hash">SHA-256 49010c8c9fdcd394c245b48ef5e960b169e63385aa050b33194cd565e4867ff2</p><pre># Primary full-text audit: sensitivity and all-layer robustness
+
+Audit date: 2026-11-06 UTC. Target: mother_theorem_reset_20261106/JOINT_PRECISION_BARRIER_AND_ROBUSTNESS.v3.md, especially Sections 2, 3 and 5. This is a coverage comparison, not a novelty certificate. No external state was changed and no upload was made.
+
+## Result
+
+The old component is substantial: single-token dilution under bounded-score smooth attention is Hahn&#x27;s mechanism; positive-epsilon LN preserves the smooth regime; all-layer adversarial activation perturbations already have a general mathematical formulation in Wei–Ma; and generic sublayer Lipschitz composition supplies the upper execution-error estimate. These ingredients must not be presented as inventions.
+
+The precise additional statement to audit in v3 is the repeatedly refreshed causal terminal coupling: after every attention read an input-aware adversary cancels the O(1/N) final-raw-token contribution, uniformly in depth, then a fixed positive Markov source turns indistinguishability into expected-TV risk. None of the theorem statements inspected below states that complete result. This is only an affirmative comparison of these inspected results, not evidence that no other result covers it. The matching upper additionally depends on the local compiler; the sources below do not certify that construction.
+
+The mathematical implication is narrow: the depth bound is a quantitative adaptation of an established mechanism; the p upper bound is a routine stability corollary conditional on the compiler and an N-independent Lipschitz tube. The repeated-erasure argument is the only locally identifiable extra lemma here, and it is elementary once the per-read O(1/N) bound and adversary contract are fixed. Novelty/publication strength does not follow from this observation.
+
+## Source ledger and access
+
+All downloaded PDFs and layout-preserving extracted text are in `primary_attention_robustness/` next to this report. Each basename below has `.pdf` and `.txt`. Page references below are the printed paper pages, not necessarily PDF viewer indices.
+
+- `hahn`: Michael Hahn, Theoretical Limitations of Self-Attention in Neural Sequence Models, TACL 2020, pp156–171. https://aclanthology.org/2020.tacl-1.11.pdf . Retrieved full text.
+- `hahn-supp`: author&#x27;s Supplement, dated May 5, 2021. https://mhahn.info/files/transformers-proof.pdf . Retrieved full text. The soft-attention calculation following p8 is printed with a restarted page number 1; it is PDF page9.
+- `chiang`: David Chiang and Peter Cholak, Overcoming a Theoretical Limitation of Self-Attention, ACL2022, pp7654–7664. https://aclanthology.org/2022.acl-long.527.pdf . Retrieved full text.
+- `weima`: Colin Wei and Tengyu Ma, Improved Sample Complexities for Deep Networks and Robust Classification via an All-Layer Margin, arXiv:1910.04284v5, 16 June2021, associated with ICLR2020. https://arxiv.org/pdf/1910.04284 . Retrieved full text. https://openreview.net/pdf?id=HJe_yR4Fwr returned HTTP403/browser verification, so the exact conference snapshot was not inspected. Claims below identify the arXiv version.
+- `weightnoise`: Yu-Lin Tsai, Chia-Yi Hsu, Chia-Mu Yu, Pin-Yu Chen, Formalizing Generalization and Adversarial Robustness of Neural Networks to Weight Perturbations, NeurIPS2021. https://proceedings.neurips.cc/paper_files/paper/2021/file/a3ab4ff8fa4deed2e3bae3a5077675f0-Paper.pdf . Retrieved full main paper; separately hosted supplement not fetched.
+- `smoothattn`: Valérie Castin, Pierre Ablin, Gabriel Peyré, How Smooth Is Attention?, arXiv:2312.14820v2, 4 June2024 / ICML2024. https://arxiv.org/pdf/2312.14820 . Retrieved full text and appendices. Published entry https://proceedings.mlr.press/v235/castin24a.html .
+- `noisetrans`: Themistoklis Haris, Zihan Zhang, Yuichi Yoshida, Noise Stability of Transformer Models, arXiv:2602.08287, PDF headed ICLR2026. https://arxiv.org/pdf/2602.08287 . Retrieved full text including appendices. Indexed conference PDF: https://openreview.net/pdf/088a9df8d976c7303f9895eeb5e0af883541bf0e.pdf .
+
+## 1. Hahn2020 and the correction
+
+### Actual definitions and claims
+
+Section3 p158 uses a finite-alphabet sequence ending in a fixed end-of-sequence symbol, source-independent positional embeddings, attention heads which take weighted sums of previous activations, and a positionwise map f_act incorporating skip/FFN operations. The last activation determines the label probability. Attention is unmasked in the displayed definition. The framework is not explicitly the exact current causal PreLN execution contract.
+
+Lemma5 p165: exchange one symbol x_i, i&lt;n; the terminal activation changes by O(1/n), with constants depending on parameter matrices. Proof pp166–167 uses Euclidean activation norms and induction: the changed position can change O(1), all other positions O(1/n). It explicitly treats L fixed independently of n. The proof bounds states via input/position norms and depth, bounds attention logits by A, and then individual weights by exp(2A)/(n−1). Thus quoting the printed expression while letting depth grow requires checking uniformity: its state and score constants can themselves depend on L. V3&#x27;s separately frozen full reachable-state/primitive envelope is a meaningful extra hypothesis for obtaining a fixed-base A^D/N estimate.
+
+Theorem6 p165 is a next-symbol cross-entropy statement for a specified parity-generating two-state automaton and a 2Dyck PCFG. It is not an expected-TV minimax theorem for an unknown positive Markov transition class. The parity automaton has termination depending on parity; this must not be relabeled as v3&#x27;s strictly positive last-symbol chain.
+
+### Correction that must be included
+
+Supplement §S2 p8, eqs34–35, explicitly says the original attention difference estimate omitted the term from changes in weights. The needed decomposition is a sum of old weights times value differences PLUS a sum of weight differences times bounded comparison values. PDF p9 derives total attention-weight change O(1/n) (ordinary unchanged entries have O(1/n²) change). The correction explicitly requires bounded positional embeddings and Lipschitz attention/activation functions. Dot-product attention is Lipschitz on the bounded reachable domain; it is not globally Lipschitz on unrestricted Euclidean space.
+
+V3&#x27;s per-read single-key/value replacement bound should be proved directly from normalized exponentials and bounded states, including denominator change. The corrected Hahn proof supports the mechanism; the original one-term display is not a valid proof to copy.
+
+### Coverage judgment
+
+- The clean dilution idea: directly established prior mechanism.
+- Frozen-envelope logarithmic depth necessity: quantitative adaptation with a separate causal-tail recurrence, not literally Lemma5&#x27;s fixed-network asymptotic statement.
+- Repeated, input-adaptive post-attention cancellation: not in Lemma5/Theorem6 or §S2.
+- Precision p or hardware roundoff: not a variable in those claims.
+
+## 2. Chiang–Cholak2022
+
+Section2 pp7655–7656 uses a transformer encoder, prepended CLS readout, full scaled-dot-product attention, and post-residual layer normalization. Footnote2 p7658 explicitly notes PreLN is common but follows original post-LN instead. PE is an arbitrary source-independent position function.
+
+Proposition1 p7656 constructs exact PARITY classification for every length. The relevant acceptance criterion is probability strictly greater than 1/2, not a margin bounded away from 1/2 or low probability-estimation risk. FIRST&#x27;s displayed logit (Eq1 p7658) is exp(c)/(exp(c)+n−1) times (indicator−1/2), so exact signs can coexist with decaying confidence. This reinforces the coefficient/state precision distinction and shows why exact-real classification cannot be substituted for TV accuracy.
+
+Section4 p7658 defines LN(x;γ,β)=(x−mean(x))/sqrt(var(x)+ε) elementwise multiplied by γ, plus β; their construction fixes γ=1, β=0. Proposition2 p7659 explicitly assumes ε=0. Paired coordinates (s,−s,0,...) are converted by exact LN into constant-amplitude signs, followed by an output scale depending on target cross-entropy η. Immediately below its proof, the authors explicitly state that ε&gt;0 makes LN Lipschitz and Hahn&#x27;s lemma still applies. Thus this proposition does not invalidate v3&#x27;s fixed positive-epsilon lower bound. Paired-coordinate centering tricks themselves are prior construction material, not new.
+
+Proposition3 p7661 achieves arbitrarily low FIRST cross-entropy using attention logits multiplied by log n, including a positive-epsilon LN variant. This escapes v3&#x27;s fixed bounded-score envelope; it is not a counterexample within that envelope. Neither proposition claims all-row post-attention/post-FFN robust execution.
+
+## 3. Wei–Ma all-layer activation margin
+
+Section2 p5, Eq2.1: h_1=f_1(x)+δ_1||x||_2 and h_i=f_i(h_(i−1))+δ_i||h_(i−1)||_2. Eq2.2 minimizes sqrt(sum_i ||δ_i||_2²) over perturbations making the classification wrong. Perturbations are chosen for a particular input/label and may be simultaneous at all layers; this is genuine hidden-state adversarial perturbation, not merely input or weight noise.
+
+Crucial generality: AppendixA p16 permits arbitrary normed spaces at each layer, not only Euclidean spaces, and defines a mixed budget ||(α_i||δ_i||)_i||_p. Consequently the sequence-row-max Euclidean norm can be selected in its general formalism. It would be wrong to dismiss coverage simply because a sequence is a matrix or because the main-text norm is Euclidean. Taking large p and using the standard norm equivalence also links aggregate and maximum budgets.
+
+The actual differences from v3 are:
+
+1. The injected vector is scaled by the current preceding-state norm. V3 has an absolute radius u at each row/substep. If a positive lower bound and upper bound on those state norms are available, the contracts can be compared up to constants; upper boundedness alone does not establish the needed two-way comparison near a zero state. A protected public coordinate could help but itself must respect the stated error model. Thus a robust claim cannot rest on the norm-name mismatch.
+2. The event is crossing a classification decision boundary; v3 measures expected total variation to a nondegenerate transition distribution. Correct classification does not control calibration/TV.
+3. Theorem2.3 p5 and generalized TheoremA.2 p16 are sample generalization bounds controlled by all-layer margins and function-class covering complexity. They are not architecture-wide execution-precision necessities as a function of input length.
+4. Theorem4.1 p9 studies robust test classification over an input neighborhood, using the infimum of all-layer margins over that neighborhood. It does not assert the same robust Markov estimator theorem.
+
+Its all-layer setup is relevant prior art and a suitable formal framework for an adapted certificate; its stated theorems do not by direct substitution yield the depth-independent p≥log N repeated-erasure lower. Adaptivity is not by itself a novelty distinction: for deterministic execution, an input-specific collection of perturbations can reproduce the realized path of an adaptive strategy.
+
+## 4. Tsai et al2021 weight robustness
+
+Section3.1 p5 (continuation of preliminaries) assumes a feed-forward network W_L ρ(...ρ(W_1x)), nonnegative monotone 1-Lipschitz activation, and independent elementwise ℓ∞ matrix perturbation budgets ε_k. Theorem1 p5 treats a single weight layer. Theorem2 §3.3.1 p6 bounds pairwise-logit-margin changes under all-layer weight perturbations, with propagated error terms involving hidden ℓ1 norms and products of matrix (1,∞) norms. Theorem3 extends to selected layers.
+
+This is useful prior art for telescoping/propagating local errors, but arbitrary additive activation vectors after softmax attention and FFN residual sublayers are not guaranteed to be realizable by those weight changes. Softmax/LN residual attention is not the stipulated monotone scalar-activation feed-forward chain. Therefore no direct contract identity should be asserted. Supplement proofs were not independently inspected; the theorem statement and proof description in the full main paper suffice for this scope distinction.
+
+## 5. Castin–Ablin–Peyré2024: do not stop at sqrtN
+
+Section3.1 pp4–5 defines finite-sequence input/output norm as Frobenius, and local Lipschitz constant as the induced Jacobian operator norm. On rowwise bounded B_R^n, Theorem3.3 p5 gives a bound growing as sqrt(n) for unmasked attention. Theorem4.3 p7 gives the masked counterpart. Proposition3.4 explains a regime in which sqrt(n) is tight.
+
+But the same paper also proves an N-independent bound: Theorem3.5 pp5–6 bounds the W2 Lipschitz constant of mean-field attention by ||V|| (1+3||A||R²) exp(2||A||R²), and Lemma3.2 connects this to the finite-sequence Frobenius constant. Theorem4.4 p7 gives the same-form N-independent bound for masked mean-field attention in the conditional-transport metric d_p, with equal positional marginals. These are important positive prior bounds, not a mere unrelated sqrtN story. Its LN discussion §2.4 p4 is about bounding attention inputs and uses the displayed unregularized normalization; it is not a proof of robustness for the entire positive-epsilon PreLN network.
+
+V3&#x27;s convenient norm is max_i ||h_i||_2 because every row has an independent radius u. Converting a Frobenius estimate naively incurs sqrt(n) since ||E||_F≤sqrt(n)u. This does not contradict its N-independent row-max proof, and the conditional-transport bounds may offer a more direct route. In either case the elementary row-max estimate is readily proved from bounded logits/values and softmax&#x27;s sup-to-ℓ1 continuity. Existing Lipschitz theory substantially covers the upper mechanism. It does not provide the lower repeated-erasure/source-risk statement.
+
+## 6. Haris–Zhang–Yoshida2026 noise stability
+
+Definition4.1 p5: X is standard Gaussian and Y=ρX+sqrt(1−ρ²)Z with Z independent standard Gaussian; Stab_ρ(f)=E[f(X)f(Y)]. It is an input-pair covariance statistic, not a supremum over bounded activation errors, and not itself expected-TV target risk.
+
+Theorem5.1 p6 is the standard correlated-Gaussian ReLU moment formula. Theorem5.2 p7 studies f(X)=softmax(XXᵀ)XW_V as d→∞, with identity query-key product and Gaussian inputs. It derives per-coordinate stability proportional to ρ times a value-column squared norm. Section5.2 then discusses random low-rank and random Gaussian query-key products; Theorem5.3 p7 and AppendixG concern matching selected attention indices in the unstructured high-dimensional regime. The displayed main-text Theorem5.3 repeats the identity-case f(X) formula despite surrounding unstructured discussion; do not silently fix it when citing a literal theorem. The exact typography issue does not affect the scope comparison.
+
+Section5.3 p8 explicitly calls its simple multilayer recurrence a thought experiment ignoring inter-layer distributional shifts. AppendixH p31 reports a mismatch between the proxy recurrence and observed full dampening. AppendixI pp32–35 adds distribution-dependent stability interval lemmas; Lemma11 requires Gaussian marginals and a scaled coordinatewise Bonami–Beckner resampling process. These are not new independent bounded post-sublayer perturbations at each layer. They do not establish v3&#x27;s uniform guarantee or lower bound. The full text was accessible; no full-text gap remains for this paper.
+
+## Recommended technically safe positioning
+
+State the intended theorem as a changed execution-model corollary/extension of bounded-attention sensitivity plus a separate causal repeated-erasure lemma, with a conditional matching construction. Cite corrected Hahn, Chiang–Cholak&#x27;s epsilon distinction, all-layer margins, and attention Lipschitz work. Do not claim novelty for layerwise perturbations, log precision for resolving 1/N signals, paired-coordinate LN cancellation, or geometric error accumulation. Do not infer ordinary floating-point behavior or realizable rounding trajectories from a freely chosen additive adversary.
+
+For any novelty or theorem-cover decision still needed, compare other precision papers and the local compiler separately; this report does not substitute for those audits.
+</pre></details><details><summary>Markov 与 n-gram 原文审计 · MARKOV_NGRAM_EXECUTION_CONTRACT_AUDIT.v1.md</summary><p class="hash">SHA-256 3685201f6c988550fd744bfec41938f55eaf628de013a1054387f321aad3e440</p><pre># Markov / n-gram primary-contract audit
+
+6 November 2026 UTC. Read-only primary-body comparison against `mother_theorem_reset_20261106/JOINT_PRECISION_BARRIER_AND_ROBUSTNESS.v3.md`, especially Sections 3 and 5. No uploads, repository changes, numerical experiments, or priority claim.
+
+## Target and conclusion
+
+The candidate fixes an unknown homogeneous binary order-two source class with an interior transition floor, same-history actual-terminal expected TV, a synthetic terminal row, actual positive-epsilon PreLN, frozen full-state/operator/head envelope, and adaptive additive execution errors after each attention/FFN residual at every row. At fixed risk it proposes joint achievable logarithmic depth and execution precision, with separate necessities. Coefficient-description bits are explicitly different.
+
+The checked Markov representation results already cover the important broad ideas: common source-independent same-history n-gram estimation, final realized suffix conditioning, constant width for fixed alphabet/order, normalized implementations, and logarithmic parameter precision remarks. These are not defensible novelty axes. The full candidate is not a verified direct corollary of the checked statements, because their architecture and execution/error quantifiers differ materially. This is not a novelty certification: the candidate&#x27;s upper perturbation recurrence is generic stability bookkeeping once its noiseless compiler is accepted. The source-class/risk conjunction alone cannot establish new technique or priority.
+
+## 1. Rajaraman et al., Transformers on Markov Data: Constant Depth Suffices
+
+Primary checked: https://arxiv.org/html/2407.17686v1 . Locators: Section 2.1; Theorems 4.4, 4.5, 5.1; Remark 5.2; Architecture 0.2; Appendix C.1–C.3.
+
+Theorem 5.1 represents conditional k-grams with three layers, one head each, relative positions and O(S) embedding dimension. The empirical distribution conditions on the final k symbols of the SAME input, not an independent suffix. This representation is pathwise rather than an expected-TV minimax theorem, so stationary versus nonstationary initialization is not a restriction of that representation claim. Appendix C.1 duplicates signs and replaces normalization by Euclidean normalization. Architecture 0.2&#x27;s denominator has no fixed positive epsilon. The text also says Theorem 5.1 holds for their original architecture, so saying merely “not normalized” is wrong.
+
+Remark 5.2 explicitly says its proof does not bound finite-bit approximation error; it suggests logarithmic-in-length plus order bits per parameter for O(1/T) error. Concentration uses an unbounded sharpening limit (e.g. Appendix A equations (10)–(13)); it is not frozen-score execution robustness. Thus it supplies estimator/normalization ancestry, not the candidate&#x27;s adversarial-noise fixed-risk certificate.
+
+## 2. Ekbote et al., What One Cannot, Two Can
+
+Primaries: https://arxiv.org/pdf/2508.07208v2 and https://arxiv.org/html/2508.07208v2 . Locators: PDF printed p.7 Theorem 3 and Remark 2; Sections 2.1–2.2, 4; Appendices A.1, A.2.2, B, H.3–H.4.
+
+Theorem 3 gives two layers, one head per layer, relative positions, MLP and layer normalization, dimension 6S+3. It computes the same-history empirical conditional k-gram at the actual final suffix. Representation is not a uniform minimax TV risk theorem. Experimental generation uses Dirichlet transition rows and uniform initial k tokens, not stationary initialization. Section 2.2 specifies ReLU output rather than ordinary vocabulary softmax. Appendix A.2.2 applies LN to projected keys/queries and sharpens cosine scores toward infinity; this is not positive-epsilon full-feature PreLN with frozen score envelope.
+
+Remark 2 asserts sufficient parameter precision, written Ω(log T+k), with O(1/T) approximation error. Its wording must not be upgraded to a lower bound or to arbitrary after-every-sublayer execution-error certification. H.3 concerns input/dynamics noise, and H.4 empirical bit precision. Neither changes the theorem&#x27;s error quantifiers into the candidate&#x27;s adaptive all-row errors. Full PDF was essential: theorem text is missing from the HTML rendering around Section 4.
+
+## 3. D’Angelo et al., Induction Heads Interpolate N-Grams
+
+Primary: https://arxiv.org/html/2607.02800v1 . Locators: Sections 2.1–2.2; Definition 3.1; Proposition 3.1, equation (8); Sections 3.2.1–3.2.3; Corollary 4.1, equation (10).
+
+Proposition 3.1 is explicitly for any input string: two disentangled layers with k heads then one head compute weighted mask-count probabilities. The final query context is that input&#x27;s realized suffix. Source-independence and same-history prediction are genuine overlap. Fixed alphabet/order gives constant representation dimension. Section 2.2 uses uniform initial k tokens and Dirichlet or hierarchical priors; this does not restrict the pathwise proposition. Its probabilistic evaluation is not the candidate&#x27;s supremum-over-interior-kernels TV guarantee.
+
+Section 3.2.1 copies preceding symbols in an infinite positional-sharpening limit, and Section 3.2.2 suppresses early positions by another infinite limit. Finite context-matching beta therefore does not imply globally bounded scores. The architecture concatenates registers and selects output coordinates rather than imposing the candidate&#x27;s full PreLN/softmax contract. Corollary 4.1 already implements additive smoothing through a BOS token in a hard-matching limit. No execution-noise theorem is supplied by these checked statements; this is a statement about their scope, not an exhaustive absence claim.
+
+## 4. Izzo, Nichani and Lee, Quantitative Bounds for Length Generalization in Transformers
+
+Primary: https://arxiv.org/html/2510.27015v1 . Locators: Sections 3.1–3.3; Theorems 4.1–4.2; Definition 5.1; Theorem 5.2; Lemma 5.3; Definition 5.4; Appendix B.3.
+
+Section 3.2 specifies rounding small exponentials after max-shifting; with log-length score scaling, N≥2^(p/γ) gives hardmax. This differs from bounded-score adaptive additive residual errors. Section 3.1 has residual MLPs and linear unembedding, without candidate PreLN. Theorem 4.2 averages IID tokens under a Dirichlet-drawn categorical distribution; the following discussion leaves Markov-source average generalization open. Theorem 5.2 is worst-string agreement transfer for restricted two-layer infinite-precision transformers, not statistical next-token risk.
+
+Lemma 5.3 compresses suffix-and-prefix-histogram averages; its proof&#x27;s Markov chain selects a subsequence, not the prediction source. Definition 5.4 conditions empirical counts on the realized terminal suffix. The following paragraph expressly calls Appendix B.3&#x27;s complexity estimate heuristic. Thus there is strong simulation/precision ancestry but no verified direct robust-minimax implication. The missing reduction would need to preserve the candidate&#x27;s frozen scores, arbitrary growing depth, actual normalization, and error policy class, not just its n-gram target.
+
+## 5. Akman, Feldman Starosta, Saldi and Yüksel
+
+Primary: https://arxiv.org/html/2610.41038v1 . Locators: Sections 4.1.1–4.1.3, equations (17)–(21); Section 5 preamble; Theorems 26–27, equations (24)–(25); Appendix C.6, Definition 32 and Lemma 33.
+
+Theorem 26 trains on one trajectory but explicitly tests independently. Theorem 27&#x27;s expected-TV bound likewise uses an independent test history. The architecture has M gatherer layers plus an interpolator, dimension 2M+R(s)+1, supplied unmasked M-token windows, and ordinary final softmax. Its gatherers read protected token/position coordinates. This does overlap genuine TV prediction and bounded-window sufficiency; stationarity/interiority do not establish source disjointness.
+
+Important precision overlap: Section 5 explicitly applies state quantizer Q_n and measure quantizer R_l after every layer. Theorem 27 includes quantization/training/architecture error; Lemma 33 uses aligning grids to preserve selected coordinates. This is NOT merely an exact-real predecessor. However, this specified quantized trained architecture does not yield the candidate&#x27;s adversarial all-row, two-sublayer residual error model, nor its unknown-source common same-history predictor. Its actual update (19) is not candidate PreLN. A source-independent cost-preserving compilation would be additional work, not theorem substitution.
+
+## Risk and implication checks
+
+1. A pathwise approximation to empirical terminal counts can be composed with an estimator-risk theorem, so “representation rather than risk” alone is a weak separation. The essential remaining obligations are a uniform source-risk estimate plus the exact architecture/resource/execution compilation.
+2. Uniform initialization in experimental/Bayesian sections does not restrict a theorem valid on every input string. Do not use it to claim a source-class separation.
+3. An independent test trajectory is a substantive distinction for source-trained results; it does not apply to the common n-gram constructions.
+4. None of these comparisons establishes a precision lower bound in the candidate model. In particular sufficient parameter bits cannot be substituted for execution precision or bounded-message cardinality.
+5. Candidate Section 5’s stability upper is a generic consequence of an O(log N)-depth noiseless implementation with N-uniform sublayer Lipschitz constants: error ≤u·(Λ^L−1)/(Λ−1). Its scientific value must rest on a genuinely justified complete compiler and matching architecture-wide necessity, not presenting this recurrence as a new Markov theorem.
+6. Candidate Section 3&#x27;s erasure adversary has access to the input and cancels each terminal read. This is much stronger than deterministic hardware rounding. A comparison to threshold arithmetic cannot erase this distinction, and an upper for arbitrary errors does not make its lower hardware-realizable.
+
+## Access and audit limits
+
+All five linked primary HTML bodies were accessible. Ekbote&#x27;s PDF was also opened and its theorem/precision statement verified directly. HTML math/cross-references sometimes fail; missing theorem rendering was repaired with the PDF rather than guessed. This was a targeted full-text-body/theorem-and-construction audit, not a line-by-line verification of every external proof, an exhaustive version/citation search, or a universal non-subsumption proof. Earlier local `CURRENT_FRONTIER_PRIMARY_COMPARISON.v2.md` supplied candidates only; conclusions above use fresh primary passages. No abstract-only theorem claims.
+</pre></details><details><summary>Markov 原始定位清单 · MARKOV_PRIMARY_SOURCE_LOCATORS.v2.tsv</summary><p class="hash">SHA-256 69c16a5d64a288d3f7c4c6497f000960a564ba8608f549b87e3d848b2836abf7</p><pre>paper	primary_url	locator
+Rajaraman et al.	https://arxiv.org/html/2407.17686v1	Theorem 5.1 lines218-223; Appendix C.1 lines529-535
+Ekbote et al.	https://arxiv.org/pdf/2508.07208v2	printed page7 / PDF page-index6, Theorem3 and Remark2 lines482-492
+Ekbote et al.	https://arxiv.org/html/2508.07208v2	Section2.2 line154; AppendixA.2.2 lines476-482
+DAngelo et al.	https://arxiv.org/html/2607.02800v1	Prop3.1 lines201-207; copying line227; suppression line513; Cor4.1 lines566-570
+Izzo Nichani Lee	https://arxiv.org/html/2510.27015v1	Section3.2 lines94-118; Thm4.2 lines156+; Markov gap line174; Def5.1/Thm5.2 lines179-192; Def5.4 lines207-212
+Akman et al.	https://arxiv.org/html/2610.41038v1	Section5 preamble lines647-648; Theorem26 lines666-669; Theorem27 equations24-25 lines673-682; Lemma33 lines1176+
+</pre></details><details><summary>直接推导与合同反例 · REDUCTION_AND_COUNTERCONTRACT_LEDGER.v1.md</summary><p class="hash">SHA-256 0da5733122ca6be5fad09cac61744434db1cc2d5f67288fb1715124e8f1886f0</p><pre># Reduction ledger and counterexamples to contract substitution
+
+6 November 2026 UTC. Analytical assessment tied to the frozen comparison contract. This is not a new novelty claim. Full primary-theorem audits are separate.
+
+## 1. What the fixed-risk matching actually measures
+
+The precision lower uses a single fixed copy/flip source with probabilities c and 1-c. It continues to hold even if that kernel is supplied to the network designer: the missing information is the last raw context bit. Thus it is a CONTEXT-ACCESS robustness bound, not a lower bound on learning the unknown transition probabilities. Unknown-source estimation enters only through the reused upper construction.
+
+Likewise the logarithmic depth lower is the established bounded-attention terminal-context mechanism. The current matching theorem does not distinguish sophisticated estimation from recovery of a single relevant final bit, and supplies no sharp vanishing-risk resource dependence. This is an essential limitation when evaluating whether it can carry the T1/T2 main result.
+
+## 2. Four proof ingredients, with honest attribution level
+
+A. Single-source-row softmax influence. Suppose terminal query and all but one source row agree, values have norm &lt;=V, each score range &lt;=B, and there are T attended rows. For a single head, write the output as (1-a)v_rest+a v_special. The shared rest distribution is unchanged; both special weights a,a&#x27;&lt;=e^B/T. Triangle inequality gives output change &lt;=4Ve^B/T. A fixed full output projection and bounded head count multiply only a fixed constant. This is the elementary local normalized-attention bound underlying the older sensitivity literature, not a new attention principle.
+
+B. Repeated terminal erasure. Causality ensures that changing only raw row N changes no earlier raw row. If an input-aware post-attention error resets the synthetic terminal to the canonical final-bit-zero execution after every read, its query remains identical. Ingredient A therefore applies afresh at every depth, despite changed row-N memory. Required error is &lt;=C/T per attention residual. This coupling is a short additional argument under the deliberately strong adversary; a fixed-depth sensitivity theorem alone does not literally state it.
+
+C. Statistical conversion. Conditional final-bit probabilities are at least c and the two target distributions differ by 1-2c. If both terminal outputs coincide, triangle inequality gives conditional expected TV at least c(1-2c). This is elementary binary decision geometry. No novel Markov estimation lower is involved.
+
+D. Robust upper. A previously proved predictor has exact risk &lt;=r/2 and paid depth O(log N) at fixed r. Standard layerwise Lipschitz propagation in a max-row bounded tube yields error &lt;=G u sum_j Lambda^j. Selecting u=2^(-p) with p=O(log N) gives risk &lt;=r. This is an ordinary stability corollary of the existing predictor and layer bounds, not a new learning algorithm.
+
+The full combination may have a useful precise contract, but mere absence of its exact wording in a paper is insufficient to call it a new main theorem. Assess proof distance as well as literal statement overlap.
+
+## 3. Counterexample: arbitrary error budgets do not imply a deterministic-rounding lower
+
+Let round_delta be nearest-grid rounding with grid delta. Inputs 0.49delta and 0.51delta differ by only 0.02delta, yet round_delta returns 0 and delta. An admissible additive-error adversary with radius 0.01delta could instead map both to 0.50delta. Therefore the existence of a small cancelling perturbation does not imply that a specified correctly rounded operation erases the difference. Conversely a robust upper against every error in a budget covers any implementation whose local error is actually proved to lie in that budget.
+
+This example concerns quantifiers, not a full transformer counterexample. It explains why an adversarial lower cannot be transferred to round-to-nearest merely by naming the same error radius.
+
+## 4. Counterexample: fractional-grid bits differ from total floating bits
+
+For N=2^k, the value 1/N=2^(-k) can be represented with a constant-length normalized mantissa and an exponent whose binary length is O(log k)=O(log log N). On a fixed fractional grid 2^(-p), nonzero representation of 1/N instead requires p of order log N. Exponent range, mantissa precision, fractional bits and absolute error radius are separate quantities. Neither may be renamed “precision bits” without its definition.
+
+This elementary distinction is concretely reflected in Merrill–Sabharwal&#x27;s full-text Proposition 1 and is why an abstract-level constant-precision limitation cannot be read as a log-N total-floating-bit lower.
+
+## 5. Other non-equivalences to preserve
+
+- Random or unbiased errors do not include every input-aware cancellation policy. A worst-case lower does not establish expected-roundoff behavior.
+- Parameter perturbations apply the same altered weights across histories/layers when the definition says so; independently chosen rowwise activation errors have much more freedom.
+- Source-average loss is not worst-history output approximation; classification margin is not TV risk of a probability vector.
+- An epsilon-zero normalization can amplify vanishing signals without the fixed positive-epsilon Lipschitz envelope. It is a different architectural hypothesis, not a contradiction.
+- A Frobenius/Euclidean whole-sequence norm cannot be silently identified with maximum row Euclidean norm. Some prior results explicitly allow general norms, so norm mismatch must be checked, not presumed.
+- Perturbation stability in a compact domain requires an actual tube or global bound. No assumption that arbitrary large-error trajectories remain bounded should be inserted into the upper without proof.
+
+## 6. Current research verdict
+
+Keep the matching robustness statement as a precise technical proposition pending full primary-contract comparison. Do not yet promote it to the original coefficient-precision T2 frontier or a publication-level statistical novelty. A genuinely stronger next target would need a canonical execution model with a nontrivial risk-dependent boundary, or an original-model statistical contraction beyond last-bit context access. Further local symmetry variants do not address this gap.
+</pre></details><details><summary>摘要级比较的修订 · CORRECTIONS_AND_CLAIM_LIMITS.v1.md</summary><p class="hash">SHA-256 8f50673b475b692abdfc705c888d121bd0987d30392548a66076da7802cd467a</p><pre># Corrections to earlier abstract-level comparisons
+
+6 November 2026 UTC. Earlier frozen reports are preserved, not silently rewritten. This file supersedes only the comparisons identified below, not their mathematical proofs.
+
+1. Merrill–Sabharwal: the earlier strategic discussion paired its constant-precision uniform-attention limitation with a warning against claiming novelty for logarithmic precision. Full text now fixes the exact distinction: Proposition 1 is a log-log-N TOTAL-FLOAT-BIT underflow threshold. Its O(log N) execution class is not that proposition&#x27;s necessary threshold. The current candidate&#x27;s p instead denotes an absolute disturbance-radius exponent. Do not cite Proposition 1 as a log-N total-bit lower.
+2. Brösamle–Eckstein: full text explicitly omits LayerNorm/RMSNorm and permits growing width and Q/K scaling. It also contains genuine perturbation recurrences and denoising, so it cannot be dismissed as unrelated to robustness. The exact target still needs a different architecture/noise/task combination.
+3. Markov antecedents: pathwise same-history n-gram representations, normalization, additive smoothing and parameter-precision discussion are already present. Calling them independent-context or entirely unnormalized would be wrong. Akman&#x27;s construction explicitly applies quantizers after layers, so not all relevant prediction antecedents are exact-real-only.
+4. General robustness antecedents: Wei–Ma permits arbitrary normed spaces in its appendix; max-row norm alone does not separate the candidate. Castin et al. has both sqrt(N) Euclidean/Frobenius bounds and N-independent mean-field results; mentioning only the first would misrepresent its coverage.
+5. Every Bit Counts: the fixed-point one-layer result is the reliable p-versus-p−1 comparison. The checked floating-softmax appendix has statement/proof discrepancies; do not certify the printed floating one-bit claim without an author correction or a separate proof. This audit does not propose its own repaired theorem.
+
+No item here establishes novelty of the candidate. The repeated-erasure coupling is a short derivation from bounded single-row attention influence under a strong adversarial contract; the matching upper is ordinary perturbation propagation over the inherited compiler. Whether their exact combination is worth a standalone contribution remains unresolved and is distinct from literal noncoverage by these inspected theorems.
+</pre></details><details><summary>独立覆盖审阅 · INDEPENDENT_PRIMARY_COVERAGE_AUDIT.v2.md</summary><p class="hash">SHA-256 89f702f926f52d8346c894483ca8f91d9504ff4e0661468d056b6c735851f206</p><pre># Independent targeted primary-coverage audit (revision 2)
+
+6 November 2026 UTC. This checks selected consequential comparisons against primary passages and reviews the reduction ledger. It is neither an exhaustive literature search nor a novelty certification.
+
+## Exact local bindings
+
+- `FROZEN_COMPARISON_CONTRACT.v1.md`: `f43a535767380607be4be632554ceea8d34dc46314326b9d923609d41048b068`.
+- `FINITE_PRECISION_PRIMARY_FULLTEXT_AUDIT.v1.md`: `79bbf0c4f29434ccdcecdbe9da9f175293ebde0dccd330eb0145d94cd325249f`.
+- `MARKOV_NGRAM_EXECUTION_CONTRACT_AUDIT.v1.md`: `3685201f6c988550fd744bfec41938f55eaf628de013a1054387f321aad3e440`.
+- `REDUCTION_AND_COUNTERCONTRACT_LEDGER.v1.md`: `0da5733122ca6be5fad09cac61744434db1cc2d5f67288fb1715124e8f1886f0`.
+
+- `ATTENTION_ACTIVATION_PRIMARY_AUDIT.md`: `49010c8c9fdcd394c245b48ef5e960b169e63385aa050b33194cd565e4867ff2`.
+
+Verdict: the key distinctions and reduction conclusions below are supported. Do not strengthen “not supplied by direct substitution of the inspected theorem” into a universal non-subsumption or novelty claim. Other detailed external statements in the companion audits retain their own stated verification scope.
+
+## 1. Merrill–Sabharwal: verified correction
+
+Inspected complete local primary PDF text, Section 2.1 and Section 3 Proposition 1, corresponding to [arXiv:2210.02671v7](https://arxiv.org/pdf/2210.02671v7). Precision p totals mantissa and exponent storage. Proposition 1 gives at most 2^(2^p) nonzero rounded attention entries and zero uniform attention when p&lt;log2 log2 n. Thus the threshold from this proposition is double logarithmic in total floating bits. The O(log n) precision class studied later is not its necessary threshold.
+
+The audit properly notes that attention nonnegativity is needed for the counting argument even though the printed proposition displays only the sum constraint. This issue does not affect application to attention probability vectors. Neither float underflow nor the logical expressivity theorem implies the candidate&#x27;s logarithmic inverse-adversarial-radius threshold by renaming p.
+
+## 2. Every Bit Counts: discrepancy independently confirmed
+
+Inspected local primary PDF text for [arXiv:2602.02707v1](https://arxiv.org/pdf/2602.02707v1), Theorem C.2, Lemmas C.7–C.8, and the proof of C.2. The discrepancy is directly visible: the printed C.2 has m=p and a p versus p−1 statement, while its proof chooses m=2p−1 and cites a p+log p+2 upper. C.7 prints a p≥m bound but its proof yields ceil(m/2). These are textual statement/proof inconsistencies, not an independently established corrected theorem. The floating-softmax exact one-bit conclusion must remain qualified. The clean fixed-point result is a different cited result.
+
+No conclusion that the entire paper or every theorem is false follows. Nor can its one-layer equality task establish the target&#x27;s all-depth Markov-TV robust necessity without another reduction.
+
+## 3. Brösamle–Eckstein: actual normalization and rounding scope
+
+Inspected proceedings primary text Section 2.2, Remark D.5 and Theorem D.17. Section 2.2 explicitly omits LayerNorm/RMSNorm; an informal possible adaptation does not prove the target&#x27;s fixed positive-epsilon normalization contract. Remark D.5 lists multiple rounded activation locations and rounded attention weights, while excluding higher-precision accumulation and softmax-operation errors. It is not an all-operation finite implementation.
+
+D.17 really provides denoising conversion from its specialized hardmax class, with depth doubling, representability conditions and a Q/K scale growing with the context bound. Thus “only generic Lipschitz propagation exists in prior work” would be false. The companion audit correctly treats this as substantive nearby robustness machinery, while preserving its different invariant, task, range, width/score and normalization assumptions.
+
+## 4. Hahn, Chiang–Cholak and all-layer margins
+
+Independently inspected Hahn&#x27;s Lemma 5 in the primary text and Chiang–Cholak Section 4, Proposition 2 (printed p.7659). Hahn&#x27;s token-influence estimate is the inherited mechanism. Chiang–Cholak&#x27;s arbitrary-small-cross-entropy normalization claim explicitly uses epsilon zero; the following paragraph says positive epsilon makes normalization Lipschitz and restores applicability of Hahn&#x27;s lemma. It is incorrect to cite that epsilon-zero mechanism as a contradiction to the target&#x27;s frozen positive-epsilon envelope.
+
+Also inspected Wei–Ma Appendix A, printed p.16, equation (A.1): it allows arbitrary normed layer spaces and mixed norms over layer perturbations. Therefore a Euclidean-versus-maximum-row norm contrast alone is not a valid exclusion. Its perturbations are scaled by the preceding activation norm and its objective is a classification margin; translating to absolute rowwise disturbance balls and statistical TV requires explicit assumptions and a decision conversion. Prior all-layer adversarial perturbations must be acknowledged.
+
+Inspected Castin et al. Theorem 3.5: an N-independent bounded-domain mean-field Lipschitz bound is present. A comparison mentioning only the earlier sqrt(N) Frobenius estimate would be incomplete. Whether such a bound transfers to an aligned causal max-row contract requires the appropriate metric and causal hypotheses; “no N-independent prior bound” is not supported.
+
+## 5. Izzo–Nichani–Lee: primary checked
+
+Opened [arXiv:2510.27015v1](https://arxiv.org/html/2510.27015v1), Sections 3.1–3.3, Theorem 4.2 and its following discussion, and Definition 5.1/Theorem 5.2. Section 3.2 thresholds small max-shifted exponentials before normalization. Combined with logarithmic score scaling, this produces hardmax at sufficient length; it is not the candidate&#x27;s bounded-score residual perturbation model. Theorem 4.2 averages IID tokens under a Dirichlet categorical draw, and the following paragraph treats Markov average generalization as future work. The two-layer theorem uses infinite precision and restricted positional structure.
+
+The Markov audit is correct on these central distinctions. Its warning is also sound: a pathwise empirical-conditional representation can be combined with a risk theorem, so “representation versus risk” alone is not a robust novelty boundary. The other Markov papers&#x27; detailed theorem locators were reviewed in the companion document, not independently re-fetched in this targeted audit.
+
+## 6. Reduction ledger: independent proof check
+
+For one changed source row and fixed terminal query, the common-rest decomposition gives output change at most 4V exp(B)/T: each special-row weight is at most exp(B)/T and each row differs from the common-rest average by at most 2V. Reapplying this after terminal reset produces the stated all-depth erasure coupling under an input-aware adversary. The statistical conversion is ordinary conditional binary geometry. The upper is standard full-program bounded-tube stability composed with the existing predictor.
+
+Crucially, the erasure lower still holds if the fixed copy/flip source is known to the designer. Its obstruction is access to the last context bit, not estimation of an unknown transition matrix. The report&#x27;s short-technical-combination assessment is therefore justified; it does not establish a new estimation frontier merely by including an estimator in the upper.
+
+The nearest-rounding example is valid: 0.49delta and 0.51delta round differently, although allowed errors of magnitude 0.01delta can make both equal 0.50delta. Thus arbitrary-error erasure is not a deterministic-rounding lower. Conversely, an upper against every bounded error covers a concrete implementation only after its local errors are proved to fit that budget.
+
+For N=2^k, 1/N has a constant-length normalized mantissa and an exponent with O(log k) bits. This supports the distinction between fractional grid resolution, exponent range, total floats and absolute error radius. None is interchangeable by terminology alone.
+
+## Limits
+
+No absence-of-phrase or failed-search argument was used as novelty evidence. Exact coverage, direct consequence with extra hypotheses, related mechanism under a different contract, and unresolved comparisons remain distinct classifications. This review supplies no publication or priority certification. No scientific model execution, training, upload, or visual report rendering was performed.
+
+## 7. Completed attention-robustness companion review
+
+Read `ATTENTION_ACTIVATION_PRIMARY_AUDIT.md` in full after the initial independent checks. Its distinctions for Hahn, Chiang–Cholak, Wei–Ma and Castin agree with the primary passages inspected here. Additionally checked Hahn&#x27;s supplement Section S2, equations (34)–(35): it explicitly identifies the omitted attention-weight-change term, requires bounded positional embeddings and Lipschitz maps, and supplies its O(1/n) correction. A one-term value-only proof should not be reused.
+
+Also independently checked Castin Theorem 4.4 and Definition 4.1: the masked mean-field result is N-independent in its conditional-transport metric and compares equal positional marginals. This confirms that both unmasked and masked positive bounds must be represented in the comparison. It does not by itself identify that metric with the target max-row norm.
+
+Wei–Ma&#x27;s norm generality and input-specific perturbations mean neither “non-Euclidean” nor “adaptive” alone establishes a new perturbation framework. The report correctly retains the state-norm scaling and classification/TV conversion obligations. The remaining Tsai and Haris theorem details were read in the companion audit but not independently re-proved here; their original verification and stated limits remain applicable. Any reported Haris display inconsistency should likewise remain a literal statement comparison, not an inferred corrected theorem.
+
+The companion&#x27;s recommended technical positioning is justified: generic sensitivity, all-layer perturbations and stability are substantial prior mechanisms. A separately formulated repeated-erasure lemma is not automatically a publication-strength contribution merely because no identical statement was located in this targeted collection.
+</pre></details></section><footer><p>中文报告 v2 · 2026 年 11 月 6 日 UTC。本增量无数学枚举、模型执行或训练；未完成视觉渲染验收。</p></footer></body></html>
