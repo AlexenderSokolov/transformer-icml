@@ -1,0 +1,435 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>回到母问题：两条路线、已证障碍与执行鲁棒性起点</title><style>body{font-family:system-ui,-apple-system,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;color:#171717;max-width:980px;margin:auto;padding:40px 24px;line-height:1.8}h1{font-size:2rem;line-height:1.4}h2{font-size:1.5rem;margin-top:2.6rem}h3{font-size:1.15rem;margin-top:1.8rem}nav{margin:24px 0}a{color:#145a88}.eq{font-family:Cambria,Georgia,serif;padding:12px 0;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d9d9d9;padding:12px;text-align:left;vertical-align:top}th{background:#e8edf1}tr:nth-child(even){background:#f8f9fa}details{margin:22px 0}summary{cursor:pointer;font-weight:600;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.65 ui-monospace,monospace}.hash{overflow-wrap:anywhere;font-size:.85rem}footer{color:#555;margin-top:40px}@media(max-width:600px){body{padding:20px 16px}h1{font-size:1.6rem}td,th{padding:8px}}@media print{body{max-width:none;padding:0}nav{display:none}h2{break-after:avoid}tr{break-inside:avoid}a{color:inherit}}</style></head><body><header><h1>回到母问题：两条路线、已证障碍与执行鲁棒性起点</h1><p>v10 研究重评 · 2026 年 11 月 6 日 UTC</p><p><strong>判断：</strong>停止继续扩写局部对称变体。已有轨道平均、双相位与重心编译应作为技术引理保留，尚不能支撑一般 T1/T2 主定理。当前没有足够证据宣称已形成可发表的主创新。</p></header>
+<section id="routes"><h2>一 只保留两条路线</h2><p><strong>优先路线：明确执行合同的历史—深度—精度界。</strong>在原真实 PreLN 架构与二阶预测任务上，显式增加执行误差合同。已经得到固定风险下深度与执行精度同时为对数量级的证明起点。下一步必须检查已有精度文献的精确合同，再决定是否值得推进到规范的有限算术实现或趋零风险定理，而不是再制造一个可去除扰动。</p><p><strong>保留路线：原精确实数模型中的统计决策下界。</strong>直接控制来源测试或预测风险，允许非线性 K/V 在全部历史行上演化。目标是超过已有“常数风险需要 Ω(log N) 深度”的结论；当前尚无经证明的风险—深度函数，不能把旧后缀估计器的上界反推成下界。</p></section>
+<section id="bits"><h2>二 同一真实模型内已经证实的精度障碍</h2><p>固定有限系数集合、固定宽度、一个真正的 PreLN 注意力块，仍能产生 N+1 个不同终端输出。简单构造以 ±1 成对编码原始符号，零分数均匀读得到 u=√2(2S−N)/(N+1)，最终普通 LN／softmax 输出 sigmoid(2u/√(1+u²))，对总计数 S 严格递增。若合同强制保留位置和锚点寄存器，扩大到另一个固定宽度即可保留相同单调性。</p><p><strong>因此：</strong>系数有 B 位不等于每个状态只有 B 位；精确平均和 LN 运算会产生新的实数值。用系数描述数推出终端消息字母表大小的证明路线被此反例排除。这不是“所有 B 相关下界都不存在”，也不是固定深度能一致预测二阶过程。</p><p>即使真的施加 M 个终端状态，IID 子类仅给出量化下界 (1−2c)/(4M)。量化经验均值达到 O(N^(−1/2)+1/M)，说明单靠状态位数不能推出 1/√(状态位数) 风险。全部 N 行仍可变时，通用逐层通信模拟需 O(NWpD) 位，不能未经新证明删去 N。</p></section>
+<section id="robust"><h2>三 已开始并证明的联合鲁棒性目标</h2><p>固定 0&lt;c&lt;1/2 和 0&lt;r&lt;c(1−2c)/2。未知来源仍是转移概率在 [c,1−c] 的齐次二元二阶过程，目标与风险仍为实际末端条件分布的期望 TV。架构仍是正 ε 完整特征 PreLN、因果 softmax 和普通最终 softmax。</p><p><strong>新增合同必须明说：</strong>每个注意力残差子层、每个 FFN 残差子层之后，每一行允许一个范数≤2^(−p) 的加性误差；误差可以依赖输入并自适应选择。输入、系数和各子层内部运算理想精确，最后输出头也理想精确。风险取来源和允许误差策略的最坏情况。这是执行鲁棒性证书，不是系数位宽定理，不等同于普通四舍五入或随机舍入。</p><p><strong>在一次选定、足够大的固定宽度与完整范数包络内：</strong>达到风险≤r 需要 D≥Ω_(c,r)(log N) 且 p≥log₂(N+1)−O_(c,r)(1)；存在同一架构的长度依赖参数族，D=O_(c,r)(log N)、p=O_(c,r)(log N) 同时足够。上界的每系数描述也为 O_(c,r)(log N)，但没有得到该描述长度的必要性。</p></section>
+<section id="proof"><h2>四 下界和上界为何闭合</h2><p><strong>精度下界：</strong>比较仅最后原始符号不同的两条历史。保持合成终端状态相同时，任意一层对最后原始行的有界分数注意力贡献差仅为 C/(N+1)。在每次读取后，误差策略把该差抵消，使终端持续沿同一个规范轨迹前进。无论深度多大，都无法恢复每次读入即被删除的符号影响。非终端行可以任意合法演化，不要求静态记忆。</p><p>在固定正转移的复制—翻转 Markov 来源上，最后符号两个分支的目标差为 1−2c，条件概率均至少 c（任意初始二元分布时取 N≥3），故这样的鲁棒风险至少 c(1−2c)。零误差本身又是允许策略，因此已有末端敏感度深度下界同时适用。</p><p><strong>匹配上界：</strong>先选一个只依赖 c,r 的固定后缀长度，让已审真实预测器的精确风险≤r/2，其实际深度 O(log N)。在完整状态的固定邻域内，每个实际子层对最大行范数的 Lipschitz 常数 Λ 与 N 无关。若共有 L 个受扰子层，误差递推给出 E_L≤2^(−p)∑_{j&lt;L}Λ^j。取 p=O(L+log(1/r))，既保持邻域归纳，也让输出 TV 增量≤r/2。归一化、填充和幅度恢复都包含在这些实际子层中。</p><p>这证明了固定风险下两个资源的匹配数量级，未证明精确交换曲线、趋零风险依赖、硬件舍入正确性或训练可得性。现有敏感度和误差传播工具都是继承工具，新旧贡献必须分开。</p></section>
+<section id="other"><h2>五 更具体舍入合同的障碍与限制</h2><p>若每条 softmax 权重在聚合前独立舍入到 2^(−p) 固定网格，且不重新归一化，分数跨度≤B 时，N+1&gt;2e^B2^p 会令所有终端边变成零。任意深度、宽度和非终端分布式记忆都不能绕过零输入通道。这是明确合同下的真实下溢障碍。</p><p>但聚合后舍入、浮点指数表示、零向量的均匀回退、稀疏掩码或增长分数跨度都可能改变结论。将其包装成“低精度 Transformer 普遍失效”是错误的。完整有限实现还要分别证明 LN、指数、除法、累加和初始幅度的精度，不能只量化注意力权重。</p></section>
+<section id="prior"><h2>六 发表潜力与下一步停止标准</h2><p><a href="https://arxiv.org/abs/2210.02671">Merrill–Sabharwal 的 log-precision 工作（2025 修订）</a>已明确指出其常数精度模型无法表示均匀注意力；<a href="https://arxiv.org/abs/2602.02707">Every Bit Counts（2026）</a>已证明单层 equality 类任务的逐比特精度阈值。因此“需要 log N 精度”这个口号本身不是新颖性。</p><p><a href="https://aclanthology.org/2022.acl-long.527/">Chiang–Cholak（2022）</a>讨论归一化如何改变已有注意力限制；<a href="https://arxiv.org/abs/2510.27015">Izzo–Nichani–Lee（2025）</a>区分平均／一致误差和有限／无限精度的长度模拟。这些新核对主要来自原始摘要页，尚未完成逐定理合同对照，不能据此认证优先权。</p><p><strong>继续路线一的门槛：</strong>主文献完整合同对照后，必须发现并关闭真实缺口，例如规范算术下的一致预测精度阈值或趋零风险的联合界。若只剩均匀权重下溢加通用稳定性，降级为技术命题，不再扩写成主结果。</p><p><strong>继续路线二的门槛：</strong>给出对真实全行演化的统计测试收缩，而不是系数计数、单个终端寄存器计数、完整输出模拟或强制后缀替代。没有这个新不变量，就不再增加局部轨道例子。</p><p>全部失败与旧版本本地保留。没有实验、模型执行、参数生成、训练、上传或投稿。文档静态检查不是科学验证；未进行视觉渲染验收。总体结论是研究方向收缩并获得严格起点，而不是母问题已经解决。</p></section>
+<section id="appendix"><h2>七 完整证明与独立审阅原文</h2><p>候选创建时的待审状态以对应精确版本审阅为准。下列原文可离线核对，哈希仅用于版本绑定，不是科学执行或机器证明。</p><details><summary>战略路线与先行工作门槛 · STRATEGIC_DECISION_AND_PRIOR_GATE.v1.md</summary><p class="hash">SHA-256 c5222773e58f32f73563e8b9ae69770b64d55fb85392b137b1755f57995fe555</p><pre># Strategic decision: one active route and one reserved mother-problem route
+
+6 November 2026 UTC. This is an assessment, not a publication-readiness or novelty certification. Local orbit variants are paused. Their sourcewise risk comparisons, exact phase certificates and physical compilers remain useful technical lemmas and counterexample hygiene; they have not established the arbitrary-memory T1/T2 frontier.
+
+## Route 1: explicit execution robustness, with a proved fixed-risk starting point
+
+Priority: first, because it has a fully falsifiable model and a completed analytical core. It preserves the actual PreLN/softmax architecture and Markov prediction task, but ADDS a worst-case execution-error contract. Do not quietly substitute it for the original exact-real/coefficient-precision problem.
+
+Target already proved in the candidate, subject to exact independent review: for fixed c and 0&lt;r&lt;c(1-2c)/2, with perturbation magnitude 2^(-p) after each attention and FFN residual, and a sufficiently large once-frozen fixed-width/full-norm envelope, low robust risk requires D=Omega(log N) and p&gt;=log2 N-O(1); an inherited suffix estimator plus full-program tube stability achieves D,p=O(log N). Inputs and coefficients are exact; final output head is ideal; errors are input-aware/adaptive vectors. The model is not deterministic round-to-nearest hardware.
+
+The potentially meaningful new obligation is all-depth terminal erasure despite evolving nonterminal memory. Its proof cancels each O(1/N) access to the final raw token, preserving a canonical terminal trajectory. The depth lower and numerical upper use old sensitivity/stability tools. Matching orders at fixed risk is a sound result but may be too elementary or too close to prior precision work to serve alone as a leading conference main theorem.
+
+Next gate, not another synthetic variant: inspect the precise arithmetic contracts in the primary finite-precision papers below and determine whether a canonical rounded execution implementation has a genuinely distinct statistical threshold. A full finite implementation must charge LN, exp, division, accumulation, storage, initial small-amplitude embeddings and exponent/range, not only coefficient bits. If the result reduces to known uniform-attention underflow plus generic stability, retain it as a technical proposition and do not expand it into a claimed novel main result. A stronger target would resolve risk tending to zero or a sharp depth–precision exchange under one realistic, fixed arithmetic contract; neither is currently proved.
+
+## Route 2: exact-real, estimator-relevant lower bound (reserved, higher risk)
+
+Keep the original exact-real model and fixed width, full norms, raw source and arbitrary evolving K/V. The only viable lower-bound objective is directly on statistical decisions or target risk, not reconstructing every output perturbation. A proposed source testing contraction must survive the known nuisance counterexample, account for all N evolving rows and arbitrary head/depth schedules, and yield something beyond the existing D=Omega(log N) constant-risk threshold.
+
+Concrete proof target before any further artifact expansion: for the lag-two local-alternative experiment, derive an architecture-sensitive bound on the distinguishability of the final bounded decision as a function of paid depth and width, with no imposed post-read finite summary. No justified function F(D,W,B) is presently available for a proposed risk&gt;=const/sqrt(min(N,F)) theorem. Do not assign a conjectured exponent merely because the old suffix estimator uses depth proportional to inverse risk squared.
+
+Stop condition: an argument based only on (i) coefficient-description cardinality, (ii) terminal state bit count, (iii) exact-output communication, or (iv) a mandatory sublinear suffix is already blocked by explicit results. No more local orbit constructions are warranted unless they prove the missing architecture-sensitive contraction for a genuinely broader class.
+
+## Proved barriers that change route selection
+
+- Fixed coefficient precision does not bound the number of reachable outputs: a genuine constant-width one-block PreLN network with a fixed finite coefficient set produces N+1 distinct outputs. Mandatory public registers can be retained in a larger fixed width.
+- Even a real M-state terminal cut gives only the scalar quantization floor (1-2c)/(4M), tight in order for IID estimation plus sampling error. It cannot alone imply inverse-square-root risk in the number of state bits.
+- A general all-row simulator charges O(N W p D), not O(W p D). Removing N needs a real structural theorem.
+- The existing growing-width actual network blocks universal sublinear-suffix replacement. It does not resolve the fixed-width original problem.
+
+## Fresh primary-source checks and remaining priority gate
+
+The following primary abstract pages were opened during this reset. Claims are limited to their abstracts; no complete theorem-by-theorem novelty comparison is asserted.
+
+1. Merrill and Sabharwal, A Logic for Expressing Log-Precision Transformers, arXiv:2210.02671v7, corrected September 2025: https://arxiv.org/abs/2210.02671 . The abstract explicitly states that its finite-precision variant cannot represent uniform attention and studies log-n forward precision. Thus the broad slogan “uniform attention needs logarithmic precision” is prior work. Exact numerical conventions must be compared to the new adversarial residual-error certificate.
+2. Chakrabarti, Pitassi and Alman, Every Bit Counts, February 2026: https://arxiv.org/abs/2602.02707 . Its primary abstract states a one-layer equality-inspired p-versus-p−1 expressivity threshold using finite-precision constructions and communication lower bounds. This prevents broad precision-frontier novelty claims; it does not itself establish the present unknown-Markov multi-layer task bound.
+3. Chiang and Cholak, Overcoming a Theoretical Limitation of Self-Attention, ACL 2022: https://aclanthology.org/2022.acl-long.527/ . The abstract uses layer normalization to improve cross-entropy on PARITY/FIRST and discusses length generalization. The exact epsilon and bounded-gain assumptions must be read from its proof before comparison, not inferred from the abstract.
+4. Izzo, Nichani and Lee, Quantitative Bounds for Length Generalization in Transformers, October 2025: https://arxiv.org/abs/2510.27015 . The abstract distinguishes average versus uniform error, finite versus infinite precision, and one versus two layers in shorter-sequence simulation. This is a close simulation neighbor, not permission to assume arbitrary evolving-memory task folding.
+5. Hahn&#x27;s fixed-depth token influence lineage is already identified in the archived primary comparison; the accessible primary paper is https://nlp.stanford.edu/pubs/hahn2020theoretical.pdf . Its O(1/N) influence mechanism must remain credited rather than relabeled as a new depth theorem.
+
+The prior orbit-resource comparison additionally records 2026 low-precision CoT and padded-transformer results. No claim is made that these searches are exhaustive. Publication potential remains an open judgment contingent on the primary-contract comparison and a genuinely nontrivial extension, not on the number of accumulated lemmas.
+
+No training, model execution, numerical experiment, upload, purchase or submission was performed. Old failed versions are preserved. This reset prioritizes one bounded proof program instead of indefinitely expanding removable-nuisance constructions.
+</pre></details><details><summary>系数位宽不等于状态位宽 · COEFFICIENT_BITS_NOT_STATE_BITS.candidate.v1.md</summary><p class="hash">SHA-256 77abb0004cd4ce7895a392f7e778d9336d8ffbd8f42ad3a668b93a1cf78a2649</p><pre># Constant coefficient precision does not bound output alphabet size
+
+6 November 2026 UTC. Symbolic candidate v1; independent review pending. This is an exact-real PreLN obstruction to a proposed precision proof, not a statistical lower or a consistency theorem.
+
+## 1. One-block construction in the actual architecture
+
+Use width d=2. For raw binary symbol x_i set h_i^0=(2x_i-1,-(2x_i-1)); initialize the synthetic terminal T=N+1 to (0,0). Public positions may remain unused. All input embeddings and trainable coefficients below are drawn from the fixed finite set {0,+1,-1,2}. Every LayerNorm has epsilon=1, gain=2 and zero shift.
+
+Use one standard causal self-inclusive attention block with Q=K=0, one scalar value head W_V=(1,0), and output projection W_O=(1,-1)^T. The attention residual is retained. Set the FFN branch identically zero. Finish with a final full-feature LayerNorm and vocabulary logits (first coordinate,0), followed by ordinary binary softmax.
+
+At a raw row the input is mean zero with variance one, so its normalized first coordinate equals sqrt(2)(2x_i-1). The synthetic input value is zero. Thus, if S=sum_i x_i, the terminal after attention is (u,-u), where
+
+ u=sqrt(2)(2S-N)/(N+1).
+
+The final LayerNorm maps this to (2u/sqrt(1+u^2),-2u/sqrt(1+u^2)). Its probability of the first vocabulary symbol is
+
+ q_N(S)=sigmoid(2u/sqrt(1+u^2)).
+
+The derivative of 2u/sqrt(1+u^2) is 2/(1+u^2)^(3/2)&gt;0. Therefore q_N(S) takes N+1 distinct values as S ranges from 0 to N.
+
+All full per-row hidden norms are bounded by sqrt(2)(1+sqrt(2)) before the final LayerNorm: each uniform average of scalar values is at most sqrt(2) in magnitude. Every full matrix/operator and bias norm is bounded by two, and all primitive Lipschitz constants have a fixed finite bound. Width, depth, head count and per-coefficient binary description length are independent of N. The ordinary causal denominator 1/t and normalization square roots are operations of the stipulated exact-real model, not learned coefficients.
+
+## 2. What this rigorously rules out
+
+A proposed argument saying that a terminal real state or output has at most 2^(C W D B) possible values merely because every parameter has B bits is false in this model. Here W,D,B are fixed while the output alphabet grows without bound. A communication simulation that sends one terminal coordinate exactly cannot price that coordinate as B bits solely from coefficient precision.
+
+The same observation applies to counting distinguishable reachable states before the final output. Arithmetic precision and coefficient precision are separate resource axes. Input length and exact attention averaging can generate increasingly fine real values from a finite coefficient set.
+
+This does NOT show that statistically meaningful prediction risk can be arbitrarily small at fixed depth: the constructed q_N is not a universal Markov predictor, and the established terminal-context depth lower still applies. It does not refute lower bounds that explicitly charge an approximation tolerance, output dynamic range, or actual quantization of activations/attention arithmetic. It also does not show an N+1 alphabet needs more than O(log N) bits to communicate; it only rejects an N-independent B-based cap.
+
+## 3. Alternative contract that would be needed
+
+If one explicitly rounds every retained coordinate to a known p-bit finite set, a width-W terminal state has at most 2^(pW) possibilities. A final deterministic decoder has no more output codewords. That finite-alphabet fact is correct under the changed execution model, but does not apply to the current exact-real PreLN model. Rounding every coefficient alone is not such a change.
+
+This candidate supplies a strict obstacle to a tempting joint precision theorem, and helps delimit the remaining targets. It is not a new attention expressivity principle or a substitute for the mother problem&#x27;s statistical resource analysis. No numerical execution, training, upload or parameter-generation experiment was performed.
+</pre></details><details><summary>固定风险的执行鲁棒性联合界 · JOINT_PRECISION_BARRIER_AND_ROBUSTNESS.v3.md</summary><p class="hash">SHA-256 735f5647c3c26df7389cb33e6bc59df9df29eabd01a6374630d0ed99b497edfc</p><pre># Joint history–depth–precision: an exact-model barrier and a changed-model candidate
+
+6 November 2026 UTC. Analytical research note v3. Preserves v1 and v2 and retains the correction of the arbitrary-initial-pair condition to N&gt;=3. Includes the fixed-risk matching robustness candidate in Section 5. No upload, training, numerical experiment, priority claim, or new statistical rate. These results distinguish coefficient description length B from execution precision b. They are not interchangeable.
+
+## Finding
+
+In the existing exact-real bounded-norm positive-epsilon PreLN model, the established last-token sensitivity argument supplies a history–depth lower bound, with NO coefficient-bit term. A finite coefficient alphabet does not supply a finite activation alphabet. The explicit construction below rules out importing fixed-summary quantization bounds by merely substituting coefficient bits for master-word bits.
+
+A potentially useful genuinely three-resource extension requires a new execution-error contract. Under worst-case bounded per-layer execution errors, b=Omega(log N) is necessary regardless of depth. This is a changed-model theorem, not an answer already proved in the current model. It may be worth pursuing only if a finite-execution theorem is a deliberate research objective.
+
+## 1. Exact same-model coefficient/activation obstruction
+
+Take width d sufficiently large to contain the prescribed input registers, two paired symbol coordinates, and a fresh paired destination. Embed binary raw symbols as (s,-s) with s in {-1,+1}, with coefficient entries in {0,+1,-1}. Retain public positional/constant coordinates if required, as orthogonal source-independent registers. The synthetic terminal row has zero symbol pair. All initial row norms are bounded. Pair public registers too, so row means are zero; public register values may depend on i and N, as allowed by the current public-position input convention.
+
+Use one genuine causal PreLN attention block, epsilon=1, gain=2, zero shift, Q=K=0. Use V and O to copy the symbol pair to the fresh destination pair, with fixed entries 0 or 1. Set its FFN to zero. If the source-independent squared norm of the public registers at row i is r_i^2, LayerNorm sends its symbol pair to
+
+    a_i (s_i,-s_i),  a_i=2/sqrt(1+(2+r_i^2)/d)&gt;0.
+
+The terminal destination is therefore exactly
+
+    (u,-u),  u=(1/T) sum_(i=1)^N a_i s_i, T=N+1.
+
+Every coefficient of the embedding, attention, and FFN has constant description length, all complete operator/state norms are bounded, and there is one head and constant depth. Public position precision is part of the input contract, not coefficient storage. All arithmetic is exact-real.
+
+Start with all s_i=-1 and flip them to +1 one at a time in a fixed order. The terminal u increases strictly at every flip. There are at least N+1 different terminal states at constant coefficient precision and fixed width. With no position registers, all a_i are equal, and these are exactly the N+1 count values. Public registers do not invalidate the strict monotonicity argument.
+
+An ordinary final epsilon-one/gain-two LN and a fixed affine logit projection onto u preserve distinguishability: the relevant scalar is
+
+    g(u)=2u/sqrt(1+(r_T^2+2u^2)/d),
+
+whose derivative is strictly positive for all u. Binary softmax with logits (g(u),0) is also strictly increasing. Thus this is an output-level obstruction, not merely inaccessible hidden information.
+
+Conclusion: no bound of the form &quot;the terminal message has at most 2^{O(d B)} labels&quot; follows from per-coefficient B bits. The example does NOT prove that constant B achieves vanishing uniform Markov prediction risk; its nonlinear readout is not an accurate count-to-probability estimator. It specifically disproves the proposed finite-message inference. Nor does it exclude every conceivable B-dependent lower bound proved by a different mechanism.
+
+## 2. The exact-model raw-tail lower bound that does follow
+
+Freeze the actual model&#x27;s width/head and full-norm/primitive-Lipschitz envelope so each terminal block obeys the usual bounded-score sensitivity constants. More generally allow any fixed bounded head count; constants may depend on that count and envelope. For histories differing only in raw token N, rows 1,...,N-1 agree at every layer by causality. Their terminal inputs agree. Every reachable row is bounded, including row N.
+
+At each layer, changing row N while keeping the terminal query and other rows fixed changes terminal attention by at most C/T. This follows directly from score bounds |score|&lt;=S: each weight is at most exp(2S)/T, and changing one score/value changes the normalized weighted sum by O(1/T). Changes in the terminal row itself contribute at most A times its old difference, including the query, its own key/value, LN, residual and local FFN. Consequently, for suitable frozen A&gt;1,C,
+
+    e_0=0, e_(l+1)&lt;=A e_l+C/T,
+    TV(Q(x_1:N),Q(x_1:N-1,x&#x27;_N))
+        &lt;= C_out C (A^D-1)/((A-1)T) =: Delta_D.
+
+Here D counts actual blocks; any equivalent constant-factor primitive-depth convention changes A only. This is an architecture bound and holds regardless of coefficient description precision.
+
+For a concrete statistical witness, choose the binary first-order chain (also an order-two kernel) with
+
+    P(X_(t+1)=1 | X_t=0)=c,
+    P(X_(t+1)=1 | X_t=1)=1-c,
+
+for fixed 0&lt;c&lt;1/2, with any permissible initial law. At N&gt;=3 (allowing an arbitrary initial-pair law) each conditional final-symbol probability given the prefix is at least c. The two next-symbol target laws have TV distance 1-2c. For each prefix, the triangle inequality and min{conditional weights}&gt;=c give
+
+    E[TV(Q,p_actual) | prefix] &gt;= c(1-2c-Delta_D)_+.
+
+The same holds after averaging prefixes. Thus risk below c(1-2c)/2 forces D&gt;=Omega(log N), with constants fixed by the model envelope. Together with the known parametric sample lower one can state a maximum of that sample lower and this architectural floor, but this is old mechanism/composition, not a new three-resource mother theorem.
+
+The chain is strictly positive and belongs to the source class used by the current statistical witness. This argument does not need deterministic target rows, an externally supplied suffix, or a cut restricting history access.
+
+## 3. Changed-model theorem: adversarial execution errors after every read
+
+This section deliberately changes exact-real execution. Declare that immediately after EACH attention sublayer, an adversary may add an arbitrary vector of Euclidean norm at most delta to the terminal residual state. Error-free execution remains admissible. Raw observations, weights, and nonterminal rows are not changed. Analyze robust risk, the supremum over allowed errors of expected terminal TV. Require the same fixed reachable-state envelope, or a bounded tube large enough to contain the coupled executions.
+
+For any two histories sharing X_1:N-1 but differing in X_N, construct their execution as follows. Use the X_N=0 run without errors as reference. In the X_N=1 run, maintain the same terminal state as reference before every read. Earlier rows coincide by causality, row N may differ but remains bounded, and the terminal queries are identical. The terminal outputs of that attention sublayer differ by at most C/T, by the single-key/value replacement estimate above. Choose the allowed terminal error to cancel this difference exactly. Subsequent deterministic terminal-local computations agree. Repeat at every attention read, irrespective of how many reads/depth stages there are.
+
+Hence, if delta&gt;=C/T, a legal error policy makes the final prediction identical for both final-symbol branches for each prefix. On the same fixed positive binary chain,
+
+    robust risk &gt;= c(1-2c).
+
+This construction works with actual PreLN, nonlinear evolved nonterminal states, and a conventional final softmax. It does not assume a stale memory bank or a one-read decoder. The adversary may depend on the whole input and reference run, as permitted by worst-case execution error. This is not a stochastic roundoff theorem.
+
+If the execution contract has delta=kappa*2^(-b), this yields the necessary condition b&gt;log2(T)-O(1) for robust risk below c(1-2c). Depth cannot recover a final token whose O(1/N) contribution is erased at every access. Separately, setting all errors to zero retains Section 2&#x27;s logarithmic depth necessity. Therefore a robust low-risk realization needs BOTH D=Omega(log N) and b=Omega(log N). Section 5 supplies a matching fixed-risk upper for the source class under an explicitly declared compatible stronger error contract.
+
+This result cannot be claimed for ordinary correctly rounded arithmetic without further work: a malicious cancelling vector is not necessarily a realizable rounding error, rounding-cell boundaries can preserve tiny changes, and random/unbiased errors have different quantifiers. It also cannot be claimed from finite coefficient descriptions. Width/head growth or a growing score/norm envelope changes C and requires explicit accounting.
+
+## 4. Failed routes and what to do next
+
+1. Count model descriptions to count messages: invalid. The same fixed program yields arbitrarily many exact-real outputs, as Section 1 proves.
+2. Treat eta=2^(-M) in existing compiler as a necessary M-bit coefficient: invalid as a lower-bound inference. It proves one sufficient implementation&#x27;s precision cost, not a requirement of every architecture; paid repeated contractions can manufacture small signals from simple constants, although an exact full PreLN constant-alphabet compiler has not been established here.
+3. Use a quantized-summary lower after the first attention read: changes the model because raw rows remain accessible and future layers can read them again.
+4. Infer arithmetic robustness from O(log N)-bit dyadic weights: invalid. LN square roots and attention divisions are still exact operations in the current results.
+5. Claim no B lower of any sort: not proved. The actual conclusion is narrower: the current statistical/quantization argument supplies none, and there is a concrete counterexample to its required finite-message premise.
+
+Recommended strategic decision: keep exact-real coefficient descriptions in the resource ledger, not as a claimed precision frontier. Either pursue a truly same-model evolving-memory lower by a different structural invariant, or explicitly announce a finite-execution branch and attempt matching robust upper/lower bounds. Do not dress the old log-depth sensitivity lower as a new joint theorem.
+
+## Local dependencies inspected
+
+- ordered_causal_memory_20261106/TWO_READ_PRELN_COMPILATION.candidate.v4.md: exact-real semantics; small-amplitude precision is a sufficient construction cost; total parameter bits differ from per-coefficient bits.
+- nonlinear_statistical_frontier_20261106/WIDE_PRELN_STATISTICAL_WITNESS.candidate.v2.md: genuine growing-width PreLN/full-norm contract and explicit arithmetic caveat.
+- prior_art/precision_frontier_followup.md: fixed-master quantization interface differs from optimized encoders, streaming memory, and coefficient precision; established finite-message/half-log threshold mechanisms are not new.
+- prior_art/two_resource_targeted_comparison.md: communication/statistic quantization sources do not establish an architecture-wide bit frontier.
+
+## 5. Matching fixed-risk robust certificate (candidate extension)
+
+The existing constant-width suffix compilation supplies a matching upper at fixed target risk, without proving new estimation rates. Here is the compatible precise contract.
+
+Fix 0&lt;c&lt;1/2 and 0&lt;r&lt;c(1-2c)/2. After EACH attention residual sublayer and EACH FFN residual sublayer, allow additive errors at EVERY row, independently chosen with Euclidean norm at most u=2^(-p). The error policy may be adaptive and input-dependent. All supplied input symbols/positions and coefficients are exact; LN, softmax and affine computation are ideal before the declared additive perturbation. Final output LN/affine/softmax is ideal. This last convention is harmless for extension to a final additive error, but fixes the theorem unambiguously. Risk is sup over sources and admissible policies of expected TV from the actual terminal transition law. This is a robust execution certificate, not a specified hardware quantizer.
+
+Choose one sufficiently large fixed width and parameter/state envelope, depending on c and r, that contains the existing fixed-suffix PreLN construction and a radius-one tube around all of its reachable exact states. The same envelope is used in the lower statements. With source-independent length-dependent weights, there exist D_N&lt;=C_(c,r) log(N+1) and p_N&lt;=C_(c,r) log(N+1), and per-coefficient description length B_N=O_(c,r)(log(N+1)), such that robust risk is at most r for all sufficiently large N. Conversely, within this frozen bounded-head/full-norm model, robust risk &lt;=r forces D&gt;=a_(c,r) log(N+1)-b_(c,r) and p&gt;=log2(N+1)-b&#x27;_(c,r).
+
+Upper proof. Choose a fixed power-of-two suffix length b sufficiently large that the reviewed TWO_READ_PRELN_COMPILATION v4 bound
+
+    13 sqrt(32/(b-1)) + 1/b + O_c(b^(-2))
+
+is at most r/2. All constants and b now depend only on c,r. That construction has fixed width, D_N=O_(c,r)(log N), and a fixed full-state/full-parameter norm envelope. It already includes the bounded conventional terminal readout and all amplitude-restoration/padding stages. No new learning argument is needed.
+
+On the fixed tube each complete sublayer map is Lambda-Lipschitz in the maximum-over-rows Euclidean norm, for one Lambda&gt;=2 independent of N. For causal softmax this follows by bounding score differences in sup norm from bounded Q/K and LN, using ||softmax(s)-softmax(s&#x27;)||_1&lt;=2||s-s&#x27;||_infinity, and using the bounded value-row envelope; no factor N appears. FFN/LN/residual bounds are direct. Let G&gt;=1 be a terminal output TV Lipschitz constant on the tube. For L=2D_N perturbed sublayers,
+
+    E_j &lt;= Lambda E_(j-1)+u,
+    E_L &lt;= u (Lambda^L-1)/(Lambda-1).
+
+Choose p so that this last bound is at most min{1/2,r/(2G)}. Tube induction is then valid at every preceding stage because the bound is increasing in j. Final TV changes by at most r/2, uniformly over input words and adversaries, giving robust risk &lt;=r. The needed p is O_(c,r)(L+log(1/r))=O_(c,r)(log N). This treats all normalizing and restoration stages, rather than supposing their cancellation is exact under perturbations.
+
+Lower proof. Zero errors are admissible, so Section 2 gives logarithmic depth. For the precision lower, the Section 3 erasure policy is a legal subset of this stronger all-row/two-sublayer error contract: set every FFN error and every nonterminal error to zero, and use only terminal post-attention errors. If 2^(-p)&gt;=C/(N+1), robust risk is at least c(1-2c)&gt;r, independent of depth. Therefore p&gt;log2(N+1)-log2 C.
+
+What this establishes, conditional on the cited compiler&#x27;s audited theorem: matching logarithmic ORDERS of two necessary resources at fixed risk, jointly achievable by the same actual PreLN architecture. It does not prove an exact depth–precision exchange curve, optimized coefficient precision, vanishing-risk dependence, stochastic roundoff behavior, or a guarantee for any particular arithmetic implementation. The shared norm envelope must be frozen after choosing c,r and the upper construction; it is not a claim for an arbitrarily prescribed too-small numerical envelope. Treat this as a proposed extension to the model, not a result already inside the exact-real paper.
+
+
+## 6. Construction cross-check and prior-art caution
+
+The companion note COEFFICIENT_BITS_NOT_STATE_BITS.candidate.v1.md was independently checked symbolically: its width-two one-block formula, monotonicity, bounded states, and constant coefficient alphabet are correct when unused positional inputs need not occupy hidden coordinates. If the declared contract requires retaining position/anchor registers, Section 1 here supplies the same argument with paired public registers in a larger fixed width. This is an input-contract caveat, not a failure of the coefficient/activation distinction.
+
+A targeted literature screen reports the following prior finding: Merrill–Sabharwal, arXiv:2210.02671v7 (2025 correction), explicitly notes a constant-precision obstruction to uniform attention. This report has not been independently checked here. Consequently, do not claim that p=Omega(log N), the constant-precision failure of 1/N averaging, or the sensitivity-to-precision link is new. A careful primary-source theorem comparison must distinguish their arithmetic convention from the adaptive terminal-error robust minimax convention here before judging whether Section 5 adds anything worth pursuing. No publication-readiness or priority conclusion follows from this note.
+</pre></details><details><summary>有限执行障碍与未成路线 · FINITE_EXECUTION_RESET_AND_OBSTRUCTIONS.v2.md</summary><p class="hash">SHA-256 58e15e0a5c756f83e1881cdf412a36d9b0d332eecdb266c4934dce9c29ae75c8</p><pre># Mother-theorem reset: finite execution, not another orbit lemma
+
+6 November 2026 UTC. Version 2 preserves v1 and makes the stage boundary for rounding-error accounting explicit. Independent strategic assessment and self-contained obstruction proofs. No training, scientific executable, upload or external mutation. These are analytical results, not an independent certification of the existing compilers. External comparisons below use the already recorded primary-source audit rather than a fresh literature search.
+
+## 1. Freeze what remains unproved
+
+The common statistical experiment is one unknown stationary interior binary order-two source, a raw N-symbol history, public source-independent positional features, a synthetic terminal, causal evolving all-row memory, fixed positive-epsilon full-feature PreLN, bounded complete norms, and ordinary terminal affine-softmax prediction. The target is the conditional next-symbol law at the actual terminal context, on the same history. Width, total paid primitive depth, number/dimension of reads, arithmetic precision, and N-row storage are separate resources.
+
+The old suffix estimator already gives O(b_suffix^(-1/2)) risk with O(log N+b_suffix) depth and constant width, under exact-real execution. The wide witness already achieves O(N^(-1/2)) with O(N) width and O(log N) depth. These are not new statistical exponents. The accepted orbit bridges and scalar evaluators are supporting compatibility results. The quadratic IID nuisance already blocks uniformly simulating EVERY low-risk output at a small risk-relative tolerance with polylogarithmic communication. Any purported universal output simulator must confront that counterexample first.
+
+Two directions remain defensible: an explicit finite-execution theorem with joint history/depth/width/precision accounting, or a genuinely architecture-sensitive statistical lower bound that works modulo statistically irrelevant output nuisance. Neither is currently proved. Below are proved obstructions that sharply constrain both directions.
+
+## 2. Proved obstruction A: a terminal bit budget gives an exponential floor, not an inverse-square-root floor
+
+Let c in (0,1/2), L=1-2c, and suppose a predictor&#x27;s only history-dependent input to its final decoder is a state S with at most M values. Positions, N and source-independent fixed parameters may be supplied freely. The decoder may use source-independent randomness. All earlier N rows may contain arbitrary distributed state. On the IID subclass p in [c,1-c],
+
+    sup_p E_p |q-p| &gt;= L/(4M).
+
+Proof. First fix every source-independent random tape, including decoder randomness. Each possible state s then produces one number q_s. For every sample, |q-p| &gt;= min_s |q_s-p|. For any M real reconstruction points, partition [c,1-c] into their Voronoi cells of lengths l_s (empty cells allowed). The integral of absolute distance to a point over a cell of length l is at least l^2/4. Consequently
+
+    integral_c^(1-c) min_s |q_s-p| dp &gt;= sum_s l_s^2/4 &gt;= L^2/(4M).
+
+Average over all tapes, divide by L, and then take the supremum over p. Conditioning on tapes is valid even if the encoder also uses them: the pointwise nearest-codeword lower does not depend on the conditional distribution of S. This proves the result.
+
+If the terminal state has W coordinates of b bits each, M&lt;=2^(bW), giving risk &gt;= L·2^(-bW)/4. Combine with the existing IID two-point sample lower to obtain
+
+    risk &gt;= max{ c_0/sqrt(N), L·2^(-bW)/4 }.
+
+No all-row storage assumption is needed for this theorem because the cut is immediately before the final decoder. But all history-dependent skip connections or outputs from other rows crossing that cut must be included in S. A decoder with additional history access invalidates the cut. A source-specific trained parameter that identifies p also invalidates the experiment. Randomized codebooks do not invalidate the proof.
+
+### Sharpness of the information-only argument
+
+On IID Bernoulli(p), compute the empirical mean p_hat and quantize it to the nearest of M equally spaced points in [0,1], M&gt;=2. Its risk is at most
+
+    E|p_hat-p| + 1/[2(M-1)] &lt;= 1/(2sqrt(N)) + 1/[2(M-1)].
+
+The final state needs only ceil(log2 M) bits. This is an abstract computation, NOT a claimed constant-depth PreLN realization. It proves that no lower bound stronger in M follows merely from the size of the terminal state and the IID experiment. In particular, a purported universal risk &gt;= const/sqrt(bW), derived only by counting final states or using I(history;S)&lt;=bW, is false. Parameter estimation encodes an estimate, not the N sample bits. For the full fixed-order source class, the relevant statistical object also has fixed dimension, reinforcing the need for an architectural restriction rather than a state-count slogan.
+
+This distinction prevents a misleading route to T2: precision cannot be converted into a sample budget without a theorem about which sufficient statistics the architecture can compute.
+
+## 3. Proved obstruction B: bounded-score attention can be annihilated by actual edgewise rounding
+
+Fix the following explicit finite-execution semantics. At every attention head, compute the ordinary softmax weights, then independently round each weight to the nearest multiple of delta=2^(-b), without renormalizing. Subsequent local computations may have arbitrary depth, width and precision. The terminal attends to all T=N+1 prefix positions, including itself, at every useful head. All pre-rounding score spans are at most B, uniformly over all rows, layers and actual finite-execution trajectories. There is no separate terminal raw-history access.
+
+If
+
+    T &gt; 2 e^B 2^b,
+
+then every terminal attention weight is zero at every layer. Therefore the terminal output is independent of the raw history, even though nonterminal memory evolves arbitrarily.
+
+Proof. For a softmax vector of length T and score span at most B, every weight is at most e^B/T &lt; delta/2. Nearest rounding gives zero. The synthetic terminal initial state and public features are source independent. Inductively, every local terminal update depends only on its previous source-independent state, and every attention contribution is zero. PreLN does not change this induction: full-feature normalization is row-local. Additional layers cannot restore a missing history channel.
+
+For an explicit stationary interior order-two witness, use signs Y_t in {-1,+1} with
+
+    P(Y_(t+1)=+1 | history)=1/2 + theta Y_(t-1),
+    0&lt;theta&lt;=1/2-c.
+
+The uniform distribution on the four consecutive-sign pairs is invariant: summing the two possible predecessor signs gives probability 1/4 for each successor pair. Thus Y_(N-1) is uniform and the terminal target takes 1/2±theta equally often. Any history-independent (possibly randomized) prediction q has risk at least theta, by
+
+    (|q-(1/2+theta)|+|q-(1/2-theta)|)/2 &gt;= theta.
+
+Hence risk below theta requires
+
+    b &gt;= log2(N+1) - B/log(2) - 1
+
+(up to the integer/tie boundary). This is a true all-depth/all-width obstruction under the stated arithmetic convention, not an information bound imported from one-use attention. Source-independent positional features and distributed N-row memory do not defeat it: they cannot cross the zero terminal edge channel.
+
+### Essential exclusions and counterexamples
+
+- Rounding the aggregate attention output instead of individual weights is a different model. Uniform averaging can survive with constant accumulator resolution even though 1/T is below that resolution.
+- Renormalizing rounded weights with a uniform fallback defeats the proof: a zero vector can be replaced with a functioning average. A zero-preserving fallback does not.
+- Floating-point precision is not the same as a fixed-point grid. Exponent range can represent 1/T with few mantissa bits; the theorem must charge exponent range, not claim a mantissa lower.
+- A sparse mask with m accessible rows replaces T by m. Cropping to a suffix for free changes the raw-access contract.
+- Growing score span B can concentrate a terminal edge. The lower becomes a precision-versus-score-span tradeoff rather than a precision-only claim.
+- A history-bearing terminal token or an external readout over every row defeats the induction.
+
+This is a strict warning against advertising exact-real small-amplitude compilation as an implemented low-precision theorem. It is not alone a publication-level statistical frontier, and no priority claim is made.
+
+## 4. A constructive formal reduction: exact reference circuits to edgewise-rounded execution
+
+The following deterministic reduction supplies a falsifiable upper-proof obligation rather than assuming numerical execution is harmless.
+
+Take an exact reference circuit of D paid stages. In a fixed enlarged reachable-state tube, suppose each exact stage is L-Lipschitz in the maximum row Euclidean norm, L&gt;=1, and the final probability map is K-Lipschitz in that norm. Use at most H heads in one stage, at most N+1 incoming rows, value norm at most V, and bounded output projection norm A. Round each attention weight to nearest delta=2^(-b) without renormalization and round stored row coordinates to that same grid. All other errors can be included in the stage error budget explicitly. Here an attention stage ends immediately after the rounded attention aggregation, output projection, residual addition and stored-coordinate rounding. Any following FFN or other local transformation is a SEPARATE paid stage. If several operations are instead bundled into one stage, every downstream Lipschitz amplification must multiply the attention-rounding defect before the displayed stage budget is used.
+
+At identical inputs, edgewise weight rounding changes a single head output by at most (N+1)delta V/2. Summing head projections conservatively gives stage defect
+
+    u &lt;= delta [HA(N+1)V + sqrt(W)]/2 = delta C_NW.
+
+The sqrt(W) term is the Euclidean error of coordinatewise storage rounding. If the usual concatenation uses a tighter square-root-H bound, that is an optional sharpening. With exact initial inputs,
+
+    e_(j+1) &lt;= L e_j + u,
+    e_D &lt;= delta C_NW sum_(j=0)^(D-1) L^j &lt;= delta C_NW D L^(D-1).
+
+Thus terminal TV error &lt;= epsilon is guaranteed by
+
+    b &gt;= log2(K C_NW D/epsilon) + (D-1)log2 L.
+
+Also require delta C_NW D L^(D-1) below the enlarged-tube margin to justify every local bound. Quantized initial states contribute L^D e_0. Approximate LN, exp, division and scalar arithmetic require their own certified local errors; the formula does NOT hide them. Strict exact-real transcendentals in a rounded-attention model do not yet constitute a completely finite implementation.
+
+The proof is induction plus the triangle inequality. It allows arbitrary evolving all-row memory and costs no communication simulation. For constant complete norms and fixed positive-epsilon LN, an N-independent stage Lipschitz envelope is plausible and can be derived directly, but it must be checked for the actual full compiler and arithmetic, not inferred from a logical circuit alone.
+
+For the existing constant-width suffix family, D=O(log N+b_suffix), epsilon of order b_suffix^(-1/2), and constant L would yield sufficient fixed-point precision O(log N+b_suffix). Inserting b_suffix≈risk^(-2) gives a genuine joint *upper* resource statement. The matching lower supplied by Section 3 only requires log N bits; the additional risk/depth dependence is NOT proved necessary.
+
+## 5. Why the raw split does not automatically repair T2
+
+Let every row state have at most Wb bits, with Alice/Bob owning alternating AA/BB raw blocks. A completely general layer simulator can exchange the previous states of all owned rows, compute the next layer locally, and repeat. This costs at most O(NWbD) bits, independent of nonlinear interactions, with public parameters and deterministic arithmetic. It does not cost O(WbD).
+
+The reason is concrete: raw ownership assigns O(N) changing row states, not one terminal register. Every later K/V bank may depend on both parties&#x27; previous messages. Exchanging only the terminal state does not allow either party to reconstruct those banks. Local, static, separable or bounded-anchor assumptions can lower the cost, but each is a substantive model restriction. The existing quadratic nuisance example already forbids a generic polylogarithmic exact-output surrogate at the relevant tolerance under exact-real semantics with logarithmic coefficient descriptions. It must not be silently regarded as finite-execution certified, but it makes the missing logical cut unmistakable.
+
+## 6. Two falsifiable main-theorem targets
+
+### T1: a common-model finite-execution resource region
+
+Specify arithmetic first, including exponent/range, accumulator bits, when weights are rounded, renormalization, LN/exp implementation, and rounding of the small-amplitude input embedding. Prove an actual finite-implementation upper for the old statistical estimator, with the full tuple (N,D,W,H,b), not another exact-real compiler. Combine it with a universal precision/score-span obstruction such as Section 3 under that SAME arithmetic. A compelling result would characterize when arbitrarily deep bounded-score attention remains statistically blind and when a bounded-norm PreLN construction crosses to consistent prediction, with no uncharged high-precision accumulator or positional table.
+
+Falsification tests: uniform averaging under aggregate rounding; weight renormalization fallback; floating exponents; enlarged sparse masks; quantization erasing the compiler amplitude eta before the first stage. Any one invalidates an overbroad version. To rise beyond a technical numerical corollary, close a real gap (for example necessary and sufficient precision for consistency under a canonical execution contract), rather than merely inserting the generic O(D) stability budget.
+
+### T2: an estimator-relevant architecture lower bound, not exact-output simulation
+
+For fixed W, complete norms and score span, arbitrary evolving causal memory and unrestricted useful reads, target a lower bound on minimax terminal TV risk that distinguishes paid depth from the sample-size floor. It must remain valid after adding and discarding the known low-amplitude high-communication nuisance. A potential route is a *decision-specific* testing or correlation contraction directly for the lag-two source experiment, or a reduction to an alternative statistically comparable predictor whose error is measured against the target, not against every detail of the original output.
+
+Required formal deliverable: derive a bound on source distinguishability of the final decision under the actual architecture, with all-row evolution explicitly included. Merely knowing final state size gives Section 2 and no more. A theorem of the form risk&gt;=const/sqrt(min{N,F(D,W,b)}) is currently a conjectural target; no particular F is justified by this note. Width-free F is refuted by the wide O(log N)-depth estimator. A universal small-relative-error simulator is refuted by the IID nuisance. Fixed-depth sensitivity supplies only the existing constant-error/log N threshold, not a vanishing-risk rate.
+
+T2 is the stronger scientific objective but is currently less mature. T1 has a concrete arithmetic obstruction and a constructive reduction now, at the cost of studying an explicit finite-execution subclass rather than claiming that the exact-real general frontier is solved.
+
+## 7. Literature overlap and classification
+
+The existing current-frontier primary audit already identifies Hahn&#x27;s token-sensitivity lineage; Chen et al. and Alman–Song for bounded-kernel summaries; Kozachinskiy for decoder-sensitive exact-real lower bounds; Rajaraman et al., Ekbote et al. and D&#x27;Angelo et al. for Markov/ngram representation. None supports marketing the old estimator or a new scalar orbit evaluator as a new main statistical theorem.
+
+The orbit-resource prior comparison records Brösamle–Eckstein (ICML 2026) on rounded activations/attention and Svete et al. (ICML 2026) on padding, precision and looping. Their full theorem contracts must be inspected before claiming any finite-execution novelty. The state-quantization argument here is elementary scalar quantization, the stability reduction is standard numerical perturbation propagation, and the edge-annihilation obstruction is elementary underflow. Their value is to rule out invalid T1/T2 formulations and specify a genuinely testable research target, not to claim a new general technique.
+
+Sources read: CURRENT_FRONTIER_PRIMARY_COMPARISON.v2.md; STATISTICAL_SCOPE_AND_SAMPLE_FLOOR.candidate.v1.md; IID_QUADRATIC_NUISANCE_HARDNESS.candidate.v3.md; orbit_preln_resource_link_20261106/PRIOR_AND_MODEL_COMPARISON.v1.md. The wide witness and compiler consequences above are explicitly inherited/conditional, not re-proved or newly audited here.
+</pre></details><details><summary>精确版本独立审阅 · INDEPENDENT_COEFFICIENT_STATE_BITS_AUDIT.v1.md</summary><p class="hash">SHA-256 36424119ee048816fd9aea0b8897822c8ddfa0deb06af55a09ed7dc94216a7a5</p><pre># Audit: coefficient descriptions versus reachable state alphabets
+
+6 November 2026 UTC.
+
+PASS for `COEFFICIENT_BITS_NOT_STATE_BITS.candidate.v1.md`, SHA-256 `77abb0004cd4ce7895a392f7e778d9336d8ffbd8f42ad3a668b93a1cf78a2649`, under the stated exact-real PreLN contract with unused public-position inputs.
+
+## Direct calculation
+
+For raw h=(s,−s), s in {−1,+1}, full-feature mean is zero and variance is one. Epsilon-one/gain-two LN therefore gives (sqrt(2)s,−sqrt(2)s). The synthetic initial row is zero. Zero queries and keys give ordinary self-inclusive uniform weights 1/(N+1). The scalar value read and paired output projection produce the displayed terminal u=sqrt(2)(2S−N)/(N+1).
+
+The zero FFN leaves this residual intact. Final full-feature LN maps its first coordinate to 2u/sqrt(1+u²), with derivative 2/(1+u²)^(3/2)&gt;0. Ordinary binary softmax is strictly increasing in that logit. Every count S=0,...,N is attained, proving N+1 distinct terminal outputs without finite-word approximations.
+
+The raw embedding matrix with columns (−1,+1) and (+1,−1) has operator norm two. The scalar value map has norm one and paired output projection has norm sqrt(2). Raw residual states have norm at most sqrt(2)(1+sqrt(2)); the terminal has an even smaller bound. All intermediate LNs and primitive Lipschitz constants have fixed bounds at epsilon one. The coefficient alphabet, width and depth are independent of N. Attention denominators and LN square roots are exact architecture operations, not secretly growing coefficient descriptions.
+
+## Scope
+
+This refutes an N-independent finite-state or finite-output alphabet bound deduced solely from W,D and coefficient bit length B. It also refutes pricing an exact transmitted activation coordinate at B bits merely because its generating parameters have B-bit descriptions. The example itself needs only O(log N) bits to identify its count output, and supplies no stronger communication lower.
+
+It neither predicts every Markov source accurately nor contradicts statistical terminal-context depth lower bounds. It does not exclude all possible coefficient-precision lower bounds established by other mechanisms. An explicit finite retained-coordinate alphabet would yield a finite-state count, but that is an additional execution contract, not coefficient rounding.
+
+If a model requires explicit retained public positional/anchor registers rather than allowing the embedding to ignore them, the exact width-two instance must be enlarged by a fixed number of paired registers. The companion joint note supplies this adaptation: source-independent rowwise LN weights remain positive, so flipping raw symbols in a fixed order still yields N+1 strictly increasing terminal values. This is a constant-width variant, not a width-two claim under mandatory-register requirements.
+
+No numerical execution, training, upload, or parameter generation was performed.
+</pre></details><details><summary>精确版本独立审阅 · INDEPENDENT_ROBUST_MATCHING_AUDIT.v1.md</summary><p class="hash">SHA-256 8623308ecf4c24482eed3b6bdb745f2a2c399ac254ccd2b4f118be3b21972913</p><pre># Audit: fixed-risk depth and adversarial execution precision
+
+6 November 2026 UTC.
+
+PASS for `JOINT_PRECISION_BARRIER_AND_ROBUSTNESS.v3.md`, SHA-256 `735f5647c3c26df7389cb33e6bc59df9df29eabd01a6374630d0ed99b497edfc`, under its explicitly changed execution-error contract and cited fixed-width compiler theorem. This accepts a robustness certificate, not a coefficient-precision frontier, hardware arithmetic theorem, or novelty claim.
+
+## Exact-model statements
+
+The coefficient/state-alphabet obstruction remains valid with mandatory public registers retained in a fixed larger paired width. Its positive source-dependent-row weights in fact depend only on public registers, not unknown source probabilities. Strict monotonicity yields at least N+1 outputs at fixed coefficient precision. No universal impossibility of every coefficient-bit lower bound follows.
+
+The bounded-score last-token sensitivity recurrence includes evolved row N, terminal query/state changes, residuals and local computations. Earlier rows agree by causality. The resulting logarithmic-depth fixed-risk necessity is independent of coefficient bits. The previous arbitrary-initial horizon issue is corrected to N≥3, which ensures X_N is generated by the kernel rather than the unconstrained initial pair.
+
+## Matching error contracts
+
+Section 5 explicitly allows arbitrary adaptive, input-dependent additive full-vector errors of norm at most 2^(−p) at every row after each attention and FFN residual sublayer. Inputs and coefficients remain exact, all operations before those perturbations are ideal, and final output operations are ideal. This contract is stronger than Section 3&#x27;s terminal-only post-attention errors. Therefore its lower-bound policy remains legal: all nonterminal and FFN errors are set to zero.
+
+For each prefix the policy uses the clean last-bit-zero reference. On the other branch it cancels the entire terminal attention difference, at most C/(N+1), while maintaining identical terminal states before every read. Nonterminal rows evolve cleanly; only row N can differ across branches. The adversary can use the full input and a counterfactual reference, as expressly permitted. This supplies a single valid input-dependent policy, not a family of unrelated source-dependent operations. Identical terminal outputs on both branches force risk at least c(1−2c), irrespective of depth.
+
+The coupling witness stays within the clean reachable envelopes. More general perturbations in the upper proof are controlled separately by tube induction. Thus there is no circular assumption that all arbitrary errors are harmless merely because the lower witness is bounded.
+
+## Upper proof and uniformity
+
+For fixed c and target r&gt;0, choose a constant sufficiently large suffix length so the inherited exact physical risk is at most r/2. Its width, norm envelope and coefficient constants may depend on c,r but not N. Its paid depth and descriptions are O_(c,r)(log N). This imports the already compiled physical family, including padding and restoration, not just a logical recurrence.
+
+On a fixed-radius tube, full-feature positive-epsilon LN has a uniform Lipschitz bound even for perturbations that break pairing or zero mean. Bounded queries/keys give a score-sup difference proportional to the maximum row-vector error. The softmax l1 bound and bounded values then bound attention in the same max-row norm with no factor N. Residual and FFN constants are fixed. Consequently a common Lambda independent of N controls each full physical sublayer.
+
+The recursion E_j≤Lambda E_(j−1)+u with L=2D and u=2^(−p) gives the displayed geometric sum. Requiring its endpoint below min(1/2,r/(2G)) also bounds every intermediate stage, validating tube induction. The final ideal readout changes TV by at most r/2 uniformly over every history and adaptive adversary. Choosing p=O_(c,r)(D+log(1/r)) therefore gives O_(c,r)(log N) precision at fixed r.
+
+Zero errors give the depth lower. The terminal cancellation policy gives p&gt;log2(N+1)−log2 C. Thus both logarithmic orders are necessary and jointly achievable, with the same frozen sufficiently large model envelope. The proof does not claim matching leading constants or a depth–precision tradeoff curve.
+
+## Boundaries
+
+Execution tolerance p is not coefficient description B. Coefficients happen to have an O(log N) upper construction cost here, but no matching B lower was proved. Correctly rounded arithmetic cannot generally choose the cancelling error vectors; unbiased, stochastic, input-independent and edgewise-rounded models require separate proofs. Initial embedding rounding, approximate exp/LN/division, and finite-word underflow are not covered by ideal operations plus residual perturbations alone.
+
+The result concerns fixed positive target risk; constants and suffix length depend on that target. No optimized vanishing-risk region, arbitrary small externally prescribed envelope, training guarantee or statistical-rate improvement follows. External novelty comments are appropriately cautious and remain unverified here. No scientific execution, rendering or upload was performed.
+</pre></details><details><summary>精确版本独立审阅 · INDEPENDENT_FINITE_EXECUTION_OBSTRUCTIONS_AUDIT.v1.md</summary><p class="hash">SHA-256 d59bd35ec2d5f0f808142292adb004f512a4a28c7b2718ebd06ad21acafcaaa6</p><pre># Audit: finite-state, rounding and distributed-state obstructions
+
+6 November 2026 UTC.
+
+PASS for the self-contained obstruction and conditional perturbation arguments in `FINITE_EXECUTION_RESET_AND_OBSTRUCTIONS.v2.md`, SHA-256 `58e15e0a5c756f83e1881cdf412a36d9b0d332eecdb266c4934dce9c29ae75c8`. Strategic research targets remain proposals, not established general theorems.
+
+## Finite decoder state
+
+Fixing every source-independent random tape produces at most M decoder reconstruction values. This remains true if encoder and decoder share the tape. The pointwise nearest-codeword loss lower is independent of how a sample chooses its state. Intersecting scalar Voronoi cells with [c,1−c] gives intervals of total length L. On an interval of length l, any reconstruction point has integrated absolute error at least l²/4. Cauchy–Schwarz therefore yields L²/(4M), and averaging over tapes then over a uniform parameter prior gives the stated worst-parameter lower L/(4M).
+
+The cut must include all history-dependent input to the final decoder. A later reread or history-bearing skip connection invalidates a terminal-only alphabet bound. Fixed positions and source-independent parameters do not. The statement requires an actual M-state execution interface; coefficient precision alone supplies none.
+
+The IID empirical-mean upper follows from variance at most 1/(4N) and nearest-grid error at most 1/[2(M−1)]. It demonstrates the sharp exponential-in-bit-budget information scale, up to constants, without claiming an architectural realization. Consequently a universal inverse-square-root-in-bW lower cannot be obtained from state cardinality alone. The separate sample-size lower is compatible with the maximum of the two bounds.
+
+## Edgewise rounding underflow
+
+With terminal score span at most B, every unrounded weight is at most exp(B)/(N+1). Under the explicit fixed-point, nearest-edgewise, no-renormalization convention, N+1&gt;2exp(B)2^b makes every terminal weight zero. This holds at every layer on the actual finite-execution trajectories by hypothesis. All remaining terminal operations are row-local, and its initial content is source-independent. Induction proves history independence despite arbitrary evolving nonterminal memories, width or depth.
+
+The proposed lag-two sign kernel is stationary with uniform pair distribution: summing its two predecessor probabilities gives each successor pair probability one quarter. Its actual terminal target equals 1/2±theta with equal probability. Any independent decoder prediction, including randomization, has expected absolute error at least theta. The precision/score-span inequality follows by negating the strict-zero condition; integer and tie boundaries are explicitly excluded from an overprecise claim.
+
+The exclusions are substantive: aggregate rounding, a nonzero renormalization fallback, floating exponent range, different masks, growing score span or an external history-bearing readout change the proof. This is not a universal statement about all low-precision attention implementations.
+
+## Conditional numerical reduction
+
+At identical inputs, independently rounded edge weights perturb one head&#x27;s aggregate by at most (N+1)delta V/2. Output projection and summing heads conservatively multiply by HA. Coordinatewise storage rounding contributes at most sqrt(W)delta/2. The stated u bound is valid for the attention stage boundary made explicit in revision 2: aggregation, projection, residual addition, then stored-coordinate rounding. Subsequent FFNs/local maps are separate paid stages; otherwise their downstream Lipschitz constants must amplify the defect.
+
+Using exact-stage Lipschitzness in maximum row norm yields e_(j+1)≤L e_j+u by a hybrid exact-map comparison. No Lipschitz property of the discontinuous rounding map is needed. Geometric accumulation gives the displayed D L^(D−1) bound, including L=1. Final-output Lipschitzness and the separate tube-margin requirement justify the sufficient bit budget. Initial quantization and exp/LN/division errors remain separate charges rather than being hidden inside coefficient precision.
+
+The existing suffix-family substitution is expressly conditional on checking its actual full physical-stage tube constants. It is a sufficient precision upper, not a matching lower for the additional target-risk/depth dependence. The edgewise arithmetic contract also remains different from the adaptive residual-error robustness contract of the companion note.
+
+## Distributed simulation and research scope
+
+The general raw-split simulation can exchange every owned Wb-bit row state at each layer, costing O(NWbD). Both parties then know the global previous state and can reproduce deterministic updates. An O(WbD) claim would need another invariant or communication cut; terminal state alone does not reconstruct evolving K/V rows. The assertion is an upper simulator cost, not a proof that every instance needs that many bits.
+
+The two proposed main directions do not claim success: a fully specified finite-execution implementation with matched obstructions, or an estimator-relevant lower that ignores removable output nuisance. Width-free depth frontiers and generic small-relative-error output simulation retain their known counterexamples. Novelty remains unverified; scalar quantization, perturbation propagation and the underflow calculation are elementary mechanisms.
+
+Revision 1 is preserved at SHA-256 `3c3b8344f8628d3164812f3edcddf81fcabe4f97044bdf2245aff4e4c4fc2a0b`. Its stage-boundary ambiguity is explicitly corrected in accepted revision 2. No numerical execution, training, rendering or upload was performed.
+</pre></details></section><footer><p>中文报告 v1 · 2026 年 11 月 6 日 UTC。本增量无数学枚举、模型执行或训练；未完成视觉渲染验收。</p></footer></body></html>
