@@ -1,0 +1,375 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>一次真实注意力调用能够保留多少稀有转移信息</title><style>body{max-width:980px;margin:48px auto;padding:0 24px;font:17px/1.8 system-ui,"Noto Sans CJK SC",sans-serif;color:#17202b;background:#fff}h1{font-size:32px;line-height:1.35;margin:36px 0 24px}h2{font-size:25px;margin:42px 0 18px}h3{font-size:20px;margin:28px 0 12px}p{margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.7 ui-monospace,monospace;padding:16px;background:#f5f7f9}a{color:#145c9e;overflow-wrap:anywhere}.appendix{margin-top:64px}@media(max-width:600px){body{padding:0 16px;font-size:16px;margin:24px auto}h1{font-size:27px}pre{font-size:13px}}@media print{body{max-width:none;margin:0;font-size:11pt}.appendix{break-before:page}h1,h2,h3{break-after:avoid}}</style></head><body><h1>一次真实注意力调用能够保留多少稀有转移信息</h1>
+<p>2026 年 11 月 6 日。T1/T2 统计资源桥梁研究。</p>
+<h2>结论与边界</h2>
+<p>本轮找到两种不同的单次调用反例。第一种只用固定宽度和标量 value：正 ε 的 LayerNorm 产生可区分全部历史的代数权重，最后的普通概率输出仍保留完整轨迹信息，但预测风险始终很差。第二种支付线性宽度和对数深度：一次宽向量读出后，在终端内部完成二阶计数，确实达到已有的 rare-A 条件统计率。</p>
+<p>因此，上一轮的总通信位数下界不能直接转成多次注意力下界。“低维、分数有界、影响很小”也不意味着精确实值输出的 KL 信息很少。尚未解决的是同一固定宽度、付费解码能力和真实概率风险下的调用次数关系。</p>
+<p>这些不是新的通用单层表达能力发现。单层甚至标量全上下文编码已有直接先例，本轮作用是验证更严格真实 PreLN 契约下的具体障碍，及检查一次调用的统计用途。</p>
+<h2>一 冻结模型与共同风险</h2>
+<p>二阶状态为 A=00、B=01、C=10、D=11，平稳分布为 (u,w,w,w)，w=(1-u)/3，q=ut/w。转移行为</p>
+<pre>(1−t,t,0,0), (0,0,1/2,1/2),
+(q,1−q,0,0), (0,0,1/2,1/2).</pre>
+<p>本轮使用 0&lt;u≤1/100、1/2≤t≤3/4。整体仍统一快速混合。真实预测时刻是同一条历史 X₁:N 的 N+1，终端状态为 T=(X_{N−1},X_N)，不是独立抽取的查询。总体主风险为 E[TV(Q_N,P(·|T))]；给定 T=A 的条件风险另行标明。</p>
+<p>网络从原始符号与公共归一化位置出发，使用 ε=1、gain=2 的全特征 PreLN、残差、自包含因果 softmax、普通最终 LN 与词表 softmax。全向量范数、完整矩阵算子范数及单个算术阶段增益均受固定上界约束。长度相关公共参数允许使用，但宽度、value 维度、层数、参数描述与执行精度分别计费。</p>
+<h2>二 固定宽度的一次标量调用保留完整信息</h2>
+<p>令 P 为不小于 N+1 的最小二次幂。二元符号写成 σ_i∈{−1,+1}。使用宽度 8 的原始嵌入</p>
+<pre>h_i=(σ_i,−σ_i,i/P²,−i/P²,0,0,0,0).</pre>
+<p>原始公共位置 i/P 只需乘以 1/P。该变换是已计费的有界初始线性嵌入，参数描述 O(logN) 位。合成终端的符号坐标为零。</p>
+<p>这些向量均值为零。真实 ε=1、gain=2 的 LayerNorm 后，把第一坐标除以 4 作为标量 value，正好得到</p>
+<pre>v_i=σ_i/√(5+i²/P⁴).</pre>
+<p>取 Q=K=0，则一次自包含均匀因果注意力在终端输出</p>
+<pre>M_N=P²/(N+1) · Σ_{i=1}^N σ_i/√(5P⁴+i²).</pre>
+<p>没有近似硬匹配、预制相邻特征、额外读出或未计费头。所有行的状态与 value 范数有界。</p>
+<h3>为什么这个标量没有丢失历史信息</h3>
+<p>整数 n_i=5P⁴+i² 都落在长度小于 N² 的区间里，而 N²&lt;2√(5P⁴)。若两个整数有相同平方自由部分 d，它们是 da²、db²，其最小正间距大于 2√(5P⁴)，矛盾。因此这些整数具有互异平方自由部分。</p>
+<p>不同平方自由整数的平方根在有理数上线性独立，倒数平方根也只是非零有理倍。因此两个不同符号历史不可能具有相同的 M_N。一次标量调用已经给全部 2^N 条历史不同编码。</p>
+<p>把 M_N 和 −M_N 写入空的成对坐标，保留完整残差。最终 LN 的对应坐标是</p>
+<pre>4M_N/√(4+a_T²+M_N²)，a_T=(N+1)/P².</pre>
+<p>这是 M_N 的严格递增函数。再用普通二元 softmax，最终概率输出仍然单射。宽度、头数、深度、全范数及最终读出敏感性都可以固定；这没有证明逆向解码也具有固定敏感性。</p>
+<h3>与 rare-u 完整轨迹和末端条件的精确连接</h3>
+<p>对有限历史集合上的任何两个源分布，单射确定变换保持 KL 和 TV。因此这一个概率输出的 KL 就等于完整历史 KL：</p>
+<pre>(N−2)[u kl(t,s)+w kl(ut/w,us/w)].</pre>
+<p>N≥3 时它是 Nu(t−s)² 的量级，不是 Nu²(t−s)²。故普适的“一次固定宽度标量注意力只有 Nu² 信息”命题为假。</p>
+<p>条件于真实终端 A 后，单射仍成立。反向符号过程仍是同一个二阶源，从已知 00 出发；前几步含常数级信息，随后 A 访问次数提供 Nu 级信息。因此 N≥3 时，条件完整轨迹 KL 为 (1+Nu)(t−s)² 的量级，具体上下界见附录。N=2 时条件历史固定，该 KL 为零。没有直接把无条件 KL 套到稀有条件事件。</p>
+<h3>信息全部存在却预测仍差</h3>
+<p>|M_N|≤1/√5，最终 logit 差的绝对值小于 1，故两个输出概率都大于 1/4。真实终端 C 的下一符号 0 概率为 q，因而该网络的总体风险至少</p>
+<pre>w(1/4−q)=(1−u)/12−ut ≥3/40.</pre>
+<p>所以它不是低风险预测器，尽管其最终概率数值在精确实数意义下保留了全部历史信息。该反例明确阻断的是错误的信息上界，不是统计计算下界本身。</p>
+<h3>精度没有免费消失</h3>
+<p>参数描述只有 O(logN) 位，但平方根及其和按精确实数计算。2^N 个码落在固定区间内，最小间距至多 O(2^(−N))。要无损区分全部历史，任何有限状态编码至少需要 N 位；这只是最坏历史重建要求，不能改称预测 t 需要 N 位。</p>
+<p>因此不能把短系数描述写成短执行精度。也不能仅凭码间距推出任务风险下界：必须证明那些靠得很近的历史在目标概率上确实需要不同输出，并控制其源概率。</p>
+<h2>三 支付线性宽度的一次调用确实能够统计预测</h2>
+<p>第二个构造不依赖难以利用的精细标量编码。它复用已有的宽广播，在终端取得按位置排列的原始符号 bank，然后把原本需要第二次 attention 汇总的操作改放到终端内部的已计费 FFN 中。</p>
+<p>取 R 为满足 R²≥N 的最小二次幂，s=1/R。一次宽向量均匀读出与已计费的对数深度放大后，各行可见位置的符号坐标为</p>
+<pre>a_{i,c}=s·1{X_i=c}，未来位置为零。</pre>
+<p>终端内部对每个 i≥3 和 c∈{0,1} 形成</p>
+<pre>τ_{i,c}=ReLU(a_{i−2,0}+a_{i−1,0}+a_{i,c}−2s).</pre>
+<p>它就是缩放后的 00c 三元组指示量。该门组的输入复用次数有界，完整 bias 范数也有界。用权重 s 汇总，得到 C_{00c}/R²；此聚合矩阵范数至多 1，不是未计费的 √N 放大。</p>
+<p>随后使用原有的分母选择网格、逐阶段有界放大、归约树和普通 softmax 编译，计算 add-one 估计 (C_{001}+1)/(C_{000}+C_{001}+2)，投影到 [1/2,3/4]。真实正 ε PreLN 的全状态编译误差也计入。</p>
+<p>结果：存在不依赖 u,t 的网络族，在 N≥6 时只用一次有效 attention，并满足</p>
+<pre>E[|Q_N(1)−t| | T=A]
+   ≤min{1,157/√(1+(N−2)u)}+C/√N.</pre>
+<p>这里的估计器、常数 157 和同历史条件风险证明都是已有结果。本轮变化只是把局部三元组计数搬进宽终端，删除第二次有效调用。它仍是解析构造，未生成或执行网络参数。</p>
+<h3>与上一轮通信下界的关系</h3>
+<p>令 N 约为 u^(−2)，使用上一轮终端条件信息证明的局部参数先验。先验在终端 A 条件下不变，Bob 奇偶观测的基线信息至多 1/100。上式给条件绝对误差 O(√u)，由绝对损失的最大熵不等式，输出关于未知参数的条件信息至少 0.5 ln(1/u)−O(1)。</p>
+<p>因此一次实际调用不仅能隐藏编码，也能支持确实有统计用途的输出。它支付了 O(N) value 维度、O(N) 宽度和 O(logN) 逐位置计算深度，不是固定宽度反例，也没有构造匹配最短的分布式协议。</p>
+<h2>补充 同一总体风险的完整上界保留输出范围地板</h2>
+<p>固定二进有理设计裁剪水平 α∈(0,1/4]，允许网络的完整范数常数依赖这个事先声明的 α，但不依赖 N,u,t。把宽终端计数扩充到 A、C 两行；A 用 add-one，C 用无平滑频率且零计数回退为零，B、D 用已知公平分布。真实末端二元组从读出后的第 N−1、N 个位置内部恢复，未外加查询端口。</p>
+<p>分母为零由有限网格中的零分支处理，不插入外部除法。把所得预测投影到 [α,1−α] 后，再编译为普通 softmax。对任意实施容差 0&lt;ε≤1/16，可得到</p>
+<pre>R_N≤1300u/√(1+(N−2)u)+w(α−q)₊+ε,
+W=O_α(N+ε^(−1)),
+D=O_α(logN+log(1/ε)), 完整value维度按O_α(N+ε^(−1))计费。</pre>
+<p>其中只有 O(N) 个 value 坐标非零；为不改变原模型，任意 ε 下完整 head 维度按全部宽度计费。仍然只有一次有效注意力。取 ε=1/(16N)，完整 value 维度和宽度均为 O_α(N)、深度 O_α(logN)，误差余项 O(1/N)。该上界使用同一条历史的真实末位置总体风险。旧统计率、投影不等式并非本轮新结果。</p>
+<p>固定 α 且 u→0 时，范围项趋于 α/3，不能声称总体 rare-u 风险趋零。如果另行声明已知 u≥ρ 并把 α 取得足够小，可以消掉该项，但 α 所带来的范数、logit 与近似成本必须作为 ρ 依赖资源计入。α 是参考估计器的设计区间，不声称近似后的实际网络恰好具有同一个锐利 logit 跨度。</p>
+<h2>四 资源与证明依赖</h2>
+<p>标量构造：宽度 8，头数 1，value 维度 1，一次有效调用，常数深度与完整范数，O(logN) 参数描述位。全 N 行持久状态仍需 O(N) 实数槽位；若显式存储稠密注意力分数或权重，另需 O(N²) 临时空间。均匀注意力可以流式计算；朴素稠密计算为 O(N²)。精确执行含平方根和 softmax，没有有限字长实现保证。最终概率风险不收敛。</p>
+<p>宽统计构造：一次有效头，value 维度 O(N)，模型及 FFN 宽度 O(N)，深度 O(logN)，全状态及单阶段矩阵范数固定。保守稠密计账为 O(N²logN) 个系数、O(N²log²N) 描述位、O(N²) 滚动激活槽位和 O(N³logN) 算术工作。它远比流式计数器昂贵，不能称总计算最优。</p>
+<p>宽构造有 O(logN) 系数精度及多项式小误差半径的解析保证，但这不是完整浮点执行定理。所有 LN、softmax、累加器和舍入位数仍需另外定义。全 N 行更新没有被忽略。</p>
+<h2>五 先行工作和严格定位</h2>
+<p>Kajitsuka–Sato 的 ICLR 2024 论文 Theorem 2 已给出单层、单头、低秩 contextual mapping，正文也允许标量压缩全上下文。其 §2.2 模型省略 LN，附录构造通过 Q/K 缩放取得随长度增长的分数间隔，且输出分离可能极小。本轮不是新的通用表达能力结论，而是 ε=1、零分数、固定完整范数和短参数的具体实现与证明路线反例。</p>
+<p>Hahn 的小影响界控制距离而非精确相等，所以与极细间距单射相容。Merrill–Sabharwal 的有限精度结论对实际执行状态计位，不能用短系数描述替代。完整来源定位附后。</p>
+<p>宽统计构造继承已有广播、分母选择器、正 ε PreLN 编译、logit 近似和旧 Markov 估计率；不把组合这些工具称为新的估计率。</p>
+<h2>六 仍未解决的母问题</h2>
+<p>目前没有任意多次有效 attention 的源平均统计资源下界，也没有固定宽度下达到完整历史率的匹配调用次数前沿。一个有效的新命题必须同时限制或付费：可执行的状态精度、目标相关解码敏感性、value 维度、全部非终端状态更新和真实终端风险。</p>
+<p>不能为了回避反例而悄悄改变原精确实数模型；有限精度模型若进入主定理，必须明确作为新量词契约。也不能把总体风险换成 A 条件风险。冻结普通输出范围在 C 行造成的旧概率地板仍是总体 rare-u 率的独立约束。</p>
+<p>未训练、未仿真、未数值枚举、未形式验证或外部同行评审；独立审阅是解析证明与契约复核。全部失败与旧稿保留，没有公开上传或投稿。</p><section class="appendix"><h2>附录 A 固定宽度标量的完整反例</h2><h1>One raw PreLN scalar can retain the entire rare-source experiment</h1>
+<h2>1. Main result</h2>
+<p>Fix N&gt;=3 and P=2^ceil(log2(N+1)). There is a genuine raw-symbol, full-prefix causal PreLN network with:</p>
+<p>- physical width eight; - one useful head invocation, identically zero scores, and a scalar head value; - a bounded initial affine embedding, one complete ordinary PreLN block with zero FFN, a final full-feature LayerNorm, bounded affine logits and ordinary binary softmax; - every LayerNorm having epsilon=1, scalar gain two and shift zero; - fixed, N-independent full-state, full-matrix, full-bias, value and primitive-Lipschitz bounds; - O(log N) binary description length per coefficient, with only the dyadic coefficient 1/P depending on N;</p>
+<p>whose final normalized probability vector is an injective function of the ENTIRE binary word X_1:N.</p>
+<p>Consequently the exact law of that single scalar read, its complete terminal state, and its final probability output all retain the full finite-history KL divergence between any two positive source laws. The counterexample has constant continuation Lipschitz constant, not merely unbounded decoding gain. This refutes a universal O((1+Nu^2)(t-s)^2) KL bound for exact one-read outputs under fixed width, fixed depth, bounded scores, bounded primitive gains and short coefficient descriptions alone.</p>
+<p>There is no contradiction with known statistical risk lower bounds: exact mutual information/KL permits arbitrarily fine tests of an observed real number. The network&#x27;s bounded-Lipschitz output is not asserted to estimate the rare parameter. Finite activation precision, additive noise, or a restriction on the downstream estimator changes the observation experiment.</p>
+<h2>2. Exact raw implementation, retaining every register</h2>
+<p>Use binary raw symbol onehots. Put sigma_i=+1 for symbol 1 and -1 for symbol 0; the synthetic row T=N+1 has sigma_T=0. The only positional input is the public p_i=i/P. A counted affine embedding produces</p>
+<pre>h_i=(sigma_i,-sigma_i,r_i,-r_i,0,0,0,0),
+r_i=p_i/P=i/P^2.</pre>
+<p>This embedding uses no adjacent-symbol feature, historical encoder, pair port, or precomputed statistical feature. Its full operator norm is at most two. All eight coordinates enter every LayerNorm. They have zero mean.</p>
+<p>The cited standard-PreLN raw contract uses p_i=i/P. If instead the public coordinate is i/(N+1), the equally bounded dyadic embedding coefficient (N+1)/P^2 gives the same r_i and still has O(log N) description length. This is an initial counted affine embedding, not an assumption that a PreLN residual FFN performs an exact unnormalized rescaling.</p>
+<p>For a real row i&lt;=N, with LN denoting epsilon-one/gain-two LayerNorm,</p>
+<pre>||h_i||^2=2+2r_i^2,
+LN(h_i)_1=4 sigma_i/sqrt(5+r_i^2).</pre>
+<p>Take W_Q=W_K=0 and W_V=(1/4)e_1^T. Thus the real-row scalar value is</p>
+<pre>v_i=sigma_i/sqrt(5+r_i^2)
+   =P^2 sigma_i/sqrt(5P^4+i^2).</pre>
+<p>The synthetic value is exactly zero: its first coordinate is zero, whatever its different normalization denominator. Self is included in every full-prefix average. At physical row t the one head returns</p>
+<pre>A_t=(1/t)sum_(i&lt;=min(t,N)) v_i.</pre>
+<p>Let W_O write A_t and -A_t into the previously zero fifth and sixth coordinates. The attention residual is therefore exactly</p>
+<pre>u_t=(sigma_t,-sigma_t,r_t,-r_t,A_t,-A_t,0,0).</pre>
+<p>The FFN branch is identically zero, but its full-feature positive-epsilon input LayerNorm remains present in the complete block. There is no residual deletion, normalization shortcut, or ignored stale register. In particular, the nonterminal rows retain their own raw-symbol and position pairs and their updated prefix averages. No later operation reads those rows; all remaining operations are positionwise and output is terminal-only.</p>
+<p>All |v_i|&lt;=1/sqrt(5), so |A_t|&lt;=1/sqrt(5). Since r_t&lt;=1/P and P&gt;=4, every reached u_t has squared norm at most 2+2/P^2+2/5&lt;3. W_O has norm sqrt(2); all other matrices and biases are bounded by fixed constants. The final full-feature LN and affine head also have fixed full-norm bounds. No coordinatewise bound is substituted for a full-vector bound.</p>
+<p>At T the residual is public except for A=A_T. The final LN&#x27;s fifth coordinate is</p>
+<pre>f_N(A)=2A/sqrt(1+(r_T^2+A^2)/4).</pre>
+<p>Choose ordinary vocabulary logits (f_N(A),0), followed by binary softmax. Thus</p>
+<pre>q_1(A)=1/(1+exp(-f_N(A))), q_0(A)=1-q_1(A).</pre>
+<p>Both coordinates are strictly positive and sum to one exactly on every word. This uses the actual final full-feature normalization, including both copies of A and the retained position pair. Since</p>
+<pre>f_N&#x27;(A)=2(1+r_T^2/4)/(1+(r_T^2+A^2)/4)^(3/2)&gt;0,</pre>
+<p>the final probability is strictly increasing in A. Also f_N&#x27;&lt;=2 globally, so the continuation A-&gt;q is globally 1/2-Lipschitz in binary TV. The primitive LN maps are globally two-Lipschitz. The useful attention count, complete sequential depth and every continuation gain remain constant.</p>
+<p>Ablating W_O makes the terminal output exactly (1/2,1/2), whereas an all-symbol-1 input gives A&gt;0 and q_1&gt;1/2. The single invocation is genuinely useful to this map, though the map is not a good estimator of t.</p>
+<p>The failure as a predictor is quantitative. Since |A|&lt;=1/sqrt(5), its logit contrast has magnitude |f_N(A)|&lt;1. Both predicted probabilities exceed 1/(1+e)&gt;1/4. On the rare family&#x27;s terminal C=10, the true next-zero probability is q_t&lt;=1/44. Consequently its SAME-history averaged prediction risk is at least</p>
+<pre>w(1/4-q_t)=(1-u)/12-ut&gt;=3/40.                    (0)</pre>
+<p>Thus this ordinary-softmax probability output simultaneously retains the complete exact-history experiment and has prediction risk bounded away from zero throughout the rare family. Exact information preservation is not an accurate task decoder.</p>
+<h2>3. A finite-coefficient algebraic injectivity proof</h2>
+<p>Set n_i=5P^4+i^2 for i=1,...,N. These are distinct positive integers. Write each uniquely as</p>
+<pre>n_i=d_i a_i^2,</pre>
+<p>where d_i is a positive squarefree integer and a_i is a positive integer. The d_i are pairwise distinct. Indeed, if n_i=d a^2&lt;n_j=d b^2 had the same squarefree part, then b&gt;=a+1 and</p>
+<pre>n_j-n_i=d(b^2-a^2)&gt;=d(2a+1)
+         &gt;2 sqrt(d n_i)&gt;=2 sqrt(5) P^2.</pre>
+<p>But n_j-n_i=j^2-i^2&lt;N^2&lt;P^2, a contradiction.</p>
+<p>The square roots of distinct positive squarefree integers are linearly independent over Q. One proof takes the multiquadratic field generated by the finitely many primes occurring in those integers. Independent sign changes of the prime square roots are its automorphisms; the distinct squarefree radicals carry distinct characters of this sign group. Averaging a putative relation against each character isolates its coefficient. The squarefree integer 1, if present, corresponds to the trivial character. Equivalently these radical monomials form the usual rational basis of that multiquadratic field.</p>
+<p>Since 1/sqrt(n_i)=sqrt(d_i)/(a_i d_i), the numbers 1/sqrt(n_i) are also Q-linearly independent. Therefore two distinct words sigma,tau in {-1,+1}^N satisfy</p>
+<pre>sum_i (sigma_i-tau_i)/sqrt(n_i) != 0.</pre>
+<p>The actual terminal scalar is</p>
+<pre>A(sigma)=P^2/(N+1) sum_i sigma_i/sqrt(n_i),</pre>
+<p>so it is injective. The final q_1 is strictly monotone in A and hence injective too. No generic transcendental coefficient, learned position table, exponentially many initial features, unbounded score, or unpaid positional precomputation is used. The irrational radicals arise from the mandatory ordinary epsilon-one LayerNorm applied to raw symbol and public position coordinates.</p>
+<p>The multiquadratic fact is an algebraic lemma, not an assertion that a bounded-depth network implements the inverse map. No inverse is needed to identify the exact probability law of an injective statistic.</p>
+<h2>4. Full rare-source information survives, including the actual terminal</h2>
+<p>Use the same stationary rare family as RARE_PARITY_INFORMATION and RARE_TERMINAL_PARITY_INFORMATION v2:</p>
+<pre>pi=(u,w,w,w), w=(1-u)/3, q_t=ut/w,
+P_t=[[1-t,t,0,0],[0,0,1/2,1/2],
+     [q_t,1-q_t,0,0],[0,0,1/2,1/2]],
+0&lt;u&lt;=1/100, 1/2&lt;=t&lt;=3/4.</pre>
+<p>States are A=00,B=01,C=10,D=11. The stationary initial-pair law pi is the same for the compared t,s at fixed u. Every finite binary word has positive probability. The exact path KL is</p>
+<pre>KL(P_t^X || P_s^X)
+  =(N-2)[u kl(t,s)+w kl(q_t,q_s)].                 (1)</pre>
+<p>Here kl is Bernoulli KL; the coordinate orientation of the C row is immaterial. In this rectangle, Pinsker and the elementary chi-square upper bound give</p>
+<pre>2(N-2)u(t-s)^2 &lt;= KL(P_t^X || P_s^X)
+                 &lt;= 8(N-2)u(t-s)^2.              (2)</pre>
+<p>For the upper, kl(t,s)&lt;=16(t-s)^2/3. Also q_s&lt;=1/44 and q_s&gt;=u/(2w), so w kl(q_t,q_s)&lt;(88/43)u(t-s)^2. Their sum is below eight.</p>
+<p>Any injective deterministic map on this finite common sample space preserves KL exactly. Thus (1)-(2) also hold with X replaced by A_T, the full terminal state, or the final ordinary-softmax probability vector. The hidden all-row updates and final FFN/residual pathway have not been discarded.</p>
+<p>More generally, for ANY parameter prior and any pre-existing side information B, injectivity gives the exact equality</p>
+<pre>I(Theta;Q_N | B,E)=I(Theta;X_1:N | B,E)</pre>
+<p>whenever the conditioning event E has positive probability. This equality, rather than a claimed mutual-information rate inferred solely from pairwise KL, is the corresponding MI statement.</p>
+<h3>4.1 Terminal A conditioning is not a free stationarity assumption</h3>
+<p>Let E={X_(N-1)=X_N=0}. Its probability is exactly u for every parameter. As proved directly in the terminal-parity note, reversing a stationary path conditional on E produces the same symbol source P_t initialized at pair A. It is an identity of conditional finite-history laws. Thus the conditional path KL is the sum of transition KLs along a P_t chain started at A, not equation (1) blindly divided by u.</p>
+<p>For every state x,</p>
+<pre>P_t^2(x,D)&gt;=1/4,  P_t^2(D,A)=q_t/2.</pre>
+<p>Therefore</p>
+<pre>P_t^4(x,A)&gt;=q_t/8&gt;=3u/16.                        (3)</pre>
+<p>For N&gt;=3 the first reversed transition starts at A and contributes kl(t,s)&gt;=2(t-s)^2. For each reversed transition whose pre-transition pair has taken at least four steps, (3) gives another contribution at least (3u/8)(t-s)^2. There are (N-6)_+ such transitions. Consequently</p>
+<pre>KL(P_t^(X|E) || P_s^(X|E))
+  &gt;=[2+(3/8)(N-6)_+ u](t-s)^2.                  (4)</pre>
+<p>For a matching order upper, the common atom P_t^2(x,D)&gt;=1/4 implies</p>
+<pre>TV(P_t^j(A,.),pi)&lt;=(3/4)^floor(j/2).</pre>
+<p>The expected number of A visits before the N-2 transitions is at most (N-2)u+8. Bound A-row KL by 16(t-s)^2/3 and every C-row KL by 7u(t-s)^2, using w&gt;=33/100 and 88/(43w)&lt;7. The other rows contribute zero. A loose consequence is</p>
+<pre>KL(P_t^(X|E) || P_s^(X|E))
+   &lt;=60(1+Nu)(t-s)^2.                            (5)</pre>
+<p>The scalar and final output remain injective on the restricted set of histories ending in A, so they preserve this conditional KL exactly as well. Thus the O(1) terminal transient does not rescue an O((1+Nu^2)(t-s)^2) exact-output bound. For example, N of order u^(-2) makes (4) grow as (t-s)^2/u, while the proposed parity-scale upper would remain O((t-s)^2).</p>
+<p>These are observation-channel information claims. They neither turn the displayed network into a good next-token predictor nor provide an efficient inverse/estimator from its code.</p>
+<h2>5. Precision ledger: short coefficients are not short activations</h2>
+<p>Only the coefficient 1/P varies with N. It is dyadic with O(log N) ordinary binary description length. All other embedding/head/LN coefficients are fixed rationals. Nevertheless the intermediate values and final probabilities are evaluated with exact-real square-root, division and exponential semantics. Coefficient descriptions do not imply an O(log N)-bit state register.</p>
+<p>Constant width and depth do not mean constant total distributed memory or work: there are N+1 physical rows and O(N) real activation registers. The one full-prefix head has O(N^2) dense work if evaluated by the usual all-row dense causal attention implementation. All of those rows and updates belong to the construction; no cached history-free replacement is assumed.</p>
+<p>There are 2^N distinct A values in [-1/sqrt(5),1/sqrt(5)]. If delta_N is their minimum separation, then</p>
+<pre>delta_N &lt;= (2/sqrt(5))/(2^N-1).                   (6)</pre>
+<p>To robustly reconstruct every word from an adversarial absolute-error observation A+e with |e|&lt;=eta, one needs 2eta&lt;delta_N (at equality, two permitted observation intervals can meet). Any finite-alphabet observation that is injective on every word must have at least 2^N symbols, hence at least N bits. These are all-history injectivity statements; they are not lower bounds on precision needed merely to estimate t under the rare source.</p>
+<p>For completeness an extremely loose algebraic separation bound is available. Put n_max=5P^4+N^2 and B=2N n_max^((N-1)/2). For a nonzero difference vector e_i in {0,+2,-2},</p>
+<pre>beta=sum_i e_i product_(j!=i) sqrt(n_j)</pre>
+<p>is a nonzero algebraic integer in a field of degree at most 2^N. Every conjugate has absolute value at most B. Its nonzero integer norm has absolute value at least one, so</p>
+<pre>|beta|&gt;=B^(-(2^N-1)).</pre>
+<p>It follows that</p>
+<pre>delta_N &gt;= [P^2/(N+1)]
+             B^(-(2^N-1)) n_max^(-N/2).           (7)</pre>
+<p>This only supplies a very inefficient sufficient precision of O(N 2^N log N) fractional bits for preserving all distinct scalar codes under sufficiently accurate evaluation. It is not a claim about finite-arithmetic implementation, a tight separation rate, or efficient parameter generation.</p>
+<h3>5.1 The informative fine distinctions are uniformly tiny</h3>
+<p>Let C=sum_i sigma_i and define the simple token-count code</p>
+<pre>A_0=C/[(N+1)sqrt(5)].</pre>
+<p>The mean-value theorem for z-&gt;(5+z)^(-1/2) yields, on EVERY word,</p>
+<pre>|A-A_0|
+  &lt;= [1/(2*5^(3/2))] N^2/P^4
+  &lt;= [1/(2*5^(3/2))] N^(-2).                    (8)</pre>
+<p>The final actual softmax output is consequently within</p>
+<pre>1/[4*5^(3/2) N^2]</pre>
+<p>in TV of q(A_0). The latter is computed by applying the same mathematical continuation to the count code. This is an approximation/comparison statement, not an additional uncounted neural operation.</p>
+<p>At N of order u^(-2), this discrepancy is O(u^4), much smaller than the full-history rare-risk scale u^(3/2). Exact KL nevertheless retains all the Nu information. This sharply demonstrates why closeness of two scalar values, bounded continuation sensitivity, or equality of means cannot be converted into an exact-information statement without an explicit observation model.</p>
+<h2>6. Consequences and the correct stopping boundary</h2>
+<p>1. A fixed-dimensional additive statistic can have full rare-transition information. Equality of its one-symbol means, or a variance calculation, does not constrain its exact law enough. 2. Raw positive-epsilon PreLN itself supplies the position-dependent algebraic weights. One need not appeal to an expensive full-history positional encoder to refute a width-only exact-information claim. 3. Fixed paid continuation sensitivity does not bound unregularized KL: the final bounded-Lipschitz ordinary-softmax output here is injective. A lower bound on estimation by bounded-sensitivity decoders must retain that decoder restriction throughout its statistical comparison. 4. This does NOT contradict the old one-invocation gain/depth/risk theorem, the parity-channel theorem, or the total-bit lower. Those statements concern different observation/computation restrictions and do not grant arbitrary exact inversion for free. 5. A future resource bridge must specify the precision or permitted statistical use of the complete visible representation, rather than charging only its dimension. This note adds no observation noise and claims no noisy-model resource separation. The exact-model risk frontier remains open.</p>
+<h2>7. Read dependencies</h2>
+<p>- rare_statistical_resource_reset_20261106/RARE_PARITY_INFORMATION.candidate.v1.md. - rare_statistical_resource_reset_20261106/RARE_TERMINAL_PARITY_INFORMATION.candidate.v2.md. - rare_statistical_resource_reset_20261106/RARE_INTERACTIVE_BITS.candidate.v1.md and ATTENTION_BRIDGE_STOPPING_GATE.v1.md. - source_average_simulation_20261105/SOURCE_AVERAGE_SIMULATION_BOUNDARY.candidate.v2.md. - standard_preln_20261104_2344/STANDARD_PRELN.candidate.v2.md, for the actual full-feature epsilon-one/gain-two convention. - one_invocation_rate_lower_20261104/BOUNDED_SCORE_RATE_EXTENSION.candidate.v1.md and stationary_one_invocation_20261105/STATIONARY_ONE_INVOCATION_LOWER.candidate.v2.md, for the public-query/additive-sketch interface and paid-continuation distinction.</p>
+<p>The explicit algebraic encoding and its conditional rare-source information accounting are proved above rather than imported from a full-history compiler. No literature priority claim is made.</p></section><section class="appendix"><h2>附录 B 一次宽读出的条件统计预测</h2><h1>One actual PreLN read already carries the rare-A statistical information</h1>
+<h2>1. Main result and strict scope</h2>
+<p>Use the stationary binary rare family from `../rare_statistical_resource_reset_20261106/RARE_PARITY_INFORMATION.candidate.v1.md`: pair states A=00, B=01, C=10, D=11, stationary law (u,w,w,w), w=(1-u)/3, q=ut/w, 0&lt;u&lt;=1/100, 1/2&lt;=t&lt;=3/4. The next-one probability at the ACTUAL terminal pair A is t. There are N raw symbols and one source-independent synthetic terminal, N&gt;=6, n=N-2 observed transitions.</p>
+<p>There is a sufficiently large ABSOLUTE finite envelope, fixed before N,u,t vary, and a source-independent, length-dependent untied family Q_N with:</p>
+<p>- actual positive-epsilon full-feature PreLN residual blocks, epsilon=1, coordinate gain 2 and zero shift; - self-inclusive causal ordinary softmax attention; exactly ONE useful invocation, one head, zero scores; all other attention outputs are identically zero; - model width and FFN intermediate width O(N), useful value dimension O(N), paid sequential depth O(log N); - bounded complete per-row state/value Euclidean norms, matrix operator norms, full bias-vector norms and primitive Lipschitz constants, all independent of N,u,t; - an ordinary final epsilon-one gain-two LayerNorm, bounded affine binary vocabulary head and ordinary softmax; - the actual-terminal conditional risk bound</p>
+<pre>sup_t E_(u,t)[ |Q_N(1)-t| | (X_(N-1),X_N)=A ]
+   &lt;= min{1,157/sqrt(1+(N-2)u)} + C/sqrt(N).       (1)</pre>
+<p>The network is NOT given u, t, the terminal pair, paired input features, counts, or any data-dependent weights. Its only public input beyond raw symbols is scalar position i/P, P=2^ceil(log2(N+1)), and a constant anchor. In fact this construction estimates the A-row parameter on every history; it does not need to test whether the terminal pair is A. Conditioning in (1) is on the actual event in the source law, not a supplied feature or independent query.</p>
+<p>This is NOT an overall rare-family prediction upper bound. On C the correct next-zero probability is q=Theta(u), and the frozen bounded-logit output contract cannot attain overall risk O(u/sqrt(1+Nu)) uniformly as u tends to zero. That old obstruction remains unchanged. The result addresses exactly the terminal-A information event used in the new communication lower.</p>
+<p>Gain 2 is the diagonal operator 2I of norm 2; the Euclidean norm of its d-entry parameter vector is not separately required to remain constant. Such an extra requirement would exclude the inherited growing-width model itself. The family has exact-real evaluation semantics. See Section 8 for the precision charges and limitations.</p>
+<h2>2. Reused first-read broadcast, with its costs retained</h2>
+<p>Let R be the smallest power of two with R^2&gt;=N, s=1/R, and Q=R^2. Then N&lt;=Q&lt;4N. The construction of `../parallel_width_depth_20261104/CANDIDATE.v2.md`, Sections 1-2, starts with local raw symbols x_j(c), c=0,1, and the scalar position p_j=j/P.</p>
+<p>At every row j and for i=1,...,N, form d_i=s|p_j-i/P|, apply H=log2 P paid clipped doublings d_i&lt;-min(s,2d_i), and let g_i=s-d_i. The resulting selector is s exactly when j=i, and zero otherwise. Form</p>
+<pre>b_(j,i,c)=ReLU(s x_j(c)+g_i-s).</pre>
+<p>The whole selector/token fanouts have norm at most s sqrt(N)&lt;=1; the complete selector and gate bias norms are bounded. All apparent sharpness is purchased by H sequential bounded-gain stages. At the synthetic row x_(N+1)=0, every source pulse is zero.</p>
+<p>One zero-score full-prefix attention with value coordinates b_(j,i,c) gives</p>
+<pre>a_(j,i,c)=s 1{i&lt;=j} 1{X_i=c}/j.</pre>
+<p>Value/output maps have bounded operator norms and the full value vector is bounded; there are 2N logical value coordinates, not N uncharged heads. Another H paid clipped doublings a&lt;-min(s,2a) yield</p>
+<pre>a_(j,i,c)=s 1{i&lt;=min(j,N)} 1{X_i=c}.              (2)</pre>
+<p>At every row the complete broadcast bank has norm at most s sqrt(N)&lt;=1. This source-selection and broadcast operation is OLD. It already leaves the entire ordered history in the terminal&#x27;s wide bank. The second attention in the old full-history compiler was used after each original row formed its own triple. It is unnecessary if those triples are formed INSIDE the wide terminal bank instead.</p>
+<p>No destination selector, predecessor port, or external pair binding is supplied here.</p>
+<h2>3. Paid local triple binding and norm-one count aggregation</h2>
+<p>For every i=3,...,N and c=0,1, at every row j form</p>
+<pre>tau_(j,i,c)=ReLU(a_(j,i-2,0)+a_(j,i-1,0)
+                              +a_(j,i,c)-2s).   (3)</pre>
+<p>By (2), this equals s times the indicator of the observed triple 00c ending at i, provided i&lt;=j; otherwise it is zero. If one required position is absent, at most two s terms remain, so the gate is zero. Thus no fake boundary transition is introduced.</p>
+<p>The linear map feeding all these gates has bounded operator norm: every source coordinate appears in only a fixed number of gates, and each gate has three inputs. The complete bias vector has norm 2s sqrt(2(N-2))&lt;=2sqrt(2). The complete output bank has norm at most s sqrt(N)&lt;=1, since at most one c is active per i.</p>
+<p>Now compute the two scalars</p>
+<pre>f_(j,c)=s sum_(i=3)^N tau_(j,i,c)=C_(j,c)/Q,
+v_j=f_(j,0)+f_(j,1)=J_j/Q.                    (4)</pre>
+<p>Here C_(j,c) counts the 00c triples in the visible prefix, and J_j=C_(j,0)+C_(j,1). The two aggregation rows have disjoint supports, each with Euclidean norm s sqrt(N-2)&lt;=1. Consequently this is a norm-at-most-one linear map, NOT a norm-sqrt(N) uncharged sum. The extra multiplication by s makes the result a frequency with public denominator Q.</p>
+<p>At all rows, 0&lt;=C_(j,c)&lt;=J_j&lt;=N-2 and the quantities lie on the exact 1/Q lattice. Thus this local computation obtains the two rare-row transition counts up to one public scale, after only ONE attention invocation. Its FFN width O(N), full state bound, and constant number of local stages are all charged.</p>
+<h2>4. Paid add-one ratio without an external division decoder</h2>
+<p>We specialize the OLD denominator-selector construction, now using the public grid 1/Q rather than 1/(N+1). For m=0,...,N-2, start</p>
+<pre>d_m=s|v_j-m/Q|,</pre>
+<p>apply log2 Q clipped doublings at cap s, and set h_m=s-d_m. Because v_j=J_j/Q at EVERY row, h_(J_j)=s and every other h_m=0. The scaled scalar fanout, centers and cap biases have bounded full norms. There is no rounding operation or discontinuity.</p>
+<p>For c=0,1 form</p>
+<pre>z_(j,m,c)=ReLU(s(f_(j,c)+1/Q)+h_m-s).           (5)</pre>
+<p>Only m=J_j survives, with value s(C_(j,c)+1)/Q. Indeed inactive blocks vanish because f_(j,c)+1/Q&lt;1. Multiply block m by</p>
+<pre>A_m=RQ/(m+2),</pre>
+<p>factoring this public positive rational into O(log N) diagonal stages with each diagonal norm at most 2 (powers of two, a final rational factor in [1,2), and identity fillers). Every coefficient has an O(log N)-bit rational description. During amplification the active coordinates never exceed their final values, which are at most one. Exactly one block is active at every row.</p>
+<p>A paid balanced sum tree, each stage of operator norm sqrt(2), gives the binary vector</p>
+<pre>B_(j,c)=(C_(j,c)+1)/(J_j+2).                   (6)</pre>
+<p>All intermediate complete vectors are bounded. At the synthetic terminal, B_(T,1) is exactly the historical rare-A add-one estimator. If the single attention is ablated, its new broadcast bank remains zero, every tau and count is zero, and (6) is (1/2,1/2) at every row. Thus the ablated reference also stays in the same bounded domain.</p>
+<p>This is a length-dependent rational table, not a uniform constant-cost division primitive. The table width, coefficient descriptions, selector depth, factored gains and final tree are paid.</p>
+<h2>5. Ordinary softmax output and actual positive-epsilon PreLN</h2>
+<p>Clip B_(j,1) to [1/2,3/4], call the result z_j, and set p_j=(1-z_j,z_j). Projection cannot increase |z_j-t| for t in [1/2,3/4]. Both coordinates are in [1/4,3/4]. These are bounded affine/ReLU stages.</p>
+<p>Apply the already reviewed log interpolation of `../nonlinear_statistical_frontier_20261106/WIDE_PRELN_STATISTICAL_WITNESS.candidate.v2.md`, Section 3, at fixed floor a=1/4. O(N^(1/4)) scaled hinge coordinates approximate both log probabilities with uniform error at most N^(-1/2)/256. Scaling each fanout/hinge by 1/sqrt(m) and charging its output weights keeps complete matrices, biases and state vectors bounded. Coefficients have O(log N)-bit dyadic descriptions. This is a paid ordinary two-layer-ReLU computation, not a logarithm oracle.</p>
+<p>Copy the prepared logits into a designated output bank and clear all other logical registers, including positions, tokens, selector banks, count blocks, interpolation banks and scratch. Clear the anchor last. Pair every logical coordinate with its negative. The complete reference ends at</p>
+<pre>z_ref=(ell_0,-ell_0,ell_1,-ell_1,0,...,0).</pre>
+<p>The whole reference, including all clears, has m_ref=O(log N) bounded affine/ReLU/zero-score-attention stages. Both the intact and single-read-ablated reference have uniformly bounded complete state norm Z and common dimension-free primitive Lipschitz envelope L&gt;=2. Zero inert coordinates give a physical width d=Theta(N), with a sufficiently large absolute multiplicative constant.</p>
+<p>The exact compiler mechanism is reused, not newly asserted: initialize the paired physical vector as h=eta z, eta=2^(-M), through a bounded raw-symbol/position embedding. For gain-one epsilon-one LN on the paired mean-zero subspace,</p>
+<pre>LN_1(eta z)=eta s_eta(z)z,
+s_eta(z)=(1+eta^2 ||z||^2/d)^(-1/2),
+|1-s_eta(z)|&lt;=eta^2 Z^2/(2d).</pre>
+<p>Homogenize affine biases with the maintained anchor. A homogeneous residual branch implementing F-I then deviates from the ideal overwrite F by O(eta^2/d) in complete logical-vector norm. The unique attention has zero queries/keys, so it is genuinely uniform. Its source-row normalization factors give the same O(eta^2/d) maximum-row local error, including the full growing value vector.</p>
+<p>The bounded-tube induction is</p>
+<pre>e_l&lt;=L e_(l-1)+C eta^2/d,
+max_(l&lt;=m_ref) e_l&lt;=C&#x27; eta^2 L^(m_ref)/d.        (7)</pre>
+<p>Choose one eta, common to the intact and ablated references, so the right side is at most</p>
+<pre>xi_N=min{N^(-1/2)/1024,s/16}</pre>
+<p>and the common tube constraints hold. This requires M=O(log N), with absolute constants. Physical selectors need not remain exactly on logical lattices; their continuous full-vector errors are covered by (7). Replace each interior gain-one LN by gain two and halve the consuming first FFN/value matrix. This exact reparameterization makes all actual LNs have the prescribed gain two.</p>
+<p>After complete preparation and clearing, use M paid local amplitude-restoration steps</p>
+<pre>h_(k+1)=h_k+h_k/sqrt(1+||h_k||^2/d).</pre>
+<p>They are ordinary gain-two-PreLN FFN residual blocks using a signed-ReLU linear identity and one-half gain. The reviewed geometric error calculation gives, for h_0=2^(-M)u_0 with ||u_0-z_ref||&lt;=xi_N,</p>
+<pre>||h_M-u_0||&lt;=||u_0||^3/(12d).</pre>
+<p>A final prescribed gain-two LN and head (1/2)P_out have logit error at most</p>
+<pre>xi_N+7(Z+xi_N)^3/(12d).</pre>
+<p>Take the constant in d=Theta(N) sufficiently large, and allocate the interpolation error similarly, so the physical ordinary-softmax output differs from p_j by at most C/sqrt(N), and, when useful for ablation, by less than 1/32 for every N&gt;=6. This includes approximate scratch clearing; no residual coordinate is discarded for free.</p>
+<p>All physical states remain bounded. There is no unbounded one-shot 1/eta gain, nonzero norm-padding of size sqrt(d), singular normalization, custom probability readout or free decoder. The construction satisfies the actual frozen PreLN syntax.</p>
+<h2>6. Conditional statistical prediction and genuinely useful read</h2>
+<p>The inherited exact same-history result is Section 8, equation (8.5), of</p>
+<pre>../u_blind_full_averaged_20261103_2147/full_averaged_tv_bound_v1.html.</pre>
+<p>For the exact estimator in (6), it proves</p>
+<pre>E_(u,t)[ |B_(T,1)-t| | terminal A ]
+   &lt;=min{1,157/sqrt(1+(N-2)u)}.</pre>
+<p>Its reversed-chain flow proof explicitly handles terminal dependence. We do not assume conditional iid transition counts or an independent query. Projection and the uniform physical implementation error give (1). This statistical bound, estimator and constant 157 are OLD.</p>
+<p>The one actual read is pathwise useful. Take the length-N prefix of 001001001..., N&gt;=6. Every observed departure from 00 is to 1, and at least two such transitions occur. Hence B_(T,1)&gt;=3/4, and its clipped value is 3/4. The ablated reference returns 1/2. Both physical outputs are within 1/32 of their respective reference probabilities under the SAME eta, width and restoration schedule. Their separation is therefore at least 1/4-2/32=3/16. This witness has positive probability under every u,t in the family, although usefulness only requires a legal raw word.</p>
+<p>This proves one useful invocation suffices for the conditional statistical task. It does not prove one is necessary, nor that the overall rare-rate task is solved.</p>
+<h2>7. The very logarithmic parameter information needed by the bit lower</h2>
+<p>Let Theta be uniformly distributed on the interval centered at 5/8 with length</p>
+<pre>a_u=1/[10000 sqrt(1+m u^2)],</pre>
+<p>where m is Bob&#x27;s parity length in the communication theorem. Let E be the actual terminal-A event. Since Pr(E|Theta)=u, conditioning on E leaves this prior unchanged.</p>
+<p>Choose horizons N=Theta_order(u^(-2)), meaning c_1 u^(-2)&lt;=N&lt;=c_2 u^(-2) for fixed positive constants c_1,c_2 and sufficiently small u. Then a_u is bounded above and below by positive constants, and (1) implies</p>
+<pre>D_u=E[|Q_N(1)-Theta| | E]&lt;=C_* sqrt(u).</pre>
+<p>The same Laplace maximum-entropy inequality used in the communication lower gives</p>
+<pre>I(Theta;Q_N(1)|E)
+   &gt;=log(a_u/(2e D_u))
+   &gt;=(1/2)log(1/u)-O(1) nats.                 (8)</pre>
+<p>The new parity-plus-terminal information theorem bounds Bob&#x27;s local baseline by 1/100 under this prior. If V is Bob&#x27;s parity observation, then</p>
+<pre>I(Theta;Q_N(1)|V,E)
+   =I(Theta;Q_N(1),V|E)-I(Theta;V|E)
+   &gt;=(1/2)log(1/u)-O(1).                      (9)</pre>
+<p>Thus this ONE actual read supports a genuine estimator whose statistical output contains the growing conditional parameter information used by the lower. It is not merely an arbitrary injected code. There is no conflict with the finite-bit communication lower: the value dimension, positional addressing and decoder cost here grow. A simulation transmitting the whole wide message is much more expensive than O(log(1/u)) bits; (8)-(9) are information lower statements, not a claim of a matching short distributed protocol.</p>
+<p>There is also a direct ordered-data statement. At the intermediate stage immediately after the paid saturation following the only attention, (7) makes the designated physical bank divided by eta within s/16, in full Euclidean norm, of (2). At the synthetic terminal, comparing each pair of coordinates with s/2 uniquely recovers every X_i. Hence this clean intermediate terminal state is injective on raw histories. That threshold is only a mathematical information witness; it is not inserted as a network decoder. The network&#x27;s actual continuous statistical decoding is Sections 3-5.</p>
+<h2>8. Full resource and precision ledger</h2>
+<p>For fixed absolute accuracy constants:</p>
+<p>- useful attention invocations: exactly 1; useful head count: 1; logical value dimension: 2N, with constant-factor paired physical representation O(N); - physical model and intermediate FFN width: O(N); paid pre-read selector depth O(log N), post-read saturation O(log N), local triple/count stages O(1), denominator/select/amplification/tree O(log N), log preparation O(1) at O(N^(1/4)) width, clears O(1), restoration O(log N); total actual depth O(log N); - all per-token complete states, values, matrices, biases and primitive Lipschitz constants are bounded by one fixed absolute envelope; the global continuation Lipschitz constant is at most L^(O(log N))=N^O(1), not O(1); - public positions use O(N log N) total description bits; parameter values use O(log N)-bit rational/dyadic descriptions, including eta; the public count-table/positional information is included; - conservative dense untied coefficients O(N^2 log N), coefficient-description bits O(N^2 log^2 N), including O(dD) LN gain/shift entries; - rolling all-row real activations O(N^2); explicit attention scores or mask O(N^2) additional slots/bits; - dense projection/FFN scalar work O(N^3 log N); one useful dense attention product O(N^3), or O(N^3 log N) if dummy attention slots are evaluated densely.</p>
+<p>These are not good total-compute claims. A streaming empirical-count baseline is vastly cheaper; this witness addresses the logical inference from total information to invocation count.</p>
+<p>Precision has THREE distinct meanings:</p>
+<p>1. Coefficient/public-input description lengths are O(log N). This alone is not an arithmetic guarantee. 2. The clean intermediate physical history-bank separation is at least a constant times eta/R=N^(-O(1)); immediately after the read and before paid saturation it is smaller by a further factor at most N+1. Thus sufficiently fine O(log N)-scale fractional resolution is consistent with distinguishability, but a free infinitely accurate bounded scalar is not the stated resource. 3. A sufficient adversarial execution-error radius can also be charged without claiming a floating-point implementation. Every complete actual sublayer is dimension-free Lipschitz in maximum-row Euclidean norm; uniform attention and epsilon-one LN retain this property. For additive perturbations of radius delta after each residual sublayer, output error is at most C delta L_*^(2D+1), with an enlarged fixed L_*&gt;1. Since D=O(log N), choosing delta=N^(-A) for sufficiently large fixed A makes extra TV error O(N^(-1/2)). A larger fixed A also preserves intermediate history-bank separation. This is a robust error-radius statement p=-log2 delta=O(log N), NOT a machine word-length, rounded-LN/softmax, accumulator-size or complete finite-arithmetic theorem.</p>
+<p>If all-dyadic parameters are wanted, round the rational table with zero support and paired antisymmetry preserved, to N^(-A) coordinate error. Operator errors cost at most d times this precision, and the polynomial continuation sensitivity is absorbed by a sufficiently large fixed A. This gives the same asymptotic approximate output, not exact ratio evaluation. It changes none of the information or invocation conclusions.</p>
+<p>At N=Theta_order(u^(-2)), the paid width is Theta(u^(-2)), depth O(log(1/u)), and sufficient coefficient/error-radius exponents are O(log(1/u)). Dense storage/work costs remain as above. The construction therefore gives no fixed-width or equal-total-resource separation against repeated attention.</p>
+<h2>9. What changed, what did not, and the stopping implication</h2>
+<p>Old material reused verbatim at the mechanism level:</p>
+<p>- scaled positional addressing and single wide full-history broadcast; - bounded-gain selector/denominator table and balanced reductions; - small-amplitude paired positive-epsilon PreLN compilation, complete scratch clearing, dimension-diluted restoration, and ordinary-softmax logit preparation; - the rare-A add-one statistical rate and entropy-distortion inequality.</p>
+<p>The narrow derived change is that after the first wide broadcast, positionwise shifted channel accesses (3) and the norm-one weighted sum (4) compute the rare-row counts at the terminal. This removes the second useful attention for the conditional statistical task while charging every local operation. No novelty or priority claim is made. This is an analytical composition, not a compiled/executed model.</p>
+<p>The earlier one-invocation width-Lipschitz lower is not contradicted: its charge includes value dimension and global continuation sensitivity. This family pays linear value dimension and polynomial continuation sensitivity. Its binary rare-A conditional task also differs from that lower&#x27;s full-source overall risk task.</p>
+<p>Consequently, the new logarithmic bit requirement cannot be converted into an increasing useful-attention count by ignoring width, source positional encoding, post-read FFN computation or precision. A next theorem must fix or charge those resources, and must separately resolve the old ordinary-softmax range obstruction if it claims the full overall rare rate.</p></section><section class="appendix"><h2>附录 C 具有范围地板的总体风险</h2><h1>One-read overall prediction with the existing output-range floor</h1>
+<h2>1. Precise statement</h2>
+<p>Fix a declared dyadic design clipping level 0&lt;alpha&lt;=1/4 and an implementation tolerance 0&lt;epsilon&lt;=1/16. Retain the binary stationary rare family, raw one-hot input, scalar public positions and synthetic terminal of the conditional companion. For every N&gt;=6 there is a source-independent actual PreLN network with exactly one useful zero-score causal attention invocation and ordinary final vocabulary softmax satisfying</p>
+<pre>R_(N,u,t)(Q)
+  &lt;=1300 u/sqrt(1+(N-2)u)
+      +w(alpha-q)_+ + epsilon,                (E1)</pre>
+<p>simultaneously for 0&lt;u&lt;=1/100, 1/2&lt;=t&lt;=3/4, where q=ut/w and w=(1-u)/3.</p>
+<p>It has a complete per-row/full-parameter envelope C_alpha, fixed after alpha and before N,u,t,epsilon vary, with</p>
+<pre>d=O_alpha(N+epsilon^(-1)),
+d_value=O_alpha(N+epsilon^(-1)), with O(N) nonzero coordinates,
+D=O_alpha(log N+log(1/epsilon)),                (E2)</pre>
+<p>and intermediate FFN width O_alpha(N+epsilon^(-1/2)) before ordinary constant-factor padding into d. All head, full-state, matrix, bias and primitive constants are bounded by C_alpha. LayerNorm epsilon=1, gain=2, shift=0 throughout; the final head is ordinary bounded affine-softmax. Its useful attention count is one, not its total sequential depth.</p>
+<p>For epsilon_N=min{1/16,1/N}, (E2) reduces to width O_alpha(N), depth O_alpha(log N), and implementation remainder O(1/N). The whole physical value width is charged, including inert coordinates; no special permission for rectangular narrow value projections is needed. The constants can depend on alpha. This does NOT evade the frozen output floor as alpha tends to zero: requiring alpha to vary with rarity changes the declared norm/range resource, and C_alpha is not asserted uniform in alpha.</p>
+<p>Alpha specifies the reference predictor&#x27;s interval projection. Because the physical output approximates it, this note does not assert the exact sharp realized logit span log((1-alpha)/alpha). A strict exact-span theorem would need a reserved approximation margin or an additional range-preserving argument. The physical full norms and thus some fixed realized span remain bounded by C_alpha, independently of N and epsilon.</p>
+<h2>2. Reuse one wide read and compute both needed row counts locally</h2>
+<p>Use the conditional companion&#x27;s Sections 2-3 without change. With R^2=Q&gt;=N and s=1/R, after the unique read and paid saturation every row j has ordered prefix coordinates</p>
+<pre>a_(j,i,c)=s 1{i&lt;=min(j,N)}1{X_i=c}.</pre>
+<p>Form, for (a,b) equal to A=00 and C=10, and c=0,1,</p>
+<pre>tau_(j,i,ab,c)=ReLU(a_(j,i-2,a)+a_(j,i-1,b)
+                                     +a_(j,i,c)-2s),
+f_(j,ab,c)=s sum_(i=3)^N tau_(j,i,ab,c),
+v_(j,ab)=f_(j,ab,0)+f_(j,ab,1).</pre>
+<p>These equal C_(j,ab,c)/Q and J_(j,ab)/Q. Computing all four contexts would also cost only a constant factor, but is unnecessary because rows B,D are known fair. Every input coordinate is used in a bounded number of triple gates. Complete gate/bias norms and complete states remain bounded. Each count aggregation has norm at most one, as in the companion. No context features or adjacent-token access are given externally.</p>
+<h2>3. Different A and C ratio branches, including exact zero fallback</h2>
+<p>For A use the companion&#x27;s exact add-one table, obtaining</p>
+<pre>r_(j,A)=(C_(j,A,0)+1)/(J_(j,A)+2),</pre>
+<p>where r denotes the next-ZERO probability.</p>
+<p>For C use a separate 1/Q-grid selector h_m=s1{J_(j,C)=m}, m=0,...,N-2. Form</p>
+<pre>z_(j,m)=ReLU(s f_(j,C,0)+h_m-s).</pre>
+<p>If m is inactive the gate is zero because f&lt;=1. If m=J it equals s C_(j,C,0)/Q. Set block m=0 identically to zero. For m&gt;=1, amplify by the public factor</p>
+<pre>A_m=RQ/m,</pre>
+<p>through O(log N) diagonal stages of norm at most two, followed by the paid balanced sum tree. The output is exactly</p>
+<pre>r_(j,C)=C_(j,C,0)/J_(j,C) if J_(j,C)&gt;0,
+r_(j,C)=0 otherwise.                           (E3)</pre>
+<p>No discontinuous test or external division was inserted: zero is one branch of the finite-grid ReLU selector table. All rows have integer counts on the same grid, exactly one active selector, and 0&lt;=C&lt;=J. Consequently all intermediate active values are at most one and all inactive values are zero. This is a simpler all-row domain than the old terminal-only rational readout. The m=0 zero map is implemented with a zero diagonal entry; for m&gt;=1 all multiplier factors are positive and at most two.</p>
+<p>The rational table has O(N) entries, O(log N) coefficient-description bits per entry, O(log N) paid depth, bounded matrix norms at every stage and bounded complete states. A and C branches run in parallel with only a constant-factor full-norm increase. Set r_B=r_D=1/2 using the anchor.</p>
+<h2>4. Recover the actual terminal pair internally</h2>
+<p>Project the broadcast bank onto the four coordinates at indices N-1 and N. Restore their scale from s to one by log2 R paid diagonal doublings. Their complete norm stays at most sqrt(2) at every row: a coordinate is either zero or a partial amplification of one original symbol bit.</p>
+<p>Write the resulting two symbol onehots as y_old and y_new. For each ab define</p>
+<pre>g_ab=ReLU(y_old(a)+y_new(b)-1).</pre>
+<p>At the synthetic terminal exactly one g_ab is one and it identifies the real pair (X_(N-1),X_N). At rows j&lt;N, the final symbol is absent, so all g_ab vanish; at rows j&gt;=N the pair is correctly available. This fixed-index local projection occurs AFTER the one global read, so it is not a free suffix port or structural local-copy mask.</p>
+<p>Select the next-zero estimate continuously by</p>
+<pre>z_j=sum_ab ReLU(r_(j,ab)+g_ab-1)
+                        +(1/2)(1-sum_ab g_ab). (E4)</pre>
+<p>Because g is either one-hot or all zero, (E4) equals the selected row estimate or the harmless nonterminal default 1/2. Every r is in [0,1], so the ReLU gates implement the binary selectors exactly on the reference domain. The finite sums have constant dimension and constant operator/bias norms. At the synthetic terminal this is precisely the OLD mixed estimator: add-one at A, unsmoothed zero-fallback at C, exact fair at B,D.</p>
+<h2>5. Projection, log preparation and physical compilation</h2>
+<p>Clip z_j to [alpha,1-alpha], yielding p_j=(clip(z_j),1-clip(z_j)). The reference is a probability vector at every row, including ablation. Use the old scaled-hinge approximation to log on [alpha,1] with</p>
+<pre>m=O_alpha(epsilon^(-1/2))</pre>
+<p>hinges per coordinate and uniform log error at most a fixed small multiple of epsilon. Input scaling 1/sqrt(m) controls fanout and full biases, while adjacent slope differences O_alpha(1/m) control the complete output row norm. Coefficient descriptions use O_alpha(log(1/epsilon)) bits. Thus growing log precision purchases width rather than unbounded primitive norms.</p>
+<p>Pair all coordinates, append the complete output-bank copy and scratch clear, and keep a common bounded logical tube for original and single-read-ablated programs. The reference stage count before restoration is O(log N), while its width is O_alpha(N+epsilon^(-1/2)). The common fixed Lipschitz envelope is independent of epsilon because of the scaled hinges.</p>
+<p>Apply exactly the conditional companion&#x27;s small-amplitude actual-PreLN compiler. Select eta=2^(-M) so</p>
+<pre>C eta^2 L^(m_ref)/d &lt;= c epsilon</pre>
+<p>and the common tube conditions hold. This requires M=O_alpha(log N+log(1/epsilon)). Add inert zeros so</p>
+<pre>d&gt;=C_alpha (N+epsilon^(-1)).</pre>
+<p>The inherited radial restoration and final-LN logit error are bounded by</p>
+<pre>c epsilon+7(Z+c epsilon)^3/(12d).</pre>
+<p>With constants sufficiently large, the final ordinary-softmax prediction differs from the projected reference by at most epsilon in TV on EVERY input word, for both original and ablated network. No execution-time log/division primitive, nonzero sqrt(d)-norm padding, arbitrary terminal decoder, or uncharged clearing is added.</p>
+<h2>6. Statistical envelope and physical usefulness</h2>
+<p>The old full averaged theorem in `../u_blind_full_averaged_20261103_2147/full_averaged_tv_bound_v1.html` gives the mixed reference risk at most</p>
+<pre>1300 u/sqrt(1+(N-2)u).</pre>
+<p>The old projection comparison in `../rare_statistical_resource_reset_20261106/RARE_OUTPUT_RANGE_ASSESSMENT.candidate.v1.md` applies because alpha&lt;=1/4: A and fair rows lie inside the allowed interval, while the C-row target q has the only possible range deficit. Pointwise projection therefore gives</p>
+<pre>R(projected reference)&lt;=1300 u/sqrt(1+(N-2)u)
+                                          +w(alpha-q)_+.</pre>
+<p>The pathwise implementation error proves (E1) without any independence assumption between terminal pair and counts. Statistical estimation, same-history dependence handling and this projection inequality are inherited results, not new proofs.</p>
+<p>Deleting the single read removes all recovered symbols and counts. In (E4) all pair selectors then vanish and the reference returns 1/2 at every row. On the all-zero word the actual terminal pair is A, and the unablated next-zero estimate is (N-1)/N&gt;=5/6. Its projected value is at least 3/4 because alpha&lt;=1/4. Thus ideal separation is at least 1/4. With epsilon&lt;=1/16, the two actual physical outputs remain separated by at least 1/4-2epsilon&gt;=1/8. The attention is genuinely useful in this implementation.</p>
+<h2>7. Charged resources and limits</h2>
+<p>Let W=O_alpha(N+epsilon^(-1)), D=O_alpha(log N+log(1/epsilon)), and b=O_alpha(log N+log(1/epsilon)). Conservative dense accounting gives:</p>
+<p>- parameter coefficients O(D W^2), parameter-description bits O(D W^2 b), including all LN gains/shifts; - rolling all-row real states O(NW), plus O(N^2) score slots if attention is materialized; - dense projections/FFN work O(D N W^2); - useful attention products O(N^2 W), charging the complete physical value width even though only O(N) value coordinates are nonzero; dummy slots densely evaluated cost O(D N^2 W); - public positions O(N log N) bits and explicit mask O(N^2) bits if stored.</p>
+<p>For epsilon_N=min{1/16,1/N} these become the same O_alpha(N)-width, O_alpha(log N)-depth and O_alpha(N^3 log N) dense-work orders as the conditional witness, with an O(1/N) implementation remainder.</p>
+<p>These are exact-real mathematical constructions. A sufficient additive sublayer error radius is polynomially small in N and epsilon by the same global Lipschitz propagation argument as the companion, so its negative logarithm is O_alpha(log N+log(1/epsilon)). This is not a finite machine arithmetic, accumulator, trained-network or emitted-parameter certificate.</p>
+<p>If a known rarity floor rho is declared and alpha is chosen below every allowed q, the range term vanishes. The associated alpha-dependent norm and log-approximation constants must then be charged as rho-dependent resources. No uniform-in-rho fixed norm/range theorem is claimed. Conversely, for fixed alpha and u tending to zero, the floor tends to alpha/3 and cannot be removed by this or any other bounded-logit history processor.</p>
+<p>The purpose of this extension is to show that one useful attention invocation can implement the old statistical-plus-range envelope under complete, explicitly paid actual-PreLN resources. It does not claim a better estimator, width optimality, a fixed-width separation, a matching information budget, or external novelty.</p>
+<h2>Revision 2 correction record</h2>
+<p>1. Version 1 stated the useful value dimension as O(N) while allowing model-width padding O(epsilon^(-1)). That is realizable with rectangular value maps but needlessly relies on that architectural convention. This version charges the full standard-head value width O(N+epsilon^(-1)); only its nonzero coordinate bank is O(N). The main epsilon_N=O(1/N) specialization remains linear width either way. 2. Version 1 allowed epsilon&lt;=1/16 but discussed epsilon=1/N for all N&gt;=6. The uniform specialization is epsilon_N=min{1/16,1/N}, which is always at most 1/N and leaves all stated resource orders unchanged. Neither change modifies the reference predictor, statistical bound or physical compilation.</p></section><section class="appendix"><h2>附录 D 先行文献原文定位</h2><h1>原文定位与覆盖范围</h1>
+<p>Kajitsuka–Sato，ICLR 2024：Theorem 2 与 §3.4（第 6 页）已有单层低秩 contextual mapping 及标量上下文压缩。§2.2 式 (2)（第 3 页）省略 LN；附录 A.2 式 (29)–(30)（第 16 页）使用 Q/K 缩放；其输出分离可以很小。位置和 mask 扩展亦已有覆盖。因此本轮只能声称指定正 ε PreLN 契约中的具体反例，不能声称首次发现单层编码全部上下文。</p>
+<p><a href="https://arxiv.org/html/2307.14023v3">https://arxiv.org/html/2307.14023v3</a></p>
+<p><a href="https://proceedings.iclr.cc/paper_files/paper/2024/file/96ee35c170cb8720033b16259c305da9-Paper-Conference.pdf">https://proceedings.iclr.cc/paper_files/paper/2024/file/96ee35c170cb8720033b16259c305da9-Paper-Conference.pdf</a></p>
+<p>Hahn，2020：Lemma 5 的 O(1/N) 单符号影响控制的是输出距离，不要求相同输出。其补充修订 §S2 也需计入改变注意力权重的项。这里的极细单射与该小影响现象相容。</p>
+<p><a href="https://aclanthology.org/2020.tacl-1.11.pdf">https://aclanthology.org/2020.tacl-1.11.pdf</a></p>
+<p>Merrill–Sabharwal：§2.1 定义的是实际 p 位浮点执行。Proposition 1 的均匀注意力下溢门槛是 log₂log₂N 总浮点位，不能改写成 logN。短参数描述与准确保存代数实数的状态精度并非同一资源。</p>
+<p><a href="https://arxiv.org/html/2210.02671v7">https://arxiv.org/html/2210.02671v7</a></p>
+<p>以上是针对命题与模型的定位，不是穷尽式新颖性认证。平方自由编码是否存在更直接的文献先例仍未获得优先权审定；本报告不依赖其新颖性来成立。</p></section></body></html>
