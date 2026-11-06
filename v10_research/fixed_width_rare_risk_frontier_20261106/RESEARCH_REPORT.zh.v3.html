@@ -1,0 +1,568 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>固定宽度稀有二阶预测的历史深度与精度关系</title><style>body{max-width:980px;margin:48px auto;padding:0 24px;font:17px/1.8 system-ui,"Noto Sans CJK SC",sans-serif;color:#17202b;background:#fff}h1{font-size:32px;line-height:1.35;margin:36px 0 24px}h2{font-size:25px;margin:42px 0 18px}h3{font-size:20px;margin:28px 0 12px}p{margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.7 ui-monospace,monospace;padding:16px;background:#f5f7f9}a{color:#145c9e;overflow-wrap:anywhere}.appendix{margin-top:64px}@media(max-width:600px){body{padding:0 16px;font-size:16px;margin:24px auto}h1{font-size:27px}pre{font-size:13px}}@media print{body{max-width:none;margin:0;font-size:11pt}.appendix{break-before:page}h1,h2,h3{break-after:avoid}}</style></head><body><h1>固定宽度稀有二阶预测的历史深度与精度关系</h1>
+<p>2026 年 11 月 6 日。T1/T2 阶段研究报告。</p>
+<h2>结论</h2>
+<p>本轮给出一个可审查的联合充分条件：在固定宽度、真实 PreLN、零 shift 最终 LN 与普通 softmax 下，一次有效注意力可以读取公共选择的 b 个末尾符号，经过已计费解码，达到既有 rare-u 统计风险加上显式概率量化、输出范围及实施误差。</p>
+<p>同时得到一个直接针对任务风险的必要条件：单次读出后，若解码器的完整 Lipschitz 增益太小，就不能准确估计真实末端 A=00 的未知转移概率。证明采用联合再生耦合与 Wasserstein 距离，允许精确实数编码保持全部 KL，因此不受上一轮单射反例推翻。</p>
+<p>这还不是匹配的最优历史—深度—精度前沿。上界采用顺序解码；下界只有一读增益门槛，不限制任意多次数据相关注意力。旧统计率、一般量化下界及已有编译器不作为创新主张。</p>
+<h2>一 同一个过程风险与模型</h2>
+<p>二阶状态 A=00、B=01、C=10、D=11。设 w=(1-u)/3、q=ut/w，平稳分布为 (u,w,w,w)，转移行为</p>
+<pre>(1−t,t,0,0), (0,0,1/2,1/2),
+(q,1−q,0,0), (0,0,1/2,1/2).</pre>
+<p>使用 0&lt;u≤1/100、1/2≤t≤3/4。全链统一快速混合；A 状态罕见不等于全链慢混合。预测时刻是 X₁:N 的 N+1，真实终端状态 T=(X_{N−1},X_N)。主风险为同历史期望 TV；条件于 T=A 的风险单独报告。</p>
+<p>模型使用原始符号、公共归一化位置、合成终端，全特征 ε_LN=1、gain=2、shift=0 的 PreLN 残差块，以及普通最终 LN、仿射词表头和 softmax。宽度固定，完整状态、矩阵、bias 和单阶段增益有固定上界。参数可以依赖公共长度和预算，但不能依赖未知 t 或真实 u。</p>
+<p>固定一个事先声明的二进有理裁剪水平 α∈(0,1/4]。范数和复杂度常数可以依 α，但不能在 u 变小时免费改变 α。</p>
+<h2>二 固定宽度联合风险上界</h2>
+<p>公共选择二次幂 b、G，满足 8≤b≤N、G≥8，并选择实施容差 0&lt;ε≤1/16。存在一族不读取 u,t 的网络，宽度和 value 维度固定，只用一次有效均匀注意力，且实际概率输出严格属于 [α,1−α]。</p>
+<p>其同历史条件风险满足</p>
+<pre>E[|Q_N(1)−t| | T=A]
+  ≤min{1,157/√(1+(b−2)u)}+1/G+ε.</pre>
+<p>同一个网络的总体风险满足</p>
+<pre>R_N≤1300u/√(1+(b−2)u)
+      +w(α−q)₊+(u+w)/G+ε.</pre>
+<p>在同一实际输出范围下，任何预测器也有 R_N≥w(α−q)₊。这里 b 是使用的末尾历史量，G 是有意选择的概率量化网格，ε 是真实网络对参考计算的误差。三者不是一个“精度”变量。</p>
+<p>令 H=ceil(log₂(N+1))、h=ceil(log₂(b+2))，可达深度为</p>
+<pre>D=O_α(H+b+log²(b+2)+h logG+log²(1/ε)).</pre>
+<p>每个系数的描述长度为 O_α(D)，保守总参数描述位数为 O_α(D²)。这些是上界，不意味着任何网络都只能使用 O(D) 个历史符号。</p>
+<h3>证明链与真正补上的接口</h3>
+<p>复用已有固定宽度 packed-suffix 程序：一个标量读出携带长度 b 的基数编码，已计费的连续平台分类器逐个解码，内部累积二阶转移计数，并恢复真实终端二元组。每个物理行都对应合法虚拟后缀，保证算术域与全范数合法。</p>
+<p>A 行使用 add-one。C 行必须使用无平滑频率和零计数回退；否则会破坏旧总体 rare-u 率。固定宽度 restoring division 显式处理分子零、分子等于分母和分母零，输出网格误差至多 1/G。没有外部除法、取整或免费比较器。</p>
+<p>旧固定宽度 PreLN 结果的最终输出是带非零 shift 的概率坐标投影，不能直接当作普通 softmax。本轮先在有界概率区间内，用 Taylor 展开与已计费乘法顺序计算 log，深度 O_α(log²(1/ε))、宽度固定；再把归一化 logit bank 放进固定宽度 norm-padding 程序，使目标全特征方差为 3。已计费幅度恢复后，gain=2、shift=0 的最终 LN 恢复 logits，再接普通仿射 softmax。</p>
+<p>为确保实际输出而非仅参考估计器严格处在 [α,1−α]，先留出小幅向内裁剪余量，再把编译误差控制在余量以内。该裁剪偏差明确包含在 ε 中。</p>
+<p>统计部分依赖已有真实终端 A 的 157 界及总体混合估计器的 1300 界。平稳性使末尾 b 段具有相同过程律，其终端状态就是原始终端状态；没有把查询独立化。</p>
+<h3>预算量词与例子</h3>
+<p>若预先选择 b≈logN、G≈b 且 G≥16、ε=1/G，则 D=O_α(logN)，条件风险上界为 O(1/√(1+u logN))+O(1/logN)。总体上界仍保留范围地板与量化项。</p>
+<p>这不意味着对完全未知 u 自动获得最优预算。把目标风险反解成 b≈1/(u r²) 后再选择权重，已经使用了 u；这种选择只能在已知 u 或已声明稀有程度下界的预算问题中使用。一般情况应保留对同一个公共 b 的点态风险式。</p>
+<p>取 b 为不超过 N 的最大二次幂，则 b&gt;N/2，可以达到与全历史同阶的统计基线，但解码深度付出了线性 N 项。没有由此证明线性深度必要，也没有排除更快的多次注意力算法。</p>
+<h2>三 实际执行量化是单独的条件契约</h2>
+<p>不能把 O(D) 位系数描述直接叫作 O(D) 位可靠执行。本轮另列固定网格 evaluator 的充分条件：标量运算、参数与输入转换绝对误差不超过 Δ=2^(−p)；零 Q/K、exp(0)=1 与因果 mask 精确保留；LN 按非负方差、add-one、经认证的 sqrt/div 计算；最终有界 logits 的 exp/div 同样需误差证书；整数范围覆盖前缀分母 N+1，不能溢出。</p>
+<p>为得到严格二元概率输出，有限输出格式明确量化一个概率，再以精确网格减法输出其补数。分别舍入两个概率只保证向量接近，不自动保证和为一。这是有限 evaluator 的输出编码，不是额外插入原实数网络的隐藏层。</p>
+<p>设 m 为恢复前计算深度、初始缩放为 η=2^(−M)，固定常数 A_α&gt;1。可审查充分条件是</p>
+<pre>p≥M+m log₂A_α+log₂(N+2)+log₂(1/ν)+C_α,</pre>
+<p>其中 ν 是允许增加的最终 TV 误差，需满足 0&lt;ν≤ν₀(α)，ν₀(α) 是用于保持有界误差邻域的固定小常数。于是一个充分的分数位数量级为 O_α(D+logN+log(1/ν))，整数范围另付 O(logN)+O_α(1) 位。总体和条件风险上界各增加 ν；若要保留严格 α 范围，还要求 ν≤μ/2，其中 μ 是证明中预留的向内裁剪余量。</p>
+<p>这不是对任何现成 dtype 的保证，未实例化或运行 evaluator。sqrt、exp、division 的实际位操作成本和常数仍需机器级实现证书。该契约是分析充分条件，不是必要精度下界。</p>
+<h2>四 直接针对风险的一读传输界</h2>
+<p>设单读之前所有操作都逐位置进行，因此合成终端的 query 是公共的。先考虑完整欧氏范数有界的加性统计</p>
+<pre>Z=[a_*+Σ_i a_i(X_i)]/(N+1)，‖a_i(x)‖≤R,</pre>
+<p>其中位置函数可以任意复杂，维度也可以增长；a_* 公共。比较同一 u 下参数 t,s，记 h=|t−s|、m=ceil(N/2)。条件于实际终端 A，两统计分布满足</p>
+<pre>W₁(Law_t(Z|A),Law_s(Z|A))
+  ≤R[32+√(8320muh)]/(N+1).</pre>
+<p>这是 Wasserstein 距离，不是 KL 或 TV。精确实数单射可以同时保留完整 KL 并满足该距离界。</p>
+<h3>为什么耦合包含真实末端和相关性</h3>
+<p>反向条件历史从 A 出发，仍使用同一二阶核。两步核都有共同 D 原子，质量至少 1/4。用共享再生 coin 构造联合链，不能只因两个边际各自混合就断言联合混合。</p>
+<p>联合平稳分布的两边际相同，均为 π；参数变化只通过 A 的罕见访问及 C 的小转移影响分歧，平稳分歧概率≤40uh。把反向相邻两个符号视为一个 pair-state 块，每块向量差均值为零。共同再生给可求和协方差，得到总差平方期望≤8320mR²uh。由平稳联合链切换到真实起点 (A,A)，首次再生前最多增加 32R 的期望差。整个论证没有使用独立样本公式。</p>
+<h3>付费解码如何进入同一总体风险</h3>
+<p>若完整解码器 F 满足 TV(F(z),F(z′))≤Λ‖z−z′‖，实际网络在 A 条件下对该接口的平均近似误差至多 η_A，则</p>
+<pre>max{R_t,R_s}≥(u/2)
+   [h−ΛR(32+√(8320muh))/(N+1)−2η_A]₊.</pre>
+<p>若仅知道无条件接口误差≤ε，安全版本是在没有 η_A 的下界后减 ε，不能免费沿用条件误差 ε。稀有条件与总体误差相差的 u 因子始终保留。</p>
+<p>一个有界分数的真实单头读出可以写成带权 numerator/denominator 的加性统计。分数范围 S、value 范数 V、后续完整解码增益 L 都明确计入，不能漏掉 output projection、residual、FFN、LN 或最终 head。</p>
+<p>取固定参数间距，在 A 条件误差足够小且接口近似误差已计入时，需要</p>
+<pre>L≥c·N/(1+√(Nu))
+  =Ω(min{N,√(N/u)}),</pre>
+<p>常数依赖声明的 score/value 上界。若 L≤C₀M^D，得到 D≥log_M[N/(1+√(Nu))]−O(1)。这是单读增益门槛，不是匹配风险曲线，也不覆盖读取更新后非终端 K/V 的多次调用。</p>
+<p>读出接口若按已声明量化器产生欧氏误差≤δ，可以用 η_A≤Lδ。这个误差项削弱必要条件，不能把它反过来称作精度下界。全栈有限执行仍由上一节的单独契约处理。</p>
+<h3>同一 rare 源的终端访问门槛更强</h3>
+<p>该传输计算不能作为新的总体深度主下界。对同一个 rare 源，若 X_{N−1}=1，最后一个符号是公平位；它决定真实终端为 C 或 D，目标概率之差 g=1/2−q≥21/44。一读只改变末端原始符号时，head 输出距离至多 4V exp(S)/(N+1)。因此</p>
+<pre>R_t≥w[g−4V exp(S)L/(N+1)]₊.</pre>
+<p>该公式首先对精确接口预测器 Q₀ 成立；实际 Q 若仅在每个源下以无条件 TV 误差 ε 近似 Q₀，右侧必须再减 ε 并取正部。</p>
+<p>对精确接口，总体低风险要求 L=Ω(N)，已支配 N/(1+√(Nu)) 这一参数估计门槛。这个推导是旧末端符号影响机制在同一源上的直接适配，不能称新主定理。传输界的独立用途只在终端已经固定为 A、仍需估计未知转移概率的条件任务；它不再借助复制末端符号的困难。</p>
+<h2>五 已被否决的拼接与标准下界</h2>
+<p>上一轮总通信位数下界与通用 Lipschitz 网格模拟直接拼接，可能完全无法推出正风险下界。原因是模拟成本本身含 log(1/ε)，代回指数型信息下界后，右侧可能只剩 ε 的一次或更高次幂，减去模拟误差即失去正值。附录保存全尺度的判据，不继续把该拼接包装成主结果。</p>
+<p>若完整可见终端信息最多有 M 个状态，标准码本畸变论证给条件风险≥1/(16M)，总体风险≥u/(16M)。只有全部 W 个可见坐标各有不超过2^p个状态且没有额外标签、缓存或再次读取时，才可写 M≤2^(Wp)，其中 p 是每坐标全部编码位，不只是浮点尾数或网格分数位。这个标准误差地板不自动包含深度。完整历史的统计下界、输出范围地板、有限状态畸变下界可以同时列出，却不能因此声称得到匹配 D—precision 前沿。有限状态字母表与本轮 evaluator 的误差保证，只有严格对齐语义后才能比较。</p>
+<h2>六 先行工作和资源账本</h2>
+<p>固定宽度 suffix packing、计数、restoring division、小幅度 PreLN 编译和恢复均有本项目已审前例；统计率也已存在。本轮新增义务是标准 zero-shift final-LN/softmax 的固定宽度接口，以及同一 rare 源的任务相关传输计算。</p>
+<p>已有 ReLU 乘法近似可支持固定宽度 O(log(1/δ)) 深度；不能据此免费把 log 也写成同阶，本轮保守付 O(log²(1/ε))。通用 Markov 扰动定理主要比较时刻边际或平稳分布，不能直接替代这里的加性路径统计与终端瞬态。Paulin Theorem 3.7 已给位置依赖函数的非可逆链方差界，能替代这里的协方差求和，保持同阶和全向量维度控制。联合再生、方差与 Lipschitz 风险三角不等式都是标准工具，不主张新的一般耦合理论。</p>
+<p>固定宽度仍有 N 行状态：持久激活为 O_α(N)，局部计算为 O_α(ND)，一次朴素稠密 attention 为 O_α(N²)，若连 dummy attention 都稠密执行则 O_α(DN²)，显式分数矩阵另需 O(N²) 空间。训练数据、训练步数、模型学习可达性没有进入这些推理资源结论。</p>
+<h2>七 未完成边界</h2>
+<p>上下界尚不匹配。顺序解码上界不证明所有算法都要顺序处理 b 个符号；一读传输下界不限制任意多次注意力，也可能被其他终端访问或范围障碍支配。固定 α 的总体 rare-u 地板仍存在。</p>
+<p>没有训练、仿真、参数运行、形式验证或外部专家审定。本轮保留证明初稿、失败拼接、合同修订、原文定位与独立文本审查；没有上传或投稿。</p><section class="appendix"><h2>附录 A 固定宽度上界与执行契约</h2><h1>Fixed-width, one-read rare prediction with paid ordinary-softmax decoding</h1>
+<h2>1. Statement, including the output-range contract</h2>
+<p>Use the stationary binary rare family already fixed in `../rare_attention_information_bridge_20261106/ONE_READ_RARE_A_STATISTICAL_WITNESS.candidate.v1.md`: pair states A=00, B=01, C=10, D=11, stationary probabilities (u,w,w,w), w=(1-u)/3, 0&lt;u&lt;=1/100, t in [1/2,3/4], and C-row next-zero probability q=ut/w. The A-row next-one probability is t; B,D are fair. Inputs are N raw symbol onehots, scalar public position j/P with P=2^ceil(log2(N+1)), and one source-independent synthetic zero-symbol terminal T=N+1. There are no supplied counts, context features, suffix port, or encoded-history input.</p>
+<p>Fix a declared dyadic 0&lt;alpha&lt;=1/4. Choose a power-of-two suffix length b with 8&lt;=b&lt;=N, a power-of-two denominator G&gt;=8, and 0&lt;epsilon&lt;=1/16. These are public design budgets fixed without access to u,t or the realized history; the bounds hold simultaneously over the allowed u,t. Choosing b by inverting a target bound using u would require known u or a declared known lower rarity bound, and is not an unknown-u adaptive result. There is a source-independent, length-dependent untied family with:</p>
+<p>- constant model width, FFN width and physical value width, independent of N,b,G,epsilon (a fixed binary register layout suffices); - exactly one useful self-inclusive causal ordinary-softmax attention invocation, with one head and identically zero scores; every other attention output is zero; - genuine full-feature PreLN residual blocks, every LN having epsilon_LN=1, coordinate gain 2 and zero shift, including the ordinary final LN; - a bounded affine binary vocabulary head followed by ordinary softmax; - one finite full-state/value/operator/full-bias/primitive-Lipschitz envelope C_alpha, fixed after alpha and before N,b,G,epsilon,u,t or the history vary; - every exact-real physical output&#x27;s next-zero probability in the EXACT interval [alpha,1-alpha].</p>
+<p>Let Q_N denote the actual terminal output and E_A={actual terminal pair is A}. Then</p>
+<pre>E[|Q_N(1)-t| | E_A]
+  &lt;= min{1,157/sqrt(1+(b-2)u)} + 1/G + epsilon.       (1)</pre>
+<p>For unconditional terminal TV risk R,</p>
+<pre>R(Q_N) &lt;= 1300u/sqrt(1+(b-2)u)
+          + w(alpha-q)_+ + (u+w)/G + epsilon.        (2)</pre>
+<p>Both right sides may be capped at one. These estimates use the SAME model and the SAME actual terminal pair. In the same exact output-range contract, EVERY predictor, irrespective of its history processor, satisfies</p>
+<pre>R &gt;= w(alpha-q)_+.                                    (3)</pre>
+<p>Consequently the fixed-alpha floor and the achievable statistical/quantization/implementation terms are on one ledger. This does not remove the floor by letting alpha depend on u: that changes the declared norm/range resources.</p>
+<p>Put H=ceil(log2(N+1)), h=ceil(log2(b+2)), g=log2 G, and L=1+log(1/epsilon), with logs in resource bounds in any fixed base. A sufficient paid primitive/standard-block depth is</p>
+<pre>D = O_alpha(H + b + log^2(b+2) + h g + L^2).           (4)</pre>
+<p>Maximum rational/dyadic coefficient-description length is O_alpha(D), and conservative dense untied parameter-description length is O_alpha(D^2). These are description bounds, not execution-bit guarantees. Section 9 supplies a separate conditional finite-evaluator contract.</p>
+<h2>2. Existing packed suffix, now used for two row estimates</h2>
+<p>Import only Sections 3-4 of `../terminal_width_suffix_20261104_2003/CONSTANT_WIDTH_CONSISTENCY.candidate.v3.md`. They give a continuous fixed-width affine/ReLU reference program with one uniform scalar read, paid depth</p>
+<pre>O(H+b+log^2(b+2)),</pre>
+<p>and bounded whole states and primitives. The program positions base-B digits for the last b raw symbols, with B=16 for a binary alphabet, averages them over the full prefix, pays for recovering the prefix denominator, and sequentially decodes all b digits using continuous classifiers with a proved plateau margin. The packed-code approximation error is below B^(-b)/100 before digit decoding. Every public gain depending on N or b is factored into paid bounded stages. The input is not physically cropped.</p>
+<p>Relabel raw symbol 0 by digit 1 and raw symbol 1 by digit 2. An unavailable decoded digit 0 is replaced, for counting only, by raw symbol 1. This harmless default differs from the old optional default and does not change subtraction from the packed residual. Thus EVERY physical row produces a legal virtual b-symbol word, and the synthetic terminal&#x27;s word is precisely the actual suffix. Retain the two decoded lag onehots and accumulate the fixed-size binary triple table at scale 1/Q, Q=2^h&gt;=b+2. All count mass is at most (b-2)/Q&lt;1.</p>
+<p>At T the final pair is the ACTUAL pair (X_(N-1),X_N). Local gates select each of the A and C count rows, independently of which row is final. The only extra count/output registers are constant in number. Keeping all four contexts or just A,C changes only a fixed factor.</p>
+<p>All-row legality is important. It gives exact reference count lattices, bounded division domains, and valid final log/padding domains at every physical row, including early rows. The later physical PreLN simulation is not claimed to preserve these lattices exactly; its continuous full-program error is charged separately.</p>
+<h2>3. Fixed-width dyadic quotient, including C&#x27;s exact zero fallback</h2>
+<p>The existing restoring-division comparator from `../shallow_readout_audit_20261104_1037/sources/proof.v3.md` is</p>
+<pre>H_delta(x)=min(1,Q max(0,x+delta)), delta=1/Q.</pre>
+<p>It is implemented by one ReLU initialization and h clipped doublings, each gain at most two. On the delta lattice it equals 1{x&gt;=0}. We use this exact-real reference fact, not a discontinuous comparator primitive or an assertion about perturbed inputs.</p>
+<p>The following minor extension handles 0&lt;=n&lt;=d&lt;=1, lattice n,d, and d=0. Compute</p>
+<pre>z=H_delta(-d), d&#x27;=d+delta z,
+e=H_delta(n-d&#x27;), v=ReLU(d&#x27;+e-1),
+r=n-v, f=e.</pre>
+<p>On the legal domain, z=1 precisely at d=0, hence d&#x27;&gt;=delta. Because n&lt;=d&#x27;, e=1 precisely at n=d&#x27;. The gate v equals e d&#x27;. Thus 0&lt;=r&lt;d&#x27; and f is the endpoint indicator. If n=d&#x27;&gt;0, f=1 and r=0; otherwise f=0 and r=n. If d=0, then n=0, d&#x27;=delta, f=r=0.</p>
+<p>For j=1,...,g, perform paid steps</p>
+<pre>a=H_delta(2r-d&#x27;), v=ReLU(d&#x27;+a-1),
+r &lt;- clip_[0,1](2r-v), f &lt;- f+2^(-j) a.</pre>
+<p>On every reference row a is an exact bit, v=a d&#x27;, and 0&lt;=r&lt;d&#x27;; the clipping is inactive on the valid recurrence. For n&lt;d&#x27; standard induction gives</p>
+<pre>f=floor(G n/d&#x27;)/G,</pre>
+<p>while n=d&#x27; yields f=1 exactly. The d=0 case yields f=0. No large integer F, ceiling, division, floor or endpoint test occurs as a network primitive. All values and complete fixed-size states stay bounded. The extra initial comparator and gate cost O(h); the g rounds cost O(hg), with maximum coefficient description O(h+g).</p>
+<p>Apply this algorithm to</p>
+<pre>A: n=(C_A0+1)/Q, d=(J_A+2)/Q;
+C: n=C_C0/Q,     d=J_C/Q.</pre>
+<p>For A the ratio is strictly between zero and one. For C this computes</p>
+<pre>r_C^G=floor(G C_C0/J_C)/G when J_C&gt;0,
+r_C^G=0 when J_C=0,                              (5)</pre>
+<p>including exactly one at C_C0=J_C&gt;0. Let r_A be the old A add-one estimate and r_C the old unsmoothed zero-fallback estimate. Then</p>
+<pre>|r_A^G-r_A|&lt;=1/G, |r_C^G-r_C|&lt;=1/G.              (6)</pre>
+<p>Set the B,D estimates to exactly 1/2 and select the actual virtual final pair using its two internal lag onehots. This gives a scalar r^G in [0,1] at every row. At T it is a quantized version of the OLD mixed estimator, not an add-one replacement for the C branch. The maximum pathwise error against the old mixed estimator is 1/G and it is zero on B,D.</p>
+<h2>4. An inward margin gives the exact alpha range</h2>
+<p>Let mu be the largest power of two not exceeding epsilon/2, so epsilon/4&lt;mu&lt;=epsilon/2. Define</p>
+<pre>p=clip_[alpha+mu,1-alpha-mu](r^G).</pre>
+<p>This is a paid fixed-size affine/ReLU operation. Since alpha&lt;=1/4 and mu&lt;=1/32, the interval is nonempty. Relative to the desired alpha-projected estimate p_alpha=clip_[alpha,1-alpha](r^G),</p>
+<pre>|p-p_alpha|&lt;=mu.                                 (7)</pre>
+<p>We will compile p to a physical ordinary-softmax output qhat with uniform error at most mu/2. Consequently, on EVERY legal raw history and physical row,</p>
+<pre>alpha+mu/2 &lt;= qhat &lt;= 1-alpha-mu/2,
+|qhat-p_alpha| &lt;= 3mu/2 &lt;= 3epsilon/4.             (8)</pre>
+<p>Thus the exact physical output really is alpha-range restricted. This small reserved margin addresses the gap in the earlier wide construction, whose alpha was only the reference projection level and did not establish the exact realized range. No zero-error compiler or limiting network is assumed.</p>
+<h2>5. Paid logarithms at fixed width</h2>
+<p>A logarithm oracle or growing hinge bank is unnecessary. For x in [alpha,1], set y=1-x and use</p>
+<pre>log x = -sum_(k=1)^r y^k/k - tail,
+0&lt;=tail&lt;= (1-alpha)^(r+1)/((r+1)alpha).</pre>
+<p>For a desired uniform log error delta_log&gt;0, choose the public integer</p>
+<pre>r = ceil(alpha^(-1) log(4/(alpha delta_log))).</pre>
+<p>Then the tail is at most delta_log/4. Starting from v_0=1, compute serially</p>
+<pre>v_k=clip_[0,1](M_delta(v_(k-1),y)),
+s_k=clip_[0,C_0](s_(k-1)+v_k/k), s_0=0,</pre>
+<p>where M_delta is the existing fixed-width tent-square/polarization product with absolute error at most delta, and C_0 is a fixed power of two at least 1+log(1/alpha). Each product costs O(1+log(1/delta)) paid affine/ReLU primitives, with fixed scratch and bounded primitive coefficients. Take a public dyadic delta&lt;=delta_log/(4r).</p>
+<p>Inductively |v_k-y^k|&lt;=k delta. True partial sums lie in [0,log(1/alpha)], so clipping the accumulator does not increase error. Therefore |s_r-sum y^k/k|&lt;=r delta&lt;=delta_log/4. The emitted ell=-s_r has error at most delta_log/2. Exact rational coefficients 1/k use O(log r) bits; alternatively rounded coefficients within delta_log/(4r) add at most delta_log/4. No partial sum exceeds C_0, and no r-wide bank is held.</p>
+<p>Perform this twice for x=p and x=1-p, reusing product scratch. The paid log depth is</p>
+<pre>O(r[1+log(r/delta_log)]) = O_alpha(log^2(1/delta_log)). (9)</pre>
+<p>Its width is constant. Choose delta_log sufficiently small, for example mu/64. The ideal ordinary softmax of the two prepared logits differs from (p,1-p) by at most a fixed small fraction of mu, by the bounded binary-softmax Jacobian. This is a deliberate conservative allocation, not a new logarithm complexity optimum.</p>
+<h2>6. Fixed-width norm padding for logits, with zero terminal shift</h2>
+<p>This section adapts the OLD actual-PreLN compiler from `../standard_preln_20261104_2344/STANDARD_PRELN.candidate.v2.md`. That source alone proves a probability-register result with nonzero terminal shift. It does NOT by itself establish the ordinary-softmax theorem here.</p>
+<p>Store v=(ell_0/C_0,ell_1/C_0), so ||v||^2&lt;=2. Reserve a fixed physical dimension d&gt;=8 large enough for all source, arithmetic, paired output, anchors and scratch registers; it is independent of N,b,G,mu. Using the old paid norm-padding arithmetic, compute</p>
+<pre>r_*(v)=sqrt(3d/2-1-||v||^2), |r-r_*|&lt;=kappa.</pre>
+<p>The relevant radicand is bounded away from zero. The bounded tent-square products and warmup/doubled-precision inverse-square-root Newton circuit of `../mandatory_post_layernorm_20261104_2210/MANDATORY_POST_LN.candidate.v4.md`, Section 5, give depth O(1+log(1/kappa)), fixed width, bounded complete states and coefficients. We import its LOGICAL arithmetic, not its post-LN physical implementation.</p>
+<p>After paid clearing, the reference ends at</p>
+<pre>z_ref=(v,-v,1,-1,r,-r,0,...,0),
+| ||z_ref||^2/d - 3 | &lt;= C_pad kappa.            (10)</pre>
+<p>Every logical affine/ReLU/attention microstep, including log, padding and clears, is implemented inside a genuine PreLN block by the old small-amplitude compiler. Pair all rails, replace logical biases by anchor coefficients, initialize h=eta z with eta=2^(-M), and homogenize each overwrite F. With gain-one LN notation its actual residual update is</p>
+<pre>z_new=z+s(z)(F(z)-z),
+s(z)=(1+eta^2||z||^2/d)^(-1/2).</pre>
+<p>The useful attention has its own source-row factors s(z_i); uniform averaging has no prefix-length penalty in max-row norm. On a fixed reference tube, the full-program error recurrence is</p>
+<pre>e_l &lt;= L_* e_(l-1)+C eta^2,
+e_l &lt;= C&#x27; eta^2 L_*^m,                         (11)</pre>
+<p>for the entire m-step reference including the new arithmetic. Choose eta so this is &lt;=xi. As in the old compiler, replace each interior gain-one LN by gain two and halve the consuming first FFN/value matrix. This is an exact reparameterization, not another approximation. All actual interior LN shifts are zero. The actual final prepared vector z_tilde is still sign-paired, its anchors are 1,-1 in analytical coordinates, and ||z_tilde-z_ref||&lt;=xi. Approximate scratch clearing is INCLUDED in this full-vector norm error.</p>
+<p>Use the OLD stable restoration schedule a_j=2^(j-M), j=0,...,M, with public dyadic k_j approximating sqrt(1+3a_j^2) to error &lt;=tau a_j^2. Each paid ordinary PreLN block implements</p>
+<pre>h_(j+1)=h_j+k_j LN_(1,1,0)(h_j),</pre>
+<p>or equivalently uses gain-two LN and half the branch coefficient. The old recurrence proves, when delta=C_pad kappa+C_norm xi is sufficiently small,</p>
+<pre>h_M=r_M z_tilde, |r_M-1|&lt;=3delta+tau.           (12)</pre>
+<p>Finally apply the ORDINARY full-feature LN_(1,2,0), with ZERO shift, and affine head C_0 P_out, followed by ordinary binary softmax. Unlike the probability-register source, add no pi and impose no probability-bank sum invariant. The extracted logits are</p>
+<pre>ell_hat=C_0 g v_tilde,
+g=2r_M/sqrt(1+c r_M^2), c=||z_tilde||^2/d,
+|g-1|&lt;=7delta+2tau.                            (13)</pre>
+<p>At the reference target c=3,r_M=1 this gain is exactly one. Hence</p>
+<pre>||ell_hat-ell||_2
+   &lt;=C_0[2xi+sqrt(2)(7delta+2tau)].             (14)</pre>
+<p>Select xi,kappa,tau as dyadic positive constants times mu, small enough for (14) and the log error from Section 5 to give binary TV error &lt;=mu/2. Their negative logarithms are O_alpha(1+log(1/mu)). This proves (8).</p>
+<p>This is fixed-width nonzero norm padding, of bounded norm because d is fixed. It does not use dimension-dilution, a width growing like 1/epsilon, a free inverse LN, a nonzero final shift, coordinate probability output, or an uncharged nonlinear vocabulary head. The vocabulary head is affine and its C_0 factor is a fixed alpha-dependent operator bound.</p>
+<h2>7. Statistical composition and the genuine read</h2>
+<p>Stationarity makes the last-b marginal exactly the same stationary rare-family length-b law. Its terminal pair is identically the original terminal pair, so conditioning on A is the SAME-history conditioning in the old theorem. No independent query, conditional-iid count argument or new initial-law assertion is needed.</p>
+<p>The old actual-terminal A add-one lemma gives</p>
+<pre>E[|r_A-(1-t)| | E_A]
+   &lt;=min{1,157/sqrt(1+(b-2)u)}.</pre>
+<p>The true A probability 1-t lies in [1/4,1/2] and thus in [alpha,1-alpha]. Projection is contractive toward it. Combining (6) and (8) proves (1).</p>
+<p>The old mixed-estimator theorem gives</p>
+<pre>R(r)&lt;=1300u/sqrt(1+(b-2)u).</pre>
+<p>The explicit constant 1300 is proved in `../clipped_joint_risk_20261103_2217/clipped_joint_risk_derivation.v2.md`, Section 6: its C contribution is at most 1104u/sqrt(1+(b-2)u), and the A contribution is at most 157u/sqrt(1+(b-2)u). The earlier `../u_blind_full_averaged_20261103_2147/full_averaged_tv_bound_v1.html` supplies the underlying mixed-estimator and conditional-A analysis. This is not a new proof or a new constant. The quantizer changes only A,C and by at most 1/G, so expected error is at most (u+w)/G. Projection onto [alpha,1-alpha] adds at most w(alpha-q)_+: A and B,D targets lie inside, and C is the only possibly excluded target. Equation (8) then proves (2). Since the actual output is itself always in [alpha,1-alpha], conditioning on C proves (3) directly.</p>
+<p>The single read is genuinely useful. Ablating its output leaves a recovered packed code within B^(-b)/100 of zero, so continuous plateau decoding returns only missing digits; our declared raw-1 default makes the virtual word all ones. Its final row is D and the mixed reference prediction is 1/2. On an all-zero input word, the intact terminal pair is A, r_A=(b-1)/b&gt;=7/8, and the dyadic quotient is at least 3/4 for G&gt;=8. Its inward-projected prediction is at least 3/4-mu. Apply the same fixed tube, eta and restoration schedule to intact and ablated reference programs. Their actual predictions differ by at least</p>
+<pre>1/4-2mu &gt;= 3/16.</pre>
+<p>This demonstrates usefulness of the implemented read; it is not a one-invocation lower bound or a matching communication protocol.</p>
+<h2>8. Resource ledger and a depth-budget corollary</h2>
+<p>Let r be the log-series length from Section 5 with delta_log=mu/64. A more explicit sufficient reference length is</p>
+<pre>m &lt;= C_alpha [H+b+log^2(b+2)+h(g+1)
+              + r(1+log(r/mu))+log(1/mu)+1].   (15)</pre>
+<p>The small-amplitude choice and stable restoration require</p>
+<pre>M=O_alpha(m+log(1/mu)), D=O_alpha(m+M).</pre>
+<p>For fixed alpha this is (4). Original packing coefficients need O(H+b+g) bits, including the exponentially small base-B positions. Log/padding coefficients need O_alpha(log(r/mu)) bits. The shrink eta and prescribed public dyadic k_j need O_alpha(m+log(1/mu)) bits. Thus maximum coefficient descriptions are O_alpha(D). No offline constant generation is claimed to have been executed.</p>
+<p>For the constant physical/FFN widths, conservative dense accounting is:</p>
+<p>- coefficients O_alpha(D), parameter-description bits O_alpha(D^2); - public scalar positions O(N log N) bits if separately stored; - rolling all-row state O_alpha(N) real slots, not constant total memory; - local affine/FFN real work O_alpha(ND); - one useful dense attention operation O_alpha(N^2); evaluating all dummy attention slots densely gives O_alpha(DN^2); - explicit attention score/mask storage O(N^2) if materialized; the mask is not free in that implementation.</p>
+<p>No trained-weight claim, shared-parameter claim, efficient streaming claim, finite hardware benchmark or optimal parameter precision claim follows.</p>
+<p>For example, for N&gt;=8 set b=2^floor(log2(max{8,H})), G=max{16,b}, and epsilon=1/G. Then 8&lt;=b&lt;=N, b is comparable to log(N+1), G is comparable to b, and epsilon&lt;=1/16. Then D=O_alpha(log N), maximum parameter-description bits O_alpha(log N), and</p>
+<pre>conditional-A risk &lt;= O(1/sqrt(1+u log N))+O(1/log N),
+overall risk &lt;= O(u/sqrt(1+u log N))
+                     +w(alpha-q)_+ +O(1/log N).</pre>
+<p>The constants 157 and 1300 remain available in (1)-(2); this display only summarizes order. When u log N is small, the conditional bound is correspondingly noninformative. To reach the full-b statistical regime, b must itself grow and its decoding cost and packed-code precision are paid. Taking b=N when N is a power of two, or the largest power of two at most N otherwise, gives b=Theta(N) and a linear-in-N upper decoder depth (up to the other stated terms). It does not give a fixed-width logarithmic-depth full-history statistical theorem.</p>
+<p>More generally, solving (4) for a feasible b gives an ACHIEVABLE upper envelope under a depth budget. It does not prove that all fixed-width architectures must obey b&lt;=O(D), or that packing/serial decoding is optimal.</p>
+<h2>9. Separate conditional execution/quantization contract</h2>
+<p>There are three distinct precisions: the intentional quotient denominator G; parameter descriptions (including eta and k_j); and finite execution error. They must not be identified.</p>
+<h3>9.1 Backend-independent perturbation statement</h3>
+<p>Each complete physical map has a finite alpha-dependent Lipschitz envelope on the relevant bounded tube. Uniform attention has no additional N factor in that norm. If each physical sublayer incurs adversarial additive full-row error at most delta, and the final ordinary softmax is exact, a conservative bound is</p>
+<pre>TV(Q_perturbed,Q_exact)&lt;=C_alpha delta A_alpha^(cD),</pre>
+<p>with fixed A_alpha&gt;1 and c. Hence delta&lt;=nu/(C_alpha A_alpha^(cD)) suffices for an added risk term nu. This is an error-radius theorem, not a claim that a named dtype satisfies it. It does not assume pairing or exact mean zero survives the perturbations.</p>
+<h3>9.2 A specified conditional fixed-grid evaluator</h3>
+<p>A stronger but still conditional finite-arithmetic result can be stated for the following evaluator:</p>
+<p>1. Use a signed fixed grid of step Delta=2^(-p). Scalar parameters, inputs, and elementary arithmetic results are rounded to nearest grid point with a fixed tie rule, for example ties-to-even. Square root, division, and exp are correctly rounded, or come with a proved absolute error bound &lt;=Delta. Exact zeros, Q=K=0, exp(0)=1 and the causal mask are preserved exactly. Integer/range capacity handles the prefix denominator t&lt;=T and all accumulations without overflow. 2. LN is evaluated by mean, centering, nonnegative squared deviations, variance mean, add-one, certified sqrt and division. Epsilon one keeps its exact divisor away from zero. Fixed-width local substeps then have O_alpha(Delta) error on the fixed tube. 3. The sole useful zero-score attention uses sequential weight/value arithmetic, including the ordinary softmax denominator. Its local error is bounded by O_alpha(T Delta), provided T Delta is small. Dummy sublayers remain charged even if their zero outputs are exact. 4. The final bounded-logit ordinary softmax uses certified exp and division. Its local error is O_alpha(Delta), since its logits and exponentials lie in fixed alpha-dependent compact ranges with denominator bounded below. 5. For an EXACT binary simplex output format, round one computed next-zero probability to the Delta grid, clip that grid value to [0,1], and emit its complement by exact grid subtraction from one. Clipping cannot increase distance from the exact probability and ensures a legal simplex output. This is a declared finite OUTPUT ENCODING, not an inserted exact-real network layer, an unnoticed probability repair, a literal exact softmax output, or a claim that independent rounding of both probabilities preserves mass. All its operations and error are charged. A backend choosing independent output rounding obtains only vector closeness, not a legal-probability TV theorem.</p>
+<p>With m computational blocks before restoration, the standard perturbation recurrence from `../preln_precision_analysis_20261105/ANALYTICAL_PRECISION.v1.md` gives</p>
+<pre>E_comp&lt;=C_alpha(T+1) A_alpha^m Delta.</pre>
+<p>The old restoration maps have global product Lipschitz bound &lt;2/eta, including arbitrary nonpaired error. Consequently, after final LN, affine head, certified softmax and the declared output encoding,</p>
+<pre>TV(Q_grid,Q_exact)
+   &lt;=C&#x27;_alpha(T+1)A_alpha^m 2^M Delta.          (16)</pre>
+<p>A sufficient condition for error &lt;=nu is</p>
+<pre>p &gt;= M+m log2 A_alpha+log2(T+1)
+                   +log2(1/nu)+log2 C&#x27;_alpha. (17)</pre>
+<p>It also closes the bounded-tube induction when nu is a sufficiently small fixed alpha-dependent constant. Add any independently imposed exact coefficient-storage requirement to (17); approximating coefficients is already charged in its error model. Integer/range bits are O(log T)+O_alpha(1) for the sequential attention sums/denominator and bounded local computations, in addition to the fractional bits. Certified square-root/exp/div implementations and their own bit-operation cost must still be supplied for a concrete machine theorem.</p>
+<p>Thus a sufficient fractional-bit ORDER is</p>
+<pre>p=O_alpha(D+log N+log(1/nu)),                   (18)</pre>
+<p>not a universal necessary order or an instantiated machine precision. At b=Theta(log N), G=Theta(b), epsilon=1/G, nu comparable to epsilon, this becomes O_alpha(log N). At general b, it pays the b-dependent decoding/representation sensitivity. Rounded eta collapsing raw-input distinctions cannot be repaired later.</p>
+<p>If nu&lt;=mu/2, (8) and (16) also keep the emitted complementary-grid probability in [alpha,1-alpha]. Under that extra inequality, (3) applies to the finite output too, and (1)-(2) acquire only the extra nu term. For larger nu the finite output may remain a simplex point but the exact alpha-floor lower must be weakened to its actually guaranteed range. A statement of small numerical vector error alone is not enough to assert the old exact simplex/range contract.</p>
+<p>No evaluator has been instantiated or executed here. Conditions (1)-(5), constants, operation order, intermediate range, parameter conversion, output format and pre-run capture would require separate review before any numerical run. This note supplies an analytical contract and stopping boundary only.</p>
+<h2>10. Dependencies and nonclaims</h2>
+<p>Direct dependencies read for this derivation:</p>
+<p>- `../terminal_width_suffix_20261104_2003/CONSTANT_WIDTH_CONSISTENCY.candidate.v3.md`: fixed-width suffix packing and paid sequential count decoder. - `../shallow_readout_audit_20261104_1037/sources/proof.v3.md`: paid lattice comparator/restoring division; this note adds explicit endpoints and zero fallback. - `../standard_preln_20261104_2344/STANDARD_PRELN.candidate.v2.md`: small-amplitude ordinary-PreLN simulation and stable fixed-width norm restoration, NOT its nonzero-shift probability readout. - `../mandatory_post_layernorm_20261104_2210/MANDATORY_POST_LN.candidate.v4.md`, Section 5: logical multiplication/sqrt/norm-padding arithmetic only. - `../rare_attention_information_bridge_20261106/ONE_READ_RARE_A_STATISTICAL_WITNESS.candidate.v1.md`: the inherited conditional-A statement and source binding. - `../rare_attention_information_bridge_20261106/ONE_READ_CLIPPED_OVERALL_EXTENSION.candidate.v2.md`: the inherited mixed estimator and projection comparison. - `../clipped_joint_risk_20261103_2217/clipped_joint_risk_derivation.v2.md`, Section 6: the direct explicit 1300 overall-TV constant, from 1104+157&lt;1300. - `../preln_precision_analysis_20261105/ANALYTICAL_PRECISION.v1.md`: conditional finite-grid propagation and exact-mass caution.</p>
+<p>No novelty search or external literature-priority conclusion was performed. In particular this note does not prove a new statistical law, optimal fixed-width frontier, matching bit lower, finite-bit global impossibility, attention-count lower, trained realizability, executed scientific result, or that arbitrary-alpha resources are uniform.</p>
+<h2>Revision 2 record</h2>
+<p>1. Fixed the public log-series length to its stated ceiling, so the claimed depth is an upper construction rather than a claim about every larger truncation. 2. Made the u-blind budget quantifiers explicit; repaired the b=N power-of-two wording and the G&gt;=16 condition needed for epsilon=1/G in the specialization. 3. Bound the explicit 1300 constant to its direct existing derivation, which was read for this revision. 4. Specified nearest-grid rounding, a fixed tie rule and certified nonlinear scalar operations. Made the finite output encoding explicitly round-then-clip plus exact binary complement. This does not change the exact-real architecture or turn the conditional evaluator into an executed machine certificate.</p></section><section class="appendix"><h2>附录 B 同终端的单读传输证明</h2><h1>A rare-source transport bound for a paid one-read decoder</h1>
+<h2>1. The source and the observation are unchanged</h2>
+<p>Use the stationary binary family already fixed in the rare-information notes. The pair states are A=00, B=01, C=10, D=11, with</p>
+<pre>pi=(u,w,w,w), w=(1-u)/3, q_t=ut/w,
+P_t=[[1-t,t,0,0],[0,0,1/2,1/2],
+     [q_t,1-q_t,0,0],[0,0,1/2,1/2]],
+0&lt;u&lt;=1/100, 1/2&lt;=t&lt;=3/4.</pre>
+<p>Let E={X_(N-1)=X_N=0} be the ACTUAL terminal event of the same trajectory, N&gt;=3. Its probability is u for every t. The target next-one probability on E is t. Reversal of a stationary symbol trajectory conditional on E is exactly the same source initialized at A, as proved in RARE_TERMINAL_PARITY_INFORMATION.candidate.v2.md. This observation handles the terminal conditioning; no unconditional comparison is divided by u.</p>
+<p>For any publicly fixed functions a_i:{0,1}-&gt;R^k with ||a_i(x)||&lt;=R, define</p>
+<pre>Z(X)=[a_*+sum_(i=1)^N a_i(X_i)]/(N+1),</pre>
+<p>where a_* is public. The dimension k can grow, and all norms here are full Euclidean norms. Positions can enter a_i arbitrarily. This covers one public-query, single-head actual bounded-score read via its weighted numerator and denominator, but not a later read from data-dependent memory. A simultaneous multihead extension with explicit aggregate costs is stated in Section 6.1.</p>
+<p>Put m=ceil(N/2), h=|t-s|. Then there is a coupling of the terminal-conditioned experiments satisfying</p>
+<pre>E ||Z(X^t)-Z(X^s)||
+  &lt;= R[32+sqrt(8320 m u h)]/(N+1).                 (T)</pre>
+<p>Thus (T) bounds their Wasserstein-1 distance. It does NOT bound exact KL or TV. In particular the exact scalar injection remains compatible with (T).</p>
+<h2>2. A uniform joint regeneration with rare disagreements</h2>
+<p>Write K_t=P_t^2. Directly,</p>
+<pre>K_t(x,D)&gt;=1/4 for every x and t.</pre>
+<p>Choose gamma=1/4 and define residual kernels</p>
+<pre>H_t(x,.)=[K_t(x,.)-gamma delta_D]/(1-gamma).</pre>
+<p>Construct a joint kernel C for a t-chain and an s-chain as follows. With probability gamma, put both next states at D. Otherwise couple H_t(x,.) and H_s(y,.); if x=y use a maximal coupling. Each marginal is exactly K_t or K_s, and C has the common atom gamma delta_(D,D), including from off-diagonal states.</p>
+<p>The elementary two-step difference bound is</p>
+<pre>TV(K_t(x,.),K_s(x,.)) &lt;= 2h 1{x=A}+8u h.        (1)</pre>
+<p>To verify it without a matrix calculation, write P_t^2-P_s^2=(P_t-P_s)P_s+P_t(P_t-P_s). The single-step row TV is h at A, (u/w)h at C, and zero at B,D. Here u/w&lt;=100u/33, and q_t&lt;=25u/11. For x=A the two terms sum to at most h+(1-t)h&lt;=3h/2. For x=B,D they sum to at most (u/(2w))h. For x=C they sum to at most (u/w+q_t)h&lt;6u h. These imply (1).</p>
+<p>The finite joint chain C has a stationary law nu; the common atom makes it unique. Its marginals are pi because each marginal chain has the unique stationary law pi. If p=nu{x!=y}, then the coupling construction gives</p>
+<pre>p &lt;= (1-gamma)p + E_nu[1{x=y} TV(K_t(x,.),K_s(x,.))]
+  &lt;= (3/4)p + 2hu+8uh.</pre>
+<p>Consequently</p>
+<pre>p&lt;=40u h.                                         (2)</pre>
+<p>No false independence between the two parity subsequences is used. This is a coupling of two different parameter laws on the ORIGINAL pair chain.</p>
+<h2>3. The stationary additive-difference variance</h2>
+<p>Group the REVERSED symbol positions into consecutive pairs. Let F_j denote the sum of the one or two a_i terms assigned to pair j. The last group has one term if N is odd, and the source may be extended one unobserved symbol to define that final pair. Thus ||F_j(x)||&lt;=2R for every j,x. The public a_* cancels.</p>
+<p>Run the coupled pair chain in its stationary law nu, and put</p>
+<pre>Y_j=F_j(U_j)-F_j(V_j).</pre>
+<p>The two pair marginals equal pi, so E Y_j=0 even though F_j varies with position. Moreover</p>
+<pre>||Y_j||&lt;=4R 1{U_j!=V_j},
+E||Y_j||&lt;=4Rp,
+E||Y_j||^2&lt;=16R^2p.                              (3)</pre>
+<p>The common joint atom gives TV(C^l(z,.),nu)&lt;=(3/4)^l. For j&lt;k, vector-valued duality therefore gives</p>
+<pre>||E[Y_k | (U_j,V_j)=z]|| &lt;=8R (3/4)^(k-j),
+|E &lt;Y_j,Y_k&gt;| &lt;=32R^2 p (3/4)^(k-j).             (4)</pre>
+<p>The factor eight safely accounts for the two-probability-measure convention for TV and the bound ||Y_k||&lt;=4R. Sum (3)-(4), using sum_(l&gt;=1)(3/4)^l=3:</p>
+<pre>E||sum_(j=1)^m Y_j||^2
+  &lt;=(16+64*3)mR^2p
+  &lt;=8320mR^2u h.                                 (5)</pre>
+<p>This full-vector estimate has no coordinatewise dimension factor. It uses shared stationary marginals and joint regeneration, not an iid variance formula.</p>
+<h2>4. The actual terminal initialization costs only a constant transient</h2>
+<p>Under E, reversal starts both compared pair chains at A. Run C from (A,A). Couple this joint chain with its stationary version using the same regeneration coin, and set their future paths equal after the first common reset to (D,D). Their expected number of differing time indices, including the initial index, is at most 1/gamma=4.</p>
+<p>At any index the two versions of Y_j differ in norm by at most 8R. Therefore</p>
+<pre>E||sum_j Y_j^(A,A)-sum_j Y_j^stationary||&lt;=32R.  (6)</pre>
+<p>Combining (5), Jensen, and (6), then dividing by N+1, proves (T). The transient does not depend on u, h, or N. It is deliberately loose; h=0 can instead use the identical-path coupling.</p>
+<h2>5. Paid decoding, approximate interfaces, and actual risk</h2>
+<p>Let F be one fixed map on the reached sketch set into binary probability distributions with</p>
+<pre>TV(F(z),F(z&#x27;))&lt;=Lambda ||z-z&#x27;||.</pre>
+<p>Let Q be the actual predictor. Suppose its approximation error to this interface obeys</p>
+<pre>sup_t E_t[ TV(Q(X),F(Z(X))) | E ] &lt;= eta_A.       (7)</pre>
+<p>No worst-history approximation is required. Denote its full actual-terminal risk by R_t(Q). For every pair t,s at distance h,</p>
+<pre>max{R_t(Q),R_s(Q)}
+  &gt;= (u/2)[h-Lambda R(32+sqrt(8320muh))/(N+1)-2eta_A]_+.
+                                                           (R)</pre>
+<p>Proof: the two conditional target probabilities are t and s. Under the coupling of Section 4, triangle inequality gives</p>
+<pre>E_t[|Q(1)-t||E]+E_s[|Q(1)-s||E]
+  &gt;= h-E|F(Z^t)(1)-F(Z^s)(1)|-2eta_A.</pre>
+<p>Use (T), then R_t(Q)&gt;=u E_t[|Q(1)-t||E], and take the maximum. This is source-average risk at the real terminal, not a worst-history decoder-separation argument.</p>
+<p>Alternatively, if the error in (7) is bounded only UNCONDITIONALLY by epsilon under every t, then the safe bound is</p>
+<pre>max{R_t(Q),R_s(Q)}
+  &gt;= (u/2)[h-Lambda R(32+sqrt(8320muh))/(N+1)]-epsilon,</pre>
+<p>capped below by zero. Conditioning error cannot be left at epsilon without paying the factor u.</p>
+<h2>6. Application to one real single-head bounded-score attention read</h2>
+<p>All preceding operations must be positionwise, so the synthetic terminal query and pre-read state are public. Subtract its fixed self score. If the score range is at most S and full values have norm at most V, write</p>
+<pre>a_i(x)=(exp(s_i(x)-s_* )v_i(x), exp(s_i(x)-s_*)),
+R=exp(S)sqrt(V^2+1), k=d+1.</pre>
+<p>The final scalar self weight and self value are public. The numerator-denominator sketch has z&gt;=exp(-S), and each genuine attention output o=n/z has norm at most V. On two reached sketches,</p>
+<pre>||n/z-n&#x27;/z&#x27;|| &lt;= exp(S)(1+V)|| (n,z)-(n&#x27;,z&#x27;) ||.</pre>
+<p>If the complete paid terminal continuation G is L-Lipschitz from head-output Euclidean distance to binary TV, take</p>
+<pre>Lambda=L exp(S)(1+V).</pre>
+<p>It includes the output projection, residual processing, every FFN/LN, and the actual final head. Positive-epsilon full-feature PreLN is allowed because all pre-read row states remain local functions of their raw symbol and public metadata. An exact injection is allowed; no inverse is granted for free.</p>
+<p>Set t=1/2,s=3/4. For an exact interface eta_A=0, (R) gives a nonzero rare-event risk threshold whenever</p>
+<pre>L &lt;= c N/(1+sqrt(Nu))</pre>
+<p>for a sufficiently small constant c depending on S,V. In particular, risk o(u) requires</p>
+<pre>L &gt;= c&#x27; N/(1+sqrt(Nu))
+  = Omega(min{N,sqrt(N/u)}).                    (8)</pre>
+<p>If a fixed primitive envelope gives L&lt;=C_0 M^D, M&gt;1, this implies only</p>
+<pre>D &gt;= log_M[N/(1+sqrt(Nu))]-O(1).                (9)</pre>
+<p>A coefficient-description length is not used as an activation precision. Width does not appear in (8): the estimate is full-vector and dimension-free. Wide one-read O(log N)-depth constructions have sufficiently large polynomial L and are not excluded.</p>
+<p>For a quantized actual head output with Euclidean error at most delta before the same L-Lipschitz G, set eta_A&lt;=L delta. For d coordinates rounded with step zeta and no overflow, delta&lt;=sqrt(d)zeta/2. This is an interface error assumption, not a theorem about finite arithmetic throughout all layers. Its error term weakens (R); it cannot be relabeled a precision lower by itself.</p>
+<h3>6.1 Parallel heads require an aggregate bound</h3>
+<p>If H heads read in parallel from the same pre-read local states and each query is public, concatenate the H weighted numerators and H denominators. If head h has full value bound V_h and all head score ranges are at most S, the full local augmented vector has bound</p>
+<pre>R_H=exp(S)sqrt(sum_(h=1)^H V_h^2+H).</pre>
+<p>For the concatenated ratio outputs, a valid Lipschitz factor is exp(S)(1+max_h V_h). Thus (T) and (R) apply with R replaced by R_H and Lambda replaced by L exp(S)(1+max_h V_h), where L is the paid continuation bound in the full concatenated Euclidean norm, including the output projection. Both H and the total value dimension are charged. Merely per-head bounds do not make R_H constant when H grows. This extension permits one simultaneous physical attention layer; it does not permit sequential reads with data-dependent queries, intermediate memory mixing, or an uncharged later reread.</p>
+<h2>7. Coverage and limitations</h2>
+<p>The direct predecessor ingredients are bounded-score additive-sketch factorization, paid decoder sensitivity, the rare family&#x27;s reversal and uniform two-step atom, and elementary regenerative covariance control. The old one-invocation rate lower uses a DIFFERENT stationary lag-two family and cannot simply be claimed on this rare subfamily. Conversely, for minimax risk over all stationary second-order sources its inverse-square-root depth theorem is much stronger than the logarithmic threshold (9). This result therefore does not improve that established global frontier.</p>
+<p>For the current rare source the derivation adds a source-specific transport calculation and preserves actual terminal conditioning. It does not prove the desired sharp joint N,D,W,precision rate, a matching construction, an advantage of repeated reads, or a new general expressivity result. No literature novelty claim follows from this internal dependency comparison.</p>
+<p>There is also a stronger same-source overall-risk obstruction using the OLD late-token mechanism. Conditional on a prefix ending in symbol 1, the last observed bit is fair; its two values lead to terminal C and D, whose target probabilities differ by g_t=1/2-q_t&gt;=21/44. A one-head change of that sole last raw token changes the head output by at most 4V exp(S)/(N+1). Hence overall risk is at least w[g_t-4V exp(S)L/(N+1)]_+, as proved in TASK_DIRECTED_PRECISION_AND_COVERAGE.candidate.v1.md, Section 4. Thus overall low risk already requires L=Omega(N), which dominates (8). The new calculation retains a narrower content on the conditional-A task, where both compared terminal pairs are fixed at A and this context-acquisition distinction is absent. It is not a new main depth frontier.</p>
+<p>Under a uniformly bounded final ordinary-softmax logit contrast, overall risk already has a C-row output floor. That separate obstruction can dominate (R) as u tends to zero; conditional-A claims must not be presented as a vanishing overall-risk theorem.</p>
+<p>Read dependencies: rare_statistical_resource_reset_20261106/RARE_TERMINAL_PARITY_INFORMATION.candidate.v2.md; rare_attention_information_bridge_20261106/EXACT_PRELN_INFORMATION_OBSTRUCTION.candidate.v2.md; one_invocation_rate_lower_20261104/BOUNDED_SCORE_RATE_EXTENSION.candidate.v1.md; stationary_one_invocation_20261105/STATIONARY_ONE_INVOCATION_LOWER.candidate.v2.md. This proof supplies all new coupling and variance steps explicitly.</p></section><section class="appendix"><h2>附录 C 精度下界与失败拼接</h2><h1>Task-directed discretization does not close the rare-risk frontier</h1>
+<h2>1. Frozen risks and source</h2>
+<p>Use exactly the stationary binary rare family of RARE_ONE_READ_TRANSPORT.candidate.v2.md. Write</p>
+<pre>R(Q)=sup_(t in [1/2,3/4]) E_t TV(Q(X),p_t(.|X_(N-1),X_N)),
+R_A(Q)=sup_t E_t[|Q(1)-t| | E], E={terminal pair A=00}.</pre>
+<p>Only R(Q)&gt;=u times a suitable parameter-averaged conditional-A lower is used. In general R(Q)&gt;=u R_A(Q) also holds because u is common to every t. A lower on R_A is not an upper on R and cannot repair output error on C.</p>
+<h2>2. Task-directed one-read quantization: a correct but empty inequality</h2>
+<p>The checked rare communication theorem gives, for a source-independent interactive b-bit protocol whose output is normalized,</p>
+<pre>risk &gt;= a_b := c u 2^(-b)/sqrt(1+m u^2),
+c=exp(-1/100)/(20000e),                         (1)</pre>
+<p>with Bob&#x27;s entire parity observation and actual terminal pair supplied freely, m&lt;=N. The proof already handles parameter-dependent Bob marginals and conditional terminal KL.</p>
+<p>For a one public-query bounded-score read with d&gt;=1 value coordinates, its augmented numerator-denominator partial sum belongs to a radius-R ball of dimension k=d+1, where</p>
+<pre>R=exp(S)sqrt(V^2+1).</pre>
+<p>A public Euclidean delta-net transmits Alice&#x27;s partial sum using</p>
+<pre>B(delta)=ceil[k log2(1+2R/delta)]</pre>
+<p>bits. For delta&lt;=exp(-S)/2, the denominator stays positive. If the terminal continuation is globally L-Lipschitz into binary TV, a safe uniform simulator error is</p>
+<pre>epsilon(delta)&lt;=K delta,
+K=2L exp(S)(1+V).                               (2)</pre>
+<p>The full off-manifold continuation is required here. If its output is not a normalized Bernoulli distribution, clip its next-one coordinate to [0,1]; the clipping preserves the scalar Lipschitz error to the actual valid network output. Equivalently take L as the globally Lipschitz scalar probability continuation. The already-free terminal pair adds no communication bit.</p>
+<p>Combining (1)-(2) correctly yields</p>
+<pre>R(Q) &gt;= c u 2^(-B(delta))/sqrt(1+m u^2)-K delta. (3)</pre>
+<p>This is a source-average RISK inequality, not an exact-output-information assertion. But it is empty at EVERY admissible delta under the usual envelope L&gt;=1. Indeed k&gt;=1 and</p>
+<pre>2^(-B(delta))
+  &lt;= [delta/(delta+2R)]^k
+  &lt;= delta/(2R).</pre>
+<p>Set a=c u/sqrt(1+m u^2). Then the right side of (3) is at most</p>
+<pre>delta[a/(2R)-K] &lt;=0,                            (4)</pre>
+<p>because R&gt;=1, K&gt;=2, and a&lt;c/100&lt;1. Optimizing delta or setting the simulation tolerance proportional to the advertised risk cannot change this sign. Replacing k=d+1 by the more favorable k=1 would still leave the same obstruction.</p>
+<h3>2.1 Charging error only on the task event does not cure it</h3>
+<p>If the comparison is made directly under E, the rare entropy argument gives conditional protocol loss &gt;=c 2^(-b)/sqrt(1+m u^2). A conditional output approximation tolerance K delta therefore yields</p>
+<pre>R_A(Q)&gt;= c 2^(-B(delta))/sqrt(1+m u^2)-K delta.</pre>
+<p>It is still nonpositive by the same argument, now with a=c/sqrt(1+m u^2)&lt;1. Hence the missing factor is not an accidental failure to multiply simulator error by u. Correct task-directed conditioning alone does not create a width/depth lower.</p>
+<p>This is a boundary of THIS combination of the rare total-bit lower and a generic geometric simulation. It does not prove that no better architecture-dependent or task-dependent simulation exists. If a truly smaller source-average message radius or entropy is separately established, it must be analyzed rather than substituted without proof. The new transport note supplies such a direct source-specific comparison, not a claim of improved bit cardinality.</p>
+<h2>3. Finite visible terminal state: standard precision and sample-size bounds</h2>
+<p>Suppose the complete source-dependent information available to the final decoder takes at most M states. This includes EVERY visible terminal activation, exponent, branch/index tag, cached read, and any other source-dependent side channel. The decoder may depend on public N,u, network parameters, and independent randomness. It may not reread other rows or raw tokens. This assumption does not follow from width alone or from short coefficient descriptions.</p>
+<p>Then</p>
+<pre>R_A(Q)&gt;=1/(16M),     R(Q)&gt;=u/(16M).             (5)</pre>
+<p>Proof. Let t be uniform on I=[1/2,3/4], of length a=1/4. Conditioning on E does not change the prior because Pr_t(E)=u. Conditional on all independent decoder coins, at most M possible predicted next-one probabilities exist. Whatever source-dependent state selection occurs, absolute loss is at least distance to that M-point codebook. For any M real centers, the uniform average distance over an interval of length a is at least a/(4M): split into nearest-center cells of lengths l_j, use integral absolute distance &gt;=l_j^2/4, and sum l_j^2&gt;=a^2/M. Average over the independent coins and multiply by u. Public/decoder coins remain independent of t under E. This proves (5) without a false lossless-history decoding claim.</p>
+<p>If each of W visible coordinates has at most 2^p states and there are no extra tags or side channels, M&lt;=2^(Wp), so</p>
+<pre>R(Q)&gt;=u 2^(-Wp)/16.                            (6)</pre>
+<p>Consequently a full-history rare-rate envelope C u/sqrt(1+Nu) requires</p>
+<pre>Wp &gt;= (1/2)log2(1+Nu)-log2(16C).</pre>
+<p>This is ordinary finite-codebook quantization. It is architecture-independent, contains no D, permits an arbitrary paid or unpaid decoder, and must NOT be advertised as a new attention-resource theorem. A finite state at one internal cut need not limit a network that subsequently reads data again.</p>
+<p>Independently, the established full-history conditional KL bound is</p>
+<pre>KL(P_t^(X|E)||P_s^(X|E))&lt;=60(1+Nu)(t-s)^2.</pre>
+<p>Take h=1/[16sqrt(1+Nu)] around midpoint 5/8. Pinsker bounds conditional TV by sqrt(30)/16. The two-point absolute-loss overlap bound gives</p>
+<pre>R_A(Q)&gt;= [1-sqrt(30)/16]/[32sqrt(1+Nu)]
+       &gt;=1/[64sqrt(1+Nu)],
+R(Q)&gt;=u/[64sqrt(1+Nu)].                         (7)</pre>
+<p>This sample-size obstruction also applies to any randomized predictor by data processing. The conditional full-history KL is explicitly proved in EXACT_PRELN_INFORMATION_OBSTRUCTION.candidate.v2.md, Section 4.1. It is not derived by dividing stationary path KL by u.</p>
+<h2>4. The old terminal-context mechanism already forces gain Omega(N) here</h2>
+<p>The published-internal predecessor MATCHING_ORDER.v2.md proves a late-token influence obstruction using a different fixed noisy-XOR source. Its exact source is NOT the rare family. Nevertheless its elementary one-read mechanism transfers directly to this rare family, as follows.</p>
+<p>Consider ONE bounded-score read with public terminal query, ||v_i||&lt;=V, score range &lt;=S, and a terminal continuation that is L-Lipschitz into binary TV. Fix any t in [1/2,3/4], even allowing the predictor to know t. Conditional on a prefix X_1:N-1 ending in symbol 1, the last symbol X_N is a fair bit: both applicable preceding pair rows B,D assign probability 1/2 to each next symbol.</p>
+<p>If X_N=0 the actual terminal pair is C=10, whose next-one probability is 1-q_t. If X_N=1 the pair is D=11, whose next-one probability is 1/2. Their TV gap is</p>
+<pre>g_t=1/2-q_t &gt;=1/2-1/44=21/44.</pre>
+<p>The two histories differ only at raw position N. Every other pre-read row and the public terminal query are identical. The head outputs can be written</p>
+<pre>o_b=(1-alpha_b)r+alpha_b v_b,</pre>
+<p>where r is the SAME normalized average of all other rows and ||r||,||v_b||&lt;=V. Bounded score range on each history gives alpha_b&lt;=exp(S)/(N+1). Therefore</p>
+<pre>||o_0-o_1||&lt;=4V exp(S)/(N+1).                  (8)</pre>
+<p>The conditional fair-bit triangle inequality and stationary Pr(X_(N-1)=1)=2w give</p>
+<pre>R_t(Q)&gt;=w[g_t-4V exp(S)L/(N+1)]_+.            (9)</pre>
+<p>Thus any overall risk below, for example, w g_t/2 requires</p>
+<pre>L &gt;= (N+1)g_t/[8V exp(S)]=Omega(N).           (10)</pre>
+<p>The V=0 case simply cannot achieve that risk. A source-average approximation error epsilon to this smooth one-read interface weakens (9) by at most epsilon. Uniform rounding error delta before the same decoder weakens the inside bracket by at most 2L delta.</p>
+<p>This is a short transfer of the prior late-token argument, not a new principal lower. It is valid on the exact rare family, without changing source, stationarity, or terminal query. It applies even to a source-aware predictor because the obstruction is acquiring the actual terminal context, not estimating t.</p>
+<p>The new transport note&#x27;s rare-parameter threshold is</p>
+<pre>L=Omega(N/(1+sqrt(Nu))),</pre>
+<p>whose required scale N/(1+sqrt(Nu)) is no larger than N. Hence (10) dominates it for the overall low-risk task. When Nu is large, the domination is strict in order. The transport result&#x27;s remaining content is the fixed-terminal-A conditional estimation task: the two sources have the SAME fixed terminal pair A, so (9)&#x27;s last-bit/context distinction is absent. No new main depth frontier should be claimed from the transport calculation.</p>
+<h2>5. Ordinary final softmax adds an independent existing floor</h2>
+<p>If the complete final binary logit contrast has magnitude at most B_out, both predicted probabilities are at least beta=1/(1+exp(B_out)). At terminal C, the true next-zero probability is q_t=ut/w. Thus, for every t,</p>
+<pre>R_t(Q)&gt;=w[beta-q_t]_+=[w beta-ut]_+.           (11)</pre>
+<p>For fixed B_out this remains positive as u tends to zero. In particular an overall envelope C u/sqrt(1+Nu), uniform over arbitrarily small u, is impossible before asking about depth, width, or precision. The frozen full-feature epsilon-positive PreLN and bounded affine final head must be audited to obtain B_out, rather than assuming it is absent. Conditional-A estimation remains meaningful because t lies in [1/2,3/4].</p>
+<p>The ordinary final-softmax contract is not interchangeable with the older probability-register projection contract in STANDARD_PRELN.candidate.v2.md. That compiler explicitly excludes bounded-logit vocabulary softmax. Its upper cannot be silently used to remove (11).</p>
+<h2>6. An honest combined resource statement and stopping conclusion</h2>
+<p>To combine the terms without hiding quantization discontinuities, let Q_0=G(o(X)) be the smooth one-head interface, let L bound G into TV, and suppose</p>
+<pre>sup_t E_t TV(Q,Q_0)&lt;=epsilon,
+sup_t E_t[TV(Q,Q_0)|E]&lt;=eta_A.</pre>
+<p>These are separate admissible bounds; a global epsilon alone only implies eta_A&lt;=epsilon/u. For Q=Q_0 both may be zero. Apply the finite-state and output-range assumptions to the ACTUAL predictor Q. Under these hypotheses the independent lower terms may be combined by taking their maximum:</p>
+<pre>R(Q) &gt;= max{
+  u/[64sqrt(1+Nu)],
+  u/(16M),
+  [sup_t w[g_t-4V exp(S)L/(N+1)]_+-epsilon]_+,
+  sup_t [w beta-ut]_+,
+  (u/2)[1/4-Lambda R(32+sqrt(2080 ceil(N/2)u))/(N+1)-2eta_A]_+
+}.</pre>
+<p>The context term must retain epsilon when Q is only an approximate or rounded version of Q_0. It may be set to zero only for an exact interface or a separately proved zero-error comparison. For a uniform rounded head with error delta, epsilon&lt;=L delta is valid, while the direct two-history bound in Section 4 is another valid route.</p>
+<p>Here M&lt;=2^(Wp) only under the complete finite-visible-state contract; L&lt;=C_0 M_0^D only under a fixed primitive envelope; Lambda=L exp(S)(1+V) for the bounded-score augmented sketch; beta applies only when the logit contrast bound is part of the contract; and the last term is the new source-specific transport comparison, with h=1/4. The M used for state cardinality and M_0 used for a primitive gain are different quantities.</p>
+<p>This is explicit and reviewable, but it is NOT a sharp joint frontier. The positive finite-state term is standard. The task-directed bit/net reduction is empty. The new conditional-parameter transport threshold is dominated on the overall task by the transferred terminal-context threshold, and both are at most logarithmic necessities after substituting paid exponential sensitivity. The bounded-output floor may dominate all vanishing-rate discussions.</p>
+<p>A defensible next claim would need a same-source risk lower that remains informative AFTER terminal context is paid, at allowed output range, and for L large enough to pass these thresholds; or a genuinely architecture-specific precision/decoding lower beyond finite codebook size. Neither is supplied here. Exact scalar injection invalidates exact-information shortcuts, and the wide one-read statistical witness prevents converting logarithmic required parameter information into a required number of useful invocations.</p></section><section class="appendix"><h2>附录 D 架构算术与统计先行工作</h2><h1>固定宽 rare-A 风险候选：先行工作与主张边界审计</h1>
+<p>2026-11-06 UTC。独立先行审计，供后续候选定理逐式核验使用。没有运行模型、枚举、数值检查、参数生成、训练或任何科学实验；没有上传、购买、仓库写入或发布。此文不是候选新证明的独立 PASS，不认证优先权。已存在的候选/审查文件均未修改。</p>
+<h2>1. 结论先行</h2>
+<p>**可以继续的窄方向：** 给定 raw symbols、public normalized positions、synthetic terminal、一个 useful zero-score causal read、固定 model/FFN width、冻结完整范数，构造 stationary rare family 的真实 terminal-A 条件风险上界；完成固定宽 full-feature positive-epsilon PreLN、zero-shift final LN、bounded affine vocabulary head 和 ordinary softmax 的完整编译，并把每项 arithmetic、精度和所有物理 rows 的成本列明。</p>
+<p>**不应当使用的主张：** 新的 rare-A 统计率、新的一个 read 保存上下文、首次固定宽对数深度 Markov predictor、新的 norm-padding 方法、新的 distortion/quantization lower、已经匹配的 depth–precision–risk frontier、普通浮点实现定理、整体 rare-family 风险已完成。</p>
+<p>当前证据支持的分类是 **known composition with additional quantitative implementation obligations**。内部已有 fixed-width suffix packing、sequential local triple counts、paid restoring division、positive-epsilon PreLN small-amplitude simulation、fixed-width norm padding 和 bounded-gain restoration。外部文献亦已有相应大机制。新候选真正需要补齐的是最终输出合同的改变和完整联接后的统一资源账本，而非重新命名这些机制。</p>
+<h2>2. 冻结比较对象及原计划字段</h2>
+<p>建议在定理首段固定以下对象，不用同一个符号同时表示 suffix length 和 precision。</p>
+<p>- 原始历史 X_1:N，n=N−2；stationary binary order-two rare family，A=00、B=01、C=10、D=11，π=(u,w,w,w)、w=(1−u)/3，0&lt;u≤1/100、t∈[1/2,3/4]、q=ut/w。 - 所评估事件 E 是同一条完整历史的实际 terminal pair A，Pr_t(E)=u。损失为 E_t[|Q_N(1)−t| | E]。不换成独立 query，不在 raw input 供应 pair、counts、u 或 t。 - 一个 predictor 对全部 t 通用；若声称 u-blind，同一预定 b_N、G_N、ε_N 和权重族亦不依赖真实 u。允许 public N、目标精度或预先声明的参数范围依赖，不等于允许测试时使用真实参数。 - b_s 是实际使用的 suffix symbols 数量，观测到 b_s−2 个 suffix transitions。保持旧 packing 的 dyadic domain，或为任意 b_s 另行证明。所有 N+1 物理 rows 仍实际存在。 - actual blocks 为 positive-epsilon (=1)、gain-two、zero-shift、全特征 PreLN；self-inclusive causal ordinary softmax；一个 useful read，其余 attention 为零；model width 和每层 FFN width 均固定，不能只固定 residual width。 - 固定的是充分大的完整 state/value norm、矩阵 operator norm、全 bias-vector norm、head 数、value dimension 和 primitive Lipschitz envelope。整体 continuation sensitivity 可以随 paid depth 增长，必须列出。 - 输出是 final zero-shift LN 后 bounded affine head 和 ordinary vocabulary softmax。原概率坐标 projection 不是同一个合同。 - 精度至少分为 coefficient/input description bits、state alphabet/storage bits、absolute execution-error radius、指定 rounded primitive arithmetic 四类。没有推导不得替换。</p>
+<p>原计划原文核对：</p>
+<p>1. `plan_verification_20261104_2102/space_plan_0.md`，模型约定（原总计划第76行）：参数能否依赖 N、L、ε 及是否 tied 必须逐定理声明；它没有一概禁止 length-indexed untied family。 2. 原总计划 T1（第170行）冻结 effective attention gap，不靠 N/L-growing weights 或 hidden norms 逼近 hard matching。Zero scores 满足 attention 条件，但 positionwise arithmetic 和全网敏感性仍须收费。 3. 原总计划 T2（第198行）及第二计划 §5.3：不能用人为慢算法制造深度必要性；必须比较 direct correction 和强同预算基线。 4. 第二计划 §2.5 要求 extra heads、统计、positions、precision 付费或对照同享。§3.3 要求逐近邻记录 source/prior/observability/stationarity/order/query/loss/trajectory/N/depth/heads/width/positions/mask/normalization/training/known parameters/precision/upper-lower/proof/implication，而不只摘要。 5. 总计划 rare-family 部分明确区分 terminal-A 条件风险与 stationary 平均风险；A 事件向平均损失转换保留 u 因子。它也明确完整有限样本波动不能用 population means 抹去。 6. 两份计划允许声明概率投影和平滑。Ordinary softmax 是新候选选择的更严格输出合同，不能反称旧 projection 违反原总计划。</p>
+<h2>3. 内部直接前件：逐命题定位</h2>
+<h3>I1. 固定宽 suffix 程序已经存在</h3>
+<p>来源：`../terminal_width_suffix_20261104_2003/CONSTANT_WIDTH_CONSISTENCY.candidate.v3.md`，§§3–6；独立审查 `INDEPENDENT_CONSTANT_WIDTH_AUDIT.v2.md`。</p>
+<p>它已经以一个 zero-score prefix mean 获得 packed suffix，在每个 row 顺序解码，局部形成 triple counts，用 O_K(1) 寄存器累积，再 paid restoring division。完整物理 rows 的 legal virtual-word invariant、边界 default symbols、complete-state bounds 和 source-independent public positions 已计入。</p>
+<p>旧资源形状为</p>
+<p>D_ref = O_K(log N + b_s + log² b_s + log(b_s+K) log G), W=O_K(1), useful reads=1。</p>
+<p>旧输出为 positive probability coordinates projection，不是 vocabulary softmax。把统计目标换成 rare-A 并只保留 A-row counts 是简化/组合，不是新的一读 packing 或 local-binding 机制。</p>
+<h3>I2. 此程序已有一份狭义 finite arithmetic 定理</h3>
+<p>来源：同目录 `PACKED_SUFFIX_PRECISION.candidate.v2.md`，§§2–6、9；独立审查 v2。</p>
+<p>它规定 dyadic persistent registers、足够 integer temporaries、exact integer attention numerator accumulation 后一次 downward rounding，以及特定 floored square-product schedule，给出 F=O_K(log N+b_s+log G) fractional bits 并在每 row 得到同一 quantized probability output。它**没有** positive-epsilon LN/ordinary-softmax 的有限运算保证。其 exact word recovery collision、fixed-grid collapse、floating mean-rounding stress test 都针对特定 bottleneck/arithmetic。不可搬成新全模型风险下界。</p>
+<h3>I3. 固定宽 positive-epsilon PreLN 与真实 norm padding 已存在</h3>
+<p>来源：`../standard_preln_20261104_2344/STANDARD_PRELN.candidate.v2.md`，§§3–6、8；third review v1。不是 wide compiler。</p>
+<p>已审机制包括 paired homogeneous representation h=ηz、anchors、每步真实误差递推 e_l≤L e_(l−1)+Cη²、所有 source-row LN factors、approximate clears、fixed-width square-root padding、public bounded-gain restoration。旧 prepared reference 为 (v,−v,1,−1,r,−r,0,…) 且 r≈√(3d/2−1−||v||²)，使 norm²/d≈3。它使用了 final LN 的非零 probability-offset shift β=π，然后 projection。</p>
+<p>因此新 zero-shift/ordinary-softmax 不能原封不动引用旧 output theorem；但不应把 padding、restoration 或 small-amplitude idea 再称新方法。</p>
+<h3>I4. rare-A 统计率与同端点处理均为旧成果</h3>
+<p>来源：`../u_blind_full_averaged_20261103_2147/full_averaged_tv_bound_v1.html`，§8 Eq.(8.5)、§10，及 `final_file_review_v1.md`；后续 `../rare_context_reconciliation_20261104_2104/RECONCILIATION.v2.md` §2。</p>
+<p>旧 add-one A-row estimator 在 actual terminal A 上满足 min{1,157/√(1+n u)}。相同 source 的 full-history conditional minimax scale 为 (1+n u)^−1/2；平均风险 lower 乘 u。Suffix marginal 在 stationary source 下仍为该 stationary source，且其最后 pair 就是完整历史的最后 pair，所以把 n 换成 b_s−2 是合法的旧定理组合。不能用一般无条件频率估计直接替代 terminal-conditioned proof。</p>
+<h3>I5. wide one-read statistical witness 已经实现 ordinary softmax</h3>
+<p>来源：`../rare_attention_information_bridge_20261106/ONE_READ_RARE_A_STATISTICAL_WITNESS.candidate.v1.md`，§§3–6、8–9。</p>
+<p>它的 wide history bank 已在 terminal 内 locally triple-bind/count，从两读变一读；它把 A estimator clip 到 [1/2,3/4]，再付费 log preparation，最后 ordinary softmax。宽度 O(N) 和 growing log-interpolation lanes 被明示计费；其中 restoration 的小误差利用 d=Θ(N) 的 dimension dilution。该结论不能自动变成 fixed-width 上界。新候选必须替换这些增宽步骤，而不是省略其成本。</p>
+<h3>I6. 精确 scalar injection 阻止无条件信息下界</h3>
+<p>来源：同目录 `EXACT_PRELN_INFORMATION_OBSTRUCTION.candidate.v2.md`、`SCALAR_INJECTION_PRIOR_AUDIT.v1.md`。</p>
+<p>固定维精确实数并不提供 finite alphabet；短参数 descriptions 不等于短 activations。有限 terminal-state lower 必须把新量化/观察限制明确写进模型，而不能说其从 ordinary PreLN 自动产生。</p>
+<h2>4. 新上界的证明验收清单</h2>
+<p>候选风险的安全形状为</p>
+<p>R_A ≤ min{1,157/√(1+(b_s−2)u)} + C/G + ε_impl。</p>
+<p>这不是本审计已验收的新定理；仅在以下义务完成后可报告该上界。</p>
+<p>1. **Suffix marginal 与 domain：** b_s≤N、有效 transitions=b_s−2、dyadic约束及短历史单独处理。Stationary 源的条件引用正确，不能悄悄放宽到 arbitrary starts。 2. **全 row 合法性：** unavailable suffix slots、zero digits、synthetic exclusion、lags/triples 边界以及所有负 preactivations/scratch 必须落入同一完整范数。 3. **Quantized ratio：** 若用旧 restoring division，输入 lattice 是旧 exact logical reference 的性质；physical PreLN 轨迹是连续近似，并不仍在 lattice 上。应用整个 continuous-program error recurrence，而不是对 physical states 免费 snap。 4. **剪裁：** 将估计 t clip 到 [1/2,3/4] 不增风险；相应 probability vector 的两项位于 [1/4,3/4]。它解决 A-conditional output range，不解决 C-row q=Θ(u) 的 overall 风险。 5. **真正 fixed-width paid log：** 宽 hinge bank 或查表的宽度不能漏记。一个简单、保守且可逐式实现的方案是 log p=−Σ_(k=1)^m (1−p)^k/k+tail，m=O(log(1/ε))；在 p∈[1/4,3/4]，tail≤4(3/4)^(m+1)。串行维护 power 和 sum，并用 bounded-domain multiplication 误差 δ=O(ε/m)，得到 O(log²(1/ε)) paid depth、固定寄存器、bounded coefficients/states。此处只是构造建议，不能在未写电路前算作独立 proof PASS。 6. **O(log 1/ε) log circuit 不能无证领取：** Yarotsky square/product theorem 本身不含该结论。若要更快 log，需独立 source theorem 或 accelerated circuit，逐项保留 fixed width、full norm、coefficient bits 和 stable tube。 7. **zero-shift norm padding：** 可以准备 paired logits (ℓ,−ℓ) 与 anchor、padding，而非 deviation simplex bank。若使用一维 log-odds ℓ=log[z/(1−z)]∈[0,log3]，可取 prepared vector (ℓ,−ℓ,1,−1,r,−r,0,…)，r≈√(3d/2−1−ℓ²)，固定 d 使被开方数远离零。旧 restoration 完成后 final gain-two/zero-shift LN 在目标 norm²/d=3 时近似 identity，affine head logits=(0,ℓ)，然后 ordinary softmax。必须把 padding 的算术误差、physical scratch 和 restoration 参数误差统合进 ε_impl。 8. **梯度/误差与概率：** 二元 softmax 是 sigmoid(logit difference)，其导数≤1/4。给出 exact mapping、logit uniform error 到 TV 的常数即可；不要用“近似概率总和为一”替代真正 softmax。 9. **资源：** 至少列 model/FFN/value width、实际 blocks、useful invocations、public positions、每参数最大 bitlength、全部 untied parameter bits、all-row states、dense score storage、local work 与 useful/dummy attention work。 10. **精度：** inherited compiler 可给 p_error-radius=O(D+log(1/ε_impl)) 的充分扰动指标，前提是全 actual blocks 共同 Lipschitz。它不是有限 state alphabet，也不是 LN/exp/accumulator rounding theorem。finite alphabet 下界与此上界不可直接拼成 matching precision theorem。 11. **u-blind 量词：** 对任意预选 public b_s 可得到一份点态 u-dependent bound；反解 b_s≈1/(u r²) 再选权重已依赖真实 u。若要这样调预算，必须声明 known u、known lower bound ρ 或新的合法自适应方案。</p>
+<h2>5. Lower 的正确分类与不能推出的结论</h2>
+<h3>5.1 Finite terminal alphabet 是标准 distortion/quantization</h3>
+<p>假设最终输出只能使用一个完整 terminal statistic S，|range S|≤M，外加已声明且不携带 t 信息的 public metadata/独立 coins。所有 residual、历史的 terminal copies、其他 heads、精确 side ports 都必须包含在 S 内或证明对输出无用。有限 d 不足以给有限 M。</p>
+<p>给 Θ 在 [1/2,3/4] 上均匀先验，长度 a=1/4。Pr_Θ(E)=u 独立于 Θ，所以条件 E 不改变该先验。Data processing 和 |S|≤M 给 I(Θ;Q|E)≤log M。标准 absolute-distortion entropy inequality 给</p>
+<p>E[|Q(1)−Θ| | E] ≥ a/(2eM) = 1/(8eM)。</p>
+<p>该 lower 允许任意编码、任何计算深度、随机 encoder/decoder（独立 coins 按条件处理）。这是 Xu–Raginsky Theorem 3 Eq.(39) 的直接参数代入，不是本研究创新。</p>
+<p>若每个 complete terminal scalar 有 A_p 种值且 d fixed，M≤A_p^d；若每标量总 storage bits≤p，则 A_p≤2^p，得到 R_A≥c2^(−dp)。固定 bounded-range fractional grid 给 log A_p=O(p)，但 exact-real coefficient bits 或 error-radius p 不给这个结论。若输出允许读取整个 terminal transcript，而非最后 state，则需要重新计 M；若之后还能读取非terminal rows，也不是该 cut。</p>
+<h3>5.2 与 full-statistical lower 取 max 仍非 architecture frontier</h3>
+<p>同源旧 conditional full-history lower 与上式合成</p>
+<p>R_A ≥ c max{(1+(N−2)u)^−1/2, M^−1}</p>
+<p>（常数可取两者较小值）。这只是任意完整历史估计的 sampling lower 加上最终输出的 finite-message lower。</p>
+<p>它不含 b_s，也不下界计算 depth 或 useful read 数。Suffix upper 使用 b_s≪N 时损失的信息是所选算法的代价，不能由 full-statistical lower 证明不可避免。把实现中 b_s≈D 倒代进 upper 不能得到 lower。b_s 只有在整个受限类已被证明/定义为只能看到该 suffix 时才进入 statistical lower；那又是更窄且不同模型。</p>
+<p>M 的充分成本可能 O(D) bits，而 finite-message necessity 只有 log(1/r)。这没有 matching。一个 Θ(log(1/u)) 信息需求也不强迫多个 reads，一次高精度消息即足以承载。固定有限字母表 theorem 不依赖 evolving-row attention 结构，不能解决母问题中的 repeated useful attention lower。</p>
+<h3>5.3 强同预算 baseline</h3>
+<p>自由读取完整 raw history 的普通 streaming counter 可维护 A-row successes/departures 以及最后两个符号，使用 O(log N) integer bits，在 O(N) arithmetic steps 得到 full-data estimator；再用 O(log(1/r)) bits量化 final estimate。该算法是 statistical/storage baseline，不是免费嵌入 candidate Transformer。若比较总体计算成本，不能将其排除；若比较 architecture，必须明确它获得不同访问接口。</p>
+<h2>6. 外部 primary theorem comparison</h2>
+<p>下面保留核心强制字段；“NA”表示该表示/逼近定理没有统计源或训练风险对象。所有结论均只覆盖所列版本和定理，而不是 exhaustive non-subsumption。</p>
+<h3>P1. Rajaraman et al., Transformers on Markov Data</h3>
+<p>Primary: <a href="https://arxiv.org/html/2407.17686v1">https://arxiv.org/html/2407.17686v1</a> ，Theorem 5.1、Remark 5.2、§2.1、Architecture 0.2、Appendix C.1–C.3。</p>
+<p>完全观测同一输入 string，actual final k-symbol context 的 empirical conditional k-gram；pathwise representation，不依赖 stationarity或特定 initialization，不是 uniform rare-A expected-TV theorem。三层、每层一 head、O(S) embedding，relative positions；有 LN，正文明确结论也适用于原 evaluated architecture。相关证明的 norm 没有固定正ε全特征 PreLN合同，attention sharpening 非冻结 score。Theorem 是 source-independent constructed weights，不是 training theorem。Remark 5.2 对 logarithmic-in-T/order bits 的 sufficiency 是讨论且明说 proof 未界 finite-bit approximation。**关系：** estimator、same-history、constant dimension、normalization 的强前件；缺少新的 simultaneous frozen architecture/arithmetic contract。不能靠“它不是统计率”一项宣称技术分离，representation 可以组合旧统计 lemma。</p>
+<h3>P2. Ekbote et al., What One Cannot, Two Can</h3>
+<p>Primary: <a href="https://arxiv.org/pdf/2508.07208v2">https://arxiv.org/pdf/2508.07208v2</a> ，printed p.7 Theorem 3 / Remark 2；§2.2；Appendix A.2.2、B。</p>
+<p>同样是任何输入 string 的 conditional k-gram，actual terminal suffix，原始 symbol sequence；两层，每层一 head，dimension 6S+3，MLPs、relative positions 和 LN。实验 Dirichlet source/uniform initialization 不限制 pathwise theorem。ReLU output而非 ordinary final softmax；对 projected query/key normalization、无限 sharpening 等与 frozen full-feature positive-ε PreLN 不同。Remark 2 声称 sufficient Ω(log T+k) parameter precision，不是 necessity或全部内部算术 guarantee。**关系：** 更近 shallow constant-dimension nonlinear Markov representation；其 parameter-count项包含 T，不能只按 residual dimension 宣称总成本常数。</p>
+<h3>P3. D’Angelo et al., Induction Heads Interpolate N-Grams</h3>
+<p>Primary: <a href="https://arxiv.org/html/2607.02800v1">https://arxiv.org/html/2607.02800v1</a> ，Proposition 3.1 Eq.(8)、§§3.2.1–3.2.3、Corollary 4.1 Eq.(10)。本轮沿用先前 primary fulltext audit，未重审全文。</p>
+<p>Pathwise actual-suffix weighted mask counts；两 disentangled layers，k heads再一 head，fixed alphabet/order 下维度常数，BOS additive smoothing 已有。固定β的 context weighting并不令全部 positional copying/suppression scores有界，它们另取 sharpening limits。Registers/readout不是本候选 full PreLN/ordinary-softmax合同；无本候选 finite-execution模型。**关系：** counting/smoothing/context mechanisms 已知，不能把添加统计界作为唯一新机制。</p>
+<h3>P4. Akman et al., quantitative/quantized statistical prediction</h3>
+<p>Primary: <a href="https://arxiv.org/html/2610.41038v1">https://arxiv.org/html/2610.41038v1</a> ，§5 preamble、Theorems 26–27 Eqs.(24)–(25)、Appendix C.6 Definition 32/Lemma 33。本轮沿用先前已核 primary passages。</p>
+<p>一条训练轨迹而 independent test history，TV损失；gatherer/interpolator architecture，dimension 2M+R(s)+1，受保护 token/position coordinates与 supplied unmasked windows，ordinary final softmax。逐层 state Q_n 和 measure R_l 量化已经明确，不可称 exact-real-only predecessor；其 training/source依赖和误差入口不同于 unknown-kernel common in-context terminal estimator。**关系：** nearest genuine TV+quantization+softmax antecedent，不能直接代换成当前 same-history/error-policy theorem。</p>
+<h3>P5. Yarotsky, fixed-width square/multiply arithmetic</h3>
+<p>Primary: <a href="https://arxiv.org/pdf/1610.01145v3">https://arxiv.org/pdf/1610.01145v3</a> ，§3.1，Propositions 2–3，printed pp.7–8、Eq.(3)–(4)。本轮直接核正文。</p>
+<p>NA for stochastic source/prior/prediction/training。Constructive ReLU uniform approximation on bounded domains；iterated tent squares与polarization乘法，depth/size O(log(1/δ))，参数可依赖目标精度。**关系：** packed-product/log-series/padding 所用基本 arithmetic 的直接前件；不能由此直接声称 zero-cost log、LN rounding、全 Transformer norm envelope或 statistical risk。</p>
+<h3>P6. Ahvonen et al., norm-padding normalization simulation</h3>
+<p>Primary: <a href="https://arxiv.org/html/2605.07705v2">https://arxiv.org/html/2605.07705v2</a> ，Appendix F.3 Theorems 19–20。此次重开定位核验。</p>
+<p>有限 floating domain 的 logical expressivity，不是 Markov risk/training theorem。Theorem 20 明确 no-LN decoder layer 可由 pre/post-norm layer模拟；paired coordinates消均值，padding等范数，fixed gain和β=0使LN neutral。**关系：** zero-shift norm padding 本身也已有。它没有提供当前精度依赖下 fixed-width/bounded-complete-norm continuous padding微程序；Theorem 19 反向模拟用 sufficiently wide lookup MLP，不能借为固定宽 cost-free LN计算。</p>
+<h3>P7. Merrill–Sabharwal, log-precision execution</h3>
+<p>Primary: <a href="https://arxiv.org/html/2210.02671v7">https://arxiv.org/html/2210.02671v7</a> ，§2.1 Definitions 1–2、§3 Proposition 1、§4 Theorem 2、Appendices C–D。本轮沿用 `FINITE_PRECISION_PRIMARY_FULLTEXT_AUDIT.v1.md`。</p>
+<p>Finite p-bit floats是实际 states/primitive outputs datatype，不是parameter descriptions。Uniform attention nearest-rounding collapse threshold为 log₂log₂N **total float bits**，不是log N fractional bits。Logical Boolean expressivity，非 rare-risk；displayed LN与ε=1合同不相同。**关系：** precision-sensitive expressivity已知，不支持本候选error-radius与storage alphabet混同。</p>
+<h3>P8. Chakrabarti–Pitassi–Alman, Every Bit Counts</h3>
+<p>Primary: <a href="https://arxiv.org/pdf/2602.02707v1">https://arxiv.org/pdf/2602.02707v1</a> ，Theorem 2.4、Appendix A Definitions A.7/A.10、A.3–A.4、B.2。本轮沿用上述 fulltext audit。</p>
+<p>特殊 equality encoding，one layer/one head/d_v=1，p versus p−1 fixed-point exact computation，指定 operation order和rounding。不是raw stationary Markov prediction，也没有固定正ε PreLN/full norm。**关系：** finite-bit瓶颈方法前件；cannot transplant one-shot lower to arbitrary repeated evolving-row reads。其 floating appendix文字/证明不一致已记在旧审计，不作为干净 exact threshold引用。</p>
+<h3>P9. Brösamle–Eckstein, layerwise rounding and denoising</h3>
+<p>Primary: <a href="https://proceedings.mlr.press/v306/brosamle26a.html">https://proceedings.mlr.press/v306/brosamle26a.html</a> ，PDF <a href="https://raw.githubusercontent.com/mlresearch/v306/main/assets/brosamle26a/brosamle26a.pdf">https://raw.githubusercontent.com/mlresearch/v306/main/assets/brosamle26a/brosamle26a.pdf</a> ，Definition D.4、Remark D.5、Theorems D.16–D.17、Theorems 4.1–4.2。本轮沿用旧 fulltext audit。</p>
+<p>正规语言/Turing-machine、argmax/CoT任务；无强制LN，width/depth及QK scale增长；指定 rounding points，中间高精度累加排除。包含显式layerwise error recurrence以及更强ReLU denoising。**关系：** stability recurrence不新；当前 candidate 的 bounded-score fixed-width calibrated-probability合同需另证。</p>
+<h3>P10. Xu–Raginsky, distortion and quantized scalar estimation</h3>
+<p>Primary: <a href="https://arxiv.org/pdf/1607.00550v1">https://arxiv.org/pdf/1607.00550v1</a> ，Theorem 3 Eq.(39)，Example 6/Corollary 7，Eqs.(100)–(103)。本轮直接核正文。</p>
+<p>General Bayes estimation entropy inequality；该 scalar absolute-loss例为uniform Bernoulli-bias prior、IID raw observations、quantized sample mean，经有限消息预算；无需Transformer结构。Lower c2^(−bits)与upper sampling error+quantization以及half-log n摘要位数都已明确。**关系：** 当前terminal alphabet下界的直接数学代入，必须标为standard distortion/quantization，不得作为新核心定理。</p>
+<h2>7. 可以使用的结果描述与停止条件</h2>
+<p>安全描述：</p>
+<p>“我们将已有固定宽 suffix 程序、rare-A 同端点统计界和 positive-epsilon PreLN compiler 连接，在明确支付 logit 准备、norm padding 与幅度恢复成本后，研究 ordinary-softmax 输出的固定宽条件风险实现。标准 finite-alphabet distortion bound 提供独立表示精度障碍；它尚未匹配计算深度或 useful-read 的必要性。”</p>
+<p>若最终只剩上式风险上界和 max{sampling,quantization}下界，不将其升格为新架构最优前沿。继续研究应集中在真正 architecture-specific、覆盖所有 retained channels/evolved rows、且与上界同算术合同的必要性；或者将当前结果如实作为 implementation corollary结束。</p>
+<h2>8. 审计证据范围</h2>
+<p>本轮直接读取两份原计划相关段、上述内部候选/审查及 execution-contract primary audits；直接重开核查 Yarotsky、Rajaraman、Ekbote、Ahvonen、Xu–Raginsky 的指定 primary theorem passages。D’Angelo、Akman、Merrill、Chakrabarti、Brösamle条目明确继承现有 fulltext audit，并未虚称再次逐行复核。无全文缺失导致关键结论依赖猜测，但没有完成全部最新版本/引用图穷尽调查。检索未找到完整同合同结果不构成 novelty证据。</p></section><section class="appendix"><h2>附录 E 传输证明的先行工作</h2><h1>新 rare one-read transport lower：primary 定理蕴含审计</h1>
+<p>2026-11-06 UTC。目标为 `RARE_ONE_READ_TRANSPORT.candidate.v1.md` 的 (T)、(R)、(8)–(9)。只作先行工作与方法定位；候选常数及实现语义仍以独立数学审查为准。没有模型运行、数值实验、上传或公开写入。</p>
+<h2>1. 结论</h2>
+<p>**不是 Mitrophanov 或 Rudolf–Schweizer 所列 theorem 的直接裸参数代入，但其证明主要是标准 regeneration/perturbation、已知 Markov additive variance 和 Lipschitz testing 的 source-specific 组合。** 尤其 covariance 部分可由 Paulin Theorem 3.7 Eq.(3.20) 直接获得同阶结论，不必宣传为新 covariance 方法。</p>
+<p>可以保留的窄增量是：针对这一个 rare source、actual terminal-A conditioning、任意位置依赖 bounded vector additive sketch，逐项证明 rare-disagreement coupling 和 endpoint transient，再把 transport closeness 接到付费 decoder 的风险。没有认证该 exact conjunction 的优先权；未完成引用图穷尽搜索。</p>
+<p>Hahn 已提供 bounded soft-attention 的单符号 dilution/sensitivity 基础机制，但其 Lemma 5/Theorem 6 不直接给候选的 u-dependent source-average threshold。候选 W1 小也不意味着 exact output KL/TV 小，与 scalar injection兼容。</p>
+<h2>2. 候选对象不可扩大</h2>
+<p>- 同 stationary order-two source π=(u,w,w,w)，t∈[1/2,3/4]；E是真实terminal pair A，不是独立query；reverse law为从A开始的同源链。 - 一个 actual data-bearing read；其前所有 operations positionwise，所以 synthetic query和terminal residual public。Bounded-score读可化为 augmented numerator/denominator additive sketch，score零是其子类。 - a_i可依位置而变，full-vector norm≤R。维数可变；因此 lower本身不是一个 fixed-width专属结论。 - 之后唯一数据输入是此read及其派生值；后续 paid continuation Lipschitz常数Λ必须包含全部FFN、LN、残差、output head和softmax。不能再读取evolved raw-row memory。 - 目标 risk是conditional A 或乘u后的overall lower。Ordinary bounded-logit overall C-row floor可能更强；不要把这个lower说成已实现vanishing overall rare risk。</p>
+<h2>3. Mitrophanov 2005：直接覆盖的是 marginal perturbation</h2>
+<p>Primary full PDF： <a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/26A9854BCB8D103B3A63A9B272616EC0/S0021900200001066a.pdf/sensitivity_and_convergence_of_uniformly_ergodic_markov_chains.pdf">https://www.cambridge.org/core/services/aop-cambridge-core/content/view/26A9854BCB8D103B3A63A9B272616EC0/S0021900200001066a.pdf/sensitivity_and_convergence_of_uniformly_ergodic_markov_chains.pdf</a></p>
+<p>定位：§2，Theorem 3.1、Eqs.(3.2)–(3.3)，printed pp.1005–1006。已直接核正文。</p>
+<p>对象是同状态空间两个homogeneous kernels的 n-step distributions，uniform ergodicity和operator TV perturbation E=\tilde P−P。其telescoping式把初始差异和one-step kernel差异沿ergodicity coefficients传播。不是统计估计loss，不含Transformer、training或storage精度。</p>
+<p>**对本候选的蕴含：** common-atom contraction、扰动与mixing的关系为直接先行。仅给P_t、P_s代参数，至多约束pair marginal；这里二者stationary π完全相同，stationary distribution difference本来就是零。它不能仅凭这一点控制路径加法统计的分布，尤其不能直接产出 √(u h/N)。需要构建joint chain并保留路径差值。用更适合的weighted/augmented state将候选写成一般perturbation corollary并非不可能；本审计没有证明这种文献归约不存在。</p>
+<h2>4. Rudolf–Schweizer：Wasserstein 名称不等于路径统计结论</h2>
+<p>Primary： <a href="https://arxiv.org/pdf/1503.04123v3">https://arxiv.org/pdf/1503.04123v3</a> ，23 February 2017版本；发表记录 <a href="https://doi.org/10.3150/17-BEJ938">https://doi.org/10.3150/17-BEJ938</a> 。定位：§2 Eq.(2.1)、Assumption 2.1、§3.1 Theorem 3.1、Corollary 3.2 Eq.(3.6)、Remark 3.3。直接核完整PDF的对应段。</p>
+<p>Theorem 3.1使用Wasserstein ergodicity、Lyapunov function和weighted one-step discrepancy，给n-step distribution的Wasserstein perturbation bound。Corollary 3.2以trivial Lyapunov function给C[ρ^n W(p0,\tilde p0)+(1−ρ^n)γ/(1−ρ)]，Remark 3.3以discrete metric恢复Mitrophanov类TV结果。</p>
+<p>**对本候选的蕴含：** Wasserstein/coupling和Lipschitz duality是已知核心工具。原始pair process套用Corollary 3.2，不会自动得到带N^−1/2的additive-functional fluctuation gain。把累计和加入state也不免费：该augmented chain不因原pair chain mixing而自动具备同一uniform ergodicity常数。候选需要另外用shared marginals使difference mean zero，再做variance。此为应写清的归约工作，不是足以支持novelty的“不同任务”借口。</p>
+<h2>5. Paulin 2015/2018：covariance 部分已有直接同阶定理</h2>
+<p>Primary： <a href="https://arxiv.org/pdf/1212.2015v5">https://arxiv.org/pdf/1212.2015v5</a> ，13 November 2018；论文为 Concentration inequalities for Markov chains by Marton couplings and spectral methods。定位：§3，Theorem 3.7，Eq.(3.20)，PDF printed p.16；proof §5.2。已直接核正文。</p>
+<p>该定理对stationary nonreversible chain，pseudo spectral gap γ_ps&gt;0，以及位置依赖f_1,…,f_m∈L²(ν)，给</p>
+<p>Var[Σ_j f_j(Z_j)] ≤ (4/γ_ps) Σ_j Var_ν[f_j]。</p>
+<p>因此“位置依赖functions”或“nonreversible chain”均不是与它的分离点。向vector extension只需逐坐标求和，若已有full-vector variance bound就没有额外dimension factor。</p>
+<h3>5.1 候选 joint regeneration 自动给适用的 gap</h3>
+<p>这一步是本审计写出的简单归约，不声称是Paulin印出的特例。设候选joint kernel</p>
+<p>C(z,·)=γδ_o+(1−γ)H(z,·), γ=1/4,</p>
+<p>stationary lawν满足ν=γδ_o+(1−γ)μ，μ=νH。对任意scalar f，</p>
+<p>Var_ν(Cf)=(1−γ)² Var_ν(Hf)</p>
+<pre>      ≤(1−γ)² Var_μ(f)
+      ≤(1−γ) Var_ν(f)。</pre>
+<p>第一不等式是conditional expectation的variance contraction；第二来自mixture variance identity</p>
+<p>Var_ν(f)=(1−γ)Var_μ(f)+γ(1−γ)(f(o)−μ f)²。</p>
+<p>于是centered L²(ν) operator norm平方≤1−γ，C* C的spectral gap≥γ，按pseudo gap定义取k=1即可得γ_ps≥γ。</p>
+<h3>5.2 直接代入 additive differences</h3>
+<p>候选stationary joint lawν具有两个相同marginal π，且p=ν{U≠V}≤40u h。令Y_j=F_j(U_j)−F_j(V_j)，||F_j||≤2R，则EνY_j=0且Eν||Y_j||²≤16R²p。</p>
+<p>对每个coordinate使用Theorem3.7，再求和：</p>
+<p>E||Σ_j Y_j||² ≤ (4/γ_ps)Σ_j E||Y_j||²</p>
+<pre>          ≤256mR²p
+          ≤10240mR²u h。</pre>
+<p>与候选常数8320略不同，但同阶完全相同，并保留dimension-free和任意位置依赖。候选的直接common-atom covariance proof取得较好常数是有效的 elementary specialization，不是新general variance theorem。</p>
+<p>随后由Jensen得到O(R√(m u h))。Couple非平稳(A,A)起点到stationary joint chain，首次common reset期望O(1/γ)，每期差值bounded，得到O(R) transient。最后除N+1即得(T)的同阶结构。最后两步也是标准regeneration/transient处理。</p>
+<h2>6. 稀有 disagreement 的新增核对究竟在哪里</h2>
+<p>在candidate的coupling构造给定后，stationary mismatch满足</p>
+<p>p ≤ (1−γ)p + Eν[1{U=V} TV(K_t(U,·),K_s(U,·))]。</p>
+<p>使用共同stationary marginal π及row perturbation的rare mass得到p=O(u h)，而不是sup-row O(h)。这是此source的有效细化，仍是经典stationarity-weighted perturbation/renewal accounting。</p>
+<p>一个简便的辅助推导也说明它不是新的机制：令δ(x)=TV(P_t(x,·),P_s(x,·))，则πδ=uh+w(u/w)h=2uh。由kernel telescoping、TV contraction和πP_t=π，</p>
+<p>Σ_x π(x)TV(P_t²(x,·),P_s²(x,·)) ≤2πδ=4u h。</p>
+<p>因此同一stationary mismatch不等式甚至给p≤16u h，而candidate的40u h是保守可用常数。此观察无需改candidate常数，也不改变其scope；可作为其rare-factor依赖的独立逻辑检查。**注意：** 不能由π_t=π_s本身就推path laws接近。必须经过真实joint construction和per-step discrepancy。</p>
+<p>原candidate若坚持full proof，需保留：同atom的residual maximal coupling确实给所写marginals；joint stationary law存在并具有所需π marginals；π_t=π_s在全部参数区间；odd-N最后pair extension不引入observed future；conditional reversal与F_j重排正确。以上不是通用perturbation论文自动代作者完成的source检查。</p>
+<h2>7. Hahn 的覆盖与非覆盖</h2>
+<p>Primary： <a href="https://aclanthology.org/2020.tacl-1.11.pdf">https://aclanthology.org/2020.tacl-1.11.pdf</a> ，Lemma 5、Theorem 6，printed pp.165–167；修正版 <a href="https://mhahn.info/files/transformers-proof.pdf">https://mhahn.info/files/transformers-proof.pdf</a> ，§S2 Eqs.(34)–(35)。本轮重开核定位。</p>
+<p>Lemma5在fixed soft-attention network中将一个非终端符号改变对terminal activation的影响界为O(1/N)，常数依赖parameter matrices。Theorem6再用于指定语言的cross-entropy。不提供本rare unknown-parameter source experiment、W1 sketch law或min{N,√(N/u)} decoder敏感性门槛。</p>
+<p>可以从Hahn式pathwise influence加coupled Hamming distance得到一个较粗思路，但直接triangle summing O(Nu h+1) mismatches只给O(R[u h+1/N])。候选的√(u h/N)来自**中心化的加法差值在joint Markov chain上的方差**，不是单token sensitivity原句的直接重述。该方差加强本身已有上节标准工具。</p>
+<p>在fixed u、固定条件精度下，把Λ≤M^D倒代得到D=Ω(log N)与大量既有bounded-sensitivity深度结论同阶；候选应强调source-specific u-dependence和完整visible-interface定量式，而不称新的general logarithmic-depth necessity。</p>
+<p>修正的Hahn proof包含attention weights变化项。候选用实际numerator/denominator分解控制bounded-score ratio时已经保留该效应；不能引用未修正的单value差项推导任意attention。</p>
+<h2>8. Risk reduction 与最终定位</h2>
+<p>对于任何共同Λ-Lipschitz F，两个conditional target相差h，triangle inequality和transport coupling给</p>
+<p>R_A(t)+R_A(s) ≥ h−ΛW1−2η_A。</p>
+<p>这是标准two-target risk reduction；乘同一个terminal probability u然后取max给candidate的u/2。它不是KL contraction或exact-data-processing information loss。若η只无条件控制，conditional化须付1/u，candidate的−ε版本保留此点。</p>
+<p>固定h=1/4得到ΛR必须至少常数乘N/(1+√(Nu))才能使conditional risk低于足够小固定阈值；o(u)overallrisk是另一充分要求来调用该lower。这个threshold不是sharp error curve，不证明upper匹配，不下界read次数，也不是固定宽下界。它允许value dimension增长，但收费full norm和decoder sensitivity。</p>
+<p>**建议文字：** “使用共同再生耦合、标准Markov variance bound和Lipschitz testing，我们得到一个针对rare family和真实terminal conditioning的一读sketch敏感性必要条件。主要附加工作是同源参数变化下的rare disagreement和endpoint接口核对；不宣称新的通用coupling、Wasserstein或variance方法。”</p>
+<h2>9. 覆盖限度</h2>
+<p>Mitrophanov、Rudolf–Schweizer、Paulin、Hahn及其correction的指定正文已访问。Publisher的Rudolf–Schweizer PDF wrapper未直接提供正文，改用作者arXiv v3完整PDF，结论按此版本标注。没有使用摘要代替theorem结论。并未穷尽所有Markov perturbation/coupling/variance-reduction文献，未认证创新性。当前主要结论不依赖未访问的文献。</p></section></body></html>
