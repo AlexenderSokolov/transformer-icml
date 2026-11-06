@@ -1,0 +1,496 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>rare-u 固定宽度资源差距检验</title><style>body{max-width:980px;margin:48px auto;padding:0 24px;font:17px/1.8 system-ui,"Noto Sans CJK SC",sans-serif;color:#17202b;background:#fff}h1{font-size:32px;line-height:1.35;margin:36px 0 24px}h2{font-size:25px;margin:42px 0 18px}h3{font-size:20px;margin:28px 0 12px}p{margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.7 ui-monospace,monospace;padding:16px;background:#f5f7f9}a{color:#145c9e;overflow-wrap:anywhere}.appendix{margin-top:64px}@media(max-width:600px){body{padding:0 16px;font-size:16px;margin:24px auto}h1{font-size:27px}pre{font-size:13px}}@media print{body{max-width:none;margin:0;font-size:11pt}.appendix{break-before:page}h1,h2,h3{break-after:avoid}}</style></head><body><h1>固定宽度 rare-u 上界差距的决定性检验</h1>
+<p>2026 年 11 月 6 日。研究范围：真实 PreLN / softmax、未知二阶过程、同一历史末端预测。本文报告一个失败构造的严格排除、一个 u-blind 预算反例，以及源平均中间表示障碍。尚未得到一般多次有效注意力的末端统计资源下界，也未发现更快且满足冻结资源的完整算法。附录保留完整论证和先行工作对照；不把标准测试论证或已有统计率称为新结果。</p>
+<h2>一、问题契约不能移动</h2>
+<p>过程固定为二元二阶平稳族：A=00、B=01、C=10、D=11，平稳概率分别为 u,w,w,w，其中 w=(1-u)/3，0&lt;u≤0.01；A 后继 1 的概率 t∈[1/2,3/4]，C 后继 0 的概率 q=ut/w，B、D 后继公平。观测 N 个原始符号，另加公开的合成末端行。评价实际末端二元分布与真实下一符号条件分布的期望 TV，而不是独立测试上下文。</p>
+<p>物理模型保留完整特征 PreLN、ε_LN=1、增益 2、零偏移，因果含自身的普通 softmax 注意力，最终 LayerNorm、仿射词表头和普通 softmax。所有完整状态、值、矩阵、偏置、基础运算 Lipschitz 常数均计入固定预算。长度相关大增益需要用有界阶段支付；不能免费提供前驱、计数、完整历史编码、除法或对数。</p>
+<p>固定输出范围 [α,1−α]，0&lt;α≤1/4。参数可依公开 N、预算和精度变化，不能依未知 u,t 或已实现历史变化。训练无关仅指表达/计算构造与下界；没有训练、模型运行或科学数值复现。</p>
+<h2>二、先把风险地板和现有上界分开</h2>
+<p>任意上述输出范围预测器均有不可避免的总体风险地板</p>
+<pre>F(u,t)=w(α−q)_+。</pre>
+<p>这是末端 C 的概率乘以不可避免的输出偏差。固定 α 而 u→0 时，F→α/3；因此不能用原始总体风险的常数级表现声称已经匹配稀有参数估计。条件于末端 A 的风险和超过 F 的总体风险必须分别列出。</p>
+<p>已有固定宽、一次有效 uniform read 构造，用公开后缀长度 b、量化分母 G 和实现误差 ε，满足</p>
+<pre>条件 A 风险 ≤ min{1,157/√(1+(b−2)u)}+1/G+ε；
+总体风险 ≤ F+1300u/√(1+(b−2)u)+(u+w)/G+ε；
+D=O_α(log N+b+log² b+log b log G+log²(1/ε))。</pre>
+<p>这些统计常数和率来自已有结果。当前问题是线性 b 解码能否被真正更好的固定宽、多次通信算法替代，不是再次推导旧计数估计器。</p>
+<p>每层固定宽不等于总内存固定：有 N+1 行，滚动状态为 O_α(N)，实际局部工作 O_α(ND)；密集计算每个有效注意力一般 O_α(N²)，若照常执行零输出注意力槽则为 O_α(DN²)。参数描述与有限运行精度不是同一资源。</p>
+<h2>三、两读局部三元计数捷径失败</h2>
+<p>看似可行的改进是：第一读在每一行恢复其自身最近三个符号，位置独立计算局部三元指示，第二读汇总全部转移计数。若第一阶段只需对数深度，就能在固定宽度下避免串行解码 N 个符号。</p>
+<p>但旧后缀程序没有提供这种能力。它选定一个全局区间 [N−b+1,N]，在各行恢复的是该区间可见前缀，再补默认符号。它不是移动窗口。将“每行都有合法虚拟词”改写为“每行都有自己的真实最近三个符号”是不成立的。</p>
+<p>更强的是已有下界直接排除该第一阶段：固定值宽、一次 uniform read 后，若每行都以固定裕量恢复前驱，深度必须 Ω(N)。对固定维度有界 QK 的单读，已有指数特征论证给出</p>
+<pre>N ≤ C(D+1)^k [D+log(N+1)+1]，</pre>
+<p>所以 D 至少为 Ω(N^(1/(k+1)))，也不是 O(log N)。这里 k 是固定查询/键维度；不能误写为更强的 N/polylog N 下界。</p>
+<p>已有多次 uniform-read transcript 论证还给出 q[D+log(A+1)+log(D+1)]=Ω(N)，其中 q 是所有有效读的总有效值维度。在 q≤AW、A≤D 下，固定 W 的完整局部恢复至少需 Ω(√N) 深度。它不能直接用于末端风险。现有分块打包确实用约 N/log N 次读、每块对数深度实现所有局部信息，但总深度仍为 O(N)，没有缩小母问题中的差距。增加第二读形成一个新的线性深度计数器也不会优于已经有的一读线性解码器，因此停止重复扩写该组合。</p>
+<h2>四、u-blind 后缀预算有明确反例</h2>
+<p>对任意只使用最后 b 个符号的预测器，3≤b≤N，即使允许知道 u，当 bu≤1 时，固定参数对 t₀=1/2、t₁=17/32 已保证</p>
+<pre>max_i E_{t_i}[|Q(1)−t_i| | 末端 A] ≥1/128；
+max_i (R_{t_i}−F_{t_i}) ≥u/128。</pre>
+<p>证明只复用已有全历史末端条件 KL 界，在长度 b 上得到 KL≤60(1+bu)/1024&lt;1/2，然后用 Pinsker 和两点测试。总体式成立是因为 A 上的损失与 C 上的输出地板发生在不相交末端事件上，不是把条件风险直接冒充总体风险。</p>
+<p>若公开预算 b_N=o(N)，取合法稀有序列</p>
+<pre>u_N=1/√(N b_N)。</pre>
+<p>则 b_Nu_N→0，但 Nu_N→∞。所以任何这类后缀估计器的 A 条件风险保持常数，而全历史参考率趋零。扣除同一个输出范围地板后，后缀风险下界与全历史统计项的比例以 (N/b_N)^(1/4) 的量级发散。</p>
+<p>此反例不意味着任意固定宽模型需要线性深度。它仅排除次线性后缀预算均匀匹配全历史 rare-u 统计率的说法。实际 PreLN 编译输出可能有微小前缀依赖，不能强行称为严格后缀函数；正确转移是：若它与严格后缀参考的逐历史 TV 误差≤δ，条件 A 下界变为 1/128−δ，总体超过范围地板的下界变为 u(1/128−δ)。现有编译器有 δ≤3ε/4，并保留精确 α 输出范围，因此该转移有效。</p>
+<p>G≥N²、ε≤N^−2 均可公开选择，无需知道 u。反之，按 b≈1/(ur²) 选择预算需要知道 u，或有已声明的下界 u≥ρ。若要消除范围地板，已知 u≥ρ 时可选择 α≤3ρ/[2(1−ρ)]；相应词表 logit 范围至少随 log(1/ρ) 增长。对全部 u&gt;0，任何固定正 α 都无法消除地板。</p>
+<h2>五、源平均局部表示障碍：不再只靠最坏历史</h2>
+<p>本轮的直接证明进展是把旧 uniform-transcript 中间表示障碍推广到该 rare-u 平稳源下的平均稳健局部恢复错误。它的任务仍是恢复前驱或局部三元信息，不是直接预测唯一末端。</p>
+<p>证明使用以下事实：该过程的每步熵率</p>
+<pre>h*=u h₂(t)+w h₂(q)+2w ≥2(1−u)/3 ≥0.66 bit。</pre>
+<p>即使 u 很小，完整局部符号序列仍有线性熵。给证明中的解码器真实未来符号和量化的各层全局值平均，它可以通过因果前缀的补集恒等式逐层重建未来行；不必猜测任何符号，也没有逐个错误传播。随后使用反向条件熵链及二元 Fano 界，将较小源平均局部错误转成线性信息需求。</p>
+<p>此处使用恒定裕量和局部恢复错误，而不是相对稀有末端风险精度；因此不会重复先前已判为空的“总消息位数减网格误差”路线。相反，这个证明依赖完整局部信息具有 Θ(N) 熵，无法把这一熵量直接转给只有低维未知参数的末端统计任务。定理的精确常数、近似裕量、多个 uniform reads 与实际有限网格语义列在附录。</p>
+<p>进一步，不强迫恢复所有原始符号，而只要求恢复稀有 00 指标。令 Z_j=1{X_j=X_(j+1)=0}；给真实未来后，精确条件熵为</p>
+<pre>h_A=H(Z_j | X_(j+1):N)=u h₂(t)+w h₂(q)。</pre>
+<p>这里不能再额外条件化前半段，否则该平稳逆向条件熵等式可能改变。正确证明用无条件反向互信息链，并丢弃不需要的非负项。该式给出 h_A 为 u log(1/u) 量级。若平均稳健稀有指标错误≤u/256，则</p>
+<pre>Q log₂(1+4M√A D B^D/g) ≥ (Nu/16)log₂(1/u)，</pre>
+<p>其中 Q 是所有读的总有效值维度，M 是值范数界，B 为由冻结 Lipschitz 预算确定的常数，g=1/2−η&gt;0 是恢复裕量。因此 Q≤AW 时，固定预算下 AWD=Ω(Nu log(1/u))。有限网格对应量使用实际舍入前头维度 Q_f，而不是默认折叠后的 W，得到 Q_f[p+log N+O(1)]=Ω(Nu log(1/u))。这只覆盖已声明的精确前缀累加/确定性局部运算合同，不适用于任意浮点计算。</p>
+<p>该稀有版本排除“只需稀有指标，所以全局部信息障碍完全无关”的一部分反驳，但要求错误小于稀有质量的固定小比例。全零指标本来就有 O(u) 绝对错误，不违反定理。逐行指标必须足够准确的假设不能从末端预测风险自动推出；直接计算聚合统计量或允许正负局部误差相消的算法仍未排除。</p>
+<h3>有界 QK 的重复读取也能覆盖，但仍是局部任务</h3>
+<p>独立审阅的扩展不再要求实际 attention 权重均匀。每次使用一头、固定键/查询维度 k、值维度≤d、完整 Q/K/V 范数和局部 Lipschitz 预算固定时，用 m 阶指数核特征构造证明用的全局 transcript。它不是网络获得的免费特征。关键补充是：截断特征的范数与导数界都不依赖 m；对证明中的近似 Q/K/V 作球投影、对近似分子作投影并将分母截在正下界，使逐层 suffix 重建稳定。实际网络没有被改动。</p>
+<p>将 Taylor 余项与证明用网格误差同时控制到 g/(4DB^D)，只需 m=O(D)；源平均信息界因而给出</p>
+<pre>A(d+1)(D+1)^(k+1)=Ω(N)  （小平均稳健前驱错误）；
+A(d+1)(D+1)^(k+1)=Ω(Nu log(1/u))  （稀有指标错误≤u/256）。</pre>
+<p>第二式不偷偷要求恢复全部前驱。若固定宽且 A≤D，则满足该局部稀有指标精度的管线至少有 D=Ω((Nu log(1/u))^(1/(k+2)))；当该右侧超出 polylog N 时，固定宽、对数级调用/深度的“先高精度局部指标、再 pooling”路线被排除。这仍不能推出实际末端风险需要同样深度。任意位置对偏置、增长的 Q/K 范数、未计费的头数不在定理内；固定多个头需要逐头特征维度及整体 Lipschitz 预算记账。非均匀 attention 的一般有限网格执行定理没有由此得到。</p>
+<h2>六、与先行工作逐项对照</h2>
+<p>Rajaraman 等的 Markov 构造、Ekbote 等的两层 Markov 估计、D’Angelo 的加权计数先行工作已经覆盖不同资源合同下的浅层转移统计机制。不能把再次拼接局部计数加 pooling 说成新结构。需要逐项比较完整 LayerNorm 形式、分数放大、输出头、查询/键维度与精度；不能只比较“层数”。</p>
+<p>已有固定宽终端后缀、宽度 O(N) 全历史双读计数、约 N/log N 宽的分块并行恢复、以及真实 PreLN 双读终端后缀构造各自覆盖不同点，不能互换它们的宽度或信息访问合同。新的后缀反例只是已有条件 KL 与标准 Le Cam 的直接推论；源平均局部障碍采用标准熵链/Fano 与已有补集重建，不是一般 T1/T2 主定理。</p>
+<h2>七、停止条件与剩余缺口</h2>
+<p>本轮停止两条已经有决定性否定的捷径：一是把全局后缀误认成移动局部窗口；二是用任何次线性 u-blind 后缀预算声称均匀达到 full-history rare-u 统计率。也不重新启动已为空界的通用通信/网格路线。</p>
+<p>仍有实质开放问题：在固定宽、可重复更新 K/V 的真实 PreLN 下，能否直接计算足够的稀有转移统计，而不先恢复所有局部前驱，也不在末端解码线性长度历史？或者能否从实际末端风险本身推出一个必须支付的表示/精度资源量？现有局部恢复下界不能提供这个蕴含。</p>
+<p>有限执行误差只能在此前逐运算误差、非溢出、LN 平方根/除法、最终 exp/div 等条件确实成立时使用；没有声称已实例化或认证 IEEE 执行器。若只有总体实现误差 ε_global，条件于稀有 A 时可能放大为 ε_global/u；只有逐历史保证才能直接加同一个误差。数值、训练和完整机器精度验证仍未完成。</p>
+<h2>八、证据状态</h2>
+<p>后缀反例、uniform 源平均局部界、稀有指标强化和 bounded-QK 重复读取扩展均完成独立逐式审阅。保留初版、修订版、失败反例与审阅记录。本文没有运行模型、训练或科学数值实验。HTML 仅作静态结构、来源和隐私审阅，未完成视觉渲染；外链只按先行工作审计已读取的公开来源列出。</p><section class="appendix"><h2>附录 A 后缀预算反例与物理实现转移</h2><h1>A decisive u-blind test for the suffix route, not for all transformers</h1>
+<h2>Contract</h2>
+<p>Use the same stationary binary order-two rare family as `FIXED_WIDTH_RARE_RISK_FRONTIER.candidate.v2.md`: A=00, B=01, C=10, D=11; pi=(u,w,w,w), w=(1-u)/3; t in [1/2,3/4], 0&lt;u&lt;=1/100; A next-one=t, C next-zero=q=ut/w, B,D fair. The actual terminal context is A on E_A. History length is N. A suffix-b predictor is any randomized function of only the actual last b observations and public N,b; even known u is allowed for the lower bound. It has no further history-dependent state, cached statistics, or parameters. Randomness is independent of the source. This is an information restriction, not a definition of all fixed-width models.</p>
+<p>Fix the same exact physical output range [alpha,1-alpha], 0&lt;alpha&lt;=1/4. Define total expected TV R_t, the unavoidable range floor F_t=w(alpha-q)_+, and excess-over-range-floor E_t=R_t-F_t. The floor follows solely from terminal C. Since A and C are disjoint events and B,D losses are nonnegative,</p>
+<pre>E_t &gt;= u E_t[|Q(1)-t| | E_A].                         (1)</pre>
+<p>This notation E_t for excess is not conditional expectation; expectations are written explicitly below. The known full-history construction supplies</p>
+<pre>R_t &lt;= F_t + 1300u/sqrt(1+(N-2)u)
+                +(u+w)/G + epsilon                 (2)</pre>
+<p>when its suffix budget is the full history (or a power-of-two suffix at least N/2 with the corresponding constant-factor statistical bound). The depth of that construction includes linear suffix decoding. Equation (2) is an existing upper, not a new rate.</p>
+<h2>Proposition: every sublinear suffix budget fails a uniform full-history conditional test</h2>
+<p>For b&gt;=3 and bu&lt;=1, there exist t0,t1 in [1/2,3/4], separated by h=1/32, such that every suffix-b predictor satisfies</p>
+<pre>max_i E_{t_i}[|Q(1)-t_i| | E_A] &gt;= 1/128,
+max_i (R_{t_i}-F_{t_i}) &gt;= u/128.                    (3)</pre>
+<p>The pair can be fixed as t0=1/2, t1=17/32. The predictor may know u; no u-blind assumption is needed for this lower.</p>
+<h3>Proof</h3>
+<p>Stationarity implies the last b observations conditional on their final pair A have exactly the b-observation conditional law used by the existing full-history conditional KL lemma. That lemma, already proved for this family, gives</p>
+<pre>KL(P_t0^(b)(.|E_A),P_t1^(b)(.|E_A))
+   &lt;=60(1+bu) h^2 &lt;=120/1024 &lt;1/2.                 (4)</pre>
+<p>This is the full-history conditional KL estimate with its length set to b, not the smaller parity-side estimate. The terminal event has probability u independent of t. Independent randomness and the predictor do not increase TV. Pinsker therefore gives input-law TV &lt;1/2. Integrating the triangle inequality |z-t0|+|z-t1|&gt;=h against the common part of the two laws proves that the sum of the two expected absolute errors is at least h(1-TV)&gt;h/2. The larger is at least h/4=1/128. Equation (1) proves the excess-risk statement. No claims of independence between the final pair and past were used.</p>
+<p>Now let b_N be any public, u-blind integer budget with 3&lt;=b_N&lt;=N and b_N/N -&gt;0. Set</p>
+<pre>u_N=(N b_N)^(-1/2).</pre>
+<p>Eventually u_N&lt;=1/100, b_N u_N=sqrt(b_N/N)&lt;=1, while N u_N=sqrt(N/b_N)-&gt;infinity. Thus (3) remains bounded away from zero conditionally on A, although the full-history conditional rate 157/sqrt(1+(N-2)u_N) tends to zero. Moreover the ratio of the suffix excess lower to the known full-history statistical term diverges as a constant times (N/b_N)^(1/4). Choose public G&gt;=N^2 and epsilon&lt;=N^(-2) to make the existing quantization and compilation errors negligible relative to that statistical term. Since u_N&gt;=1/N, this comparison is valid. For the legal power-of-two b used in the prior implementation choose b_full as the largest power of two &lt;=N; b_full&gt;N/2 and the conclusion is unchanged.</p>
+<h2>Robust transfer to the physical PreLN implementation</h2>
+<p>The physical compiled predictor need not be exactly suffix-measurable: normalization and approximation can retain tiny dependencies on earlier rows. Do not apply the suffix-only theorem to it by measurability assertion. Instead suppose a strictly suffix-measurable reference Q_ref satisfies a uniform pathwise TV bound TV(Q_phys,Q_ref)&lt;=delta. The triangle inequality gives</p>
+<pre>max_i E_{t_i}[|Q_phys(1)-t_i| | E_A] &gt;=1/128-delta.</pre>
+<p>If Q_phys has the declared exact alpha range, (1) then gives</p>
+<pre>max_i (R_phys,t_i-F_t_i)&gt;=u(1/128-delta).</pre>
+<p>For the existing construction Q_ref is the alpha-projected quantized suffix estimator and delta&lt;=3epsilon/4 by its explicit margin/compilation lemma. Thus epsilon tending to zero transfers the triangular lower. This is not a lower for arbitrary physical models; an independently justified uniformly small suffix-reference approximation is required. An actual finite evaluator adds its certified pathwise error nu to delta; retaining the same F_t also requires the finite output to retain the alpha range, for example under the previous sufficient nu&lt;=mu/2 inward-margin condition.</p>
+<h2>What the test does and does not decide</h2>
+<p>1. It rules out presenting b=Theta(log N) or any sublinear public suffix budget as uniformly matching the full-history rare conditional rate, even though it is consistent at every fixed u&gt;0. Pointwise-in-u convergence and a triangular rare-u family are different quantifiers. 2. It also makes a meaningful comparison in overall risk by subtracting the unavoidable declared output-range floor. Comparing raw overall risk ratios at fixed alpha is misleading as u tends to zero, because both algorithms can be dominated by a positive C-context floor. 3. It does not impose D&gt;=b on arbitrary algorithms or prove a multiple-attention lower bound. The old one-read suffix construction has paid D=O_alpha(log N+b+log^2 b+log b log G+log^2(1/epsilon)); the lower above concerns its information choice, not the computational necessity of sequential decoding. 4. u-blind schedules G&gt;=N^2, epsilon&lt;=N^(-2), and b_full&gt;N/2 need no knowledge of u. Choosing b proportional to 1/(u r^2) does need known u or a declared lower rarity bound. If u&gt;=rho is declared, b=O(1/(rho r^2)) suffices for the conditional statistical term, subject to N&gt;=b and the existing large constants. This is not adaptive unknown-u learning. 5. alpha can be lowered only by paying the changed output/norm envelope. Uniformly eliminating the C-floor for u&gt;=rho requires alpha&lt;=3rho/[2(1-rho)] (the minimum q at t=1/2). A sufficient smaller choice is the previously used alpha=3rho/[4(1-rho)]. The corresponding logit range grows like log(1/rho). For arbitrary u&gt;0 no fixed positive alpha eliminates the floor. 6. Finite evaluation is an additional contract. Exact-real coefficient descriptions do not imply execution precision. Under the separately stated conditional evaluator contract from the preceding report, if its conditions are met, total output error nu adds nu to R and to the A-conditional error if the guarantee is uniform pathwise; if only an unconditional implementation error epsilon_global is known, conditioning costs epsilon_global/u. This distinction cannot be omitted in a rare-event comparison.</p>
+<h2>Existing proof dependencies and claim boundary</h2>
+<p>- `EXACT_PRELN_INFORMATION_OBSTRUCTION.candidate.v2.md`: terminal-A full-history conditional KL &lt;=60(1+Nu)h^2. - `TASK_DIRECTED_PRECISION_AND_COVERAGE.candidate.v2.md`: existing full-history Le Cam application and output floor. - `FIXED_WIDTH_RARE_RISK_FRONTIER.candidate.v2.md`: paid ordinary-softmax upper and finite execution certificate contract.</p>
+<p>The proposition is a direct reuse of a proved KL lemma and standard two-point testing. It is a diagnostic of an insufficient proposed algorithmic route, not a claimed new statistical theorem or general depth lower bound. The next potentially decisive question is whether a different fixed-width evolving-memory algorithm can use full-history statistics without all-row lag reconstruction or a linear suffix decoder; this remains unresolved here.</p></section><section class="appendix"><h2>附录 B 多次 uniform reads 的源平均局部障碍</h2><h1>Source-average local reconstruction barrier for repeated uniform reads</h1>
+<p>**Result:** the former all-word local-lag obstruction strengthens to a genuine expected-fraction-of-local-errors lower bound under the actual stationary rare source. It also extends to multiple full-prefix **uniform** reads. It is still a representation-specific result, not a terminal statistical-risk lower bound.</p>
+<h2>1. Frozen source and its nonvanishing entropy rate</h2>
+<p>The binary second-order source has pair states A=00, B=01, C=10, D=11 and</p>
+<pre>pi=(u,w,w,w),  w=(1-u)/3,  q_src=ut/w,
+P=[[1-t,t,0,0],[0,0,1/2,1/2],
+   [q_src,1-q_src,0,0],[0,0,1/2,1/2]],
+0&lt;u&lt;=1/100,  1/2&lt;=t&lt;=3/4.</pre>
+<p>The history X_1:N starts in stationarity. All entropies and logarithms below are in bits. Write h_2 for binary entropy and</p>
+<pre>h_* = u h_2(t)+w h_2(q_src)+2w &gt;= 2w &gt;= 33/50.       (1)</pre>
+<p>This is exactly H(X_i | X_1:i-1) for every i&gt;=3, averaged under the stationary law. Consequently, for any m&gt;=2,</p>
+<pre>H(X_(m+1):N | X_1:m)=(N-m)h_*.                     (2)</pre>
+<p>Also H(X_1:N)&gt;=N h_* for N&gt;=2: stationarity and conditioning give both H(X_1)&gt;=h_* and H(X_2|X_1)&gt;=h_*. No independence of the raw symbols, no iid transition-count assumption, and no terminal conditioning are being asserted.</p>
+<p>The source has high symbol entropy even when A is rare, because the B and D rows supply fair transitions. This fact will obstruct recovering most raw local lags. It does not itself say that estimating the one rare-row parameter requires recovering those lags.</p>
+<h2>2. Actual network contract and the error criterion</h2>
+<p>There are T=N+1 physical rows, the final row a fixed, source-independent sentinel. Initial row states depend only on the row&#x27;s own raw symbol and public position/length. The model has D counted synchronous primitives, of which A are useful full-inclusive-prefix uniform attention invocations. Positionwise computation may precede, separate, and follow the invocations. Every readout is row-local and is included among the counted primitives.</p>
+<p>At invocation ell the value vector is</p>
+<pre>v_i^ell = V_(ell,i)(h_i),  dimension r_ell,
+a_i^ell = (1/i) sum_(s&lt;=i) v_s^ell.</pre>
+<p>All relevant local maps and value maps are C-Lipschitz in full Euclidean norms, with a fixed C&gt;=1; ||v_i^ell||&lt;=M on actual reachable states. Attention&#x27;s local residual/output update is C-Lipschitz in the joint pair consisting of its local state and its received average. All constants are uniform in N, source parameters, width, depth, and positions. These bounds cover the frozen positive-epsilon/gain-bounded PreLN, bounded complete affine maps, residuals, and paid ReLUs. They exclude singular normalization and uncharged readout gain.</p>
+<p>For convenience the maps are globally Lipschitz, as the stated ordinary primitives are. Equivalently, one may use fixed same-Lipschitz extensions of the restrictions to reachable input sets for the proof-only simulation. The simulated points need not be actual reachable network states. This is not a modification or a finite-precision execution of the actual network.</p>
+<p>Let r_(j+1) be its numerical predecessor rail, targeting X_j, for j=1,...,N. Fix eta&lt;1/2 and define</p>
+<pre>e_j = Pr{|r_(j+1)-X_j|&gt;eta},
+epsilon = (1/N) sum_(j=1)^N e_j.                  (3)</pre>
+<p>Thus epsilon is the source expectation of the fraction of bad rows. Different histories may fail at different rows; no single history need have every rail correct. The fixed numerical margin is essential. Bare correctness of the sign of a vanishing-amplitude score is not the hypothesis.</p>
+<p>The effective exact-real transcript dimension is</p>
+<pre>Q=sum_(ell=1)^A r_ell.</pre>
+<p>For several same-mask uniform heads, either concatenate the actual value messages with their full norm budget, or collapse exact linear output mixing into one effective value map. The latter is legitimate only when it has a uniform full-map/full-value bound. If r_ell&lt;=W, then Q&lt;=AW. This effective exact-real dimension will not automatically be the finite-arithmetic dimension in Section 7.</p>
+<h2>3. Quantized global transcript and causal suffix replay</h2>
+<p>Define the proof-only global averages and transcript</p>
+<pre>z_ell(X)=(1/T) sum_(i=1)^T v_i^ell(X),
+Z(X)=(z_1,...,z_A) in R^Q,
+||Z(X)||&lt;=M sqrt(A).                              (4)</pre>
+<p>Later values may depend on their entire causal prefixes. No assumption that they remain functions of their own raw symbols is made.</p>
+<p>Let m=floor(N/2), n=N-m, and assume N&gt;=4. Fix a target bit j in {m+1,...,N}. A proof-only decoder receives a quantized transcript Zhat and the **true** future raw symbols X_(j+1):N. It initializes exactly the suffix rows i&gt;j, including the fixed sentinel, and replays the network&#x27;s primitives on those rows only.</p>
+<p>At a uniform-read stage it computes, from the already simulated pre-read suffix states,</p>
+<pre>vhat_i^ell = V_(ell,i)(hhat_i),
+ahat_i^ell = (T/i) zhat_ell
+            -(1/i) sum_(s&gt;i) vhat_s^ell,  i&gt;j.    (5)</pre>
+<p>All values on the right of (5) are from the pre-read layer, so there is no circular dependency. The exact execution satisfies the same complement identity with hats removed. Values from unknown earlier rows are absorbed into the global average.</p>
+<p>If Delta is the maximum suffix-state error before the stage and delta_ell=||zhat_ell-z_ell||, then T/i&lt;=2 and (T-i)/i&lt;=1 for every i&gt;j. Therefore</p>
+<pre>||ahat_i^ell-a_i^ell|| &lt;=2 delta_ell+C Delta,
+Delta_new &lt;=C(1+C)Delta+2C delta_ell.              (6)</pre>
+<p>A local stage multiplies Delta by at most C. The initial error is zero. Take a fixed</p>
+<pre>B&gt;=max{2,C,C(1+C),2C}.</pre>
+<p>Iterating the at most D primitives, including the row-local output, gives the deliberately loose bound</p>
+<pre>max_(i&gt;j) ||outputhat_i-output_i||
+   &lt;=D B^D ||Zhat-Z||.                            (7)</pre>
+<p>This construction is different from recursively guessing the history backwards. Every bit has its own genie-aided decoder with the true suffix supplied. There are no propagated token-decoding errors. The only propagated errors are bounded numerical replay errors in (6).</p>
+<h2>4. Source-average Fano bound</h2>
+<p>Put g=1/2-eta&gt;0 and choose a Euclidean covering of the radius-M sqrt(A) transcript ball with radius</p>
+<pre>delta=g/(2D B^D).</pre>
+<p>A maximal delta-separated set gives such a finite cover with cardinality at most</p>
+<pre>L &lt;= (1+2M sqrt(A)/delta)^Q
+   = (1+4M sqrt(A)D B^D/g)^Q.                    (8)</pre>
+<p>Let K(X) be the deterministic index of a covering center and Zhat its center. This quantization occurs only in the proof; the exact actual network is not rounded. Equation (7) makes the simulated scalar rail differ from the actual rail by at most g/2. On the event |r_(j+1)-X_j|&lt;=eta, its distance to X_j is at most eta+g/2&lt;1/2. Thresholding the simulated rail at 1/2 therefore correctly predicts X_j on that event.</p>
+<p>Let p_j denote the error probability of this genie decoder. Then p_j&lt;=e_j. Give the first half X_1:m as additional side information, although the decoder above ignores it. Binary Fano and the reverse conditional entropy chain imply</p>
+<pre>H(X_(m+1):N | X_1:m,K)
+  =sum_(j=m+1)^N H(X_j | X_1:m,K,X_(j+1):N)
+  &lt;=sum_(j=m+1)^N h_2(p_j)
+  &lt;=n h_2(pbar),                                (9)</pre>
+<p>where pbar is the mean p_j over these n target indices. No conditional independence is used. If</p>
+<pre>epsilon_tail=(1/n)sum_(j=m+1)^N e_j &lt;=1/2,</pre>
+<p>then pbar&lt;=epsilon_tail and monotonicity on [0,1/2] gives</p>
+<pre>H(X_(m+1):N | X_1:m,K)&lt;=n h_2(epsilon_tail).</pre>
+<p>Combining (2), I(X_(m+1):N;K|X_1:m)&lt;=H(K)&lt;=log_2 L, and (8) proves</p>
+<pre>Q log_2(1+4M sqrt(A)D B^D/g)
+   &gt;= n [h_*-h_2(epsilon_tail)].                 (10)</pre>
+<p>For the all-row expectation epsilon in (3), epsilon_tail&lt;=N epsilon/n&lt;=2epsilon. Thus, whenever epsilon&lt;=1/4,</p>
+<pre>Q log_2(1+4M sqrt(A)D B^D/g)
+   &gt;= n [h_*-h_2(2epsilon)].                     (11)</pre>
+<p>In particular, any fixed epsilon with h_2(2epsilon)&lt;33/50 forces a linear-in-N transcript-bit budget. A concrete convenient condition is epsilon&lt;=1/32. Since h_2(1/16)&lt;3/8, the right side is at least (57/200)n, and therefore exceeds N/8. This constant is intentionally nonoptimal.</p>
+<p>For an expected scalar absolute error criterion</p>
+<pre>R=(1/N)sum_j E|r_(j+1)-X_j|,</pre>
+<p>take eta=1/4. Markov&#x27;s inequality gives epsilon&lt;=4R. Therefore R&lt;=1/128 also implies the same N/8 lower bound in (11), with g=1/4. More generally retain the actual entropy gap instead of these convenient constants.</p>
+<p>When A=0, Q=0, or all value messages are identically zero, the transcript is a single point and exact suffix replay uses no quantization error. Equations (9)-(10) then directly forbid the same small-error hypothesis. No division by a zero resource is intended.</p>
+<h2>5. Paid width, invocation, and depth consequences</h2>
+<p>For fixed C,M,eta, and 1&lt;=A&lt;=D,</p>
+<pre>log_2(1+4M sqrt(A)D B^D/g)
+   =O(D+log(A+1)+log(D+1)).</pre>
+<p>Under a fixed positive entropy gap in (11), this yields</p>
+<pre>Q [D+log(A+1)+log(D+1)] = Omega(N).              (12)</pre>
+<p>If every effective message dimension is at most W,</p>
+<pre>AW [D+log(A+1)+log(D+1)] = Omega(N).             (13)</pre>
+<p>Since A&lt;=D and D&gt;=1, one may absorb the displayed logarithms into D and write AW D=Omega(N), with the frozen constants understood.</p>
+<p>Consequences for the numerical local-rail representation, and only that representation:</p>
+<p>- Fixed W and a fixed number of useful uniform reads require D=Omega(N). - Fixed W with A&lt;=D requires D=Omega(sqrt(N)). - If both A and D are O(log N), W=Omega(N/log^2 N). - If A=O(1) and D=O(log N), W=Omega(N/log N).</p>
+<p>Thus a fixed-width polylogarithmic-depth uniform-read pipeline cannot form mostly correct fixed-margin local predecessor rails, even merely on average under this rare source. The statement allows evolving memory and values that already depend on earlier attention; this is the substantive repeated-read improvement over a one-read additive code.</p>
+<p>The depth and all attention/readout computation remain charged. There are still T physical row states, so fixed per-row width is not fixed total memory. Usual dense full-prefix attention has O(AT^2 W) arithmetic work, with the actual value/head dimensions substituted as appropriate; pointwise work adds O(TD) at fixed width. A global transcript used in a proof is not an extra network input, a free implementation, or a communication protocol supplied to the model.</p>
+<h2>6. Sharper one-read specialization</h2>
+<p>For one uniform read with values v_i(X_i) of dimension d and norm at most V, followed only by local continuation of Lipschitz constant Lambda, the entire history can be used, without discarding the first half.</p>
+<p>Let Z=(1/T)sum_i v_i(X_i). For each j, t=j+1, knowledge of the true future gives the local current-row state and all values after t. Reconstruct</p>
+<pre>otilde_t=(T/t)Zhat-(1/t)sum_(i&gt;t)v_i(X_i).</pre>
+<p>Its error is at most T||Zhat-Z||, and the rail error is at most Lambda T||Zhat-Z||. Cover the radius-V ball with radius g/(2Lambda T). The same reverse entropy chain over all N bits gives, for epsilon&lt;=1/2,</p>
+<pre>d log_2(1+4V Lambda T/g)
+   &gt;= H(X_1:N)-N h_2(epsilon)
+   &gt;= N[h_*-h_2(epsilon)].                       (14)</pre>
+<p>The sentinel is necessary here to supply the last bit&#x27;s receiving row with fixed local input. If it is absent, give X_N as a free boundary symbol and lose at most one entropy bit and one lag target. This changes no linear-order consequence.</p>
+<p>Under Lambda&lt;=A_0^D with fixed A_0&gt;1, fixed d,V,g and a fixed positive entropy gap, (14) gives D=Omega(N). This is a genuine source-average strengthening of the earlier all-word zero-score packing statement, rather than the invalid assertion that every history has to be reconstructed simultaneously.</p>
+<h2>7. Finite-grid counterpart, with a different dimension ledger</h2>
+<p>This is a separate arithmetic theorem, not a precision assumption silently imposed on the exact-real network.</p>
+<p>At every stage/head, each actual value coordinate immediately before accumulation lies on the common grid 2^(-p) Z and has absolute value at most M_f. Each head forms its exact prefix sum, then applies deterministic division/rounding based only on that sum and public row index. Head mixing and all local updates/readouts may be arbitrary deterministic maps. There are no other cross-row operations. Let</p>
+<pre>Q_f=sum_(ell,head) r_(ell,head)</pre>
+<p>be the total **actual pre-rounding head dimension**. Record the exact unnormalized global sum of every such coordinate in a transcript S. Each scalar sum has at most</p>
+<pre>L_f=2 floor(T M_f 2^p)+1</pre>
+<p>possible values, so H(S)&lt;=Q_f log_2 L_f.</p>
+<p>Given S and a true future suffix, replay the suffix states exactly: at every head subtract the suffix value sum from the global sum, then use precisely that head&#x27;s declared deterministic division and rounding. This reproduces every receiving-row output exactly. No Lipschitz hypothesis, robustness margin, or approximate replay is needed.</p>
+<p>If a fixed row-local binary decoder of each actual output has expected tail classification-error fraction e_tail&lt;=1/2, the same conditional entropy argument gives</p>
+<pre>Q_f log_2(2 floor(T M_f 2^p)+1)
+   &gt;=n[h_*-h_2(e_tail)].                         (15)</pre>
+<p>An all-row classification-error fraction epsilon gives e_tail&lt;=2epsilon. Numerical eta-accurate rails with eta&lt;1/2 are a sufficient special case, but here a discontinuous local binary decoder is allowed because the transcript replay is exact and finite-valued.</p>
+<p>For fixed M_f and a fixed entropy gap, (15) implies</p>
+<pre>Q_f [p+log_2 T+O_(M_f)(1)] = Omega(N).            (16)</pre>
+<p>To substitute Q_f&lt;=AW, one must separately assume the **total pre-rounding dimensions over all heads** at each invocation are at most W. H heads each with W coordinates instead give Q_f&lt;=AHW. Exact-real algebraic collapse of head outputs does not justify collapsing this finite transcript after independent headwise rounding. Order-dependent/edgewise rounded accumulation and unspecified floating-point formats are not covered.</p>
+<h2>8. Full triple-onehot features, versus rare-only features</h2>
+<p>The same repeated-uniform-read proof covers numerical full local triple-onehot features F_i targeting e_(X_(i-2),X_(i-1),X_i), i=3,...,N. Use the Euclidean error threshold eta_tri&lt;sqrt(2)/2 and define its source-expected bad fraction over these N-2 rows. Include the complete eight-dimensional output in the Lipschitz/depth budget.</p>
+<p>For j=m+1,...,N-1, the true future and replayed output at row j+1 identify X_j whenever that output is within sqrt(2)/2 of its correct onehot. Quantize tightly enough that replay contributes at most half of sqrt(2)/2-eta_tri. The nearest-onehot decision is only a mathematical decoder for the entropy argument, not an unpaid network primitive.</p>
+<p>Give X_N as an extra boundary symbol. With ell=N-m-1 target bits,</p>
+<pre>H(X_(m+1):(N-1) | X_1:m,X_N)
+   &gt;=(N-m)h_*-1.</pre>
+<p>For N&gt;=6 the tail bad fraction is at most twice the all-triple bad fraction epsilon_tri. Assume epsilon_tri&lt;=1/4 so binary-entropy monotonicity applies. Then the analogue of (11), with g replaced by sqrt(2)/2-eta_tri, has right side</p>
+<pre>(N-m)h_*-1-ell h_2(2epsilon_tri).                (17)</pre>
+<p>This is again Omega(N) for a fixed sufficiently small bad fraction. It excludes a pipeline that first forms almost all accurate full local triples and then pools them, including one that never names explicit lag rails.</p>
+<p>This full-entropy corollary does **not** cover only the two rare-A indicators 1{triple=000},1{triple=001}. Returning zero for both already has error only on the O(u) fraction of A departures. Such rare-only features do not determine all raw symbols. Section 9 instead proves a smaller, rarity-scaled information bound when these local indicators must be accurate to a sufficiently small fraction of u. Neither bound implies a lower bound on an aggregate count: correlated errors, cancellation, or an entirely different decomposition can still make a useful aggregate. No inference of terminal prediction risk is licensed by (17).</p>
+<h2>9. A rarity-scaled bound for local rare-context indicators</h2>
+<p>The raw-lag requirement is stronger than what a rare-transition counter needs. The following separate consequence addresses the actual local context indicator</p>
+<pre>Y_j=1{X_j=0,X_(j+1)=0},  j=1,...,N-2.             (18)</pre>
+<p>Suppose row j+2 outputs a numerical rail b_(j+2) approximating Y_j. This is the context indicator of a transition ending at that row. One can instead place the same output at row j+1; the proof is unchanged. Both receiving rows lie strictly after j, so the suffix replay already proved applies. Fix eta_A&lt;1/2, put g_A=1/2-eta_A, and define</p>
+<pre>epsilon_A=(1/(N-2))sum_(j=1)^(N-2)
+                Pr{|b_(j+2)-Y_j|&gt;eta_A}.           (19)</pre>
+<p>Use N&gt;=8, m=floor(N/2), and the selected target set</p>
+<pre>J={m+1,...,N-2},  ell=|J|=N-m-2&gt;=N/4.</pre>
+<p>Its mean robust error e_A,tail is at most 4 epsilon_A. Reuse the transcript cover with g_A in place of g, and replay the suffix separately for every j in J. A threshold at 1/2 yields a decoder of Y_j with average classification error pbar_A&lt;=e_A,tail.</p>
+<h3>9.1 Exact reverse conditional indicator entropy</h3>
+<p>Because j&lt;=N-2, the true future includes the next two symbols. The stationary reverse second-order Markov property, or direct factorization of the finite path likelihood, gives</p>
+<pre>Pr{X_j=0 | X_(j+1):N}=
+  1-t, if (X_(j+1),X_(j+2))=(0,0),
+  q_src, if (X_(j+1),X_(j+2))=(0,1).</pre>
+<p>For completeness these two reverse probabilities are</p>
+<pre>Pr(000)/Pr(00)=u(1-t)/u=1-t,
+Pr(001)/Pr(01)=ut/w=q_src.</pre>
+<p>Any further future factors depend only on the next pair and cancel from the conditional likelihood. When X_(j+1)=1, Y_j=0 deterministically. Therefore</p>
+<pre>H(Y_j | X_(j+1):N)
+  = h_A :=u h_2(t)+w h_2(q_src).                  (20)</pre>
+<p>This is source information about a local rare-context indicator, not mutual information about the parameter t.</p>
+<h3>9.2 Use the reverse information chain without a prefix genie</h3>
+<p>Unlike Section 4, do **not** additionally condition on the first half: it would alter the simple reverse conditional law (20). Instead, the unconditional reverse chain rule and nonnegativity give</p>
+<pre>H(K) &gt;= I(K;X_1:N)
+  =sum_(j=1)^N I(K;X_j | X_(j+1):N)
+  &gt;=sum_(j in J) I(K;X_j | X_(j+1):N)
+  &gt;=sum_(j in J) I(K;Y_j | X_(j+1):N).             (21)</pre>
+<p>The last inequality is conditional data processing: Y_j is a deterministic function of X_j and the already conditioned future. Fano, (20), and concavity give</p>
+<pre>H(K) &gt;=ell [h_A-h_2(pbar_A)]
+      &gt;=ell [h_A-h_2(e_A,tail)]                  (22)</pre>
+<p>when e_A,tail&lt;=1/2. Thus the exact-real repeated-uniform-read theorem becomes</p>
+<pre>Q log_2(1+4M sqrt(A)D B^D/g_A)
+   &gt;=ell [h_A-h_2(e_A,tail)].                    (23)</pre>
+<p>In particular, replace e_A,tail by 4epsilon_A when epsilon_A&lt;=1/8.</p>
+<h3>9.3 A uniform explicit rare-mass regime</h3>
+<p>Throughout the source rectangle, q_src&lt;=25u/11&lt;4u and w q_src=ut&gt;=u/2. Write L_u=log_2(1/u), so L_u&gt;=6. Using h_2(q)&gt;=q log_2(1/q),</p>
+<pre>h_A &gt;=(u/2)(L_u-2) &gt;=(u/3)L_u.                 (24)</pre>
+<p>The elementary inequality h_2(p)&lt;=p log_2(e/p) gives, if e_A,tail&lt;=u/64,</p>
+<pre>h_2(e_A,tail) &lt;=(u/64)[L_u+log_2(64e)]
+                &lt;(u/64)(L_u+8)
+                &lt;=(7u/192)L_u.</pre>
+<p>Consequently</p>
+<pre>h_A-h_2(e_A,tail) &gt;=(u/4)L_u.                   (25)</pre>
+<p>The stronger constants in the preceding lines are not used. The convenient all-row assumption epsilon_A&lt;=u/256 ensures e_A,tail&lt;=u/64. Equations (23)-(25) then imply</p>
+<pre>Q log_2(1+4M sqrt(A)D B^D/g_A)
+   &gt;=(Nu/16)log_2(1/u).                          (26)</pre>
+<p>For fixed primitive/norm/margin budgets and r_ell&lt;=W this gives</p>
+<pre>AW[D+log(A+1)+log(D+1)]
+   =Omega(Nu log(1/u)).                          (27)</pre>
+<p>The exact finite-grid counterpart follows by replacing the left side of (23) with Q_f log_2(2 floor(T M_f 2^p)+1), under the unchanged actual pre-rounding dimension and accumulation assumptions in Section 7. Exact replay allows this finite version to start with local indicator classification error directly.</p>
+<p>The numerical constants u/256 and 1/16 are sufficient and deliberately loose. The informative general statement is (23), with the actual entropy gap. It does not exclude the all-zero local indicator, whose error is u and whose gap is not forced positive. It requires a substantial improvement relative to that baseline, not just an error that vanishes as u tends to zero.</p>
+<h3>9.4 Rare triple features and the remaining aggregate gap</h3>
+<p>Suppose the local output consists only of the two rare triple indicators</p>
+<pre>f_i=(1{(X_(i-2),X_(i-1),X_i)=000},
+     1{(X_(i-2),X_(i-1),X_i)=001}).</pre>
+<p>Their sum is Y_(i-2). A numerical vector approximation with Euclidean error at most eta_A/sqrt(2) gives a sum-rail error at most eta_A; the summation has operator norm sqrt(2), which must be included in the frozen local-map/readout budget. Thus sufficiently accurate rare triple features also satisfy (23), with the same fraction-of-bad-rows qualification. This is a weaker rarity-scaled consequence, not the full Omega(N) bound for all eight triple classes.</p>
+<p>A terminal estimator may compute useful approximate rare counts without ever accurately reconstructing most individual rare-context indicators. Equations (26)-(27) therefore still do not establish terminal-A conditional risk, full next-token risk, or a necessity of the local-feature-then-pool architecture. No terminal-risk reduction is supplied.</p>
+<h2>10. What was strengthened, and what remains unavailable</h2>
+<p>Established here and independently reviewed in the stated scope:</p>
+<p>1. The old all-word lag requirement can be relaxed to small expected fraction of fixed-margin numerical lag errors under the actual stationary rare source. 2. Multiple uniform reads are covered by a transcript of all global means plus genie-aided suffix replay. Later values are allowed to depend on earlier reads. 3. Standard Fano converts source entropy, rather than worst-word cardinality, into the resource bound. 4. An explicit common-grid finite evaluator admits the analogous source-average bit bound without a Lipschitz assumption. 5. Local rare-context indicators accurate to a sufficiently small fraction of rare mass satisfy the smaller Omega(Nu log(1/u)) resource-bit lower, without asserting that raw-lag reconstruction is necessary for rare counting.</p>
+<p>Not established:</p>
+<p>- Any lower bound for actual-terminal conditional-A TV risk or overall next-token TV/KL risk. A good terminal estimator need not reconstruct many raw lags, and the bounded-final-logit rare-C floor remains a separate issue. - Necessity of an increasing invocation count for rare-parameter estimation. The known wide one-read estimator is compatible with the bound and pays width. - A repeated **nonuniform**-attention bound. The exact complement identity (5) is specific to uniform prefix weights. A possible global feature-code approximation for bounded bilinear QK requires a separate checked replay argument, including all approximation and stability errors; it is not proved in this file. - A bound from exact-real mutual information alone. The exact PreLN scalar injection still retains the full history law. The present proof instead quantizes only as accurately as fixed-margin, bounded-sensitivity local decoding requires. - A bare sign-error lower without a fixed numerical margin in the exact-real theorem. Quantization can reverse arbitrarily tiny signed outputs; such an extension is not justified by this proof. - A direct count-approximation lower, an unconditional Omega(N) lower for rare-only features, a universal two-read statistical obstruction, or an equal-total-resource statistical separation.</p>
+<p>Preserved failed approach: sequentially decode an entire word backwards from a quantized code, then claim small original per-row error prevents propagation. That claim is false without further control. The proof here avoids it by conditioning each entropy term on the true future separately. It also does not transfer worst-history packing to source-average risk without this entropy argument.</p>
+<h2>11. Sources and attribution</h2>
+<p>Local proof dependencies inspected:</p>
+<p>- `ALLROW_SINGLE_INVOCATION_OBSTRUCTION.candidate.v1.md` and its independent audit, for the one-read zero-score packing setup and fixed-margin limitation. - `transcript_packing_candidate.v3.md`, for the existing repeated-uniform global-transcript lemma and distinction between effective exact-real dimensions and pre-rounding finite dimensions. - `RARE_PARITY_INFORMATION.candidate.v1.md`, for the exact stationary rare family. - `PROBLEM_CARD_AND_FAILED_TARGETS.v1.md`, `EXACT_PRELN_INFORMATION_OBSTRUCTION.candidate.v2.md`, and `ONE_READ_RARE_A_STATISTICAL_WITNESS.candidate.v1.md`, for the mother contract and the already documented separation between exact information, useful decoding, width, and terminal risk.</p>
+<p>The entropy chain rule, conditional data processing, binary Fano inequality, concavity of binary entropy, and Euclidean covering bound are standard. The repeated-read suffix recurrence is reused from the existing transcript note. This file&#x27;s derived step is their application to source-average robust local reconstruction and to its rarity-scaled indicator variant under the specified rare law. No prior-art novelty or priority assertion is made.</p></section><section class="appendix"><h2>附录 C 有界 QK 多次调用扩展</h2><h1>Repeated bounded-QK extension of the source-average local barrier</h1>
+<h2>1. Statement and scope</h2>
+<p>Take the same raw binary source, row-local input/readout, N raw rows plus fixed sentinel, and D paid synchronous primitives as in `SOURCE_AVERAGE_LOCAL_BARRIER.candidate.v2.md`. There are A&lt;=D useful full-inclusive-prefix attention invocations, with one ordinary bilinear-QK head at each invocation. Query/key dimension is at most a fixed k and value dimension at most d. The actual complete query/key/value vectors satisfy fixed bounds</p>
+<pre>||q_i||&lt;=R_q,  ||k_i||&lt;=R_k,  ||v_i||&lt;=V.</pre>
+<p>Their row-local maps, all other local primitives, and the local attention residual/output update have uniformly bounded full-vector Lipschitz constants C&gt;=1. Scores are q_i dot k_s, with the conventional dimension scaling absorbed into these fixed bounds. There is no arbitrary pairwise positional bias or extra cross-row primitive. All output gains and readout operations are counted.</p>
+<p>Later keys, queries and values may depend on earlier attention. The theorem does not assume that later values are raw-symbol-local.</p>
+<p>For the nondegenerate transcript and quantization formulas assume D&gt;=1 and 1&lt;=A&lt;=D. If A=0 (including D=0), use a one-point transcript and exact row-local suffix replay instead. The same Fano inequalities then directly prohibit either stipulated positive-entropy-gap error regime; no division by zero or zero-dimensional covering calculation is required. The lag statement uses N&gt;=4; the rare-indicator statement uses N&gt;=8.</p>
+<p>For any fixed numerical margin 0&lt;g&lt;=1/2, there are constants B&gt;=2 and R_*&gt;0 depending only on the frozen norm/Lipschitz budgets, and a degree</p>
+<pre>m=O(D+log(D+1)+log(1/g)+1),</pre>
+<p>such that a proof-only quantized global-feature transcript has at most</p>
+<pre>B_code = Q_m log_2(1+8R_* sqrt(A)D B^D/g)
+Q_m=sum_(ell=1)^A (d_ell+1) binom(m+k_ell,k_ell)    (1)</pre>
+<p>bits of log-cardinality and supports the same genie-aided local decoders as the uniform theorem. Here k_ell&lt;=k and d_ell&lt;=d. For fixed g, k and the frozen budgets,</p>
+<pre>B_code &lt;= C_0 A(d+1)(D+1)^k
+                  [D+log(A+1)+log(D+1)+1].        (2)</pre>
+<p>Therefore the standard entropy arguments give:</p>
+<p>- For numerical predecessor rails at all rows, with source-expected bad fraction epsilon at threshold eta&lt;1/2 and g=1/2-eta,</p>
+<pre>  B_code &gt;= n[h_*-h_2(2epsilon)],  epsilon&lt;=1/4,
+  n=N-floor(N/2),  h_*&gt;=33/50.                    (3)</pre>
+<p>- For numerical rare-context indicators at transition row j+2, with threshold eta_A&lt;1/2, g=1/2-eta_A and source-expected bad fraction epsilon_A over j=1,...,N-2,</p>
+<pre>  B_code &gt;=ell[h_A-h_2(4epsilon_A)],
+  ell=N-floor(N/2)-2,  N&gt;=8,  epsilon_A&lt;=1/8,
+  h_A=u h_2(t)+w h_2(q_src).                      (4)</pre>
+<p>In particular epsilon&lt;=1/32 implies B_code&gt;=N/8; epsilon_A&lt;=u/256 implies B_code&gt;=(Nu/16)log_2(1/u). For fixed budgets and fixed key dimension, these imply respectively</p>
+<pre>A(d+1)(D+1)^(k+1)=Omega(N),
+A(d+1)(D+1)^(k+1)=Omega(Nu log(1/u)).             (5)</pre>
+<p>The first excludes fixed-width polylogarithmic-depth/call schemes that reconstruct most fixed-margin raw local lags. The second is the more task-aligned but weaker bound for very accurate rare indicators. Neither is a terminal prediction-risk lower. In particular, (5)&#x27;s first line is not necessary merely because the desired terminal estimator uses rare counts.</p>
+<h2>2. Degree-independent feature bounds</h2>
+<p>For multi-indices alpha in N^k define the truncated exponential features</p>
+<pre>phi_m(z)=(z^alpha/sqrt(alpha!))_(|alpha|&lt;=m),
+L_m=binom(m+k,k).</pre>
+<p>The standard identities give</p>
+<pre>||phi_m(z)||^2&lt;=exp(||z||^2),
+&lt;phi_m(q),phi_m(k)&gt;=sum_(r=0)^m (q dot k)^r/r!.</pre>
+<p>Put S=R_q R_k. Uniformly over the frozen query/key balls,</p>
+<pre>|exp(q dot k)-&lt;phi_m(q),phi_m(k)&gt;|
+   &lt;=epsilon_m:=exp(S)S^(m+1)/(m+1)!.             (6)</pre>
+<p>If S=0 the degree-zero formula is exact.</p>
+<p>The important additional fact for repeated reads is a derivative bound independent of m:</p>
+<pre>||D phi_m(z)[v]||^2
+   &lt;=exp(||z||^2)(||v||^2+&lt;z,v&gt;^2)
+   &lt;=exp(R^2)(1+R^2)||v||^2,  ||z||&lt;=R.           (7)</pre>
+<p>To verify (7), use the full exponential-feature kernel &lt;phi_infty(x),phi_infty(y)&gt;=exp(x dot y). Its mixed directional derivative at x=y=z is exp(||z||^2)(||v||^2+&lt;z,v&gt;^2), the sum of the squared coordinate derivatives of the full feature vector. Truncating this sum of nonnegative squares only decreases it. The entire series and its derivatives converge on bounded balls. Integrating along a segment inside the ball gives the Lipschitz constant</p>
+<pre>L_phi(R)=exp(R^2/2)sqrt(1+R^2),</pre>
+<p>also independent of m. Thus increasing the polynomial degree increases transcript dimension without increasing these feature norm and Lipschitz budgets.</p>
+<p>For one source value define</p>
+<pre>xi_m(k,v)=phi_m(k) tensor (v,1).</pre>
+<p>On the query/key/value balls set</p>
+<pre>F_k=exp(R_k^2/2),  F_q=exp(R_q^2/2),
+R_*=F_k sqrt(V^2+1),
+L_xi=C[L_phi(R_k)sqrt(V^2+1)+F_k].               (8)</pre>
+<p>Then ||xi_m(k,v)||&lt;=R_* and its dependence on a row state is L_xi-Lipschitz, as long as its key and value maps are C-Lipschitz. Bounds (7)-(8) are independent of m, N and D.</p>
+<h2>3. Global feature transcript</h2>
+<p>At every actual read ell form the auxiliary mean</p>
+<pre>z_ell=(1/T)sum_(s=1)^T xi_m(k_s^ell,v_s^ell),
+Z=(z_1,...,z_A),  ||Z||&lt;=R_* sqrt(A).             (9)</pre>
+<p>All quantities in (9) are computed from the actual states at that invocation. This is a proof device, not an added network feature, attention channel, or uncharged computation.</p>
+<p>Cover the radius-R_* sqrt(A) ball at some radius delta and use a finite center index K. After choosing a center, project each of its blocks onto its radius-R_* Euclidean ball. Each such projection leaves the true block fixed and is nonexpansive, so the resulting transcript Zhat still satisfies</p>
+<pre>||Zhat-Z||&lt;=delta,</pre>
+<p>with no increase in the number of codewords. The block projections are only convenient proof stabilization.</p>
+<h2>4. Stable suffix replay for a query-dependent head</h2>
+<p>Fix j&gt;floor(N/2) and supply the true future X_(j+1):N. Initialize exactly all suffix row states i&gt;j, including the sentinel. Replay local primitives as usual. At a head stage compute simulated queries, keys and values from simulated states, then project them separately onto the frozen balls of radii R_q,R_k,V. These projections leave all corresponding true vectors unchanged, are 1-Lipschitz, and preserve the C-times-state-error bounds. They only define the proof&#x27;s approximate decoder; no clipping operation is being added to the actual network.</p>
+<p>Write Delta for the maximum suffix-state error before the head. Compute</p>
+<pre>Uhat_i=(T/i)zhat_ell
+       -(1/i)sum_(s&gt;i) xi_m(khat_s,vhat_s),
+(ahat_i,bhat_i)=&lt;phi_m(qhat_i),Uhat_i&gt;.            (10)</pre>
+<p>Contraction in (10) is along the feature index, leaving d_ell numerator coordinates and one denominator coordinate. The exact feature prefix tensor is</p>
+<pre>U_i=(1/i)sum_(s&lt;=i)xi_m(k_s,v_s)
+   =(T/i)z_ell-(1/i)sum_(s&gt;i)xi_m(k_s,v_s).</pre>
+<p>Since T/i&lt;=2 and (T-i)/i&lt;=1,</p>
+<pre>||Uhat_i-U_i||&lt;=2||zhat_ell-z_ell||+L_xi Delta,
+||U_i||&lt;=R_*.</pre>
+<p>Using the true U_i for the query-difference term avoids an uncontrolled tensor norm. The projected query map has error at most C Delta, so</p>
+<pre>||(ahat_i,bhat_i)-&lt;phi_m(q_i),U_i&gt;||
+  &lt;=2F_q||zhat_ell-z_ell||
+    +[F_q L_xi+L_phi(R_q)C R_*]Delta.             (11)</pre>
+<p>The true averaged softmax numerator and denominator are</p>
+<pre>a_i=(1/i)sum_(s&lt;=i)exp(q_i dot k_s)v_s,
+b_i=(1/i)sum_(s&lt;=i)exp(q_i dot k_s),
+o_i=a_i/b_i.</pre>
+<p>They satisfy ||a_i||&lt;=V exp(S), b_i&gt;=exp(-S). Averaging the Taylor remainder, rather than summing it without normalization, gives</p>
+<pre>||&lt;phi_m(q_i),U_i&gt;-(a_i,b_i)||
+   &lt;=sqrt(V^2+1)epsilon_m.                       (12)</pre>
+<p>There is no extra factor N in (12).</p>
+<h3>4.1 A globally stable proof-only ratio</h3>
+<p>Approximate denominators need not be positive. Define Pi_R as Euclidean projection onto the radius-R ball and set</p>
+<pre>R_stab(a,b)=Pi_(V exp(S))(a)/max{b,exp(-S)/2}.</pre>
+<p>It agrees with the true attention ratio on every actual pair (a_i,b_i). It is globally Lipschitz in the joint numerator/denominator pair, with a sufficient constant</p>
+<pre>L_R=2exp(S)+4V exp(3S).                           (13)</pre>
+<p>Indeed, subtracting ratios gives a numerator difference divided by a denominator at least exp(-S)/2, plus a bounded numerator times the difference of reciprocal denominators. Projection and the denominator clamp are nonexpansive. The two coordinate-wise constants are respectively 2exp(S) and 4V exp(3S); their sum bounds the joint Euclidean Lipschitz constant.</p>
+<p>Use ohat_i=R_stab(ahat_i,bhat_i) in the simulated local residual/output update. Combining (11)-(13), then applying that update&#x27;s C-Lipschitz bound, yields a fixed constant B&gt;=2 such that</p>
+<pre>Delta_new&lt;=B Delta+B||zhat_ell-z_ell||+B epsilon_m. (14)</pre>
+<p>B depends only on C,R_q,R_k,V, not on m. Local-only primitives multiply Delta by at most C, which can also be absorbed into B. Induction through the D counted primitives, including the row-local numerical output, gives</p>
+<pre>max_(i&gt;j)||outputhat_i-output_i||
+   &lt;=D B^D (||Zhat-Z||+epsilon_m).               (15)</pre>
+<p>Every target bit/indicator again uses its own decoder supplied with the genuine suffix. No raw tokens are guessed or recycled between decoders. Query dependence and evolving prefix-dependent keys/values are paid through the explicit recurrence (14), not assumed away.</p>
+<h2>5. Precision, feature degree, and entropy conversion</h2>
+<p>Take</p>
+<pre>delta=g/(4D B^D),
+epsilon_m&lt;=g/(4D B^D).                           (16)</pre>
+<p>Then (15) bounds numerical output error by g/2. A good original eta-accurate scalar output with g=1/2-eta remains strictly on the correct side of the threshold 1/2. The same holds for eta_A-accurate rare indicators.</p>
+<p>The radius-R_* sqrt(A) cover has at most</p>
+<pre>(1+2R_* sqrt(A)/delta)^Q_m
+   =(1+8R_* sqrt(A)D B^D/g)^Q_m</pre>
+<p>centers, proving (1). The factorial tail (6), using n!&gt;=(n/e)^n after n exceeds a fixed multiple of S, permits</p>
+<pre>m&lt;=C_1[D+log(D+1)+log(1/g)+1]</pre>
+<p>with C_1 depending only on the frozen budgets. For fixed g and D&gt;=1 this is m=O(D+1). The dimension and log-cardinality bounds in (2) follow. Using A&lt;=D, the displayed logarithmic factors can be absorbed into D+1 for (5).</p>
+<p>At this point the proof needs only the decoder error property, so the unchanged standard entropy conversions in the uniform source-average candidate apply:</p>
+<p>1. For all lags, condition on the first half and use the reverse entropy chain over the second half. Equation (2) of that candidate gives n h_* source entropy, and binary Fano subtracts n h_2(2epsilon). 2. For rare indicators, do **not** condition additionally on the first half. Use the unconditional reverse information chain and drop the unused nonnegative terms. The selected j&lt;=N-2 satisfy H(1{X_j=X_(j+1)=0}|X_(j+1):N)=h_A exactly. Conditional data processing and Fano give (4).</p>
+<p>The numerical constants and source-law calculations for the two convenient error regimes are unchanged. This completes the claimed exact-real source-average inequalities, with the separate replay argument reviewed independently.</p>
+<h2>6. Limits and attribution</h2>
+<p>- A uniform-read complement identity is used here only for the auxiliary **feature sums**, not falsely for the actual nonuniform attention outputs. The Taylor approximation and ratio stabilization are explicit. - Fixed bounded query/key dimension and frozen full query/key norms are essential to the stated polynomial-degree dimension bound. Merely saying that scores are bounded, or supplying an arbitrary pairwise positional score, is not the model proved here. - One head per useful invocation is the stated model. A fixed number of independently norm-bounded heads can be treated by separate feature blocks with charged dimensions and aggregate local Lipschitz budgets; no unbounded-head extension is claimed without that accounting. - The proof-only code may have dimension polynomial in D even when the actual network width is fixed. It is a compression device for a lower bound, not hidden actual width. - Exact-real injection remains possible. Fixed-margin local reconstruction, bounded continuation sensitivity, and the finite proof code are what connect to Fano here. - No common-grid finite-arithmetic QK theorem is inferred from this argument. Section 7 of the uniform candidate has separate arithmetic semantics; it does not automatically extend to nonuniform softmax evaluation. - The rare-indicator result does not require all raw lags, but it still requires accurate individual local indicators. Aggregate statistical counts and actual-terminal risk may avoid that representation. Neither (3) nor (4) closes the terminal-risk problem. - The standard Fano/data-processing argument and truncated exponential feature map are not claimed as new. This candidate composes the earlier one-read bounded-QK feature code with the earlier repeated-uniform transcript replay, supplying the degree-independent derivative and stabilized approximate-ratio steps needed for repeated QK reads.</p>
+<p>Local dependencies: `SOURCE_AVERAGE_LOCAL_BARRIER.candidate.v2.md`; `ALLROW_SINGLE_INVOCATION_OBSTRUCTION.candidate.v1.md`, Sections 4-6; and `transcript_packing_candidate.v3.md`.</p></section><section class="appendix"><h2>附录 D 先行工作与范围审计</h2><h1>Prior art and obstruction audit: two-read local statistics</h1>
+<h2>Verdict</h2>
+<p>**STOP the proposed fixed-width logarithmic-depth first-read last-three-symbol route.** The needed intermediate representation is not available in the old terminal-suffix program. An already independently reviewed all-row obstruction directly contradicts uniformly correct local predecessor or triple features after one full-prefix uniform read at fixed width and O(log N) paid depth.</p>
+<p>This does **not** prove a lower bound against every two-read rare-family predictor or direct approximate count scheme. It rejects the specific local-recover-then-pool route. A different statistical route must avoid demanding uniformly accurate local triples after its first read, or pay larger width/depth, or explicitly change its access/score contract.</p>
+<p>No same-contract fixed-width, O(log N)-depth, two-useful-uniform-read full-history type/count construction was located in the inspected repository. This is a bounded search result, not an exhaustive absence or novelty claim. Existing full-history two-read constructions buy growing width; the accepted fixed-width two-read construction still estimates a chosen terminal suffix.</p>
+<h2>1. The exact first-stage obstruction</h2>
+<p>Directly read:</p>
+<p>- `ALLROW_SINGLE_INVOCATION_OBSTRUCTION.candidate.v1.md`, Sections 1–7. - Its `ALLROW_SINGLE_INVOCATION_OBSTRUCTION.independent_audit.v1.md`, especially Sections 1, 3, 4. Verdict: PASS for its representation-specific contract.</p>
+<p>Hypotheses match the proposed first stage: raw binary symbols plus public positions; token-local preprocessing before the first useful head; one full inclusive causal prefix read; only positionwise computation between that read and the claimed triple representation; fixed value dimension and full value radius; frozen per-primitive Lipschitz constants; every local stage charged.</p>
+<p>For predecessor error eta&lt;1/2 on every row and every word, gamma=1−2 eta, continuation Lipschitz constant Lambda, value dimension d and radius V, the candidate proves</p>
+<pre>N ln 2 &lt;= d ln(1 + 2 V (N+1) Lambda/gamma).</pre>
+<p>With Lambda&lt;=A^D and fixed d,V,A,gamma, this gives D=Omega(N). The proof uses the last differing input position j and receiving row j+1. At that row the current token and local side information agree. The global average of the token-local values must therefore distinguish all binary words with a margin of order 1/[(N+1)Lambda]. Euclidean packing gives the inequality. Exact-real weights and arbitrarily fine descriptions do not escape the paid-Lipschitz premise.</p>
+<p>The separately checked Section 7 corollary **already covers local triple onehots**, not just explicit predecessor rails. Fix the final raw bit and vary the first N−1 bits. At t=max(3,j+1), the receiver’s own token agrees while its triple differs. Distinct triple onehots have Euclidean separation sqrt(2), so any uniform vector error eta&lt;sqrt(2)/2 yields the same argument with (N−1) ln 2 and gamma=sqrt(2)−2 eta. Thus replacing a last-three-symbol decoder by direct triple indicators does not avoid the obstruction.</p>
+<p>For standard bounded full-norm bilinear QK attention, the same source proves the weaker but still excluding bound</p>
+<pre>N &lt;= C(D+1)^k [D+log(N+1)+1],
+D = Omega(N^(1/(k+1)))</pre>
+<p>for fixed query/key dimension k. It does not cover arbitrary nonseparable relative-position score tables. A rapid preliminary message in this audit misstated the QK rate; the formula here and the immediate correction are authoritative. The zero-score linear-depth conclusion was never changed.</p>
+<h3>Why positive-epsilon PreLN and rarity do not repair this step</h3>
+<p>With fixed alpha and frozen C_alpha, epsilon-one full-feature LN, bounded gains/maps, ReLU, and residual updates have an N-independent per-stage Lipschitz envelope. Token-local preprocessing remains token-local until the first useful read. Zero Q/K makes the first physical head a uniform mean of token-local normalized values. Therefore the same first-stage packing argument applies if the physical stage promises fixed-margin accurate triples. Small-amplitude compilation is not a means of creating a nonexistent logical reference.</p>
+<p>For every fixed admissible u&gt;0 and t in [1/2,3/4], the rare family has positive stationary mass and positive transition probabilities. Every finite binary word has positive probability. Hence an exact or uniformly bounded-error all-history claim cannot be weakened merely by saying “on the rare source support.” An expected local-feature error statement would be materially weaker and is not ruled out by this theorem. No source-average reduction is supplied here.</p>
+<h2>2. What the old all-row suffix assertion actually means</h2>
+<p>Direct source: `CONSTANT_WIDTH_CONSISTENCY.candidate.v3.md`, Sections 3–6; independent audit v2. Its fixed selected interval is i=N−b+1 through N, shared by every row.</p>
+<p>At receiving row t the read contains only the available part of this **same global interval**, with packed sum</p>
+<pre>S_t = sum_(s=i)^min(t,N) d_s B^(-(s-i+1)).</pre>
+<p>The row decodes b digits, replacing absent digits by a declared default only for statistical counting. Therefore every row has a legal virtual b-word and bounded count/readout state. At T=N+1 this virtual word is the actual last-b suffix. At an early row t&lt;i it is all defaults, regardless of the true preceding raw symbols.</p>
+<p>This is an all-row **validity and boundedness invariant**, not an assertion that row t receives the moving raw suffix ending at t. The latest fixed-width rare-softmax audit says the same explicitly in Section 1. Substituting i=t−2 changes a common token-local source-value function into a receiver-dependent selector; one uniform head cannot quietly perform that substitution. Reusing b=3 is not justified either: the old theorem’s declared general domain is power-of-two integer b&gt;=4. Using b=4 avoids that minor domain error but not the moving-window obstruction.</p>
+<p>The older `packing_candidate.v2.md` really does recover all-row predecessor rails by geometric destination gates, but processes O(N/log N) source blocks sequentially. It pays O(N) depth and O(N/log N) useful reads before the histogram. Taking a single block only supplies the rows belonging to that block; it does not recover all local triples in the history.</p>
+<h2>3. Actual internal antecedents and exact resource differences</h2>
+<h3>A. Full-history two-read logical construction: growing width</h3>
+<p>`CANDIDATE.v2.md`, Sections 1–5, constructs scaled source lanes, one wide uniform broadcast, all-row lags, then a second uniform triple-histogram read. It recovers full-history counts and the actual terminal pair and gives an internal add-one readout.</p>
+<p>Its width is O(NK+K^3), depth O_K(log N), useful reads two, and the first value bank is wide. It has frozen full-vector norms but no mandatory LN and ends with coordinate probability projection. It is not a fixed-width antecedent. Its headline statement in Section 7 that a different fixed-width logarithmic construction is not excluded predates the narrower all-row obstruction; interpret that openness as about alternative representations, not this pipeline.</p>
+<h3>B. Packing improves the all-row width, not to a constant</h3>
+<p>`INDEPENDENT_ALLROW_FRONTIER_AUDIT.md`, Sections 1–5, binds `sources/MATCHING_THEOREM.v2.md`. For exact all-row lag recovery, fixed useful uniform-read count and paid D=O(log N), its accepted endpoint is W=Theta_K(N/log N). Parallel packed lanes share one wide head. A subsequent count histogram is an additional read, not present in the lag-only endpoint statement.</p>
+<p>The corresponding lower concerns all-row representation, not terminal statistical prediction. Its repeated-uniform transcript argument also warns against assuming that a constant number of extra uniform reads makes exact all-row lag reconstruction free.</p>
+<h3>C. Actual PreLN/softmax full-history two-read witness: still growing width</h3>
+<p>`WIDE_PRELN_STATISTICAL_WITNESS.candidate.v2.md`, Sections 1–3 and independent wide audit, already supplies actual positive-epsilon full-feature PreLN, ordinary final softmax, fixed full-norm envelope, two useful uniform reads, O(log N) depth, and a full-history O_c(N^−1/2) expected-TV bound on an interior binary order-two class. It explicitly buys model/FFN/value width O_c(N).</p>
+<p>`PHYSICAL_TYPE_SUFFIX_OBSTRUCTION.candidate.v1.md` Sections 2, 3, 6 uses that same family and its uniformly approximated full-count/terminal-pair reference. It is not a fixed-width compiler. The interior floor c is also not a fixed lower bound for the rare-family C probability as u→0, so its statistical theorem cannot be transferred unchanged to the entire rare family.</p>
+<h3>D. Accepted fixed-width two-read PreLN witness: old suffix estimator</h3>
+<p>`TWO_READ_ORDERED_SUFFIX.candidate.v3.md` and `TWO_READ_PRELN_COMPILATION.candidate.v4.md`, accepted by `INDEPENDENT_TWO_READ_PRELN_AUDIT.v1.md`, use two genuinely useful reads with evolving nonterminal values. Their logical second read is a public-linear weighted sum of one selected terminal block. A synthetic-terminal gate then zeros decoder input at nonterminal rows. The terminal decoder reconstructs only that block’s counts and final pair.</p>
+<p>The normalization/ordinary-softmax theorem is real, not merely pending, but its statistical order is the same O(b^−1/2) suffix order as the one-read predecessor. Setting b comparable to log N gives logarithmic depth; extending to a full-history-sized block pays linear decoding depth (with endpoint/domain adjustments if needed). This is not a previously proved full-type improvement.</p>
+<h3>E. Existing one-read wide rare-A witness prevents a two-read necessity claim</h3>
+<p>`ONE_READ_RARE_A_STATISTICAL_WITNESS.candidate.v1.md` Sections 1–4 stores the full ordered history in a wide terminal bank, binds triples locally, and estimates rare-A from all N−2 transitions with one useful read. Its width is O(N), not fixed. It shows why read count must be compared jointly with width, work and precision, rather than called necessary from an implementation’s ablation usefulness.</p>
+<h2>4. Existing terminal/type obstructions: what they do and do not settle</h2>
+<p>`TERMINAL_SIMULATION_OBSTRUCTION.candidate.v2.md` and independent terminal audit v2 give a fixed-width, two-uniform-read, O(log N)-depth prefix-energy network whose terminal output needs Omega(N) worst-case interactive communication at fixed error. The second-read values are nonlinear functions of prefix sums. This defeats a universal cheap terminal simulator even without reconstructing intermediate rows.</p>
+<p>Its accepted output convention is probability-coordinate projection, not mandatory final PreLN/softmax. Its hard encoded histories are a worst-case family; positive Markov support does not transfer the lower to source-average statistical prediction. It therefore neither proves the proposed rare-risk upper impossible nor supplies a rare-task lower. Its lesson is to avoid assuming that two reads always collapse into one cheap terminal message.</p>
+<p>`UNIVERSAL_MARKOV_TYPE_PROJECTION.candidate.v1.md` Sections 2–4, 7 proves classical source-independent type projection and an Omega(N) distributed acquisition lower for the exact full type despite its O(log N)-bit description. The theorem explicitly does not preserve neural architecture or depth. It cannot be used as a free full-count input port, or as a risk-specific two-read lower.</p>
+<h2>5. Primary Markov-transformer comparison</h2>
+<p>Freshly reopened the following primary bodies with the web tool in this audit; theorem/construction passages were read, not inferred from abstracts. Prior detailed execution-contract audits were used as navigation and cross-checks. This is a targeted comparison, not exhaustive citation/version research.</p>
+<h3>Rajaraman et al., Transformers on Markov Data: Constant Depth Suffices</h3>
+<p>Primary: <a href="https://arxiv.org/html/2407.17686v1">https://arxiv.org/html/2407.17686v1</a> . Direct locators: Theorem 5.1 / Remark 5.2 (lines 218–223), Architecture 0.2 (209–216), Appendix C.1 (529–535).</p>
+<p>The theorem already represents same-history conditional k-grams with three layers, one head per layer, relative positions, LN and O(S) embedding. Their normalization is not the fixed epsilon-one full-feature contract; C.1 converts it to Euclidean normalization through paired signs. The paper says its theorem also holds for its original architecture, so it is wrong to dismiss it as “no normalization.” Remark 5.2 explicitly leaves finite-bit approximation unbounded in the proof while suggesting logarithmic length/order parameter bits. These are strong estimator/architecture antecedents, not the present bounded-score execution certificate.</p>
+<h3>Ekbote et al., What One Cannot, Two Can</h3>
+<p>Primary: <a href="https://arxiv.org/pdf/2508.07208v2">https://arxiv.org/pdf/2508.07208v2</a> and <a href="https://arxiv.org/html/2508.07208v2">https://arxiv.org/html/2508.07208v2</a> . Direct locators: printed p.7 Theorem 3 / Remark 2; Section 2.2, HTML line 154; Appendix A.2.2, lines 476–482.</p>
+<p>Theorem 3 already gives two layers, one head per layer, MLPs, LN, relative positions and dimension 6S+3 for the conditional k-gram. Remark 2 gives a parameter count containing T and a sufficient parameter-precision statement, not an execution-noise or lower-bound theorem. The output is ReLU rather than ordinary vocabulary softmax. The reviewed appendix normalizes projected keys/queries and sends a temperature parameter to infinity; that is not frozen full-norm positive-epsilon PreLN. Its two-layer result prevents broad claims of first two-read Markov estimation, while leaving the exact current frozen contract unverified.</p>
+<h3>D’Angelo et al., Induction Heads Interpolate N-Grams</h3>
+<p>Primary: <a href="https://arxiv.org/html/2607.02800v1">https://arxiv.org/html/2607.02800v1</a> . Direct locators: Proposition 3.1 / Eq.(8), lines 201–207; Section 3.2.1, lines 213–228.</p>
+<p>The pathwise two-layer disentangled construction uses k heads then one, recovers local contexts, and aggregates mask-conditioned counts; BOS supplies pseudo-count smoothing. Fixed alphabet/order has constant representation dimension. Its first-layer copying explicitly takes positional sharpening to infinity. Consequently finite context-match beta does not mean all scores are uniformly bounded. Counting, same-history conditioning and smoothing are established mechanisms; the blocked local-copy step cannot be imported into the proposed uniform-head contract.</p>
+<p>Two targeted additional searches for bounded/two-layer Markov and uniform-attention fixed-width counts returned these known families plus length-generalization and unrelated attention papers. No theorem found in those results was established to supply the missing uniform-head local-triple stage. Negative search results are not priority evidence. Other external comparisons in the latest rare-risk prior-art file, including Akman et al., were read through the existing audited summaries but not newly fulltext-checked here.</p>
+<h2>6. Go/no-go decision and precise remaining opening</h2>
+<p>1. **No-go:** one uniform first read + fixed-width O(log N) pointwise decoder yields all rows’ last three raw symbols or uniformly accurate local triple onehots. The obstruction is a theorem already present, not a missing citation. 2. **No-go:** interpret legal virtual suffix words at all physical rows as their individual moving suffixes; silently change source gates by receiving row; import hard positional-copy limits; or insert precomputed pairs/counts. 3. **No-go:** call a growing-width two-read or one-read construction a fixed-width result; treat two ablation-useful paths as a necessity of two reads. 4. **Not excluded:** weaker distributed features whose aggregated terminal error is controlled directly in the rare source law, without uniformly decoding local triples. Any such candidate needs its own statistical/bias proof and complete all-row resource accounting. This audit supplies no such construction. 5. **Not solved by output compilation:** paid quotient/logs, norm padding, zero-shift final LN, exact alpha-range margin and u-blind budgets can be reused only after a valid logical first/second-read estimator exists. They do not supply its missing information-acquisition stage. 6. **Rate/range discipline:** replacing suffix sample size b by full history N in the rare-A bound requires actual full-history estimator equality or a proved comparison. An overall rare-family bound must still pay its fixed-alpha C-row floor. Budget choice cannot depend on unknown u.</p>
+<h2>9. Follow-on status after exact-file review</h2>
+<p>The following source-average candidate has now been reviewed: `SOURCE_AVERAGE_LOCAL_BARRIER.candidate.v2.md`, SHA256 `8c966282ce5369531e3bac3cf729bece4bdd8aa60694d1675295568f5ba1008a`. `INDEPENDENT_SOURCE_AVERAGE_LOCAL_AUDIT.v2.md` records independent PASS for its scoped equations.</p>
+<p>In addition to the source-average full-lag/triple bound, candidate v2 proves a separate rare-context indicator bound. If fixed-margin local 00-indicator failure fraction is at most u/256, the proof-only transcript requires at least Nu log_2(1/u)/16 bits. This uses the exact reverse conditional indicator entropy u h_2(t)+w h_2(q_src), unconditional reverse mutual-information chain, conditional data processing and Fano. It does not use a prefix genie in that rare entropy calculation. It does not prove an unconditional Omega(N) rare-only-feature bound, an aggregate-count bound, or terminal statistical-risk necessity.</p>
+<p>Thus the older Sections 1 and 6 intentionally describe only the preexisting worst-case theorem. The current additional accepted scope is the new candidate’s explicit average local-feature hypotheses, not an architecture-wide rare prediction theorem. The proposal “rare indicators are never covered” would now be too strong: they are covered at a small relative-to-u error level, with a smaller rarity-scaled lower.</p>
+<h2>10. Bounded-QK follow-on: established kernel ingredients and reviewed obligations</h2>
+<p>A separate lemma extends suffix replay to repeated bounded bilinear QK heads using finite Taylor feature codes. Its initial status was unreviewed in preserved prior audit v2. The complete proof and the minimal v1-to-v2 domain revision have now been independently reviewed in `INDEPENDENT_BOUNDED_QK_AUDIT.v2.md`, with PASS for the exact-real local-reconstruction claims. The reviewed source is `BOUNDED_QK_SOURCE_AVERAGE_EXTENSION.candidate.v2.md`, SHA256 `bb4aa0697fc097eb25e7c03e37a9e9a43163550abb2dd646d66f01ecdf94c746`.</p>
+<p>The intended elementary feature map is already present in the older one-read QK obstruction, Sections 4–6:</p>
+<pre>phi_m(z)=(z^a/sqrt(a!))_(|a|&lt;=m),
+dim phi_m=binom(m+k,k),
+||phi_m(z)||^2&lt;=exp(||z||^2),
+&lt;phi_m(q),phi_m(k)&gt;=sum_(r=0)^m (q·k)^r/r!.</pre>
+<p>Value-weighted feature summaries and a separate denominator coordinate yield dimension (d_v+1)binom(m+k,k). These are established polynomial-kernel mechanisms; the one-read code is a direct internal predecessor. Their use is not itself a new attention representation.</p>
+<p>Two narrow primary checks were performed specifically for this follow-on, without broad searching:</p>
+<p>1. **Alman and Song, Fast Attention Requires Bounded Entries.** <a href="https://arxiv.org/html/2302.13214v1">https://arxiv.org/html/2302.13214v1</a> . Freshly read Lemma 2.1 / Corollary 2.2 (lines 137–164), Lemma 3.2 (180–239), and the surrounding normalized-attention approximation sections. These construct polynomial approximations to exp, factor polynomial inner-product kernels into low-rank features, and relate those approximations to attention. Their main results are runtime statements under entry/dimension regimes, not this fixed-width paid-depth source-average local reconstruction theorem. The primary paper itself credits earlier exponential approximation theory. Do not present Taylor expansion or polynomial feature factorization as new.</p>
+<p>2. **Chen, Feng, Indyk, Kapralov, Kochetkova and Prokhorov, Towards Tight Bounds for Streaming Attention.** <a href="https://arxiv.org/html/2606.07205v1">https://arxiv.org/html/2606.07205v1</a> . Freshly read Section 2.1 (especially lines 198–199, 231–233) and Lemma 7.3 with its proof (1307–1348). The paper explicitly describes the classical fixed-dimensional Taylor/moment method, and proves a weighted polynomial-kernel sketch needed for value-weighted attention. Its stored-bit and main space theorems have their own parameter regimes. They are not a free black-box proof of a growing-depth causal replay; the feature identity is the relevant established ingredient.</p>
+<p>The reviewed repeated-read proof establishes, on its stated contract: global transcript radius; feature dimension per actual head; bounded variation of the feature map as simulated keys change; a stable denominator floor; control of approximate queries and keys at every replay stage; the total Taylor tail after D-stage amplification; a feature degree m=O(D) at fixed margin with constants independent of m,N; all required error margins; and the correct Fano conditioning. Its proof-only ball projections and denominator clamps leave the true reference unchanged and have the required Lipschitz/error bounds. Arbitrary pairwise relative-position score tables remain outside the finite-dimensional dot-product kernel argument.</p>
+<p>The accepted standard-Fano composition rules out fixed-dimensional polylogarithmic local-lag pipelines at small robust average error, and gives the smaller rarity-scaled bound for local rare indicators accurate to a sufficiently small fraction of u. It must not be called a new main terminal-risk theorem, a universal cheap simulator, a finite-arithmetic hardware guarantee, or evidence of a matching rare prediction frontier. The open aggregate/terminal-risk implication remains separate.</p></section><section class="appendix"><h2>附录 E 失败路线与错误修订</h2><h1>Failed routes and corrections retained</h1>
+<h2>F1: the moving-window shortcut is false</h2>
+<p>Attempt: use the old constant-width one-read suffix decoder at every row, claim each row gets its own final three raw symbols in O(log N), and pool triples in a second read.</p>
+<p>Failure: its source gate is the single public interval [N-b+1,N], independent of the receiving row. A row before that interval sees no selected values; a row inside it sees a prefix of this same interval, then defaults. Its legal virtual word is not its own moving window. The already-proved all-row one-uniform-read lower requires D=Omega(N) for fixed-width, constant-margin predecessor recovery. The all-row QK bound is N&lt;=C(D+1)^k[D+log(N+1)+1], not N/polylog N. A rapid preliminary quotation of the latter stronger rate was corrected before using it in any theorem.</p>
+<p>A valid linear-depth construction could decode the entire public prefix, skip missing digits, retain each row&#x27;s last three symbols, and pool them. This is redundant with the existing one-read linear-depth terminal decoder and does not improve the frontier. It was not expanded into another claimed algorithm.</p>
+<h2>F2: whole-symbol entropy cannot be assigned to rare-only features</h2>
+<p>Attempt: the source has entropy rate at least .66 bits per symbol, so every rare-statistics pipeline must communicate Omega(N) effective bits.</p>
+<p>Failure: an all-zero 00-indicator estimate has absolute average error u. The rare indicator has much less information than all raw lags, and terminal parameter estimation has a still different information target. The valid rare-feature theorem uses h_A=u h_2(t)+w h_2(q), small error relative to u, and a weaker Omega(Nu log(1/u)) resource term. It does not imply a terminal-risk lower.</p>
+<h2>F3: first-half conditioning invalidates the simple reverse-entropy identity</h2>
+<p>Attempt: reuse the full-lag entropy proof conditioned on the first half, but substitute H(1{X_j=X_(j+1)=0}|future)=u h_2(t)+w h_2(q) without changing that conditioning.</p>
+<p>Failure: a bridge conditioned on earlier observations need not have the stationary reversed transition law. An explicit four-symbol example in the same allowed source demonstrates the change. Set u=1/100, t=3/4, w=33/100, q=1/44. Then</p>
+<pre>Pr(X_2=0 | X_3=0,X_4=1)=q=1/44,
+Pr(X_2=0 | X_1=0,X_3=0,X_4=1)=1/87.</pre>
+<p>Indeed the two possible strings are 0001 and 0101. Their stationary probabilities are respectively</p>
+<pre>u(1-t)t=3/1600,
+w(1/2)(1-q)=258/1600,</pre>
+<p>so the second conditional probability is 3/(3+258)=1/87. All conditioning events have positive probability.</p>
+<p>Correction: use the UNCONDITIONAL reverse mutual-information chain I(X_1:N;K)=sum_j I(X_j;K|X_(j+1):N), discard unselected nonnegative terms, then apply conditional data processing to the rare indicator. Do not give the earlier prefix as extra information in this rare-entropy identity. The full-lag theorem&#x27;s separate first-half-conditioned argument remains valid because it uses the forward chain to compute its entropy budget, not this reversed bridge identity.</p>
+<h2>F4: a physical compiler is not exactly suffix-measurable</h2>
+<p>Attempt: apply the strict suffix-information Le Cam lower directly to the final physical PreLN output.</p>
+<p>Failure: approximate arithmetic and LayerNorm may preserve tiny dependencies on non-suffix rows. The reference is suffix-measurable; the physical output need not be.</p>
+<p>Correction in U_BLIND_SUFFIX_TEST v2: a uniform pathwise TV distance delta to a suffix reference transfers the conditional lower as 1/128-delta. The excess-over-range-floor lower additionally requires the physical output&#x27;s exact alpha range. A finite evaluator adds its pathwise error and must separately preserve the range; an unconditional implementation error cannot be conditioned for free.</p>
+<h2>F5: the floor cannot be ignored, and precision is conditional</h2>
+<p>A fixed alpha gives F=w(alpha-q)_+ tending to alpha/3 as u tends to zero. Raw overall risk ratios can therefore hide a large rare-parameter gap. This round compares conditional A risk or R-F, with F identical for the compared predictors at the same source. Eliminating F by changing alpha changes the logit/norm budget.</p>
+<p>No implemented evaluator has been certified. The preceding finite-execution theorem is conditional on explicit operation errors, nonoverflow and arithmetic certificates. Its use does not establish an IEEE implementation, runtime bit complexity, or numerical reproducibility. The phrase &#x27;separately certified evaluator&#x27; in the initial suffix note was corrected to &#x27;separately stated conditional evaluator contract, if its conditions are met.&#x27;</p>
+<h2>F6: no return to the empty generic message/grid route</h2>
+<p>The preceding result that a generic total-message bound minus Lipschitz grid error is nonpositive is retained. The current transcript quantization has a different target: constant-margin local reconstruction (or rare-indicator error at a fixed small fraction of u) and an explicit source entropy lower. It is not a repaired relative-terminal-risk simulation. Any later attempt to infer the main T1/T2 statistical bound still needs a new reduction from terminal risk to the stated local task.</p></section></body></html>
