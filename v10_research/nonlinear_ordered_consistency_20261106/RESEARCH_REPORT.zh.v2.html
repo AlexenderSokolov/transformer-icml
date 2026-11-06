@@ -1,0 +1,881 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>纯平方因果记忆与一致二阶预测</title><style>body{font-family:system-ui,-apple-system,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;color:#171717;max-width:980px;margin:auto;padding:40px 24px;line-height:1.8}h1{font-size:2rem;line-height:1.4}h2{font-size:1.5rem;margin-top:2.6rem}h3{font-size:1.15rem;margin-top:1.8rem}nav{margin:24px 0}a{color:#145a88}.eq{font-family:Cambria,Georgia,serif;padding:12px 0;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d9d9d9;padding:12px;text-align:left;vertical-align:top}th{background:#e8edf1}tr:nth-child(even){background:#f8f9fa}details{margin:22px 0}summary{cursor:pointer;font-weight:600;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.65 ui-monospace,monospace}.hash{overflow-wrap:anywhere;font-size:.85rem}footer{color:#555;margin-top:40px}@media(max-width:600px){body{padding:20px 16px}h1{font-size:1.6rem}td,th{padding:8px}}@media print{body{max-width:none;padding:0}nav{display:none}h2{break-after:avoid}tr{break-inside:avoid}a{color:inherit}}</style></head><body><header><h1>纯平方因果记忆与一致二阶预测：兼容例子及折叠边界</h1><p>v10 研究增量 · 2026 年 11 月 6 日 UTC · 中文完整报告</p><p><strong>结论范围：</strong>这里构造的是同一真实 PreLN／softmax 预算中的一个可核验存在例子。非线性中间能量并不加性，最终预测输出却能与已有线性编码程序完全等价。估计器、风险率与规范化工具均继承已有成果，不作为新统计率或训练结论。</p></header>
+<nav><a href="#contract">问题契约</a> · <a href="#result1">纯平方编码</a> · <a href="#result2">有序解码与风险</a> · <a href="#result3">折叠边界</a> · <a href="#ledger">资源账本</a> · <a href="#prior">先行工作</a> · <a href="#limits">修订与局限</a> · <a href="#appendix">完整证明</a></nav>
+<section id="contract"><h2>一 问题契约与证明依赖</h2><p>固定 c∈(0,1/2)，未知齐次二阶二元过程的转移概率在 [c,1−c] 内。模型接收 N 个原始符号和一个合成终端，不接收末端符号对、三元组计数或裁剪后的后缀。已知公开长度参数和 c 可以进入权重。取 B=16、T=N+1、s=N−b+1，b 为满足 4≤b≤N/2 的二次幂。</p><p>共同物理架构是固定宽度、两次有用标量零分数全前缀因果注意力；每个 LayerNorm 的 ε=1、增益为 2、偏置为 0；最终是普通仿射词表 logits 与 softmax。所有局部操作、位置处理、解码、除法、对数、规范化准备和恢复均计入深度。使用足够大的固定 c 相关范数包络，不擅自等同于先前未核验的数值 M<sub>K</sub>。</p><p>关键依赖是已经审阅的有序两读后缀程序 v3、真实 PreLN 编译 v4、常宽后缀一致性 v3、固定概率下界对数读出与最终规范化恢复。下面的逻辑等式不直接等同于物理 K/V 等式，物理结论依赖完整准备向量误差界。</p></section>
+<section id="result1"><h2>二 结果一：没有线性旁路的纯平方记忆</h2><p>在后缀第 j 个位置放入数字 d<sub>j</sub>∈{1,2} 的几何编码 d<sub>j</sub>B<sup>−j</sup>，其他位置为零。第一次读取得到前缀平均 r<sub>i</sub>，经过付费的公开 s 倍放大得到 u<sub>i</sub>=s r<sub>i</sub>。第二次读取只接收 u<sub>i</sub>² 的高精度有界分段线性近似，不携带 r 或 u 的线性旁路。</p><p class="eq">C<sub>k</sub>=Σ<sub>j≤k</sub>d<sub>j</sub>B<sup>−j</sup>，C<sub>b+1</sub>=C<sub>b</sub>；E=Σ<sub>k=1</sub><sup>b+1</sup>w<sub>k</sub>C<sub>k</sub>²，w<sub>k</sub>=(s/(s+k−1))²/(b+1)。</p><p>合成终端的自项明确包括在内。1/[9(b+1)]≤w<sub>k</sub>≤1/(b+1)。能量 E≥1/(9B²)，前两个后缀数字的混合差分至少为 8/(45B³)，均不随 N 消失。因此该理想能量截面不是加性 token 汇总，也不是原线性信号上趋零的装饰。实际有限系数逻辑程序的初始解码坐标也有正混合差分：Δ₁₂ ĥ₁≥36/(43B²)−4e₁&gt;0，e₁ 为明确控制的平方／系数近似误差。这是逻辑能量尺度的非消失结论；物理编译的配对坐标被小振幅缩放，不声称其原始幅度或某个物理内部截面具有同一混合差分。</p></section>
+<section id="result2"><h2>三 结果二：付费有序解码与真实二阶风险</h2><p>关键不是把 E 当成边缘频率，而是从 E 逐位恢复真正的后缀。设 p 为已解码的几何前缀，h 为按剩余平方权重归一化的能量残差。条件于当前数字 d，剩余项满足有界变基数递推；p·d 通过离散 one-hot 门精确计算，不需要每一步重新做高精度通用乘法。首位与后续数字有固定间隔，连续平台分类器即可恢复精确数字。平方近似和公开比值的参数误差按递推放大显式控制。</p><p>恢复的每个数字立即进入旧的三元组计数、末端有序符号对与付费除法程序。所有非终端行及单次读取消融使用合法默认词，保证旧读出的全行前提。由此逻辑输出逐历史等于已有后缀估计器，而非仅有相同渐近量级。</p><p class="eq">sup<sub>P∈P<sub>c</sub></sub> E TV(Q<sub>phys</sub>,p<sub>actual</sub>) ≤ 13√(32/(b−1))+1/b+2ζ，ζ=min{10<sup>−3</sup>,1/(100b²)}。</p><p>完整局部程序与两个标量读取进入已经审阅的 PreLN 编译：所有复制、补范数和清零先进入完整长度 m，再选择小振幅精度；不能仅控制进入 logit 银行时的误差。真实轨迹允许离开精确计数格点，但通过连续程序的统一误差界控制。b→∞ 时风险趋零；b≈log N 时深度为 O<sub>c</sub>(log N)，风险 O((log N)<sup>−1/2</sup>)。这是旧估计率的架构兼容复现，不是提高旧率。</p><p>两次读取在本实现中均有非消失的输出作用，但已有单读实现就能完成同一统计任务，所以不主张两读或平方在统计上必要。</p></section>
+<section id="result3"><h2>四 结果三：能量近似失败，终端输出仍可折叠</h2><p>令 U 为全部 T 行的 u 均值。按 U 做平方的一阶 Taylor 平均，再施加相同能量归一化，得到 E<sub>mean</sub>=TU²/(b+1)。精确残差为 Σ(u<sub>i</sub>−U)²/(b+1)。当 b=o(N)，E≥1/(9B²)，但 E<sub>mean</sub>≤4(b+1)/(225T)→0。该候选能量近似在每个历史、因而每个来源分布下都保持常数级残差。</p><p>这不是对旧 Taylor 证明的反例：旧证明处理平稳原始符号前缀均值，且必须乘下游增益；这里有位置选择、付费放大、能量归一化与逐位解码。不能把旧的 O(log N/N) 模拟误差直接当成该预测器的误差。</p><p>与此同时，正确解码后的最终估计器与旧线性后缀代码逐历史相同；使用相同的固定下界对数读出，参考输出也相同。因此最终输出可借旧的加性代码表示，尽管中间能量本身非加性。更直接的单向协议只需发送 Alice 所拥有的后缀位，至多 b 位，Bob 即可重建参考输出；对真实 PreLN 输出另加 ζ 的最坏历史 TV 误差。</p><p><strong>区别：</strong>这是特定程序的输出等价与短后缀支持证明，不是任意非线性内存压缩定理。正混合差分并不意味着最终通信昂贵；能量 Taylor 失败也不意味着预测失败。</p><h3>补充反例：把正数字换成带符号平方会丢失上下文</h3><p>若完整终端数据只由原始符号的齐次线性形式平方组成，则整体符号翻转不改变预测。取平稳 lag-two 来源 p(+1|历史)=1/2+θX<sub>N−1</sub>/2，历史分布在翻转下不变。配对三角不等式给出每个 N 的风险至少 θ/2；若物理输出距此对称参考至多 ζ，风险仍至少 θ/2−ζ。正数字 d∈{1,2} 打破该符号对称，因此主构造不受此反例限制。它强调必须恢复真实末端上下文，不能把所有“平方记忆”混为一类。</p></section>
+<section id="ledger"><h2>五 完整资源账本</h2><table><thead><tr><th>资源</th><th>本轮主构造</th></tr></thead><tbody><tr><td>有用读取</td><td>恰好两次，标量值，零 Q/K，全前缀因果；非终端值真正更新。</td></tr><tr><td>深度与宽度</td><td>D=O<sub>c</sub>(log N+b)，宽度 O(1)；包含所有编译和读出步骤。</td></tr><tr><td>范数与位置</td><td>完整状态、矩阵、全偏置、单步增益均在固定 c 相关包络；位置门与几何系数付费，不供应后缀或统计量。</td></tr><tr><td>参数精度</td><td>每个系数 O<sub>c</sub>(log N+b) 位；不共享参数时总描述 O<sub>c</sub>((log N+b)²) 位。不是定精度浮点执行保证。</td></tr><tr><td>分布式状态与计算</td><td>T 行、总状态 O(N)；跳过零注意力槽时 O(N²+ND)，所有虚设槽都稠密执行则 O(N²D)。</td></tr><tr><td>终端模拟</td><td>至多 b 个数据位重建逻辑参考；物理输出附加 ζ 误差。不是重建全部中间行。</td></tr><tr><td>风险</td><td>继承旧后缀估计器 R<sub>b</sub>，加上既有 softmax／编译误差；无新增估计率。</td></tr></tbody></table></section>
+<section id="prior"><h2>六 与最接近工作逐项对照</h2><p>仓库中最接近的先行结果已经包括单读后缀估计、两读线性有序编码、相同真实 PreLN 编译、平方能量的最坏历史通信硬例，以及带非消失二阶风险的平稳前缀平方例子。本轮只填补一个兼容点：非消失非加性中间能量，也能经显式解码得到低风险的真实二阶预测，并保持旧资源量级。</p><p><a href="https://arxiv.org/html/2407.17686v1">Rajaraman 等</a>与<a href="https://arxiv.org/pdf/2508.07208v2">Ekbote 等</a>早已有少层 Markov 经验条件模型；<a href="https://arxiv.org/html/2607.02800v1">D’Angelo 等</a>已有有序 n-gram／induction 表示。不能把恢复二阶上下文或少层预测说成首次。已有训练结论的特定假设也不转移成本构造的训练保证。</p><p><a href="https://aclanthology.org/2020.tacl-1.11.pdf">Hahn 的灵敏度分析</a>提醒深度、增益和参数预算不能隐去。本构造明确支付逐层放大与增长精度。以上对照复用前一轮已记录的原文核验，本轮未再次联网检索，也没有做穷尽优先权调查。完整差异和检索来源在附录保留。</p></section>
+<section id="limits"><h2>七 失败版本、审阅状态与剩余缺口</h2><p>保留最初端点多项式解码候选，其深度 O(log N+b²)，以及小信号 r+r² 路线为何只说明渐近线性兼容的记录。主构造利用离散数字门改用线性轮数递推，不抹去旧候选，也不把旧候选的较慢风险描述当作最终结论。所有候选和独立审阅按精确版本与哈希绑定。主变基数 v2、Taylor／输出等价 v1、带符号平方反例 v1 以及先行工作／失败记录 v2 均完成范围受限的独立 PASS；其中 Taylor／输出等价审阅本身仍保留对正确解码的条件依赖，由主证明审阅另行闭合。旧版审阅只认证各自的精确旧版，不能替代新版本审阅。</p><p>尚未证明任意非线性逐行 K/V 的统一源平均资源前沿、最优深度、训练可达性、必须 PostLN 的实现或有限精度算术可靠性。实际执行过 (N,b)=(6,4)、(8,4)、(16,8) 的有限精确有理数递推检查，共覆盖 16、16、256 个后缀；脚本和原输出保留。这不是完整 Transformer 执行、参数生成、模型训练、浮点传播验证或统计复现实验。文档构建与静态核验也不算科学实验。</p><p>报告为静态离线 HTML，完整证明与审阅原文可展开阅读。未完成视觉渲染验收。文件哈希仅用于版本和来源绑定，不是数学形式化证明或外部同行评审。</p></section>
+<section id="appendix"><h2>八 完整证明与独立审阅原文</h2><p>候选创建时的待审状态以对应精确版本审阅为准。下列原文可离线核对，哈希仅用于版本绑定，不是科学执行或机器证明。</p><details><summary>纯平方变基数完整证明 · PURE_SQUARE_RADIX.candidate.v2.md</summary><p class="hash">SHA-256 3d7b4ebd319f296618e08309b6c14ac8f8d507a8cd6294014d484696a561b7cd</p><pre># Pure-square causal memory with a bounded quadratic radix decoder
+
+6 November 2026 UTC. Analytical candidate v2; v1 is preserved. Incorporates first independent review clarifications, executed finite-check provenance, and a quantitative nonadditivity certificate at the implemented logical cut. This is an alternative transport/decoding construction for the EXISTING suffix estimator, not a new estimator, rate, minimum head count, training method, or priority claim. The nonlinear middle cut is not claimed additive or Taylor-collapsible. The final logical output is exactly the old additive-code estimator by decoded-word equivalence.
+
+## 1. Frozen contract and first two reads
+
+Use the contract and paid source-position program of `../ordered_causal_memory_20261106/TWO_READ_ORDERED_SUFFIX.candidate.v3.md`: N&gt;=6, T=N+1, power-of-two 4&lt;=b&lt;=N-2, B=16, s=N-b+1, binary digits d_j in {1,2}, and a synthetic zero-symbol terminal. Every raw row is supplied. Let
+
+    C_k = sum_{j=1}^k d_j B^(-j),  C_0=0,
+    k(i)=min(i-s+1,b) for s&lt;=i&lt;=T.
+
+The existing paid bounded-width geometric position program writes v_i=d_(i-s+1) B^(-(i-s+1)) on s&lt;=i&lt;=N and zero elsewhere. Its depth is O(log N+b). First zero-score scalar full-prefix read:
+
+    r_i = (1/i) sum_{l&lt;=i} v_l.
+
+Multiply r_i by the PUBLIC INTEGER s with paid bounded doublings and one final dyadic factor in [1,2). This gives u_i=0 before s and
+
+    u_i=(s/i) C_(k(i)),  0&lt;=u_i&lt;=2/15.
+
+All intermediate amplification states are bounded by 2/15. Apply a paid dyadic tent-square circuit f_L on [0,1], with f_L(0)=0 exactly and uniform error at most nu. The square is the ONLY value sent into read 2; there is no linear bypass into that head. Read 2 is another scalar zero-score full-prefix average. At the ideal-square comparator its terminal answer is
+
+    z_T = Y/T,
+    Y = sum_{i=s}^T w_i C_(k(i))^2,  w_i=(s/i)^2.       (1)
+
+The terminal synthetic self-row i=T is included. The actual logical circuit uses f_L, not an exact multiplication primitive. The final decoder uses only the second read&#x27;s terminal-gated output and public parameters, not any retained first-read row or raw symbol. Raw shadows may be retained solely until the synthetic marker gate.
+
+Since second-read answers lie in [0,1], gate them with the exact synthetic marker e_i by ReLU(z_i+e_i-1). Every nonterminal row then has EXACT zero decoder input. The square approximation can be clipped to [0,1], fixing zero and not increasing its error.
+
+## 2. Exact quadratic radix identity
+
+Define public tails
+
+    W_k = sum_{i=s+k-1}^T w_i,  1&lt;=k&lt;=b.
+
+The last tail W_b includes BOTH i=N and i=T. Suppose digits before k have been recovered, and put
+
+    P_(k-1)=sum_{j&lt;k}d_j B^(-j),
+    J_(k-1)=sum_{j&lt;k} W_j [2 P_(j-1) d_j B^(-j)+d_j^2 B^(-2j)].
+
+Telescoping C_j^2-C_(j-1)^2 proves the exact identity
+
+    Y=sum_{j=1}^b W_j [2 P_(j-1) d_j B^(-j)+d_j^2 B^(-2j)].  (2)
+
+Do NOT store J or calculate a fresh square at each round. Instead maintain the normalized residual
+
+    h_k=B^k (Y-J_(k-1))/W_k.
+
+For i&gt;=s+k-1, write C_(k(i))=P_(k-1)+B^(-k)t_i. Then
+
+    d_k&lt;=t_i&lt;=d_k+2/15,
+    h_k=sum_{i=s+k-1}^T (w_i/W_k)
+                 [2P_(k-1)t_i+B^(-k)t_i^2].             (3)
+
+After correctly recovering d_k, update
+
+    h_(k+1)=clip(q_k [h_k-2P_(k-1)d_k-d_k^2 B^(-k)],0,1),
+    q_k=B W_k/W_(k+1),
+    P_k=P_(k-1)+d_k B^(-k),                            (4)
+
+for k&lt;b. The clip never alters the exact reference. Initial h_1 is obtained from the terminal-gated z by scaling R=BT/W_1. As W_1&gt;=s^2(b+1)/T^2, 16&lt;=R&lt;=16T^3/[s^2(b+1)]=O(N^3); R is implemented in O(log N) bounded doublings with clip [0,1], followed by one bounded factor. No growing matrix is used.
+
+For i=s+k-1&gt;=3 and k&lt;b, W_(k+1) includes the next two rows. Therefore
+
+    W_k/W_(k+1) &lt;= 1+(i+2)^2/(2i^2) &lt;=43/18&lt;3,
+    16&lt;=q_k&lt;48.                                       (5)
+
+All q_k are public. Exact harmonic-square rationals are NOT embedded for free; Section 4 specifies finite dyadic replacements.
+
+## 3. Fixed-margin classifiers and no paid generic products in the decoder
+
+At k=1, P_0=0, so the exact digit intervals from (3) are
+
+    d_1=1: h_1 in [1/16,289/3600],
+    d_1=2: h_1 in [1/4,64/225].                        (6)
+
+Take a ReLU plateau classifier C_1 equal to one on [3/64,3/32] with support [1/32,1/8], and C_2 equal to one on [15/64,5/16] with support [7/32,3/8]. Each is zero outside its support and has fixed bounded ramps. These disjoint supports also make both outputs zero at h_1=0.
+
+At k&gt;=2, P=P_(k-1) satisfies 1/16&lt;=P&lt;2/15. Classify y_k=h_k-3P. For digit 1,
+
+    y_k &lt;= -(11/15)P+B^(-k)(17/15)^2
+          &lt;= -11/240+289/57600 = -2351/57600 &lt; -0.0408,
+    y_k &gt;= -3P &gt; -2/5.
+
+For digit 2,
+
+    y_k &gt;= P+4B^(-k) &gt;=1/16.
+
+Also every exact h_k lies in [0,1]: h_1&lt;=64/225, while for k&gt;=2,
+
+    h_k&lt;=2(2/15)(32/15)+B^(-2)(32/15)^2=44/75&lt;1.
+
+Thus digit-2 y_k&lt;=44/75. Take later C_1 equal to one on [-1/2,-1/32] with support [-3/4,-1/64], and C_2 equal to one on [1/32,3/4] with support [1/64,1]. They both vanish on a neighborhood of y=0. All exact true-digit intervals have margin greater than 1/1000 inside the required plateaus.
+
+Set D=C_1+2C_2 and Dsq=C_1+4C_2. When these are exact onehots, D=d and Dsq=d^2. As P in [0,1], the fixed ReLU gate
+
+    G(P,C)=ReLU(P+C-1)
+
+equals P*C for C in {0,1}. Hence P*d=G(P,C_1)+2G(P,C_2), and every operation in (4) is a constant-size bounded affine/ReLU circuit. There is NO uncharged multiplication and no O(b)-precision product circuit per decoded digit. P updates use the exact dyadic coefficients B^(-k), so P remains exact as long as the classified digits agree.
+
+On every nonterminal row, h=P=0 initially, both classifiers give zero, and equations (4) preserve h=P=0. At the terminal, ablating either read also yields this exact zero branch because f_L(0)=0. For counting ONLY, use symbol onehots z_1=1-C_2 and z_2=C_2 on these exact reference states. This converts digit zero into default symbol 1, exactly as in the prior construction. It is not substituted by 1 in the residual or P update. This distinction prevents the zero branch from acquiring fictitious packed digits. Exact nonterminal/default rows have legal all-default b-words for the imported counting and divider program.
+
+## 4. Finite square precision and dyadic coefficient robustness
+
+Put eta_0=1/1000. Let every q_k and the final bounded factor gamma in R=2^m gamma be replaced by dyadics to absolute accuracy delta, with gamma_hat in [1,2] and q_hat in [0,49]. Choose
+
+    delta &lt;= eta_0 / [16 b 49^b],
+    nu &lt;= eta_0 s^2 / [64 B T^2 49^b].                 (7)
+
+The first multiplication by s is exact with dyadic coefficients. Only b+1 rows have nonzero u_i, and f_L(0)=0. Consequently the square error in z_T is at most (b+1)nu/T. Since W_1&gt;=s^2(b+1)/T^2 and gamma_hat/gamma&lt;=2, the initial decoded-code error is conservatively bounded by
+
+    e_1 &lt;= 2 B T^2 nu/s^2 + delta.                     (8)
+
+The final-factor rounding term is bounded by delta because the exact initial code is less than one. Intermediate clipping is nonexpansive relative to the exact amplification path, which stays in [0,1].
+
+Assume classified digits agree through round k. Then P and the known subtraction in (4) are exact. Clipping is nonexpansive relative to exact h_(k+1), and q_hat&lt;=49, giving
+
+    e_(k+1)&lt;=49 e_k+delta.                            (9)
+
+Here the exact pre-radix residual is at most one; the tighter bound 1/16 is unnecessary. From (7)-(9),
+
+    max_{k&lt;=b} e_k &lt;=49^(b-1)(e_1+b delta)&lt;eta_0.
+
+The plateau margins in Section 3 then make every classified digit EXACT, closing the induction. The exact zero branch is also preserved by all dyadic replacements. Thus the finite-coefficient affine/ReLU/square-approximant reference returns precisely the original suffix word on every binary history and all-default words at every other physical row.
+
+The tent-square interpolant can attain nu with L=O(log(1/nu))=O(log N+b) bounded stages and constant width. Equation (7) requires only O(b+log b) fractional bits for the q_k and gamma replacements. Position encoding, exact s multiplication, dyadic B^(-k), and the square approximant have per-coefficient description O(log N+b). This is an exact-real execution theorem with finite parameter descriptions, NOT a floating-point/edgewise rounding theorem.
+
+If the optional simplification b&lt;=N/2 is imposed, s/T&gt;=3/7 and W_1&gt;=(9/49)(b+1), so square accuracy O(49^(-b)) already suffices. This simplification is NOT required for (7) or the stated general construction.
+
+## 5. Statistics, terminal folding, and substantive nonlinear signal
+
+Feed the exact recovered word to the prior paid sequential triple counter and restoring divider with G=b. It recovers the ordered final pair and the established suffix transition estimate q. The inherited bound is exactly the old one:
+
+    sup_(P,mu) E TV(q,p_actual)
+       &lt;=13 sqrt(32/(b-1))+1/b.                        (10)
+
+There is no improved estimation theorem here. Equality of decoded words proves pointwise equality of q to the old one-read and ordered-two-read additive-code estimators on every Boolean history. Therefore their existing PUBLIC ADDITIVE terminal-output simulator can be used unchanged for q. This is semantic equivalence of final outputs. It is NOT additive reconstruction of Y, approximation of intermediate nonterminal square rows, or the raw-prefix Taylor theorem.
+
+Alternatively Alice can send precisely her owned selected-suffix bits, using at most b bits, and Bob evaluates the public logical estimator. This simple exact protocol is independent of the cut and source and does not claim a new communication result.
+
+The square is evaluated on active u_i at a fixed positive LOGICAL scale, not r_i=O(1/N): when b&lt;=N/2,
+
+    u_i&gt;=(s/T)/16&gt;=3/112 for every active row,
+    Y/(b+1)&gt;=9/(49*256).
+
+This scale statement is about the bounded logical program and its normalized logical energy. The later PreLN compiler represents all logical registers at physical amplitude eta tending to zero. No fixed positive lower bound on unscaled physical hidden-coordinate magnitudes or physical mixed differences is asserted.
+
+The only second-read value path is u_i^2. With either read ablated the complete word becomes all-default; an all-digit-2 suffix yields the old opposite estimate and its fixed output separation. Thus both reads remain useful in this implementation. This is not a lower bound or a claim that two reads are necessary, because the old one-read predictor already suffices. Nor is nonlinearity itself necessary for the statistical task: the final function deliberately equals the old estimator.
+
+For b=o(N), let U=T^(-1)sum_i u_i. Then U&lt;=2(b+1)/(15T), whereas the squared contribution at the energy normalization is bounded below as above. The constant-prefix-mean square surrogate would satisfy
+
+    [T/(b+1)] U^2 &lt;=4(b+1)/(225T) -&gt;0.
+
+Thus after this normalization the square signal cannot be dismissed as a vanishing Taylor remainder around the global mean. This is a boundary observation, not a lower bound for every nonlinear simulator. In particular it does not contradict the different raw-sign prefix-average Taylor theorem.
+
+There is also a direct certificate that the IMPLEMENTED logical scalar h_hat_1 after terminal gating/scaling is not a public additive sum of separate token-local functions. Freeze all suffix digits except the first two. Define D_12 F=F(2,2)-F(2,1)-F(1,2)+F(1,1). Equation (1) gives for the ideal-square scalar h_1=BY/W_1,
+
+    D_12 h_1=(2/B^2)(W_2/W_1)&gt;=36/(43B^2),            (12)
+
+using W_1/W_2&lt;=43/18. A token-local additive scalar has mixed difference zero. The finite-dyadic implementation obeys |h_hat_1-h_1|&lt;=e_1 uniformly over all four histories, so
+
+    D_12 h_hat_1 &gt;=36/(43B^2)-4e_1&gt;0                  (13)
+
+by (7)-(8). This is an actual logical-cut nonadditivity statement, not merely an ideal polynomial observation. It does not exclude a nonlinear decoding of an additive sufficient summary, nor does it conflict with final-output equivalence. The physical PreLN cut has only the compiler&#x27;s scaled logical-coordinate approximation; (12) is not an exact physical hidden-state identity.
+
+## 6. Positive-epsilon PreLN and complete resource ledger
+
+Use the already-reviewed `../ordered_causal_memory_20261106/TWO_READ_PRELN_COMPILATION.candidate.v4.md` mechanism on THIS finite-dyadic reference program. All reference primitives above have one fixed gain/state/matrix/full-bias envelope: square tent slopes, classifier slopes, radix at most 49, conditional gates, bounded doubling, and existing count/division routines. Choose one common widened tube for the original program and both exact all-default single-read ablations. Physical perturbations need not stay on the digit/count lattice; the actual continuous primitive circuits propagate their errors.
+
+For fixed interior kernel bound c, choose a to be the largest negative power of two not exceeding c. Append the old floor/log readout using the dyadic floor a and zeta=min(1/1000,1/(100b^2)). Include ALL scaled-logit copies, norm-padding primitives, and scratch clears in the prepared reference length m BEFORE choosing small amplitude. Choose padding/restoration/complete-vector tolerances as fixed allowed dyadic multiples of zeta; then m=O_c(log N+b). Paired small-amplitude states h=eta z have both zero-score attention local errors O(eta^2), including the data-dependent full-feature normalization factors. With the common max-row tube, the full prepared recurrence is
+
+    e_l&lt;=L_0 e_(l-1)+C eta^2,
+    e_m&lt;=C&#x27; eta^2 L_0^m.
+
+Choose eta=2^(-M), M=O_c(m+log(1/zeta)), so the FULL prepared-vector error meets the imported output-restoration condition. Apply its paid bounded restoration, final LN, and ordinary affine vocabulary head/softmax. The gain-two reparameterization gives EVERY LN epsilon=1, gain=2, shift=0. This is an explicit reuse of that compiler, contingent on its accepted dependencies and independent checking of this enlarged fixed tube; it is not a new compiler or a mandatory-PostLN claim.
+
+The physical terminal output differs from the logical floor/log reference by at most zeta uniformly over histories and both single-read ablations. Flooring does not worsen binary prediction risk for kernels with both next-symbol probabilities at least c. The old log approximation contributes another zeta, giving
+
+    sup E TV(Q_phys,p_actual)
+       &lt;=13 sqrt(32/(b-1))+1/b+2 zeta.                 (11)
+
+A common output tolerance preserves the old fixed positive separation between the original all-digit-2 word and either all-default ablation. Final-output folding is to the same old additive-code estimator INCLUDING the identical floor/log circuit; physical PreLN only has the proven approximation, not an exact additive intermediate identity.
+
+Resource ledger:
+- Exactly two useful full-prefix scalar zero-score attention invocations; no extra memory read, pair/triple input, suffix crop, supplied counts, or external predictor.
+- Constant width, including raw shadows until gating, two fresh head destinations, square scratch, P/h/classifier registers, and the existing lag/count/readout banks.
+- Paid reference depth and physical PreLN depth O_c(log N+b). There is one O(log N+b) square approximation, NOT one per digit; radix decoding is O(b).
+- One sufficiently large fixed c-dependent envelope for complete reachable states, matrices, full biases, primitive gains, and LN gains. No unchecked identification with a predetermined numerical M_K.
+- Per-coefficient binary description O_c(log N+b); at constant width and depth, untied total parameter description O_c((log N+b)^2).
+- T=N+1 rows and therefore O(N) distributed state despite constant per-row width.
+- Useful-head/local work O(N^2+N D) if dummy zero-attention slots are skipped; dense evaluation of every dummy attention slot costs O(N^2 D).
+- With b=Theta(log N), depth remains O_c(log N) and risk O(1/sqrt(log N)), precisely the OLD orders.
+- Exact-real arithmetic and finite coefficient descriptions only. No executed model, training, parameter-generation runtime, or floating-point implementation guarantee.
+
+## 7. Checks and limits
+
+An author-run finite exact-rational sanity check was ACTUALLY EXECUTED once and enumerated every binary suffix for (N,b)=(6,4),(8,4),(16,8), totaling 288 suffixes. All digits were recovered by (2)-(4), including the synthetic self-row. The largest observed radix gains were 29.282, 27.675, and 25.654, below the proved 48 bound; digit-1 later y maxima were -0.04850, -0.04762, and -0.04471, below the proved -0.0408. The exact executed shell/Python source is `EXACT_CHECK_EXECUTED_COMMAND.v1.txt`; the readable standalone equivalent is `check_pure_square_radix_exact.py`; captured stdout is `check_pure_square_radix_exact.stdout.txt`; scope and timing are recorded in `EXACT_CHECK_PROVENANCE.v1.md`. The recurrence and assertions used exact fractions, with only display metrics converted to floats. These finite checks do not replace the proof or independent mathematical audit and are NOT a trained/full logical or normalized transformer execution, parameter-generation program, benchmark, or finite-arithmetic robustness experiment. No further checks were run when saving this provenance or revision.
+
+Main dependencies remain the existing bounded geometric position program, exact ordered count/readout estimator, and reviewed positive-epsilon PreLN output compiler. What is new locally is only the explicit positive-code square transport and constant-work quadratic radix identity. No literature novelty is asserted. A smooth nonlinearity on arbitrary signed first-read values is not covered: squaring can lose signs, and neither this positive-code decoder nor the raw-prefix two-statistic Taylor argument applies automatically.
+</pre></details><details><summary>Taylor边界与输出等价 · TAYLOR_BOUNDARY_AND_OUTPUT_EQUIVALENCE.candidate.v1.md</summary><p class="hash">SHA-256 e887f99efb2272dc12688c032b7b98cd42b53d9ba7dfef6abb082246b1bf0726</p><pre># Nonvanishing energy remainder versus exact terminal output equivalence
+
+6 November 2026 UTC. Candidate v1. Conditional on the pure-square decoder proof passing review. This note distinguishes three inequivalent meanings of communication folding.
+
+## 1. Pure-square body and an explicit failed Taylor route
+
+Use the pure-square construction&#x27;s notation: T=N+1, b selected suffix symbols, s=N-b+1, B=16, u_i=s C_k/i at its b+1 active rows (including the synthetic terminal), and u_i=0 elsewhere. Assume 4&lt;=b&lt;=N/2. Then 1/(3B)&lt;=u_i&lt;=2/(B-1) on every active row, for every history. Let U=T^{-1}sum_i u_i. The paid normalized energy is E=(b+1)^{-1}sum_i u_i^2.
+
+The Taylor first-order surrogate of f(u)=u^2 about the common mean U, averaged over all T rows and multiplied by T/(b+1), is
+ E_mean=T U^2/(b+1).
+Its residual is the exact nonnegative identity
+ E-E_mean=(b+1)^{-1}sum_i (u_i-U)^2.
+Uniformly over histories,
+ E&gt;=1/(9B^2),
+ E_mean&lt;=4(b+1)/[(B-1)^2 T].
+Therefore if b=o(N), liminf(E-E_mean)&gt;=1/(9B^2)&gt;0. This also holds after expectation under every source distribution, including the stationary interior second-order class. The source-average energy remainder is not small.
+
+This is NOT a contradiction to TAYLOR_PREFIX_CLOSURE v2: its O_c(log N/N) estimate concerned prefix averages of stationary raw spins with bounded curvature and bounded downstream gain. The present states use source-position gating, paid s amplification, and a paid T/(b+1) normalization, followed by a growing-gain ordered decoder. The hypotheses and output sensitivity differ. A Taylor formula itself always holds, but importing the old numerical remainder/risk conclusion would be invalid.
+
+This lower bound concerns THIS mean-centered energy surrogate only, not all possible linear statistics, all simulators, or the final predictive output. It is not a communication lower bound and is not a lower bound on prediction risk.
+
+## 2. Nonadditive internal energy can have an additively representable output
+
+For two suffix symbols j&lt;l represented by d_j=1+x_j, d_l=1+x_l, the exact energy has mixed difference
+ D_{jl}E=2B^{-(j+l)}sum_{k=l}^{b+1} w_k&gt;0.
+In particular the first two digits give a uniformly positive lower bound independent of N,b. The complete scalar ENERGY cut cannot be represented exactly as a constant plus a sum of token-local terms. This follows from the previously reviewed additive-cut criterion and says nothing about a later lossy map.
+
+If the pure-square decoder correctly recovers all suffix digits, its final exact count estimator q(x) equals, on every Boolean history, the q(x) returned by the already-reviewed TWO_READ_ORDERED_SUFFIX v3 linear harmonic-code construction. That prior complete terminal signal IS a public weighted token-local sum. Both computations can use the identical fixed-floor and serial-log routines after q, so their bounded-log reference output distributions are exactly equal on all histories.
+
+Thus the nonlinear network&#x27;s terminal OUTPUT has an exact reference representation through the old additive code even though its internal energy does not. This is an explicit semantic equivalence of two fully specified programs, not a blanket theorem that nonlinear row memory is linear. Proving the decoder is essential; low rank or small curvature alone does not establish this equality.
+
+The old simulator therefore transfers at the output, with its fully charged public decoder gain and parameter description. Alternatively Alice sends her suffix bits, at most b bits, and Bob reconstructs q exactly. The physical PreLN program differs from the bounded-log reference by the separately certified zeta, so the same protocols incur at most zeta additional worst-history TV error. This requires the full prepared-vector compiler proof; physical internal K/V are never asserted to equal their logical references.
+
+## 3. Risk interpretation and non-claims
+
+The statistic actually used for prediction is the empirical triple-count conditional at the recovered final ordered pair, not E, U or the marginal symbol average. Hence consistency follows ONLY from the old suffix-estimator risk theorem after exact decoding and controlled physical approximation. The preserved raw nonlinear energy itself is not a predictor of the next-symbol law.
+
+This result would provide a compatibility example with nonvanishing internal curvature, low-risk second-order output, and cheap terminal simulation. It would not improve the statistical rate, prove a general nonlinear source-average lower bound, show training can find the weights, or certify finite-arithmetic execution. The strong distinction between nonadditive intermediate state and additively representable final output is the structural conclusion, not a new estimation theorem.
+</pre></details><details><summary>带符号平方的上下文障碍 · SIGNED_SQUARE_CONTEXT_OBSTRUCTION.candidate.v1.md</summary><p class="hash">SHA-256 df30dc1624541d7db1a70373bc4b63104bbbd3a886cc6ed3a9ac1ac80a3b8977</p><pre># Sign-erasing square bottleneck cannot predict the lag-two witness consistently
+
+6 November 2026 UTC. Candidate v1. Elementary symmetry obstruction, not a new statistical minimax theorem. This states exactly why the positive ordered code in the constructive example cannot be replaced by an arbitrary signed prefix square.
+
+## Contract
+
+Let X_t in {-1,+1} be the stationary homogeneous second-order source with initial pair uniform and independent, and
+ P_theta(X_t=x | X_(t-2)=a, X_(t-1)=b)=(1+theta a x)/2,
+where 0&lt;theta&lt;=1-2c. Thus it belongs to P_c, and its actual next-plus probability is p_theta(x)=1/2+theta x_(N-1)/2. The law of the length-N history is invariant under simultaneously negating every symbol: its density is (1/4) product_(t=3)^N (1+theta x_(t-2)x_t)/2.
+
+Suppose a predictor&#x27;s complete data-dependent input to its terminal decoder is invariant under this global negation. A sufficient example is any collection of squared homogeneous PUBLIC linear forms (sum_j a_(ij) X_j)^2, followed by arbitrary deterministic computations, and public constants. No unaccounted raw-symbol, position-symbol, signed anchor or previous unsquared-value channel may enter the terminal decoder. Positions alone are harmless. Input-dependent coefficients or nonzero additive offsets need a new symmetry check.
+
+## Risk lower bound
+
+Such a predictor q satisfies q(x)=q(-x). Write q for its plus probability. For every paired histories x,-x,
+ |q(x)-p_theta(x)|+|q(-x)-p_theta(-x)|
+ &gt;= |p_theta(x)-p_theta(-x)|=theta.
+By the invariant history law, E TV(q,p_theta)&gt;=theta/2, for every N&gt;=2. The constant predictor 1/2 attains theta/2 on this source, so this fixed-source symmetry bound is sharp.
+
+If q is only approximately invariant, define A=E |q(X)-q(-X)|. The same triangle inequality gives
+ E TV(q,p_theta)&gt;=(theta-A)/2,
+with the lower bound clipped at zero. In particular if a physical output is uniformly within zeta of an exactly invariant reference, A&lt;=2zeta and its risk is at least theta/2-zeta. This conclusion needs an end-to-end approximation guarantee; we do not assume physical PreLN preserves the logical sign symmetry internally.
+
+## Application and limits
+
+A pure square of a signed packed suffix has this obstruction if the decoder sees no unsquared channel. The positive code d in {1,2} is an affine encoding of signs, and its squared value includes cross terms that distinguish global sign reversal. The constructive pure-square decoder therefore lies outside the obstruction. It really recovers the terminal ordered pair rather than estimating the marginal mean.
+
+This is one explicit loss-of-context counterexample, not a characterization of every nonlinear update. It does not rule out injective nonlinear positive coding, biased features, additional signed channels, multiple statistics that break the symmetry, or an appropriate known kernel with different invariance. It does not establish a communication lower bound. No empirical experiment or training is needed for the argument.
+</pre></details><details><summary>先行工作与失败版本 · PRIOR_WORK_AND_FAILED_ROUTES.v2.md</summary><p class="hash">SHA-256 57a17fa9d175cb545cc3db71e1b05924fef0b7d4fecb8c060af8054c177515f6</p><pre># Prior work, rejected routes, and provenance
+
+6 November 2026 UTC. Local analytical follow-on. No new literature retrieval, full Transformer execution, training, publication or novelty certification occurred in this pass. A finite exact-rational check of the ideal radix recurrence was actually executed for (N,b)=(6,4),(8,4),(16,8), covering 16, 16 and 256 suffixes. Its script and observed output are preserved; it is not an executed parameter-generation pipeline, full model implementation, finite-arithmetic validation or statistical experiment. The earlier v1 blanket no-experiment wording was too broad and is retained as a corrected version. External comparisons reuse the primary checks explicitly recorded in ordered_causal_memory_20261106/PRIMARY_COMPARISON.v1.md and nonlinear_causal_closure_20261106/PRIOR_WORK_AND_SCOPE_COMPARISON.v2.md.
+
+## Closest local results and exact differences
+
+1. CONSTANT_WIDTH_CONSISTENCY v3 already constructs the one-read packed-suffix estimator, exact triple-count/final-pair update, paid division, and risk 13 sqrt(32/(b-1))+1/b. Those are dependencies, not new results here.
+2. TWO_READ_ORDERED_SUFFIX v3 and TWO_READ_PRELN_COMPILATION v4 already transport the same suffix through two public linear prefix reads, decode harmonic-radix digits, and compile to positive-epsilon PreLN with ordinary softmax. They already achieve depth O(log N+b), constant width and consistency. The current candidate inserts a pure-square distributed value update and changes the decoder, not the estimator.
+3. TAYLOR_PREFIX_CLOSURE v2 supplies an O_c(log N/N) source-average simulation residual for smooth functions of stationary raw-spin prefix means, but its quadratic example has limiting risk theta/2 on the lag-two witness. The new construction uses paid positional scaling and an ordered packed code, not that marginal statistic or its error bound.
+4. ADDITIVE_CUT_CERTIFICATE v3 identifies mixed differences for a specified complete cut. It does not prohibit a nonadditive intermediate code from being decoded to an output representable by a different additive code.
+5. NORMALIZED_NONLINEAR_OBSTRUCTION v2 compiles a known pure-energy communication obstruction with two scalar heads into the same normalization/output contract. It is not low-risk. The present suffix-supported energy is not hard in communication: sending the suffix costs at most b bits. Neither example implies the other&#x27;s risk or distributional theorem.
+6. LOW_RISK_WEAK_ANCHOR_COMPOSITION adds a small extra interaction around a completed predictor. The present pure-square body instead carries the only second-read signal and has an N-independent internal mixed difference. Nevertheless the final estimator remains identical to the old one, so this does not establish statistical necessity or advantage of nonlinearity.
+
+## Closest external work, without a new priority claim
+
+- Rajaraman et al., https://arxiv.org/html/2407.17686v1 : earlier primary inspection of Theorem 5.1 records a three-one-head-layer Markov construction. Ordered empirical prediction is already prior work. The current result is not a first multilayer Markov estimator or minimum-layer theorem.
+- Ekbote et al., https://arxiv.org/pdf/2508.07208v2 : earlier inspection of Theorem 3 records two one-head layers, width 6S+3, relative positions, sharpening and a normalization v/||v||. Its restricted first-order training result assumes a correct MLP, and is not training of the entire second-order construction. The current positive-epsilon bounded-gain compilation is a different explicitly budgeted contract; this does not establish superiority or novelty.
+- D&#x27;Angelo et al., https://arxiv.org/html/2607.02800v1 : earlier inspected induction/n-gram representation passages already treat ordered context. No claim that nonlinear memory first becomes useful for Markov prediction here.
+- Hahn, https://aclanthology.org/2020.tacl-1.11.pdf : bounded-depth sensitivity depends on gains and depth; this construction pays logarithmic-depth amplification and growing coefficient precision. The corrected supplement was not freshly fetched in this pass or the preceding ordered-causal pass. No contradiction to fixed-resource sensitivity bounds is asserted.
+
+The new square-code radix identity, if independently accepted, is a concrete algebraic compatibility example. Elementary algebra, plateau coding, tent-square approximation, one-hot ReLU gates, and the old normalization compiler are not asserted to be novel mathematical tools. An exhaustive priority search has not been performed.
+
+## Preserved attempts and limits
+
+A. Small-signal route considered before writing the main candidate: use f(r)=r+r^2 with unamplified packed prefix r=O(1/N). Its normalized decoder perturbation can be made harmless, but bounded curvature then contributes only O(1/N) to the initial decoder code. This would be an asymptotically affine example, not an answer about nonvanishing nonlinear memory. It is not used as evidence of a strong nonlinear effect. No unreviewed claim of an improved rate is retained.
+
+B. PURE_SQUARE_ORDERED_ESTIMATOR.candidate.v1.md is preserved as the initial slower endpoint-polynomial construction. Its tentative O(log N+b^2) decoder repeatedly approximates products. The later radix route exploits digit one-hots to make prefix-times-digit exact and aims to reduce this overhead to O(b). The slower file&#x27;s header remains historically &#x27;candidate&#x27;; it must not be silently cited as independently accepted. Its projected O((log N)^(-1/4)) rate at D=O(log N) is not the final radix result.
+
+C. Wrong generalization rejected: applying the old stationary raw-prefix Taylor variance bound to position-gated, amplified suffix code. The explicit normalized-energy residual in TAYLOR_BOUNDARY_AND_OUTPUT_EQUIVALENCE demonstrates why the naive mean-centered replacement stays inaccurate.
+
+D. Wrong inference rejected: positive mixed differences at the internal energy cut imply expensive terminal communication. Correct decoding can erase the distinction, and short suffix support itself gives a b-bit protocol.
+
+E. Wrong resource shortcut rejected: treating growing decoder gain, exact harmonic rational coefficients, a supplied suffix/count port, or final normalization as free. All are either avoided or explicitly paid. Complete padding/clears must precede selecting the physical small amplitude, as corrected in the earlier accepted compiler.
+
+F. Open: training, actual parameter generation and numerical model execution, finite-arithmetic error, arbitrary nonlinear banks, low-risk source-average lower frontier, optimality and mandatory PostLN. The public-linear and low-risk pure-square examples alone do not settle these.
+
+G. Provenance correction: the radix author actually ran the finite rational check described above. It was not an independent audit, randomized statistical test or full scientific reproduction. Do not translate it into either a blanket no-execution claim or a claim of trained/model validation.
+
+H. Signed square is a different case: SIGNED_SQUARE_CONTEXT_OBSTRUCTION v1 pairs globally negated histories and gives risk at least theta/2 when the decoder sees only sign-invariant statistics. Positive offset digits break that symmetry. This elementary counterexample does not rule out the positive-code construction.
+</pre></details><details><summary>独立审阅 · INDEPENDENT_PURE_SQUARE_RADIX_AUDIT.v1.md</summary><p class="hash">SHA-256 81af20c928dc7ed3e53075bf9d08cea0a8e5da7fc5c86373d38dc68876222a11</p><pre># Independent exact-file audit: pure-square quadratic radix
+
+6 November 2026 UTC. Mathematical verdict: PASS for the stated exact-real logical circuit and its reuse of the accepted positive-epsilon PreLN compiler in one sufficiently large fixed c-dependent envelope. The separate package-level provenance issue below must be reconciled; the mathematical proof does not depend on finite checks.
+
+Reviewed source: `PURE_SQUARE_RADIX.candidate.v1.md`.
+SHA-256: `6cfd97155834dfafb79fff32facc25d1d7c47f103b9877420a6cde6e7fb74fb8`.
+
+Frozen prior contract directly read: `../ordered_causal_memory_20261106/TWO_READ_ORDERED_SUFFIX.candidate.v3.md`, hash `8447990d0957bab96b473a256cf108b2a13a9d2d397c65da13549d40a4d56c75`; and `TWO_READ_PRELN_COMPILATION.candidate.v4.md` in that directory, hash `a7bde2d8f93b043f1fa8764add8098b4f3d8030963e106cf2e95de069b1e2cb2`. Their independent audits and the full `../terminal_width_suffix_20261104_2003/CONSTANT_WIDTH_CONSISTENCY.candidate.v3.md` were also read. Existing statistical and normalization lemmas are inherited, not re-proved as new results.
+
+## 1. Exact signal and recurrence
+
+The first head gives C_k/i, including C_b/T at the synthetic row. Exact paid multiplication by s therefore gives the stated u_i. Summing squared values over the second full-prefix head gives Y/T, with both N and T contributing to the final suffix tail. No selected source or synthetic self term is missing.
+
+Interchanging the finite sums in C_k^2=sum_{j&lt;=k}(C_j^2-C_{j-1}^2) gives equation (2). After subtracting J_(k-1), the contribution of each remaining active row is C_(k(i))^2-P_(k-1)^2. This proves equation (3), rather than assuming that Y itself is a simple square of the complete code.
+
+Subtracting the recovered digit&#x27;s exact contribution and multiplying by B W_k/W_(k+1) gives equation (4). Its exact residual is nonnegative. The quoted bound h_(k+1)&lt;1 makes the clip harmless. Since the next tail contains rows i+1 and i+2, W_k/W_(k+1) &lt;= 1+(i+2)^2/(2i^2) &lt;=43/18 for i&gt;=3. Thus every radix is below 48, independent of N and b.
+
+Initial gain R is positive, at least 16 and polynomially bounded by 16T^3/[s^2(b+1)]. Its bounded-gain factorization costs O(log N). Every exact partial amplification is at most the final h_1&lt;=64/225, so intermediate clipping fixes the exact path.
+
+## 2. Classifiers, all-row legality, and zero ablations
+
+The first-round intervals are exactly bounded by [1/16,289/3600] and [1/4,64/225]. Both lie strictly inside their respective displayed plateau intervals, with margins much greater than 1/1000. Their supports are disjoint and avoid zero.
+
+For k&gt;=2, 1/16&lt;=P&lt;2/15 and h_k is the weighted average in (3). For digit one, y=h_k-3P is between -2/5 and -2351/57600; for digit two it is at least 1/16 and no greater than 44/75. Those intervals lie inside the later plateaus with margins greater than 1/1000. The loose bound h_k&lt;=44/75 follows from 2(2/15)(32/15)+(1/256)(32/15)^2=44/75. No terminal history is omitted.
+
+Once a classifier is an exact onehot, ReLU(P+C-1) equals P*C on the declared P domain. Hence the digit-times-prefix operation is an exact bounded gate, not an approximate generic multiplication. P remains exact under the correct-digit induction.
+
+The synthetic gate annihilates every nonterminal decoder input. At h=P=0 both classifiers vanish, D=Dsq=0, and the recurrence preserves h=P=0. First-read ablation also reaches this branch because the square interpolant fixes zero exactly; second-read ablation reaches it directly. Counting alone converts this zero branch to symbol one. An explicit implementation is z_1=1-C_2, z_2=C_2 on every exact reference state, equivalently using C_0=1-C_1-C_2. Thus every row supplies a legal b-word to the inherited exact count lattice and restoring divider.
+
+## 3. Finite coefficients and error induction
+
+Only b+1 square inputs are nonzero. Therefore the terminal second-read square error is at most (b+1)nu/T. Nonexpansiveness of every clipped doubling, gamma_hat/gamma&lt;=2, and the exact pre-final-factor state being below one give the stated e_1 &lt;=2BT^2 nu/s^2+delta. This comparison remains valid even if an approximate amplification path clips.
+
+Given correct previous classifications, P and the subtraction are exact. The difference between the rounded and exact radix updates is bounded by 49e_k+delta, because the exact pre-radix residual is in [0,1]. The displayed choices give
+
+    e_1 &lt;= eta_0/(32*49^b)+delta,
+    49^(b-1)(e_1+b*delta)
+        &lt;= eta_0/(32*49)+(b+1)eta_0/(16*b*49)
+        &lt; eta_0.
+
+Hence the classifier-margin induction closes on every suffix; it is not an inference from the finite checks reported in Section 7. Zero branches remain exactly zero under the coefficient replacements.
+
+The q/gamma accuracy costs O(b+log b) fractional bits. The square accuracy has log(1/nu)=O(log N+b), using s&gt;=3. The one square approximant costs O(log N+b), while all b radix rounds cost only O(b). Exact dyadic position weights, paid integer s amplification, and prior source-position routines have the claimed O(log N+b) descriptions. Execution arithmetic is still exact-real.
+
+## 4. Whole-program PreLN and statistics
+
+Every new primitive has bounded fixed width, full coefficient and bias norms, and complete reachable states: tent-square stages, gates, fixed plateau slopes, radices at most 49, bounded doublings and clips. Their fixed enlarged tube can contain original and both ablated reference trajectories. A physical perturbation need not stay on a classifier or count lattice; the accepted compiler propagates error through the actual continuous circuits.
+
+The source includes floor/log work, all scaled copies, norm-padding microsteps and clears before choosing eta. Its m=O_c(log N+b) is therefore a complete prepared-program length. The two uniform attention local errors are O(eta^2) without a horizon multiplier. Choosing M=O_c(m+log(1/zeta)) controls the full prepared vector, which is the premise required for paid radial restoration and the final ordinary affine vocabulary softmax. The gain-two reparameterization preserves trajectories. No exact physical square or additive K/V identity is used.
+
+The inherited finite-description floor is the largest negative power of two a&lt;=c, as specified by the referenced compiler; the phrase &#x27;fixed interior floor c&#x27; should be read as invoking that construction, not storing an arbitrary exact real c as a finite-bit coefficient. Making a explicit in a future revision would remove ambiguity.
+
+Exact decoded-word equality supplies the actual ordered terminal pair and triple-count estimate, not a marginal frequency estimate. The source-independent arbitrary-initial suffix risk is therefore inherited unchanged. The floor cannot worsen binary risk against targets with coordinates at least c; log and physical approximation add at most 2zeta. On all-digit-two versus all-default suffixes, the inherited pre-floor separation is 1-2/b&gt;=1/2, and the common output tolerances preserve a fixed positive gap after compilation. This establishes usefulness of both paths in this program, not necessity for the estimation task.
+
+## 5. Communication and complete resource scope
+
+The terminal function equals the old estimator, so its old additive-code representation can simulate the output with the old charged decoder. Alternatively, sending owned suffix bits costs at most b bits exactly for the logical reference. Adding the uniform physical/reference error incurs zeta. Neither statement is a Taylor approximation of the energy or a reconstruction of the evolving physical row bank.
+
+The ledger consistently charges two useful heads, O_c(log N+b) paid depth, constant per-row width, a sufficient fixed c-dependent full-norm envelope, O_c(log N+b) per-coefficient bits and O_c((log N+b)^2) untied total bits. O(N) distributed state, O(N^2+ND) useful-head/local work, and O(N^2D) work for densely evaluated dummy attention slots remain distinct. The rate/depth orders match old results, and no finite-arithmetic, trained-realization, PostLN or general nonlinear simulation claim is certified.
+
+## 6. Provenance issue retained
+
+Section 7 of the reviewed v1 reports an executed exact-rational recurrence enumeration. The author confirmed that Python fractions.Fraction was used and that no further checks would be run. The contemporaneous `PRIOR_WORK_AND_FAILED_ROUTES.v1.md` opening says no experiment occurred in this pass, so package-level reporting needs clarification rather than silently dropping the recorded computation. The author is preserving its script and captured output. This audit did not execute or rely on that enumeration. It is not a mathematical counterexample or failure of the proof.
+
+The slower `PURE_SQUARE_ORDERED_ESTIMATOR.candidate.v1.md` was inspected only as historical fallback and is not independently accepted by this audit. No author source was overwritten. No scientific computation, model execution, parameter-generation run, upload or publication was performed by this auditor.
+</pre></details><details><summary>独立审阅 · INDEPENDENT_PURE_SQUARE_RADIX_AUDIT.v2.md</summary><p class="hash">SHA-256 a091dd78ed48374a515767b0712352864b8a6207acf34be2a361ee99172d299d</p><pre># Independent exact-file audit: pure-square radix revision 2
+
+6 November 2026 UTC. Verdict: PASS in the stated exact-real, sufficiently large fixed-envelope contract. This audit supersedes the v1 audit&#x27;s version/provenance status, not its preserved mathematical derivations.
+
+Reviewed source: `PURE_SQUARE_RADIX.candidate.v2.md`.
+SHA-256: `3d7b4ebd319f296618e08309b6c14ac8f8d507a8cd6294014d484696a561b7cd`.
+
+The complete v1 proof audit is retained in `INDEPENDENT_PURE_SQUARE_RADIX_AUDIT.v1.md`, SHA-256 `81af20c928dc7ed3e53075bf9d08cea0a8e5da7fc5c86373d38dc68876222a11`. The exact source diff was inspected. No recurrence, tolerance, risk, depth, or compiler step from the mathematically accepted v1 has changed.
+
+## Revision checks
+
+1. The exact counting onehots are now explicit: z_1=1-C_2, z_2=C_2. The zero branch becomes the all-default word for counting but remains h=P=D=Dsq=0 for residual decoding. This makes the all-row count-lattice premise explicit.
+2. The floor is explicitly the largest negative power of two a&lt;=c. Thus the inherited finite coefficient-description claim does not require storing an arbitrary exact real c.
+3. The new implemented-cut mixed-difference proof is correct. Expanding Y in its first two digit coordinates gives D_12 Y=2B^-3 W_2. Since h_1=BY/W_1, its mixed difference is (2/B^2)(W_2/W_1). The already proved W_1/W_2&lt;=43/18 gives 36/(43B^2). Uniform error e_1 over the four histories changes a mixed difference by at most 4e_1. For b&gt;=4, (7)-(8) give e_1 &lt;=3 eta_0/(64*49^b), so this lower bound is strictly positive by a large margin. This certifies the actual finite-dyadic logical h_hat_1 cut, not only an ideal square oracle.
+4. The fixed positive scale and nonadditivity are correctly scoped to logical coordinates. The source explicitly disclaims a horizon-independent amplitude or mixed difference for unscaled physical coordinates after multiplication by eta. Its physical result remains the uniform compiled-output approximation.
+5. Section 7 now identifies the finite enumeration as author-run, not an independent audit, and names the preserved executed command, readable equivalent, stdout, and provenance record. Read-only inspection confirms that the recorded code enumerates 16, 16 and 256 suffixes and checks the ideal exact-rational recurrence; it does not execute the square approximant, finite dyadic perturbations, classifier ramps, count/readout circuit, or normalized Transformer. The revised claims preserve this distinction and do not use the enumeration to prove those missing components.
+
+The changed source resolves the v1 clarity issues. `PRIOR_WORK_AND_FAILED_ROUTES.v2.md` corrects the package&#x27;s old blanket no-experiment statement, retaining the earlier text as history. No failed mathematical route has been silently promoted or erased.
+
+All mathematical conclusions remain as in the v1 audit: exact suffix recovery and legal all-row words, useful original/ablation paths, the inherited order-two risk plus 2zeta, O_c(log N+b) paid depth, fixed per-row width and complete norm envelope, growing finite parameter precision, and terminal communication by output equivalence or at most b suffix bits. These do not establish a new statistical rate, a generic nonlinear collapse, a Taylor simulator for this energy, a trained realization, or finite-arithmetic robustness.
+
+This auditor used source reading and analytic derivation only, did not rerun the author&#x27;s computation, and made no author-source edit or upload.
+</pre></details><details><summary>独立审阅 · INDEPENDENT_TAYLOR_OUTPUT_EQUIVALENCE_AUDIT.v1.md</summary><p class="hash">SHA-256 770eb35525de8bdde0cbffd45048ec75d933e9e21a5a612bb52e2b5e1b8e9776</p><pre># Independent exact-file audit: energy remainder and output equivalence
+
+6 November 2026 UTC. Verdict: PASS as the explicitly CONDITIONAL mathematical statement in the source. The pure-square decoder and its complete positive-epsilon compilation remain separate obligations; this note does not certify them.
+
+Reviewed source: `TAYLOR_BOUNDARY_AND_OUTPUT_EQUIVALENCE.candidate.v1.md`.
+SHA-256: `e887f99efb2272dc12688c032b7b98cd42b53d9ba7dfef6abb082246b1bf0726`.
+
+Directly checked dependencies: `../ordered_causal_memory_20261106/TWO_READ_ORDERED_SUFFIX.candidate.v3.md` (SHA-256 `8447990d0957bab96b473a256cf108b2a13a9d2d397c65da13549d40a4d56c75`); `TWO_READ_PRELN_COMPILATION.candidate.v4.md` in that directory (SHA-256 `a7bde2d8f93b043f1fa8764add8098b4f3d8030963e106cf2e95de069b1e2cb2`); and the prior nonlinear closure package&#x27;s `TAYLOR_PREFIX_CLOSURE.candidate.v2.md` and `ADDITIVE_CUT_CERTIFICATE.candidate.v3.md`.
+
+## Analytic checks
+
+- There are exactly b+1 active rows, including the synthetic self. At each, C_k is at least 1/B and s/i is at least 1/3, while C_k is at most 2/(B-1). Thus the displayed positive lower and upper bounds on u_i hold on every history.
+- Writing U=(1/T) sum_i u_i gives sum_i (u_i-U)^2=sum_i u_i^2-T U^2. Dividing by b+1 proves the exact displayed normalized residual, including the factor T/(b+1) in the Taylor surrogate.
+- The active support bound gives U &lt;= 2(b+1)/[(B-1)T], hence E_mean &lt;= 4(b+1)/[(B-1)^2 T]. Together with E &gt;= 1/(9B^2), this proves the claimed history-uniform positive liminf when b=o(N). Taking expectations cannot remove that uniform lower bound.
+- This is specifically the expansion of the squared sparse, amplified rows about their common mean U. It is not the previous raw-spin-prefix expansion about M=S_N/N. The note correctly distinguishes the hypotheses and retains downstream amplification rather than importing the former O_c(log N/N) conclusion.
+- Expanding C_k^2 gives mixed binary difference 2 B^{-(j+l)} sum_{k&gt;=l} w_k. It is strictly positive. For j=1,l=2, the prior bound is at least 8/(45 B^3), so the ideal scalar energy cut is not additive and its early curvature does not vanish with the horizon.
+- Exact recovery of the actual suffix, followed by the same count/readout program, is sufficient for pointwise equality of q with the old harmonic-code program. The same deterministic floor/log schedule then gives pointwise equality of bounded-log reference distributions. This statement does not require the nonlinear energy itself to factor additively.
+- The prior additive-code terminal simulator can therefore simulate that identical reference output. Alternatively, at most b raw suffix bits suffice exactly for the reference output, with the public ownership partition and parameters known to both parties. A separately proved uniform physical/reference error zeta adds at most zeta by the triangle inequality.
+
+## Scope retained
+
+The phrase output representation means representation THROUGH the old additive code with its charged nonlinear decoder. It does not mean the output distribution itself is an additive function of tokens. Likewise, nonadditivity is asserted here for the ideal energy identity; extension to the implemented dyadic or physical internal cut requires its own error comparison. Neither caveat affects the stated conditional semantic equivalence.
+
+The energy remainder is not a prediction-risk lower or a lower against all linear summaries, Taylor centers, or communication protocols. Consistency still depends on the established ordered triple-count estimator and exact decoding, not on interpreting the energy as a predictor.
+
+No failure requiring source revision was found. This audit used source reading and analytic derivation only. No scientific experiment, model execution, parameter-generation run, source-file overwrite, upload, or publication was performed.
+</pre></details><details><summary>独立审阅 · INDEPENDENT_SIGNED_SQUARE_AUDIT.v1.md</summary><p class="hash">SHA-256 2b5c23b5aa52a7c794f3f992c17eac183c387ff6daf6ac734bf68280b55e0bbc</p><pre># Independent exact-file audit: sign-erasing square obstruction
+
+6 November 2026 UTC. Verdict: PASS for the specified complete-terminal-input global-negation symmetry, with the displayed approximate extension.
+
+Reviewed source: `SIGNED_SQUARE_CONTEXT_OBSTRUCTION.candidate.v1.md`.
+SHA-256: `df30dc1624541d7db1a70373bc4b63104bbbd3a886cc6ed3a9ac1ac80a3b8977`.
+
+## Mathematical checks
+
+The given pair transition sends (a,b) to (b,x) with probability (1+theta*a*x)/2. Summing over a under the uniform pair law gives probability 1/4 for every next pair (b,x), establishing stationarity directly. For 0&lt;theta&lt;=1-2c, both next-symbol probabilities belong to [c,1-c], so the source belongs to the stated homogeneous interior order-two class.
+
+The path probability is unchanged by replacing every x_t by -x_t: each product x_(t-2)*x_t is preserved and the initial pair is uniform. The actual next-plus probabilities at paired histories are 1/2+theta*x_(N-1)/2 and 1/2-theta*x_(N-1)/2, separated by theta.
+
+If the complete decoder input is invariant under global negation, its deterministic output q is invariant too. The pathwise triangle inequality gives the sum of the two binary TV errors at least theta. The invariant source law makes their expectations equal, proving risk at least theta/2. The constant predictor 1/2 incurs exactly theta/2, so the fixed-source symmetry bound is sharp.
+
+Without exact invariance, inserting |q(x)-q(-x)| into the same triangle inequality gives 2*risk+A&gt;=theta. The nonnegative bound is max(0,(theta-A)/2). Uniform TV error zeta to an invariant reference implies A&lt;=2zeta by two applications of the triangle inequality, proving the stated physical lower bound theta/2-zeta when positive.
+
+## Scope checks
+
+Every squared homogeneous public linear form of signs is invariant under global negation, as are arbitrary deterministic functions of such forms and public constants. The requirement that this is the COMPLETE data-dependent decoder input is essential. Unsquared signed channels, nonzero offsets, or data-dependent coefficients are not silently included.
+
+The positive d in {1,2} encoding is affine rather than odd in the underlying sign. Squaring its nonzero-offset code can retain sign-dependent cross terms, so it does not satisfy this obstruction. The positive-code constructive theorem and this restricted impossibility theorem are compatible.
+
+No lower bound for all nonlinear updates, communication, attention count, or training follows. The approximate physical consequence requires the stated end-to-end error certificate and does not assume that full-feature PreLN has exact internal sign symmetry.
+
+No correction was needed. This audit used source reading and pencil derivation only; no experiment, model run, source edit or upload was performed.
+</pre></details><details><summary>独立审阅 · INDEPENDENT_PRIOR_WORK_AUDIT.v1.md</summary><p class="hash">SHA-256 c8e66d1d055425cd1147c50e923b67f9df1a26072a2dc46abc3224460c21209d</p><pre># Independent exact-file audit: prior work, failures, and provenance
+
+6 November 2026 UTC. Verdict: PASS as a scoped comparison using recorded earlier primary checks, with the corrected execution provenance explicitly retained.
+
+Reviewed source: `PRIOR_WORK_AND_FAILED_ROUTES.v2.md`.
+SHA-256: `57a17fa9d175cb545cc3db71e1b05924fef0b7d4fecb8c060af8054c177515f6`.
+
+Direct comparison sources read: the full `../ordered_causal_memory_20261106/PRIMARY_COMPARISON.v1.md`; `../nonlinear_causal_closure_20261106/PRIOR_WORK_AND_SCOPE_COMPARISON.v2.md`; the accepted ordered-suffix and PreLN sources; the constant-width estimator; and this package&#x27;s revised radix, Taylor/output-equivalence, signed-square, and finite-check provenance files. No external paper was fetched again in this audit.
+
+## Prior work and scope
+
+The Rajaraman, Ekbote, D&#x27;Angelo and Hahn summaries match the earlier recorded inspected sections and versions. The source does not convert those recorded inspections into a fresh literature retrieval or exhaustive priority search. It correctly distinguishes the inspected two/three attention-layer representation results, restricted training assumptions, sharpening, and zero-epsilon homogeneous normalization from the present fully charged fixed-positive-epsilon contract. Different resource assumptions are not treated as a novelty certificate or superiority result.
+
+The local estimator, ordered count/final-pair program, statistical risk, prior logarithmic-depth consistency, and positive-epsilon compiler are all correctly credited to existing sources. The new square radix transports the same estimator rather than inventing a new prediction rate. The nonlinear Taylor statistic and communication-hard energy example have their own nonvanishing prediction-risk limitations; neither is silently used as the current low-risk result.
+
+The cited fixed nonvanishing mixed difference is at the implemented LOGICAL h_hat_1 cut, as now proved in radix v2. It must not be read as a horizon-independent magnitude for the physically eta-scaled hidden coordinate. The current source and report should retain radix v2&#x27;s explicit logical/physical qualification whenever that observation is summarized.
+
+## Failure retention and provenance
+
+The slower endpoint-polynomial candidate remains present and unaccepted as a separate mathematical deliverable. Its O(log N+b^2) depth and slower logarithmic-depth risk must not be substituted for the accepted radix result, or described as a failure of the new recurrence. The unamplified small-signal route is correctly marked unsuitable for a nonvanishing logical-nonlinearity claim. The rejected Taylor transfer, inference from nonadditivity to communication hardness, and uncharged precision/preparation shortcuts are all retained.
+
+The v1 opening&#x27;s blanket &#x27;no experiment&#x27; statement was too broad relative to the author&#x27;s actually executed rational enumeration. The v2 opening and section G explicitly correct it while preserving v1. Read-only inspection of `EXACT_CHECK_EXECUTED_COMMAND.v1.txt`, `check_pure_square_radix_exact.py`, captured stdout, and `EXACT_CHECK_PROVENANCE.v1.md` is consistent with an author-run ideal exact-rational recurrence check over 288 suffixes. The source uses fractions for recurrence/assertions and float conversion only for displayed metrics. This auditor did not observe the original execution directly or rerun it; its occurrence is supported by the author&#x27;s confirmation and retained output.
+
+The revised scope correctly excludes full model execution, parameter generation, a finite-arithmetic certificate, training, benchmarking, and statistical simulation. It also no longer calls the author-run check an independent audit. The analytical proof and independent review establish the general theorem, not those finite cases.
+
+The unresolved training, arbitrary nonlinear-memory, source-average lower-bound, optimality, and PostLN questions are accurately retained. No new primary retrieval, computation, experiment, source overwrite, upload or publication was performed by this auditor.
+</pre></details><details><summary>有限检查执行来源 · EXACT_CHECK_PROVENANCE.v1.md</summary><p class="hash">SHA-256 c30a8dccdeff82164c7574b8acd066b4eb5a973dd00cdb8676cde19bfa49d98c</p><pre># Finite mathematical-check provenance
+
+6 November 2026 UTC. The exact-rational recurrence check was actually executed once in this research pass. Its results were captured before this record was written. It enumerated all 16, 16, and 256 binary suffixes respectively at (N,b)=(6,4),(8,4),(16,8), using Python fractions.Fraction throughout the recurrence and assertions. The printed summary metrics alone were converted to floating-point for display.
+
+The exact original shell command including its Python heredoc is preserved in `EXACT_CHECK_EXECUTED_COMMAND.v1.txt`. A standalone script with formatting and a descriptive module comment only is `check_pure_square_radix_exact.py`; the captured stdout is `check_pure_square_radix_exact.stdout.txt`. It was not rerun when these files were saved.
+
+This was an executed finite mathematical sanity check. It was not a trained model, full logical or physical transformer execution, finite-precision robustness experiment, parameter-generation program, benchmark, or statistical simulation. Blanket descriptions claiming that no scientific or mathematical computation occurred should not be used. The proof, rather than the finite checks, establishes the general claim.
+</pre></details><details><summary>有限检查脚本 · check_pure_square_radix_exact.py</summary><p class="hash">SHA-256 ecc45fc7bb24edebc68a3dcac8cbabc18775b917777888ac6c751a7eb3875cf5</p><pre>&quot;&quot;&quot;Exact script executed once during the 2026-11-06 algebraic sanity check.
+
+This is a preserved recurrence check, not a trained or normalized transformer
+implementation, a parameter generator, or a finite-arithmetic robustness test.
+All recurrence calculations and assertions use fractions.Fraction. Only the
+three printed summary metrics are converted to float for display.
+&quot;&quot;&quot;
+
+from fractions import Fraction as F
+from itertools import product
+
+for N, b in [(6, 4), (8, 4), (16, 8)]:
+    s = N - b + 1
+    T = N + 1
+    B = 16
+    W = [F(s, i) ** 2 for i in range(s, T + 1)]
+    tail = [sum(W[k:]) for k in range(b)]
+    maxerr = 0
+    ratios = []
+    gaps1 = []
+    gaps2 = []
+    for digs in product([1, 2], repeat=b):
+        p = F(0)
+        Y = F(0)
+        for k, d in enumerate(digs, 1):
+            p += F(d, B ** k)
+            Y += W[k - 1] * p * p
+        Y += W[-1] * p * p
+        h = F(B) * Y / tail[0]
+        p = F(0)
+        for j, d in enumerate(digs, 1):
+            val = h if j == 1 else h - 3 * p
+            if j == 1:
+                dd = 1 if val &lt; F(1, 8) else 2
+            else:
+                dd = 1 if val &lt; 0 else 2
+                (gaps1 if d == 1 else gaps2).append(val)
+            assert dd == d, (N, b, digs, j, val)
+            inc = 2 * p * d + F(d * d, B ** j)
+            p += F(d, B ** j)
+            if j &lt; b:
+                ratio = B * tail[j - 1] / tail[j]
+                ratios.append(ratio)
+                h = ratio * (h - inc)
+    print(N, b, &#x27;histories&#x27;, 2 ** b, &#x27;maxgain&#x27;, float(max(ratios)),
+          &#x27;d1max&#x27;, float(max(gaps1)), &#x27;d2min&#x27;, float(min(gaps2)))
+</pre></details><details><summary>已捕获检查输出 · check_pure_square_radix_exact.stdout.txt</summary><p class="hash">SHA-256 dd4728f23da2baaff6d8cba0598c4a49a1c7873c7a5d119cd3f6ca5481b23670</p><pre>6 4 histories 16 maxgain 29.281882352941178 d1max -0.04850798100597464 d2min 0.06671142578125
+8 4 histories 16 maxgain 27.674032371569318 d1max -0.047624781545233315 d2min 0.06671142578125
+16 8 histories 256 maxgain 25.653365953109073 d1max -0.04471916522500512 d2min 0.06666666734963655
+</pre></details><details><summary>保留的较慢候选，非最终主定理 · PURE_SQUARE_ORDERED_ESTIMATOR.candidate.v1.md</summary><p class="hash">SHA-256 361cf684ff82369f83947fc884df8cceb87a09d3a073ac01f33721b60c752762</p><pre># Pure-square causal memory with a consistent ordered second-order decoder
+
+6 November 2026 UTC. Candidate v1, not yet independently accepted. This is an architectural compatibility construction using the EXISTING suffix estimator, not a new statistical rate, training result, or optimal attention-depth theorem. All arithmetic is exact-real; bounded dyadic parameter descriptions are separately accounted for.
+
+## 1. Frozen contract
+
+Fix c in (0,1/2), N&gt;=16, and a power of two 4&lt;=b&lt;=N/2. Let T=N+1, s=N-b+1, B=16. Inputs are N binary raw-symbol rows plus one synthetic terminal. No pair, counts, cropped suffix or prefix statistic is supplied. Sources are the common homogeneous binary second-order class P_c; the inherited logical suffix estimator also permits arbitrary initial-pair laws. All parameters depend only on public N,b,c. Use two scalar zero-score full-prefix causal attention invocations. Fixed width includes all work registers and raw shadows. All local operations must be bounded affine/ReLU primitives. The actual target is the previously reviewed epsilon-one, gain-two, zero-shift PreLN model with ordinary vocabulary softmax.
+
+Old dependency: ordered_causal_memory_20261106/TWO_READ_ORDERED_SUFFIX.candidate.v3.md, TWO_READ_PRELN_COMPILATION.candidate.v4.md, and their audits; terminal_width_suffix_20261104_2003/CONSTANT_WIDTH_CONSISTENCY.candidate.v3.md. The imported estimator has risk R_b=13 sqrt(32/(b-1))+1/b. Nothing below improves that estimator.
+
+## 2. Nonlinear body, without a linear signal bypass
+
+Use the old paid position program to place v_i=d_i B^{-j} at i=s+j-1, j=1,...,b, d_i in {1,2}; other values, including the synthetic input, are zero. Read 1 writes r_t=(1/t)sum_{i&lt;=t}v_i. Multiply by the PUBLIC s in O(log N) bounded doubling/final-factor steps, clipping to [0,1]. No exact state is clipped: u_t=s r_t&lt;=2/(B-1). The only value channel sent into read 2 is an approximation to u_t^2. There is no channel transmitting r_t or u_t through read 2 to the decoder.
+
+Write C_k=sum_{j&lt;=k}d_{s+j-1}B^{-j} and C_{b+1}=C_b. The ideal square-body terminal statistic, after a paid factor T/(b+1), is
+
+ E=sum_{k=1}^{b+1} w_k C_k^2,
+ w_k=(s/(s+k-1))^2/(b+1).
+
+The k=b+1 term is the synthetic self and MUST be included. Since s&gt;=N/2 and T=N+1, s/T&gt;=1/3, so
+
+ 1/[9(b+1)]&lt;=w_k&lt;=1/(b+1),  0&lt;E&lt;=4/(B-1)^2.
+
+Square is implemented by the established dyadic tent-square interpolant on [0,1]. A later tolerance choice makes the implemented energy uniformly accurate. Terminal marker gating is applied after the second read. No outside-suffix symbol is used in this logical terminal statistic.
+
+The nonlinear body is not a vanishing correction: E&gt;=1/(9B^2). More sharply, representing two suffix digits by d_j=1+x_j, its mixed finite difference at positions j&lt;l is
+
+ D_{jl}E=2 B^{-(j+l)}sum_{k=l}^{b+1}w_k&gt;0.
+
+For j=1,l=2 and b&gt;=4 this is &gt;=8/(45 B^3), independent of N,b. Thus this energy cut has no exact additive token-local representation, and its curvature contribution does not vanish as N grows. This does NOT imply large communication; all its relevant bits lie in a short suffix.
+
+## 3. Lexicographic interval decoder: exact ideal proof
+
+Suppose digits before j have been recovered. Let p=sum_{l&lt;j}d_l B^{-l} and E_past=sum_{k&lt;j}w_k C_k^2. Consider two suffix completions sharing that prefix:
+ L: digit j is 1 and every later digit is 2;
+ U: digit j is 2 and every later digit is 1.
+At every row k&gt;=j, C_k(U)-C_k(L)&gt;=B^{-j}(1-1/(B-1))=(14/15)B^{-j}. Both codes are &gt;=1/B, so their squared difference is &gt;=(28/(15B))B^{-j}. All weights are positive. Consequently
+
+ E(U)-E(L) &gt;= g,
+ g=B^{-(b+2)}/[9(b+1)].
+
+This deliberately loose bound holds uniformly over all prefixes and j&lt;=b. Monotonicity of positive codes shows that any actual continuation with digit 1 has E&lt;=E(L), and any continuation with digit 2 has E&gt;=E(U). The midpoint H_j=(E(L)+E(U))/2 therefore classifies digit j with margin at least g/2.
+
+Crucially H_j can be computed in constant workspace. If q_k denotes the publicly specified completion code starting at j, then
+ E(completion)=E_past+A_j p^2+2 B_completion p+C_completion,
+ A_j=sum_{k&gt;=j}w_k,
+ B_completion=sum_{k&gt;=j}w_k q_k,
+ C_completion=sum_{k&gt;=j}w_k q_k^2.
+All three coefficients are public bounded scalars. Their j-indexed values are parameters, NOT extra input features or data-dependent advice. After classifying digit d_j, update p to p+d_j B^{-j}, and E_past to E_past+w_j p_new^2. Maintain only p,E_past,E plus temporary arithmetic registers and the old count/lag registers. Each recovered digit is immediately fed into the existing exact sequential triple-count and final-pair accumulator. This recovers the ACTUAL ordered suffix, not marginal frequencies.
+
+## 4. Finite parameters and paid approximate arithmetic
+
+Choose eta to be the largest dyadic number not exceeding
+ B^{-(b+2)}/[10^5(b+1)^2].
+Use dyadic approximations to every bounded public weight/threshold coefficient with error at most eta/100. Coefficients B^{-j} are exact dyadics. Evaluate each bounded square/product in the threshold and past-energy updates with absolute error at most eta/100 using the previously reviewed tent-square/polarization primitives. Each such routine costs O(1+log(1/eta))=O(b+log b) bounded-gain stages at constant width. Exact-real affine addition introduces no execution rounding error.
+
+For the row square choose uniform error nu&lt;=eta/(100T). This costs O(log N+b+log b) stages, not b copies. Approximate the final bounded factor in the paid T/(b+1) scaling so its accumulated output error is &lt;=eta/100; sufficient coefficient error eta/(100T) is used. The resulting terminal energy error is &lt;eta. All unscaled/partly scaled states remain bounded, using clipping on a fixed expanded domain containing the exact targets. The s amplification is public integer/dyadic and exact in this semantics.
+
+Past-energy error grows by at most eta per recovered step. On the correct-digit induction, p is exact, since it is updated using exact dyadic coefficients and exact digit outputs. Endpoint evaluation and energy error together are conservatively &lt;=10(b+1)eta&lt;g/16. Therefore each approximate comparison retains absolute margin &gt;g/4. Implement the comparison using O(log(1/g)) paid clipped doublings followed by a continuous plateau: choose a power of two L&gt;=8/g, form clip(L(Ehat-Hhat),-1,1), then map -1 to digit 1 and +1 to digit 2. Every terminal output is exactly a digit. There is no discontinuous comparator or unbounded weight.
+
+At every nonterminal row force the recovered bit to zero using the preserved exact synthetic marker e_t: for a comparator bit chi in [0,1], use chi-ReLU(chi-e_t). Thus nonterminal rows produce default digit 1 at every step even if their comparisons lie in transition bands. This guarantees the old all-row exact count lattice. The terminal induction proves that the finite dyadic logical network returns EXACTLY the old suffix estimator, for every history.
+
+No hidden table exponential in b is used: there are O(b) bounded coefficients, each requiring O(log N+b+log b) bits. Their rational formulas define a mathematical architecture; parameter-generation computation has not been executed or assigned free runtime. Each of b decoding rounds costs O(b+log b), so the logical depth is D_0=O(log N+b^2), constant width.
+
+## 5. True PreLN/softmax compilation and risk
+
+Apply the accepted TWO_READ_PRELN_COMPILATION v4 argument to THIS fully bounded logical program. It applies because every local stage above is continuous affine/ReLU with a fixed primitive gain, every exact row state is bounded, both reads have zero scores and scalar values, and all-row count validity has been established. Insert all serial fixed-floor logit routines, scaled copies, norm padding, and scratch clears BEFORE defining the complete prepared length m. The added square and comparison stages enlarge m and the fixed tube constants; they may not be omitted.
+
+Take zeta=min{1/1000,1/(100b^2)}. The inherited log routine costs O_c(b), padding costs O_c(log b), and m=O_c(log N+b^2). With a common bounded tube for the original and both single-read ablations, choose the largest permitted dyadic preparation/restoration tolerances proportional to zeta. The established recurrence e_l&lt;=L_0 e_{l-1}+C eta_small^2 then permits eta_small=2^{-M}, M=O_c(m+log(1/zeta)). Both uniform-head local errors are O(eta_small^2) independent of N. The full prepared-vector error, not merely a logit-bank error, is controlled before radial restoration. Reparameterize consuming matrices exactly as v4 to make every LN epsilon=1, gain=2, shift=0. Output ordinary affine vocabulary logits and softmax.
+
+Result, contingent on the cited accepted compiler and new proof review:
+ sup_{P in P_c} E TV(Q_phys,p_actual)&lt;=R_b+2zeta.
+
+The inequality uses the old estimator and old fixed-floor argument verbatim. It is consistent for b-&gt;infinity. It is NOT a new statistical rate. For b a power of two of order sqrt(log(N+1)), D=O_c(log N) and the inherited risk is O((log N)^(-1/4)), WORSE than the old O((log N)^(-1/2)) available with linear packing and the same depth order. At general b the structural price is quadratic decoding depth.
+
+Both reads are useful in this implementation. Ablating either yields energy zero; each computed threshold corresponds to positive codes and the comparison induction yields the all-default digit word. On an all-symbol-2 suffix, the unablated estimator and all-default estimator differ by at least 1/2 before normalization, as in the old proof. The common-tube compiler and log tolerances retain a positive constant gap. This is path usefulness, not a claim that two heads or square are statistically necessary.
+
+## 6. Communication and resource ledger
+
+A deterministic one-way protocol sends Alice&#x27;s raw suffix bits in publicly known position order, at most b bits. Bob supplies his own suffix bits and computes the logical nonlinear estimator. Thus exact logical terminal simulation costs &lt;=b, and simulation of the physical network has worst-history TV error &lt;=zeta (relative to the bounded-log reference). If further output quantization is required, its accuracy is separately charged. This is a finite suffix-support certificate, NOT an additive cut, a Taylor moment protocol, or a new communication theorem. Nonadditivity is compatible with low communication.
+
+Full budget:
+- exactly two useful full-prefix scalar zero-score heads;
+- fixed width and one sufficiently large fixed c-dependent complete-state/full-matrix/full-bias/primitive-gain envelope, not an unchecked numerical M_K;
+- D=O_c(log N+b^2), including position preparation, row square, comparisons, counts, division, logs, normalization padding/restoration;
+- per-coefficient description O_c(log N+b^2), dominated by compiler M; untied total O_c((log N+b^2)^2);
+- T physical rows, O(N) distributed state; useful-head plus local work O(N^2+ND) if zero-attention slots are skipped; O(N^2D) if every dummy slot is densely evaluated;
+- exact-real semantics including LN and softmax; parameter precision does not certify floating-point execution;
+- source-independent weights with known c only for the fixed probability floor/output envelope.
+
+## 7. What this does and does not combine
+
+This answers compatibility positively for a genuinely nonadditive, nonvanishing pure-square distributed memory followed by true ordered second-order prediction. It does NOT retain the previous two-moment Taylor communication proof: that proof controls small smooth-output errors, whereas this decoder has exponentially small digit margins and paid growing gain. We instead certify short suffix support. Ignoring the decoder gain would be false bookkeeping.
+
+Recent Markov/n-gram papers already exhibit multi-layer ordered estimators. The immediate repository prior already has a one-read consistent estimator and a two-read linear version. This result is only a scoped existence/closure-boundary example. No improved rate, learned realization, generic nonlinear communication collapse, sharp lower frontier, minimum layer count or originality priority is asserted. No training, numerical model execution, parameter generation run, upload or publication occurred.
+</pre></details><details><summary>保留的主证明 v1 · PURE_SQUARE_RADIX.candidate.v1.md</summary><p class="hash">SHA-256 6cfd97155834dfafb79fff32facc25d1d7c47f103b9877420a6cde6e7fb74fb8</p><pre># Pure-square causal memory with a bounded quadratic radix decoder
+
+6 November 2026 UTC. Analytical candidate v1, awaiting independent audit. This is an alternative transport/decoding construction for the EXISTING suffix estimator, not a new estimator, rate, minimum head count, training method, or priority claim. The nonlinear middle cut is not claimed additive or Taylor-collapsible. The final logical output is exactly the old additive-code estimator by decoded-word equivalence.
+
+## 1. Frozen contract and first two reads
+
+Use the contract and paid source-position program of `../ordered_causal_memory_20261106/TWO_READ_ORDERED_SUFFIX.candidate.v3.md`: N&gt;=6, T=N+1, power-of-two 4&lt;=b&lt;=N-2, B=16, s=N-b+1, binary digits d_j in {1,2}, and a synthetic zero-symbol terminal. Every raw row is supplied. Let
+
+    C_k = sum_{j=1}^k d_j B^(-j),  C_0=0,
+    k(i)=min(i-s+1,b) for s&lt;=i&lt;=T.
+
+The existing paid bounded-width geometric position program writes v_i=d_(i-s+1) B^(-(i-s+1)) on s&lt;=i&lt;=N and zero elsewhere. Its depth is O(log N+b). First zero-score scalar full-prefix read:
+
+    r_i = (1/i) sum_{l&lt;=i} v_l.
+
+Multiply r_i by the PUBLIC INTEGER s with paid bounded doublings and one final dyadic factor in [1,2). This gives u_i=0 before s and
+
+    u_i=(s/i) C_(k(i)),  0&lt;=u_i&lt;=2/15.
+
+All intermediate amplification states are bounded by 2/15. Apply a paid dyadic tent-square circuit f_L on [0,1], with f_L(0)=0 exactly and uniform error at most nu. The square is the ONLY value sent into read 2; there is no linear bypass into that head. Read 2 is another scalar zero-score full-prefix average. At the ideal-square comparator its terminal answer is
+
+    z_T = Y/T,
+    Y = sum_{i=s}^T w_i C_(k(i))^2,  w_i=(s/i)^2.       (1)
+
+The terminal synthetic self-row i=T is included. The actual logical circuit uses f_L, not an exact multiplication primitive. The final decoder uses only the second read&#x27;s terminal-gated output and public parameters, not any retained first-read row or raw symbol. Raw shadows may be retained solely until the synthetic marker gate.
+
+Since second-read answers lie in [0,1], gate them with the exact synthetic marker e_i by ReLU(z_i+e_i-1). Every nonterminal row then has EXACT zero decoder input. The square approximation can be clipped to [0,1], fixing zero and not increasing its error.
+
+## 2. Exact quadratic radix identity
+
+Define public tails
+
+    W_k = sum_{i=s+k-1}^T w_i,  1&lt;=k&lt;=b.
+
+The last tail W_b includes BOTH i=N and i=T. Suppose digits before k have been recovered, and put
+
+    P_(k-1)=sum_{j&lt;k}d_j B^(-j),
+    J_(k-1)=sum_{j&lt;k} W_j [2 P_(j-1) d_j B^(-j)+d_j^2 B^(-2j)].
+
+Telescoping C_j^2-C_(j-1)^2 proves the exact identity
+
+    Y=sum_{j=1}^b W_j [2 P_(j-1) d_j B^(-j)+d_j^2 B^(-2j)].  (2)
+
+Do NOT store J or calculate a fresh square at each round. Instead maintain the normalized residual
+
+    h_k=B^k (Y-J_(k-1))/W_k.
+
+For i&gt;=s+k-1, write C_(k(i))=P_(k-1)+B^(-k)t_i. Then
+
+    d_k&lt;=t_i&lt;=d_k+2/15,
+    h_k=sum_{i=s+k-1}^T (w_i/W_k)
+                 [2P_(k-1)t_i+B^(-k)t_i^2].             (3)
+
+After correctly recovering d_k, update
+
+    h_(k+1)=clip(q_k [h_k-2P_(k-1)d_k-d_k^2 B^(-k)],0,1),
+    q_k=B W_k/W_(k+1),
+    P_k=P_(k-1)+d_k B^(-k),                            (4)
+
+for k&lt;b. The clip never alters the exact reference. Initial h_1 is obtained from the terminal-gated z by scaling R=BT/W_1. As W_1&gt;=s^2(b+1)/T^2, 16&lt;=R&lt;=16T^3/[s^2(b+1)]=O(N^3); R is implemented in O(log N) bounded doublings with clip [0,1], followed by one bounded factor. No growing matrix is used.
+
+For i=s+k-1&gt;=3 and k&lt;b, W_(k+1) includes the next two rows. Therefore
+
+    W_k/W_(k+1) &lt;= 1+(i+2)^2/(2i^2) &lt;=43/18&lt;3,
+    16&lt;=q_k&lt;48.                                       (5)
+
+All q_k are public. Exact harmonic-square rationals are NOT embedded for free; Section 4 specifies finite dyadic replacements.
+
+## 3. Fixed-margin classifiers and no paid generic products in the decoder
+
+At k=1, P_0=0, so the exact digit intervals from (3) are
+
+    d_1=1: h_1 in [1/16,289/3600],
+    d_1=2: h_1 in [1/4,64/225].                        (6)
+
+Take a ReLU plateau classifier C_1 equal to one on [3/64,3/32] with support [1/32,1/8], and C_2 equal to one on [15/64,5/16] with support [7/32,3/8]. Each is zero outside its support and has fixed bounded ramps. These disjoint supports also make both outputs zero at h_1=0.
+
+At k&gt;=2, P=P_(k-1) satisfies 1/16&lt;=P&lt;2/15. Classify y_k=h_k-3P. For digit 1,
+
+    y_k &lt;= -(11/15)P+B^(-k)(17/15)^2
+          &lt;= -11/240+289/57600 = -2351/57600 &lt; -0.0408,
+    y_k &gt;= -3P &gt; -2/5.
+
+For digit 2,
+
+    y_k &gt;= P+4B^(-k) &gt;=1/16.
+
+Also every exact h_k lies in [0,1]: h_1&lt;=64/225, while for k&gt;=2,
+
+    h_k&lt;=2(2/15)(32/15)+B^(-2)(32/15)^2=44/75&lt;1.
+
+Thus digit-2 y_k&lt;=44/75. Take later C_1 equal to one on [-1/2,-1/32] with support [-3/4,-1/64], and C_2 equal to one on [1/32,3/4] with support [1/64,1]. They both vanish on a neighborhood of y=0. All exact true-digit intervals have margin greater than 1/1000 inside the required plateaus.
+
+Set D=C_1+2C_2 and Dsq=C_1+4C_2. When these are exact onehots, D=d and Dsq=d^2. As P in [0,1], the fixed ReLU gate
+
+    G(P,C)=ReLU(P+C-1)
+
+equals P*C for C in {0,1}. Hence P*d=G(P,C_1)+2G(P,C_2), and every operation in (4) is a constant-size bounded affine/ReLU circuit. There is NO uncharged multiplication and no O(b)-precision product circuit per decoded digit. P updates use the exact dyadic coefficients B^(-k), so P remains exact as long as the classified digits agree.
+
+On every nonterminal row, h=P=0 initially, both classifiers give zero, and equations (4) preserve h=P=0. At the terminal, ablating either read also yields this exact zero branch because f_L(0)=0. For counting ONLY, digit zero is converted into default symbol 1, exactly as in the prior construction. It is not substituted by 1 in the residual or P update. This distinction prevents the zero branch from acquiring fictitious packed digits. Exact nonterminal/default rows have legal all-default b-words for the imported counting and divider program.
+
+## 4. Finite square precision and dyadic coefficient robustness
+
+Put eta_0=1/1000. Let every q_k and the final bounded factor gamma in R=2^m gamma be replaced by dyadics to absolute accuracy delta, with gamma_hat in [1,2] and q_hat in [0,49]. Choose
+
+    delta &lt;= eta_0 / [16 b 49^b],
+    nu &lt;= eta_0 s^2 / [64 B T^2 49^b].                 (7)
+
+The first multiplication by s is exact with dyadic coefficients. Only b+1 rows have nonzero u_i, and f_L(0)=0. Consequently the square error in z_T is at most (b+1)nu/T. Since W_1&gt;=s^2(b+1)/T^2 and gamma_hat/gamma&lt;=2, the initial decoded-code error is conservatively bounded by
+
+    e_1 &lt;= 2 B T^2 nu/s^2 + delta.                     (8)
+
+The final-factor rounding term is bounded by delta because the exact initial code is less than one. Intermediate clipping is nonexpansive relative to the exact amplification path, which stays in [0,1].
+
+Assume classified digits agree through round k. Then P and the known subtraction in (4) are exact. Clipping is nonexpansive relative to exact h_(k+1), and q_hat&lt;=49, giving
+
+    e_(k+1)&lt;=49 e_k+delta.                            (9)
+
+Here the exact pre-radix residual is at most one; the tighter bound 1/16 is unnecessary. From (7)-(9),
+
+    max_{k&lt;=b} e_k &lt;=49^(b-1)(e_1+b delta)&lt;eta_0.
+
+The plateau margins in Section 3 then make every classified digit EXACT, closing the induction. The exact zero branch is also preserved by all dyadic replacements. Thus the finite-coefficient affine/ReLU/square-approximant reference returns precisely the original suffix word on every binary history and all-default words at every other physical row.
+
+The tent-square interpolant can attain nu with L=O(log(1/nu))=O(log N+b) bounded stages and constant width. Equation (7) requires only O(b+log b) fractional bits for the q_k and gamma replacements. Position encoding, exact s multiplication, dyadic B^(-k), and the square approximant have per-coefficient description O(log N+b). This is an exact-real execution theorem with finite parameter descriptions, NOT a floating-point/edgewise rounding theorem.
+
+If the optional simplification b&lt;=N/2 is imposed, s/T&gt;=3/7 and W_1&gt;=(9/49)(b+1), so square accuracy O(49^(-b)) already suffices. This simplification is NOT required for (7) or the stated general construction.
+
+## 5. Statistics, terminal folding, and substantive nonlinear signal
+
+Feed the exact recovered word to the prior paid sequential triple counter and restoring divider with G=b. It recovers the ordered final pair and the established suffix transition estimate q. The inherited bound is exactly the old one:
+
+    sup_(P,mu) E TV(q,p_actual)
+       &lt;=13 sqrt(32/(b-1))+1/b.                        (10)
+
+There is no improved estimation theorem here. Equality of decoded words proves pointwise equality of q to the old one-read and ordered-two-read additive-code estimators on every Boolean history. Therefore their existing PUBLIC ADDITIVE terminal-output simulator can be used unchanged for q. This is semantic equivalence of final outputs. It is NOT additive reconstruction of Y, approximation of intermediate nonterminal square rows, or the raw-prefix Taylor theorem.
+
+Alternatively Alice can send precisely her owned selected-suffix bits, using at most b bits, and Bob evaluates the public logical estimator. This simple exact protocol is independent of the cut and source and does not claim a new communication result.
+
+The square is evaluated on active u_i at a fixed positive logical scale, not r_i=O(1/N): when b&lt;=N/2,
+
+    u_i&gt;=(s/T)/16&gt;=3/112 for every active row,
+    Y/(b+1)&gt;=9/(49*256).
+
+The only second-read value path is u_i^2. With either read ablated the complete word becomes all-default; an all-digit-2 suffix yields the old opposite estimate and its fixed output separation. Thus both reads remain useful in this implementation. This is not a lower bound or a claim that two reads are necessary, because the old one-read predictor already suffices. Nor is nonlinearity itself necessary for the statistical task: the final function deliberately equals the old estimator.
+
+For b=o(N), let U=T^(-1)sum_i u_i. Then U&lt;=2(b+1)/(15T), whereas the squared contribution at the energy normalization is bounded below as above. The constant-prefix-mean square surrogate would satisfy
+
+    [T/(b+1)] U^2 &lt;=4(b+1)/(225T) -&gt;0.
+
+Thus after this normalization the square signal cannot be dismissed as a vanishing Taylor remainder around the global mean. This is a boundary observation, not a lower bound for every nonlinear simulator. In particular it does not contradict the different raw-sign prefix-average Taylor theorem.
+
+## 6. Positive-epsilon PreLN and complete resource ledger
+
+Use the already-reviewed `../ordered_causal_memory_20261106/TWO_READ_PRELN_COMPILATION.candidate.v4.md` mechanism on THIS finite-dyadic reference program. All reference primitives above have one fixed gain/state/matrix/full-bias envelope: square tent slopes, classifier slopes, radix at most 49, conditional gates, bounded doubling, and existing count/division routines. Choose one common widened tube for the original program and both exact all-default single-read ablations. Physical perturbations need not stay on the digit/count lattice; the actual continuous primitive circuits propagate their errors.
+
+For a fixed interior floor c, append the old floor/log readout with zeta=min(1/1000,1/(100b^2)). Include ALL scaled-logit copies, norm-padding primitives, and scratch clears in the prepared reference length m BEFORE choosing small amplitude. Choose padding/restoration/complete-vector tolerances as fixed allowed dyadic multiples of zeta; then m=O_c(log N+b). Paired small-amplitude states h=eta z have both zero-score attention local errors O(eta^2), including the data-dependent full-feature normalization factors. With the common max-row tube, the full prepared recurrence is
+
+    e_l&lt;=L_0 e_(l-1)+C eta^2,
+    e_m&lt;=C&#x27; eta^2 L_0^m.
+
+Choose eta=2^(-M), M=O_c(m+log(1/zeta)), so the FULL prepared-vector error meets the imported output-restoration condition. Apply its paid bounded restoration, final LN, and ordinary affine vocabulary head/softmax. The gain-two reparameterization gives EVERY LN epsilon=1, gain=2, shift=0. This is an explicit reuse of that compiler, contingent on its accepted dependencies and independent checking of this enlarged fixed tube; it is not a new compiler or a mandatory-PostLN claim.
+
+The physical terminal output differs from the logical floor/log reference by at most zeta uniformly over histories and both single-read ablations. Flooring does not worsen binary prediction risk for kernels with both next-symbol probabilities at least c. The old log approximation contributes another zeta, giving
+
+    sup E TV(Q_phys,p_actual)
+       &lt;=13 sqrt(32/(b-1))+1/b+2 zeta.                 (11)
+
+A common output tolerance preserves the old fixed positive separation between the original all-digit-2 word and either all-default ablation. Final-output folding is to the same old additive-code estimator INCLUDING the identical floor/log circuit; physical PreLN only has the proven approximation, not an exact additive intermediate identity.
+
+Resource ledger:
+- Exactly two useful full-prefix scalar zero-score attention invocations; no extra memory read, pair/triple input, suffix crop, supplied counts, or external predictor.
+- Constant width, including raw shadows until gating, two fresh head destinations, square scratch, P/h/classifier registers, and the existing lag/count/readout banks.
+- Paid reference depth and physical PreLN depth O_c(log N+b). There is one O(log N+b) square approximation, NOT one per digit; radix decoding is O(b).
+- One sufficiently large fixed c-dependent envelope for complete reachable states, matrices, full biases, primitive gains, and LN gains. No unchecked identification with a predetermined numerical M_K.
+- Per-coefficient binary description O_c(log N+b); at constant width and depth, untied total parameter description O_c((log N+b)^2).
+- T=N+1 rows and therefore O(N) distributed state despite constant per-row width.
+- Useful-head/local work O(N^2+N D) if dummy zero-attention slots are skipped; dense evaluation of every dummy attention slot costs O(N^2 D).
+- With b=Theta(log N), depth remains O_c(log N) and risk O(1/sqrt(log N)), precisely the OLD orders.
+- Exact-real arithmetic and finite coefficient descriptions only. No executed model, training, parameter-generation runtime, or floating-point implementation guarantee.
+
+## 7. Checks and limits
+
+A small independent exact-rational sanity check enumerated every binary suffix for (N,b)=(6,4),(8,4),(16,8). All digits were recovered by (2)-(4), including the synthetic self-row. The largest observed radix gains were 29.282, 27.675, and 25.654, below the proved 48 bound; digit-1 later y maxima were -0.04850, -0.04762, and -0.04471, below the proved -0.0408. These finite checks do not replace the proof and are NOT transformer training or numerical model execution.
+
+Main dependencies remain the existing bounded geometric position program, exact ordered count/readout estimator, and reviewed positive-epsilon PreLN output compiler. What is new locally is only the explicit positive-code square transport and constant-work quadratic radix identity. No literature novelty is asserted. A smooth nonlinearity on arbitrary signed first-read values is not covered: squaring can lose signs, and neither this positive-code decoder nor the raw-prefix two-statistic Taylor argument applies automatically.
+</pre></details><details><summary>实际执行的原命令 · EXACT_CHECK_EXECUTED_COMMAND.v1.txt</summary><p class="hash">SHA-256 6a249016f6ceafaa59453c440937bf11d4e124fc5484bbdf73987c23de0c2a5a</p><pre>python - &lt;&lt;&#x27;PY&#x27;
+from fractions import Fraction as F
+from itertools import product
+for N,b in [(6,4),(8,4),(16,8)]:
+ s=N-b+1;T=N+1;B=16
+ W=[F(s,i)**2 for i in range(s,T+1)]
+ tail=[sum(W[k:]) for k in range(b)]
+ maxerr=0; ratios=[]
+ gaps1=[];gaps2=[]
+ for digs in product([1,2],repeat=b):
+  p=F(0);Y=F(0)
+  for k,d in enumerate(digs,1):
+   p+=F(d,B**k);Y+=W[k-1]*p*p
+  Y+=W[-1]*p*p
+  h=F(B)*Y/tail[0];p=F(0)
+  for j,d in enumerate(digs,1):
+   val=h if j==1 else h-3*p
+   if j==1:
+    dd=1 if val&lt;F(1,8) else 2
+   else:
+    dd=1 if val&lt;0 else 2
+    (gaps1 if d==1 else gaps2).append(val)
+   assert dd==d,(N,b,digs,j,val)
+   inc=2*p*d+F(d*d,B**j)
+   p+=F(d,B**j)
+   if j&lt;b:
+    ratio=B*tail[j-1]/tail[j]
+    ratios.append(ratio)
+    h=ratio*(h-inc)
+ print(N,b,&#x27;histories&#x27;,2**b,&#x27;maxgain&#x27;,float(max(ratios)),&#x27;d1max&#x27;,float(max(gaps1)),&#x27;d2min&#x27;,float(min(gaps2)))
+PY
+</pre></details><details><summary>保留的执行披露修订前版本 · PRIOR_WORK_AND_FAILED_ROUTES.v1.md</summary><p class="hash">SHA-256 470742cd52509ab5be1360eb9d9facb0f8f92cfc4a27a1b8c080d0b90fe88b81</p><pre># Prior work, rejected routes, and provenance
+
+6 November 2026 UTC. Local analytical follow-on. No new literature retrieval, experiment, training, publication or novelty certification occurred in this pass. External comparisons reuse the primary checks explicitly recorded in ordered_causal_memory_20261106/PRIMARY_COMPARISON.v1.md and nonlinear_causal_closure_20261106/PRIOR_WORK_AND_SCOPE_COMPARISON.v2.md.
+
+## Closest local results and exact differences
+
+1. CONSTANT_WIDTH_CONSISTENCY v3 already constructs the one-read packed-suffix estimator, exact triple-count/final-pair update, paid division, and risk 13 sqrt(32/(b-1))+1/b. Those are dependencies, not new results here.
+2. TWO_READ_ORDERED_SUFFIX v3 and TWO_READ_PRELN_COMPILATION v4 already transport the same suffix through two public linear prefix reads, decode harmonic-radix digits, and compile to positive-epsilon PreLN with ordinary softmax. They already achieve depth O(log N+b), constant width and consistency. The current candidate inserts a pure-square distributed value update and changes the decoder, not the estimator.
+3. TAYLOR_PREFIX_CLOSURE v2 supplies an O_c(log N/N) source-average simulation residual for smooth functions of stationary raw-spin prefix means, but its quadratic example has limiting risk theta/2 on the lag-two witness. The new construction uses paid positional scaling and an ordered packed code, not that marginal statistic or its error bound.
+4. ADDITIVE_CUT_CERTIFICATE v3 identifies mixed differences for a specified complete cut. It does not prohibit a nonadditive intermediate code from being decoded to an output representable by a different additive code.
+5. NORMALIZED_NONLINEAR_OBSTRUCTION v2 compiles a known pure-energy communication obstruction with two scalar heads into the same normalization/output contract. It is not low-risk. The present suffix-supported energy is not hard in communication: sending the suffix costs at most b bits. Neither example implies the other&#x27;s risk or distributional theorem.
+6. LOW_RISK_WEAK_ANCHOR_COMPOSITION adds a small extra interaction around a completed predictor. The present pure-square body instead carries the only second-read signal and has an N-independent internal mixed difference. Nevertheless the final estimator remains identical to the old one, so this does not establish statistical necessity or advantage of nonlinearity.
+
+## Closest external work, without a new priority claim
+
+- Rajaraman et al., https://arxiv.org/html/2407.17686v1 : earlier primary inspection of Theorem 5.1 records a three-one-head-layer Markov construction. Ordered empirical prediction is already prior work. The current result is not a first multilayer Markov estimator or minimum-layer theorem.
+- Ekbote et al., https://arxiv.org/pdf/2508.07208v2 : earlier inspection of Theorem 3 records two one-head layers, width 6S+3, relative positions, sharpening and a normalization v/||v||. Its restricted first-order training result assumes a correct MLP, and is not training of the entire second-order construction. The current positive-epsilon bounded-gain compilation is a different explicitly budgeted contract; this does not establish superiority or novelty.
+- D&#x27;Angelo et al., https://arxiv.org/html/2607.02800v1 : earlier inspected induction/n-gram representation passages already treat ordered context. No claim that nonlinear memory first becomes useful for Markov prediction here.
+- Hahn, https://aclanthology.org/2020.tacl-1.11.pdf : bounded-depth sensitivity depends on gains and depth; this construction pays logarithmic-depth amplification and growing coefficient precision. The corrected supplement was not freshly fetched in this pass or the preceding ordered-causal pass. No contradiction to fixed-resource sensitivity bounds is asserted.
+
+The new square-code radix identity, if independently accepted, is a concrete algebraic compatibility example. Elementary algebra, plateau coding, tent-square approximation, one-hot ReLU gates, and the old normalization compiler are not asserted to be novel mathematical tools. An exhaustive priority search has not been performed.
+
+## Preserved attempts and limits
+
+A. Small-signal route considered before writing the main candidate: use f(r)=r+r^2 with unamplified packed prefix r=O(1/N). Its normalized decoder perturbation can be made harmless, but bounded curvature then contributes only O(1/N) to the initial decoder code. This would be an asymptotically affine example, not an answer about nonvanishing nonlinear memory. It is not used as evidence of a strong nonlinear effect. No unreviewed claim of an improved rate is retained.
+
+B. PURE_SQUARE_ORDERED_ESTIMATOR.candidate.v1.md is preserved as the initial slower endpoint-polynomial construction. Its tentative O(log N+b^2) decoder repeatedly approximates products. The later radix route exploits digit one-hots to make prefix-times-digit exact and aims to reduce this overhead to O(b). The slower file&#x27;s header remains historically &#x27;candidate&#x27;; it must not be silently cited as independently accepted. Its projected O((log N)^(-1/4)) rate at D=O(log N) is not the final radix result.
+
+C. Wrong generalization rejected: applying the old stationary raw-prefix Taylor variance bound to position-gated, amplified suffix code. The explicit normalized-energy residual in TAYLOR_BOUNDARY_AND_OUTPUT_EQUIVALENCE demonstrates why the naive mean-centered replacement stays inaccurate.
+
+D. Wrong inference rejected: positive mixed differences at the internal energy cut imply expensive terminal communication. Correct decoding can erase the distinction, and short suffix support itself gives a b-bit protocol.
+
+E. Wrong resource shortcut rejected: treating growing decoder gain, exact harmonic rational coefficients, a supplied suffix/count port, or final normalization as free. All are either avoided or explicitly paid. Complete padding/clears must precede selecting the physical small amplitude, as corrected in the earlier accepted compiler.
+
+F. Open: training, actual parameter generation and numerical model execution, finite-arithmetic error, arbitrary nonlinear banks, low-risk source-average lower frontier, optimality and mandatory PostLN. The public-linear and low-risk pure-square examples alone do not settle these.
+</pre></details></section><footer><p>中文报告 v2 · 2026 年 11 月 6 日 UTC。有有限精确有理数递推检查；无完整模型执行、训练或视觉渲染验收。</p></footer></body></html>
