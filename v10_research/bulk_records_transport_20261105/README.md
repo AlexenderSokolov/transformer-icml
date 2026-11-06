@@ -1,0 +1,3 @@
+# Research records and documents
+
+The 100 numbered parts reconstruct large_records_and_research_documents.zip in numeric order. The archive contains 1,872 research objects and has SHA-256 9ea81dd0bcd61c9933b6d728ac3f2e41446877581877c0f2f39cafd27b10e1ad. BULK_PARTS_MANIFEST.json records part and archive hashes. The restoration helper is available in the sibling numeric_arrays_transport_20261105 directory. Scientific labels incorrectly redacted in the earlier unpublished candidate have been restored from retained originals; this is the independently reviewed v2. Packaging checks do not certify research results or recover missing historical experiments.
