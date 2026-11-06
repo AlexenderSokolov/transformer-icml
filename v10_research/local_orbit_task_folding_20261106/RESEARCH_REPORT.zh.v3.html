@@ -1,0 +1,830 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>局部概率保持变换：任务风险折叠的条件与边界</title><style>body{font-family:system-ui,-apple-system,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;color:#171717;max-width:980px;margin:auto;padding:40px 24px;line-height:1.8}h1{font-size:2rem;line-height:1.4}h2{font-size:1.5rem;margin-top:2.6rem}h3{font-size:1.15rem;margin-top:1.8rem}nav{margin:24px 0}a{color:#145a88}.eq{font-family:Cambria,Georgia,serif;padding:12px 0;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d9d9d9;padding:12px;text-align:left;vertical-align:top}th{background:#e8edf1}tr:nth-child(even){background:#f8f9fa}details{margin:22px 0}summary{cursor:pointer;font-weight:600;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.65 ui-monospace,monospace}.hash{overflow-wrap:anywhere;font-size:.85rem}footer{color:#555;margin-top:40px}@media(max-width:600px){body{padding:20px 16px}h1{font-size:1.6rem}td,th{padding:8px}}@media print{body{max-width:none;padding:0}nav{display:none}h2{break-after:avoid}tr{break-inside:avoid}a{color:inherit}}</style></head><body><header><h1>局部概率保持变换：任务风险折叠的条件与边界</h1><p>v10 研究增量 · 2026 年 11 月 6 日 UTC</p><p><strong>结论：</strong>可以把单个相位反例推广到一类有限群局部改写证书，但真正必要的新增条件是“输出轨道重心可由后缀计算”。概率保持或输出不变性本身不够。本轮证明了多相位参考函数的折叠，尚未构造新的多相位真实 PreLN 网络。</p></header>
+<section id="contract"><h2>一 固定任务与证明范围</h2><p>输入为长度 N 的原始二元历史，来源为未知齐次二阶过程，各转移概率在 [c,1−c]，0&lt;c&lt;1/2。目标是在实际末端二元上下文上的下一符号分布，损失为期望终端 TV。主问题的平稳来源类包含在此；多数改写结论还能覆盖任意初始二元分布。</p><p>通信沿用 AA/BB：Alice 持有每四位的前两位，Bob 持有后两位。N 为四的倍数，末端后缀长度 b 是不超过 N/2 的二次幂且 b≥4 时，Alice 发送恰好 b/2 位即可交付后缀。真实架构仍为正 ε、完整特征归一化的实数 PreLN 与普通最终 softmax。新的参考函数不自动满足这个架构；物理误差 ζ 的传递均以已证实现为前提。</p></section>
+<section id="criterion"><h2>二 非循环的充分结构证书</h2><p>设有限群 H 通过显式双射作用于历史，每个变换保持初始对、全部八个三元计数和末端后缀 Z。参考输出具有分解 Q(x)=q(Z(x),Φ(x))。在群不变的良好事件 G 上，有限相位 Φ 按一个传递群作用变化；各分支 q(z,a) 有明确求值方法。</p><p>齐次 Markov 似然在每个轨道上不变，目标也不变。经典凸风险平均因此给出 R<sub>P</sub>(Q<sub>H</sub>)≤R<sub>P</sub>(Q)，逐来源成立。在 G 上轨道平均等于后缀函数 M(z)=|A|<sup>−1</sup>∑<sub>a</sub>q(z,a)。若分支 TV 直径为 D(z)，则</p><p><strong>R<sub>P</sub>(M)≤R<sub>P</sub>(Q)+E<sub>P</sub>[D(Z)1<sub>Gᶜ</sub>]。</strong></p><p>实际网络与 Q 的统一误差 ζ，以及 M 的求值误差 η，分别再加在右侧。此证明没有使用待证深度下界。它也没有免费提供计算效率：分支表、相位数、群描述与求值复杂度必须分别支付。昂贵的轨道平均只是证明工具，协议直接计算 M。</p></section>
+<section id="example"><h2>三 多相位局部改写例子</h2><p>把后缀之前、初始对之后的部分分成 r 个不重叠区域，第 j 个区域含 m<sub>j</sub> 个八位试验块，8∑m<sub>j</sub>≤N−b−2。每区的相位 F<sub>j</sub>是区域内重新计数的二次奇偶函数。在该区首个匹配位置对换 00110000 与 00011000。两词首尾各两位相同、内部三元计数相同，故整个历史似然不变；对换仅翻转本区相位。</p><p>不同区域的对换交换，得到 H=(Z/2)<sup>r</sup>。这不是重复使用同一个相位。对 r=2、两个不同正振幅，可得到四个不同分支 logit。</p><p>令 q(z,a)(1)=σ(d(z)+∑ρ<sub>j</sub>(2a<sub>j</sub>−1))，ρ<sub>j</sub>≥0，γ=1−2c⁸。逐块条件概率下界给出第 j 区没有匹配的概率至多 γ<sup>mⱼ</sup>，不需要区块独立。逐坐标概率中点比较得到</p><p><strong>R<sub>P</sub>(M)≤R<sub>P</sub>(Q)+¼∑ρ<sub>j</sub>γ<sup>mⱼ</sup>。</strong></p><p>令 q₀(z)=σ(d(z))。均匀独立符号下的一阶项消失，二阶余项给出 TV(M,q₀)≤⅛∑ρ<sub>j</sub>²。因此，在两端物理实现确有统一误差 ζ<sub>h</sub>、ζ<sub>b</sub>时，旧单读基线的风险增量至多 ζ<sub>h</sub>+ζ<sub>b</sub>+¼∑ρ<sub>j</sub>γ<sup>mⱼ</sup>+⅛∑ρ<sub>j</sub>²。这里没有声明新的多相位物理实现已完成。</p></section>
+<section id="limits"><h2>四 为什么概率保持与不变性仍不足</h2><p><strong>守恒障碍：</strong>若一个固定双射保持所有任意初始分布及开区间内所有独立二阶转移参数的来源律，它必须保持初始对和每一项三元计数。证明对似然比逐行参数取对数导数即可。因此，这些变换生成的轨道不会混合整个固定后缀纤维；轨道重心的后缀可计算性不能由概率保持自动推出。此必要性证明使用任意初始分布，不冒充只要求平稳来源保持时的结论。</p><p><strong>真正的任务风险不足例子：</strong>对两个平稳 IID 来源 Bernoulli(c) 与 Bernoulli(1−c)，全历史总计数多数预测器 Q<sub>N</sub>在所有共同保来源双射下不变。以两个来源等权作证明先验，TV 的 Bayes 风险为 (1−2c)e<sub>N</sub>；任意仅看 b 位后缀、允许随机化和任意概率输出的预测器，其平均风险至少 (1−2c)e<sub>b</sub>。N≥b+2 时 e<sub>N</sub>&lt;e<sub>b</sub>，所以不存在在两个来源上都无损支配 Q<sub>N</sub>的后缀预测器。</p><p>这个例子并不反驳一般廉价通信：Alice 只需用 O(log N) 位发送其总计数。它也不是整个二阶来源类上一致的预测器。仅证明了“所有不变预测器均能由指定短后缀逐源无损替代”错误。新的实际 PreLN 实现尚未完成，只有逻辑电路和带误差的条件传递。</p><p><strong>强化到全类一致性：</strong>完整三元计数的经验转移预测器 Q_type 对整个内点二阶来源类、任意初始分布都有 O_c(N^(−1/2)) 的风险，并在保持末端上下文的类型移动下不变。占用数下尾与鞅分子界给出这一经典估计率。若 b≤log N/[4 log(1/c)]，每个仅看后缀的预测器在上述两个 IID 来源上的平均风险至少 (1−2c)N^(−1/4)，因此充分大的 N 下仍无法逐源支配 Q_type。这个强化消除了参考预测器不一致的限制，但依然没有真实固定宽度 PreLN 实现或一般通信下界。</p><p>另一个滞后二阶自旋例子中，±h 参数在各方单独观测上的分布相同，但末端目标相差 h，故零通信最坏风险至少 h/2。全数据的滞后二阶相关估计能达到 O(N<sup>−1/2</sup>)。这仅为零通信障碍，不是多轮通信下界。</p></section>
+<section id="resources"><h2>五 计算账本与现有架构缺口</h2><ul><li>直接后缀群重心：b/2 位通信；r 相位例子需 2<sup>r</sup> 次 sigmoid 与 O(C<sub>d</sub>+r2<sup>r</sup>) 实数运算。不能忽略指数本地工作。</li><li>单 sigmoid 替代 q₀：无需枚举相位，但支付 ∑ρ<sub>j</sub>²/8。只对已有同一 d，继承其真实单读基线 W=O<sub>c</sub>(1)、D=O<sub>c</sub>(log N+b)、每系数 O<sub>c</sub>(log N+b) 位、未共享总描述 O<sub>c</sub>((log N+b)²)。</li><li>上述基线仍有 N+1 行状态；跳过零注意力槽时工作 O(N²+ND)。实数表达定理不是浮点执行证书。</li><li>新多相位硬网络的宽度、头数、深度、全状态 PreLN 误差均未证明。不能将参考函数公式误报为模型内表达结果。</li><li>增长 r 时区间变短，失败概率按 r·exp(−a<sub>c</sub>(N−b)/r) 一类尺度退化，不能保留与 r 无关的原指数。</li></ul></section>
+<section id="prior"><h2>六 先行工作、失败版本与待解问题</h2><p>Chen、Dobriban、Lee 的 <a href="https://jmlr.org/papers/v21/20-163.html">A Group-Theoretic Framework for Data Augmentation（2020）</a>中 Lemma 1、Proposition 2 已明确给出轨道平均与凸风险改进。群平均、Rao–Blackwell 化、Reynolds 投影和 Jensen 不等式均不是本轮创新。Takemura、Hara 的 <a href="https://arxiv.org/abs/1004.3599">齐次 Markov 链 Markov-basis 研究</a>涉及保持统计量的移动，包括单路径移动，但不直接证明这里二阶二元、固定后缀和廉价重心的组合。</p><p>本轮具体增加的是有限局部改写证书、重心求值与异常概率账本，以及条件不足的严格边界；不作优先权认证。独立审阅只覆盖列明证明及其范围，不重新证明全部继承编译依赖。</p><p>保留失败：把概率保持当作充分计算条件、把生成元采样当成均匀群平均、隐藏 2<sup>r</sup> 计算、免费复用单相位物理编译、把后缀不足升级成一般通信不足、把加性比较变成逐源比例比较。区域起始下标和 h 的取值范围修订前后均保留。</p><p><strong>开放：</strong>真实固定宽度多层多头网络中，哪些可检验条件自动给出这种输出代数闭合？能否证明一般源平均资源下界，或构造真正反驳廉价任务通信的同模型例子？本轮未解决。没有训练、参数生成、数学枚举、数值诊断或模型执行；文档构建不属于科学实验。未做视觉渲染验收，未上传或投稿。</p></section>
+<section id="appendix"><h2>七 完整证明与独立审阅原文</h2><p>候选创建时的待审状态以对应精确版本审阅为准。下列原文可离线核对，哈希仅用于版本绑定，不是科学执行或机器证明。</p><details><summary>有限群折叠与多相位参考例子 · FINITE_GROUP_LOCAL_TASK_FOLDING.candidate.v2.md</summary><p class="hash">SHA-256 fbc953468aa9455da32e801a9ee9ef632b1787ab77e4f11948f838c1874945f6</p><pre># Finite local rewrite groups and sourcewise task-risk folding
+
+6 November 2026 UTC. Symbolic candidate v2; v1 is preserved. This version clarifies that a zone begins immediately after an even time, rather than calling its first symbol index even. No scientific executable, numerical check, training, physical-network construction, external write or upload accompanies this note. Administrative shell file reads/writes are not scientific execution. This is a sufficient structural criterion and a nontrivial multi-phase example, not a generic evolving-memory resource frontier or novelty claim.
+
+## 1. Frozen contract
+
+The source is an arbitrary homogeneous binary order-two Markov law P_(p,mu), with arbitrary initial-pair law mu and c &lt;= p(y|a,b) &lt;= 1-c for fixed 0&lt;c&lt;1/2. Input is the actual raw N-bit sample. The target on that history is tau_p(x)=p(.|x_(N-1),x_N). Risk is E_P TV(Q(X),tau_p(X)), with TV inside any predictor-randomness expectation. All predictors constructed below are deterministic and independent of p,mu.
+
+Retain the final b-bit suffix Z, b&gt;=2. For the original AA/BB physical comparison keep N divisible by four and b a power of two, 4&lt;=b&lt;=N/2. Alice owns positions 4i-3,4i-2, Bob positions 4i-1,4i. Physical claims concern the same positive-epsilon, full-feature real PreLN model with an ordinary final vocabulary softmax, and require a separately established uniform end-to-end approximation bound. A symbolic new phase decomposition is not a physical realization theorem.
+
+## 2. General finite-group criterion
+
+Let H be a finite group, |H|=h, acting by explicitly specified bijections T_g on all length-N words. Suppose:
+
+1. Every T_g preserves the initial pair, all eight overlapping triple counts, and the final b-bit suffix.
+2. A public finite phase set A and public map Phi:{0,1}^N -&gt; A give a decomposition Q_ref(x)=q(Z(x),Phi(x)), where each q(z,a) is a probability vector.
+3. There is an H-invariant good event G and an H-action on A such that Phi(T_g x)=g.Phi(x) for x in G, all g. The H-action on A is transitive. (More generally each orbit may be identified by a public suffix-computable label; average over that labeled orbit.)
+
+Define
+
+  Q_H(x) = (1/h) sum_(g in H) Q_ref(T_g x),
+  M(z) = (1/|A|) sum_(a in A) q(z,a).
+
+Then for every p,mu separately,
+
+  R_P(Q_H) &lt;= R_P(Q_ref).
+
+Indeed homogeneous likelihood is mu(x_1,x_2) times the product of transition probabilities raised to the triple counts. Thus each T_g preserves P exactly, including when mu has zeros, and it preserves the target. Jensen&#x27;s inequality followed by change of variables proves the claim. This part needs neither positivity nor G.
+
+On G, orbit-stabilizer counting gives Q_H(x)=M(Z(x)): every phase appears h/|A| times in the group sum. The stabilizer need not be trivial; transitivity is the requirement. Let D(z)=max_(a,a&#x27; in A) TV(q(z,a),q(z,a&#x27;)). Both Q_H(x) and M(z) are convex combinations of these branch vectors at the same z, even off G. Hence
+
+  TV(Q_H(x),M(Z(x))) &lt;= D(Z(x)) 1_(G complement),
+  R_P(M) &lt;= R_P(Q_ref) + E_P[D(Z)1_(G complement)].       (1)
+
+If sup_x TV(Q_phys(x),Q_ref(x))&lt;=zeta_h, add zeta_h to the right side with Q_phys replacing Q_ref. If a suffix evaluator returns M within uniform TV eta, add eta as well. The expensive orbit predictor Q_H is only a proof device; the task protocol evaluates M directly.
+
+This is a finite algebraic criterion, not an assumption of cheapness. An arbitrary q(z,a) can be computationally hard and its table can have 2^b|A| entries. A large group or phase set can destroy local efficiency even while communication remains small. Section 5 records every such dependence.
+
+## 3. Verifiable local certificates
+
+A block replacement preserves homogeneous order-two likelihood if old/new words have the same first two and last two symbols and identical internal triple-count vectors. Cross-boundary triples are then identical for every surrounding word. Blocks must lie after the initial pair and before the retained suffix.
+
+A useful construction uses a family of distinct same-length words W={w_a:a in K}, all with those boundary/type identities. Let a finite group K act regularly on their labels. At a prescribed bank of disjoint aligned blocks, select the first block belonging to W; replace w_a by w_(g a), leaving unmatched histories unchanged. This is a genuine K-action, since membership and first-hit selection are unchanged. Actions in disjoint banks commute, giving a product group. A union of several K-orbits of words also works when the action is explicitly defined on each and selection membership is invariant.
+
+Phase equivariance must be verified, not inferred from type preservation. One general finite-state verification method is as follows. A public deterministic phase evaluator has finite state S and symbol transitions U_(t,y), allowing a public position clock. For a proposed block rewrite w -&gt; w&#x27;, find a state permutation V representing its intended phase action. Check the block transformation identity U_w&#x27;=V U_w on every reachable incoming state (or all states, which is stronger), and check that all later transitions commute with V. Check that the final readout obeys readout(Vs)=g.readout(s). This proves whole-history equivariance, including later suffix effects. A finite clock can encode all positions for fixed N; this makes verification finite, not necessarily efficient. Multiple generators must additionally satisfy their group relations on states or directly on the full-word maps. We do not infer commuting rewrites merely because their phase labels commute.
+
+For a bank of m disjoint L-bit trials and a membership library of q distinct words, every next trial belongs to the library with conditional probability at least q c^L, regardless of previous failure and initial law. Repeated conditioning gives
+
+  P(no hit in bank) &lt;= (1-q c^L)^m.                       (2)
+
+No block independence is assumed. A union bound over banks supplies the exceptional probability when G requires all banks to have hits. This is valid for fixed c; large L or a growing number of banks may make it ineffective. Variable trial lengths have a product bound with their corresponding q_i c^(L_i). Empty banks have failure probability one.
+
+## 4. Explicit r-phase example
+
+Take r&gt;=2 and nonnegative integers m_1,...,m_r with 8 sum_j m_j &lt;= N-b-2. Starting just after time 2, allocate consecutive disjoint zones I_j of lengths 8m_j. Each zone starts immediately after an even time; its first symbol index is odd. Unused pre-suffix bits and the suffix are outside the zones. In zone j define the RESET quadratic phase
+
+  F_j(x) = sum_(k in I_j, k odd) x_k sum_(ell in I_j, ell&lt;k) x_ell mod 2.
+
+Resetting at zone boundaries is part of the definition, not a discarded cross term of the original full-history phase. Each F_j is a finite-state stream computation using local parity and its accumulated phase; the public clock chooses its zone. This example changes the reference nuisance to r phases. It does not assert that the original one-phase physical network secretly implements r phases.
+
+Partition each zone into its m_j eight-bit blocks. Use
+
+  w=00110000,    w&#x27;=00011000.
+
+Both begin/end with 00. Their internal triples are 001,011,110,100 once each and 000 twice. Both have two ones. The involution T_j interchanges w,w&#x27; in the first matching block of zone j and is the identity if none match. These r involutions commute because their selection and edits use disjoint zones. They define H=(Z/2)^r on all histories, with group size 2^r.
+
+Let E_j be the event of a hit in zone j. If the incoming within-zone parity is S, the block contributions to F_j are S for w and S+1 for w&#x27;, because the selected odd local positions are respectively 3 and 5. The outgoing within-zone parity is unchanged (two ones), so all later phase contributions are unchanged. Thus T_j flips F_j on E_j and leaves every other phase unchanged. This also proves the identity in the presence of preceding blocks in the same zone. On G=intersection_j E_j the phase vector ranges over every element of {0,1}^r under H exactly once, so this is a genuinely 2^r-branch orbit rather than a relabeled two-branch example. G is invariant.
+
+For public rho_j&gt;=0 and public suffix function d define
+
+  q(z,a)(1)=sigmoid(d(z)+sum_j rho_j(2a_j-1)),
+  q(z,a)(0)=1-q(z,a)(1),
+  M(z)(1)=2^(-r) sum_(a in {0,1}^r)
+                       sigmoid(d(z)+sum_j rho_j(2a_j-1)).
+
+No assumption is made that the rho_j are equal. If a fixed bounded-logit/state envelope is desired, impose the additional public bound sum_j rho_j&lt;=R for fixed R; this controls the perturbation magnitude but does not itself prove any PreLN compilation or fixed-width implementation. For example r=2 with distinct positive rho_1,rho_2 gives four distinct branch logits and a group of order four. Set m_1=m_2=floor((N-b-2)/16) for an immediate explicit family. All four phases occur on every good orbit, regardless of the source.
+
+Write gamma=1-2c^8 and let gamma^0=1. Equation (2) gives P(E_j complement)&lt;=gamma^(m_j), hence P(G complement)&lt;=min(1,sum_j gamma^(m_j)). A diameter-only application of (1) gives excess at most min(1,sum_j rho_j/2) times that failure bound.
+
+A sharper bound avoids requiring every phase hit. At any x, Q_H averages exactly the hit coordinates and holds each missing coordinate at its observed value. Symmetrizing one missing coordinate changes the first probability by at most rho_j/4: the two branch logits differ by 2rho_j, sigmoid is 1/4-Lipschitz, and a midpoint is half the branch gap. This estimate remains valid after averaging any other coordinates. Telescoping over missing coordinates yields
+
+  TV(M(Z(x)),Q_H(x)) &lt;= sum_j (rho_j/4)1_(E_j complement),
+  R_P(M) &lt;= R_P(Q_ref)+sum_j (rho_j/4)gamma^(m_j),
+  R_P(M) &lt;= R_P(Q_phys)+zeta_h+sum_j (rho_j/4)gamma^(m_j). (3)
+
+The last line is conditional on a proved physical uniform comparison for this r-phase reference. It is not evidence of such a compilation.
+
+An alternative cheap suffix rule is q_0(1|z)=sigmoid(d(z)). Let independent uniform signs epsilon_j define U=sum_j rho_j epsilon_j. Since E U=0, E U^2=sum_j rho_j^2 and |sigmoid&#x27;&#x27;|&lt;=1/4, Taylor&#x27;s theorem gives
+
+  TV(M(z),q_0(z)) &lt;= (1/8)sum_j rho_j^2.                 (4)
+
+Therefore the original separately compiled one-head baseline for the SAME d, with error zeta_b, obeys the conditional comparison
+
+  R_P(Q_base) &lt;= R_P(Q_phys)+zeta_h+zeta_b
+                +sum_j (rho_j/4)gamma^(m_j)
+                +(1/8)sum_j rho_j^2.                  (5)
+
+Unlike enumerating M, using q_0 does not require 2^r branch evaluations. The price is the explicitly displayed quadratic amplitude term. If total variance sum rho_j^2 is large it need not be small. No sourcewise multiplicative ratio is inferred from these additive bounds.
+
+## 5. Resource ledger and model boundary
+
+Under aligned AA/BB ownership, Alice transmits exactly b/2 suffix bits in public order; Bob reconstructs Z and evaluates the public suffix rule. For general alignment at most b bits suffice. Group size does not multiply communication because phases and original prefix are never transmitted. This is worst-case deterministic one-way bit communication, with no real-valued transmissions or free silence/timing channel.
+
+For a general finite phase table, evaluation costs C_M(b,|A|), not automatically O(b). A direct algorithm computes the suffix once, then enumerates |A| branches with total cost C_Z(b)+sum_a C_q(a)+O(|A|) vector arithmetic; public group/phase description size must be added to any parameter ledger. If only a group-indexed branch description is supplied, the naive sum has h terms and may repeat phases; no free orbit reduction is assumed. The selection-and-rewrite proof maps can be implemented by scanning banks, but Q_H still invokes the original reference up to h times and is not claimed cheap.
+
+For the explicit logistic example, enumerate 2^r sign vectors. Compute d once, compute each signed sum in O(r) arithmetic operations, and evaluate one sigmoid per branch. This gives O(C_d(b)+r2^r) arithmetic work and 2^r sigmoid evaluations, using streaming accumulation and O(r) amplitude storage, in addition to the suffix and evaluator workspace. Gray-code reuse can lower arithmetic overhead but is not needed for this bound. Amplitude/phase descriptions cost at least the supplied description of r amplitudes and zone boundaries. If r grows, exponential local work remains real. The q_0 alternative requires only C_d(b) and one sigmoid, with error (4).
+
+For the imported d, the prior symbolic ledger is O_c(b) exact-real local primitive work plus sigmoid, constant-many O(log b)-bit count registers, and a one-head physical baseline with width O_c(1), depth O_c(log N+b), per-coefficient description O_c(log N+b), untied total description O_c((log N+b)^2). These baseline bounds are inherited only for that same d and its separately correct PreLN compilation. Its physical all-row work still includes N+1 rows and the useful dense head, O(N^2+ND) when zero heads are skipped; constant width is not constant total memory/work.
+
+No multi-phase physical width, depth, compiler precision, useful-head count, parameter-description or finite-arithmetic theorem is established here. Neither an average of 2^r softmax outputs nor deleting nuisance banks is automatically legal inside the frozen ordinary-softmax full-feature PreLN architecture. Equation (5) uses the already separately compiled baseline and assumes a proved new hard-family approximation if such a family is later supplied. Full-feature LN coupling is not ignored.
+
+## 6. Failed routes and precise limits
+
+- A measure-preserving rewrite need not change any nuisance, and a nuisance-flipping rewrite need not preserve Markov likelihood. Both certificates are essential.
+- The shorter five-bit signed-kernel paths 11000 and 01100 are not substituted for a local source-measure-preserving permutation: their first two bits differ, so cross-boundary triple counts can change. Signed cancellation and exact permutation averaging are different mechanisms.
+- Merely averaging logits does not equal M. The only permission to replace M by q_0 here is the paid Taylor error (4).
+- Transitivity cannot be dropped: different phase orbits can have different means depending on unrevealed prefix information. An orbit label must be suffix-computable, or this route does not yield a suffix predictor.
+- Independent block occurrences are not assumed; the failure bound is conditional minorization. Zero transition bounds preserve exact orbit domination but remove useful exponential decay.
+- Repeating the original phase r times would not create r independent group coordinates. The reset-zone definition and separate phase-flip proof are what establish the multi-phase example.
+- If r grows with N with balanced m_j roughly (N-b)/(8r), the union bound scales as r exp(-a_c(N-b)/r), not exp(-a_c(N-b)) with a uniform constant. The sharper excess scales with the amplitudes but still has this zone-length deterioration.
+- The companion UNIVERSAL_REWRITE_CONSERVATION.candidate.v1.md proves that preservation of every source with arbitrary initial law and independent kernel rows ranging over an open interior forces any deterministic bijection to preserve the initial pair and all triple counts. Thus universal rewrite groups cannot mix the entire suffix fiber, whose histories can have different total counts. Output algebra is indispensable. This necessity statement is not asserted for the stationary-only source class, and is not a task-risk lower bound.
+- No architecture-preserving universal Rao-Blackwellization, minimax improvement, new output-simulation lower, necessity of the criterion, or generic task-risk/depth frontier follows.
+
+## 7. Read provenance and status
+
+Read in full:
+- UNIVERSAL_REWRITE_CONSERVATION.candidate.v1.md: necessity of Markov-type conservation under arbitrary initial laws, and the consequent obstruction to unrestricted suffix-fiber mixing.
+- ../task_oriented_simulation_20261106/LOCAL_TYPE_INVOLUTION_CERTIFICATE.candidate.v2.md: exact eight-word local type-preserving involution, prefix-domain/empty-event conventions, original physical-scope distinctions.
+- ../task_oriented_simulation_20261106/SYMMETRIC_QUADRATIC_NUISANCE_REMOVAL.candidate.v1.md: source contract, signed-versus-permutation distinction, AA/BB suffix costs, midpoint-to-baseline comparison, inherited separate PreLN compiler ledger.
+
+New in this note: the finite-group sufficient criterion; local regular-word-library construction; a finite-state equivariance check; r reset-zone phase example; coordinate-weighted exceptional bound; variance-based baseline comparison; explicit group-size cost ledger. All new mathematical claims are symbolic proofs. No finite enumeration, scientific test, execution or independent review has yet checked them. The files above are primary provenance for inherited statements; their downstream neural compilation dependencies are not independently re-read or re-proved here.
+</pre></details><details><summary>普适双射的类型守恒 · UNIVERSAL_REWRITE_CONSERVATION.candidate.v1.md</summary><p class="hash">SHA-256 9fa0a82cf43eca5bb231feaf765516ad9fb4c8dce87e003acfa23ac50beb484d</p><pre># Universal deterministic rewrite conservation
+
+6 November 2026 UTC. Candidate v1. Symbolic statement; independent review pending. No architecture or communication conclusion is implied by this lemma.
+
+Fix N&gt;=3 and binary homogeneous second-order path laws with arbitrary initial-pair distribution μ and four independent transition probabilities p_ab in the open interval (c,1-c), 0&lt;c&lt;1/2. Let τ be a bijection of {0,1}^N that preserves EACH such path measure. Then τ preserves the initial pair and every triple count. Conversely every bijection with these properties preserves every homogeneous second-order path measure, even with zero probabilities.
+
+Proof. In a finite space, preservation by a bijection means P(x)=P(τx). Concentrating μ on x&#x27;s initial pair proves that τx has the same initial pair: every path with that pair has positive probability, all other initial pairs have probability zero. Write A_ab=C_ab1(x), B_ab=C_ab0(x), and primed versions for τx. Equality of path masses gives
+
+  product_ab p_ab^(A_ab) (1-p_ab)^(B_ab)
+  = product_ab p_ab^(A&#x27;_ab) (1-p_ab)^(B&#x27;_ab).
+
+Fix the other three row parameters. For each row this says p^u(1-p)^v is a positive constant throughout an open interval, with integer u=A-A&#x27; and v=B-B&#x27;. Logarithmic differentiation yields u/p-v/(1-p)=0 throughout that interval, hence u-(u+v)p=0, so u=v=0. All counts agree. The converse follows directly from the likelihood factorization.
+
+The total number of ones is x_1+x_2+sum_ab C_ab1. Hence every such rewrite preserves that count. In particular no family of universally preserving bijections can mix across different values of this statistic. A chain or group built only from such bijections cannot be uniformly mixing on the whole set of histories sharing a terminal suffix: that suffix class contains differing counts whenever N&gt;b&gt;=2.
+
+This is a limitation on an exact universal orbit-to-suffix reduction for arbitrary functions. It is NOT a lower bound on task risk, nor a proof that a count-dependent predictor lacks some other cheap risk replacement. The assumed arbitrary initial laws are essential to the stated initial-pair proof; this lemma is not asserted from preservation of the stationary-only source class alone. Positive row parameters on an open interval are enough; no boundary transition is used in the necessity proof.
+
+Failure retained: a broad attempt to infer whole suffix-fiber mixing solely from universal probability preservation fails because the full Markov type is conserved. Additional output algebra, rather than source preservation alone, must make an orbit barycenter suffix-computable.
+</pre></details><details><summary>多数预测器的后缀支配反例 · INVARIANCE_DOES_NOT_FORCE_SUFFIX_DOMINATION.candidate.v2.md</summary><p class="hash">SHA-256 d11854f28b3640172114b6595b447509d00999a40180a14fa2f2fb4553aa9af1</p><pre># Universal local invariance does not imply suffix-only risk domination
+
+6 November 2026 UTC. Analytical candidate v2; v1 is preserved. This version adds the scaling and full-class limitation in Section 7. Symbolic proof; no mathematical executable, training, upload, or public mutation. This is a narrow task-risk counterexample, not a communication lower bound or a new statistical rate.
+
+## 1. Precise conclusion
+
+Fix 0&lt;c&lt;1/2 and integers N&gt;=b+2, b&gt;=1. There is a source-independent binary next-symbol predictor Q_N, invariant under every probability-preserving bijection common to all homogeneous binary order-two source laws, for which NO predictor depending only on the final b symbols has risk no greater at both IID Bernoulli(c) and IID Bernoulli(1-c).
+
+The same conclusion holds for the specific local involution in LOCAL_TYPE_INVOLUTION_CERTIFICATE.candidate.v2.md whenever its horizon restrictions are met. Thus even exact invariance under all universal type moves does not imply exact sourcewise domination by a prescribed short suffix predictor. The loss is actual prediction TV; a replacement may output arbitrary distributions and need not reconstruct Q_N.
+
+This does NOT refute cheap general distributed task folding. Indeed Q_N can be evaluated with O(log N) communication by exchanging counts. It also does not refute minimax domination with slack or a constant-factor risk allowance.
+
+## 2. Two sources and a fully invariant predictor
+
+Let P_- be IID Bernoulli(c), P_+ be IID Bernoulli(1-c). Both are stationary homogeneous binary order-two sources in the usual interior class P_c. They have constant next-one probabilities c and 1-c. Put Delta=1-2c and S(x)=sum_i x_i.
+
+Define Q_N&#x27;s probability of one to be c when S&lt;N/2, 1-c when S&gt;N/2, and 1/2 on a tie. This is one predictor, independent of the actual source.
+
+The complete Markov type determines S:
+
+ S=x_1+x_2+sum_(a,b) C_ab1.
+
+Consequently Q_N is full-type invariant and invariant under the reviewed local rewrite. More strongly, suppose a bijection j preserves every source law in the model. Finite-space measure preservation gives P_-(x)=P_-(j(x)); since c!=1/2, equality of c^S(1-c)^(N-S) forces S(j(x))=S(x). Hence Q_N is invariant under every such bijection. This statement concerns bijections, not arbitrary measure-preserving randomized kernels.
+
+## 3. Bayes TV risk, including arbitrary replacement outputs
+
+Introduce an equal prior on the two sources only as a proof device. Given an observed word of length n, the likelihood ratio is
+
+ L_n=((1-c)/c)^(2S-n).
+
+For posterior probability pi of P_+, the conditional TV loss of a reported probability q is
+
+ pi |q-(1-c)|+(1-pi)|q-c|.
+
+Clipping q to [c,1-c] cannot increase this loss. On this interval it is affine in q; its minimum is Delta min(pi,1-pi), achieved at the more probable endpoint (and every point of the interval when pi=1/2). Thus majority is a Bayes-optimal TV predictor, not merely an output classifier. Randomized predictions cannot do better, by the same pointwise minimization or convexity.
+
+Write
+
+ e_n = Pr_(Bin(n,c))(S&gt;n/2) + (1/2) Pr_(Bin(n,c))(S=n/2).
+
+Symmetry between the two sources gives equal-prior optimal prediction risk Delta e_n. The full-history Q_N attains Delta e_N. Under IID sources the final b symbols are just a length-b IID experiment, so every suffix-b predictor Q_s satisfies
+
+ (R_-(Q_s)+R_+(Q_s))/2 &gt;= Delta e_b.
+
+## 4. Strict improvement from at least two additional observations
+
+Bayes error cannot increase with more observations: the later observer can ignore them. It strictly decreases between n and n+2.
+
+For even n, the event S=n/2 has positive mixture probability and posterior pi=1/2. Two additional observations have nonzero probabilities of 00 and 11 under both sources. These yield posterior values on opposite sides of 1/2. The posterior is a martingale, and min(pi,1-pi) is concave with a strict corner at 1/2. Conditional expectation of this function is therefore strictly smaller after the two observations on that event.
+
+For odd n, use the positive-probability event S=(n+1)/2, whose likelihood-ratio exponent is +1. Two observations 00 yield exponent -1, whereas 11 yield exponent +3. Their posterior values again lie strictly on opposite sides of 1/2, giving strict Jensen improvement. Other old observations cannot increase expected Bayes error. Thus e_(n+2)&lt;e_n.
+
+It follows that N&gt;=b+2 implies e_N&lt;e_b. Set g=Delta(e_b-e_N)&gt;0. If one suffix predictor sourcewise dominated Q_N at both sources, averaging those two inequalities would imply Delta e_b&lt;=Delta e_N, a contradiction. In fact every suffix predictor has at least one source on which its excess risk over Q_N is at least g.
+
+No assertion that g stays bounded away from zero is made. For fixed c and large b, this gap can be very small; it is not a new minimax rate.
+
+## 5. Architecture and approximation boundaries
+
+There is a simple bounded-gain constant-width LOGICAL uniform-head program for Q_N. With the actual synthetic zero-symbol terminal, a zero-score scalar full-prefix attention read returns r=S/(N+1). Subtract N/[2(N+1)]. Repeated fixed-gain doubling with clipping to [-1,1], for ceil(log2(2(N+1))) stages, maps every nonzero grid offset to its sign and preserves a tie as zero. All states and primitive gains remain bounded; depth is O(log N). Use final logits (a t,0), a=log((1-c)/c), with t the resulting sign. Ordinary softmax returns exactly the desired probabilities, including 1/2 at a tie. This is a logical circuit, not an independently audited all-feature PreLN realization.
+
+The reviewed small-amplitude paired-state compiler is a possible physical route. This note does not assert a new complete physical theorem or exact physical invariance. If a separately verified physical construction has uniform TV error zeta, then its risk differs from Q_N by at most zeta at each source and its rewrite modulus is at most 2zeta. If zeta&lt;g, NO suffix-b predictor can sourcewise dominate that physical output either, by the same mixture gap. Exact equality of physical outputs on orbits does not follow from uniform approximation.
+
+The necessary accuracy is tied to g. Selecting zeta&lt;g without charging log(1/zeta), preparation, amplitude, restoration, final normalization, and parameter precision would conceal costs. In particular no O(log N) physical claim is obtained here when b grows with N. No claim about useful-head ablations is supplied.
+
+## 6. Why this is not the missing communication counterexample
+
+Under AA/BB ownership Alice sends her number of ones in ceil(log2(N/2+1)) bits; Bob adds his count and evaluates Q_N. Hence the example is cheap in ordinary interactive communication. It proves that local invariance does not force suffix-only sourcewise domination, but leaves open a general efficient task-folding theorem that may use other cheap statistics.
+
+References read: ../task_oriented_simulation_20261106/LOCAL_TYPE_INVOLUTION_CERTIFICATE.candidate.v2.md; ../task_oriented_simulation_20261106/UNIVERSAL_MARKOV_TYPE_PROJECTION.candidate.v1.md; ../nonlinear_statistical_frontier_20261106/IID_QUADRATIC_NUISANCE_HARDNESS.candidate.v3.md.
+
+## 7. Nontrivial scaling and the full-class limitation
+
+The strict gap need not demand exponentially many bits in N. For b&gt;=1 the all-ones sample is an error under Bernoulli(c), so e_b&gt;=c^b. Hoeffding&#x27;s bound gives e_N&lt;=exp[-2N(1/2-c)^2]. Hence
+
+ g &gt;= Delta {c^b-exp[-2N(1/2-c)^2]}.
+
+Take N divisible by four and b=Theta(log N), with b a power of two if the prior suffix convention requires it. For all sufficiently large N, g&gt;=Delta c^b/2, an inverse-polynomial lower bound in N. Choosing zeta&lt;=Delta c^b/4 then requires log(1/zeta)=O_c(b)=O_c(log N). This is a justified accuracy/description target, not by itself a completed PreLN compiler audit. The logical circuit has no variable-input logarithm stage; its terminal logit scale a depends only on fixed c. Any physical transfer must still verify full preparation, normalization, restoration, and complete-state error at this tolerance.
+
+Q_N is useful and Bayes-optimal on the two IID witness sources. It is NOT claimed to be consistent over the entire unknown order-two class P_c: global count majority would generally discard the terminal-context dependence needed there. A theorem claiming sourcewise suffix domination for every invariant predictor is disproved by these two witnesses. A theorem restricted to globally consistent or minimax-rate-optimal predictors, or allowing statistical slack, needs a different argument.
+</pre></details><details><summary>全类一致的类型预测器反例 · CONSISTENT_TYPE_ESTIMATOR_SUFFIX_OBSTRUCTION.candidate.v1.md</summary><p class="hash">SHA-256 83b42f71263b46a22e462b808bde2344dbd68c3938e970847074175653e857d9</p><pre># A globally consistent type-invariant predictor need not admit suffix domination
+
+6 November 2026 UTC. Private analytical candidate v1. Symbolic result; no executable, training, upload, or new-rate claim. This strengthens the consistency scope of INVARIANCE_DOES_NOT_FORCE_SUFFIX_DOMINATION.candidate.v1.md, without giving an actual PreLN construction or an arbitrary-message communication lower.
+
+## 1. Full-type empirical predictor and uniform risk
+
+Fix 0&lt;c&lt;1/2. Let P_c contain homogeneous binary order-two kernels with every transition probability in [c,1-c], with any initial law. For each context v in {00,01,10,11}, define
+
+ D_v=sum_(i=3)^N 1{(X_(i-2),X_(i-1))=v},
+ A_v=sum_(i=3)^N 1{(X_(i-2),X_(i-1))=v} X_i.
+
+Use A_v/D_v when D_v&gt;0 and 1/2 otherwise, clipped to [c,1-c], as p_hat_v. Report p_hat_(X_(N-1),X_N) as the next-one probability. This predictor factors through full triple counts and the final pair. It is exactly invariant under the reviewed local type rewrite, and all endpoint-preserving type moves.
+
+Here is an elementary uniform risk bound, included to avoid hiding a statistical assumption. Put L=floor((N-3)/2), and assume N&gt;=6. Among the context pairs counted in D_v are the L disjoint pairs (X_3,X_4),(X_5,X_6),...,(X_(2L+1),X_(2L+2)). Conditional on all symbols preceding any such pair, its probability of equaling v is at least c^2. For their indicators B_j, iterated conditioning gives, for every t&gt;0,
+
+ E exp[-t sum_j B_j] &lt;= (1-c^2+c^2 exp(-t))^L.
+
+The usual one-line exponential Markov optimization (the binomial lower-tail Chernoff bound) therefore gives
+
+ Pr(D_v&lt;Lc^2/2) &lt;= exp(-Lc^2/8).
+
+Let p_v=p(1|v) and Z_v=A_v-p_v D_v. Its summands are martingale differences relative to the raw history filtration, so E Z_v^2&lt;= (N-2)/4 and E|Z_v|&lt;=sqrt(N)/2. On D_v&gt;=Lc^2/2,
+
+ |p_hat_v-p_v| &lt;= 2|Z_v|/(Lc^2).
+
+Clipping cannot worsen the error, and off this event the error is at most one. Hence
+
+ E|p_hat_v-p_v| &lt;= sqrt(N)/(Lc^2)+exp(-Lc^2/8).
+
+The actual final context is random; no independence with the estimator is assumed. Bound its error by the sum of the four context errors to obtain
+
+ sup_(P in P_c) R_P(Q_type)
+ &lt;= B_N := 4sqrt(N)/(Lc^2)+4exp(-Lc^2/8)
+ = O_c(N^(-1/2)).
+
+The loose constants and classical rate are not claimed as new. Arbitrary initial laws do not affect this proof because the selected pair blocks begin after the initial pair.
+
+## 2. Every sufficiently short suffix loses on at least one IID witness
+
+For equal-prior IID Bernoulli(c) and Bernoulli(1-c), the companion proof shows that every suffix-b predictor has mixture TV risk at least Delta e_b, where Delta=1-2c and e_b is the optimal majority-testing error. In particular e_b&gt;=c^b by the all-ones event under Bernoulli(c).
+
+Choose any integer b&gt;=1 with
+
+ b &lt;= log N/[4 log(1/c)].
+
+Then c^b&gt;=N^(-1/4). Consequently every suffix-b predictor Q_s satisfies
+
+ [R_-(Q_s)+R_+(Q_s)]/2 &gt;= Delta N^(-1/4),
+
+while the globally consistent Q_type satisfies both witness risks &lt;=B_N=O_c(N^(-1/2)). For all sufficiently large N, Delta N^(-1/4)&gt;B_N. No suffix-b predictor can then sourcewise dominate Q_type, even just on these two sources.
+
+Moreover some witness has excess risk at least Delta N^(-1/4)-B_N. Choosing b to be the largest power of two below the displayed bound retains b=Theta_c(log N), and N may remain divisible by four.
+
+This is a real task-risk separation allowing arbitrary randomized replacement outputs. It does not depend on approximating Q_type&#x27;s original outputs. It also withstands uniform output perturbations zeta&lt;Delta N^(-1/4)-B_N, but such a perturbation only gives approximate invariance, not exact physical invariance.
+
+## 3. Exact scope
+
+This result invalidates blanket suffix-only sourcewise domination even when the invariant predictor is uniformly consistent over the full interior order-two class. It does not establish any architecture/resource advantage: no bounded-width actual PreLN realization is proved here. The known packed-suffix decoder could motivate a separately charged O(N)-depth route, but that is not a theorem of this note.
+
+Exact distributed acquisition of all transition counts is difficult under the old ownership split, but this does not imply that a different low-cost predictor cannot match the task risk. No superlogarithmic interactive task lower is claimed. The missing arbitrary-message task-folding counterexample remains missing.
+</pre></details><details><summary>零通信障碍与失败路线 · INVARIANT_TASK_COUNTEREXAMPLE_FAILURES.candidate.v2.md</summary><p class="hash">SHA-256 3d6bde6cc97bdb2eb0726644a81217ed3ae332e18a9dd73f0b6e976fa448daa7</p><pre># Retained limits and a genuine zero-communication task obstruction
+
+6 November 2026 UTC. Analytical candidate v2; v1 is preserved. The sign-testing comparison explicitly specifies 0&lt;h&lt;=1-2c. No experiments, mathematical execution, training, or upload.
+
+## A. A useful full-type statistic whose parameter sign is invisible locally
+
+Use spins X_i in {-1,+1} and a stationary homogeneous order-two law
+
+ P_theta(X_i=z | X_(i-2)=u,X_(i-1)=v)=(1+theta zu)/2,
+
+with initial pair independent uniform and |theta|&lt;=1-2c. In the two-sign comparison choose 0&lt;h&lt;=1-2c. The two parity subsequences are independent stationary symmetric Markov chains with one-step correlation theta. Under AA/BB raw ownership each party sees every other site in each parity chain. Its marginal transition correlation is theta^2. Consequently Alice&#x27;s full local marginal, and Bob&#x27;s full local marginal, are each IDENTICAL at theta=+h and theta=-h.
+
+Bob owns the final pair when N is divisible by four. The next-one probability is (1+theta X_(N-1))/2. Any zero-communication prediction at Bob (with independent shared/private random coins permitted) therefore has
+
+ max{R_(+h),R_(-h)} &gt;= h/2.
+
+Proof: Bob&#x27;s input and coins have the same law at the two parameters. For each such input the two target probabilities differ by h. Sum the two absolute losses and use the triangle inequality, then integrate under that common law.
+
+Yet useful invariant full-data prediction is elementary. The lag-two products Y_i=X_i X_(i-2), i=3,...,N, are independent signs with mean theta: they are precisely the independent transition innovations of the two parity chains. Let theta_hat=(N-2)^(-1)sum Y_i and report (1+theta_hat X_(N-1))/2. Its TV risk is
+
+ (1/2)E|theta_hat-theta| &lt;= 1/[2 sqrt(N-2)].
+
+This estimator factors through complete triple counts and the final pair, so it is invariant under the specific local rewrite and every endpoint-preserving type move. Thus actual useful task information can survive type projection and be invisible to either party alone.
+
+Scope: this proves only a ZERO-communication obstruction. It does not prove a superlogarithmic interactive lower, a fixed-width PreLN realization, or universal invariance under all source-preserving maps. Deriving a quantitative distributed-testing lower at h of order N^(-1/2) would require an additional argument not supplied here. Identical separate marginals alone never imply a large interactive communication lower.
+
+## B. Rejected routes
+
+1. Parity of C_111 is type-invariant and can encode inner product on a selected AA/BB raw-history family. That is whole-output / exact-statistic hardness, not task-risk hardness. A predictor may discard the parity without hurting its task loss. The encoded distribution also is not the homogeneous Markov source law.
+2. Reusing the old within-type quadratic nuisance fails because the local rewrite deliberately flips its phase. Its replacement is already cheap by the reviewed orbit midpoint proof.
+3. Adding a new invariant nuisance to a consistent estimator does not establish useful distributed hardness. Its deletion remains a legal task replacement unless a separate prediction-risk separation is proved.
+4. O(log N)-bit description of Markov types does not imply cheap distributed acquisition. Conversely, linear exact acquisition cost does not imply that all useful functions of the types are expensive.
+5. The full-count majority counterexample in the companion candidate proves a real task-risk failure of suffix-only domination, but total count itself has logarithmic communication. It cannot honestly be promoted into a counterexample to arbitrary cheap communication folding.
+6. An exponentially small strict Bayes gap cannot be transferred to a physical compiler with only inverse-polynomial error unless the error is below that gap. Required accuracy and precision must remain paid.
+
+## C. Unresolved deliverable
+
+No rigorous same-model counterexample was obtained in which a locally invariant fixed-width actual PreLN/softmax predictor has useful risk that every cheap interactive task replacement fails to match. The narrow suffix-domination theorem is proved; the general task-folding obstruction remains open here.
+</pre></details><details><summary>先行工作对照 · PRIOR_COMPARISON.v1.md</summary><p class="hash">SHA-256 eb477ef41dd55009922d7c14d2c150e5a73574f91cd31f9e8b0f845550af39e5</p><pre># Local rewrite orbit folding: targeted prior comparison
+
+6 November 2026 UTC. Targeted web verification, not an exhaustive novelty search. Baseline read: task_oriented_simulation_20261106/README.v1.md and LOCAL_TYPE_INVOLUTION_CERTIFICATE.candidate.v2.md. This document does not certify any proposed generalization&#x27;s proof.
+
+## 1. Closest averaging result: explicitly not new
+
+Shuxiao Chen, Edgar Dobriban, Jane H. Lee, **A Group-Theoretic Framework for Data Augmentation**, JMLR 21(245):1–71, 2020.
+
+- Landing page: https://jmlr.org/papers/v21/20-163.html
+- Full paper: https://www.jmlr.org/papers/volume21/20-163/20-163.pdf
+- Verified full-text locations: Lemma 1, printed p.15; Proposition 2 and Rao–Blackwell discussion, printed p.16 (PDF pages indexed 14–15).
+- What it establishes: Under exact distributional invariance, group averaging is orbit conditional averaging, preserves expectations, reduces covariance, and decreases expected convex functions. Proposition 2 applies the principle to estimators and convex loss. The paper separately studies approximate invariance.
+- What it does not supply for this project: a binary order-two fixed-suffix rewrite construction, cancellation of this history phase, or a communication-cheap implementation of the averaged predictor. Its fixed parameter estimation formulation also requires an explicit adaptation when the prediction target depends on the history: the target must remain fixed along each orbit.
+
+Thus source-preserving group averaging plus Jensen, including the two-element involution case, must be presented as standard machinery, not the contribution. Merely replacing C2 by a larger finite group does not change that assessment.
+
+## 2. Count-preserving moves and conditional sampling
+
+Akimichi Takemura and Hisayuki Hara, **Markov chain Monte Carlo test of toric homogeneous Markov chains**, Statistical Methodology 9 (2012), 392–406; preprint https://arxiv.org/abs/1004.3599 ; full text https://arxiv.org/pdf/1004.3599 .
+
+Verified §2.2, §2.3, Theorem 1: the sufficient statistics are initial-state frequencies and aggregate transition counts for a multiset of first-order paths. Their moves preserve these statistics; crossing-path swaps and other moves connect fibers in the stated cases. Theorem 1 treats two states and arbitrary length; another result treats arbitrary states and length three. These include degree-one moves, so it would be wrong to say all their operations require multiple paths.
+
+Important differences: connectivity of a contingency-table fiber is not itself a bijective fixed-suffix map on one binary order-two history, a phase-cancellation identity, or an inexpensive barycenter. Encoding order-two histories by pair states gives a four-state graph with forbidden transitions. The two-state theorem cannot simply be imported into that constrained four-state problem.
+
+Related source: Hara and Takemura, **A Markov basis for two-state toric homogeneous Markov chain model without initial parameters**, 2011: https://www.jstage.jst.go.jp/article/jjss/41/1/41_1_033/_article/-char/en ; https://arxiv.org/abs/1005.1717 . Abstract verified: degree at most three suffices for their two-state model without initial parameters. This is a different model from preservation of an arbitrary initial-pair law.
+
+Foundational reference: Persi Diaconis and Bernd Sturmfels, **Algebraic algorithms for sampling from conditional distributions**, Annals of Statistics 26(1), 363–397 (1998). Verified institutional record: https://statistics.stanford.edu/technical-reports/algebraic-algorithms-sampling-conditional-distributions . Search-accessible paper: https://www.math.ucdavis.edu/~deloera/MISC/LA-BIBLIO/trunk/Diaconis/Diaconis8.pdf . The general subject is Markov-chain sampling conditional on discrete exponential-family sufficient statistics. The PDF opened but yielded no extractable text here; no theorem-number claim is based on it.
+
+## 3. Finite-group cancellation and random walks
+
+Persi Diaconis, **Group Representations in Probability and Statistics** (1988), verified bibliographic DOI: https://doi.org/10.1214/lnms/1215467407 ; institutional preprint record: https://statistics.stanford.edu/technical-reports/group-representations-probability-and-statistics . The publisher page did not expose readable chapter text here.
+
+Accessible secondary verification: https://math362.cjgg.me/notes/characters/fourier-theory.html , Remark 9.1 and §9.2. Uniform group averaging is the Reynolds projection onto invariant vectors. The notes attribute the finite-group Fourier upper-bound lemma to Diaconis (1988), Lemma 3.1. Nontrivial irreducible components vanish under uniform averaging. Random-walk convergence is a separate quantitative question, not a consequence of merely naming a finite group.
+
+Application cautions developed for this project: a nonuniform single-step generator average need not be the uniform orbit projection. Periodicity or a proper generated subgroup can prevent the claimed cancellation. If noncommuting rewrites are sampled, prove stationarity, accessibility and the needed contraction or use exact finite-group averaging. A general finite-state transducer can be noninvertible and need not define any group action. Its aggregation requires separate source-preservation and target-invariance proofs. A sufficient exact projection identity can avoid invoking mixing altogether.
+
+## 4. The meaningful additional composition/resource question
+
+The candidate claim worth proving is more specific than the inherited averaging lemma:
+
+1. Explicit local rewrites preserve every homogeneous order-two source likelihood, including arbitrary initial law; this requires initial pair, triple counts and boundary compatibility.
+2. On a source-uniform high-probability event, the reachable output orbit has a barycenter depending only on the retained suffix, with no hidden prefix state.
+3. The exceptional-event probability has a proved uniform bound under the stated positive-transition assumption.
+4. The suffix-only map is actually implementable within the declared communication and physical architecture budget, including approximation errors.
+
+These four obligations can turn standard averaging into a concrete resource separation. Finite orbit size, a short orbit description, or small sufficient statistics alone do not establish cheap evaluation. Exact risk domination belongs to the orbit average; the implementable suffix replacement generally pays an exceptional-event term and physical compilation error. Neither full-output hardness nor a universal low-risk-network replacement theorem follows from this composition.
+
+Recommended phrasing: “We combine classical invariant convex-risk averaging with an explicit type-preserving local rewrite certificate and a separately proved suffix-computable orbit barycenter.” Novelty and priority remain unverified; do not call Jensen averaging, Reynolds projection, or count-preserving moves new.
+
+No uploads, purchases, training, model experiments, or numerical tests were performed for this comparison.
+</pre></details><details><summary>范围与失败记录 · SCOPE_AND_FAILED_ROUTES.v1.md</summary><p class="hash">SHA-256 14fcce94724c66e971b8a7d4d0352da4057dcd758dd1d532a04a72d11e3a76e5</p><pre># Scope and failed routes
+
+6 November 2026 UTC. This round extends the explicitly structured task-risk argument; it does not solve the general T1/T2 resource frontier.
+
+The common prediction task is the next-symbol distribution at the actual terminal pair of an unknown homogeneous binary second-order source with all transitions in [c,1-c]. The main stationary interior source class is included. The rewrite results hold more broadly for arbitrary initial-pair laws; the necessity-of-type-conservation argument uses that broader requirement and must not be asserted from stationary invariance alone. Loss is expected terminal total variation, not training loss or a proper-score replacement.
+
+1. Failed: source-preserving transformations alone imply cheap averaging. They preserve full Markov type and may leave computationally important statistics untouched. A proved suffix-computable orbit barycenter and its evaluator cost are separate obligations.
+2. Failed: mixing generators automatically produce uniform orbit averaging. Accessibility, stationary law and periodicity would require proof. The candidate uses exact finite-group averages and algebraic phase equivariance instead.
+3. Failed: many phases are a free extension of a real single-phase Transformer. The reset-zone example is proved as a reference function; no new physical multi-phase network has been compiled. A comparison to a physical network is conditional on a separately proved uniform error bound. The existing suffix baseline is genuinely compiled under its inherited contract.
+4. Failed: group size affects no resources because communication is b/2. Direct evaluation uses 2^r sigmoids in the example and growing r needs a ledger. The alternate single-sigmoid rule pays sum rho_j^2/8, rather than claiming exact equality.
+5. Failed: invariance of a useful statistic refutes all cheap task replacements. A suffix-only domination obstruction is narrower than an arbitrary-message communication lower bound. In particular a global count can be sent using logarithmically many bits.
+6. Failed: additive loss comparison implies a sourcewise multiplicative guarantee. It does not without a corresponding positive sourcewise risk lower bound.
+7. Failed: the invariant convex-risk averaging lemma is a new result. It is standard Rao–Blackwell/group averaging machinery; targeted primary-paper comparison is recorded separately.
+8. Failed: make O(risk^-2) generic suffix cost into O(depth) for every low-risk network. The previous equivalence shows that this substitutes the unproved resource lower bound for the missing structural argument.
+
+No new finite-precision numerical execution theorem, optimized resource rate, learned parameters, training guarantee or exhaustive novelty determination is provided. There is no mathematics executable in this round. Document build/HTML static inspection, if performed, is not a numerical or model experiment. Existing dependencies are reused with explicit scope, not transitively re-proved.
+</pre></details><details><summary>精确版本独立审阅 · INDEPENDENT_CONSISTENT_TYPE_OBSTRUCTION_AUDIT.v1.md</summary><p class="hash">SHA-256 49316d5984b0a1bac429505e71407b158267cd716539849f551cf0451c508cb8</p><pre># Audit: consistent empirical-type suffix obstruction
+
+6 November 2026 UTC.
+
+Reviewed `CONSISTENT_TYPE_ESTIMATOR_SUFFIX_OBSTRUCTION.candidate.v1.md`, SHA-256 `83b42f71263b46a22e462b808bde2344dbd68c3938e970847074175653e857d9`.
+
+## Verdict
+
+Pass for the symbolic statistical statement. It strengthens the earlier suffix-only obstruction by using a predictor uniformly consistent over the full positive homogeneous order-two class with arbitrary initialization. It does not prove a physical PreLN realization or a lower bound against arbitrary interactive task communication.
+
+## Uniform risk proof
+
+- The selected context pairs start at positions 3,5,...,2L+1 and end at 2L+2≤N−1, so every one is a context counted by D_v. Their transitions occur after the initial pair.
+- Given the raw history preceding one selected pair, the probability of its two specified bits is at least c². This also bounds the conditional probability given earlier block events. Repeated exponential-moment conditioning therefore gives the displayed binomial-dominated lower tail without assuming independent blocks. The conservative Chernoff constant 1/8 is valid.
+- Each summand of Z_v is an indicator measurable before X_i times X_i−p_v and has conditional mean zero. Distinct increments are orthogonal. Conditional variance is at most 1/4 times the indicator; E Z_v²≤(N−2)/4 follows. The coarser E|Z_v|≤sqrt(N)/2 is valid.
+- On D_v≥Lc²/2, the empirical ratio&#x27;s error is bounded by 2|Z_v|/(Lc²). Clipping to the known admissible interval cannot increase distance to p_v. Off that event the error is bounded by one, including D_v=0.
+- The terminal pair is random and correlated with the estimates. Bounding the selected error pointwise by the sum over four contexts is valid and explicitly avoids an unjustified independence step.
+- L is positive for N≥6 and asymptotic to N/2. Consequently the claimed B_N is O_c(N^−1/2), uniformly over kernels and arbitrary initial laws. A displayed bound exceeding one at small N is harmless.
+
+## Suffix separation proof
+
+For b≥1, the all-ones event under Bernoulli(c) is a strict erroneous-majority event with probability c^b. Thus e_b≥c^b. The stated logarithmic upper bound on b gives c^b≥N^−1/4, with the inequality direction correct because log(c)&lt;0.
+
+The two-source mixture lower bound applies to all suffix-only reported probability vectors, including randomized rules. Uniform consistency bounds each witness risk of the empirical-type predictor by B_N. For fixed c and sufficiently large N, (1−2c)N^−1/4−B_N is positive. Averaging rules out simultaneous domination at both witnesses and gives the stated excess on at least one witness. Choosing the largest power of two below the threshold preserves logarithmic order and the earlier alignment domain for large N.
+
+The predictor depends on public c but not the unknown source parameter or initial law. It factors through triple counts and terminal context and is invariant under the specified endpoint-preserving moves. This statement should not be strengthened to every universally preserving map unless terminal-context preservation is separately supplied.
+
+## Approximation and scope
+
+Uniform output error ζ adds at most ζ to each source risk. A positive gap survives when ζ is strictly below the stated gap. This is conditional transfer, not a physical construction; exact invariance need not survive approximate compilation. No uncharged source-dependent operation, presumed resource lower bound, or type-class enumeration enters the statistical proof. Acquisition of empirical counts in the distributed model is not shown cheap, and hardness of exact acquisition would not establish hardness of all task replacements.
+
+## Initial report-body review
+
+Also read `REPORT_BODY.zh.v1.html`, SHA-256 `cfa1b95922ccb7ed6668683526904bcbc6b68c96e5ba1309b3ca5b0f9ac24ff0`. Its existing finite-group, majority, spin, resource, and novelty summaries faithfully preserve the audited distinctions. It does not yet include the present strengthened empirical-type result. A revised body should identify this as a separate predictor; the earlier two-source majority rule itself is not globally consistent on the whole order-two class. This is semantic source review, not rendered layout validation or a binding to a later assembled report.
+</pre></details><details><summary>精确版本独立审阅 · INDEPENDENT_ORBIT_EXTENSION_AUDIT.v1.md</summary><p class="hash">SHA-256 fdd51a79562c13d05f974f0fa084176992b9e1c6d04b68889927bfc5869382a5</p><pre># Audit: finite local groups and task counterexamples
+
+6 November 2026 UTC. Symbolic proof review and targeted verification of the closest cited averaging result. No numerical experiment or physical implementation validation was performed.
+
+## Exact source bindings
+
+- `FINITE_GROUP_LOCAL_TASK_FOLDING.candidate.v1.md`: SHA-256 `6e493a102ee4aa385227eb6ee534692fd8515b074da67201d66dcc210c387078`.
+- `INVARIANCE_DOES_NOT_FORCE_SUFFIX_DOMINATION.candidate.v1.md`: SHA-256 `fd0e1cad3e82691876d1931168b7c0cffd5755641194f00aa3db9b9d2c8deab0`.
+- `INVARIANT_TASK_COUNTEREXAMPLE_FAILURES.candidate.v1.md`: SHA-256 `b4f706db5fdea023f129d525ba7dfdc8c411b02ddc894783b82f07435bdae59f`.
+- `PRIOR_COMPARISON.v1.md`: SHA-256 `eb477ef41dd55009922d7c14d2c150e5a73574f91cd31f9e8b0f845550af39e5`.
+
+Background read: `LOCAL_TYPE_INVOLUTION_CERTIFICATE.candidate.v2.md` and `SYMMETRIC_QUADRATIC_NUISANCE_REMOVAL.candidate.v1.md` from the preceding task-oriented simulation collection. Their physical compiler dependencies remain inherited rather than independently re-proved in this audit.
+
+## Verdict
+
+Pass for the stated symbolic claims, with two small notation clarifications below. The general group-average argument is standard. The explicit multi-phase construction and risk comparisons are valid logical examples; they are not a newly constructed physical multi-phase network. The count example excludes exact suffix-only sourcewise domination. The spin example excludes zero communication. Neither supplies the missing lower bound against arbitrary cheap interactive task replacement.
+
+## Finite-group proof checks
+
+1. Initial-pair and triple-count preservation give exact likelihood equality for every homogeneous order-two source, including arbitrary initial laws with zeros. Final-suffix preservation fixes the history-dependent target. Convexity and change of variables then yield exact sourcewise domination by the group average without needing positivity or the good event.
+2. Transitivity plus orbit-stabilizer counting yields a uniform phase barycenter on the good event. Off that event both outputs remain in the convex hull of branch distributions, so their TV distance is at most the branch diameter. The exceptional-event term is correct. The invariant-event hypothesis is sufficient, though stronger than needed for this direct pointwise calculation.
+3. First-hit selection in a fixed word library is unchanged by a regular label action. Disjoint banks ensure commuting actions. Matching both boundary pairs and internal triple counts handles every cross-boundary triple. No independence of block occurrences is required for repeated conditional minorization by the sum of distinct word probabilities.
+4. The finite-state criterion is a valid sufficient algebraic certificate if the block identity holds on every reachable incoming state, the later transition commutation identities hold on the states they are applied to, and the readout intertwines the actions. Checking on all states avoids reachability-domain ambiguity. Encoding a full position clock makes the certificate finite, not necessarily small or efficient.
+5. The two eight-bit words have matching boundary pairs and internal triple counts. For a block beginning immediately after an even time, the odd local positions carrying a one are 3 and 5 respectively. Their phase increments are S and S+1; equal even total-one count preserves outgoing parity. Resetting each zone eliminates cross-zone phase contributions by definition. Each successful bank flips precisely its own coordinate.
+6. On any history, averaging over all group elements averages the hit coordinates and leaves the others fixed. For a missing coordinate, its two branch logits differ by 2ρ_j; sigmoid Lipschitz constant 1/4 bounds the branch gap by ρ_j/2. Replacing a fixed branch by its midpoint costs at most ρ_j/4. Averaging other coordinates cannot increase the bound. Telescoping and taking expectations prove the displayed coordinate-weighted excess without independence between banks.
+7. The uniform sign sum has mean zero and second moment Σρ_j². Taylor remainder bounded by |u|²/8, using |sigmoid&#x27;&#x27;|≤1/4, proves the barycenter-to-baseline bound Σρ_j²/8. Averaging logits is not silently equated with averaging probabilities.
+8. Empty banks cause no contradiction: the corresponding no-hit probability bound is one and the all-hit event can be empty. A nonvacuous 2^r-phase orbit requires all banks nonempty. For the displayed r=2 equal-bank example this means N-b-2≥16.
+
+## Computation and physical scope
+
+The communication protocol really sends only the suffix bits, with b/2 bits in the stated aligned AA/BB setting. It uses a public source-independent evaluator, not an oracle for the unknown transition law. Its local computation need not be cheap: direct multi-phase averaging has 2^r branches, and the candidate explicitly charges that work. The inexpensive unperturbed sigmoid incurs the stated quadratic amplitude error.
+
+No task-risk lower bound is an assumption of the proof. No full-type conditional expectation or exponential enumeration is hidden in the claimed cheap baseline. The general finite-phase criterion alone does not supply an efficient branch evaluator. The cited physical baseline requires its previously established compilation; a new physical multi-phase reference remains conditional on its own uniform approximation theorem. Approximate physical suffix dependence must not be promoted to exact logical invariance. The original source, target, ordinary-softmax architecture, total-row work, precision costs, and randomization-inside-TV distinction remain explicit.
+
+## Majority counterexample checks
+
+For the two IID endpoint sources, total count determines the likelihood ratio. Under absolute error in the next-one probability, a posterior majority endpoint is Bayes-optimal over all reported probabilities. The midpoint is also optimal at a tie. Randomization cannot improve this pointwise minimum.
+
+The mixture Bayes risk is Δ e_n. Posterior probabilities form a martingale. For even n, the tie event; for odd n, the event with count (n+1)/2, has positive probability and admits two-step continuations whose posteriors lie on opposite sides of one half. The concave posterior Bayes-error function therefore decreases strictly on that event. This verifies e_(n+2)&lt;e_n; monotonicity extends the strict gap to every N≥b+2. A suffix-b rule has mixture risk at least Δ e_b, so at least one source has excess at least g=Δ(e_b−e_N)&gt;0.
+
+Universal invariance of this majority rule already follows from preservation of the single IID Bernoulli(c) measure: different counts have different path masses. Its c-dependence is public class dependence, not dependence on the unknown source. The logical bounded-gain sign computation has O(log N) stages and is valid on the finite count grid, including ties. Physical transfer needs error below g, with the corresponding precision paid. Its total-count communication is logarithmic, so it is not a general cheap-communication obstruction.
+
+## Spin counterexample checks
+
+The stationary initial pair gives two independent symmetric parity chains. Their transition innovations are independent signs with mean θ; hence all lag-two products are independent. Subsampling each chain by two transitions produces correlation θ², proving equality of each party&#x27;s marginal at θ=±h. Bob owns the terminal pair under the stated alignment, and the two next-one targets differ by h for each Bob input. Pointwise triangle inequality and the common marginal prove worst-source zero-communication risk at least h/2, also with independent shared/private randomness.
+
+The full-data empirical lag-two correlation has variance at most 1/(N−2). Multiplication by the known terminal spin and the factor one half give the stated TV risk bound. Counts and terminal pair determine this estimator, but its universal invariance under every source-preserving map is not asserted. Separate marginal equality gives no quantitative interactive communication lower bound.
+
+## Literature check and novelty boundary
+
+Independently inspected Chen, Dobriban and Lee, [A Group-Theoretic Framework for Data Augmentation](https://www.jmlr.org/papers/volume21/20-163/20-163.pdf), Lemma 1 (printed p.15) and Proposition 2 (printed p.16). They establish orbit conditional averaging, covariance reduction, and convex-loss improvement under exact invariance. The comparison&#x27;s attribution and page locations are correct. Applying this to a history-dependent prediction target requires the explicit target-invariance step, supplied here. Group averaging itself is not new.
+
+The remaining references were reviewed for the scope of the comparison, not exhaustively re-searched or independently theorem-checked. The comparison appropriately distinguishes multiset first-order Markov bases from one-history fixed-suffix order-two rewrites, and explicitly labels inaccessible theorem detail and secondary verification. No priority certification follows.
+
+## Small clarifications recommended
+
+- Replace “All zone start times are even” with “Each zone begins immediately after an even time.” The first included symbol indices are odd. The displayed phase calculation uses the correct convention.
+- State `0&lt;h≤1−2c` explicitly when introducing the two spin parameters ±h; the claimed positive separation requires h&gt;0.
+
+These clarifications do not change the proved results. No scientific or architecture-level claim beyond the narrow scopes above is certified.
+</pre></details><details><summary>精确版本独立审阅 · INDEPENDENT_ORBIT_EXTENSION_AUDIT.v2.md</summary><p class="hash">SHA-256 f46d7e970e7d34fb29eaf2bcb1fe47e687a13fbc5627c6eb1f9e364c315dea07</p><pre># Audit: finite local groups and task counterexamples (revision 2)
+
+6 November 2026 UTC. Symbolic proof review and targeted verification of the closest cited averaging result. No numerical experiment or physical implementation validation was performed.
+
+## Exact source bindings
+
+- `FINITE_GROUP_LOCAL_TASK_FOLDING.candidate.v2.md`: SHA-256 `fbc953468aa9455da32e801a9ee9ef632b1787ab77e4f11948f838c1874945f6`.
+- `INVARIANCE_DOES_NOT_FORCE_SUFFIX_DOMINATION.candidate.v1.md`: SHA-256 `fd0e1cad3e82691876d1931168b7c0cffd5755641194f00aa3db9b9d2c8deab0`.
+- `INVARIANT_TASK_COUNTEREXAMPLE_FAILURES.candidate.v2.md`: SHA-256 `3d6bde6cc97bdb2eb0726644a81217ed3ae332e18a9dd73f0b6e976fa448daa7`.
+- `PRIOR_COMPARISON.v1.md`: SHA-256 `eb477ef41dd55009922d7c14d2c150e5a73574f91cd31f9e8b0f845550af39e5`.
+
+Background read: `LOCAL_TYPE_INVOLUTION_CERTIFICATE.candidate.v2.md` and `SYMMETRIC_QUADRATIC_NUISANCE_REMOVAL.candidate.v1.md` from the preceding task-oriented simulation collection. Their physical compiler dependencies remain inherited rather than independently re-proved in this audit.
+
+- `SCOPE_AND_FAILED_ROUTES.v1.md`: SHA-256 `14fcce94724c66e971b8a7d4d0352da4057dcd758dd1d532a04a72d11e3a76e5`.
+
+## Verdict
+
+Pass for the stated symbolic claims. The two small notation clarifications identified in revision 1 have been verified as corrected in the version-2 sources. The general group-average argument is standard. The explicit multi-phase construction and risk comparisons are valid logical examples; they are not a newly constructed physical multi-phase network. The count example excludes exact suffix-only sourcewise domination. The spin example excludes zero communication. Neither supplies the missing lower bound against arbitrary cheap interactive task replacement.
+
+## Finite-group proof checks
+
+1. Initial-pair and triple-count preservation give exact likelihood equality for every homogeneous order-two source, including arbitrary initial laws with zeros. Final-suffix preservation fixes the history-dependent target. Convexity and change of variables then yield exact sourcewise domination by the group average without needing positivity or the good event.
+2. Transitivity plus orbit-stabilizer counting yields a uniform phase barycenter on the good event. Off that event both outputs remain in the convex hull of branch distributions, so their TV distance is at most the branch diameter. The exceptional-event term is correct. The invariant-event hypothesis is sufficient, though stronger than needed for this direct pointwise calculation.
+3. First-hit selection in a fixed word library is unchanged by a regular label action. Disjoint banks ensure commuting actions. Matching both boundary pairs and internal triple counts handles every cross-boundary triple. No independence of block occurrences is required for repeated conditional minorization by the sum of distinct word probabilities.
+4. The finite-state criterion is a valid sufficient algebraic certificate if the block identity holds on every reachable incoming state, the later transition commutation identities hold on the states they are applied to, and the readout intertwines the actions. Checking on all states avoids reachability-domain ambiguity. Encoding a full position clock makes the certificate finite, not necessarily small or efficient.
+5. The two eight-bit words have matching boundary pairs and internal triple counts. For a block beginning immediately after an even time, the odd local positions carrying a one are 3 and 5 respectively. Their phase increments are S and S+1; equal even total-one count preserves outgoing parity. Resetting each zone eliminates cross-zone phase contributions by definition. Each successful bank flips precisely its own coordinate.
+6. On any history, averaging over all group elements averages the hit coordinates and leaves the others fixed. For a missing coordinate, its two branch logits differ by 2ρ_j; sigmoid Lipschitz constant 1/4 bounds the branch gap by ρ_j/2. Replacing a fixed branch by its midpoint costs at most ρ_j/4. Averaging other coordinates cannot increase the bound. Telescoping and taking expectations prove the displayed coordinate-weighted excess without independence between banks.
+7. The uniform sign sum has mean zero and second moment Σρ_j². Taylor remainder bounded by |u|²/8, using |sigmoid&#x27;&#x27;|≤1/4, proves the barycenter-to-baseline bound Σρ_j²/8. Averaging logits is not silently equated with averaging probabilities.
+8. Empty banks cause no contradiction: the corresponding no-hit probability bound is one and the all-hit event can be empty. A nonvacuous 2^r-phase orbit requires all banks nonempty. For the displayed r=2 equal-bank example this means N-b-2≥16.
+
+## Computation and physical scope
+
+The communication protocol really sends only the suffix bits, with b/2 bits in the stated aligned AA/BB setting. It uses a public source-independent evaluator, not an oracle for the unknown transition law. Its local computation need not be cheap: direct multi-phase averaging has 2^r branches, and the candidate explicitly charges that work. The inexpensive unperturbed sigmoid incurs the stated quadratic amplitude error.
+
+No task-risk lower bound is an assumption of the proof. No full-type conditional expectation or exponential enumeration is hidden in the claimed cheap baseline. The general finite-phase criterion alone does not supply an efficient branch evaluator. The cited physical baseline requires its previously established compilation; a new physical multi-phase reference remains conditional on its own uniform approximation theorem. Approximate physical suffix dependence must not be promoted to exact logical invariance. The original source, target, ordinary-softmax architecture, total-row work, precision costs, and randomization-inside-TV distinction remain explicit.
+
+## Majority counterexample checks
+
+For the two IID endpoint sources, total count determines the likelihood ratio. Under absolute error in the next-one probability, a posterior majority endpoint is Bayes-optimal over all reported probabilities. The midpoint is also optimal at a tie. Randomization cannot improve this pointwise minimum.
+
+The mixture Bayes risk is Δ e_n. Posterior probabilities form a martingale. For even n, the tie event; for odd n, the event with count (n+1)/2, has positive probability and admits two-step continuations whose posteriors lie on opposite sides of one half. The concave posterior Bayes-error function therefore decreases strictly on that event. This verifies e_(n+2)&lt;e_n; monotonicity extends the strict gap to every N≥b+2. A suffix-b rule has mixture risk at least Δ e_b, so at least one source has excess at least g=Δ(e_b−e_N)&gt;0.
+
+Universal invariance of this majority rule already follows from preservation of the single IID Bernoulli(c) measure: different counts have different path masses. Its c-dependence is public class dependence, not dependence on the unknown source. The logical bounded-gain sign computation has O(log N) stages and is valid on the finite count grid, including ties. Physical transfer needs error below g, with the corresponding precision paid. Its total-count communication is logarithmic, so it is not a general cheap-communication obstruction.
+
+## Spin counterexample checks
+
+The stationary initial pair gives two independent symmetric parity chains. Their transition innovations are independent signs with mean θ; hence all lag-two products are independent. Subsampling each chain by two transitions produces correlation θ², proving equality of each party&#x27;s marginal at θ=±h. Bob owns the terminal pair under the stated alignment, and the two next-one targets differ by h for each Bob input. Pointwise triangle inequality and the common marginal prove worst-source zero-communication risk at least h/2, also with independent shared/private randomness.
+
+The full-data empirical lag-two correlation has variance at most 1/(N−2). Multiplication by the known terminal spin and the factor one half give the stated TV risk bound. Counts and terminal pair determine this estimator, but its universal invariance under every source-preserving map is not asserted. Separate marginal equality gives no quantitative interactive communication lower bound.
+
+## Literature check and novelty boundary
+
+Independently inspected Chen, Dobriban and Lee, [A Group-Theoretic Framework for Data Augmentation](https://www.jmlr.org/papers/volume21/20-163/20-163.pdf), Lemma 1 (printed p.15) and Proposition 2 (printed p.16). They establish orbit conditional averaging, covariance reduction, and convex-loss improvement under exact invariance. The comparison&#x27;s attribution and page locations are correct. Applying this to a history-dependent prediction target requires the explicit target-invariance step, supplied here. Group averaging itself is not new.
+
+The remaining references were reviewed for the scope of the comparison, not exhaustively re-searched or independently theorem-checked. The comparison appropriately distinguishes multiset first-order Markov bases from one-history fixed-suffix order-two rewrites, and explicitly labels inaccessible theorem detail and secondary verification. No priority certification follows.
+
+## Revision and scope-note verification
+
+Compared each version-2 source to its preserved version 1. The finite-group file corrects the zone-start convention without changing the mathematics. The spin file explicitly states 0&lt;h≤1−2c without changing its proof. The preceding audit therefore carries over to these exact version-2 bindings.
+
+The scope note correctly preserves the distinction between reference functions and physical networks, exact orbit averages and approximate suffix replacements, suffix-only and general communication restrictions, and additive and multiplicative comparison. Its first item should be read with “source-preserving transformations” meaning the universal fixed bijections under the arbitrary-initial source contract, as in the conservation theorem. Preservation of just one fixed source is not sufficient to force its complete type. This qualification is already explicit in the scope note&#x27;s preceding paragraph and the conservation candidate.
+
+No scientific or architecture-level claim beyond the narrow scopes above is certified.
+</pre></details><details><summary>精确版本独立审阅 · INDEPENDENT_UNIVERSAL_REWRITE_CONSERVATION_AUDIT.v1.md</summary><p class="hash">SHA-256 eea25dc89af15ea2540ea3ee87d020bc8ee1ef92c0304a7db666bdf2b4985fde</p><pre># Audit: universal deterministic rewrite conservation
+
+6 November 2026 UTC.
+
+## Exact source binding
+
+Reviewed `UNIVERSAL_REWRITE_CONSERVATION.candidate.v1.md`.
+SHA-256: `9fa0a82cf43eca5bb231feaf765516ad9fb4c8dce87e003acfa23ac50beb484d`.
+
+## Verdict
+
+Pass for the stated symbolic theorem. No architecture separation, efficient algorithm, task-risk lower bound, or stationary-only theorem is established.
+
+## Proof checks
+
+1. The quantifier order is essential: a single fixed bijection of the finite path space preserves every source in the specified class. For a bijection, measure preservation implies equality of each path&#x27;s mass with its image&#x27;s mass.
+2. Taking the initial-pair law to be a point mass is allowed by arbitrary initialization. Strictly positive row transitions then force the image to retain that initial pair.
+3. The four independent transition parameters range over an open product interval. Holding three fixed reduces likelihood equality to constancy of `p^u(1-p)^v`. Its logarithmic derivative is zero only when both integer exponent differences vanish. This identifies all eight triple counts without requiring boundary transitions.
+4. Equal initial pair and all triple counts suffice by direct likelihood factorization, including zero transition probabilities. No division by a zero boundary probability is used in this converse.
+5. The displayed expression for total ones counts the initial two symbols once and each subsequent symbol through its incoming triple once. It is correct.
+6. For a specified terminal suffix of length b, with N&gt;b&gt;=2, change any of the N-b preceding bits while retaining the suffix to obtain different total-one counts. Each permitted rewrite, its inverse, and any composition preserve this count. Consequently a Markov chain selecting only these rewrites cannot converge from every starting history to the uniform distribution over that entire suffix fiber. This conclusion also holds if the allowed selection probabilities depend on the current history, since no count-changing move exists.
+
+## Scope and cost checks
+
+- The source class is binary, homogeneous, second-order, arbitrary-initial, finite-horizon. The target is a permutation of histories, not a causal predictor or physical execution architecture.
+- Source-dependent choices of a different permutation for each law are outside the necessity theorem&#x27;s universal fixed-permutation premise.
+- Stationary-only initialization is not covered by the initial-pair argument. The candidate explicitly avoids that extension.
+- The proof contains no computation of an orbit average, conditional law, type-class enumeration, or partition function. It does not hide an efficient implementation claim; it provides no such implementation at all.
+- The conclusion is an orbit obstruction for exact universal rewrites, not a lower bound on risk-preserving task replacement. A task can ignore conserved information or remove it by separate output algebra.
+- No physical-to-logical compilation is supplied or required. No inference about communication, circuit resources, or model width follows.
+- The result does not assume the desired lower bound. Its only obstruction is the explicitly proved invariant.
+
+## Optional clarification
+
+“Cannot be uniformly mixing” can be replaced by “cannot converge from every initial history to the uniform distribution on the entire fixed terminal-suffix fiber” to avoid ambiguity between a uniform target distribution and a uniform mixing-rate guarantee. This wording clarification does not change the mathematical result.
+</pre></details><details><summary>保留旧版：多数预测器原始审阅版本 · INVARIANCE_DOES_NOT_FORCE_SUFFIX_DOMINATION.candidate.v1.md</summary><p class="hash">SHA-256 fd0e1cad3e82691876d1931168b7c0cffd5755641194f00aa3db9b9d2c8deab0</p><pre># Universal local invariance does not imply suffix-only risk domination
+
+6 November 2026 UTC. Private analytical candidate v1. Symbolic proof; no mathematical executable, training, upload, or public mutation. This is a narrow task-risk counterexample, not a communication lower bound or a new statistical rate.
+
+## 1. Precise conclusion
+
+Fix 0&lt;c&lt;1/2 and integers N&gt;=b+2, b&gt;=1. There is a source-independent binary next-symbol predictor Q_N, invariant under every probability-preserving bijection common to all homogeneous binary order-two source laws, for which NO predictor depending only on the final b symbols has risk no greater at both IID Bernoulli(c) and IID Bernoulli(1-c).
+
+The same conclusion holds for the specific local involution in LOCAL_TYPE_INVOLUTION_CERTIFICATE.candidate.v2.md whenever its horizon restrictions are met. Thus even exact invariance under all universal type moves does not imply exact sourcewise domination by a prescribed short suffix predictor. The loss is actual prediction TV; a replacement may output arbitrary distributions and need not reconstruct Q_N.
+
+This does NOT refute cheap general distributed task folding. Indeed Q_N can be evaluated with O(log N) communication by exchanging counts. It also does not refute minimax domination with slack or a constant-factor risk allowance.
+
+## 2. Two sources and a fully invariant predictor
+
+Let P_- be IID Bernoulli(c), P_+ be IID Bernoulli(1-c). Both are stationary homogeneous binary order-two sources in the usual interior class P_c. They have constant next-one probabilities c and 1-c. Put Delta=1-2c and S(x)=sum_i x_i.
+
+Define Q_N&#x27;s probability of one to be c when S&lt;N/2, 1-c when S&gt;N/2, and 1/2 on a tie. This is one predictor, independent of the actual source.
+
+The complete Markov type determines S:
+
+ S=x_1+x_2+sum_(a,b) C_ab1.
+
+Consequently Q_N is full-type invariant and invariant under the reviewed local rewrite. More strongly, suppose a bijection j preserves every source law in the model. Finite-space measure preservation gives P_-(x)=P_-(j(x)); since c!=1/2, equality of c^S(1-c)^(N-S) forces S(j(x))=S(x). Hence Q_N is invariant under every such bijection. This statement concerns bijections, not arbitrary measure-preserving randomized kernels.
+
+## 3. Bayes TV risk, including arbitrary replacement outputs
+
+Introduce an equal prior on the two sources only as a proof device. Given an observed word of length n, the likelihood ratio is
+
+ L_n=((1-c)/c)^(2S-n).
+
+For posterior probability pi of P_+, the conditional TV loss of a reported probability q is
+
+ pi |q-(1-c)|+(1-pi)|q-c|.
+
+Clipping q to [c,1-c] cannot increase this loss. On this interval it is affine in q; its minimum is Delta min(pi,1-pi), achieved at the more probable endpoint (and every point of the interval when pi=1/2). Thus majority is a Bayes-optimal TV predictor, not merely an output classifier. Randomized predictions cannot do better, by the same pointwise minimization or convexity.
+
+Write
+
+ e_n = Pr_(Bin(n,c))(S&gt;n/2) + (1/2) Pr_(Bin(n,c))(S=n/2).
+
+Symmetry between the two sources gives equal-prior optimal prediction risk Delta e_n. The full-history Q_N attains Delta e_N. Under IID sources the final b symbols are just a length-b IID experiment, so every suffix-b predictor Q_s satisfies
+
+ (R_-(Q_s)+R_+(Q_s))/2 &gt;= Delta e_b.
+
+## 4. Strict improvement from at least two additional observations
+
+Bayes error cannot increase with more observations: the later observer can ignore them. It strictly decreases between n and n+2.
+
+For even n, the event S=n/2 has positive mixture probability and posterior pi=1/2. Two additional observations have nonzero probabilities of 00 and 11 under both sources. These yield posterior values on opposite sides of 1/2. The posterior is a martingale, and min(pi,1-pi) is concave with a strict corner at 1/2. Conditional expectation of this function is therefore strictly smaller after the two observations on that event.
+
+For odd n, use the positive-probability event S=(n+1)/2, whose likelihood-ratio exponent is +1. Two observations 00 yield exponent -1, whereas 11 yield exponent +3. Their posterior values again lie strictly on opposite sides of 1/2, giving strict Jensen improvement. Other old observations cannot increase expected Bayes error. Thus e_(n+2)&lt;e_n.
+
+It follows that N&gt;=b+2 implies e_N&lt;e_b. Set g=Delta(e_b-e_N)&gt;0. If one suffix predictor sourcewise dominated Q_N at both sources, averaging those two inequalities would imply Delta e_b&lt;=Delta e_N, a contradiction. In fact every suffix predictor has at least one source on which its excess risk over Q_N is at least g.
+
+No assertion that g stays bounded away from zero is made. For fixed c and large b, this gap can be very small; it is not a new minimax rate.
+
+## 5. Architecture and approximation boundaries
+
+There is a simple bounded-gain constant-width LOGICAL uniform-head program for Q_N. With the actual synthetic zero-symbol terminal, a zero-score scalar full-prefix attention read returns r=S/(N+1). Subtract N/[2(N+1)]. Repeated fixed-gain doubling with clipping to [-1,1], for ceil(log2(2(N+1))) stages, maps every nonzero grid offset to its sign and preserves a tie as zero. All states and primitive gains remain bounded; depth is O(log N). Use final logits (a t,0), a=log((1-c)/c), with t the resulting sign. Ordinary softmax returns exactly the desired probabilities, including 1/2 at a tie. This is a logical circuit, not an independently audited all-feature PreLN realization.
+
+The reviewed small-amplitude paired-state compiler is a possible physical route. This note does not assert a new complete physical theorem or exact physical invariance. If a separately verified physical construction has uniform TV error zeta, then its risk differs from Q_N by at most zeta at each source and its rewrite modulus is at most 2zeta. If zeta&lt;g, NO suffix-b predictor can sourcewise dominate that physical output either, by the same mixture gap. Exact equality of physical outputs on orbits does not follow from uniform approximation.
+
+The necessary accuracy is tied to g. Selecting zeta&lt;g without charging log(1/zeta), preparation, amplitude, restoration, final normalization, and parameter precision would conceal costs. In particular no O(log N) physical claim is obtained here when b grows with N. No claim about useful-head ablations is supplied.
+
+## 6. Why this is not the missing communication counterexample
+
+Under AA/BB ownership Alice sends her number of ones in ceil(log2(N/2+1)) bits; Bob adds his count and evaluates Q_N. Hence the example is cheap in ordinary interactive communication. It proves that local invariance does not force suffix-only sourcewise domination, but leaves open a general efficient task-folding theorem that may use other cheap statistics.
+
+References read: ../task_oriented_simulation_20261106/LOCAL_TYPE_INVOLUTION_CERTIFICATE.candidate.v2.md; ../task_oriented_simulation_20261106/UNIVERSAL_MARKOV_TYPE_PROJECTION.candidate.v1.md; ../nonlinear_statistical_frontier_20261106/IID_QUADRATIC_NUISANCE_HARDNESS.candidate.v3.md.
+</pre></details><details><summary>保留旧版：区域下标措辞 · FINITE_GROUP_LOCAL_TASK_FOLDING.candidate.v1.md</summary><p class="hash">SHA-256 6e493a102ee4aa385227eb6ee534692fd8515b074da67201d66dcc210c387078</p><pre># Finite local rewrite groups and sourcewise task-risk folding
+
+6 November 2026 UTC. New private symbolic candidate v1. No scientific executable, numerical check, training, physical-network construction, external write or upload accompanies this note. Administrative shell file reads/writes are not scientific execution. This is a sufficient structural criterion and a nontrivial multi-phase example, not a generic evolving-memory resource frontier or novelty claim.
+
+## 1. Frozen contract
+
+The source is an arbitrary homogeneous binary order-two Markov law P_(p,mu), with arbitrary initial-pair law mu and c &lt;= p(y|a,b) &lt;= 1-c for fixed 0&lt;c&lt;1/2. Input is the actual raw N-bit sample. The target on that history is tau_p(x)=p(.|x_(N-1),x_N). Risk is E_P TV(Q(X),tau_p(X)), with TV inside any predictor-randomness expectation. All predictors constructed below are deterministic and independent of p,mu.
+
+Retain the final b-bit suffix Z, b&gt;=2. For the original AA/BB physical comparison keep N divisible by four and b a power of two, 4&lt;=b&lt;=N/2. Alice owns positions 4i-3,4i-2, Bob positions 4i-1,4i. Physical claims concern the same positive-epsilon, full-feature real PreLN model with an ordinary final vocabulary softmax, and require a separately established uniform end-to-end approximation bound. A symbolic new phase decomposition is not a physical realization theorem.
+
+## 2. General finite-group criterion
+
+Let H be a finite group, |H|=h, acting by explicitly specified bijections T_g on all length-N words. Suppose:
+
+1. Every T_g preserves the initial pair, all eight overlapping triple counts, and the final b-bit suffix.
+2. A public finite phase set A and public map Phi:{0,1}^N -&gt; A give a decomposition Q_ref(x)=q(Z(x),Phi(x)), where each q(z,a) is a probability vector.
+3. There is an H-invariant good event G and an H-action on A such that Phi(T_g x)=g.Phi(x) for x in G, all g. The H-action on A is transitive. (More generally each orbit may be identified by a public suffix-computable label; average over that labeled orbit.)
+
+Define
+
+  Q_H(x) = (1/h) sum_(g in H) Q_ref(T_g x),
+  M(z) = (1/|A|) sum_(a in A) q(z,a).
+
+Then for every p,mu separately,
+
+  R_P(Q_H) &lt;= R_P(Q_ref).
+
+Indeed homogeneous likelihood is mu(x_1,x_2) times the product of transition probabilities raised to the triple counts. Thus each T_g preserves P exactly, including when mu has zeros, and it preserves the target. Jensen&#x27;s inequality followed by change of variables proves the claim. This part needs neither positivity nor G.
+
+On G, orbit-stabilizer counting gives Q_H(x)=M(Z(x)): every phase appears h/|A| times in the group sum. The stabilizer need not be trivial; transitivity is the requirement. Let D(z)=max_(a,a&#x27; in A) TV(q(z,a),q(z,a&#x27;)). Both Q_H(x) and M(z) are convex combinations of these branch vectors at the same z, even off G. Hence
+
+  TV(Q_H(x),M(Z(x))) &lt;= D(Z(x)) 1_(G complement),
+  R_P(M) &lt;= R_P(Q_ref) + E_P[D(Z)1_(G complement)].       (1)
+
+If sup_x TV(Q_phys(x),Q_ref(x))&lt;=zeta_h, add zeta_h to the right side with Q_phys replacing Q_ref. If a suffix evaluator returns M within uniform TV eta, add eta as well. The expensive orbit predictor Q_H is only a proof device; the task protocol evaluates M directly.
+
+This is a finite algebraic criterion, not an assumption of cheapness. An arbitrary q(z,a) can be computationally hard and its table can have 2^b|A| entries. A large group or phase set can destroy local efficiency even while communication remains small. Section 5 records every such dependence.
+
+## 3. Verifiable local certificates
+
+A block replacement preserves homogeneous order-two likelihood if old/new words have the same first two and last two symbols and identical internal triple-count vectors. Cross-boundary triples are then identical for every surrounding word. Blocks must lie after the initial pair and before the retained suffix.
+
+A useful construction uses a family of distinct same-length words W={w_a:a in K}, all with those boundary/type identities. Let a finite group K act regularly on their labels. At a prescribed bank of disjoint aligned blocks, select the first block belonging to W; replace w_a by w_(g a), leaving unmatched histories unchanged. This is a genuine K-action, since membership and first-hit selection are unchanged. Actions in disjoint banks commute, giving a product group. A union of several K-orbits of words also works when the action is explicitly defined on each and selection membership is invariant.
+
+Phase equivariance must be verified, not inferred from type preservation. One general finite-state verification method is as follows. A public deterministic phase evaluator has finite state S and symbol transitions U_(t,y), allowing a public position clock. For a proposed block rewrite w -&gt; w&#x27;, find a state permutation V representing its intended phase action. Check the block transformation identity U_w&#x27;=V U_w on every reachable incoming state (or all states, which is stronger), and check that all later transitions commute with V. Check that the final readout obeys readout(Vs)=g.readout(s). This proves whole-history equivariance, including later suffix effects. A finite clock can encode all positions for fixed N; this makes verification finite, not necessarily efficient. Multiple generators must additionally satisfy their group relations on states or directly on the full-word maps. We do not infer commuting rewrites merely because their phase labels commute.
+
+For a bank of m disjoint L-bit trials and a membership library of q distinct words, every next trial belongs to the library with conditional probability at least q c^L, regardless of previous failure and initial law. Repeated conditioning gives
+
+  P(no hit in bank) &lt;= (1-q c^L)^m.                       (2)
+
+No block independence is assumed. A union bound over banks supplies the exceptional probability when G requires all banks to have hits. This is valid for fixed c; large L or a growing number of banks may make it ineffective. Variable trial lengths have a product bound with their corresponding q_i c^(L_i). Empty banks have failure probability one.
+
+## 4. Explicit r-phase example
+
+Take r&gt;=2 and nonnegative integers m_1,...,m_r with 8 sum_j m_j &lt;= N-b-2. Starting just after time 2, allocate consecutive disjoint zones I_j of lengths 8m_j. All zone start times are even. Unused pre-suffix bits and the suffix are outside the zones. In zone j define the RESET quadratic phase
+
+  F_j(x) = sum_(k in I_j, k odd) x_k sum_(ell in I_j, ell&lt;k) x_ell mod 2.
+
+Resetting at zone boundaries is part of the definition, not a discarded cross term of the original full-history phase. Each F_j is a finite-state stream computation using local parity and its accumulated phase; the public clock chooses its zone. This example changes the reference nuisance to r phases. It does not assert that the original one-phase physical network secretly implements r phases.
+
+Partition each zone into its m_j eight-bit blocks. Use
+
+  w=00110000,    w&#x27;=00011000.
+
+Both begin/end with 00. Their internal triples are 001,011,110,100 once each and 000 twice. Both have two ones. The involution T_j interchanges w,w&#x27; in the first matching block of zone j and is the identity if none match. These r involutions commute because their selection and edits use disjoint zones. They define H=(Z/2)^r on all histories, with group size 2^r.
+
+Let E_j be the event of a hit in zone j. If the incoming within-zone parity is S, the block contributions to F_j are S for w and S+1 for w&#x27;, because the selected odd local positions are respectively 3 and 5. The outgoing within-zone parity is unchanged (two ones), so all later phase contributions are unchanged. Thus T_j flips F_j on E_j and leaves every other phase unchanged. This also proves the identity in the presence of preceding blocks in the same zone. On G=intersection_j E_j the phase vector ranges over every element of {0,1}^r under H exactly once, so this is a genuinely 2^r-branch orbit rather than a relabeled two-branch example. G is invariant.
+
+For public rho_j&gt;=0 and public suffix function d define
+
+  q(z,a)(1)=sigmoid(d(z)+sum_j rho_j(2a_j-1)),
+  q(z,a)(0)=1-q(z,a)(1),
+  M(z)(1)=2^(-r) sum_(a in {0,1}^r)
+                       sigmoid(d(z)+sum_j rho_j(2a_j-1)).
+
+No assumption is made that the rho_j are equal. If a fixed bounded-logit/state envelope is desired, impose the additional public bound sum_j rho_j&lt;=R for fixed R; this controls the perturbation magnitude but does not itself prove any PreLN compilation or fixed-width implementation. For example r=2 with distinct positive rho_1,rho_2 gives four distinct branch logits and a group of order four. Set m_1=m_2=floor((N-b-2)/16) for an immediate explicit family. All four phases occur on every good orbit, regardless of the source.
+
+Write gamma=1-2c^8 and let gamma^0=1. Equation (2) gives P(E_j complement)&lt;=gamma^(m_j), hence P(G complement)&lt;=min(1,sum_j gamma^(m_j)). A diameter-only application of (1) gives excess at most min(1,sum_j rho_j/2) times that failure bound.
+
+A sharper bound avoids requiring every phase hit. At any x, Q_H averages exactly the hit coordinates and holds each missing coordinate at its observed value. Symmetrizing one missing coordinate changes the first probability by at most rho_j/4: the two branch logits differ by 2rho_j, sigmoid is 1/4-Lipschitz, and a midpoint is half the branch gap. This estimate remains valid after averaging any other coordinates. Telescoping over missing coordinates yields
+
+  TV(M(Z(x)),Q_H(x)) &lt;= sum_j (rho_j/4)1_(E_j complement),
+  R_P(M) &lt;= R_P(Q_ref)+sum_j (rho_j/4)gamma^(m_j),
+  R_P(M) &lt;= R_P(Q_phys)+zeta_h+sum_j (rho_j/4)gamma^(m_j). (3)
+
+The last line is conditional on a proved physical uniform comparison for this r-phase reference. It is not evidence of such a compilation.
+
+An alternative cheap suffix rule is q_0(1|z)=sigmoid(d(z)). Let independent uniform signs epsilon_j define U=sum_j rho_j epsilon_j. Since E U=0, E U^2=sum_j rho_j^2 and |sigmoid&#x27;&#x27;|&lt;=1/4, Taylor&#x27;s theorem gives
+
+  TV(M(z),q_0(z)) &lt;= (1/8)sum_j rho_j^2.                 (4)
+
+Therefore the original separately compiled one-head baseline for the SAME d, with error zeta_b, obeys the conditional comparison
+
+  R_P(Q_base) &lt;= R_P(Q_phys)+zeta_h+zeta_b
+                +sum_j (rho_j/4)gamma^(m_j)
+                +(1/8)sum_j rho_j^2.                  (5)
+
+Unlike enumerating M, using q_0 does not require 2^r branch evaluations. The price is the explicitly displayed quadratic amplitude term. If total variance sum rho_j^2 is large it need not be small. No sourcewise multiplicative ratio is inferred from these additive bounds.
+
+## 5. Resource ledger and model boundary
+
+Under aligned AA/BB ownership, Alice transmits exactly b/2 suffix bits in public order; Bob reconstructs Z and evaluates the public suffix rule. For general alignment at most b bits suffice. Group size does not multiply communication because phases and original prefix are never transmitted. This is worst-case deterministic one-way bit communication, with no real-valued transmissions or free silence/timing channel.
+
+For a general finite phase table, evaluation costs C_M(b,|A|), not automatically O(b). A direct algorithm computes the suffix once, then enumerates |A| branches with total cost C_Z(b)+sum_a C_q(a)+O(|A|) vector arithmetic; public group/phase description size must be added to any parameter ledger. If only a group-indexed branch description is supplied, the naive sum has h terms and may repeat phases; no free orbit reduction is assumed. The selection-and-rewrite proof maps can be implemented by scanning banks, but Q_H still invokes the original reference up to h times and is not claimed cheap.
+
+For the explicit logistic example, enumerate 2^r sign vectors. Compute d once, compute each signed sum in O(r) arithmetic operations, and evaluate one sigmoid per branch. This gives O(C_d(b)+r2^r) arithmetic work and 2^r sigmoid evaluations, using streaming accumulation and O(r) amplitude storage, in addition to the suffix and evaluator workspace. Gray-code reuse can lower arithmetic overhead but is not needed for this bound. Amplitude/phase descriptions cost at least the supplied description of r amplitudes and zone boundaries. If r grows, exponential local work remains real. The q_0 alternative requires only C_d(b) and one sigmoid, with error (4).
+
+For the imported d, the prior symbolic ledger is O_c(b) exact-real local primitive work plus sigmoid, constant-many O(log b)-bit count registers, and a one-head physical baseline with width O_c(1), depth O_c(log N+b), per-coefficient description O_c(log N+b), untied total description O_c((log N+b)^2). These baseline bounds are inherited only for that same d and its separately correct PreLN compilation. Its physical all-row work still includes N+1 rows and the useful dense head, O(N^2+ND) when zero heads are skipped; constant width is not constant total memory/work.
+
+No multi-phase physical width, depth, compiler precision, useful-head count, parameter-description or finite-arithmetic theorem is established here. Neither an average of 2^r softmax outputs nor deleting nuisance banks is automatically legal inside the frozen ordinary-softmax full-feature PreLN architecture. Equation (5) uses the already separately compiled baseline and assumes a proved new hard-family approximation if such a family is later supplied. Full-feature LN coupling is not ignored.
+
+## 6. Failed routes and precise limits
+
+- A measure-preserving rewrite need not change any nuisance, and a nuisance-flipping rewrite need not preserve Markov likelihood. Both certificates are essential.
+- The shorter five-bit signed-kernel paths 11000 and 01100 are not substituted for a local source-measure-preserving permutation: their first two bits differ, so cross-boundary triple counts can change. Signed cancellation and exact permutation averaging are different mechanisms.
+- Merely averaging logits does not equal M. The only permission to replace M by q_0 here is the paid Taylor error (4).
+- Transitivity cannot be dropped: different phase orbits can have different means depending on unrevealed prefix information. An orbit label must be suffix-computable, or this route does not yield a suffix predictor.
+- Independent block occurrences are not assumed; the failure bound is conditional minorization. Zero transition bounds preserve exact orbit domination but remove useful exponential decay.
+- Repeating the original phase r times would not create r independent group coordinates. The reset-zone definition and separate phase-flip proof are what establish the multi-phase example.
+- If r grows with N with balanced m_j roughly (N-b)/(8r), the union bound scales as r exp(-a_c(N-b)/r), not exp(-a_c(N-b)) with a uniform constant. The sharper excess scales with the amplitudes but still has this zone-length deterioration.
+- The companion UNIVERSAL_REWRITE_CONSERVATION.candidate.v1.md proves that preservation of every source with arbitrary initial law and independent kernel rows ranging over an open interior forces any deterministic bijection to preserve the initial pair and all triple counts. Thus universal rewrite groups cannot mix the entire suffix fiber, whose histories can have different total counts. Output algebra is indispensable. This necessity statement is not asserted for the stationary-only source class, and is not a task-risk lower bound.
+- No architecture-preserving universal Rao-Blackwellization, minimax improvement, new output-simulation lower, necessity of the criterion, or generic task-risk/depth frontier follows.
+
+## 7. Read provenance and status
+
+Read in full:
+- UNIVERSAL_REWRITE_CONSERVATION.candidate.v1.md: necessity of Markov-type conservation under arbitrary initial laws, and the consequent obstruction to unrestricted suffix-fiber mixing.
+- ../task_oriented_simulation_20261106/LOCAL_TYPE_INVOLUTION_CERTIFICATE.candidate.v2.md: exact eight-word local type-preserving involution, prefix-domain/empty-event conventions, original physical-scope distinctions.
+- ../task_oriented_simulation_20261106/SYMMETRIC_QUADRATIC_NUISANCE_REMOVAL.candidate.v1.md: source contract, signed-versus-permutation distinction, AA/BB suffix costs, midpoint-to-baseline comparison, inherited separate PreLN compiler ledger.
+
+New in this note: the finite-group sufficient criterion; local regular-word-library construction; a finite-state equivariance check; r reset-zone phase example; coordinate-weighted exceptional bound; variance-based baseline comparison; explicit group-size cost ledger. All new mathematical claims are symbolic proofs. No finite enumeration, scientific test, execution or independent review has yet checked them. The files above are primary provenance for inherited statements; their downstream neural compilation dependencies are not independently re-read or re-proved here.
+</pre></details><details><summary>保留旧版：h 参数域 · INVARIANT_TASK_COUNTEREXAMPLE_FAILURES.candidate.v1.md</summary><p class="hash">SHA-256 b4f706db5fdea023f129d525ba7dfdc8c411b02ddc894783b82f07435bdae59f</p><pre># Retained limits and a genuine zero-communication task obstruction
+
+6 November 2026 UTC. Private analytical candidate v1. No experiments, mathematical execution, training, or upload.
+
+## A. A useful full-type statistic whose parameter sign is invisible locally
+
+Use spins X_i in {-1,+1} and a stationary homogeneous order-two law
+
+ P_theta(X_i=z | X_(i-2)=u,X_(i-1)=v)=(1+theta zu)/2,
+
+with initial pair independent uniform and |theta|&lt;=1-2c. The two parity subsequences are independent stationary symmetric Markov chains with one-step correlation theta. Under AA/BB raw ownership each party sees every other site in each parity chain. Its marginal transition correlation is theta^2. Consequently Alice&#x27;s full local marginal, and Bob&#x27;s full local marginal, are each IDENTICAL at theta=+h and theta=-h.
+
+Bob owns the final pair when N is divisible by four. The next-one probability is (1+theta X_(N-1))/2. Any zero-communication prediction at Bob (with independent shared/private random coins permitted) therefore has
+
+ max{R_(+h),R_(-h)} &gt;= h/2.
+
+Proof: Bob&#x27;s input and coins have the same law at the two parameters. For each such input the two target probabilities differ by h. Sum the two absolute losses and use the triangle inequality, then integrate under that common law.
+
+Yet useful invariant full-data prediction is elementary. The lag-two products Y_i=X_i X_(i-2), i=3,...,N, are independent signs with mean theta: they are precisely the independent transition innovations of the two parity chains. Let theta_hat=(N-2)^(-1)sum Y_i and report (1+theta_hat X_(N-1))/2. Its TV risk is
+
+ (1/2)E|theta_hat-theta| &lt;= 1/[2 sqrt(N-2)].
+
+This estimator factors through complete triple counts and the final pair, so it is invariant under the specific local rewrite and every endpoint-preserving type move. Thus actual useful task information can survive type projection and be invisible to either party alone.
+
+Scope: this proves only a ZERO-communication obstruction. It does not prove a superlogarithmic interactive lower, a fixed-width PreLN realization, or universal invariance under all source-preserving maps. Deriving a quantitative distributed-testing lower at h of order N^(-1/2) would require an additional argument not supplied here. Identical separate marginals alone never imply a large interactive communication lower.
+
+## B. Rejected routes
+
+1. Parity of C_111 is type-invariant and can encode inner product on a selected AA/BB raw-history family. That is whole-output / exact-statistic hardness, not task-risk hardness. A predictor may discard the parity without hurting its task loss. The encoded distribution also is not the homogeneous Markov source law.
+2. Reusing the old within-type quadratic nuisance fails because the local rewrite deliberately flips its phase. Its replacement is already cheap by the reviewed orbit midpoint proof.
+3. Adding a new invariant nuisance to a consistent estimator does not establish useful distributed hardness. Its deletion remains a legal task replacement unless a separate prediction-risk separation is proved.
+4. O(log N)-bit description of Markov types does not imply cheap distributed acquisition. Conversely, linear exact acquisition cost does not imply that all useful functions of the types are expensive.
+5. The full-count majority counterexample in the companion candidate proves a real task-risk failure of suffix-only domination, but total count itself has logarithmic communication. It cannot honestly be promoted into a counterexample to arbitrary cheap communication folding.
+6. An exponentially small strict Bayes gap cannot be transferred to a physical compiler with only inverse-polynomial error unless the error is below that gap. Required accuracy and precision must remain paid.
+
+## C. Unresolved deliverable
+
+No rigorous same-model counterexample was obtained in which a locally invariant fixed-width actual PreLN/softmax predictor has useful risk that every cheap interactive task replacement fails to match. The narrow suffix-domination theorem is proved; the general task-folding obstruction remains open here.
+</pre></details></section><footer><p>中文报告 v3 · 2026 年 11 月 6 日 UTC。本增量无数学枚举、模型执行或训练；未完成视觉渲染验收。</p></footer></body></html>
