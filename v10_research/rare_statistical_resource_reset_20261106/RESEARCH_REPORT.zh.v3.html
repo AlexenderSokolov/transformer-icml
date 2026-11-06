@@ -1,0 +1,395 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>稀有二阶预测中的子采样信息损失</title><style>body{max-width:980px;margin:48px auto;padding:0 24px;font:17px/1.8 system-ui,"Noto Sans CJK SC",sans-serif;color:#17202b;background:#fff}h1{font-size:32px;line-height:1.35;margin:36px 0 24px}h2{font-size:25px;margin:42px 0 18px}h3{font-size:20px;margin:28px 0 12px}p{margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.7 ui-monospace,monospace;padding:16px;background:#f5f7f9}a{color:#145c9e;overflow-wrap:anywhere}.appendix{margin-top:64px}@media(max-width:600px){body{padding:0 16px;font-size:16px;margin:24px auto}h1{font-size:27px}pre{font-size:13px}}@media print{body{max-width:none;margin:0;font-size:11pt}.appendix{break-before:page}h1,h2,h3{break-after:avoid}pre{break-inside:auto}}</style></head><body><h1>稀有二阶预测中的子采样信息损失</h1>
+<p>2026 年 11 月 6 日。T1/T2 阶段研究报告。</p>
+<h2>本轮回答了什么</h2>
+<p>在同一未知二阶、整体快速混合的过程族中，只保留奇数位或偶数位，会把关于未知转移参数的有效信息从 Nu 级降到 Nu² 级。这个区别不仅存在于参数估计，也可以严格转化到同一条历史的实际末位置概率预测。给出末端二元组并不能消除信息损失。</p>
+<p>这是一个有匹配统计风险的观察接口分离。它不是任意多层、多头 Transformer 的下界：真实网络可以通过另一半原始符号、残差和更新后的非终端 K/V 取得更多证据。本轮还建立了允许任意交互的总通信位数下界。当前缺少的核心桥梁是把这些通信位数与实际注意力资源联系起来。</p>
+<p>本轮停止扩展执行扰动和局部对称变体。滤波收缩、KL 链式法则、两点检验和熵下界都是已有方法；这里检验的是它们在指定 rare-u 模型中的具体参数尺度与真实末端风险量词。</p>
+<h2>一 共同过程与量词</h2>
+<p>状态 A=00、B=01、C=10、D=11。设 w=(1-u)/3，q=ut/w，转移矩阵为</p>
+<pre>P = [[1-t, t, 0, 0],
+     [0, 0, 1/2, 1/2],
+     [q, 1-q, 0, 0],
+     [0, 0, 1/2, 1/2]].</pre>
+<p>从共同平稳分布 π=(u,w,w,w) 开始。本轮严格限定 0&lt;u≤1/100、1/2≤t≤3/4。旧族的 t 下端是 1/4；不能把本轮滤波证明自动扩张到那个范围。已知的两步共同原子给统一快速混合，u→0 并不意味着全链慢混合。</p>
+<p>完整历史是 X₁:N。预测时刻固定为 N+1，真实终端状态 T=(X_{N−1},X_N)。主风险为</p>
+<pre>R_N(u,t;Q)=E_{u,t}[ TV(Q(·|可见历史),P_{u,t}(·|T)) ].</pre>
+<p>A 行的下一符号 1 概率为 t，C 行的下一符号 0 概率为 q，B、D 行公平。一个预测器必须对未知 t 通用。已知 u 和未知 u 是两个不同实验，分别表述。所有下界允许源独立随机化、无限本地计算和任意内部数值精度。</p>
+<p>观察接口包含某一奇偶子序列 Y₁:m，m 为该子序列长度，约 N/2。若另外披露 T，仅补上缺失的一个末端符号，最多一位。这里的信息权限是显式统计协议，不是免费授予真实网络的预处理。</p>
+<h2>二 不披露终端时的一侧信息定理</h2>
+<p>对固定同一个 u 和任意 t,s∈[1/2,3/4]，</p>
+<pre>KL(Law_{u,t}(Y₁:m) || Law_{u,s}(Y₁:m))
+   ≤100000(m−1)u²(t−s)².</pre>
+<p>相比之下，完整历史 KL 精确等于</p>
+<pre>(N−2)[u kl(t,s)+w kl(ut/w,us/w)],</pre>
+<p>在本参数矩形中为 (N−2)u(t−s)² 的量级；N≥3 时可等价写成 Nu(t−s)²。初始状态的分布与 t 无关，没有丢掉初始化 KL。</p>
+<p>已知 u 时，从奇偶子序列估计 t 的最小最大绝对损失量级是 min{1,1/(u√m)}；完整历史已有可达上界为常数倍 min{1,1/√(mu)}。这纠正了一个容易误读的旧结论：边缘分布依赖 t，只意味着可识别，不意味着具有完整历史的 rare-u 估计效率。</p>
+<h3>证明关键步骤</h3>
+<p>在观测符号为 0 时，隐含二元状态只能是 A 或 C。记 z 为给定已观测历史后属于 A 的条件概率。两步转移在 A、C 子空间上为</p>
+<pre>H = [[(1−t)², t/2],
+     [q(1−t), (1−q)/2]].</pre>
+<p>下一观测为 0 的概率 d=z r_A+(1−z)r_C，其中 r_A=(1−t)²+t/2，r_C=q(1−t)+(1−q)/2。更新 F 的分子是 z(1−t)²+(1−z)q(1−t)，分母是 d。</p>
+<p>平稳初始 z=u/(u+w) 与 t 无关；在观测到 1 后，下一个 0 的滤波状态重置为 2q/(1+2q)。对每条历史，z≤3q≤7u。整个区间上 F_z≤32/49&lt;2/3，而在可达小滤波区 |F_t|≤42u。因此 |∂_t z|≤126u，观测概率导数≤133u。</p>
+<p>所有后续观测概率都在 [1/4,1/2]，所以 Bernoulli KL≤(16/3)(概率差)²。对同一条已观测前缀使用均值定理，再使用准确的 KL 链式法则，得到所述常数。下界用两点检验；上界用 lag-two 频率估计，结合几何混合控制相关样本方差，未使用独立样本假设。</p>
+<h2>三 实际末位置预测的匹配观察接口分离</h2>
+<p>披露真实终端 T 后，不能直接沿用上节 KL。稀有条件事件可能改变整个历史的统计分布。本轮单独证明</p>
+<pre>KL(Law_{u,t}(Y|T=A) || Law_{u,s}(Y|T=A))
+   ≤10⁶(1+mu²)(t−s)².</pre>
+<p>由此，已知 u、只见 Y 与 T 的全部预测器满足</p>
+<pre>inf_Q sup_t R_N(u,t;Q) ≍ u/√(1+mu²).</pre>
+<p>两端常数绝对，短历史使用常数回退。下界允许任意计算；上界是明确的统计估计器。它与完整历史的旧统计率 u/√(1+Nu) 不同，后一统计率在本轮不是创新主张。</p>
+<h3>为什么没有把条件风险偷换成总体风险</h3>
+<p>平稳符号过程反向后的二阶转移规律仍为 P，二元状态只需交换 B、C。条件 T=00 后，反向历史从已知二元组 00 出发。一个奇偶序列的初始滤波 z=1；另一个先付出一次 Bernoulli(1−t) 边界观测，再进入同一递推。</p>
+<p>全区间 z∈[0,1] 上仍有 F_z&lt;2/3。初始 z=1 带来的导数影响指数衰减，给出</p>
+<pre>z_k≤(2/3)^k+7u,
+|∂_t z_k|≤4k(2/3)^(k−1)+141u.</pre>
+<p>观测概率导数的平方和≤常数×(1+mu²)。额外的 1 正是末端条件化的瞬态信息，不能删除。随后由条件 KL 两点检验得到 A 条件绝对误差下界，再使用两模型共同的 P(T=A)=u，得到总体下界。</p>
+<p>上界估计 lag-two 零对频率 J，使用</p>
+<pre>t_hat=投影_[1/2,3/4]((u+w/2−J)/u),
+q_hat=u t_hat/w.</pre>
+<p>真实终端 A 用 t_hat，C 用 q_hat，其余两行用 1/2。反向链从每个固定终端状态都快速混合，给条件均方误差 O(1/m)，而非另抽一个独立查询。两行加权损失各贡献 u 倍估计误差，得到 O(min{u,m^(−1/2)})，即匹配量级。</p>
+<h2>补充 允许任意交互后的总通信位数下界</h2>
+<p>把另一半奇偶符号交给 Alice，允许双方任意交互，本地计算不限，并把真实终端二元组免费给双方。协议可知道固定 u、N，但必须对未知 t 通用。通信遵循标准二叉协议树，总最坏通信成本至多 b 位，不允许借停止时间或说话次序传递未计费信息。</p>
+<p>则存在绝对 c&gt;0，使</p>
+<pre>sup_t R_N(u,t;协议) ≥ c u 2^(−b)/√(1+mu²).</pre>
+<p>这是实际同历史总体概率风险的通信位数下界，既允许双向交互，也计入了一侧边缘的非零信息。它不是消息轮数或注意力调用次数下界。</p>
+<h3>完整信息论推导</h3>
+<p>在 t=5/8 附近取宽 a=1/[10000√(1+mu²)] 的均匀先验。因为 P(Terminal=A)=u 不依赖 t，条件终端 A 后先验不变。上节条件 KL 对该区间内全部两参数至多 1/100，故 Bob 的一侧观测 V 满足 I(t;V|A)≤1/100。</p>
+<p>给定 Bob 的观测及源独立随机数，总成本 b 位的协议树至多有 2^b 个完整转录。完整本地视图 Z 因而满足 I(t;Z|A)≤1/100+b ln2。任意估计 t_hat 的条件绝对误差 D 满足最大熵不等式 h(t|Z,A)≤ln(2eD)。结合均匀先验熵 ln a，得</p>
+<pre>D ≥ [a/(2e)] exp(−I(t;Z|A)).</pre>
+<p>归一化二元概率的 TV 正是该绝对误差。乘以共同终端概率 u，再以最坏风险下界先验平均风险，得到结论；可取 c=exp(−1/100)/(20000e)。这些熵工具是标准方法，新增数学义务在前面的 rare-u 条件信息控制。</p>
+<p>若希望达到完整历史旧统计率 C u/√(1+Nu)，必要条件为</p>
+<pre>b ≥ 0.5 log₂[(1+Nu)/(1+Nu²)] − O_C(1).</pre>
+<p>例如 N 约为 u^(−2) 时需要至少 0.5 log₂(1/u)−O_C(1) 位。负的右端应与零取最大。该下界未证明匹配最优，也不排除一个足够长的消息。</p>
+<p>若某网络可由 b 位协议在每个源下以平均半 l1 输出误差 ε 模拟，且模拟输出归一化，则原网络风险 r 必须满足</p>
+<pre>r+ε ≥ c u 2^(−b)/√(1+mu²).</pre>
+<p>未归一化二元输出先裁剪为概率时，安全版本使用 r+2ε。不能把 ε 的绝对趋零误认为在 rare-u 风险尺度上足够小。</p>
+<h2>四 未知 u 的额外支持集障碍</h2>
+<p>若同一个 Q_N 对所有 u 通用，只能见 Y 和 T，且没有任何额外数据消息，则不可能统一达到完整历史率 C u/√(1+Nu)。</p>
+<p>固定 N,t 后令 u→0，C=10 行的正确下一符号 0 概率 q→0。任何可行的奇偶历史与终端 C，都可以把未观测位补成 1，得到没有相邻 00 的轨迹；这种补全在 u=0 仍有正概率。因此统一消失的风险迫使 Q_N 在所有终端 C 观察上都输出下一符号 0 概率零。这又令每个 u&gt;0 下的 C 行总体损失为 wq=ut≥u/2。选择足够大的 N 即矛盾。</p>
+<p>该结论不限制任意正位数消息。额外消息可以指出是否出现相邻 00，破坏支持集论证。已知 u 的预测器也不受此论证限制。</p>
+<h2>五 输出范围修订不是新统计率</h2>
+<p>另行复查了已有的有界输出 logit 障碍。若最终概率必须在 [α,1−α]，α=1/(1+expΛ)，C 行不可避免贡献 w(α−q)₊。但“还必须增加 0.5 log(1+Nu) 的 logit 范围”不是必要性。</p>
+<p>在 α≤1/4（即 Λ≥log3）的必要适用条件下，把旧完整历史混合估计器投影到该区间，逐历史只有 C 行可能额外受损：</p>
+<pre>R≤1300u/√(1+nu)+w(α−q)₊，n=N−2.</pre>
+<p>已知任务范围 u≥ρ 时，Λ=log((4−7ρ)/(3ρ)) 就可以覆盖旧族 t≥1/4 的全部目标概率，保持原统计率而不随 n 增长。A 条件目标远离 0、1，只需常数范围 log3。总体风险却受 C 行趋零概率影响，二者不能互相代替。</p>
+<p>这些是既有统计估计器的投影精化，不是实际 PreLN 编译或新的估计率。若严格冻结全网络范数与最终输出范围，不能无偿增加 Λ。</p>
+<h2>六 文献与本轮增量</h2>
+<p>Abraham、Gassiat、Naulet 的 Fundamental limits for learning hidden Markov model parameters，Proposition 2，已经用预测条件分布控制 HMM 观测路径 KL；其适用对象是两个隐状态、正发射概率和规定的近独立区域。当前四状态确定发射表示不能直接代入。Frontiers to the learning of nonparametric hidden Markov models 的 Appendix B Proposition 11 延伸了相关工具，也不是当前表示的直接适用结论。</p>
+<p>Tadić、Doucet 的 Stability of optimal filter higher-order derivatives，Theorems 2.1–2.2，提供一般导数稳定性理论。确定性发射本身并不排除其假设；但本例 P²(A,A)/P²(B,A)≈1/u，通用全状态比较常数不能直接当作 u 一致常数。本例所需的小滤波可达区域、参数导数的 u 因子与终端瞬态，需要具体证明。</p>
+<p>u=0 的奇偶过程仍不是 IID：零边缘概率 1/3，连续两个奇偶零概率 1/6≠1/9。因此本轮消失的是 t 的信息，而非观测依赖本身。上述差异不是新颖性认证；滤波、KL、Le Cam 方法已有清楚先例。</p>
+<p>与 Transformer 近邻的关系保持上一轮原文审计结论：Rajaraman 的浅层 k-gram 表示、D’Angelo 的有限分数 n-gram 插值、Akman 的窗口与优化预测理论，不可重新包装。本轮没有给出替代它们的实际网络构造。</p>
+<h2>七 资源账本和未完成部分</h2>
+<p>历史 N 是单条推理轨迹长度，不是训练序列数。奇偶观察有 m≈N/2 个二进制符号；补齐真实末端最多一位。统计上界可用 O(N) 时间、常数个 O(logN) 位计数器和已知 u 的实数算术，后者未编译为有限精度网络。</p>
+<p>统计下界允许无限层、宽度、头数、计算精度；限制只在可见信息，不限制算法。因此它不能单独生成注意力头数、层数或参数精度下界。真实 PreLN 的全部 N 行状态、非终端更新、完整 residual、position、Q/K/V、FFN 和最终 softmax 仍需计账。系数描述位数也不等于执行状态位数。</p>
+<p>没有训练实验、数值仿真、枚举测试或形式验证。独立审阅是文本与数学重建，不是外部同行评审。保留全部初稿、修订与失败证明；没有公开上传或投稿。</p>
+<h2>八 下一关键证明义务</h2>
+<p>本轮已经用条件互信息建立总通信位数下界，并保留了一侧的非零边缘信息与真实终端条件化。下一步必须证明某一明确实际 PreLN 子类的源平均有限位协议模拟，并完整计入消息精度、头数、value 维度、层数及全部更新行。只有这一桥梁成立，才可能把通信位数下界转成 T1/T2 的实际注意力资源下界。</p>
+<p>如果模拟仍必须支付 N 行通信，或者一轮高维读出可以跨过该接口，就应报告严格障碍，不把统计子采样限制当成神经网络限制。不继续通过增加相似滤波变体来代替这条核心桥梁。</p>
+<h2>九 修订记录与核验范围</h2>
+<p>末端证明初稿在导数界中把 141u+3.5u+4u 写成 145u，独立复核指出此处常数推导不足。修订版改为 149u，对应平方和系数从 63075 改为 66603；最终 10⁶ 的 KL 常数及全部速率结论不变。初稿保留，最终证明依赖修订版。</p>
+<p>本报告附上完整英文证明和先行工作逐条审计，中文正文给出共同模型、主要证明链、实际风险、资源与失败边界。没有将“未检索到直接覆盖”写成“没有先例”。当前统计与通信结果通过独立文本重建；未完成真实网络模拟，也未获得外部专家审定。</p><section class="appendix"><h2>附录 A 完整奇偶滤波证明</h2><h1>Rare-context parity information: a finite-sample leakage theorem</h1>
+<h2>1. Main result and the correction it makes</h2>
+<p>Use the stationary rare-context family with pair states A=00, B=01, C=10, D=11,</p>
+<pre>pi=(u,w,w,w), w=(1-u)/3, q=ut/w,
+P=[[1-t,t,0,0],[0,0,1/2,1/2],
+   [q,1-q,0,0],[0,0,1/2,1/2]].</pre>
+<p>For this note restrict 0&lt;u&lt;=1/100 and 1/2&lt;=t&lt;=3/4. Bob observes one parity subsequence Y_1,...,Y_m of a stationary history. For every t,s in this interval, at the SAME u,</p>
+<pre>KL(Law_(u,t)(Y_1:m) || Law_(u,s)(Y_1:m))
+   &lt;= 100000 (m-1) u^2 (t-s)^2.                 (1)</pre>
+<p>The initial observed-symbol marginal is t-independent. There is no discarded initialization or Bob-marginal term.</p>
+<p>Consequently, even if u is supplied to Bob, the minimax absolute error for estimating t from this parity subsequence has order</p>
+<pre>min{1, 1/(u sqrt(m))},                         (2)</pre>
+<p>with absolute constants and the usual m&gt;=2 convention (constant rate for m=1). This is slower in the rare-mass regime than the full-history rate min{1,1/sqrt(mu)}. Thus population identifiability does NOT establish that Bob attains the full-history rare rate. For a fixed u it does establish the ordinary m^(-1/2) exponent, but the constant grows as 1/u, not 1/sqrt(u).</p>
+<p>Equation (1) permits, rather than proves, a repaired communication argument with an explicitly charged marginal leakage term. At a full-history local separation (t-s)^2 of order 1/(Nu), Bob&#x27;s KL is only O(u), whereas the full-path information can be O(1). A proof still needs the message-dependent information inequality, terminal conditioning, and a charged simulation of the network. None is supplied by (1).</p>
+<h2>2. Exact two-step hidden filter</h2>
+<p>At a parity-observation time let S denote the underlying pair ending at that time. If the observed symbol is zero, S is A or C. If it is one, S is B or D. Crucially P^2 has identical B and D rows:</p>
+<pre>P^2(B,.)=P^2(D,.)=(q/2,(1-q)/2,1/4,1/4).</pre>
+<p>On states A,C, transitions whose next parity symbol is zero form</p>
+<pre>H=[[a,t/2],[b,(1-q)/2]],
+a=(1-t)^2, b=q(1-t).</pre>
+<p>Write r_A=a+t/2 and r_C=b+(1-q)/2. Throughout our parameter rectangle,</p>
+<pre>7/16 &lt;= r_A,r_C &lt;= 1/2,
+q &lt;= (25/11)u,  dot q=partial_t q=u/w &lt;= (100/33)u.</pre>
+<p>Given a parity history ending in zero, let z be the posterior probability S=A. The probability of another zero and the updated posterior are exactly</p>
+<pre>d(z,t)=z r_A+(1-z)r_C,
+F(z,t)=[z a+(1-z)b]/d(z,t).                    (3)</pre>
+<p>After an observed one, the next symbol is zero with probability 1/4+q/2; conditional on that zero, its posterior is reset to</p>
+<pre>z_reset=2q/(1+2q).                             (4)</pre>
+<p>At the first parity observation, conditional on zero,</p>
+<pre>z_initial=u/(u+w)=3u/(1+2u),                   (5)</pre>
+<p>independent of t. Stationarity provides this formula whichever parity is observed. One can use an auxiliary stationary backward extension if the first observed index is 1; this adds no observation or parameter information.</p>
+<h3>2.1 A posterior bound on every history</h3>
+<p>Claim: 0&lt;=z&lt;=3q&lt;=7u for every history ending in zero.</p>
+<p>Equation (5) has z_initial/q=(1-u)/(t(1+2u))&lt;=2, and (4) is at most 2q. If z&lt;=3q, then a&lt;=1/4, b&lt;=q/2, and d&gt;=7/16 imply</p>
+<pre>F(z,t) &lt;= [(3q)/4+q/2]/(7/16)=20q/7&lt;3q.</pre>
+<p>This proves the invariant by induction. It is a pathwise posterior bound, not an average statement.</p>
+<h3>2.2 Uniform derivative control</h3>
+<p>All finite-history likelihoods are positive and differentiable on the parameter rectangle. Differentiating (3) with respect to z,</p>
+<pre>F_z=(a r_C-b r_A)/d^2,
+a r_C-b r_A=(1-t)((1-t)-q)/2 &gt;=0.</pre>
+<p>Also a r_C&lt;=1/8 and d&gt;=7/16, so</p>
+<pre>0&lt;=F_z&lt;=32/49&lt;2/3.                            (6)</pre>
+<p>In the following partial derivatives z is held fixed. Since z&lt;=7u,</p>
+<pre>|partial_t (z a+(1-z)b)|
+  &lt;= z + dot q/2 + q &lt; 11u.</pre>
+<p>Similarly r_A&#x27;=-2(1-t)+1/2 has magnitude at most 1/2, while</p>
+<pre>r_C&#x27;=dot q(1/2-t)-q,
+|partial_t d| &lt;= z/2 + dot q/4 + q &lt;7u.</pre>
+<p>The numerator of F is between zero and d. Therefore</p>
+<pre>|F_t| &lt;= (11u+7u)/(7/16)&lt;42u.                (7)</pre>
+<p>The initial derivative is zero, and the reset derivative is</p>
+<pre>|d z_reset/dt|=2 dot q/(1+2q)^2&lt;7u.</pre>
+<p>Combining (6)-(7) inductively gives, for every finite history,</p>
+<pre>|d z/dt|&lt;=126u.                              (8)</pre>
+<p>For the emitted probability d after a zero, the TOTAL derivative is bounded by</p>
+<pre>|d d/dt| &lt;= |z&#x27;| |r_A-r_C|+|partial_t d|
+            &lt;=133u.                         (9)</pre>
+<p>After a one, its zero probability 1/4+q/2 has derivative dot q/2&lt;2u. All emitted zero probabilities lie in [1/4,1/2].</p>
+<h2>3. KL bound and matching parameter-estimation order</h2>
+<p>For a fixed observed prefix, the mean-value theorem and (9) give</p>
+<pre>|Pr_t(next zero|prefix)-Pr_s(next zero|prefix)|
+    &lt;=133u|t-s|.</pre>
+<p>For Bernoulli probabilities p,r in [1/4,1/2],</p>
+<pre>KL(Ber(p)||Ber(r)) &lt;= (p-r)^2/[r(1-r)]
+                   &lt;= (16/3)(p-r)^2.</pre>
+<p>The first observation has probability (1+2u)/3 of zero, independent of t. Applying the exact likelihood chain rule to the remaining m-1 observations proves (1), since (16/3)*133^2&lt;100000. This calculation conditions on the SAME observed prefix under both models; no hidden-state distribution is supplied to Bob.</p>
+<p>For the lower in (2), take t_0=5/8-h/2 and t_1=5/8+h/2, where</p>
+<pre>h=min{1/8,1/(1000u sqrt(m))}.</pre>
+<p>Equation (1) makes their KL at most 1/10, hence their TV at most sqrt(1/20). The ordinary two-point testing reduction gives maximum absolute-estimation risk at least h(1-sqrt(1/20))/4. This remains true when u is known, and therefore cannot improve when u is unknown.</p>
+<p>For the upper, assume u known and use</p>
+<pre>Jbar=(1/(m-1)) sum_(j=1)^(m-1) 1{Y_j=0,Y_(j+1)=0},
+that=projection_[1/2,3/4]((u+w/2-Jbar)/u).</pre>
+<p>Stationarity gives E Jbar=u(1-t)+w/2. The archived pair-chain bound</p>
+<pre>sup_mu TV(mu P^k,pi) &lt;= (7/8)^floor(k/2)</pre>
+<p>implies Var(Jbar)&lt;=C/(m-1), with an absolute constant: the covariance of two bounded lag-two indicators separated by k parity indices is bounded by a constant times (7/8)^(k-1), by conditioning at the end of the earlier indicator. Summing this geometric covariance series gives the stated variance. Projection is nonexpansive, so E|that-t|&lt;=C/(u sqrt(m-1)); projection also bounds the error by 1/4. This proves (2), without assuming independent parity samples.</p>
+<h2>4. Actual terminal context and averaged risk</h2>
+<p>The source&#x27;s actual next-symbol probabilities depend on the same-trajectory terminal pair: row A uses t, row C uses q, and rows B,D are fair. A parameter-estimation lower is NOT automatically an A-conditional or source-average prediction lower. In particular, conditioning Bob&#x27;s entire observation on the rare terminal event A can change its information by an inverse rare-mass factor, and adding even the missing terminal bit changes the observed experiment. Equation (1) is not asserted for those augmented laws.</p>
+<p>For a known u, one can give an upper comparison with all costs explicit: Alice reveals the one missing terminal symbol (at most one bit), so Bob knows the actual pair; Bob estimates t from his parity subsequence as above and uses qhat=u that/w. This is a statistical protocol, not an architectural implementation.</p>
+<p>The same estimator has conditional absolute error &lt;=C min{1,1/(u sqrt(m))} given EACH terminal pair. To justify this without substituting an independent query: run the stationary pair chain backward from the specified terminal pair. The archive supplies the reverse-kernel common-atom bound Q^2(x,D)&gt;=1/8. It implies geometric contraction from every reverse start. For the bounded parity-pair indicators, the conditional average has bias O(1/m) relative to its stationary mean and variance O(1/m). The bias follows by summing the geometric distance to stationarity. For the variance, condition at the end of the earlier block in reverse time; conditional expectations of a later bounded block from two possible states differ geometrically, which bounds its covariance under an arbitrary reverse start. Adjacent/overlapping blocks contribute only O(m) to the variance sum. Hence the conditional MSE is O(1/m), uniformly in the terminal pair. At m=1 use any clipped fixed estimate.</p>
+<p>The SAME-history averaged loss of this known-u protocol is consequently</p>
+<pre>u E[|that-t| | terminal A]
+  +w E[(u/w)|that-t| | terminal C]
+  &lt;= C u min{1,1/(u sqrt(m))}
+  = C min{u,1/sqrt(m)}.                       (10)</pre>
+<p>The rare factor u is retained. Equation (10) is worse than the full-history u/sqrt(1+Nu) rate when u is small and Nu is large. It does not show that this parity split invalidates every rare-family communication lower.</p>
+<p>All of (1)-(10) assume stationary initialization. Arbitrary starts are not silently covered; the existing all-zero-start obstruction remains applicable to u-scaled finite-horizon risk claims.</p>
+<h2>5. An additional obstruction when u is unknown</h2>
+<p>A stronger, different statement concerns protocols with NO data message except disclosure of the missing terminal symbol. Let Q_N be ONE source-independent normalized predictor using only Bob&#x27;s parity subsequence and the actual terminal pair, with optional source-independent randomness. It is not given u or t.</p>
+<p>There cannot be a finite universal C such that for every N, 0&lt;u&lt;=1/100, and t in [1/2,3/4],</p>
+<pre>R_(N,u,t)(Q_N) &lt;= C u/sqrt(1+Nu).             (11)</pre>
+<p>Proof. Fix N and t and let u decrease to zero. The finite observation law converges to the well-defined stationary u=0 law supported on pair states B,C,D. Under this limit q=0, so the correct next-zero probability at terminal C=10 is zero. The RHS of (11) tends to zero. Nonnegativity of loss therefore forces Q_N&#x27;s predicted next-zero probability to vanish almost surely on every observation ending in C that has positive probability at u=0, including its randomized expectation.</p>
+<p>Every combinatorially consistent parity-history/terminal-C observation has positive u=0 probability. To see this, assign all unobserved symbols to 1 except the prescribed terminal zero if it is unobserved. This completion has no adjacent zeros. Its initial pair lies in B,C,D, each of stationary probability 1/3, and every transition along it has positive probability at u=0 (the C-&gt;B transition has probability one; the B,D exits have probability 1/2). Thus Q_N must predict next-zero probability zero on ALL possible observations ending in C, under every u&gt;0 as well.</p>
+<p>For every u,t this alone contributes</p>
+<pre>Pr(terminal C)*q=wq=ut&gt;=u/2</pre>
+<p>to averaged TV. Choose N large enough that C/sqrt(1+Nu)&lt;1/2 to contradict (11).</p>
+<p>This is not a contradiction with the known-u estimator or the full-history u-blind upper. A known-u estimator changes with u. The full history can exhibit adjacent 00, an event absent at u=0, whereas every parity observation compatible with terminal C remains possible at u=0. Arbitrary Alice messages can also reveal such events and escape this support argument. No general positive-bit communication bound follows from it.</p>
+<h2>6. Scope and prior-work relationship</h2>
+<p>The lower endpoint t=1/2 is deliberate. For t=1/4, long all-zero parity runs can amplify the posterior rare state: at u=0 the competing hidden persistence scales are (1-t)^2=9/16 and 1/2. Thus the pathwise O(u) filter bound used here does not extend by the same argument to the original entire t interval. We do NOT infer that KL necessarily exceeds O(Nu^2) there; a separate average-likelihood argument would be needed.</p>
+<p>Remaining bridge: bound the information in Alice&#x27;s message conditional on Bob&#x27;s dependent parity history, account for terminal events and rare loss, and simulate repeated useful attention with all resource charges. None of the present results supplies that bridge, an architectural upper implementation, or a novelty certification.</p></section><section class="appendix"><h2>附录 B 真实终端条件证明修订版</h2><h1>Same-terminal rare parity lower: transient filter correction</h1>
+<h2>1. Statement</h2>
+<p>Retain its stationary rare family, 0&lt;u&lt;=1/100 and 1/2&lt;=t&lt;=3/4. Bob observes either parity subsequence of X_1:N, of length m, and is additionally given the actual terminal pair T=(X_(N-1),X_N). Conditional on T=A=00,</p>
+<pre>KL(Law_(u,t)(Bob | T=A) || Law_(u,s)(Bob | T=A))
+  &lt;= 10^6 (1+m u^2)(t-s)^2.                    (T1)</pre>
+<p>Therefore, for any ONE normalized predictor using these observations (even if given u),</p>
+<pre>sup_t E_(u,t) TV(Q_N,p_(u,t)(.|T))
+  &gt;= c u/sqrt(1+m u^2),                        (T2)</pre>
+<p>with an absolute c&gt;0. It suffices that the prediction rule is the same for the compared t values. The actual terminal pair is from the observed trajectory, not resampled independently. The prefactor u in (T2) is its exact stationary probability.</p>
+<p>The known-u upper in the companion gives the matching order u/sqrt(1+m u^2), within absolute constants and trivial small-horizon conventions. Unknown u is a separate quantifier: the companion&#x27;s support argument rules out a u-blind uniform full-history rare rate with only this observation channel.</p>
+<h2>2. Why reversing the terminal-conditioned history is legitimate</h2>
+<p>Let the stationary pair chain&#x27;s reverse kernel be Q. Direct stationary reversal gives, in states A,B,C,D,</p>
+<pre>Q=[[1-t,0,t,0],[q,0,1-q,0],
+   [0,1/2,0,1/2],[0,1/2,0,1/2]].</pre>
+<p>Swapping B,C converts Q exactly into P. Equivalently, reversing the stationary symbol sequence yields the same homogeneous order-two source. Conditional on terminal pair 00, the reversed symbols R_i=X_(N+1-i) therefore form a forward P-source initialized with R_1=R_2=0. This is an identity of the conditional finite-path law, not an approximation by stationarity. Its initialization has no dependence on t.</p>
+<p>The reversed Bob subsequence is either R_2,R_4,... or R_1,R_3,.... For the first case R_2=0 is deterministic and its hidden pair is known to be A, so the parity filter starts at z_0=1. In the second case R_1=0 is deterministic, while the first nonconstant observed symbol R_3 has probability 1-t of being zero. Given R_3=0 the hidden pair is A; given R_3=1 it is B. Thereafter the same two-step filter applies. Thus this second case introduces just one exceptional Bernoulli transition, whose parameter derivative has magnitude one and whose probability lies in [1/4,1/2]. Both terminal zeros have been conditioned on; neither is silently discarded or assumed independent.</p>
+<h2>3. A global filter contraction with a decaying transient</h2>
+<p>Use the companion notation</p>
+<pre>F(z,t)=[z(1-t)^2+(1-z)q(1-t)]/[z r_A+(1-z)r_C],
+r_A=(1-t)^2+t/2,
+r_C=q(1-t)+(1-q)/2,
+dot q=u/w.</pre>
+<p>The bounds 7/16&lt;=r_A,r_C&lt;=1/2 hold on the whole parameter rectangle, independently of z. In particular the proof of</p>
+<pre>0&lt;=F_z&lt;=32/49&lt;2/3                              (T3)</pre>
+<p>holds for ALL z in [0,1], not just z=O(u).</p>
+<p>Put a_0=2/3. Compare the filter initialized at z_0=1 with an auxiliary filter initialized at zero and driven by the same observed sequence. The latter remains bounded by 3q&lt;=7u, by the companion&#x27;s invariant. On a zero update their difference contracts by at most a_0. An intervening observed one resets both filters equally at the subsequent zero. Consequently, after k two-step updates, whenever the current symbol is zero,</p>
+<pre>z_k &lt;= a_0^k+7u.                               (T4)</pre>
+<p>This comparison is purely algebraic; the auxiliary filter need not describe the actual initial distribution.</p>
+<p>At fixed z, write n=z(1-t)^2+(1-z)q(1-t) and d=z r_A+(1-z)r_C. On the whole unit interval,</p>
+<pre>|partial_t n| &lt;= z+4u,
+|partial_t d| &lt;= z/2+4u,
+0&lt;=n&lt;=d, d&gt;=7/16.</pre>
+<p>Hence</p>
+<pre>|F_t| &lt;= 4z+19u.                               (T5)</pre>
+<p>The true z_0=1 has derivative zero. Combining (T3)-(T5), the derivative D_k=|partial_t z_k| satisfies, between resets,</p>
+<pre>D_(k+1) &lt;= a_0 D_k+4a_0^k+47u.</pre>
+<p>A reset has derivative at most 7u, so the following bound holds also across resets by induction:</p>
+<pre>D_k &lt;= 4k a_0^(k-1)+141u,                       (T6)</pre>
+<p>where the k=0 first term is defined to be zero.</p>
+<p>The emitted next-zero probability after a zero has total derivative bounded by</p>
+<pre>|p&#x27;_k| &lt;= D_k |r_A-r_C|+z_k/2+4u
+        &lt;=4k a_0^(k-1)+(1/2)a_0^k+149u.        (T7)</pre>
+<p>After a one its derivative is dot q/2&lt;2u, also below the displayed envelope. All ordinary emitted probabilities are in [1/4,1/2]. If the first nonconstant observed symbol is R_3, restart the index k after it; conditioned on either result the initial hidden state is known and its derivative is zero. Its own extra derivative-one contribution will be added separately.</p>
+<h2>4. Conditional KL calculation</h2>
+<p>The square-summability needed here is uniform in the finite horizon:</p>
+<pre>sum_(k&gt;=0) k^2 a_0^(2k-2)
+  =(1+a_0^2)/(1-a_0^2)^3=1053/125,
+sum_(k&gt;=0) a_0^(2k)=9/5.</pre>
+<p>Using (x+y+z)^2&lt;=3(x^2+y^2+z^2), (T7) gives for at most m ordinary transitions</p>
+<pre>sum_k sup_t |p&#x27;_k|^2
+   &lt;=48*(1053/125)+(3/4)*(9/5)+66603m u^2
+   &lt; 406+66603m u^2.</pre>
+<p>Include at most one extra derivative-one Bernoulli transition. The mean-value theorem for each fixed observed prefix, the Bernoulli KL bound with denominator at least 3/16, and the exact conditional likelihood chain rule now yield</p>
+<pre>KL &lt;= (16/3)(407+66603m u^2)(t-s)^2
+    &lt;=10^6(1+m u^2)(t-s)^2.</pre>
+<p>This proves (T1) without applying the stationary-initialized Bob KL to a terminal-conditioned law. The O(1) term is the explicit transient information in the terminal-conditioned reversed start.</p>
+<h2>5. Risk reduction retaining the rare factor</h2>
+<p>Choose t_0=5/8-h/2 and t_1=5/8+h/2, with</p>
+<pre>h=1/[10000 sqrt(1+m u^2)].</pre>
+<p>Both belong to [1/2,3/4]. By (T1), the conditional observation KL is at most 1/100 and conditional TV at most 1/sqrt(200). At terminal A, the actual next-one probability is exactly t. Thus the predictor&#x27;s next-one coordinate is an estimator of t under this conditional experiment. The two-point absolute-loss bound gives</p>
+<pre>max_i E_(u,t_i)[TV(Q_N,p_(u,t_i)(.|A)) | T=A]
+  &gt;= h(1-1/sqrt(200))/4.</pre>
+<p>For either model Pr(T=A)=u. Nonnegativity of the loss on other terminal states gives (T2), for example with</p>
+<pre>c=(1-1/sqrt(200))/40000.</pre>
+<p>This lower remains true with u known. It does not hold against a protocol receiving unrestricted data messages from Alice, and therefore supplies no standalone positive-bit communication lower. Such a proof must still quantify what messages can recover from the hidden intervening symbols.</p>
+<h2>6. Interpretation for the proposed resource bridge</h2>
+<p>The concrete odd/even observation channel has conditional rare information of order 1+m u^2, including its terminal transient, rather than 1+m u. On this subfamily Bob alone does not attain the full-history rare rate. The earlier identifiability warning is correct but insufficient to discard all rare-family communication reductions.</p>
+<p>A future reduction must now include the Bob/terminal baseline information of this scale, a separate message-dependent information term, and an architecture-to-protocol simulation. The current derivation covers neither message interaction nor repeated useful attention. It is analytical progress on one prerequisite and an exact boundary, not a completion of the architectural theorem.</p></section><section class="appendix"><h2>附录 C 任意交互总通信位数证明</h2><h1>Rare-terminal information requires communication bits</h1>
+<h2>1. Exact experiment and theorem</h2>
+<p>The source is the stationary rare binary family in the two companion notes, with fixed known 0&lt;u&lt;=1/100 and unknown 1/2&lt;=t&lt;=3/4. Alice receives one parity subsequence of X_1:N, and Bob receives the other, of length m. The actual terminal pair S=(X_(N-1),X_N) may be supplied freely to BOTH parties. This strengthening avoids hiding a terminal-access cost in the lower. The source law is not otherwise provided; in particular a protocol must be the SAME for all t.</p>
+<p>Allow arbitrary local computation, independent private randomness, public randomness independent of the source, and arbitrary interactive communication represented by a standard binary protocol tree with worst-case total cost at most b bits. Bob outputs a normalized binary next-token distribution. Source-independent here means independent of t; the protocol may know the fixed u and N, which makes the lower stronger.</p>
+<p>There is an absolute constant c&gt;0 such that every such protocol obeys</p>
+<pre>sup_(1/2&lt;=t&lt;=3/4) E_(u,t) TV(Q,p_(u,t)(.|S))
+   &gt;= c u 2^(-b)/sqrt(1+m u^2).                 (B1)</pre>
+<p>For example c=exp(-1/100)/(20000e) is valid under the companion&#x27;s conditional KL constant. The theorem does not assume one-way communication or unchanged party marginals.</p>
+<h2>2. Local prior with bounded baseline information</h2>
+<p>Let T be uniform on the interval centered at 5/8 with length</p>
+<pre>a=1/[10000 sqrt(1+m u^2)].</pre>
+<p>This interval lies inside [1/2,3/4]. Write E for terminal event S=A=00. Its probability is exactly u for every parameter. Consequently conditioning on E leaves the prior on T UNCHANGED and independent of all protocol coins.</p>
+<p>The terminal companion proves for all t,s in this interval</p>
+<pre>KL(P_(V|T=t,E) || P_(V|T=s,E))
+   &lt;=10^6(1+m u^2)(t-s)^2 &lt;=1/100.</pre>
+<p>Here V is Bob&#x27;s entire parity observation, and the fixed terminal pair A is already part of the conditional experiment. If Pbar_V is the mixture under the uniform prior, convexity of KL in its second argument gives</p>
+<pre>I(T;V|E)
+  = E_t KL(P_(V|t,E)||Pbar_V)
+  &lt;=E_(t,s) KL(P_(V|t,E)||P_(V|s,E))
+  &lt;=1/100.                                    (B2)</pre>
+<p>This explicitly charges Bob&#x27;s t-dependent marginal and the terminal conditioning. No common-marginal reference law is used.</p>
+<h2>3. Interactive transcript information</h2>
+<p>Let R be public coins, R_B Bob&#x27;s private coins, and Pi the complete transcript. Conditioned on R,R_B and V, a worst-case b-bit binary protocol has at most 2^b complete transcripts: the binary tree has depth at most b, and its leaves form a prefix-free set. Random stopping or speaker changes must be represented by the standard protocol tree; no uncharged timing or control channel is permitted.</p>
+<p>R and R_B are independent of (T,V,E), so Bob&#x27;s full view Z=(V,R,R_B,Pi), with the fixed terminal pair A implicit, satisfies</p>
+<pre>I(T;Z|E)
+  =I(T;V|E)+I(T;Pi|V,R,R_B,E)
+  &lt;=1/100+H(Pi|V,R,R_B,E)
+  &lt;=1/100+b ln 2.                             (B3)</pre>
+<p>Alice&#x27;s private randomness does not alter the transcript-cardinality bound. Bob&#x27;s outgoing messages are counted in b. A version charging only received bits requires the additional standard simulation/cardinality argument that Bob&#x27;s own messages and all stopping decisions are determined by his local view and those received bits; that variant is NOT needed or claimed here.</p>
+<h2>4. Absolute-loss entropy inequality</h2>
+<p>Let that(Z) be Bob&#x27;s predicted next-one probability on E. The correct probability there is T. Put D=E[|T-that(Z)| | E]. The uniform prior has differential entropy h(T|E)=ln a. The maximum differential entropy at a fixed first absolute moment is attained by a Laplace density; equivalently, nonnegativity of relative entropy against a Laplace density centered at that(Z), followed by Jensen, gives</p>
+<pre>h(T|Z,E) &lt;= ln(2eD).</pre>
+<p>The inequality also follows directly using one common Laplace scale D before averaging over Z, so no regularity of the estimator is required. If D=0, finite mutual information in (B3) rules it out by a limit argument. Therefore</p>
+<pre>ln a-I(T;Z|E) &lt;= ln(2eD),
+D &gt;= [a/(2e)] exp(-I(T;Z|E))
+  &gt;= [exp(-1/100)/(20000e)]
+      2^(-b)/sqrt(1+m u^2).                    (B4)</pre>
+<p>Normalized binary TV on terminal A is exactly |that-T|. Multiply (B4) by Pr(E)=u, discard nonnegative risk on the other terminal states, and bound the maximum risk below by its prior average. This proves (B1). The prior-average step uses the unchanged uniform T prior conditional on E; it would not be valid without that check.</p>
+<h2>5. Necessary bits at the full-history rare rate</h2>
+<p>If a protocol has, for every t in this subfamily,</p>
+<pre>E TV(Q,p_(u,t)(.|S)) &lt;= C u/sqrt(1+Nu),</pre>
+<p>then (B1) implies</p>
+<pre>b &gt;= (1/2) log2[(1+Nu)/(1+m u^2)] + log2(c/C).</pre>
+<p>Since m&lt;=N, the weaker horizon-only consequence is</p>
+<pre>b &gt;= (1/2) log2[(1+Nu)/(1+Nu^2)] - O_C(1).     (B5)</pre>
+<p>This becomes (1/2)log2(1/u)-O_C(1) when N is of order u^(-2), and stays of that order for larger N. It is a necessary COMMUNICATION BIT budget. It is not a lower on the number of messages or rounds: one real-valued unrestricted message could carry unbounded information, and one sufficiently long binary message could satisfy this bit budget.</p>
+<p>The floor/truncation b&gt;=0 is understood when the right side is negative. Constants are intentionally loose, and the fixed-u subfamily lower does not require an architecture to be supplied u.</p>
+<h2>6. Source-average simulation consequence and remaining gap</h2>
+<p>Suppose a source-independent network predictor Q has expected TV risk at most r, and a b-bit interactive simulator has expected half-l1 approximation error at most epsilon under every source in this subfamily. If its output is normalized, triangle inequality lets (B1) apply with risk r+epsilon:</p>
+<pre>r+epsilon &gt;= c u 2^(-b)/sqrt(1+m u^2).</pre>
+<p>For an unnormalized binary simulator, clip its next-one coordinate to [0,1] to define a Bernoulli prediction. Coordinate error is at most the full l1 error, giving instead a safe bound using r+2epsilon. No unnormalized-output factor is silently dropped.</p>
+<p>To turn this into an attention-resource result one must prove an appropriate source-average finite-bit simulation with a cost b expressed in charged width, depth, gains, precision, and number of useful attention invocations. The bit lower alone does not supply such a simulation and does not rule out efficient repeated attention. The present argument answers a narrower open question: the rare-family odd/even split can yield a nonzero, growing interactive bit requirement despite its t-dependent Bob marginal, once that marginal and the actual terminal event are handled correctly.</p></section><section class="appendix"><h2>附录 D 输出范围修订与依赖</h2><h1>Rare-family statistical risk and the output-range budget</h1>
+<p>6 November 2026 UTC. Analytical assessment and elementary corollary, independently checked within the stated assumptions. No numerical experiments, model execution, parameter generation, uploads or public writes. No new statistical rate or priority claim.</p>
+<h2>Decision first</h2>
+<p>The frozen bounded ordinary-final-logit contract cannot attain the old full averaged rate uniformly over arbitrarily small u. This is explicitly already proved in the local TV/KL boundary archive. Rebranding that impossibility as a new mother theorem would duplicate work.</p>
+<p>The suggested necessary contrast log(1/u)+(1/2)log(1+nu) does NOT follow. It is a sufficient scale for a crude additive-clipping bound, and is unnecessarily large as an output-range requirement. The correct weighted common-row range obstruction is w(alpha-q)_+, not w alpha. Projection onto the permitted binary interval supplies a matching statistical-plus-range envelope at the unrestricted full-history level. The actual PreLN implementation of that envelope remains a separate, potentially useful research target.</p>
+<h2>1. Plans, comparison contract and source lineage</h2>
+<p>Original user plan: `../../v10_intake/source/sources/research-plan/ICML_研究总计划.md`, especially T1/T2 and the rare-context family. Second user plan HTML located at `../../plan_verification_20261104_2102/space_plan_1.html`; its readable local extraction is `execution_plan_text.txt` beside it. The second plan prioritizes joint T1/T2, actual-terminal TV, rare but uniformly mixing contexts, same-resource comparisons, and full antecedent audit before novelty claims. It explicitly rejects algebra alone as novelty.</p>
+<p>Recent primary-work audit: `../execution_contract_prior_audit_20261106/MARKOV_NGRAM_EXECUTION_CONTRACT_AUDIT.v1.md`, `CORRECTIONS_AND_CLAIM_LIMITS.v1.md`, and `FROZEN_COMPARISON_CONTRACT.v1.md`. That frozen contract is an interior-source execution-error theorem, not a rare-u theorem. For this new task retain its actual raw-token architecture but do not import its interior source floor or turn execution noise into the statistical objective. Existing Markov/n-gram work already includes source-independent same-history estimation, terminal suffix conditioning, normalization, smoothing, and precision discussion. The remaining possible increment must be a complete costed network/risk connection, not those broad features.</p>
+<p>Retained architecture obligations: N raw symbols plus one synthetic terminal; no free contexts, counts or suffix ports; self-inclusive full-prefix causal softmax; actual positive-epsilon full-feature PreLN; paid full state, value, matrix, bias and primitive bounds; final ordinary affine vocabulary softmax. The old constant-envelope version freezes those bounds before N varies. A growing final-logit budget is an explicitly changed resource, not obtainable for free from increasing width or depth under frozen full-state/readout norms. Weights remain source-independent, though may know a declared class boundary rho and N.</p>
+<p>Family and theorem source: `../rare_context_reconciliation_20261104_2104/RECONCILIATION.v2.md`, and `../u_blind_full_averaged_20261103_2147/full_averaged_tv_bound_v1.html`. Set n=N-2, A=00, B=01, C=10, D=11, w=(1-u)/3, q=ut/w, 0&lt;u&lt;=1/10, 1/4&lt;=t&lt;=3/4. Initialize stationarily; query is the terminal pair of the same history. The pair stationary law is (u,w,w,w). The common-atom two-step bound and uniform geometric mixing are inherited, not newly proved. They do not authorize arbitrary-start risk bounds.</p>
+<p>Inherited unrestricted full-history minimax order is</p>
+<pre>s(n,u)=u/sqrt(1+nu),
+c s(n,u) &lt;= inf_g sup_t R_n(u,t;g) &lt;= 1300 s(n,u),
+c=(1-1/sqrt(6))/32.</pre>
+<p>The upper uses one u-blind mixed predictor: add-one at A, unsmoothed empirical ratio with zero fallback at C, and exact fair B,D. The lower remains valid even when u is known.</p>
+<h2>2. What is already old</h2>
+<p>1. `../tv_kl_boundary_20261103_2201/TV_KL_boundary_obstruction.v3.md`, Sections 3–5 and 9: at each fixed finite n, every single u-blind finite-logit softmax rule has a positive boundary floor and cannot satisfy the pure s(n,u) envelope uniformly in u. Strict positivity alone suffices, even without a deterministic common range bound. The loss-support obstruction is stronger than the frozen-range specialization. 2. Same source Section 6 and `../clipped_joint_risk_20261103_2217/clipped_joint_risk_derivation.v2.md`, Sections 6–7: clipping at delta gives additive delta/3, exact fixed-n boundary TV delta/3, finite forward KL, and a clipping-specific logarithmic KL penalty. Do not call this a new clipping method or new rate. 3. `../softmax_readout_20261105_0002/SOFTMAX_READOUT.candidate.v2.md`, Sections 2–3: sharp general bounded-softmax TV radius, statistical-plus-range lower/upper, and range versus precision distinction already exist. 4. `../softmax_interior_20261105_0031/INTERIOR_SOFTMAX.candidate.v2.md`, Section 9: exact minimum span for a whole interior simplex is already stated. The recent wide actual PreLN witness uses an interior projection idea as well: `../nonlinear_statistical_frontier_20261106/WIDE_PRELN_STATISTICAL_WITNESS.candidate.v2.md`, Section 3.1.</p>
+<p>The specialization below is useful bookkeeping, not evidence of novelty or a claim that no archive ever states it.</p>
+<h2>3. Exact necessary common-row contrast</h2>
+<p>Let Lambda&gt;=0 bound the realized binary logit contrast |z_0-z_1| on every history, and put</p>
+<pre>alpha=1/(1+exp(Lambda)).</pre>
+<p>Every output probability of next-zero lies in I_alpha=[alpha,1-alpha]. Since the true C-row probability is q, stationarity gives, without independence,</p>
+<pre>R_n(u,t) &gt;= w (alpha-q)_+.                       (1)</pre>
+<p>This applies even to predictors knowing u,t and randomized predictors. It is therefore an output range obstruction, not an information or computation bound.</p>
+<p>To have R_n(u,t)&lt;=r, necessarily alpha&lt;=q+r/w. When 0&lt;q+r/w&lt;1/2 this is exactly</p>
+<pre>Lambda &gt;= log((1-q-r/w)/(q+r/w)).                (2)</pre>
+<p>If q+r/w&gt;=1/2, (1) supplies no positive contrast lower. If r=C s(n,u), the right side, when nontrivial, equals</p>
+<pre>log(1/u)+log w-log(t+C/sqrt(1+nu))
+  +log(1-u(t+C/sqrt(1+nu))/w).</pre>
+<p>Thus for fixed C it is log(1/u)+O_C(1) as u tends to zero, uniformly over n. Increasing nu does not add (1/2)log(1+nu): q itself remains order u and dominates the required interval endpoint. As r tends to zero at fixed u,t, (2) converges to log((1-q)/q), a finite constant.</p>
+<p>For any fixed Lambda, taking u down to zero in (1) gives boundary lower alpha/3. Hence a frozen output tuple cannot recover the pure old rate even if unlimited depth, width or history processing were granted.</p>
+<h2>4. Matching output-only statistical envelope</h2>
+<p>Assume Lambda&gt;=log 3, so alpha&lt;=1/4. Apply the scalar interval projection Pi_alpha to the inherited mixed predictor at every terminal context. The true A-row probability lies in [1/4,3/4], the fair rows lie in I_alpha, and q&lt;=1/4&lt;=1-alpha. For every x in [0,1],</p>
+<pre>|Pi_alpha(x)-q| &lt;= |x-q|+(alpha-q)_+.</pre>
+<p>For all other rows the projection cannot increase error. Therefore</p>
+<pre>R_n(projected mixed;u,t)
+  &lt;=1300 s(n,u)+w(alpha-q)_+.                    (3)</pre>
+<p>This sharper inequality does not require independent query selection. It follows pointwise and then uses Pr(terminal=C)=w. The projected rule is u-blind for any fixed Lambda; it uses only the inherited counts and declared output budget.</p>
+<p>Let M(n,u,Lambda) be minimax over t, constrained ONLY by output in I_alpha, allowing all measurable full-history predictors. Then</p>
+<pre>max{c s(n,u), w(alpha-u/(4w))_+}
+  &lt;= M(n,u,Lambda)
+  &lt;=1300 s(n,u)+w(alpha-u/(4w))_+.                (4)</pre>
+<p>The lower combines the inherited statistical lower with (1) at t=1/4. The upper uses (3) and the smallest q. Thus M is within universal constants of s plus that floor. The upper is attained by a single u-blind family for fixed n,Lambda; the lower allows knowledge of u. This is NOT a network compilation theorem, nor a fresh minimax-rate discovery.</p>
+<h2>5. Declared rarity range and false stronger necessity</h2>
+<p>If the task specifies rho&lt;=u&lt;=1/10, choose</p>
+<pre>alpha_rho=3rho/[4(1-rho)],
+Lambda_rho=log((4-7rho)/(3rho)).                  (5)</pre>
+<p>Then alpha_rho&lt;=q for every allowed u,t, and alpha_rho&lt;=1/4. Projection creates no risk increase at all. The inherited full-history rate holds uniformly over the truncated class with a fixed-in-n output range Lambda_rho=log(1/rho)+O(1).</p>
+<p>This is a direct counterexample, at the output-budget-only level, to any asserted necessity of log(1/u)+(1/2)log(1+nu). It is not a counterexample to an additional computational lower under the actual network contract; such a lower would need independent proof.</p>
+<p>Choosing alpha of order s(n,u) would make the old crude additive bound of order s, giving the stronger sufficient log range. That choice uses u unless a class bound is substituted. It is unnecessary because projection toward an interior true q does not introduce alpha-sized error. For uniform 0&lt;u&lt;=1/10 at any fixed n, no finite source-independent Lambda(n) restores the pure rate. A declared rho(n)&gt;0, an additive range floor, or a different output interface is mandatory.</p>
+<h2>6. Rare A conditional versus overall risk</h2>
+<p>Conditioned on terminal A, the statistical order is 1/sqrt(1+nu), and the target next-zero probability stays in [1/4,3/4]. For alpha&lt;=1/4, projection has NO approximation floor on this conditional task. Exact range coverage of the entire target interval requires only Lambda&gt;=log3, independent of u and n. Smaller Lambda creates an endpoint approximation gap (alpha-1/4)_+.</p>
+<p>The rare A contribution to full risk carries factor u. The common C contribution carries w approximately 1/3 and its target q tends to zero. This is why an A-conditional resource theorem can remain feasible under frozen output logits while the same claimed overall rare-u rate fails. Neither result may be silently substituted for the other.</p>
+<h2>7. Nonduplicate candidate target and stopping gate</h2>
+<p>The useful target is a fully charged ACTUAL PreLN implementation of (3), not a new proof of (1):</p>
+<pre>R_network &lt;= C s(n,u)+w(alpha-q)_+ + epsilon_impl,</pre>
+<p>with all raw pair binding, histogram/count extraction, C zero-count fallback, division, interval projection, logit conversion and final-LN interaction compiled. Declare either a known rho (with Lambda_rho) or the additive range-floor formulation. Report resources as functions of N, Lambda/rho and epsilon_impl, including width, effective value dimension, depth, full norms, parameter description and any actual arithmetic assumptions. An epsilon_impl of order s must be justified uniformly on the declared class, not chosen using unknown u.</p>
+<p>The existing wide compiler uses an add-one estimator across rows and an interior c-dependent envelope. It cannot simply inherit the sharper rare-family rate: smoothing C reintroduces the old finite-n floor, and c-dependent bounds can diverge as rho shrinks. A successful compiler must explicitly replace the C branch with the unsmoothed zero-fallback estimator followed by projection, and charge all rho-dependent gains/log approximation costs. If the final head and normalized full state remain frozen absolutely, growing Lambda is impossible; identify which resource grows.</p>
+<p>Novelty gate: even this would be a specialized compiler/risk composition with inherited statistics. Compare against the recent primary-contract audit and existing logit-conversion compiler before claiming a contribution. The more ambitious fixed-width optimal depth/width/range frontier remains open; (4) is not an architectural lower. Stop if the result is merely another re-expression of clipping or of the already established bounded-logit obstruction.</p></section><section class="appendix"><h2>附录 E 先行文献逐条核验</h2><h1>Primary-source audit: rare-u parity information loss and HMM antecedents</h1>
+<p>6 November 2026 UTC. Targeted primary theorem/assumption inspection, not exhaustive priority certification or independent verification of the parity candidate. No experiment or public write.</p>
+<h2>Candidate scope</h2>
+<p>The proposed comparison is KL of one parity subsequence O(N u^2 Delta^2), versus complete raw trajectory O(N u Delta^2), in the stationary binary rare-context family, 0&lt;u&lt;=.01 and t in [.5,.75]. The subsequence can be represented by a four-state hidden pair chain with transition P^2 and deterministic emission of one coordinate. This is a statistical observation-interface comparison, NOT yet a Transformer resource lower bound. A proof that a network receives only that interface, with all other accesses charged, would be additional work.</p>
+<h2>1. Abraham–Gassiat–Naulet: Fundamental limits</h2>
+<p>Primary inspected: <a href="https://arxiv.org/html/2106.12936v3">https://arxiv.org/html/2106.12936v3</a> (24 October 2022), Section II, Section IV Proposition 2, and proof Section VIII-B.</p>
+<p>The setting is a stationary TWO-hidden-state HMM with multinomial emissions. Proposition 2 assumes every entry of both models&#x27; emission densities is at least c&gt;0 and max(|phi_2|,|tilde phi_2|)&lt;=epsilon_0(c), where phi_2=1-p-q. It bounds observation-path KL by C(c)n rho^2, with rho their explicit reparametrized statistical distance. Proposition 1 relates rho to the three-observation law. The proof uses conditional predictive laws and KL/chi-square control; these methods are clear antecedents.</p>
+<p>Classification: close methodological antecedent, NOT direct application to the displayed four-state deterministic-emission realization. Its positive-emission premise fails for that realization, and no equivalent admissible two-state realization has been established. Merely having a binary observed alphabet does not provide two hidden states. Recasting the model would require a proved equality of all observation-path laws and verification of every constant, not a matching two-point moment alone.</p>
+<h2>2. Abraham–Gassiat–Naulet: Frontiers</h2>
+<p>Primary inspected: <a href="https://arxiv.org/html/2306.16293v2">https://arxiv.org/html/2306.16293v2</a> (15 July 2025), Section 1.2, Section 2, Appendix B Proposition 11 and B.1. Journal record: <a href="https://www.jmlr.org/papers/v26/24-2230.html">https://www.jmlr.org/papers/v26/24-2230.html</a> .</p>
+<p>This paper studies two hidden states with emission densities on [0,1]. Appendix B explicitly attributes Proposition 11 to Proposition 2 of the earlier paper, extending probability masses to densities. It requires both models&#x27; densities uniformly bounded below by c&gt;0 and states KL&lt;=Cn rho^2. Its printed statement does NOT repeat the earlier small-|phi_2| restriction; B.1&#x27;s lower-bound construction does impose small epsilon. This audit does not repair or certify that broader printed formulation. Either way, its two-state positive-density setting does not directly cover the displayed parity representation. Theorems about estimating transition/emission parameters, with smoothness and distance-to-independence factors, are not the requested parity-vs-full observation experiment.</p>
+<p>Classification: strong ancestor for boundary-sensitive KL/minimax analysis and its tools, not a checked direct corollary producing this four-state parity result. No novelty certification follows from this distinction.</p>
+<h2>3. Filter derivatives: Tadić–Doucet</h2>
+<p>Primary inspected: <a href="https://www.stats.ox.ac.uk/~doucet/Tadic_Doucet_stabilityoptimalfilterhigherorderderivatives.pdf">https://www.stats.ox.ac.uk/~doucet/Tadic_Doucet_stabilityoptimalfilterhigherorderderivatives.pdf</a> , Stochastic Processes and their Applications 130 (2020), 4808–4858; Section 2.3, printed pp.4812–4813, Assumptions 2.1–2.3 and Theorems 2.1–2.2.</p>
+<p>Assumption 2.1 requires the observation-weighted transition kernel r_theta(y,x&#x27;|x) to lie between epsilon and epsilon^{-1} times one reference measure mu_theta(dx&#x27;|y), uniformly over starting x. Assumption 2.2 controls parameter derivatives relative to r_theta; 2.3 supplies domination. Theorem 2.1 establishes differentiability, while 2.2 provides derivative forgetting bounds depending on derivative order and epsilon, with the displayed observation-dependent factors.</p>
+<p>Deterministic emissions alone do NOT violate this formulation: the reference measure may have observation-dependent support. However its generic constants do not automatically give the desired u-uniform O(u) predictive derivative. One must verify the actual filtered recursion and track rarity rather than simply invoke generic differentiability/forgetting.</p>
+<p>Classification: established general filter-derivative machinery. An O(u) derivative invariant for this special reachable filter is an application-specific calculation, not a new general technique.</p>
+<h2>4. Direct checks on the proposed model (our algebra, not claims imported from papers)</h2>
+<p>For state order A=00,B=01,C=10,D=11, the two-step probabilities include</p>
+<pre>P^2(A,A)=(1-t)^2,   P^2(B,A)=q/2,   q=ut/w.</pre>
+<p>For the emitted coordinate that gives A emission zero, taking the reference-measure comparison on the singleton {A} forces</p>
+<pre>epsilon^2 &lt;= P^2(B,A)/P^2(A,A)=q/[2(1-t)^2].</pre>
+<p>Thus any such full-state comparison epsilon must vanish as u tends to zero. This does NOT refute filter stability on the reachable posterior set; it prevents treating the generic theorem&#x27;s epsilon-dependent constants as automatically u-uniform. A tailored low-dimensional filter calculation could exploit the stationary initial posterior and its invariant region.</p>
+<p>The boundary observed process is not IID. Using the existing exact parity identity, at u=0,</p>
+<pre>Pr(Z_i=0)=1/3,
+Pr(Z_i=0,Z_(i+1)=0)=1/6 != 1/9.</pre>
+<p>The disappearing object is the t-dependence of this observation law, not dependence of the observations themselves. Consequently the AGN interpretation as distance to the IID boundary is not a literal identification of the current parameter u, even though both problems involve weakly identifiable boundaries.</p>
+<h2>5. Exact obligations before claiming the statistical separation</h2>
+<p>1. Prove predictive conditional probabilities stay bounded away from zero and one uniformly over reachable parity histories, u and t in the declared interval. 2. Prove their t-derivatives are O(u) uniformly in history length, including the stationary initial filter and the parameter dependence of q. A bound on one marginal moment is insufficient. 3. Apply KL chain rule to the same observation history under both parameters. Show the first-observation KL is zero or otherwise include it. The derivative bound plus Bernoulli KL control then gives the candidate upper. 4. Preserve the complete-trajectory comparison and its actual number of transitions. An O(Nu^2 Delta^2) upper alone is not a matching-order KL theorem; distinguish lower bounds or estimation consequences requiring further work. 5. For architectural use, account for all information outside the parity stream. No network lower follows merely because one party&#x27;s observation is statistically weak.</p>
+<p>The narrow defensible contribution would be a checked, uniform information-loss calculation for this concrete fast-mixing family, plus a justified use in the mother problem. Calling HMM filtering, derivative recursion, KL chain rule, or weak-identifiability minimax reasoning new would be incorrect.</p>
+<h2>Additional primary-source limit</h2>
+<p>Le Gland–Mevel (2000), <a href="https://doi.org/10.1007/PL00009861">https://doi.org/10.1007/PL00009861</a> , was located but its full theorem assumptions were not accessible. It is not used as theorem-level evidence. The present audit is targeted, not exhaustive.</p></section></body></html>
