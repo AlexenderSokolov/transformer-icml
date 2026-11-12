@@ -1,0 +1,57 @@
+{
+  "status": "pass",
+  "actual_all_row_words": 1372,
+  "max_formula_error": 2.220446049250313e-16,
+  "max_physical_state_norm": 2.4748737341529163,
+  "rows": [
+    {
+      "N": 2,
+      "words": 4,
+      "exact_code_spacing": "1/6",
+      "float_output_min_spacing": 0.033682889543567573,
+      "pushforward_KL": 0.0,
+      "innovation_KL": 0.0
+    },
+    {
+      "N": 3,
+      "words": 8,
+      "exact_code_spacing": "1/16",
+      "float_output_min_spacing": 0.012608320921420946,
+      "pushforward_KL": 0.12770640594149762,
+      "innovation_KL": 0.12770640594149765
+    },
+    {
+      "N": 4,
+      "words": 16,
+      "exact_code_spacing": "1/40",
+      "float_output_min_spacing": 0.005051343026832522,
+      "pushforward_KL": 0.2554128118829953,
+      "innovation_KL": 0.2554128118829953
+    },
+    {
+      "N": 6,
+      "words": 64,
+      "exact_code_spacing": "1/224",
+      "float_output_min_spacing": 0.0009054795709942387,
+      "pushforward_KL": 0.5108256237659907,
+      "innovation_KL": 0.5108256237659906
+    },
+    {
+      "N": 8,
+      "words": 256,
+      "exact_code_spacing": "1/1152",
+      "float_output_min_spacing": 0.00017647555770655687,
+      "pushforward_KL": 0.7662384356489875,
+      "innovation_KL": 0.766238435648986
+    },
+    {
+      "N": 10,
+      "words": 1024,
+      "exact_code_spacing": "1/5632",
+      "float_output_min_spacing": 3.6144394259030044e-05,
+      "pushforward_KL": 1.0216512475319819,
+      "innovation_KL": 1.0216512475319812
+    }
+  ],
+  "scope": "candidate fixed-depth exact-real information-retention realization; no bounded-gain inverse decoder"
+}
