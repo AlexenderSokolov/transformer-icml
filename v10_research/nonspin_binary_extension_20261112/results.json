@@ -1,0 +1,76 @@
+{
+  "status": "pass",
+  "arithmetic": "exact Fraction",
+  "feasible_grid_models": 831,
+  "rejected_grid_models": 3162,
+  "path_checks": 688,
+  "example_transition_tables": [
+    {
+      "(-1, -1)": "17/44",
+      "(-1, 1)": "7/12",
+      "(1, -1)": "19/36",
+      "(1, 1)": "23/44"
+    },
+    {
+      "(-1, -1)": "25/44",
+      "(-1, 1)": "13/36",
+      "(1, -1)": "11/36",
+      "(1, 1)": "31/44"
+    }
+  ],
+  "exact_common_template_L1": "1/10",
+  "exact_common_template_squared": "1/99",
+  "path_enumeration": [
+    {
+      "t": "-1/10",
+      "N": 3,
+      "L1": "1/10",
+      "squared": "1/99"
+    },
+    {
+      "t": "-1/10",
+      "N": 4,
+      "L1": "1/10",
+      "squared": "1/99",
+      "adjacent_triple_product_covariance": "59/6600"
+    },
+    {
+      "t": "-1/10",
+      "N": 6,
+      "L1": "1/10",
+      "squared": "1/99"
+    },
+    {
+      "t": "-1/10",
+      "N": 8,
+      "L1": "1/10",
+      "squared": "1/99"
+    },
+    {
+      "t": "3/10",
+      "N": 3,
+      "L1": "1/10",
+      "squared": "1/99"
+    },
+    {
+      "t": "3/10",
+      "N": 4,
+      "L1": "1/10",
+      "squared": "1/99",
+      "adjacent_triple_product_covariance": "193/19800"
+    },
+    {
+      "t": "3/10",
+      "N": 6,
+      "L1": "1/10",
+      "squared": "1/99"
+    },
+    {
+      "t": "3/10",
+      "N": 8,
+      "L1": "1/10",
+      "squared": "1/99"
+    }
+  ],
+  "scope": "source-family and template-risk algebra; not a numerical proof of the architecture L2 theorem"
+}
