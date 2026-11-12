@@ -1,0 +1,138 @@
+{
+  "counterexample": {
+    "word_x": [
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1
+    ],
+    "word_y": [
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      -1
+    ],
+    "q_x": 0.5891837558334733,
+    "q_y": 0.5746977577182404,
+    "probability_difference": 0.014485998115232879,
+    "second_read_difference": 0.06297305313699836,
+    "global_key_array_norms": [
+      0,
+      0
+    ]
+  },
+  "finite_checks": 34,
+  "max_observed_all_row_state_norm": 2.108878474699913,
+  "source_average_rows": [
+    {
+      "N": 3,
+      "theta": -0.5,
+      "mean_abs_error_from_public_reference": 0.08386954719218948,
+      "prediction_risk": 0.20806522640390523,
+      "conservative_bridge_error_bound": 9.139543205215457
+    },
+    {
+      "N": 3,
+      "theta": 0,
+      "mean_abs_error_from_public_reference": 0.08386954719218946,
+      "prediction_risk": 0.08386954719218946,
+      "conservative_bridge_error_bound": 9.139543205215457
+    },
+    {
+      "N": 3,
+      "theta": 0.5,
+      "mean_abs_error_from_public_reference": 0.08386954719218945,
+      "prediction_risk": 0.2080652264039053,
+      "conservative_bridge_error_bound": 9.139543205215457
+    },
+    {
+      "N": 4,
+      "theta": -0.5,
+      "mean_abs_error_from_public_reference": 0.08005309258893396,
+      "prediction_risk": 0.23097787067758158,
+      "conservative_bridge_error_bound": 8.174655956063228
+    },
+    {
+      "N": 4,
+      "theta": 0,
+      "mean_abs_error_from_public_reference": 0.07730821297806093,
+      "prediction_risk": 0.07730821297806093,
+      "conservative_bridge_error_bound": 8.174655956063228
+    },
+    {
+      "N": 4,
+      "theta": 0.5,
+      "mean_abs_error_from_public_reference": 0.08005309258893399,
+      "prediction_risk": 0.2309778706775816,
+      "conservative_bridge_error_bound": 8.174655956063228
+    },
+    {
+      "N": 6,
+      "theta": -0.5,
+      "mean_abs_error_from_public_reference": 0.07080941269479897,
+      "prediction_risk": 0.23391675776869558,
+      "conservative_bridge_error_bound": 6.908845262208647
+    },
+    {
+      "N": 6,
+      "theta": 0,
+      "mean_abs_error_from_public_reference": 0.06745197725664658,
+      "prediction_risk": 0.06745197725664658,
+      "conservative_bridge_error_bound": 6.908845262208647
+    },
+    {
+      "N": 6,
+      "theta": 0.5,
+      "mean_abs_error_from_public_reference": 0.07080941269479896,
+      "prediction_risk": 0.23391675776869567,
+      "conservative_bridge_error_bound": 6.908845262208647
+    },
+    {
+      "N": 8,
+      "theta": -0.5,
+      "mean_abs_error_from_public_reference": 0.06510853745874787,
+      "prediction_risk": 0.24217881397660695,
+      "conservative_bridge_error_bound": 6.0930288034769715
+    },
+    {
+      "N": 8,
+      "theta": 0,
+      "mean_abs_error_from_public_reference": 0.06078086318417521,
+      "prediction_risk": 0.06078086318417521,
+      "conservative_bridge_error_bound": 6.0930288034769715
+    },
+    {
+      "N": 8,
+      "theta": 0.5,
+      "mean_abs_error_from_public_reference": 0.06510853745874787,
+      "prediction_risk": 0.2421788139766069,
+      "conservative_bridge_error_bound": 6.0930288034769715
+    },
+    {
+      "N": 10,
+      "theta": -0.5,
+      "mean_abs_error_from_public_reference": 0.06108435321825671,
+      "prediction_risk": 0.24421342569051302,
+      "conservative_bridge_error_bound": 5.511351921262151
+    },
+    {
+      "N": 10,
+      "theta": 0,
+      "mean_abs_error_from_public_reference": 0.055880105617945056,
+      "prediction_risk": 0.055880105617945056,
+      "conservative_bridge_error_bound": 5.511351921262151
+    },
+    {
+      "N": 10,
+      "theta": 0.5,
+      "mean_abs_error_from_public_reference": 0.06108435321825675,
+      "prediction_risk": 0.24421342569051324,
+      "conservative_bridge_error_bound": 5.511351921262151
+    }
+  ],
+  "scope": "actual two-read PreLN summary counterexample and finite source-average checks; no general risk-counterexample"
+}
