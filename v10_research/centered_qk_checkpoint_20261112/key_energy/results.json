@@ -1,0 +1,52 @@
+{
+  "status": "pass",
+  "all_row_network_words": 348,
+  "max_formula_error": 1.1102230246251565e-16,
+  "max_physical_norm": 2.449489742783178,
+  "risk_limit": 0.14939535007588722,
+  "finite_binomial_risks": [
+    {
+      "N": 8,
+      "actual_theta0_risk": 0.13132196498168563,
+      "uniform_reference_risk": 0.050836928682879166,
+      "expected_prediction_difference": 0.1301740351303188
+    },
+    {
+      "N": 16,
+      "actual_theta0_risk": 0.14019372488539825,
+      "uniform_reference_risk": 0.03922944308095116,
+      "expected_prediction_difference": 0.14015721544673101
+    },
+    {
+      "N": 32,
+      "actual_theta0_risk": 0.14488483457985646,
+      "uniform_reference_risk": 0.029067759932616535,
+      "expected_prediction_difference": 0.14488475380629634
+    },
+    {
+      "N": 64,
+      "actual_theta0_risk": 0.14716672125782326,
+      "uniform_reference_risk": 0.021059912177901156,
+      "expected_prediction_difference": 0.14716672125686
+    },
+    {
+      "N": 128,
+      "actual_theta0_risk": 0.148287546933169,
+      "uniform_reference_risk": 0.015077649769144677,
+      "expected_prediction_difference": 0.1482875469331689
+    },
+    {
+      "N": 256,
+      "actual_theta0_risk": 0.1488430533762371,
+      "uniform_reference_risk": 0.01072863378364889,
+      "expected_prediction_difference": 0.14884305337623724
+    },
+    {
+      "N": 512,
+      "actual_theta0_risk": 0.1491195999307574,
+      "uniform_reference_risk": 0.00761026834886112,
+      "expected_prediction_difference": 0.14911959993075743
+    }
+  ],
+  "scope": "float64 actual all-row full-PreLN and exact-binomial weighted theta0 diagnostic; no noise certificate"
+}
