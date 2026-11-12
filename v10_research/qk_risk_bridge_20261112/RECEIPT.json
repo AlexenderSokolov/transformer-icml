@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-12",
+  "parent_commit": "6fbf395e4780a624a8b77792fb965a33091736f3",
+  "source": "Library-preserved qk-risk-bridge documents and independent review",
+  "verification": "Independent replay: exact parsed JSON match; 240 softmax cases and five exhaustive risk cases. Binary64 only. CI not run.",
+  "limitations": "Single raw-value retrieval, whole-array key norm, no history bypass, paid decoder gain; not general evolving-KV lower bound.",
+  "sha256": {
+    "BRIDGE.md": "55db65f8935357c74144a57cbb112d5cf1296fff5d08f84796582ba8c2a01400",
+    "REVIEW.md": "3508801be1e5808236308d71b19689bf627297a5e27066c94fa22a34675e0a9d",
+    "check.py": "466c260d3a5bd93e2be7fb72a0ba79bf8081f3c34df1a4a901946832e37d0ff9",
+    "results.json": "6139233be4826241c5dc6c9d302d97a068816c603c16d1a0379eb39531c08ec0",
+    "README.md": "3499723d7b73f86193f2d67fa50e60fc93302026213f02a4a39b5094e95aa773"
+  }
+}

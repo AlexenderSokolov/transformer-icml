@@ -1,0 +1,38 @@
+{
+  "status": "pass",
+  "softmax_checks": 240,
+  "max_bound_ratio": 0.35992571762980147,
+  "exhaustive_risk_checks": [
+    {
+      "N": 3,
+      "actual_risk": 0.31064699576832233,
+      "uniform_reference_risk": 0.3117329077816521,
+      "expected_prediction_difference": 0.04111935050479003
+    },
+    {
+      "N": 4,
+      "actual_risk": 0.2993239539246028,
+      "uniform_reference_risk": 0.2969516880915453,
+      "expected_prediction_difference": 0.029436297710559584
+    },
+    {
+      "N": 6,
+      "actual_risk": 0.28458908603318395,
+      "uniform_reference_risk": 0.2849257408546089,
+      "expected_prediction_difference": 0.02380018758413692
+    },
+    {
+      "N": 8,
+      "actual_risk": 0.2746926656834008,
+      "uniform_reference_risk": 0.2738189406232363,
+      "expected_prediction_difference": 0.01930072524137011
+    },
+    {
+      "N": 10,
+      "actual_risk": 0.2683777936288963,
+      "uniform_reference_risk": 0.26815020128874034,
+      "expected_prediction_difference": 0.016619456405778884
+    }
+  ],
+  "scope": "single raw-value retrieval; nonzero globally norm-bounded QK; binary64 diagnostic"
+}
