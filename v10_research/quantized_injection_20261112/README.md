@@ -1,0 +1,7 @@
+# Quantization of one frozen encoder
+
+This independently reviewed unit concerns only the given width-four exact encoder and a zero-centered terminal nearest-grid quantizer. There is no arbitrary architecture, all-layer arithmetic, rescaled observation, or general decoder-input lower bound. The decoder sees only the quantized scalar and the freely supplied endpoint. No novelty or submission-readiness conclusion is certified.
+
+The inherited exact injectivity source is the earlier research report `fixed-c-bridge/BRIDGE_OBSTRUCTION.md`, reread by the independent reviewer. Frozen source SHA256: `584f5b1ad66666832ff331bc00ca89f3212fd7ed07a6d1b5ca3dacebdc1a42fb`. That earlier full report is not part of this increment; its unrelated claims are not newly certified here. THEOREM.md gives the complete scalar formula and explicitly treats exact injectivity as inherited. In particular the minimum transcendental gap is not quantified. The variance, coarse centered-grid collapse and common-part risk argument do not require a new injectivity proof.
+
+An additional archival execution of check.py matched every saved result field (108 assertions). These small binary64 checks do not establish transcendence, asymptotic gaps, adversarial execution precision or trained-network risk. Parent commit: 2983a7377fd42e419a03dedde89ab9edbd84ad8c. Existing source files and main are untouched. The historical 293-extra-file inventory defect remains unchanged; no CI success is claimed.
