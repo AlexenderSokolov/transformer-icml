@@ -1,0 +1,197 @@
+{
+  "status": "pass",
+  "same_code_average_checks": [
+    {
+      "N": 64,
+      "average_error": 0.40701282158936697,
+      "cover_bound": 0.001984126984126984
+    },
+    {
+      "N": 128,
+      "average_error": 0.4329966945058115,
+      "cover_bound": 0.021981627296587928
+    },
+    {
+      "N": 256,
+      "average_error": 0.45194630531901225,
+      "cover_bound": 0.031862745098039214
+    }
+  ],
+  "correction_checks": 80,
+  "cases": 24,
+  "variance_regime_cases": 19,
+  "gamma": 0.6931471805599453,
+  "K": 12,
+  "rows": [
+    {
+      "d": 1,
+      "n_keys": 4,
+      "mode": "same",
+      "nuisance_variance": 3.0,
+      "exact_enumerated_bit_error": 0.3125
+    },
+    {
+      "d": 1,
+      "n_keys": 4,
+      "mode": "mixed",
+      "nuisance_variance": 1.5,
+      "exact_enumerated_bit_error": 0.25
+    },
+    {
+      "d": 1,
+      "n_keys": 8,
+      "mode": "same",
+      "nuisance_variance": 7.0,
+      "exact_enumerated_bit_error": 0.36328125
+    },
+    {
+      "d": 1,
+      "n_keys": 8,
+      "mode": "mixed",
+      "nuisance_variance": 5.5,
+      "exact_enumerated_bit_error": 0.34375
+    },
+    {
+      "d": 1,
+      "n_keys": 12,
+      "mode": "same",
+      "nuisance_variance": 11.0,
+      "exact_enumerated_bit_error": 0.38720703125
+    },
+    {
+      "d": 1,
+      "n_keys": 12,
+      "mode": "mixed",
+      "nuisance_variance": 7.25,
+      "exact_enumerated_bit_error": 0.3583984375
+    },
+    {
+      "d": 1,
+      "n_keys": 16,
+      "mode": "same",
+      "nuisance_variance": 15.0,
+      "exact_enumerated_bit_error": 0.4018096923828125
+    },
+    {
+      "d": 1,
+      "n_keys": 16,
+      "mode": "mixed",
+      "nuisance_variance": 9.0,
+      "exact_enumerated_bit_error": 0.373321533203125
+    },
+    {
+      "d": 2,
+      "n_keys": 4,
+      "mode": "same",
+      "nuisance_variance": 3.0,
+      "exact_enumerated_bit_error": 0.3125
+    },
+    {
+      "d": 2,
+      "n_keys": 4,
+      "mode": "mixed",
+      "nuisance_variance": 0.333866718907695,
+      "exact_enumerated_bit_error": 0.0
+    },
+    {
+      "d": 2,
+      "n_keys": 8,
+      "mode": "same",
+      "nuisance_variance": 7.0,
+      "exact_enumerated_bit_error": 0.36328125
+    },
+    {
+      "d": 2,
+      "n_keys": 8,
+      "mode": "mixed",
+      "nuisance_variance": 1.783073834198487,
+      "exact_enumerated_bit_error": 0.25
+    },
+    {
+      "d": 2,
+      "n_keys": 12,
+      "mode": "same",
+      "nuisance_variance": 11.0,
+      "exact_enumerated_bit_error": 0.38720703125
+    },
+    {
+      "d": 2,
+      "n_keys": 12,
+      "mode": "mixed",
+      "nuisance_variance": 2.7696741490577694,
+      "exact_enumerated_bit_error": 0.28515625
+    },
+    {
+      "d": 2,
+      "n_keys": 16,
+      "mode": "same",
+      "nuisance_variance": 15.0,
+      "exact_enumerated_bit_error": 0.4018096923828125
+    },
+    {
+      "d": 2,
+      "n_keys": 16,
+      "mode": "mixed",
+      "nuisance_variance": 4.868158625478554,
+      "exact_enumerated_bit_error": 0.330108642578125
+    },
+    {
+      "d": 3,
+      "n_keys": 4,
+      "mode": "same",
+      "nuisance_variance": 3.0,
+      "exact_enumerated_bit_error": 0.3125
+    },
+    {
+      "d": 3,
+      "n_keys": 4,
+      "mode": "mixed",
+      "nuisance_variance": 0.2922777645842062,
+      "exact_enumerated_bit_error": 0.0
+    },
+    {
+      "d": 3,
+      "n_keys": 8,
+      "mode": "same",
+      "nuisance_variance": 7.0,
+      "exact_enumerated_bit_error": 0.36328125
+    },
+    {
+      "d": 3,
+      "n_keys": 8,
+      "mode": "mixed",
+      "nuisance_variance": 2.3859358042283336,
+      "exact_enumerated_bit_error": 0.265625
+    },
+    {
+      "d": 3,
+      "n_keys": 12,
+      "mode": "same",
+      "nuisance_variance": 11.0,
+      "exact_enumerated_bit_error": 0.38720703125
+    },
+    {
+      "d": 3,
+      "n_keys": 12,
+      "mode": "mixed",
+      "nuisance_variance": 1.7092967994698336,
+      "exact_enumerated_bit_error": 0.23486328125
+    },
+    {
+      "d": 3,
+      "n_keys": 16,
+      "mode": "same",
+      "nuisance_variance": 15.0,
+      "exact_enumerated_bit_error": 0.4018096923828125
+    },
+    {
+      "d": 3,
+      "n_keys": 16,
+      "mode": "mixed",
+      "nuisance_variance": 4.796727688280695,
+      "exact_enumerated_bit_error": 0.32965087890625
+    }
+  ],
+  "arithmetic": "binary64 weights; exhaustive fair-sign enumeration",
+  "scope": "tied positional-code scalar-sign interface, not arbitrary predictor risk"
+}
