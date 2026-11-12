@@ -1,0 +1,29 @@
+{
+  "additional_review": "JOR_SELECTOR_AUDIT.md is a separate bounded independent derivation supplied for this checkpoint; its full caveats are preserved; no independent numerical validation of that review is claimed here.",
+  "artifact_hashes": {
+    "AUDIT.md": "5aba15a5c19a0de961d2983727b0d2765c3b88e58271f4b3fd4c989048e0bd6d",
+    "JOR_SELECTOR_AUDIT.md": "3c11954a69caf47acaab3acb19379dcd0be4692578cc2496d849ddbbdc5cb22c",
+    "check_old_visit.py": "b522202e301d615c06101e96f5f5128ba24105f04ded2314f59286c67e29b917",
+    "diagnostic_results.json": "7b9dba53ea07ec38ff6c40ff331b06f17668a09a8f2065e38376eb578d4d8371"
+  },
+  "audited_commit": "2ca64346e0dbb19ccf12b5c0f06f12cd0ff31a70",
+  "checks": {
+    "baseline_public_inventory": "FAIL: 293 pre-existing undeclared tracked files; zero missing inventory paths; zero declared Git blob mismatches",
+    "existing_unittest_suite": "PASS: 7 tests",
+    "formal_verification": "NOT PERFORMED",
+    "fresh_diagnostic": "PASS: 3400 gate cases and 850 convolution/start-at-target cases",
+    "full_scientific_replay": "NOT RUN",
+    "optimized_interpreter": "REJECTED as intended",
+    "second_run": "PASS: byte-identical output"
+  },
+  "date": "2026-11-12",
+  "limitations": [
+    "Local lemma audit only; not the entire main theorem",
+    "Finite exact cases do not prove the general inequality",
+    "Pre-existing public inventory mismatch is preserved, not bypassed",
+    "No historical receipts or theorem source modified"
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "source": "v10_research/positional_manuscript_consolidated_20261103/sections/proofs_positive.tex",
+  "source_sha256": "a629caebe01e614a71738f2036bd9016708f35871a15b6902dd98be967f69e88"
+}
