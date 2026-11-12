@@ -1,0 +1,27 @@
+{
+  "command": "python v10_research/lower_transport_audit_20261112/check_lower.py",
+  "date": "2026-11-12",
+  "existing_verifier_regressions_passed": 7,
+  "files": {
+    "AUDIT.md": {
+      "bytes": 8887,
+      "sha256": "2c243dfb2539764fdcedfe2f62f2f7bc56b65aa4e267e9e9c6e5d2160994e99f"
+    },
+    "check_lower.py": {
+      "bytes": 5323,
+      "sha256": "bf4c384167b350fef95340ae40f1f1063ba286ceef57a8938db03e41a5454b48"
+    },
+    "results.json": {
+      "bytes": 798,
+      "sha256": "b55347f7c21781469dac538f973f026ed156fc21b43ece7f6e00a7498845b283"
+    }
+  },
+  "full_repository_integrity": "not passed: pre-existing 293 extra tracked files; no full byte replay attempted",
+  "optimized_python_rejected": true,
+  "python": "3.12.14",
+  "repeated_output_byte_equal": true,
+  "scope": "two local mathematical lemmas; not full theorem validation",
+  "source_blob": "bb1351ffab5b63dc12dd1a695e174c3b8f08f136",
+  "source_commit": "2ca64346e0dbb19ccf12b5c0f06f12cd0ff31a70",
+  "source_sha256": "c33000a5e7b98eb395d8ccae7c104b60d4cf7d30900607d64f4102c9bf9302c7"
+}
