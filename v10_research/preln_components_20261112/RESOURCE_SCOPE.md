@@ -1,0 +1,12 @@
+# Combined resource ledger and publication boundaries
+
+12 November 2026. This ledger prevents interpreting separate conditional modules as a completed fixed-resource predictor.
+
+* Amplifier: state width six; fixed hidden width per FFN; fixed per-layer matrices; O(log N+log(1/eta)) blocks. Initial predecessor bias is externally supplied. Added lanes change normalization and require the persistent-lane analysis.
+* Persistent extension: fixed r signed pairs plus two variable pairs and z zero pairs, width 2(r+2+z). Norm bound sqrt(2(r+2)). This is clean-state algebra, not exact invariance under arbitrary full-vector noise.
+* Endpoint: state width thirteen, two outer blocks and two hidden ReLUs per FFN. It requires the input logit/padding state. Every unit-gain LN carries gain norm sqrt(13); final head norm is sigma_f, not one. Coefficient precision and internal arithmetic are separate from residual-error tolerance.
+* Per-layer bounded norms and tied storage do not imply bounded concatenated-across-depth parameter norm. Repeating a nonzero block D times gives an occurrence-based Frobenius contribution proportional to sqrt(D), and summed per-layer norms proportional to D. Unit LN gains alone must be counted at every occurrence.
+* For the separately investigated width-two scalar relay, the exact ledger is P_total^2=D P_block^2+kappa^2+2 and LN-gain square sum 4D+2; fixed-in-N interpolation hidden width can nevertheless be enormous. That relay is NOT included here as a complete predictor. Fixed physical H under all allowed errors requires accounting for common-mode drift; a sufficient module choice delta=O(1/D) gives p=log2 D+O(1), not a general source-prediction precision theorem.
+* A separate stitched root-N construction uses free endpoints, external pairwise biases and growing output-FFN hidden width O(N^1/4). It is not a fixed-inner-width theorem and is not asserted by this checkpoint. A low-rank positional scalar interface likewise pays roughly N/r precision/amplification depth and remains uncompiled into the required full architecture.
+
+Mathematical scope is local construction plus audited interfaces. No fixed total-network budget, arbitrary-position replacement, optimal precision law, training result, or mother-frontier resolution is inferred. All noisy comparisons require their declared global or tube domain. Exact output-range constraints at boundary alpha=c need an explicit inward margin or legal bounded-logit construction, not just approximate logits.

@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-12",
+  "parent_commit": "03f91a4d0a4408dd1e520b8a0151e9ba38452176",
+  "verification": {
+    "endpoint_independent_rerun": "360 clean and 1440 noisy cases; byte-equivalent parsed JSON",
+    "arithmetic": "float64, not interval certification",
+    "CI": "not checked; no success claim",
+    "full_repository_integrity": "not run; historical 293 undeclared files remain"
+  },
+  "publication_edits": "Portable filenames and separate independent public review/resource summaries; no private coordination notes. Current endpoint final-LN revision only.",
+  "artifact_sha256": {
+    "AMPLIFIER.md": "4e4b529e31d6b73a199a8c18c5163c6c1ea91101d3bc98021f8d4d763f6802e5",
+    "PERSISTENT_LANES.md": "5ad49a78b7f31fdad0995060d62df168670ea8ebbbb5f686d6925568b71ded1e",
+    "ENDPOINT_GADGET.md": "82dbbd706a30413b6a0f8a70c4f648964bc7454be18003278e57cc3dd42131bd",
+    "check_endpoint.py": "d2ef60d2209ea323738d687a3eab3304a0be383bdf74a73b013dda29bdada61a",
+    "endpoint_results.json": "b55a196677418171ea4f4e7ed491eba49715bbf77094db44b9f2955745681634",
+    "README.md": "d341d212c7ff47870d3053d92e9387d3f6b4cbce40d3a0d98d127323f483de83",
+    "REVIEW.md": "70e0ddf39f50d7d78841413b274515dcda36344211dfd045793299405cf8643e",
+    "RESOURCE_SCOPE.md": "c4217d61de44685c8bd51f53478b04d09861b5f21abb20dae11902e7605e2557"
+  }
+}
