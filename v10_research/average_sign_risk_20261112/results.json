@@ -1,0 +1,95 @@
+{
+  "status": "pass",
+  "word_checks": 69888,
+  "finite_failure_rows": [
+    {
+      "N": 8,
+      "epsilon": 0.015625,
+      "m": 2,
+      "bad_words": 4,
+      "failure_probability": {
+        "-0.5": 0.029296875,
+        "0.0": 0.03125,
+        "0.5": 0.029296875
+      }
+    },
+    {
+      "N": 8,
+      "epsilon": 0.0078125,
+      "m": 3,
+      "bad_words": 2,
+      "failure_probability": {
+        "-0.5": 0.0205078125,
+        "0.0": 0.015625,
+        "0.5": 0.0205078125
+      }
+    },
+    {
+      "N": 12,
+      "epsilon": 0.015625,
+      "m": 2,
+      "bad_words": 54,
+      "failure_probability": {
+        "-0.5": 0.025554656982421875,
+        "0.0": 0.0263671875,
+        "0.5": 0.025554656982421875
+      }
+    },
+    {
+      "N": 12,
+      "epsilon": 0.0078125,
+      "m": 3,
+      "bad_words": 28,
+      "failure_probability": {
+        "-0.5": 0.01947784423828125,
+        "0.0": 0.013671875,
+        "0.5": 0.01947784423828125
+      }
+    },
+    {
+      "N": 16,
+      "epsilon": 0.015625,
+      "m": 2,
+      "bad_words": 860,
+      "failure_probability": {
+        "-0.5": 0.02545568346977234,
+        "0.0": 0.0262451171875,
+        "0.5": 0.02545568346977234
+      }
+    },
+    {
+      "N": 16,
+      "epsilon": 0.0078125,
+      "m": 3,
+      "bad_words": 462,
+      "failure_probability": {
+        "-0.5": 0.0196601003408432,
+        "0.0": 0.01409912109375,
+        "0.5": 0.0196601003408432
+      }
+    }
+  ],
+  "shrinking_epsilon_worst_words": [
+    {
+      "N": 32,
+      "epsilon": 6.103515625e-05,
+      "tail_to_first_ratio": 1.0002441694570237
+    },
+    {
+      "N": 64,
+      "epsilon": 1.52587890625e-05,
+      "tail_to_first_ratio": 1.000061037018952
+    },
+    {
+      "N": 128,
+      "epsilon": 3.814697265625e-06,
+      "tail_to_first_ratio": 1.000015258905479
+    },
+    {
+      "N": 256,
+      "epsilon": 9.5367431640625e-07,
+      "tail_to_first_ratio": 1.0000038147045416
+    }
+  ],
+  "scope": "float64 normalized-coefficient scalar interface; not a compiled network or precision certificate"
+}

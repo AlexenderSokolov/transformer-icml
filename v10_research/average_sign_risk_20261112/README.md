@@ -1,0 +1,7 @@
+# Rare-sign-error statistical interface checkpoint
+
+This preserves an independently analytically reviewed counterexample to promoting worst-word sign failure directly into statistical risk failure. It is exact-real scalar-interface arithmetic, not a complete PreLN compiler or finite-precision algorithm. Source-average risk may be small despite positive-probability misdecoded words, while exponentially small signal and amplification costs remain unresolved.
+
+The published source includes the independent review's correction delta=2^(-N+o(N)); this is not generally Theta(2^-N). Run `python check.py` for 69,888 float64 normalized-coefficient word checks and four shrinking-epsilon worst-word examples. An independent replay matched recorded JSON. These diagnostics do not test the full two-stage predictor, implement a network, or certify noise robustness. No CI was run for this checkpoint.
+
+Historical CI provenance: https://github.com/AlexenderSokolov/transformer-icml/actions/runs/42171209329/job/127739204873 failed on 2026-11-06 at main 2ca64346e0dbb19ccf12b5c0f06f12cd0ff31a70. tools/public_verify.py reported missing=[] and 293 extra unregistered files; those exact paths remain the inherited mismatch before this increment. Rejection-case tests were skipped. This is a preexisting failure, not caused by the November12 additions. Existing inventory rows and these historical files are preserved.
