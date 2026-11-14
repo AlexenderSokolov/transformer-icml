@@ -1,0 +1,14 @@
+# Attention prior art: three model contracts
+
+This note indexes published results. It does not report results for this repository or compare unpublished bounds.
+
+| Source | Statement and model | What the statement measures |
+|---|---|---|
+| [Chiang and Cholak, ACL 2022](https://aclanthology.org/2022.acl-long.527.pdf), Proposition 1 and §3.3 | Bidirectional encoder, leading CLS, exact soft attention and positional features. PARITY uses a global count, a position-dependent ReLU gate and two second-layer heads; FIRST gates the value at the selected position. | Exact threshold decisions; the bounded-score constructions can have shrinking logit margins. |
+| Same paper, Proposition 2 | A new post-normalized block uses zero-epsilon layer normalization to convert a nonzero scalar score into a fixed-magnitude sign signal, followed by readout scaling. | Arbitrarily small deterministic-label cross-entropy, with a chosen readout for each target error. Zero-epsilon normalization is not uniformly Lipschitz near a vanishing centered input. |
+| Same paper, Proposition 3 and Eq. (2) | FIRST with log-length-scaled attention scores. The proof uses the explicitly gated FIRST construction and treats variants with and without normalization. | A length-independent classification margin after amplifying the selected score gap. It is not a uniform bound on the scores themselves. |
+| [Ildiz et al., ICML 2024](https://proceedings.mlr.press/v235/ildiz24a.html), Theorem 2.6, Appendix A | One-layer attention with a last-token query. Under the specified embedding and linear-readout assumptions, the position-free output law reweights a base transition by prompt token counts. Appendix A separately allows position-weighted counts. | Equality of two descriptions of the same model-generated conditional law. |
+| Same paper, Theorems 3.4 and 4.2, Corollary 4.3, §5 | Co-occurrence and realizability assumptions for the attention teacher; §§3–4 learn from independent prompt/output pairs, while §5 treats a trajectory generated autoregressively by the teacher. | Identification, excess likelihood loss and parameter estimation in the specified settings; generation dynamics in §5. The number of independent pairs is not the length of a single externally generated history. |
+| [Castin, Ablin and Peyré, ICML 2024](https://proceedings.mlr.press/v235/castin24a.html), Theorems 4.3 and 4.5 | Causally masked attention smoothness on the specified bounded input domain (4.3), and a distinct local large-radius regime (4.5). | Map Lipschitz behavior in the stated metrics. These are not conditional next-symbol risk statements. |
+
+Keep apart full versus causal visibility, positive versus zero normalization epsilon, fixed versus length-dependent score gaps, clean arithmetic versus a specified error model, and classification margin versus probability estimation.
